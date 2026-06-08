@@ -10,6 +10,10 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+import testsRouter from "./routes/tests.routes";
+
+app.use("/api/tests", testsRouter);
+
 app.get("/", (req, res) => {
   res.json({ message: "Hello from Express in Turborepo!" });
 });
