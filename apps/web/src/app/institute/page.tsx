@@ -9,7 +9,7 @@ import {
   RiMoreFill,
   RiAddLine
 } from "@remixicon/react";
-import { mockInstituteAdmin, mockBatches, mockInstituteStudents } from "../../lib/mock-data";
+import { mockInstituteAdmin, mockBatches, mockInstituteStudents, mockInstituteTests } from "../../lib/mock-data";
 
 export default function InstituteDashboardPage() {
   return (
@@ -22,9 +22,14 @@ export default function InstituteDashboardPage() {
           </h1>
           <p className="text-body">Welcome back, {mockInstituteAdmin.name}. Here is your institute overview.</p>
         </div>
-        <button className="btn btn-primary" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <RiAddLine size={18} /> Create New Batch
-        </button>
+        <div style={{ display: "flex", gap: 12 }}>
+          <button className="btn btn-outline" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <RiAddLine size={18} /> Create New Batch
+          </button>
+          <Link href="/institute/tests/create" className="btn btn-primary" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none" }}>
+            <RiAddLine size={18} /> Schedule Batch Test
+          </Link>
+        </div>
       </header>
 
       {/* KPI Cards */}
@@ -66,6 +71,49 @@ export default function InstituteDashboardPage() {
           <p style={{ fontSize: 13, color: "var(--fg-muted)", marginTop: 8 }}>Renews on Aug 15, 2026</p>
         </div>
       </div>
+
+      {/* Collaborative Test Pipeline */}
+      <section className="rayum-card" style={{ marginBottom: 24 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700 }}>Test Pipeline</h2>
+          <Link href="/institute/tests" className="btn btn-outline" style={{ padding: "6px 12px", fontSize: 13 }}>View All Tests</Link>
+        </div>
+        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <thead>
+            <tr style={{ borderBottom: "1px solid var(--border-default)", textAlign: "left", color: "var(--fg-muted)", fontSize: 13 }}>
+              <th style={{ paddingBottom: 12 }}>Test Name</th>
+              <th style={{ paddingBottom: 12 }}>Batch</th>
+              <th style={{ paddingBottom: 12 }}>Date</th>
+              <th style={{ paddingBottom: 12 }}>Section Status</th>
+              <th style={{ paddingBottom: 12 }}>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {mockInstituteTests.map(test => (
+              <tr key={test.id} style={{ borderBottom: "1px solid var(--neutral-10)" }}>
+                <td style={{ padding: "16px 0", fontWeight: 600 }}>{test.name}</td>
+                <td style={{ padding: "16px 0", color: "var(--fg-muted)", fontSize: 13 }}>{test.batch}</td>
+                <td style={{ padding: "16px 0", color: "var(--fg-muted)", fontSize: 13 }}>{new Date(test.scheduledDate).toLocaleDateString()}</td>
+                <td style={{ padding: "16px 0" }}>
+                  <div style={{ display: "flex", gap: 4 }}>
+                    {Object.entries(test.progress).map(([subject, status]) => (
+                      <span key={subject} title={subject} style={{
+                        width: 12, height: 12, borderRadius: "50%",
+                        background: status === "completed" ? "var(--success-50)" : "var(--warning-50)"
+                      }} />
+                    ))}
+                  </div>
+                </td>
+                <td style={{ padding: "16px 0" }}>
+                  <span className={`rayum-badge ${test.status === 'ready' ? 'green' : 'orange'}`}>
+                    {test.status === 'ready' ? 'Ready to Publish' : 'Waiting on Teachers'}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
         

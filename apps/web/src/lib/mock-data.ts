@@ -23,6 +23,7 @@ export const mockTeacher = {
   email: "vikram.seth@aakash.test",
   role: "teacher" as const,
   instituteName: "Aakash Institute",
+  subject: "Physics",
   batchesAssigned: 3,
 };
 
@@ -510,4 +511,56 @@ export const mockInstitutesList = [
     status: "expiring",
     joined: "2026-05-15",
   },
+];
+
+// Collaborative Test Creation Data
+export const mockPendingTasks = [
+  {
+    id: "task-001",
+    testName: "Fortnightly Review 4 - JEE Main",
+    batchName: "JEE 2026 Morning",
+    dueDate: "2026-06-12",
+    subject: "Physics",
+    questionsRequired: 25,
+    questionsAdded: 0,
+    status: "pending",
+  },
+  {
+    id: "task-002",
+    testName: "Full Mock 1 - NEET Pattern",
+    batchName: "NEET 2026 Droppers",
+    dueDate: "2026-06-15",
+    subject: "Physics",
+    questionsRequired: 45,
+    questionsAdded: 45,
+    status: "completed",
+  }
+];
+
+export const mockInstituteTests = [
+  {
+    id: "itest-001",
+    name: "Fortnightly Review 4 - JEE Main",
+    batch: "JEE 2026 Morning",
+    scheduledDate: "2026-06-14",
+    status: "pending_teachers",
+    progress: {
+      physics: "pending",
+      chemistry: "completed",
+      maths: "completed"
+    }
+  },
+  {
+    id: "itest-002",
+    name: "Full Mock 1 - NEET Pattern",
+    batch: "NEET 2026 Droppers",
+    scheduledDate: "2026-06-17",
+    status: "ready",
+    progress: {
+      physics: "completed",
+      chemistry: "completed",
+      botany: "completed",
+      zoology: "completed"
+    }
+  }
 ];

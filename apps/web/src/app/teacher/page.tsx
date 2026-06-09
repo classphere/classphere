@@ -8,7 +8,7 @@ import {
   RiArrowRightUpLine,
   RiSettings4Line
 } from "@remixicon/react";
-import { mockTeacher, mockBatches } from "../../lib/mock-data";
+import { mockTeacher, mockBatches, mockPendingTasks } from "../../lib/mock-data";
 
 export default function TeacherDashboardPage() {
   return (
@@ -21,8 +21,8 @@ export default function TeacherDashboardPage() {
           </h1>
           <p className="text-body">Here's the latest from your assigned batches at {mockTeacher.instituteName}.</p>
         </div>
-        <Link href="/teacher/create-test" className="btn btn-primary">
-          Create Batch Test
+        <Link href="/teacher/create-assignment" className="btn btn-primary">
+          Create Subject Assignment
         </Link>
       </header>
 
@@ -66,6 +66,41 @@ export default function TeacherDashboardPage() {
           <p style={{ fontSize: 13, color: "var(--fg-muted)", marginTop: 8 }}>Scheduled for this week</p>
         </div>
       </div>
+
+      {/* Pending Tasks Alert */}
+      {mockPendingTasks.length > 0 && (
+        <section className="rayum-card" style={{ marginBottom: 24, borderLeft: "4px solid var(--warning-50)" }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+            <RiCalendarEventLine size={20} color="var(--warning-50)" /> Action Required: Pending Test Sections
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {mockPendingTasks.map(task => (
+              <div key={task.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: 16, background: "var(--neutral-10)", borderRadius: 8 }}>
+                <div>
+                  <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 4 }}>{task.testName}</div>
+                  <div style={{ fontSize: 13, color: "var(--fg-muted)", display: "flex", alignItems: "center", gap: 12 }}>
+                    <span style={{ display: "flex", alignItems: "center", gap: 4 }}><RiTeamLine size={14} /> {task.batchName}</span>
+                    <span style={{ display: "flex", alignItems: "center", gap: 4 }}><RiCalendarEventLine size={14} /> Due: {new Date(task.dueDate).toLocaleDateString()}</span>
+                  </div>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+                  <div style={{ textAlign: "right" }}>
+                    <div style={{ fontSize: 13, fontWeight: 600 }}>{task.questionsAdded} / {task.questionsRequired}</div>
+                    <div style={{ fontSize: 12, color: "var(--fg-muted)" }}>Questions</div>
+                  </div>
+                  {task.status === "pending" ? (
+                    <Link href={`/teacher/tasks/${task.id}`} className="btn btn-primary" style={{ padding: "6px 16px", fontSize: 13 }}>
+                      Add Questions
+                    </Link>
+                  ) : (
+                    <span className="rayum-badge green" style={{ padding: "6px 12px" }}>Completed</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Main Content Grid */}
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 24 }}>
