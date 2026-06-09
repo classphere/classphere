@@ -12,15 +12,17 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.10",
+    "eslint-config": "*",
     "ts-node-dev": "^2.0.0",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.5",
     "tsconfig": "*",
-    "eslint-config": "*"
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
   }
 }

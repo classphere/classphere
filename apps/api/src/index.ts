@@ -7,17 +7,33 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
+// ─── Global Middleware ────────────────────────────────────────────────────────
 app.use(cors());
 app.use(express.json());
 
-import testsRouter from "./routes/tests.routes";
+// ─── API Routes ───────────────────────────────────────────────────────────────
+import apiRouter from "./routes/index";
 
-app.use("/api/tests", testsRouter);
+// All routes are prefixed with /api/v1
+app.use("/api/v1", apiRouter);
 
+// ─── Health Check ─────────────────────────────────────────────────────────────
 app.get("/", (req, res) => {
-  res.json({ message: "Hello from Express in Turborepo!" });
+  res.json({ status: "ok", message: "ExamPrep API is running", version: "v1" });
+});
+
+// ─── 404 Handler ──────────────────────────────────────────────────────────────
+app.use((req, res) => {
+  res.status(404).json({ success: false, message: `Route not found: ${req.method} ${req.path}` });
+});
+
+// ─── Global Error Handler ─────────────────────────────────────────────────────
+app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  console.error("[Unhandled Error]", err);
+  res.status(500).json({ success: false, message: "Internal server error" });
 });
 
 app.listen(port, () => {
-  console.log(`API Server is running on port ${port}`);
+  console.log(`[API] ExamPrep API Server running on port ${port}`);
+  console.log(`[API] Routes mounted at /api/v1`);
 });
