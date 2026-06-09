@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Sidebar from "@/components/layout/Sidebar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,10 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ExamPrep — AI-Powered JEE & NEET Test Platform",
-  description:
-    "Take customized tests, get AI-powered analysis, and track your rank among thousands of JEE and NEET aspirants. The smartest way to prepare.",
-  keywords: ["JEE", "NEET", "exam preparation", "AI analysis", "test platform", "mock test"],
+  title: "ExamPrep — Dashboard",
+  description: "B2B Exam Preparation Dashboard",
 };
 
 export default function RootLayout({
@@ -20,7 +19,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full antialiased" style={{ display: "flex" }}>
+        <Sidebar />
+        <div style={{ flex: 1, marginLeft: 260, minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

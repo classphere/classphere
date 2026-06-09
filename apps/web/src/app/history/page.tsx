@@ -3,6 +3,10 @@
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { mockHistory } from "@/lib/mock-data";
+import {
+  RiFlashlightFill,
+  RiCheckboxCircleFill
+} from "@remixicon/react";
 
 type HistoryItem = {
   id: string;
@@ -17,97 +21,113 @@ type HistoryItem = {
 
 function TestChainItem({ item, depth = 0 }: { item: HistoryItem; depth?: number }) {
   const pct = item.percentage;
-  const color = pct >= 70 ? "#22c55e" : pct >= 50 ? "#eab308" : "#ef4444";
+  const colorClass = pct >= 70 ? "success" : pct >= 50 ? "warning" : "error";
   const isBooster = depth > 0;
 
   return (
-    <div style={{ display: "flex", gap: 0 }}>
-      {depth > 0 && (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginRight: 16, width: 24, flexShrink: 0 }}>
-          <div style={{ width: 2, height: 20, background: "rgba(255,255,255,0.1)", flexShrink: 0 }} />
-          <div style={{ width: 12, height: 12, borderRadius: "50%", background: isBooster ? "rgba(249,115,22,0.3)" : "rgba(255,255,255,0.15)", border: `2px solid ${isBooster ? "#f97316" : "rgba(255,255,255,0.2)"}`, flexShrink: 0 }} />
-          {item.boosters.length > 0 && <div style={{ width: 2, flex: 1, background: "rgba(255,255,255,0.1)" }} />}
-        </div>
+    <div style={{ position: "relative", marginTop: depth > 0 ? 16 : 0 }}>
+      {/* Vertical connector line from parent */}
+      {isBooster && (
+        <div style={{
+          position: "absolute",
+          left: -19,
+          top: -24,
+          bottom: "50%",
+          width: 2,
+          background: "var(--border-muted)",
+          zIndex: 0
+        }} />
       )}
 
-      <div style={{ flex: 1, marginBottom: 12 }}>
-        <div
-          className="glass glass-hover"
-          style={{
-            borderRadius: 14, padding: "16px 18px",
-            borderLeft: isBooster ? "3px solid rgba(249,115,22,0.3)" : "3px solid rgba(255,255,255,0.08)",
-            background: item.mastered ? "rgba(34,197,94,0.04)" : undefined,
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
-            <div style={{ flex: 1 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                {isBooster && <span className="badge badge-orange" style={{ fontSize: "0.65rem" }}>⚡ Booster {depth}</span>}
-                {item.mastered && <span className="badge badge-green" style={{ fontSize: "0.65rem" }}>✅ Mastered</span>}
-                <span style={{ color: "#334155", fontSize: "0.72rem" }}>{item.date}</span>
-              </div>
-              <div style={{ fontWeight: 600, color: "#f1f5f9", fontSize: "0.9rem", marginBottom: 4 }}>{item.title}</div>
-              <div style={{ color: "#475569", fontSize: "0.78rem" }}>{item.questions} questions</div>
-            </div>
-            <div style={{ textAlign: "right", flexShrink: 0 }}>
-              <div style={{ fontSize: "1.3rem", fontWeight: 900, color }}>{pct}%</div>
-              <div style={{ fontSize: "0.7rem", color: "#334155" }}>Score</div>
-            </div>
-          </div>
+      {/* Horizontal connector line to this card */}
+      {isBooster && (
+        <div style={{
+          position: "absolute",
+          left: -19,
+          top: "50%",
+          width: 16,
+          height: 2,
+          background: "var(--border-muted)",
+          zIndex: 0
+        }} />
+      )}
 
-          <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
-            <Link href={`/results/${item.id}`} className="btn-ghost" style={{ fontSize: "0.75rem", padding: "4px 12px" }}>
-              View Analysis
-            </Link>
+      <div className="rayum-card" style={{
+          position: "relative",
+          zIndex: 1,
+          padding: "16px 18px",
+          borderLeft: isBooster ? "4px solid var(--primary-50)" : "4px solid var(--border-default)",
+          background: item.mastered ? "var(--success-10)" : "var(--bg-surface)",
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+              {isBooster && <span className="rayum-badge orange" style={{ fontSize: 10, display: "inline-flex", alignItems: "center", gap: 4 }}><RiFlashlightFill size={12} /> Booster {depth}</span>}
+              {item.mastered && <span className="rayum-badge green" style={{ fontSize: 10, display: "inline-flex", alignItems: "center", gap: 4 }}><RiCheckboxCircleFill size={12} /> Mastered</span>}
+              <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>{item.date}</span>
+            </div>
+            <div className="text-body-large" style={{ fontWeight: 600, color: "var(--fg-default)", marginBottom: 4 }}>{item.title}</div>
+            <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>{item.questions} questions</div>
+          </div>
+          <div style={{ textAlign: "right", flexShrink: 0 }}>
+            <div className="text-heading-s" style={{ color: `var(--${colorClass}-50)` }}>{pct}%</div>
+            <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>Score</div>
           </div>
         </div>
 
-        {/* Recursive boosters */}
-        {item.boosters.length > 0 && (
-          <div style={{ marginTop: 0, marginLeft: depth === 0 ? 24 : 0 }}>
-            {item.boosters.map((booster) => (
-              <TestChainItem key={booster.id} item={booster} depth={depth + 1} />
-            ))}
-          </div>
-        )}
+        <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
+          <Link href={`/results/${item.id}`} className="btn btn-outline" style={{ fontSize: 12, padding: "4px 12px" }}>
+            View Analysis
+          </Link>
+        </div>
       </div>
+
+      {/* Recursive boosters wrapper */}
+      {item.boosters && item.boosters.length > 0 && (
+        <div style={{ position: "relative", paddingLeft: 36 }}>
+          {/* Vertical line continuing down for children */}
+          <div style={{
+            position: "absolute",
+            left: 17,
+            top: 0,
+            bottom: 24, // stop before the last child's center
+            width: 2,
+            background: "var(--border-muted)",
+            zIndex: 0
+          }} />
+          
+          {item.boosters.map((booster) => (
+            <TestChainItem key={booster.id} item={booster} depth={depth + 1} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
 
 export default function HistoryPage() {
   return (
-    <div style={{ minHeight: "100vh", background: "var(--bg-primary)" }}>
-      <Navbar />
-      <main style={{ maxWidth: 820, margin: "0 auto", padding: "36px 24px" }}>
-        <div style={{ marginBottom: 32 }}>
-          <h1 style={{ fontSize: "1.7rem", fontWeight: 800, color: "#f1f5f9", marginBottom: 6 }}>
-            Test History
-          </h1>
-          <p style={{ color: "#64748b" }}>
-            Your test chains — from original test to booster to mastery
-          </p>
-        </div>
-
+    <>
+      <Navbar title="Test History" />
+      <main style={{ maxWidth: 820, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
+        
         {/* Legend */}
-        <div
-          className="glass"
-          style={{ borderRadius: 14, padding: "16px 20px", marginBottom: 28, display: "flex", gap: 20, flexWrap: "wrap" }}
-        >
-          <div style={{ fontSize: "0.78rem", color: "#475569", fontWeight: 600, alignSelf: "center" }}>Legend:</div>
+        <div className="rayum-card" style={{ padding: "16px 20px", marginBottom: "var(--space-600)", display: "flex", gap: 20, flexWrap: "wrap", alignItems: "center" }}>
+          <div className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-default)" }}>Legend:</div>
           {[
-            { label: "Original Test", color: "rgba(255,255,255,0.2)" },
-            { label: "Booster Test", color: "#f97316" },
-            { label: "Mastered ✅", color: "#22c55e" },
+            { label: "Original Test", color: "var(--border-default)" },
+            { label: "Booster Test", color: "var(--primary-50)" },
+            { label: "Mastered", color: "var(--success-50)", icon: <RiCheckboxCircleFill size={14} color="var(--success-50)" /> },
           ].map((l) => (
             <div key={l.label} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <div style={{ width: 3, height: 16, background: l.color, borderRadius: 2 }} />
-              <span style={{ fontSize: "0.78rem", color: "#64748b" }}>{l.label}</span>
+              {l.icon ? l.icon : <div style={{ width: 4, height: 16, background: l.color, borderRadius: 2 }} />}
+              <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>{l.label}</span>
             </div>
           ))}
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-500)" }}>
           {mockHistory.map((item) => (
             <div key={item.id}>
               <TestChainItem item={item} />
@@ -115,6 +135,6 @@ export default function HistoryPage() {
           ))}
         </div>
       </main>
-    </div>
+    </>
   );
 }

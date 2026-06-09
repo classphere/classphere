@@ -17,6 +17,33 @@ export const mockUser = {
   batch: "JEE 2026 Morning",
 };
 
+export const mockTeacher = {
+  id: "t-001",
+  name: "Dr. Vikram Seth",
+  email: "vikram.seth@aakash.test",
+  role: "teacher" as const,
+  instituteName: "Aakash Institute",
+  batchesAssigned: 3,
+};
+
+export const mockInstituteAdmin = {
+  id: "i-001",
+  name: "Aakash Admin",
+  email: "admin@aakash.test",
+  role: "institute_admin" as const,
+  instituteName: "Aakash Institute",
+  plan: "Institute Growth",
+  studentsCount: 420,
+  batchesCount: 8,
+};
+
+export const mockSuperAdmin = {
+  id: "s-001",
+  name: "ExamPrep Admin",
+  email: "admin@examprep.in",
+  role: "super_admin" as const,
+};
+
 export const mockStats = {
   totalTests: 34,
   avgScore: 68.5,
@@ -357,3 +384,130 @@ export const examConfig = {
     speedMinPerQ: 1.0,
   },
 };
+
+// Teacher & Institute Data
+export const mockBatches = [
+  {
+    id: "batch-001",
+    name: "JEE 2026 Morning",
+    exam: "JEE",
+    studentsCount: 142,
+    avgScore: 71.4,
+    testsConducted: 12,
+    nextTestDate: "2026-06-12",
+  },
+  {
+    id: "batch-002",
+    name: "JEE 2026 Evening",
+    exam: "JEE",
+    studentsCount: 138,
+    avgScore: 68.2,
+    testsConducted: 12,
+    nextTestDate: "2026-06-12",
+  },
+  {
+    id: "batch-003",
+    name: "NEET 2026 Droppers",
+    exam: "NEET",
+    studentsCount: 185,
+    avgScore: 62.5,
+    testsConducted: 8,
+    nextTestDate: "2026-06-15",
+  },
+];
+
+export const mockBatchAnalysis = {
+  batchId: "batch-001",
+  testTitle: "Weekly Test 4 — Physics & Maths",
+  totalStudents: 142,
+  attemptedCount: 138,
+  classSummary: {
+    avgScore: 64.5,
+    topScore: 92.0,
+    bottomScore: 18.5,
+    belowAverageCount: 45,
+  },
+  chapterHeatmap: [
+    { chapter: "Laws of Motion", avgAccuracy: 42, flag: "critical" },
+    { chapter: "Work, Energy & Power", avgAccuracy: 68, flag: "warning" },
+    { chapter: "Calculus — Limits", avgAccuracy: 85, flag: "good" },
+  ],
+  teachingRecs: [
+    { recommendation: "73% of students failed on Pulley System signs. Re-teach sign conventions.", priority: "high" },
+    { recommendation: "Work-Energy theorem is understood, but variable force integration is weak.", priority: "medium" },
+  ],
+  attentionFlags: [
+    { studentName: "Rohan Gupta", reason: "Score dropped 30% since last week." },
+    { studentName: "Sneha Reddy", reason: "Missed 3 consecutive tests." },
+  ],
+};
+
+export const mockInstituteStudents = Array.from({ length: 15 }, (_, i) => ({
+  id: `stu-${i}`,
+  name: [
+    "Arjun Mehta", "Priya Sharma", "Rohan Gupta", "Ananya Singh", "Vikram Patel",
+    "Sneha Reddy", "Aditya Kumar", "Kavya Nair", "Rahul Verma", "Divya Joshi",
+    "Siddharth Rao", "Meera Pillai", "Karan Malhotra", "Shreya Das", "Nikhil Sinha"
+  ][i],
+  batch: i % 3 === 0 ? "NEET 2026 Droppers" : "JEE 2026 Morning",
+  avgScore: Math.round(85 - i * 1.8 + Math.random() * 3),
+  testsTaken: Math.round(15 - i * 0.2),
+  joinedAt: "2025-04-10",
+}));
+
+// Super Admin Data
+export const mockPlatformStats = {
+  totalInstitutes: 45,
+  totalStudents: 12450,
+  testsConductedThisMonth: 145000,
+  activeAIAnalyses: 138000,
+  mrr: "₹3,45,000",
+};
+
+export const mockInstitutesList = [
+  {
+    id: "inst-1",
+    name: "Aakash Institute (Delhi)",
+    plan: "Pro",
+    students: 2450,
+    batches: 32,
+    status: "active",
+    joined: "2025-01-15",
+  },
+  {
+    id: "inst-2",
+    name: "Allen Career Institute (Kota)",
+    plan: "Pro",
+    students: 5800,
+    batches: 64,
+    status: "active",
+    joined: "2025-02-10",
+  },
+  {
+    id: "inst-3",
+    name: "Resonance (Mumbai)",
+    plan: "Growth",
+    students: 450,
+    batches: 8,
+    status: "active",
+    joined: "2025-11-05",
+  },
+  {
+    id: "inst-4",
+    name: "Vibrant Academy",
+    plan: "Starter",
+    students: 120,
+    batches: 3,
+    status: "active",
+    joined: "2026-03-20",
+  },
+  {
+    id: "inst-5",
+    name: "Future Point Classes",
+    plan: "Trial",
+    students: 45,
+    batches: 1,
+    status: "expiring",
+    joined: "2026-05-15",
+  },
+];

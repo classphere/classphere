@@ -3,6 +3,14 @@
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { mockQuestions } from "@/lib/mock-data";
+import {
+  RiTimerLine,
+  RiStarFill,
+  RiStarLine,
+  RiArrowLeftLine,
+  RiArrowRightLine,
+  RiFlag2Fill
+} from "@remixicon/react";
 
 type AnswerMap = Record<string, string>;
 type StatusMap = Record<string, "unanswered" | "answered" | "review">;
@@ -59,23 +67,24 @@ export default function TestPage() {
   return (
     <div
       style={{
-        minHeight: "100vh", background: "var(--bg-primary)",
+        minHeight: "100vh", background: "var(--bg-default)",
         display: "flex", flexDirection: "column",
       }}
     >
       {/* Top Bar */}
       <header
         style={{
-          height: 56, display: "flex", alignItems: "center", justifyContent: "space-between",
-          padding: "0 20px",
-          background: "rgba(8,12,20,0.95)",
-          borderBottom: "1px solid rgba(255,255,255,0.07)",
+          height: 64, display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "0 32px",
+          background: "var(--bg-surface)",
+          borderBottom: "1px solid var(--border-default)",
           position: "sticky", top: 0, zIndex: 50,
+          boxShadow: "var(--shadow-100)"
         }}
       >
-        <div style={{ fontWeight: 800, fontSize: "0.95rem", color: "#f1f5f9" }}>
-          Exam<span style={{ color: "#f97316" }}>Prep</span>
-          <span style={{ color: "#334155", fontWeight: 400, marginLeft: 12, fontSize: "0.8rem" }}>
+        <div style={{ fontWeight: 800, fontSize: 18, color: "var(--fg-default)" }}>
+          Exam<span style={{ color: "var(--secondary-50)" }}>Prep</span>
+          <span style={{ color: "var(--fg-muted)", fontWeight: 500, marginLeft: 16, fontSize: 14 }}>
             Laws of Motion · JEE · {questions.length} Questions
           </span>
         </div>
@@ -84,16 +93,18 @@ export default function TestPage() {
         <div
           style={{
             display: "flex", alignItems: "center", gap: 10,
-            padding: "6px 18px", borderRadius: 24,
-            background: timeWarning ? "rgba(239,68,68,0.12)" : "rgba(255,255,255,0.06)",
-            border: `1px solid ${timeWarning ? "rgba(239,68,68,0.3)" : "rgba(255,255,255,0.1)"}`,
+            padding: "8px 20px", borderRadius: "var(--radius-full)",
+            background: timeWarning ? "var(--error-10)" : "var(--neutral-10)",
+            border: `1px solid ${timeWarning ? "var(--error-50)" : "var(--border-default)"}`,
           }}
         >
-          <span style={{ fontSize: "0.8rem" }}>⏱</span>
+          <span style={{ display: "flex", color: timeWarning ? "var(--error-50)" : "var(--fg-default)" }}>
+            <RiTimerLine size={18} />
+          </span>
           <span
             style={{
-              fontWeight: 800, fontSize: "1.1rem", fontVariantNumeric: "tabular-nums",
-              color: timeWarning ? "#f87171" : "#f1f5f9",
+              fontWeight: 800, fontSize: 16, fontVariantNumeric: "tabular-nums",
+              color: timeWarning ? "var(--error-50)" : "var(--fg-default)",
             }}
           >
             {formatTime(timeLeft)}
@@ -102,8 +113,7 @@ export default function TestPage() {
 
         <button
           id="submit-test-btn"
-          className="btn-primary"
-          style={{ padding: "8px 20px", fontSize: "0.85rem" }}
+          className="btn btn-primary"
           onClick={() => setShowSubmitModal(true)}
         >
           Submit Test
@@ -112,160 +122,176 @@ export default function TestPage() {
 
       <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
         {/* Question Area */}
-        <div style={{ flex: 1, padding: "32px", overflowY: "auto" }}>
-          {/* Subject tag + difficulty */}
-          <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
-            <span className="badge badge-blue">{q.subject}</span>
-            <span className="badge badge-orange">{q.chapter}</span>
-            <span
-              className="badge"
-              style={{
-                background: q.difficulty === "easy" ? "rgba(34,197,94,0.12)" : q.difficulty === "hard" ? "rgba(239,68,68,0.12)" : "rgba(234,179,8,0.12)",
-                color: q.difficulty === "easy" ? "#4ade80" : q.difficulty === "hard" ? "#f87171" : "#facc15",
-                border: "none",
-              }}
-            >
-              {q.difficulty}
-            </span>
-          </div>
-
-          {/* Question number + text */}
-          <div style={{ marginBottom: 32 }}>
-            <div style={{ fontSize: "0.8rem", color: "#475569", marginBottom: 10 }}>
-              Question {current + 1} of {questions.length}
-            </div>
-            <p style={{ fontSize: "1.05rem", color: "#f1f5f9", lineHeight: 1.75, fontWeight: 400 }}>
-              {q.questionText}
-            </p>
-          </div>
-
-          {/* Options */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 640 }}>
-            {q.options.map((opt) => {
-              const selected = answers[q.id] === opt.id;
-              return (
-                <button
-                  key={opt.id}
-                  id={`option-${opt.id}`}
-                  className="option-btn"
-                  style={selected ? { borderColor: "#f97316", background: "rgba(249,115,22,0.1)" } : {}}
-                  onClick={() => selectAnswer(q.id, opt.id)}
-                >
-                  <div
-                    style={{
-                      width: 28, height: 28, borderRadius: 8, flexShrink: 0,
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      background: selected ? "#f97316" : "rgba(255,255,255,0.06)",
-                      color: selected ? "#000" : "#94a3b8",
-                      fontSize: "0.8rem", fontWeight: 700,
-                    }}
-                  >
-                    {opt.id}
-                  </div>
-                  <span style={{ color: selected ? "#f1f5f9" : "#94a3b8" }}>{opt.text}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Nav buttons */}
-          <div style={{ display: "flex", gap: 10, marginTop: 32, paddingBottom: 20 }}>
-            <button
-              className="btn-secondary"
-              onClick={() => setCurrent((c) => Math.max(0, c - 1))}
-              disabled={current === 0}
-            >
-              ← Previous
-            </button>
-            <button
-              className="btn-ghost"
-              onClick={() => toggleReview(q.id)}
-              style={{
-                color: status[q.id] === "review" ? "#facc15" : "#64748b",
-                border: "1px solid",
-                borderColor: status[q.id] === "review" ? "rgba(234,179,8,0.3)" : "rgba(255,255,255,0.08)",
-                borderRadius: 10,
-              }}
-            >
-              {status[q.id] === "review" ? "⭐ Marked" : "☆ Mark for Review"}
-            </button>
-            {current < questions.length - 1 ? (
-              <button className="btn-primary" onClick={() => setCurrent((c) => c + 1)}>
-                Next →
-              </button>
-            ) : (
-              <button
-                className="btn-primary animate-glow"
-                onClick={() => setShowSubmitModal(true)}
+        <div style={{ flex: 1, padding: "40px 60px", overflowY: "auto" }}>
+          <div className="rayum-card" style={{ maxWidth: 860, margin: "0 auto", padding: 40 }}>
+            {/* Subject tag + difficulty */}
+            <div style={{ display: "flex", gap: 8, marginBottom: 24 }}>
+              <span className="rayum-badge blue">{q.subject}</span>
+              <span className="rayum-badge orange">{q.chapter}</span>
+              <span
+                className="rayum-badge"
+                style={{
+                  background: q.difficulty === "easy" ? "var(--success-10)" : q.difficulty === "hard" ? "var(--error-10)" : "var(--warning-10)",
+                  color: q.difficulty === "easy" ? "var(--success-50)" : q.difficulty === "hard" ? "var(--error-50)" : "var(--warning-50)",
+                  border: "none",
+                }}
               >
-                Submit Test
+                {q.difficulty}
+              </span>
+            </div>
+
+            {/* Question number + text */}
+            <div style={{ marginBottom: 40 }}>
+              <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 12, fontWeight: 600 }}>
+                QUESTION {current + 1} OF {questions.length}
+              </div>
+              <p style={{ fontSize: 18, color: "var(--fg-default)", lineHeight: 1.6, fontWeight: 500 }}>
+                {q.questionText}
+              </p>
+            </div>
+
+            {/* Options */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {q.options.map((opt) => {
+                const selected = answers[q.id] === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    id={`option-${opt.id}`}
+                    style={{
+                      display: "flex", alignItems: "center", gap: 16,
+                      padding: "16px 20px", borderRadius: "var(--radius-md)", cursor: "pointer",
+                      textAlign: "left", fontSize: 16, fontWeight: 500,
+                      background: selected ? "var(--primary-10)" : "var(--bg-default)",
+                      border: selected ? "2px solid var(--primary-50)" : "1.5px solid var(--border-default)",
+                      color: selected ? "var(--fg-default)" : "var(--fg-muted)",
+                      transition: "all 0.15s"
+                    }}
+                    onClick={() => selectAnswer(q.id, opt.id)}
+                  >
+                    <div
+                      style={{
+                        width: 32, height: 32, borderRadius: "50%", flexShrink: 0,
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        background: selected ? "var(--primary-50)" : "var(--neutral-20)",
+                        color: selected ? "white" : "var(--fg-default)",
+                        fontSize: 14, fontWeight: 700,
+                      }}
+                    >
+                      {opt.id}
+                    </div>
+                    <span>{opt.text}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Nav buttons */}
+            <div style={{ display: "flex", gap: 16, marginTop: 40, borderTop: "1px solid var(--border-default)", paddingTop: 32 }}>
+              <button
+                className="btn btn-outline"
+                style={{ display: "inline-flex", gap: 8 }}
+                onClick={() => setCurrent((c) => Math.max(0, c - 1))}
+                disabled={current === 0}
+              >
+                <RiArrowLeftLine size={18} /> Previous
               </button>
-            )}
+              <button
+                className="btn"
+                onClick={() => toggleReview(q.id)}
+                style={{
+                  display: "inline-flex", gap: 8,
+                  background: status[q.id] === "review" ? "var(--warning-10)" : "transparent",
+                  color: status[q.id] === "review" ? "var(--warning-50)" : "var(--fg-muted)",
+                  border: `1.5px solid ${status[q.id] === "review" ? "var(--warning-50)" : "var(--border-default)"}`,
+                }}
+              >
+                {status[q.id] === "review" ? <><RiStarFill size={18} /> Marked</> : <><RiStarLine size={18} /> Mark for Review</>}
+              </button>
+              {current < questions.length - 1 ? (
+                <button className="btn btn-primary" style={{ display: "inline-flex", gap: 8 }} onClick={() => setCurrent((c) => c + 1)}>
+                  Next Question <RiArrowRightLine size={18} />
+                </button>
+              ) : (
+                <button
+                  className="btn btn-primary"
+                  onClick={() => setShowSubmitModal(true)}
+                  style={{ background: "var(--secondary-50)" }}
+                >
+                  Submit Test
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
         {/* Right Panel: Question Navigator */}
         <div
           style={{
-            width: 260, borderLeft: "1px solid rgba(255,255,255,0.07)",
-            padding: "24px 16px", overflowY: "auto",
-            background: "rgba(8,12,20,0.6)",
+            width: 300, borderLeft: "1px solid var(--border-default)",
+            padding: "32px 24px", overflowY: "auto",
+            background: "var(--bg-surface)",
           }}
         >
           {/* Stats */}
           <div
             style={{
-              display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 6, marginBottom: 20,
-              padding: "12px", borderRadius: 12,
-              background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)",
+              display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12, marginBottom: 32,
+              padding: 16, borderRadius: "var(--radius-md)",
+              background: "var(--neutral-10)", border: "1px solid var(--border-default)",
             }}
           >
             {[
-              { label: "Done", value: answered, color: "#4ade80" },
-              { label: "Review", value: marked, color: "#facc15" },
-              { label: "Left", value: unanswered, color: "#64748b" },
+              { label: "Done", value: answered, color: "var(--success-50)" },
+              { label: "Review", value: marked, color: "var(--warning-50)" },
+              { label: "Left", value: unanswered, color: "var(--fg-muted)" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontWeight: 800, fontSize: "1.1rem", color: s.color }}>{s.value}</div>
-                <div style={{ fontSize: "0.65rem", color: "#334155" }}>{s.label}</div>
+                <div style={{ fontWeight: 800, fontSize: 20, color: s.color }}>{s.value}</div>
+                <div style={{ fontSize: 12, fontWeight: 600, color: "var(--fg-muted)", marginTop: 4 }}>{s.label}</div>
               </div>
             ))}
           </div>
 
-          <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "#334155", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 }}>
-            Questions
+          <div className="text-body-small" style={{ fontWeight: 700, color: "var(--fg-muted)", textTransform: "uppercase", marginBottom: 16 }}>
+            Questions Navigator
           </div>
 
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 8 }}>
             {questions.map((_, i) => {
               const qId = questions[i].id;
               const s = status[qId] || "unanswered";
               const isCurrent = i === current;
+              
+              let bg = "var(--bg-surface)";
+              let borderColor = "var(--border-default)";
+              let color = "var(--fg-muted)";
+
+              if (s === "answered") { bg = "var(--success-10)"; borderColor = "var(--success-50)"; color = "var(--success-50)"; }
+              else if (s === "review") { bg = "var(--warning-10)"; borderColor = "var(--warning-50)"; color = "var(--warning-50)"; }
+              
+              if (isCurrent) {
+                borderColor = "var(--primary-50)";
+                bg = "var(--primary-50)";
+                color = "white";
+              }
+
               return (
                 <button
                   key={i}
                   id={`nav-q-${i + 1}`}
-                  className={`q-pill ${isCurrent ? "current" : s}`}
+                  style={{
+                    aspectRatio: "1/1", borderRadius: "var(--radius-sm)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontSize: 14, fontWeight: 700, cursor: "pointer",
+                    background: bg, border: `2px solid ${borderColor}`, color: color
+                  }}
                   onClick={() => setCurrent(i)}
                 >
                   {i + 1}
                 </button>
               );
             })}
-          </div>
-
-          {/* Legend */}
-          <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 6 }}>
-            {[
-              { color: "#4ade80", bg: "rgba(34,197,94,0.15)", label: "Answered" },
-              { color: "#facc15", bg: "rgba(234,179,8,0.15)", label: "Marked for Review" },
-              { color: "#64748b", bg: "rgba(255,255,255,0.06)", label: "Not Answered" },
-            ].map((l) => (
-              <div key={l.label} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <div style={{ width: 14, height: 14, borderRadius: 4, background: l.bg, border: `1.5px solid ${l.color}30` }} />
-                <span style={{ fontSize: "0.72rem", color: "#334155" }}>{l.label}</span>
-              </div>
-            ))}
           </div>
         </div>
       </div>
@@ -274,36 +300,27 @@ export default function TestPage() {
       {showSubmitModal && (
         <div
           style={{
-            position: "fixed", inset: 0, background: "rgba(0,0,0,0.7)",
+            position: "fixed", inset: 0, background: "rgba(0,0,0,0.4)",
             display: "flex", alignItems: "center", justifyContent: "center",
             zIndex: 100, backdropFilter: "blur(4px)",
           }}
         >
-          <div
-            className="glass"
-            style={{ borderRadius: 20, padding: "36px 32px", maxWidth: 420, width: "90%" }}
-          >
-            <h2 style={{ fontWeight: 800, color: "#f1f5f9", marginBottom: 8 }}>Submit Test?</h2>
-            <p style={{ color: "#64748b", fontSize: "0.875rem", marginBottom: 24, lineHeight: 1.6 }}>
-              You&apos;ve answered <strong style={{ color: "#f1f5f9" }}>{answered}</strong> of{" "}
-              <strong style={{ color: "#f1f5f9" }}>{questions.length}</strong> questions.
-              {unanswered > 0 && ` ${unanswered} questions are unanswered.`}
+          <div className="rayum-card" style={{ maxWidth: 460, width: "90%", padding: 40, textAlign: "center" }}>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: 16, color: "var(--fg-default)" }}>
+              <RiFlag2Fill size={48} />
+            </div>
+            <h2 className="text-h2" style={{ marginBottom: 12 }}>Ready to Submit?</h2>
+            <p className="text-body-base" style={{ color: "var(--fg-muted)", marginBottom: 32, lineHeight: 1.6 }}>
+              You&apos;ve answered <strong style={{ color: "var(--fg-default)" }}>{answered}</strong> of{" "}
+              <strong style={{ color: "var(--fg-default)" }}>{questions.length}</strong> questions.
+              {unanswered > 0 && ` ${unanswered} questions are still unanswered.`}
             </p>
-            <div style={{ display: "flex", gap: 12 }}>
-              <button
-                className="btn-secondary"
-                style={{ flex: 1, justifyContent: "center" }}
-                onClick={() => setShowSubmitModal(false)}
-              >
-                Keep Going
+            <div style={{ display: "flex", gap: 16 }}>
+              <button className="btn btn-outline" style={{ flex: 1 }} onClick={() => setShowSubmitModal(false)}>
+                Keep Working
               </button>
-              <button
-                id="confirm-submit-btn"
-                className="btn-primary"
-                style={{ flex: 1, justifyContent: "center" }}
-                onClick={handleSubmit}
-              >
-                Submit & See Results
+              <button id="confirm-submit-btn" className="btn btn-primary" style={{ flex: 1 }} onClick={handleSubmit}>
+                Submit Test
               </button>
             </div>
           </div>

@@ -1,353 +1,258 @@
+"use client";
+
 import Link from "next/link";
+import Navbar from "@/components/layout/Navbar";
+import { mockUser, mockStats, mockRecentTests } from "@/lib/mock-data";
+import {
+  RiBarChartBoxLine,
+  RiMoreFill,
+  RiArrowRightUpLine,
+  RiArrowDownSLine,
+  RiRulerLine,
+  RiTestTubeLine,
+  RiMore2Fill,
+  RiAlertFill,
+  RiSparklingFill,
+  RiShieldCrossFill
+} from "@remixicon/react";
 
-export default function LandingPage() {
+export default function Dashboard() {
   return (
-    <main style={{ minHeight: "100vh", background: "var(--bg-primary)", overflow: "hidden" }}>
-      {/* ── Navbar ── */}
-      <header
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 50,
-          padding: "0 24px",
-          height: 64,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          background: "rgba(8,12,20,0.7)",
-          backdropFilter: "blur(16px)",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <div
-            style={{
-              width: 32, height: 32, borderRadius: 8,
-              background: "linear-gradient(135deg, #f97316, #eab308)",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 16, fontWeight: 900, color: "#000",
-            }}
-          >E</div>
-          <span style={{ fontWeight: 800, fontSize: "1.05rem", color: "#f1f5f9" }}>
-            Exam<span style={{ color: "#f97316" }}>Prep</span>
-          </span>
-        </div>
-        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          <Link href="/login" className="btn-ghost">Log in</Link>
-          <Link href="/signup" className="btn-primary">Get Started Free</Link>
-        </div>
-      </header>
-
-      {/* ── Hero ── */}
-      <section
-        style={{
-          minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center",
-          padding: "120px 24px 80px", position: "relative", textAlign: "center",
-        }}
-      >
-        {/* Orbs */}
-        <div className="orb" style={{ width: 500, height: 500, background: "#f97316", top: "10%", left: "20%", opacity: 0.12 }} />
-        <div className="orb" style={{ width: 400, height: 400, background: "#a855f7", top: "20%", right: "15%", opacity: 0.10 }} />
-        <div className="orb" style={{ width: 300, height: 300, background: "#eab308", bottom: "10%", left: "50%", opacity: 0.08 }} />
-
-        <div style={{ maxWidth: 780, position: "relative", zIndex: 1 }}>
-          <div className="section-label" style={{ marginBottom: 24 }}>
-            🎯 JEE · NEET · SSC · UPSC
-          </div>
-          <h1
-            style={{
-              fontSize: "clamp(2.4rem, 6vw, 4rem)", fontWeight: 900, lineHeight: 1.1,
-              marginBottom: 24, color: "#f1f5f9",
-            }}
-          >
-            Don&apos;t just take tests.<br />
-            <span className="gradient-text">Understand why you fail them.</span>
-          </h1>
-          <p
-            style={{
-              fontSize: "1.15rem", color: "#94a3b8", lineHeight: 1.7,
-              marginBottom: 40, maxWidth: 600, margin: "0 auto 40px",
-            }}
-          >
-            ExamPrep gives you AI-powered analysis after every test — not just a score,
-            but exactly what you got wrong, why, and a 7-day plan to fix it.
-          </p>
-          <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/signup" className="btn-primary" style={{ fontSize: "1rem", padding: "14px 32px" }}>
-              Start for Free →
-            </Link>
-            <Link href="/dashboard" className="btn-secondary" style={{ fontSize: "1rem", padding: "14px 28px" }}>
-              View Demo
-            </Link>
-          </div>
-          <p style={{ marginTop: 20, color: "#475569", fontSize: "0.8rem" }}>
-            No credit card required · Free for students · JEE question bank ready
-          </p>
-        </div>
-      </section>
-
-      {/* ── Stats Bar ── */}
-      <section style={{ padding: "0 24px 60px" }}>
-        <div
-          style={{
-            maxWidth: 960, margin: "0 auto", display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 1,
-            background: "rgba(255,255,255,0.06)", borderRadius: 16, overflow: "hidden",
-            border: "1px solid rgba(255,255,255,0.08)",
-          }}
-        >
-          {[
-            { value: "50,000+", label: "Questions" },
-            { value: "12,000+", label: "Active Students" },
-            { value: "94%", label: "Report Accuracy" },
-            { value: "3x", label: "Score Improvement" },
-          ].map((s) => (
-            <div
-              key={s.label}
-              style={{
-                padding: "32px 24px", textAlign: "center",
-                background: "rgba(8,12,20,0.8)", borderRight: "1px solid rgba(255,255,255,0.06)",
-              }}
-            >
-              <div className="gradient-text" style={{ fontSize: "2.2rem", fontWeight: 900 }}>{s.value}</div>
-              <div style={{ color: "#64748b", fontSize: "0.85rem", marginTop: 4 }}>{s.label}</div>
+    <>
+      <Navbar />
+      
+      <main style={{ padding: "0 32px 32px 32px", maxWidth: 1400, margin: "0 auto", width: "100%" }}>
+        
+        {/* Top Row: Performance Overview (Left) + Team Updates (Right) */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: 24, marginBottom: 24 }}>
+          
+          {/* Performance Overview Card */}
+          <div className="rayum-card" style={{ padding: 24 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
+              <h2 className="text-h3">Performance Overview</h2>
+              <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 13, color: "var(--fg-muted)", cursor: "pointer" }}>
+                This week <RiArrowDownSLine size={16} />
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* ── Features ── */}
-      <section style={{ padding: "80px 24px", maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 60 }}>
-          <div className="section-label" style={{ marginBottom: 16 }}>Features</div>
-          <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800, color: "#f1f5f9" }}>
-            Everything you need to crack the exam
-          </h2>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
-          {[
-            {
-              icon: "🧠",
-              title: "AI Analysis — After Every Test",
-              desc: "Get a detailed breakdown of every mistake. Error patterns, weak topics, and concept gaps identified automatically.",
-              accent: "#f97316",
-            },
-            {
-              icon: "🎯",
-              title: "Booster Tests — Close the Loop",
-              desc: "Immediately after analysis, get a curated test on exactly the topics you struggled with. No dead ends.",
-              accent: "#a855f7",
-            },
-            {
-              icon: "📊",
-              title: "Live Rankings & Streaks",
-              desc: "See where you rank globally, within your batch, and in your institute. Daily streak keeps you consistent.",
-              accent: "#eab308",
-            },
-            {
-              icon: "🏫",
-              title: "Institute & Batch Tools",
-              desc: "Teachers get AI-powered batch analysis. Instantly know which chapters need re-teaching.",
-              accent: "#22c55e",
-            },
-            {
-              icon: "⚡",
-              title: "Custom Test Builder",
-              desc: "Pick exam, subjects, chapters, difficulty mix. Create a chapter test or a full mock in 30 seconds.",
-              accent: "#3b82f6",
-            },
-            {
-              icon: "📈",
-              title: "Progress Tracking",
-              desc: "Watch your improvement per topic over time. See the booster chain from weakness to mastery.",
-              accent: "#ef4444",
-            },
-          ].map((f) => (
-            <div
-              key={f.title}
-              className="glass glass-hover"
-              style={{ borderRadius: 16, padding: "28px 24px" }}
-            >
-              <div
-                style={{
-                  width: 48, height: 48, borderRadius: 12, marginBottom: 18,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 22, background: `${f.accent}18`,
-                  border: `1px solid ${f.accent}30`,
-                }}
-              >
-                {f.icon}
-              </div>
-              <h3 style={{ fontWeight: 700, fontSize: "1rem", color: "#f1f5f9", marginBottom: 8 }}>{f.title}</h3>
-              <p style={{ color: "#64748b", fontSize: "0.875rem", lineHeight: 1.65 }}>{f.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── How it works ── */}
-      <section
-        style={{
-          padding: "80px 24px",
-          background: "rgba(255,255,255,0.02)",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
-        }}
-      >
-        <div style={{ maxWidth: 960, margin: "0 auto", textAlign: "center" }}>
-          <div className="section-label" style={{ marginBottom: 16 }}>How It Works</div>
-          <h2 style={{ fontSize: "2.4rem", fontWeight: 800, color: "#f1f5f9", marginBottom: 60 }}>
-            From test to improvement in 3 steps
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 40 }}>
-            {[
-              { step: "01", title: "Take a Test", desc: "Create a custom test by exam, subject, chapter, difficulty — or use a preset." },
-              { step: "02", title: "Get AI Analysis", desc: "Receive a detailed report in seconds. Weak topics, error patterns, and a 7-day study plan." },
-              { step: "03", title: "Take the Booster", desc: "Auto-generated test on your exact weak areas. Watch your score jump on the same topics." },
-            ].map((s, i) => (
-              <div key={s.step} style={{ position: "relative" }}>
-                {i < 2 && (
-                  <div style={{
-                    display: "none",
-                  }} />
-                )}
-                <div
-                  className="gradient-text"
-                  style={{ fontSize: "3rem", fontWeight: 900, marginBottom: 12 }}
-                >
-                  {s.step}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+              
+              {/* Stat 1 */}
+              <div style={{ border: "1px solid var(--border-default)", borderRadius: "var(--radius-md)", padding: 16 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
+                  <span className="text-bold">Total Tests</span>
+                  <span style={{ color: "var(--fg-muted)", display: "flex" }}><RiBarChartBoxLine size={18} /></span>
                 </div>
-                <h3 style={{ fontWeight: 700, color: "#f1f5f9", marginBottom: 10, fontSize: "1.1rem" }}>{s.title}</h3>
-                <p style={{ color: "#64748b", fontSize: "0.875rem", lineHeight: 1.65 }}>{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Pricing ── */}
-      <section style={{ padding: "80px 24px", maxWidth: 1100, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 60 }}>
-          <div className="section-label" style={{ marginBottom: 16 }}>Pricing</div>
-          <h2 style={{ fontSize: "2.4rem", fontWeight: 800, color: "#f1f5f9" }}>Simple, transparent pricing</h2>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
-          {[
-            {
-              name: "Free",
-              price: "₹0",
-              period: "forever",
-              desc: "Get started with no risk",
-              features: ["2 tests per week", "Basic score report", "Global leaderboard"],
-              cta: "Start Free",
-              href: "/signup",
-              highlight: false,
-            },
-            {
-              name: "Student Pro",
-              price: "₹99",
-              period: "per month",
-              desc: "Everything you need to crack JEE",
-              features: ["Unlimited tests", "Full AI analysis + study plan", "Booster tests", "Rank card", "Test history"],
-              cta: "Start for ₹99/mo",
-              href: "/signup",
-              highlight: true,
-            },
-            {
-              name: "Institute",
-              price: "₹2,999",
-              period: "per month",
-              desc: "For coaching institutes",
-              features: ["3 batches, 100 students", "Batch AI analysis", "Teacher dashboard", "Invite management", "PDF reports"],
-              cta: "Start 30-day Trial",
-              href: "/signup",
-              highlight: false,
-            },
-          ].map((plan) => (
-            <div
-              key={plan.name}
-              style={{
-                borderRadius: 20,
-                padding: "32px 28px",
-                background: plan.highlight ? "rgba(249,115,22,0.06)" : "var(--bg-card)",
-                border: plan.highlight ? "1.5px solid rgba(249,115,22,0.4)" : "1px solid rgba(255,255,255,0.08)",
-                position: "relative",
-                boxShadow: plan.highlight ? "var(--shadow-glow)" : "none",
-              }}
-            >
-              {plan.highlight && (
-                <div
-                  className="badge badge-orange"
-                  style={{ position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)" }}
-                >
-                  Most Popular
+                <div style={{ fontSize: 32, fontWeight: 800, color: "var(--fg-default)", marginBottom: 8 }}>
+                  {mockStats.totalTests}
                 </div>
-              )}
-              <div style={{ marginBottom: 20 }}>
-                <div style={{ fontWeight: 700, fontSize: "1rem", color: "#f1f5f9", marginBottom: 4 }}>{plan.name}</div>
-                <div style={{ color: "#64748b", fontSize: "0.8rem" }}>{plan.desc}</div>
-              </div>
-              <div style={{ marginBottom: 28 }}>
-                <span className={plan.highlight ? "gradient-text" : ""} style={{ fontSize: "2.4rem", fontWeight: 900, color: plan.highlight ? undefined : "#f1f5f9" }}>
-                  {plan.price}
+                <span className="rayum-badge green" style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+                  +12% vs last week
                 </span>
-                <span style={{ color: "#64748b", fontSize: "0.85rem", marginLeft: 6 }}>/{plan.period}</span>
+                <div style={{ marginTop: 16, height: 40, borderBottom: "2px solid var(--primary-50)", position: "relative" }}>
+                   {/* Fake line chart */}
+                   <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 40">
+                     <path d="M0,30 Q10,20 20,25 T40,15 T60,20 T80,5 T100,10" fill="none" stroke="var(--primary-50)" strokeWidth="3"/>
+                   </svg>
+                </div>
               </div>
-              <ul style={{ listStyle: "none", padding: 0, marginBottom: 28 }}>
-                {plan.features.map((f) => (
-                  <li key={f} style={{ display: "flex", gap: 8, color: "#94a3b8", fontSize: "0.875rem", marginBottom: 10, alignItems: "flex-start" }}>
-                    <span style={{ color: "#22c55e", marginTop: 2 }}>✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href={plan.href}
-                className={plan.highlight ? "btn-primary" : "btn-secondary"}
-                style={{ width: "100%", justifyContent: "center", display: "flex" }}
-              >
-                {plan.cta}
-              </Link>
+
+              {/* Stat 2 */}
+              <div style={{ border: "1px solid var(--border-default)", borderRadius: "var(--radius-md)", padding: 16 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
+                  <span className="text-bold">Average Score</span>
+                  <span style={{ color: "var(--fg-muted)", display: "flex" }}><RiBarChartBoxLine size={18} /></span>
+                </div>
+                <p style={{ fontSize: 12, color: "var(--fg-muted)", marginBottom: 12 }}>
+                  <span className="text-bold" style={{ color: "var(--fg-default)" }}>86 marks</span> avg. +15% vs last week.
+                </p>
+                <div style={{ display: "flex", alignItems: "flex-end", gap: 4, height: 40 }}>
+                   {/* Fake bar chart */}
+                   {[40, 60, 30, 80, 50, 90, 70, 60, 80, 50].map((h, i) => (
+                     <div key={i} style={{ flex: 1, height: `${h}%`, background: i % 2 === 0 ? "var(--primary-20)" : "var(--primary-50)", borderRadius: 2 }} />
+                   ))}
+                </div>
+              </div>
+
+              {/* Stat 3 */}
+              <div style={{ border: "1px solid var(--border-default)", borderRadius: "var(--radius-md)", padding: 16, display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
+                  <span className="text-bold">Accuracy Rate</span>
+                  <span style={{ color: "var(--fg-muted)", display: "flex" }}><RiMoreFill size={18} /></span>
+                </div>
+                <div style={{ marginTop: "auto" }}>
+                  <div style={{ fontSize: 32, fontWeight: 800, color: "var(--fg-default)", marginBottom: 8 }}>
+                    {mockStats.accuracy}%
+                  </div>
+                  <span className="rayum-badge green" style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+                    <RiArrowRightUpLine size={12} /> +5.2%
+                  </span>
+                </div>
+              </div>
+
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
 
-      {/* ── CTA ── */}
-      <section
-        style={{
-          padding: "80px 24px", textAlign: "center",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-        }}
-      >
-        <div style={{ maxWidth: 640, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "2.4rem", fontWeight: 900, color: "#f1f5f9", marginBottom: 16 }}>
-            Ready to see your <span className="gradient-text">actual weak spots?</span>
-          </h2>
-          <p style={{ color: "#64748b", marginBottom: 32, fontSize: "1rem" }}>
-            Join 12,000+ JEE and NEET aspirants already using ExamPrep.
-          </p>
-          <Link href="/signup" className="btn-primary" style={{ fontSize: "1.05rem", padding: "16px 40px" }}>
-            Get Started — It&apos;s Free →
-          </Link>
-        </div>
-      </section>
+          {/* Team Updates Card */}
+          <div className="rayum-card" style={{ padding: 24, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: 16 }}>
+               {/* Overlapping Avatars */}
+               <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--secondary-50)", border: "2px solid white", zIndex: 3 }}></div>
+               <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--primary-50)", border: "2px solid white", marginLeft: -12, zIndex: 2 }}></div>
+               <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--warning-50)", border: "2px solid white", marginLeft: -12, zIndex: 1 }}></div>
+            </div>
+            <h3 className="text-h3" style={{ marginBottom: 4 }}>Batch Updates</h3>
+            <p className="text-body" style={{ marginBottom: 24 }}>3 urgent from "Target JEE 2026"</p>
+            <button className="btn btn-outline" style={{ width: "100%", padding: "10px 0" }}>
+              Open Inbox
+            </button>
+          </div>
 
-      {/* Footer */}
-      <footer
-        style={{
-          padding: "24px",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-          textAlign: "center",
-          color: "#334155",
-          fontSize: "0.8rem",
-        }}
-      >
-        © 2026 ExamPrep. Built for Indian students by Indian engineers.
-      </footer>
-    </main>
+        </div>
+
+        {/* Middle Row: Charts */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: 24, marginBottom: 24 }}>
+          
+          <div className="rayum-card" style={{ padding: 24, position: "relative" }}>
+             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 24 }}>
+               <div>
+                 <h3 className="text-h3" style={{ marginBottom: 8 }}>Score Performance</h3>
+                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                   <span style={{ fontSize: 24, fontWeight: 800 }}>86.4%</span>
+                   <span className="rayum-badge green" style={{ background: "#07200C", color: "var(--primary-50)", display: "inline-flex", alignItems: "center", gap: 4 }}>
+                     <RiArrowRightUpLine size={12} /> 105% of Goal
+                   </span>
+                 </div>
+                 <p className="text-body" style={{ marginTop: 4 }}>Best performing month driven by Physics.</p>
+               </div>
+               <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 13, color: "var(--fg-muted)", cursor: "pointer" }}>
+                 Year: 2026 <RiArrowDownSLine size={16} />
+               </div>
+             </div>
+             
+             {/* Fake wide bar chart */}
+             <div style={{ display: "flex", alignItems: "flex-end", gap: 8, height: 160, paddingBottom: 24 }}>
+                {[30, 45, 60, 40, 70, 90, 60, 30, 40, 50, 45, 30, 20, 40, 100, 70, 50, 40].map((h, i) => (
+                  <div key={i} style={{ flex: 1, height: `${h}%`, background: "var(--secondary-50)", borderRadius: "4px 4px 0 0", opacity: i % 3 === 0 ? 0.4 : 1 }} />
+                ))}
+             </div>
+          </div>
+
+          <div className="rayum-card" style={{ padding: 24 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 24 }}>
+               <h3 className="text-bold">Topic Mastery</h3>
+               <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 13, color: "var(--fg-muted)", cursor: "pointer" }}>
+                 This week <RiArrowDownSLine size={16} />
+               </div>
+            </div>
+            {/* Fake Donut Chart */}
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: 160, marginBottom: 24, position: "relative" }}>
+              <div style={{ width: 140, height: 140, borderRadius: "50%", border: "24px solid var(--secondary-50)", borderLeftColor: "var(--primary-50)", borderBottomColor: "var(--primary-20)" }}></div>
+              <div style={{ position: "absolute", fontSize: 28, fontWeight: 800 }}>64%</div>
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, fontSize: 11, color: "var(--fg-muted)" }}>
+               <div style={{ display: "flex", alignItems: "center", gap: 4 }}><div style={{ width: 8, height: 8, background: "var(--secondary-50)", borderRadius: 2 }}/> Physics (64%)</div>
+               <div style={{ display: "flex", alignItems: "center", gap: 4 }}><div style={{ width: 8, height: 8, background: "var(--primary-50)", borderRadius: 2 }}/> Chemistry (10%)</div>
+               <div style={{ display: "flex", alignItems: "center", gap: 4 }}><div style={{ width: 8, height: 8, background: "var(--primary-20)", borderRadius: 2 }}/> Maths (26%)</div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Row */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
+          
+          <div className="rayum-card" style={{ padding: 24 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 24 }}>
+               <h3 className="text-bold">Recent Tests</h3>
+               <Link href="/history" style={{ fontSize: 13, color: "var(--secondary-50)", textDecoration: "none", fontWeight: 600 }}>View All</Link>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {mockRecentTests.slice(0, 4).map(test => (
+                <div key={test.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <div style={{ width: 48, height: 48, background: "var(--neutral-10)", borderRadius: "var(--radius-md)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--fg-muted)" }}>
+                      {test.exam === "JEE" ? <RiRulerLine size={24} /> : <RiTestTubeLine size={24} />}
+                    </div>
+                    <div>
+                      <div className="text-bold" style={{ fontSize: 14 }}>{test.title}</div>
+                      <div style={{ fontSize: 12, color: "var(--fg-muted)", marginTop: 2 }}>Score: {test.percentage}%</div>
+                    </div>
+                  </div>
+                  <span style={{ color: "var(--fg-muted)", cursor: "pointer", display: "flex" }}>
+                    <RiMore2Fill size={20} />
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+            <div className="rayum-card" style={{ padding: 24 }}>
+              <span className="rayum-badge orange" style={{ marginBottom: 12, display: "inline-flex", alignItems: "center", gap: 6 }}>
+                <RiAlertFill size={14} /> Action Required
+              </span>
+              <h3 className="text-h3" style={{ marginBottom: 16 }}>Critical Boosters Ready</h3>
+              <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
+                 <div style={{ width: 48, height: 48, background: "var(--neutral-10)", borderRadius: "50%" }}></div>
+                 <div style={{ width: 48, height: 48, background: "var(--neutral-10)", borderRadius: "50%" }}></div>
+                 <div style={{ width: 48, height: 48, background: "var(--neutral-10)", borderRadius: "50%" }}></div>
+              </div>
+              <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                <span className="text-body">Topics degrading</span>
+                <span className="rayum-badge" style={{ border: "1px solid var(--border-muted)", color: "var(--fg-muted)" }}>High Risk</span>
+              </div>
+            </div>
+
+            <div className="rayum-card" style={{ padding: 24 }}>
+               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
+                 <h3 className="text-bold">Live Batch Activity</h3>
+                 <span style={{ color: "var(--fg-muted)", display: "flex", cursor: "pointer" }}><RiMoreFill size={18} /></span>
+               </div>
+               <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 16 }}>
+                 <span style={{ fontSize: 32, fontWeight: 800 }}>842</span>
+                 <span className="text-body">Taking tests right now.</span>
+               </div>
+               <div style={{ fontSize: 12, color: "var(--fg-muted)", marginBottom: 8 }}>Students Online</div>
+               <div style={{ display: "flex", gap: 4 }}>
+                  {[1,2,3,4,5].map(i => (
+                    <div key={i} style={{ width: 32, height: 32, background: "var(--secondary-50)", borderRadius: "50%", border: "2px solid white" }}></div>
+                  ))}
+                  <div style={{ width: 32, height: 32, background: "var(--neutral-20)", borderRadius: "50%", border: "2px solid white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: "bold" }}>+8</div>
+               </div>
+            </div>
+          </div>
+
+          <div className="rayum-card" style={{ padding: 24, background: "var(--primary-50)", border: "none", color: "var(--neutral-100)", display: "flex", flexDirection: "column" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 24 }}>
+               <div style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 700 }}>
+                 <RiSparklingFill size={18} /> Insight
+               </div>
+               <span style={{ cursor: "pointer", display: "flex" }}><RiMoreFill size={20} /></span>
+            </div>
+            
+            <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 24 }}>Topic Risk</h2>
+            
+            <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
+               <RiShieldCrossFill size={80} color="rgba(0,0,0,0.8)" />
+            </div>
+
+            <p style={{ fontSize: 13, fontWeight: 500, lineHeight: 1.5, marginBottom: 24, color: "rgba(0,0,0,0.8)" }}>
+              Accuracy for <span style={{ fontWeight: 800, color: "black" }}>Laws of Motion</span> dropped -15% this week. 
+              Knowledge gap identified by Friday. Est. impact: <span style={{ fontWeight: 800, color: "black" }}>-12 marks</span>.
+            </p>
+
+            <button style={{ width: "100%", padding: 16, background: "transparent", border: "1px solid rgba(0,0,0,0.2)", borderRadius: "var(--radius-full)", fontWeight: 700, marginBottom: 8, cursor: "pointer" }}>
+              Take Booster Test
+            </button>
+            <button style={{ width: "100%", padding: 16, background: "#000", color: "white", border: "none", borderRadius: "var(--radius-full)", fontWeight: 700, cursor: "pointer" }}>
+              Review Concepts
+            </button>
+          </div>
+
+        </div>
+
+      </main>
+    </>
   );
 }

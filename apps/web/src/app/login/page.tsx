@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { RiFlashlightFill } from "@remixicon/react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function LoginPage() {
     await new Promise((r) => setTimeout(r, 900));
     if (email && password) {
       localStorage.setItem("ep_auth", "true");
-      router.push("/dashboard");
+      router.push("/");
     } else {
       setError("Please enter your email and password.");
     }
@@ -33,106 +34,109 @@ export default function LoginPage() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "var(--bg-primary)",
-        padding: "24px",
-        position: "relative",
-        overflow: "hidden",
+        background: "var(--bg-default)",
+        padding: "var(--space-600)",
       }}
     >
-      {/* Orbs */}
-      <div className="orb" style={{ width: 400, height: 400, background: "#f97316", top: "-10%", left: "20%", opacity: 0.1 }} />
-      <div className="orb" style={{ width: 300, height: 300, background: "#a855f7", bottom: "0%", right: "20%", opacity: 0.08 }} />
-
-      <div style={{ width: "100%", maxWidth: 420, position: "relative", zIndex: 1 }}>
+      <div style={{ width: "100%", maxWidth: 420 }}>
         {/* Logo */}
-        <div style={{ textAlign: "center", marginBottom: 36 }}>
+        <div style={{ textAlign: "center", marginBottom: "var(--space-800)" }}>
           <Link href="/" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
             <div
               style={{
-                width: 36, height: 36, borderRadius: 10,
-                background: "linear-gradient(135deg, #f97316, #eab308)",
+                width: 36, height: 36, borderRadius: "50%",
+                background: "var(--secondary-50)",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 18, fontWeight: 900, color: "#000",
+                color: "white",
               }}
-            >E</div>
-            <span style={{ fontWeight: 800, fontSize: "1.2rem", color: "#f1f5f9" }}>
-              Exam<span style={{ color: "#f97316" }}>Prep</span>
+            ><RiFlashlightFill size={18} /></div>
+            <span style={{ fontWeight: 800, fontSize: 20, color: "var(--fg-default)" }}>
+              ExamPrep
             </span>
           </Link>
-          <h1 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#f1f5f9", marginTop: 16, marginBottom: 6 }}>
+          <h1 className="text-h2" style={{ marginTop: 16, marginBottom: 8 }}>
             Welcome back
           </h1>
-          <p style={{ color: "#64748b", fontSize: "0.875rem" }}>Log in to continue your prep streak</p>
+          <p className="text-body-base" style={{ color: "var(--fg-muted)" }}>Log in to continue your prep streak</p>
         </div>
 
         {/* Card */}
-        <div
-          className="glass"
-          style={{ borderRadius: 20, padding: "36px 32px" }}
-        >
+        <div className="rayum-card" style={{ padding: 40 }}>
           {error && (
             <div
-              className="badge badge-red"
-              style={{ width: "100%", justifyContent: "center", marginBottom: 20, padding: "12px 16px", borderRadius: 10 }}
+              className="rayum-badge"
+              style={{ background: "var(--error-10)", color: "var(--error-50)", width: "100%", justifyContent: "center", marginBottom: 20, padding: "12px 16px", borderRadius: "var(--radius-sm)" }}
             >
               {error}
             </div>
           )}
 
           <form onSubmit={handleLogin}>
-            <div style={{ marginBottom: 18 }}>
-              <label style={{ display: "block", fontSize: "0.8rem", fontWeight: 600, color: "#94a3b8", marginBottom: 8 }}>
+            <div style={{ marginBottom: 20 }}>
+              <label className="text-body-small" style={{ display: "block", fontWeight: 600, color: "var(--fg-default)", marginBottom: 8 }}>
                 Email
               </label>
               <input
                 id="login-email"
                 type="email"
-                className="input-field"
                 placeholder="you@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                style={{
+                  width: "100%", padding: "12px 16px", borderRadius: "var(--radius-md)", border: "1px solid var(--border-default)",
+                  background: "var(--bg-default)", color: "var(--fg-default)", fontSize: 14, outline: "none",
+                  transition: "border-color 0.2s"
+                }}
+                onFocus={(e) => e.target.style.borderColor = "var(--primary-50)"}
+                onBlur={(e) => e.target.style.borderColor = "var(--border-default)"}
               />
             </div>
 
-            <div style={{ marginBottom: 24 }}>
-              <label style={{ display: "block", fontSize: "0.8rem", fontWeight: 600, color: "#94a3b8", marginBottom: 8 }}>
+            <div style={{ marginBottom: 32 }}>
+              <label className="text-body-small" style={{ display: "block", fontWeight: 600, color: "var(--fg-default)", marginBottom: 8 }}>
                 Password
               </label>
               <input
                 id="login-password"
                 type="password"
-                className="input-field"
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                style={{
+                  width: "100%", padding: "12px 16px", borderRadius: "var(--radius-md)", border: "1px solid var(--border-default)",
+                  background: "var(--bg-default)", color: "var(--fg-default)", fontSize: 14, outline: "none",
+                  transition: "border-color 0.2s"
+                }}
+                onFocus={(e) => e.target.style.borderColor = "var(--primary-50)"}
+                onBlur={(e) => e.target.style.borderColor = "var(--border-default)"}
               />
             </div>
 
             <button
               id="login-submit"
               type="submit"
-              className="btn-primary"
-              style={{ width: "100%", justifyContent: "center", padding: "14px", fontSize: "0.95rem" }}
+              className="btn btn-primary"
+              style={{ width: "100%", padding: 14 }}
               disabled={loading}
             >
-              {loading ? "Signing in..." : "Sign In →"}
+              {loading ? "Signing in..." : "Sign In"}
             </button>
           </form>
 
           <div style={{ marginTop: 24 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-              <div className="divider" style={{ flex: 1 }} />
-              <span style={{ color: "#334155", fontSize: "0.75rem" }}>or continue with</span>
-              <div className="divider" style={{ flex: 1 }} />
+              <div style={{ flex: 1, height: 1, background: "var(--border-default)" }} />
+              <span style={{ color: "var(--fg-muted)", fontSize: 12 }}>or continue with</span>
+              <div style={{ flex: 1, height: 1, background: "var(--border-default)" }} />
             </div>
             <button
-              className="btn-secondary"
-              style={{ width: "100%", justifyContent: "center" }}
+              className="btn btn-outline"
+              style={{ width: "100%", padding: 12 }}
               onClick={() => {
                 localStorage.setItem("ep_auth", "true");
-                router.push("/dashboard");
+                router.push("/");
               }}
             >
               <span>G</span> Google
@@ -140,9 +144,9 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <p style={{ textAlign: "center", marginTop: 20, color: "#475569", fontSize: "0.85rem" }}>
+        <p className="text-body-small" style={{ textAlign: "center", marginTop: 24, color: "var(--fg-muted)" }}>
           Don&apos;t have an account?{" "}
-          <Link href="/signup" style={{ color: "#f97316", fontWeight: 600, textDecoration: "none" }}>
+          <Link href="/signup" style={{ color: "var(--secondary-50)", fontWeight: 600, textDecoration: "none" }}>
             Sign up free
           </Link>
         </p>

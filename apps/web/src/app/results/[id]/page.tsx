@@ -5,15 +5,28 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { mockAnalysis } from "@/lib/mock-data";
+import {
+  RiTargetLine,
+  RiFlashlightFill,
+  RiTimerLine,
+  RiSearchLine,
+  RiAlertFill,
+  RiCalendarEventLine,
+  RiArrowUpSLine,
+  RiArrowDownSLine,
+  RiLightbulbFlashLine,
+  RiArrowLeftLine,
+  RiArrowRightLine
+} from "@remixicon/react";
 
 function AccuracyBar({ accuracy }: { accuracy: number }) {
-  const color = accuracy >= 70 ? "#22c55e" : accuracy >= 40 ? "#eab308" : "#ef4444";
+  const color = accuracy >= 70 ? "var(--success-50)" : accuracy >= 40 ? "var(--warning-50)" : "var(--error-50)";
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-      <div className="progress-bar-track" style={{ flex: 1 }}>
+      <div className="rayum-progress-track" style={{ flex: 1 }}>
         <div style={{ height: "100%", width: `${accuracy}%`, background: color, borderRadius: 999, transition: "width 0.8s" }} />
       </div>
-      <span style={{ fontSize: "0.8rem", fontWeight: 700, color, minWidth: 32, textAlign: "right" }}>
+      <span className="text-body-small" style={{ fontWeight: 700, color, minWidth: 32, textAlign: "right" }}>
         {accuracy}%
       </span>
     </div>
@@ -30,62 +43,55 @@ export default function ResultsPage() {
 
   const a = mockAnalysis;
   const pct = a.percentage;
-  const pctColor = pct >= 70 ? "#22c55e" : pct >= 50 ? "#eab308" : "#ef4444";
+  const pctColor = pct >= 70 ? "var(--success-50)" : pct >= 50 ? "var(--warning-50)" : "var(--error-50)";
+  const pctBg = pct >= 70 ? "var(--success-10)" : pct >= 50 ? "var(--warning-10)" : "var(--error-10)";
 
   return (
-    <div style={{ minHeight: "100vh", background: "var(--bg-primary)" }}>
-      <Navbar />
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "36px 24px" }}>
+    <>
+      <Navbar title="Results & Analysis" />
+      <main style={{ maxWidth: 900, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
         {/* Header */}
-        <div style={{ marginBottom: 32 }}>
-          <Link href="/dashboard" style={{ color: "#475569", fontSize: "0.8rem", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 16 }}>
-            ← Back to Dashboard
+        <div style={{ marginBottom: "var(--space-800)" }}>
+          <Link href="/" style={{ color: "var(--secondary-50)", fontSize: 14, fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 16 }}>
+            <RiArrowLeftLine size={16} /> Back to Dashboard
           </Link>
-          <h1 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#f1f5f9" }}>
+          <h1 className="text-h2" style={{ color: "var(--fg-default)" }}>
             Test Results & AI Analysis
           </h1>
-          <p style={{ color: "#64748b", marginTop: 6 }}>Laws of Motion · JEE · {a.correctCount + a.incorrectCount + a.skippedCount} Questions</p>
+          <p className="text-body-base" style={{ color: "var(--fg-muted)", marginTop: 8 }}>Laws of Motion · JEE · {a.correctCount + a.incorrectCount + a.skippedCount} Questions</p>
         </div>
 
         {/* Score Banner */}
-        <div
-          className="glass"
-          style={{
-            borderRadius: 20, padding: "32px",
-            border: `1px solid ${pctColor}25`,
-            background: `${pctColor}05`,
-            marginBottom: 24,
-          }}
-        >
-          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 32, alignItems: "center" }}>
+        <div className="rayum-card" style={{ padding: 40, border: `2px solid ${pctColor}`, background: pctBg, marginBottom: "var(--space-800)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 48, alignItems: "center" }}>
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "4rem", fontWeight: 900, color: pctColor, lineHeight: 1 }}>{pct}%</div>
-              <div style={{ color: "#475569", fontSize: "0.8rem", marginTop: 6 }}>Your Score</div>
+              <div style={{ fontSize: 64, fontWeight: 900, color: pctColor, lineHeight: 1 }}>{pct}%</div>
+              <div className="text-body-base" style={{ color: "var(--fg-muted)", marginTop: 12, fontWeight: 600 }}>Your Score</div>
             </div>
 
             <div>
-              <div className="progress-bar-track" style={{ height: 8, marginBottom: 20 }}>
+              <div className="rayum-progress-track" style={{ height: 12, marginBottom: 24, background: "rgba(0,0,0,0.05)" }}>
                 <div style={{ height: "100%", width: `${pct}%`, background: pctColor, borderRadius: 999, transition: "width 1s" }} />
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
                 {[
-                  { label: "Correct", value: a.correctCount, color: "#22c55e" },
-                  { label: "Incorrect", value: a.incorrectCount, color: "#ef4444" },
-                  { label: "Skipped", value: a.skippedCount, color: "#64748b" },
+                  { label: "Correct", value: a.correctCount, color: "var(--success-50)" },
+                  { label: "Incorrect", value: a.incorrectCount, color: "var(--error-50)" },
+                  { label: "Skipped", value: a.skippedCount, color: "var(--fg-muted)" },
                 ].map((s) => (
-                  <div key={s.label} style={{ textAlign: "center" }}>
-                    <div style={{ fontSize: "1.6rem", fontWeight: 900, color: s.color }}>{s.value}</div>
-                    <div style={{ fontSize: "0.75rem", color: "#475569" }}>{s.label}</div>
+                  <div key={s.label} style={{ textAlign: "center", background: "white", padding: "12px", borderRadius: "var(--radius-md)", boxShadow: "var(--shadow-100)" }}>
+                    <div style={{ fontSize: 24, fontWeight: 900, color: s.color }}>{s.value}</div>
+                    <div className="text-body-small" style={{ color: "var(--fg-muted)", marginTop: 4, fontWeight: 600 }}>{s.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div style={{ textAlign: "right" }}>
-              <div style={{ color: "#64748b", fontSize: "0.75rem", marginBottom: 4 }}>Batch Avg</div>
-              <div style={{ fontWeight: 800, fontSize: "1.4rem", color: "#64748b" }}>{a.batchAvg}%</div>
-              <div style={{ fontSize: "0.72rem", marginTop: 8, color: pct >= a.batchAvg ? "#22c55e" : "#ef4444", fontWeight: 600 }}>
-                {pct >= a.batchAvg ? `+${pct - a.batchAvg}% above avg` : `${a.batchAvg - pct}% below avg`}
+            <div style={{ textAlign: "right", background: "white", padding: 24, borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-100)" }}>
+              <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 8, fontWeight: 600 }}>Batch Avg</div>
+              <div style={{ fontWeight: 800, fontSize: 32, color: "var(--fg-default)" }}>{a.batchAvg}%</div>
+              <div style={{ fontSize: 13, marginTop: 12, color: pct >= a.batchAvg ? "var(--success-50)" : "var(--error-50)", fontWeight: 700 }}>
+                {pct >= a.batchAvg ? `↑ +${pct - a.batchAvg}% above avg` : `↓ ${a.batchAvg - pct}% below avg`}
               </div>
             </div>
           </div>
@@ -93,79 +99,64 @@ export default function ResultsPage() {
 
         {/* 🎯 Booster Card */}
         {!showBooster ? (
-          <div
-            style={{
-              borderRadius: 18, padding: "28px",
-              background: "linear-gradient(135deg, rgba(249,115,22,0.08), rgba(234,179,8,0.05))",
-              border: "1.5px solid rgba(249,115,22,0.35)",
-              marginBottom: 28, cursor: "pointer",
-            }}
-            onClick={() => setShowBooster(true)}
-          >
+          <div className="rayum-card" style={{ padding: 32, border: "2px solid var(--warning-50)", background: "var(--warning-10)", marginBottom: "var(--space-800)", cursor: "pointer" }} onClick={() => setShowBooster(true)}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 16 }}>
               <div>
-                <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "#f1f5f9", marginBottom: 10 }}>
-                  🎯 Improvement Options Ready
+                <div className="text-h3" style={{ color: "var(--warning-50)", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
+                  <RiTargetLine size={24} /> Improvement Options Ready
                 </div>
-                <div style={{ color: "#94a3b8", fontSize: "0.875rem", lineHeight: 1.6, marginBottom: 16 }}>
-                  Based on your analysis, <strong style={{ color: "#f97316" }}>3 topics need work</strong>:
+                <div className="text-body-base" style={{ color: "var(--fg-default)", marginBottom: 20 }}>
+                  Based on your analysis, <strong style={{ color: "var(--warning-50)" }}>3 topics need work</strong>:
                 </div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
                   {a.weakTopics.map((t) => (
-                    <span key={t.topic} className="badge badge-red">{t.topic}</span>
+                    <span key={t.topic} className="rayum-badge orange" style={{ padding: "8px 16px", fontSize: 13 }}>{t.topic}</span>
                   ))}
                 </div>
               </div>
-              <button className="btn-primary" style={{ whiteSpace: "nowrap", flexShrink: 0 }}>
-                Choose Mode →
+              <button className="btn btn-primary" style={{ background: "var(--warning-50)", whiteSpace: "nowrap", flexShrink: 0, display: "inline-flex", gap: 8 }}>
+                Choose Mode <RiArrowRightLine size={18} />
               </button>
             </div>
           </div>
         ) : (
-          <div
-            className="glass"
-            style={{
-              borderRadius: 18, padding: "28px",
-              border: "1.5px solid rgba(249,115,22,0.3)",
-              marginBottom: 28,
-              background: "rgba(249,115,22,0.03)",
-            }}
-          >
-            <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "#f1f5f9", marginBottom: 6 }}>
-              🎯 Choose Your Practice Mode
+          <div className="rayum-card" style={{ padding: 32, border: "2px solid var(--warning-50)", background: "var(--bg-surface)", marginBottom: "var(--space-800)" }}>
+            <div className="text-h3" style={{ color: "var(--fg-default)", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
+              <RiTargetLine size={24} /> Choose Your Practice Mode
             </div>
-            <p style={{ color: "#64748b", fontSize: "0.85rem", marginBottom: 24 }}>
+            <p className="text-body-base" style={{ color: "var(--fg-muted)", marginBottom: 32 }}>
               All questions are from your {a.weakTopics.length} weak topics only.
             </p>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 24 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 32 }}>
               {/* Micro Booster */}
               <div
                 onClick={() => setSelectedMode("micro")}
                 style={{
-                  padding: "18px", borderRadius: 14, cursor: "pointer",
-                  background: selectedMode === "micro" ? "rgba(249,115,22,0.1)" : "rgba(255,255,255,0.04)",
-                  border: selectedMode === "micro" ? "2px solid #f97316" : "1.5px solid rgba(255,255,255,0.08)",
+                  padding: 24, borderRadius: "var(--radius-md)", cursor: "pointer",
+                  background: selectedMode === "micro" ? "var(--warning-10)" : "var(--neutral-10)",
+                  border: selectedMode === "micro" ? "2px solid var(--warning-50)" : "2px solid transparent",
                   transition: "all 0.15s",
                 }}
               >
-                <div style={{ fontSize: "1.3rem", marginBottom: 8 }}>⚡</div>
-                <div style={{ fontWeight: 700, color: "#f1f5f9", marginBottom: 4 }}>Micro Booster</div>
-                <div style={{ color: "#64748b", fontSize: "0.8rem", marginBottom: 14 }}>Quick 30-60 min targeted revision</div>
+                <div style={{ marginBottom: 16, color: "var(--warning-50)" }}>
+                  <RiFlashlightFill size={32} />
+                </div>
+                <div className="text-body-large" style={{ fontWeight: 700, color: "var(--fg-default)", marginBottom: 8 }}>Micro Booster</div>
+                <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 24 }}>Quick 30-60 min targeted revision</div>
                 {selectedMode === "micro" && (
                   <div onClick={(e) => e.stopPropagation()}>
-                    <div style={{ fontSize: "0.75rem", color: "#94a3b8", marginBottom: 8 }}>Questions:</div>
-                    <div style={{ display: "flex", gap: 6 }}>
+                    <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 12, fontWeight: 600 }}>Questions:</div>
+                    <div style={{ display: "flex", gap: 8 }}>
                       {[15, 20, 25, 30].map((n) => (
                         <button
                           key={n}
                           onClick={() => setMicroCount(n)}
                           style={{
-                            padding: "4px 10px", borderRadius: 8, border: "1px solid",
-                            borderColor: microCount === n ? "#f97316" : "rgba(255,255,255,0.12)",
-                            background: microCount === n ? "rgba(249,115,22,0.15)" : "transparent",
-                            color: microCount === n ? "#fb923c" : "#64748b",
-                            cursor: "pointer", fontSize: "0.78rem", fontFamily: "Inter, sans-serif",
+                            padding: "8px 16px", borderRadius: "var(--radius-sm)", border: "none",
+                            background: microCount === n ? "var(--warning-50)" : "var(--bg-surface)",
+                            color: microCount === n ? "white" : "var(--fg-muted)",
+                            cursor: "pointer", fontSize: 13, fontWeight: 600, boxShadow: "var(--shadow-100)"
                           }}
                         >
                           {n}
@@ -180,29 +171,30 @@ export default function ResultsPage() {
               <div
                 onClick={() => setSelectedMode("full")}
                 style={{
-                  padding: "18px", borderRadius: 14, cursor: "pointer",
-                  background: selectedMode === "full" ? "rgba(168,85,247,0.1)" : "rgba(255,255,255,0.04)",
-                  border: selectedMode === "full" ? "2px solid #a855f7" : "1.5px solid rgba(255,255,255,0.08)",
+                  padding: 24, borderRadius: "var(--radius-md)", cursor: "pointer",
+                  background: selectedMode === "full" ? "var(--secondary-10)" : "var(--neutral-10)",
+                  border: selectedMode === "full" ? "2px solid var(--secondary-50)" : "2px solid transparent",
                   transition: "all 0.15s",
                 }}
               >
-                <div style={{ fontSize: "1.3rem", marginBottom: 8 }}>⏱️</div>
-                <div style={{ fontWeight: 700, color: "#f1f5f9", marginBottom: 4 }}>Full Improvement Test</div>
-                <div style={{ color: "#64748b", fontSize: "0.8rem", marginBottom: 14 }}>Exam simulation on weak areas</div>
+                <div style={{ marginBottom: 16, color: "var(--secondary-50)" }}>
+                  <RiTimerLine size={32} />
+                </div>
+                <div className="text-body-large" style={{ fontWeight: 700, color: "var(--fg-default)", marginBottom: 8 }}>Full Improvement Test</div>
+                <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 24 }}>Exam simulation on weak areas</div>
                 {selectedMode === "full" && (
                   <div onClick={(e) => e.stopPropagation()}>
-                    <div style={{ fontSize: "0.75rem", color: "#94a3b8", marginBottom: 8 }}>Duration:</div>
-                    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                    <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 12, fontWeight: 600 }}>Duration:</div>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                       {([1, 2, 3] as const).map((h) => (
                         <button
                           key={h}
                           onClick={() => setFullHours(h)}
                           style={{
-                            padding: "6px 12px", borderRadius: 8, border: "1px solid", textAlign: "left",
-                            borderColor: fullHours === h ? "#a855f7" : "rgba(255,255,255,0.12)",
-                            background: fullHours === h ? "rgba(168,85,247,0.12)" : "transparent",
-                            color: fullHours === h ? "#c084fc" : "#64748b",
-                            cursor: "pointer", fontSize: "0.78rem", fontFamily: "Inter, sans-serif",
+                            padding: "10px 16px", borderRadius: "var(--radius-sm)", border: "none", textAlign: "left",
+                            background: fullHours === h ? "var(--secondary-50)" : "var(--bg-surface)",
+                            color: fullHours === h ? "white" : "var(--fg-default)",
+                            cursor: "pointer", fontSize: 13, fontWeight: 600, boxShadow: "var(--shadow-100)"
                           }}
                         >
                           {h} Hour · {h * 25} Questions (JEE)
@@ -214,16 +206,16 @@ export default function ResultsPage() {
               </div>
             </div>
 
-            <div style={{ display: "flex", gap: 12 }}>
+            <div style={{ display: "flex", gap: 16 }}>
               <button
-                className="btn-primary"
+                className="btn btn-primary"
                 disabled={!selectedMode}
-                style={{ flex: 1, justifyContent: "center", opacity: selectedMode ? 1 : 0.4 }}
+                style={{ flex: 1, justifyContent: "center", opacity: selectedMode ? 1 : 0.4, display: "inline-flex", gap: 8 }}
                 onClick={() => router.push("/test/booster-001")}
               >
-                Start Improvement Test →
+                Start Improvement Test <RiArrowRightLine size={18} />
               </button>
-              <button className="btn-ghost" onClick={() => setShowBooster(false)}>
+              <button className="btn btn-outline" onClick={() => setShowBooster(false)}>
                 Skip for now
               </button>
             </div>
@@ -231,30 +223,28 @@ export default function ResultsPage() {
         )}
 
         {/* Weak Topics */}
-        <div style={{ marginBottom: 24 }}>
-          <h2 style={{ fontWeight: 800, color: "#f1f5f9", marginBottom: 16, fontSize: "1.1rem" }}>
-            🔍 Weak Topic Breakdown
+        <div style={{ marginBottom: "var(--space-800)" }}>
+          <h2 className="text-h3" style={{ marginBottom: 24, display: "flex", alignItems: "center", gap: 8 }}>
+            <RiSearchLine size={22} /> Weak Topic Breakdown
           </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             {a.weakTopics.map((topic) => (
-              <div key={topic.topic} className="glass" style={{ borderRadius: 14, padding: "18px 20px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14, gap: 16 }}>
+              <div key={topic.topic} className="rayum-card" style={{ padding: 24 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20, gap: 16 }}>
                   <div>
-                    <div style={{ fontWeight: 700, color: "#f1f5f9", marginBottom: 4 }}>{topic.topic}</div>
-                    <span className="badge badge-orange" style={{ fontSize: "0.68rem" }}>{topic.chapter}</span>
+                    <div className="text-body-large" style={{ fontWeight: 700, color: "var(--fg-default)", marginBottom: 8 }}>{topic.topic}</div>
+                    <span className="rayum-badge orange">{topic.chapter}</span>
                   </div>
-                  <div
-                    style={{
-                      fontSize: "1.4rem", fontWeight: 900,
-                      color: topic.accuracy >= 70 ? "#22c55e" : topic.accuracy >= 40 ? "#eab308" : "#ef4444",
-                    }}
-                  >
+                  <div style={{ fontSize: 28, fontWeight: 900, color: topic.accuracy >= 70 ? "var(--success-50)" : topic.accuracy >= 40 ? "var(--warning-50)" : "var(--error-50)" }}>
                     {topic.accuracy}%
                   </div>
                 </div>
                 <AccuracyBar accuracy={topic.accuracy} />
-                <p style={{ color: "#64748b", fontSize: "0.8rem", marginTop: 12, lineHeight: 1.6 }}>
-                  💡 {topic.recommendation}
+                <p className="text-body-small" style={{ color: "var(--fg-muted)", marginTop: 16, lineHeight: 1.6, display: "flex", gap: 8 }}>
+                  <RiLightbulbFlashLine size={16} color="var(--primary-50)" style={{ flexShrink: 0, marginTop: 2 }} />
+                  <span>
+                    <strong style={{ color: "var(--fg-default)" }}>Recommendation:</strong> {topic.recommendation}
+                  </span>
                 </p>
               </div>
             ))}
@@ -262,21 +252,17 @@ export default function ResultsPage() {
         </div>
 
         {/* Error Patterns */}
-        <div style={{ marginBottom: 24 }}>
-          <h2 style={{ fontWeight: 800, color: "#f1f5f9", marginBottom: 16, fontSize: "1.1rem" }}>
-            ⚠️ Error Patterns
+        <div style={{ marginBottom: "var(--space-800)" }}>
+          <h2 className="text-h3" style={{ marginBottom: 24, display: "flex", alignItems: "center", gap: 8 }}>
+            <RiAlertFill size={22} color="var(--error-50)" /> Error Patterns
           </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
             {a.errorPatterns.map((ep) => (
-              <div
-                key={ep.pattern}
-                className="glass"
-                style={{ borderRadius: 14, padding: "16px 20px", borderLeft: "3px solid #ef4444" }}
-              >
-                <div style={{ fontWeight: 700, color: "#f87171", marginBottom: 6 }}>{ep.pattern}</div>
-                <p style={{ color: "#64748b", fontSize: "0.85rem", lineHeight: 1.6 }}>{ep.description}</p>
-                <div style={{ marginTop: 8 }}>
-                  <span className="badge badge-red">{ep.questionsAffected} questions affected</span>
+              <div key={ep.pattern} className="rayum-card" style={{ borderLeft: "4px solid var(--error-50)", padding: 24 }}>
+                <div className="text-body-large" style={{ fontWeight: 700, color: "var(--error-50)", marginBottom: 12 }}>{ep.pattern}</div>
+                <p className="text-body-small" style={{ color: "var(--fg-muted)", lineHeight: 1.6, marginBottom: 16 }}>{ep.description}</p>
+                <div>
+                  <span className="rayum-badge" style={{ background: "var(--error-10)", color: "var(--error-50)" }}>{ep.questionsAffected} questions affected</span>
                 </div>
               </div>
             ))}
@@ -285,39 +271,33 @@ export default function ResultsPage() {
 
         {/* 7-Day Study Plan */}
         <div>
-          <h2 style={{ fontWeight: 800, color: "#f1f5f9", marginBottom: 16, fontSize: "1.1rem" }}>
-            📅 Your 7-Day Study Plan
+          <h2 className="text-h3" style={{ marginBottom: 24, display: "flex", alignItems: "center", gap: 8 }}>
+            <RiCalendarEventLine size={22} /> Your 7-Day Study Plan
           </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {a.studyPlan.map((day) => (
               <div
                 key={day.day}
-                className="glass glass-hover"
-                style={{ borderRadius: 14, overflow: "hidden", cursor: "pointer" }}
+                className="rayum-card"
+                style={{ padding: 0, overflow: "hidden", cursor: "pointer", transition: "all 0.2s", border: expandedDay === day.day ? "1px solid var(--primary-50)" : "1px solid var(--border-default)" }}
                 onClick={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
               >
-                <div
-                  style={{
-                    padding: "14px 20px", display: "flex",
-                    alignItems: "center", justifyContent: "space-between", gap: 16,
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                    <div
-                      className="gradient-text"
-                      style={{ fontWeight: 900, fontSize: "1.1rem", minWidth: 24 }}
-                    >
+                <div style={{ padding: 20, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, background: expandedDay === day.day ? "var(--primary-10)" : "var(--bg-surface)" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+                    <div style={{ fontWeight: 900, fontSize: 18, color: "var(--primary-50)", minWidth: 32 }}>
                       D{day.day}
                     </div>
                     <div>
-                      <div style={{ fontWeight: 600, color: "#f1f5f9", fontSize: "0.9rem" }}>{day.topic}</div>
-                      <div style={{ color: "#475569", fontSize: "0.75rem" }}>{day.durationMinutes} min</div>
+                      <div className="text-body-base" style={{ fontWeight: 600, color: "var(--fg-default)" }}>{day.topic}</div>
+                      <div className="text-body-small" style={{ color: "var(--fg-muted)", marginTop: 4 }}>{day.durationMinutes} min</div>
                     </div>
                   </div>
-                  <span style={{ color: "#334155", fontSize: "0.9rem" }}>{expandedDay === day.day ? "▲" : "▼"}</span>
+                  <span style={{ color: "var(--fg-muted)", display: "flex" }}>
+                    {expandedDay === day.day ? <RiArrowUpSLine size={20} /> : <RiArrowDownSLine size={20} />}
+                  </span>
                 </div>
                 {expandedDay === day.day && (
-                  <div style={{ padding: "0 20px 16px", color: "#64748b", fontSize: "0.875rem", lineHeight: 1.6 }}>
+                  <div style={{ padding: "0 20px 20px", color: "var(--fg-muted)", fontSize: 14, lineHeight: 1.6, borderTop: "1px solid var(--border-default)", marginTop: 16, paddingTop: 16 }}>
                     {day.activity}
                   </div>
                 )}
@@ -326,6 +306,6 @@ export default function ResultsPage() {
           </div>
         </div>
       </main>
-    </div>
+    </>
   );
 }
