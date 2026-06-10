@@ -1,36 +1,34 @@
 "use client";
 
 import Navbar from "@/components/layout/Navbar";
-import { useState } from "react";
+import { Suspense } from "react";
+import { RiSmartphoneLine, RiComputerLine, RiGoogleFill, RiWhatsappFill, RiCheckFill, RiDownloadCloud2Line, RiErrorWarningLine } from "@remixicon/react";
 
-export default function SettingsPage() {
-  const [activeTab, setActiveTab] = useState("account");
-
+function SettingsContent() {
   return (
     <>
-      <Navbar title="Settings" />
-      <main style={{ maxWidth: 1000, margin: "0 auto", padding: "var(--space-600)", width: "100%", display: "flex", gap: 32 }}>
+      <Navbar title="Store Settings" subtitle="Adjust key settings to shape your store experience." breadcrumbs="Dashboard > Store Settings" />
+      <main style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px 32px 32px", width: "100%", display: "flex", gap: 32, alignItems: "flex-start" }}>
         
-        {/* Settings Sidebar */}
-        <div style={{ width: 240, flexShrink: 0 }}>
-          <div className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-muted)", marginBottom: 12, textTransform: "uppercase" }}>Settings Menu</div>
+        {/* Left Nav Menu */}
+        <div style={{ width: 220, flexShrink: 0, position: "sticky", top: 100 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
             {[
-              { id: "account", label: "Account Settings" },
-              { id: "notifications", label: "Notifications" },
-              { id: "privacy", label: "Privacy & Security" },
-              { id: "appearance", label: "Appearance" },
+              { id: "general", label: "General Info", active: true },
+              { id: "security", label: "Security", active: false },
+              { id: "notifications", label: "Notifications", active: false },
+              { id: "integrations", label: "Integrations", active: false },
             ].map(tab => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
                 style={{
                   textAlign: "left",
                   padding: "10px 16px",
-                  borderRadius: "var(--radius-md)",
-                  background: activeTab === tab.id ? "var(--primary-10)" : "transparent",
-                  color: activeTab === tab.id ? "var(--primary-50)" : "var(--fg-default)",
-                  fontWeight: activeTab === tab.id ? 600 : 500,
+                  borderRadius: "var(--r-md)",
+                  background: tab.active ? "var(--n-20)" : "transparent",
+                  color: tab.active ? "var(--fg-default)" : "var(--fg-muted)",
+                  fontWeight: tab.active ? 600 : 500,
+                  fontSize: 14,
                   border: "none",
                   cursor: "pointer",
                   transition: "all 0.2s"
@@ -42,64 +40,135 @@ export default function SettingsPage() {
           </div>
         </div>
 
-        {/* Settings Content */}
-        <div style={{ flex: 1 }}>
-          {activeTab === "account" && (
-            <div className="rayum-card" style={{ padding: 32 }}>
-              <h2 className="text-heading-m" style={{ color: "var(--fg-default)", marginBottom: 24 }}>Account Settings</h2>
-              
-              <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                  <label className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-default)" }}>Full Name</label>
-                  <input type="text" className="input-field" defaultValue="Arjun Patel" />
-                </div>
+        {/* Right Content Form Card */}
+        <div className="rayum-card" style={{ flex: 1, padding: 40 }}>
+          
+          <h2 className="section-title" style={{ marginBottom: 32 }}>General Info</h2>
+          
+          <div style={{ marginBottom: 32 }}>
+            <div style={{ width: 100, height: 100, borderRadius: "50%", background: "var(--s-50)", marginBottom: 12, display: "flex", alignItems: "center", justifyContent: "center", color: "white" }}>
+               {/* Abstract geometric icon placeholder */}
+               <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2L2 13H10V22L19 11H11V2Z"/></svg>
+            </div>
+            <button className="btn btn-ghost" style={{ color: "var(--s-50)", padding: 0 }}>
+              <RiCheckFill size={16} /> Replace
+            </button>
+          </div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                  <label className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-default)" }}>Email Address</label>
-                  <input type="email" className="input-field" defaultValue="arjun.patel@example.com" />
-                </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 24, marginBottom: 48 }}>
+            <div>
+              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Store name</label>
+              <input type="text" className="input" defaultValue="Rayum Store" />
+              <div className="t-body-sm" style={{ marginTop: 6 }}>Shown on invoices and emails</div>
+            </div>
+            
+            <div>
+              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Store description</label>
+              <textarea className="input textarea" defaultValue="Modern home & lifestyle essentials. Ships from San Francisco. Prices in USD." />
+              <div className="t-body-sm" style={{ marginTop: 6, textAlign: "right" }}>79/100</div>
+            </div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                  <label className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-default)" }}>Language Preference</label>
-                  <select className="input-field">
-                    <option value="en">English</option>
-                    <option value="hi">Hindi</option>
-                  </select>
-                </div>
+            <div>
+              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Primary domain</label>
+              <input type="text" className="input" defaultValue="rayumstore.com" />
+              <div className="t-body-sm" style={{ marginTop: 6 }}>Used for order and support notifications.</div>
+            </div>
 
-                <hr style={{ border: "none", borderTop: "1px solid var(--border-default)" }} />
-
-                <div style={{ display: "flex", justifyContent: "flex-end", gap: 12 }}>
-                  <button className="btn btn-outline">Cancel</button>
-                  <button className="btn btn-primary">Save Changes</button>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+              <div>
+                <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Country</label>
+                <div className="search-bar" style={{ padding: "10px 14px", borderRadius: "var(--r-full)" }}>
+                   <input type="text" defaultValue="United States (US)" readOnly />
                 </div>
               </div>
+              <div>
+                <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Phone</label>
+                <input type="text" className="input" defaultValue="+1 (415) 555-0199" />
+              </div>
             </div>
-          )}
+          </div>
 
-          {activeTab === "notifications" && (
-            <div className="rayum-card" style={{ padding: 32 }}>
-              <h2 className="text-heading-m" style={{ color: "var(--fg-default)", marginBottom: 24 }}>Notifications</h2>
-              <div className="text-body-large" style={{ color: "var(--fg-muted)" }}>Notification settings will be available soon.</div>
+          <hr className="divider" style={{ margin: "48px 0" }} />
+
+          <h2 className="section-title" style={{ marginBottom: 32 }}>Security</h2>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
+              <div>
+                <div className="text-bold">Two-Factor Authentication (2FA)</div>
+                <div className="t-body-sm">Requires a security key or authenticator app.</div>
+              </div>
+              <label className="switch">
+                <input type="checkbox" defaultChecked />
+                <span className="switch-track"></span>
+              </label>
             </div>
-          )}
-          
-          {activeTab === "privacy" && (
-            <div className="rayum-card" style={{ padding: 32 }}>
-              <h2 className="text-heading-m" style={{ color: "var(--fg-default)", marginBottom: 24 }}>Privacy & Security</h2>
-              <div className="text-body-large" style={{ color: "var(--fg-muted)" }}>Change password and security questions here.</div>
+            
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
+              <div>
+                <div className="text-bold">Active Sessions</div>
+                <div className="t-body-sm" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <RiComputerLine size={16} /> MacBook Pro (Current) • IP: 192.168.1.1
+                </div>
+              </div>
+              <button className="btn btn-outline">Revoke All</button>
             </div>
-          )}
-          
-          {activeTab === "appearance" && (
-            <div className="rayum-card" style={{ padding: 32 }}>
-              <h2 className="text-heading-m" style={{ color: "var(--fg-default)", marginBottom: 24 }}>Appearance</h2>
-              <div className="text-body-large" style={{ color: "var(--fg-muted)" }}>Theme settings (Dark/Light mode) coming soon.</div>
+          </div>
+
+          <hr className="divider" style={{ margin: "48px 0" }} />
+
+          <h2 className="section-title" style={{ marginBottom: 32 }}>Notifications</h2>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
+              <div>
+                <div className="text-bold">Order Updates</div>
+                <div className="t-body-sm">Get notified when an order is placed, updated or cancelled.</div>
+              </div>
+              <label className="switch">
+                <input type="checkbox" />
+                <span className="switch-track"></span>
+              </label>
             </div>
-          )}
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
+              <div>
+                <div className="text-bold">Payment Alerts</div>
+                <div className="t-body-sm">Be informed when a payment is received or fails.</div>
+              </div>
+              <label className="switch">
+                <input type="checkbox" defaultChecked />
+                <span className="switch-track"></span>
+              </label>
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
+              <div>
+                <div className="text-bold">Inventory Warnings</div>
+                <div className="t-body-sm">Receive alerts when stock levels are low.</div>
+              </div>
+              <label className="switch">
+                <input type="checkbox" defaultChecked />
+                <span className="switch-track"></span>
+              </label>
+            </div>
+          </div>
+
+          {/* Action Footer */}
+          <div style={{ display: "flex", justifyContent: "flex-end", gap: 16, marginTop: 48 }}>
+            <button className="btn btn-outline" style={{ border: "1px solid var(--border-default)" }}>Discard Changes</button>
+            <button className="btn btn-dark">Save Changes</button>
+          </div>
+
         </div>
 
       </main>
     </>
+  );
+}
+
+export default function SettingsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SettingsContent />
+    </Suspense>
   );
 }
