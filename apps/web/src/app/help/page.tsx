@@ -2,8 +2,38 @@
 
 import Navbar from "@/components/layout/Navbar";
 import { RiQuestionLine, RiMailSendLine, RiBookOpenLine } from "@remixicon/react";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function HelpPage() {
+function HelpContent() {
+  const searchParams = useSearchParams();
+  const role = searchParams.get("role") || "student";
+
+  const faqs = {
+    student: [
+      { q: "How do booster tests work?", a: "Booster tests are automatically generated after you complete a standard test. They focus entirely on the concepts you struggled with, providing targeted practice." },
+      { q: "Can I review my past test answers?", a: "Yes, navigate to the Test History page and click on 'View Analysis' to see detailed explanations for every question." },
+      { q: "How is the leaderboard calculated?", a: "The leaderboard ranks students based on their average score across all mock tests within a specific batch." }
+    ],
+    teacher: [
+      { q: "How do I create a new subject assignment?", a: "Go to 'Create Subject Assignment' in the sidebar. You can use the AI Wizard to generate questions based on the topics you recently taught." },
+      { q: "Where can I see which topics my batch is failing?", a: "Check the 'Batch Analytics' page. It aggregates mock test data to highlight critical weaknesses across your entire class." },
+      { q: "How do I resolve student doubts?", a: "Navigate to 'Resolve Doubts'. You will see a feed of pending questions from your students. Click 'Reply' to type your explanation." }
+    ],
+    institute: [
+      { q: "How do I add a new faculty member?", a: "Navigate to the 'Faculty' page and click 'Add New Faculty'. You can assign them to specific batches from there." },
+      { q: "How do I upgrade my billing tier?", a: "Go to the 'Billing' page and click 'Upgrade Plan'. This will send a request directly to the Super Admin." },
+      { q: "The platform is slow, how do I report this?", a: "Go to 'Support' and create a New Ticket. Select 'Technical Support' and mark it as High Priority." }
+    ],
+    superadmin: [
+      { q: "How do I toggle beta features?", a: "Go to the 'Configuration' page. You can enable or disable feature flags globally from there." },
+      { q: "What happens if AI tokens exceed the quota?", a: "You can monitor token consumption in 'Global Analytics'. If quotas are exceeded, the AI Wizard will temporarily pause until you adjust the rate limits." },
+      { q: "How do I resolve an institute escalation?", a: "Navigate to 'Support Escalations' to view and respond to tickets raised by Institute Admins." }
+    ]
+  };
+
+  const currentFaqs = faqs[role as keyof typeof faqs] || faqs.student;
+
   return (
     <>
       <Navbar title="Help & Support" />
@@ -33,11 +63,7 @@ export default function HelpPage() {
         {/* FAQs */}
         <h2 className="text-heading-m" style={{ color: "var(--fg-default)", marginBottom: 16 }}>Frequently Asked Questions</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          {[
-            { q: "How do booster tests work?", a: "Booster tests are automatically generated after you complete a standard test. They focus entirely on the concepts you struggled with, providing targeted practice." },
-            { q: "Can I review my past test answers?", a: "Yes, navigate to the Test History page and click on 'View Analysis' to see detailed explanations for every question." },
-            { q: "How is the leaderboard calculated?", a: "The leaderboard ranks students based on their average score across all mock tests within a specific batch." },
-          ].map((faq, i) => (
+          {currentFaqs.map((faq, i) => (
             <div key={i} className="rayum-card" style={{ padding: "20px 24px" }}>
               <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
                 <RiQuestionLine size={20} color="var(--primary-50)" style={{ flexShrink: 0, marginTop: 2 }} />
@@ -52,5 +78,13 @@ export default function HelpPage() {
 
       </main>
     </>
+  );
+}
+
+export default function HelpPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HelpContent />
+    </Suspense>
   );
 }

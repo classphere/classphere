@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
-import { RiCheckFill, RiDownload2Line } from "@remixicon/react";
+import { RiCheckFill, RiDownload2Line, RiCloseLine } from "@remixicon/react";
 
 const mockInvoices = [
   { id: "INV-2023-001", date: "01 Jun 2026", amount: "$299.00", status: "Paid" },
@@ -10,6 +11,8 @@ const mockInvoices = [
 ];
 
 export default function BillingPage() {
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+
   return (
     <>
       <Navbar title="Billing & Subscription" />
@@ -25,7 +28,7 @@ export default function BillingPage() {
           <div style={{ textAlign: "right" }}>
             <div className="text-heading-xl" style={{ margin: 0 }}>$299<span style={{ fontSize: 16, opacity: 0.8 }}>/mo</span></div>
             <div className="text-body-small" style={{ opacity: 0.8, marginTop: 4 }}>Renews on Jul 1, 2026</div>
-            <button className="btn" style={{ background: "white", color: "var(--primary-50)", marginTop: 16 }}>Upgrade Plan</button>
+            <button className="btn" style={{ background: "white", color: "var(--primary-50)", marginTop: 16 }} onClick={() => setShowUpgradeModal(true)}>Upgrade Plan</button>
           </div>
         </div>
 
@@ -103,6 +106,38 @@ export default function BillingPage() {
             </tbody>
           </table>
         </div>
+
+        {/* Upgrade Modal */}
+        {showUpgradeModal && (
+          <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.5)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div className="rayum-card" style={{ width: 600, maxWidth: "90%", padding: 32 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
+                <h2 className="text-heading-m" style={{ color: "var(--fg-default)", margin: 0 }}>Upgrade Subscription</h2>
+                <button className="btn btn-ghost" style={{ padding: 4 }} onClick={() => setShowUpgradeModal(false)}>
+                  <RiCloseLine size={24} />
+                </button>
+              </div>
+              <p className="text-body" style={{ color: "var(--fg-muted)", marginBottom: 24 }}>You are currently on the <strong>Pro Plan</strong>. Select a tier below to request an upgrade from the Super Admin.</p>
+              
+              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                <div style={{ padding: 24, border: "2px solid var(--success-50)", borderRadius: 12, background: "rgba(34, 197, 94, 0.05)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <div>
+                    <h3 className="text-heading-s" style={{ color: "var(--fg-default)" }}>Enterprise Plan</h3>
+                    <ul style={{ listStyle: "none", padding: 0, margin: 0, marginTop: 8, color: "var(--fg-muted)", fontSize: 13, display: "flex", flexDirection: "column", gap: 4 }}>
+                      <li>✓ Unlimited Students</li>
+                      <li>✓ Custom App Branding (White-label)</li>
+                      <li>✓ 24/7 Dedicated Support</li>
+                    </ul>
+                  </div>
+                  <div style={{ textAlign: "right" }}>
+                    <div className="text-heading-l" style={{ color: "var(--fg-default)" }}>Custom</div>
+                    <button className="btn btn-primary" style={{ marginTop: 12 }} onClick={() => setShowUpgradeModal(false)}>Contact Sales</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
       </main>
     </>
