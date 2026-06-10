@@ -141,19 +141,7 @@ export default function Sidebar() {
               </div>
             </Link>
           ))}
-          {/* Static Messages item like in Rayum */}
-          <Link
-            href={`/messages${roleQuery}`}
-            className={`sidebar-link ${pathname.startsWith("/messages") ? "active" : ""}`}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{ display: "flex", alignItems: "center" }}><RiMessage3Line size={18} /></span>
-              <span>Messages</span>
-            </div>
-            <span style={{ background: "var(--s-50)", color: "white", fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              3
-            </span>
-          </Link>
+
         </nav>
       </div>
 
