@@ -258,7 +258,7 @@ export default function ResultsPage() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
             {a.errorPatterns.map((ep) => (
-              <div key={ep.pattern} className="rayum-card" style={{ borderLeft: "4px solid var(--error-50)", padding: 24 }}>
+              <div key={ep.pattern} className="rayum-card" style={{ padding: 24 }}>
                 <div className="text-body-large" style={{ fontWeight: 700, color: "var(--error-50)", marginBottom: 12 }}>{ep.pattern}</div>
                 <p className="text-body-small" style={{ color: "var(--fg-muted)", lineHeight: 1.6, marginBottom: 16 }}>{ep.description}</p>
                 <div>

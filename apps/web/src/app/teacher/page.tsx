@@ -59,7 +59,7 @@ export default function TeacherDashboardPage() {
 
         {/* Pending Tasks Alert */}
         {mockPendingTasks.length > 0 && (
-          <section className="rayum-card" style={{ marginBottom: 24, borderLeft: "4px solid var(--warning-50)", padding: 32 }}>
+          <section className="rayum-card" style={{ marginBottom: 24, padding: 32 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
               <h2 className="section-title" style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 18 }}>
                 Action Required: Pending Test Sections
@@ -146,15 +146,15 @@ export default function TeacherDashboardPage() {
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 16, flex: 1 }}>
-              <div style={{ padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)", borderLeft: "4px solid var(--danger-50)" }}>
+              <div style={{ padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
                 <h4 className="text-bold" style={{ marginBottom: 6 }}>Rohan Gupta (JEE 2026 Morning)</h4>
                 <p className="t-body-sm">Score dropped 30% since last week's Physics test. Recommending a 1-on-1 session.</p>
               </div>
-              <div style={{ padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)", borderLeft: "4px solid var(--warning-50)" }}>
+              <div style={{ padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
                 <h4 className="text-bold" style={{ marginBottom: 6 }}>Carnot Cycle Failure</h4>
                 <p className="t-body-sm">73% of NEET 2026 Droppers failed Carnot Cycle efficiency problems. Needs revision class.</p>
               </div>
-              <div style={{ padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)", borderLeft: "4px solid var(--warning-50)" }}>
+              <div style={{ padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
                 <h4 className="text-bold" style={{ marginBottom: 6 }}>Sneha Reddy (NEET 2026 Droppers)</h4>
                 <p className="t-body-sm">Missed 3 consecutive batch tests.</p>
               </div>

@@ -111,8 +111,7 @@ export default function LeaderboardPage() {
                   display: "grid", gridTemplateColumns: "60px 1fr 80px 80px 80px",
                   padding: "14px 20px",
                   background: student.isCurrentUser ? "var(--primary-10)" : "transparent",
-                  borderBottom: "1px solid var(--border-default)",
-                  borderLeft: student.isCurrentUser ? "4px solid var(--primary-50)" : "4px solid transparent",
+                  borderBottom: "1px solid var(--border-default)"
                 }}
               >
                 {/* Rank */}

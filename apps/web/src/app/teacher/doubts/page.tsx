@@ -29,7 +29,7 @@ export default function TeacherDoubtsPage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           {mockPendingDoubts.map(doubt => (
-            <div key={doubt.id} className="rayum-card" style={{ padding: 24, borderLeft: "4px solid var(--warning-50)" }}>
+            <div key={doubt.id} className="rayum-card" style={{ padding: 24 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
                 <div>
                   <div style={{ fontWeight: 600, color: "var(--fg-default)" }}>{doubt.student}</div>

@@ -18,7 +18,7 @@ export default function SupportPage() {
         
         {/* KPI Cards */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginBottom: 32 }}>
-          <div className="rayum-card" style={{ padding: 24, display: "flex", alignItems: "center", gap: 16, borderLeft: "4px solid var(--error-50)" }}>
+          <div className="rayum-card" style={{ padding: 24, display: "flex", alignItems: "center", gap: 16 }}>
             <div style={{ padding: 12, background: "rgba(239, 68, 68, 0.1)", borderRadius: "50%", color: "var(--error-50)" }}>
               <RiCustomerService2Fill size={28} />
             </div>
@@ -27,7 +27,7 @@ export default function SupportPage() {
               <div className="text-heading-l" style={{ color: "var(--fg-default)", margin: 0 }}>14</div>
             </div>
           </div>
-          <div className="rayum-card" style={{ padding: 24, display: "flex", alignItems: "center", gap: 16, borderLeft: "4px solid var(--warning-50)" }}>
+          <div className="rayum-card" style={{ padding: 24, display: "flex", alignItems: "center", gap: 16 }}>
             <div style={{ padding: 12, background: "rgba(245, 158, 11, 0.1)", borderRadius: "50%", color: "var(--warning-50)" }}>
               <RiTimeLine size={28} />
             </div>
@@ -36,7 +36,7 @@ export default function SupportPage() {
               <div className="text-heading-l" style={{ color: "var(--fg-default)", margin: 0 }}>45m</div>
             </div>
           </div>
-          <div className="rayum-card" style={{ padding: 24, display: "flex", alignItems: "center", gap: 16, borderLeft: "4px solid var(--success-50)" }}>
+          <div className="rayum-card" style={{ padding: 24, display: "flex", alignItems: "center", gap: 16 }}>
             <div style={{ padding: 12, background: "rgba(34, 197, 94, 0.1)", borderRadius: "50%", color: "var(--success-50)" }}>
               <RiCustomerService2Fill size={28} />
             </div>
