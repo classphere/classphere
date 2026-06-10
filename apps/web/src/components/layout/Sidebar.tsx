@@ -4,15 +4,12 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
   RiDashboardLine,
-  RiFlashlightLine,
   RiFlashlightFill,
   RiBookOpenLine,
   RiTrophyLine,
   RiMessage3Line,
   RiSettings4Line,
   RiInformationLine,
-  RiSunLine,
-  RiMoonLine,
   RiTeamLine,
   RiBarChartBoxLine,
   RiBankCardLine,
@@ -23,7 +20,10 @@ import {
   RiLineChartLine,
   RiMoneyDollarCircleLine,
   RiToggleLine,
-  RiLifebuoyLine
+  RiLifebuoyLine,
+  RiQuestionAnswerLine,
+  RiBox3Line,
+  RiShoppingCartLine
 } from "@remixicon/react";
 
 export default function Sidebar() {
@@ -35,72 +35,80 @@ export default function Sidebar() {
   const isSuperAdmin = pathname.startsWith("/superadmin");
   const isStudent = !isTeacher && !isInstitute && !isSuperAdmin;
 
-  // Different Navigations based on Role
+  // Navigations based on Role
   const studentNav = [
     { label: "Dashboard", href: "/", icon: <RiDashboardLine size={18} />, active: pathname === "/" },
-    { label: "Create Test", href: "/create-test", icon: <RiFlashlightLine size={18} />, active: pathname.startsWith("/create-test") },
+    { label: "Create Test", href: "/create-test", icon: <RiBox3Line size={18} />, active: pathname.startsWith("/create-test") },
     { label: "Test History", href: "/history", icon: <RiBookOpenLine size={18} />, active: pathname.startsWith("/history") },
+    { label: "Analytics", href: "/analytics", icon: <RiLineChartLine size={18} />, active: pathname.startsWith("/analytics") },
     { label: "Leaderboard", href: "/leaderboard", icon: <RiTrophyLine size={18} />, active: pathname.startsWith("/leaderboard") },
+    { label: "Ask a Doubt", href: "/doubts", icon: <RiQuestionAnswerLine size={18} />, active: pathname.startsWith("/doubts") },
   ];
 
   const teacherNav = [
-    { label: "Teacher Dashboard", href: "/teacher", icon: <RiDashboardLine size={18} />, active: pathname === "/teacher" },
-    { label: "Create Subject Assignment", href: "/teacher/create-assignment", icon: <RiFlashlightLine size={18} />, active: pathname.startsWith("/teacher/create-assignment") },
+    { label: "Dashboard", href: "/teacher", icon: <RiDashboardLine size={18} />, active: pathname === "/teacher" },
+    { label: "Assignments", href: "/teacher/create-assignment", icon: <RiBox3Line size={18} />, active: pathname.startsWith("/teacher/create-assignment") },
+    { label: "Analytics", href: "/teacher/analytics", icon: <RiBarChartBoxLine size={18} />, active: pathname.startsWith("/teacher/analytics") },
+    { label: "Doubts", href: "/teacher/doubts", icon: <RiMessage3Line size={18} />, active: pathname.startsWith("/teacher/doubts") },
   ];
 
   const instituteNav = [
-    { label: "Institute Dashboard", href: "/institute", icon: <RiDashboardLine size={18} />, active: pathname === "/institute" },
-    { label: "Manage Batches", href: "/institute/batches", icon: <RiTeamLine size={18} />, active: pathname.startsWith("/institute/batches") },
+    { label: "Dashboard", href: "/institute", icon: <RiDashboardLine size={18} />, active: pathname === "/institute" },
+    { label: "Batches", href: "/institute/batches", icon: <RiTeamLine size={18} />, active: pathname.startsWith("/institute/batches") },
+    { label: "Faculty", href: "/institute/faculty", icon: <RiUserStarLine size={18} />, active: pathname.startsWith("/institute/faculty") },
     { label: "Students", href: "/institute/students", icon: <RiUser3Line size={18} />, active: pathname.startsWith("/institute/students") },
     { label: "Reports", href: "/institute/reports", icon: <RiBarChartBoxLine size={18} />, active: pathname.startsWith("/institute/reports") },
     { label: "Billing", href: "/institute/billing", icon: <RiBankCardLine size={18} />, active: pathname.startsWith("/institute/billing") },
+    { label: "Support", href: "/institute/support", icon: <RiLifebuoyLine size={18} />, active: pathname.startsWith("/institute/support") },
   ];
 
   const superAdminNav = [
     { label: "Platform Health", href: "/superadmin", icon: <RiDashboardLine size={18} />, active: pathname === "/superadmin" },
     { label: "Global Analytics", href: "/superadmin/analytics", icon: <RiLineChartLine size={18} />, active: pathname.startsWith("/superadmin/analytics") },
-    { label: "Revenue & Billing", href: "/superadmin/revenue", icon: <RiMoneyDollarCircleLine size={18} />, active: pathname.startsWith("/superadmin/revenue") },
-    { label: "Question Bank", href: "/superadmin/questions", icon: <RiDatabase2Line size={18} />, active: pathname.startsWith("/superadmin/questions") },
-    { label: "Institutes CRM", href: "/superadmin/institutes", icon: <RiBuilding4Line size={18} />, active: pathname.startsWith("/superadmin/institutes") },
+    { label: "Revenue", href: "/superadmin/revenue", icon: <RiMoneyDollarCircleLine size={18} />, active: pathname.startsWith("/superadmin/revenue") },
+    { label: "Questions", href: "/superadmin/questions", icon: <RiDatabase2Line size={18} />, active: pathname.startsWith("/superadmin/questions") },
+    { label: "Institutes", href: "/superadmin/institutes", icon: <RiBuilding4Line size={18} />, active: pathname.startsWith("/superadmin/institutes") },
     { label: "Configuration", href: "/superadmin/configuration", icon: <RiToggleLine size={18} />, active: pathname.startsWith("/superadmin/configuration") },
-    { label: "Support Escalations", href: "/superadmin/support", icon: <RiLifebuoyLine size={18} />, active: pathname.startsWith("/superadmin/support") },
+    { label: "Support", href: "/superadmin/support", icon: <RiLifebuoyLine size={18} />, active: pathname.startsWith("/superadmin/support") },
   ];
 
   const currentNav = isTeacher ? teacherNav : isInstitute ? instituteNav : isSuperAdmin ? superAdminNav : studentNav;
+  const roleQuery = isTeacher ? "?role=teacher" : isInstitute ? "?role=institute" : isSuperAdmin ? "?role=superadmin" : "?role=student";
 
   const othersNav = [
-    { label: "Messages", href: "/messages", icon: <RiMessage3Line size={18} />, badge: 3 },
-    { label: "Profile", href: "/profile", icon: <RiUserStarLine size={18} /> },
-    { label: "Settings", href: "/settings", icon: <RiSettings4Line size={18} /> },
-    { label: "Help", href: "/help", icon: <RiInformationLine size={18} /> },
+    { label: "Settings", path: "/settings", href: `/settings${roleQuery}`, icon: <RiSettings4Line size={18} /> },
+    { label: "Help Me", path: "/help", href: `/help${roleQuery}`, icon: <RiInformationLine size={18} /> },
   ];
 
   return (
     <aside
       style={{
         width: 250,
-        height: "100vh",
+        height: "calc(100vh - 32px)",
+        margin: 16,
+        borderRadius: "var(--r-xl)",
         background: "var(--bg-surface)",
-        borderRight: "1px solid var(--border-default)",
+        border: "1px solid var(--border-default)",
+        boxShadow: "var(--sh-200)",
         display: "flex",
         flexDirection: "column",
         padding: "24px 16px",
-        position: "fixed",
-        top: 0,
-        left: 0,
+        position: "sticky",
+        top: 16,
+        flexShrink: 0,
         zIndex: 40,
         overflowY: "auto"
       }}
     >
-      {/* Logo Area */}
+      {/* ── Logo ── */}
       <div style={{ marginBottom: 32, paddingLeft: 8 }}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <div
             style={{
               width: 32,
               height: 32,
               borderRadius: "50%",
-              background: "var(--secondary-50)",
+              background: "var(--s-50)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -109,22 +117,16 @@ export default function Sidebar() {
           >
             <RiFlashlightFill size={18} />
           </div>
-          <span style={{ fontWeight: 800, fontSize: 22, color: "var(--fg-default)" }}>
+          <span style={{ fontWeight: 800, fontSize: 22, color: "var(--fg-default)", letterSpacing: "-0.02em" }}>
             ExamPrep
           </span>
         </Link>
       </div>
 
-      {/* Main Menu */}
+      {/* ── Main Menu ── */}
       <div style={{ marginBottom: 24 }}>
-        <div style={{ 
-          fontSize: 12, 
-          fontWeight: 600, 
-          color: "var(--fg-muted)", 
-          marginBottom: 12,
-          paddingLeft: 8
-        }}>
-          {isTeacher ? "Teacher Portal" : isInstitute ? "Institute Admin" : isSuperAdmin ? "Super Admin" : "Student Portal"}
+        <div className="t-label" style={{ marginBottom: 12, paddingLeft: 12 }}>
+          Main menu
         </div>
         <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
           {currentNav.map((item) => (
@@ -132,7 +134,6 @@ export default function Sidebar() {
               key={item.href}
               href={item.href}
               className={`sidebar-link ${item.active ? "active" : ""}`}
-              style={{ padding: "10px 16px" }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ display: "flex", alignItems: "center" }}>{item.icon}</span>
@@ -140,72 +141,68 @@ export default function Sidebar() {
               </div>
             </Link>
           ))}
+          {/* Static Messages item like in Rayum */}
+          <Link
+            href={`/messages${roleQuery}`}
+            className={`sidebar-link ${pathname.startsWith("/messages") ? "active" : ""}`}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <span style={{ display: "flex", alignItems: "center" }}><RiMessage3Line size={18} /></span>
+              <span>Messages</span>
+            </div>
+            <span style={{ background: "var(--s-50)", color: "white", fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              3
+            </span>
+          </Link>
         </nav>
       </div>
 
-      {/* Others Menu */}
+      {/* ── Others Menu ── */}
       <div style={{ marginBottom: "auto" }}>
-        <div style={{ 
-          fontSize: 12, 
-          fontWeight: 600, 
-          color: "var(--fg-muted)", 
-          marginBottom: 12,
-          paddingLeft: 8
-        }}>
-          Account
+        <div className="t-label" style={{ marginBottom: 12, paddingLeft: 12 }}>
+          Others
         </div>
         <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
           {othersNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`sidebar-link ${pathname.startsWith(item.href) ? "active" : ""}`}
-              style={{ padding: "10px 16px" }}
+              className={`sidebar-link ${pathname.startsWith(item.path) ? "active" : ""}`}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ display: "flex", alignItems: "center" }}>{item.icon}</span>
                 <span>{item.label}</span>
               </div>
-              {item.badge && (
-                <span style={{ 
-                  background: "var(--secondary-50)", 
-                  color: "white", 
-                  fontSize: 11, 
-                  fontWeight: "bold", 
-                  padding: "2px 6px", 
-                  borderRadius: 12,
-                  marginLeft: "auto"
-                }}>
-                  {item.badge}
-                </span>
-              )}
             </Link>
           ))}
         </nav>
       </div>
 
-      {/* Role Switcher Demo Dropdown */}
-      <div style={{ 
-        background: "var(--neutral-10)", 
-        borderRadius: "var(--radius-lg)", 
-        padding: "16px",
-        marginTop: 32,
-        marginBottom: 16
-      }}>
-        <h4 style={{ fontWeight: 700, fontSize: 12, color: "var(--fg-muted)", marginBottom: 8, textTransform: "uppercase" }}>
-          Demo Role Switcher
-        </h4>
-        <select 
-          className="input-field" 
-          style={{ width: "100%", padding: "8px", fontSize: 13 }}
-          value={isTeacher ? "/teacher" : isInstitute ? "/institute" : isSuperAdmin ? "/superadmin" : "/"}
-          onChange={(e) => router.push(e.target.value)}
-        >
-          <option value="/">Student</option>
-          <option value="/teacher">Teacher</option>
-          <option value="/institute">Institute Admin</option>
-          <option value="/superadmin">Super Admin</option>
-        </select>
+      {/* ── Bottom Section (Profile + Demo Switcher) ── */}
+      <div style={{ marginTop: 32 }}>
+        
+        {/* Download App block pattern from Rayum */}
+        <div style={{ background: "var(--n-10)", borderRadius: "var(--r-lg)", padding: 20, marginBottom: 24 }}>
+          <h4 className="text-body-large text-bold" style={{ marginBottom: 4 }}>Download our<br/>Mobile App</h4>
+          <p className="t-body-sm" style={{ marginBottom: 16 }}>Get easy in another way</p>
+          <button className="btn btn-outline" style={{ width: "100%", background: "transparent" }}>Download</button>
+        </div>
+
+        {/* Demo Role Switcher */}
+        <div style={{ padding: "0 8px" }}>
+          <select 
+            className="input" 
+            style={{ width: "100%", padding: "8px 12px", fontSize: 13, borderColor: "var(--n-20)", background: "transparent" }}
+            value={isTeacher ? "/teacher" : isInstitute ? "/institute" : isSuperAdmin ? "/superadmin" : "/"}
+            onChange={(e) => router.push(e.target.value)}
+          >
+            <option value="/">Student</option>
+            <option value="/teacher">Teacher</option>
+            <option value="/institute">Institute Admin</option>
+            <option value="/superadmin">Super Admin</option>
+          </select>
+        </div>
+
       </div>
 
     </aside>

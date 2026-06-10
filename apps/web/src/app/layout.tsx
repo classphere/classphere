@@ -19,10 +19,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
-      <body className="min-h-full antialiased" style={{ display: "flex" }}>
-        <Sidebar />
-        <div style={{ flex: 1, marginLeft: 260, minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-          {children}
+      <body className="min-h-full antialiased" style={{ display: "flex", justifyContent: "center", backgroundColor: "var(--n-20)" }}>
+        <div style={{ display: "flex", width: "100%", maxWidth: 1440, minHeight: "100vh", position: "relative", backgroundColor: "var(--bg-default)", boxShadow: "0 0 40px rgba(0,0,0,0.05)" }}>
+          <Sidebar />
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
+            {children}
+          </div>
         </div>
       </body>
     </html>
