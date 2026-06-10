@@ -19,7 +19,11 @@ import {
   RiDatabase2Line,
   RiBuilding4Line,
   RiUserStarLine,
-  RiUser3Line
+  RiUser3Line,
+  RiLineChartLine,
+  RiMoneyDollarCircleLine,
+  RiToggleLine,
+  RiLifebuoyLine
 } from "@remixicon/react";
 
 export default function Sidebar() {
@@ -41,7 +45,7 @@ export default function Sidebar() {
 
   const teacherNav = [
     { label: "Teacher Dashboard", href: "/teacher", icon: <RiDashboardLine size={18} />, active: pathname === "/teacher" },
-    { label: "Create Batch Test", href: "/teacher/create-test", icon: <RiFlashlightLine size={18} />, active: pathname.startsWith("/teacher/create-test") },
+    { label: "Create Subject Assignment", href: "/teacher/create-assignment", icon: <RiFlashlightLine size={18} />, active: pathname.startsWith("/teacher/create-assignment") },
   ];
 
   const instituteNav = [
@@ -54,8 +58,12 @@ export default function Sidebar() {
 
   const superAdminNav = [
     { label: "Platform Health", href: "/superadmin", icon: <RiDashboardLine size={18} />, active: pathname === "/superadmin" },
+    { label: "Global Analytics", href: "/superadmin/analytics", icon: <RiLineChartLine size={18} />, active: pathname.startsWith("/superadmin/analytics") },
+    { label: "Revenue & Billing", href: "/superadmin/revenue", icon: <RiMoneyDollarCircleLine size={18} />, active: pathname.startsWith("/superadmin/revenue") },
     { label: "Question Bank", href: "/superadmin/questions", icon: <RiDatabase2Line size={18} />, active: pathname.startsWith("/superadmin/questions") },
     { label: "Institutes CRM", href: "/superadmin/institutes", icon: <RiBuilding4Line size={18} />, active: pathname.startsWith("/superadmin/institutes") },
+    { label: "Configuration", href: "/superadmin/configuration", icon: <RiToggleLine size={18} />, active: pathname.startsWith("/superadmin/configuration") },
+    { label: "Support Escalations", href: "/superadmin/support", icon: <RiLifebuoyLine size={18} />, active: pathname.startsWith("/superadmin/support") },
   ];
 
   const currentNav = isTeacher ? teacherNav : isInstitute ? instituteNav : isSuperAdmin ? superAdminNav : studentNav;
