@@ -17,7 +17,7 @@ export default function BatchAnalysisPage() {
   const batch = mockBatches.find(b => b.id === batchId) || mockBatches[0];
 
   return (
-    <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+    <div style={{ maxWidth: 1200, margin: "0 auto", padding: 32 }}>
       {/* Header */}
       <div style={{ marginBottom: 32 }}>
         <Link href="/teacher" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fg-muted)", fontSize: 14, marginBottom: 16, textDecoration: "none" }}>
