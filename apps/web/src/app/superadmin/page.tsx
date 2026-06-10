@@ -80,45 +80,68 @@ export default function SuperAdminDashboardPage() {
         </div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
-        {/* Institutes CRM */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+        {/* System Health */}
         <section className="rayum-card">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700 }}>Institute Clients CRM</h2>
-            <Link href="/superadmin/institutes" className="btn btn-outline" style={{ padding: "6px 12px", fontSize: 13 }}>View All Institutes</Link>
+            <h2 style={{ fontSize: 18, fontWeight: 700 }}>System Resources</h2>
+            <span className="rayum-badge green" style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--success-50)" }} /> All Systems Operational
+            </span>
           </div>
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
-            <thead>
-              <tr style={{ borderBottom: "1px solid var(--border-default)", textAlign: "left", color: "var(--fg-muted)", fontSize: 13 }}>
-                <th style={{ paddingBottom: 12 }}>Institute Name</th>
-                <th style={{ paddingBottom: 12 }}>Plan</th>
-                <th style={{ paddingBottom: 12 }}>Students</th>
-                <th style={{ paddingBottom: 12 }}>Batches</th>
-                <th style={{ paddingBottom: 12 }}>Status</th>
-                <th style={{ paddingBottom: 12 }}></th>
-              </tr>
-            </thead>
-            <tbody>
-              {mockInstitutesList.map(inst => (
-                <tr key={inst.id} style={{ borderBottom: "1px solid var(--neutral-10)" }}>
-                  <td style={{ padding: "16px 0", fontWeight: 600 }}>{inst.name}</td>
-                  <td style={{ padding: "16px 0", color: "var(--fg-muted)" }}>{inst.plan}</td>
-                  <td style={{ padding: "16px 0", color: "var(--fg-muted)" }}>{inst.students.toLocaleString()}</td>
-                  <td style={{ padding: "16px 0", color: "var(--fg-muted)" }}>{inst.batches}</td>
-                  <td style={{ padding: "16px 0" }}>
-                    <span className={`rayum-badge ${inst.status === 'active' ? 'green' : 'yellow'}`}>
-                      {inst.status === 'active' ? 'Active' : 'Expiring Soon'}
-                    </span>
-                  </td>
-                  <td style={{ padding: "16px 0", textAlign: "right" }}>
-                    <button style={{ background: "transparent", border: "none", cursor: "pointer", color: "var(--fg-muted)" }}>
-                      <RiMoreFill size={20} />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+                <span className="text-body-small" style={{ color: "var(--fg-default)", fontWeight: 600 }}>API Server Load</span>
+                <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>34%</span>
+              </div>
+              <div style={{ height: 8, background: "var(--bg-body)", borderRadius: 4, overflow: "hidden" }}>
+                <div style={{ width: "34%", height: "100%", background: "var(--primary-50)" }} />
+              </div>
+            </div>
+            <div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+                <span className="text-body-small" style={{ color: "var(--fg-default)", fontWeight: 600 }}>Database Connections</span>
+                <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>142 / 500</span>
+              </div>
+              <div style={{ height: 8, background: "var(--bg-body)", borderRadius: 4, overflow: "hidden" }}>
+                <div style={{ width: "28%", height: "100%", background: "var(--success-50)" }} />
+              </div>
+            </div>
+            <div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+                <span className="text-body-small" style={{ color: "var(--fg-default)", fontWeight: 600 }}>Storage Capacity</span>
+                <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>4.2 TB / 10 TB</span>
+              </div>
+              <div style={{ height: 8, background: "var(--bg-body)", borderRadius: 4, overflow: "hidden" }}>
+                <div style={{ width: "42%", height: "100%", background: "var(--warning-50)" }} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Audit Logs */}
+        <section className="rayum-card">
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700 }}>Recent Audit Logs</h2>
+            <button className="btn btn-ghost" style={{ padding: "6px 12px", fontSize: 13 }}>View All</button>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {[
+              { id: 1, action: "New Institute Onboarded", user: "System", time: "10 mins ago", type: "success" },
+              { id: 2, action: "Question Bank Sync Complete", user: "Admin", time: "1 hour ago", type: "primary" },
+              { id: 3, action: "Failed Login Attempt", user: "Unknown IP", time: "2 hours ago", type: "error" },
+              { id: 4, action: "Subscription Upgraded (Vibrant Academy)", user: "Admin", time: "3 hours ago", type: "primary" },
+            ].map(log => (
+              <div key={log.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 12, borderBottom: "1px solid var(--border-subtle)" }}>
+                <div>
+                  <div className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-default)" }}>{log.action}</div>
+                  <div className="text-body-small" style={{ color: "var(--fg-muted)", fontSize: 11 }}>By {log.user}</div>
+                </div>
+                <div className="text-body-small" style={{ color: "var(--fg-muted)", fontSize: 11 }}>{log.time}</div>
+              </div>
+            ))}
+          </div>
         </section>
       </div>
     </div>
