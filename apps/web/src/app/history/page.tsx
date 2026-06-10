@@ -25,78 +25,52 @@ function TestChainItem({ item, depth = 0 }: { item: HistoryItem; depth?: number 
   const isBooster = depth > 0;
 
   return (
-    <div style={{ position: "relative", marginTop: depth > 0 ? 16 : 0 }}>
-      {/* Vertical connector line from parent */}
-      {isBooster && (
-        <div style={{
-          position: "absolute",
-          left: -19,
-          top: -24,
-          bottom: "50%",
-          width: 2,
-          background: "var(--border-muted)",
-          zIndex: 0
-        }} />
-      )}
-
-      {/* Horizontal connector line to this card */}
-      {isBooster && (
-        <div style={{
-          position: "absolute",
-          left: -19,
-          top: "50%",
-          width: 16,
-          height: 2,
-          background: "var(--border-muted)",
-          zIndex: 0
-        }} />
-      )}
-
-      <div className="rayum-card" style={{
-          position: "relative",
-          zIndex: 1,
-          padding: "16px 18px",
-          borderLeft: isBooster ? "4px solid var(--primary-50)" : "4px solid var(--border-default)",
-          background: item.mastered ? "var(--success-10)" : "var(--bg-surface)",
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
-          <div style={{ flex: 1 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-              {isBooster && <span className="rayum-badge orange" style={{ fontSize: 10, display: "inline-flex", alignItems: "center", gap: 4 }}><RiFlashlightFill size={12} /> Booster {depth}</span>}
-              {item.mastered && <span className="rayum-badge green" style={{ fontSize: 10, display: "inline-flex", alignItems: "center", gap: 4 }}><RiCheckboxCircleFill size={12} /> Mastered</span>}
-              <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>{item.date}</span>
+    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      <div style={{ display: "flex" }}>
+        {/* Indentation line markers */}
+        {Array.from({ length: depth }).map((_, i) => (
+          <div key={i} style={{ 
+            width: 24, 
+            borderLeft: i === depth - 1 ? "4px solid var(--primary-50)" : "1px dashed var(--border-subtle)", 
+            marginLeft: i === 0 ? 12 : 0,
+            marginRight: i === depth - 1 ? 16 : 0
+          }} />
+        ))}
+        
+        <div className="rayum-card" style={{
+            flex: 1,
+            padding: "16px 18px",
+            borderLeft: depth === 0 ? "4px solid var(--border-default)" : "none",
+            background: item.mastered ? "var(--success-10)" : "var(--bg-surface)",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                {isBooster && <span className="rayum-badge orange" style={{ fontSize: 10, display: "inline-flex", alignItems: "center", gap: 4 }}><RiFlashlightFill size={12} /> Booster {depth}</span>}
+                {item.mastered && <span className="rayum-badge green" style={{ fontSize: 10, display: "inline-flex", alignItems: "center", gap: 4 }}><RiCheckboxCircleFill size={12} /> Mastered</span>}
+                <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>{item.date}</span>
+              </div>
+              <div className="text-body-large" style={{ fontWeight: 600, color: "var(--fg-default)", marginBottom: 4 }}>{item.title}</div>
+              <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>{item.questions} questions</div>
             </div>
-            <div className="text-body-large" style={{ fontWeight: 600, color: "var(--fg-default)", marginBottom: 4 }}>{item.title}</div>
-            <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>{item.questions} questions</div>
+            <div style={{ textAlign: "right", flexShrink: 0 }}>
+              <div className="text-heading-s" style={{ color: `var(--${colorClass}-50)` }}>{pct}%</div>
+              <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>Score</div>
+            </div>
           </div>
-          <div style={{ textAlign: "right", flexShrink: 0 }}>
-            <div className="text-heading-s" style={{ color: `var(--${colorClass}-50)` }}>{pct}%</div>
-            <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>Score</div>
-          </div>
-        </div>
 
-        <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
-          <Link href={`/results/${item.id}`} className="btn btn-outline" style={{ fontSize: 12, padding: "4px 12px" }}>
-            View Analysis
-          </Link>
+          <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
+            <Link href={`/results/${item.id}`} className="btn btn-outline" style={{ fontSize: 12, padding: "4px 12px" }}>
+              View Analysis
+            </Link>
+          </div>
         </div>
       </div>
 
       {/* Recursive boosters wrapper */}
       {item.boosters && item.boosters.length > 0 && (
-        <div style={{ position: "relative", paddingLeft: 36 }}>
-          {/* Vertical line continuing down for children */}
-          <div style={{
-            position: "absolute",
-            left: 17,
-            top: 0,
-            bottom: 24, // stop before the last child's center
-            width: 2,
-            background: "var(--border-muted)",
-            zIndex: 0
-          }} />
-          
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           {item.boosters.map((booster) => (
             <TestChainItem key={booster.id} item={booster} depth={depth + 1} />
           ))}
