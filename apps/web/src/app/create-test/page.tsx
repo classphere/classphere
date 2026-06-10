@@ -59,7 +59,7 @@ export default function CreateTestPage() {
   return (
     <>
       <Navbar title="Create a Test" subtitle="Design a custom test or mock exam" breadcrumbs="Dashboard > Create a Test" />
-      <main style={{ maxWidth: 1000, margin: "0 auto", padding: "0 32px 32px 32px", width: "100%" }}>
+      <main style={{ maxWidth: 800, margin: "0 auto", padding: "0 24px 32px 24px", width: "100%" }}>
         
         {/* Step indicator */}
         <div style={{ display: "flex", alignItems: "center", marginBottom: 32, padding: "0 24px" }}>
@@ -96,31 +96,31 @@ export default function CreateTestPage() {
 
         {/* Step 1: Exam & Type */}
         {step === 1 && (
-          <div className="rayum-card" style={{ padding: 40 }}>
-            <h2 className="section-title" style={{ marginBottom: 24 }}>Select Exam</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 40 }}>
+          <div className="rayum-card" style={{ padding: 32 }}>
+            <h2 className="section-title" style={{ marginBottom: 20 }}>Select Exam</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 32 }}>
               {(["JEE", "NEET"] as ExamType[]).map((exam) => (
                 <button
                   key={exam}
                   onClick={() => { setSelectedExam(exam); setSelectedSubjects([]); setSelectedChapters([]); }}
                   style={{
-                    padding: 24, borderRadius: "var(--r-md)", cursor: "pointer",
+                    padding: 20, borderRadius: "var(--r-md)", cursor: "pointer",
                     background: selectedExam === exam ? "var(--p-10)" : "var(--bg-surface)",
                     border: selectedExam === exam ? "2px solid var(--p-50)" : "1px solid var(--border-default)",
                     textAlign: "left", transition: "all 0.2s",
                   }}
                 >
-                  <div style={{ marginBottom: 16, color: selectedExam === exam ? "var(--p-50)" : "var(--fg-muted)" }}>
-                    {exam === "JEE" ? <RiFlaskLine size={32} /> : <RiMicroscopeLine size={32} />}
+                  <div style={{ marginBottom: 12, color: selectedExam === exam ? "var(--p-50)" : "var(--fg-muted)" }}>
+                    {exam === "JEE" ? <RiFlaskLine size={28} /> : <RiMicroscopeLine size={28} />}
                   </div>
-                  <div className="text-bold" style={{ fontSize: 18, marginBottom: 4 }}>{exam === "JEE" ? "JEE Main" : "NEET-UG"}</div>
+                  <div className="text-bold" style={{ fontSize: 16, marginBottom: 4 }}>{exam === "JEE" ? "JEE Main" : "NEET-UG"}</div>
                   <div className="t-body-sm">{exam === "JEE" ? "75 Qs · 3 Hours · PCM" : "180 Qs · 3 Hours · PCB"}</div>
                 </button>
               ))}
             </div>
 
-            <h2 className="section-title" style={{ marginBottom: 24 }}>Test Type</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+            <h2 className="section-title" style={{ marginBottom: 20 }}>Test Type</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               {[
                 { value: "chapter", label: "Chapter Test", desc: "Focus on specific chapters" },
                 { value: "subject", label: "Subject Test", desc: "Full subject coverage" },
@@ -131,7 +131,7 @@ export default function CreateTestPage() {
                   key={t.value}
                   onClick={() => setConfig({ ...config, type: t.value as typeof config.type })}
                   style={{
-                    padding: 20, borderRadius: "var(--r-md)", cursor: "pointer", textAlign: "left",
+                    padding: 16, borderRadius: "var(--r-md)", cursor: "pointer", textAlign: "left",
                     background: config.type === t.value ? "var(--p-10)" : "var(--bg-surface)",
                     border: config.type === t.value ? "2px solid var(--p-50)" : "1px solid var(--border-default)",
                     transition: "all 0.2s",
@@ -143,7 +143,7 @@ export default function CreateTestPage() {
               ))}
             </div>
 
-            <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 40 }}>
+            <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 32 }}>
               <button className="btn btn-primary" style={{ display: "inline-flex", gap: 8 }} onClick={() => setStep(2)}>
                 Next: Select Chapters <RiArrowRightLine size={18} />
               </button>
@@ -153,13 +153,13 @@ export default function CreateTestPage() {
 
         {/* Step 2: Subjects & Chapters */}
         {step === 2 && (
-          <div className="rayum-card" style={{ padding: 40 }}>
-            <h2 className="section-title" style={{ marginBottom: 32 }}>
+          <div className="rayum-card" style={{ padding: 32 }}>
+            <h2 className="section-title" style={{ marginBottom: 24 }}>
               Select Subjects & Chapters
             </h2>
-            <div style={{ display: "flex", gap: 40 }}>
+            <div style={{ display: "flex", gap: 24 }}>
               {/* Subjects */}
-              <div style={{ minWidth: 200 }}>
+              <div style={{ minWidth: 160 }}>
                 <div className="t-label" style={{ marginBottom: 16 }}>
                   Subjects
                 </div>
@@ -169,7 +169,7 @@ export default function CreateTestPage() {
                       key={s}
                       onClick={() => toggleSubject(s)}
                       style={{
-                        padding: "12px 16px", borderRadius: "var(--r-md)", textAlign: "left",
+                        padding: "8px 12px", borderRadius: "var(--r-md)", textAlign: "left",
                         background: selectedSubjects.includes(s) ? "var(--p-10)" : "transparent",
                         color: selectedSubjects.includes(s) ? "var(--fg-default)" : "var(--fg-muted)",
                         fontWeight: selectedSubjects.includes(s) ? 600 : 500,
@@ -186,7 +186,7 @@ export default function CreateTestPage() {
 
               {/* Chapters */}
               <div style={{ flex: 1 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
                   <div className="t-label">
                     Chapters {selectedChapters.length > 0 && <span style={{ color: "var(--p-50)", textTransform: "none" }}>({selectedChapters.length} selected)</span>}
                   </div>
@@ -206,13 +206,13 @@ export default function CreateTestPage() {
                     Select a subject first to view chapters
                   </div>
                 ) : (
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                     {chapters.map((c) => (
                       <button
                         key={c}
                         onClick={() => toggleChapter(c)}
                         style={{
-                          padding: "8px 16px", borderRadius: "var(--r-full)", cursor: "pointer", fontSize: 13,
+                          padding: "6px 12px", borderRadius: "var(--r-full)", cursor: "pointer", fontSize: 13,
                           background: selectedChapters.includes(c) ? "var(--p-50)" : "transparent",
                           border: selectedChapters.includes(c) ? "1px solid var(--p-50)" : "1px solid var(--border-default)",
                           color: selectedChapters.includes(c) ? "white" : "var(--fg-default)",
@@ -227,7 +227,7 @@ export default function CreateTestPage() {
               </div>
             </div>
 
-            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 48 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 40 }}>
               <button className="btn btn-outline" style={{ display: "inline-flex", gap: 8 }} onClick={() => setStep(1)}>
                 <RiArrowLeftLine size={18} /> Back
               </button>
@@ -240,12 +240,12 @@ export default function CreateTestPage() {
 
         {/* Step 3: Settings */}
         {step === 3 && (
-          <div className="rayum-card" style={{ padding: 40 }}>
-            <h2 className="section-title" style={{ marginBottom: 32 }}>Test Settings</h2>
+          <div className="rayum-card" style={{ padding: 32 }}>
+            <h2 className="section-title" style={{ marginBottom: 24 }}>Test Settings</h2>
 
             {/* Question count */}
-            <div style={{ marginBottom: 32 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+            <div style={{ marginBottom: 24 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
                 <label className="text-bold">Number of Questions</label>
                 <div style={{ fontSize: 24, fontWeight: 800, color: "var(--p-50)" }}>{config.questionCount}</div>
               </div>
@@ -262,15 +262,15 @@ export default function CreateTestPage() {
             </div>
 
             {/* Difficulty */}
-            <div style={{ marginBottom: 32 }}>
-              <label className="text-bold" style={{ display: "block", marginBottom: 16 }}>Difficulty Mix</label>
-              <div style={{ display: "flex", gap: 16 }}>
+            <div style={{ marginBottom: 24 }}>
+              <label className="text-bold" style={{ display: "block", marginBottom: 12 }}>Difficulty Mix</label>
+              <div style={{ display: "flex", gap: 12 }}>
                 {["easy", "medium", "hard", "mixed"].map((d) => (
                   <button
                     key={d}
                     onClick={() => setConfig({ ...config, difficulty: d as typeof config.difficulty })}
                     style={{
-                      flex: 1, padding: "12px", borderRadius: "var(--r-md)", cursor: "pointer",
+                      flex: 1, padding: "10px", borderRadius: "var(--r-md)", cursor: "pointer",
                       background: config.difficulty === d ? "var(--p-10)" : "transparent",
                       border: config.difficulty === d ? "2px solid var(--p-50)" : "1px solid var(--border-default)",
                       color: config.difficulty === d ? "var(--p-60)" : "var(--fg-muted)",
@@ -284,9 +284,9 @@ export default function CreateTestPage() {
             </div>
 
             {/* Mode */}
-            <div style={{ marginBottom: 40 }}>
-              <label className="text-bold" style={{ display: "block", marginBottom: 16 }}>Test Mode</label>
-              <div style={{ display: "flex", gap: 16 }}>
+            <div style={{ marginBottom: 32 }}>
+              <label className="text-bold" style={{ display: "block", marginBottom: 12 }}>Test Mode</label>
+              <div style={{ display: "flex", gap: 12 }}>
                 {[
                   { value: "exam", label: "Exam Mode", desc: "Timed, no hints" },
                   { value: "practice", label: "Practice Mode", desc: "No timer, see hints" },
@@ -295,7 +295,7 @@ export default function CreateTestPage() {
                     key={m.value}
                     onClick={() => setConfig({ ...config, mode: m.value as typeof config.mode })}
                     style={{
-                      flex: 1, padding: "20px", borderRadius: "var(--r-md)", cursor: "pointer", textAlign: "left",
+                      flex: 1, padding: "16px", borderRadius: "var(--r-md)", cursor: "pointer", textAlign: "left",
                       background: config.mode === m.value ? "var(--p-10)" : "transparent",
                       border: config.mode === m.value ? "2px solid var(--p-50)" : "1px solid var(--border-default)",
                       transition: "all 0.2s",
@@ -309,9 +309,9 @@ export default function CreateTestPage() {
             </div>
 
             {/* Summary */}
-            <div style={{ padding: 24, borderRadius: "var(--r-md)", background: "var(--n-10)", border: "1px solid var(--border-default)" }}>
-              <div className="text-bold" style={{ fontSize: 16, marginBottom: 16 }}>Test Summary</div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+            <div style={{ padding: 20, borderRadius: "var(--r-md)", background: "var(--n-10)", border: "1px solid var(--border-default)" }}>
+              <div className="text-bold" style={{ fontSize: 15, marginBottom: 16 }}>Test Summary</div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 {[
                   { label: "Exam", value: selectedExam },
                   { label: "Type", value: config.type },
@@ -328,7 +328,7 @@ export default function CreateTestPage() {
               </div>
             </div>
 
-            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 48 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 40 }}>
               <button className="btn btn-outline" style={{ display: "inline-flex", gap: 8 }} onClick={() => setStep(2)}>
                 <RiArrowLeftLine size={18} /> Back
               </button>
