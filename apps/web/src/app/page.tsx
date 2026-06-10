@@ -15,6 +15,32 @@ import {
   RiSparklingFill,
   RiShieldCrossFill
 } from "@remixicon/react";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
+
+const scoreData = [
+  { name: 'Test 1', score: 45 },
+  { name: 'Test 2', score: 52 },
+  { name: 'Mock 1', score: 48 },
+  { name: 'Test 3', score: 61 },
+  { name: 'Test 4', score: 58 },
+  { name: 'Mock 2', score: 72 },
+  { name: 'Test 5', score: 68 },
+  { name: 'Mock 3', score: 86 },
+];
+
+const topicData = [
+  { name: 'Physics', value: 64, color: 'var(--s-50)' },
+  { name: 'Chemistry', value: 10, color: 'var(--p-50)' },
+  { name: 'Maths', value: 26, color: 'var(--p-20)' },
+];
+
+const microLineData = [
+  { value: 12 }, { value: 15 }, { value: 18 }, { value: 14 }, { value: 20 }, { value: 24 }, { value: 34 }
+];
+
+const microBarData = [
+  { value: 40 }, { value: 60 }, { value: 30 }, { value: 80 }, { value: 50 }, { value: 90 }, { value: 70 }, { value: 60 }, { value: 80 }, { value: 50 }
+];
 
 export default function Dashboard() {
   return (
@@ -50,10 +76,12 @@ export default function Dashboard() {
                   <span className="badge badge-dark" style={{ marginRight: 6 }}>+12% vs last week</span>
                 </div>
                 {/* Micro Chart (Line) */}
-                <div style={{ marginTop: "auto", height: 40, borderBottom: "2px solid var(--p-50)", position: "relative" }}>
-                   <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 40">
-                     <path d="M0,30 Q10,20 20,25 T40,15 T60,20 T80,5 T100,10" fill="none" stroke="var(--p-50)" strokeWidth="3"/>
-                   </svg>
+                <div style={{ marginTop: "auto", height: 48, width: "100%" }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={microLineData}>
+                      <Line type="monotone" dataKey="value" stroke="var(--p-50)" strokeWidth={3} dot={false} isAnimationActive={false} />
+                    </LineChart>
+                  </ResponsiveContainer>
                 </div>
               </div>
 
@@ -67,10 +95,18 @@ export default function Dashboard() {
                   <strong style={{ color: "var(--fg-default)" }}>86 marks</strong> avg. +15% vs last week.
                 </p>
                 {/* Micro Chart (Bars) */}
-                <div style={{ display: "flex", alignItems: "flex-end", gap: 4, height: 40, marginTop: "auto" }}>
-                   {[40, 60, 30, 80, 50, 90, 70, 60, 80, 50].map((h, i) => (
-                     <div key={i} style={{ flex: 1, height: `${h}%`, background: i % 2 === 0 ? "var(--p-20)" : "var(--p-50)", borderRadius: 2 }} />
-                   ))}
+                <div style={{ marginTop: "auto", height: 48, width: "100%" }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={microBarData} margin={{ top: 0, bottom: 0, left: 0, right: 0 }}>
+                      <Bar dataKey="value" fill="var(--p-50)" radius={[2, 2, 0, 0]} isAnimationActive={false}>
+                        {
+                          microBarData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={index % 2 === 0 ? "var(--p-20)" : "var(--p-50)"} />
+                          ))
+                        }
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
                 </div>
               </div>
 
@@ -139,16 +175,25 @@ export default function Dashboard() {
                </div>
              </div>
              
-             {/* Large Bar Chart */}
-             <div style={{ display: "flex", alignItems: "flex-end", gap: 8, height: 200, paddingBottom: 32, marginTop: "auto" }}>
-                {[30, 45, 60, 40, 70, 90, 60, 30, 40, 50, 45, 30, 20, 40, 100, 70, 50, 40].map((h, i) => (
-                  <div key={i} style={{ flex: 1, height: `${h}%`, background: "var(--s-50)", borderRadius: "4px 4px 0 0", opacity: i % 3 === 0 ? 0.4 : 1 }} />
-                ))}
+             {/* Real Recharts Bar Chart */}
+             <div style={{ height: 240, width: "100%", marginTop: "auto", marginLeft: -20 }}>
+               <ResponsiveContainer width="100%" height="100%">
+                 <BarChart data={scoreData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }} barSize={36}>
+                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border-default)" />
+                   <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: 'var(--fg-muted)', fontWeight: 500 }} dy={10} />
+                   <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: 'var(--fg-muted)', fontWeight: 500 }} dx={-10} domain={[0, 100]} />
+                   <Tooltip 
+                     cursor={{ fill: 'var(--n-10)' }}
+                     contentStyle={{ borderRadius: 'var(--r-md)', border: '1px solid var(--border-default)', boxShadow: 'var(--sh-200)' }}
+                     itemStyle={{ fontWeight: 600, color: 'var(--fg-default)' }}
+                   />
+                   <Bar dataKey="score" fill="var(--s-50)" radius={[4, 4, 0, 0]} />
+                 </BarChart>
+               </ResponsiveContainer>
              </div>
              {/* Chart Legend */}
-             <div style={{ display: "flex", gap: 16, fontSize: 12, color: "var(--fg-muted)", fontWeight: 500 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 6 }}><div style={{ width: 12, height: 12, background: "var(--s-50)", borderRadius: 2 }}/> Actual Score</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 6 }}><div style={{ width: 12, height: 12, background: "var(--s-50)", opacity: 0.4, borderRadius: 2 }}/> vs 2025</div>
+             <div style={{ display: "flex", gap: 16, fontSize: 12, color: "var(--fg-muted)", fontWeight: 500, marginTop: 16 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 6 }}><div style={{ width: 12, height: 12, background: "var(--s-50)", borderRadius: 2 }}/> Test Score</div>
              </div>
           </div>
 
@@ -161,9 +206,30 @@ export default function Dashboard() {
                </div>
             </div>
             
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: 180, marginBottom: 32, position: "relative" }}>
-              <div style={{ width: 160, height: 160, borderRadius: "50%", border: "24px solid var(--s-50)", borderLeftColor: "var(--p-50)", borderBottomColor: "var(--p-20)" }}></div>
-              <div style={{ position: "absolute", fontSize: 32, fontWeight: 800 }}>64%</div>
+            <div style={{ height: 180, width: "100%", position: "relative", marginBottom: 32 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={topicData}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={64}
+                    outerRadius={80}
+                    paddingAngle={4}
+                    dataKey="value"
+                    stroke="none"
+                  >
+                    {topicData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  <Tooltip 
+                    contentStyle={{ borderRadius: 'var(--r-md)', border: '1px solid var(--border-default)', boxShadow: 'var(--sh-200)' }}
+                    itemStyle={{ fontWeight: 600 }}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+              <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", fontSize: 28, fontWeight: 800 }}>64%</div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: "auto" }}>
@@ -218,8 +284,8 @@ export default function Dashboard() {
               </span>
               <h3 className="section-title" style={{ fontSize: 20, marginBottom: 16 }}>Critical Boosters Ready</h3>
               <div style={{ display: "flex", gap: -8, marginBottom: 16 }}>
-                 <div className="avatar avatar-lg" style={{ border: "2px solid white", zIndex: 3, background: "url(https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=100&auto=format&fit=crop) center/cover" }}></div>
-                 <div className="avatar avatar-lg" style={{ border: "2px solid white", marginLeft: -12, zIndex: 2, background: "url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop) center/cover" }}></div>
+                 <div className="avatar avatar-lg" style={{ border: "2px solid white", zIndex: 3, background: "var(--n-90)" }}><RiShieldCrossFill size={20} /></div>
+                 <div className="avatar avatar-lg" style={{ border: "2px solid white", marginLeft: -12, zIndex: 2, background: "var(--n-70)" }}><RiTestTubeLine size={20} /></div>
                  <div className="avatar avatar-lg" style={{ border: "2px solid white", marginLeft: -12, zIndex: 1, background: "var(--n-20)", color: "var(--n-60)" }}>+2</div>
               </div>
               <div style={{ display: "flex", gap: 12, alignItems: "center", marginTop: 16 }}>
