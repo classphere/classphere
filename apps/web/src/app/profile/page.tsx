@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "@/components/layout/Navbar";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { RiCheckFill } from "@remixicon/react";
 
@@ -9,14 +9,25 @@ function ProfileContent() {
   const searchParams = useSearchParams();
   const role = searchParams.get("role") || "student";
 
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+
+  const handleSave = () => {
+    setSaving(true);
+    setTimeout(() => {
+      setSaving(false);
+      setSaved(true);
+      setTimeout(() => setSaved(false), 2000);
+    }, 800);
+  };
+
   // Data
   const data = {
-    name: "William Donat",
-    email: "william.donat@rayum.app",
-    job: "Ecommerce Operations Lead",
-    country: "United Kingdom",
-    phone: "+44 7700 900123",
-    bio: "Ops & CX lead. Focus on retention, AOV and on-time delivery.",
+    name: "Harsh Singh",
+    email: "harshsingh15dec@gmail.com",
+    exam: "JEE Main",
+    phone: "+91 9876543210",
+    bio: "JEE 2026 Aspirant focusing on Physics and Maths.",
   };
 
   return (
@@ -85,15 +96,15 @@ function ProfileContent() {
             </div>
 
             <div>
-              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Job title</label>
-              <input type="text" className="input" defaultValue={data.job} />
+              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Target Exam</label>
+              <input type="text" className="input" defaultValue={data.exam} />
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
               <div>
-                <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Country</label>
+                <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Role</label>
                 <div className="search-bar" style={{ padding: "10px 14px", borderRadius: "var(--r-full)" }}>
-                   <input type="text" defaultValue={data.country} readOnly />
+                   <input type="text" defaultValue={role.toUpperCase()} readOnly />
                 </div>
               </div>
               <div>
@@ -106,8 +117,8 @@ function ProfileContent() {
               <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Bio</label>
               <textarea className="input textarea" defaultValue={data.bio} />
               <div className="t-body-sm" style={{ marginTop: 6, display: "flex", justifyContent: "space-between" }}>
-                <span>Keep it short—scope and key metrics.</span>
-                <span>60/100</span>
+                <span>Keep it short—your goals and focus.</span>
+                <span>48/100</span>
               </div>
             </div>
           </div>
@@ -140,18 +151,8 @@ function ProfileContent() {
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
               <div>
-                <div className="text-bold">Order Updates</div>
-                <div className="t-body-sm">Get notified when an order is placed, updated or cancelled</div>
-              </div>
-              <label className="switch">
-                <input type="checkbox" />
-                <span className="switch-track"></span>
-              </label>
-            </div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
-              <div>
-                <div className="text-bold">Payment Alerts</div>
-                <div className="t-body-sm">Be informed when a payment is received or fails</div>
+                <div className="text-bold">Test Reminders</div>
+                <div className="t-body-sm">Get notified 24 hours before a scheduled test</div>
               </div>
               <label className="switch">
                 <input type="checkbox" defaultChecked />
@@ -160,8 +161,18 @@ function ProfileContent() {
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
               <div>
-                <div className="text-bold">Inventory Warnings</div>
-                <div className="t-body-sm">Receive alerts when stock levels are low</div>
+                <div className="text-bold">Performance Reports</div>
+                <div className="t-body-sm">Receive a weekly email summary of your test scores</div>
+              </div>
+              <label className="switch">
+                <input type="checkbox" defaultChecked />
+                <span className="switch-track"></span>
+              </label>
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
+              <div>
+                <div className="text-bold">Doubt Resolution</div>
+                <div className="t-body-sm">Get alerts when a teacher answers your doubt</div>
               </div>
               <label className="switch">
                 <input type="checkbox" defaultChecked />
@@ -183,7 +194,9 @@ function ProfileContent() {
           {/* Action Footer */}
           <div style={{ display: "flex", justifyContent: "flex-end", gap: 16, marginTop: 48 }}>
             <button className="btn btn-outline" style={{ border: "1px solid var(--border-default)" }}>Discard Changes</button>
-            <button className="btn btn-dark">Save Changes</button>
+            <button className="btn btn-dark" onClick={handleSave} disabled={saving} style={{ width: 140 }}>
+              {saving ? "Saving..." : saved ? "Saved!" : "Save Changes"}
+            </button>
           </div>
 
         </div>

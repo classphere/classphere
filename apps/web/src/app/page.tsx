@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { mockUser, mockStats, mockRecentTests } from "@/lib/mock-data";
 import {
@@ -17,16 +18,15 @@ import {
 } from "@remixicon/react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
 
-const scoreData = [
-  { name: 'Test 1', score: 45 },
-  { name: 'Test 2', score: 52 },
-  { name: 'Mock 1', score: 48 },
-  { name: 'Test 3', score: 61 },
-  { name: 'Test 4', score: 58 },
-  { name: 'Mock 2', score: 72 },
-  { name: 'Test 5', score: 68 },
-  { name: 'Mock 3', score: 86 },
-];
+const scoreDataOverallJEE = [ { name: 'Test 1', score: 120 }, { name: 'Test 2', score: 150 }, { name: 'Mock 1', score: 140 }, { name: 'Test 3', score: 180 }, { name: 'Test 4', score: 175 }, { name: 'Mock 2', score: 210 }, { name: 'Test 5', score: 200 }, { name: 'Mock 3', score: 255 } ];
+const scoreDataPhysicsJEE = [ { name: 'Test 1', score: 45 }, { name: 'Test 2', score: 52 }, { name: 'Mock 1', score: 48 }, { name: 'Test 3', score: 61 }, { name: 'Test 4', score: 58 }, { name: 'Mock 2', score: 72 }, { name: 'Test 5', score: 68 }, { name: 'Mock 3', score: 86 } ];
+const scoreDataChemJEE = [ { name: 'Test 1', score: 35 }, { name: 'Test 2', score: 42 }, { name: 'Mock 1', score: 38 }, { name: 'Test 3', score: 51 }, { name: 'Test 4', score: 48 }, { name: 'Mock 2', score: 62 }, { name: 'Test 5', score: 58 }, { name: 'Mock 3', score: 76 } ];
+const scoreDataMathsJEE = [ { name: 'Test 1', score: 40 }, { name: 'Test 2', score: 56 }, { name: 'Mock 1', score: 54 }, { name: 'Test 3', score: 68 }, { name: 'Test 4', score: 69 }, { name: 'Mock 2', score: 76 }, { name: 'Test 5', score: 74 }, { name: 'Mock 3', score: 93 } ];
+
+const scoreDataOverallNEET = [ { name: 'Test 1', score: 320 }, { name: 'Test 2', score: 410 }, { name: 'Mock 1', score: 390 }, { name: 'Test 3', score: 520 }, { name: 'Test 4', score: 490 }, { name: 'Mock 2', score: 610 }, { name: 'Test 5', score: 580 }, { name: 'Mock 3', score: 680 } ];
+const scoreDataPhysicsNEET = [ { name: 'Test 1', score: 70 }, { name: 'Test 2', score: 95 }, { name: 'Mock 1', score: 85 }, { name: 'Test 3', score: 120 }, { name: 'Test 4', score: 110 }, { name: 'Mock 2', score: 145 }, { name: 'Test 5', score: 135 }, { name: 'Mock 3', score: 160 } ];
+const scoreDataChemNEET = [ { name: 'Test 1', score: 80 }, { name: 'Test 2', score: 105 }, { name: 'Mock 1', score: 95 }, { name: 'Test 3', score: 130 }, { name: 'Test 4', score: 120 }, { name: 'Mock 2', score: 155 }, { name: 'Test 5', score: 145 }, { name: 'Mock 3', score: 170 } ];
+const scoreDataBioNEET = [ { name: 'Test 1', score: 170 }, { name: 'Test 2', score: 210 }, { name: 'Mock 1', score: 210 }, { name: 'Test 3', score: 270 }, { name: 'Test 4', score: 260 }, { name: 'Mock 2', score: 310 }, { name: 'Test 5', score: 300 }, { name: 'Mock 3', score: 350 } ];
 
 const topicData = [
   { name: 'Physics', value: 64, color: 'var(--s-50)' },
@@ -43,6 +43,39 @@ const microBarData = [
 ];
 
 export default function Dashboard() {
+  const isNEET = mockUser.batch.includes("NEET");
+  const subjects = ["Overall", "Physics", "Chemistry", isNEET ? "Biology" : "Maths"];
+  const [activeSubject, setActiveSubject] = useState("Overall");
+
+  const currentScoreData = isNEET
+    ? (activeSubject === "Overall" ? scoreDataOverallNEET :
+       activeSubject === "Physics" ? scoreDataPhysicsNEET :
+       activeSubject === "Chemistry" ? scoreDataChemNEET : scoreDataBioNEET)
+    : (activeSubject === "Overall" ? scoreDataOverallJEE :
+       activeSubject === "Physics" ? scoreDataPhysicsJEE :
+       activeSubject === "Chemistry" ? scoreDataChemJEE : scoreDataMathsJEE);
+
+  const getScoreDisplay = () => {
+    if (activeSubject === "Overall") return { score: isNEET ? "680 / 720" : "255 / 300", text: "Best performing month driven by Physics." };
+    if (activeSubject === "Physics") return { score: isNEET ? "160 / 180" : "86 / 100", text: "Your strongest subject. Top 5% in batch." };
+    if (activeSubject === "Chemistry") return { score: isNEET ? "170 / 180" : "76 / 100", text: "Consistent improvement over last 3 tests." };
+    if (activeSubject === "Maths") return { score: "93 / 100", text: "Steady progress. Calculus needs attention." };
+    return { score: "350 / 360", text: "Excellent performance in Genetics." }; // Biology
+  };
+
+  const { score, text } = getScoreDisplay();
+
+  const getYAxisDomain = () => {
+    if (isNEET) {
+       if (activeSubject === "Overall") return [0, 720];
+       if (activeSubject === "Biology") return [0, 360];
+       return [0, 180];
+    } else {
+       if (activeSubject === "Overall") return [0, 300];
+       return [0, 100];
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -163,25 +196,48 @@ export default function Dashboard() {
                <div>
                  <h3 className="section-title">Score Performance</h3>
                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
-                   <span style={{ fontSize: 24, fontWeight: 800 }}>86.4%</span>
+                   <span style={{ fontSize: 24, fontWeight: 800 }}>{score}</span>
                    <span className="badge badge-dark">
                      <RiArrowRightUpLine size={12} /> 105% of Goal
                    </span>
                  </div>
-                 <p className="t-body-sm" style={{ marginTop: 8 }}>Best performing month driven by Physics.</p>
+                 <p className="t-body-sm" style={{ marginTop: 8 }}>{text}</p>
                </div>
-               <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 500, color: "var(--fg-muted)", cursor: "pointer", height: "fit-content" }}>
-                 Year: 2026 <RiArrowDownSLine size={16} />
+               
+               <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 16 }}>
+                 {/* Subject Tabs */}
+                 <div style={{ display: "flex", gap: 4, background: "var(--neutral-10)", padding: 4, borderRadius: "var(--r-md)" }}>
+                   {subjects.map(sub => (
+                     <button
+                       key={sub}
+                       onClick={() => setActiveSubject(sub)}
+                       style={{
+                         padding: "6px 12px",
+                         borderRadius: "var(--r-sm)",
+                         border: "none",
+                         background: activeSubject === sub ? "var(--bg-surface)" : "transparent",
+                         color: activeSubject === sub ? "var(--fg-default)" : "var(--fg-muted)",
+                         fontWeight: activeSubject === sub ? 700 : 500,
+                         fontSize: 12,
+                         cursor: "pointer",
+                         boxShadow: activeSubject === sub ? "var(--sh-100)" : "none",
+                         transition: "all 0.15s"
+                       }}
+                     >
+                       {sub}
+                     </button>
+                   ))}
+                 </div>
                </div>
              </div>
              
              {/* Real Recharts Bar Chart */}
              <div style={{ height: 240, width: "100%", marginTop: "auto", marginLeft: -20 }}>
                <ResponsiveContainer width="100%" height="100%">
-                 <BarChart data={scoreData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }} barSize={36}>
+                 <BarChart data={currentScoreData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }} barSize={36}>
                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border-default)" />
                    <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: 'var(--fg-muted)', fontWeight: 500 }} dy={10} />
-                   <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: 'var(--fg-muted)', fontWeight: 500 }} dx={-10} domain={[0, 100]} />
+                   <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: 'var(--fg-muted)', fontWeight: 500 }} dx={-10} domain={getYAxisDomain()} />
                    <Tooltip 
                      cursor={{ fill: 'var(--n-10)' }}
                      contentStyle={{ borderRadius: 'var(--r-md)', border: '1px solid var(--border-default)', boxShadow: 'var(--sh-200)' }}

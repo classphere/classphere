@@ -1,13 +1,25 @@
 "use client";
 
 import Navbar from "@/components/layout/Navbar";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { RiSmartphoneLine, RiComputerLine, RiGoogleFill, RiWhatsappFill, RiCheckFill, RiDownloadCloud2Line, RiErrorWarningLine } from "@remixicon/react";
 
 function SettingsContent() {
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+
+  const handleSave = () => {
+    setSaving(true);
+    setTimeout(() => {
+      setSaving(false);
+      setSaved(true);
+      setTimeout(() => setSaved(false), 2000);
+    }, 800);
+  };
+
   return (
     <>
-      <Navbar title="Store Settings" subtitle="Adjust key settings to shape your store experience." breadcrumbs="Dashboard > Store Settings" />
+      <Navbar title="Platform Settings" subtitle="Manage your account, preferences, and test settings." breadcrumbs="Dashboard > Settings" />
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px 32px 32px", width: "100%", display: "flex", gap: 32, alignItems: "flex-start" }}>
         
         {/* Left Nav Menu */}
@@ -57,28 +69,28 @@ function SettingsContent() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 24, marginBottom: 48 }}>
             <div>
-              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Store name</label>
-              <input type="text" className="input" defaultValue="Rayum Store" />
-              <div className="t-body-sm" style={{ marginTop: 6 }}>Shown on invoices and emails</div>
+              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Display Name</label>
+              <input type="text" className="input" defaultValue="Harsh Singh" />
+              <div className="t-body-sm" style={{ marginTop: 6 }}>Shown on leaderboards and doubts.</div>
             </div>
             
             <div>
-              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Store description</label>
-              <textarea className="input textarea" defaultValue="Modern home & lifestyle essentials. Ships from San Francisco. Prices in USD." />
-              <div className="t-body-sm" style={{ marginTop: 6, textAlign: "right" }}>79/100</div>
+              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Bio</label>
+              <textarea className="input textarea" defaultValue="JEE 2026 Aspirant focusing on Physics and Maths." />
+              <div className="t-body-sm" style={{ marginTop: 6, textAlign: "right" }}>48/100</div>
             </div>
 
             <div>
-              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Primary domain</label>
-              <input type="text" className="input" defaultValue="rayumstore.com" />
-              <div className="t-body-sm" style={{ marginTop: 6 }}>Used for order and support notifications.</div>
+              <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Email Address</label>
+              <input type="text" className="input" defaultValue="harshsingh15dec@gmail.com" />
+              <div className="t-body-sm" style={{ marginTop: 6 }}>Used for login and important communications.</div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
               <div>
-                <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Country</label>
+                <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Target Exam</label>
                 <div className="search-bar" style={{ padding: "10px 14px", borderRadius: "var(--r-full)" }}>
-                   <input type="text" defaultValue="United States (US)" readOnly />
+                   <input type="text" defaultValue="JEE Main" readOnly />
                 </div>
               </div>
               <div>
@@ -122,8 +134,8 @@ function SettingsContent() {
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
               <div>
-                <div className="text-bold">Order Updates</div>
-                <div className="t-body-sm">Get notified when an order is placed, updated or cancelled.</div>
+                <div className="text-bold">Test Reminders</div>
+                <div className="t-body-sm">Get notified 24 hours before a scheduled test.</div>
               </div>
               <label className="switch">
                 <input type="checkbox" />
@@ -132,8 +144,8 @@ function SettingsContent() {
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
               <div>
-                <div className="text-bold">Payment Alerts</div>
-                <div className="t-body-sm">Be informed when a payment is received or fails.</div>
+                <div className="text-bold">Performance Reports</div>
+                <div className="t-body-sm">Receive a weekly email summary of your test scores.</div>
               </div>
               <label className="switch">
                 <input type="checkbox" defaultChecked />
@@ -142,8 +154,8 @@ function SettingsContent() {
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
               <div>
-                <div className="text-bold">Inventory Warnings</div>
-                <div className="t-body-sm">Receive alerts when stock levels are low.</div>
+                <div className="text-bold">Doubt Resolution</div>
+                <div className="t-body-sm">Get alerts when a teacher answers your doubt.</div>
               </div>
               <label className="switch">
                 <input type="checkbox" defaultChecked />
@@ -155,7 +167,9 @@ function SettingsContent() {
           {/* Action Footer */}
           <div style={{ display: "flex", justifyContent: "flex-end", gap: 16, marginTop: 48 }}>
             <button className="btn btn-outline" style={{ border: "1px solid var(--border-default)" }}>Discard Changes</button>
-            <button className="btn btn-dark">Save Changes</button>
+            <button className="btn btn-dark" onClick={handleSave} disabled={saving} style={{ width: 140 }}>
+              {saving ? "Saving..." : saved ? "Saved!" : "Save Changes"}
+            </button>
           </div>
 
         </div>
