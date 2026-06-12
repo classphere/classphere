@@ -271,6 +271,36 @@ export const mockLeaderboard = Array.from({ length: 20 }, (_, i) => ({
   isCurrentUser: i === 6,
 }));
 
+export const mockInstituteLeaderboard = Array.from({ length: 20 }, (_, i) => ({
+  rank: i + 1,
+  name: [
+    "Rahul Verma", "Vikram Patel", "Arjun Mehta", "Siddharth Rao", "Aditya Kumar",
+    "Divya Joshi", "Harsh Singh", "Rohan Gupta", "Priya Sharma", "Meera Pillai",
+    "Kavya Nair", "Karan Malhotra", "Ananya Singh", "Sneha Reddy", "Shreya Das",
+    "Nikhil Sinha", "Pooja Agarwal", "Arnav Kapoor", "Riya Bose", "Tanmay Shah",
+  ][i],
+  avgScore: Math.round(82 - i * 1.5 + Math.random() * 2),
+  totalTests: Math.round(35 - i * 0.5 + Math.random() * 4),
+  streak: Math.round(15 - i * 0.5 + Math.random() * 2),
+  percentile: parseFloat((98 - i * 2.0).toFixed(1)),
+  isCurrentUser: i === 6,
+}));
+
+export const mockBatchLeaderboard = Array.from({ length: 20 }, (_, i) => ({
+  rank: i + 1,
+  name: [
+    "Arjun Mehta", "Siddharth Rao", "Harsh Singh", "Aditya Kumar", "Rohan Gupta",
+    "Rahul Verma", "Vikram Patel", "Divya Joshi", "Priya Sharma", "Meera Pillai",
+    "Kavya Nair", "Karan Malhotra", "Ananya Singh", "Sneha Reddy", "Shreya Das",
+    "Nikhil Sinha", "Pooja Agarwal", "Arnav Kapoor", "Riya Bose", "Tanmay Shah",
+  ][i],
+  avgScore: Math.round(80 - i * 1.2 + Math.random() * 2),
+  totalTests: Math.round(30 - i * 0.4 + Math.random() * 3),
+  streak: Math.round(12 - i * 0.4 + Math.random() * 2),
+  percentile: parseFloat((97 - i * 1.8).toFixed(1)),
+  isCurrentUser: i === 2,
+}));
+
 // Test history with booster chain
 export const mockHistory = [
   {

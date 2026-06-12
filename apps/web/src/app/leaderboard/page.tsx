@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
-import { mockLeaderboard, mockUser } from "@/lib/mock-data";
+import { mockLeaderboard, mockInstituteLeaderboard, mockBatchLeaderboard, mockUser } from "@/lib/mock-data";
 import {
   RiMedalFill,
   RiFireFill
@@ -96,7 +96,7 @@ export default function LeaderboardPage() {
             ))}
           </div>
 
-          {mockLeaderboard.map((student) => {
+          {(activeTab === "Global" ? mockLeaderboard : activeTab === "Institute" ? mockInstituteLeaderboard : mockBatchLeaderboard).map((student) => {
             const getMedal = () => {
               if (student.rank === 1) return <RiMedalFill color="#EAB308" size={24} />;
               if (student.rank === 2) return <RiMedalFill color="#94A3B8" size={24} />;
