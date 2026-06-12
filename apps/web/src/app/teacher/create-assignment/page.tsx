@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/layout/Navbar";
 import { useState } from "react";
-import { RiAddCircleLine, RiCalendarLine, RiTeamLine, RiBookmarkLine } from "@remixicon/react";
+import { RiAddCircleLine, RiCalendarLine, RiTeamLine, RiBookmarkLine, RiCheckFill } from "@remixicon/react";
 
 export default function CreateAssignmentPage() {
   const [step, setStep] = useState(1);
@@ -118,8 +118,20 @@ export default function CreateAssignmentPage() {
 
               <div style={{ display: "flex", justifyContent: "space-between", marginTop: 16 }}>
                 <button className="btn btn-ghost" onClick={() => setStep(2)}>Back</button>
-                <button className="btn btn-primary" onClick={() => alert("Assignment created successfully!")}>Publish Assignment</button>
+                <button className="btn btn-primary" onClick={() => setStep(4)}>Publish Assignment</button>
               </div>
+            </div>
+          )}
+          {step === 4 && (
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, padding: "48px 0" }}>
+              <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(34, 197, 94, 0.1)", color: "var(--success-50)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <RiCheckFill size={32} />
+              </div>
+              <h2 className="text-heading-s" style={{ color: "var(--fg-default)" }}>Assignment Published!</h2>
+              <p className="text-body-base" style={{ color: "var(--fg-muted)", textAlign: "center", maxWidth: 400 }}>
+                The assignment has been successfully created and scheduled for the selected batches.
+              </p>
+              <button className="btn btn-primary" style={{ marginTop: 24 }} onClick={() => window.location.href = "/teacher"}>Return to Dashboard</button>
             </div>
           )}
         </div>
