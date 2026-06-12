@@ -12,6 +12,19 @@ const mockDoubts = [
 export default function StudentDoubtsPage() {
   const [doubtText, setDoubtText] = useState("");
   const [subject, setSubject] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = () => {
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setDoubtText("");
+      setSubject("");
+      setTimeout(() => setIsSubmitted(false), 3000);
+    }, 1000);
+  };
 
   return (
     <>
@@ -54,8 +67,13 @@ export default function StudentDoubtsPage() {
               <button className="btn btn-outline" style={{ display: "flex", alignItems: "center", gap: 8, borderRadius: "var(--r-full)" }}>
                 <RiImageAddLine size={18} /> Upload Image
               </button>
-              <button className="btn btn-dark" style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 24px" }} disabled={!doubtText || !subject}>
-                Submit Doubt <RiSendPlaneFill size={18} />
+              <button 
+                className="btn btn-dark" 
+                style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 24px" }} 
+                disabled={!doubtText || !subject || isSubmitting || isSubmitted}
+                onClick={handleSubmit}
+              >
+                {isSubmitting ? "Submitting..." : isSubmitted ? "Submitted Successfully!" : <>Submit Doubt <RiSendPlaneFill size={18} /></>}
               </button>
             </div>
           </div>
