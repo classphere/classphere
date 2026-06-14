@@ -1,0 +1,3696 @@
+[
+  {
+    "id": "d7f20653-0f98-4328-a616-831f5b961ac3",
+    "question_number": 1,
+    "question_text": "Position of an ant ($\\mathrm{S}$ in metres) moving in $\\mathrm{Y}-\\mathrm{Z}$ plane is given by $\\mathrm{S}=2 \\mathrm{t}^2 \\hat{\\mathrm{j}}+5 \\hat{\\mathrm{k}}$ (where $\\mathrm{t}$ is in second). The magnitude and direction of velocity of the ant at $\\mathrm{t}=1 \\mathrm{~s}$ will be :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$16 \\mathrm{~m} / \\mathrm{s}$ in $y$-direction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$4 \\mathrm{~m} / \\mathrm{s}$ in $\\mathrm{x}$-direction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$9 \\mathrm{~m} / \\mathrm{s}$ in $\\mathrm{z}$-direction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$4 \\mathrm{~m} / \\mathrm{s}$ in y-direction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$\\vec{v}=\\frac{d \\vec{s}}{d t}=4 t \\hat{j}$\nAt $\\mathrm{t}=1 \\sec \\overrightarrow{\\mathrm{v}}=4 \\hat{\\mathrm{j}}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Kinematics",
+    "topic": "speed and velocity",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "66ab4a6e-1c70-40f2-b9e4-62158e1e8bf9",
+    "question_number": 2,
+    "question_text": "Given below are two statements :\nStatement (I) :Viscosity of gases is greater than that of liquids.\nStatement (II) : Surface tension of a liquid decreases due to the presence of insoluble impurities.\nIn the light of the above statements, choose the most appropriate answer from the options given below:",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Statement I is correct but statement II is incorrect",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Statement I is incorrect but Statement II is correct",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Both Statement I and Statement II are incorrect",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Both Statement I and Statement II are correct",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gases have less viscosity.\nDue to insoluble impurities like detergent surface tension decreases",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Properties of Solids and Liquids",
+    "topic": "Surface energy and surface tension",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2610fd01-14d4-4a16-8605-7619328f28c7",
+    "question_number": 3,
+    "question_text": "If the refractive index of the material of a prism is $\\cot \\left(\\frac{\\mathrm{A}}{2}\\right)$, where $\\mathrm{A}$ is the angle of prism then the angle of minimum deviation will be",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\pi-2 \\mathrm{~A}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{\\pi}{2}-2 \\mathrm{~A}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\pi-\\mathrm{A}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{\\pi}{2}-\\mathrm{A}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "$\\begin{aligned} & \\cot \\frac{A}{2}=\\frac{\\sin \\left(\\frac{A+\\delta_{\\min }}{2}\\right)}{\\sin \\frac{A}{2}} \\\\ & \\Rightarrow \\cos \\frac{A}{2}=\\sin \\left(\\frac{A+\\delta_{\\min }}{2}\\right) \\\\ & \\frac{A+\\delta_{\\min }}{2}=\\frac{\\pi}{2}-\\frac{A}{2} \\\\ & \\delta_{\\text {min }}=\\pi-2 \\mathrm{~A}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Experimental Skills",
+    "topic": "The plot of the angle of deviation vs angle of inc",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e9ce8ce7-9123-47ae-9289-dc7c1c338043",
+    "question_number": 4,
+    "question_text": "A proton moving with a constant velocity passes through a region of space without any change in its velocity. If $\\overrightarrow{\\mathrm{E}}$ and $\\overrightarrow{\\mathrm{B}}$ represent the electric and magnetic fields respectively, then the region of space may have :\n(A) $\\mathrm{E}=0, \\mathrm{~B}=0$\n(B) $\\mathrm{E}=0, \\mathrm{~B} \\neq 0$\n(C) $\\mathrm{E} \\neq 0, \\mathrm{~B}=0$\n(D) $\\mathrm{E} \\neq 0, \\mathrm{~B} \\neq 0$\nChoose the most appropriate answer from the options given below :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "(A), (B) and (C) only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(A), (C) and (D) only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(A), (B) and (D) only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(B), (C) and (D) only",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Net force on particle must be zero i.e. $\\mathrm{q} \\overrightarrow{\\mathrm{E}}+\\mathrm{q} \\overrightarrow{\\mathrm{V}} \\times \\overrightarrow{\\mathrm{B}}=0$\nPossible cases are\n(i) $\\overrightarrow{\\mathrm{E}} \\& \\overrightarrow{\\mathrm{B}}=0$\n(ii) $\\overrightarrow{\\mathrm{V}} \\times \\overrightarrow{\\mathrm{B}}=0, \\overrightarrow{\\mathrm{E}}=0$\n(iii) $q \\vec{E}=-q \\vec{V} \\times \\vec{B}$\n$\\overrightarrow{\\mathrm{E}} \\neq 0 \\& \\overrightarrow{\\mathrm{B}} \\neq 0$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Magnetic Effects of Current and Magnetism",
+    "topic": "Force on a moving charge in uniform magnetic and e",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f6ec3538-c4d6-4cee-af0d-e6bfff306ab1",
+    "question_number": 5,
+    "question_text": "The acceleration due to gravity on the surface of earth is $\\mathrm{g}$. If the diameter of earth reduces to half of its original value and mass remains constant, then acceleration due to gravity on the surface of earth would be :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$g / 4$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$2 \\mathrm{~g}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$g / 2$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$4 \\mathrm{~g}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$\\begin{aligned} & \\mathrm{g}=\\frac{\\mathrm{GM}}{\\mathrm{R}^2} \\Rightarrow \\mathrm{g} \\propto \\frac{1}{\\mathrm{R}^2} \\\\ & \\frac{\\mathrm{g}_2}{\\mathrm{~g}_1}=\\frac{\\mathrm{R}_1^2}{\\mathrm{R}_2^2} \\\\ & \\mathrm{~g}_2=4 \\mathrm{~g}_1\\left(\\mathrm{R}_2=\\frac{\\mathrm{R}_1}{2}\\right)\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Properties of Solids and Liquids",
+    "topic": "effect of gravity on fluid pressure",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "577d6e3f-0264-4605-a5c0-43bdddd9f552",
+    "question_number": 6,
+    "question_text": "A train is moving with a speed of $12 \\mathrm{~m} / \\mathrm{s}$ on rails which are $1.5 \\mathrm{~m}$ apart. To negotiate a curve radius $400 \\mathrm{~m}$, the height by which the outer rail should be raised with respect to the inner rail is (Given, $g=$ $10 \\mathrm{~m} / \\mathrm{s}^2$) :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$6.0 \\mathrm{~cm}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$5.4 \\mathrm{~cm}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$4.8 \\mathrm{~cm}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$4.2 \\mathrm{~cm}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "$\\tan \\theta=\\frac{\\mathrm{v}^2}{\\mathrm{Rg}}=\\frac{12 \\times 12}{10 \\times 400}$\n\n$\\begin{aligned} & \\tan \\theta=\\frac{\\mathrm{h}}{1.5} \\\\ & \\Rightarrow \\frac{\\mathrm{h}}{1.5}=\\frac{144}{4000} \\\\ & \\mathrm{~h}=5.4 \\mathrm{~cm}\\end{aligned}$",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/05198c74479b08856b174e3cf5c178e3d0fa0119cfcad38d7c69ff1e063a4300.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Experimental Skills",
+    "topic": "Familiarity with the basic approach and observatio",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2c54aeba-f254-4a62-857b-1291a8a35a61",
+    "question_number": 7,
+    "question_text": "Which of the following circuits is reverse - biased?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/9e423a1aa0c6cc1b0532bad356725758dd7f0bba0edeb50ca813fb63c9f31496.png"
+      },
+      {
+        "id": "B",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/2912d76362e3f1b84d44df4689e62e2e3f42e0464a1404bba1d4423261b94b81.png"
+      },
+      {
+        "id": "C",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/44b63ecc5b124248d0b84b1687b5f280bd6df1958673e82e3858ab88d686683c.png"
+      },
+      {
+        "id": "D",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/42af4a042b104a4bcb85c476abe964179f85b38e4257f8994035bb0af7ca4c98.png"
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$P$ end should be at higher potential for forward biasing.",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Electronic Devices",
+    "topic": "semiconductor diode: I-V characteristics in forwar",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "938d6b79-0ca8-4d58-a10a-06b2dd4796d6",
+    "question_number": 8,
+    "question_text": "Identify the physical quantity that cannot be measured using spherometer :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Radius of curvature of concave surface",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Specific rotation of liquids",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Thickness of thin plates",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Radius of curvature of convex surface",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Spherometer can be used to measure curvature of surface.",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Properties of Solids and Liquids",
+    "topic": "Surface energy and surface tension",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a9cfc818-180d-4938-9385-de44822be7ad",
+    "question_number": 9,
+    "question_text": "Two bodies of mass $4 \\mathrm{~g}$ and $25 \\mathrm{~g}$ are moving with equal kinetic energies. The ratio of magnitude of their linear momentum is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$3: 5$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$5: 4$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$2: 5$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$4: 5$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "$\\begin{aligned} & \\frac{\\mathrm{P}_1^2}{2 \\mathrm{~m}_1}=\\frac{\\mathrm{P}_2^2}{2 \\mathrm{~m}_2} \\\\ & \\frac{\\mathrm{P}_1}{\\mathrm{P}_2}=\\sqrt{\\frac{\\mathrm{m}_1}{\\mathrm{~m}_2}}=\\frac{2}{5}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Rotational Motion",
+    "topic": "Centre of mass of a two-particle system",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "755df123-5aea-4a23-8b30-b9d150890498",
+    "question_number": 10,
+    "question_text": "$0.08 \\mathrm{~kg}$ air is heated at constant volume through $5^{\\circ} \\mathrm{C}$. The specific heat of air at constant volume is $0.17 \\mathrm{kcal} / \\mathrm{kg}^{\\circ} \\mathrm{C}$ and $\\mathrm{J}=4.18 \\mathrm{joule} / \\mathrm{cal}$. The change in its internal energy is approximately.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$318 \\mathrm{~J}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$298 \\mathrm{~J}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$284 \\mathrm{~J}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$142 \\mathrm{~J}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "$\\begin{aligned} & \\mathrm{Q}=\\Delta \\mathrm{U} \\text { as work done is zero [constant volume] } \\\\ & \\Delta \\mathrm{U}=\\mathrm{ms} \\Delta \\mathrm{T} \\\\ & =0.08 \\times(170 \\times 4.18) \\times 5 \\\\ & \\simeq 284 \\mathrm{~J}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work done by a constant force and a variable force",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c2183e2-462f-4f17-8a2b-35026e406171",
+    "question_number": 11,
+    "question_text": "The radius of third stationary orbit of electron for Bohr's atom is R. The radius of fourth stationary orbit will be:",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{4}{3} \\mathrm{R}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{16}{9} R$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\frac{3}{4} \\mathrm{R}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{9}{16} \\mathrm{R}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "$\\begin{aligned} & r \\propto \\frac{n^2}{Z} \\\\ & \\frac{r_4}{r_3}=\\frac{4^2}{3^2} \\\\ & r_4=\\frac{16}{9} R\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Rutherford's model of atom",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7975ee14-0fbc-47d0-a2b8-3a3b090ed21a",
+    "question_number": 12,
+    "question_text": "A rectangular loop of length $2.5 \\mathrm{~m}$ and width $2 \\mathrm{~m}$ is placed at $60^{\\circ}$ to a magnetic field of $4 \\mathrm{~T}$. The loop is removed from the field in $10 \\mathrm{sec}$. The average emf induced in the loop during this time is",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$-2 \\mathrm{~V}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$+2 \\mathrm{~V}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$+1 \\mathrm{~V}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$-1 \\mathrm{~V}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "$\\begin{aligned} & \\text { Average emf }=\\frac{\\text { Change in flux }}{\\text { Time }}=-\\frac{\\Delta \\phi}{\\Delta t} \\\\ & =-\\frac{0-\\left(4 \\times(2.5 \\times 2) \\cos 60^{\\circ}\\right)}{10} \\\\ & =+1 \\mathrm{~V}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Magnetic Effects of Current and Magnetism",
+    "topic": "torque experienced by a current loop in a uniform ",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d5a2ef6-9a80-4688-a02f-df8234ce3d1e",
+    "question_number": 13,
+    "question_text": "An electric charge $10^{-6} \\mu \\mathrm{C}$ is placed at origin $(0,0)$ $\\mathrm{m}$ of $\\mathrm{X}-\\mathrm{Y}$ co-ordinate system. Two points $\\mathrm{P}$ and $\\mathrm{Q}$ are situated at $(\\sqrt{3}, \\sqrt{3}) \\mathrm{m}$ and $(\\sqrt{6}, 0) \\mathrm{m}$ respectively. The potential difference between the points $P$ and $Q$ will be :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\sqrt{3} \\mathrm{~V}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\sqrt{6} \\mathrm{~V}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$0 \\mathrm{~V}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$3 \\mathrm{~V}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "$\\begin{aligned}\n \\ & \\text { Potential difference }=\\frac{K Q}{r_1}-\\frac{K Q}{r_2} \\\\\n \\ & r_1=\\sqrt{(\\sqrt{3})^2+(\\sqrt{3})^2} \\\\\n \\ & r_2=\\sqrt{(\\sqrt{6})^2+0}\n \\ \\end{aligned}$\nAs $r_1=r_2=\\sqrt{6} \\mathrm{~m}$\nSo potential difference $=0$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Electrostatics",
+    "topic": "potential difference",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d3706f21-8141-47f0-b18e-1bcbab39246d",
+    "question_number": 14,
+    "question_text": "A convex lens of focal length $40 \\mathrm{~cm}$ forms an image of an extended source of light on a photoelectric cell. A current I is produced. The lens is replaced by another convex lens having the same diameter but focal length $20 \\mathrm{~cm}$. The photoelectric current now is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{\\mathrm{I}}{2}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "4 I",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "2 I",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "I",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "As amount of energy incident on cell is same so current will remain same.",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Optics",
+    "topic": "thin lens formula and lens maker formula",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0600db64-e63f-4f7e-8dbb-bba2aeb98360",
+    "question_number": 15,
+    "question_text": "A body of mass $1000 \\mathrm{~kg}$ is moving horizontally with a velocity $6 \\mathrm{~m} / \\mathrm{s}$. If $200 \\mathrm{~kg}$ extra mass is added, the final velocity (in $\\mathrm{m} / \\mathrm{s}$) is:",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Momentum will remain conserve\n$\\begin{aligned}\n \\ & 1000 \\times 6=1200 \\times v \\\\\n \\ & v=5 \\mathrm{~m} / \\mathrm{s}\n \\ \\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Kinematics",
+    "topic": "speed and velocity",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bd8e60d3-35fd-4869-8dde-6897dd1a56b8",
+    "question_number": 16,
+    "question_text": "A plane electromagnetic wave propagating in $\\mathrm{x}$-direction is described by\n$\\mathrm{E}_{\\mathrm{y}}=\\left(200 \\mathrm{Vm}^{-1}\\right) \\sin \\left[1.5 \\times 10^7 \\mathrm{t}-0.05 \\mathrm{x}\\right] \\text {; }$\nThe intensity of the wave is :\n(Use $\\epsilon_0=8.85 \\times 10^{-12} \\mathrm{C}^2 \\mathrm{~N}^{-1} \\mathrm{~m}^{-2}$)",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$35.4 \\mathrm{Wm}^{-2}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$53.1 \\mathrm{Wm}^{-2}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$26.6 \\mathrm{Wm}^{-2}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$106.2 \\mathrm{Wm}^{-2}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "$\\begin{aligned} & \\mathrm{I}=\\frac{1}{2} \\varepsilon_0 \\mathrm{E}_0^2 \\times \\mathrm{c} \\\\ & \\mathrm{I}=\\frac{1}{2} \\times 8.85 \\times 10^{-12} \\times 4 \\times 10^4 \\times 3 \\times 10^8 \\\\ & \\mathrm{I}=53.1 \\mathrm{~W} / \\mathrm{m}^2\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Electromagnetic Waves",
+    "topic": "electromagnetic waves and their characteristics",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c9d3e104-b779-4585-9742-dd5abd1fcec6",
+    "question_number": 17,
+    "question_text": "Given below are two statements :\nStatement (I) : Planck's constant and angular momentum have same dimensions.\nStatement (II) : Linear momentum and moment of force have same dimensions.\nIn the light of the above statements, choose the correct answer from the options given below :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Statement I is true but Statement II is false",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Both Statement I and Statement II are false",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Both Statement I and Statement II are true",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Statement I is false but Statement II is true",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "$\\begin{aligned}\n \\ & {[\\mathrm{h}]=\\mathrm{ML}^2 \\mathrm{~T}^{-1}} \\\\\n \\ & {[\\mathrm{~L}]=\\mathrm{ML}^2 \\mathrm{~T}^{-1}} \\\\\n \\ & {[\\mathrm{P}]=\\mathrm{MLT}^{-1}} \\\\\n \\ & {[\\tau]=\\mathrm{ML}^2 \\mathrm{~T}^{-2}}\n \\ \\end{aligned}$\n(Here $\\mathrm{h}$ is Planck's constant, $\\mathrm{L}$ is angular momentum, $\\mathrm{P}$ is linear momentum and $\\tau$ is moment of force)",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Rotational Motion",
+    "topic": "angular momentum",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3dfd1628-6d2b-49bc-bee3-ce9cdec6fecb",
+    "question_number": 18,
+    "question_text": "A wire of length $10 \\mathrm{~cm}$ and radius $\\sqrt{7} \\times 10^{-4} \\mathrm{~m}$ connected across the right gap of a meter bridge. When a resistance of $4.5 \\Omega$ is connected on the left gap by using a resistance box, the balance length is found to be at $60 \\mathrm{~cm}$ from the left end. If the resistivity of the wire is $\\mathrm{R} \\times 10^{-7} \\Omega \\mathrm{m}$, then value of $\\mathrm{R}$ is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "63",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "70",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "66",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "35",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For null point,\n$\\frac{4.5}{60}=\\frac{R}{40}$\nAlso, $\\mathrm{R}=\\frac{\\rho \\ell}{\\mathrm{A}}=\\frac{\\rho \\ell}{\\pi \\mathrm{r}^2}$\n$\\begin{aligned}\n \\ & 4.5 \\times 40=\\rho \\times \\frac{0.1}{\\pi \\times 7 \\times 10^{-8}} \\times 60 \\\\\n \\ & \\rho=66 \\times 10^{-7} \\Omega \\times \\mathrm{m}\n \\ \\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Experimental Skills",
+    "topic": "The resistivity of the material of a given wire us",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a826dfe7-8b49-4411-a41e-4cb6b3ed1daf",
+    "question_number": 19,
+    "question_text": "A wire of resistance $R$ and length $L$ is cut into 5 equal parts. If these parts are joined parallely, then resultant resistance will be :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{1}{25} \\mathrm{R}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{1}{5} \\mathrm{R}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$25 \\mathrm{R}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$5 \\mathrm{R}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "$\\begin{aligned} & \\text { Resistance of each part }=\\frac{R}{5} \\\\ & \\text { Total resistance }=\\frac{1}{5} \\times \\frac{R}{5}=\\frac{R}{25}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "electrical resistance",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "03f61fa9-9edc-4e21-b190-cbe0c7b436da",
+    "question_number": 20,
+    "question_text": "The average kinetic energy of a monatomic molecule is $0.414 \\mathrm{eV}$ at temperature :\n(Use $K_B=1.38 \\times 10^{-23} \\mathrm{~J} / \\mathrm{mol}-\\mathrm{K}$)",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$3000 \\mathrm{~K}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$3200 \\mathrm{~K}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$1600 \\mathrm{~K}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$1500 \\mathrm{~K}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For monoatomic molecule degree of freedom $=3$.\n$\\begin{aligned}\n \\ & \\therefore \\mathrm{K}_{\\text {avg }}=\\frac{3}{2} \\mathrm{~K}_{\\mathrm{B}} \\mathrm{T} \\\\\n \\ & \\mathrm{T}=\\frac{0.414 \\times 1.6 \\times 10^{-19} \\times 2}{3 \\times 1.38 \\times 10^{-23}} \\\\\n \\ & =3200 \\mathrm{~K}\n \\ \\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Kinetic Theory of Gases",
+    "topic": "kinetic interpretation of temperature",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f0320070-edae-4bb9-b41c-34aa13ea1291",
+    "question_number": 21,
+    "question_text": "A particle starts from origin at $\\mathrm{t}=0$ with a velocity $5 \\hat{\\mathrm{i}} \\mathrm{m} / \\mathrm{s}$ and moves in $\\mathrm{x}-\\mathrm{y}$ plane under action of a force which produces a constant acceleration of $(3 \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}) \\mathrm{m} / \\mathrm{s}^2$. If the $\\mathrm{x}$-coordinate of the particle at that instant is $84 \\mathrm{~m}$, then the speed of the particle at this time is $\\sqrt{\\alpha} \\mathrm{m} / \\mathrm{s}$. The value of $\\alpha$ is ______",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 673,
+    "explanation": "$\\begin{aligned} & \\mathrm{u}_{\\mathrm{x}}=5 \\mathrm{~m} / \\mathrm{s} \\quad \\mathrm{a}_{\\mathrm{x}}=3 \\mathrm{~m} / \\mathrm{s}^2 \\quad \\mathrm{x}=84 \\mathrm{~m} \\\\ & \\mathrm{v}_{\\mathrm{x}}^2-\\mathrm{u}_{\\mathrm{x}}^2=2 \\mathrm{ax} \\\\ & \\mathrm{v}_{\\mathrm{x}}^2-25=2(3)(84) \\\\ & \\mathrm{V}_{\\mathrm{x}}=23 \\mathrm{~m} / \\mathrm{s} \\\\ & \\mathrm{v}_{\\mathrm{x}}-\\mathrm{u}_{\\mathrm{x}}=\\mathrm{a}_{\\mathrm{x}} \\mathrm{t} \\\\ & \\mathrm{t}=\\frac{23-5}{3}=6 \\mathrm{~s} \\\\ & \\mathrm{v}_{\\mathrm{y}}=0+\\mathrm{a}_{\\mathrm{y}} \\mathrm{t}=0+2 \\times(6)=12 \\mathrm{~m} / \\mathrm{s} \\\\ & \\mathrm{v}^2=\\mathrm{v}_{\\mathrm{x}}^2+\\mathrm{v}_{\\mathrm{y}}^2=23^2+12^2=673 \\\\ & \\mathrm{v}=\\sqrt{673} \\mathrm{~m} / \\mathrm{s}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Physics",
+    "chapter": "Kinematics",
+    "topic": "speed and velocity",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c88005ab-6844-4a97-8b87-efffd8c5e95e",
+    "question_number": 22,
+    "question_text": "A thin metallic wire having cross sectional area of $10^{-4} \\mathrm{~m}^2$ is used to make a ring of radius $30 \\mathrm{~cm}$. A positive charge of $2 \\pi \\mathrm{C}$ is uniformly distributed over the ring, while another positive charge of 30 $\\mathrm{pC}$ is kept at the centre of the ring. The tension in the ring is ______ $\\mathrm{N}$; provided that the ring does not get deformed (neglect the influence of gravity). (given, $\\frac{1}{4 \\pi \\epsilon_0}=9 \\times 10^9 \\mathrm{SI}$ units)",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 3,
+    "explanation": "$\\begin{aligned} & 2 \\mathrm{~T} \\sin \\frac{\\mathrm{d} \\theta}{2}=\\frac{\\mathrm{kq}_0}{\\mathrm{R}^2} \\cdot \\lambda \\mathrm{Rd} \\theta \\\\ & {\\left[\\lambda=\\frac{\\mathrm{Q}}{2 \\pi \\mathrm{R}}\\right]}\\end{aligned}$\n$\\begin{aligned} & \\Rightarrow \\mathrm{T}=\\frac{\\mathrm{Kq}_0 \\mathrm{Q}}{\\left(\\mathrm{R}^2\\right) \\times 2 \\pi} \\\\ & =\\frac{\\left(9 \\times 10^9\\right)\\left(2 \\pi \\times 30 \\times 10^{-12}\\right)}{(0.30)^2 \\times 2 \\pi} \\\\ & =\\frac{9 \\times 10^{-3} \\times 30}{9 \\times 10^{-2}}=3 \\mathrm{~N}\\end{aligned}$",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/7cb7b3e7dc8333174b5049158f9dcfd7266c1eb9481e47badd7b161206eca170.png"
+    ],
+    "question_type": "integer",
+    "subject": "Physics",
+    "chapter": "Electrostatics",
+    "topic": "Electric charges: conservation of charge",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8551da72-d307-45d6-a257-139e7212fed1",
+    "question_number": 23,
+    "question_text": "Two coils have mutual inductance $0.002 \\mathrm{H}$. The current changes in the first coil according to the relation $\\mathrm{i}=\\mathrm{i}_0 \\sin \\omega \\mathrm{t}$, where $\\mathrm{i}_0=5 \\mathrm{~A}$ and $\\omega=50 \\pi$ $\\mathrm{rad} / \\mathrm{s}$. The maximum value of emf in the second coil is $\\frac{\\pi}{\\alpha} \\mathrm{V}$. The value of $\\alpha$ is _____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 2,
+    "explanation": "$\\begin{aligned} & \\phi=\\mathrm{Mi}=\\mathrm{Mi}_0 \\sin \\omega \\mathrm{t} \\\\ & \\mathrm{EMF}=-\\mathrm{M} \\frac{\\mathrm{di}}{\\mathrm{dt}}=-0.002\\left(\\mathrm{i}_0 \\omega \\cos \\omega \\mathrm{t}\\right) \\\\ & \\mathrm{EMF}_{\\max }=\\mathrm{i}_0 \\omega(0.002)=(5)(50 \\pi)(0.002) \\\\ & \\mathrm{EMF}_{\\max }=\\frac{\\pi}{2} \\mathrm{~V}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Physics",
+    "chapter": "Electromagnetic Induction and Alternating Currents",
+    "topic": "peak and RMS value of alternating current/voltage",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "92cce03d-21c0-4e8a-84de-c0b8e8316600",
+    "question_number": 24,
+    "question_text": "Two immiscible liquids of refractive indices $\\frac{8}{5}$ and $\\frac{3}{2}$ respectively are put in a beaker as shown in the figure. The height of each column is $6 \\mathrm{~cm}$. A coin is placed at the bottom of the beaker. For near normal vision, the apparent depth of the coin is $\\frac{\\alpha}{4} \\mathrm{~cm}$. The value of $\\alpha$ is _____ .",
+    "question_images": [
+      "https://i2.jee-adv.eu.org/images/3b8e6b8c8fe8bcc3152d74adcfdeb1cae2b606291e000eb140b4260dc85a9bbe.png"
+    ],
+    "options": null,
+    "correct_answer": 31,
+    "explanation": "$\\mathrm{h}_{\\text {upp }}=\\frac{\\mathrm{h}_1}{\\mu_1}+\\frac{\\mathrm{h}_2}{\\mu_2}=\\frac{6}{3 / 2}+\\frac{6}{8 / 5}=4+\\frac{15}{4}=\\frac{31}{4} \\mathrm{~cm}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Alpha-particle scattering experiment",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a2c0f59a-8012-41a2-a0f5-bc2218a83bce",
+    "question_number": 25,
+    "question_text": "In a nuclear fission process, a high mass nuclide $(A \\approx 236)$ with binding energy $7.6 \\mathrm{MeV} /$ Nucleon dissociated into middle mass nuclides $(\\mathrm{A} \\approx 118)$, having binding energy of $8.6 \\mathrm{MeV} /$ Nucleon. The energy released in the process would be _____ $\\mathrm{MeV}$.",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 236,
+    "explanation": "$\\begin{aligned} & \\mathrm{Q}=\\mathrm{BE}_{\\text {Product }}-\\mathrm{BE}_{\\text {Rectant }} \\\\ & =2(118)(8.6)-236(7.6) \\\\ & =236 \\times 1=236 \\mathrm{MeV}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "binding energy per nucleon and its variation with ",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53510670-9790-493d-8e74-078801d7ca2f",
+    "question_number": 26,
+    "question_text": "Four particles each of mass $1 \\mathrm{~kg}$ are placed at four corners of a square of side $2 \\mathrm{~m}$. Moment of inertia of system about an axis perpendicular to its plane and passing through one of its vertex is _____ $\\mathrm{kgm}^2$.",
+    "question_images": [
+      "https://i2.jee-adv.eu.org/images/9061102756b16670fc85dc63ae01a01022a5b0e3d59e2e9d02e8a93e33145eca.png"
+    ],
+    "options": null,
+    "correct_answer": 16,
+    "explanation": "$\\begin{aligned} & I=m a^2+m a^2+m(\\sqrt{2 a})^2 \\\\ & =4 m a^2 \\\\ & =4 \\times 1 \\times(2)^2=16\\end{aligned}$",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/879dcb3979b78bf15133c306e858a43c8b1c8274bc024298775fa94fd28e8088.png"
+    ],
+    "question_type": "integer",
+    "subject": "Physics",
+    "chapter": "Rotational Motion",
+    "topic": "Centre of mass of a two-particle system",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a8284874-5280-480d-99fd-9cdaefab5c0d",
+    "question_number": 27,
+    "question_text": "A particle executes simple harmonic motion with an amplitude of $4 \\mathrm{~cm}$. At the mean position, velocity of the particle is $10 \\mathrm{~cm} / \\mathrm{s}$. The distance of the particle from the mean position when its speed becomes $5 \\mathrm{~cm} / \\mathrm{s}$ is $\\sqrt{\\alpha} \\mathrm{cm}$, where $\\alpha=$ _____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 12,
+    "explanation": "$\\begin{aligned} & \\mathrm{V}_{\\mathrm{ut} \\text { mean position }}=\\mathrm{A} \\omega \\Rightarrow 10=4 \\omega \\\\ & \\quad \\omega=\\frac{5}{2} \\\\ & \\mathrm{v}=\\omega \\sqrt{\\mathrm{A}^2-\\mathrm{x}^2} \\\\ & 5=\\frac{5}{2} \\sqrt{4^2-\\mathrm{x}^2} \\Rightarrow \\mathrm{x}^2=16-4 \\\\ & \\mathrm{x}=\\sqrt{12} \\mathrm{~cm}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Physics",
+    "chapter": "Kinematics",
+    "topic": "position-time graph",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6b525b77-8b32-4aa6-9f76-0778e8ef7292",
+    "question_number": 28,
+    "question_text": "Two long, straight wires carry equal currents in opposite directions as shown in figure. The separation between the wires is $5.0 \\mathrm{~cm}$. The magnitude of the magnetic field at a point $P$ midway between the wires is _____ $\\mu \\mathrm{T}$\n(Given : $\\mu_0=4 \\pi \\times 10^{-7} \\mathrm{TmA}^{-1}$)",
+    "question_images": [
+      "https://i.jee-adv.eu.org/images/319772aadcea76baec30895c848cfb2dab20b2152ab1c68a9d87a5a81beba5b4.png"
+    ],
+    "options": null,
+    "correct_answer": 160,
+    "explanation": "$\\begin{aligned} & \\mathrm{B}=\\left(\\frac{\\mu_0 \\mathrm{i}}{2 \\pi \\mathrm{a}}\\right) \\times 2=\\frac{4 \\pi \\times 10^{-7} \\times 10}{\\pi \\times\\left(\\frac{5}{2} \\times 10^{-2}\\right)} \\\\ & =16 \\times 10^{-5}=160 \\mu \\mathrm{T}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Physics",
+    "chapter": "Magnetic Effects of Current and Magnetism",
+    "topic": "the force between two parallel currents carrying c",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9b13b505-842e-46f4-819c-87720cc491bb",
+    "question_number": 29,
+    "question_text": "The charge accumulated on the capacitor connected in the following circuit is _____ $\\mu \\mathrm{C}$ $($ Given $\\mathrm{C}=150 \\mu \\mathrm{F}$)",
+    "question_images": [
+      "https://i.jee-adv.eu.org/images/0aee341e11df3c123cf72d87a943c7a70813977c8da3cf1a7afa821d39918058.png"
+    ],
+    "options": null,
+    "correct_answer": 400,
+    "explanation": "$\\begin{aligned} & V_A+\\frac{10}{3}(1)-6(1)=V_B \\\\ & V_A-V_B=6-\\frac{10}{3}=\\frac{8}{3} \\mathrm{volt} \\\\ & Q=C\\left(V_A-V_B\\right) \\\\ & =150 \\times \\frac{8}{3}=400 \\mu \\mathrm{C}\\end{aligned}$",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/951bca4cef860d760d70cf4e1ca8ff7b6ee3623bca470785f3a25aae6ed799f8.png"
+    ],
+    "question_type": "integer",
+    "subject": "Physics",
+    "chapter": "Electrostatics",
+    "topic": "Electric charges: conservation of charge",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa2598e4-d20a-46c4-acf8-1cac224eb8a5",
+    "question_number": 30,
+    "question_text": "If average depth of an ocean is $4000 \\mathrm{~m}$ and the bulk modulus of water is $2 \\times 10^9 \\mathrm{Nm}^{-2}$, then fractional compression $\\frac{\\Delta V}{V}$ of water at the bottom of ocean is $\\alpha \\times 10^{-2}$. The value of $\\alpha$ is _____ (Given, $\\mathrm{g}=10 \\mathrm{~ms}^{-2}, \\rho=1000 \\mathrm{~kg} \\mathrm{~m}^{-3}$)",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 2,
+    "explanation": "$\\begin{aligned} & \\mathrm{B}=-\\frac{\\Delta \\mathrm{P}}{\\left(\\frac{\\Delta \\mathrm{V}}{\\mathrm{V}}\\right)} \\\\ & -\\left(\\frac{\\Delta \\mathrm{V}}{\\mathrm{V}}\\right)=\\frac{\\rho \\mathrm{gh}}{\\mathrm{B}}=\\frac{1000 \\times 10 \\times 4000}{2 \\times 10^9} \\\\ & =2 \\times 10^{-2}[-\\mathrm{ve} \\text { sign represent compression }]\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Physics",
+    "chapter": "Experimental Skills",
+    "topic": "Surface tension of water by capillary rise and eff",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ac65d646-4a63-413f-8597-9c8f2c156c8b",
+    "question_number": 31,
+    "question_text": "Two nucleotides are joined together by a linkage known as :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Phosphodiester linkage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Glycosidic linkage",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Disulphide linkage",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Peptide linkage",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Phosphodiester linkage",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/9299abf76ca79b08ad37ca04bf2f25dc498f4ce61fe6c9d798c684acd43d6914.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "BIOMOLECULES",
+    "topic": "peptide bond",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f8fb9563-cba4-4f42-a7e5-15d65163cf02",
+    "question_number": 32,
+    "question_text": "Highest enol content will be shown by :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/97bc9d65a7129abbc877d0fb22c53cee60001467235650f1794e5c076bc62146.png"
+      },
+      {
+        "id": "B",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/5a2ad0699e2ca07bd75efadc8b33bc976d75e07a6b0e37f93661e50535fed7b8.png"
+      },
+      {
+        "id": "C",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/ac1a9a337fd1542be19d8d86671ca4142f9aa41d1fddb11513c7efd8fe2b5b21.png"
+      },
+      {
+        "id": "D",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/89793e24d15d44685e64c2b2f8742b1504d59bde40d1bfdc982ab892d1d22ddb.png"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/ba4f97d46cb72ed33580f3157bfa63c520920de015a279b464f9f5c513cd1548.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "ATOMIC STRUCTURE",
+    "topic": "Nature of electromagnetic radiation",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b1d9a739-67cc-4d3c-bf12-81e1c18a47b6",
+    "question_number": 33,
+    "question_text": "Element not showing variable oxidation state is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Bromine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Iodine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Chlorine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Fluorine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fluorine does not show variable oxidation state.",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "d - and f- BLOCK ELEMENTS",
+    "topic": "oxidation states",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6dbd7be6-1441-47d8-84de-925e8382bd22",
+    "question_number": 34,
+    "question_text": "Which of the following is strongest Bronsted base?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/0030767b82ea7adb1eb2195501abef7ef54674bd6df2c563ce1f92f388a89b12.png"
+      },
+      {
+        "id": "B",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/af4a8f1193024b41931b642f60aa618ecdf1d71d3c8e182e104be5c92b8daac4.png"
+      },
+      {
+        "id": "C",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/ce20c525611772b2538b9eb1ddf4d11fcfea8b527046ec51536cf6fa0c88fca1.png"
+      },
+      {
+        "id": "D",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/eada4c5e619333981300e27befc25a0f24fe7a06d68958ab81fa6b53042a885b.png"
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/60823b8018eee419f1457e14bbf770e0c586e630898e4b4d78cbf0423318e7b8.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "PRINCIPLES RELATED TO PRACTICAL CHEMISTRY",
+    "topic": "detection of the following functional groups",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f995eb04-fcf7-4dd2-9c14-7ff9db2809b4",
+    "question_number": 35,
+    "question_text": "Which of the following electronic configuration would be associated with the highest magnetic moment?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$[\\mathrm{Ar}] 3 \\mathrm{~d}^7$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$[\\mathrm{Ar}] 3 \\mathrm{~d}^8$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$[\\mathrm{Ar}] 3 \\mathrm{~d}^3$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$[\\mathrm{Ar}] 3 \\mathrm{~d}^6$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$\\begin{array}{|c|c|c|c|c|}\n \\ \\hline & 3 d^7 & 3 d^8 & 3 d^3 & 3 \\mathrm{~d}^6 \\\\\n \\ \\hline \\begin{array}{l}\n \\ \\text { No.of. } \\\\\n \\ \\text { unpaired e }\n \\ \\end{array} & 3 & 2 & 3 & 4 \\\\\n \\ \\hline \\begin{array}{l}\n \\ \\text { Spin only } \\\\\n \\ \\text { Magnetic } \\\\\n \\ \\text { moment }\n \\ \\end{array} & \\begin{array}{l}\n \\ \\sqrt{15} \\\\\n \\ \\mathrm{BM}\n \\ \\end{array} & \\begin{array}{l}\n \\ \\sqrt{8} \\\\\n \\ \\mathrm{BM}\n \\ \\end{array} & \\begin{array}{l}\n \\ \\sqrt{15} \\\\\n \\ \\mathrm{BM}\n \\ \\end{array} & \\begin{array}{l}\n \\ \\sqrt{24} \\\\\n \\ \\mathrm{BM}\n \\ \\end{array} \\\\\n \\ \\hline\n \\ \\end{array}\n \\ $",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "d - and f- BLOCK ELEMENTS",
+    "topic": "electronic configuration",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "271bfb83-89c2-4865-a5d4-56b1af3d64ec",
+    "question_number": 36,
+    "question_text": "Which of the following has highly acidic hydrogen?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/f4bc372a2fab652f3fafa2bb7d299a9100647bd061e9d00b326eaaec1952de94.png"
+      },
+      {
+        "id": "B",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/70014d56e327251ec4b75978dc47e40befcbc6b863b2eb2b5d5cea912fcfd2b2.png"
+      },
+      {
+        "id": "C",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/181a68c929f1978e92eb1e05b5195ea5fc10f02edb441fa417cdef72e6684235.png"
+      },
+      {
+        "id": "D",
+        "text": "",
+        "image_url": "https://i2.jee-adv.eu.org/images/e36785dcebc6116ba78ab00b3ac4f9b9aa33f7a86e86e78c5ba6515c3def98b3.png"
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Conjugate base is more stable due to more resonance of negative charge.",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/36f0cbfaa4c3e0e201fccd7600efb9a66345c7b1c6f12fd7fec9e270e2c64349.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "SOME BASIC PRINCIPLES OF ORGANIC CHEMISTRY",
+    "topic": "resonance and hyperconjugation",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fc7ac310-088b-4113-b0d8-303b29f27dd3",
+    "question_number": 37,
+    "question_text": "A solution of two miscible liquids showing negative deviation from Raoult's law will have :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "increased vapour pressure, increased boiling point",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "increased vapour pressure, decreased boiling point",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "decreased vapour pressure, decreased boiling point",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "decreased vapour pressure, increased boiling point",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Solution with negative deviation has\n$\\begin{aligned}\n \\ & \\mathrm{P}_{\\mathrm{T}}  < \\mathrm{P}_{\\mathrm{A}} 0 \\mathrm{X}_{\\mathrm{A}}+\\mathrm{P}_{\\mathrm{B}} 0 \\mathrm{X}_{\\mathrm{B}} \\\\\n \\ & \\mathrm{P}_{\\mathrm{A}} < \\mathrm{P}_{\\mathrm{A}} 0 \\mathrm{X}_{\\mathrm{A}} \\\\\n \\ & \\mathrm{P}_{\\mathrm{B}} < \\mathrm{P}_{\\mathrm{B}}{ }^0 \\mathrm{X}_{\\mathrm{B}} \\\\\n \\ \\end{aligned}$\nIf vapour pressure decreases so boiling point increases.",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "SOLUTIONS",
+    "topic": "the elevation of boiling point and osmotic pressur",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "97a0be8c-dbb1-4e58-9467-ffcdbce5cb4c",
+    "question_number": 38,
+    "question_text": "Consider the following complex ions\n$\\begin{aligned}\n \\ & \\mathrm{P}=\\left[\\mathrm{FeF}_6\\right]^{3-} \\\\\n \\ & \\mathrm{Q}=\\left[\\mathrm{V}\\left(\\mathrm{H}_2 \\mathrm{O}\\right)_6\\right]^{2+} \\\\\n \\ & \\mathrm{R}=\\left[\\mathrm{Fe}\\left(\\mathrm{H}_2 \\mathrm{O}\\right)_6\\right]^{2+}\n \\ \\end{aligned}$\nThe correct order of the complex ions, according to their spin only magnetic moment values (in B.M.) is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "R $  < $ Q $ < $ P",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "R $  < $ P $ < $ Q",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Q $  < $ R $ < $ P",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Q $  < $ P $ < $ R",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "$\\left[\\mathrm{FeF}_6\\right]^{3-}: \\mathrm{Fe}^{+3}:[\\mathrm{Ar}] 3 \\mathrm{~d}^5$\n$\\text {F : Weak field Ligand }$\n\nNo. of unpaired electron's $=5$\n$\\begin{aligned}\n \\ & \\mu=\\sqrt{5(5+2)} \\\\\n \\ & \\mu=\\sqrt{35} \\mathrm{BM} \\\\\n \\ & {\\left[\\mathrm{V}\\left(\\mathrm{H}_2 \\mathrm{O}\\right)_6\\right]^{+2}: \\mathrm{V}^{+2}: 3 \\mathrm{~d}^3}\n \\ \\end{aligned}$\n\nNo. of unpaired electron's $=3$\n$\\begin{aligned}\n \\ & \\mu=\\sqrt{3(3+2)} \\\\\n \\ & \\mu=\\sqrt{15} \\mathrm{BM} \\\\\n \\ & {\\left[\\mathrm{Fe}\\left(\\mathrm{H}_2 \\mathrm{O}\\right)_6\\right]^{+2}: \\mathrm{Fe}^{+2}: 3 \\mathrm{~d}^6}\n \\ \\end{aligned}$\n$\\mathrm{H}_2 \\mathrm{O} \\text { : Weak field Ligand }$\n\nNo. of unpaired electron's $=4$\n$\\begin{aligned}\n \\ & \\mu=\\sqrt{4(4+2)} \\\\\n \\ & \\mu=\\sqrt{24} \\mathrm{BM}\n \\ \\end{aligned}$",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/5d137634422d2a95509d19f6577334e8a1181b029f6a46a47739629def7d0040.png",
+      "https://i2.jee-adv.eu.org/images/31960a87ef8d40779628f8cc36d0de2ab2eb7a4d17ebc31130578b380d1dd9ec.png",
+      "https://i.jee-adv.eu.org/images/3ce61ae41540a872c072de41439c890ea455d43604d4c0a6e8b51bbefda303b4.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "ATOMIC STRUCTURE",
+    "topic": "electron spin and spin quantum number",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "466e3086-8675-49c9-95d1-8b331b2cc939",
+    "question_number": 39,
+    "question_text": "Choose the polar molecule from the following :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\mathrm{CCl}_4$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\mathrm{CO}_2$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\mathrm{CH}_2=\\mathrm{CH}_2$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\mathrm{CHCl}_3$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$\\mu \\neq 0$\n$\\mathrm{CHCl}_3$ is polar molecule and rest all molecules are non-polar.",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/0f68e77b24fcbbc27563e433cafbf0053ac05d15f978362456c65396b8cb8341.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "PRINCIPLES RELATED TO PRACTICAL CHEMISTRY",
+    "topic": "detection of the following functional groups",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "85f675ec-fe8d-4e52-ae4b-75603a93d53a",
+    "question_number": 40,
+    "question_text": "Given below are two statements :\nStatement (I) : The $4 \\mathrm{f}$ and $5 \\mathrm{f}$ - series of elements are placed separately in the Periodic table to preserve the principle of classification.\nStatement (II) :S-block elements can be found in pure form in nature.\nIn the light of the above statements, choose the most appropriate answer from the options given below :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Statement I is false but Statement II is true",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Both Statement I and Statement II are true",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Statement I is true but Statement II is false",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Both Statement I and Statement II are false",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "s-block elements are highly reactive and found in combined state.",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "CLASSIFICATION OF ELEMENTS AND PERIODICITY IN PROPERTIES",
+    "topic": "d and f block elements",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7655f5f2-c5aa-4e9c-ad21-6a417583a211",
+    "question_number": 41,
+    "question_text": "Given below are two statements:\nStatement (I) : p-nitrophenol is more acidic than $\\mathrm{m}$-nitrophenol and o-nitrophenol.\nStatement (II) : Ethanol will give immediate turbidity with Lucas reagent.\nIn the light of the above statements, choose the correct answer from the options given below :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Statement I is true but Statement II is false",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Both Statement I and Statement II are true",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Both Statement I and Statement II are false",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Statement I is false but Statement II is true",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Acidic strength\n\nEthanol give lucas test after long time\nStatement (I) $\\rightarrow$ correct\nStatement (II) $\\rightarrow$ incorrect",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/2ba2f68eb161c09cddf110067c5109ffe72c41964f518473ce8b0d4a0317c96d.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "ORGANIC COMPOUNDS CONTAINING OXYGEN",
+    "topic": "Carboxylic Acids: Acidic strength and factors affe",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a3c5ff3-0426-4eaa-870c-3a11ccb623e3",
+    "question_number": 42,
+    "question_text": "The ascending order of acidity of $-\\mathrm{OH}$ group in the following compounds is :\n(A) $\\mathrm{Bu}-\\mathrm{OH}$\n(B) \n\n(C)\n\n(D)\n\n(E)\n\nChoose the correct answer from the options given below :",
+    "question_images": [
+      "https://i.jee-adv.eu.org/images/8e2535560fd4602dda903a90ebff6caeb681aceb4aae8319d2a8527b701abacb.png",
+      "https://i2.jee-adv.eu.org/images/e697e3eabbf8ab1e36278bc4f3c1056e859fe725d9aebe304e59bd5734bbcf93.png",
+      "https://i2.jee-adv.eu.org/images/052db35bd94374d9764cb7933dea99e1002c65b8a51561849ca187d519329fa5.png",
+      "https://i2.jee-adv.eu.org/images/708f2be338037518d584939d062a751805aa70f4e8bab3cb26fb8584b600ad78.png"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "(A) $  < $ (D) $ < $ (C) $ < $ (B) $ < $ (E)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(C) $  < $ (A) $ < $ (D) $ < $ (B) $ < $ (E)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(C) $  < $ (D) $ < $ (B) $ < $ (A) $ < $ (E)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(A) $  < $ (C) $ < $ (D) $ < $ (B) $ < $ (E)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/cd16c53bfefe1e4849e237e40e2a42f349c5a43b9043c6c3093b6becc81d2113.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "PRINCIPLES RELATED TO PRACTICAL CHEMISTRY",
+    "topic": " The chemistry involved in the preparation of the",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5e61b2cd-013f-4abd-85cc-f77fbf563c7e",
+    "question_number": 43,
+    "question_text": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).\nAssertion (A) : Melting point of Boron (2453 K) is unusually high in group 13 elements.\nReason (R) : Solid Boron has very strong crystalline lattice.\nIn the light of the above statements, choose the most appropriate answer from the options given below ;",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Both (A) and (R) are correct but (R) Is not the correct explanation of $(\\mathrm{A})$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(A) is true but (R) is false",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(A) is false but (R) is true",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Solid Boron has very strong crystalline lattice so its melting point unusually high in group 13 elements",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "p- BLOCK ELEMENTS",
+    "topic": "Group -13 to Group 18 Elements General Introductio",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1486df8e-ed01-4357-afd5-207e6fe055d2",
+    "question_number": 44,
+    "question_text": "Cyclohexene \n is ______ type of an\norganic compound.",
+    "question_images": [
+      "https://i2.jee-adv.eu.org/images/a98e8469aa26165daeaa02ff0fd90b507ab95758a4ca81107d915a06231e6f19.png"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Benzenoid aromatic",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Benzenoid non-aromatic",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Acyclic",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Alicyclic",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "So;. \n\nis Alicyclic",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/a0ea29cd89ee266732b853322264ce694d7d7fac7c6496779ec84485d2a9bb5f.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "SOME BASIC PRINCIPLES OF ORGANIC CHEMISTRY",
+    "topic": "Aromatic hydrocarbons - Nomenclature",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8b1dbf28-2cbd-46b8-9891-8aeddfb4a43f",
+    "question_number": 45,
+    "question_text": "Yellow compound of lead chromate gets dissolved on treatment with hot $\\mathrm{NaOH}$ solution. The product of lead formed is a :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Tetraanionic complex with coordination number six",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Neutral complex with coordination number four",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Dianionic complex with coordination number six",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Dianionic complex with coordination number four",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$\\mathrm{PbCrO}_4+\\mathrm{NaOH}$ (hot excess) $\\rightarrow\\left[\\mathrm{Pb}(\\mathrm{OH})_4\\right]^{-2}+$ $\\mathrm{Na}_2 \\mathrm{CrO}_4$\nDianionic complex with coordination number four",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "COORDINATION COMPOUNDS",
+    "topic": "coordination number",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8731d07c-60af-4641-84fe-e72437bb6bbf",
+    "question_number": 46,
+    "question_text": "Given below are two statements :\nStatement (I) : Aqueous solution of ammonium carbonate is basic.\nStatement (II) : Acidic/basic nature of salt solution of a salt of weak acid and weak base depends on $K_a$ and $K_b$ value of acid and the base forming it.\nIn the light of the above statements, choose the most appropriate answer from the options given below :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Both Statement I and Statement II are correct",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Statement I is correct but Statement II is incorrect",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Both Statement I and Statement II are incorrect",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Statement I is incorrect but Statement II is correct",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Aqueous solution of $\\left(\\mathrm{NH}_4\\right)_2 \\mathrm{CO}_3$ is Basic $\\mathrm{pH}$ of salt of weak acid and weak base depends on $\\mathrm{Ka}$ and $\\mathrm{Kb}$ value of acid and the base forming it",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "PRINCIPLES RELATED TO PRACTICAL CHEMISTRY",
+    "topic": "Enthalpy of neutralization of strong acid and stro",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "366f7373-af94-4379-8fee-11695be2a0f9",
+    "question_number": 47,
+    "question_text": "IUPAC name of following compound (P) is:",
+    "question_images": [
+      "https://i2.jee-adv.eu.org/images/3fcef769f5c7bac87344d294420f43905877501321ec9f260b359ee516aeda87.png"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "1-Ethyl-5, 5-dimethylcyclohexane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "3-Ethyl-1,1-dimethylcyclohexane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "1-Ethyl-3, 3-dimethylcyclohexane",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "1,1-Dimethyl-3-ethylcyclohexane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/fda88ae2588132c49d80d3f88cf06d9b8bbe32a8f275410814fc1f108498ce1f.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "PRINCIPLES RELATED TO PRACTICAL CHEMISTRY",
+    "topic": "detection of the following functional groups",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "77e5cae1-8c40-4b21-9846-5ec56ffd9cf5",
+    "question_number": 48,
+    "question_text": "$\\mathrm{NaCl}$ reacts with conc. $\\mathrm{H}_2 \\mathrm{SO}_4$ and $\\mathrm{K}_2 \\mathrm{Cr}_2 \\mathrm{O}_7$ to give reddish fumes (B), which react with $\\mathrm{NaOH}$ to give yellow solution (C). (B) and (C) respectively are ;",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\mathrm{CrO}_2 \\mathrm{Cl}_2, \\mathrm{Na}_2 \\mathrm{CrO}_4$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\mathrm{Na}_2 \\mathrm{CrO}_4, \\mathrm{CrO}_2 \\mathrm{Cl}_2$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\mathrm{CrO}_2 \\mathrm{Cl}_2, \\mathrm{KHSO}_4$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\mathrm{CrO}_2 \\mathrm{Cl}_2, \\mathrm{Na}_2 \\mathrm{Cr}_2 \\mathrm{O}_7$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "$\\mathrm{NaCl}+$ conc. $\\mathrm{H}_2 \\mathrm{SO}_4+\\mathrm{K}_2 \\mathrm{Cr}_2 \\mathrm{O}_7$\n$\\rightarrow \\mathrm{CrO}_2 \\mathrm{Cl}_2+\\mathrm{KHSO}_4+\\mathrm{NaHSO}_4+\\mathrm{H}_2 \\mathrm{O}$\n(B)\nReddish brown\n$\\mathrm{CrO}_2 \\mathrm{Cl}_2+\\mathrm{NaOH} \\rightarrow \\mathrm{Na}_2 \\mathrm{CrO}_4+\\mathrm{NaCl}+\\mathrm{H}_2 \\mathrm{O}$\n(C)\nYellow colour",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "PRINCIPLES RELATED TO PRACTICAL CHEMISTRY",
+    "topic": "aniline yellow",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "da310d24-e577-45e7-9d26-b5c0c738d467",
+    "question_number": 49,
+    "question_text": "The correct statement regarding nucleophilic substitution reaction in a chiral alkyl halide is ;",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Retention occurs in $S_N 1$ reaction and inversion occurs in $\\mathrm{S}_{\\mathrm{N}} 2$ reaction.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Racemisation occurs in $S_N l$ reaction and retention occurs in $\\mathrm{S}_{\\mathrm{N}} 2$ reaction.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Racemisation occurs in both $\\mathrm{S}_{\\mathrm{N}} 1$ and $\\mathrm{S}_{\\mathrm{N}} 2$ reactions.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Racemisation occurs in $S_N 1$ reaction and inversion occurs in $\\mathrm{S}_{\\mathrm{N}} 2$ reaction.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$\\mathrm{SN}^1-$ Racemisation\n$\\mathrm{SN}^2$ - Inversion",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "ORGANIC COMPOUNDS CONTAINING OXYGEN",
+    "topic": "Reimer - Tiemann reaction",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ee26cd35-8af6-40c6-9e9c-cb9490f95cb1",
+    "question_number": 50,
+    "question_text": "The electronic configuration for Neodymium is:\n[Atomic Number for Neodymium 60]",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$[\\mathrm{Xe}] 4 \\mathrm{f}^4 6 \\mathrm{~s}^2$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$[\\mathrm{Xe}] 5 \\mathrm{f}^7 7 \\mathrm{~s}^2$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$[\\mathrm{Xe}] 4 \\mathrm{f}^6 6 \\mathrm{~s}^2$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$[\\mathrm{Xe}] 4 \\mathrm{f}^1 5 \\mathrm{~d}^1 6 \\mathrm{~s}^2$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Electronic configuration of $\\mathrm{Nd}(\\mathrm{Z}=60)$ is; [Xe] $4 \\mathrm{f}^4 6 \\mathrm{~s}^2$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "d - and f- BLOCK ELEMENTS",
+    "topic": "electronic configuration",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f98114d3-7ae7-4deb-8bdf-08bcb2f821e1",
+    "question_number": 51,
+    "question_text": "The mass of silver (Molar mass of $\\mathrm{Ag}: 108 \\mathrm{gmol}^{-1}$) displaced by a quantity of electricity which displaces $5600 \\mathrm{~mL}$ of $\\mathrm{O}_2$ at S.T.P. will be ______ g.",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 108,
+    "explanation": "Eq. of $\\mathrm{Ag}=$ Eq. of $\\mathrm{O}_2$\nLet $x$ gm silver displaced, $\\frac{\\mathrm{x} \\times 1}{108}=\\frac{5.6}{22.7} \\times 4$\n(Molar volume of gas at STP $=22.7$ lit) $\\mathrm{x}=106.57 \\mathrm{gm}$\nAns. 107\nOR, as per old STP data, molar volume $=22.4$ lit\n$\\frac{\\mathrm{x} \\times 1}{108}=\\frac{5.6}{22.4} \\times 4, \\mathrm{x}=108 \\mathrm{gm} \\text {. }$\nAns. 108",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Chemistry",
+    "chapter": "SOLUTIONS",
+    "topic": "abnormal value of molar mass",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "56e9f4e7-a8ac-471e-8d08-97daad8917d3",
+    "question_number": 52,
+    "question_text": "Consider the following data for the given reaction\n$\\begin{array}{llll} \\ 2 \\mathrm{HI}_{(\\mathrm{g})} \\rightarrow \\mathrm{H}_{2(\\mathrm{g})}+\\mathrm{I}_{2(\\mathrm{g})} & & \\\\ \\ & 1 & 2 & 3 \\\\ \\ \\mathrm{HI}\\left(\\mathrm{mol} \\mathrm{L}^{-1}\\right) & 0.005 & 0.01 & 0.02 \\\\ \\ \\text {Rate }\\left(\\mathrm{mol} \\mathrm{L}^{-1} \\mathrm{~s}-1\\right) & 7.5 \\times 10^{-4} & 3.0 \\times 10^{-3} & 1.2 \\times 10^{-2} \\ \\end{array}$\nThe order of the reaction is ______",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 2,
+    "explanation": "Let, $\\mathrm{R}=\\mathrm{k}[\\mathrm{HI}]^{\\mathrm{n}}$\nusing any two of given data,\n$\\begin{aligned}\n \\ & \\frac{3 \\times 10^{-3}}{7.5 \\times 10^{-4}}=\\left(\\frac{0.01}{0.005}\\right)^{\\mathrm{n}} \\\\\n \\ & \\mathrm{n}=2\n \\ \\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Chemistry",
+    "chapter": "CHEMICAL KINETICS",
+    "topic": "Rate of a chemical reaction",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0e55b5f-0ad3-4293-89f5-87c264a91d89",
+    "question_number": 53,
+    "question_text": "Mass of methane required to produce $22 \\mathrm{~g}$ of $\\mathrm{CO}_2$ after complete combustion is ______ g.\n(Given Molar mass in g mol-1\n$\\mathrm{C}=12.0$\n$\\begin{aligned}\n \\ & H=1.0 \\\\\n \\ & O=16.0)\n \\ \\end{aligned}$",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 8,
+    "explanation": "$\\mathrm{CH}_4+2 \\mathrm{O}_2 \\rightarrow \\mathrm{CO}_2+2 \\mathrm{H}_2 \\mathrm{O}$\nMoles of $\\mathrm{CO}_2=\\frac{22}{44}=0.5$\nSo, required moles of $\\mathrm{CH}_4=0.5$\nMass $=0.5 \\times 16=8 \\mathrm{gm}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Chemistry",
+    "chapter": "SOLUTIONS",
+    "topic": "abnormal value of molar mass",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3aa94f6d-c974-41e5-87c8-e2fed5e391b2",
+    "question_number": 54,
+    "question_text": "If three moles of an ideal gas at $300 \\mathrm{~K}$ expand isotherrnally from $30 \\mathrm{dm}^3$ to $45 \\mathrm{dm}^3$ against a constant opposing pressure of $80 \\mathrm{kPa}$, then the amount of heat transferred is ______ $\\mathrm{J}$.",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 1200,
+    "explanation": "Using, first law of thermodynamics,\n$\\begin{aligned}\n \\ & \\Delta \\mathrm{U}=\\mathrm{Q}+\\mathrm{W}, \\\\\n \\ & \\Delta \\mathrm{U}=0: \\text { Process is isothermal } \\\\\n \\ & \\mathrm{Q}=-\\mathrm{W} \\\\\n \\ & \\mathrm{W}=-\\mathrm{P}_{\\mathrm{ext}} \\Delta \\mathrm{V}: \\text { Irreversible } \\\\\n \\ & =-80 \\times 10^3(45-30) \\times 10^{-3} \\\\\n \\ & =-1200 \\mathrm{~J}\n \\ \\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Chemistry",
+    "chapter": "CHEMICAL THERMODYNAMICS",
+    "topic": "The first law of thermodynamics - Concept of work",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "df444dc6-14ef-4396-a3d1-590812453273",
+    "question_number": 55,
+    "question_text": "3-Methylhex-2-ene on reaction with $\\mathrm{HBr}$ in presence of peroxide forms an addition product (A). The number of possible stereoisomers for ' $\\mathrm{A}$ ' is",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 4,
+    "explanation": "",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/3859da76f1e9db63475138b4e471592a22566bdf86f896c8456a2df388f31c67.png"
+    ],
+    "question_type": "integer",
+    "subject": "Chemistry",
+    "chapter": "ORGANIC COMPOUNDS CONTAINING OXYGEN",
+    "topic": "Reimer - Tiemann reaction",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1a6671bc-18f6-4c59-9747-3eee51d15359",
+    "question_number": 56,
+    "question_text": "Among the given organic compounds, the total number of aromatic compounds is\n(A) \n\n(B)\n\n(C)\n\n(D)",
+    "question_images": [
+      "https://i2.jee-adv.eu.org/images/629a84ab12d98b2bcd56929c0dcaa8a099c65b45a6896e56bf3afba6f32e5cb5.png",
+      "https://i2.jee-adv.eu.org/images/262a0550ecc233bb06cb1dd906b0e91485c886c1d664afa90ad76a652461b361.png",
+      "https://i2.jee-adv.eu.org/images/0fcaa0c0789d91da1b3b472eb5a60ad3c98bc7c8903b35ba05f888077ab1d314.png",
+      "https://i2.jee-adv.eu.org/images/fce1b6be4b374dd36048cfcfc2f218d44acc95bdc5bee6fb97c98e65b7c7716c.png"
+    ],
+    "options": null,
+    "correct_answer": 3,
+    "explanation": "B,C and D are Aromatic",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Chemistry",
+    "chapter": "COORDINATION COMPOUNDS",
+    "topic": "Introduction to coordination compounds",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6202cd6c-0e83-4991-a2bd-9c1e14d0b9d9",
+    "question_number": 57,
+    "question_text": "Among the following, total number of meta directing functional groups is (Integer based)\n$\\begin{aligned}\n \\ & -\\mathrm{OCH}_3,-\\mathrm{NO}_2,-\\mathrm{CN},-\\mathrm{CH}_3-\\mathrm{NHCOCH}_3, \\\\\n \\ & -\\mathrm{COR},-\\mathrm{OH},-\\mathrm{COOH},-\\mathrm{Cl}\n \\ \\end{aligned}$",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 4,
+    "explanation": "$-\\mathrm{NO}_2,-\\mathrm{C} \\equiv \\mathrm{N},-\\mathrm{COR},-\\mathrm{COOH}$ are meta directing.",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Chemistry",
+    "chapter": "PRINCIPLES RELATED TO PRACTICAL CHEMISTRY",
+    "topic": "detection of the following functional groups",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2f776c05-db81-47f1-a373-119bd0094f0d",
+    "question_number": 58,
+    "question_text": "The number of electrons present in all the completely filled subshells having $\\mathrm{n}=4$ and $\\mathrm{s}=+\\frac{1}{2}$ is\n(Where $\\mathrm{n}=$ principal quantum number and $\\mathrm{s}=$ spin quantum number)",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 16,
+    "explanation": "$\\mathrm{n}=4$ can have,\n$\\begin{array}{|c|c|c|c|c|}\n \\ \\hline & \\mathbf{4 s} & \\mathbf{4 p} & \\mathbf{4 d} & \\mathbf{4 f} \\\\\n \\ \\hline \\text { Total e } & 2 & 6 & 10 & 14 \\\\\n \\ \\hline \\text { Total e- with S }=+\\frac{1}{2} & 1 & 3 & 5 & 7 \\\\\n \\ \\hline\n \\ \\end{array}$\nSo, Ans. 16",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Chemistry",
+    "chapter": "ATOMIC STRUCTURE",
+    "topic": "electron spin and spin quantum number",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9ddf8afc-0ed5-4b42-96e2-c354a6f88353",
+    "question_number": 59,
+    "question_text": "Sum of bond order of $\\mathrm{CO}$ and $\\mathrm{NO}^{+}$is",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 6,
+    "explanation": "$\\begin{aligned}\n \\ & \\mathrm{CO} \\Rightarrow \\quad \\overline{\\mathrm{C}} \\equiv \\stackrel{+}{\\mathrm{O}} \\quad: \\mathrm{BO}=3 \\\\\n \\ & \\mathrm{NO}^{+} \\Rightarrow \\mathrm{N} \\equiv \\mathrm{O}^{+} \\quad: \\mathrm{BO}=3 \\\\\n \\ \\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Chemistry",
+    "chapter": "CHEMICAL BONDING AND MOLECULAR STRUCTURE",
+    "topic": "the concept of bond order",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9ebacdb6-41c7-499c-815e-69af8e1fbcd7",
+    "question_number": 60,
+    "question_text": "From the given list, the number of compounds with +4 oxidation state of Sulphur\n$\\mathrm{SO}_3, \\mathrm{H}_2 \\mathrm{SO}_3, \\mathrm{SOCl}_2, \\mathrm{SF}_4, \\mathrm{BaSO}_4, \\mathrm{H}_2 \\mathrm{~S}_2 \\mathrm{O}_7$",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 3,
+    "explanation": "$\\begin{array}{|c|c|c|c|c|c|c|}\n \\ \\hline \\text {Compounds } & \\mathrm{SO}_3 & \\mathrm{H}_2 \\mathrm{SO}_3 & \\mathrm{SOCl}_2 & \\mathrm{SF}_4 & \\mathrm{BaSO}_4 & \\mathrm{H}_2 \\mathrm{~S}_2 \\mathrm{O}_7 \\\\\n \\ \\hline \\text {O.S.of Sulphur: } & +6 & +4 & +4 & +4 & +6 & +6 \\\\\n \\ \\hline\n \\ \\end{array}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Chemistry",
+    "chapter": "COORDINATION COMPOUNDS",
+    "topic": "Introduction to coordination compounds",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8f3c85df-454d-420d-b864-0195f94a7e07",
+    "question_number": 61,
+    "question_text": "${ }^{n-1} C_r=\\left(k^2-8\\right){ }^n C_{r+1}$ if and only if :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$2 \\sqrt{2}  < \\mathrm{k} \\leq 3$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$2 \\sqrt{3}  < \\mathrm{k} \\leq 3 \\sqrt{2}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$2 \\sqrt{3}  < \\mathrm{k} < 3 \\sqrt{3}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$2 \\sqrt{2}  < \\mathrm{k} < 2 \\sqrt{3}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "$\\begin{aligned} & { }^{{ }^n-1} C_r=\\left(k^2-8\\right){ }^n C_{r+1} \\\\ & \\underbrace{r+1 \\geq 0, r \\geq 0}_{r \\geq 0} \\\\ & \\frac{{ }^n C_r}{{ }^n C_{r+1}}=k^2-8 \\\\ & \\frac{r+1}{n}=k^2-8 \\\\ & \\Rightarrow k^2-8 > 0 \\\\ & (k-2 \\sqrt{2})(k+2 \\sqrt{2}) > 0\\end{aligned}$\n$\\mathrm{k} \\in(-\\infty,-2 \\sqrt{2}) \\cup(2 \\sqrt{2}, \\infty)$      ....(I)\n$\\therefore \\mathrm{n} \\geq \\mathrm{r}+1, \\frac{\\mathrm{r}+1}{\\mathrm{n}} \\leq 1$\n$\\begin{array}{r}\\Rightarrow \\mathrm{k}^2-8 \\leq 1 \\\\ \\mathrm{k}^2-9 \\leq 0\\end{array}$\n$-3 \\leq \\mathrm{k} \\leq 3$       ....(II)\nFrom equation (I) and (II) we get\n$\\mathrm{k} \\in[-3,-2 \\sqrt{2}) \\cup(2 \\sqrt{2}, 3]$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "DIFFRENTIAL EQUATIONS :",
+    "topic": "the solution of differential equation by the metho",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e7852656-d7ab-40a7-b932-efa209b58c9b",
+    "question_number": 62,
+    "question_text": "The distance, of the point $(7,-2,11)$ from the line $\\frac{x-6}{1}=\\frac{y-4}{0}=\\frac{z-8}{3} \\quad$ along the line $\\frac{x-5}{2}=\\frac{y-1}{-3}=\\frac{z-5}{6}$, is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "12",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "14",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "18",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "21",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "$B=(2 \\lambda+7,-3 \\lambda-2,6 \\lambda+11)$\n$(7,-2,11)$\nPoint B lies on $\\frac{x-6}{1}=\\frac{y-4}{0}=\\frac{z-8}{3}$\n$\\frac{2 \\lambda+7-6}{1}=\\frac{-3 \\lambda-2-4}{0}=\\frac{6 \\lambda+11-8}{3}$\n$\\begin{aligned} & -3 \\lambda-6=0 \\\\ & \\lambda=-2\\end{aligned}$\n$\\mathrm{AB}=\\sqrt{(7-3)^2+(4+2)^2+(11+1)^2}$\n$\\begin{aligned} & =\\sqrt{16+36+144} \\\\ & =\\sqrt{196}=14\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "CO-ORDINATE GEOMETRY :",
+    "topic": "the distance of a point form a line",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "983abadc-164d-4052-9225-876d24f6bc99",
+    "question_number": 63,
+    "question_text": "Let $x=x(t)$ and $y=y(t)$ be solutions of the differential equations $\\frac{\\mathrm{dx}}{\\mathrm{dt}}+\\mathrm{ax}=0 \\quad$ and $\\frac{\\mathrm{dy}}{\\mathrm{dt}}+\\mathrm{by}=0$ respectively, $\\mathrm{a}, \\mathrm{b} \\in \\mathrm{R}$. Given that $x(0)=2 ; y(0)=1$ and $3 y(1)=2 x(1)$, the value of $t$, for which $\\mathrm{x}(\\mathrm{t})=\\mathrm{y}(\\mathrm{t})$, is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\log _{\\frac{2}{3}} 2$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\log _4 3$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\log _3 4$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\log _{\\frac{4}{3}} 2$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$\\begin{aligned} & \\frac{d x}{d t}+a x=0 \\\\ & \\frac{d x}{x}=-a d t \\\\ & \\int \\frac{d x}{x}=-a \\int d t \\\\ & \\ln |x|=-a t+c \\\\ & \\text { at } t=0, x=2 \\\\ & \\ln 2=0+c \\\\ & \\ln x=-a t+\\ln 2 \\\\ & \\frac{x}{2}=e^{-a t}\\end{aligned}$\n$\\mathrm{x}=2 \\mathrm{e}^{-\\mathrm{at}}$      ...(i)\n$\\begin{aligned} & \\frac{d y}{d t}+b y=0 \\\\ & \\frac{d y}{y}=-b d t\\end{aligned}$\n$\\ln |y|=-b t+\\lambda$\n$\\begin{aligned} & \\mathrm{t}=0, \\mathrm{y}=1 \\\\ & 0=0+\\lambda\\end{aligned}$\n$y=e^{-b t}$     ...(iv)\nAccording to question\n$\\begin{aligned} & 3 \\mathrm{y}(1)=2 \\mathrm{x}(1) \\\\ & 3 \\mathrm{e}^{-\\mathrm{b}}=2\\left(2 \\mathrm{e}^{-\\mathrm{a}}\\right) \\\\ & \\mathrm{e}^{\\mathrm{a}-\\mathrm{b}}=\\frac{4}{3}\\end{aligned}$\nFor $x(t)=y(t)$\n$\\begin{array}{r}\\Rightarrow 2 \\mathrm{e}^{-\\mathrm{at}}=\\mathrm{e}^{-\\mathrm{bt}} \\\\ 2=\\mathrm{e}^{(\\mathrm{a}-\\mathrm{b}) \\mathrm{t}} \\\\ \\\\ 2=\\left(\\frac{4}{3}\\right)^{\\mathrm{t}} \\\\ \\log _{\\frac{4}{3}} 2=\\mathrm{t}\\end{array}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "DIFFRENTIAL EQUATIONS :",
+    "topic": "Ordinary differential equations",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04ac415b-11f6-4ada-bdb8-9ecc994f2861",
+    "question_number": 64,
+    "question_text": "If $(a, b)$ be the orthocentre of the triangle whose vertices are $(1,2),(2,3)$ and $(3,1)$, and $I_1=\\int_{\\mathrm{a}}^{\\mathrm{b}} \\mathrm{x} \\sin \\left(4 \\mathrm{x}-\\mathrm{x}^2\\right) \\mathrm{dx}, \\mathrm{I}_2=\\int_{\\mathrm{a}}^{\\mathrm{b}} \\sin \\left(4 \\mathrm{x}-\\mathrm{x}^2\\right) \\mathrm{dx}$ , then $36 \\frac{\\mathrm{I}_1}{\\mathrm{I}_2}$ is equal to :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "72",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "88",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "80",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "66",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Equation of CE\n$\\begin{aligned} & y-1=-(x-3) \\\\ & x+y=4\\end{aligned}$\n\northocentre lies on the line $x+y=4$\nso, $a+b=4$\n$I_1=\\int_a^b x \\sin (x(4-x)) d x$     ...(i)\nUsing king rule\n$I_1=\\int_a^b(4-x) \\sin (x(4-x)) d x$    ...(ii)\n(i) + (ii)\n$2 I_1=\\int_a^b 4 \\sin (x(4-x)) d x$\n$\\begin{aligned} & 2 \\mathrm{I}_1=4 \\mathrm{I}_2 \\\\ & \\mathrm{I}_1=2 \\mathrm{I}_2 \\\\ & \\frac{\\mathrm{I}_1}{\\mathrm{I}_2}=2 \\\\ & \\frac{36 \\mathrm{I}_1}{\\mathrm{I}_2}=72\\end{aligned}$",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/77f0620b017c77887a95d119a69994a60b6b6068d028f20604f4318df604db68.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "CO-ORDINATE GEOMETRY :",
+    "topic": "orthocentre and circumcentre of a triangle",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c6bb6fc8-52ab-46e3-82a9-a21a5a263d2b",
+    "question_number": 65,
+    "question_text": "If A denotes the sum of all the coefficients in the expansion of $\\left(1-3 x+10 x^2\\right)^n$ and $B$ denotes the sum of all the coefficients in the expansion of $\\left(1+x^2\\right)^n$, then :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$A=B^3$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$3 \\mathrm{~A}=\\mathrm{B}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$B=A^3$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$A=3 B$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Sum of coefficients in the expansion of\n$\\left(1-3 x+10 x^2\\right)^n=A$\nthen $A=(1-3+10)^n=8^n($ put $x=1)$\nand sum of coefficients in the expansion of\n$\\left(1+x^2\\right)^n=B$\n$\\begin{aligned} & \\text { then } \\mathrm{B}=(1+1)^{\\mathrm{n}}=2^{\\mathrm{n}} \\\\ & \\mathrm{A}=\\mathrm{B}^3\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "COMPLEX NUMBERS AND QUADRATIC EQUATIONS:",
+    "topic": "Relations between roots and coefficients",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3f2149f-5db2-450b-be42-8300580b746b",
+    "question_number": 66,
+    "question_text": "The number of common terms in the progressions $4,9,14,19, \\ldots \\ldots$, up to $25^{\\text {th }}$ term and $3,6,9,12$, up to $37^{\\text {th }}$ term is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "9",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "7",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "$4,9,14,19, \\ldots$, up to $25^{\\text {th }}$ term\n$\\mathrm{T}_{25}=4+(25-1) 5=4+120=124$\n$3,6,9,12, \\ldots$, up to $37^{\\text {th }}$ term\n$T_{37}=3+(37-1) 3=3+108=111$\nCommon difference of $\\mathrm{I}^{\\text {st }}$ series $\\mathrm{d}_1=5$\nCommon difference of II $^{\\text {nd }}$ series $\\mathrm{d}_2=3$\nFirst common term $=9$, and\ntheir common difference $=15\\left(\\mathrm{LCM}\\right.$ of $\\mathrm{d}_1$ and $\\left.\\mathrm{d}_2\\right)$\nthen common terms are\n$9,24,39,54,69,84,99$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "BINOMIAL THEOREM AND ITS SIMPLE APPLICATIONS:",
+    "topic": "general term and middle term and simple applicatio",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3385a634-2718-4cb7-a814-2f61955634ac",
+    "question_number": 67,
+    "question_text": "If the shortest distance of the parabola $y^2=4 x$ from the centre of the circle $x^2+y^2-4 x-16 y+64=0$ is $\\mathrm{d}$, then $\\mathrm{d}^2$ is equal to :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "16",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "24",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "20",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "36",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Equation of normal to parabola\n$y=m x-2 m-m^3$\nthis normal passing through center of circle $(2,8)$\n$\\begin{aligned} & 8=2 m-2 m-m^3 \\\\ & m=-2\\end{aligned}$\nSo point $\\mathrm{P}$ on parabola $\\Rightarrow\\left(\\mathrm{am}^2,-2 \\mathrm{am}\\right)=(4,4)$\nAnd $\\mathrm{C}=(2,8)$\n$\\begin{aligned} & \\mathrm{PC}=\\sqrt{4+16}=\\sqrt{20} \\\\ & \\mathrm{~d}^2=20\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "CO-ORDINATE GEOMETRY :",
+    "topic": "the general form of the equation of a circle",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2838e38c-0ca8-43e5-90ce-b445d81ea9a7",
+    "question_number": 68,
+    "question_text": "If the shortest distance between the lines $\\frac{x-4}{1}=\\frac{y+1}{2}=\\frac{z}{-3}$ and $\\frac{x-\\lambda}{2}=\\frac{y+1}{4}=\\frac{z-2}{-5}$ is $\\frac{6}{\\sqrt{5}}$, then the sum of all possible values of $\\lambda$ is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "8",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "7",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "10",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "$\\begin{aligned} & \\frac{x-4}{1}=\\frac{y+1}{2}=\\frac{z}{-3} \\\\ & \\frac{x-\\lambda}{2}=\\frac{y+1}{4}=\\frac{z-2}{-5}\\end{aligned}$\nthe shortest distance between the lines\n$\\begin{aligned} & =\\left|\\frac{(\\overrightarrow{\\mathrm{a}}-\\overrightarrow{\\mathrm{b}}) \\cdot\\left(\\overrightarrow{\\mathrm{d}_1} \\times \\overrightarrow{\\mathrm{d}_2}\\right)}{\\left|\\overrightarrow{\\mathrm{d}_1} \\times \\overrightarrow{\\mathrm{d}_2}\\right|}\\right| \\\\ & \\left.=\\left|\\frac{\\left|\\begin{array}{ccc}\\lambda-4 & 0 & 2 \\\\ 1 & 2 & -3 \\\\ 2 & 4 & -5\\end{array}\\right|}{\\left|\\begin{array}{ccc}\\hat{i} & \\hat{j} & \\hat{k} \\\\ 1 & 2 & -3 \\\\ 2 & 4 & -5\\end{array}\\right|}\\right| \\right\\rvert\\, \\\\ & =\\left|\\frac{(\\lambda-4)(-10+12)-0+2(4-4)}{|2 \\hat{i}-1 \\hat{j}+0 \\hat{k}|}\\right| \\\\ & \\frac{6}{\\sqrt{5}}=\\left|\\frac{2(\\lambda-4)}{\\sqrt{5}}\\right| \\\\ & 3=|\\lambda-4| \\\\ & \\lambda-4= \\pm 3 \\\\ & \\lambda=7,1 \\\\ & \\end{aligned}$\nSum of all possible values of $\\lambda$ is $=8$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "THREE DIMENSIONAL GEOMETRY :",
+    "topic": "the shortest distance between them and its equatio",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1e0ce6e1-51b1-47b0-8de3-f6c2e0bbf08e",
+    "question_number": 69,
+    "question_text": "If $\\int_0^1 \\frac{1}{\\sqrt{3+x}+\\sqrt{1+x}} d x=a+b \\sqrt{2}+c \\sqrt{3}$, where $a, b, c$ are rational numbers, then $2 a+3 b-4 c$ is equal to :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "10",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "7",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$\\begin{aligned} & \\int_0^1 \\frac{1}{\\sqrt{3+x}+\\sqrt{1+x}} d x=\\int_0^1 \\frac{\\sqrt{3+x}-\\sqrt{1+x}}{(3+x)-(1+x)} d x \\\\ & \\frac{1}{2}\\left[\\int_0^1 \\sqrt{3+x} d x-\\int_0^1(\\sqrt{1+x}) d x\\right]\\end{aligned}$\n$\\begin{aligned} & \\frac{1}{2}\\left[2 \\frac{(3+x)^{\\frac{3}{2}}}{3}-\\frac{2(1+x)^{\\frac{3}{2}}}{3}\\right]_0^1 \\\\ & \\frac{1}{2}\\left[\\frac{2}{3}(8-3 \\sqrt{3})-\\frac{2}{3}\\left(2^{\\frac{3}{2}}-1\\right)\\right] \\\\ & \\frac{1}{3}[8-3 \\sqrt{3}-2 \\sqrt{2}+1] \\\\ & =3-\\sqrt{3}-\\frac{2}{3} \\sqrt{2}=a+b \\sqrt{2}+c \\sqrt{3} \\\\ & a=3, b=-\\frac{2}{3}, c=-1 \\\\ & 2 a+3 b-4 c=6-2+4=8\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "COMPLEX NUMBERS AND QUADRATIC EQUATIONS:",
+    "topic": "Complex numbers as ordered pairs of reals",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "155ec850-6694-407a-a232-24f870488415",
+    "question_number": 70,
+    "question_text": "Let $S=\\{1,2,3, \\ldots, 10\\}$. Suppose $M$ is the set of all the subsets of $S$, then the relation $\\mathrm{R}=\\{(\\mathrm{A}, \\mathrm{B}): \\mathrm{A} \\cap \\mathrm{B} \\neq \\phi ; \\mathrm{A}, \\mathrm{B} \\in \\mathrm{M}\\}$ is $:$",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "symmetric and reflexive only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "reflexive only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "symmetric and transitive only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "symmetric only",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Let $S=\\{1,2,3, \\ldots, 10\\}$\n$\\mathrm{R}=\\{(\\mathrm{A}, \\mathrm{B}): \\mathrm{A} \\cap \\mathrm{B} \\neq \\phi ; \\mathrm{A}, \\mathrm{B} \\in \\mathrm{M}\\}$\nFor Reflexive,\n$M$ is subset of ' $S$ '\nSo $\\phi \\in \\mathrm{M}$\nfor $\\phi \\cap \\phi=\\phi$\n$\\Rightarrow$ but relation is $\\mathrm{A} \\cap \\mathrm{B} \\neq \\phi$\nSo it is not reflexive.\nFor symmetric,\n$\\begin{array}{ll}\\mathrm{ARB} & \\mathrm{A} \\cap \\mathrm{B} \\neq \\phi, \\\\ \\Rightarrow \\mathrm{BRA} & \\Rightarrow \\mathrm{B} \\cap \\mathrm{A} \\neq \\phi,\\end{array}$\nSo it is symmetric.\nFor transitive,\nIf $A=\\{(1,2),(2,3)\\}$\n$\\begin{aligned} & B=\\{(2,3),(3,4)\\} \\\\ & C=\\{(3,4),(5,6)\\}\\end{aligned}$\nARB \\& BRC but A does not relate to C\nSo it not transitive",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "SEQUENCE AND SERIES:",
+    "topic": "Relation between A",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "08ca7a45-d5e1-4322-b87d-0ca073a0d7e3",
+    "question_number": 71,
+    "question_text": "If $S=\\{z \\in C:|z-i|=|z+i|=|z-1|\\}$, then, $n(S)$ is:",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "$|z-i|=|z+i|=|z-1|$\n\n$\\mathrm{ABC}$ is a triangle. Hence its circum-centre will be the only point whose distance from A, B, C will be same.\nSo $\\mathrm{n}(\\mathrm{S})=1$",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/5511d7569e8fbaeff5f3c211428d1d89be6ba4cb6911c2a0bac0bbbff4efee59.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "CO-ORDINATE GEOMETRY :",
+    "topic": "the distance of a point form a line",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d70304a-074d-462c-96e0-5318e75afef2",
+    "question_number": 72,
+    "question_text": "Four distinct points $(2 \\mathrm{k}, 3 \\mathrm{k}),(1,0),(0,1)$ and $(0,0)$ lie on a circle for $k$ equal to :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{2}{13}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{3}{13}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\frac{5}{13}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{1}{13}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "$(2 \\mathrm{k}, 3 \\mathrm{k})$ will lie on circle whose diameter is $\\mathrm{AB}$.\n\n$(\\mathrm{x}-1)(\\mathrm{x})+(\\mathrm{y}-1)(\\mathrm{y})=0$\n$x^2+y^2-x-y=0$      ...(i)\nSatisfy $(2 k, 3 k)$ in (i)\n$\\begin{aligned} & (2 k)^2+(3 k)^2-2 k-3 k=0 \\\\ & 13 k^2-5 k=0\\end{aligned}$\n$\\mathrm{k}=0, \\mathrm{k}=\\frac{5}{13}$\nhence $\\mathrm{k}=\\frac{5}{13}$",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/0588207cb78d657615a50f8ee7b5a44b3c03b0f56b1c46aeeb4f810851bcc48a.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "CO-ORDINATE GEOMETRY :",
+    "topic": "equation of a circle when the endpoints of a diame",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04acb55d-d4ae-4be8-a257-18194e63821d",
+    "question_number": 73,
+    "question_text": "Consider the function.\n$f(x)=\\left\\{\\begin{array}{cc}\\frac{a\\left(7 x-12-x^2\\right)}{b\\left|x^2-7 x+12\\right|} & , x  < 3 \\\\ 2^{\\frac{\\sin (x-3)}{x-[x]}} & , \\quad x > 3 \\\\ b & , \\quad x=3\\end{array}\\right.$\nWhere $[\\mathrm{x}]$ denotes the greatest integer less than or equal to $x$. If $S$ denotes the set of all ordered pairs $(a, b)$ such that $\\mathrm{f}(\\mathrm{x})$ is continuous at $\\mathrm{x}=3$, then the number of elements in $\\mathrm{S}$ is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Infinitely many",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$f\\left(3^{-}\\right)=\\frac{a}{b} \\frac{\\left(7 x-12-x^2\\right)}{\\left|x^2-7 x+12\\right|} \\quad$ (for $f(x)$ to be cont.)\n$\\Rightarrow \\mathrm{f}\\left(3^{-}\\right)=\\frac{-\\mathrm{a}}{\\mathrm{b}} \\frac{(\\mathrm{x}-3)(\\mathrm{x}-4)}{(\\mathrm{x}-3)(\\mathrm{x}-4)} ; \\mathrm{x}  < 3 \\Rightarrow \\frac{-\\mathrm{a}}{\\mathrm{b}}$\nHence $f\\left(3^{-}\\right)=\\frac{-a}{b}$\nThen $f\\left(3^{+}\\right)=2^{\\lim _{x \\rightarrow 3^{+}}\\left(\\frac{\\sin (x-3)}{x-3}\\right)}=2$ and\n$f(3)=b$\nHence $f(3)=f\\left(3^{+}\\right)=f\\left(3^{-}\\right)$\n$\\Rightarrow \\mathrm{b}=2=-\\frac{\\mathrm{a}}{\\mathrm{b}}$\n$b=2, a=-4$\nHence only 1 ordered pair $(-4,2)$.",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "COMPLEX NUMBERS AND QUADRATIC EQUATIONS:",
+    "topic": "Complex numbers as ordered pairs of reals",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f51af68d-a944-48a5-a2ea-2ceb59d69389",
+    "question_number": 74,
+    "question_text": "Let $a_1, a_2, \\ldots . a_{10}$ be 10 observations such that $\\sum_{\\mathrm{k}=1}^{10} \\mathrm{a}_{\\mathrm{k}}=50$ and $\\sum_{\\forall \\mathrm{k}  < \\mathrm{j}} \\mathrm{a}_{\\mathrm{k}} \\cdot \\mathrm{a}_{\\mathrm{j}}=1100$. Then the standard deviation of $\\mathrm{a}_1, \\mathrm{a}_2, . ., \\mathrm{a}_{10}$ is equal to :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\sqrt{5}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "10",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\sqrt{115}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "$\\sum_{\\mathrm{k}=1}^{10} \\mathrm{a}_{\\mathrm{k}}=50$\n$a_1+a_2+\\ldots+a_{10}=50$   ....(i)\n$\\sum_{\\forall \\mathrm{k}  < \\mathrm{j}} \\mathrm{a}_{\\mathrm{k}} \\mathrm{a}_{\\mathrm{j}}=1100$    ...(ii)\nIf $\\mathrm{a}_1+\\mathrm{a}_2+\\ldots+\\mathrm{a}_{10}=50$.\n$\\left(a_1+a_2+\\ldots+a_{10}\\right)^2=2500$\n$\\begin{aligned} & \\Rightarrow \\sum_{\\mathrm{i}=1}^{10} \\mathrm{a}_{\\mathrm{i}}^2+2 \\sum_{\\mathrm{k} < \\mathrm{j}} \\mathrm{a}_{\\mathrm{k}} \\mathrm{a}_{\\mathrm{j}}=2500 \\\\ & \\Rightarrow \\sum_{\\mathrm{i}=1}^{10} \\mathrm{a}_{\\mathrm{i}}^2=2500-2(1100)\\end{aligned}$\n$\\sum_{\\mathrm{i}=1}^{10} \\mathrm{a}_{\\mathrm{i}}^2=300$, Standard deviation ' $\\sigma$ '\n$\\begin{aligned} & =\\sqrt{\\frac{\\sum \\mathrm{a}_{\\mathrm{i}}^2}{10}-\\left(\\frac{\\sum \\mathrm{a}_{\\mathrm{i}}}{10}\\right)^2}=\\sqrt{\\frac{300}{10}-\\left(\\frac{50}{10}\\right)^2} \\\\ & =\\sqrt{30-25}=\\sqrt{5}\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "STATISTICS AND PROBABILITY :",
+    "topic": "calculation of standard deviation",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "780e48da-1496-4737-b209-041e776b39b0",
+    "question_number": 75,
+    "question_text": "The length of the chord of the ellipse $\\frac{x^2}{25}+\\frac{y^2}{16}=1$, whose mid point is $\\left(1, \\frac{2}{5}\\right)$, is equal to :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{\\sqrt{1691}}{5}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{\\sqrt{2009}}{5}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\frac{\\sqrt{1741}}{5}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{\\sqrt{1541}}{5}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Equation of chord with given middle point.\n$\\mathrm{T}=\\mathrm{S}_1$\n$\\begin{aligned} & \\frac{x}{25}+\\frac{y}{40}=\\frac{1}{25}+\\frac{1}{100} \\\\ & \\frac{8 x+5 y}{200}=\\frac{8+2}{200}\\end{aligned}$\n$y=\\frac{10-8 x}{5}$        ...(i)\n$\\frac{x^2}{25}+\\frac{(10-8 x)^2}{400}=1 \\quad$ (put in original equation)\n$\\begin{aligned} & \\frac{16 x^2+100+64 x^2-160 x}{400}=1 \\\\ & 4 x^2-8 x-15=0 \\\\ & x=\\frac{8 \\pm \\sqrt{304}}{8} \\\\ & x_1=\\frac{8+\\sqrt{304}}{8} ; x_2=\\frac{8-\\sqrt{304}}{8}\\end{aligned}$\nSimilarly, $y=\\frac{10-18 \\pm \\sqrt{304}}{5}=\\frac{2 \\pm \\sqrt{304}}{5}$\n$\\mathrm{y}_1=\\frac{2-\\sqrt{304}}{5} ; \\mathrm{y}_2=\\frac{2+\\sqrt{304}}{5}$\nDistance $=\\sqrt{\\left(\\mathrm{x}_1-\\mathrm{x}_2\\right)^2+\\left(\\mathrm{y}_1-\\mathrm{y}_2\\right)^2}$\n$=\\sqrt{\\frac{4 \\times 304}{64}+\\frac{4 \\times 304}{25}}=\\frac{\\sqrt{1691}}{5}$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "THREE DIMENSIONAL GEOMETRY :",
+    "topic": "the shortest distance between them and its equatio",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ee8e75a2-3634-46af-990d-22c8da6a2e8a",
+    "question_number": 76,
+    "question_text": "The portion of the line $4 x+5 y=20$ in the first quadrant is trisected by the lines $\\mathrm{L}_1$ and $\\mathrm{L}_2$ passing through the origin. The tangent of an angle between the lines $\\mathrm{L}_1$ and $\\mathrm{L}_2$ is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{8}{5}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{25}{41}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\frac{2}{5}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{30}{41}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Co-ordinates of $\\mathrm{A}=\\left(\\frac{5}{3}, \\frac{8}{3}\\right)$\nCo-ordinates of $\\mathrm{B}=\\left(\\frac{10}{3}, \\frac{4}{3}\\right)$\nSlope of $\\mathrm{OA}=\\mathrm{m}_1=\\frac{8}{5}$\nSlope of $\\mathrm{OB}=\\mathrm{m}_2=\\frac{2}{5}$\n\n$\\begin{aligned} & \\tan \\theta=\\left|\\frac{m_1-m_2}{1+m_1 m_2}\\right| \\\\ & \\tan \\theta=\\frac{\\frac{6}{5}}{1+\\frac{16}{25}}=\\frac{30}{41} \\\\ & \\tan \\theta=\\frac{30}{41}\\end{aligned}$",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/0ce6748409240e9f3c8a59c772bfc83d35a8982fdaa0a0d4b213b1d011750427.png"
+    ],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "CO-ORDINATE GEOMETRY :",
+    "topic": "the slope of a line",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ae510ce2-8eb4-4af0-b9ec-0b306552fceb",
+    "question_number": 77,
+    "question_text": "Let $\\overrightarrow{\\mathrm{a}}=\\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}+\\mathrm{k}, \\overrightarrow{\\mathrm{b}}=3(\\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}+\\mathrm{k})$. Let $\\overrightarrow{\\mathrm{c}}$ be the vector such that $\\overrightarrow{\\mathrm{a}} \\times \\overrightarrow{\\mathrm{c}}=\\overrightarrow{\\mathrm{b}}$ and $\\overrightarrow{\\mathrm{a}} \\cdot \\overrightarrow{\\mathrm{c}}=3$. Then $\\overrightarrow{\\mathrm{a}} \\cdot((\\overrightarrow{\\mathrm{c}} \\times \\overrightarrow{\\mathrm{b}})-\\overrightarrow{\\mathrm{b}}-\\overrightarrow{\\mathrm{c}})$ is equal to :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$32$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$24$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$20$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$36$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "$\\overrightarrow{\\mathrm{a}} \\cdot[(\\overrightarrow{\\mathrm{c}} \\times \\overrightarrow{\\mathrm{b}})-\\overrightarrow{\\mathrm{b}}-\\overrightarrow{\\mathrm{c}}]$\n$\\overrightarrow{\\mathrm{a}} \\cdot(\\overrightarrow{\\mathrm{c}} \\times \\overrightarrow{\\mathrm{b}})-\\overrightarrow{\\mathrm{a}} \\cdot \\overrightarrow{\\mathrm{b}}-\\overrightarrow{\\mathrm{a}} \\cdot \\overrightarrow{\\mathrm{c}}$        ...(i)\ngiven $\\overrightarrow{\\mathrm{a}} \\times \\overrightarrow{\\mathrm{c}}=\\overrightarrow{\\mathrm{b}}$\n$\\Rightarrow(\\overrightarrow{\\mathrm{a}} \\times \\overrightarrow{\\mathrm{c}}) \\cdot \\overrightarrow{\\mathrm{b}}=\\overrightarrow{\\mathrm{b}} \\cdot \\overrightarrow{\\mathrm{b}}=|\\overrightarrow{\\mathrm{b}}|^2=27$\n$\\Rightarrow \\vec{a} \\cdot(\\vec{c} \\times \\vec{b})=\\left[\\begin{array}{lll}\\vec{a} & \\vec{c} & \\vec{b}\\end{array}\\right]=(\\vec{a} \\times \\vec{c}) \\cdot \\vec{b}=27$          ...(ii)\nNow $\\vec{a} \\cdot \\vec{b}=3-6+3=0$ ...(iii)\n$\\overrightarrow{\\mathrm{a}} \\cdot \\overrightarrow{\\mathrm{c}}=3$    ....(iv)(given)\nBy (i), (ii), (iii) \\& (iv)\n$27-0-3=24$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "SEQUENCE AND SERIES:",
+    "topic": "geometric means between two given numbers",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6bcbf207-0f2b-447b-9555-cef5450141d0",
+    "question_number": 78,
+    "question_text": "If $a=\\lim _{x \\rightarrow 0} \\frac{\\sqrt{1+\\sqrt{1+x^4}}-\\sqrt{2}}{x^4}$ and $b=\\lim _{x \\rightarrow 0} \\frac{\\sin ^2 x}{\\sqrt{2}-\\sqrt{1+\\cos x}}$, then the value of $a b^3$ is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$36$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$32$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$25$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$30$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "$a=\\lim _{x \\rightarrow 0} \\frac{\\sqrt{1+\\sqrt{1+x^4}}-\\sqrt{2}}{x^4}$\n$\\begin{aligned} & =\\lim _{x \\rightarrow 0} \\frac{\\sqrt{1+x^4}-1}{x^4\\left(\\sqrt{1+\\sqrt{1+x^4}}+\\sqrt{2}\\right)} \\\\ & =\\lim _{x \\rightarrow 0} \\frac{x^4}{x^4\\left(\\sqrt{1+\\sqrt{1+x^4}}+\\sqrt{2}\\right)\\left(\\sqrt{1+x^4}+1\\right)}\\end{aligned}$\nApplying limit $\\mathrm{a}=\\frac{1}{4 \\sqrt{2}}$\n$\\begin{aligned} & b=\\lim _{x \\rightarrow 0} \\frac{\\sin ^2 x}{\\sqrt{2}-\\sqrt{1+\\cos x}} \\\\ & =\\lim _{x \\rightarrow 0} \\frac{\\left(1-\\cos ^2 x\\right)(\\sqrt{2}+\\sqrt{1+\\cos x})}{2-(1+\\cos x)}\\end{aligned}$\n$b=\\lim _{x \\rightarrow 0}(1+\\cos x)(\\sqrt{2}+\\sqrt{1+\\cos x})$\nApplying limits $\\mathrm{b}=2(\\sqrt{2}+\\sqrt{2})=4 \\sqrt{2}$\nNow, $\\mathrm{ab}^3=\\frac{1}{4 \\sqrt{2}} \\times(4 \\sqrt{2})^3=32$",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "LIMIT, CONTINUITY AND DIFFERENTIABILITY:",
+    "topic": "Limits",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bcc8c037-453e-464c-ada8-01bf112dd478",
+    "question_number": 79,
+    "question_text": "Consider the matrix $f(x)=\\left[\\begin{array}{ccc}\\cos x & -\\sin x & 0 \\\\ \\sin x & \\cos x & 0 \\\\ 0 & 0 & 1\\end{array}\\right]$.\nGiven below are two statements :\nStatement I: $\\mathrm{f}(-\\mathrm{x})$ is the inverse of the matrix $\\mathrm{f}(\\mathrm{x})$.\nStatement II: $f(x) f(y)=f(x+y)$.\nIn the light of the above statements, choose the correct answer from the options given below",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Statement I is false but Statement II is true",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Both Statement I and Statement II are false",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Statement I is true but Statement II is false",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Both Statement I and Statement II are true",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$\\begin{aligned} & f(-x)=\\left[\\begin{array}{ccc}\\cos x & \\sin x & 0 \\\\ -\\sin x & \\cos x & 0 \\\\ 0 & 0 & 1\\end{array}\\right] \\\\ & f(x) \\cdot f(-x)=\\left[\\begin{array}{ccc}1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1\\end{array}\\right]=I\\end{aligned}$\nHence statement- I is correct\nNow, checking statement II\n$f(y)=\\left[\\begin{array}{ccc}\\cos y & -\\sin y & 0 \\\\ \\sin y & \\cos y & 0 \\\\ 0 & 0 & 1\\end{array}\\right]$\n$f(x) \\cdot f(y)=\\left[\\begin{array}{ccc}\\cos (x+y) & -\\sin (x+y) & 0 \\\\ \\sin (x+y) & \\cos (x+y) & 0 \\\\ 0 & 0 & 1\\end{array}\\right]$\n$\\Rightarrow \\mathrm{f}(\\mathrm{x}) \\cdot \\mathrm{f}(\\mathrm{y})=\\mathrm{f}(\\mathrm{x}+\\mathrm{y})$\nHence statement-II is also correct.",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "SEQUENCE AND SERIES:",
+    "topic": "geometric means between two given numbers",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "20dfb48c-5aa5-40c2-93e7-dcf004e79eba",
+    "question_number": 80,
+    "question_text": "The function $\\mathrm{f}: \\mathrm{N}-\\{1\\} \\rightarrow \\mathrm{N}$; defined by $\\mathrm{f}(\\mathrm{n})=$ the highest prime factor of $n$, is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "both one-one and onto",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "one-one only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "onto only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "neither one-one nor onto",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "$\\begin{aligned} & \\mathrm{f}: \\mathrm{N}-\\{1\\} \\rightarrow \\mathrm{N} \\\\ & \\mathrm{f}(\\mathrm{n})=\\text { The highest prime factor of } \\mathrm{n} . \\\\ & \\mathrm{f}(2)=2 \\\\ & \\mathrm{f}(4)=2\\end{aligned}$\n$\\Rightarrow$ many one\n4 is not image of any element\n$\\Rightarrow$ into\nHence many one and into\nNeither one-one nor onto.",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Mathematics",
+    "chapter": "SETS, RELATIONS AND FUNCTIONS:",
+    "topic": "into and onto functions",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "547cf074-9e2e-44dc-a1dc-33e7a7aeb6c2",
+    "question_number": 81,
+    "question_text": "The least positive integral value of $\\alpha$, for which the angle between the vectors $\\alpha \\hat{i}-2 \\hat{j}+2 k$ and $\\alpha \\hat{\\mathrm{i}}+2 \\alpha \\hat{\\mathrm{j}}-2 \\mathrm{k}$ is acute, is_____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 5,
+    "explanation": "$\\begin{aligned} & \\cos \\theta=\\frac{(\\alpha \\hat{\\mathrm{i}}-2 \\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}) \\cdot(\\alpha \\hat{\\mathrm{i}}+2 \\alpha \\hat{\\mathrm{j}}-2 \\hat{\\mathrm{k}})}{\\sqrt{\\alpha^2+4+4} \\sqrt{\\alpha^2+4 \\alpha^2+4}} \\\\ & \\cos \\theta=\\frac{\\alpha^2-4 \\alpha-4}{\\sqrt{\\alpha^2+8} \\sqrt{5 \\alpha^2+4}}\\end{aligned}$\n$\\begin{aligned} & \\Rightarrow \\alpha^2-4 \\alpha-4 > 0 \\\\ & \\Rightarrow \\alpha^2-4 \\alpha+4 > 8 \\quad \\Rightarrow(\\alpha-2)^2 > 8\\end{aligned}$\n$\\begin{aligned}& \\Rightarrow \\alpha-2 > 2 \\sqrt{2} \\text { or } \\alpha-2  < -2 \\sqrt{2} \\\\& \\alpha > 2+2 \\sqrt{2} \\text { or } \\alpha < 2-2 \\sqrt{2} \\\\& \\alpha \\in(-\\infty,-0.82) \\cup(4.82, \\infty)\\end{aligned}$\nLeast positive integral value of $\\alpha \\Rightarrow 5$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Mathematics",
+    "chapter": "BINOMIAL THEOREM AND ITS SIMPLE APPLICATIONS:",
+    "topic": "Binomial theorem for a positive integral index",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "34720e2e-d81f-43e9-ba8c-ae088d5dbc90",
+    "question_number": 82,
+    "question_text": "Let for a differentiable function $f:(0, \\infty) \\rightarrow R$, $\\mathrm{f}(\\mathrm{x})-\\mathrm{f}(\\mathrm{y}) \\geq \\log _{\\mathrm{e}}\\left(\\frac{\\mathrm{x}}{\\mathrm{y}}\\right)+\\mathrm{x}-\\mathrm{y}, \\forall \\mathrm{x}, \\mathrm{y} \\in(0, \\infty)$. Then $\\sum_{\\mathrm{n}=1}^{20} \\mathrm{f}^{\\prime}\\left(\\frac{1}{\\mathrm{n}^2}\\right)$ is equal to_____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 2890,
+    "explanation": "$f(x)-f(y) \\geq \\ln x-\\ln y+x-y$\n$\\frac{\\mathrm{f}(\\mathrm{x})-\\mathrm{f}(\\mathrm{y})}{\\mathrm{x}-\\mathrm{y}} \\geq \\frac{\\ln \\mathrm{x}-\\ln \\mathrm{y}}{\\mathrm{x}-\\mathrm{y}}+1$\nLet $x > y$\n$\\lim _{y \\rightarrow x} f^{\\prime}\\left(x^{-}\\right) \\geq \\frac{1}{x}+1$   ...(1)\nLet $\\mathrm{x}  < \\mathrm{y}$\n$\\lim _{y \\rightarrow x} f^{\\prime}\\left(x^{+}\\right) \\leq \\frac{1}{x}+1$   ...(2)\n$\\begin{aligned} & \\mathrm{f}^{\\mathrm{l}}\\left(\\mathrm{x}^{-}\\right)=\\mathrm{f}^1\\left(\\mathrm{x}^{+}\\right) \\\\ & \\mathrm{f}^1(\\mathrm{x})=\\frac{1}{\\mathrm{x}}+1 \\\\ & \\mathrm{f}^{\\prime}\\left(\\frac{1}{\\mathrm{x}^2}\\right)=\\mathrm{x}^2+1 \\\\ & \\sum_{\\mathrm{x}=1}^{20}\\left(\\mathrm{x}^2+1\\right)=\\sum_{\\mathrm{x}=1}^{20} \\mathrm{x}^2+20\\end{aligned}$\n$\\begin{aligned} & =\\frac{20 \\times 21 \\times 41}{6}+20 \\\\ & =2890\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Mathematics",
+    "chapter": "COMPLEX NUMBERS AND QUADRATIC EQUATIONS:",
+    "topic": "Complex numbers as ordered pairs of reals",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "edd9bed4-a5df-4d14-8354-42720075546f",
+    "question_number": 83,
+    "question_text": "If the solution of the differential equation $(2 x+3 y-2) d x+(4 x+6 y-7) d y=0, y(0)=3$, is $\\alpha x+\\beta y+3 \\log _e|2 x+3 y-\\gamma|=6$, then $\\alpha+2 \\beta+3 \\gamma$ is equal to_____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 29,
+    "explanation": "$\\begin{array}{ll}2 x+3 y-2=t & 4 x+6 y-4=2 t \\\\ 2+3 \\frac{d y}{d x}=\\frac{d t}{d x} & 4 x+6 y-7=2 t-3\\end{array}$\n$\\begin{aligned} & \\frac{d y}{d x}=\\frac{-(2 x+3 y-2)}{4 x+6 y-7} \\\\ & \\frac{d t}{d x}=\\frac{-3 t+4 t-6}{2 t-3}=\\frac{t-6}{2 t-3} \\\\ & \\int \\frac{2 t-3}{t-6} d t=\\int d x \\\\ & \\int\\left(\\frac{2 t-12}{t-6}+\\frac{9}{t-6}\\right) \\cdot d t=x\\end{aligned}$\n$\\begin{aligned} & 2 t+9 \\ln (t-6)=x+c \\\\ & 2(2 x+3 y-2)+9 \\ln (2 x+3 y-8)=x+c \\\\ & x=0, y=3 \\\\ & c=14 \\\\ & 4 x+6 y-4+9 \\ln (2 x+3 y-8)=x+14 \\\\ & x+2 y+3 \\ln (2 x+3 y-8)=6 \\\\ & \\alpha=1, \\beta=2, \\gamma=8 \\\\ & \\alpha+2 \\beta+3 \\gamma=1+4+24=29\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Mathematics",
+    "chapter": "DIFFRENTIAL EQUATIONS :",
+    "topic": "the solution of differential equation by the metho",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ffe33d14-bfb7-4630-95bb-191efc3b82d1",
+    "question_number": 84,
+    "question_text": "Let the area of the region $\\{(x, y): x-2 y+4 \\geq 0$, $\\left.x+2 y^2 \\geq 0, x+4 y^2 \\leq 8, y \\geq 0\\right\\}$ be $\\frac{m}{n}$, where $m$ and $\\mathrm{n}$ are coprime numbers. Then $\\mathrm{m}+\\mathrm{n}$ is equal to_____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 119,
+    "explanation": "$\\begin{aligned} & A=\\int_0^1\\left[\\left(8-4 y^2\\right)-\\left(-2 y^2\\right)\\right] d y+ \\\\ & \\int_1^{3 / 2}\\left[\\left(8-4 y^2\\right)-(2 y-4)\\right] d y \\\\ & =\\left[8 y-\\frac{2 y^3}{3}\\right]_0^1+\\left[12 y-y^2-\\frac{4 y^3}{3}\\right]_1^{3 / 2}=\\frac{107}{12}=\\frac{m}{n} \\\\ & \\therefore m+n=119\\end{aligned}$",
+    "explanation_images": [
+      "https://i2.jee-adv.eu.org/images/2b3ac0f710a42ddd1d0fdb7785b78c9a556ef7aa2f9b58d5e4741f7b140f1307.png"
+    ],
+    "question_type": "integer",
+    "subject": "Mathematics",
+    "chapter": "COMPLEX NUMBERS AND QUADRATIC EQUATIONS:",
+    "topic": "Complex numbers as ordered pairs of reals",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "092aaa8d-19b0-454e-8017-34a9f04f4851",
+    "question_number": 85,
+    "question_text": "If\n$8=3+\\frac{1}{4}(3+p)+\\frac{1}{4^2}(3+2 p)+\\frac{1}{4^3}(3+3 p)+\\ldots \\infty,$\nthen the value of $p$ is_____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 9,
+    "explanation": "$8=\\frac{3}{1-\\frac{1}{4}}+\\frac{p \\cdot \\frac{1}{4}}{\\left(1-\\frac{1}{4}\\right)^2}$\n(sum of infinite terms of A.G.P $=\\frac{a}{1-r}+\\frac{d r}{(1-r)^2}$)\n$\\Rightarrow \\frac{4 p}{9}=4 \\Rightarrow p=9$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Mathematics",
+    "chapter": "COMPLEX NUMBERS AND QUADRATIC EQUATIONS:",
+    "topic": "Complex numbers as ordered pairs of reals",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7f8bf841-a12b-4d8d-bbdb-6886bd3775ae",
+    "question_number": 86,
+    "question_text": "A fair die is tossed repeatedly until a six is obtained. Let $\\mathrm{X}$ denote the number of tosses required and let $a=P(X=3), b=P(X \\geq 3)$ and $c=$ $\\mathrm{P}(\\mathrm{X} \\geq 6 \\mid \\mathrm{X} > 3)$. Then $\\frac{\\mathrm{b}+\\mathrm{c}}{\\mathrm{a}}$ is equal to_____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 12,
+    "explanation": "$\\begin{aligned} & \\mathrm{a}=\\mathrm{P}(\\mathrm{X}=3)=\\frac{5}{6} \\times \\frac{5}{6} \\times \\frac{1}{6}=\\frac{25}{216} \\\\ & \\mathrm{~b}=\\mathrm{P}(\\mathrm{X} \\geq 3)=\\frac{5}{6} \\times \\frac{5}{6} \\times \\frac{1}{6}+\\left(\\frac{5}{6}\\right)^3 \\cdot \\frac{1}{6}+\\left(\\frac{5}{6}\\right)^4 \\cdot \\frac{1}{6}+\\ldots \\ldots\\end{aligned}$\n$\\begin{aligned} & =\\frac{\\frac{25}{216}}{1-\\frac{5}{6}}=\\frac{25}{216} \\times \\frac{6}{1}=\\frac{25}{36} \\\\ & P(X \\geq 6)=\\left(\\frac{5}{6}\\right)^5 \\cdot \\frac{1}{6}+\\left(\\frac{5}{6}\\right)^6 \\cdot \\frac{1}{6}+\\ldots \\ldots .\\end{aligned}$\n$\\begin{gathered}=\\frac{\\left(\\frac{5}{6}\\right)^5 \\cdot \\frac{1}{6}}{1-\\frac{5}{6}}=\\left(\\frac{5}{6}\\right)^5 \\\\ c=\\frac{\\left(\\frac{5}{6}\\right)^5}{\\left(\\frac{5}{6}\\right)^3}=\\frac{25}{36}\\end{gathered}$\n$\\frac{\\mathrm{b}+\\mathrm{c}}{\\mathrm{a}}=\\frac{\\left(\\frac{5}{6}\\right)^2+\\left(\\frac{5}{6}\\right)^2}{\\left(\\frac{5}{6}\\right)^2 \\cdot \\frac{1}{6}}=12$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Mathematics",
+    "chapter": "COMPLEX NUMBERS AND QUADRATIC EQUATIONS:",
+    "topic": "modulus and argument (or amplitude) of a complex n",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "55ca3dfc-4272-465c-b233-f053a22ac2a3",
+    "question_number": 87,
+    "question_text": "Let the set of all $a \\in R$ such that the equation $\\cos 2 x+a \\sin x=2 a-7$ has a solution be $[p, q]$ and $r=\\tan 9^{\\circ}-\\tan 27^{\\circ}-\\frac{1}{\\cot 63^{\\circ}}+\\tan 81^{\\circ}$, then pqr is equal to_____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 48,
+    "explanation": "$\\begin{aligned} & \\cos 2 x+a \\cdot \\sin x=2 a-7 \\\\ & a(\\sin x-2)=2(\\sin x-2)(\\sin x+2) \\\\ & \\sin x=2, \\quad a=2(\\sin x+2) \\\\ & \\Rightarrow a \\in[2,6] \\\\ & p=2 \\quad q=6\\end{aligned}$\n$\\begin{aligned} & r=\\tan 9^{\\circ}+\\cot 9^{\\circ}-\\tan 27-\\cot 27 \\\\ & r=\\frac{1}{\\sin 9 \\cdot \\cos 9}-\\frac{1}{\\sin 27 \\cdot \\cos 27} \\\\ & =2\\left[\\frac{4}{\\sqrt{5}-1}-\\frac{4}{\\sqrt{5}+1}\\right] \\\\ & r=4 \\\\ & \\text { p.q. . } r=2 \\times 6 \\times 4=48\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Mathematics",
+    "chapter": "DIFFRENTIAL EQUATIONS :",
+    "topic": "the solution of differential equation by the metho",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c38f6645-94ef-48dd-810d-9ff1bf76b140",
+    "question_number": 88,
+    "question_text": "Let $f(x)=x^3+x^2 f^{\\prime}(1)+x f^{\\prime \\prime}(2)+f^{\\prime \\prime \\prime}(3), x \\in R$.\nThen $f^{\\prime}(10)$ is equal to_____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 202,
+    "explanation": "$\\begin{aligned} & f(x)=x^3+x^2 \\cdot f^{\\prime}(1)+x \\cdot f^{\\prime \\prime}(2)+f^{\\prime \\prime \\prime}(3) \\\\ & f^{\\prime}(x)=3 x^2+2 x f^{\\prime}(1)+f^{\\prime \\prime}(2) \\\\ & f^{\\prime \\prime}(x)=6 x+2 f^{\\prime}(1) \\\\ & f^{\\prime \\prime \\prime}(x)=6 \\\\ & f^{\\prime}(1)=-5, f^{\\prime \\prime}(2)=2, f^{\\prime \\prime \\prime}(3)=6 \\\\ & f(x)=x^3+x^2 \\cdot(-5)+x \\cdot(2)+6 \\\\ & f^{\\prime}(x)=3 x^2-10 x+2 \\\\ & f^{\\prime}(10)=300-100+2=202\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Mathematics",
+    "chapter": "COMPLEX NUMBERS AND QUADRATIC EQUATIONS:",
+    "topic": "Complex numbers as ordered pairs of reals",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a51e810-6684-4494-9c5c-9f6a20e36bbe",
+    "question_number": 89,
+    "question_text": "Let $A=\\left[\\begin{array}{lll}2 & 0 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1\\end{array}\\right], B=\\left[B_1, B_2, B_3\\right]$, where $B_1$, $B_2, B_3$ are column matrices, and $A_1=\\left[\\begin{array}{l}1 \\\\ 0 \\\\ 0\\end{array}\\right]$,$\\mathrm{AB}_2=\\left[\\begin{array}{l}2 \\\\ 3 \\\\ 0\\end{array}\\right], \\mathrm{AB}_3=\\left[\\begin{array}{l}3 \\\\ 2 \\\\ 1\\end{array}\\right]$ \nIf $\\alpha=|B|$ and $\\beta$ is the sum of all the diagonal elements of $\\mathrm{B}$, then $\\alpha^3+\\beta^3$ is equal to_____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 28,
+    "explanation": "$A=\\left[\\begin{array}{lll}2 & 0 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1\\end{array}\\right] \\quad \\mathrm{B}=\\left[\\mathrm{B}_1, \\mathrm{~B}_2, \\mathrm{~B}_3\\right]$\n$\\mathrm{B}_1=\\left[\\begin{array}{l}\\mathrm{x}_1 \\\\ \\mathrm{y}_1 \\\\ \\mathrm{z}_1\\end{array}\\right], \\quad \\mathrm{B}_2=\\left[\\begin{array}{l}\\mathrm{x}_2 \\\\ \\mathrm{y}_2 \\\\ \\mathrm{z}_2\\end{array}\\right], \\quad \\mathrm{B}_3=\\left[\\begin{array}{l}\\mathrm{x}_3 \\\\ \\mathrm{y}_3 \\\\ \\mathrm{z}_3\\end{array}\\right]$\n$\\mathrm{AB}_1=\\left[\\begin{array}{lll}2 & 0 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1\\end{array}\\right]\\left[\\begin{array}{l}x_1 \\\\ y_1 \\\\ z_1\\end{array}\\right]=\\left[\\begin{array}{l}1 \\\\ 0 \\\\ 0\\end{array}\\right]$\n$\\mathrm{x}_1=1, \\mathrm{y}_1=-1, \\mathrm{z}_1=-1$\n$\\begin{aligned} & \\mathrm{AB}_2=\\left[\\begin{array}{lll}2 & 0 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1\\end{array}\\right]\\left[\\begin{array}{l}\\mathrm{x}_2 \\\\ \\mathrm{y}_2 \\\\ \\mathrm{z}_2\\end{array}\\right]=\\left[\\begin{array}{l}2 \\\\ 3 \\\\ 0\\end{array}\\right] \\\\ & \\mathrm{x}_2=2, \\mathrm{y}_2=1, \\mathrm{z}_2=-2 \\\\ & \\mathrm{AB}_3=\\left[\\begin{array}{lll}2 & 0 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1\\end{array}\\right]\\left[\\begin{array}{l}\\mathrm{x}_3 \\\\ \\mathrm{y}_3 \\\\ \\mathrm{z}_3\\end{array}\\right]=\\left[\\begin{array}{l}3 \\\\ 2 \\\\ 1\\end{array}\\right] \\\\ & \\mathrm{x}_3=2, \\mathrm{y}_3=0, \\mathrm{z}_3=-1 \\\\ & \\mathrm{~B}=\\left[\\begin{array}{ccc}1 & 2 & 2 \\\\ -1 & 1 & 0 \\\\ -1 & -2 & -1\\end{array}\\right]\\end{aligned}$\n$\\begin{aligned} & \\alpha=|B|=3 \\\\ & \\beta=1 \\\\ & \\alpha^3+\\beta^3=27+1=28\\end{aligned}$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Mathematics",
+    "chapter": "MATRICES AND DETERMINANTS:",
+    "topic": "Matrices",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ab6338fe-71bc-4d34-9b13-67f827734daa",
+    "question_number": 90,
+    "question_text": "If $\\alpha$ satisfies the equation $x^2+x+1=0$ and $(1+\\alpha)^7=\\mathrm{A}+\\mathrm{B} \\alpha+\\mathrm{C}^2, \\mathrm{~A}, \\mathrm{~B}, \\mathrm{C} \\geq 0$, then $5(3 \\mathrm{~A}-2 \\mathrm{~B}-\\mathrm{C})$ is equal to_____",
+    "question_images": [],
+    "options": null,
+    "correct_answer": 5,
+    "explanation": "$x^2+x+1=0 \\Rightarrow x=\\omega, \\omega^2=\\alpha$\nLet $\\alpha=\\omega$\nNow $(1+\\alpha)^7=-\\omega^{14}=-\\omega^2=1+\\omega$\n$\\mathrm{A}=1, \\mathrm{~B}=1, \\mathrm{C}=0$\n$\\therefore 5(3 A-2 B-C)=5(3-2-0)=5$",
+    "explanation_images": [],
+    "question_type": "integer",
+    "subject": "Mathematics",
+    "chapter": "DIFFRENTIAL EQUATIONS :",
+    "topic": "the solution of differential equation by the metho",
+    "difficulty": "medium",
+    "source": "JEE Main 2024 (27 Jan Shift 1)",
+    "year": 2024,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

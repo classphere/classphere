@@ -23,7 +23,8 @@ import {
   RiLifebuoyLine,
   RiQuestionAnswerLine,
   RiBox3Line,
-  RiShoppingCartLine
+  RiShoppingCartLine,
+  RiFileList3Line
 } from "@remixicon/react";
 
 export default function Sidebar() {
@@ -38,7 +39,7 @@ export default function Sidebar() {
   // Navigations based on Role
   const studentNav = [
     { label: "Dashboard", href: "/", icon: <RiDashboardLine size={18} />, active: pathname === "/" },
-    { label: "Create Test", href: "/create-test", icon: <RiBox3Line size={18} />, active: pathname.startsWith("/create-test") },
+    { label: "PYQs", href: "/pyqs", icon: <RiFileList3Line size={18} />, active: pathname.startsWith("/pyqs") },
     { label: "Test History", href: "/history", icon: <RiBookOpenLine size={18} />, active: pathname.startsWith("/history") },
     { label: "Analytics", href: "/analytics", icon: <RiLineChartLine size={18} />, active: pathname.startsWith("/analytics") },
     { label: "Leaderboard", href: "/leaderboard", icon: <RiTrophyLine size={18} />, active: pathname.startsWith("/leaderboard") },
