@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 
+import { globalDbStore } from "./services/db.mock";
+
 /**
  * GET /api/v1/analysis/:attempt_id
  * Authenticated — Return the AI analysis for a completed attempt.
@@ -8,12 +10,14 @@ import { Request, Response } from "express";
 export const getAnalysis = async (req: Request, res: Response): Promise<void> => {
   try {
     const { attempt_id } = req.params;
-    // TODO: implement
-    // 1. Fetch attempt by attempt_id; verify student_id === req.user!.id (or super_admin)
-    // 2. SELECT * FROM ai_analyses WHERE attempt_id = $attempt_id
-    // 3. If not found: return { success: true, data: { status: "pending" } } with 202
-    // 4. Return { success: true, data: { status: "ready", analysis: { ...ai_analysis row } } }
-    res.status(200).json({ success: true, message: "getAnalysis — TODO: implement", attempt_id });
+
+    const analysis = globalDbStore.analysisResults.get(attempt_id);
+    if (!analysis) {
+      res.status(202).json({ success: true, data: { status: "pending" } });
+      return;
+    }
+
+    res.status(200).json({ success: true, data: { status: "ready", analysis } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

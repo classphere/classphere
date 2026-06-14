@@ -3,17 +3,20 @@ import authRouter from "./auth.routes";
 import questionsRouter from "./questions.routes";
 import testsRouter from "./tests.routes";
 import attemptsRouter from "./attempts.routes";
-import analysisRouter from "./analysis.routes";
+import analysisRouter from "../modules/analysis-engine/analysis.routes";
 import rankingsRouter from "./rankings.routes";
 import institutesRouter from "./institutes.routes";
 import batchesRouter from "./batches.routes";
 import internalRouter from "./internal.routes";
+import pyqsRouter from "./pyqs.routes";
 
 const router = Router();
 
 // ─── Public ──────────────────────────────────────────────────────────────────
 // /auth/signup and /auth/login are public; other /auth/* routes require auth
 router.use("/auth", authRouter);
+// PYQs are public — no login needed to list or fetch questions
+router.use("/pyqs", pyqsRouter);
 
 // ─── Authenticated ───────────────────────────────────────────────────────────
 // Each router is mounted at its explicit prefix so no router ever acts as a
