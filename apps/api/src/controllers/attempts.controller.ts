@@ -87,26 +87,81 @@ export const saveAttempt = async (req: Request, res: Response): Promise<void> =>
  * POST /api/v1/attempts/:id/submit
  * Authenticated — Submit an attempt, trigger scoring, and enqueue AI analysis.
  */
+import fs from "fs";
+import path from "path";
+import { PYQ_REGISTRY, ROOT } from "./pyqs.controller";
+import { analyzeAttempt } from "../modules/analysis-engine/services/analysis.service";
+import { globalDbStore } from "../modules/analysis-engine/services/db.mock";
+import { AttemptAnswer, Question } from "../../../../packages/types/src/analysis.types";
+
 export const submitAttempt = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
-    // TODO: implement
-    // 1. Verify attempt exists, belongs to req.user!.id, and status = 'in_progress'
-    // 2. Save any final answers from req.body (same as saveAttempt)
-    // 3. Fetch the parent test to get question_ids and marking_scheme
-    // 4. Fetch all attempt_answers for this attempt
-    // 5. Score the attempt using scoring.service.ts:
-    //    — For each question: compare selected_answer to correct_answer
-    //    — Apply marking scheme: +4 correct, -1 incorrect, 0 skipped
-    //    — Compute: score, percentage, correct_count, incorrect_count, skipped_count
-    // 6. UPDATE attempt_answers with is_correct and marks_awarded
-    // 7. UPDATE attempts SET status='submitted', score, percentage, correct_count,
-    //    incorrect_count, skipped_count, time_taken_sec, submitted_at=now()
-    // 8. UPDATE student_stats (upsert) for this student + exam
-    // 9. Enqueue AI analysis job (async — do NOT await, use a background queue or setTimeout):
-    //    — ai.service.generateAnalysis(attempt_id)
-    // 10. Return { success: true, data: { attempt: { id, score, percentage, status } } }
-    res.status(200).json({ success: true, message: "submitAttempt — TODO: implement", id });
+    let { id: test_id } = req.params;
+    const { answers } = req.body; // { question_id: { selected_answer: string, time_taken_sec: number, marked_review: boolean } }
+
+    if (test_id.startsWith("pyq-")) {
+      test_id = test_id.replace("pyq-", "");
+    }
+
+    // Mock: Fetch the actual JSON questions
+    const paper = PYQ_REGISTRY.find((p) => p.id === test_id);
+    if (!paper) {
+      res.status(404).json({ success: false, message: "Test not found in PYQ registry." });
+      return;
+    }
+
+    const filePath = path.join(ROOT, paper.fileName);
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const questions: Question[] = JSON.parse(raw);
+
+    // Mock: Create AttemptAnswer objects
+    const attemptAnswers: AttemptAnswer[] = [];
+    const attemptId = `attempt-${Date.now()}`;
+
+    for (const q of questions) {
+      const studentAns = answers?.[q.id];
+      const selected = studentAns?.selected_answer || null;
+      let isCorrect = false;
+
+      if (selected) {
+        if (q.question_type === "integer") {
+          isCorrect = q.correct_answer.includes(selected);
+        } else {
+          // MCQ: correct_answer is an array of IDs like ["B"] or ["B", "C"]
+          isCorrect = q.correct_answer.includes(selected);
+        }
+      }
+
+      attemptAnswers.push({
+        id: `ans-${q.id}`,
+        attempt_id: attemptId,
+        question_id: q.id,
+        selected_answer: selected,
+        is_correct: isCorrect,
+        marks_awarded: isCorrect ? 4 : (selected ? -1 : 0),
+        time_taken_sec: studentAns?.time_taken_sec || 0,
+        marked_review: studentAns?.marked_review || false,
+        question: q,
+      });
+    }
+
+    // Mock: Store attempt in global db so orchestrator can fetch it
+    globalDbStore.attempts.set(attemptId, {
+      attempt: {
+        id: attemptId,
+        student_id: "demo-student",
+        exam_id: "jee-main",
+        batch_id: "demo-batch",
+        marking_scheme: { correct: 4, incorrect: -1, unattempted: 0, partial: false },
+      },
+      answers: attemptAnswers,
+    });
+
+    // Run Orchestrator synchronously (since it's fast and we want immediate feedback for demo)
+    const analysisResult = await analyzeAttempt(attemptId);
+    globalDbStore.analysisResults.set(attemptId, analysisResult);
+
+    res.status(200).json({ success: true, data: { attempt_id: attemptId } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

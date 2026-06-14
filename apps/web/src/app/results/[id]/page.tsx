@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
-import { mockAnalysis } from "@/lib/mock-data";
 import {
   RiTargetLine,
   RiFlashlightFill,
@@ -16,7 +15,8 @@ import {
   RiArrowDownSLine,
   RiLightbulbFlashLine,
   RiArrowLeftLine,
-  RiArrowRightLine
+  RiArrowRightLine,
+  RiLoader4Line
 } from "@remixicon/react";
 
 function AccuracyBar({ accuracy }: { accuracy: number }) {
@@ -27,7 +27,7 @@ function AccuracyBar({ accuracy }: { accuracy: number }) {
         <div style={{ height: "100%", width: `${accuracy}%`, background: color, borderRadius: 999, transition: "width 0.8s" }} />
       </div>
       <span className="text-body-small" style={{ fontWeight: 700, color, minWidth: 32, textAlign: "right" }}>
-        {accuracy}%
+        {accuracy.toFixed(0)}%
       </span>
     </div>
   );
@@ -35,14 +35,53 @@ function AccuracyBar({ accuracy }: { accuracy: number }) {
 
 export default function ResultsPage() {
   const router = useRouter();
+  const params = useParams();
+  const attemptId = params?.id as string;
+  
   const [showBooster, setShowBooster] = useState(false);
   const [selectedMode, setSelectedMode] = useState<"micro" | "full" | null>(null);
   const [microCount, setMicroCount] = useState(15);
   const [fullHours, setFullHours] = useState<1 | 2 | 3>(1);
   const [expandedDay, setExpandedDay] = useState<number | null>(null);
 
-  const a = mockAnalysis;
-  const pct = a.percentage;
+  const [a, setAnalysis] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!attemptId) return;
+    const fetchAnalysis = async () => {
+      try {
+        const res = await fetch(`/api/v1/analysis/${attemptId}`);
+        const data = await res.json();
+        if (data.success && data.data.status === "ready") {
+          setAnalysis(data.data.analysis);
+          setLoading(false);
+        } else {
+          // Poll if pending
+          setTimeout(fetchAnalysis, 2000);
+        }
+      } catch (err) {
+        console.error(err);
+        setLoading(false);
+      }
+    };
+    fetchAnalysis();
+  }, [attemptId]);
+
+  if (loading || !a) {
+    return (
+      <>
+        <Navbar title="Results & Analysis" />
+        <div style={{ minHeight: "80vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16, color: "var(--fg-muted)" }}>
+          <RiLoader4Line size={48} style={{ animation: "spin 1s linear infinite" }} />
+          <p style={{ fontSize: 16, fontWeight: 600 }}>Analyzing your performance...</p>
+          <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+        </div>
+      </>
+    );
+  }
+
+  const pct = Math.round(a.scoring.percentage);
   const pctColor = pct >= 70 ? "var(--success-50)" : pct >= 50 ? "var(--warning-50)" : "var(--error-50)";
   const pctBg = pct >= 70 ? "var(--success-10)" : pct >= 50 ? "var(--warning-10)" : "var(--error-10)";
 
@@ -75,9 +114,9 @@ export default function ResultsPage() {
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
                 {[
-                  { label: "Correct", value: a.correctCount, color: "var(--success-50)" },
-                  { label: "Incorrect", value: a.incorrectCount, color: "var(--error-50)" },
-                  { label: "Skipped", value: a.skippedCount, color: "var(--fg-muted)" },
+                  { label: "Correct", value: a.scoring.correctCount, color: "var(--success-50)" },
+                  { label: "Incorrect", value: a.scoring.incorrectCount, color: "var(--error-50)" },
+                  { label: "Skipped", value: a.scoring.skippedCount, color: "var(--fg-muted)" },
                 ].map((s) => (
                   <div key={s.label} style={{ textAlign: "center", background: "white", padding: "12px", borderRadius: "var(--radius-md)", boxShadow: "var(--shadow-100)" }}>
                     <div style={{ fontSize: 24, fontWeight: 900, color: s.color }}>{s.value}</div>
@@ -109,7 +148,7 @@ export default function ResultsPage() {
                   Based on your analysis, <strong style={{ color: "var(--warning-50)" }}>3 topics need work</strong>:
                 </div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-                  {a.weakTopics.map((t) => (
+                  {a.topicStats.filter((t: any) => t.isWeak).map((t: any) => (
                     <span key={t.topic} className="rayum-badge orange" style={{ padding: "8px 16px", fontSize: 13 }}>{t.topic}</span>
                   ))}
                 </div>
@@ -125,7 +164,7 @@ export default function ResultsPage() {
               <RiTargetLine size={24} /> Choose Your Practice Mode
             </div>
             <p className="text-body-base" style={{ color: "var(--fg-muted)", marginBottom: 32 }}>
-              All questions are from your {a.weakTopics.length} weak topics only.
+              All questions are from your {a.topicStats.filter((t: any) => t.isWeak).length} weak topics only.
             </p>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 32 }}>
@@ -228,7 +267,7 @@ export default function ResultsPage() {
             <RiSearchLine size={22} /> Weak Topic Breakdown
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            {a.weakTopics.map((topic) => (
+            {a.topicStats.filter((t: any) => t.isWeak).map((topic: any) => (
               <div key={topic.topic} className="rayum-card" style={{ padding: 24 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20, gap: 16 }}>
                   <div>
@@ -236,14 +275,14 @@ export default function ResultsPage() {
                     <span className="rayum-badge orange">{topic.chapter}</span>
                   </div>
                   <div style={{ fontSize: 28, fontWeight: 900, color: topic.accuracy >= 70 ? "var(--success-50)" : topic.accuracy >= 40 ? "var(--warning-50)" : "var(--error-50)" }}>
-                    {topic.accuracy}%
+                    {topic.accuracy.toFixed(0)}%
                   </div>
                 </div>
                 <AccuracyBar accuracy={topic.accuracy} />
                 <p className="text-body-small" style={{ color: "var(--fg-muted)", marginTop: 16, lineHeight: 1.6, display: "flex", gap: 8 }}>
                   <RiLightbulbFlashLine size={16} color="var(--primary-50)" style={{ flexShrink: 0, marginTop: 2 }} />
                   <span>
-                    <strong style={{ color: "var(--fg-default)" }}>Recommendation:</strong> {topic.recommendation}
+                    <strong style={{ color: "var(--fg-default)" }}>Analysis:</strong> Needs attention based on {topic.attempted} attempts.
                   </span>
                 </p>
               </div>
@@ -257,13 +296,16 @@ export default function ResultsPage() {
             <RiAlertFill size={22} color="var(--error-50)" /> Error Patterns
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-            {a.errorPatterns.map((ep) => (
-              <div key={ep.pattern} className="rayum-card" style={{ padding: 24 }}>
-                <div className="text-body-large" style={{ fontWeight: 700, color: "var(--error-50)", marginBottom: 12 }}>{ep.pattern}</div>
+            {a.errorPatterns.map((ep: any) => (
+              <div key={ep.id} className="rayum-card" style={{ padding: 24 }}>
+                <div className="text-body-large" style={{ fontWeight: 700, color: "var(--error-50)", marginBottom: 12 }}>{ep.name}</div>
                 <p className="text-body-small" style={{ color: "var(--fg-muted)", lineHeight: 1.6, marginBottom: 16 }}>{ep.description}</p>
                 <div>
-                  <span className="rayum-badge" style={{ background: "var(--error-10)", color: "var(--error-50)" }}>{ep.questionsAffected} questions affected</span>
+                  <span className="rayum-badge" style={{ background: "var(--error-10)", color: "var(--error-50)" }}>
+                    {ep.questionsAffected.length} questions affected
+                  </span>
                 </div>
+                <p className="text-body-small" style={{ marginTop: 16, color: "var(--primary-50)", fontWeight: 600 }}>Tip: {ep.tip}</p>
               </div>
             ))}
           </div>
@@ -298,7 +340,8 @@ export default function ResultsPage() {
                 </div>
                 {expandedDay === day.day && (
                   <div style={{ padding: "0 20px 20px", color: "var(--fg-muted)", fontSize: 14, lineHeight: 1.6, borderTop: "1px solid var(--border-default)", marginTop: 16, paddingTop: 16 }}>
-                    {day.activity}
+                    <strong>Activity:</strong> {day.activity} <br />
+                    <strong style={{ marginTop: 8, display: "block" }}>Focus:</strong> Targeting {day.focusErrorType} errors.
                   </div>
                 )}
               </div>
