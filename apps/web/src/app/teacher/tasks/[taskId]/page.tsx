@@ -22,7 +22,7 @@ export default function FulfillTaskPage() {
   const physicsQuestions = mockQuestions.filter(q => q.subject === "Physics");
 
   return (
-    <div style={{ maxWidth: 1200, margin: "0 auto", paddingBottom: 64 }}>
+    <main style={{ padding: "32px 32px 64px 32px", maxWidth: 1200, margin: "0 auto", width: "100%" }}>
       {/* Header */}
       <div style={{ marginBottom: 32 }}>
         <Link href="/teacher" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fg-muted)", fontSize: 14, marginBottom: 16, textDecoration: "none" }}>
@@ -50,7 +50,7 @@ export default function FulfillTaskPage() {
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 24 }}>
         
         {/* Left Panel: Question Bank */}
-        <section className="rayum-card" style={{ height: "calc(100vh - 200px)", display: "flex", flexDirection: "column" }}>
+        <section className="rayum-card" style={{ height: "calc(100vh - 200px)", display: "flex", flexDirection: "column", padding: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Question Bank — {task.subject}</h2>
           
           <div style={{ display: "flex", gap: 12, marginBottom: 16 }}>
@@ -88,7 +88,7 @@ export default function FulfillTaskPage() {
         </section>
 
         {/* Right Panel: Selected Questions */}
-        <section className="rayum-card" style={{ height: "calc(100vh - 200px)", display: "flex", flexDirection: "column", background: "var(--neutral-10)" }}>
+        <section className="rayum-card" style={{ height: "calc(100vh - 200px)", display: "flex", flexDirection: "column", background: "var(--n-10)", padding: 24 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700 }}>Selected</h2>
             <span style={{ fontSize: 14, fontWeight: 700, color: selectedQuestions.length === task.questionsRequired ? "var(--success-50)" : "var(--fg-default)" }}>
@@ -117,6 +117,6 @@ export default function FulfillTaskPage() {
         </section>
 
       </div>
-    </div>
+    </main>
   );
 }

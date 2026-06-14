@@ -12,7 +12,7 @@ import {
 
 export default function ScheduleTestPage() {
   return (
-    <div style={{ maxWidth: 800, margin: "0 auto", paddingBottom: 64 }}>
+    <main style={{ padding: "32px 32px 64px 32px", maxWidth: 800, margin: "0 auto", width: "100%" }}>
       {/* Header */}
       <div style={{ marginBottom: 32 }}>
         <Link href="/institute" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fg-muted)", fontSize: 14, marginBottom: 16, textDecoration: "none" }}>
@@ -27,7 +27,7 @@ export default function ScheduleTestPage() {
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
         
         {/* Basic Details */}
-        <section className="rayum-card">
+        <section className="rayum-card" style={{ padding: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, display: "flex", alignItems: "center", gap: 8 }}>
             <RiFileList3Line size={20} color="var(--primary-50)" /> Basic Details
           </h2>
@@ -64,7 +64,7 @@ export default function ScheduleTestPage() {
         </section>
 
         {/* Teacher Assignments */}
-        <section className="rayum-card">
+        <section className="rayum-card" style={{ padding: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
             <RiUserAddLine size={20} color="var(--primary-50)" /> Assign Sections to Teachers
           </h2>
@@ -77,9 +77,9 @@ export default function ScheduleTestPage() {
             <div style={{ padding: 16, border: "1px solid var(--border-default)", borderRadius: 8, display: "flex", alignItems: "center", gap: 16 }}>
               <div style={{ width: 100, fontWeight: 600 }}>Physics</div>
               <div style={{ flex: 1 }}>
-                <select className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }}>
-                  <option>Assign to...</option>
-                  <option value="t1" selected>Dr. Vikram Seth</option>
+                <select className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }} defaultValue="t1">
+                  <option value="" disabled>Assign to...</option>
+                  <option value="t1">Dr. Vikram Seth</option>
                   <option value="t2">Prof. HC Verma</option>
                 </select>
               </div>
@@ -92,8 +92,8 @@ export default function ScheduleTestPage() {
             <div style={{ padding: 16, border: "1px solid var(--border-default)", borderRadius: 8, display: "flex", alignItems: "center", gap: 16 }}>
               <div style={{ width: 100, fontWeight: 600 }}>Chemistry</div>
               <div style={{ flex: 1 }}>
-                <select className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }}>
-                  <option selected>Assign to...</option>
+                <select className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }} defaultValue="">
+                  <option value="" disabled>Assign to...</option>
                   <option value="t3">Dr. Rakesh Sharma</option>
                   <option value="t4">Ms. Anjali Desai</option>
                 </select>
@@ -107,8 +107,8 @@ export default function ScheduleTestPage() {
             <div style={{ padding: 16, border: "1px solid var(--border-default)", borderRadius: 8, display: "flex", alignItems: "center", gap: 16 }}>
               <div style={{ width: 100, fontWeight: 600 }}>Mathematics</div>
               <div style={{ flex: 1 }}>
-                <select className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }}>
-                  <option selected>Assign to...</option>
+                <select className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }} defaultValue="">
+                  <option value="" disabled>Assign to...</option>
                   <option value="t5">Mr. Anand Kumar</option>
                 </select>
               </div>
@@ -129,6 +129,6 @@ export default function ScheduleTestPage() {
         </div>
 
       </div>
-    </div>
+    </main>
   );
 }

@@ -594,3 +594,33 @@ export const mockInstituteTests = [
     }
   }
 ];
+
+// PYQ Papers — Previous Year Question Papers
+export const mockPYQPapers = [
+  // JEE Main
+  { id: "pyq-001", exam: "JEE Main", year: 2024, shift: "Jan – Session 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "hard", attempts: 0, isBookmarked: false },
+  { id: "pyq-002", exam: "JEE Main", year: 2024, shift: "Jan – Session 2", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "hard", attempts: 0, isBookmarked: false },
+  { id: "pyq-003", exam: "JEE Main", year: 2024, shift: "Apr – Session 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "medium", attempts: 1, isBookmarked: true },
+  { id: "pyq-004", exam: "JEE Main", year: 2024, shift: "Apr – Session 2", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "hard", attempts: 0, isBookmarked: false },
+  { id: "pyq-005", exam: "JEE Main", year: 2023, shift: "Jan – Session 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "medium", attempts: 2, isBookmarked: false },
+  { id: "pyq-006", exam: "JEE Main", year: 2023, shift: "Jan – Session 2", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "medium", attempts: 0, isBookmarked: false },
+  { id: "pyq-007", exam: "JEE Main", year: 2023, shift: "Apr – Session 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "hard", attempts: 0, isBookmarked: true },
+  { id: "pyq-008", exam: "JEE Main", year: 2022, shift: "Jun – Session 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "medium", attempts: 1, isBookmarked: false },
+  { id: "pyq-009", exam: "JEE Main", year: 2022, shift: "Jun – Session 2", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "easy",   attempts: 3, isBookmarked: false },
+  { id: "pyq-010", exam: "JEE Main", year: 2021, shift: "Feb – Session 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "medium", attempts: 0, isBookmarked: false },
+  { id: "pyq-011", exam: "JEE Main", year: 2021, shift: "Mar – Session 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "hard", attempts: 0, isBookmarked: false },
+  { id: "pyq-012", exam: "JEE Main", year: 2020, shift: "Sep – Session 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 75, marks: 300, duration: 180, difficulty: "medium", attempts: 1, isBookmarked: false },
+  // JEE Advanced
+  { id: "pyq-013", exam: "JEE Advanced", year: 2024, shift: "Paper 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 54, marks: 180, duration: 180, difficulty: "hard", attempts: 0, isBookmarked: false },
+  { id: "pyq-014", exam: "JEE Advanced", year: 2024, shift: "Paper 2", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 54, marks: 180, duration: 180, difficulty: "hard", attempts: 0, isBookmarked: true },
+  { id: "pyq-015", exam: "JEE Advanced", year: 2023, shift: "Paper 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 54, marks: 180, duration: 180, difficulty: "hard", attempts: 1, isBookmarked: false },
+  { id: "pyq-016", exam: "JEE Advanced", year: 2023, shift: "Paper 2", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 54, marks: 180, duration: 180, difficulty: "hard", attempts: 0, isBookmarked: false },
+  { id: "pyq-017", exam: "JEE Advanced", year: 2022, shift: "Paper 1", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 54, marks: 180, duration: 180, difficulty: "hard", attempts: 0, isBookmarked: false },
+  { id: "pyq-018", exam: "JEE Advanced", year: 2022, shift: "Paper 2", subjects: ["Physics", "Chemistry", "Mathematics"], questions: 54, marks: 180, duration: 180, difficulty: "hard", attempts: 0, isBookmarked: false },
+  // NEET
+  { id: "pyq-019", exam: "NEET-UG", year: 2024, shift: "May – Code P1", subjects: ["Physics", "Chemistry", "Botany", "Zoology"], questions: 180, marks: 720, duration: 200, difficulty: "medium", attempts: 0, isBookmarked: false },
+  { id: "pyq-020", exam: "NEET-UG", year: 2023, shift: "May – Code P1", subjects: ["Physics", "Chemistry", "Botany", "Zoology"], questions: 180, marks: 720, duration: 200, difficulty: "medium", attempts: 2, isBookmarked: true },
+  { id: "pyq-021", exam: "NEET-UG", year: 2022, shift: "Jul – Code P1",  subjects: ["Physics", "Chemistry", "Botany", "Zoology"], questions: 180, marks: 720, duration: 200, difficulty: "easy",   attempts: 1, isBookmarked: false },
+  { id: "pyq-022", exam: "NEET-UG", year: 2021, shift: "Sep – Code P1",  subjects: ["Physics", "Chemistry", "Botany", "Zoology"], questions: 180, marks: 720, duration: 200, difficulty: "medium", attempts: 0, isBookmarked: false },
+  { id: "pyq-023", exam: "NEET-UG", year: 2020, shift: "Sep – Code P1",  subjects: ["Physics", "Chemistry", "Botany", "Zoology"], questions: 180, marks: 720, duration: 200, difficulty: "easy",   attempts: 0, isBookmarked: false },
+];
