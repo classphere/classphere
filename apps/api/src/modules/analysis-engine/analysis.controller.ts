@@ -43,6 +43,8 @@ export const regenerateAnalysis = async (req: Request, res: Response): Promise<v
   }
 };
 
+import { generateBatchAnalysis } from "./services/batch-analysis";
+
 /**
  * GET /api/v1/analysis/batch/:test_id/:batch_id
  * [teacher] — Get aggregate batch-level AI analysis for a specific test + batch.
@@ -50,16 +52,13 @@ export const regenerateAnalysis = async (req: Request, res: Response): Promise<v
 export const getBatchAnalysis = async (req: Request, res: Response): Promise<void> => {
   try {
     const { test_id, batch_id } = req.params;
-    // TODO: implement
-    // 1. Verify requesting user is a teacher assigned to batch_id (batch_teachers table)
-    // 2. SELECT * FROM batch_analyses WHERE test_id = $test_id AND batch_id = $batch_id
-    // 3. If not found: return { success: true, data: { status: "pending" } } with 202
-    // 4. Return { success: true, data: { analysis: { class_summary, chapter_heatmap, teaching_recs, attention_flags } } }
+    
+    // Call the batch analysis service
+    const analysis = await generateBatchAnalysis(test_id, batch_id);
+
     res.status(200).json({
       success: true,
-      message: "getBatchAnalysis — TODO: implement",
-      test_id,
-      batch_id,
+      data: { analysis },
     });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });

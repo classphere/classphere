@@ -170,3 +170,26 @@ export interface AnalysisResult {
   boosterConfig: BoosterConfig;
   processingMs: number;
 }
+
+export interface BatchAnalysisResult {
+  testId: string;
+  batchId: string;
+  totalStudents: number;
+  avgScore: number;
+  avgPercentage: number;
+  topicPerformance: {
+    topic: string;
+    chapter: string;
+    avgAccuracy: number;
+    bottomQuartileAccuracy: number;
+  }[];
+  commonMistakes: {
+    questionId: string;
+    questionNumber: number;
+    trapOption: string;
+    studentsFallen: number;
+    percentageFallen: number;
+    errorType: string;
+  }[];
+  bottleneckChapters: string[];
+}
