@@ -15,7 +15,7 @@ import {
 import { analyzeAttemptStrategy } from "./attempt-strategy";
 import { generateNarrative, getExamCountdown } from "./narrative-summary";
 
-export async function analyzeAttempt(attemptId: string): Promise<AnalysisResult> {
+export async function analyzeAttempt(attemptId: string, hasTimingData = true): Promise<AnalysisResult> {
   const start = Date.now();
 
   // ── Single DB round-trip: fetch attempt + all answers + questions (JOIN) ──
@@ -27,7 +27,7 @@ export async function analyzeAttempt(attemptId: string): Promise<AnalysisResult>
   // ── Stage 2: Classify every answer ─────────────────────────────────────────
   const classified: ClassifiedAnswer[] = answers.map((a) => ({
     ...a,
-    classification: classifyMistake(a),
+    classification: classifyMistake(a, hasTimingData),
   }));
 
   // ── Stages 3–6: Parallel analysis (all consume classified) ─────────────────
@@ -46,7 +46,8 @@ export async function analyzeAttempt(attemptId: string): Promise<AnalysisResult>
   const attemptStrategy = analyzeAttemptStrategy(
     classified,
     attempt.exam_code ?? "jee-main",
-    attempt.total_duration_sec ?? 10800
+    attempt.total_duration_sec ?? 10800,
+    hasTimingData
   );
 
   // ── Stage 6.6: v3 — Longitudinal Pattern Detection ────────────────────────

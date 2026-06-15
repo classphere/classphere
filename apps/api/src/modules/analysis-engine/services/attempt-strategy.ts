@@ -25,10 +25,26 @@ const DEFAULT_SPLIT: Record<string, number> = {
 export function analyzeAttemptStrategy(
   classified: ClassifiedAnswer[],
   examType: string = "jee-main",
-  totalTestDurationSec: number = 10800  // 3 hours default
+  totalTestDurationSec: number = 10800, // 3 hours default
+  hasTimingData: boolean = true
 ): AttemptStrategy {
-
   const optimalSplitPct = OPTIMAL_TIME_SPLIT_PCT[examType] ?? DEFAULT_SPLIT;
+
+  // ── Offline Mode (OMR) Fallback ──
+  if (!hasTimingData) {
+    return {
+      pattern: "mixed",
+      subjectOrder: [],
+      timePerSubjectSec: {},
+      optimalTimeSec: {},
+      timeDeviationPct: {},
+      strategyScore: 100, // Neutral score
+      insight: "Offline OMR test — time management tracking is disabled.",
+      recommendation: "To track your attempt strategy, use the digital testing mode next time.",
+      overtimeSubjects: [],
+      undertimeSubjects: [],
+    };
+  }
 
   // ── Step 1: Compute time spent per subject ─────────────────────────────
   const timeBySubject: Record<string, number> = {};

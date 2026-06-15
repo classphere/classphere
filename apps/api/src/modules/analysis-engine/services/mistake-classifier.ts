@@ -6,13 +6,13 @@ const AVG_TIME: Record<string, number> = {
   hard: 180,
 };
 
-export function classifyMistake(ans: AttemptAnswer): MistakeClassification {
+export function classifyMistake(ans: AttemptAnswer, hasTimingData = true): MistakeClassification {
   if (ans.is_correct) {
     return { type: "correct", detail: "", tip: "", confidence: "high", source: "distractor_map" };
   }
 
   if (!ans.selected_answer) {
-    return classifySkip(ans);
+    return classifySkip(ans, hasTimingData);
   }
 
   // LAYER 1: Distractor map
@@ -28,13 +28,35 @@ export function classifyMistake(ans: AttemptAnswer): MistakeClassification {
   }
 
   // LAYER 2: Heuristic fallback
-  return classifyByHeuristics(ans);
+  return classifyByHeuristics(ans, hasTimingData);
 }
 
-function classifyByHeuristics(ans: AttemptAnswer): MistakeClassification {
+function classifyByHeuristics(ans: AttemptAnswer, hasTimingData: boolean): MistakeClassification {
   const t = ans.time_taken_sec;
   const avgT = AVG_TIME[ans.question.difficulty] ?? 120;
 
+  // ── Offline Mode (OMR) Fallback ──
+  // If we have no timing data, we can only rely on difficulty
+  if (!hasTimingData) {
+    if (ans.question.difficulty === "easy") {
+      return {
+        type: "calculation",
+        detail: "Easy question answered incorrectly.",
+        tip: "You likely knew the method. Double-check your arithmetic.",
+        confidence: "low",
+        source: "heuristic",
+      };
+    }
+    return {
+      type: "conceptual",
+      detail: "Incorrect answer on a medium/hard question.",
+      tip: `Study ${ans.question.topic} in ${ans.question.chapter}.`,
+      confidence: "low",
+      source: "heuristic",
+    };
+  }
+
+  // ── Online Mode Heuristics (Requires Time) ──
   // Rule 1: Answered in <30% of average time → likely misread
   if (t < avgT * 0.3) {
     return {
@@ -89,7 +111,18 @@ function classifyByHeuristics(ans: AttemptAnswer): MistakeClassification {
   };
 }
 
-function classifySkip(ans: AttemptAnswer): MistakeClassification {
+function classifySkip(ans: AttemptAnswer, hasTimingData: boolean): MistakeClassification {
+  // If offline (OMR), we can't tell WHY they skipped, only that they did.
+  if (!hasTimingData) {
+    return {
+      type: "unknown",
+      detail: "Question left blank on OMR.",
+      tip: "Make sure you aren't skipping easy questions. Review this topic.",
+      confidence: "very_low",
+      source: "heuristic",
+    } as MistakeClassification;
+  }
+
   const t = ans.time_taken_sec;
 
   // Never viewed — ran out of time
