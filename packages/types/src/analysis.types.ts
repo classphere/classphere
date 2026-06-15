@@ -5,7 +5,8 @@ export type ErrorType =
   | "partial_solve"   // Stopped at an intermediate step
   | "sign_error"      // Correct magnitude, wrong sign/direction
   | "wrong_method"    // Applied inapplicable formula
-  | "misread";        // Confused two similar-looking values
+  | "misread"         // Confused two similar-looking values
+  | "unknown";        // Couldn't auto-classify — student should self-tag
 
 export type SkipType =
   | "didnt_know"         // Viewed <15s — complete topic gap
@@ -17,7 +18,7 @@ export interface MistakeClassification {
   type: ErrorType | SkipType | "correct";
   detail: string;        // Human-readable explanation of WHY
   tip: string;           // Actionable advice
-  confidence: "high" | "medium" | "low";
+  confidence: "high" | "medium" | "low" | "very_low";
   source: "distractor_map" | "heuristic";
 }
 
@@ -160,6 +161,7 @@ export interface BoosterConfig {
 }
 
 export interface AnalysisResult {
+  // Core (existing)
   scoring: ScoringResult;
   classified: ClassifiedAnswer[];
   topicStats: TopicStat[];
@@ -169,6 +171,79 @@ export interface AnalysisResult {
   studyPlan: StudyDay[];
   boosterConfig: BoosterConfig;
   processingMs: number;
+
+  // v3 additions
+  attemptStrategy: AttemptStrategy;
+  longitudinalFlags: LongitudinalFlag[];
+  narrative: AnalysisNarrative;
+}
+
+// ── v3: Longitudinal Profiling ──
+
+export interface TopicErrorHistoryEntry {
+  attemptId: string;
+  attemptDate: number;    // Unix timestamp
+  accuracy: number;       // 0–100
+  wasWeak: boolean;       // accuracy < 50 OR below batch avg
+  dominantErrorType: string;
+  questionsAttempted: number;
+}
+
+export interface StudentErrorProfile {
+  studentId: string;
+  examId: string;
+  topicHistory: Record<string, TopicErrorHistoryEntry[]>; // key: "chapter::topic"
+  lastUpdated: number;
+}
+
+export interface LongitudinalFlag {
+  type:
+    | "recurring_blind_spot"   // same topic weak in 3+ consecutive tests
+    | "regression"             // topic was good, now dropped
+    | "no_improvement"         // topic weak for 3+ tests, accuracy not moving
+    | "newly_weak";            // topic was fine, first time weak
+  topic: string;
+  chapter: string;
+  subject: string;
+  occurrences: number;          // how many consecutive tests this appeared
+  accuracyTrend: number[];      // last N accuracy values e.g. [72, 58, 41, 38]
+  message: string;              // human-readable, teacher-voice message
+  urgency: "medium" | "high" | "critical";
+  actionRequired: string;       // concrete next step
+}
+
+// ── v3: Attempt Strategy ──
+
+export interface AttemptStrategy {
+  pattern: "linear" | "subject_grouped" | "difficulty_sweep" | "mixed";
+  subjectOrder: string[];                              // order subjects were attempted
+  timePerSubjectSec: Record<string, number>;           // actual time spent per subject
+  optimalTimeSec: Record<string, number>;              // benchmark for this exam type
+  timeDeviationPct: Record<string, number>;            // % over/under optimal
+  strategyScore: number;                               // 0–100
+  insight: string;                                     // e.g. "You spent 47% on Physics..."
+  recommendation: string;
+  overtimeSubjects: string[];                          // subjects where >20% over budget
+  undertimeSubjects: string[];                         // subjects where >20% under budget
+}
+
+// ── v3: Narrative Summary ──
+
+export interface AnalysisNarrative {
+  headline: string;            // One punchy line diagnosis
+  overview: string;            // 2-3 sentences: what happened this test
+  biggestWin: string;          // Highest-ROI single fix
+  warningMessage: string | null;  // Critical longitudinal issue, if any
+  motivationalNote: string;    // Ends on positive + action
+  examCountdown: ExamCountdown | null;
+}
+
+export interface ExamCountdown {
+  examName: string;            // "JEE Main Session 1" / "JEE Main Session 2"
+  examDate: string;            // "2027-01-22"
+  daysRemaining: number;
+  urgencyMode: "foundation" | "growth" | "sprint" | "crisis";
+  urgencyLabel: string;        // e.g. "Sprint Mode — 28 days left"
 }
 
 export interface BatchAnalysisResult {
