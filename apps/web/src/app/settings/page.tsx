@@ -21,7 +21,7 @@ function SettingsContent() {
     <>
       <Navbar title="Platform Settings" subtitle="Manage your account, preferences, and test settings." breadcrumbs="Dashboard > Settings" />
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px 32px 32px", width: "100%", display: "flex", gap: 32, alignItems: "flex-start" }}>
-        
+
         {/* Left Nav Menu */}
         <div style={{ width: 220, flexShrink: 0, position: "sticky", top: 100 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
@@ -54,13 +54,13 @@ function SettingsContent() {
 
         {/* Right Content Form Card */}
         <div className="rayum-card" style={{ flex: 1, padding: 40 }}>
-          
+
           <h2 className="section-title" style={{ marginBottom: 32 }}>General Info</h2>
-          
+
           <div style={{ marginBottom: 32 }}>
             <div style={{ width: 100, height: 100, borderRadius: "50%", background: "var(--s-50)", marginBottom: 12, display: "flex", alignItems: "center", justifyContent: "center", color: "white" }}>
-               {/* Abstract geometric icon placeholder */}
-               <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2L2 13H10V22L19 11H11V2Z"/></svg>
+              {/* Abstract geometric icon placeholder */}
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2L2 13H10V22L19 11H11V2Z" /></svg>
             </div>
             <button className="btn btn-ghost" style={{ color: "var(--s-50)", padding: 0 }}>
               <RiCheckFill size={16} /> Replace
@@ -73,7 +73,7 @@ function SettingsContent() {
               <input type="text" className="input" defaultValue="Harsh Singh" />
               <div className="t-body-sm" style={{ marginTop: 6 }}>Shown on leaderboards and doubts.</div>
             </div>
-            
+
             <div>
               <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Bio</label>
               <textarea className="input textarea" defaultValue="JEE 2026 Aspirant focusing on Physics and Maths." />
@@ -90,7 +90,7 @@ function SettingsContent() {
               <div>
                 <label className="text-bold" style={{ display: "block", marginBottom: 8 }}>Target Exam</label>
                 <div className="search-bar" style={{ padding: "10px 14px", borderRadius: "var(--r-full)" }}>
-                   <input type="text" defaultValue="JEE Main" readOnly />
+                  <input type="text" defaultValue="JEE Main" readOnly />
                 </div>
               </div>
               <div>
@@ -115,7 +115,7 @@ function SettingsContent() {
                 <span className="switch-track"></span>
               </label>
             </div>
-            
+
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 24, borderBottom: "1px solid var(--border-default)" }}>
               <div>
                 <div className="text-bold">Active Sessions</div>

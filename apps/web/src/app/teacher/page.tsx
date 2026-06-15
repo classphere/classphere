@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
-import { 
-  RiTeamLine, 
-  RiFileChartLine, 
+import {
+  RiTeamLine,
+  RiFileChartLine,
   RiCalendarEventLine,
   RiArrowRightUpLine,
   RiSettings4Line,
@@ -17,7 +17,7 @@ export default function TeacherDashboardPage() {
     <>
       <Navbar title={`Welcome back, ${mockTeacher.name}`} subtitle={`Here's the latest from your assigned batches at ${mockTeacher.instituteName}.`} breadcrumbs="Dashboard" />
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px 32px 32px", width: "100%" }}>
-        
+
         {/* KPI Cards */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginBottom: 40 }}>
           <div className="rayum-card" style={{ padding: 24 }}>
@@ -96,7 +96,7 @@ export default function TeacherDashboardPage() {
 
         {/* Main Content Grid */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 400px", gap: 24 }}>
-          
+
           {/* Batches Table */}
           <section className="rayum-card" style={{ padding: "24px 0" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 24px", marginBottom: 24 }}>
@@ -159,7 +159,7 @@ export default function TeacherDashboardPage() {
                 <p className="t-body-sm">Missed 3 consecutive batch tests.</p>
               </div>
             </div>
-            
+
             <button className="btn btn-outline" style={{ marginTop: 32, width: "100%" }}>
               View All Flags
             </button>

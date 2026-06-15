@@ -93,7 +93,7 @@ export default function DistractorMappingPage() {
   return (
     <>
       <Navbar title={`Distractor Mapping — Task #${params.taskId}`} />
-      
+
       <main style={{ maxWidth: 1000, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 32 }}>
           <div>
@@ -128,17 +128,17 @@ export default function DistractorMappingPage() {
             ))}
 
             <div style={{ display: "flex", justifyContent: "space-between", marginTop: 48, borderTop: "1px solid var(--border-default)", paddingTop: 24 }}>
-              <button 
-                className="btn btn-outline" 
-                disabled={currentIdx === 0} 
+              <button
+                className="btn btn-outline"
+                disabled={currentIdx === 0}
                 onClick={() => setCurrentIdx(c => c - 1)}
                 style={{ display: "flex", alignItems: "center", gap: 8 }}
               >
                 <RiArrowLeftLine size={18} /> Previous
               </button>
-              <button 
-                className="btn btn-primary" 
-                disabled={currentIdx === questions.length - 1} 
+              <button
+                className="btn btn-primary"
+                disabled={currentIdx === questions.length - 1}
                 onClick={() => setCurrentIdx(c => c + 1)}
                 style={{ display: "flex", alignItems: "center", gap: 8 }}
               >
@@ -164,15 +164,15 @@ export default function DistractorMappingPage() {
                   <div className="text-body-small" style={{ marginBottom: 16, color: "var(--fg-muted)" }}>
                     {opt.text}
                   </div>
-                  
+
                   {!isCorrect && (
                     <div>
                       <label className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-default)", display: "block", marginBottom: 8 }}>
                         If student selects this, it means:
                       </label>
-                      <select 
-                        className="input-field" 
-                        value={mappedError} 
+                      <select
+                        className="input-field"
+                        value={mappedError}
                         onChange={(e) => handleMapOption(opt.id, e.target.value)}
                         style={{ width: "100%", background: mappedError ? "var(--primary-10)" : "transparent" }}
                       >

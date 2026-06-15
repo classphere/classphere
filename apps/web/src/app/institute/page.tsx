@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
-import { 
-  RiTeamLine, 
+import {
+  RiTeamLine,
   RiGroupLine,
   RiBankCardLine,
   RiArrowRightUpLine,
@@ -17,7 +17,7 @@ export default function InstituteDashboardPage() {
     <>
       <Navbar title={`${mockInstituteAdmin.instituteName} Dashboard`} subtitle={`Welcome back, ${mockInstituteAdmin.name}. Here is your institute overview.`} breadcrumbs="Dashboard" />
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px 32px 32px", width: "100%" }}>
-        
+
         {/* Header Actions */}
         <div style={{ display: "flex", justifyContent: "flex-end", gap: 12, marginBottom: 32 }}>
           <button className="btn btn-outline" style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -110,7 +110,7 @@ export default function InstituteDashboardPage() {
         </section>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-          
+
           {/* Batches Overview */}
           <section className="rayum-card" style={{ padding: "24px 0" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 24px", marginBottom: 24 }}>

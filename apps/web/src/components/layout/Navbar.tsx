@@ -33,25 +33,25 @@ export default function Navbar({ title, subtitle, breadcrumbs }: { title?: strin
         <h1 className="t-heading" style={{ color: "var(--fg-default)", marginBottom: 4 }}>
           {title || `Good morning, ${mockUser.name.split(" ")[0]}`}
         </h1>
-        
+
         <p className="t-body" style={{ color: "var(--fg-muted)" }}>
           {subtitle || "Here's your daily briefing. You are 12% ahead of target this week."}
         </p>
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-        
+
         {/* Icons */}
         <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
           <button style={{ background: "none", border: "none", cursor: "pointer", color: "var(--fg-default)", display: "flex", alignItems: "center" }}>
             <RiSearchLine size={22} />
           </button>
-          
+
           <button style={{ background: "none", border: "none", cursor: "pointer", color: "var(--fg-default)", position: "relative", display: "flex", alignItems: "center" }}>
             <RiNotification3Line size={22} />
             <div className="notif-dot" style={{ background: "var(--p-50)" }} />
           </button>
-          
+
           <button style={{ background: "none", border: "none", cursor: "pointer", color: "var(--fg-default)", position: "relative", display: "flex", alignItems: "center" }}>
             <RiMailLine size={22} />
             <div className="notif-dot" style={{ background: "var(--p-50)" }} />

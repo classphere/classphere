@@ -169,18 +169,18 @@ export default function Sidebar() {
 
       {/* ── Bottom Section (Profile + Demo Switcher) ── */}
       <div style={{ marginTop: 32 }}>
-        
+
         {/* Download App block pattern from Rayum */}
         <div style={{ background: "var(--n-10)", borderRadius: "var(--r-lg)", padding: 20, marginBottom: 24 }}>
-          <h4 className="text-body-large text-bold" style={{ marginBottom: 4 }}>Download our<br/>Mobile App</h4>
+          <h4 className="text-body-large text-bold" style={{ marginBottom: 4 }}>Download our<br />Mobile App</h4>
           <p className="t-body-sm" style={{ marginBottom: 16 }}>Get easy in another way</p>
           <button className="btn btn-outline" style={{ width: "100%", background: "transparent" }}>Download</button>
         </div>
 
         {/* Demo Role Switcher */}
         <div style={{ padding: "0 8px" }}>
-          <select 
-            className="input" 
+          <select
+            className="input"
             style={{ width: "100%", padding: "8px 12px", fontSize: 13, borderColor: "var(--n-20)", background: "transparent" }}
             value={isTeacher ? "/teacher" : isInstitute ? "/institute" : isSuperAdmin ? "/superadmin" : "/"}
             onChange={(e) => router.push(e.target.value)}

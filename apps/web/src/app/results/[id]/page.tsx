@@ -37,7 +37,7 @@ export default function ResultsPage() {
   const router = useRouter();
   const params = useParams();
   const attemptId = params?.id as string;
-  
+
   const [showBooster, setShowBooster] = useState(false);
   const [selectedMode, setSelectedMode] = useState<"micro" | "full" | null>(null);
   const [microCount, setMicroCount] = useState(15);

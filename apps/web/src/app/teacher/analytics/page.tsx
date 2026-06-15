@@ -59,7 +59,7 @@ export default function TeacherAnalyticsPage() {
     <>
       <Navbar title="Batch Insights" />
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
-        
+
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 32 }}>
           <h2 className="text-heading-m" style={{ color: "var(--fg-default)", margin: 0 }}>Analysis: Mock Test #14 (JEE Main Pattern)</h2>
           <select className="input-field">
@@ -78,9 +78,9 @@ export default function TeacherAnalyticsPage() {
               <h3 style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-muted)" }}>Batch Average Score</h3>
             </div>
             <div style={{ fontSize: 28, fontWeight: 800 }}>{data.avgPercentage.toFixed(1)}%</div>
-            <p style={{ fontSize: 12, color: "var(--error-50)", marginTop: 8 }}>-2.1% from previous test</p>
+            <p style={{ fontSize: 12, color: "var(--danger-50)", marginTop: 8 }}>-2.1% from previous test</p>
           </div>
-          
+
           <div className="rayum-card" style={{ padding: 24 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
               <div style={{ padding: 10, background: "rgba(34, 197, 94, 0.1)", borderRadius: 8, color: "var(--success-50)" }}>
@@ -92,14 +92,14 @@ export default function TeacherAnalyticsPage() {
             <p style={{ fontSize: 12, color: "var(--fg-muted)", marginTop: 8 }}>By Ananya Singh</p>
           </div>
 
-          <div className="rayum-card" style={{ padding: 24, border: "2px solid var(--error-50)" }}>
+          <div className="rayum-card" style={{ padding: 24, border: "2px solid var(--danger-50)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-              <div style={{ padding: 10, background: "rgba(239, 68, 68, 0.1)", borderRadius: 8, color: "var(--error-50)" }}>
+              <div style={{ padding: 10, background: "rgba(239, 68, 68, 0.1)", borderRadius: 8, color: "var(--danger-50)" }}>
                 <RiAlertLine size={24} />
               </div>
               <h3 style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-muted)" }}>Students At Risk</h3>
             </div>
-            <div style={{ fontSize: 28, fontWeight: 800, color: "var(--error-50)" }}>{data.totalStudents}</div>
+            <div style={{ fontSize: 28, fontWeight: 800, color: "var(--danger-50)" }}>{data.totalStudents}</div>
             <p style={{ fontSize: 12, color: "var(--fg-muted)", marginTop: 8 }}>Total submissions</p>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function TeacherAnalyticsPage() {
           <div className="rayum-card" style={{ padding: 24 }}>
             <h2 className="text-heading-s" style={{ color: "var(--fg-default)", marginBottom: 8 }}>Lecture Planning: Critical Weaknesses</h2>
             <p className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 24 }}>The majority of your batch struggled with the following topics. Consider revising these in your next class.</p>
-            
+
             <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
               <thead>
                 <tr style={{ borderBottom: "1px solid var(--border-default)" }}>
@@ -126,7 +126,7 @@ export default function TeacherAnalyticsPage() {
                   return (
                     <tr key={idx} style={{ borderBottom: "1px solid var(--border-subtle)" }}>
                       <td style={{ padding: "16px 0", color: "var(--fg-default)", fontWeight: 600 }}>{topic.topic}</td>
-                      <td style={{ padding: "16px 0", color: "var(--error-50)", fontWeight: 600 }}>{failRate.toFixed(1)}%</td>
+                      <td style={{ padding: "16px 0", color: "var(--danger-50)", fontWeight: 600 }}>{failRate.toFixed(1)}%</td>
                       <td style={{ padding: "16px 0", color: "var(--fg-muted)" }}>Bottom 25% avg: {topic.bottomQuartileAccuracy.toFixed(1)}%</td>
                       <td style={{ padding: "16px 0" }}>
                         <span className={`rayum-badge ${priority === "Critical" ? "red" : priority === "High" ? "orange" : "yellow"}`}>
@@ -138,7 +138,7 @@ export default function TeacherAnalyticsPage() {
                 })}
               </tbody>
             </table>
-            
+
             <button className="btn btn-outline" style={{ width: "100%", marginTop: 24 }}>
               Generate Remedial Assignment for Bottleneck Chapters
             </button>

@@ -38,7 +38,7 @@ function HelpContent() {
     <>
       <Navbar title="Help & Support" />
       <main style={{ maxWidth: 800, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
-        
+
         {/* Support Blocks */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 32 }}>
           <div className="rayum-card" style={{ padding: 24, textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
@@ -49,7 +49,7 @@ function HelpContent() {
             <p className="text-body-small" style={{ color: "var(--fg-muted)" }}>Read guides on how to use the ExamPrep platform.</p>
             <button className="btn btn-outline" style={{ marginTop: 8 }}>Browse Docs</button>
           </div>
-          
+
           <div className="rayum-card" style={{ padding: 24, textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
             <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--success-10)", color: "var(--success-50)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <RiMailSendLine size={24} />
