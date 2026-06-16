@@ -2,18 +2,57 @@
 
 import Navbar from "@/components/layout/Navbar";
 import { useState } from "react";
-import { RiImageAddLine, RiSendPlaneFill, RiCheckDoubleLine, RiTimeLine, RiSparklingFill } from "@remixicon/react";
+import { RiImageAddLine, RiSendPlaneFill, RiCheckDoubleLine, RiTimeLine, RiSparklingFill, RiUserSecretFill, RiMessage2Fill, RiUserStarFill } from "@remixicon/react";
 
-const mockDoubts = [
-  { id: 1, text: "Sir, I didn't understand how you applied the Work-Energy Theorem in step 3 here. Shouldn't friction be negative?", subject: "Physics", status: "Resolved", teacher: "Aman Sir", response: "Great question! Friction is indeed negative work. In step 3, we moved it to the other side of the equation which is why it appeared positive. Keep up the good work!", date: "Yesterday" },
-  { id: 2, text: "Can someone explain the exceptions to the Octet rule for expanding valence shells?", subject: "Chemistry", status: "Pending", teacher: "Unassigned", response: null, date: "2 hours ago" }
+const mockForumThreads = [
+  { 
+    id: 1, 
+    author: "Rahul Verma", 
+    avatar: "R",
+    batch: "JEE 2026 Morning",
+    text: "Guys, how do we apply the Work-Energy Theorem in question 14 of yesterday's mock? Shouldn't friction be negative?", 
+    subject: "Physics", 
+    status: "Teacher Verified", 
+    date: "Yesterday",
+    replies: [
+      { id: 101, author: "Sneha Reddy", avatar: "S", role: "student", text: "Friction does negative work, yes. But if you move it to the right side of the equation (W_ext = Delta E), the sign flips.", isVerified: true },
+      { id: 102, author: "Aman Sir", avatar: "👨‍🏫", role: "teacher", text: "Sneha is absolutely correct. Good job! +10 Rep to Sneha.", isVerified: false }
+    ]
+  },
+  { 
+    id: 2, 
+    author: "Anonymous", 
+    avatar: "?",
+    batch: "JEE 2026 Morning",
+    text: "Can someone explain the exceptions to the Octet rule for expanding valence shells? I'm getting confused with SF6.", 
+    subject: "Chemistry", 
+    status: "Peer Answered", 
+    date: "2 hours ago",
+    replies: [
+      { id: 201, author: "Vikram Singh", avatar: "V", role: "student", text: "Elements in the 3rd period and beyond have empty d-orbitals. Sulfur in SF6 uses its 3d orbitals to accommodate 12 electrons.", isVerified: false }
+    ]
+  },
+  { 
+    id: 3, 
+    author: "Priya Sharma", 
+    avatar: "P",
+    batch: "JEE 2026 Morning",
+    text: "What is the fastest way to find the domain of inverse trig functions? I keep messing up the inequalities.", 
+    subject: "Mathematics", 
+    status: "Unresolved", 
+    date: "10 mins ago",
+    replies: []
+  }
 ];
 
-export default function StudentDoubtsPage() {
+export default function StudentForumPage() {
   const [doubtText, setDoubtText] = useState("");
   const [subject, setSubject] = useState("");
+  const [isAnonym, setIsAnonym] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  
+  const [expandedThread, setExpandedThread] = useState<number | null>(null);
 
   const handleSubmit = () => {
     setIsSubmitting(true);
@@ -28,26 +67,25 @@ export default function StudentDoubtsPage() {
 
   return (
     <>
-      <Navbar title="Ask a Doubt" subtitle="Get expert help within 24 hours" breadcrumbs="Dashboard > Ask a Doubt" />
+      <Navbar title="Batch Forum" subtitle="Discuss concepts with your peers in JEE 2026 Morning" breadcrumbs="Dashboard > Batch Forum" />
       <main style={{ maxWidth: 840, margin: "0 auto", padding: "0 32px 64px 32px", width: "100%" }}>
         
-        {/* Ask a Doubt Input Form */}
+        {/* Post to Forum */}
         <div className="rayum-card" style={{ padding: 40, marginBottom: 48, background: "var(--bg-surface)", position: "relative", overflow: "hidden" }}>
           
-          {/* Subtle decorative glow */}
           <div style={{ position: "absolute", top: -100, right: -100, width: 300, height: 300, background: "radial-gradient(circle, rgba(74, 222, 128, 0.1) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
             <div style={{ width: 32, height: 32, borderRadius: "var(--r-full)", background: "var(--n-10)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--n-60)" }}>
-              <RiSparklingFill size={16} />
+              <RiMessage2Fill size={16} />
             </div>
-            <h2 className="section-title" style={{ margin: 0, fontSize: 20 }}>Submit a New Doubt</h2>
+            <h2 className="section-title" style={{ margin: 0, fontSize: 20 }}>Post to Batch Forum</h2>
           </div>
-          <p className="t-body-sm" style={{ marginBottom: 32, maxWidth: "90%" }}>Stuck on a concept? Upload a photo of the question or type it out. Our faculty will resolve it with detailed explanations.</p>
+          <p className="t-body-sm" style={{ marginBottom: 32, maxWidth: "90%" }}>Stuck? Post it here. Earn reputation points by solving your peers' doubts!</p>
           
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             <div style={{ display: "flex", gap: 16 }}>
-              <select className="input" style={{ width: 240, appearance: "none", cursor: "pointer", backgroundImage: `url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2371717a%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 16px center", backgroundSize: "10px auto" }} value={subject} onChange={e => setSubject(e.target.value)}>
+              <select className="input" style={{ width: 240, appearance: "none", cursor: "pointer" }} value={subject} onChange={e => setSubject(e.target.value)}>
                 <option value="" disabled>Select Subject...</option>
                 <option>Physics</option>
                 <option>Chemistry</option>
@@ -58,88 +96,126 @@ export default function StudentDoubtsPage() {
             <textarea 
               className="input" 
               placeholder="Type your question or explain where you got stuck..." 
-              style={{ minHeight: 140, resize: "vertical", padding: 20 }}
+              style={{ minHeight: 100, resize: "vertical", padding: 20 }}
               value={doubtText}
               onChange={(e) => setDoubtText(e.target.value)}
             />
             
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 8 }}>
-              <button className="btn btn-outline" style={{ display: "flex", alignItems: "center", gap: 8, borderRadius: "var(--r-full)" }}>
-                <RiImageAddLine size={18} /> Upload Image
-              </button>
+              <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                <button className="btn btn-outline" style={{ display: "flex", alignItems: "center", gap: 8, borderRadius: "var(--r-full)" }}>
+                  <RiImageAddLine size={18} /> Add Image
+                </button>
+                <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 600, cursor: "pointer", color: isAnonym ? "var(--primary-50)" : "var(--fg-muted)" }}>
+                  <input type="checkbox" checked={isAnonym} onChange={(e) => setIsAnonym(e.target.checked)} style={{ width: 16, height: 16, accentColor: "var(--primary-50)" }} />
+                  <RiUserSecretFill size={18} /> Post Anonymously
+                </label>
+              </div>
               <button 
                 className="btn btn-dark" 
                 style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 24px" }} 
                 disabled={!doubtText || !subject || isSubmitting || isSubmitted}
                 onClick={handleSubmit}
               >
-                {isSubmitting ? "Submitting..." : isSubmitted ? "Submitted Successfully!" : <>Submit Doubt <RiSendPlaneFill size={18} /></>}
+                {isSubmitting ? "Posting..." : isSubmitted ? "Posted Successfully!" : <>Post to Forum <RiSendPlaneFill size={18} /></>}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Previous Doubts Feed */}
-        <h2 className="section-title" style={{ fontSize: 18, marginBottom: 24, paddingLeft: 8 }}>My Previous Doubts</h2>
+        {/* Community Feed */}
+        <h2 className="section-title" style={{ fontSize: 18, marginBottom: 24, paddingLeft: 8 }}>Recent Discussions</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-          {mockDoubts.map(doubt => (
-            <div key={doubt.id} className="rayum-card" style={{ 
-              padding: 32, 
-              position: "relative",
-              overflow: "hidden"
-            }}>
-              {/* Subtle status indicator strip */}
-              <div style={{ 
-                position: "absolute", left: 0, top: 0, bottom: 0, width: 4, 
-                background: doubt.status === "Resolved" ? "var(--p-50)" : "var(--warning-50)" 
-              }} />
-
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+          {mockForumThreads.map(thread => (
+            <div key={thread.id} className="rayum-card" style={{ overflow: "hidden" }}>
+              {/* Thread Header */}
+              <div style={{ padding: 24, paddingBottom: 16, display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid var(--border-subtle)" }}>
                 <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-                  <span className={`badge ${doubt.subject === 'Physics' ? 'badge-blue' : 'badge-orange'}`} style={{ padding: "4px 12px" }}>
-                    {doubt.subject}
-                  </span>
-                  <span className="t-body-sm">{doubt.date}</span>
-                </div>
-                <span style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: doubt.status === "Resolved" ? "var(--p-60)" : "var(--warning-60)", fontWeight: 600 }}>
-                  {doubt.status === "Resolved" ? <RiCheckDoubleLine size={16} /> : <RiTimeLine size={16} />}
-                  {doubt.status}
-                </span>
-              </div>
-              
-              <p className="text-bold" style={{ fontSize: 16, lineHeight: 1.6, marginBottom: 24, color: "var(--fg-default)" }}>
-                "{doubt.text}"
-              </p>
-              
-              {doubt.status === "Resolved" ? (
-                <div style={{ 
-                  background: "var(--n-10)", 
-                  padding: 24, 
-                  borderRadius: "var(--r-md)", 
-                  border: "1px solid var(--border-default)",
-                  position: "relative"
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-                    <div className="avatar avatar-sm" style={{ background: "var(--n-90)" }}>
-                      A
-                    </div>
-                    <span className="text-bold" style={{ fontSize: 14 }}>Response from {doubt.teacher}</span>
+                  <div className="avatar avatar-sm" style={{ background: thread.author === "Anonymous" ? "var(--n-40)" : "var(--primary-10)", color: thread.author === "Anonymous" ? "white" : "var(--primary-50)" }}>
+                    {thread.avatar}
                   </div>
-                  <p className="t-body-sm" style={{ color: "var(--fg-default)", lineHeight: 1.6, fontSize: 14 }}>
-                    {doubt.response}
-                  </p>
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 700, color: "var(--fg-default)" }}>{thread.author}</div>
+                    <div style={{ fontSize: 12, color: "var(--fg-muted)" }}>{thread.date}</div>
+                  </div>
                 </div>
-              ) : (
-                <div style={{ 
-                  padding: "16px 20px", 
-                  background: "rgba(245, 158, 11, 0.05)", 
-                  borderRadius: "var(--r-md)", 
-                  border: "1px dashed rgba(245, 158, 11, 0.3)",
-                  color: "var(--warning-60)", 
-                  fontSize: 14, 
-                  fontWeight: 500 
-                }}>
-                  A teacher will review this and provide a detailed solution shortly.
+                <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                  <span className={`badge ${thread.subject === 'Physics' ? 'badge-blue' : thread.subject === 'Chemistry' ? 'badge-orange' : 'badge-green'}`} style={{ padding: "4px 12px" }}>
+                    {thread.subject}
+                  </span>
+                  <span style={{ 
+                    display: "flex", alignItems: "center", gap: 6, fontSize: 12, fontWeight: 700, padding: "4px 10px", borderRadius: "var(--r-full)",
+                    background: thread.status === "Teacher Verified" ? "var(--success-10)" : thread.status === "Peer Answered" ? "var(--primary-10)" : "var(--warning-10)",
+                    color: thread.status === "Teacher Verified" ? "var(--success-50)" : thread.status === "Peer Answered" ? "var(--primary-50)" : "var(--warning-60)"
+                  }}>
+                    {thread.status === "Teacher Verified" ? <RiUserStarFill size={14} /> : thread.status === "Peer Answered" ? <RiCheckDoubleLine size={14} /> : <RiTimeLine size={14} />}
+                    {thread.status}
+                  </span>
+                </div>
+              </div>
+
+              {/* Thread Content */}
+              <div style={{ padding: 24, cursor: "pointer" }} onClick={() => setExpandedThread(expandedThread === thread.id ? null : thread.id)}>
+                <p className="text-body" style={{ color: "var(--fg-default)", fontWeight: 500, lineHeight: 1.6, margin: 0 }}>
+                  {thread.text}
+                </p>
+                
+                <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 8, color: "var(--fg-muted)", fontSize: 13, fontWeight: 600 }}>
+                  <RiMessage2Fill size={16} /> {thread.replies.length} {thread.replies.length === 1 ? "Reply" : "Replies"}
+                  <span style={{ margin: "0 8px", color: "var(--border-default)" }}>|</span>
+                  <span style={{ color: "var(--primary-50)" }}>{expandedThread === thread.id ? "Hide Replies" : "View Discussion"}</span>
+                </div>
+              </div>
+
+              {/* Thread Replies */}
+              {expandedThread === thread.id && (
+                <div style={{ background: "var(--bg-surface-hover)", padding: 24, borderTop: "1px solid var(--border-default)" }}>
+                  {thread.replies.length === 0 ? (
+                    <div style={{ textAlign: "center", padding: 24, color: "var(--fg-muted)", fontSize: 14 }}>
+                      No replies yet. Be the first to help out!
+                    </div>
+                  ) : (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                      {thread.replies.map(reply => (
+                        <div key={reply.id} style={{ 
+                          display: "flex", gap: 16, padding: 16, borderRadius: "var(--r-md)", 
+                          background: "var(--bg-surface)", border: reply.isVerified ? "1px solid var(--success-30)" : "1px solid var(--border-default)",
+                          boxShadow: reply.isVerified ? "0 0 0 1px var(--success-10)" : "none"
+                        }}>
+                          <div className="avatar avatar-sm" style={{ background: reply.role === "teacher" ? "var(--warning-10)" : "var(--n-20)", flexShrink: 0 }}>
+                            {reply.avatar}
+                          </div>
+                          <div style={{ flex: 1 }}>
+                            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                              <div style={{ fontSize: 13, fontWeight: 700, color: reply.role === "teacher" ? "var(--warning-60)" : "var(--fg-default)" }}>
+                                {reply.author} {reply.role === "teacher" && "(Faculty)"}
+                              </div>
+                              {reply.isVerified && (
+                                <div style={{ fontSize: 11, fontWeight: 700, color: "var(--success-50)", display: "flex", alignItems: "center", gap: 4, background: "var(--success-10)", padding: "2px 8px", borderRadius: 12 }}>
+                                  <RiCheckDoubleLine size={12} /> Teacher Endorsed
+                                </div>
+                              )}
+                            </div>
+                            <p style={{ fontSize: 14, color: "var(--fg-muted)", lineHeight: 1.6, margin: 0 }}>
+                              {reply.text}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Add Reply Box */}
+                  <div style={{ marginTop: 24, display: "flex", gap: 12 }}>
+                    <div className="avatar avatar-sm" style={{ background: "var(--primary-10)", color: "var(--primary-50)", flexShrink: 0 }}>You</div>
+                    <div style={{ flex: 1, position: "relative" }}>
+                      <input type="text" className="input" placeholder="Write a reply..." style={{ width: "100%", paddingRight: 48 }} />
+                      <button style={{ position: "absolute", right: 8, top: 8, background: "none", border: "none", color: "var(--primary-50)", cursor: "pointer" }}>
+                        <RiSendPlaneFill size={20} />
+                      </button>
+                    </div>
+                  </div>
+
                 </div>
               )}
             </div>
