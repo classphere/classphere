@@ -464,3 +464,26 @@ CMD ["node", "dist/index.js"]
 | Frontend session | Supabase SDK (memory) | localStorage | XSS protection; SDK handles token refresh |
 | Infra scaling | Cloud Run → GKE | Serverless functions | Functions have cold starts; containers are predictable |
 | Image storage | GCP Cloud Storage + CDN | DB blobs | Offloads bandwidth from API, CDN edge caching |
+
+---
+
+## 13. Product Workflow Strategy (DTP-Driven Ingestion)
+
+Based on Indian EdTech market realities, ExamPrep explicitly rejects the "Collaborative Teacher Task" workflow for test creation. Teachers hate data entry, and attempting to force a distributed task-fulfillment system will cause severe friction in B2B adoption.
+
+Instead, ExamPrep mirrors the real-world workflow of local and giant coaching centers (Allen, Aakash): **The DTP (Desktop Publishing) Operator Workflow.**
+
+### The Workflow Pipeline
+1. **Physical Generation:** Subject teachers handwrite/rough-draft questions.
+2. **DTP Assembly:** The institute's DTP operator types the entire 200-question paper in PageMaker or MS Word (with MathType) and generates a single PDF.
+3. **ExamPrep Ingestion (Admin/DTP Role):**
+   - The Institute Admin or DTP Operator logs into the ExamPrep B2B dashboard.
+   - They click "Create Test" and upload the single, unified PDF.
+   - Our **V1 Smart Cropping AI** slices the PDF into 200 question images automatically.
+   - The Operator uploads a simple CSV Answer Key.
+4. **Publish:** The test is immediately live for students.
+
+### Architectural Benefits
+- **Drastically Reduced UI Complexity:** We do not need to build task assignment, progress tracking, or notification queues for distributed test building.
+- **Role Simplification:** Teachers do not need write access to the Test Engine. Their portal is strictly a Read-Only Analytics Dashboard.
+- **Zero Friction Onboarding:** The institute does not change their existing operational behavior; they just upload the byproduct (the PDF) of their current process to our platform.
