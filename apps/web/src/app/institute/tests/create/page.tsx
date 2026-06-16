@@ -19,9 +19,9 @@ export default function ScheduleTestPage() {
           <RiArrowLeftLine size={16} /> Back to Dashboard
         </Link>
         <h1 style={{ fontSize: 28, fontWeight: 800, color: "var(--fg-default)", marginBottom: 4 }}>
-          Schedule Collaborative Test
+          Upload & Create Test
         </h1>
-        <p className="text-body">Create a test shell and assign sections to your subject teachers.</p>
+        <p className="text-body">Create a test via DTP PDF Upload.</p>
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
@@ -63,60 +63,33 @@ export default function ScheduleTestPage() {
           </div>
         </section>
 
-        {/* Teacher Assignments */}
+        {/* Upload Assets */}
         <section className="rayum-card" style={{ padding: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
-            <RiUserAddLine size={20} color="var(--primary-50)" /> Assign Sections to Teachers
+            <RiFileList3Line size={20} color="var(--primary-50)" /> Upload Test Assets
           </h2>
           <p style={{ fontSize: 13, color: "var(--fg-muted)", marginBottom: 24 }}>
-            Selected teachers will receive a task on their dashboard to populate their respective sections.
+            Upload the master DTP file. Our AI will automatically crop questions and process the answer key.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            {/* Physics */}
-            <div style={{ padding: 16, border: "1px solid var(--border-default)", borderRadius: 8, display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ width: 100, fontWeight: 600 }}>Physics</div>
-              <div style={{ flex: 1 }}>
-                <select className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }} defaultValue="t1">
-                  <option value="" disabled>Assign to...</option>
-                  <option value="t1">Dr. Vikram Seth</option>
-                  <option value="t2">Prof. HC Verma</option>
-                </select>
+            {/* PDF Upload */}
+            <div style={{ padding: 24, border: "2px dashed var(--border-default)", borderRadius: 8, textAlign: "center", background: "var(--bg-surface-hover)", cursor: "pointer", transition: "all 0.2s" }} className="hover-lift">
+              <div style={{ marginBottom: 12 }}>
+                <RiFileList3Line size={32} color="var(--primary-50)" style={{ margin: "0 auto" }} />
               </div>
-              <div style={{ width: 120 }}>
-                <input type="number" placeholder="Q. Count" defaultValue={25} className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }} />
-              </div>
+              <div style={{ fontWeight: 600, color: "var(--fg-default)", marginBottom: 4 }}>Upload Master PDF</div>
+              <div style={{ fontSize: 13, color: "var(--fg-muted)" }}>Supports up to 200 pages. Ensure clear formatting.</div>
             </div>
 
-            {/* Chemistry */}
-            <div style={{ padding: 16, border: "1px solid var(--border-default)", borderRadius: 8, display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ width: 100, fontWeight: 600 }}>Chemistry</div>
-              <div style={{ flex: 1 }}>
-                <select className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }} defaultValue="">
-                  <option value="" disabled>Assign to...</option>
-                  <option value="t3">Dr. Rakesh Sharma</option>
-                  <option value="t4">Ms. Anjali Desai</option>
-                </select>
+            {/* CSV Upload */}
+            <div style={{ padding: 24, border: "2px dashed var(--border-default)", borderRadius: 8, textAlign: "center", background: "var(--bg-surface-hover)", cursor: "pointer", transition: "all 0.2s" }} className="hover-lift">
+              <div style={{ marginBottom: 12 }}>
+                <RiCheckDoubleLine size={32} color="var(--success-50)" style={{ margin: "0 auto" }} />
               </div>
-              <div style={{ width: 120 }}>
-                <input type="number" placeholder="Q. Count" defaultValue={25} className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }} />
-              </div>
+              <div style={{ fontWeight: 600, color: "var(--fg-default)", marginBottom: 4 }}>Upload Answer Key (CSV)</div>
+              <div style={{ fontSize: 13, color: "var(--fg-muted)" }}>Format: Question Number, Correct Option (A/B/C/D)</div>
             </div>
-
-            {/* Maths */}
-            <div style={{ padding: 16, border: "1px solid var(--border-default)", borderRadius: 8, display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ width: 100, fontWeight: 600 }}>Mathematics</div>
-              <div style={{ flex: 1 }}>
-                <select className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }} defaultValue="">
-                  <option value="" disabled>Assign to...</option>
-                  <option value="t5">Mr. Anand Kumar</option>
-                </select>
-              </div>
-              <div style={{ width: 120 }}>
-                <input type="number" placeholder="Q. Count" defaultValue={25} className="input-field" style={{ width: "100%", padding: "8px 12px", fontSize: 14 }} />
-              </div>
-            </div>
-
           </div>
         </section>
 
@@ -124,7 +97,7 @@ export default function ScheduleTestPage() {
         <div style={{ display: "flex", justifyContent: "flex-end", gap: 12, marginTop: 16 }}>
           <Link href="/institute" className="btn btn-outline">Cancel</Link>
           <Link href="/institute" className="btn btn-primary" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <RiCheckDoubleLine size={18} /> Schedule & Notify Teachers
+            <RiCheckDoubleLine size={18} /> Process Test via Smart Cropping
           </Link>
         </div>
 

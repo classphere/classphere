@@ -10,7 +10,7 @@ import {
   RiSettings4Line,
   RiMore2Fill
 } from "@remixicon/react";
-import { mockTeacher, mockBatches, mockPendingTasks } from "../../lib/mock-data";
+import { mockTeacher, mockBatches } from "../../lib/mock-data";
 
 export default function TeacherDashboardPage() {
   return (
@@ -57,42 +57,7 @@ export default function TeacherDashboardPage() {
           </div>
         </div>
 
-        {/* Pending Tasks Alert */}
-        {mockPendingTasks.length > 0 && (
-          <section className="rayum-card" style={{ marginBottom: 24, padding: 32 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
-              <h2 className="section-title" style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 18 }}>
-                Action Required: Pending Test Sections
-              </h2>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              {mockPendingTasks.map(task => (
-                <div key={task.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingBottom: 16, borderBottom: "1px solid var(--border-default)" }}>
-                  <div>
-                    <div className="text-bold" style={{ fontSize: 16, marginBottom: 4 }}>{task.testName}</div>
-                    <div className="t-body-sm" style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                      <span style={{ display: "flex", alignItems: "center", gap: 6 }}><RiTeamLine size={16} /> {task.batchName}</span>
-                      <span style={{ display: "flex", alignItems: "center", gap: 6 }}><RiCalendarEventLine size={16} /> Due: {new Date(task.dueDate).toLocaleDateString()}</span>
-                    </div>
-                  </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-                    <div style={{ textAlign: "right" }}>
-                      <div className="text-bold" style={{ fontSize: 16 }}>{task.questionsAdded} / {task.questionsRequired}</div>
-                      <div className="t-body-sm">Questions</div>
-                    </div>
-                    {task.status === "pending" ? (
-                      <Link href={`/teacher/tasks/${task.id}`} className="btn btn-primary">
-                        Add Questions
-                      </Link>
-                    ) : (
-                      <span className="badge badge-green">Completed</span>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+
 
         {/* Main Content Grid */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 400px", gap: 24 }}>

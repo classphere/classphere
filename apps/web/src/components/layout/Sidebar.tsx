@@ -25,7 +25,7 @@ import {
   RiBox3Line,
   RiShoppingCartLine,
   RiFileList3Line,
-  RiBookMarkLine
+  RiBookmarkLine
 } from "@remixicon/react";
 
 export default function Sidebar() {
@@ -42,7 +42,7 @@ export default function Sidebar() {
     { label: "Dashboard", href: "/", icon: <RiDashboardLine size={18} />, active: pathname === "/" },
     { label: "PYQs", href: "/pyqs", icon: <RiFileList3Line size={18} />, active: pathname.startsWith("/pyqs") },
     { label: "Test History", href: "/history", icon: <RiBookOpenLine size={18} />, active: pathname.startsWith("/history") },
-    { label: "Mistake Diary", href: "/student/mistakes", icon: <RiBookMarkLine size={18} />, active: pathname.startsWith("/student/mistakes") },
+    { label: "Mistake Diary", href: "/student/mistakes", icon: <RiBookmarkLine size={18} />, active: pathname.startsWith("/student/mistakes") },
     { label: "Analytics", href: "/analytics", icon: <RiLineChartLine size={18} />, active: pathname.startsWith("/analytics") },
     { label: "Leaderboard", href: "/leaderboard", icon: <RiTrophyLine size={18} />, active: pathname.startsWith("/leaderboard") },
     { label: "Ask a Doubt", href: "/doubts", icon: <RiQuestionAnswerLine size={18} />, active: pathname.startsWith("/doubts") },
@@ -50,7 +50,6 @@ export default function Sidebar() {
 
   const teacherNav = [
     { label: "Dashboard", href: "/teacher", icon: <RiDashboardLine size={18} />, active: pathname === "/teacher" },
-    { label: "Assignments", href: "/teacher/create-assignment", icon: <RiBox3Line size={18} />, active: pathname.startsWith("/teacher/create-assignment") },
     { label: "Analytics", href: "/teacher/analytics", icon: <RiBarChartBoxLine size={18} />, active: pathname.startsWith("/teacher/analytics") },
     { label: "Doubts", href: "/teacher/doubts", icon: <RiMessage3Line size={18} />, active: pathname.startsWith("/teacher/doubts") },
   ];
