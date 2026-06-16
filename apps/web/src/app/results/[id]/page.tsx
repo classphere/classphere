@@ -16,7 +16,8 @@ import {
   RiLightbulbFlashLine,
   RiArrowLeftLine,
   RiArrowRightLine,
-  RiLoader4Line
+  RiLoader4Line,
+  RiBookMarkFill
 } from "@remixicon/react";
 
 function AccuracyBar({ accuracy }: { accuracy: number }) {
@@ -100,12 +101,50 @@ export default function ResultsPage() {
           <p className="text-body-base" style={{ color: "var(--fg-muted)", marginTop: 8 }}>Laws of Motion · JEE · {a.correctCount + a.incorrectCount + a.skippedCount} Questions</p>
         </div>
 
+        {/* Narrative Summary (V3) */}
+        {a.narrative && (
+          <div className="rayum-card" style={{ padding: 32, marginBottom: "var(--space-800)", background: "linear-gradient(to right, var(--primary-900), var(--primary-800))", color: "white", border: "none" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <RiLightbulbFlashLine size={28} color="var(--primary-200)" />
+                <h2 className="text-h3" style={{ color: "white", margin: 0 }}>AI Diagnosis</h2>
+              </div>
+              {a.narrative.examCountdown && (
+                <div className="rayum-badge" style={{ background: "rgba(255,255,255,0.15)", color: "white", border: "1px solid rgba(255,255,255,0.2)" }}>
+                  {a.narrative.examCountdown.urgencyLabel}
+                </div>
+              )}
+            </div>
+            <h3 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12, lineHeight: 1.3 }}>{a.narrative.headline}</h3>
+            <p style={{ fontSize: 15, color: "var(--primary-100)", lineHeight: 1.6, marginBottom: 24 }}>{a.narrative.overview}</p>
+            
+            <div style={{ background: "rgba(0,0,0,0.2)", padding: 20, borderRadius: "var(--radius-md)", marginBottom: 24 }}>
+              <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: 1, color: "var(--primary-200)", fontWeight: 700, marginBottom: 8 }}>Biggest Win Available</div>
+              <div style={{ fontSize: 15, fontWeight: 600 }}>{a.narrative.biggestWin}</div>
+            </div>
+            
+            {a.narrative.warningMessage && (
+              <div style={{ padding: 16, borderLeft: "4px solid var(--error-400)", background: "rgba(255,50,50,0.1)", marginBottom: 24, fontSize: 14 }}>
+                <strong style={{ color: "var(--error-300)" }}>Warning:</strong> {a.narrative.warningMessage}
+              </div>
+            )}
+            
+            <div style={{ fontSize: 14, fontStyle: "italic", color: "var(--primary-200)" }}>{a.narrative.motivationalNote}</div>
+          </div>
+        )}
+
         {/* Score Banner */}
         <div className="rayum-card" style={{ padding: 40, border: `2px solid ${pctColor}`, background: pctBg, marginBottom: "var(--space-800)" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 48, alignItems: "center" }}>
             <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 64, fontWeight: 900, color: pctColor, lineHeight: 1 }}>{pct}%</div>
               <div className="text-body-base" style={{ color: "var(--fg-muted)", marginTop: 12, fontWeight: 600 }}>Your Score</div>
+              {a.freeMarks?.projectedPercentage > pct && (
+                <div style={{ marginTop: 16, padding: "8px 12px", background: "var(--success-10)", borderRadius: "var(--radius-sm)", border: "1px solid var(--success-20)", display: "inline-block" }}>
+                  <div style={{ fontSize: 12, color: "var(--success-50)", fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 2 }}>Potential Score</div>
+                  <div style={{ fontSize: 20, fontWeight: 900, color: "var(--success-60)" }}>{Math.round(a.freeMarks.projectedPercentage)}%</div>
+                </div>
+              )}
             </div>
 
             <div>
@@ -290,6 +329,35 @@ export default function ResultsPage() {
           </div>
         </div>
 
+        {/* Attempt Strategy (V3) */}
+        {a.attemptStrategy && a.attemptStrategy.pattern !== "mixed" && (
+          <div style={{ marginBottom: "var(--space-800)" }}>
+            <h2 className="text-h3" style={{ marginBottom: 24, display: "flex", alignItems: "center", gap: 8 }}>
+              <RiTimerLine size={22} /> Attempt Strategy
+            </h2>
+            <div className="rayum-card" style={{ padding: 24 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
+                <div>
+                  <div className="text-body-large" style={{ fontWeight: 700, color: "var(--fg-default)", marginBottom: 8 }}>Time Management</div>
+                  <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>{a.attemptStrategy.insight}</div>
+                </div>
+                <div style={{ textAlign: "right" }}>
+                  <div className="text-body-small" style={{ color: "var(--fg-muted)", fontWeight: 600, marginBottom: 4 }}>Strategy Score</div>
+                  <div style={{ fontSize: 24, fontWeight: 900, color: a.attemptStrategy.strategyScore >= 80 ? "var(--success-50)" : "var(--warning-50)" }}>
+                    {a.attemptStrategy.strategyScore}/100
+                  </div>
+                </div>
+              </div>
+              <div style={{ background: "var(--bg-surface-hover)", padding: 16, borderRadius: "var(--radius-sm)", display: "flex", gap: 12 }}>
+                <RiLightbulbFlashLine size={20} color="var(--primary-50)" style={{ flexShrink: 0 }} />
+                <div className="text-body-small" style={{ color: "var(--fg-default)" }}>
+                  <strong style={{ color: "var(--primary-50)" }}>Recommendation:</strong> {a.attemptStrategy.recommendation}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Error Patterns */}
         <div style={{ marginBottom: "var(--space-800)" }}>
           <h2 className="text-h3" style={{ marginBottom: 24, display: "flex", alignItems: "center", gap: 8 }}>
@@ -309,6 +377,17 @@ export default function ResultsPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mistake Diary CTA */}
+        <div className="rayum-card" style={{ padding: 24, background: "var(--primary-10)", border: "1px solid var(--primary-20)", display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "var(--space-800)" }}>
+          <div>
+            <div className="text-body-large" style={{ fontWeight: 700, color: "var(--primary-50)", marginBottom: 4 }}>Stop repeating these mistakes</div>
+            <div className="text-body-small" style={{ color: "var(--fg-default)" }}>Add these {a.errorPatterns.length * 2} errors to your digital diary for revision.</div>
+          </div>
+          <Link href="/student/mistakes" className="btn btn-primary" style={{ display: "inline-flex", gap: 8 }}>
+            <RiBookMarkFill size={18} /> Open Mistake Diary
+          </Link>
         </div>
 
         {/* 7-Day Study Plan */}

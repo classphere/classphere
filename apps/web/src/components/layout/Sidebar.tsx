@@ -24,7 +24,8 @@ import {
   RiQuestionAnswerLine,
   RiBox3Line,
   RiShoppingCartLine,
-  RiFileList3Line
+  RiFileList3Line,
+  RiBookMarkLine
 } from "@remixicon/react";
 
 export default function Sidebar() {
@@ -41,6 +42,7 @@ export default function Sidebar() {
     { label: "Dashboard", href: "/", icon: <RiDashboardLine size={18} />, active: pathname === "/" },
     { label: "PYQs", href: "/pyqs", icon: <RiFileList3Line size={18} />, active: pathname.startsWith("/pyqs") },
     { label: "Test History", href: "/history", icon: <RiBookOpenLine size={18} />, active: pathname.startsWith("/history") },
+    { label: "Mistake Diary", href: "/student/mistakes", icon: <RiBookMarkLine size={18} />, active: pathname.startsWith("/student/mistakes") },
     { label: "Analytics", href: "/analytics", icon: <RiLineChartLine size={18} />, active: pathname.startsWith("/analytics") },
     { label: "Leaderboard", href: "/leaderboard", icon: <RiTrophyLine size={18} />, active: pathname.startsWith("/leaderboard") },
     { label: "Ask a Doubt", href: "/doubts", icon: <RiQuestionAnswerLine size={18} />, active: pathname.startsWith("/doubts") },
