@@ -31,9 +31,9 @@ We will run a dedicated microservice for WhatsApp messaging to ensure it doesn't
 5. Director scans the QR code with their phone.
 6. Server captures the session auth token, encrypts it, and saves it to the DB. Status changes to "Connected: +91 98765 43210".
 
-### The Messaging Flow (Triggered after Analysis)
-1. The Analysis Engine finishes processing an exam (`analyzeAttempt` completes).
-2. The main API pushes a job to Redis: `send_result_whatsapp(student_id, attempt_id)`.
+### The Messaging Flow (Triggered upon Admin Publish)
+1. The Admin reviews the batch analysis and clicks "Publish Results".
+2. The main API pushes a job to Redis for each student: `send_result_whatsapp(student_id, attempt_id)`.
 3. The WhatsApp microservice picks up the job.
 4. It formats the message: *"Dear Parent, Rahul scored 120/300 in NEET Mock 4. Weakest topic: Thermodynamics. View full AI report here: [Link]"*
 5. The headless WhatsApp client sends the message.
@@ -44,10 +44,10 @@ We will run a dedicated microservice for WhatsApp messaging to ensure it doesn't
 
 WhatsApp aggressively bans numbers that exhibit "bot-like" behavior. Since the institute relies on this phone number, we must implement strict safety guards in our code:
 
-### A. Rate Limiting & Jitter (The "Human" Delay)
-Never send 100 messages in 100 seconds. 
-*   **Delay:** Wait a random amount of time between 3 and 12 seconds (`Math.random() * 9000 + 3000`) before sending the next message.
-*   **Batching:** Send 50 messages, then pause the queue for 5 minutes, then resume.
+### A. Rate Limiting (The "Human" Delay)
+WhatsApp monitors outbound velocity. We use BullMQ's native rate limiter to throttle the queue:
+*   **Rate Limiting:** Enforce a strict queue limit of 1 message every 5 seconds. A batch of 500 students will process completely and safely in under an hour.
+*   **Batching:** (Optional) Pause the queue for 5 minutes after every 100 messages, then resume.
 
 ### B. "Typing..." Simulation
 Use the library's built-in presence features to simulate human interaction.

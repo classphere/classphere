@@ -130,18 +130,28 @@ PATCH /attempts/:id
   → Read Redis hash → bulk UPSERT to attempt_answers table
 ```
 
-**Submit flow:**
+**Submit flow (B2B Deferred Architecture):**
 ```
 POST /attempts/:id/submit
   → Validate JWT + attempt ownership
   → Flush final answers: Redis → DB (sync, single transaction)
-  → Score: GET answerkey:{test_id} from Redis → score in-memory (<10ms)
-  → UPDATE attempts SET score, status='submitted'
-  → LPUSH bull:analysis:wait {attempt_id}  ← BullMQ enqueue
-  → Return 200 { attempt_id, score: { correct, incorrect, marks } }
-  ↓ BullMQ Worker (async)
-  → 9-stage analysis pipeline runs (~800ms)
-  → INSERT analysis_results {attempt_id, result, status:'ready'}
+  → UPDATE attempts SET status='submitted' (DO NOT SCORE YET)
+  → Return 200 { status: 'submitted_pending_publish' }
+```
+*Note: We explicitly DO NOT run the analysis engine on submit. Doing so instantly would allow students to leak answers and prevents batch-curve calculations.*
+
+**Publish flow (Admin Orchestration):**
+```
+POST /admin/tests/:id/close-and-analyze
+  → Fetches all attempts where status='submitted'
+  → LPUSH bull:analysis:batch {test_id, attempt_ids[]}
+  → Workers crunch all 500 reports concurrently in ~2 seconds.
+  
+POST /admin/tests/:id/publish
+  → UPDATE tests SET publish_status = 'published'
+  → Compute leaderboards and batch averages
+  → LPUSH bull:whatsapp:send {attempt_id, parent_phone} 
+    (Rate limited to 1 message every 5 seconds)
 ```
 
 ### 4.3 Analysis Engine (BullMQ Workers)
@@ -475,13 +485,17 @@ Instead, ExamPrep mirrors the real-world workflow of local and giant coaching ce
 
 ### The Workflow Pipeline
 1. **Physical Generation:** Subject teachers handwrite/rough-draft questions.
-2. **DTP Assembly:** The institute's DTP operator types the entire 200-question paper in PageMaker or MS Word (with MathType) and generates a single PDF.
+2. **DTP Assembly:** The institute's DTP operator types the entire 200-question paper and generates a single PDF.
 3. **ExamPrep Ingestion (Admin/DTP Role):**
    - The Institute Admin or DTP Operator logs into the ExamPrep B2B dashboard.
    - They click "Create Test" and upload the single, unified PDF.
    - Our **V1 Smart Cropping AI** slices the PDF into 200 question images automatically.
    - The Operator uploads a simple CSV Answer Key.
-4. **Publish:** The test is immediately live for students.
+4. **Deferred Execution & Publishing (B2B Orchestration):**
+   - Students take the test. Upon submission, they see a "Pending Institute Publication" screen to maintain test integrity.
+   - Once the exam window ends, Admin clicks **"Close Test & Analyze"**.
+   - Admin reviews the generated Batch Analytics.
+   - Admin clicks **"Publish Results"**. This unlocks results for students and instantly triggers the WhatsApp blast to parents (rate-limited at 1 msg / 5s).
 
 ### Architectural Benefits
 - **Drastically Reduced UI Complexity:** We do not need to build task assignment, progress tracking, or notification queues for distributed test building.
