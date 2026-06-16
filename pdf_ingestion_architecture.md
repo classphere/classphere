@@ -5,11 +5,33 @@ Converting coaching institute PDFs into structured JSON for the Analysis Engine 
 1. **Double Columns:** Most exam papers are formatted in two columns.
 2. **Math & Physics:** Standard OCR cannot read integral signs, matrices, or complex chemical structures.
 3. **Diagrams:** Questions often contain inline images that must be extracted and hosted.
-4. **Metadata:** The Analysis Engine requires strict `subject`, `chapter`, `topic`, and `difficulty` tags, which are almost never written in the raw PDF.
+
+Because text extraction (LaTeX OCR) is highly prone to human-visible errors (like missing a minus sign), our architecture is split into two phases: **V1 (Image-Based)** for immediate foolproof market entry, and **V2 (Multi-Agent Text)** for advanced digital-native scaling.
 
 ---
 
-## 2. The Multi-Agent Architecture (Foolproof Strategy)
+## 2. The V1 Approach: Image-Based Smart Cropping (Recommended MVP)
+
+To achieve 100% foolproof accuracy and bypass the OCR/LaTeX rendering problem entirely, the V1 ingestion engine uses **Smart Cropping**. Instead of extracting the text, we simply crop the physical question block out of the PDF and show the image to the student.
+
+### The Workflow
+1. **PDF Upload & Slicing:** Teacher uploads the PDF. Backend converts every page to a high-res image.
+2. **Bounding Box Detection:** We use a lightweight Object Detection model (like YOLOv8) or a Vision LLM (GPT-4o/Gemini) to detect the exact `[y1, x1, y2, x2]` coordinates of each question block.
+3. **Auto-Crop & Host:** A Python script (OpenCV) slices the PDF page using those coordinates. The resulting images (`q1_crop.jpg`, `q2_crop.jpg`) are uploaded to AWS S3.
+4. **Taxonomy Tagging:** A RAG Agent reads the image in the background *purely* to assign the `subject`, `chapter`, and `topic` tags for the Analysis Engine. (If it misreads a number, it doesn't matter, it only cares about syllabus mapping).
+5. **The Student UI:** The student sees the cropped image of the question on their phone, with 4 digital buttons below it: `[ A ] [ B ] [ C ] [ D ]`.
+
+### Why V1 Wins B2B Deals:
+* **Zero Rendering Errors:** It is literally a picture of the original paper. No missing minus signs, no broken matrices.
+* **Speed:** Slicing a 100-page PDF takes seconds.
+* **Cost:** Bounding box detection is 10x cheaper than full text OCR.
+* **Zero Human Verification:** Because there is no digital text to fix, the teacher skips the verification step. They just upload the PDF and the A/B/C/D Answer Key CSV.
+
+---
+
+## 3. The V2 Approach: Multi-Agent Text Extraction (Future State)
+
+When we need fully digital text (for accessibility, text-to-speech, or dynamic question banks), we use a Multi-Agent workflow to extract and correct the data.
 
 To achieve 98%+ accuracy and reduce the teacher's manual verification time to near zero, we graduate from a single LLM prompt to an **Agentic Workflow**. 
 
@@ -35,7 +57,7 @@ Instead of asking one AI to do everything, we spin up a team of specialized AI A
 
 ---
 
-## 3. The Architecture Workflow (With Agents)
+## 4. The V2 Architecture Workflow
 
 ### Step 1: PDF Upload & Slicing
 *   The teacher uploads a PDF.
@@ -55,11 +77,11 @@ Instead of asking one AI to do everything, we spin up a team of specialized AI A
 ### Step 4: The "Staging" Area (Human-in-the-Loop)
 *   Even with Agents, you can never claim 100% foolproof perfection because input PDFs can be blurry or have typos themselves. 
 *   The output goes to the `staging_questions` table.
-*   The teacher reviews the Split-Screen UI. Because of the Multi-Agent system, the teacher now spends 30 seconds clicking "Approve All" instead of 10 minutes fixing typos.
+*   The teacher reviews the Split-Screen UI to approve the digital text before publishing.
 
 ---
 
-## 4. Technology Stack & Costs
+## 5. Technology Stack & Costs
 
 | Component | Technology | Cost Estimate |
 | :--- | :--- | :--- |
@@ -73,10 +95,9 @@ Instead of asking one AI to do everything, we spin up a team of specialized AI A
 
 ---
 
-## 5. UI Requirements for Teacher Dashboard
+## 6. UI Requirements for Teacher Dashboard
 1. **Upload Portal:** Drag-and-drop PDF area.
-2. **Agent Progress UI:** A progress bar showing the agent status: *(1. Extracting Text... 2. Validating Math... 3. Searching Syllabus...)*. This looks incredibly premium to users.
-3. **Verification Split-Screen:** 
-   - Left side: The PDF viewer.
-   - Right side: Form fields for Question Text, Subject/Chapter/Topic.
-4. **Bulk Action:** "Publish Test" button.
+2. **Processing UI:** Progress bar showing status *(Extracting Bounding Boxes -> Cropping Images -> Tagging Syllabus)*.
+3. **Verification Screen (V1):** Teacher just confirms the bounding boxes match the questions.
+4. **Verification Screen (V2):** Split-Screen UI with PDF viewer on left, generated text/LaTeX on right.
+5. **Bulk Action:** "Publish Test" button.
