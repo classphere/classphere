@@ -17,7 +17,7 @@ import {
   RiArrowLeftLine,
   RiArrowRightLine,
   RiLoader4Line,
-  RiBookMarkFill
+  RiBookmarkFill
 } from "@remixicon/react";
 
 function AccuracyBar({ accuracy }: { accuracy: number }) {
@@ -53,6 +53,9 @@ export default function ResultsPage() {
     const fetchAnalysis = async () => {
       try {
         const res = await fetch(`/api/v1/analysis/${attemptId}`);
+        if (!res.ok) throw new Error(`API error: ${res.status}`);
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) throw new Error("Invalid response format");
         const data = await res.json();
         if (data.success && data.data.status === "ready") {
           setAnalysis(data.data.analysis);
@@ -386,7 +389,7 @@ export default function ResultsPage() {
             <div className="text-body-small" style={{ color: "var(--fg-default)" }}>Add these {a.errorPatterns.length * 2} errors to your digital diary for revision.</div>
           </div>
           <Link href="/student/mistakes" className="btn btn-primary" style={{ display: "inline-flex", gap: 8 }}>
-            <RiBookMarkFill size={18} /> Open Mistake Diary
+            <RiBookmarkFill size={18} /> Open Mistake Diary
           </Link>
         </div>
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
-import { RiBookMarkFill, RiFilter3Line, RiCheckLine, RiSearchLine, RiAlertFill, RiLightbulbFlashLine, RiArrowRightLine } from "@remixicon/react";
+import { RiBookmarkFill, RiFilter3Line, RiCheckLine, RiSearchLine, RiAlertFill, RiLightbulbFlashLine, RiArrowRightLine } from "@remixicon/react";
 
 const MOCK_MISTAKES = [
   {
@@ -75,7 +75,7 @@ export default function MistakeDiary() {
         <div style={{ marginBottom: "var(--space-800)", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
           <div>
             <h1 className="text-h2" style={{ color: "var(--fg-default)", display: "flex", alignItems: "center", gap: 12 }}>
-              <RiBookMarkFill color="var(--primary-50)" /> My Mistake Diary
+              <RiBookmarkFill color="var(--primary-50)" /> My Mistake Diary
             </h1>
             <p className="text-body-base" style={{ color: "var(--fg-muted)", marginTop: 8 }}>
               Review your past errors so you never make them again.

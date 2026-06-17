@@ -16,12 +16,21 @@ export default function TeacherAnalyticsPage() {
     const fetchBatchData = async () => {
       try {
         const res = await fetch(`/api/v1/analysis/batch/${testId}/${batchId}`);
-        const json = await res.json();
-        if (json.success) {
-          setData(json.data.analysis);
+        if (!res.ok) {
+          throw new Error("Failed to fetch batch analysis");
+        }
+        
+        const contentType = res.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          const json = await res.json();
+          if (json.success) {
+            setData(json.data.analysis);
+          }
+        } else {
+          throw new Error("Invalid response format");
         }
       } catch (err) {
-        console.error(err);
+        console.error("Batch Analysis fetch error:", err);
       } finally {
         setLoading(false);
       }

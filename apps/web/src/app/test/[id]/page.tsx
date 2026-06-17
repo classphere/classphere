@@ -80,7 +80,12 @@ export default function TestPage() {
     if (testId.startsWith("pyq-")) {
       const paperId = testId.replace(/^pyq-/, "");
       fetch(`${API_BASE}/pyqs/${paperId}/questions`)
-        .then((r) => r.json())
+        .then((r) => {
+          if (!r.ok) throw new Error("API error");
+          const contentType = r.headers.get("content-type");
+          if (!contentType || !contentType.includes("application/json")) throw new Error("Invalid response format");
+          return r.json();
+        })
         .then((res) => {
           if (res.success) {
             setQuestions(res.data.questions);
@@ -120,6 +125,10 @@ export default function TestPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
+      if (!res.ok) throw new Error("Submit API failed");
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) throw new Error("Invalid response format");
 
       const data = await res.json();
       if (data.success) {

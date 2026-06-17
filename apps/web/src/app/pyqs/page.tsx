@@ -79,7 +79,12 @@ export default function PYQsPage() {
   useEffect(() => {
     setLoading(true);
     fetch(`${API_BASE}/pyqs`)
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error("API error");
+        const contentType = r.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) throw new Error("Invalid response format");
+        return r.json();
+      })
       .then((res) => {
         if (res.success) {
           setPapers(res.data.papers);
