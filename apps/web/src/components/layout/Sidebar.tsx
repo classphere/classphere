@@ -25,7 +25,8 @@ import {
   RiBox3Line,
   RiShoppingCartLine,
   RiFileList3Line,
-  RiBookmarkLine
+  RiBookmarkLine,
+  RiFileListLine
 } from "@remixicon/react";
 
 export default function Sidebar() {
@@ -39,19 +40,22 @@ export default function Sidebar() {
 
   // Navigations based on Role
   const studentNav = [
-    { label: "Dashboard", href: "/", icon: <RiDashboardLine size={18} />, active: pathname === "/" },
-    { label: "PYQs", href: "/pyqs", icon: <RiFileList3Line size={18} />, active: pathname.startsWith("/pyqs") },
-    { label: "Test History", href: "/history", icon: <RiBookOpenLine size={18} />, active: pathname.startsWith("/history") },
-    { label: "Mistake Diary", href: "/student/mistakes", icon: <RiBookmarkLine size={18} />, active: pathname.startsWith("/student/mistakes") },
-    { label: "Analytics", href: "/analytics", icon: <RiLineChartLine size={18} />, active: pathname.startsWith("/analytics") },
-    { label: "Leaderboard", href: "/leaderboard", icon: <RiTrophyLine size={18} />, active: pathname.startsWith("/leaderboard") },
-    { label: "Ask a Doubt", href: "/doubts", icon: <RiQuestionAnswerLine size={18} />, active: pathname.startsWith("/doubts") },
+    { label: "Dashboard",    href: "/",                  icon: <RiDashboardLine size={18} />,      active: pathname === "/" },
+    { label: "My DPPs",     href: "/assignments",        icon: <RiFileListLine size={18} />,       active: pathname.startsWith("/assignments") },
+    { label: "PYQs",        href: "/pyqs",               icon: <RiFileList3Line size={18} />,      active: pathname.startsWith("/pyqs") },
+    { label: "Test History", href: "/history",           icon: <RiBookOpenLine size={18} />,       active: pathname.startsWith("/history") },
+    { label: "Mistake Diary",href: "/student/mistakes",  icon: <RiBookmarkLine size={18} />,       active: pathname.startsWith("/student/mistakes") },
+    { label: "Analytics",   href: "/analytics",          icon: <RiLineChartLine size={18} />,      active: pathname.startsWith("/analytics") },
+    { label: "Leaderboard", href: "/leaderboard",        icon: <RiTrophyLine size={18} />,         active: pathname.startsWith("/leaderboard") },
+    { label: "Ask a Doubt", href: "/doubts",             icon: <RiQuestionAnswerLine size={18} />, active: pathname.startsWith("/doubts") },
   ];
 
+
   const teacherNav = [
-    { label: "Dashboard", href: "/teacher", icon: <RiDashboardLine size={18} />, active: pathname === "/teacher" },
-    { label: "Analytics", href: "/teacher/analytics", icon: <RiBarChartBoxLine size={18} />, active: pathname.startsWith("/teacher/analytics") },
-    { label: "Doubts", href: "/teacher/doubts", icon: <RiMessage3Line size={18} />, active: pathname.startsWith("/teacher/doubts") },
+    { label: "Dashboard", href: "/teacher",          icon: <RiDashboardLine size={18} />,  active: pathname === "/teacher" },
+    { label: "DPPs",      href: "/teacher/dpps",     icon: <RiFileListLine size={18} />,   active: pathname.startsWith("/teacher/dpps") },
+    { label: "Analytics", href: "/teacher/analytics",icon: <RiBarChartBoxLine size={18} />,active: pathname.startsWith("/teacher/analytics") },
+    { label: "Doubts",    href: "/teacher/doubts",   icon: <RiMessage3Line size={18} />,   active: pathname.startsWith("/teacher/doubts") },
   ];
 
   const instituteNav = [
@@ -133,7 +137,7 @@ export default function Sidebar() {
         <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
           {currentNav.map((item) => (
             <Link
-              key={item.href}
+              key={item.label}
               href={item.href}
               className={`sidebar-link ${item.active ? "active" : ""}`}
             >
