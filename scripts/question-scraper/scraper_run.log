@@ -1,0 +1,1781 @@
+
+📚 [Physics] Units and Measurements
+   Detected 10 tests
+   Test  1: 10 questions
+   Test  2: 10 questions
+   Test  3: 10 questions
+   Test  4: 10 questions
+   Test  5: 0 questions
+   Test  6: 0 questions
+   Test  7: (no page — stopping)
+   ✅ Saved 40 questions → Physics_Units_and_Measurements.json
+
+📚 [Physics] Motion in a Straight Line
+   Detected 10 tests
+   Test  1: 15 questions
+   Test  2: 15 questions
+   Test  3: 15 questions
+   Test  4: 10 questions
+   Test  5: 10 questions
+   Test  6: 10 questions
+   Test  7: 10 questions
+   Test  8: 10 questions
+   Test  9: 10 questions
+   Test 10: 10 questions
+   ✅ Saved 115 questions → Physics_Motion_in_a_Straight_Line.json
+
+📚 [Physics] Motion in a Plane
+   Detected 10 tests
+   Test  1: 15 questions
+   Test  2: 15 questions
+   Test  3: 14 questions
+   Test  4: 10 questions
+   Test  5: 10 questions
+   Test  6: 10 questions
+   Test  7: 10 questions
+   Test  8: 10 questions
+   Test  9: 10 questions
+   Test 10: 10 questions
+   ✅ Saved 114 questions → Physics_Motion_in_a_Plane.json
+
+📚 [Physics] Laws of Motion
+   Detected 10 tests
+   Test  1: 15 questions
+   Test  2: 14 questions
+   Test  3: 10 questions
+   Test  4: 10 questions
+   Test  5: 10 questions
+   Test  6: 10 questions
+   Test  7: 10 questions
+   Test  8: 10 questions
+   Test  9: 10 questions
+   Test 10: 10 questions
+   ✅ Saved 109 questions → Physics_Laws_of_Motion.json
+
+📚 [Physics] Work, Energy and Power
+   Detected 10 tests
+   Test  1: 15 questions
+   Test  2: 15 questions
+   Test  3: 14 questions
+   Test  4: 10 questions
+   Test  5: 10 questions
+   Test  6: 10 questions
+   Test  7: 10 questions
+   Test  8: 10 questions
+   Test  9: 10 questions
+   Test 10: 10 questions
+   ✅ Saved 114 questions → Physics_Work_Energy_and_Power.json
+
+📚 [Physics] System of Particles and Rotational Motion
+   Detected 10 tests
+   Test  1: 15 questions
+   Test  2: 15 questions
+   Test  3: 15 questions
+   Test  4: 15 questions
+   Test  5: 15 questions
+   Test  6: 15 questions
+   Test  7: 15 questions
+   Test  8: 10 questions
+   Test  9: 10 questions
+   Test 10: 10 questions
+   ✅ Saved 135 questions → Physics_System_of_Particles_and_Rotational_Motion.json
+
+📚 [Physics] Gravitation
+   Detected 10 tests
+   Test  1: 15 questions
+   Test  2: 15 questions
+   Test  3: 15 questions
+   Test  4: 15 questions
+   Test  5: 10 questions
+   Test  6: 10 questions
+   Test  7: 10 questions
+   Test  8: 10 questions
+   Test  9: 10 questions
+   Test 10: 10 questions
+   ✅ Saved 120 questions → Physics_Gravitation.json
+
+📚 [Physics] Mechanical Properties of Solids
+   Detected 10 tests
+   Test  1: 10 questions
+   Test  2: 10 questions
+   Test  3: 10 questions
+   Test  4: 10 questions
+   Test  5: 10 questions
+   Test  6: 10 questions
+   Test  7: 10 questions
+   Test  8: 10 questions
+   Test  9: 10 questions
+   Test 10: 10 questions
+   ✅ Saved 100 questions → Physics_Mechanical_Properties_of_Solids.json
+
+📚 [Physics] Mechanical Properties of Fluids
+   Detected 10 tests
+   Test  1: 15 questions
+   Test  2: 15 questions
+   Test  3: 15 questions
+   Test  4: 15 questions
+   Test  5: 15 questions
+   Test  6: 15 questions
+   Test  7: 15 questions
+   Test  8: 15 questions
+   Test  9: 15 questions
+   Test 10: 15 questions
+   ✅ Saved 150 questions → Physics_Mechanical_Properties_of_Fluids.json
+
+📚 [Physics] Thermal Properties of Matter
+   Detected 10 tests
+   Test  1: 10 questions
+   Test  2: 10 questions
+   Test  3: 10 questions
+   Test  4: 10 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermal-Properties-of-Matter/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermal-Properties-of-Matter/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermal-Properties-of-Matter/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermal-Properties-of-Matter/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermal-Properties-of-Matter/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermal-Properties-of-Matter/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 40 questions → Physics_Thermal_Properties_of_Matter.json
+
+📚 [Physics] Thermodynamics
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermodynamics/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermodynamics/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermodynamics/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermodynamics/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermodynamics/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermodynamics/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermodynamics/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermodynamics/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermodynamics/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Thermodynamics/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Thermodynamics.json
+
+📚 [Physics] Kinetic Theory
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Behaviour-of-Perfect-Gas-and-Kinetic-Theory/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Behaviour-of-Perfect-Gas-and-Kinetic-Theory/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Behaviour-of-Perfect-Gas-and-Kinetic-Theory/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Behaviour-of-Perfect-Gas-and-Kinetic-Theory/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Behaviour-of-Perfect-Gas-and-Kinetic-Theory/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Behaviour-of-Perfect-Gas-and-Kinetic-Theory/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Behaviour-of-Perfect-Gas-and-Kinetic-Theory/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Behaviour-of-Perfect-Gas-and-Kinetic-Theory/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Behaviour-of-Perfect-Gas-and-Kinetic-Theory/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Behaviour-of-Perfect-Gas-and-Kinetic-Theory/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Kinetic_Theory.json
+
+📚 [Physics] Oscillations
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Oscillations/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Oscillations/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Oscillations/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Oscillations/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Oscillations/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Oscillations/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Oscillations/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Oscillations/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Oscillations/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Oscillations/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Oscillations.json
+
+📚 [Physics] Waves
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Waves/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Waves/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Waves/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Waves/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Waves/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Waves/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Waves/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Waves/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Waves/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Waves/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Waves.json
+
+📚 [Physics] Electric Charges and Fields
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electric-Charges-and-Fields/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electric-Charges-and-Fields/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electric-Charges-and-Fields/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electric-Charges-and-Fields/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electric-Charges-and-Fields/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electric-Charges-and-Fields/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electric-Charges-and-Fields/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electric-Charges-and-Fields/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electric-Charges-and-Fields/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electric-Charges-and-Fields/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Electric_Charges_and_Fields.json
+
+📚 [Physics] Electrostatic Potential and Capacitance
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electrostatic-Potential-and-Capacitance/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electrostatic-Potential-and-Capacitance/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electrostatic-Potential-and-Capacitance/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electrostatic-Potential-and-Capacitance/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electrostatic-Potential-and-Capacitance/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electrostatic-Potential-and-Capacitance/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electrostatic-Potential-and-Capacitance/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electrostatic-Potential-and-Capacitance/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electrostatic-Potential-and-Capacitance/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electrostatic-Potential-and-Capacitance/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Electrostatic_Potential_and_Capacitance.json
+
+📚 [Physics] Current Electricity
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Current-Electricity/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Current-Electricity/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Current-Electricity/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Current-Electricity/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Current-Electricity/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Current-Electricity/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Current-Electricity/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Current-Electricity/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Current-Electricity/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Current-Electricity/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Current_Electricity.json
+
+📚 [Physics] Moving Charges and Magnetism
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetic-Effects-of-Current-and-Magnetism/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetic-Effects-of-Current-and-Magnetism/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetic-Effects-of-Current-and-Magnetism/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetic-Effects-of-Current-and-Magnetism/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetic-Effects-of-Current-and-Magnetism/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetic-Effects-of-Current-and-Magnetism/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetic-Effects-of-Current-and-Magnetism/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetic-Effects-of-Current-and-Magnetism/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetic-Effects-of-Current-and-Magnetism/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetic-Effects-of-Current-and-Magnetism/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Moving_Charges_and_Magnetism.json
+
+📚 [Physics] Magnetism and Matter
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetism-and-Matter/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetism-and-Matter/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetism-and-Matter/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetism-and-Matter/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetism-and-Matter/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetism-and-Matter/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetism-and-Matter/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetism-and-Matter/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetism-and-Matter/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Magnetism-and-Matter/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Magnetism_and_Matter.json
+
+📚 [Physics] Electromagnetic Induction
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Induction/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Induction/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Induction/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Induction/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Induction/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Induction/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Induction/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Induction/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Induction/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Induction/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Electromagnetic_Induction.json
+
+📚 [Physics] Alternating Current
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Alternating-Currents/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Alternating-Currents/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Alternating-Currents/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Alternating-Currents/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Alternating-Currents/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Alternating-Currents/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Alternating-Currents/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Alternating-Currents/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Alternating-Currents/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Alternating-Currents/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Alternating_Current.json
+
+📚 [Physics] Electromagnetic Waves
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Waves/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Waves/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Waves/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Waves/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Waves/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Waves/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Waves/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Waves/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Waves/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electromagnetic-Waves/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Electromagnetic_Waves.json
+
+📚 [Physics] Ray Optics and Optical Instruments
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Ray-Optics/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Ray-Optics/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Ray-Optics/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Ray-Optics/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Ray-Optics/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Ray-Optics/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Ray-Optics/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Ray-Optics/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Ray-Optics/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Ray-Optics/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Ray_Optics_and_Optical_Instruments.json
+
+📚 [Physics] Wave Optics
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Wave-Optics/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Wave-Optics/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Wave-Optics/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Wave-Optics/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Wave-Optics/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Wave-Optics/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Wave-Optics/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Wave-Optics/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Wave-Optics/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Wave-Optics/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Wave_Optics.json
+
+📚 [Physics] Dual Nature of Radiation and Matter
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Dual-Nature-of-Matter/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Dual-Nature-of-Matter/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Dual-Nature-of-Matter/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Dual-Nature-of-Matter/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Dual-Nature-of-Matter/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Dual-Nature-of-Matter/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Dual-Nature-of-Matter/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Dual-Nature-of-Matter/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Dual-Nature-of-Matter/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Dual-Nature-of-Matter/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Dual_Nature_of_Radiation_and_Matter.json
+
+📚 [Physics] Atoms and Nuclei
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Atoms-and-Nuclei/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Atoms-and-Nuclei/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Atoms-and-Nuclei/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Atoms-and-Nuclei/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Atoms-and-Nuclei/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Atoms-and-Nuclei/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Atoms-and-Nuclei/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Atoms-and-Nuclei/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Atoms-and-Nuclei/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Atoms-and-Nuclei/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Atoms_and_Nuclei.json
+
+📚 [Physics] Semiconductor Electronics
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electronic-Devices/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electronic-Devices/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electronic-Devices/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electronic-Devices/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electronic-Devices/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electronic-Devices/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electronic-Devices/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electronic-Devices/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electronic-Devices/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/physics-chapter-wise-question/Electronic-Devices/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Physics_Semiconductor_Electronics.json
+
+📚 [Chemistry] Some Basic Concepts of Chemistry
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Some-Basic-Concepts-Of-Chemistry/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Some-Basic-Concepts-Of-Chemistry/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Some-Basic-Concepts-Of-Chemistry/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Some-Basic-Concepts-Of-Chemistry/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Some-Basic-Concepts-Of-Chemistry/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Some-Basic-Concepts-Of-Chemistry/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Some-Basic-Concepts-Of-Chemistry/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Some-Basic-Concepts-Of-Chemistry/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Some-Basic-Concepts-Of-Chemistry/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Some-Basic-Concepts-Of-Chemistry/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Some_Basic_Concepts_of_Chemistry.json
+
+📚 [Chemistry] Structure of Atom
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Structure-of-Atom/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Structure-of-Atom/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Structure-of-Atom/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Structure-of-Atom/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Structure-of-Atom/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Structure-of-Atom/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Structure-of-Atom/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Structure-of-Atom/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Structure-of-Atom/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Structure-of-Atom/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Structure_of_Atom.json
+
+📚 [Chemistry] Classification of Elements and Periodicity in Properties
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Classification-of-Elements-and-Periodicity-in-Properties/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Classification-of-Elements-and-Periodicity-in-Properties/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Classification-of-Elements-and-Periodicity-in-Properties/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Classification-of-Elements-and-Periodicity-in-Properties/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Classification-of-Elements-and-Periodicity-in-Properties/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Classification-of-Elements-and-Periodicity-in-Properties/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Classification-of-Elements-and-Periodicity-in-Properties/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Classification-of-Elements-and-Periodicity-in-Properties/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Classification-of-Elements-and-Periodicity-in-Properties/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Classification-of-Elements-and-Periodicity-in-Properties/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Classification_of_Elements_and_Periodicity_in_Properties.json
+
+📚 [Chemistry] Chemical Bonding and Molecular Structure
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Bonding-and-Molecular-Structure/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Bonding-and-Molecular-Structure/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Bonding-and-Molecular-Structure/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Bonding-and-Molecular-Structure/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Bonding-and-Molecular-Structure/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Bonding-and-Molecular-Structure/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Bonding-and-Molecular-Structure/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Bonding-and-Molecular-Structure/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Bonding-and-Molecular-Structure/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Bonding-and-Molecular-Structure/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Chemical_Bonding_and_Molecular_Structure.json
+
+📚 [Chemistry] Thermodynamics
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Thermodynamics/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Thermodynamics/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Thermodynamics/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Thermodynamics/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Thermodynamics/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Thermodynamics/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Thermodynamics/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Thermodynamics/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Thermodynamics/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Thermodynamics/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Thermodynamics.json
+
+📚 [Chemistry] Equilibrium
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Equilibrium/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Equilibrium/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Equilibrium/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Equilibrium/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Equilibrium/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Equilibrium/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Equilibrium/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Equilibrium/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Equilibrium/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Equilibrium/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Equilibrium.json
+
+📚 [Chemistry] Redox Reactions
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Redox-Reactions/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Redox-Reactions/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Redox-Reactions/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Redox-Reactions/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Redox-Reactions/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Redox-Reactions/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Redox-Reactions/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Redox-Reactions/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Redox-Reactions/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Redox-Reactions/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Redox_Reactions.json
+
+📚 [Chemistry] Some Basic Principles of Organic Chemistry
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Organic-Chemistry-Some-Basic-Principles-and-Techniques/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Organic-Chemistry-Some-Basic-Principles-and-Techniques/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Organic-Chemistry-Some-Basic-Principles-and-Techniques/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Organic-Chemistry-Some-Basic-Principles-and-Techniques/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Organic-Chemistry-Some-Basic-Principles-and-Techniques/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Organic-Chemistry-Some-Basic-Principles-and-Techniques/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Organic-Chemistry-Some-Basic-Principles-and-Techniques/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Organic-Chemistry-Some-Basic-Principles-and-Techniques/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Organic-Chemistry-Some-Basic-Principles-and-Techniques/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Organic-Chemistry-Some-Basic-Principles-and-Techniques/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Some_Basic_Principles_of_Organic_Chemistry.json
+
+📚 [Chemistry] Hydrocarbons
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Hydrocarbons/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Hydrocarbons/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Hydrocarbons/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Hydrocarbons/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Hydrocarbons/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Hydrocarbons/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Hydrocarbons/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Hydrocarbons/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Hydrocarbons/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Hydrocarbons/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Hydrocarbons.json
+
+📚 [Chemistry] Solutions
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Solutions/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Solutions/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Solutions/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Solutions/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Solutions/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Solutions/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Solutions/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Solutions/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Solutions/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Solutions/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Solutions.json
+
+📚 [Chemistry] Electrochemistry
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Electrochemistry/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Electrochemistry/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Electrochemistry/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Electrochemistry/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Electrochemistry/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Electrochemistry/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Electrochemistry/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Electrochemistry/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Electrochemistry/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Electrochemistry/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Electrochemistry.json
+
+📚 [Chemistry] Chemical Kinetics
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Kinetics/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Kinetics/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Kinetics/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Kinetics/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Kinetics/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Kinetics/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Kinetics/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Kinetics/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Kinetics/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Chemical-Kinetics/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Chemical_Kinetics.json
+
+📚 [Chemistry] d and f Block Elements
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/The-d-and-f-Block-Elements/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/The-d-and-f-Block-Elements/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/The-d-and-f-Block-Elements/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/The-d-and-f-Block-Elements/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/The-d-and-f-Block-Elements/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/The-d-and-f-Block-Elements/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/The-d-and-f-Block-Elements/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/The-d-and-f-Block-Elements/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/The-d-and-f-Block-Elements/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/The-d-and-f-Block-Elements/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_d_and_f_Block_Elements.json
+
+📚 [Chemistry] Coordination Compounds
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Coordination-Compounds/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Coordination-Compounds/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Coordination-Compounds/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Coordination-Compounds/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Coordination-Compounds/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Coordination-Compounds/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Coordination-Compounds/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Coordination-Compounds/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Coordination-Compounds/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Coordination-Compounds/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Coordination_Compounds.json
+
+📚 [Chemistry] Haloalkanes and Haloarenes
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Haloalkanes-and-Haloarenes/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Haloalkanes-and-Haloarenes/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Haloalkanes-and-Haloarenes/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Haloalkanes-and-Haloarenes/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Haloalkanes-and-Haloarenes/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Haloalkanes-and-Haloarenes/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Haloalkanes-and-Haloarenes/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Haloalkanes-and-Haloarenes/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Haloalkanes-and-Haloarenes/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Haloalkanes-and-Haloarenes/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Haloalkanes_and_Haloarenes.json
+
+📚 [Chemistry] Alcohols, Phenols and Ethers
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Alcohols-Phenols-and-Ethers/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Alcohols-Phenols-and-Ethers/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Alcohols-Phenols-and-Ethers/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Alcohols-Phenols-and-Ethers/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Alcohols-Phenols-and-Ethers/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Alcohols-Phenols-and-Ethers/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Alcohols-Phenols-and-Ethers/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Alcohols-Phenols-and-Ethers/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Alcohols-Phenols-and-Ethers/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Alcohols-Phenols-and-Ethers/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Alcohols_Phenols_and_Ethers.json
+
+📚 [Chemistry] Aldehydes, Ketones and Carboxylic Acids
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Aldehydes-Ketones-and-Carboxylic-Acids/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Aldehydes-Ketones-and-Carboxylic-Acids/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Aldehydes-Ketones-and-Carboxylic-Acids/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Aldehydes-Ketones-and-Carboxylic-Acids/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Aldehydes-Ketones-and-Carboxylic-Acids/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Aldehydes-Ketones-and-Carboxylic-Acids/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Aldehydes-Ketones-and-Carboxylic-Acids/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Aldehydes-Ketones-and-Carboxylic-Acids/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Aldehydes-Ketones-and-Carboxylic-Acids/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Aldehydes-Ketones-and-Carboxylic-Acids/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Aldehydes_Ketones_and_Carboxylic_Acids.json
+
+📚 [Chemistry] Amines
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Amines/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Amines/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Amines/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Amines/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Amines/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Amines/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Amines/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Amines/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Amines/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Amines/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Amines.json
+
+📚 [Chemistry] Biomolecules
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Biomolecules/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Biomolecules/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Biomolecules/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Biomolecules/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Biomolecules/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Biomolecules/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Biomolecules/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Biomolecules/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Biomolecules/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/chemistry-chapter-wise-question/Biomolecules/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Chemistry_Biomolecules.json
+
+📚 [Biology] The Living World
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/The-Living-World/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/The-Living-World/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/The-Living-World/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/The-Living-World/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/The-Living-World/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/The-Living-World/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/The-Living-World/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/The-Living-World/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/The-Living-World/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/The-Living-World/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_The_Living_World.json
+
+📚 [Biology] Biological Classification
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biological-Classification/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biological-Classification/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biological-Classification/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biological-Classification/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biological-Classification/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biological-Classification/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biological-Classification/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biological-Classification/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biological-Classification/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biological-Classification/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Biological_Classification.json
+
+📚 [Biology] Plant Kingdom
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Kingdom/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Kingdom/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Kingdom/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Kingdom/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Kingdom/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Kingdom/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Kingdom/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Kingdom/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Kingdom/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Kingdom/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Plant_Kingdom.json
+
+📚 [Biology] Morphology of Flowering Plants
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Morphology-of-Flowering-Plants/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Morphology-of-Flowering-Plants/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Morphology-of-Flowering-Plants/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Morphology-of-Flowering-Plants/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Morphology-of-Flowering-Plants/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Morphology-of-Flowering-Plants/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Morphology-of-Flowering-Plants/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Morphology-of-Flowering-Plants/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Morphology-of-Flowering-Plants/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Morphology-of-Flowering-Plants/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Morphology_of_Flowering_Plants.json
+
+📚 [Biology] Anatomy of Flowering Plants
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Anatomy-of-Flowering-Plants/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Anatomy-of-Flowering-Plants/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Anatomy-of-Flowering-Plants/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Anatomy-of-Flowering-Plants/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Anatomy-of-Flowering-Plants/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Anatomy-of-Flowering-Plants/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Anatomy-of-Flowering-Plants/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Anatomy-of-Flowering-Plants/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Anatomy-of-Flowering-Plants/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Anatomy-of-Flowering-Plants/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Anatomy_of_Flowering_Plants.json
+
+📚 [Biology] Cell: The Unit of Life
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-The-Unit-of-Life/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-The-Unit-of-Life/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-The-Unit-of-Life/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-The-Unit-of-Life/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-The-Unit-of-Life/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-The-Unit-of-Life/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-The-Unit-of-Life/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-The-Unit-of-Life/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-The-Unit-of-Life/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-The-Unit-of-Life/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Cell_The_Unit_of_Life.json
+
+📚 [Biology] Cell Cycle and Cell Division
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-Cycle-and-Cell-Division/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-Cycle-and-Cell-Division/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-Cycle-and-Cell-Division/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-Cycle-and-Cell-Division/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-Cycle-and-Cell-Division/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-Cycle-and-Cell-Division/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-Cycle-and-Cell-Division/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-Cycle-and-Cell-Division/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-Cycle-and-Cell-Division/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Cell-Cycle-and-Cell-Division/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Cell_Cycle_and_Cell_Division.json
+
+📚 [Biology] Photosynthesis in Higher Plants
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Photosynthesis/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Photosynthesis/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Photosynthesis/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Photosynthesis/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Photosynthesis/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Photosynthesis/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Photosynthesis/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Photosynthesis/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Photosynthesis/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Photosynthesis/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Photosynthesis_in_Higher_Plants.json
+
+📚 [Biology] Respiration in Plants
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Respiration-in-Plants/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Respiration-in-Plants/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Respiration-in-Plants/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Respiration-in-Plants/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Respiration-in-Plants/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Respiration-in-Plants/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Respiration-in-Plants/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Respiration-in-Plants/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Respiration-in-Plants/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Respiration-in-Plants/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Respiration_in_Plants.json
+
+📚 [Biology] Plant Growth and Development
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Growth-and-Development/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Growth-and-Development/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Growth-and-Development/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Growth-and-Development/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Growth-and-Development/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Growth-and-Development/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Growth-and-Development/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Growth-and-Development/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Growth-and-Development/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Plant-Growth-and-Development/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Plant_Growth_and_Development.json
+
+📚 [Biology] Sexual Reproduction in Flowering Plants
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Sexual-Reproduction-in-Flowering-Plants/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Sexual-Reproduction-in-Flowering-Plants/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Sexual-Reproduction-in-Flowering-Plants/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Sexual-Reproduction-in-Flowering-Plants/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Sexual-Reproduction-in-Flowering-Plants/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Sexual-Reproduction-in-Flowering-Plants/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Sexual-Reproduction-in-Flowering-Plants/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Sexual-Reproduction-in-Flowering-Plants/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Sexual-Reproduction-in-Flowering-Plants/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Sexual-Reproduction-in-Flowering-Plants/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Sexual_Reproduction_in_Flowering_Plants.json
+
+📚 [Biology] Principles of Inheritance and Variation
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Principles-of-Inheritance-and-Variation/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Principles-of-Inheritance-and-Variation/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Principles-of-Inheritance-and-Variation/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Principles-of-Inheritance-and-Variation/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Principles-of-Inheritance-and-Variation/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Principles-of-Inheritance-and-Variation/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Principles-of-Inheritance-and-Variation/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Principles-of-Inheritance-and-Variation/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Principles-of-Inheritance-and-Variation/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Principles-of-Inheritance-and-Variation/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Principles_of_Inheritance_and_Variation.json
+
+📚 [Biology] Molecular Basis of Inheritance
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Molecular-Basis-of-Inheritance/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Molecular-Basis-of-Inheritance/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Molecular-Basis-of-Inheritance/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Molecular-Basis-of-Inheritance/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Molecular-Basis-of-Inheritance/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Molecular-Basis-of-Inheritance/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Molecular-Basis-of-Inheritance/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Molecular-Basis-of-Inheritance/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Molecular-Basis-of-Inheritance/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Molecular-Basis-of-Inheritance/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Molecular_Basis_of_Inheritance.json
+
+📚 [Biology] Microbes in Human Welfare
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Microbes-in-Human-Welfare/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Microbes-in-Human-Welfare/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Microbes-in-Human-Welfare/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Microbes-in-Human-Welfare/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Microbes-in-Human-Welfare/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Microbes-in-Human-Welfare/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Microbes-in-Human-Welfare/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Microbes-in-Human-Welfare/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Microbes-in-Human-Welfare/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Microbes-in-Human-Welfare/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Microbes_in_Human_Welfare.json
+
+📚 [Biology] Organisms and Populations
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Organisms-and-Population/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Organisms-and-Population/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Organisms-and-Population/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Organisms-and-Population/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Organisms-and-Population/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Organisms-and-Population/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Organisms-and-Population/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Organisms-and-Population/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Organisms-and-Population/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Organisms-and-Population/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Organisms_and_Populations.json
+
+📚 [Biology] Ecosystem
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Ecosystem/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Ecosystem/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Ecosystem/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Ecosystem/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Ecosystem/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Ecosystem/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Ecosystem/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Ecosystem/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Ecosystem/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Ecosystem/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Ecosystem.json
+
+📚 [Biology] Biodiversity and Conservation
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biodiversity-and-Its-Conservation/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biodiversity-and-Its-Conservation/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biodiversity-and-Its-Conservation/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biodiversity-and-Its-Conservation/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biodiversity-and-Its-Conservation/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biodiversity-and-Its-Conservation/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biodiversity-and-Its-Conservation/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biodiversity-and-Its-Conservation/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biodiversity-and-Its-Conservation/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biodiversity-and-Its-Conservation/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Biodiversity_and_Conservation.json
+
+📚 [Biology] Animal Kingdom
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Animal-Kingdom/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Animal-Kingdom/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Animal-Kingdom/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Animal-Kingdom/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Animal-Kingdom/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Animal-Kingdom/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Animal-Kingdom/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Animal-Kingdom/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Animal-Kingdom/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Animal-Kingdom/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Animal_Kingdom.json
+
+📚 [Biology] Structural Organisation in Animals
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Structural-Organisation-in-Animals/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Structural-Organisation-in-Animals/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Structural-Organisation-in-Animals/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Structural-Organisation-in-Animals/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Structural-Organisation-in-Animals/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Structural-Organisation-in-Animals/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Structural-Organisation-in-Animals/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Structural-Organisation-in-Animals/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Structural-Organisation-in-Animals/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Structural-Organisation-in-Animals/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Structural_Organisation_in_Animals.json
+
+📚 [Biology] Biomolecules
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biomolecules/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biomolecules/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biomolecules/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biomolecules/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biomolecules/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biomolecules/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biomolecules/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biomolecules/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biomolecules/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biomolecules/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Biomolecules.json
+
+📚 [Biology] Breathing and Exchange of Gases
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Breathing-and-Exchange-of-Gases/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Breathing-and-Exchange-of-Gases/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Breathing-and-Exchange-of-Gases/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Breathing-and-Exchange-of-Gases/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Breathing-and-Exchange-of-Gases/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Breathing-and-Exchange-of-Gases/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Breathing-and-Exchange-of-Gases/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Breathing-and-Exchange-of-Gases/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Breathing-and-Exchange-of-Gases/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Breathing-and-Exchange-of-Gases/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Breathing_and_Exchange_of_Gases.json
+
+📚 [Biology] Body Fluids and Circulation
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Body-Fluids-and-Circulation/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Body-Fluids-and-Circulation/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Body-Fluids-and-Circulation/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Body-Fluids-and-Circulation/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Body-Fluids-and-Circulation/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Body-Fluids-and-Circulation/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Body-Fluids-and-Circulation/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Body-Fluids-and-Circulation/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Body-Fluids-and-Circulation/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Body-Fluids-and-Circulation/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Body_Fluids_and_Circulation.json
+
+📚 [Biology] Excretory Products and their Elimination
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Excretory-Products-and-Their-Elimination/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Excretory-Products-and-Their-Elimination/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Excretory-Products-and-Their-Elimination/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Excretory-Products-and-Their-Elimination/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Excretory-Products-and-Their-Elimination/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Excretory-Products-and-Their-Elimination/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Excretory-Products-and-Their-Elimination/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Excretory-Products-and-Their-Elimination/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Excretory-Products-and-Their-Elimination/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Excretory-Products-and-Their-Elimination/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Excretory_Products_and_their_Elimination.json
+
+📚 [Biology] Locomotion and Movement
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Locomotion-and-Movement/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Locomotion-and-Movement/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Locomotion-and-Movement/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Locomotion-and-Movement/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Locomotion-and-Movement/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Locomotion-and-Movement/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Locomotion-and-Movement/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Locomotion-and-Movement/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Locomotion-and-Movement/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Locomotion-and-Movement/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Locomotion_and_Movement.json
+
+📚 [Biology] Neural Control and Coordination
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Neural-Control-and-Coordination/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Neural-Control-and-Coordination/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Neural-Control-and-Coordination/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Neural-Control-and-Coordination/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Neural-Control-and-Coordination/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Neural-Control-and-Coordination/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Neural-Control-and-Coordination/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Neural-Control-and-Coordination/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Neural-Control-and-Coordination/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Neural-Control-and-Coordination/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Neural_Control_and_Coordination.json
+
+📚 [Biology] Chemical Coordination and Integration
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Chemical-Coordination-and-Integration/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Chemical-Coordination-and-Integration/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Chemical-Coordination-and-Integration/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Chemical-Coordination-and-Integration/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Chemical-Coordination-and-Integration/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Chemical-Coordination-and-Integration/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Chemical-Coordination-and-Integration/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Chemical-Coordination-and-Integration/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Chemical-Coordination-and-Integration/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Chemical-Coordination-and-Integration/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Chemical_Coordination_and_Integration.json
+
+📚 [Biology] Human Reproduction
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Reproduction/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Reproduction/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Reproduction/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Reproduction/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Reproduction/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Reproduction/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Reproduction/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Reproduction/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Reproduction/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Reproduction/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Human_Reproduction.json
+
+📚 [Biology] Reproductive Health
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Reproductive-Health/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Reproductive-Health/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Reproductive-Health/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Reproductive-Health/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Reproductive-Health/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Reproductive-Health/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Reproductive-Health/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Reproductive-Health/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Reproductive-Health/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Reproductive-Health/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Reproductive_Health.json
+
+📚 [Biology] Evolution
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Evolution/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Evolution/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Evolution/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Evolution/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Evolution/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Evolution/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Evolution/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Evolution/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Evolution/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Evolution/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Evolution.json
+
+📚 [Biology] Human Health and Disease
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Health-and-Diseases/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Health-and-Diseases/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Health-and-Diseases/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Health-and-Diseases/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Health-and-Diseases/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Health-and-Diseases/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Health-and-Diseases/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Health-and-Diseases/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Health-and-Diseases/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Human-Health-and-Diseases/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Human_Health_and_Disease.json
+
+📚 [Biology] Biotechnology: Principles and Processes
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-Principles-and-Processes/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-Principles-and-Processes/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-Principles-and-Processes/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-Principles-and-Processes/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-Principles-and-Processes/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-Principles-and-Processes/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-Principles-and-Processes/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-Principles-and-Processes/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-Principles-and-Processes/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-Principles-and-Processes/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Biotechnology_Principles_and_Processes.json
+
+📚 [Biology] Biotechnology and its Applications
+   Detected 10 tests
+   Test  1:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-and-its-Applications/test-1: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  2:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-and-its-Applications/test-2: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  3:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-and-its-Applications/test-3: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  4:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-and-its-Applications/test-4: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  5:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-and-its-Applications/test-5: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  6:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-and-its-Applications/test-6: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  7:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-and-its-Applications/test-7: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  8:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-and-its-Applications/test-8: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test  9:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-and-its-Applications/test-9: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   Test 10:     ✗ Error at https://sciencelesson.in/NEET-Mock-Test/biology-chapter-wise-question/Biotechnology-and-its-Applications/test-10: Attempted to use detached Frame 'B2384CBAAE54E64D73B15EA4F510405D'.
+0 questions
+   ✅ Saved 0 questions → Biology_Biotechnology_and_its_Applications.json
+
+────────────────────────────────────────────────────────────
+🎉 Scraping complete!
+   Total questions : 1037
+   Output dir      : /home/harshsinghsv/Projects/test-jee-neet/scripts/question-scraper/output
+────────────────────────────────────────────────────────────

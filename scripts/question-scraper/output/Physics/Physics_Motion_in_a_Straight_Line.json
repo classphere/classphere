@@ -1,0 +1,7477 @@
+[
+  {
+    "id": "000c2d23-3c54-417f-a615-cbe3b9c61596",
+    "question_text": "A bike moving at \n126\nkm/h\n decelerates uniformly and stops in \n7\ns\n. What is the magnitude of deceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Convert speed: 126km/h=126⋅10003600=35m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "be0ffae7-5091-4528-b2b0-719a10597a2e",
+    "question_text": "A vehicle accelerates uniformly from rest at \n1.2\nm/s\n2\n for \n10\ns\n. What is the final velocity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use the equation v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d9b22c42-30a7-4df2-9459-1a64f0438793",
+    "question_text": "A train moving at \n54\nkm/h\n accelerates at \n1\nm/s\n2\n for \n10\ns\n, then decelerates at \n2\nm/s\n2\n to rest. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n350 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n360 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n356.25 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n340 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Speed: 54km/h=15m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4a6df24-5181-4e00-a155-771966a4f064",
+    "question_text": "A person walks \n6\nm\n in \n3\ns\n and then walks back \n2\nm\n in \n1\ns\n. What is the average speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Average speed = total distance / total time.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "742e3164-8f48-4e92-bb60-2f93ceb1825f",
+    "question_text": "A car moving at \n90\nkm/h\n decelerates uniformly and stops in \n12\ns\n. What is the magnitude of deceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.08 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.5 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Convert speed: 90km/h=90⋅10003600=25m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ec9b48c6-7b6f-4c01-945d-3102ed4d974a",
+    "question_text": "A body accelerates uniformly from rest to \n28\nm/s\n over a distance of \n98\nm\n. What is the acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v2=v02+2ax. Here, v0=0, v=28m/s, x=98m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9ede0608-b6e8-4061-814a-32f97cbbacd8",
+    "question_text": "A train moving at \n108\nkm/h\n accelerates at \n1.2\nm/s\n2\n for \n10\ns\n, then decelerates at \n3\nm/s\n2\n to rest. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n650 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n660 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n654 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n640 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Speed: 108km/h=30m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ebadfb56-41af-48d7-a587-1b8dd36dcad8",
+    "question_text": "A truck moves with a constant speed of \n15\nm/s\n for \n40\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n600 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n400 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n800 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n500 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For constant speed, distance x=vt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "16972f6a-9fee-4942-9545-8da6d0665949",
+    "question_text": "A stone is thrown upwards with a speed of \n20\nm/s\n. What is its velocity after \n3\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-20 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v=v0+at. Here, v0=20m/s, a=−10m/s2, t=3s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a611e810-bb33-41c9-9ad2-b53111aaad53",
+    "question_text": "A rocket accelerates from rest at \n7\nm/s\n2\n for \n4\ns\n, then moves at constant speed for \n6\ns\n. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n220 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n230 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n218 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n224 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phase 1: v=7⋅4=28m/s, x1=12⋅7⋅(4)2=56m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4f248df7-3e51-4a89-8dea-cc69a6581d9d",
+    "question_text": "A train accelerates uniformly from \n15\nm/s\n to \n35\nm/s\n in \n8\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n180 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n220 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n200 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Find a=v−v0t=35−158=2.5m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "75af0865-6ecf-4e55-b948-213606e86b6b",
+    "question_text": "A stone falls freely from a height of \n45\nm\n. How long does it take to reach the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For free fall, use y=12gt2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c3321ab3-40d3-4602-adaa-1e86dee4ead8",
+    "question_text": "A stone is dropped from rest. What is its velocity after falling \n61.25\nm\n? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n40 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n35 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n25 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v2=v02+2gy. Here, v0=0, g=10m/s2, y=61.25m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eb3de7e7-6ecc-40a8-9baa-181da50eafde",
+    "question_text": "A car moving at \n40\nm/s\n decelerates uniformly to rest in \n8\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n120 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n200 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n160 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n80 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Find a=v−v0t=0−408=−5m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a534110a-9dc4-48a1-8c87-a44ad13ca577",
+    "question_text": "A stone is dropped from rest. What is the distance covered in the 6th second of its fall? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n45 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n50 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n60 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n55 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Distance in n-th second = g⋅2n−12. For 6th second, n=6.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "053f9601-4fbc-42df-a23d-1e276ee6de40",
+    "question_text": "A lift ascends at \n4\nm/s\n and decelerates at \n2\nm/s\n2\n to stop. If a ball is dropped \n1.5\ns\n after deceleration starts, how far does it fall relative to the ground in \n1\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.75 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.5 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Lift stops in 42=2s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a8d51c1-bc2d-4e2a-9deb-d3d8825520f9",
+    "question_text": "A body accelerates uniformly from rest to \n14\nm/s\n over a distance of \n49\nm\n. What is the acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v2=v02+2ax. Here, v0=0, v=14m/s, x=49m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a72df103-14b0-4c93-8c5c-6518d4e23399",
+    "question_text": "A body accelerates uniformly from rest to \n16\nm/s\n in \n8\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n48 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n64 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n32 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Find a=v−v0t=16−08=2m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "41c12921-7b5d-4d7d-ae8d-22c68c52221f",
+    "question_text": "A ball is thrown upwards with a speed of \n45\nm/s\n. What is the time to reach the maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "At max height, v=0. Use v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ef617b3-db5d-4b4e-8229-2f7889034ad3",
+    "question_text": "A ball is dropped from a height of \n31.25\nm\n. What is its velocity just before hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n25 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v2=v02+2gy. Here, v0=0, g=10m/s2, y=31.25m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "52a2e035-f2ae-44a0-9922-597f67688726",
+    "question_text": "A ball is thrown upwards with a speed of \n22\nm/s\n. What is its velocity after \n1\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v=v0+at. Here, v0=22m/s, a=−10m/s2, t=1s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "55e0b17a-976b-450f-8f4a-c6e6ef50c0e5",
+    "question_text": "A balloon descends at \n8\nm/s\n and releases a stone. If the stone hits the ground after \n5\ns\n, what was the height of the balloon? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n80 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n85 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n75 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial velocity = −8m/s (upward positive).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5af663f1-0450-4c77-b2a5-0459d0d551d3",
+    "question_text": "A stone is dropped from a balloon ascending at \n12\nm/s\n. If it hits the ground after \n6\ns\n, what was the height of the balloon at the moment of release? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n120 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n108 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Initial velocity of stone = 12m/s upward. y=v0t−12gt2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "930f861c-f28d-43fd-8d0a-4d9ea1de2386",
+    "question_text": "A ball is thrown upwards with a speed of \n55\nm/s\n. What is the time to reach the maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.5 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "At max height, v=0. Use v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5cfa2f73-4772-4f3b-8c2e-7ab325d23951",
+    "question_text": "A lift descends at \n3\nm/s\n and decelerates at \n2\nm/s\n2\n to stop. If a ball is dropped \n1\ns\n after deceleration begins, how far does it fall relative to the ground in \n2\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n19.75 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n22 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "At drop: vlift=3−2⋅1=1m/s downward.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9c24c5e3-9a39-4586-b506-61ae140e62f7",
+    "question_text": "A ball is dropped from a height of \n100\nm\n on a planet where \n𝑔\n=\n5\nm/s\n2\n. What is the ratio of the distance covered in the 2nd second to the 1st second?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Distance in n-th second: dn=g⋅2n−12.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b73eb28d-024b-45c9-bb44-c8efcf5b2ae3",
+    "question_text": "A ball is dropped from a tower. After \n2\ns\n, its velocity is \n19.6\nm/s\n. What is the acceleration due to gravity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.9 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9.8 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n19.6 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v=v0+at. Here, v0=0, v=19.6m/s, t=2s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "02f2c1a3-29d2-41c3-a723-c4bc7431792b",
+    "question_text": "A body accelerates uniformly from \n5\nm/s\n to \n15\nm/s\n in \n5\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n25 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n50 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n75 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n40 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Find a=v−v0t=15−55=2m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7be96c5-1e2b-42b9-9081-75ce56f7667c",
+    "question_text": "A stone is dropped from rest. What is the distance covered in the 4th second of its fall? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n25 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n30 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n40 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n35 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Distance in n-th second = g⋅2n−12. For 4th second, n=4.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "52ca85df-4289-4376-9894-110233c1914e",
+    "question_text": "A balloon ascends at \n7\nm/s\n and releases a stone after \n4\ns\n. If the stone hits the ground \n5\ns\n later, what was the initial height of the balloon? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n60 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n62 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n65 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n58 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Height at release: h1=7⋅4=28m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2d284449-3c8f-449f-85f4-47f0088b0c3b",
+    "question_text": "A train accelerates from rest at \n2\nm/s\n2\n for \n10\ns\n, then decelerates at \n1\nm/s\n2\n to rest. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n250 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n300 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n350 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n400 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Acceleration: v=0+2⋅10=20m/s, x1=12⋅2⋅(10)2=100m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42007403-7f6d-404b-9ce8-5d7e65e09f37",
+    "question_text": "A car accelerates uniformly from \n10\nm/s\n to \n30\nm/s\n over a distance of \n80\nm\n. What is the acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Use v2=v02+2ax.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3be3eaad-0357-4790-84ba-aa27b35fb2f2",
+    "question_text": "A car accelerates from rest at \n4\nm/s\n2\n for \n6\ns\n, then decelerates at \n3\nm/s\n2\n until its speed is \n12\nm/s\n. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n140 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n144 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n136 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Phase 1: v=4⋅6=24m/s, x1=12⋅4⋅(6)2=72m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e2900a39-087b-4178-9ab4-4afbfcbd6ba0",
+    "question_text": "A body moving with an initial velocity of \n20\nm/s\n comes to rest after traveling \n40\nm\n under uniform retardation. What is the magnitude of its acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7.5 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use v2=v02+2ax. Here, v=0, v0=20m/s, x=40m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "802dea6f-63c6-49b8-89ad-4bb436dfe39e",
+    "question_text": "A ball is thrown upwards with a speed of \n36\nm/s\n. What is the maximum height reached? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n60 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n70 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n64.8 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n50 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v2=v02+2ah. At max height, v=0, v0=36m/s, a=−10m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b86e4a8-b3d3-4c14-938f-0bf08bd5ad6d",
+    "question_text": "A cyclist accelerates from \n10\nm/s\n at \n2\nm/s\n2\n for \n3\ns\n, then decelerates at \n1.5\nm/s\n2\n until its speed is \n12\nm/s\n. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n75 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n76.38 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n78 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n74 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Phase 1: v=10+2⋅3=16m/s, x1=10⋅3+12⋅2⋅(3)2=30+9=39m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "065dbddf-3cbe-4747-8e6d-c364e3c8e724",
+    "question_text": "A person walks \n10\nm\n in \n4\ns\n and then walks back \n2\nm\n in \n1\ns\n. What is the average speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.8 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Average speed = total distance / total time.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "937ef85b-d2f3-481c-ad1e-c85ef70a234e",
+    "question_text": "A train accelerates uniformly from rest to \n10\nm/s\n over a distance of \n25\nm\n. What is the acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Use v2=v02+2ax. Here, v0=0, v=10m/s, x=25m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "da617fa6-30d9-485d-9aa6-b8f34db2c633",
+    "question_text": "An object falls freely from rest. What is its velocity after traveling \n4.9\nm\n? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n19.6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9.8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n14.7 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v2=v02+2gy. Here, v0=0, g=9.8m/s2, y=4.9m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a547823-0b8a-4548-9570-4e4bff845c90",
+    "question_text": "Two balls are dropped from a height of \n180\nm\n, with a \n1.5\ns\n interval. What is their separation when the first ball hits the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n75 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n80 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n78.75 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n85 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "First ball: 180=12⋅10⋅t2⇒t2=36⇒t=6s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "97534840-5bbd-4203-83ab-e7e04192dc9c",
+    "question_text": "A stone falls from a height of \n80\nm\n on a planet and takes \n4\ns\n to reach the ground. What is the gravitational acceleration on this planet?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n11 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "h=12gt2, 80=12g(4)2⇒80=8g⇒g=10m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bd923239-c36b-4c9a-8abd-93e7379fd787",
+    "question_text": "A ball is thrown upwards at \n50\nm/s\n from a cliff. It returns to the cliff’s height after \n12\ns\n. What is the height of the cliff? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n120 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n130 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Time to max height: t=5010=5s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "173d188e-02fd-4470-accf-ae33deb09612",
+    "question_text": "A cyclist moves at a constant speed of \n15\nkm/h\n for \n12\nminutes\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5 km",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 km",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.5 km",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 km",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Convert speed: 15km/h=15⋅10003600=256m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a88401fa-6ec0-4ef3-9d67-708a3e274371",
+    "question_text": "A balloon descends at \n5\nm/s\n from \n150\nm\n and releases a stone after \n3\ns\n. What is the time taken by the stone to hit the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.5 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.72 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.2 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Height at release: h=150−5⋅3=135m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c4fa214-f3dc-4c35-8a5f-0b6069551509",
+    "question_text": "A stone is dropped from a height of \n125\nm\n. What is its velocity just before hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n50 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n60 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n30 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v2=v02+2gy. Here, v0=0, g=10m/s2, y=125m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "550d0f62-5cdc-4a34-8452-68cba09a425c",
+    "question_text": "A ball is thrown upwards with a speed of \n32\nm/s\n. What is the maximum height reached? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n48 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n51.2 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n64 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v2=v02+2ah. At max height, v=0, v0=32m/s, a=−10m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "46e3b827-b76b-4f65-a123-f7c9e59e5d9d",
+    "question_text": "A ball is thrown vertically upwards with a speed of \n16\nm/s\n. What is the maximum height reached? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12.8 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n16 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use v2=v02+2ah. At max height, v=0, v0=16m/s, a=−10m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e8a4074-1896-48c2-b0ea-95db9aefe193",
+    "question_text": "A runner moves at a constant speed of \n4\nm/s\n for \n75\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n250 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n275 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n325 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n300 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For constant speed, distance x=vt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "115a24dc-a9fd-4a15-bbaf-0acf8d65d0a8",
+    "question_text": "A truck traveling at \n36\nkm/h\n stops in \n5\ns\n with uniform deceleration. What is the distance covered before stopping?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n15 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n25 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n30 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Convert speed: 36km/h=36⋅10003600=10m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d97a1165-5d2e-4438-aa69-0d9e2896ccf4",
+    "question_text": "A ball is dropped from a height of \n20\nm\n. What is its velocity just before hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n25 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v2=v02+2gy. Here, v0=0, g=10m/s2, y=20m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "43893565-01f5-4b0b-a26f-86a4d107816d",
+    "question_text": "A car decelerates uniformly from \n45\nm/s\n to rest over a distance of \n112.5\nm\n. What is the deceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v2=v02+2ax. Here, v=0, v0=45m/s, x=112.5m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7f734de-c461-4703-9a40-5c5829b3b04b",
+    "question_text": "A ball is thrown upwards at \n25\nm/s\n from a \n60\nm\n cliff. What is its speed when it hits the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n45 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n42 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n42.72 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "v2=v02+2gh, v2=(25)2+2⋅10⋅60=625+1200=1825.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa5c4e23-b477-41cc-a9a0-19c39578a4c9",
+    "question_text": "A truck travels at a constant speed of \n60\nkm/h\n for \n15\nminutes\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n15 km",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 km",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20 km",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 km",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Convert speed: 60km/h=60⋅10003600=503m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "777da820-a62f-490d-9ac1-863b5ce4bd79",
+    "question_text": "A car decelerates uniformly from \n18\nm/s\n to rest in \n6\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n36 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n72 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n18 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n54 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Use a=v−v0t=0−186=−3m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b78be56a-b8cb-44fd-89af-4b3927ced6a9",
+    "question_text": "A car moves at \n20\nm/s\n and decelerates at \n2\nm/s\n2\n for \n5\ns\n, then accelerates at \n1\nm/s\n2\n until it reaches \n20\nm/s\n again. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n250 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n210 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n225 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phase 1: v=20−2⋅5=10m/s, x1=20⋅5−12⋅2⋅(5)2=100−25=75m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "37571322-435a-4946-8268-c413a8a21884",
+    "question_text": "A cyclist moves at a constant speed of \n7\nm/s\n for \n60\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n420 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n350 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n500 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n400 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For constant speed, distance x=vt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9acde50b-bb3b-46e7-92e7-8c18cc2f272e",
+    "question_text": "A car moving at \n30\nm/s\n decelerates uniformly to rest in \n6\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n60 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n120 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n150 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Find a=v−v0t=0−306=−5m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aef18ae3-4fe0-482a-ab0e-5edaa4b2be86",
+    "question_text": "A stone falls from a height \nℎ\n and covers \n78.4\nm\n in the last \n2\ns\n of its fall. What is the total time of fall? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Total time = t, last 2 s: h=12⋅9.8⋅t2, h−78.4=12⋅9.8⋅(t−2)2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78fdd968-6562-4eb0-9737-53b7860ec153",
+    "question_text": "A ball is thrown upwards with a speed of \n42\nm/s\n. What is the time to reach the maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.8 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.5 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.2 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "At max height, v=0. Use v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "93f9a236-2648-44d3-805a-91f0b449d42c",
+    "question_text": "A ball is thrown upwards with a speed of \n60\nm/s\n. What is the time to reach the maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "At max height, v=0. Use v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "26b8588e-6c8c-4e0a-bbdc-d3413189b545",
+    "question_text": "A ball is thrown upwards at \n15\nm/s\n from a \n45\nm\n tower. What is its speed when it passes \n15\nm\n below the tower’s top? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n25 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n22 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n22.91 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Displacement y=−15m, v2=(15)2+2⋅10⋅15=225+300=525.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "49fdf35f-8071-46f8-91e7-960935e8c88f",
+    "question_text": "A ball is thrown upwards with a speed of \n52\nm/s\n. What is the time to reach the maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.8 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.5 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.2 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "At max height, v=0. Use v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "41552092-4cda-43f3-9c72-ca3cef633363",
+    "question_text": "A car moving at \n72\nkm/h\n decelerates uniformly and stops in \n8\ns\n. What is the magnitude of deceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Convert speed: 72km/h=72⋅10003600=20m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dcdc4a71-e192-4da7-b868-eaa9f6b5f112",
+    "question_text": "A cyclist moves at a constant speed of \n9\nkm/h\n for \n20\nminutes\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 km",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5 km",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.5 km",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 km",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Convert speed: 9km/h=9⋅10003600=2.5m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e31c91be-78ec-4807-b75a-79a12ec6171a",
+    "question_text": "A truck moves at a constant speed of \n25\nm/s\n for \n20\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n500 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n400 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n600 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n450 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For constant speed, distance x=vt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "825aea7e-33a9-4a4e-9fe2-afc5ed4bb7d3",
+    "question_text": "Two stones are dropped from a height of \n245\nm\n, with a \n3\ns\n interval. What is their separation when the second stone has fallen for \n4\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n160 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n170 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n165 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n175 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "First stone (after 7 s): y1=12⋅10⋅(7)2=245m (hits ground).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29441e77-f0ea-402f-90ec-84976fbbcec1",
+    "question_text": "A ball is thrown upwards at \n18\nm/s\n from a \n32\nm\n tower. What is its speed when it passes the tower’s base on the way down? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n32 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n28 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n31.05 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "v2=v02+2gh, v2=(18)2+2⋅10⋅32=324+640=964.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f11a020-372b-4cf7-89d8-1eb396f0364a",
+    "question_text": "A particle moves with a uniform acceleration of \n2\nm/s\n2\n starting from rest. What is its velocity after traveling \n18\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v2=v02+2ax. Here, v0=0, a=2m/s2, x=18m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "44e26715-9c60-4ef4-a3b1-181316e4d33d",
+    "question_text": "An object is dropped from a height of \n19.6\nm\n above the ground. How long does it take to reach the ground? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For free fall, use y=12gt2. Here, y=19.6m, g=9.8m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "38054e92-870b-49a8-a0bd-4c9c093f751b",
+    "question_text": "A ball is thrown upwards with a speed of \n40\nm/s\n. What is the maximum height it reaches? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n60 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n100 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v2=v02+2ah. At max height, v=0, v0=40m/s, a=−10m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "92d5baf1-58a9-479a-88ac-751463e10dfc",
+    "question_text": "A particle accelerates uniformly from rest to \n18\nm/s\n in \n9\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n72 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n81 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n54 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Find a=v−v0t=18−09=2m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e694cc5d-21e8-481f-853c-b5498abf3ed7",
+    "question_text": "A ball is thrown vertically upwards with a speed of \n12\nm/s\n. What is the maximum height reached? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7.2 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n14.4 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.6 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use v2=v02+2ah. At max height, v=0, v0=12m/s, a=−10m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b5c14b7-a05f-4fdf-b0e1-73fc7b3f68d9",
+    "question_text": "A stone is dropped from a cliff and takes \n5\ns\n to hit the ground. What is the height of the cliff? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n125 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n100 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n50 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For free fall, distance is given by y=12gt2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "221e365e-ea03-4734-a032-4a2601797902",
+    "question_text": "A stone falls freely from a height and reaches the ground with a velocity of \n19.6\nm/s\n. What is the height? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9.8 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n39.2 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n19.6 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n29.4 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v2=v02+2gy. Here, v0=0, v=19.6m/s, g=9.8m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "61fa3120-51bf-4494-801f-2b8405e95063",
+    "question_text": "A car moves at \n18\nm/s\n and decelerates at \n2\nm/s\n2\n for \n4\ns\n, then accelerates at \n3\nm/s\n2\n for \n5\ns\n. What is the net displacement?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n140 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n145 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n143.5 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phase 1: v=18−2⋅4=10m/s, x1=18⋅4−12⋅2⋅(4)2=72−16=56m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cb874288-b5e2-40d2-9cee-0993b8a83396",
+    "question_text": "A ball is dropped from a height \nℎ\n and hits the ground with a speed of \n29.4\nm/s\n after \n1.5\ns\n of fall. What is the value of \n𝑔\n at that location?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n19.6 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9.8 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14.7 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use v=v0+gt. Here, v0=0, v=29.4m/s, t=1.5s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2a276b95-6b0f-4dce-be45-e9a3fbc93857",
+    "question_text": "A bike moving at \n108\nkm/h\n comes to rest in \n9\ns\n with uniform deceleration. What is the magnitude of deceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.33 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Convert speed: 108km/h=108⋅10003600=30m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa2b90ef-4ea0-497d-aa3a-1e94b7b80453",
+    "question_text": "A car moves at \n12\nm/s\n and decelerates at \n2\nm/s\n2\n for \n3\ns\n, then accelerates at \n4\nm/s\n2\n for \n4\ns\n. What is the net displacement?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n80 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n85 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n82 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n83 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phase 1: v=12−2⋅3=6m/s, x1=12⋅3−12⋅2⋅(3)2=36−9=27m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f8255300-c1b5-4b97-8e89-3316a3512585",
+    "question_text": "A rocket accelerates uniformly from rest at \n8\nm/s\n2\n until it reaches a speed of \n40\nm/s\n, then maintains that speed for \n5\ns\n. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n300 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n250 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n350 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n400 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Phase 1 (acceleration): v=v0+at, 40=0+8t⇒t=5s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9ec2f450-aa59-441b-99c3-cdc26b0f5cce",
+    "question_text": "A cyclist accelerates from \n6\nm/s\n at \n1.5\nm/s\n2\n for \n5\ns\n, then decelerates at \n2\nm/s\n2\n until its speed is \n8\nm/s\n. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n75 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n78.31 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n76 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Phase 1: v=6+1.5⋅5=13.5m/s, x1=6⋅5+12⋅1.5⋅(5)2=30+18.75=48.75m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e12ff3d2-ca0e-44a6-b393-94c167aea60d",
+    "question_text": "A car accelerates from \n12\nm/s\n at \n1.5\nm/s\n2\n for \n4\ns\n, then moves at constant speed for \n5\ns\n. What is the average speed over the entire motion?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n17 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n16.67 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phase 1: v=12+1.5⋅4=18m/s, x1=12⋅4+12⋅1.5⋅(4)2=48+12=60m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e6e126e-6980-4834-a9db-949a83d8fbc8",
+    "question_text": "A particle moves at \n18\nm/s\n and decelerates at \n3\nm/s\n2\n until its speed halves, then accelerates at \n2\nm/s\n2\n to its original speed. What is the total time taken?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7.5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phase 1: 9=18−3t⇒t1=3s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f044d859-d168-4015-aa9a-a419eeeda64a",
+    "question_text": "A cyclist moves with a constant speed of \n5\nm/s\n for \n20\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n50 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n100 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n75 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For constant speed, distance x=vt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6b6aa437-d6a4-40d3-8926-b67322f1ec4c",
+    "question_text": "A car traveling at \n54\nkm/h\n comes to rest in \n10\ns\n with uniform deceleration. What is the magnitude of the deceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.75 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Convert speed: 54km/h=54⋅10003600=15m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8ec92438-835c-4428-9ee9-55d08474427c",
+    "question_text": "A stone falls from a height and covers \n58.8\nm\n in the last \n1.2\ns\n of its fall. What is the total height? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n210 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n215 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n213.44 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n200 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Total time = t, last 1.2 s: 58.8=9.8t−4.9(t−1.2)2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "11bb8b70-6ba2-4a3b-af61-e8fbc6fe7dd8",
+    "question_text": "A train moving at \n72\nkm/h\n passes a pole in \n9\ns\n. If it decelerates uniformly to rest in \n30\ns\n after passing the pole, what is the length of the train?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n180 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n200 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n240 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Speed: 72km/h=20m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33a7dde2-30ec-4eb9-93b6-06b7f3a2b1c1",
+    "question_text": "A stone is dropped from a height of \n45\nm\n on a planet where it takes \n3\ns\n to reach the ground. What is the acceleration due to gravity on this planet?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n11 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "h=12gt2, 45=12g(3)2⇒45=4.5g⇒g=10m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5bfe5d09-a8cf-4c03-aa47-daaf17168cf1",
+    "question_text": "A bike accelerates uniformly from rest to \n20\nm/s\n over a distance of \n40\nm\n. What is its acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7.5 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v2=v02+2ax. Here, v0=0, v=20m/s, x=40m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0ef352d-9dc2-4827-885a-8555b0b83a67",
+    "question_text": "A stone falls freely from rest and reaches a velocity of \n14.7\nm/s\n. How long did it fall? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v=v0+gt. Here, v0=0, v=14.7m/s, g=9.8m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f2e903b5-91dc-4358-976d-629a1419e8ed",
+    "question_text": "Two stones are dropped from a height of \n125\nm\n, with a \n2\ns\n interval between them. How far apart are they when the second stone has fallen for \n3\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n70 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n90 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n100 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Stone 1 (after 5 s): y1=12⋅10⋅(5)2=125m (hits ground).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ca3eecef-0c47-4d1b-9586-6bfe8f3a8a71",
+    "question_text": "A ball is thrown upwards with a speed of \n38\nm/s\n. What is its velocity after \n3\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v=v0+at. Here, v0=38m/s, a=−10m/s2, t=3s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ad3d60fd-160c-470e-8fce-8514df2bc908",
+    "question_text": "A rocket ascends with an acceleration of \n4\nm/s\n2\n for \n6\ns\n, then its engines shut off. How long does it take to reach its maximum height from the start? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8.4 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7.5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "After 6 s: v=4⋅6=24m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "62c74b10-6703-40a9-9f32-e05036fb7ed4",
+    "question_text": "Two stones are dropped from a height of \n80\nm\n, \n1.5\ns\n apart. How long after the second stone is released do they meet if the first rebounds at \n15\nm/s\n upon hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.21 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "First stone: 80=12⋅10⋅t2⇒t=4s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dc3d4520-aa12-4fa6-b59c-60cf5d76ce0e",
+    "question_text": "A stone is thrown upwards at \n30\nm/s\n from a \n55\nm\n tower. How far below the tower’s top is it after \n7\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n35 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n40 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n45 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Displacement: y=30⋅7−12⋅10⋅(7)2=210−245=−35m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6b90dde3-b15b-413a-844c-c9a590c6bb14",
+    "question_text": "A ball is dropped from rest. What is the distance covered in the 3rd second of its fall? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n15 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n25 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Distance in n-th second = g⋅2n−12. For 3rd second, n=3.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4d731949-eb16-486c-916e-d0abd29d98b5",
+    "question_text": "A runner moves at a constant speed of \n8\nm/s\n for \n25\ns\n. What is the distance covered by the runner?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n250 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n100 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For constant speed, distance x=vt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f0e2c1fa-363d-4566-8381-6c5ba363943f",
+    "question_text": "A car moving at \n25\nm/s\n decelerates uniformly to rest over \n62.5\nm\n. What is the time taken to stop?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Use v2=v02+2ax to find a: 0=(25)2+2a(62.5)⇒0=625+125a⇒a=−5m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33f4a04b-8940-4495-9bee-80010f3b0760",
+    "question_text": "A particle moves at \n15\nm/s\n and decelerates at \n3\nm/s\n2\n for \n3\ns\n, then accelerates at \n2\nm/s\n2\n until its speed is \n15\nm/s\n. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n75 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n78.75 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n76 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Phase 1: v=15−3⋅3=6m/s, x1=15⋅3−12⋅3⋅(3)2=45−13.5=31.5m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc1e4568-174e-48df-87da-ee6e905af1a8",
+    "question_text": "A body starts from rest and accelerates at \n3\nm/s\n2\n for \n4\ns\n. What is its final velocity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Use v=v0+at. Here, v0=0, a=3m/s2, t=4s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "069fe6a4-5805-4195-a332-e41b1f7554a7",
+    "question_text": "A stone is thrown upwards with a speed of \n18\nm/s\n. What is its velocity after \n2\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-2 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-4 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v=v0+at. Here, v0=18m/s, a=−10m/s2, t=2s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6a76bffb-2613-43a2-b297-93e899e64605",
+    "question_text": "A train accelerates uniformly from \n10\nm/s\n to \n30\nm/s\n in \n5\ns\n. What is its acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use a=v−v0t. Here, v=30m/s, v0=10m/s, t=5s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "18b9ab0e-fcd6-4455-8dfb-1fa829a594b2",
+    "question_text": "A stone is thrown upwards from a \n60\nm\n cliff at \n20\nm/s\n. What is the time taken to reach a point \n20\nm\n below the cliff’s edge? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.47 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Displacement y=−80m (downward positive).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ad1a23a-43ba-4f57-81f8-c88b90898869",
+    "question_text": "A ball is dropped from a height of \n44.1\nm\n. What is its velocity just before hitting the ground? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n19.6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n29.4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14.7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n39.2 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use v2=v02+2gy. Here, v0=0, g=9.8m/s2, y=44.1m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eee064a8-8f7c-4007-adda-994f850fa9fb",
+    "question_text": "A stone is dropped from a height \nℎ\n and falls \n44.1\nm\n in the last \n1\ns\n before hitting the ground. What is the height \nℎ\n? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n120 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n130 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n122.5 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n115 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Distance in last second: dn=g⋅2n−12, 44.1=9.8⋅2n−12⇒2n−1=9⇒n=5s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f47c1068-5cb9-49ca-b2ac-0887f5f2760f",
+    "question_text": "A car accelerates uniformly from rest at \n3\nm/s\n2\n for \n7\ns\n. What is the final velocity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n21 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n18 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n24 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use the equation v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ae518159-2a48-419b-8b52-f741f0d520c1",
+    "question_text": "A rocket accelerates vertically at \n6\nm/s\n2\n from rest for \n4\ns\n, then its engines fail. What is the maximum height reached above the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n75 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n76.8 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n70 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Phase 1: v=6⋅4=24m/s, h1=12⋅6⋅(4)2=48m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ad5a6c48-b4f4-448a-b157-6ee0d0163cd8",
+    "question_text": "A helicopter ascends vertically at \n6\nm/s\n and releases a package after \n10\ns\n. How long after release does the package hit the ground if it was initially \n50\nm\n above the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.36 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Height at release: h=50+6⋅10=110m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cf9bc34d-bbdb-4384-9d4d-0c501f6fe5bd",
+    "question_text": "A car moves at \n16\nm/s\n and decelerates at \n2.5\nm/s\n2\n for \n3\ns\n, then accelerates at \n3.5\nm/s\n2\n for \n4\ns\n. What is the net displacement?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n95 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n100 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n97 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n98.75 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phase 1: v=16−2.5⋅3=8.5m/s, x1=16⋅3−12⋅2.5⋅(3)2=48−11.25=36.75m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2dc38602-30a4-460b-8b75-086f4f185a9b",
+    "question_text": "A rocket accelerates from rest at \n6\nm/s\n2\n for \n5\ns\n, then moves at constant speed for \n3\ns\n. What is the total distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n170 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n160 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n165 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phase 1: v=6⋅5=30m/s, x1=12⋅6⋅(5)2=75m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0ad9f363-a7fa-44db-8525-2ebd00604212",
+    "question_text": "A bus moves at a constant speed of \n36\nkm/h\n for \n30\nminutes\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18 km",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 km",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15 km",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20 km",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Convert speed: 36km/h=36⋅10003600=10m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d3ba76d-0361-4348-a240-cb79d961c1f4",
+    "question_text": "A particle starts from rest and moves with a uniform acceleration of \n3\nm/s\n2\n for \n6\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n36 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n54 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n72 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use x=v0t+12at2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1579f729-e44f-4681-9482-08a297bb7bd3",
+    "question_text": "A ball is thrown upwards at \n30\nm/s\n from a \n40\nm\n tower. What is the time taken to reach a point \n10\nm\n above the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.5 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.875 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Displacement y=−30m, −30=30t−5t2⇒5t2−30t−30=0⇒t2−6t−6=0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8e587365-f213-464d-81b1-169b55cd162c",
+    "question_text": "A ball is thrown vertically upwards with an initial speed of \n15\nm/s\n. What is the time taken to reach its maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "At maximum height, final velocity v=0. Use v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5c0d988b-dc1e-4550-b6f6-bd9a71dfdf15",
+    "question_text": "A particle accelerates uniformly from rest to \n12\nm/s\n in \n4\ns\n. What is the distance covered?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n16 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n24 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n32 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Find a=v−v0t=12−04=3m/s2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "74792c51-1558-4ad4-9cd3-50dc4097b4db",
+    "question_text": "A body accelerates uniformly from rest to \n24\nm/s\n over a distance of \n72\nm\n. What is the acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use v2=v02+2ax. Here, v0=0, v=24m/s, x=72m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Straight Line",
+    "topic": "Motion in a Straight Line",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Straight Line / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-straight-line"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

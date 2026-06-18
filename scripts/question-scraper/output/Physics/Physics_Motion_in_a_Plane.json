@@ -1,0 +1,7412 @@
+[
+  {
+    "id": "d51363e8-c7c7-4cd0-ae81-d9dac446bc06",
+    "question_text": "A particle starts with velocity \n3\n𝑖\n^\nm/s\n and accelerates at \n(\n2\n𝑖\n^\n+\n5\n𝑗\n^\n)\nm/s\n2\n. What is its speed after \n2\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.21 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Velocity v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f2d558ec-89ca-4556-86ac-f122ea10bb1b",
+    "question_text": "A projectile is launched at \n25\nm/s\n at \n60\n∘\n. What is its range? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n120\n∘\n=\n0.866\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n50 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n54.13 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n60 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n40 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Range R=v02sin⁡2θ0g, where 2θ0=120∘.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "979c2594-f16c-45a3-9b4f-f5e23ffc0c07",
+    "question_text": "In uniform circular motion, what is the relationship between centripetal acceleration (\n𝑎\n𝑐\n) and angular speed (\n𝜔\n)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑎\n𝑐\n∝\n𝜔",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑎\n𝑐\n∝\n1\n/\n𝜔",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑎\n𝑐\n∝\n𝜔\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑎\n𝑐\n∝\n𝜔\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The centripetal acceleration in uniform circular motion is given by ac=ω2R, where R\n              is the radius. This shows that ac is proportional to the square of the angular speed, reflecting\n              the dependence on the rate of change of direction.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "06bd1726-a478-46ee-903d-16e070e768ae",
+    "question_text": "A ball is thrown at 30 m/s at 60° to the horizontal. What is the time of flight? (Take g = 10 m/s²)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.2 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Time of flight T_f = (2 v₀ sin θ₀) / g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "204ed2b1-36e6-4ba9-bd7f-4b72758eb744",
+    "question_text": "A particle starts from rest with a constant acceleration of \n(\n6\n𝑖\n^\n−\n4\n𝑗\n^\n)\nm/s\n2\n. What is its speed after \n2\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n14.42 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Velocity v=v0+at, with v0=0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "438245c5-b865-4887-8670-58f541a55f12",
+    "question_text": "A particle starts with velocity \n8\n𝑖\n^\nm/s\n and accelerates at \n(\n2\n𝑗\n^\n)\nm/s\n2\n. What is its speed after \n4\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11.31 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Velocity v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d68cc50a-6194-4e50-bcdc-d2130028918a",
+    "question_text": "In projectile motion, what happens to the kinetic energy at the maximum height compared to the launch point?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt increases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt decreases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt remains the same",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt becomes zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "At the maximum height, the vertical velocity is zero, so the kinetic energy is due only to the horizontal\n              velocity, which remains constant. Thus, the kinetic energy decreases compared to the launch point, where\n              both components contribute.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9e41399c-6dc1-4bb2-84a0-cd60dc7d9368",
+    "question_text": "A plane flies east at \n40\nm/s\n while a wind blows north at \n30\nm/s\n. What is the magnitude of the plane’s velocity relative to the ground?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n50 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n70 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n30 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Velocity components: vx=40m/s,vy=30m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e428aef7-1e2f-454f-9c35-5c5c617d44ea",
+    "question_text": "What is the relationship between angular speed (\n𝜔\n) and linear speed (\n𝑣\n) in uniform circular motion?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑣\n=\n𝜔\n/\n𝑅",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑣\n=\n𝜔\n𝑅",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑣\n=\n𝜔\n2\n𝑅",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑣\n=\n𝑅\n/\n𝜔",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In uniform circular motion, the linear speed v is related to the angular speed ω by the\n              equation v=ωR, where R is the radius of the circular path. This shows that linear\n              speed is directly proportional to angular speed.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6e9897fb-32e3-4acc-a971-90e6117b65c9",
+    "question_text": "A stone is projected horizontally with a speed of 10 m/s from a height of 20 m. How long does it take to reach the ground? (Take g = 10 m/s²)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For vertical motion: y = v₀y t + (1/2) a_y t², where v₀y = 0, a_y = -g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c43959ec-5a80-4d2a-a388-d38920928663",
+    "question_text": "A ball is thrown at \n35\nm/s\n at \n37\n∘\n. What is its time of flight? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n37\n∘\n=\n0.6\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.2 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Time of flight Tf=2v0sin⁡θ0g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "73ecfd54-78b2-49c8-becf-8305a17eff1b",
+    "question_text": "A stone tied to a string moves in a circle of radius \n1.5\nm\n with a frequency of \n2\nHz\n. What is its centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n150 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n236.87 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n100 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n300 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Angular speed ω=2πf=2π×2=4πrad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "41fe808c-7858-4ab2-884f-171e8d42bd63",
+    "question_text": "A particle’s position is given by \n𝑥\n=\n3\n𝑡\n2\n−\n4\n𝑡\n and \n𝑦\n=\n5\n𝑡\n (in meters and seconds). What is its speed at \n𝑡\n=\n1\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.39 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Velocity: vx=dxdt=6t−4,vy=dydt=5.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0a37189c-ffd1-434d-b561-91d56371bafc",
+    "question_text": "A particle in circular motion has a centripetal acceleration of \n81\nm/s\n2\n and radius \n9\nm\n. What is its speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n30 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n27 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n24 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Centripetal acceleration ac=v2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9604fa77-0720-4cc6-a545-1fa4e44df697",
+    "question_text": "A projectile is launched with a speed of \n10\nm/s\n at an angle of \n45\n∘\n to the horizontal. What is its maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n45\n∘\n=\n0.707\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.5 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Maximum height hm=(v0sin⁡θ0)22g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3b1ae90-609e-4c87-a33c-84ea15f30e0b",
+    "question_text": "A ball is thrown at \n40\nm/s\n at \n30\n∘\n. What is its vertical velocity at the maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n40 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "At maximum height, the vertical velocity vy=0m/s (constant property of projectile\n              motion).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d7fcd0b-f886-422f-a3c0-daa5013f6c28",
+    "question_text": "A particle’s position is given by \n𝑥\n=\n2\n𝑡\n+\n𝑡\n2\n and \n𝑦\n=\n3\n𝑡\n−\n2\n𝑡\n2\n (in meters and seconds). What is its speed at \n𝑡\n=\n2\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.81 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Velocity: vx=dxdt=2+2t,vy=dydt=3−4t.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7387e41-7c5d-4bd3-b5e8-d895d2a622cf",
+    "question_text": "A particle moves in a circular path of radius \n2\nm\n with a period of \n1\ns\n. What is its centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n78.96 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n40 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n100 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Angular speed ω=2πT=2π1=2πrad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a324ec6c-031d-4d3d-9129-bf60514727bb",
+    "question_text": "A body is projected with a speed of 20 m/s at 45°. What is the time to reach maximum height? (Take g = 10 m/s²)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.41 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Time to max height t_m = (v₀ sin θ₀) / g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a27a4213-d964-4851-ba6c-362c86b940f3",
+    "question_text": "In projectile motion, what is true about the acceleration at all points in the trajectory?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is constant in magnitude and direction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt varies with height",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is zero at the peak",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt changes direction with velocity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In projectile motion, assuming no air resistance, the acceleration is due to gravity and remains constant\n              in magnitude and direction (downward) throughout the trajectory, regardless of the object’s position or\n              velocity.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aed57b4d-589f-4318-a259-b0d2454e06c9",
+    "question_text": "A projectile is launched at \n28\nm/s\n at \n45\n∘\n. What is its time of flight? (Take \n𝑔\n=\n9.8\nm/s\n2\n,\nsin\n⁡\n45\n∘\n=\n0.707\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.04 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Time of flight Tf=2v0sin⁡θ0g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b2ba662b-dbf5-4eeb-986d-adf19f895df9",
+    "question_text": "A projectile is launched at \n20\nm/s\n at \n53\n∘\n. What is its maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n53\n∘\n=\n0.8\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n16 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.8 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Maximum height hm=(v0sin⁡θ0)22g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fb79a331-3f70-40b2-95fe-04d3af488c72",
+    "question_text": "In projectile motion, what remains constant throughout the trajectory, assuming no air resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVertical velocity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHorizontal velocity",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTotal speed",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVertical acceleration",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In projectile motion without air resistance, the horizontal component of velocity remains constant\n              because there is no horizontal acceleration. The vertical component changes due to gravity, but the\n              horizontal motion is uniform.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8b075910-896c-42a3-ba6c-6ff63f759b80",
+    "question_text": "What is the primary factor affecting the maximum height of a projectile launched from level ground?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHorizontal velocity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTotal speed alone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLaunch angle alone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInitial vertical velocity component",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The maximum height hm=(v0sin⁡θ0)22g depends on the initial vertical velocity\n              component (v0sin⁡θ0). This component, influenced by both speed and angle, determines how\n              high the projectile rises against gravity.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bfcf4a9e-9e4d-45cb-9ea9-8ec7a41f0553",
+    "question_text": "A projectile is launched at \n18\nm/s\n at \n53\n∘\n. What is its maximum height? (Take \n𝑔\n=\n9.8\nm/s\n2\n,\nsin\n⁡\n53\n∘\n=\n0.8\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10.58 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Maximum height hm=(v0sin⁡θ0)22g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9419eb97-15d5-4829-9954-928483fa7567",
+    "question_text": "A projectile is launched at \n42\nm/s\n at \n30\n∘\n. What is its range? (Take \n𝑔\n=\n9.8\nm/s\n2\n,\nsin\n⁡\n60\n∘\n=\n0.866\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n200 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n155.88 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Range R=v02sin⁡2θ0g, where 2θ0=60∘.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5b998dc-34dc-4144-a549-82de05deda43",
+    "question_text": "A particle moves in a circular path of radius \n6\nm\n with a frequency of \n2\nHz\n. What is its centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n947.52 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n500 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1000 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n750 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Angular speed ω=2πf=2π×2=4πrad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7474306-a15f-40d7-8c09-c92f5ed0dc65",
+    "question_text": "A ball is thrown horizontally at \n5\nm/s\n from a height of \n20\nm\n. What is its horizontal range? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Time to fall: h=12gt2⇒20=12×10×t2⇒20=5t2⇒t2=4⇒t=2s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b5ed6995-b0e0-4075-8b0a-3312fd5c4d15",
+    "question_text": "In motion with constant acceleration in a plane, how are the x- and y-components of the motion related?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are independent",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey are directly proportional",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey are inversely proportional",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey are always equal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For motion with constant acceleration in a plane, the x- and y-components are independent of each other.\n              The motion can be treated as two separate one-dimensional motions along perpendicular directions, with\n              each component governed by its own constant acceleration.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "176ec015-79ad-4757-a301-80946ce938ef",
+    "question_text": "A particle completes 6 revolutions in \n3\ns\n in a circular path of radius \n1\nm\n. What is its linear speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.57 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Frequency f=nt=63=2Hz.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "74f932cc-fbf2-4156-ac86-2ad3bd1b70c2",
+    "question_text": "A particle starts with velocity \n5\n𝑖\n^\nm/s\n and accelerates at \n(\n4\n𝑗\n^\n)\nm/s\n2\n. What is its speed after \n3\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n13 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Velocity v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b73bbbce-78e0-4aac-9b60-974549f77a68",
+    "question_text": "A particle starts from rest with a constant acceleration of \n(\n−\n2\n𝑖\n^\n+\n5\n𝑗\n^\n)\nm/s\n2\n. What is the magnitude of its velocity after \n3\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n16.16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Velocity v=v0+at, with v0=0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8967b6ff-5f1d-4349-8bcd-13972471c44e",
+    "question_text": "A ball is thrown horizontally at \n8\nm/s\n from a height of \n12.5\nm\n. What is its speed on hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n17.72 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vertical velocity: vy=2gh=2×10×12.5=250≈15.81m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dbdf9ecd-99b4-414a-8ef9-d4d8dea6ed26",
+    "question_text": "A particle moves in a circle of radius \n4\nm\n with an angular speed of \n3\nrad/s\n. What is its centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n36 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n48 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n24 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Centripetal acceleration ac=ω2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "20889d17-8cf2-4124-9a1f-7b90134bfe48",
+    "question_text": "A ball is thrown horizontally from a tower with a speed of \n8\nm/s\n. It lands \n24\nm\n from the base. What is the height of the tower? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n45 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n60 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Horizontal distance x=vxt, so t=xvx=248=3s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6dabcfdd-903a-44af-849e-a30a5d28f6e1",
+    "question_text": "A stone is thrown horizontally at 12 m/s from a 80 m high cliff. How far from the base does it land? (Take g = 10 m/s²)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n24 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n36 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n60 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n48 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Time to fall: y = (1/2) g t², -80 = (1/2) × 10 × t² ⇒ t² = 16 ⇒ t = 4 s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c6ca27ac-bfa0-4547-8169-3ea7983ca790",
+    "question_text": "A particle completes 8 revolutions in \n4\ns\n in a circular path of radius \n2\nm\n. What is its linear speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n25.13 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Frequency f=nt=84=2Hz.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a42c9028-9800-4044-92bf-699dbc9ad9f3",
+    "question_text": "A projectile is launched at \n20\nm/s\n at \n53\n∘\n. What is its range? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n106\n∘\n=\n0.96\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n38.4 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n50 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n30 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Range R=v02sin⁡2θ0g, where 2θ0=106∘.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "127c069f-5b59-4a54-99e9-d33c00ff7872",
+    "question_text": "In projectile motion, what is true about the velocity vector just before landing compared to just after launch, assuming level ground?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is greater in magnitude",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is less in magnitude",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is identical",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt has the same magnitude but opposite vertical direction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For a projectile on level ground, the velocity just before landing has the same magnitude as just after\n              launch but with the vertical component reversed in direction (downward instead of upward) due to symmetry,\n              while the horizontal component remains unchanged.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5c443f4-7a99-48cb-bfc9-18f21802c786",
+    "question_text": "In projectile motion, what is the direction of the velocity vector at the highest point of its trajectory?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHorizontal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVertical",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAt an angle to the horizontal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In projectile motion, the velocity has both horizontal (vx) and vertical (vy) components.\n              At the highest point, the vertical component vy=0 due to the symmetry of the parabolic path,\n              while the horizontal component vx remains constant. Thus, the velocity vector is purely horizontal.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "90bb2ba1-fa90-4687-9d9e-1e33b6af4406",
+    "question_text": "A projectile is launched at \n20\nm/s\n at \n37\n∘\n. What is its horizontal velocity component? (Take \ncos\n⁡\n37\n∘\n=\n0.8\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Horizontal velocity vx=v0cos⁡θ0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3a769713-6a93-476a-911d-0eb627960a38",
+    "question_text": "In uniform circular motion, what is the role of the centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt increases the speed",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt decreases the speed",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt changes the direction of velocity",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt changes the magnitude of velocity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The centripetal acceleration in uniform circular motion changes the direction of the velocity vector to\n              keep the object moving in a circular path. It does not affect the speed, which remains constant.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a59027f8-ea1b-48a8-8062-29cce8ccbe46",
+    "question_text": "A particle moves with a constant acceleration of \n(\n5\n𝑖\n^\n+\n2\n𝑗\n^\n)\nm/s\n2\n from rest. What is its speed after \n3\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n16.16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Velocity v=v0+at, with v0=0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c34d0e2-e753-4abb-aa35-36d7e31cc29d",
+    "question_text": "A ball is thrown at \n30\nm/s\n at \n53\n∘\n. What is its vertical velocity at \n𝑡\n=\n2\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n53\n∘\n=\n0.8\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Vertical velocity vy=v0sin⁡θ0−gt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7e41c00-9961-432a-b48a-08717b974fc3",
+    "question_text": "An object moves in a circular path of radius \n4\nm\n with a frequency of \n5\nHz\n. What is the magnitude of its centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3947.8 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n200 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1000 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n500 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Angular speed ω=2πf=2π×5=10πrad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b2a0698f-6968-4c2a-80e3-a115d6ace488",
+    "question_text": "A projectile is launched at \n18\nm/s\n at \n45\n∘\n. What is its horizontal velocity component?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n18 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.73 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n9 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Horizontal velocity vx=v0cos⁡θ0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "00d383c5-a74f-441d-9afd-788f72bf8d47",
+    "question_text": "A particle’s position is given by \n𝑥\n=\n5\n𝑡\n−\n𝑡\n2\n and \n𝑦\n=\n2\n𝑡\n2\n (in meters and seconds). What is the magnitude of its acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.47 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Velocity: vx=dxdt=5−2t,vy=dydt=4t.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "87a55844-0f9c-4093-95fb-c0653ce8c8c9",
+    "question_text": "An object in uniform circular motion has a radius of 5 m and completes 10 revolutions in 20 s. What is the magnitude of its centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n49.35 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n25 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n100 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Angular speed ω = (2π n) / t, where n = 10, t = 20 s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ae04a1b-0ea3-4bb9-bea2-7e4700a1abbb",
+    "question_text": "In motion with constant acceleration in a plane, what is true if the acceleration is zero?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe path is parabolic",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe object stops",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe motion is circular",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe motion is uniform and rectilinear",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "If the acceleration is zero, the velocity remains constant in both magnitude and direction, resulting in\n              uniform rectilinear (straight-line) motion. Without acceleration, the object continues in its initial\n              state per Newton’s first law.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eaa6ed0b-0351-42c9-ad49-f93d1c4d21c2",
+    "question_text": "A projectile is launched with a speed of \n16\nm/s\n at an angle of \n30\n∘\n to the horizontal. What is its maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n30\n∘\n=\n0.5\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.2 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Maximum height hm=(v0sin⁡θ0)22g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1461084b-cb7e-463f-97a1-9c739638da05",
+    "question_text": "A particle starts with velocity \n4\n𝑗\n^\nm/s\n and accelerates at \n(\n3\n𝑖\n^\n−\n2\n𝑗\n^\n)\nm/s\n2\n. What is its speed after \n2\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Velocity v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fc05334e-40ae-4157-ab80-77fe13115002",
+    "question_text": "A particle starts from rest with a constant acceleration of \n(\n2\n𝑖\n^\n+\n6\n𝑗\n^\n)\nm/s\n2\n. What is its speed after \n2\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12.65 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Velocity v=v0+at, with v0=0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "342a431e-4a09-4e35-98b4-d96a9dd5ab01",
+    "question_text": "A boat moves north at 20 km/h while a river current flows east at 15 km/h. What is the magnitude of the resultant velocity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20 km/h",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n25 km/h",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n35 km/h",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15 km/h",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Resultant velocity R = √(v_x² + v_y²).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7e312a58-5662-45e0-b2ef-2f3558f7ef7e",
+    "question_text": "A ball is thrown horizontally at \n15\nm/s\n from a height of \n98\nm\n. What is its horizontal range? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n60 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n70 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n75 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n67.05 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Time to fall: h=12gt2⇒98=12×9.8×t2⇒98=4.9t2⇒t2=20⇒t=20≈4.47s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5f54725-fa0d-4caf-8f9c-8131cf657168",
+    "question_text": "In uniform circular motion, what is true about the magnitude of the velocity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt remains constant",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt increases with time",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt decreases with time",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In uniform circular motion, the magnitude of the velocity (speed) remains constant because the motion\n              occurs at a constant speed along the circular path, even though the direction of the velocity vector\n              changes continuously.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "57a61dec-4d4e-4627-9f84-3554a56bb74d",
+    "question_text": "A particle’s position is given by \n𝑥\n=\n5\n𝑡\n−\n3\n𝑡\n2\n and \n𝑦\n=\n4\n𝑡\n2\n (in meters and seconds). What is its speed at \n𝑡\n=\n1\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8.06 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Velocity: vx=dxdt=5−6t,vy=dydt=8t.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aca5b888-c33a-48a6-9f48-4f17d3767c84",
+    "question_text": "In uniform circular motion, what is true about the net force acting on the object?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is tangential",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is zero",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt varies in direction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is towards the center",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The net force in uniform circular motion is the centripetal force, directed towards the center of the\n              circle. It provides the centripetal acceleration necessary to maintain the circular path and is\n              perpendicular to the velocity.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b405ec6-d1e3-4400-a4fd-7d2c57653544",
+    "question_text": "A particle moves in a circle of radius \n3\nm\n with a speed of \n12\nm/s\n. What is its centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n36 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n24 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n60 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n48 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Centripetal acceleration ac=v2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba45895c-ffc3-4f23-947a-a64364abfa83",
+    "question_text": "What determines the time an object stays in the air during projectile motion from level ground?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHorizontal velocity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInitial vertical velocity component",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTotal initial speed",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAngle of projection alone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The time of flight in projectile motion depends on the initial vertical velocity component (v0sin⁡θ0) and gravity (g), as given by Tf=2v0sin⁡θ0g. This reflects\n              the time taken to rise and fall back to the ground.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f281c62d-0104-42b4-9250-c4c648ca9d7c",
+    "question_text": "What is true about the acceleration vector of a projectile at its highest point?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is zero",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is horizontal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is opposite to velocity",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is downward",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "At the highest point of a projectile’s trajectory, the acceleration vector is still directed downward due\n              to gravity. It remains constant in magnitude and direction (vertically downward) throughout the motion,\n              unaffected by the velocity being purely horizontal at that instant.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4a3c8ac0-0cf7-4581-8f28-16fd1754c0a8",
+    "question_text": "A projectile is launched at \n24\nm/s\n at \n30\n∘\n. What is its time to reach maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n30\n∘\n=\n0.5\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.2 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Time to maximum height tm=v0sin⁡θ0g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "669b96fb-0e15-4874-bf40-f99ca211ecb7",
+    "question_text": "In uniform circular motion, what is the relationship between the period of revolution and the frequency?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are equal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey are reciprocals",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPeriod is twice the frequency",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrequency is proportional to period squared",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The period (T) is the time for one revolution, and the frequency (f) is the number of\n              revolutions per unit time. They are reciprocals, as f=1T or T=1f,\n              defining their inverse relationship.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "db6d37b6-a757-4799-98cc-0f735a6c124c",
+    "question_text": "In uniform circular motion, what is responsible for keeping the object in its circular path?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCentripetal force",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTangential force",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGravitational force alone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInertia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In uniform circular motion, a centripetal force is required to keep the object moving in a circular path.\n              This force, directed towards the center, provides the necessary centripetal acceleration to change the\n              direction of the velocity continuously.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "788a680f-1b9b-40c1-8287-195b7592bb2b",
+    "question_text": "A stone is thrown horizontally at \n9\nm/s\n from a height of \n78.4\nm\n. What is its horizontal range? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n27 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n45 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n36 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Time to fall: h=12gt2⇒78.4=12×9.8×t2⇒78.4=4.9t2⇒t2=16⇒t=4s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0342268b-426e-4710-81f7-38eb9570684d",
+    "question_text": "For an object in motion with constant acceleration in a plane, what is the shape of its path if the initial velocity is zero?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParabola",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCircle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStraight line",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEllipse",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "If the initial velocity is zero, the object moves under constant acceleration alone, resulting in a\n              straight-line path along the direction of the acceleration vector. This is a special case of rectilinear\n              motion.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8b86ccdb-0a8e-4ea7-971c-19447bc5db68",
+    "question_text": "A ball is thrown at \n24\nm/s\n at \n37\n∘\n. What is its vertical velocity at \n𝑡\n=\n1\ns\n? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n37\n∘\n=\n0.6\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Vertical velocity vy=v0sin⁡θ0−gt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04f60b93-f729-4f4c-be66-7baef8e96a48",
+    "question_text": "A particle moves in a circular path of radius \n1\nm\n completing 3 revolutions in \n6\ns\n. What is its centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9.87 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Frequency f=nt=36=0.5Hz.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cbfb6867-6b36-4d85-8e27-4d82f035ce49",
+    "question_text": "For an object in motion with constant acceleration in a plane, what is true when the acceleration is parallel to the initial velocity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe path is a straight line",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe path is parabolic",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe path is circular",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe path is elliptical",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "When the constant acceleration is parallel to the initial velocity, the motion occurs in a straight line\n              along the direction of the initial velocity, as the acceleration only changes the magnitude of the\n              velocity, not its direction.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3233e8d0-b35b-47d0-8af0-a7945c79d674",
+    "question_text": "A projectile launched at \n15\nm/s\n at \n53\n∘\n reaches a horizontal distance of \n18\nm\n. What is the value of \n𝑔\n? (Take \nsin\n⁡\n53\n∘\n=\n0.8\n,\ncos\n⁡\n53\n∘\n=\n0.6\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9.8 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Range R=v02sin⁡2θ0g, where 2θ0=106∘,sin⁡106∘=sin⁡(180∘−106∘)=sin⁡74∘≈0.96.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b43980ae-a680-4b70-8aab-8d2c0ec198f5",
+    "question_text": "A particle moves in a circle of radius \n2.5\nm\n with a speed of \n10\nm/s\n. What is its centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n30 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n50 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n40 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Centripetal acceleration ac=v2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2d419b4a-4c61-4af1-9398-cb0921b717c0",
+    "question_text": "A particle’s position is given by \n𝑥\n=\n4\n𝑡\n2\n−\n𝑡\n and \n𝑦\n=\n2\n𝑡\n+\n𝑡\n2\n (in meters and seconds). What is its speed at \n𝑡\n=\n1\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8.06 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Velocity: vx=dxdt=8t−1,vy=dydt=2+2t.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0615d12-b530-41fb-9d4a-1f5740d8f6ea",
+    "question_text": "For a projectile launched from the ground, what is true about its time of ascent and time of descent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAscent time is greater",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDescent time is greater",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey are equal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDepends on the launch angle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For a projectile launched from and returning to the ground, the time of ascent equals the time of descent\n              due to the symmetry of the parabolic path. The time to reach maximum height (tm=v0sin⁡θ0g) is half the total time of flight, and the descent mirrors the ascent.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d2e2b35f-c3d2-49f0-8b7f-2908ba849ff3",
+    "question_text": "A projectile is launched at \n16\nm/s\n at \n37\n∘\n. What is its horizontal velocity component? (Take \ncos\n⁡\n37\n∘\n=\n0.8\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Horizontal velocity vx=v0cos⁡θ0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "adfb2fb9-b645-43f0-8704-33d22730ec85",
+    "question_text": "A particle starts with velocity \n6\n𝑖\n^\nm/s\n and accelerates at \n(\n2\n𝑖\n^\n+\n4\n𝑗\n^\n)\nm/s\n2\n. What is its speed after \n3\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n16.97 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Velocity v=v0+at.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "604a84c5-abcb-474d-b41a-0d166f81fa1e",
+    "question_text": "In projectile motion, what is true about the total mechanical energy, assuming no air resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt increases with height",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt decreases with height",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt remains conserved",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt becomes zero at the peak",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Assuming no air resistance, the total mechanical energy (kinetic + potential) of a projectile remains\n              conserved throughout its trajectory. Energy transforms between kinetic and potential forms, but the sum\n              stays constant as no external non-conservative forces act.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5cf93111-d9f2-4634-a3cb-004eac7d9d0c",
+    "question_text": "What is the significance of the horizontal component of velocity in determining the range of a projectile?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt affects only the height",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt has no effect on range",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt determines the horizontal distance",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt changes with time",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The horizontal component of velocity (v0cos⁡θ0) determines how far the projectile travels\n              horizontally during its time of flight. It remains constant and, combined with the time of flight\n              (influenced by the vertical component), defines the range.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6ba3e040-e32c-498b-ab83-eb56622ce81b",
+    "question_text": "A particle starts from rest with an acceleration of \n(\n3\n𝑖\n^\n+\n5\n𝑗\n^\n)\nm/s\n2\n. What is its displacement magnitude after \n2\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11.66 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Displacement r=12at2 (since v0=0).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b3095818-321b-4cdd-a1e8-4cfeca5f47df",
+    "question_text": "A swimmer moves north at \n3\nm/s\n in a river flowing west at \n4\nm/s\n. What is the magnitude of the swimmer’s velocity relative to the ground?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Velocity components: vx=−4m/s,vy=3m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1466f862-1909-4192-b9cd-1eda452ecff8",
+    "question_text": "A ball is thrown horizontally at \n12\nm/s\n from a height of \n24.5\nm\n. What is its horizontal range? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n30 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n25 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n26.88 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Time to fall: h=12gt2⇒24.5=12×9.8×t2⇒24.5=4.9t2⇒t2=5⇒t=5≈2.24s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09526d7c-d192-48aa-9cca-79345c9ccd05",
+    "question_text": "A projectile is launched with a speed of \n15\nm/s\n at an angle of \n60\n∘\n to the horizontal. What is its maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n60\n∘\n=\n0.866\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8.44 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Maximum height hm=(v0sin⁡θ0)22g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "953d0c82-9cda-4a94-8fc1-4f7abd0ca6ac",
+    "question_text": "For an object moving in a plane with constant acceleration, what is true about its velocity vector?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt remains constant",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt changes only in direction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt changes only in magnitude",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt changes in magnitude and/or direction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In motion with constant acceleration in a plane, the velocity vector changes in magnitude and/or\n              direction over time because the acceleration continuously alters it. Unlike uniform motion, the velocity\n              is not constant unless the acceleration is zero.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "478a6e8a-d2de-4893-8134-30b933574e94",
+    "question_text": "In projectile motion, what is the condition for achieving maximum horizontal range on level ground?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLaunch angle of 30°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLaunch angle of 60°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLaunch angle of 90°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLaunch angle of 45°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The horizontal range R=v02sin⁡2θ0g is maximized when sin⁡2θ0=1,\n              which occurs at 2θ0=90∘ or θ0=45∘. This angle balances the\n              horizontal and vertical components for the greatest distance.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e1fee6eb-9043-467d-a544-de8a7ef86e75",
+    "question_text": "A projectile is launched at \n15\nm/s\n at \n30\n∘\n. What is its time of flight? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n30\n∘\n=\n0.5\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.5 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Time of flight Tf=2v0sin⁡θ0g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "95c973b4-4071-41bf-8d52-f0e14cc2bc3b",
+    "question_text": "A stone is thrown horizontally at \n10\nm/s\n from a height of \n80\nm\n. What is its time of flight? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Vertical motion: y=12gt2, where y=−80m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "322a4d88-2d86-41ed-9e37-3273d1b54fbd",
+    "question_text": "An object moves in a circle of radius 2 m with a constant speed of 4 m/s. What is its angular speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 rad/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Angular speed ω = v / R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "331e75cf-a5d6-4651-ad94-18757be304f9",
+    "question_text": "A ball is thrown at \n20\nm/s\n at \n45\n∘\n from a height of \n5\nm\n. What is its range? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n50 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n44.41 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Time of flight: y=v0yt−12gt2, where y=−5m,v0y=20sin⁡45∘=102.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82557052-25c6-4f02-ac72-2b5b655153b4",
+    "question_text": "A particle starts with velocity \n5\n𝑖\n^\nm/s\n and accelerates at \n(\n−\n3\n𝑗\n^\n)\nm/s\n2\n. What is its displacement magnitude after \n2\ns\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n11.66 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Displacement r=v0t+12at2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4490fb2e-5d62-4a5f-9c1e-ede1ea4a1d5b",
+    "question_text": "An object in uniform circular motion has a centripetal acceleration of 16 m/s² and a radius of 4 m. What is its linear speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Centripetal acceleration a_c = v² / R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6eda99bd-4254-4469-8897-217032dd98f2",
+    "question_text": "A car moves north at \n12\nm/s\n while a wind blows east at \n5\nm/s\n. What is the magnitude of the car’s velocity relative to the ground?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n13 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n17 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Velocity components: vx=5m/s,vy=12m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b3fb60b9-02b0-4357-bd8e-dfea7a428d58",
+    "question_text": "A particle moves in a circle of radius \n5\nm\n with an angular speed of \n2\nrad/s\n. What is its centripetal acceleration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n25 m/s²",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15 m/s²",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Centripetal acceleration ac=ω2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7d2d75bc-196b-4dca-b034-02627afabb9f",
+    "question_text": "A ball is dropped from a height of \n44.1\nm\n with a horizontal speed of \n7\nm/s\n. What is its speed on hitting the ground? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n25 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n30.2 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n35 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vertical velocity: vy=2gh=2×9.8×44.1=863.28≈29.38m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8b71000c-3380-4001-a147-e198eb2774a0",
+    "question_text": "A particle in circular motion has a centripetal acceleration of \n36\nm/s\n2\n and radius \n2\nm\n. What is its speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8.49 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Centripetal acceleration ac=v2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d4416208-b1aa-4cbf-a85a-7f5c00ea0c4c",
+    "question_text": "What is the effect on the range of a projectile if the launch angle is increased beyond 45° on level ground?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt increases continuously",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt decreases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt remains the same",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt becomes zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The range R=v02sin⁡2θ0g is maximized at θ0=45∘ (when 2θ0=90∘). Beyond 45°, sin⁡2θ0 decreases (e.g., at 60°, 2θ0=120∘, sin⁡120∘<1), reducing the range.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "70de43d1-3311-4e83-9d6c-697a329e86b4",
+    "question_text": "A cyclist moves east at \n18\nm/s\n while the wind blows south at \n24\nm/s\n. What is the magnitude of the relative velocity of the wind with respect to the cyclist?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n30 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n42 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n25 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Relative velocity vwc=vw−vc, where vc=18i^,vw=−24j^.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "11746fa8-7b6f-4b28-addc-47460d5a67fb",
+    "question_text": "A projectile is launched at \n50\nm/s\n at \n60\n∘\n. What is its range? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n60\n∘\n=\n0.866\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n250 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n216.5 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Range R=v02sin⁡2θ0g, where 2θ0=120∘,sin⁡120∘=0.866.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cb491be9-bfd4-44ea-9046-43c4c3047741",
+    "question_text": "A projectile is launched with a speed of \n25\nm/s\n at an angle of \n37\n∘\n to the horizontal. What is the time taken to reach its maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n, \nsin\n⁡\n37\n∘\n=\n0.6\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Time to maximum height is given by tm=v0sin⁡θ0g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b9931ff8-66b2-4047-8bc8-390108d94d81",
+    "question_text": "What is the primary reason a projectile follows a curved path?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nConstant acceleration due to gravity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVariable horizontal velocity",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTangential force",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCentripetal force",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The curved (parabolic) path of a projectile results from the constant acceleration due to gravity acting\n              vertically, while the horizontal motion remains uniform. This combination of uniform horizontal motion and\n              accelerated vertical motion produces the curve.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "382fc9d5-4147-413a-b557-e9502ed567a6",
+    "question_text": "In uniform circular motion, what is the relationship between centripetal force and the object’s mass?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is inversely proportional",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is independent of mass",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is proportional to mass squared",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is directly proportional",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The centripetal force is given by Fc=mv2R=mac, where m is the mass. Thus,\n              the centripetal force is directly proportional to the mass of the object, meaning a greater mass requires\n              a larger force to maintain the same motion.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bf31e042-e0aa-4daa-a4bd-f83d66db61d8",
+    "question_text": "A projectile is launched at \n35\nm/s\n at \n60\n∘\n. What is its range? (Take \n𝑔\n=\n10\nm/s\n2\n,\nsin\n⁡\n120\n∘\n=\n0.866\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n120 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n106.09 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Range R=v02sin⁡2θ0g, where 2θ0=120∘.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "506ccea8-6e6c-44b0-b855-38632dd0de71",
+    "question_text": "What is the nature of the acceleration in uniform circular motion?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTangential",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVariable in magnitude",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nConstant in magnitude and direction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConstant in magnitude but not direction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In uniform circular motion, the acceleration is centripetal, meaning it is directed towards the center of\n              the circle. It changes direction continuously to remain radial but maintains a constant magnitude, as the\n              speed is constant.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "57d606bb-f29a-4d57-90c7-70cf41101e45",
+    "question_text": "A ball is thrown horizontally at \n9\nm/s\n from a height of \n44.1\nm\n. What is its speed on hitting the ground? (Take \n𝑔\n=\n9.8\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n25 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n30.73 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n35 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vertical velocity: vy=2gh=2×9.8×44.1=863.28≈29.38m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ca3b6fd-b5b7-49d1-b563-26321789005d",
+    "question_text": "In projectile motion, at what point is the speed of the projectile minimum?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAt the point of launch",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAt landing",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAt maximum height",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHalfway up its trajectory",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The speed of a projectile is minimum at its maximum height because the vertical component of velocity (vy) is zero, leaving only the horizontal component (vx), which is constant. At all other\n              points, the speed includes both components.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b26b8902-45be-4982-ac98-7372863f39c1",
+    "question_text": "A projectile is launched at \n45\nm/s\n at \n60\n∘\n. What is its speed at the maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n,\ncos\n⁡\n60\n∘\n=\n0.5\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n45 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n22.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "At maximum height, vy=0, speed = vx=v0cos⁡θ0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "de62e846-ba8f-4f19-888a-dd9d5610b6a0",
+    "question_text": "A projectile is launched at \n50\nm/s\n at \n37\n∘\n. What is its speed at maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n,\ncos\n⁡\n37\n∘\n=\n0.8\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n50 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n40 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "At maximum height, speed = vx=v0cos⁡θ0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9b0102d2-3b61-42f6-901c-ce9790c4deac",
+    "question_text": "A particle in circular motion has a centripetal acceleration of \n100\nm/s\n2\n and speed of \n20\nm/s\n. What is its radius?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Centripetal acceleration ac=v2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5e99aa10-5fdc-4a0d-987b-c714318f57cd",
+    "question_text": "A projectile is launched at \n26\nm/s\n at \n45\n∘\n. What is its time to reach maximum height? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.84 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Time to maximum height tm=v0sin⁡θ0g.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9fa166e7-8862-4f25-af1e-8e6e39051046",
+    "question_text": "A stone is thrown horizontally at \n7\nm/s\n from a height of \n31.25\nm\n. What is its time of flight? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Vertical motion: y=12gt2, where y=−31.25m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a642e922-876f-4c1a-9a1e-52a4e8954667",
+    "question_text": "A particle in circular motion has a centripetal acceleration of \n25\nm/s\n2\n and radius \n5\nm\n. What is its speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n11.18 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Centripetal acceleration ac=v2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "be71e139-2801-462a-90fb-e12ee5c3d7b1",
+    "question_text": "A stone is dropped from a height of \n20\nm\n with a horizontal speed of \n10\nm/s\n. What is its horizontal distance from the drop point when it lands? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n30 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n40 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Time to fall: h=12gt2⇒20=12×10×t2⇒t2=4⇒t=2s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "44b160b6-e2df-4896-acb3-5802b381bcce",
+    "question_text": "In motion with constant acceleration in a plane, what determines the path of the object?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMass of the object",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTime of motion",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInitial velocity and acceleration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFinal velocity only",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The path of an object in motion with constant acceleration in a plane depends on its initial velocity and\n              the direction and magnitude of the constant acceleration. For example, zero initial velocity with constant\n              acceleration results in a straight line, while non-zero initial velocity can produce a parabolic path\n              (e.g., projectile motion).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e9425bc4-a51d-473c-9233-26838bbcd7a2",
+    "question_text": "For an object in projectile motion, which component of acceleration is zero?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVertical component",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHorizontal component",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTotal acceleration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of the components",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In projectile motion, neglecting air resistance, the only acceleration is due to gravity, acting\n              vertically downward. The horizontal component of acceleration is zero because there is no force acting\n              horizontally to change the horizontal velocity.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "38f424a6-5867-467f-97a2-23a7a2577a0c",
+    "question_text": "In projectile motion, what is the angle between the velocity and acceleration vectors at the highest point?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n180°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n45°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "At the highest point, the velocity is purely horizontal (vy=0), while the acceleration (gravity)\n              is vertical downward. Thus, the angle between them is 90°, as they are perpendicular.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e008338e-17d2-4406-a53e-2628f2cc50ed",
+    "question_text": "A particle starts from rest with a constant acceleration of (4 î + 2 ĵ) m/s². What is its speed after 5 s?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n25 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n22.36 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Velocity v = v₀ + at, where v₀ = 0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ee978b34-ce04-4fa4-ab88-6ab32fdfe698",
+    "question_text": "A particle completes 5 revolutions in \n2\ns\n in a circular path of radius \n0.8\nm\n. What is its linear speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.57 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Frequency f=nt=52=2.5Hz.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Motion in a Plane",
+    "topic": "Motion in a Plane",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Motion in a Plane / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "motion-in-a-plane"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

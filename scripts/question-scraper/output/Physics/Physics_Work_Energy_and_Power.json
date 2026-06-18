@@ -1,0 +1,7412 @@
+[
+  {
+    "id": "000f90ed-dc72-49cd-9e52-8e80a8417fc2",
+    "question_text": "A \n4\nkg\n mass at \n15\nm/s\n collides elastically with an identical stationary mass. What is the speed of the second mass after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n13.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For equal masses in elastic collision, v2f=v1i=15m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c6f82ca0-992f-47ad-9294-035f9512b00e",
+    "question_text": "A \n3\nkg\n mass moving at \n12\nm/s\n collides elastically with an identical stationary mass. What is the speed of the first mass after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For equal masses in elastic collision, v1f=0m/s (first mass stops).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "18f2a962-127c-4617-8917-c6f6ab9594f5",
+    "question_text": "A neutron (\n1\nu\n) at \n6\n×\n10\n6\nm/s\n collides elastically with a deuterium (\n2\nu\n). What fraction of its kinetic energy is transferred?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.85",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.89",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.92",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.95",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fraction transferred f2=4m1m2(m1+m2)2=4×1×2(1+2)2=89≈0.889.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "71cd0919-c9b6-427c-8a8e-440cb8f00ff9",
+    "question_text": "A spring (\n𝑘\n=\n600\nN/m\n) is stretched from \n0.15\nm\n to \n0.25\nm\n. What is the work done by the spring force?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-15 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-12 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-10 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-8 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work Ws=12k(xi2−xf2)=12×600×(0.152−0.252)=300×(0.0225−0.0625)=−12J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d3678c2d-fa7f-4a4f-81d7-1abd5ecdfd70",
+    "question_text": "A motor lifts a \n2000\nkg\n elevator at \n3\nm/s\n against a frictional force of \n5000\nN\n. What is the power delivered? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n70 kW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n75 kW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80 kW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n85 kW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Total force F=mg+Ff=2000×10+5000=25000N.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b1300d15-e7c7-4576-a9d8-fac5867966e0",
+    "question_text": "A \n4\nkg\n mass falls from \n6\nm\n onto a spring (\n𝑘\n=\n800\nN/m\n). What is the maximum compression? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.7 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.78 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.85 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.9 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy mgh=4×10×6=240J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bb992e98-6398-4a0a-97d9-9621636b2495",
+    "question_text": "A \n6\nkg\n mass is lifted \n5\nm\n in \n2\ns\n at constant speed. What is the power? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n130 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n150 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n170 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n190 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=mgh=6×10×5=300J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "595007a7-a64a-4316-9a5d-019057a195aa",
+    "question_text": "A \n1400\nkg\n car at \n22\nm/s\n hits a spring (\n𝑘\n=\n1.2\n×\n10\n4\nN/m\n). What is the maximum compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7.3 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.5 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.7 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×1400×222=338800J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3ae6c174-836a-4232-88ed-bb92c351bfac",
+    "question_text": "A \n35\ng\n bullet at \n1200\nm/s\n emerges from a block with \n80\n%\n of its initial kinetic energy. What is its emergent speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1050 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1073 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1100 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1120 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×0.035×12002=25200J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cf37123f-bbb8-4f51-bb80-2dbcc8e966f2",
+    "question_text": "A motor lifts a \n2500\nkg\n load at \n2.5\nm/s\n against friction of \n3000\nN\n. What is the power output? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n65 kW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n70 kW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n75 kW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n80 kW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Force F=mg+Ff=2500×10+3000=28000N.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "68cfadf9-6af6-4acf-99fb-1510c83620f0",
+    "question_text": "A \n12\nkg\n mass at \n9\nm/s\n collides inelastically with a stationary \n6\nkg\n mass. What is the final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Momentum conservation: 12×9=(12+6)vf⇒108=18vf⇒vf=6m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4ed1cade-f3c7-4d12-8948-feeaec358f6f",
+    "question_text": "A \n8\nkg\n mass at \n5\nm/s\n collides inelastically with a stationary \n4\nkg\n mass. What is the final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.3 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Momentum conservation: 8×5=(8+4)vf⇒40=12vf⇒vf=4012≈3.33m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f30f4d89-37d6-411b-b4f9-16336161ca7e",
+    "question_text": "A neutron (\n1\nu\n) moving at \n10\n6\nm/s\n collides elastically with a deuterium (\n2\nu\n). What fraction of its kinetic energy is lost?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1/12",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1/9",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1/6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1/3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fraction lost f1=(m1−m2m1+m2)2=(1−21+2)2=(−13)2=19.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b804a75e-4702-4bcf-9059-b16bbd1e22ed",
+    "question_text": "A force \n𝐹\n=\n6\n𝑖\n^\n+\n4\n𝑗\n^\nN\n acts on a particle moving along \n𝑑\n=\n−\n2\n𝑖\n^\n+\n5\n𝑗\n^\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=F⋅d.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "24a4714e-bfd7-4b39-8d68-7b592a6dcd69",
+    "question_text": "A \n4\nkg\n ball at \n20\nm/s\n collides elastically with a stationary \n12\nkg\n ball. What is the speed of the \n12\nkg\n ball after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n11 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For elastic collision: v2f=2m1m1+m2v1i=2×44+12×20=816×20=10m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "582733b8-5bbc-4970-8ee9-fdfb2c71786f",
+    "question_text": "A force \n𝐹\n=\n8\n𝑥\nN\n acts from \n𝑥\n=\n0\n to \n𝑥\n=\n2\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n14 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n16 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n18 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=∫028xdx=[4x2]02=4×4=16J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "98e1fafc-bacf-471c-b80f-34d739d98337",
+    "question_text": "A force \n𝐹\n=\n7\n𝑖\n^\n−\n3\n𝑗\n^\nN\n acts on a particle moving along \n𝑑\n=\n2\n𝑖\n^\n+\n6\n𝑗\n^\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-6 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-4 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-2 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=F⋅d.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b824ccc2-af15-4aa0-a4f1-92c996b72366",
+    "question_text": "A spring (\n𝑘\n=\n450\nN/m\n) is compressed by \n0.15\nm\n. What is the stored potential energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.8 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.1 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.3 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.5 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=12kx2=12×450×(0.15)2=225×0.0225=5.0625J≈5.06J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3d9d835e-9dcd-4f6a-8640-152bdf0323c7",
+    "question_text": "A force \n𝐹\n=\n2\n𝑥\nN\n acts on a particle from \n𝑥\n=\n1\nm\n to \n𝑥\n=\n3\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=∫132xdx=[x2]13=9−1=8J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f80b825a-6a64-4916-9d18-6aa346e313aa",
+    "question_text": "A \n7\nkg\n mass at \n14\nm/s\n collides elastically with an identical stationary mass. What is the speed of the first mass after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For equal masses in elastic collision, v1f=0m/s (first mass stops).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "318c71b4-2793-4e70-b4a2-8a1ac8a4ddde",
+    "question_text": "A \n7\nkg\n block is pushed with \n35\nN\n over \n10\nm\n on a frictionless surface, starting from rest. What is its final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n11 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=35×10=350J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8e3e333d-8fed-4c44-9dcd-20428323543c",
+    "question_text": "A bullet of mass \n20\ng\n with speed \n300\nm/s\n passes through a wooden block and emerges with \n20\n%\n of its initial kinetic energy. What is the emergent speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n120 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n134 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n160 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×0.02×3002=900J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "890fe8ae-d2be-4124-ac86-2c1acd18efd3",
+    "question_text": "A \n9\nkg\n mass falls from \n6\nm\n onto a spring (\n𝑘\n=\n3000\nN/m\n). What is the maximum compression? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.55 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.6 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.65 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.7 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy mgh=9×10×6=540J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "43a7fd3e-857f-4b8a-8835-4d26d3badec6",
+    "question_text": "A \n5\nkg\n block is pushed with \n25\nN\n over \n8\nm\n on a frictionless surface, starting from \n1\nm/s\n. What is its final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial Ki=12×5×12=2.5J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3a15150-796b-4de0-8a8b-af996e4b5c2d",
+    "question_text": "A \n1.8\nkg\n object is dropped from \n18\nm\n. What is its kinetic energy just before hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n300 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n324 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n340 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n360 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=mgh=1.8×10×18=324J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "94ac46ef-b478-4822-98aa-271219ccd17c",
+    "question_text": "A \n1200\nkg\n car moving at \n15\nm/s\n compresses a spring (\n𝑘\n=\n8\n×\n10\n3\nN/m\n). What is the maximum compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.5 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.8 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.2 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×1200×152=135000J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "820f45ce-09a1-4d12-aeb6-341f429db529",
+    "question_text": "A \n2\nkg\n block slides down a frictionless incline from \n9\nm\n height. What is its speed at the bottom? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n13 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n13.4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n14 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Potential energy mgh=2×10×9=180J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fbf03866-6bda-4565-a77d-641c5fd04bbf",
+    "question_text": "A \n3.5\nkg\n mass falls from \n7\nm\n onto a spring (\n𝑘\n=\n1200\nN/m\n). What is the maximum compression? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.6 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.64 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.7 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.75 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy mgh=3.5×10×7=245J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "70ff24ba-3c3b-44a5-b7c9-13951436f129",
+    "question_text": "A spring (\n𝑘\n=\n900\nN/m\n) is compressed from \n0.15\nm\n to \n0.25\nm\n. What is the work done by the spring force?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-20 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-18 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-16 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-14 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work Ws=12k(xi2−xf2)=12×900×(0.152−0.252)=450×(0.0225−0.0625)=−18J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c26354da-b2b0-486a-9568-ae69f0da6e6b",
+    "question_text": "A \n2.5\nkg\n block slides down a frictionless incline from \n10\nm\n height. What is its speed at the bottom? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n14 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy mgh=2.5×10×10=250J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23c65175-1b9f-42a5-b098-5b5ac2b5e552",
+    "question_text": "A \n6\nkg\n block at \n11\nm/s\n encounters a force \n𝐹\n=\n−\n1.8\n𝑥\nN\n from \n𝑥\n=\n0.9\nm\n to \n𝑥\n=\n4.5\nm\n. What is the final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10.7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n11 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n11.2 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×6×112=363J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3705ab6-7ccd-47d2-b9d7-4bf14bb56de3",
+    "question_text": "A spring (\n𝑘\n=\n1000\nN/m\n) is stretched from \n0.1\nm\n to \n0.2\nm\n. What is the work done by the spring force?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-20 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-15 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-10 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-5 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work by spring force Ws=12k(xi2−xf2)=12×1000×(0.12−0.22)=500×(0.01−0.04)=−15J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5a72498e-7dd8-4e02-af38-69f74966e3e4",
+    "question_text": "A \n10\nkg\n mass at \n16\nm/s\n collides elastically with an identical stationary mass. What is the speed of the second mass after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n14 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n17 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For equal masses in elastic collision, v2f=v1i=16m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1510dae1-d948-4aa5-9401-a82c6b9ca2b7",
+    "question_text": "A \n0.8\ng\n drop falls from \n200\nm\n and hits the ground at \n14\nm/s\n. What is the work done by air resistance? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1.6 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-1.52 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-1.4 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-1.3 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work by gravity Wg=mgh=0.0008×10×200=1.6J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8513caf8-2bcc-4f99-8427-b23eef080a9a",
+    "question_text": "A motor lifts a \n1500\nkg\n elevator at \n4\nm/s\n against \n2000\nN\n friction. What is the power delivered? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n65 kW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n68 kW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n70 kW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n72 kW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Force F=mg+Ff=1500×10+2000=17000N.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72ff6f0b-4978-4f23-9f77-2791a80cd5ff",
+    "question_text": "A spring (\n𝑘\n=\n600\nN/m\n) is stretched by \n0.2\nm\n. What is the stored potential energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=12kx2=12×600×(0.2)2=300×0.04=12J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d83746f4-347c-4acb-8e94-434593fc1a3f",
+    "question_text": "A force \n𝐹\n=\n3\n𝑥\n3\nN\n acts from \n𝑥\n=\n0\n to \n𝑥\n=\n2\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=∫023x3dx=[34x4]02=34×16=12J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "daa6b085-8a3d-4005-bb94-b61443513c8a",
+    "question_text": "A neutron (\n1\nu\n) at \n7\n×\n10\n6\nm/s\n collides elastically with a carbon (\n12\nu\n). What fraction of its kinetic energy is retained?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.7",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.72",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.74",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.76",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fraction retained f1=(m1−m2m1+m2)2=(1−121+12)2=(−1113)2=121169≈0.716.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "267b1c8d-1af6-45f4-91c7-9d63162a63e7",
+    "question_text": "A \n14\nkg\n mass is lifted \n7\nm\n in \n5\ns\n at constant speed. What is the power? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n180 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n196 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n210 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n225 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=mgh=14×10×7=980J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c83283fd-760d-4843-a318-19ca00b0ee85",
+    "question_text": "A \n11\nkg\n mass at \n18\nm/s\n collides elastically with an identical stationary mass. What is the speed of the first mass after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For equal masses in elastic collision, v1f=0m/s (first mass stops).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "612f536f-fbcb-4505-a66c-db145b685d4c",
+    "question_text": "A \n1.2\nkg\n object is dropped from \n15\nm\n. What is its speed just before hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n17.3 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n18 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n19 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=mgh=1.2×10×15=180J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4c8ddaf6-045b-43c5-b4d0-055884f9845a",
+    "question_text": "A spring (\n𝑘\n=\n500\nN/m\n) is stretched by \n0.3\nm\n. What is the stored potential energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n22.5 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n25 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n27.5 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=12kx2=12×500×(0.3)2=250×0.09=22.5J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "214e89b3-a781-4e71-b059-639f998425f2",
+    "question_text": "A \n2\nkg\n ball moving at \n6\nm/s\n collides elastically with a stationary \n4\nkg\n ball. What is the speed of the \n4\nkg\n ball after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For elastic collision: v2f=2m1m1+m2v1i=2×22+4×6=46×6=4m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "de5c281d-8c7e-4b07-8fd8-986dd502854d",
+    "question_text": "A force \n𝐹\n=\n3\n𝑖\n^\n−\n4\n𝑗\n^\nN\n acts on a particle moving along \n𝑑\n=\n5\n𝑖\n^\n+\n5\n𝑗\n^\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-7 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-5 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-3 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=F⋅d.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09d0cffe-23ad-446d-8f27-a4b401ebbb36",
+    "question_text": "A pendulum bob of \n1\nkg\n completes a vertical circle of radius \n2\nm\n with minimum speed at the bottom. What is the speed at the top? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "At top, minimum speed vC=gL=10×2=20≈4.47m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53f98d2c-c250-4dc0-a03e-e7687c8b51a6",
+    "question_text": "A particle moves under a force \n𝐹\n=\n4\n𝑖\n^\n−\n2\n𝑗\n^\nN\n along a displacement \n𝑑\n=\n3\n𝑖\n^\n+\n6\n𝑗\n^\nm\n. What is the work done by the force?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Work done W=F⋅d.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "95c358bb-45d0-4eda-bf59-2b6f76372bc8",
+    "question_text": "A \n10\ng\n bullet moving at \n500\nm/s\n emerges from a block with \n36\n%\n of its initial kinetic energy. What is its final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n280 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n300 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n320 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n340 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×0.01×5002=1250J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fab0ef50-8071-4660-896c-01920fc3e071",
+    "question_text": "A \n3\nkg\n ball at \n9\nm/s\n collides elastically with a stationary \n6\nkg\n ball. What is the speed of the \n3\nkg\n ball after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For elastic collision: v1f=m1−m2m1+m2v1i=3−63+6×9=−39×9=−3m/s (magnitude 3m/s).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f53a5712-92c3-4e92-935a-9ba063f6e0d2",
+    "question_text": "A \n5\nkg\n block at \n10\nm/s\n encounters a force \n𝐹\n=\n−\n2\n𝑥\nN\n from \n𝑥\n=\n0.8\nm\n to \n𝑥\n=\n4\nm\n. What is the final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9.7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9.9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10.1 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10.3 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×5×102=250J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ae6e4cb8-58fd-4a3c-93b2-e36c2f6d0808",
+    "question_text": "A \n6\nkg\n mass at \n4\nm/s\n collides inelastically with a stationary \n2\nkg\n mass. What is the final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Momentum conservation: 6×4=(6+2)vf⇒24=8vf⇒vf=3m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "987a94b4-9be8-4fc9-81d3-268067e760e0",
+    "question_text": "A \n7\nkg\n mass at \n6\nm/s\n collides inelastically with a stationary \n5\nkg\n mass. What is the final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Momentum conservation: 7×6=(7+5)vf⇒42=12vf⇒vf=3.5m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "733b896a-1abe-4f75-bde5-e8a49ce1bd85",
+    "question_text": "A \n30\ng\n bullet at \n700\nm/s\n emerges from a block with \n40\n%\n of its initial kinetic energy. What is its emergent speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n420 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n443 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n460 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n480 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×0.03×7002=7350J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fe7e7494-4253-43d0-b2e8-2833cb4bae9c",
+    "question_text": "A \n1.5\nkg\n block at \n6\nm/s\n encounters a force \n𝐹\n=\n−\n0.6\n𝑥\nN\n from \n𝑥\n=\n0.3\nm\n to \n𝑥\n=\n1.5\nm\n. What is the final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.2 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×1.5×62=27J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1d6c18a2-07bf-498d-b18f-91fe3f450620",
+    "question_text": "A \n1\nkg\n ball moving at \n8\nm/s\n undergoes an elastic collision with a stationary \n3\nkg\n ball. What is the speed of the \n1\nkg\n ball after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For elastic collision: v1f=m1−m2m1+m2v1i.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5da743fb-3455-438c-9da1-500ea9ffe69e",
+    "question_text": "A \n0.2\nkg\n ball is dropped from \n12\nm\n. What is its speed just before hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n14 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n16 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n17 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=mgh=0.2×10×12=24J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4cce43e0-131c-44ba-be2a-5bf20a180b8c",
+    "question_text": "A \n9\nkg\n block is pushed with \n45\nN\n over \n7\nm\n on a frictionless surface, starting from rest. What is its final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8.4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8.8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n9 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=45×7=315J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a2c14f78-4273-415d-a657-eabe7b08edba",
+    "question_text": "A \n4\nkg\n block slides down a frictionless incline from a height of \n3\nm\n. What is its speed at the bottom? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Potential energy mgh=4×10×3=120J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09369dd2-222a-49db-94b6-32c39ee87ed8",
+    "question_text": "A \n50\ng\n bullet moving at \n400\nm/s\n loses \n75\n%\n of its kinetic energy passing through a target. What is its emergent speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n180 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n200 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n220 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n240 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×0.05×4002=4000J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d587d4ce-6bcb-4a99-a36e-75233d37661c",
+    "question_text": "A \n0.8\nkg\n object is dropped from \n10\nm\n. What is its kinetic energy just before impact? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n70 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n80 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n100 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=mgh=0.8×10×10=80J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d452a302-c7a9-4377-ab9d-35d4d4a07c42",
+    "question_text": "A \n15\nkg\n mass is lifted \n6\nm\n in \n4\ns\n at constant speed. What is the power? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n225 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n250 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n275 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=mgh=15×10×6=900J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "71b2ad44-c564-40d2-a4b1-b0ed09828b86",
+    "question_text": "A \n3\nkg\n ball at \n18\nm/s\n collides elastically with a stationary \n9\nkg\n ball. What is the speed of the \n3\nkg\n ball after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For elastic collision: v1f=m1−m2m1+m2v1i=3−93+9×18=−612×18=−9m/s (magnitude 9m/s).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0aced532-fb0e-4083-9ede-296620333829",
+    "question_text": "A \n4\nkg\n block is pushed with \n20\nN\n over \n6\nm\n on a frictionless surface, starting from rest. What is its final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Work W=20×6=120J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c39c5ec-fd26-490b-b418-695ea2c764ed",
+    "question_text": "A \n1.5\nkg\n object is dropped from \n16\nm\n. What is its speed just before hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n17 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n17.9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n18.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n19 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=mgh=1.5×10×16=240J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba83a5db-f73a-4de2-87d4-a48fe1cb1502",
+    "question_text": "A spring (\n𝑘\n=\n900\nN/m\n) is stretched from \n0.05\nm\n to \n0.1\nm\n. What is the work done by the spring force?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-4 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-3.4 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-3 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-2.5 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work Ws=12k(xi2−xf2)=12×900×(0.052−0.12)=450×(0.0025−0.01)=−3.375J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "60720cc7-605b-424b-b5f5-09f55c3159e7",
+    "question_text": "A \n5\nkg\n mass at \n20\nm/s\n collides elastically with an identical stationary mass. What is the speed of the first mass after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For equal masses in elastic collision, v1f=0m/s (first mass stops).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7644766a-fe1e-4664-ab9f-5c9d77d3c0b7",
+    "question_text": "A \n3\nkg\n object is dropped from \n17\nm\n. What is its speed just before hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n18.4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n19 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n19.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=mgh=3×10×17=510J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e209d00-145b-4ab8-886c-cafcea0f47d9",
+    "question_text": "A \n8\nkg\n mass is lifted \n4\nm\n in \n2.5\ns\n at constant speed. What is the power? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n120 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n128 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n135 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n140 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=mgh=8×10×4=320J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "665096d4-0369-4f28-a616-ba5ddbe08369",
+    "question_text": "A \n900\nkg\n car at \n14\nm/s\n hits a spring (\n𝑘\n=\n6\n×\n10\n3\nN/m\n). What is the maximum compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.2 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.4 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.6 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.8 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×900×142=88200J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc3c2c44-3660-4bfc-8a36-f4ba216a6f55",
+    "question_text": "A \n6\nkg\n block slides down a frictionless incline from \n10\nm\n height. What is its speed at the bottom? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n14 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy mgh=6×10×10=600J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "caca1765-9641-42dc-8c42-dce3448ce2ad",
+    "question_text": "A neutron (\n1\nu\n) moving at \n2\n×\n10\n6\nm/s\n collides elastically with a carbon nucleus (\n12\nu\n). What fraction of its kinetic energy is retained?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.65",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.72",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.78",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.85",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fraction retained f1=(m1−m2m1+m2)2=(1−121+12)2=(−1113)2=121169≈0.716.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "44809a9f-ca53-4ce8-960e-56864e9c789b",
+    "question_text": "A \n8\nkg\n mass falls from \n5\nm\n onto a spring (\n𝑘\n=\n2500\nN/m\n). What is the maximum compression? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.57 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.6 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.65 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy mgh=8×10×5=400J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c89554bb-5ee1-4412-89bf-83ceb4c715c5",
+    "question_text": "A force \n𝐹\n=\n10\n𝑥\n2\nN\n acts from \n𝑥\n=\n0\n to \n𝑥\n=\n1\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.3 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.6 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=∫0110x2dx=[103x3]01=103×1=103≈3.33J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "36b46596-4bc0-45ad-a801-7ac216b41d19",
+    "question_text": "A spring with constant \n𝑘\n=\n200\nN/m\n is compressed by \n0.1\nm\n. What is the potential energy stored in the spring?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=12kx2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7619fb07-17c6-46e9-8405-735d2add9e71",
+    "question_text": "A motor lifts a \n2000\nkg\n load at \n2.5\nm/s\n against \n6000\nN\n friction. What is the power? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n63 kW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n65 kW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n67 kW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n69 kW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Force F=mg+Ff=2000×10+6000=26000N.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "20949719-c8f6-44b6-9402-0e473ec64247",
+    "question_text": "A force \n𝐹\n=\n3\n𝑥\n2\nN\n acts on a particle from \n𝑥\n=\n0\n to \n𝑥\n=\n2\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=∫023x2dx=[x3]02=23−0=8J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "34dfca5b-8176-4449-af1c-2d548b958d94",
+    "question_text": "A \n2.5\nkg\n ball at \n16\nm/s\n collides elastically with a stationary \n7.5\nkg\n ball. What is the speed of the \n7.5\nkg\n ball after collision?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For elastic collision: v2f=2m1m1+m2v1i=2×2.52.5+7.5×16=510×16=8m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "02128f5c-f767-4af1-bdce-6017a2d88c98",
+    "question_text": "A force \n𝐹\n=\n6\n𝑖\n^\n+\n8\n𝑗\n^\nN\n acts on a particle moving along \n𝑑\n=\n3\n𝑖\n^\n−\n2\n𝑗\n^\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=F⋅d.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1dd80b90-57a2-471e-a21d-87917ce3c62b",
+    "question_text": "A \n8\nkg\n block is pushed with \n40\nN\n over \n6\nm\n on a frictionless surface, starting from \n2\nm/s\n. What is its final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial Ki=12×8×22=16J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f76fe326-01b7-448a-8f1e-aa4b4d512028",
+    "question_text": "A \n3\nkg\n block is pushed with a force of \n15\nN\n over \n4\nm\n on a frictionless horizontal surface. If it starts with a speed of \n2\nm/s\n, what is its final kinetic energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n60 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n66 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n72 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n78 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial Ki=12×3×22=6J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a7d5651f-f3d7-4f87-9143-57d94877e3de",
+    "question_text": "A force \n𝐹\n=\n15\n𝑥\n2\nN\n acts from \n𝑥\n=\n0\n to \n𝑥\n=\n2\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n36 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n40 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n44 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n48 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=∫0215x2dx=[5x3]02=5×8=40J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5d6146fd-407e-4aba-b98a-d197241a3444",
+    "question_text": "In a completely inelastic collision, a \n3\nkg\n mass moving at \n6\nm/s\n collides with a stationary \n2\nkg\n mass. What is the final velocity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Momentum conservation: m1v1i=(m1+m2)vf.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "911825d8-faa9-4112-93cb-ec5f6c6b61c5",
+    "question_text": "A neutron (\n1\nu\n) at \n3\n×\n10\n6\nm/s\n collides elastically with a deuterium (\n2\nu\n). What fraction of its kinetic energy is retained?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.11",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.15",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fraction retained f1=(m1−m2m1+m2)2=(1−21+2)2=(−13)2=19≈0.111.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a6ce528-917e-4d97-81e9-6a6a606290fd",
+    "question_text": "A \n0.5\nkg\n pendulum bob is given a speed at the bottom to complete a \n1\nm\n vertical circle. What is the speed at the bottom? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "At top, vC=gL, energy conservation: 12mv02=12m(gL)+2mgL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cdb2c73c-beb0-41a3-be40-aaacfd1ff6b8",
+    "question_text": "A neutron (\n1\nu\n) at \n8\n×\n10\n6\nm/s\n collides elastically with a carbon (\n12\nu\n). What fraction of its kinetic energy is transferred?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.26",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.28",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.32",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fraction transferred f2=4m1m2(m1+m2)2=4×1×12(1+12)2=48169≈0.284.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "26610e86-d7e2-4864-b935-0ae54e53131c",
+    "question_text": "A force starts at \n60\nN\n over \n5\nm\n, then decreases linearly to \n20\nN\n over \n5\nm\n. What is the total work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n480 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n500 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n520 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n540 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work in first part: W1=60×5=300J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8beefea1-2a7c-4ea7-a180-fbf69e0cb1ee",
+    "question_text": "A \n3.5\nkg\n block slides down a frictionless incline from \n8\nm\n height. What is its speed at the bottom? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12.6 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n13 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n13.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy mgh=3.5×10×8=280J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "22886889-3974-4172-a78f-b4f9f206655b",
+    "question_text": "A \n40\ng\n bullet at \n900\nm/s\n emerges from a block with \n60\n%\n of its initial kinetic energy. What is its emergent speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n680 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n697 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n710 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n730 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×0.04×9002=16200J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "15f384ec-3367-4e71-8096-31f42b3c9d59",
+    "question_text": "A spring (\n𝑘\n=\n400\nN/m\n) is stretched by \n0.25\nm\n. What is the stored potential energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n11 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12.5 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15.5 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=12kx2=12×400×(0.25)2=200×0.0625=12.5J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5da9c78-34d4-495b-8903-27991cb93c97",
+    "question_text": "A \n2\nkg\n object is dropped from \n14\nm\n. What is its speed just before hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n11 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n11.8 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n13 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=mgh=2×10×14=280J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7e3cb411-6e9b-4526-81b6-09ed011bacfd",
+    "question_text": "A \n1.5\nkg\n pendulum bob completes a vertical circle of radius \n1.8\nm\n. What is the speed at the bottom? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "At top, vC=gL, energy conservation: 12mv02=12m(gL)+2mgL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e42847dd-2a49-4ede-9ad4-d8ed9c6b7754",
+    "question_text": "A cyclist applies a force of \n150\nN\n over \n8\nm\n, then the force decreases linearly to \n50\nN\n over the next \n12\nm\n. What is the total work done by the cyclist?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1600 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1700 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1800 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1900 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Work in first part: W1=150×8=1200J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4f67414-56f1-4dbd-92a5-03952468f6b2",
+    "question_text": "A spring (\n𝑘\n=\n800\nN/m\n) is compressed from \n0.08\nm\n to \n0.12\nm\n. What is the work done by the spring force?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-3.5 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-3.2 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-3 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-2.8 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work Ws=12k(xi2−xf2)=12×800×(0.082−0.122)=400×(0.0064−0.0144)=−3.2J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1143a437-6eff-4bf1-98cd-25f998e77749",
+    "question_text": "A \n1500\nkg\n car at \n20\nm/s\n hits a spring (\n𝑘\n=\n9\n×\n10\n3\nN/m\n). What is the maximum compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8.2 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8.5 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8.8 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×1500×202=300000J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1a948247-507a-465b-9bc2-fe733622847a",
+    "question_text": "A neutron (\n1\nu\n) at \n5\n×\n10\n6\nm/s\n collides elastically with a deuterium (\n2\nu\n). What fraction of its kinetic energy is retained?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.09",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.11",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.13",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.15",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fraction retained f1=(m1−m2m1+m2)2=(1−21+2)2=(−13)2=19≈0.111.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e46742d9-ba4b-42cd-90ec-1f201f1268af",
+    "question_text": "A force starts at \n75\nN\n over \n3\nm\n, then decreases linearly to \n15\nN\n over \n6\nm\n. What is the total work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n475 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n495 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n515 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n535 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work in first part: W1=75×3=225J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6e0cc508-bdea-4990-9026-b688a229370d",
+    "question_text": "A \n0.4\ng\n drop falls from \n400\nm\n and hits the ground at \n25\nm/s\n. What is the work done by air resistance? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1.6 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-1.5 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-1.4 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-1.2 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work by gravity Wg=mgh=0.0004×10×400=1.6J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "406b1f07-30cb-4dc1-a1fc-c219a1c390f2",
+    "question_text": "A \n12\nkg\n mass is lifted \n4\nm\n in \n3\ns\n at constant speed. What is the power? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n140 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n160 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n180 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n200 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=mgh=12×10×4=480J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "35de62bf-051d-4010-814b-883d1570c851",
+    "question_text": "A \n800\nkg\n car at \n12\nm/s\n hits a spring (\n𝑘\n=\n4\n×\n10\n3\nN/m\n). What is the maximum compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.4 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.8 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×800×122=57600J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4776e2bd-126a-41ed-9a13-7b85edc378af",
+    "question_text": "A \n9\nkg\n mass is lifted \n3\nm\n in \n1.5\ns\n at constant speed. What is the power? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n160 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n180 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n200 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n220 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=mgh=9×10×3=270J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e4d84b1f-17d3-4529-82fb-ab3cc74dc092",
+    "question_text": "A raindrop of mass \n2\ng\n falls from a height of \n1\nkm\n and hits the ground with a speed of \n40\nm/s\n. What is the work done by the resistive force? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-20 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-18.4 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-16 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-14 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work by gravity Wg=mgh=0.002×10×1000=20J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c997aad-c741-421a-9d51-be46895d8039",
+    "question_text": "A \n4\nkg\n block at \n9\nm/s\n encounters a force \n𝐹\n=\n−\n1.5\n𝑥\nN\n from \n𝑥\n=\n0.6\nm\n to \n𝑥\n=\n3\nm\n. What is the final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8.7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8.9 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9.1 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n9.3 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×4×92=162J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b1ac3cff-6529-4fd2-be5a-a05896630186",
+    "question_text": "A force \n𝐹\n=\n2\n𝑖\n^\n+\n5\n𝑗\n^\nN\n acts on a particle moving along \n𝑑\n=\n4\n𝑖\n^\n−\n3\n𝑗\n^\nm\n. What is the work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-9 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-7 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-5 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-3 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work W=F⋅d.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "30c20601-d90b-4e90-989d-1b4158a5f0fd",
+    "question_text": "A car of mass \n1500\nkg\n moving at \n20\nm/s\n collides with a spring of constant \n10\n4\nN/m\n. What is the maximum compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.5 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.8 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Initial K=12×1500×202=300000J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6cfc8118-2087-440a-9be3-9348bb0a2462",
+    "question_text": "A \n0.7\ng\n drop falls from \n250\nm\n and hits the ground at \n16\nm/s\n. What is the work done by air resistance? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1.8 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-1.66 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-1.5 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-1.4 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work by gravity Wg=mgh=0.0007×10×250=1.75J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1bf629b1-7a02-40da-af87-cfc3cf541824",
+    "question_text": "A \n25\ng\n bullet at \n600\nm/s\n emerges from a target with \n50\n%\n of its initial kinetic energy. What is its emergent speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n400 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n424 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n450 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n475 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×0.025×6002=4500J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f8f1dd97-5a53-46c8-95ed-152c96c09382",
+    "question_text": "A \n1100\nkg\n car at \n16\nm/s\n hits a spring (\n𝑘\n=\n7\n×\n10\n3\nN/m\n). What is the maximum compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.1 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.3 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.5 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.7 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×1100×162=140800J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "485ebdff-aba6-4f7d-9f93-007366a8889f",
+    "question_text": "A \n2\nkg\n block falls from \n5\nm\n onto a spring (\n𝑘\n=\n500\nN/m\n). What is the maximum compression? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.6 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.63 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.7 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Potential energy mgh=2×10×5=100J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82be7f33-66f7-4bb9-a6ea-d786a4f83fb2",
+    "question_text": "A spring (\n𝑘\n=\n250\nN/m\n) is compressed by \n0.4\nm\n. What is the stored potential energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n22 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n24 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potential energy V=12kx2=12×250×(0.4)2=125×0.16=20J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2042c674-8d5e-4c24-b68a-73364a6509f2",
+    "question_text": "A \n7\nkg\n block at \n12\nm/s\n encounters a force \n𝐹\n=\n−\n2.4\n𝑥\nN\n from \n𝑥\n=\n1\nm\n to \n𝑥\n=\n5\nm\n. What is the final speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n11.7 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.2 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×7×122=504J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "57df8a7e-9ac4-4225-a280-fabf80039d10",
+    "question_text": "A \n1.2\nkg\n pendulum bob completes a vertical circle of radius \n1.6\nm\n. What is the speed at the top? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.5 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "At top, minimum speed vC=gL=10×1.6=16=4m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5b29d448-7c10-44e7-905b-e91d49eac786",
+    "question_text": "A spring (\n𝑘\n=\n400\nN/m\n) is compressed from \n0.2\nm\n to \n0.35\nm\n. What is the work done by the spring force?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-18 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-16.5 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-15 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-13.5 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work Ws=12k(xi2−xf2)=12×400×(0.22−0.352)=200×(0.04−0.1225)=−16.5J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "43a299cb-6b82-4095-a37f-ee5474afba69",
+    "question_text": "A \n20\ng\n bullet at \n1000\nm/s\n emerges from a block with \n70\n%\n of its initial kinetic energy. What is its emergent speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n820 m/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n837 m/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n850 m/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n870 m/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Initial K=12×0.02×10002=10000J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d80836bd-126c-4a5c-ade7-20580fe06954",
+    "question_text": "A ball of mass \n0.5\nkg\n is dropped from a height of \n8\nm\n. What is its kinetic energy just before hitting the ground? (Take \n𝑔\n=\n10\nm/s\n2\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n35 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n40 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n45 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Potential energy at top: V=mgh=0.5×10×8=40J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4c7b8d3-a95d-4e1e-b7ba-0aabc5e9a712",
+    "question_text": "A force starts at \n90\nN\n over \n3\nm\n, then decreases linearly to \n40\nN\n over \n7\nm\n. What is the total work done?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n700 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n725 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n750 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n775 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work in first part: W1=90×3=270J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work, Energy and Power",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Work, Energy and Power / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "work-energy-and-power"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

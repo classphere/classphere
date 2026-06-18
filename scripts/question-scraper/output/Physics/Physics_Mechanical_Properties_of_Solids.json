@@ -1,0 +1,6502 @@
+[
+  {
+    "id": "b62286fa-1319-4cfc-9872-b2f0f6773d0c",
+    "question_text": "A copper block of dimensions \n0.4\nm\n×\n0.2\nm\n×\n0.05\nm\n is subjected to a shearing force of \n1.5\n×\n10\n4\nN\n. If the shear modulus of copper is \n4.2\n×\n10\n10\nN/m\n2\n, what is the shear strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4\n×\n10\n−\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5\n×\n10\n−\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\n×\n10\n−\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.46\n×\n10\n−\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Shear modulus: G=Shear stressShear strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "98eb95a5-db7a-4c09-adf1-923a4d1d8158",
+    "question_text": "What does the term \"elastic limit\" refer to in the context of a material’s stress-strain behavior?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe point where the material fractures",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe maximum stress before plastic deformation begins",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe maximum stress beyond which the material does not return to its original shape",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe minimum stress required for permanent deformation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The elastic limit is the maximum stress a material can withstand while still returning to its\n              original shape upon removal of the load; beyond this, permanent deformation occurs.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fab52185-ca09-4269-b0bf-708f8851c6bc",
+    "question_text": "Which type of stress leads to a change in length of a body without changing its shape?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLongitudinal stress",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nShearing stress",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHydraulic stress",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVolumetric stress",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Longitudinal stress (tensile or compressive) causes a change in length along the direction of\n              the applied force without altering the shape of the body.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8c85f36b-8343-48de-9274-1bbca3a4c8f6",
+    "question_text": "Which of the following best defines stress in the context of mechanical properties of solids?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRestoring force per unit area",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDeforming force per unit volume",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChange in length per unit area",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChange in volume per unit force",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stress is defined as the restoring force per unit area developed in a body due to an external\n              deforming force, given by Stress=FA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8b83b4c2-3ac5-431e-9d40-34ce4b7d3193",
+    "question_text": "What does the steepness of the linear portion of a stress-strain curve typically indicate about a material?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLower stiffness",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigher Young’s modulus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGreater ductility",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigher toughness",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The steepness of the linear portion of the stress-strain curve indicates a higher Young’s\n              modulus, meaning the material is stiffer and requires more stress to produce a given strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0f205e48-1d0c-4471-8b66-04175964cd67",
+    "question_text": "An aluminium rod of length \n1.6\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n is compressed by a force of \n600\nN\n. If the Young's modulus of aluminium is \n7\n×\n10\n10\nN/m\n2\n, what is the compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6\nmm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.86\nmm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7\nmm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5\nmm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Young's modulus: Y=FLAΔL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "483bc4e4-bba8-48ce-a91a-e60366ad2d94",
+    "question_text": "A water sample of volume 1 litre is compressed by 0.05%. If the bulk modulus of water is 2.2 × 109 N/m2, what is the pressure applied?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 × 10\n6\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5 × 10\n6\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 × 10\n6\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.1 × 10\n6\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Bulk modulus: B = -p / (ΔV / V).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5268fdc4-58a3-4bd2-97a7-0cbe047a26c5",
+    "question_text": "A steel wire of length 4 m and cross-sectional area 2 × 10-6 m2 is stretched by 0.4 mm. If the force applied is 200 N, what is the Young's modulus of the steel?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5 × 10\n12\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 × 10\n12\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5 × 10\n12\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1 × 10\n12\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Young's modulus: Y = (F L) / (A ΔL).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7d98703c-ac0a-4a46-b72c-fd3c53220f4e",
+    "question_text": "A steel wire of length 3 m and cross-sectional area 4 × 10-6 m2 is stretched by 0.3 mm. If the Young's modulus of steel is 2 × 1011 N/m2, what is the force applied?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n60 N",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n100 N",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80 N",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n120 N",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Young's modulus: Y = (F L) / (A ΔL).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "773204e4-ed59-4920-b0c5-d418c625b65e",
+    "question_text": "Why is steel often chosen over materials like copper for heavy-duty structural applications?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHigher Young’s modulus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLower density",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGreater ductility",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigher thermal conductivity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Steel has a higher Young’s modulus (≈200×109N/m2) compared\n              to copper (≈110×109N/m2), requiring a larger force to\n              produce the same deformation, making it more suitable for resisting bending and stretching.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a054e20-1507-4c45-91ac-c231b47e406f",
+    "question_text": "A steel wire of length \n2.5\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n is stretched by a force producing a strain of \n3\n×\n10\n−\n4\n. If the Young's modulus of steel is \n2\n×\n10\n11\nN/m\n2\n, what is the force applied?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100\nN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n150\nN",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n120\nN",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n130\nN",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Young's modulus: Y=StressStrain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e44625e4-c4cd-4e4c-8f04-8953a18c5daf",
+    "question_text": "A copper rod of radius \n0.02\nm\n and length \n1.0\nm\n is subjected to a tensile force producing a stress of \n2\n×\n10\n7\nN/m\n2\n. What is the force applied? (Take \n𝜋\n≈\n3.14\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.512\n×\n10\n4\nN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3\n×\n10\n4\nN",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n×\n10\n4\nN",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5\n×\n10\n4\nN",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stress: Stress=FA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29def086-443e-456d-b1d1-f4e7bf418882",
+    "question_text": "A steel wire of length 2.5 m and cross-sectional area 3 × 10-6 m2 is stretched by a force producing a strain of 2 × 10-4. If the Young's modulus of steel is 2 × 1011 N/m2, what is the force applied?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100 N",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n120 N",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 N",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n80 N",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Young's modulus: Y = Stress / Strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "36224574-855e-492c-849a-7a2d71c06068",
+    "question_text": "What does the steepness of the initial linear portion of a stress-strain curve indicate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLower stiffness",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGreater ductility",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHigher shear modulus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigher Young’s modulus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The steepness of the initial linear portion indicates a higher Young’s modulus, meaning the\n              material is stiffer and requires more stress to produce a given strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c194fcc7-2f63-42c1-b989-c255fa97e62c",
+    "question_text": "A copper wire of length 1 m and cross-sectional area 1 × 10-6 m2 is stretched by a force of 50 N. If the Young's modulus of copper is 1.1 × 1011 N/m2, what is the elongation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.4 mm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.455 mm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.5 mm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.6 mm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Young's modulus: Y = (F L) / (A ΔL).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8ef60854-ba51-49de-b516-5745ee5b7cb8",
+    "question_text": "Which type of stress leads to a change in length of a body without changing its shape?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLongitudinal stress",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nShearing stress",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHydraulic stress",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVolumetric stress",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Longitudinal stress (tensile or compressive) causes a change in length along the direction of\n              the applied force without altering the shape of the body.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ae931626-83fe-42cf-9952-3037e3d57512",
+    "question_text": "In the stress-strain behavior of a material, what occurs after the maximum stress point when the material is ductile?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe material returns to its original shape",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe stress decreases leading to fracture",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe material becomes more elastic",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe material obeys Hooke’s law",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For a ductile material, after the maximum stress point (ultimate tensile strength), the\n              stress decreases with increasing strain as the material necks, leading to fracture.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3868dd9f-7fef-468c-b8ef-64073e0cf703",
+    "question_text": "A glass slab of volume \n0.02\nm\n3\n is subjected to a hydraulic pressure of \n3\n×\n10\n6\nN/m\n2\n. If the bulk modulus of glass is \n3.7\n×\n10\n10\nN/m\n2\n, what is the fractional change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8.11\n×\n10\n−\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Bulk modulus: B=−pΔVV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e7c92b20-f111-40be-81de-72eaa092f3af",
+    "question_text": "Why are I-shaped beams commonly used in construction for load-bearing applications?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey have a higher shear modulus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey provide a large load-bearing surface with reduced bending",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey have a lower density",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey exhibit greater ductility",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "I-shaped beams provide a large load-bearing surface and sufficient depth to reduce bending,\n              minimizing buckling while reducing weight compared to solid beams.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8cad4a98-47a7-4afb-8083-c7221fc08ee9",
+    "question_text": "A copper wire of length \n1.6\nm\n and cross-sectional area \n1.8\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n180\nN\n. If the Young's modulus of copper is \n1.1\n×\n10\n11\nN/m\n2\n, what is the elongation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.45\nmm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5\nmm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.2\nmm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.8\nmm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Young's modulus: Y=FLAΔL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "30cb8074-9ff6-4004-9cf5-dd6167ef352b",
+    "question_text": "A brass wire of length \n2.0\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n300\nN\n. If the Young's modulus of brass is \n9\n×\n10\n10\nN/m\n2\n, what is the strain produced?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.67\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1\n×\n10\n−\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stress: Stress=FA=3002×10−6=1.5×108N/m2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2473222d-2f2e-4a7b-aaf2-2d019f5fe6fe",
+    "question_text": "A copper wire of length 2 m and cross-sectional area 2 × 10-6 m2 is stretched by a force of 200 N. If the elongation is 0.727 mm, what is the Young's modulus of copper?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 × 10\n11\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 × 10\n11\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.5 × 10\n11\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.75 × 10\n11\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Young's modulus: Y = (F L) / (A ΔL).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09b92179-380d-49b4-8fad-c8a1e0573564",
+    "question_text": "A water sample of volume \n2.5\nlitres\n is compressed by a pressure of \n2\n×\n10\n6\nN/m\n2\n. If the bulk modulus of water is \n2.2\n×\n10\n9\nN/m\n2\n, what is the fractional change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9.09\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bulk modulus: B=−pΔVV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9fb764a5-8fde-4587-afa4-335062eb71c1",
+    "question_text": "A glass slab of volume \n0.02\nm\n3\n is subjected to a hydraulic pressure of \n4\n×\n10\n6\nN/m\n2\n. If the bulk modulus of glass is \n3.7\n×\n10\n10\nN/m\n2\n, what is the fractional change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.2\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.08\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Bulk modulus: B=−pΔVV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f26006dc-9264-4b7f-b5cf-31ae2e745362",
+    "question_text": "An aluminium wire of length \n2.3\nm\n and cross-sectional area \n1.5\n×\n10\n−\n6\nm\n2\n is stretched by a force producing a stress of \n2\n×\n10\n7\nN/m\n2\n. If the Young's modulus of aluminium is \n7\n×\n10\n10\nN/m\n2\n, what is the strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.86\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Young's modulus: Y=StressStrain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "307976f7-8679-4ad5-9ec2-d6a2a497d303",
+    "question_text": "A glass block of volume 0.01 m3 is subjected to a hydraulic pressure of 4 × 106 N/m2. If the bulk modulus of glass is 3.7 × 1010 N/m2, what is the change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 × 10\n-6\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.08 × 10\n-6\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.2 × 10\n-6\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5 × 10\n-6\nm\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bulk modulus: B = -p / (ΔV / V).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4adba9e4-8216-4789-a4cb-7fd21397e2cc",
+    "question_text": "A copper cube of edge length 0.1 m is subjected to a hydraulic pressure of 5 × 106 N/m2. If the bulk modulus of copper is 1.4 × 1011 N/m2, what is the change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 × 10\n-8\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.57 × 10\n-8\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 × 10\n-8\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5 × 10\n-8\nm\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bulk modulus: B = -p / (ΔV / V).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dcd78f36-9794-4a9b-89a3-aba48f2a89b5",
+    "question_text": "What is the primary reason solids are far less compressible than gases?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTight coupling between neighboring atoms",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigh temperature of solids",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLow density of solids",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigh molecular weight of solids",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The tight coupling between neighboring atoms in solids results in a much higher resistance to\n              volume change compared to gases, where molecules are weakly coupled.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7cd580b3-3c46-44c1-b7cf-ec5083d215f0",
+    "question_text": "A steel wire of length \n1.5\nm\n and cross-sectional area \n1\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n100\nN\n. If the Young's modulus of steel is \n2\n×\n10\n11\nN/m\n2\n, what is the elongation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.75\nmm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1\nmm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.5\nmm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5\nmm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Young's modulus: Y=FLAΔL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5432224-cc02-4e51-9636-9e1c06974b96",
+    "question_text": "A brass wire of length 1.5 m and cross-sectional area 2.5 × 10-6 m2 is stretched by a force of 150 N. If the elongation is 0.25 mm, what is the Young's modulus of brass?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 × 10\n11\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4 × 10\n11\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 × 10\n11\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.6 × 10\n11\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Young's modulus: Y = (F L) / (A ΔL).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bf3ee13e-ad98-4054-98a1-fd843617ccb4",
+    "question_text": "A steel wire of length \n2.2\nm\n and cross-sectional area \n2.5\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n250\nN\n. If the Young's modulus of steel is \n2\n×\n10\n11\nN/m\n2\n, what is the strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Stress: Stress=FA=2502.5×10−6=1×108N/m2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c6123557-91e7-4ebf-954f-94b2d7c6c767",
+    "question_text": "A brass block of dimensions 0.3 m × 0.2 m × 0.1 m is subjected to a shearing force of 5 × 104 N. If the shear modulus of brass is 3.6 × 1010 N/m2, what is the displacement of the upper face?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 × 10\n-6\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 × 10\n-6\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.31 × 10\n-6\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.5 × 10\n-6\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Shear modulus: G = (F / A) / (Δx / L).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c6f2f99e-9403-443c-910f-4876e4e9fce8",
+    "question_text": "An aluminium block of dimensions \n0.5\nm\n×\n0.3\nm\n×\n0.1\nm\n is subjected to a shearing force of \n7\n×\n10\n4\nN\n. If the shear modulus of aluminium is \n2.5\n×\n10\n10\nN/m\n2\n, what is the displacement of the top face?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5\n×\n10\n−\n6\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\n×\n10\n−\n6\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.8\n×\n10\n−\n6\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.87\n×\n10\n−\n6\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Shear modulus: G=F/AΔx/L.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "de091a0e-89ce-4096-9af2-19f08e715300",
+    "question_text": "An aluminium rod of length \n1.2\nm\n and cross-sectional area \n2.5\n×\n10\n−\n6\nm\n2\n is compressed by a force producing a strain of \n2\n×\n10\n−\n4\n. If the Young's modulus of aluminium is \n7\n×\n10\n10\nN/m\n2\n, what is the stress?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.4\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Young's modulus: Y=StressStrain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "384cb529-e884-46d7-b724-c852d59a9fd9",
+    "question_text": "What does the term \"elastic limit\" refer to in the context of a material’s stress-strain behavior?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe point where the material fractures",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe maximum stress before plastic deformation begins",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe maximum stress beyond which the material does not return to its original shape",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe minimum stress required for permanent deformation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The elastic limit is the maximum stress a material can withstand while still returning to its\n              original shape upon removal of the load; beyond this, permanent deformation occurs.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2a71fd33-089d-4476-9180-8c08926238af",
+    "question_text": "A steel rod of length 0.5 m and cross-sectional area 1 × 10-5 m2 is compressed by a force of 500 N. If the strain is 5 × 10-4, what is the Young's modulus?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5 × 10\n11\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 × 10\n11\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5 × 10\n11\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1 × 10\n11\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Young's modulus: Y = Stress / Strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "19259bd3-d28e-431e-9332-b835ce9e5491",
+    "question_text": "A brass wire of length \n2.6\nm\n and cross-sectional area \n4\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n400\nN\n. If the Young's modulus of brass is \n9\n×\n10\n10\nN/m\n2\n, what is the elongation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5\nmm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3\nmm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nmm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.89\nmm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Young's modulus: Y=FLAΔL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "addc725f-e076-4138-b861-17e3369dd9a9",
+    "question_text": "Which modulus describes a material’s resistance to volume change under uniform pressure in all directions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nYoung’s modulus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nShear modulus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBulk modulus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElastic modulus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The bulk modulus measures a material’s resistance to volume change when subjected to uniform\n              pressure (hydraulic stress) in all directions, affecting volume but not shape.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e263971f-8e05-4d95-b632-0f7c387bcf1f",
+    "question_text": "A steel wire of length \n2.4\nm\n and cross-sectional area \n4\n×\n10\n−\n6\nm\n2\n is stretched by \n0.6\nmm\n. If the Young's modulus of steel is \n2\n×\n10\n11\nN/m\n2\n, what is the stress?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Strain: Strain=ΔLL=0.6×10−32.4=2.5×10−4.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5ae2839-9ae9-4962-a116-6ca2a69fdad6",
+    "question_text": "A copper block of dimensions 0.5 m × 0.3 m × 0.2 m is subjected to a shearing force of 7 × 104 N on its top face. If the shear modulus of copper is 4.2 × 1010 N/m2, what is the shear strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.11 × 10\n-5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 × 10\n-5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1 × 10\n-5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5 × 10\n-5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Shear modulus: G = (Shear stress) / (Shear strain).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef97bc47-29e7-47d2-8f2b-e90bcc9c5a7e",
+    "question_text": "A copper wire of length 1.5 m and diameter 1 mm is subjected to a tensile force of 100 N. If the Young's modulus of copper is 1.1 × 1011 N/m2, what is the stress in the wire?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.27 × 10\n8\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5 × 10\n8\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.0 × 10\n8\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.0 × 10\n8\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stress is given by: Stress = F / A.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d74ec56e-1f36-4023-b258-663867a15f5c",
+    "question_text": "What is the primary reason solids are far less compressible than gases?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTight coupling between neighboring atoms",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigh temperature of solids",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLow density of solids",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigh molecular weight of solids",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The tight coupling between neighboring atoms in solids results in a much higher resistance to\n              volume change compared to gases, where molecules are weakly coupled.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04eeb23b-66d4-4622-998c-1e6874114a87",
+    "question_text": "A solid aluminium sphere is subjected to a hydraulic pressure of 1 × 107 N/m2. If the bulk modulus of aluminium is 7.2 × 1010 N/m2, what is the fractional change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.39 × 10\n-4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 × 10\n-4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1 × 10\n-4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 × 10\n-4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bulk modulus: B = -p / (ΔV / V).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c80713f7-265c-4754-aaa3-1e159488c39a",
+    "question_text": "An aluminium wire of length \n2.0\nm\n and cross-sectional area \n1.5\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n150\nN\n. If the Young's modulus of aluminium is \n7\n×\n10\n10\nN/m\n2\n, what is the elongation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5\nmm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.86\nmm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\nmm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nmm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Young's modulus: Y=FLAΔL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "acc39490-afcb-4365-928f-9bf051c71ad7",
+    "question_text": "Why do materials like steel require a significantly larger force to produce small deformations compared to materials like rubber?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDue to lower shear modulus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDue to higher density",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDue to larger Young’s modulus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDue to greater ductility",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Steel has a much larger Young’s modulus compared to rubber, meaning it has greater stiffness\n              and requires more force to produce the same strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b65b1225-ed7f-420f-9eca-03cf782d0933",
+    "question_text": "What property of a material primarily determines its resistance to uniform compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nShear modulus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nYoung’s modulus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBulk modulus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nYield strength",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The bulk modulus determines a material’s resistance to uniform compression by measuring how\n              much it resists volume change under pressure applied in all directions.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ac7b775-b1f7-468e-b4fe-4647b6c53706",
+    "question_text": "A glass slab of volume \n0.03\nm\n3\n is subjected to a hydraulic pressure of \n6\n×\n10\n6\nN/m\n2\n. If the bulk modulus of glass is \n3.7\n×\n10\n10\nN/m\n2\n, what is the fractional change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.62\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bulk modulus: B=−pΔVV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ac2c78ef-7125-49cc-9d08-b000719e5e7e",
+    "question_text": "A copper rod of length \n2.0\nm\n and cross-sectional area \n2.5\n×\n10\n−\n6\nm\n2\n is subjected to a tensile force of \n500\nN\n. If the Young's modulus of copper is \n1.1\n×\n10\n11\nN/m\n2\n, what is the strain produced?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.82\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1\n×\n10\n−\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stress: Stress=FA=5002.5×10−6=2×108N/m2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "67b5b205-612e-4904-9c73-5f4f33f8b6d3",
+    "question_text": "A glass slab of volume \n0.05\nm\n3\n is subjected to a hydraulic pressure of \n8\n×\n10\n6\nN/m\n2\n. If the bulk modulus of glass is \n3.7\n×\n10\n10\nN/m\n2\n, what is the fractional change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.16\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bulk modulus: B=−pΔVV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42f97b6a-179e-480a-922f-45cc9f40ee83",
+    "question_text": "A copper block of dimensions \n0.3\nm\n×\n0.2\nm\n×\n0.05\nm\n is subjected to a shearing force of \n3\n×\n10\n4\nN\n. If the shear modulus of copper is \n4.2\n×\n10\n10\nN/m\n2\n, what is the shear strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.19\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n×\n10\n−\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Shear modulus: G=Shear stressShear strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a1838afc-dc24-454a-867a-92b7e837876a",
+    "question_text": "A brass block of dimensions \n0.5\nm\n×\n0.3\nm\n×\n0.2\nm\n is subjected to a shearing force of \n6\n×\n10\n4\nN\n. If the shear modulus of brass is \n3.6\n×\n10\n10\nN/m\n2\n, what is the displacement of the top face?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\n×\n10\n−\n6\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.22\n×\n10\n−\n6\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.5\n×\n10\n−\n6\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5\n×\n10\n−\n6\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Shear modulus: G=F/AΔx/L.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "21876783-0944-4020-9973-d1600d31e0d4",
+    "question_text": "A steel wire of length \n2.7\nm\n and cross-sectional area \n3\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n450\nN\n. If the Young's modulus of steel is \n2\n×\n10\n11\nN/m\n2\n, what is the strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.5\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Stress: Stress=FA=4503×10−6=1.5×108N/m2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a2d694a8-fe1e-4d1e-aae1-5d6f7a9cb74c",
+    "question_text": "A steel wire of length 5 m and cross-sectional area 4 × 10-6 m2 is stretched by 0.5 mm. If the Young's modulus of steel is 2 × 1011 N/m2, what is the stress?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 × 10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 × 10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 × 10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 × 10\n7\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Young's modulus: Y = (Stress) / (Strain).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "43a6f23f-d488-45a9-a85b-c46fbde57be8",
+    "question_text": "A copper block of dimensions \n0.6\nm\n×\n0.4\nm\n×\n0.2\nm\n is subjected to a shearing force of \n7\n×\n10\n4\nN\n. If the shear modulus of copper is \n4.2\n×\n10\n10\nN/m\n2\n, what is the shear strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.95\n×\n10\n−\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7\n×\n10\n−\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6\n×\n10\n−\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5\n×\n10\n−\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Shear modulus: G=Shear stressShear strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79b20bf0-50b1-4354-ae98-8c2b2963ac05",
+    "question_text": "What is the key difference between elastic and plastic deformation in a material?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElastic deformation occurs only in solids",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlastic deformation occurs at lower stress",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElastic deformation involves higher energy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElastic deformation is reversible, plastic is not",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Elastic deformation is reversible, meaning the material returns to its original shape after\n              the load is removed, while plastic deformation results in permanent changes.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7337bdab-023d-46ab-886c-c0469930a928",
+    "question_text": "An aluminium rod of length \n1.4\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n is compressed by a force producing a stress of \n3\n×\n10\n7\nN/m\n2\n. If the Young's modulus of aluminium is \n7\n×\n10\n10\nN/m\n2\n, what is the compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5\nmm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.7\nmm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.4\nmm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.6\nmm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Young's modulus: Y=StressStrain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "31df64fd-73fb-4ed8-a598-ffd9b7a16baf",
+    "question_text": "A glass slab experiences a hydraulic pressure of 8 × 106 N/m2. If the bulk modulus of glass is 3.7 × 1010 N/m2, what is the fractional change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 × 10\n-4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5 × 10\n-4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.16 × 10\n-4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 × 10\n-4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bulk modulus: B = -p / (ΔV / V).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fe12db00-4158-48c1-8d4e-8dbc4e4d8e8d",
+    "question_text": "A steel wire of length 2 m and cross-sectional area 2 × 10-6 m2 is stretched by a force of 200 N. If the Young's modulus of steel is 2 × 1011 N/m2, what is the elongation of the wire?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 mm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2 mm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.5 mm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5 mm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Using Young's modulus formula: Y = (F L) / (A ΔL).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba7c6e99-4e28-4c76-b7ef-35e03461c053",
+    "question_text": "Which modulus describes a material’s resistance to volume change under uniform pressure in all directions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nYoung’s modulus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nShear modulus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBulk modulus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElastic modulus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The bulk modulus measures a material’s resistance to volume change when subjected to uniform\n              pressure (hydraulic stress) in all directions, affecting volume but not shape.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ba63d13-9f5d-481a-ba28-c06b9520aaba",
+    "question_text": "A steel cable of radius 0.02 m is used to lift a load. If the maximum stress it can withstand is 1 × 108 N/m2, what is the maximum load it can support? (Take π ≈ 3.14)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 × 10\n5\nN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.256 × 10\n5\nN",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5 × 10\n5\nN",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2 × 10\n5\nN",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Stress: Stress = F / A.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1da5c933-278c-41bb-a124-b4b35c7b818a",
+    "question_text": "A copper wire of length \n2.0\nm\n and cross-sectional area \n2.5\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n250\nN\n. If the Young's modulus of copper is \n1.1\n×\n10\n11\nN/m\n2\n, what is the elongation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5\nmm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\nmm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.8\nmm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.82\nmm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Young's modulus: Y=FLAΔL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "422e4e48-b9ae-4896-ad1c-a02ad4f7c861",
+    "question_text": "A copper wire of length \n2.3\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n200\nN\n. If the Young's modulus of copper is \n1.1\n×\n10\n11\nN/m\n2\n, what is the strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n9.09\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Stress: Stress=FA=2002×10−6=1×108N/m2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "93b6d5c3-bfef-41e3-b416-7b3af910deff",
+    "question_text": "A copper wire of length \n2.4\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n is stretched by a force producing a strain of \n1.5\n×\n10\n−\n4\n. If the Young's modulus of copper is \n1.1\n×\n10\n11\nN/m\n2\n, what is the stress?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.65\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.8\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.2\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Young's modulus: Y=StressStrain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "14ec4ee2-166d-4829-beac-ae661e838312",
+    "question_text": "What does the steepness of the linear portion of a stress-strain curve typically indicate about a material?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLower stiffness",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigher Young’s modulus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGreater ductility",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigher toughness",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The steepness of the linear portion of the stress-strain curve indicates a higher Young’s\n              modulus, meaning the material is stiffer and requires more stress to produce a given strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e0922d4a-abb2-42e6-a7f8-defb0218eb68",
+    "question_text": "A water sample of volume \n1\nlitre\n is compressed by a pressure of \n1\n×\n10\n6\nN/m\n2\n. If the bulk modulus of water is \n2.2\n×\n10\n9\nN/m\n2\n, what is the fractional change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.55\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Bulk modulus: B=−pΔVV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b9978a8-9d09-4f36-9412-613307cfad01",
+    "question_text": "A steel cable of radius 0.015 m is used to support a load. If the maximum stress it can withstand is 2 × 108 N/m2, what is the maximum load it can support? (Take π ≈ 3.14)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.413 × 10\n5\nN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1 × 10\n5\nN",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 × 10\n5\nN",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5 × 10\n5\nN",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stress: Stress = F / A.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef1f7e6a-d7ca-408f-9fec-eda405bffdba",
+    "question_text": "A steel wire of length \n2.7\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n is stretched by \n0.54\nmm\n. If the Young's modulus of steel is \n2\n×\n10\n11\nN/m\n2\n, what is the stress?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Strain: Strain=ΔLL=0.54×10−32.7=2×10−4.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ccd8b42-e540-47ca-80bd-74c079c5c835",
+    "question_text": "A brass block of dimensions \n0.6\nm\n×\n0.4\nm\n×\n0.2\nm\n is subjected to a shearing force of \n9\n×\n10\n4\nN\n. If the shear modulus of brass is \n3.6\n×\n10\n10\nN/m\n2\n, what is the shear strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.04\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1\n×\n10\n−\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Shear modulus: G=Shear stressShear strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c8e59e8-c07a-4427-8d15-d5845508056a",
+    "question_text": "A rectangular slab of length 0.4 m, width 0.2 m, and thickness 0.1 m is subjected to a shearing force of 8 × 104 N. If the shear modulus is 4 × 109 N/m2, what is the displacement of the upper face relative to the lower face?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5 × 10\n-5\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5 × 10\n-5\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1 × 10\n-5\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 × 10\n-5\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Shear modulus: G = (Shear stress) / (Shear strain) = (F / A) / (Δx / L).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eb03ffdb-0578-4af3-bb36-4f17f06de98d",
+    "question_text": "An aluminium block of dimensions \n0.6\nm\n×\n0.4\nm\n×\n0.2\nm\n is subjected to a shearing force of \n8\n×\n10\n4\nN\n. If the shear modulus of aluminium is \n2.5\n×\n10\n10\nN/m\n2\n, what is the displacement of the top face?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5\n×\n10\n−\n6\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.67\n×\n10\n−\n6\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\n×\n10\n−\n6\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n×\n10\n−\n6\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Shear modulus: G=F/AΔx/L.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2a3b2f67-b5e4-4066-89e9-9f23c77a30c2",
+    "question_text": "A glass slab of volume \n0.01\nm\n3\n is subjected to a hydraulic pressure of \n2\n×\n10\n6\nN/m\n2\n. If the bulk modulus of glass is \n3.7\n×\n10\n10\nN/m\n2\n, what is the change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5\n×\n10\n−\n7\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6\n×\n10\n−\n7\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.41\n×\n10\n−\n7\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4\n×\n10\n−\n7\nm\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bulk modulus: B=−pΔVV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7cecb595-384e-4e62-84d4-29722a8812b4",
+    "question_text": "A brass wire of length \n1.6\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n is stretched by a force producing a stress of \n4\n×\n10\n7\nN/m\n2\n. If the Young's modulus of brass is \n9\n×\n10\n10\nN/m\n2\n, what is the strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.44\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Young's modulus: Y=StressStrain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc793365-4b52-4d43-b48c-4cf267af3554",
+    "question_text": "A brass wire of length \n2.4\nm\n and cross-sectional area \n3\n×\n10\n−\n6\nm\n2\n is stretched by a force producing a stress of \n5\n×\n10\n7\nN/m\n2\n. If the Young's modulus of brass is \n9\n×\n10\n10\nN/m\n2\n, what is the strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.56\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Young's modulus: Y=StressStrain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b55d64f8-ce5a-42e9-aa69-0fa3b4002f1b",
+    "question_text": "A steel wire of length \n2.6\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n400\nN\n. If the Young's modulus of steel is \n2\n×\n10\n11\nN/m\n2\n, what is the elongation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nmm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.6\nmm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\nmm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5\nmm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Young's modulus: Y=FLAΔL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09879e24-8f4b-4c0a-9c58-6e3b64d6c479",
+    "question_text": "A brass rod of radius \n0.008\nm\n and length \n1.0\nm\n is subjected to a tensile force producing a stress of \n5\n×\n10\n7\nN/m\n2\n. What is the force applied? (Take \n𝜋\n≈\n3.14\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.005\n×\n10\n4\nN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5\n×\n10\n4\nN",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1\n×\n10\n4\nN",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n×\n10\n4\nN",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stress: Stress=FA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "91c2aba5-1955-4818-86a5-f896282348fe",
+    "question_text": "A steel rod of radius \n0.01\nm\n and length \n1.5\nm\n is subjected to a tensile force producing a stress of \n4\n×\n10\n7\nN/m\n2\n. What is the force applied? (Take \n𝜋\n≈\n3.14\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.256\n×\n10\n4\nN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5\n×\n10\n4\nN",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1\n×\n10\n4\nN",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n×\n10\n4\nN",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stress: Stress=FA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fe4e2ab-2cdc-48ae-92f1-a2211f732608",
+    "question_text": "What property of a material primarily determines its resistance to uniform compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nShear modulus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nYoung’s modulus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBulk modulus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nYield strength",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The bulk modulus determines a material’s resistance to uniform compression by measuring how\n              much it resists volume change under pressure applied in all directions.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ed642df7-cf7e-469f-a91d-39a351eabdf5",
+    "question_text": "A copper rod of length 1 m and diameter 2 mm is subjected to a tensile force. If the stress is 4 × 107 N/m2, what is the force applied? (Take π ≈ 3.14)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100 N",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n150 N",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n120 N",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n125.6 N",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Stress: Stress = F / A.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b1f5649-bbe3-4d8b-bb49-8f3de740eaf4",
+    "question_text": "A copper block of dimensions 0.4 m × 0.3 m × 0.1 m is subjected to a shearing force of 3 × 104 N. If the shear modulus of copper is 4.2 × 1010 N/m2, what is the displacement of the top face?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 × 10\n-7\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.5 × 10\n-7\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.95 × 10\n-7\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7 × 10\n-7\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Shear modulus: G = (F / A) / (Δx / L).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "92b55732-3bdf-4ce5-a2e0-10d8a346ea4f",
+    "question_text": "A brass wire of length \n1.8\nm\n and cross-sectional area \n2.5\n×\n10\n−\n6\nm\n2\n is stretched by a force producing a strain of \n2\n×\n10\n−\n4\n. If the Young's modulus of brass is \n9\n×\n10\n10\nN/m\n2\n, what is the stress?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8\n×\n10\n6\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.8\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Young's modulus: Y=StressStrain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ce057769-1c06-4917-a001-293453bfd5bc",
+    "question_text": "Why are I-shaped beams commonly used in construction for load-bearing applications?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey have a higher shear modulus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey provide a large load-bearing surface with reduced bending",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey have a lower density",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey exhibit greater ductility",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "I-shaped beams provide a large load-bearing surface and sufficient depth to reduce bending,\n              minimizing buckling while reducing weight compared to solid beams.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e63e879a-7601-47db-be15-ee41928992b9",
+    "question_text": "Why do engineers prefer materials with a large Young’s modulus for designing columns and beams?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are more ductile",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey have lower density",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey are more brittle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey provide greater stiffness",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Materials with a large Young’s modulus are stiffer, requiring greater force to produce small\n              deformations, which ensures better resistance to bending and stretching.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "45f2535f-a97d-42e4-aafa-278b189399e7",
+    "question_text": "In designing bridges, why is it critical to understand the elastic properties of materials?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTo increase the weight of the bridge",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTo reduce the cost of materials",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTo enhance thermal conductivity",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTo ensure structural integrity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Understanding elastic properties ensures that materials can withstand various loads (traffic,\n              wind, weight) without undergoing permanent deformation, maintaining structural integrity.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c78b34d7-b928-448e-a654-8c1315534b83",
+    "question_text": "An aluminium block of dimensions \n0.3\nm\n×\n0.2\nm\n×\n0.05\nm\n is subjected to a shearing force of \n1.5\n×\n10\n4\nN\n. If the shear modulus of aluminium is \n2.5\n×\n10\n10\nN/m\n2\n, what is the shear strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5\n×\n10\n−\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n×\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1\n×\n10\n−\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Shear modulus: G=Shear stressShear strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a0db4037-2f97-42cd-8001-eca96ab32a02",
+    "question_text": "A steel rod of length 0.8 m and cross-sectional area 2 × 10-5 m2 is compressed by a force of 800 N. If the Young's modulus of steel is 2 × 1011 N/m2, what is the compression?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1 mm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.16 mm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.2 mm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.25 mm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Young's modulus: Y = (F L) / (A ΔL).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2a504f8e-ec0e-4734-af8f-997d558b6554",
+    "question_text": "A cylindrical rod of length 0.5 m and radius 0.01 m is compressed by a force of 5000 N. If the compressive stress is 5 × 106 N/m2, what is the cross-sectional area of the rod?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10\n-3\nm\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10\n-2\nm\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5 × 10\n-3\nm\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2 × 10\n-3\nm\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stress: Stress = F / A.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "77de8e55-a3e5-4fa6-ab07-f0199ac6640b",
+    "question_text": "Why do engineers prefer materials with a large Young’s modulus for designing columns and beams?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are more ductile",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey have lower density",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey are more brittle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey provide greater stiffness",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Materials with a large Young’s modulus are stiffer, requiring greater force to produce small\n              deformations, which ensures better resistance to bending and stretching.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "46f7c1d1-b72a-45c3-b3c2-01f007939426",
+    "question_text": "An aluminium wire of length \n2.5\nm\n and cross-sectional area \n1.5\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n150\nN\n. If the Young's modulus of aluminium is \n7\n×\n10\n10\nN/m\n2\n, what is the stress?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1\n×\n10\n8\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5\n×\n10\n8\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n×\n10\n8\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5\n×\n10\n7\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stress: Stress=FA=1501.5×10−6=1×108N/m2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6a35207d-8267-41a9-ba9a-068df4ca88e2",
+    "question_text": "A glass slab of volume 0.005 m3 is compressed by a pressure of 3 × 106 N/m2. If the bulk modulus of glass is 3.7 × 1010 N/m2, what is the change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 × 10\n-7\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5 × 10\n-7\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 × 10\n-7\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.05 × 10\n-7\nm\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Bulk modulus: B = -p / (ΔV / V).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0f5e3278-7ad3-4372-904f-dcd52d34e3cd",
+    "question_text": "A steel wire of length \n2.5\nm\n and cross-sectional area \n3.5\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n350\nN\n. If the elongation is \n0.2\nmm\n, what is the Young's modulus of steel?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1\n×\n10\n12\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5\n×\n10\n12\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.2\n×\n10\n12\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.25\n×\n10\n12\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Young's modulus: Y=FLAΔL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "895e51d8-611d-4159-a920-1df52c7b23fd",
+    "question_text": "Which type of stress causes a change in the shape of a body without altering its volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTensile stress",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCompressive stress",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nShearing stress",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydraulic stress",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Shearing stress causes a change in the shape of a body by producing relative displacement of\n              opposite faces (pure shear) without changing its volume.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "83e2b6cb-ba9e-44a6-af15-48a119c71150",
+    "question_text": "A copper block of dimensions \n0.5\nm\n×\n0.3\nm\n×\n0.1\nm\n is subjected to a shearing force of \n6\n×\n10\n4\nN\n. If the shear modulus of copper is \n4.2\n×\n10\n10\nN/m\n2\n, what is the displacement of the top face?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9.52\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1\n×\n10\n−\n6\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8\n×\n10\n−\n7\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Shear modulus: G=F/AΔx/L.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "56957436-cfe4-457d-a136-d0357458c1a8",
+    "question_text": "A steel wire of length \n3.2\nm\n and cross-sectional area \n5\n×\n10\n−\n6\nm\n2\n is stretched by \n0.8\nmm\n. If the Young's modulus of steel is \n2\n×\n10\n11\nN/m\n2\n, what is the force applied?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200\nN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n300\nN",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n250\nN",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n150\nN",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Young's modulus: Y=FLAΔL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "394785a8-ca02-488d-8dc8-9b8102882e6d",
+    "question_text": "Why is steel often chosen over materials like copper for heavy-duty structural applications?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHigher Young’s modulus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLower density",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGreater ductility",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigher thermal conductivity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Steel has a higher Young’s modulus (≈200×109N/m2) compared\n              to copper (≈110×109N/m2), requiring a larger force to\n              produce the same deformation, making it more suitable for resisting bending and stretching.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e3e670ae-1b3a-4eb6-8542-9170e87bd210",
+    "question_text": "A glass slab of volume \n0.015\nm\n3\n is subjected to a hydraulic pressure of \n2\n×\n10\n6\nN/m\n2\n. If the bulk modulus of glass is \n3.7\n×\n10\n10\nN/m\n2\n, what is the change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8\n×\n10\n−\n7\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9\n×\n10\n−\n7\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8.11\n×\n10\n−\n7\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7\n×\n10\n−\n7\nm\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bulk modulus: B=−pΔVV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "706574e7-2699-4f68-aaca-9fbddee529fe",
+    "question_text": "A copper wire of length \n2.2\nm\n and cross-sectional area \n1.8\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n180\nN\n. If the Young's modulus of copper is \n1.1\n×\n10\n11\nN/m\n2\n, what is the strain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9.09\n×\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7\n×\n10\n−\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Stress: Stress=FA=1801.8×10−6=1×108N/m2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72ad636c-f493-404d-ba40-02eb310b9e77",
+    "question_text": "A water sample of volume \n1.5\nlitres\n is compressed by a pressure of \n3\n×\n10\n6\nN/m\n2\n. If the bulk modulus of water is \n2.2\n×\n10\n9\nN/m\n2\n, what is the fractional change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n×\n10\n−\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.36\n×\n10\n−\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Bulk modulus: B=−pΔVV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f8f2563b-bcc6-4f56-8e1e-d57d565af466",
+    "question_text": "A copper wire of length 2 m and cross-sectional area 3 × 10-6 m2 is stretched by a force of 150 N. If the strain produced is 1 × 10-3, what is the Young's modulus of copper?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 × 10\n10\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6 × 10\n10\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5 × 10\n10\nN/m\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7 × 10\n10\nN/m\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Young's modulus: Y = Stress / Strain.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "76582d26-10fd-4036-ae0f-073c987c1d0b",
+    "question_text": "A steel wire of length \n3.0\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n is stretched by a force of \n200\nN\n. If the Young's modulus of steel is \n2\n×\n10\n11\nN/m\n2\n, what is the elongation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5\nmm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\nmm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1\nmm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3\nmm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Young's modulus: Y=FLAΔL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8d00e5c5-df66-476f-8238-7069924fd7fd",
+    "question_text": "A glass slab of volume \n0.025\nm\n3\n is subjected to a hydraulic pressure of \n4\n×\n10\n6\nN/m\n2\n. If the bulk modulus of glass is \n3.7\n×\n10\n10\nN/m\n2\n, what is the change in volume?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5\n×\n10\n−\n6\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.7\n×\n10\n−\n6\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\n×\n10\n−\n6\nm\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n×\n10\n−\n6\nm\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bulk modulus: B=−pΔVV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Mechanical Properties of Solids",
+    "topic": "Mechanical Properties of Solids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Mechanical Properties of Solids / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "mechanical-properties-of-solids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

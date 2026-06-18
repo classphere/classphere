@@ -1,0 +1,2605 @@
+[
+  {
+    "id": "97553914-ae51-40f8-a950-c4c39907e4e7",
+    "question_text": "The dimensional formula of force is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n[MLT⁻²]",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n[ML²T⁻²]",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n[M⁰LT²]",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n[MLT⁰]",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Force is given by F=ma.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fbe2d40f-d7b7-42e9-b5fa-51ee994057d3",
+    "question_text": "Which of the following is not a base unit in the SI system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKelvin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCandela",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNewton",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMole",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "SI system consists of 7 base units: metre (m), kilogram (kg), second (s), ampere (A), kelvin (K), mole\n              (mol), and candela (cd).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "941ec34f-0a9f-40a8-b4bc-c21382bbd56e",
+    "question_text": "The number of significant figures in 0.00450 is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Leading zeros are not significant. The digits 4, 5, and the trailing zero are significant.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "200e40b3-b5a2-4adf-a59c-66362328a376",
+    "question_text": "The SI unit of pressure is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNewton",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPascal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nJoule",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWatt",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Pressure is force per unit area. P=FA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a8587811-39d6-4a12-bc3f-c8952e2f6e69",
+    "question_text": "The unit of Planck’s constant is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nJoule-second",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNewton-meter",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nJoule",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWatt",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Planck’s constant h appears in the equation E=hν, where energy has units of Joule (J)\n              and frequency has units of Hertz (Hz) or s−1.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "50ad78ca-e8db-4917-b472-a2d72f53f691",
+    "question_text": "The number of base units in the SI system is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The SI system has 7 base units: metre, kilogram, second, ampere, kelvin, mole, and candela.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23e64db2-e70f-4327-8a8a-b7c125b0956c",
+    "question_text": "If the percentage error in measuring mass and velocity are 2% and 3% respectively, the maximum possible error in kinetic energy is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Kinetic energy is given by KE=12mv2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "92bbe219-b4f9-47dc-81ff-90719d84d218",
+    "question_text": "Which of the following has the same dimensions as energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPower",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nForce",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTorque",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMomentum",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Energy has the unit Joule=kg⋅m2⋅s−2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "93121d13-8d0f-4000-8472-a3ba03638238",
+    "question_text": "The dimensional formula of work is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n[MLT⁻²]",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n[ML²T⁻²]",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n[M⁰LT²]",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n[MLT⁰]",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work is given by W=F⋅d.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6e201498-b2e1-4026-b8b8-254e7ad7972b",
+    "question_text": "In a new unit system, \n1\nunit of mass\n=\n0.25\nkg\n, \n1\nunit of length\n=\n0.1\nm\n, \n1\nunit of time\n=\n0.5\ns\n. What is \n3\nJ\n (\n1\nJ\n=\n1\nkg m\n2\ns\n−\n2\n) in this system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9.0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12.0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15.0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18.0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "[J]=[M L2T−2]. 3J=3kg×(1m)2×(1s)−2=3×(4×0.25)×(10×0.1)2×(2×0.5)−2=3×1×1×4=12new units.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eb0664bf-c0e7-4c18-8477-d69f8eb8248f",
+    "question_text": "Which of the following is a derived unit in the SI system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMetre (m)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCandela (cd)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNewton (N)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKelvin (K)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Derived units are obtained by combining base units. Examples include the Newton (N), Joule (J), and\n              Pascal (Pa).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7b82423b-ee52-435a-b58a-7c72d00f61ee",
+    "question_text": "Which physical quantity is dimensionless?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAngular displacement",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nForce",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPressure",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDensity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Dimensionless quantities are those without any physical dimensions, like angles and refractive index.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a76a83b7-8a83-4ef2-8bfa-7f692f0cdd73",
+    "question_text": "The SI unit of luminous intensity is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWatt",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLumen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCandela",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLux",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The SI unit of luminous intensity is the candela (cd).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aadc8701-c51c-4459-8759-b9a2b212249e",
+    "question_text": "Which of the following has the same dimensional formula as momentum?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nForce",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nImpulse",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEnergy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPower",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Momentum is given by p=mv with dimensional formula [MLT−1].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d0a2366-f394-401f-9146-a25d25649e97",
+    "question_text": "The number of significant figures in \n0.000560\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Leading zeros are not counted as significant figures. Only the digits 5, 6, and the trailing 0 are\n              significant.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b20eaf5-b007-407a-8ffa-bd01be8504e1",
+    "question_text": "Dimensional formula of work done is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n[\n𝑀\n𝐿\n𝑇\n−\n2\n]",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n[\n𝑀\n𝐿\n2\n𝑇\n−\n2\n]",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n[\n𝑀\n2\n𝐿\n2\n𝑇\n−\n3\n]",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n[\n𝑀\n𝐿\n2\n𝑇\n−\n1\n]",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work is the product of force and displacement. Hence its dimensional formula is [ML2T−2].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9ac50c89-0277-4c0e-a11a-2f5d394fad7f",
+    "question_text": "Which of the following pairs have the same dimensions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nForce and Energy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWork and Torque",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPressure and Power",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMomentum and Energy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Torque and work both have the dimensional formula [ML2T−2].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "56e246a4-1ce7-4f64-ab9e-f2436c6d9482",
+    "question_text": "One angstrom is equal to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10\n−\n8\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10\n−\n9\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10\n−\n10\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10\n−\n12\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "One angstrom (ÅÅ) is a unit of length equal to 10−10 m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "746f320c-f8b6-415a-aba4-cf4daa20c262",
+    "question_text": "Which of the following is a dimensionless constant?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGravitational constant",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRefractive index",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlanck’s constant",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoltzmann constant",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Refractive index is the ratio of two similar quantities (speed of light), making it dimensionless.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "54451123-1fd4-41b4-a81b-666de49a7e67",
+    "question_text": "Which of the following quantities has different dimensions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWork",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnergy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPressure",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTorque",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Pressure has the dimensional formula [ML−1T−2] while the others represent forms of energy or\n              work.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "514c2486-6982-4f1c-b572-f3473937a73f",
+    "question_text": "The dimensional formula of power is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n[\n𝑀\n𝐿\n2\n𝑇\n−\n3\n]",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n[\n𝑀\n𝐿\n𝑇\n−\n2\n]",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n[\n𝑀\n2\n𝐿\n2\n𝑇\n−\n4\n]",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n[\n𝑀\n𝐿\n3\n𝑇\n−\n2\n]",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Power is the rate at which work is done: P=Wt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "55b60ad1-5559-4353-b435-e3ea3f7ea729",
+    "question_text": "Which of the following is a fundamental quantity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVelocity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nForce",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTime",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPressure",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fundamental quantities are those that cannot be derived from others — like mass, length, and time.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "da8bf409-7c93-486c-b1d6-44a7c44714d3",
+    "question_text": "The SI unit of solid angle is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRadian",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSteradian",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDegree",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGradian",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Solid angle is measured in steradians (sr), a dimensionless unit in the SI system.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9195f78a-58b0-4111-a2db-7ae29fa6543a",
+    "question_text": "Which one of the following pairs has different dimensions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nForce and Weight",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPressure and Stress",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWork and Energy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPressure and Energy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Pressure and stress both share the same dimensional formula [ML−1T−2], but energy has\n              [ML2T−2].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c2e20dbb-d715-4609-ba04-abdaed7297b5",
+    "question_text": "If the unit of length is doubled, how is the unit of area affected?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDoubled",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHalved",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFour times",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRemains unchanged",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Area is proportional to the square of length. So, if the unit of length doubles, the unit of area becomes\n              four times larger.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "56d39545-d2b0-4dea-b1d1-edd2970a1304",
+    "question_text": "Which of the following has the dimensional formula \n[\n𝑀\n0\n𝐿\n0\n𝑇\n0\n]\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStrain",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nForce",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVelocity",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPressure",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Dimensionless quantities like refractive index, strain, and angles have no physical dimensions.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2f0715f5-d31f-473b-9ea8-7904fc733151",
+    "question_text": "The physical quantity with the same dimensions as impulse is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWork",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnergy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPower",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMomentum",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Impulse is the product of force and time, having the formula [MLT−1], which matches momentum.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0776e8cd-d93c-4992-97d3-dfbe1b7b3ca5",
+    "question_text": "The SI unit of electric current is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCoulomb",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVolt",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmpere",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOhm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Electric current’s SI base unit is the ampere (A).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba33ce68-3d07-4f22-8922-df99facaf3a2",
+    "question_text": "The number of significant figures in \n2.0030\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "All non-zero digits and any zeros between or after significant digits in decimal form are significant.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "76bb6439-5d12-4fcc-9867-96d5074576a7",
+    "question_text": "Which of the following quantities is dimensionless?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nViscosity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nReynolds number",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAcceleration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nForce",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reynolds number is a pure ratio and has no physical dimensions.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "182be786-59ca-460b-94a0-48108bf702fe",
+    "question_text": "Which of the following is not a derived unit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNewton (N)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nJoule (J)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWatt (W)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKilogram (kg)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Derived units are formed by combining base units. Base units are fundamental and independent.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7881048a-2949-4f74-bcba-520305ccbc9f",
+    "question_text": "The number of base quantities in the International System of Units (SI) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The SI system has seven base quantities: length, mass, time, electric current, temperature, amount of\n              substance, and luminous intensity.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c6c980c5-d228-4b49-bc7b-379ec5e56079",
+    "question_text": "The dimensional formula for pressure is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n[\n𝑀\n𝐿\n−\n1\n𝑇\n−\n2\n]",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n[\n𝑀\n𝐿\n𝑇\n−\n2\n]",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n[\n𝑀\n𝐿\n2\n𝑇\n−\n2\n]",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n[\n𝑀\n𝐿\n−\n2\n𝑇\n−\n1\n]",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pressure is defined as force per unit area: P=FA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "833920ab-733e-44c0-87a4-3f7ef949b183",
+    "question_text": "The SI unit of thermodynamic temperature is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCelsius",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKelvin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFahrenheit",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRankine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The base unit of thermodynamic temperature in the SI system is the Kelvin (K).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3bcfd0c6-35e5-4ee0-883b-1a374c64d949",
+    "question_text": "The order of magnitude of the diameter of a hydrogen atom (approx \n1.06\n×\n10\n−\n10\n m) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10\n−\n8",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10\n−\n9",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10\n−\n10",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10\n−\n11",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The order of magnitude is the nearest power of 10: 1.06×10−10 m rounds to 10−10.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "221b643c-348f-4223-b347-c664ffbe5d0a",
+    "question_text": "Which one of these quantities has a different dimension from the others?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWork",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnergy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTorque",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPressure",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Work, energy, and torque share the same dimensional formula [ML2T−2], while pressure is\n              [ML−1T−2].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "77d2de93-ed20-40e8-a39e-1d563952e92c",
+    "question_text": "How many significant figures are there in the measurement \n0.023080\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "Leading zeros are not significant. The significant digits here are 2, 3, 0, 8, 0 — a total of 5.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "38f1404a-b91d-4caa-a588-8a0674b7f5c1",
+    "question_text": "Dimensional analysis can be used to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCheck the correctness of physical equations",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDerive relationships between physical quantities",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nConvert units",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Dimensional analysis is useful for checking the correctness of equations, converting units, and deriving\n              formulas.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1208bc5e-16f4-45f2-8619-6ed2a4fc1aab",
+    "question_text": "The SI unit of luminous intensity is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLux",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLumen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCandela",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWatt",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The base unit of luminous intensity in the SI system is the candela (cd).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d4ac6e43-e4e5-49f0-ac8a-f56bf92508bb",
+    "question_text": "The dimensional formula of acceleration is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n[\n𝐿\n𝑇\n−\n1\n]",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n[\n𝐿\n𝑇\n−\n2\n]",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n[\n𝐿\n2\n𝑇\n−\n1\n]",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n[\n𝑀\n𝑇\n−\n2\n]",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Acceleration is the rate of change of velocity with time: [LT−1]/[T]=[LT−2].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Units and Measurements",
+    "topic": "Units and Measurements",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Units and Measurements / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "units-and-measurements"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]
