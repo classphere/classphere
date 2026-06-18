@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
-import { mockUser, mockStats, mockRecentTests } from "@/lib/mock-data";
+import { mockUser, mockStats, mockRecentTests, mockStudentDPPs } from "@/lib/mock-data";
 import {
   RiBarChartBoxLine,
   RiArrowRightUpLine,
@@ -397,6 +397,51 @@ export default function Dashboard() {
             </button>
           </div>
 
+        </div>
+
+        {/* ── DPP Row ── */}
+        <div style={{ marginTop: 24 }}>
+          <div className="rayum-card" style={{ padding: 24 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+              <div>
+                <h3 className="section-title" style={{ fontSize: 18 }}>📝 Pending DPPs</h3>
+                <p className="t-body-sm" style={{ marginTop: 4 }}>{mockStudentDPPs.filter(d => d.status === "pending" || d.status === "late").length} assignments need your attention</p>
+              </div>
+              <a href="/assignments" style={{ fontSize: 13, color: "var(--s-50)", textDecoration: "none", fontWeight: 600 }}>View All</a>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 16 }}>
+              {mockStudentDPPs.map(dpp => {
+                const isLate = dpp.status === "late";
+                const isPending = dpp.status === "pending";
+                const isDone = dpp.status === "completed";
+                return (
+                  <div key={dpp.id} style={{ padding: 20, borderRadius: "var(--r-md)", border: `1.5px solid ${isLate ? "#EF4444" : isDone ? "#22C55E" : "var(--border-default)"}`, background: isLate ? "#FEF2F2" : isDone ? "#F0FDF4" : "var(--bg-default)", display: "flex", flexDirection: "column", gap: 10 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: "var(--fg-default)" }}>{dpp.title}</div>
+                        <div style={{ fontSize: 12, color: "var(--fg-muted)" }}>{dpp.subject} · {dpp.totalQuestions} questions</div>
+                      </div>
+                      <span className={`badge ${isLate ? "badge-orange" : isDone ? "badge-green" : "badge-dark"}`} style={{ marginLeft: 12, flexShrink: 0 }}>
+                        {isLate ? "⚠ Late" : isDone ? "✓ Done" : "Pending"}
+                      </span>
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <span style={{ fontSize: 12, color: isLate ? "#DC2626" : "var(--fg-muted)", fontWeight: 500 }}>
+                        Due: {dpp.dueDate}
+                      </span>
+                      {isDone ? (
+                        <span style={{ fontSize: 13, fontWeight: 700, color: "#16A34A" }}>{dpp.score}/{dpp.maxScore} marks</span>
+                      ) : (
+                        <a href={`/assignments/${dpp.id}`} className="btn btn-primary" style={{ padding: "6px 16px", fontSize: 13 }}>
+                          {isLate ? "Submit Late" : "Start"}
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
       </main>

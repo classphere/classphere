@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import {
@@ -8,11 +9,18 @@ import {
   RiCalendarEventLine,
   RiArrowRightUpLine,
   RiSettings4Line,
-  RiMore2Fill
+  RiMore2Fill,
+  RiFileListLine,
+  RiCheckLine,
+  RiAlertLine,
 } from "@remixicon/react";
-import { mockTeacher, mockBatches } from "../../lib/mock-data";
+import { mockTeacher, mockBatches, mockDPPs } from "../../lib/mock-data";
 
 export default function TeacherDashboardPage() {
+  const [showDPPModal, setShowDPPModal] = useState<string | null>(null); // batchId
+  const pendingDPPs = mockDPPs.filter(d => d.status === "pending" || d.status === "upcoming");
+  const completedDPPs = mockDPPs.filter(d => d.status === "completed");
+
   return (
     <>
       <Navbar title={`Welcome back, ${mockTeacher.name}`} subtitle={`Here's the latest from your assigned batches at ${mockTeacher.instituteName}.`} breadcrumbs="Dashboard" />
@@ -59,8 +67,8 @@ export default function TeacherDashboardPage() {
 
 
 
-        {/* Main Content Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 400px", gap: 24 }}>
+        {/* Main Content Grid — Batches (left) + AI Flags (right) */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 400px", gap: 24, marginBottom: 24 }}>
 
           {/* Batches Table */}
           <section className="rayum-card" style={{ padding: "24px 0" }}>
@@ -75,7 +83,7 @@ export default function TeacherDashboardPage() {
                   <th>Exam</th>
                   <th>Students</th>
                   <th>Avg Score</th>
-                  <th style={{ textAlign: "right", paddingRight: 24 }}></th>
+                  <th style={{ textAlign: "right", paddingRight: 24 }}>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -113,7 +121,7 @@ export default function TeacherDashboardPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16, flex: 1 }}>
               <div style={{ padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
                 <h4 className="text-bold" style={{ marginBottom: 6 }}>Rohan Gupta (JEE 2026 Morning)</h4>
-                <p className="t-body-sm">Score dropped 30% since last week's Physics test. Recommending a 1-on-1 session.</p>
+                <p className="t-body-sm">Score dropped 30% since last week&apos;s Physics test. Recommending a 1-on-1 session.</p>
               </div>
               <div style={{ padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
                 <h4 className="text-bold" style={{ marginBottom: 6 }}>Carnot Cycle Failure</h4>
@@ -131,7 +139,52 @@ export default function TeacherDashboardPage() {
           </section>
 
         </div>
+
+        {/* DPP Activity — full width row below the main grid */}
+        <section className="rayum-card" style={{ padding: 24 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <div style={{ padding: 8, background: "var(--n-10)", borderRadius: "var(--r-md)", color: "var(--fg-default)" }}>
+                <RiFileListLine size={20} />
+              </div>
+              <div>
+                <h2 className="section-title" style={{ fontSize: 18 }}>DPP Activity</h2>
+                <p className="t-body-sm" style={{ marginTop: 2 }}>{pendingDPPs.length} active · {completedDPPs.length} completed across all batches</p>
+              </div>
+            </div>
+            <Link href="/teacher/dpps" className="btn btn-primary" style={{ fontSize: 13, display: "inline-flex", alignItems: "center", gap: 6 }}>
+              <RiFileListLine size={14} /> Manage DPPs
+            </Link>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
+            {mockDPPs.map(dpp => {
+              const completion = Math.round((dpp.completedCount / dpp.totalStudents) * 100);
+              const isComplete = dpp.status === "completed";
+              const isUpcoming = dpp.status === "upcoming";
+              return (
+                <div key={dpp.id} style={{ padding: 16, borderRadius: "var(--r-md)", border: `1.5px solid ${isComplete ? "#22C55E" : isUpcoming ? "var(--border-default)" : "var(--p-30)"}`, background: isComplete ? "#F0FDF4" : "var(--bg-default)" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
+                    <div style={{ fontWeight: 700, fontSize: 14, flex: 1, marginRight: 8 }}>{dpp.title}</div>
+                    <span style={{ fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: isComplete ? "#F0FDF4" : isUpcoming ? "var(--n-10)" : "#FFFBEB", color: isComplete ? "#16A34A" : isUpcoming ? "var(--fg-muted)" : "#D97706", border: `1px solid ${isComplete ? "#22C55E" : isUpcoming ? "var(--border-default)" : "#F59E0B"}`, flexShrink: 0 }}>
+                      {isComplete ? "Done" : isUpcoming ? "Upcoming" : "Active"}
+                    </span>
+                  </div>
+                  <div style={{ fontSize: 12, color: "var(--fg-muted)", marginBottom: 12 }}>{dpp.batchName} · {dpp.subject} · Due {dpp.dueDate}</div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
+                    <div style={{ flex: 1, height: 6, background: "var(--n-20)", borderRadius: 4, overflow: "hidden" }}>
+                      <div style={{ height: "100%", width: `${completion}%`, background: isComplete ? "#22C55E" : "var(--p-50)", borderRadius: 4 }} />
+                    </div>
+                    <span style={{ fontSize: 12, fontWeight: 700, flexShrink: 0 }}>{dpp.completedCount}/{dpp.totalStudents}</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
       </main>
     </>
   );
 }
+
