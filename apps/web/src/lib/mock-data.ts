@@ -624,3 +624,228 @@ export const mockPYQPapers = [
   { id: "pyq-022", exam: "NEET-UG", year: 2021, shift: "Sep – Code P1",  subjects: ["Physics", "Chemistry", "Botany", "Zoology"], questions: 180, marks: 720, duration: 200, difficulty: "medium", attempts: 0, isBookmarked: false },
   { id: "pyq-023", exam: "NEET-UG", year: 2020, shift: "Sep – Code P1",  subjects: ["Physics", "Chemistry", "Botany", "Zoology"], questions: 180, marks: 720, duration: 200, difficulty: "easy",   attempts: 0, isBookmarked: false },
 ];
+
+// ─── DPP (Daily Practice Problems) ───────────────────────────────────────────
+
+export type DPPStatus = "pending" | "completed" | "late" | "upcoming";
+
+export interface MockDPP {
+  id: string;
+  title: string;
+  batchId: string;
+  batchName: string;
+  subject: string;
+  chapter: string;
+  totalQuestions: number;
+  dueDate: string;
+  createdAt: string;
+  createdBy: string;
+  status: DPPStatus;
+  completedCount: number;
+  totalStudents: number;
+}
+
+export interface MockStudentDPP {
+  id: string;
+  title: string;
+  subject: string;
+  chapter: string;
+  totalQuestions: number;
+  dueDate: string;
+  status: DPPStatus;
+  score: number | null;
+  maxScore: number;
+  timeTakenMin: number | null;
+}
+
+// Teacher's view of all DPPs assigned to their batches
+export const mockDPPs: MockDPP[] = [
+  {
+    id: "dpp-001",
+    title: "Laws of Motion — Newton's Laws",
+    batchId: "batch-001",
+    batchName: "JEE 2026 Morning",
+    subject: "Physics",
+    chapter: "Laws of Motion",
+    totalQuestions: 15,
+    dueDate: "2026-06-20",
+    createdAt: "2026-06-18",
+    createdBy: "Dr. Vikram Seth",
+    status: "pending",
+    completedCount: 87,
+    totalStudents: 142,
+  },
+  {
+    id: "dpp-002",
+    title: "Thermodynamics — Carnot Cycle",
+    batchId: "batch-001",
+    batchName: "JEE 2026 Morning",
+    subject: "Physics",
+    chapter: "Thermodynamics",
+    totalQuestions: 10,
+    dueDate: "2026-06-17",
+    createdAt: "2026-06-15",
+    createdBy: "Dr. Vikram Seth",
+    status: "completed",
+    completedCount: 140,
+    totalStudents: 142,
+  },
+  {
+    id: "dpp-003",
+    title: "Organic Chemistry Basics — IUPAC",
+    batchId: "batch-003",
+    batchName: "NEET 2026 Droppers",
+    subject: "Chemistry",
+    chapter: "Some Basic Principles of Organic Chemistry",
+    totalQuestions: 20,
+    dueDate: "2026-06-22",
+    createdAt: "2026-06-18",
+    createdBy: "Dr. Vikram Seth",
+    status: "upcoming",
+    completedCount: 0,
+    totalStudents: 185,
+  },
+  {
+    id: "dpp-004",
+    title: "Electrostatics — Coulomb's Law",
+    batchId: "batch-002",
+    batchName: "JEE 2026 Evening",
+    subject: "Physics",
+    chapter: "Electric Charges and Fields",
+    totalQuestions: 12,
+    dueDate: "2026-06-15",
+    createdAt: "2026-06-13",
+    createdBy: "Dr. Vikram Seth",
+    status: "completed",
+    completedCount: 130,
+    totalStudents: 138,
+  },
+];
+
+// Student's view — their personal DPP list with submission status
+export const mockStudentDPPs: MockStudentDPP[] = [
+  {
+    id: "dpp-001",
+    title: "Laws of Motion — Newton's Laws",
+    subject: "Physics",
+    chapter: "Laws of Motion",
+    totalQuestions: 15,
+    dueDate: "2026-06-20",
+    status: "pending",
+    score: null,
+    maxScore: 60,
+    timeTakenMin: null,
+  },
+  {
+    id: "dpp-002",
+    title: "Thermodynamics — Carnot Cycle",
+    subject: "Physics",
+    chapter: "Thermodynamics",
+    totalQuestions: 10,
+    dueDate: "2026-06-17",
+    status: "completed",
+    score: 32,
+    maxScore: 40,
+    timeTakenMin: 18,
+  },
+  {
+    id: "dpp-005",
+    title: "Coordinate Geometry — Circles",
+    subject: "Mathematics",
+    chapter: "Coordinate Geometry",
+    totalQuestions: 12,
+    dueDate: "2026-06-19",
+    status: "pending",
+    score: null,
+    maxScore: 48,
+    timeTakenMin: null,
+  },
+  {
+    id: "dpp-006",
+    title: "Calculus — Integration Basics",
+    subject: "Mathematics",
+    chapter: "Calculus",
+    totalQuestions: 10,
+    dueDate: "2026-06-14",
+    status: "late",
+    score: null,
+    maxScore: 40,
+    timeTakenMin: null,
+  },
+];
+
+// Sample DPP questions — reusing the Question schema
+export const mockDPPQuestions: Record<string, typeof mockQuestions> = {
+  "dpp-001": [
+    {
+      id: "dpp-q-001",
+      questionNumber: 1,
+      subject: "Physics",
+      chapter: "Laws of Motion",
+      topic: "Newton's Second Law",
+      difficulty: "medium" as const,
+      type: "mcq_single" as const,
+      questionText: "A 10 kg block is pulled along a frictionless horizontal surface by a force of 50 N. What is the acceleration of the block?",
+      options: [
+        { id: "A", text: "2 m/s²" },
+        { id: "B", text: "5 m/s²" },
+        { id: "C", text: "10 m/s²" },
+        { id: "D", text: "0.5 m/s²" },
+      ],
+      correctAnswer: "B",
+    },
+    {
+      id: "dpp-q-002",
+      questionNumber: 2,
+      subject: "Physics",
+      chapter: "Laws of Motion",
+      topic: "Newton's Third Law",
+      difficulty: "easy" as const,
+      type: "mcq_single" as const,
+      questionText: "When a gun fires a bullet, the gun recoils. This is an example of:",
+      options: [
+        { id: "A", text: "Newton's First Law" },
+        { id: "B", text: "Newton's Second Law" },
+        { id: "C", text: "Newton's Third Law" },
+        { id: "D", text: "Law of Conservation of Energy" },
+      ],
+      correctAnswer: "C",
+    },
+    {
+      id: "dpp-q-003",
+      questionNumber: 3,
+      subject: "Physics",
+      chapter: "Laws of Motion",
+      topic: "Friction",
+      difficulty: "hard" as const,
+      type: "mcq_single" as const,
+      questionText: "A block of mass 5 kg is placed on a rough horizontal surface (μ = 0.4). The minimum force required to just move the block is (g = 10 m/s²):",
+      options: [
+        { id: "A", text: "10 N" },
+        { id: "B", text: "15 N" },
+        { id: "C", text: "20 N" },
+        { id: "D", text: "25 N" },
+      ],
+      correctAnswer: "C",
+    },
+  ],
+  "dpp-005": [
+    {
+      id: "dpp-q-010",
+      questionNumber: 1,
+      subject: "Mathematics",
+      chapter: "Coordinate Geometry",
+      topic: "Circles",
+      difficulty: "medium" as const,
+      type: "mcq_single" as const,
+      questionText: "The centre and radius of the circle x² + y² - 6x + 8y - 24 = 0 are:",
+      options: [
+        { id: "A", text: "(3, -4) and 7" },
+        { id: "B", text: "(-3, 4) and 7" },
+        { id: "C", text: "(3, -4) and 5" },
+        { id: "D", text: "(-3, 4) and 5" },
+      ],
+      correctAnswer: "A",
+    },
+  ],
+};
