@@ -23,11 +23,11 @@ const CHAPTERS: Record<string, string[]> = {
   Biology: ["Cell Biology", "Genetics", "Ecology", "Human Physiology", "Plant Physiology"],
 };
 
-const statusMeta = {
-  completed: { label: "Completed", color: "#16A34A", bg: "#F0FDF4", border: "#22C55E" },
-  upcoming:  { label: "Upcoming",  color: "#2563EB", bg: "#EFF6FF", border: "#3B82F6" },
-  late:      { label: "Late",      color: "#DC2626", bg: "#FEF2F2", border: "#EF4444" },
-  pending:   { label: "Active",    color: "#D97706", bg: "#FFFBEB", border: "#F59E0B" },
+const statusMeta: Record<string, { label: string; badgeClass: string; icon: string }> = {
+  completed: { label: "Completed", badgeClass: "badge-green", icon: "✅" },
+  upcoming:  { label: "Upcoming",  badgeClass: "badge-blue", icon: "🕐" },
+  late:      { label: "Late",      badgeClass: "badge-red", icon: "⚠️" },
+  pending:   { label: "Active",    badgeClass: "badge-orange", icon: "📝" },
 };
 
 type FilterStatus = "all" | "pending" | "completed" | "upcoming";
@@ -105,8 +105,8 @@ export default function TeacherDPPsPage() {
                 {s.icon}
               </div>
               <div>
-                <div style={{ fontSize: 26, fontWeight: 800, color: s.color }}>{s.value}</div>
-                <div style={{ fontSize: 13, color: "var(--fg-muted)" }}>{s.label}</div>
+                <div className="t-kpi" style={{ color: s.color, marginBottom: 4 }}>{s.value}</div>
+                <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>{s.label}</div>
               </div>
             </div>
           ))}
@@ -117,14 +117,14 @@ export default function TeacherDPPsPage() {
           {/* Filter tabs */}
           <div style={{ display: "flex", gap: 4, background: "var(--n-10)", padding: 4, borderRadius: "var(--r-md)", border: "1px solid var(--border-default)" }}>
             {(["all", "pending", "completed", "upcoming"] as FilterStatus[]).map(f => (
-              <button key={f} onClick={() => setFilter(f)} style={{ padding: "6px 16px", borderRadius: "var(--r-sm)", border: "none", cursor: "pointer", fontSize: 13, fontWeight: filter === f ? 700 : 500, background: filter === f ? "var(--bg-surface)" : "transparent", color: filter === f ? "var(--fg-default)" : "var(--fg-muted)", boxShadow: filter === f ? "var(--sh-100)" : "none", transition: "all 0.15s", textTransform: "capitalize" }}>
+              <button key={f} onClick={() => setFilter(f)} style={{ padding: "6px 16px", borderRadius: "var(--r-sm)", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: filter === f ? 600 : 500, background: filter === f ? "var(--bg-surface)" : "transparent", color: filter === f ? "var(--fg-default)" : "var(--fg-muted)", boxShadow: filter === f ? "var(--sh-100)" : "none", transition: "all 0.15s", textTransform: "capitalize" }}>
                 {f === "all" ? `All (${total})` : f === "pending" ? `Active (${active})` : f === "completed" ? `Done (${completed})` : "Upcoming"}
               </button>
             ))}
           </div>
 
-          <button className="btn btn-primary" style={{ display: "inline-flex", alignItems: "center", gap: 8 }} onClick={() => setShowModal(true)}>
-            <RiAddLine size={18} /> Create DPP
+          <button className="btn btn-sm btn-primary" onClick={() => setShowModal(true)}>
+            <RiAddLine size={16} /> Create DPP
           </button>
         </div>
 
@@ -141,14 +141,14 @@ export default function TeacherDPPsPage() {
             const pct = Math.round((dpp.completedCount / dpp.totalStudents) * 100);
             return (
               <div key={dpp.id} className="rayum-card" style={{ padding: 20, display: "flex", alignItems: "center", gap: 20 }}>
-                <div style={{ width: 44, height: 44, borderRadius: "var(--r-md)", background: meta.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: 22 }}>
-                  {dpp.status === "completed" ? "✅" : dpp.status === "upcoming" ? "🕐" : "📝"}
+                <div className="stat-icon" style={{ background: "var(--n-10)", fontSize: 22, width: 44, height: 44 }}>
+                  {meta.icon}
                 </div>
 
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
-                    <span style={{ fontWeight: 700, fontSize: 15 }}>{dpp.title}</span>
-                    <span style={{ fontSize: 11, fontWeight: 700, padding: "2px 10px", borderRadius: 20, background: meta.bg, color: meta.color, border: `1px solid ${meta.border}` }}>{meta.label}</span>
+                    <span className="t-body-base-bold">{dpp.title}</span>
+                    <span className={`badge ${meta.badgeClass}`}>{meta.label}</span>
                   </div>
                   <div style={{ display: "flex", gap: 16, fontSize: 13, color: "var(--fg-muted)", flexWrap: "wrap" }}>
                     <span>📚 {dpp.subject} · {dpp.chapter}</span>
@@ -159,13 +159,13 @@ export default function TeacherDPPsPage() {
                 </div>
 
                 <div style={{ textAlign: "right", flexShrink: 0, minWidth: 120 }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 6 }}>
+                  <div className="t-body-sm-med" style={{ marginBottom: 6 }}>
                     {dpp.completedCount}/{dpp.totalStudents} submitted
                   </div>
-                  <div style={{ height: 6, background: "var(--n-20)", borderRadius: 4, overflow: "hidden" }}>
-                    <div style={{ height: "100%", width: `${pct}%`, background: dpp.status === "completed" ? "#22C55E" : "var(--p-50)", borderRadius: 4, transition: "width 0.4s" }} />
+                  <div className="progress-track" style={{ height: 6 }}>
+                    <div className="progress-fill" style={{ height: "100%", width: `${pct}%`, background: dpp.status === "completed" ? "var(--success-50, #22C55E)" : "var(--p-50)" }} />
                   </div>
-                  <div style={{ fontSize: 11, color: "var(--fg-muted)", marginTop: 4 }}>{pct}%</div>
+                  <div className="t-body-sm" style={{ color: "var(--fg-muted)", marginTop: 4 }}>{pct}%</div>
                 </div>
               </div>
             );
@@ -178,7 +178,7 @@ export default function TeacherDPPsPage() {
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 100, backdropFilter: "blur(4px)" }}>
           <div className="rayum-card" style={{ width: 540, padding: 40 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 28 }}>
-              <h2 style={{ fontWeight: 800, fontSize: 20 }}>Create New DPP</h2>
+              <h2 className="t-heading-s">Create New DPP</h2>
               <button style={{ border: "none", background: "none", cursor: "pointer", color: "var(--fg-muted)", display: "flex" }} onClick={() => setShowModal(false)}>
                 <RiCloseLine size={24} />
               </button>
@@ -187,13 +187,13 @@ export default function TeacherDPPsPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {/* Title */}
               <div>
-                <label style={{ fontSize: 13, fontWeight: 600, display: "block", marginBottom: 8 }}>DPP Title *</label>
+                <label className="t-body-sm-med" style={{ display: "block", marginBottom: 8 }}>DPP Title *</label>
                 <input className="input" placeholder="e.g. Newton's Laws — Practice Set" value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} style={{ width: "100%", boxSizing: "border-box" }} />
               </div>
 
               {/* Batch */}
               <div>
-                <label style={{ fontSize: 13, fontWeight: 600, display: "block", marginBottom: 8 }}>Assign to Batch *</label>
+                <label className="t-body-sm-med" style={{ display: "block", marginBottom: 8 }}>Assign to Batch *</label>
                 <select className="input" value={form.batchId} onChange={e => setForm(f => ({ ...f, batchId: e.target.value }))} style={{ width: "100%", cursor: "pointer" }}>
                   {mockBatches.map(b => <option key={b.id} value={b.id}>{b.name} ({b.exam})</option>)}
                 </select>
@@ -202,13 +202,13 @@ export default function TeacherDPPsPage() {
               {/* Subject + Chapter */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 <div>
-                  <label style={{ fontSize: 13, fontWeight: 600, display: "block", marginBottom: 8 }}>Subject *</label>
+                  <label className="t-body-sm-med" style={{ display: "block", marginBottom: 8 }}>Subject *</label>
                   <select className="input" value={form.subject} onChange={e => setForm(f => ({ ...f, subject: e.target.value, chapter: CHAPTERS[e.target.value][0] }))} style={{ width: "100%", cursor: "pointer" }}>
                     {SUBJECTS.map(s => <option key={s}>{s}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label style={{ fontSize: 13, fontWeight: 600, display: "block", marginBottom: 8 }}>Chapter *</label>
+                  <label className="t-body-sm-med" style={{ display: "block", marginBottom: 8 }}>Chapter *</label>
                   <select className="input" value={form.chapter} onChange={e => setForm(f => ({ ...f, chapter: e.target.value }))} style={{ width: "100%", cursor: "pointer" }}>
                     {(CHAPTERS[form.subject] || []).map(c => <option key={c}>{c}</option>)}
                   </select>
@@ -218,16 +218,16 @@ export default function TeacherDPPsPage() {
               {/* Questions + Due Date */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 <div>
-                  <label style={{ fontSize: 13, fontWeight: 600, display: "block", marginBottom: 8 }}>No. of Questions *</label>
+                  <label className="t-body-sm-med" style={{ display: "block", marginBottom: 8 }}>No. of Questions *</label>
                   <input className="input" type="number" min={5} max={50} value={form.totalQuestions} onChange={e => setForm(f => ({ ...f, totalQuestions: parseInt(e.target.value) || 10 }))} style={{ width: "100%", boxSizing: "border-box" }} />
                 </div>
                 <div>
-                  <label style={{ fontSize: 13, fontWeight: 600, display: "block", marginBottom: 8 }}>Due Date *</label>
+                  <label className="t-body-sm-med" style={{ display: "block", marginBottom: 8 }}>Due Date *</label>
                   <input className="input" type="date" value={form.dueDate} onChange={e => setForm(f => ({ ...f, dueDate: e.target.value }))} style={{ width: "100%", boxSizing: "border-box" }} />
                 </div>
               </div>
 
-              <div style={{ padding: 14, background: "var(--n-10)", borderRadius: "var(--r-md)", fontSize: 13, color: "var(--fg-muted)" }}>
+              <div className="t-body-sm" style={{ padding: 14, background: "var(--n-10)", borderRadius: "var(--r-md)", color: "var(--fg-muted)" }}>
                 Marking: <strong style={{ color: "var(--fg-default)" }}>+4 correct · −1 wrong · 0 unattempted</strong>
               </div>
 

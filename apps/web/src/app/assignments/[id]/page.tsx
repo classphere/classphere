@@ -108,27 +108,27 @@ export default function DPPSolvePage() {
             {pct >= 70 ? "🎉" : pct >= 40 ? "📈" : "💪"}
           </div>
           <span className="badge badge-dark" style={{ marginBottom: 16 }}>DPP Completed</span>
-          <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>{dpp.title}</h1>
-          <p className="t-body-sm" style={{ marginBottom: 32 }}>{dpp.chapter} · {dpp.subject}</p>
+          <h1 className="t-title-page-b" style={{ marginBottom: 8, fontWeight: 800 }}>{dpp.title}</h1>
+          <p className="t-body-sm" style={{ marginBottom: 32, color: "var(--fg-muted)" }}>{dpp.chapter} · {dpp.subject}</p>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginBottom: 40 }}>
             <div style={{ padding: 20, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: "var(--s-50)" }}>{score.correct}</div>
+              <div className="t-heading-b" style={{ color: "var(--s-50)", marginBottom: 4 }}>{score.correct}</div>
               <div className="t-body-sm">Correct</div>
             </div>
             <div style={{ padding: 20, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: "var(--danger-50)" }}>{score.total - score.correct}</div>
+              <div className="t-heading-b" style={{ color: "var(--danger-50)", marginBottom: 4 }}>{score.total - score.correct}</div>
               <div className="t-body-sm">Wrong</div>
             </div>
             <div style={{ padding: 20, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
-              <div style={{ fontSize: 28, fontWeight: 800 }}>{Math.max(0, score.marks)}</div>
+              <div className="t-heading-b" style={{ marginBottom: 4 }}>{Math.max(0, score.marks)}</div>
               <div className="t-body-sm">Marks</div>
             </div>
           </div>
 
           {/* Correct answer review */}
           <div style={{ textAlign: "left", marginBottom: 32 }}>
-            <h3 style={{ fontWeight: 700, marginBottom: 16, fontSize: 16 }}>Answer Review</h3>
+            <h3 className="section-title">Answer Review</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {questions.map((q, i) => {
                 const yourAns = answers[q.id];
@@ -140,8 +140,8 @@ export default function DPPSolvePage() {
                       {isRight ? <RiCheckLine size={18} /> : <RiAlertLine size={18} />}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <p style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>Q{i + 1}. {q.questionText.substring(0, 80)}{q.questionText.length > 80 ? "…" : ""}</p>
-                      <p style={{ fontSize: 12, color: "var(--fg-muted)" }}>
+                      <p className="t-body-sm-med" style={{ marginBottom: 4 }}>Q{i + 1}. {q.questionText.substring(0, 80)}{q.questionText.length > 80 ? "…" : ""}</p>
+                      <p className="t-body-sm" style={{ color: "var(--fg-muted)" }}>
                         Your answer: <strong>{yourAns ?? "Not attempted"}</strong> &nbsp;·&nbsp; Correct: <strong style={{ color: "#22C55E" }}>{correct}</strong>
                       </p>
                     </div>
@@ -187,10 +187,10 @@ export default function DPPSolvePage() {
             <RiArrowLeftLine size={20} />
           </Link>
           <div>
-            <div style={{ fontWeight: 800, fontSize: 15, color: "var(--fg-default)" }}>
+            <div className="t-body-base-bold" style={{ color: "var(--fg-default)" }}>
               📝 DPP &nbsp;<span style={{ color: "var(--p-50)" }}>·</span>&nbsp; {dpp.title}
             </div>
-            <div style={{ fontSize: 12, color: "var(--fg-muted)", fontWeight: 500 }}>
+            <div className="t-body-sm-med" style={{ color: "var(--fg-muted)" }}>
               {dpp.subject} · {dpp.chapter}
             </div>
           </div>
@@ -225,10 +225,10 @@ export default function DPPSolvePage() {
 
             {/* Question */}
             <div style={{ marginBottom: 40 }}>
-              <div className="t-label" style={{ color: "var(--fg-muted)", marginBottom: 12 }}>
+              <div className="text-label" style={{ marginBottom: 12 }}>
                 QUESTION {current + 1} OF {questions.length}
               </div>
-              <p style={{ fontSize: 17, color: "var(--fg-default)", lineHeight: 1.7, fontWeight: 500 }}>
+              <p className="t-body-lg-med" style={{ color: "var(--fg-default)" }}>
                 {q.questionText}
               </p>
             </div>
@@ -276,12 +276,12 @@ export default function DPPSolvePage() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginBottom: 24, padding: 16, borderRadius: "var(--r-md)", background: "var(--n-10)", border: "1px solid var(--border-default)" }}>
             {[{ label: "Done", value: answered, color: "#22C55E" }, { label: "Review", value: marked, color: "#F59E0B" }, { label: "Left", value: unanswered, color: "var(--fg-muted)" }].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontWeight: 800, fontSize: 20, color: s.color }}>{s.value}</div>
-                <div style={{ fontSize: 12, fontWeight: 600, color: "var(--fg-muted)", marginTop: 4 }}>{s.label}</div>
+                <div className="t-sub-b" style={{ color: s.color }}>{s.value}</div>
+                <div className="t-body-sm-med" style={{ color: "var(--fg-muted)", marginTop: 4 }}>{s.label}</div>
               </div>
             ))}
           </div>
-          <div style={{ fontSize: 11, fontWeight: 700, color: "var(--fg-muted)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 12 }}>Questions</div>
+          <div className="text-label" style={{ marginBottom: 12 }}>Questions</div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 6 }}>
             {questions.map((sq, idx) => {
               const s = status[sq.id] || "unanswered";
@@ -299,10 +299,10 @@ export default function DPPSolvePage() {
           </div>
 
           <div style={{ marginTop: 32, padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
-            <div style={{ fontSize: 12, fontWeight: 700, marginBottom: 8 }}>📌 Due Date</div>
-            <div style={{ fontSize: 13, color: "var(--fg-muted)" }}>{dpp.dueDate}</div>
-            <div style={{ fontSize: 12, fontWeight: 700, marginTop: 12, marginBottom: 4 }}>Marking Scheme</div>
-            <div style={{ fontSize: 12, color: "var(--fg-muted)" }}>✅ +4 correct &nbsp;·&nbsp; ❌ -1 wrong</div>
+            <div className="t-body-sm-bold" style={{ marginBottom: 8 }}>📌 Due Date</div>
+            <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>{dpp.dueDate}</div>
+            <div className="t-body-sm-bold" style={{ marginTop: 12, marginBottom: 4 }}>Marking Scheme</div>
+            <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>✅ +4 correct &nbsp;·&nbsp; ❌ -1 wrong</div>
           </div>
         </div>
       </div>
@@ -312,7 +312,7 @@ export default function DPPSolvePage() {
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.4)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 100, backdropFilter: "blur(4px)" }}>
           <div className="rayum-card" style={{ maxWidth: 440, width: "90%", padding: 40, textAlign: "center" }}>
             <RiFlag2Fill size={48} style={{ margin: "0 auto 16px", color: "var(--fg-default)" }} />
-            <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Submit DPP?</h2>
+            <h2 className="section-title" style={{ marginBottom: 12 }}>Submit DPP?</h2>
             <p className="t-body-sm" style={{ color: "var(--fg-muted)", marginBottom: 32, lineHeight: 1.6 }}>
               You&apos;ve answered <strong style={{ color: "var(--fg-default)" }}>{answered}</strong> of{" "}
               <strong style={{ color: "var(--fg-default)" }}>{questions.length}</strong> questions.

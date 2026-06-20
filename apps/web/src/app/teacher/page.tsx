@@ -152,8 +152,8 @@ export default function TeacherDashboardPage() {
                 <p className="t-body-sm" style={{ marginTop: 2 }}>{pendingDPPs.length} active · {completedDPPs.length} completed across all batches</p>
               </div>
             </div>
-            <Link href="/teacher/dpps" className="btn btn-primary" style={{ fontSize: 13, display: "inline-flex", alignItems: "center", gap: 6 }}>
-              <RiFileListLine size={14} /> Manage DPPs
+            <Link href="/teacher/dpps" className="btn btn-sm btn-primary" style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+              <RiFileListLine size={16} /> Manage DPPs
             </Link>
           </div>
 
@@ -166,16 +166,16 @@ export default function TeacherDashboardPage() {
                 <div key={dpp.id} style={{ padding: 16, borderRadius: "var(--r-md)", border: `1.5px solid ${isComplete ? "#22C55E" : isUpcoming ? "var(--border-default)" : "var(--p-30)"}`, background: isComplete ? "#F0FDF4" : "var(--bg-default)" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
                     <div style={{ fontWeight: 700, fontSize: 14, flex: 1, marginRight: 8 }}>{dpp.title}</div>
-                    <span style={{ fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: isComplete ? "#F0FDF4" : isUpcoming ? "var(--n-10)" : "#FFFBEB", color: isComplete ? "#16A34A" : isUpcoming ? "var(--fg-muted)" : "#D97706", border: `1px solid ${isComplete ? "#22C55E" : isUpcoming ? "var(--border-default)" : "#F59E0B"}`, flexShrink: 0 }}>
+                    <span className={`badge ${isComplete ? "badge-green" : isUpcoming ? "badge-dark" : "badge-orange"}`} style={{ flexShrink: 0 }}>
                       {isComplete ? "Done" : isUpcoming ? "Upcoming" : "Active"}
                     </span>
                   </div>
-                  <div style={{ fontSize: 12, color: "var(--fg-muted)", marginBottom: 12 }}>{dpp.batchName} · {dpp.subject} · Due {dpp.dueDate}</div>
+                  <div className="t-body-sm" style={{ color: "var(--fg-muted)", marginBottom: 12 }}>{dpp.batchName} · {dpp.subject} · Due {dpp.dueDate}</div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
-                    <div style={{ flex: 1, height: 6, background: "var(--n-20)", borderRadius: 4, overflow: "hidden" }}>
-                      <div style={{ height: "100%", width: `${completion}%`, background: isComplete ? "#22C55E" : "var(--p-50)", borderRadius: 4 }} />
+                    <div className="progress-track" style={{ flex: 1, height: 6 }}>
+                      <div className="progress-fill" style={{ height: "100%", width: `${completion}%`, background: isComplete ? "var(--success-50, #22C55E)" : "var(--p-50)" }} />
                     </div>
-                    <span style={{ fontSize: 12, fontWeight: 700, flexShrink: 0 }}>{dpp.completedCount}/{dpp.totalStudents}</span>
+                    <span className="t-body-sm-med" style={{ flexShrink: 0 }}>{dpp.completedCount}/{dpp.totalStudents}</span>
                   </div>
                 </div>
               );

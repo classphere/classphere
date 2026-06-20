@@ -40,7 +40,7 @@ export default function AssignmentsPage() {
                 <RiFileListLine size={22} color={s.color} />
               </div>
               <div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: s.color }}>{s.value}</div>
+                <div className="t-kpi" style={{ color: s.color, marginBottom: 4 }}>{s.value}</div>
                 <div className="t-body-sm">{s.label}</div>
               </div>
             </div>
@@ -51,8 +51,8 @@ export default function AssignmentsPage() {
         {late.length > 0 && (
           <div style={{ marginBottom: 32 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-              <RiAlertLine size={18} color="#DC2626" />
-              <h2 style={{ fontSize: 16, fontWeight: 700, color: "#DC2626" }}>Overdue ({late.length})</h2>
+              <RiAlertLine size={18} color="var(--danger-50, #DC2626)" />
+              <h2 className="t-body-base-bold" style={{ color: "var(--danger-50, #DC2626)", marginBottom: 0 }}>Overdue ({late.length})</h2>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {late.map(dpp => <DPPCard key={dpp.id} dpp={dpp} />)}
@@ -64,8 +64,8 @@ export default function AssignmentsPage() {
         {pending.length > 0 && (
           <div style={{ marginBottom: 32 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-              <RiTimeLine size={18} color="#D97706" />
-              <h2 style={{ fontSize: 16, fontWeight: 700 }}>Pending ({pending.length})</h2>
+              <RiTimeLine size={18} color="var(--warning-50, #D97706)" />
+              <h2 className="t-body-base-bold" style={{ marginBottom: 0 }}>Pending ({pending.length})</h2>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {pending.map(dpp => <DPPCard key={dpp.id} dpp={dpp} />)}
@@ -77,8 +77,8 @@ export default function AssignmentsPage() {
         {completed.length > 0 && (
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-              <RiCheckLine size={18} color="#16A34A" />
-              <h2 style={{ fontSize: 16, fontWeight: 700 }}>Completed ({completed.length})</h2>
+              <RiCheckLine size={18} color="var(--success-50, #16A34A)" />
+              <h2 className="t-body-base-bold" style={{ marginBottom: 0 }}>Completed ({completed.length})</h2>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {completed.map(dpp => <DPPCard key={dpp.id} dpp={dpp} />)}
@@ -111,25 +111,25 @@ function DPPCard({ dpp }: { dpp: typeof mockStudentDPPs[0] }) {
 
       {/* Info */}
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{dpp.title}</div>
-        <div style={{ fontSize: 13, color: "var(--fg-muted)", display: "flex", gap: 16, flexWrap: "wrap" }}>
+        <div className="t-body-base-bold" style={{ marginBottom: 4 }}>{dpp.title}</div>
+        <div className="t-body-sm" style={{ color: "var(--fg-muted)", display: "flex", gap: 16, flexWrap: "wrap" }}>
           <span>{dpp.subject} · {dpp.chapter}</span>
           <span>{dpp.totalQuestions} questions</span>
-          <span style={{ color: cfg.color, fontWeight: 600 }}>Due: {dpp.dueDate}</span>
+          <span className="t-body-sm-med" style={{ color: cfg.color }}>Due: {dpp.dueDate}</span>
         </div>
       </div>
 
       {/* Score or Start button */}
       {dpp.status === "completed" ? (
         <div style={{ textAlign: "right", flexShrink: 0 }}>
-          <div style={{ fontSize: 22, fontWeight: 800, color: "#16A34A" }}>{dpp.score}/{dpp.maxScore}</div>
-          <div style={{ fontSize: 12, color: "var(--fg-muted)" }}>{dpp.timeTakenMin} min</div>
+          <div className="t-heading-s" style={{ color: "var(--success-50, #16A34A)" }}>{dpp.score}/{dpp.maxScore}</div>
+          <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>{dpp.timeTakenMin} min</div>
         </div>
       ) : (
         <Link
           href={`/assignments/${dpp.id}`}
-          className="btn btn-primary"
-          style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 8, background: dpp.status === "late" ? "#DC2626" : undefined }}
+          className={`btn btn-sm ${dpp.status === "late" ? "btn-danger" : "btn-primary"}`}
+          style={{ flexShrink: 0, display: "inline-flex", alignItems: "center" }}
         >
           {dpp.status === "late" ? "Submit Late" : "Start DPP"} <RiArrowRightLine size={16} />
         </Link>

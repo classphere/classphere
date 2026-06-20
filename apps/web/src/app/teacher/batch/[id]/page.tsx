@@ -33,10 +33,10 @@ export default function BatchAnalysisPage() {
             <RiArrowLeftLine size={16} /> Back to Dashboard
           </Link>
           <div style={{ display: "flex", gap: 10 }}>
-            <Link href="/teacher/dpps" className="btn btn-outline" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13 }}>
-              <RiAddLine size={14} /> Assign DPP for this Batch
+            <Link href="/teacher/dpps" className="btn btn-outline" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, padding: "8px 16px" }}>
+              <RiAddLine size={16} /> Assign DPP for this Batch
             </Link>
-            <button className="btn btn-primary">Export PDF Report</button>
+            <button className="btn btn-primary" style={{ padding: "8px 16px" }}>Export PDF Report</button>
           </div>
         </div>
 
@@ -45,8 +45,8 @@ export default function BatchAnalysisPage() {
 
           <section className="rayum-card" style={{ padding: 24 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-              <div style={{ padding: 8, background: "var(--n-10)", borderRadius: 8 }}><RiPieChart2Line size={20} /></div>
-              <h2 style={{ fontSize: 18, fontWeight: 700 }}>Score Distribution</h2>
+              <div style={{ padding: 8, background: "var(--n-10)", borderRadius: "var(--r-md)" }}><RiPieChart2Line size={24} /></div>
+              <h2 className="section-title" style={{ marginBottom: 0 }}>Score Distribution</h2>
             </div>
             <div style={{ display: "flex", gap: 16, marginBottom: 20 }}>
               {[
@@ -54,35 +54,35 @@ export default function BatchAnalysisPage() {
                 { label: "Highest Score", value: `${mockBatchAnalysis.classSummary.topScore}%`,  color: "var(--accent-green)" },
                 { label: "Lowest Score",  value: `${mockBatchAnalysis.classSummary.bottomScore}%`, color: "var(--accent-red)" },
               ].map(s => (
-                <div key={s.label} style={{ flex: 1, padding: 16, background: "var(--n-10)", borderRadius: 8, textAlign: "center" }}>
-                  <div style={{ fontSize: 24, fontWeight: 800, color: s.color, marginBottom: 4 }}>{s.value}</div>
-                  <div style={{ fontSize: 12, color: "var(--fg-muted)" }}>{s.label}</div>
+                <div key={s.label} style={{ flex: 1, padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)", textAlign: "center" }}>
+                  <div className="t-heading-b" style={{ color: s.color, marginBottom: 4 }}>{s.value}</div>
+                  <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>{s.label}</div>
                 </div>
               ))}
             </div>
-            <div style={{ background: "var(--n-10)", padding: 16, borderRadius: 8, display: "flex", alignItems: "center", gap: 16 }}>
-              <RiAlertLine size={24} color="var(--accent-orange)" />
+            <div style={{ background: "var(--n-10)", padding: 16, borderRadius: "var(--r-md)", display: "flex", alignItems: "center", gap: 16 }}>
+              <RiAlertLine size={24} color="var(--warning-50, #D97706)" />
               <div>
-                <div style={{ fontWeight: 600, fontSize: 14 }}>{mockBatchAnalysis.classSummary.belowAverageCount} Students Below Average</div>
-                <div style={{ fontSize: 13, color: "var(--fg-muted)" }}>Consider assigning a Booster DPP to this cohort.</div>
+                <div className="t-body-sm-med">{mockBatchAnalysis.classSummary.belowAverageCount} Students Below Average</div>
+                <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>Consider assigning a Booster DPP to this cohort.</div>
               </div>
             </div>
           </section>
 
           <section className="rayum-card" style={{ padding: 24 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-              <div style={{ padding: 8, background: "var(--n-10)", borderRadius: 8 }}><RiFocus2Line size={20} /></div>
-              <h2 style={{ fontSize: 18, fontWeight: 700 }}>AI Teaching Recommendations</h2>
+              <div style={{ padding: 8, background: "var(--n-10)", borderRadius: "var(--r-md)" }}><RiFocus2Line size={24} /></div>
+              <h2 className="section-title" style={{ marginBottom: 0 }}>AI Teaching Recommendations</h2>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {mockBatchAnalysis.teachingRecs.map((rec, i) => (
-                <div key={i} style={{ padding: 16, border: "1px solid var(--border-default)", borderRadius: 8, display: "flex", gap: 16 }}>
-                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: rec.priority === "high" ? "rgba(220,38,38,0.1)" : "rgba(234,88,12,0.1)", color: rec.priority === "high" ? "var(--accent-red)" : "var(--accent-orange)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <div key={i} style={{ padding: 16, border: "1px solid var(--border-default)", borderRadius: "var(--r-md)", display: "flex", gap: 16 }}>
+                  <div style={{ width: 32, height: 32, borderRadius: "var(--r-full)", background: rec.priority === "high" ? "var(--danger-10, #FEF2F2)" : "var(--warning-10, #FFFBEB)", color: rec.priority === "high" ? "var(--danger-50, #DC2626)" : "var(--warning-50, #D97706)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <RiAlertLine size={16} />
                   </div>
                   <div>
-                    <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4 }}>{rec.priority === "high" ? "Critical Priority" : "Medium Priority"}</div>
-                    <p style={{ fontSize: 14, color: "var(--fg-muted)", lineHeight: 1.5 }}>{rec.recommendation}</p>
+                    <div className="t-body-sm-med" style={{ marginBottom: 4 }}>{rec.priority === "high" ? "Critical Priority" : "Medium Priority"}</div>
+                    <p className="t-body-sm" style={{ color: "var(--fg-muted)", lineHeight: 1.5 }}>{rec.recommendation}</p>
                   </div>
                 </div>
               ))}
@@ -92,40 +92,40 @@ export default function BatchAnalysisPage() {
 
         {/* Chapter Heatmap */}
         <section className="rayum-card" style={{ padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>Chapter Performance Heatmap</h2>
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <h2 className="section-title" style={{ marginBottom: 20 }}>Chapter Performance Heatmap</h2>
+          <table className="rayum-table">
             <thead>
-              <tr style={{ borderBottom: "1px solid var(--border-default)", textAlign: "left", color: "var(--fg-muted)", fontSize: 13 }}>
-                <th style={{ paddingBottom: 12 }}>Chapter</th>
-                <th style={{ paddingBottom: 12 }}>Batch Accuracy</th>
-                <th style={{ paddingBottom: 12 }}>Status</th>
-                <th style={{ paddingBottom: 12, textAlign: "right" }}>Action</th>
+              <tr>
+                <th>Chapter</th>
+                <th>Batch Accuracy</th>
+                <th>Status</th>
+                <th style={{ textAlign: "right" }}>Action</th>
               </tr>
             </thead>
             <tbody>
               {mockBatchAnalysis.chapterHeatmap.map((ch, idx) => (
-                <tr key={idx} style={{ borderBottom: "1px solid var(--n-10)" }}>
-                  <td style={{ padding: "14px 0", fontWeight: 600 }}>{ch.chapter}</td>
-                  <td style={{ padding: "14px 0" }}>
+                <tr key={idx}>
+                  <td className="t-body-sm-med">{ch.chapter}</td>
+                  <td>
                     <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                      <div style={{ flex: 1, height: 8, background: "var(--n-10)", borderRadius: 4, maxWidth: 200, overflow: "hidden" }}>
-                        <div style={{ height: "100%", width: `${ch.avgAccuracy}%`, background: ch.flag === "good" ? "var(--accent-green)" : ch.flag === "warning" ? "var(--accent-orange)" : "var(--accent-red)" }} />
+                      <div className="progress-track" style={{ flex: 1, height: 8, maxWidth: 200 }}>
+                        <div className="progress-fill" style={{ height: "100%", width: `${ch.avgAccuracy}%`, background: ch.flag === "good" ? "var(--success-50, #22C55E)" : ch.flag === "warning" ? "var(--warning-50, #F59E0B)" : "var(--danger-50, #EF4444)" }} />
                       </div>
-                      <span style={{ fontSize: 13, fontWeight: 600 }}>{ch.avgAccuracy}%</span>
+                      <span className="t-body-sm-med">{ch.avgAccuracy}%</span>
                     </div>
                   </td>
-                  <td style={{ padding: "14px 0" }}>
+                  <td>
                     {ch.flag === "good" ? (
-                      <span className="rayum-badge green" style={{ display: "inline-flex", alignItems: "center", gap: 4 }}><RiCheckDoubleLine size={12} /> Mastered</span>
+                      <span className="badge badge-green"><RiCheckDoubleLine size={14} /> Mastered</span>
                     ) : ch.flag === "warning" ? (
-                      <span className="rayum-badge yellow" style={{ display: "inline-flex", alignItems: "center", gap: 4 }}><RiAlertLine size={12} /> Needs Review</span>
+                      <span className="badge badge-orange"><RiAlertLine size={14} /> Needs Review</span>
                     ) : (
-                      <span className="rayum-badge red" style={{ display: "inline-flex", alignItems: "center", gap: 4 }}><RiAlertLine size={12} /> Critical Weakness</span>
+                      <span className="badge badge-red"><RiAlertLine size={14} /> Critical Weakness</span>
                     )}
                   </td>
-                  <td style={{ padding: "14px 0", textAlign: "right" }}>
+                  <td style={{ textAlign: "right" }}>
                     {ch.flag !== "good" && (
-                      <Link href="/teacher/dpps" className="btn btn-outline" style={{ fontSize: 12, padding: "4px 12px" }}>
+                      <Link href="/teacher/dpps" className="btn btn-outline" style={{ padding: "6px 12px", fontSize: 13 }}>
                         + Assign DPP
                       </Link>
                     )}
