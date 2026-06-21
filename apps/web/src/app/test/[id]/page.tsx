@@ -180,7 +180,7 @@ export default function TestPage() {
   const [current, setCurrent]             = useState(0);
   const [answers, setAnswers]             = useState<AnswerMap>({});
   const [status, setStatus]               = useState<StatusMap>({});
-  const [timeLeft, setTimeLeft]           = useState(0);
+  const [timeLeft, setTimeLeft]           = useState<number | null>(null);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [isDemoMode, setIsDemoMode]       = useState(false);
 
@@ -264,8 +264,8 @@ export default function TestPage() {
   }, [answers, status, testId, router]);
 
   useEffect(() => {
-    if (timeLeft <= 0 || loading) return;
-    const t = setTimeout(() => setTimeLeft((s) => s - 1), 1000);
+    if (timeLeft === null || timeLeft <= 0 || loading) return;
+    const t = setTimeout(() => setTimeLeft((s) => (s !== null ? s - 1 : null)), 1000);
     return () => clearTimeout(t);
   }, [timeLeft, loading, handleSubmit]);
 
@@ -376,7 +376,7 @@ export default function TestPage() {
   const answered   = Object.values(status).filter((s) => s === "answered").length;
   const marked     = Object.values(status).filter((s) => s === "review").length;
   const unanswered = questions.length - answered - marked;
-  const timeWarning = timeLeft < 300;
+  const timeWarning = timeLeft !== null && timeLeft < 300;
 
   // ── Group questions by subject for navigator labels ─────────────────────────
   const subjects = [...new Set(questions.map((q) => q.subject))];
@@ -406,7 +406,7 @@ export default function TestPage() {
                 <RiTimerLine size={18} />
               </span>
               <span className={`text-body-2 font-bold tabular-nums ${timeWarning ? "text-[#FF6A55]" : "text-t-primary"}`}>
-                {formatTime(timeLeft)}
+                {timeLeft !== null ? formatTime(timeLeft) : "--:--"}
               </span>
             </div>
 
