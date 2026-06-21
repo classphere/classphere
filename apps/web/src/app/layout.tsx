@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/layout/Sidebar";
+import AppShell from "@/components/layout/AppShell";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,14 +18,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`}>
-      <body className="min-h-full antialiased" style={{ display: "flex", justifyContent: "center", backgroundColor: "var(--n-20)" }}>
-        <div style={{ display: "flex", width: "100%", maxWidth: 1440, minHeight: "100vh", position: "relative", backgroundColor: "var(--bg-default)", boxShadow: "0 0 40px rgba(0,0,0,0.05)" }}>
-          <Sidebar />
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
-            {children}
-          </div>
-        </div>
+    <html lang="en" className={`${inter.variable} h-full`} data-theme="light">
+      <body className="min-h-screen bg-b-surface1 text-t-primary antialiased">
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

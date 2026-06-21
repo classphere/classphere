@@ -9,74 +9,80 @@ import {
   RiVerifiedBadgeFill
 } from "@remixicon/react";
 
-export default function Navbar({ title, subtitle, breadcrumbs }: { title?: string, subtitle?: string, breadcrumbs?: string }) {
+export default function Navbar({
+  title,
+  subtitle,
+  breadcrumbs
+}: {
+  title?: string;
+  subtitle?: string;
+  breadcrumbs?: string;
+}) {
   return (
-    <header
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "32px 32px 24px 32px",
-        background: "transparent",
-        width: "100%"
-      }}
-    >
-      <div>
-        {breadcrumbs ? (
-          <div className="breadcrumb" style={{ marginBottom: 12 }}>
-            <span className="breadcrumb-current">{breadcrumbs.split(" > ")[0]}</span>
-            <span className="breadcrumb-sep">›</span>
+    <header className="sticky top-4 z-30 mx-4 flex w-[calc(100%-2rem)] flex-col gap-4 rounded-4xl border border-s-stroke2/70 bg-b-surface1 px-5 py-4 shadow-widget md:mx-6 md:w-[calc(100%-3rem)] md:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:px-8">
+      {/* Title & Breadcrumbs */}
+      <div className="min-w-0 flex-1">
+        {breadcrumbs && (
+          <div className="mb-1 flex items-center gap-1.5 text-caption text-t-secondary">
+            <span className="font-semibold text-t-secondary">{breadcrumbs.split(" > ")[0]}</span>
+            <span>›</span>
             <span>{breadcrumbs.split(" > ").slice(1).join(" › ")}</span>
           </div>
-        ) : null}
+        )}
 
-        <h1 className="t-heading" style={{ color: "var(--fg-default)", marginBottom: 4 }}>
+        <h1 className="max-w-full text-h6 font-semibold leading-tight tracking-tight text-t-primary sm:text-h5">
           {title || `Good morning, ${mockUser.name.split(" ")[0]}`}
         </h1>
 
-        <p className="t-body" style={{ color: "var(--fg-muted)" }}>
+        <p className="mt-1 max-w-2xl text-body-2 text-t-secondary">
           {subtitle || "Here's your daily briefing. You are 12% ahead of target this week."}
         </p>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-
-        {/* Icons */}
-        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-          <button style={{ background: "none", border: "none", cursor: "pointer", color: "var(--fg-default)", display: "flex", alignItems: "center" }}>
-            <RiSearchLine size={22} />
+      {/* Right Actions */}
+      <div className="flex w-full items-center justify-between gap-3 lg:w-auto lg:justify-end sm:gap-5">
+        {/* Quick Action Icons */}
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          <button className="flex size-9 items-center justify-center rounded-full border border-transparent bg-b-surface2 text-t-secondary transition-colors hover:border-s-stroke2 hover:text-t-primary cursor-pointer sm:size-10">
+            <RiSearchLine size={20} />
           </button>
 
-          <button style={{ background: "none", border: "none", cursor: "pointer", color: "var(--fg-default)", position: "relative", display: "flex", alignItems: "center" }}>
-            <RiNotification3Line size={22} />
-            <div className="notif-dot" style={{ background: "var(--p-50)" }} />
+          <button className="relative flex size-9 items-center justify-center rounded-full border border-transparent bg-b-surface2 text-t-secondary transition-colors hover:border-s-stroke2 hover:text-t-primary cursor-pointer sm:size-10">
+            <RiNotification3Line size={20} />
+            <div className="absolute top-2 right-2 size-2 rounded-full bg-primary-01" />
           </button>
 
-          <button style={{ background: "none", border: "none", cursor: "pointer", color: "var(--fg-default)", position: "relative", display: "flex", alignItems: "center" }}>
-            <RiMailLine size={22} />
-            <div className="notif-dot" style={{ background: "var(--p-50)" }} />
+          <button className="relative flex size-9 items-center justify-center rounded-full border border-transparent bg-b-surface2 text-t-secondary transition-colors hover:border-s-stroke2 hover:text-t-primary cursor-pointer sm:size-10">
+            <RiMailLine size={20} />
+            <div className="absolute top-2 right-2 size-2 rounded-full bg-primary-01" />
           </button>
         </div>
 
-        {/* Profile */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12, cursor: "pointer", marginLeft: 8 }}>
-          <div className="avatar avatar-lg">
-            <img src={`https://ui-avatars.com/api/?name=${encodeURIComponent(mockUser.name)}&background=3765F6&color=fff&size=88`} alt="Avatar" style={{ width: "100%", height: "100%", borderRadius: "50%" }} />
+        {/* Vertical Divider */}
+        <div className="hidden h-8 w-px bg-s-stroke2/70 lg:block" />
+
+        {/* User Profile Card */}
+        <div className="flex items-center gap-3 rounded-full border border-transparent px-2 py-1.5 transition-colors hover:border-s-stroke2 hover:bg-b-surface2/70 cursor-pointer">
+          <div className="size-10 overflow-hidden rounded-full border-[1.5px] border-s-stroke2 bg-b-surface2">
+            <img
+              src={`https://ui-avatars.com/api/?name=${encodeURIComponent(mockUser.name)}&background=3765F6&color=fff&size=88`}
+              alt="Avatar"
+              className="w-full h-full object-cover"
+            />
           </div>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-              <div className="text-body-large text-bold">{mockUser.name}</div>
-              <span style={{ color: "var(--s-50)", display: "flex", alignItems: "center" }}>
-                <RiVerifiedBadgeFill size={16} />
+          <div className="hidden min-w-0 sm:block">
+            <div className="flex items-center gap-1">
+              <span className="text-body-2 font-bold text-t-primary leading-none">{mockUser.name}</span>
+              <span className="text-t-blue flex items-center">
+                <RiVerifiedBadgeFill size={14} />
               </span>
             </div>
-            <div className="t-body-sm">@{mockUser.name.split(" ")[0].toLowerCase()}</div>
+            <div className="text-caption text-t-secondary mt-0.5">@{mockUser.name.split(" ")[0].toLowerCase()}</div>
           </div>
-          <span style={{ color: "var(--fg-muted)", display: "flex", alignItems: "center", marginLeft: 4 }}>
-            <RiArrowDownSLine size={20} />
+          <span className="text-t-secondary flex items-center">
+            <RiArrowDownSLine size={16} />
           </span>
         </div>
-
       </div>
     </header>
   );

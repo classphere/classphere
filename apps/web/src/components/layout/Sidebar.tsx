@@ -88,105 +88,97 @@ export default function Sidebar() {
 
   return (
     <aside
-      style={{
-        width: 250,
-        height: "calc(100vh - 32px)",
-        margin: 16,
-        borderRadius: "var(--r-xl)",
-        background: "var(--bg-surface)",
-        border: "1px solid var(--border-default)",
-        boxShadow: "var(--sh-200)",
-        display: "flex",
-        flexDirection: "column",
-        padding: "24px 16px",
-        position: "sticky",
-        top: 16,
-        flexShrink: 0,
-        zIndex: 40,
-        overflowY: "auto"
-      }}
+      className="hidden md:flex sticky top-0 z-40 h-screen w-[280px] shrink-0 flex-col overflow-y-auto border-r border-s-stroke2/70 bg-b-surface1 px-5 py-6 xl:w-[304px]"
     >
       {/* ── Logo ── */}
-      <div style={{ marginBottom: 32, paddingLeft: 8 }}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div
-            style={{
-              width: 32,
-              height: 32,
-              borderRadius: "50%",
-              background: "var(--s-50)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-            }}
-          >
+      <div className="mb-8 pl-1">
+        <Link href="/" className="flex items-center gap-2.5 rounded-full px-2 py-1.5 transition-colors hover:bg-b-surface2">
+          <div className="flex size-8 items-center justify-center rounded-full bg-b-primary text-t-light">
             <RiFlashlightFill size={18} />
           </div>
-          <span style={{ fontWeight: 800, fontSize: 22, color: "var(--fg-default)", letterSpacing: "-0.02em" }}>
+          <span className="font-bold text-h6 text-t-primary tracking-tight">
             ExamPrep
           </span>
         </Link>
       </div>
 
       {/* ── Main Menu ── */}
-      <div style={{ marginBottom: 24 }}>
-        <div className="t-label" style={{ marginBottom: 12, paddingLeft: 12 }}>
+      <div className="mb-6">
+        <div className="t-label mb-3 pl-3">
           Main menu
         </div>
-        <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        <nav className="flex flex-col gap-1">
           {currentNav.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className={`sidebar-link ${item.active ? "active" : ""}`}
+              className={`group relative flex h-12 shrink-0 items-center gap-3 rounded-3xl px-5 text-button transition-colors hover:text-t-primary ${
+                item.active ? "text-t-primary font-bold" : "text-t-secondary"
+              }`}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <span style={{ display: "flex", alignItems: "center" }}>{item.icon}</span>
-                <span>{item.label}</span>
-              </div>
+              {item.active && (
+                <div className="absolute inset-0 z-0 rounded-3xl gradient-menu shadow-depth-menu">
+                  <div className="absolute inset-[1.5px] rounded-[1.375rem] bg-b-pop"></div>
+                </div>
+              )}
+              <span className={`relative z-10 flex items-center transition-colors group-hover:text-t-primary ${
+                item.active ? "text-t-primary" : "text-t-secondary"
+              }`}>
+                {item.icon}
+              </span>
+              <span className="relative z-10">{item.label}</span>
             </Link>
           ))}
-
         </nav>
       </div>
 
       {/* ── Others Menu ── */}
-      <div style={{ marginBottom: "auto" }}>
-        <div className="t-label" style={{ marginBottom: 12, paddingLeft: 12 }}>
+      <div className="mb-auto">
+        <div className="t-label mb-3 pl-3">
           Others
         </div>
-        <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-          {othersNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`sidebar-link ${pathname.startsWith(item.path) ? "active" : ""}`}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <span style={{ display: "flex", alignItems: "center" }}>{item.icon}</span>
-                <span>{item.label}</span>
-              </div>
-            </Link>
-          ))}
+        <nav className="flex flex-col gap-1">
+          {othersNav.map((item) => {
+            const isActive = pathname.startsWith(item.path);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`group relative flex h-12 shrink-0 items-center gap-3 rounded-3xl px-5 text-button transition-colors hover:text-t-primary ${
+                  isActive ? "text-t-primary font-bold" : "text-t-secondary"
+                }`}
+              >
+                {isActive && (
+                  <div className="absolute inset-0 z-0 rounded-3xl gradient-menu shadow-depth-menu">
+                    <div className="absolute inset-[1.5px] rounded-[1.375rem] bg-b-pop"></div>
+                  </div>
+                )}
+                <span className={`relative z-10 flex items-center transition-colors group-hover:text-t-primary ${
+                  isActive ? "text-t-primary" : "text-t-secondary"
+                }`}>
+                  {item.icon}
+                </span>
+                <span className="relative z-10">{item.label}</span>
+              </Link>
+            );
+          })}
         </nav>
       </div>
 
       {/* ── Bottom Section (Profile + Demo Switcher) ── */}
-      <div style={{ marginTop: 32 }}>
+      <div className="mt-8">
 
-        {/* Download App block pattern from Rayum */}
-        <div style={{ background: "var(--n-10)", borderRadius: "var(--r-lg)", padding: 20, marginBottom: 24 }}>
-          <h4 className="text-body-large text-bold" style={{ marginBottom: 4 }}>Download our<br />Mobile App</h4>
-          <p className="t-body-sm" style={{ marginBottom: 16 }}>Get easy in another way</p>
-          <button className="btn btn-outline" style={{ width: "100%", background: "transparent" }}>Download</button>
+        {/* Download App block pattern */}
+        <div className="card mb-6 rounded-4xl border border-s-stroke2/70 bg-b-surface2 p-5 shadow-widget">
+          <h4 className="text-body-2 font-bold mb-1 text-t-primary">Download our<br />Mobile App</h4>
+          <p className="text-caption text-t-secondary mb-4">Get easy in another way</p>
+          <button className="btn btn-sm btn-outline w-full bg-transparent">Download</button>
         </div>
 
         {/* Demo Role Switcher */}
-        <div style={{ padding: "0 8px" }}>
+        <div className="px-2">
           <select
-            className="input"
-            style={{ width: "100%", padding: "8px 12px", fontSize: 13, borderColor: "var(--n-20)", background: "transparent" }}
+            className="input h-10 w-full rounded-3xl border border-s-stroke2 bg-b-surface2 px-3 py-1.5 text-caption"
             value={isTeacher ? "/teacher" : isInstitute ? "/institute" : isSuperAdmin ? "/superadmin" : "/"}
             onChange={(e) => router.push(e.target.value)}
           >
