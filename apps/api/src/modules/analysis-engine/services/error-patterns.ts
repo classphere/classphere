@@ -11,6 +11,7 @@ const ALL_DETECTORS: PatternDetector[] = [
   detectSubjectAvoidance,
   detectDistractorTrap,
   detectFreeMarksLeak,
+  detectConsistentGuesser,
 ];
 
 export function detectAllPatterns(answers: ClassifiedAnswer[]): ErrorPattern[] {
@@ -186,5 +187,22 @@ function detectFreeMarksLeak(classified: ClassifiedAnswer[]): ErrorPattern | nul
     questionsAffected: leaks.map(a => a.question_id),
     severity: leaks.length >= 5 ? "high" : "medium",
     tip: "These are your highest ROI fixes. Slow down on straightforward questions.",
+  };
+}
+
+// 9. Consistent Guesser: >3 correct answers flagged as guessed
+function detectConsistentGuesser(classified: ClassifiedAnswer[]): ErrorPattern | null {
+  const guessed = classified.filter(a => a.classification?.type === "correct_guessed");
+  if (guessed.length < 3) return null;
+
+  const marksAtRisk = guessed.length * 5; // +4 gained, +1 penalty avoided = 5 per question
+
+  return {
+    id: "consistent_guesser",
+    name: "Hidden Score Risk: Correct But Guessed",
+    description: `${guessed.length} correct answers were likely guesses or eliminations, not confident solutions. These ${marksAtRisk} marks are at risk in the real exam.`,
+    questionsAffected: guessed.map(a => a.question_id),
+    severity: guessed.length >= 6 ? "high" : "medium",
+    tip: "Review every question you answered quickly. If you can't reproduce the solution path from scratch, mark it as 'weak' and revise the topic.",
   };
 }

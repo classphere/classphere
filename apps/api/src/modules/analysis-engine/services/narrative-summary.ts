@@ -16,7 +16,6 @@ import {
 // We always target the NEXT upcoming session from today.
 //
 // For NEET: May (approx first Sunday of May), anchor May 4
-
 const JEE_SESSION_DATES: { name: string; month: number; day: number }[] = [
   { name: "JEE Main Session 1", month: 1,  day: 22 },  // January 22
   { name: "JEE Main Session 2", month: 4,  day: 2  },  // April 2
@@ -89,6 +88,17 @@ function buildUrgencyLabel(mode: ExamCountdown["urgencyMode"], days: number): st
   }
 }
 
+// Helper: Deterministic Hash
+function getDeterministicIndex(seed: string, length: number): number {
+  if (!seed) return Math.floor(Math.random() * length);
+  let hash = 0;
+  for (let i = 0; i < seed.length; i++) {
+    hash = (hash << 5) - hash + seed.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash) % length;
+}
+
 // ── Narrative Generator ───────────────────────────────────────────────────
 
 export function generateNarrative(
@@ -98,7 +108,8 @@ export function generateNarrative(
   freeMarks: FreeMarksResult,
   longitudinalFlags: LongitudinalFlag[],
   strategy: AttemptStrategy,
-  examCode: string
+  examCode: string,
+  attemptId: string = ""
 ): AnalysisNarrative {
   const countdown = getExamCountdown(examCode);
   const weakCount = topicStats.filter((t) => t.isWeak).length;
@@ -107,13 +118,13 @@ export function generateNarrative(
   const highFlags = longitudinalFlags.filter((f) => f.urgency === "high");
 
   // ── Headline ──────────────────────────────────────────────────────────
-  const headline = buildHeadline(scoring, freeMarks, criticalFlag, longitudinalFlags);
+  const headline = buildHeadline(scoring, freeMarks, criticalFlag, attemptId);
 
   // ── Overview ──────────────────────────────────────────────────────────
-  const overview = buildOverview(scoring, pct, weakCount, freeMarks, strategy);
+  const overview = buildOverview(scoring, pct, weakCount, freeMarks, strategy, attemptId);
 
   // ── Biggest win ───────────────────────────────────────────────────────
-  const biggestWin = identifyBiggestWin(errorPatterns, freeMarks, longitudinalFlags, strategy);
+  const biggestWin = identifyBiggestWin(errorPatterns, freeMarks, longitudinalFlags, strategy, attemptId);
 
   // ── Warning ───────────────────────────────────────────────────────────
   const warningMessage = criticalFlag
@@ -123,7 +134,7 @@ export function generateNarrative(
     : null;
 
   // ── Motivational note ─────────────────────────────────────────────────
-  const motivationalNote = buildMotivationalNote(scoring, freeMarks, countdown, weakCount);
+  const motivationalNote = buildMotivationalNote(scoring, freeMarks, countdown, weakCount, attemptId);
 
   return {
     headline,
@@ -141,24 +152,61 @@ function buildHeadline(
   scoring: ScoringResult,
   freeMarks: FreeMarksResult,
   criticalFlag: LongitudinalFlag | undefined,
-  longitudinalFlags: LongitudinalFlag[]
+  attemptId: string
 ): string {
+  const seed = attemptId + "_headline";
+
   if (criticalFlag) {
-    return `Recurring gap in "${criticalFlag.topic}" needs immediate attention.`;
+    const templates = [
+      `Recurring gap in "${criticalFlag.topic}" needs immediate attention.`,
+      `Struggling with "${criticalFlag.topic}" across multiple tests — this needs active review.`,
+      `Alert: "${criticalFlag.topic}" has emerged as a persistent weak spot.`
+    ];
+    return templates[getDeterministicIndex(seed, templates.length)];
   }
+
   if (freeMarks.totalFreeMarks >= 20) {
-    return `${freeMarks.totalFreeMarks} marks left on the table — and you already knew how to earn them.`;
+    const templates = [
+      `${freeMarks.totalFreeMarks} marks left on the table — and you already knew how to earn them.`,
+      `Score leak alert: ${freeMarks.totalFreeMarks} marks lost purely to silly and calculation errors.`,
+      `Recoverable points: ${freeMarks.totalFreeMarks} marks were lost due to exam room rush.`
+    ];
+    return templates[getDeterministicIndex(seed, templates.length)];
   }
+
   if (scoring.percentage >= 80) {
-    return "Strong performance — now it's about eliminating the last few leaks.";
+    const templates = [
+      "Strong performance — now it's about eliminating the last few leaks.",
+      "Outstanding attempt. You've established a solid foundation; let's polish the edge cases.",
+      "Premium execution. Just a few small adjustments needed to reach the highest percentiles."
+    ];
+    return templates[getDeterministicIndex(seed, templates.length)];
   }
+
   if (scoring.percentage >= 60) {
-    return "Solid foundation — targeted fixes can push you into the top percentile.";
+    const templates = [
+      "Solid foundation — targeted fixes can push you into the top percentile.",
+      "Strong foundation established — targeted optimization will elevate your rank.",
+      "Promising result. You have the concept baseline; now refine your execution speed."
+    ];
+    return templates[getDeterministicIndex(seed, templates.length)];
   }
+
   if (scoring.percentage >= 40) {
-    return "Significant room to grow — the right strategy will accelerate your improvement.";
+    const templates = [
+      "Significant room to grow — the right strategy will accelerate your improvement.",
+      "Substantial room to climb — the right revision strategy will accelerate your progress.",
+      "Solid baseline, but a few critical concept leaks are pulling your score down."
+    ];
+    return templates[getDeterministicIndex(seed, templates.length)];
   }
-  return "Early stage — every test is data. Let's see exactly where to focus.";
+
+  const templates = [
+    "Early stage — every test is data. Let's see exactly where to focus.",
+    "Initial baseline set. Treat every mistake here as a free lesson for the final exam.",
+    "Don't chase high scores yet — build your foundational concepts topic by topic."
+  ];
+  return templates[getDeterministicIndex(seed, templates.length)];
 }
 
 function buildOverview(
@@ -166,44 +214,61 @@ function buildOverview(
   pct: string,
   weakCount: number,
   freeMarks: FreeMarksResult,
-  strategy: AttemptStrategy
+  strategy: AttemptStrategy,
+  attemptId: string
 ): string {
+  const seed = attemptId + "_overview";
   const scoreStr = `${scoring.score}/${scoring.maxScore}`;
-  let text = `You scored ${pct}% (${scoreStr}) this test, with ${weakCount} topic${weakCount !== 1 ? "s" : ""} falling below the 50% threshold. `;
 
-  if (freeMarks.totalFreeMarks > 0) {
-    text += `${freeMarks.totalFreeMarks} marks were lost to fixable errors (${freeMarks.sillyCount} silly + ${freeMarks.calculationCount} calculation) — these are recoverable without any additional studying. `;
-  }
-
+  let timeSummary = "";
   if (strategy.overtimeSubjects.length > 0) {
-    text += `Time allocation shows over-investment in ${strategy.overtimeSubjects.join(" and ")}, which may have compressed time on other sections.`;
+    timeSummary = `Time allocation shows over-investment in ${strategy.overtimeSubjects.join(" and ")}, which may have compressed time on other sections.`;
   } else if (strategy.strategyScore >= 75) {
-    text += "Your time management across subjects was well-balanced.";
+    timeSummary = "Your time management across subjects was well-balanced.";
   }
 
-  return text.trim();
+  const templates = [
+    `You achieved a score of ${pct}% (${scoreStr}) this test, with ${weakCount} topic${weakCount !== 1 ? "s" : ""} falling below the target threshold. Of these, ${freeMarks.totalFreeMarks} marks were lost to simple slips rather than knowledge gaps. ${timeSummary}`,
+    `With ${pct}% (${scoreStr}) in this test, you've shown solid performance, but ${weakCount} key topic${weakCount !== 1 ? "s" : ""} require attention. Rushing and math slips cost you ${freeMarks.totalFreeMarks} marks which could be instantly recovered. ${timeSummary}`,
+    `This mock test result of ${pct}% (${scoreStr}) highlights ${weakCount} area${weakCount !== 1 ? "s" : ""} of improvement. You dropped ${freeMarks.totalFreeMarks} marks on silly/calculation slips. ${timeSummary}`
+  ];
+
+  return templates[getDeterministicIndex(seed, templates.length)];
 }
 
 function identifyBiggestWin(
   errorPatterns: ErrorPattern[],
   freeMarks: FreeMarksResult,
   longitudinalFlags: LongitudinalFlag[],
-  strategy: AttemptStrategy
+  strategy: AttemptStrategy,
+  attemptId: string
 ): string {
+  const seed = attemptId + "_win";
+
   // Priority: critical longitudinal > free marks > strategy > error patterns
   const critical = longitudinalFlags.find((f) => f.urgency === "critical");
   if (critical) {
-    return `Fix "${critical.topic}" — it's been your weakest point for ${critical.occurrences} tests. ${critical.actionRequired}`;
+    const templates = [
+      `Fix "${critical.topic}" — it's been your weakest point for ${critical.occurrences} tests. ${critical.actionRequired}`,
+      `Critical Action: Address the gap in "${critical.topic}" before your next mock test. It has been a persistent drain on your score.`
+    ];
+    return templates[getDeterministicIndex(seed, templates.length)];
   }
 
   if (freeMarks.totalFreeMarks >= 15) {
-    return `Recover your free marks: ${freeMarks.totalFreeMarks} marks lost to silly + calculation errors. ` +
-      `These require zero new studying — just more careful execution. Slow down on easy questions.`;
+    const templates = [
+      `Recover your free marks: ${freeMarks.totalFreeMarks} marks lost to silly + calculation errors. These require zero new studying — just more careful execution. Slow down on easy questions.`,
+      `Quickest score boost: Secure the ${freeMarks.totalFreeMarks} marks you lost to careless execution. No new revision needed, just more deliberate calculations.`
+    ];
+    return templates[getDeterministicIndex(seed, templates.length)];
   }
 
   if (strategy.overtimeSubjects.length > 0 && strategy.strategyScore < 70) {
-    return `Fix your time strategy: you're over-investing in ${strategy.overtimeSubjects.join("/")}. ` +
-      `${strategy.recommendation}`;
+    const templates = [
+      `Fix your time strategy: you're over-investing in ${strategy.overtimeSubjects.join("/")}. ${strategy.recommendation}`,
+      `Pacing optimization: Adjust your subject timing. Over-allocating time to ${strategy.overtimeSubjects.join("/")} is hurting your overall score.`
+    ];
+    return templates[getDeterministicIndex(seed, templates.length)];
   }
 
   const highPattern = errorPatterns.find((p) => p.severity === "high");
@@ -211,48 +276,53 @@ function identifyBiggestWin(
     return `${highPattern.name}: ${highPattern.tip}`;
   }
 
-  return "Revisit your weakest topic this week with a focused 60-minute session before your next test.";
+  const templates = [
+    "Revisit your weakest topic this week with a focused 60-minute session before your next test.",
+    "Syllabus patching: Review the core concept of your lowest-accuracy topic before taking another test."
+  ];
+  return templates[getDeterministicIndex(seed, templates.length)];
 }
 
 function buildMotivationalNote(
   scoring: ScoringResult,
   freeMarks: FreeMarksResult,
   countdown: ExamCountdown | null,
-  weakCount: number
+  weakCount: number,
+  attemptId: string
 ): string {
+  const seed = attemptId + "_motivational";
   const parts: string[] = [];
 
   if (freeMarks.totalFreeMarks > 0) {
-    parts.push(
-      `If you fix just the fixable errors, your score jumps to ${freeMarks.projectedScore} — ` +
-      `that's ${freeMarks.projectedPercentage.toFixed(0)}% without learning a single new concept.`
-    );
+    const templates = [
+      `If you fix just the silly errors, your score jumps to ${freeMarks.projectedScore} — that's ${freeMarks.projectedPercentage.toFixed(0)}% without learning a single new concept.`,
+      `Imagine starting the next test with an extra ${freeMarks.totalFreeMarks} marks. You already have the knowledge — just execute carefully.`
+    ];
+    parts.push(templates[getDeterministicIndex(seed, templates.length)]);
   }
 
   if (countdown) {
     if (countdown.urgencyMode === "foundation") {
       parts.push(
-        `With ${countdown.daysRemaining} days until ${countdown.examName}, you have time to build deeply. ` +
-        `Focus on understanding, not memorization.`
+        `With ${countdown.daysRemaining} days until ${countdown.examName}, you have time to build deeply. Focus on understanding, not memorization.`
       );
     } else if (countdown.urgencyMode === "sprint") {
       parts.push(
-        `${countdown.daysRemaining} days to ${countdown.examName}. ` +
-        `Every mock from here is a full dress rehearsal. Execute your study plan precisely.`
+        `${countdown.daysRemaining} days to ${countdown.examName}. Every mock from here is a full dress rehearsal. Execute your study plan precisely.`
       );
     } else if (countdown.urgencyMode === "crisis") {
       parts.push(
-        `${countdown.daysRemaining} days left. No new concepts — only consolidation and attempt strategy. ` +
-        `Your foundation is set. Trust it.`
+        `${countdown.daysRemaining} days left. No new concepts — only consolidation and attempt strategy. Your foundation is set. Trust it.`
       );
     }
   }
 
   if (parts.length === 0) {
-    parts.push(
-      `The goal isn't a perfect score — it's a consistently improving one. ` +
-      `${weakCount} topics to fix. That's specific. That's solvable.`
-    );
+    const templates = [
+      `The goal isn't a perfect score — it's a consistently improving one. ${weakCount} topics to fix. That's specific. That's solvable.`,
+      `Every error solved now is a point saved on the final day. Keep pushing forward.`
+    ];
+    parts.push(templates[getDeterministicIndex(seed, templates.length)]);
   }
 
   return parts.join(" ");

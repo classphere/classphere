@@ -73,7 +73,8 @@ export async function analyzeAttempt(attemptId: string, hasTimingData = true): P
     freeMarks,
     longitudinalFlags,
     attemptStrategy,
-    attempt.exam_code ?? "jee-main"
+    attempt.exam_code ?? "jee-main",
+    attemptId
   );
 
   const processingMs = Date.now() - start;
