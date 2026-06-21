@@ -463,7 +463,7 @@ export default function TestPage() {
             <div className="mb-6 flex flex-wrap gap-3">
               {q.question_images.map((url, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={i} src={url} alt={`Figure ${i + 1}`} className="max-w-full rounded-2xl border border-s-stroke2" />
+                <img key={i} src={url} alt={`Figure ${i + 1}`} className="max-w-full rounded-2xl border border-s-stroke2" referrerPolicy="no-referrer" />
               ))}
             </div>
           )}
@@ -509,7 +509,7 @@ export default function TestPage() {
                         {opt.text && <Latex>{opt.text}</Latex>}
                         {opt.image_url && (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 max-w-full rounded-xl" />
+                          <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 max-w-full rounded-xl" referrerPolicy="no-referrer" />
                         )}
                       </div>
                     </button>
