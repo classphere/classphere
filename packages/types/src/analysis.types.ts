@@ -15,7 +15,7 @@ export type SkipType =
   | "strategic_skip";    // Viewed 15-60s — reasonable decision
 
 export interface MistakeClassification {
-  type: ErrorType | SkipType | "correct";
+  type: ErrorType | SkipType | "correct" | "correct_guessed";
   detail: string;        // Human-readable explanation of WHY
   tip: string;           // Actionable advice
   confidence: "high" | "medium" | "low" | "very_low";
