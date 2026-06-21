@@ -69,24 +69,24 @@ export default function MistakeDiary() {
   return (
     <>
       <Navbar title="Mistake Diary" />
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
+      <main className="mx-auto w-full max-w-screen-lg px-6 pb-10 pt-6 md:px-8">
         
         {/* Header */}
-        <div style={{ marginBottom: "var(--space-800)", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-          <div>
-            <h1 className="text-h2" style={{ color: "var(--fg-default)", display: "flex", alignItems: "center", gap: 12 }}>
-              <RiBookmarkFill color="var(--primary-50)" /> My Mistake Diary
-            </h1>
-            <p className="text-body-base" style={{ color: "var(--fg-muted)", marginTop: 8 }}>
+        <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="min-w-0">
+            <div className="mb-2 flex items-center gap-2 text-caption font-semibold uppercase tracking-wider text-t-tertiary">
+              <RiBookmarkFill className="text-primary-01" /> Review log
+            </div>
+            <h1 className="text-h4 font-semibold tracking-tight text-t-primary">Mistake Diary</h1>
+            <p className="mt-2 text-body-2 text-t-secondary">
               Review your past errors so you never make them again.
             </p>
           </div>
-          <div style={{ display: "flex", gap: 12 }}>
+          <div className="w-full lg:w-48">
              <select 
-              className="input" 
+              className="input h-11 w-full rounded-3xl"
               value={filterSubject}
               onChange={(e) => setFilterSubject(e.target.value)}
-              style={{ width: 140 }}
             >
               <option value="All">All Subjects</option>
               <option value="Physics">Physics</option>
@@ -97,24 +97,24 @@ export default function MistakeDiary() {
         </div>
 
         {/* Tabs */}
-        <div style={{ display: "flex", gap: 32, borderBottom: "1px solid var(--border-default)", marginBottom: 32 }}>
+        <div className="mb-6 flex gap-2 border-b border-s-stroke2">
           <button 
             onClick={() => setActiveTab("unresolved")}
-            style={{ 
-              background: "none", border: "none", padding: "0 0 12px 0", fontSize: 16, fontWeight: 600, cursor: "pointer",
-              color: activeTab === "unresolved" ? "var(--primary-50)" : "var(--fg-muted)",
-              borderBottom: activeTab === "unresolved" ? "2px solid var(--primary-50)" : "2px solid transparent",
-            }}
+            className={`border-b-2 px-2 pb-3 text-body-2 font-semibold transition-colors ${
+              activeTab === "unresolved"
+                ? "border-primary-01 text-primary-01"
+                : "border-transparent text-t-secondary hover:text-t-primary"
+            }`}
           >
             Needs Review ({mistakes.filter(m => !m.resolved).length})
           </button>
           <button 
             onClick={() => setActiveTab("resolved")}
-            style={{ 
-              background: "none", border: "none", padding: "0 0 12px 0", fontSize: 16, fontWeight: 600, cursor: "pointer",
-              color: activeTab === "resolved" ? "var(--primary-50)" : "var(--fg-muted)",
-              borderBottom: activeTab === "resolved" ? "2px solid var(--primary-50)" : "2px solid transparent",
-            }}
+            className={`border-b-2 px-2 pb-3 text-body-2 font-semibold transition-colors ${
+              activeTab === "resolved"
+                ? "border-primary-01 text-primary-01"
+                : "border-transparent text-t-secondary hover:text-t-primary"
+            }`}
           >
             Resolved ({mistakes.filter(m => m.resolved).length})
           </button>
@@ -122,57 +122,57 @@ export default function MistakeDiary() {
 
         {/* List */}
         {filteredMistakes.length === 0 ? (
-          <div style={{ textAlign: "center", padding: 64, color: "var(--fg-muted)" }}>
-            <RiCheckLine size={48} style={{ opacity: 0.5, marginBottom: 16, display: "inline-block" }} />
-            <h3 className="text-h4">No mistakes found here!</h3>
-            <p className="text-body-base" style={{ marginTop: 8 }}>You have reviewed all your errors.</p>
+          <div className="card py-16 text-center text-t-secondary">
+            <RiCheckLine size={48} className="mx-auto mb-4 text-t-tertiary" />
+            <h3 className="text-h5 font-semibold text-t-primary">No mistakes found here!</h3>
+            <p className="mt-2 text-body-2 text-t-secondary">You have reviewed all your errors.</p>
           </div>
         ) : (
-          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+          <div className="flex flex-col gap-6">
             {filteredMistakes.map(m => (
-              <div key={m.id} className="rayum-card" style={{ padding: 32, borderLeft: m.resolved ? "4px solid var(--success-50)" : "4px solid var(--warning-50)" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
-                  <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-                    <span className="rayum-badge blue">{m.subject}</span>
-                    <span className="rayum-badge neutral">{m.chapter}</span>
+              <div key={m.id} className={`card border p-6 md:p-8 ${m.resolved ? "border-primary-02/30" : "border-[#EF9D0E]/30"}`}>
+                <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="label label-gray">{m.subject}</span>
+                    <span className="label label-gray">{m.chapter}</span>
                   </div>
-                  <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>{m.exam} • {m.date}</span>
+                  <span className="text-caption text-t-secondary">{m.exam} • {m.date}</span>
                 </div>
 
-                <div style={{ marginBottom: 24 }}>
-                  <div className="text-body-small" style={{ fontWeight: 700, color: "var(--fg-muted)", marginBottom: 8, textTransform: "uppercase", letterSpacing: 1 }}>Question</div>
-                  <div className="text-body-base" style={{ color: "var(--fg-default)", fontWeight: 600, lineHeight: 1.6 }}>{m.question}</div>
+                <div className="mb-6">
+                  <div className="mb-2 text-overline font-bold uppercase tracking-wider text-t-tertiary">Question</div>
+                  <div className="text-body-2 font-semibold leading-relaxed text-t-primary">{m.question}</div>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 24 }}>
-                  <div style={{ padding: 16, background: "var(--error-10)", borderRadius: "var(--radius-sm)", border: "1px solid var(--error-20)" }}>
-                    <div className="text-body-small" style={{ color: "var(--error-50)", fontWeight: 700, marginBottom: 4 }}>Your Answer</div>
-                    <div className="text-body-large" style={{ color: "var(--error-60)", fontWeight: 700 }}>{m.studentAnswer}</div>
+                <div className="mb-6 grid gap-4 md:grid-cols-2">
+                  <div className="rounded-3xl border border-[#FF6A55]/20 bg-[#FF6A55]/5 p-4">
+                    <div className="mb-1 text-caption font-bold text-[#FF6A55]">Your Answer</div>
+                    <div className="text-body-1 font-bold text-[#FF6A55]">{m.studentAnswer}</div>
                   </div>
-                  <div style={{ padding: 16, background: "var(--success-10)", borderRadius: "var(--radius-sm)", border: "1px solid var(--success-20)" }}>
-                    <div className="text-body-small" style={{ color: "var(--success-50)", fontWeight: 700, marginBottom: 4 }}>Correct Answer</div>
-                    <div className="text-body-large" style={{ color: "var(--success-60)", fontWeight: 700 }}>{m.correctAnswer}</div>
+                  <div className="rounded-3xl border border-[#00A656]/20 bg-[#00A656]/5 p-4">
+                    <div className="mb-1 text-caption font-bold text-[#00A656]">Correct Answer</div>
+                    <div className="text-body-1 font-bold text-[#00A656]">{m.correctAnswer}</div>
                   </div>
                 </div>
 
-                <div style={{ background: "var(--bg-surface-hover)", padding: 24, borderRadius: "var(--radius-md)", marginBottom: 24 }}>
-                  <div style={{ display: "flex", gap: 12, marginBottom: 16 }}>
-                    <RiAlertFill size={20} color="var(--warning-50)" style={{ flexShrink: 0 }} />
+                <div className="mb-6 rounded-3xl bg-b-surface1 p-5">
+                  <div className="mb-4 flex gap-3">
+                    <RiAlertFill size={20} className="shrink-0 text-[#EF9D0E]" />
                     <div>
-                      <div className="text-body-small" style={{ fontWeight: 700, color: "var(--warning-50)", marginBottom: 4 }}>Diagnosis: {m.errorType.replace("_", " ")}</div>
-                      <div className="text-body-base" style={{ color: "var(--fg-default)" }}>{m.detail}</div>
+                      <div className="mb-1 text-caption font-bold text-[#EF9D0E]">Diagnosis: {m.errorType.replace("_", " ")}</div>
+                      <div className="text-body-2 text-t-primary">{m.detail}</div>
                     </div>
                   </div>
-                  <div style={{ display: "flex", gap: 12 }}>
-                    <RiLightbulbFlashLine size={20} color="var(--primary-50)" style={{ flexShrink: 0 }} />
+                  <div className="flex gap-3">
+                    <RiLightbulbFlashLine size={20} className="shrink-0 text-primary-01" />
                     <div>
-                      <div className="text-body-small" style={{ fontWeight: 700, color: "var(--primary-50)", marginBottom: 4 }}>Actionable Tip</div>
-                      <div className="text-body-base" style={{ color: "var(--fg-default)" }}>{m.tip}</div>
+                      <div className="mb-1 text-caption font-bold text-primary-01">Actionable Tip</div>
+                      <div className="text-body-2 text-t-primary">{m.tip}</div>
                     </div>
                   </div>
                 </div>
 
-                <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                <div className="flex justify-end">
                   <button 
                     className={m.resolved ? "btn btn-outline" : "btn btn-primary"} 
                     onClick={() => toggleResolved(m.id)}

@@ -15,68 +15,68 @@ export default function StudentAnalyticsPage() {
   return (
     <>
       <Navbar title="My Performance Analytics" />
-      <main style={{ maxWidth: 1200, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
+      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
         
         {/* KPI Cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginBottom: 32 }}>
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-              <div style={{ padding: 10, background: "var(--primary-10)", borderRadius: 8, color: "var(--primary-50)" }}>
+        <div className="mb-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="card p-6">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="rounded-2xl bg-primary-01/10 p-2.5 text-primary-01">
                 <RiCrosshair2Line size={24} />
               </div>
-              <h3 style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-muted)" }}>Overall Accuracy</h3>
+              <h3 className="text-body-2 font-semibold text-t-secondary">Overall Accuracy</h3>
             </div>
-            <div style={{ fontSize: 28, fontWeight: 800 }}>76.4%</div>
-            <p style={{ fontSize: 12, color: "var(--success-50)", marginTop: 8, fontWeight: 600 }}>+4.2% from last month</p>
+            <div className="text-h4 font-bold text-t-primary">76.4%</div>
+            <p className="mt-2 text-caption font-semibold text-[#00A656]">+4.2% from last month</p>
           </div>
 
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-              <div style={{ padding: 10, background: "rgba(245, 158, 11, 0.1)", borderRadius: 8, color: "var(--warning-50)" }}>
+          <div className="card p-6">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="rounded-2xl bg-[#EF9D0E]/10 p-2.5 text-[#EF9D0E]">
                 <RiTimeLine size={24} />
               </div>
-              <h3 style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-muted)" }}>Avg Time / Question</h3>
+              <h3 className="text-body-2 font-semibold text-t-secondary">Avg Time / Question</h3>
             </div>
-            <div style={{ fontSize: 28, fontWeight: 800 }}>1m 45s</div>
-            <p style={{ fontSize: 12, color: "var(--error-50)", marginTop: 8 }}>+15s slower than target</p>
+            <div className="text-h4 font-bold text-t-primary">1m 45s</div>
+            <p className="mt-2 text-caption font-semibold text-[#FF6A55]">+15s slower than target</p>
           </div>
 
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-              <div style={{ padding: 10, background: "rgba(168, 85, 247, 0.1)", borderRadius: 8, color: "var(--accent-purple)" }}>
+          <div className="card p-6">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="rounded-2xl bg-primary-04/10 p-2.5 text-primary-04">
                 <RiTrophyLine size={24} />
               </div>
-              <h3 style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-muted)" }}>Batch Percentile</h3>
+              <h3 className="text-body-2 font-semibold text-t-secondary">Batch Percentile</h3>
             </div>
-            <div style={{ fontSize: 28, fontWeight: 800 }}>88th</div>
-            <p style={{ fontSize: 12, color: "var(--fg-muted)", marginTop: 8 }}>Top 12% of Aakash Target Batch</p>
+            <div className="text-h4 font-bold text-t-primary">88th</div>
+            <p className="mt-2 text-caption text-t-secondary">Top 12% of Aakash Target Batch</p>
           </div>
           
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-              <div style={{ padding: 10, background: "var(--neutral-10)", borderRadius: 8, color: "var(--fg-default)" }}>
+          <div className="card p-6">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="rounded-2xl bg-b-surface1 p-2.5 text-t-primary">
                 <RiLineChartLine size={24} />
               </div>
-              <h3 style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-muted)" }}>Tests Attempted</h3>
+              <h3 className="text-body-2 font-semibold text-t-secondary">Tests Attempted</h3>
             </div>
-            <div style={{ fontSize: 28, fontWeight: 800 }}>42</div>
-            <p style={{ fontSize: 12, color: "var(--fg-muted)", marginTop: 8 }}>This academic year</p>
+            <div className="text-h4 font-bold text-t-primary">42</div>
+            <p className="mt-2 text-caption text-t-secondary">This academic year</p>
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 32 }}>
+        <div className="mb-8 grid gap-6 xl:grid-cols-2">
           {/* Topic Wise Analysis */}
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <h2 className="text-heading-m" style={{ color: "var(--fg-default)", marginBottom: 20 }}>Topic-wise Strengths & Weaknesses</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div className="card p-6">
+            <h2 className="section-title mb-5">Topic-wise Strengths & Weaknesses</h2>
+            <div className="flex flex-col gap-4">
               {topicPerformance.map((item, idx) => (
                 <div key={idx}>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-                    <span className="text-body" style={{ color: "var(--fg-default)", fontWeight: 600 }}>{item.topic}</span>
-                    <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>{item.accuracy}% Accuracy</span>
+                  <div className="mb-2 flex items-center justify-between gap-3">
+                    <span className="text-body-2 font-semibold text-t-primary">{item.topic}</span>
+                    <span className="text-caption text-t-secondary">{item.accuracy}% Accuracy</span>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <div style={{ flex: 1, height: 8, background: "var(--bg-body)", borderRadius: 4, overflow: "hidden" }}>
+                  <div className="flex items-center gap-3">
+                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-b-surface1">
                       <div 
                         style={{ 
                           width: `${item.accuracy}%`, 
@@ -85,7 +85,7 @@ export default function StudentAnalyticsPage() {
                         }} 
                       />
                     </div>
-                    <span className={`rayum-badge ${item.accuracy > 80 ? "green" : item.accuracy > 50 ? "orange" : "red"}`} style={{ minWidth: 70, textAlign: "center" }}>
+                    <span className={`label ${item.accuracy > 80 ? "label-green" : item.accuracy > 50 ? "label-yellow" : "label-red"}`}>
                       {item.status}
                     </span>
                   </div>
@@ -95,50 +95,50 @@ export default function StudentAnalyticsPage() {
           </div>
 
           {/* Time Management Analysis */}
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <h2 className="text-heading-m" style={{ color: "var(--fg-default)", marginBottom: 20 }}>Time Management (Physics)</h2>
-            <p className="text-body" style={{ color: "var(--fg-muted)", marginBottom: 24 }}>
+          <div className="card p-6">
+            <h2 className="section-title mb-5">Time Management (Physics)</h2>
+            <p className="text-body-2 text-t-secondary mb-6">
               You are spending too much time on mechanics questions. Try to use our time-bound booster tests to improve speed.
             </p>
             
-            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+            <div className="flex flex-col gap-6">
               <div>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-                  <span className="text-body-small" style={{ color: "var(--fg-default)", fontWeight: 600 }}>Mechanics (Avg: 3m 12s)</span>
-                  <span className="text-body-small" style={{ color: "var(--error-50)" }}>Target: 2m 00s</span>
+                <div className="mb-2 flex items-center justify-between gap-3">
+                  <span className="text-body-2 font-semibold text-t-primary">Mechanics (Avg: 3m 12s)</span>
+                  <span className="text-caption font-semibold text-[#FF6A55]">Target: 2m 00s</span>
                 </div>
-                <div style={{ height: 12, background: "var(--bg-body)", borderRadius: 6, overflow: "hidden", position: "relative" }}>
-                  <div style={{ width: "80%", height: "100%", background: "var(--error-50)" }} />
+                <div className="relative h-3 overflow-hidden rounded-full bg-b-surface1">
+                  <div className="h-full w-[80%] bg-[#FF6A55]" />
                   {/* Target Marker */}
-                  <div style={{ position: "absolute", left: "50%", top: 0, bottom: 0, width: 2, background: "var(--fg-default)", zIndex: 10 }} />
+                  <div className="absolute inset-y-0 left-1/2 z-10 w-0.5 bg-t-primary" />
                 </div>
               </div>
               
               <div>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-                  <span className="text-body-small" style={{ color: "var(--fg-default)", fontWeight: 600 }}>Electrodynamics (Avg: 1m 45s)</span>
-                  <span className="text-body-small" style={{ color: "var(--success-50)" }}>Target: 2m 00s</span>
+                <div className="mb-2 flex items-center justify-between gap-3">
+                  <span className="text-body-2 font-semibold text-t-primary">Electrodynamics (Avg: 1m 45s)</span>
+                  <span className="text-caption font-semibold text-[#00A656]">Target: 2m 00s</span>
                 </div>
-                <div style={{ height: 12, background: "var(--bg-body)", borderRadius: 6, overflow: "hidden", position: "relative" }}>
-                  <div style={{ width: "40%", height: "100%", background: "var(--success-50)" }} />
-                  <div style={{ position: "absolute", left: "50%", top: 0, bottom: 0, width: 2, background: "var(--fg-default)", zIndex: 10 }} />
+                <div className="relative h-3 overflow-hidden rounded-full bg-b-surface1">
+                  <div className="h-full w-[40%] bg-[#00A656]" />
+                  <div className="absolute inset-y-0 left-1/2 z-10 w-0.5 bg-t-primary" />
                 </div>
               </div>
 
               <div>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-                  <span className="text-body-small" style={{ color: "var(--fg-default)", fontWeight: 600 }}>Modern Physics (Avg: 2m 10s)</span>
-                  <span className="text-body-small" style={{ color: "var(--warning-50)" }}>Target: 2m 00s</span>
+                <div className="mb-2 flex items-center justify-between gap-3">
+                  <span className="text-body-2 font-semibold text-t-primary">Modern Physics (Avg: 2m 10s)</span>
+                  <span className="text-caption font-semibold text-[#EF9D0E]">Target: 2m 00s</span>
                 </div>
-                <div style={{ height: 12, background: "var(--bg-body)", borderRadius: 6, overflow: "hidden", position: "relative" }}>
-                  <div style={{ width: "55%", height: "100%", background: "var(--warning-50)" }} />
-                  <div style={{ position: "absolute", left: "50%", top: 0, bottom: 0, width: 2, background: "var(--fg-default)", zIndex: 10 }} />
+                <div className="relative h-3 overflow-hidden rounded-full bg-b-surface1">
+                  <div className="h-full w-[55%] bg-[#EF9D0E]" />
+                  <div className="absolute inset-y-0 left-1/2 z-10 w-0.5 bg-t-primary" />
                 </div>
               </div>
             </div>
             
-            <div style={{ display: "flex", justifyContent: "center", marginTop: 32 }}>
-              <button className="btn btn-primary" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <div className="mt-8 flex justify-center">
+              <button className="btn btn-primary flex items-center gap-2">
                 <RiTimeLine size={18} /> Generate Speed Booster Test
               </button>
             </div>

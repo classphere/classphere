@@ -54,6 +54,118 @@ type StatusMap = Record<string, "unanswered" | "answered" | "review">;
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api/v1";
 
+const DEMO_QUESTIONS: Question[] = [
+  {
+    id: "demo-q1",
+    question_number: 1,
+    question_text: "Position of an ant moving in the Y-Z plane is given by $\vec{s}=2t^2\hat{j}+5\hat{k}$. The magnitude and direction of velocity at $t=1\,s$ will be:",
+    question_images: [],
+    options: [
+      { id: "A", text: "$16\,m/s$ in $y$-direction", image_url: null },
+      { id: "B", text: "$4\,m/s$ in $x$-direction", image_url: null },
+      { id: "C", text: "$9\,m/s$ in $z$-direction", image_url: null },
+      { id: "D", text: "$4\,m/s$ in y-direction", image_url: null },
+    ],
+    correct_answer: ["D"],
+    explanation: "",
+    question_type: "mcq_single",
+    subject: "Physics",
+    chapter: "Kinematics",
+    topic: "speed and velocity",
+    difficulty: "medium",
+    marking_scheme: { correct: 4, incorrect: -1, unattempted: 0 },
+  },
+  {
+    id: "demo-q2",
+    question_number: 2,
+    question_text: "The number of significant figures in 0.004560 is:",
+    question_images: [],
+    options: [
+      { id: "A", text: "2", image_url: null },
+      { id: "B", text: "3", image_url: null },
+      { id: "C", text: "4", image_url: null },
+      { id: "D", text: "5", image_url: null },
+    ],
+    correct_answer: ["C"],
+    explanation: "",
+    question_type: "mcq_single",
+    subject: "Chemistry",
+    chapter: "Some Basic Concepts",
+    topic: "significant figures",
+    difficulty: "easy",
+    marking_scheme: { correct: 4, incorrect: -1, unattempted: 0 },
+  },
+  {
+    id: "demo-q3",
+    question_number: 3,
+    question_text: "If $\int x\,dx = \frac{x^n}{n}+C$, then the value of $n$ is:",
+    question_images: [],
+    options: [
+      { id: "A", text: "1", image_url: null },
+      { id: "B", text: "2", image_url: null },
+      { id: "C", text: "0", image_url: null },
+      { id: "D", text: "3", image_url: null },
+    ],
+    correct_answer: ["B"],
+    explanation: "",
+    question_type: "mcq_single",
+    subject: "Mathematics",
+    chapter: "Differentiation and Integration",
+    topic: "indefinite integration",
+    difficulty: "medium",
+    marking_scheme: { correct: 4, incorrect: -1, unattempted: 0 },
+  },
+  {
+    id: "demo-q4",
+    question_number: 4,
+    question_text: "In a diploid cell, the chromosome number after mitosis remains:",
+    question_images: [],
+    options: [
+      { id: "A", text: "Haploid", image_url: null },
+      { id: "B", text: "Diploid", image_url: null },
+      { id: "C", text: "Triploid", image_url: null },
+      { id: "D", text: "Tetraploid", image_url: null },
+    ],
+    correct_answer: ["B"],
+    explanation: "",
+    question_type: "mcq_single",
+    subject: "Biology",
+    chapter: "Cell Division",
+    topic: "mitosis",
+    difficulty: "easy",
+    marking_scheme: { correct: 4, incorrect: -1, unattempted: 0 },
+  },
+  {
+    id: "demo-q5",
+    question_number: 5,
+    question_text: "For a first-order reaction, the unit of rate constant is:",
+    question_images: [],
+    options: [
+      { id: "A", text: "$s^{-1}$", image_url: null },
+      { id: "B", text: "$mol\,L^{-1}\,s^{-1}$", image_url: null },
+      { id: "C", text: "$L\,mol^{-1}\,s^{-1}$", image_url: null },
+      { id: "D", text: "$mol\,s^{-1}$", image_url: null },
+    ],
+    correct_answer: ["A"],
+    explanation: "",
+    question_type: "mcq_single",
+    subject: "Chemistry",
+    chapter: "Chemical Kinetics",
+    topic: "rate constant",
+    difficulty: "medium",
+    marking_scheme: { correct: 4, incorrect: -1, unattempted: 0 },
+  },
+];
+
+const DEMO_META: PYQMeta = {
+  id: "demo-pyq-jee-main-2024-jan-shift1",
+  exam: "JEE Main",
+  year: 2024,
+  shift: "27 Jan Shift 1",
+  questions: DEMO_QUESTIONS.length,
+  duration: 180,
+};
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function TestPage() {
@@ -70,6 +182,7 @@ export default function TestPage() {
   const [status, setStatus]               = useState<StatusMap>({});
   const [timeLeft, setTimeLeft]           = useState(0);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
+  const [isDemoMode, setIsDemoMode]       = useState(false);
 
   // ── Load questions ──────────────────────────────────────────────────────────
   useEffect(() => {
@@ -91,11 +204,17 @@ export default function TestPage() {
             setQuestions(res.data.questions);
             setMeta(res.data.paper);
             setTimeLeft(res.data.paper.duration * 60);
+            setIsDemoMode(false);
           } else {
             setError(res.message ?? "Failed to load questions.");
           }
         })
-        .catch(() => setError("Cannot reach the backend. Make sure the API is running on port 3001."))
+        .catch(() => {
+          setQuestions(DEMO_QUESTIONS);
+          setMeta(DEMO_META);
+          setTimeLeft(DEMO_META.duration * 60);
+          setIsDemoMode(true);
+        })
         .finally(() => setLoading(false));
       return;
     }
@@ -181,9 +300,55 @@ export default function TestPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--bg-default)", flexDirection: "column", gap: 16, color: "var(--fg-muted)" }}>
-        <RiLoader4Line size={48} style={{ animation: "spin 1s linear infinite" }} />
-        <p style={{ fontSize: 16, fontWeight: 600 }}>Loading questions from backend…</p>
+      <div className="min-h-screen bg-b-surface1 text-t-primary">
+        <header className="border-b border-s-stroke2/70 bg-b-surface1/95">
+          <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="space-y-2">
+              <div className="h-5 w-28 rounded-full bg-b-surface2" />
+              <div className="h-8 w-72 max-w-full rounded-2xl bg-b-surface2" />
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="h-11 w-28 rounded-3xl bg-b-surface2" />
+              <div className="h-11 w-36 rounded-3xl bg-b-surface2" />
+            </div>
+          </div>
+        </header>
+        <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
+          <section className="card min-w-0 p-5 md:p-7">
+            <div className="mb-5 flex flex-wrap gap-2">
+              <div className="h-7 w-20 rounded-full bg-b-surface2" />
+              <div className="h-7 w-28 rounded-full bg-b-surface2" />
+              <div className="h-7 w-20 rounded-full bg-b-surface2" />
+            </div>
+            <div className="mb-6 h-6 w-40 rounded-full bg-b-surface2" />
+            <div className="space-y-3">
+              <div className="h-20 rounded-3xl bg-b-surface2" />
+              <div className="h-20 rounded-3xl bg-b-surface2" />
+              <div className="h-20 rounded-3xl bg-b-surface2" />
+              <div className="h-20 rounded-3xl bg-b-surface2" />
+            </div>
+            <div className="mt-8 flex gap-3 border-t border-s-stroke2 pt-6">
+              <div className="h-11 flex-1 rounded-3xl bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-3xl bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-3xl bg-b-surface2" />
+            </div>
+          </section>
+          <aside className="card min-w-0 p-5 md:p-6">
+            <div className="mb-5 grid grid-cols-3 gap-3">
+              <div className="h-20 rounded-3xl bg-b-surface2" />
+              <div className="h-20 rounded-3xl bg-b-surface2" />
+              <div className="h-20 rounded-3xl bg-b-surface2" />
+            </div>
+            <div className="space-y-5">
+              <div className="h-28 rounded-3xl bg-b-surface2" />
+              <div className="h-28 rounded-3xl bg-b-surface2" />
+            </div>
+          </aside>
+        </main>
+        <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-center gap-3 px-4 pb-6 text-t-secondary">
+          <RiLoader4Line size={18} className="animate-spin text-primary-01" />
+          <p className="text-body-2 font-semibold">Loading questions from backend…</p>
+        </div>
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
     );
@@ -191,9 +356,9 @@ export default function TestPage() {
 
   if (error) {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--bg-default)", flexDirection: "column", gap: 16 }}>
-        <div style={{ fontSize: 48 }}>⚠️</div>
-        <p style={{ fontSize: 16, fontWeight: 600, color: "var(--danger-50)" }}>{error}</p>
+      <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-b-surface1 px-6 text-center">
+        <div className="text-5xl">⚠️</div>
+        <p className="text-body-1 font-semibold text-[#FF6A55]">{error}</p>
         <button className="btn btn-outline" onClick={() => router.push("/pyqs")}>← Back to PYQs</button>
       </div>
     );
@@ -201,8 +366,8 @@ export default function TestPage() {
 
   if (questions.length === 0) {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <p>No questions found.</p>
+      <div className="flex min-h-screen items-center justify-center bg-b-surface1 px-6">
+        <p className="text-body-1 text-t-secondary">No questions found.</p>
       </div>
     );
   }
@@ -217,227 +382,208 @@ export default function TestPage() {
   const subjects = [...new Set(questions.map((q) => q.subject))];
 
   return (
-    <div style={{ minHeight: "100vh", background: "var(--bg-default)", display: "flex", flexDirection: "column" }}>
-
+    <div className="min-h-screen bg-b-surface1 text-t-primary">
       {/* ── Top Bar ── */}
-      <header style={{
-        height: 64, display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "0 32px", background: "var(--bg-surface)",
-        borderBottom: "1px solid var(--border-default)",
-        position: "sticky", top: 0, zIndex: 50, boxShadow: "var(--shadow-100)",
-      }}>
-        <div style={{ fontWeight: 800, fontSize: 18, color: "var(--fg-default)" }}>
-          Exam<span style={{ color: "var(--secondary-50)" }}>Prep</span>
-          {meta && (
-            <span style={{ color: "var(--fg-muted)", fontWeight: 500, marginLeft: 16, fontSize: 14 }}>
-              {meta.exam} {meta.year} · {meta.shift} · {questions.length} Questions
-            </span>
-          )}
-        </div>
+      <header className="sticky top-0 z-50 border-b border-s-stroke2/70 bg-b-surface1/95 backdrop-blur-0">
+        <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="min-w-0">
+            <div className="flex items-center gap-3 text-h6 font-bold tracking-tight text-t-primary">
+              <span>Exam</span>
+              <span className="text-primary-01">Prep</span>
+            </div>
+            {meta && (
+              <div className="mt-1 flex flex-wrap items-center gap-2 text-caption text-t-secondary">
+                <span className="label label-gray">{meta.exam} {meta.year}</span>
+                <span className="label label-gray">{meta.shift}</span>
+                <span className="label label-gray">{questions.length} Questions</span>
+              </div>
+            )}
+          </div>
 
-        {/* Timer */}
-        <div style={{
-          display: "flex", alignItems: "center", gap: 10,
-          padding: "8px 20px", borderRadius: "var(--radius-full)",
-          background: timeWarning ? "#FEF2F2" : "var(--n-10)",
-          border: `1px solid ${timeWarning ? "#EF4444" : "var(--border-default)"}`,
-        }}>
-          <span style={{ display: "flex", color: timeWarning ? "#EF4444" : "var(--fg-default)" }}>
-            <RiTimerLine size={18} />
-          </span>
-          <span style={{ fontWeight: 800, fontSize: 16, fontVariantNumeric: "tabular-nums", color: timeWarning ? "#EF4444" : "var(--fg-default)" }}>
-            {formatTime(timeLeft)}
-          </span>
-        </div>
-
-        <button id="submit-test-btn" className="btn btn-primary" onClick={() => setShowSubmitModal(true)}>
-          Submit Test
-        </button>
-      </header>
-
-      <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
-
-        {/* ── Question Area ── */}
-        <div style={{ flex: 1, padding: "40px 60px", overflowY: "auto" }}>
-          <div className="rayum-card" style={{ maxWidth: 860, margin: "0 auto", padding: 40 }}>
-
-            {/* Tags */}
-            <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
-              <span className="rayum-badge blue">{q.subject}</span>
-              <span className="rayum-badge orange">{q.chapter}</span>
-              {q.topic && <span className="rayum-badge">{q.topic}</span>}
-              <span
-                className="rayum-badge"
-                style={{
-                  background: q.difficulty === "easy" ? "#F0FDF4" : q.difficulty === "hard" ? "#FEF2F2" : "#FFFBEB",
-                  color:      q.difficulty === "easy" ? "#16A34A" : q.difficulty === "hard" ? "#DC2626" : "#D97706",
-                  border: "none",
-                }}
-              >
-                {q.difficulty}
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className={`flex items-center gap-3 rounded-3xl border px-4 py-2.5 ${timeWarning ? "border-[#FF6A55]/30 bg-[#FF6A55]/5" : "border-s-stroke2 bg-b-surface2"}`}>
+              <span className={`${timeWarning ? "text-[#FF6A55]" : "text-t-primary"}`}>
+                <RiTimerLine size={18} />
+              </span>
+              <span className={`text-body-2 font-bold tabular-nums ${timeWarning ? "text-[#FF6A55]" : "text-t-primary"}`}>
+                {formatTime(timeLeft)}
               </span>
             </div>
 
-            {/* Question number + text */}
-            <div style={{ marginBottom: 40 }}>
-              <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 12, fontWeight: 600 }}>
-                QUESTION {current + 1} OF {questions.length}
+            <button id="submit-test-btn" className="btn btn-primary" onClick={() => setShowSubmitModal(true)}>
+              Submit Test
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
+        {isDemoMode && (
+          <div className="xl:col-span-2">
+            <div className="flex flex-col gap-3 rounded-[32px] border border-amber-200/70 bg-amber-50/70 px-5 py-4 text-amber-950 shadow-sm backdrop-blur-sm md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-caption font-bold uppercase tracking-[0.24em] text-amber-700">Demo preview</p>
+                <p className="mt-1 text-body-2 font-medium text-amber-950/90">
+                  The API is unavailable in this session, so the exam shell is rendering against a local paper sample.
+                </p>
               </div>
-              <p style={{ fontSize: 17, color: "var(--fg-default)", lineHeight: 1.7, fontWeight: 500, whiteSpace: "pre-wrap" }}>
+              <button className="btn btn-outline border-amber-300 bg-white/70 text-amber-950" onClick={() => router.push("/pyqs")}>Open PYQs</button>
+            </div>
+          </div>
+        )}
+
+        {/* ── Question Area ── */}
+        <section className="card min-w-0 p-5 md:p-7">
+          <div className="mb-5 flex flex-wrap items-center gap-2">
+            <span className="label label-gray">{q.subject}</span>
+            <span className="label label-gray">{q.chapter}</span>
+            {q.topic && <span className="label label-gray">{q.topic}</span>}
+            <span className={`label ${q.difficulty === "easy" ? "label-green" : q.difficulty === "hard" ? "label-red" : "label-yellow"}`}>
+              {q.difficulty}
+            </span>
+          </div>
+
+          <div className="mb-6 flex items-start justify-between gap-4 border-b border-s-stroke2 pb-5">
+            <div className="min-w-0">
+              <div className="text-overline font-bold uppercase tracking-wider text-t-tertiary">
+                Question {current + 1} of {questions.length}
+              </div>
+              <p className="mt-2 text-h6 leading-relaxed text-t-primary md:text-h5">
                 <Latex>{q.question_text}</Latex>
               </p>
-              {/* Question images */}
-              {q.question_images && q.question_images.length > 0 && (
-                <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 12 }}>
-                  {q.question_images.map((url, i) => (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img key={i} src={url} alt={`Figure ${i + 1}`} style={{ maxWidth: "100%", borderRadius: 8, border: "1px solid var(--border-default)" }} />
-                  ))}
-                </div>
-              )}
             </div>
+            <div className="hidden shrink-0 rounded-3xl border border-s-stroke2 bg-b-surface2 px-4 py-2 text-right sm:block">
+              <div className="text-caption text-t-secondary">Progress</div>
+              <div className="text-body-2 font-bold text-t-primary">{answered + marked}/{questions.length}</div>
+            </div>
+          </div>
 
-            {/* Options or Text Input */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {!q.options || q.options.length === 0 ? (
-                <div style={{ marginTop: 8 }}>
-                  <label className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 8, display: "block" }}>
-                    ENTER NUMERICAL ANSWER
-                  </label>
-                  <input
-                    type="text"
-                    className="input"
-                    placeholder="Type your answer..."
-                    value={answers[q.id] || ""}
-                    onChange={(e) => {
-                      const val = e.target.value;
-                      setAnswers((a) => ({ ...a, [q.id]: val }));
-                      setStatus((s) => ({ ...s, [q.id]: val ? "answered" : "unanswered" }));
-                    }}
-                    style={{ maxWidth: 320, fontSize: 18, fontWeight: 600, padding: "14px 20px" }}
-                  />
-                </div>
-              ) : (
-                q.options.map((opt) => {
+          {/* Question images */}
+          {q.question_images && q.question_images.length > 0 && (
+            <div className="mb-6 flex flex-wrap gap-3">
+              {q.question_images.map((url, i) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={i} src={url} alt={`Figure ${i + 1}`} className="max-w-full rounded-2xl border border-s-stroke2" />
+              ))}
+            </div>
+          )}
+
+          {/* Options or Text Input */}
+          <div className="space-y-3">
+            {!q.options || q.options.length === 0 ? (
+              <div className="max-w-xl">
+                <label className="mb-2 block text-caption font-bold uppercase tracking-wider text-t-tertiary">
+                  Enter numerical answer
+                </label>
+                <input
+                  type="text"
+                  className="input h-12 rounded-3xl px-4 text-body-1 font-semibold"
+                  placeholder="Type your answer..."
+                  value={answers[q.id] || ""}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    setAnswers((a) => ({ ...a, [q.id]: val }));
+                    setStatus((s) => ({ ...s, [q.id]: val ? "answered" : "unanswered" }));
+                  }}
+                />
+              </div>
+            ) : (
+              <div className="grid gap-3">
+                {q.options.map((opt) => {
                   const selected = answers[q.id] === opt.id;
                   return (
                     <button
                       key={opt.id}
                       id={`option-${opt.id}`}
-                      style={{
-                        display: "flex", alignItems: "center", gap: 16,
-                        padding: "16px 20px", borderRadius: "var(--radius-md)", cursor: "pointer",
-                        textAlign: "left", fontSize: 16, fontWeight: 500,
-                        background: selected ? "var(--p-10)" : "var(--bg-default)",
-                        border: selected ? "2px solid var(--p-50)" : "1.5px solid var(--border-default)",
-                        color: selected ? "var(--fg-default)" : "var(--fg-muted)",
-                        transition: "all 0.15s",
-                      }}
+                      className={`flex items-center gap-4 rounded-3xl border p-4 text-left transition-all ${
+                        selected
+                          ? "border-primary-01 bg-primary-01/5 shadow-widget"
+                          : "border-s-stroke2 bg-b-surface2 hover:border-s-highlight"
+                      }`}
                       onClick={() => selectAnswer(q.id, opt.id)}
                     >
-                      <div style={{
-                        width: 32, height: 32, borderRadius: "50%", flexShrink: 0,
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        background: selected ? "var(--p-60)" : "var(--n-20)",
-                        color: selected ? "white" : "var(--fg-default)",
-                        fontSize: 14, fontWeight: 700,
-                      }}>
+                      <div className={`flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold ${selected ? "bg-primary-01 text-t-light" : "bg-b-surface1 text-t-primary"}`}>
                         {opt.id}
                       </div>
-                      <div style={{ flex: 1 }}>
-                        {opt.text && <span><Latex>{opt.text}</Latex></span>}
+                      <div className="min-w-0 flex-1 text-body-2 font-medium text-t-primary">
+                        {opt.text && <Latex>{opt.text}</Latex>}
                         {opt.image_url && (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img src={opt.image_url} alt={`Option ${opt.id}`} style={{ maxWidth: "100%", marginTop: opt.text ? 8 : 0, borderRadius: 4 }} />
+                          <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 max-w-full rounded-xl" />
                         )}
                       </div>
                     </button>
                   );
-                })
-              )}
-            </div>
-
-            {/* Nav buttons */}
-            <div style={{ display: "flex", gap: 16, marginTop: 40, borderTop: "1px solid var(--border-default)", paddingTop: 32 }}>
-              <button
-                className="btn btn-outline"
-                style={{ display: "inline-flex", gap: 8 }}
-                onClick={() => setCurrent((c) => Math.max(0, c - 1))}
-                disabled={current === 0}
-              >
-                <RiArrowLeftLine size={18} /> Previous
-              </button>
-              <button
-                className="btn"
-                onClick={() => toggleReview(q.id)}
-                style={{
-                  display: "inline-flex", gap: 8,
-                  background: status[q.id] === "review" ? "#FFFBEB" : "transparent",
-                  color: status[q.id] === "review" ? "#F59E0B" : "var(--fg-muted)",
-                  border: `1.5px solid ${status[q.id] === "review" ? "#F59E0B" : "var(--border-default)"}`,
-                }}
-              >
-                {status[q.id] === "review" ? <><RiStarFill size={18} /> Marked</> : <><RiStarLine size={18} /> Mark for Review</>}
-              </button>
-              {current < questions.length - 1 ? (
-                <button className="btn btn-primary" style={{ display: "inline-flex", gap: 8 }} onClick={() => setCurrent((c) => c + 1)}>
-                  Next Question <RiArrowRightLine size={18} />
-                </button>
-              ) : (
-                <button className="btn btn-primary" onClick={() => setShowSubmitModal(true)} style={{ background: "var(--s-60)" }}>
-                  Submit Test
-                </button>
-              )}
-            </div>
+                })}
+              </div>
+            )}
           </div>
-        </div>
+
+          {/* Nav buttons */}
+          <div className="mt-8 flex flex-col gap-3 border-t border-s-stroke2 pt-6 sm:flex-row">
+            <button
+              className="btn btn-outline justify-center gap-2 sm:flex-1"
+              onClick={() => setCurrent((c) => Math.max(0, c - 1))}
+              disabled={current === 0}
+            >
+              <RiArrowLeftLine size={18} /> Previous
+            </button>
+            <button
+              className={`btn justify-center gap-2 sm:flex-1 ${status[q.id] === "review" ? "btn-outline" : "btn-ghost"}`}
+              onClick={() => toggleReview(q.id)}
+            >
+              {status[q.id] === "review" ? <><RiStarFill size={18} /> Marked</> : <><RiStarLine size={18} /> Mark for Review</>}
+            </button>
+            {current < questions.length - 1 ? (
+              <button className="btn btn-primary justify-center gap-2 sm:flex-1" onClick={() => setCurrent((c) => c + 1)}>
+                Next Question <RiArrowRightLine size={18} />
+              </button>
+            ) : (
+              <button className="btn btn-primary justify-center sm:flex-1" onClick={() => setShowSubmitModal(true)}>
+                Submit Test
+              </button>
+            )}
+          </div>
+        </section>
 
         {/* ── Right Panel: Question Navigator ── */}
-        <div style={{ width: 300, borderLeft: "1px solid var(--border-default)", padding: "32px 24px", overflowY: "auto", background: "var(--bg-surface)" }}>
-
-          {/* Stats */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12, marginBottom: 24, padding: 16, borderRadius: "var(--radius-md)", background: "var(--n-10)", border: "1px solid var(--border-default)" }}>
+        <aside className="card min-w-0 p-5 md:p-6 xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
+          <div className="mb-5 grid grid-cols-3 gap-3">
             {[
-              { label: "Done",   value: answered,   color: "#22C55E" },
-              { label: "Review", value: marked,     color: "#F59E0B" },
-              { label: "Left",   value: unanswered, color: "var(--fg-muted)" },
+              { label: "Done", value: answered, color: "text-[#00A656]" },
+              { label: "Review", value: marked, color: "text-[#EF9D0E]" },
+              { label: "Left", value: unanswered, color: "text-t-secondary" },
             ].map((s) => (
-              <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontWeight: 800, fontSize: 20, color: s.color }}>{s.value}</div>
-                <div style={{ fontSize: 12, fontWeight: 600, color: "var(--fg-muted)", marginTop: 4 }}>{s.label}</div>
+              <div key={s.label} className="rounded-3xl bg-b-surface2 p-3 text-center">
+                <div className={`text-h6 font-bold ${s.color}`}>{s.value}</div>
+                <div className="text-caption font-semibold text-t-secondary">{s.label}</div>
               </div>
             ))}
           </div>
 
-          {/* Subject-grouped navigator */}
           {subjects.map((subj) => {
-            const subjQs = questions.filter((q) => q.subject === subj);
+            const subjQs = questions.filter((item) => item.subject === subj);
             return (
-              <div key={subj} style={{ marginBottom: 20 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: "var(--fg-muted)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 10 }}>
+              <div key={subj} className="mb-5 last:mb-0">
+                <div className="mb-3 text-overline font-bold uppercase tracking-wider text-t-tertiary">
                   {subj}
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 6 }}>
+                <div className="grid grid-cols-5 gap-2 sm:grid-cols-6 lg:grid-cols-5">
                   {subjQs.map((sq) => {
                     const globalIdx = questions.findIndex((gq) => gq.id === sq.id);
                     const s = status[sq.id] || "unanswered";
                     const isCurrent = globalIdx === current;
 
-                    let bg = "var(--bg-surface)", borderColor = "var(--border-default)", color = "var(--fg-muted)";
-                    if (s === "answered")  { bg = "#F0FDF4"; borderColor = "#22C55E"; color = "#22C55E"; }
-                    else if (s === "review") { bg = "#FFFBEB"; borderColor = "#F59E0B"; color = "#F59E0B"; }
-                    if (isCurrent) { bg = "var(--p-60)"; borderColor = "var(--p-60)"; color = "white"; }
+                    let classes = "border-s-stroke2 bg-b-surface1 text-t-secondary";
+                    if (s === "answered") classes = "border-[#00A656]/30 bg-[#00A656]/5 text-[#00A656]";
+                    if (s === "review") classes = "border-[#EF9D0E]/30 bg-[#EF9D0E]/5 text-[#EF9D0E]";
+                    if (isCurrent) classes = "border-primary-01 bg-primary-01 text-t-light shadow-widget";
 
                     return (
                       <button
                         key={sq.id}
                         id={`nav-q-${sq.question_number}`}
-                        style={{
-                          aspectRatio: "1/1", borderRadius: "var(--radius-sm)",
-                          display: "flex", alignItems: "center", justifyContent: "center",
-                          fontSize: 12, fontWeight: 700, cursor: "pointer",
-                          background: bg, border: `2px solid ${borderColor}`, color,
-                        }}
+                        className={`aspect-square rounded-2xl border text-sm font-bold transition-all hover:scale-[1.02] ${classes}`}
                         onClick={() => setCurrent(globalIdx)}
                       >
                         {sq.question_number}
@@ -448,25 +594,25 @@ export default function TestPage() {
               </div>
             );
           })}
-        </div>
-      </div>
+        </aside>
+      </main>
 
       {/* ── Submit Modal ── */}
       {showSubmitModal && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.4)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 100, backdropFilter: "blur(4px)" }}>
-          <div className="rayum-card" style={{ maxWidth: 460, width: "90%", padding: 40, textAlign: "center" }}>
-            <div style={{ display: "flex", justifyContent: "center", marginBottom: 16, color: "var(--fg-default)" }}>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-4 py-6">
+          <div className="card w-full max-w-lg p-6 text-center md:p-8">
+            <div className="mb-4 flex justify-center text-t-primary">
               <RiFlag2Fill size={48} />
             </div>
-            <h2 className="text-h2" style={{ marginBottom: 12 }}>Ready to Submit?</h2>
-            <p className="text-body-base" style={{ color: "var(--fg-muted)", marginBottom: 32, lineHeight: 1.6 }}>
-              You&apos;ve answered <strong style={{ color: "var(--fg-default)" }}>{answered}</strong> of{" "}
-              <strong style={{ color: "var(--fg-default)" }}>{questions.length}</strong> questions.
+            <h2 className="text-h4 font-semibold text-t-primary">Ready to Submit?</h2>
+            <p className="mt-3 text-body-2 leading-relaxed text-t-secondary">
+              You&apos;ve answered <strong className="text-t-primary">{answered}</strong> of{" "}
+              <strong className="text-t-primary">{questions.length}</strong> questions.
               {unanswered > 0 && ` ${unanswered} questions are still unanswered.`}
             </p>
-            <div style={{ display: "flex", gap: 16 }}>
-              <button className="btn btn-outline" style={{ flex: 1 }} onClick={() => setShowSubmitModal(false)}>Keep Working</button>
-              <button id="confirm-submit-btn" className="btn btn-primary" style={{ flex: 1 }} onClick={handleSubmit}>Submit Test</button>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <button className="btn btn-outline flex-1" onClick={() => setShowSubmitModal(false)}>Keep Working</button>
+              <button id="confirm-submit-btn" className="btn btn-primary flex-1" onClick={handleSubmit}>Submit Test</button>
             </div>
           </div>
         </div>

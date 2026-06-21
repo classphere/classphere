@@ -17,61 +17,40 @@ export default function LeaderboardPage() {
   return (
     <>
       <Navbar title="Leaderboard" />
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
+      
+      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 pt-6 md:px-8">
         
         {/* Your rank card */}
-        <div className="rayum-card" style={{
-            padding: "24px 28px", marginBottom: "var(--space-600)",
-            background: "var(--bg-surface)",
-            border: "1px solid var(--primary-50)",
-            display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap",
-            boxShadow: "0 4px 20px rgba(92, 223, 120, 0.15)"
-          }}
-        >
-          <div
-            style={{
-              width: 52, height: 52, borderRadius: "50%",
-              background: "var(--primary-50)",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 20, fontWeight: 900, color: "var(--neutral-100)", flexShrink: 0,
-            }}
-          >
+        <div className="card mb-8 flex flex-wrap items-center gap-6 border border-primary-01/30 bg-primary-01/5 p-6 shadow-depth">
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-01 text-body-1 font-bold text-t-light">
             {mockUser.name.charAt(0)}
           </div>
-          <div style={{ flex: 1 }}>
-            <div className="text-body-large" style={{ fontWeight: 700, color: "var(--fg-default)", marginBottom: 4 }}>You — {mockUser.name}</div>
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>Global: <strong style={{ color: "var(--primary-90)" }}>#{mockUser.globalRank}</strong></span>
-              <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>Institute: <strong style={{ color: "var(--primary-90)" }}>#{mockUser.instituteRank}</strong></span>
-              <span className="text-body-small" style={{ color: "var(--fg-muted)" }}>Batch: <strong style={{ color: "var(--primary-90)" }}>#{mockUser.batchRank}</strong></span>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-body-1 font-bold text-t-primary mb-1">You — {mockUser.name}</h3>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-caption font-semibold text-t-secondary">
+              <span>Global: <strong className="text-primary-01">#{mockUser.globalRank}</strong></span>
+              <span>Institute: <strong className="text-primary-01">#{mockUser.instituteRank}</strong></span>
+              <span>Batch: <strong className="text-primary-01">#{mockUser.batchRank}</strong></span>
             </div>
           </div>
-          <div style={{ textAlign: "center" }}>
-            <div className="text-heading-l" style={{ color: "var(--primary-50)" }}>{mockUser.percentile}%ile</div>
-            <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>Global Percentile</div>
+          <div className="text-right shrink-0">
+            <div className="text-h4 font-bold text-primary-01 tracking-tight">{mockUser.percentile}%ile</div>
+            <div className="text-caption text-t-secondary font-semibold">Global Percentile</div>
           </div>
         </div>
 
         {/* Tabs */}
-        <div
-          style={{
-            display: "flex", gap: 4, marginBottom: 20, padding: 4,
-            background: "var(--neutral-10)", borderRadius: "var(--radius-md)", width: "fit-content",
-          }}
-        >
+        <div className="mb-6 flex w-fit max-w-full gap-1 overflow-x-auto rounded-3xl border border-s-stroke2 bg-b-surface2 p-1">
           {tabs.map((tab) => (
             <button
               key={tab}
               id={`tab-${tab.toLowerCase()}`}
               onClick={() => setActiveTab(tab)}
-              style={{
-                padding: "8px 20px", borderRadius: "var(--radius-sm)", cursor: "pointer", border: "none",
-                background: activeTab === tab ? "var(--bg-surface)" : "transparent",
-                color: activeTab === tab ? "var(--fg-default)" : "var(--fg-muted)",
-                fontWeight: activeTab === tab ? 700 : 500, fontSize: 14,
-                boxShadow: activeTab === tab ? "var(--shadow-100)" : "none",
-                transition: "all 0.15s",
-              }}
+              className={`shrink-0 rounded-2xl border-none px-5 py-1.5 text-caption font-semibold transition-all cursor-pointer ${
+                activeTab === tab
+                  ? "bg-b-surface1 text-t-primary shadow-widget font-bold"
+                  : "bg-transparent text-t-secondary hover:text-t-primary"
+              }`}
             >
               {tab}
             </button>
@@ -79,84 +58,83 @@ export default function LeaderboardPage() {
         </div>
 
         {/* Table */}
-        <div className="rayum-card" style={{ padding: 0, overflow: "hidden" }}>
-          {/* Table Header */}
-          <div
-            style={{
-              display: "grid", gridTemplateColumns: "60px 1fr 80px 80px 80px",
-              padding: "12px 20px",
-              background: "var(--neutral-10)",
-              borderBottom: "1px solid var(--border-default)",
-            }}
-          >
-            {["Rank", "Student", "Avg Score", "Tests", "Streak"].map((h) => (
-              <div key={h} className="text-body-small" style={{ fontWeight: 700, color: "var(--fg-muted)", textTransform: "uppercase", textAlign: h === "Student" ? "left" : "center" }}>
-                {h}
+        <div className="card border border-s-stroke2 bg-b-surface1 p-0 overflow-hidden">
+          <div className="overflow-x-auto">
+            <div className="min-w-[760px]">
+              {/* Table Header */}
+              <div className="grid grid-cols-[80px_minmax(0,1fr)_100px_100px_100px] gap-4 border-b border-s-stroke2 bg-b-surface2 p-4 text-center text-caption font-bold text-t-secondary">
+                <div className="text-left pl-2">Rank</div>
+                <div className="text-left">Student</div>
+                <div>Avg Score</div>
+                <div>Tests</div>
+                <div>Streak</div>
               </div>
-            ))}
-          </div>
 
-          {(activeTab === "Global" ? mockLeaderboard : activeTab === "Institute" ? mockInstituteLeaderboard : mockBatchLeaderboard).map((student) => {
-            const getMedal = () => {
-              if (student.rank === 1) return <RiMedalFill color="#EAB308" size={24} />;
-              if (student.rank === 2) return <RiMedalFill color="#94A3B8" size={24} />;
-              if (student.rank === 3) return <RiMedalFill color="#B45309" size={24} />;
-              return null;
-            };
-            const medal = getMedal();
-            return (
-              <div
-                key={student.rank}
-                style={{
-                  display: "grid", gridTemplateColumns: "60px 1fr 80px 80px 80px",
-                  padding: "14px 20px",
-                  background: student.isCurrentUser ? "var(--primary-10)" : "transparent",
-                  borderBottom: "1px solid var(--border-default)"
-                }}
-              >
-                {/* Rank */}
-                <div style={{ display: "flex", alignItems: "center", fontWeight: 800, fontSize: 14, color: student.rank <= 3 ? "var(--primary-50)" : "var(--fg-muted)" }}>
-                  {medal || `#${student.rank}`}
-                </div>
-
-                {/* Name */}
-                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <div
-                    style={{
-                      width: 32, height: 32, borderRadius: "50%", flexShrink: 0,
-                      background: student.isCurrentUser ? "var(--primary-50)" : "var(--neutral-20)",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      fontSize: 12, fontWeight: 800, color: student.isCurrentUser ? "white" : "var(--fg-default)",
-                    }}
-                  >
-                    {student.name.charAt(0)}
+              <div className="flex flex-col">
+            {(activeTab === "Global" ? mockLeaderboard : activeTab === "Institute" ? mockInstituteLeaderboard : mockBatchLeaderboard).map((student) => {
+              const getMedal = () => {
+                if (student.rank === 1) return <RiMedalFill className="text-[#EF9D0E]" size={20} />;
+                if (student.rank === 2) return <RiMedalFill className="text-[#94A3B8]" size={20} />;
+                if (student.rank === 3) return <RiMedalFill className="text-[#B45309]" size={20} />;
+                return null;
+              };
+              const medal = getMedal();
+              return (
+                <div
+                  key={student.rank}
+                  className={`grid grid-cols-[80px_minmax(0,1fr)_100px_100px_100px] gap-4 border-b border-s-stroke2 p-4 items-center text-center last:border-b-0 ${
+                    student.isCurrentUser ? "bg-primary-01/5" : ""
+                  }`}
+                >
+                  {/* Rank */}
+                  <div className="text-left pl-2 flex items-center font-bold text-body-2 text-t-secondary">
+                    {medal || `#${student.rank}`}
                   </div>
-                  <div>
-                    <div className="text-body-base" style={{ fontWeight: 600, color: "var(--fg-default)" }}>
-                      {student.name}
-                      {student.isCurrentUser && <span className="rayum-badge green" style={{ marginLeft: 8 }}>You</span>}
+
+                  {/* Name */}
+                  <div className="flex items-center gap-3 text-left min-w-0">
+                    <div className={`flex size-8 shrink-0 items-center justify-center rounded-full text-caption font-bold ${
+                      student.isCurrentUser
+                        ? "bg-primary-01 text-white"
+                        : "bg-b-surface2 border border-s-stroke2 text-t-primary"
+                    }`}>
+                      {student.name.charAt(0)}
                     </div>
-                    <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>JEE 2026</div>
+                    <div className="min-w-0">
+                      <div className="text-body-2 font-bold text-t-primary truncate flex items-center">
+                        {student.name}
+                        {student.isCurrentUser && <span className="label label-green ml-2">You</span>}
+                      </div>
+                      <div className="text-caption text-t-secondary">JEE 2026</div>
+                    </div>
+                  </div>
+
+                  {/* Avg Score */}
+                  <div className={`text-body-2 font-bold ${
+                    student.avgScore >= 70
+                      ? "text-[#00A656]"
+                      : student.avgScore >= 50
+                        ? "text-[#EF9D0E]"
+                        : "text-[#FF6A55]"
+                  }`}>
+                    {student.avgScore}%
+                  </div>
+
+                  {/* Tests */}
+                  <div className="text-caption text-t-secondary font-semibold">
+                    {student.totalTests}
+                  </div>
+
+                  {/* Streak */}
+                  <div className="text-caption text-[#EF9D0E] font-bold flex items-center justify-center gap-0.5">
+                    <RiFireFill size={16} /> {student.streak}
                   </div>
                 </div>
-
-                {/* Avg Score */}
-                <div style={{ textAlign: "center", fontWeight: 700, color: student.avgScore >= 70 ? "var(--success-50)" : student.avgScore >= 50 ? "var(--warning-50)" : "var(--error-50)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  {student.avgScore}%
-                </div>
-
-                {/* Tests */}
-                <div style={{ textAlign: "center", color: "var(--fg-muted)", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  {student.totalTests}
-                </div>
-
-                {/* Streak */}
-                <div style={{ textAlign: "center", color: "var(--warning-50)", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "center", gap: 4 }}>
-                  <RiFireFill size={16} color="var(--warning-50)" /> {student.streak}
-                </div>
+              );
+            })}
               </div>
-            );
-          })}
+            </div>
+          </div>
         </div>
       </main>
     </>

@@ -21,13 +21,14 @@ import {
 } from "@remixicon/react";
 
 function AccuracyBar({ accuracy }: { accuracy: number }) {
-  const color = accuracy >= 70 ? "var(--success-50)" : accuracy >= 40 ? "var(--warning-50)" : "var(--error-50)";
+  const color = accuracy >= 70 ? "bg-[#00A656]" : accuracy >= 40 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]";
+  const textClass = accuracy >= 70 ? "text-[#00A656]" : accuracy >= 40 ? "text-[#EF9D0E]" : "text-[#FF6A55]";
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-      <div className="rayum-progress-track" style={{ flex: 1 }}>
-        <div style={{ height: "100%", width: `${accuracy}%`, background: color, borderRadius: 999, transition: "width 0.8s" }} />
+    <div className="flex items-center gap-3">
+      <div className="flex-1 h-2 bg-s-stroke2 rounded-full overflow-hidden">
+        <div className={`h-full rounded-full transition-all duration-800 ${color}`} style={{ width: `${accuracy}%` }} />
       </div>
-      <span className="text-body-small" style={{ fontWeight: 700, color, minWidth: 32, textAlign: "right" }}>
+      <span className={`text-caption font-bold min-w-[32px] text-right ${textClass}`}>
         {accuracy.toFixed(0)}%
       </span>
     </div>
@@ -40,6 +41,7 @@ export default function ResultsPage() {
   const attemptId = params?.id as string;
 
   const [showBooster, setShowBooster] = useState(false);
+  const [showAllWeakTopics, setShowAllWeakTopics] = useState(false);
   const [selectedMode, setSelectedMode] = useState<"micro" | "full" | null>(null);
   const [microCount, setMicroCount] = useState(15);
   const [fullHours, setFullHours] = useState<1 | 2 | 3>(1);
@@ -76,359 +78,344 @@ export default function ResultsPage() {
     return (
       <>
         <Navbar title="Results & Analysis" />
-        <div style={{ minHeight: "80vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16, color: "var(--fg-muted)" }}>
-          <RiLoader4Line size={48} style={{ animation: "spin 1s linear infinite" }} />
-          <p style={{ fontSize: 16, fontWeight: 600 }}>Analyzing your performance...</p>
-          <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+        <div className="min-h-[70vh] px-4 py-10 md:px-6">
+          <div className="mx-auto flex max-w-5xl flex-col gap-6 rounded-[36px] border border-s-stroke2/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(244,247,251,0.92))] p-8 shadow-depth md:p-10">
+            <div className="h-3 w-36 rounded-full bg-b-surface2" />
+            <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_14rem]">
+              <div className="space-y-3">
+                <div className="h-9 w-72 max-w-full rounded-2xl bg-b-surface2" />
+                <div className="h-5 w-96 max-w-full rounded-full bg-b-surface2" />
+              </div>
+              <div className="h-24 rounded-[28px] border border-s-stroke2 bg-b-surface2" />
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="h-32 rounded-[28px] bg-b-surface2" />
+              <div className="h-32 rounded-[28px] bg-b-surface2" />
+              <div className="h-32 rounded-[28px] bg-b-surface2" />
+            </div>
+
+            <div className="flex items-center gap-3 text-t-secondary">
+              <RiLoader4Line size={18} className="animate-spin text-primary-01" />
+              <p className="text-body-2 font-semibold">Analyzing your performance...</p>
+            </div>
+          </div>
         </div>
       </>
     );
   }
 
   const pct = Math.round(a.scoring.percentage);
-  const pctColor = pct >= 70 ? "var(--success-50)" : pct >= 50 ? "var(--warning-50)" : "var(--error-50)";
-  const pctBg = pct >= 70 ? "var(--success-10)" : pct >= 50 ? "var(--warning-10)" : "var(--error-10)";
+  const pctColorClass = pct >= 70 ? "text-[#00A656]" : pct >= 50 ? "text-[#EF9D0E]" : "text-[#FF6A55]";
+  const pctBorderColor = pct >= 70 ? "border-[#00A656]" : pct >= 50 ? "border-[#EF9D0E]" : "border-[#FF6A55]";
+  const pctBgClass = pct >= 70 ? "bg-[#00A656]/5" : pct >= 50 ? "bg-[#EF9D0E]/5" : "bg-[#FF6A55]/5";
+  const totalQuestions = a.scoring.correctCount + a.scoring.incorrectCount + a.scoring.skippedCount;
+  const batchAvg = a.batchAvg?.percentage ?? a.batchAvg?.score ?? a.batchAvg;
+  const weakTopics = [...a.topicStats].filter((topic: any) => topic.isWeak);
+  const visibleWeakTopics = showAllWeakTopics ? weakTopics : weakTopics.slice(0, 8);
+  const strategySubjects = a.attemptStrategy?.subjectOrder ?? Object.keys(a.attemptStrategy?.timeDeviationPct ?? {});
 
   return (
     <>
       <Navbar title="Results & Analysis" />
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
-        {/* Header */}
-        <div style={{ marginBottom: "var(--space-800)" }}>
-          <Link href="/" style={{ color: "var(--secondary-50)", fontSize: 14, fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 16 }}>
+
+      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-4 md:px-6">
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <Link href="/" className="inline-flex items-center gap-2 rounded-full border border-s-stroke2 bg-b-surface2 px-4 py-2 text-caption font-bold text-t-secondary transition-colors hover:text-t-primary">
             <RiArrowLeftLine size={16} /> Back to Dashboard
           </Link>
-          <h1 className="text-h2" style={{ color: "var(--fg-default)" }}>
-            Test Results & AI Analysis
-          </h1>
-          <p className="text-body-base" style={{ color: "var(--fg-muted)", marginTop: 8 }}>Laws of Motion · JEE · {a.correctCount + a.incorrectCount + a.skippedCount} Questions</p>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="label label-gray">{a.scoring.correctCount + a.scoring.incorrectCount + a.scoring.skippedCount} questions</span>
+            <span className="label label-gray">{a.topicStats.filter((t: any) => t.isWeak).length} weak topics</span>
+            {a.narrative?.examCountdown && (
+              <span className="label label-yellow">{a.narrative.examCountdown.urgencyLabel}</span>
+            )}
+          </div>
         </div>
 
-        {/* Narrative Summary (V3) */}
-        {a.narrative && (
-          <div className="rayum-card" style={{ padding: 32, marginBottom: "var(--space-800)", background: "linear-gradient(to right, var(--primary-900), var(--primary-800))", color: "white", border: "none" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <RiLightbulbFlashLine size={28} color="var(--primary-200)" />
-                <h2 className="text-h3" style={{ color: "white", margin: 0 }}>AI Diagnosis</h2>
+        <section className="mb-6 overflow-hidden rounded-[36px] border border-s-stroke2/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(246,249,252,0.92))] shadow-depth">
+          <div className="grid gap-6 p-6 md:p-8 xl:grid-cols-[minmax(0,1fr)_20rem]">
+            <div className="space-y-5">
+              <div>
+                <p className="text-caption font-bold uppercase tracking-[0.24em] text-t-tertiary">Test Results</p>
+                <h1 className="mt-2 text-h4 font-black tracking-tight text-t-primary md:text-h3">Test Results & Analysis</h1>
+                <p className="mt-2 text-body-2 text-t-secondary">{a.topicStats[0]?.chapter ?? "Practice set"} · JEE · {totalQuestions} questions</p>
               </div>
-              {a.narrative.examCountdown && (
-                <div className="rayum-badge" style={{ background: "rgba(255,255,255,0.15)", color: "white", border: "1px solid rgba(255,255,255,0.2)" }}>
-                  {a.narrative.examCountdown.urgencyLabel}
-                </div>
-              )}
-            </div>
-            <h3 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12, lineHeight: 1.3 }}>{a.narrative.headline}</h3>
-            <p style={{ fontSize: 15, color: "var(--primary-100)", lineHeight: 1.6, marginBottom: 24 }}>{a.narrative.overview}</p>
-            
-            <div style={{ background: "rgba(0,0,0,0.2)", padding: 20, borderRadius: "var(--radius-md)", marginBottom: 24 }}>
-              <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: 1, color: "var(--primary-200)", fontWeight: 700, marginBottom: 8 }}>Biggest Win Available</div>
-              <div style={{ fontSize: 15, fontWeight: 600 }}>{a.narrative.biggestWin}</div>
-            </div>
-            
-            {a.narrative.warningMessage && (
-              <div style={{ padding: 16, borderLeft: "4px solid var(--error-400)", background: "rgba(255,50,50,0.1)", marginBottom: 24, fontSize: 14 }}>
-                <strong style={{ color: "var(--error-300)" }}>Warning:</strong> {a.narrative.warningMessage}
-              </div>
-            )}
-            
-            <div style={{ fontSize: 14, fontStyle: "italic", color: "var(--primary-200)" }}>{a.narrative.motivationalNote}</div>
-          </div>
-        )}
 
-        {/* Score Banner */}
-        <div className="rayum-card" style={{ padding: 40, border: `2px solid ${pctColor}`, background: pctBg, marginBottom: "var(--space-800)" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 48, alignItems: "center" }}>
-            <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: 64, fontWeight: 900, color: pctColor, lineHeight: 1 }}>{pct}%</div>
-              <div className="text-body-base" style={{ color: "var(--fg-muted)", marginTop: 12, fontWeight: 600 }}>Your Score</div>
-              {a.freeMarks?.projectedPercentage > pct && (
-                <div style={{ marginTop: 16, padding: "8px 12px", background: "var(--success-10)", borderRadius: "var(--radius-sm)", border: "1px solid var(--success-20)", display: "inline-block" }}>
-                  <div style={{ fontSize: 12, color: "var(--success-50)", fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 2 }}>Potential Score</div>
-                  <div style={{ fontSize: 20, fontWeight: 900, color: "var(--success-60)" }}>{Math.round(a.freeMarks.projectedPercentage)}%</div>
+              {a.narrative && (
+                <div className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5 md:p-6">
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-2 text-body-2 font-bold text-t-primary">
+                      <RiLightbulbFlashLine size={20} className="text-[#EF9D0E]" /> Performance summary
+                    </div>
+                    {a.narrative.examCountdown && <span className="label label-gray">{a.narrative.examCountdown.urgencyLabel}</span>}
+                  </div>
+                  <p className="text-body-2 font-semibold leading-relaxed text-t-primary">{a.narrative.headline}</p>
+                  <p className="mt-3 max-w-3xl text-caption leading-relaxed text-t-secondary">{a.narrative.overview}</p>
+                  <div className="mt-4 rounded-2xl border border-s-stroke2 bg-b-surface2 p-4">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary">Best next move</div>
+                    <div className="mt-1 text-body-2 font-semibold text-t-primary">{a.narrative.biggestWin}</div>
+                  </div>
                 </div>
               )}
             </div>
 
-            <div>
-              <div className="rayum-progress-track" style={{ height: 12, marginBottom: 24, background: "rgba(0,0,0,0.05)" }}>
-                <div style={{ height: "100%", width: `${pct}%`, background: pctColor, borderRadius: 999, transition: "width 1s" }} />
+            <div className="rounded-[30px] border border-s-stroke2 bg-b-surface1 p-5 shadow-sm">
+              <div className={`flex items-center justify-between rounded-[24px] border ${pctBorderColor} ${pctBgClass} p-4`}>
+                <div>
+                  <div className={`text-h3 font-black tracking-tight ${pctColorClass}`}>{pct}%</div>
+                  <div className="text-caption font-bold text-t-secondary">Your score</div>
+                </div>
+                {a.freeMarks?.projectedPercentage > pct && (
+                  <div className="text-right">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#00A656]">Potential</div>
+                    <div className="text-body-1 font-black text-[#00A656]">{Math.round(a.freeMarks.projectedPercentage)}%</div>
+                  </div>
+                )}
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+
+              <div className="mt-4 h-3 rounded-full bg-s-stroke2 overflow-hidden">
+                <div className={`h-full rounded-full ${pct >= 70 ? "bg-[#00A656]" : pct >= 50 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]"}`} style={{ width: `${pct}%` }} />
+              </div>
+
+              <div className="mt-4 grid grid-cols-3 gap-3">
                 {[
-                  { label: "Correct", value: a.scoring.correctCount, color: "var(--success-50)" },
-                  { label: "Incorrect", value: a.scoring.incorrectCount, color: "var(--error-50)" },
-                  { label: "Skipped", value: a.scoring.skippedCount, color: "var(--fg-muted)" },
-                ].map((s) => (
-                  <div key={s.label} style={{ textAlign: "center", background: "white", padding: "12px", borderRadius: "var(--radius-md)", boxShadow: "var(--shadow-100)" }}>
-                    <div style={{ fontSize: 24, fontWeight: 900, color: s.color }}>{s.value}</div>
-                    <div className="text-body-small" style={{ color: "var(--fg-muted)", marginTop: 4, fontWeight: 600 }}>{s.label}</div>
+                  { label: "Correct", value: a.scoring.correctCount, color: "text-[#00A656]" },
+                  { label: "Wrong", value: a.scoring.incorrectCount, color: "text-[#FF6A55]" },
+                  { label: "Skipped", value: a.scoring.skippedCount, color: "text-t-secondary" },
+                ].map((stat) => (
+                  <div key={stat.label} className="rounded-2xl border border-s-stroke2 bg-b-surface2 p-3 text-center">
+                    <div className={`text-body-1 font-black ${stat.color}`}>{stat.value}</div>
+                    <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-t-tertiary">{stat.label}</div>
                   </div>
                 ))}
               </div>
-            </div>
 
-            <div style={{ textAlign: "right", background: "white", padding: 24, borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-100)" }}>
-              <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 8, fontWeight: 600 }}>Batch Avg</div>
-              <div style={{ fontWeight: 800, fontSize: 32, color: "var(--fg-default)" }}>{a.batchAvg}%</div>
-              <div style={{ fontSize: 13, marginTop: 12, color: pct >= a.batchAvg ? "var(--success-50)" : "var(--error-50)", fontWeight: 700 }}>
-                {pct >= a.batchAvg ? `↑ +${pct - a.batchAvg}% above avg` : `↓ ${a.batchAvg - pct}% below avg`}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 🎯 Booster Card */}
-        {!showBooster ? (
-          <div className="rayum-card" style={{ padding: 32, border: "2px solid var(--warning-50)", background: "var(--warning-10)", marginBottom: "var(--space-800)", cursor: "pointer" }} onClick={() => setShowBooster(true)}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 16 }}>
-              <div>
-                <div className="text-h3" style={{ color: "var(--warning-50)", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
-                  <RiTargetLine size={24} /> Improvement Options Ready
-                </div>
-                <div className="text-body-base" style={{ color: "var(--fg-default)", marginBottom: 20 }}>
-                  Based on your analysis, <strong style={{ color: "var(--warning-50)" }}>3 topics need work</strong>:
-                </div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-                  {a.topicStats.filter((t: any) => t.isWeak).map((t: any) => (
-                    <span key={t.topic} className="rayum-badge orange" style={{ padding: "8px 16px", fontSize: 13 }}>{t.topic}</span>
-                  ))}
-                </div>
-              </div>
-              <button className="btn btn-primary" style={{ background: "var(--warning-50)", whiteSpace: "nowrap", flexShrink: 0, display: "inline-flex", gap: 8 }}>
-                Choose Mode <RiArrowRightLine size={18} />
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="rayum-card" style={{ padding: 32, border: "2px solid var(--warning-50)", background: "var(--bg-surface)", marginBottom: "var(--space-800)" }}>
-            <div className="text-h3" style={{ color: "var(--fg-default)", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
-              <RiTargetLine size={24} /> Choose Your Practice Mode
-            </div>
-            <p className="text-body-base" style={{ color: "var(--fg-muted)", marginBottom: 32 }}>
-              All questions are from your {a.topicStats.filter((t: any) => t.isWeak).length} weak topics only.
-            </p>
-
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 32 }}>
-              {/* Micro Booster */}
-              <div
-                onClick={() => setSelectedMode("micro")}
-                style={{
-                  padding: 24, borderRadius: "var(--radius-md)", cursor: "pointer",
-                  background: selectedMode === "micro" ? "var(--warning-10)" : "var(--neutral-10)",
-                  border: selectedMode === "micro" ? "2px solid var(--warning-50)" : "2px solid transparent",
-                  transition: "all 0.15s",
-                }}
-              >
-                <div style={{ marginBottom: 16, color: "var(--warning-50)" }}>
-                  <RiFlashlightFill size={32} />
-                </div>
-                <div className="text-body-large" style={{ fontWeight: 700, color: "var(--fg-default)", marginBottom: 8 }}>Micro Booster</div>
-                <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 24 }}>Quick 30-60 min targeted revision</div>
-                {selectedMode === "micro" && (
-                  <div onClick={(e) => e.stopPropagation()}>
-                    <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 12, fontWeight: 600 }}>Questions:</div>
-                    <div style={{ display: "flex", gap: 8 }}>
-                      {[15, 20, 25, 30].map((n) => (
-                        <button
-                          key={n}
-                          onClick={() => setMicroCount(n)}
-                          style={{
-                            padding: "8px 16px", borderRadius: "var(--radius-sm)", border: "none",
-                            background: microCount === n ? "var(--warning-50)" : "var(--bg-surface)",
-                            color: microCount === n ? "white" : "var(--fg-muted)",
-                            cursor: "pointer", fontSize: 13, fontWeight: 600, boxShadow: "var(--shadow-100)"
-                          }}
-                        >
-                          {n}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Full Improvement */}
-              <div
-                onClick={() => setSelectedMode("full")}
-                style={{
-                  padding: 24, borderRadius: "var(--radius-md)", cursor: "pointer",
-                  background: selectedMode === "full" ? "var(--secondary-10)" : "var(--neutral-10)",
-                  border: selectedMode === "full" ? "2px solid var(--secondary-50)" : "2px solid transparent",
-                  transition: "all 0.15s",
-                }}
-              >
-                <div style={{ marginBottom: 16, color: "var(--secondary-50)" }}>
-                  <RiTimerLine size={32} />
-                </div>
-                <div className="text-body-large" style={{ fontWeight: 700, color: "var(--fg-default)", marginBottom: 8 }}>Full Improvement Test</div>
-                <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 24 }}>Exam simulation on weak areas</div>
-                {selectedMode === "full" && (
-                  <div onClick={(e) => e.stopPropagation()}>
-                    <div className="text-body-small" style={{ color: "var(--fg-muted)", marginBottom: 12, fontWeight: 600 }}>Duration:</div>
-                    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                      {([1, 2, 3] as const).map((h) => (
-                        <button
-                          key={h}
-                          onClick={() => setFullHours(h)}
-                          style={{
-                            padding: "10px 16px", borderRadius: "var(--radius-sm)", border: "none", textAlign: "left",
-                            background: fullHours === h ? "var(--secondary-50)" : "var(--bg-surface)",
-                            color: fullHours === h ? "white" : "var(--fg-default)",
-                            cursor: "pointer", fontSize: 13, fontWeight: 600, boxShadow: "var(--shadow-100)"
-                          }}
-                        >
-                          {h} Hour · {h * 25} Questions (JEE)
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <div style={{ display: "flex", gap: 16 }}>
-              <button
-                className="btn btn-primary"
-                disabled={!selectedMode}
-                style={{ flex: 1, justifyContent: "center", opacity: selectedMode ? 1 : 0.4, display: "inline-flex", gap: 8 }}
-                onClick={() => router.push("/test/booster-001")}
-              >
-                Start Improvement Test <RiArrowRightLine size={18} />
-              </button>
-              <button className="btn btn-outline" onClick={() => setShowBooster(false)}>
-                Skip for now
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Weak Topics */}
-        <div style={{ marginBottom: "var(--space-800)" }}>
-          <h2 className="text-h3" style={{ marginBottom: 24, display: "flex", alignItems: "center", gap: 8 }}>
-            <RiSearchLine size={22} /> Weak Topic Breakdown
-          </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            {a.topicStats.filter((t: any) => t.isWeak).map((topic: any) => (
-              <div key={topic.topic} className="rayum-card" style={{ padding: 24 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20, gap: 16 }}>
+              <div className="mt-4 rounded-2xl border border-s-stroke2 bg-b-surface2 p-4">
+                <div className="flex items-center justify-between gap-4">
                   <div>
-                    <div className="text-body-large" style={{ fontWeight: 700, color: "var(--fg-default)", marginBottom: 8 }}>{topic.topic}</div>
-                    <span className="rayum-badge orange">{topic.chapter}</span>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-t-tertiary">Batch average</div>
+                    <div className="mt-1 text-body-1 font-black text-t-primary">{a.batchAvg}%</div>
                   </div>
-                  <div style={{ fontSize: 28, fontWeight: 900, color: topic.accuracy >= 70 ? "var(--success-50)" : topic.accuracy >= 40 ? "var(--warning-50)" : "var(--error-50)" }}>
-                    {topic.accuracy.toFixed(0)}%
-                  </div>
+                  {batchAvg != null ? (
+                    <div className={`text-caption font-bold ${pct >= batchAvg ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
+                      {pct >= batchAvg ? `↑ +${pct - batchAvg}%` : `↓ ${batchAvg - pct}%`} vs avg
+                    </div>
+                  ) : (
+                    <div className="text-caption font-bold text-t-secondary">Batch avg unavailable</div>
+                  )}
                 </div>
-                <AccuracyBar accuracy={topic.accuracy} />
-                <p className="text-body-small" style={{ color: "var(--fg-muted)", marginTop: 16, lineHeight: 1.6, display: "flex", gap: 8 }}>
-                  <RiLightbulbFlashLine size={16} color="var(--primary-50)" style={{ flexShrink: 0, marginTop: 2 }} />
-                  <span>
-                    <strong style={{ color: "var(--fg-default)" }}>Analysis:</strong> Needs attention based on {topic.attempted} attempts.
-                  </span>
-                </p>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
+        </section>
 
-        {/* Attempt Strategy (V3) */}
-        {a.attemptStrategy && a.attemptStrategy.pattern !== "mixed" && (
-          <div style={{ marginBottom: "var(--space-800)" }}>
-            <h2 className="text-h3" style={{ marginBottom: 24, display: "flex", alignItems: "center", gap: 8 }}>
-              <RiTimerLine size={22} /> Attempt Strategy
-            </h2>
-            <div className="rayum-card" style={{ padding: 24 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
+        <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
+          <div className="space-y-6">
+            <section className="card p-6 md:p-7">
+              <div className="mb-5 flex items-center justify-between gap-4">
                 <div>
-                  <div className="text-body-large" style={{ fontWeight: 700, color: "var(--fg-default)", marginBottom: 8 }}>Time Management</div>
-                  <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>{a.attemptStrategy.insight}</div>
+                  <h2 className="text-sub-title-1 font-black text-t-primary">Weak Topic Breakdown</h2>
+                  <p className="mt-1 text-caption text-t-secondary">The fastest marks are in the topics below.</p>
                 </div>
-                <div style={{ textAlign: "right" }}>
-                  <div className="text-body-small" style={{ color: "var(--fg-muted)", fontWeight: 600, marginBottom: 4 }}>Strategy Score</div>
-                  <div style={{ fontSize: 24, fontWeight: 900, color: a.attemptStrategy.strategyScore >= 80 ? "var(--success-50)" : "var(--warning-50)" }}>
+                <button className="label label-yellow cursor-pointer" onClick={() => setShowAllWeakTopics((v) => !v)}>
+                  {showAllWeakTopics ? "Showing all" : `Top ${Math.min(8, weakTopics.length)}`} · {weakTopics.length} weak topics
+                </button>
+              </div>
+
+              <div className="grid gap-4 lg:grid-cols-2">
+                {visibleWeakTopics.map((topic: any) => (
+                  <div key={topic.topic} className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5 transition-colors hover:border-s-highlight">
+                    <div className="mb-4 flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="text-body-2 font-bold text-t-primary">{topic.topic}</h3>
+                        <p className="mt-1 text-caption text-t-secondary">{topic.chapter}</p>
+                      </div>
+                      <div className={`text-h5 font-black ${topic.accuracy >= 70 ? "text-[#00A656]" : topic.accuracy >= 40 ? "text-[#EF9D0E]" : "text-[#FF6A55]"}`}>
+                        {topic.accuracy.toFixed(0)}%
+                      </div>
+                    </div>
+                    <AccuracyBar accuracy={topic.accuracy} />
+                    <p className="mt-4 text-caption leading-relaxed text-t-secondary">
+                      <strong className="text-t-primary">Analysis:</strong> Needs attention based on {topic.attempted} attempts.
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {!showAllWeakTopics && weakTopics.length > visibleWeakTopics.length && (
+                <div className="mt-5 flex items-center justify-between rounded-[26px] border border-s-stroke2 bg-b-surface2 px-4 py-3 text-caption text-t-secondary">
+                  <span>{weakTopics.length - visibleWeakTopics.length} more weak topics hidden to keep this view readable.</span>
+                  <button className="font-bold text-primary-01" onClick={() => setShowAllWeakTopics(true)}>Show all</button>
+                </div>
+              )}
+            </section>
+
+            {a.attemptStrategy && a.attemptStrategy.pattern !== "mixed" && (
+              <section className="card p-6 md:p-7">
+                <div className="mb-4 flex items-center justify-between gap-4">
+                  <div>
+                    <h2 className="text-sub-title-1 font-black text-t-primary">Attempt Strategy</h2>
+                    <p className="mt-1 text-caption text-t-secondary">Use this to improve pacing and accuracy.</p>
+                  </div>
+                  <div className="rounded-full border border-s-stroke2 bg-b-surface2 px-3 py-1 text-caption font-bold text-t-secondary">
                     {a.attemptStrategy.strategyScore}/100
                   </div>
                 </div>
-              </div>
-              <div style={{ background: "var(--bg-surface-hover)", padding: 16, borderRadius: "var(--radius-sm)", display: "flex", gap: 12 }}>
-                <RiLightbulbFlashLine size={20} color="var(--primary-50)" style={{ flexShrink: 0 }} />
-                <div className="text-body-small" style={{ color: "var(--fg-default)" }}>
-                  <strong style={{ color: "var(--primary-50)" }}>Recommendation:</strong> {a.attemptStrategy.recommendation}
+                <div className="rounded-[24px] border border-s-stroke2 bg-b-surface2 p-4">
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {strategySubjects.map((subject: string) => {
+                      const deviation = a.attemptStrategy.timeDeviationPct?.[subject];
+                      const budget = a.attemptStrategy.optimalTimeSec?.[subject];
+                      const spent = a.attemptStrategy.timePerSubjectSec?.[subject];
+                      return (
+                        <div key={subject} className="rounded-2xl border border-s-stroke2 bg-b-surface1 p-4">
+                          <div className="text-caption font-bold uppercase tracking-[0.22em] text-t-tertiary">{subject}</div>
+                          <div className={`mt-2 text-body-1 font-black ${deviation >= 0 ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
+                            {deviation != null ? `${deviation > 0 ? "+" : ""}${Math.round(deviation)}%` : "—"}
+                          </div>
+                          <div className="mt-1 text-caption text-t-secondary">
+                            {spent != null && budget != null ? `${Math.round(spent)}s spent · ${Math.round(budget)}s ideal` : "Timing data unavailable"}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <p className="mt-4 text-caption leading-relaxed text-t-secondary">
+                    <strong className="text-t-primary">Recommendation:</strong> {a.attemptStrategy.recommendation}
+                  </p>
                 </div>
-              </div>
-            </div>
-          </div>
-        )}
+              </section>
+            )}
 
-        {/* Error Patterns */}
-        <div style={{ marginBottom: "var(--space-800)" }}>
-          <h2 className="text-h3" style={{ marginBottom: 24, display: "flex", alignItems: "center", gap: 8 }}>
-            <RiAlertFill size={22} color="var(--error-50)" /> Error Patterns
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-            {a.errorPatterns.map((ep: any) => (
-              <div key={ep.id} className="rayum-card" style={{ padding: 24 }}>
-                <div className="text-body-large" style={{ fontWeight: 700, color: "var(--error-50)", marginBottom: 12 }}>{ep.name}</div>
-                <p className="text-body-small" style={{ color: "var(--fg-muted)", lineHeight: 1.6, marginBottom: 16 }}>{ep.description}</p>
+            <section className="card p-6 md:p-7">
+              <div className="mb-5 flex items-center justify-between gap-4">
                 <div>
-                  <span className="rayum-badge" style={{ background: "var(--error-10)", color: "var(--error-50)" }}>
-                    {ep.questionsAffected.length} questions affected
-                  </span>
+                  <h2 className="text-sub-title-1 font-black text-t-primary">Error Patterns</h2>
+                  <p className="mt-1 text-caption text-t-secondary">These are the mistakes that cost you the most.</p>
                 </div>
-                <p className="text-body-small" style={{ marginTop: 16, color: "var(--primary-50)", fontWeight: 600 }}>Tip: {ep.tip}</p>
+                <span className="label label-red">Watch closely</span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mistake Diary CTA */}
-        <div className="rayum-card" style={{ padding: 24, background: "var(--primary-10)", border: "1px solid var(--primary-20)", display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "var(--space-800)" }}>
-          <div>
-            <div className="text-body-large" style={{ fontWeight: 700, color: "var(--primary-50)", marginBottom: 4 }}>Stop repeating these mistakes</div>
-            <div className="text-body-small" style={{ color: "var(--fg-default)" }}>Add these {a.errorPatterns.length * 2} errors to your digital diary for revision.</div>
-          </div>
-          <Link href="/student/mistakes" className="btn btn-primary" style={{ display: "inline-flex", gap: 8 }}>
-            <RiBookmarkFill size={18} /> Open Mistake Diary
-          </Link>
-        </div>
-
-        {/* 7-Day Study Plan */}
-        <div>
-          <h2 className="text-h3" style={{ marginBottom: 24, display: "flex", alignItems: "center", gap: 8 }}>
-            <RiCalendarEventLine size={22} /> Your 7-Day Study Plan
-          </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {a.studyPlan.map((day) => (
-              <div
-                key={day.day}
-                className="rayum-card"
-                style={{ padding: 0, overflow: "hidden", cursor: "pointer", transition: "all 0.2s", border: expandedDay === day.day ? "1px solid var(--primary-50)" : "1px solid var(--border-default)" }}
-                onClick={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
-              >
-                <div style={{ padding: 20, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, background: expandedDay === day.day ? "var(--primary-10)" : "var(--bg-surface)" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-                    <div style={{ fontWeight: 900, fontSize: 18, color: "var(--primary-50)", minWidth: 32 }}>
-                      D{day.day}
+              <div className="grid gap-4 md:grid-cols-2">
+                {a.errorPatterns.map((ep: any) => (
+                  <div key={ep.id} className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5">
+                    <h3 className="text-body-2 font-bold text-[#FF6A55]">{ep.name}</h3>
+                    <p className="mt-2 text-caption leading-relaxed text-t-secondary">{ep.description}</p>
+                    <div className="mt-4">
+                      <span className="label label-red font-bold">{ep.questionsAffected.length} questions affected</span>
                     </div>
-                    <div>
-                      <div className="text-body-base" style={{ fontWeight: 600, color: "var(--fg-default)" }}>{day.topic}</div>
-                      <div className="text-body-small" style={{ color: "var(--fg-muted)", marginTop: 4 }}>{day.durationMinutes} min</div>
+                    <div className="mt-4 rounded-2xl border border-s-stroke2 bg-b-surface2 p-3 text-caption font-semibold text-t-primary">
+                      <span className="text-[#3765F6]">Tip:</span> {ep.tip}
                     </div>
                   </div>
-                  <span style={{ color: "var(--fg-muted)", display: "flex" }}>
-                    {expandedDay === day.day ? <RiArrowUpSLine size={20} /> : <RiArrowDownSLine size={20} />}
-                  </span>
-                </div>
-                {expandedDay === day.day && (
-                  <div style={{ padding: "0 20px 20px", color: "var(--fg-muted)", fontSize: 14, lineHeight: 1.6, borderTop: "1px solid var(--border-default)", marginTop: 16, paddingTop: 16 }}>
-                    <strong>Activity:</strong> {day.activity} <br />
-                    <strong style={{ marginTop: 8, display: "block" }}>Focus:</strong> Targeting {day.focusErrorType} errors.
-                  </div>
-                )}
+                ))}
               </div>
-            ))}
+            </section>
+
+            <section className="card flex flex-col gap-4 rounded-[32px] border border-primary-01/20 bg-primary-01/5 p-6 md:flex-row md:items-center md:justify-between md:p-7">
+              <div>
+                <h2 className="text-body-2 font-bold text-primary-01">Stop repeating these mistakes</h2>
+                <p className="mt-1 text-caption text-t-secondary">Add these {a.errorPatterns.length * 2} errors to your mistake diary for revision.</p>
+              </div>
+              <Link href="/student/mistakes" className="btn btn-primary flex items-center gap-1.5 self-start md:self-auto">
+                <RiBookmarkFill size={16} /> Open Mistake Diary
+              </Link>
+            </section>
+
+            <section className="card p-6 md:p-7">
+              <div className="mb-5 flex items-center justify-between gap-4">
+                <div>
+                  <h2 className="text-sub-title-1 font-black text-t-primary">7-Day Study Plan</h2>
+                  <p className="mt-1 text-caption text-t-secondary">Small, daily work beats one long reset.</p>
+                </div>
+                <span className="label label-gray">Next 7 days</span>
+              </div>
+              <div className="space-y-3">
+                {a.studyPlan.map((day: any) => (
+                  <button
+                    key={day.day}
+                    className={`w-full rounded-[26px] border p-4 text-left transition-colors ${
+                      expandedDay === day.day ? "border-primary-01 bg-primary-01/5" : "border-s-stroke2 bg-b-surface1 hover:border-s-highlight"
+                    }`}
+                    onClick={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
+                  >
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-4">
+                        <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-b-surface2 text-body-2 font-black text-primary-01">D{day.day}</div>
+                        <div>
+                          <div className="text-body-2 font-bold text-t-primary">{day.topic}</div>
+                          <div className="mt-0.5 text-caption text-t-secondary">{day.durationMinutes} min</div>
+                        </div>
+                      </div>
+                      <span className="text-t-secondary">
+                        {expandedDay === day.day ? <RiArrowUpSLine size={20} /> : <RiArrowDownSLine size={20} />}
+                      </span>
+                    </div>
+                    {expandedDay === day.day && (
+                      <div className="mt-4 border-t border-s-stroke2 pt-4 text-caption leading-relaxed text-t-secondary">
+                        <div><strong className="text-t-primary">Activity:</strong> {day.activity}</div>
+                        <div className="mt-2"><strong className="text-t-primary">Focus:</strong> Targeting {day.focusErrorType} errors.</div>
+                      </div>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </section>
           </div>
+
+          <aside className="space-y-6 xl:sticky xl:top-6 xl:self-start">
+            <section className="card p-6 md:p-7">
+              <div className="mb-4 flex items-center gap-2 text-body-2 font-bold text-t-primary">
+                <RiTargetLine size={20} className="text-[#EF9D0E]" /> Recovery options
+              </div>
+              <p className="text-caption leading-relaxed text-t-secondary">Turn the weak areas into a short follow-up set or a full revision run.</p>
+
+              <div className="mt-5 space-y-3">
+                <button onClick={() => setShowBooster((v) => !v)} className="btn btn-outline w-full justify-between">
+                  <span className="flex items-center gap-2"><RiFlashlightFill size={16} /> Micro Booster</span>
+                  <span className="text-caption">15-30 Qs</span>
+                </button>
+                <button onClick={() => router.push("/pyqs")} className="btn btn-primary w-full justify-between">
+                  <span className="flex items-center gap-2"><RiArrowRightLine size={16} /> Back to PYQs</span>
+                  <span className="text-caption">pick another paper</span>
+                </button>
+              </div>
+
+              {showBooster && (
+                <div className="mt-5 rounded-[26px] border border-s-stroke2 bg-b-surface2 p-4">
+                  <div className="mb-3 text-caption font-bold uppercase tracking-[0.22em] text-t-tertiary">Quick set</div>
+                  <div className="grid grid-cols-4 gap-2">
+                    {[15, 20, 25, 30].map((n) => (
+                      <button key={n} onClick={() => setMicroCount(n)} className={`btn btn-sm ${microCount === n ? "btn-primary" : "btn-outline"}`}>
+                        {n}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="mt-4 text-caption text-t-secondary">The current pick is {microCount} questions.</div>
+                </div>
+              )}
+            </section>
+
+            <section className="card p-6 md:p-7">
+              <div className="mb-4 flex items-center gap-2 text-body-2 font-bold text-t-primary">
+                <RiTimerLine size={20} className="text-[#3765F6]" /> Exam snapshot
+              </div>
+              <div className="space-y-3 text-caption text-t-secondary">
+                <div className="flex items-center justify-between rounded-2xl bg-b-surface2 px-4 py-3">
+                  <span>Correct</span>
+                  <strong className="text-[#00A656]">{a.scoring.correctCount}</strong>
+                </div>
+                <div className="flex items-center justify-between rounded-2xl bg-b-surface2 px-4 py-3">
+                  <span>Incorrect</span>
+                  <strong className="text-[#FF6A55]">{a.scoring.incorrectCount}</strong>
+                </div>
+                <div className="flex items-center justify-between rounded-2xl bg-b-surface2 px-4 py-3">
+                  <span>Skipped</span>
+                  <strong className="text-t-primary">{a.scoring.skippedCount}</strong>
+                </div>
+              </div>
+            </section>
+          </aside>
         </div>
       </main>
     </>
