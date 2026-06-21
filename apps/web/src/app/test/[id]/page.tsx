@@ -284,10 +284,28 @@ export default function TestPage() {
       : `${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
   };
 
+  const isSectionBLimitReached = (q: any) => {
+    if (q.question_type !== "integer") return false;
+    if (answers[q.id] !== undefined && answers[q.id] !== "") return false;
+    const count = questions.filter((quest) => 
+      quest.subject === q.subject && 
+      quest.question_type === "integer" && 
+      answers[quest.id] !== undefined && 
+      answers[quest.id] !== ""
+    ).length;
+    return count >= 5;
+  };
+
   const selectAnswer = (qId: string, optId: string) => {
+    const q = questions.find((quest) => quest.id === qId);
+    if (q && isSectionBLimitReached(q)) {
+      alert(`You can only attempt a maximum of 5 numerical questions in ${q.subject}. Please clear another answer in this section first.`);
+      return;
+    }
     setAnswers((a) => ({ ...a, [qId]: optId }));
     setStatus((s)  => ({ ...s, [qId]: "answered" }));
   };
+
 
   const toggleReview = (qId: string) => {
     setStatus((s) => ({
@@ -470,6 +488,15 @@ export default function TestPage() {
 
           {/* Options or Text Input */}
           <div className="space-y-3">
+            {isSectionBLimitReached(q) && (
+              <div className="rounded-[24px] border border-amber-200/50 bg-amber-50/50 p-4 text-amber-950">
+                <p className="text-caption font-bold uppercase tracking-wider text-amber-800">⚠️ Section B limit reached</p>
+                <p className="mt-1 text-caption font-semibold">
+                  You have already answered 5 numerical questions in {q.subject}. To attempt this question, please clear your answer on another numerical question in this subject first.
+                </p>
+              </div>
+            )}
+
             {!q.options || q.options.length === 0 ? (
               <div className="max-w-xl">
                 <label className="mb-2 block text-caption font-bold uppercase tracking-wider text-t-tertiary">
@@ -477,8 +504,9 @@ export default function TestPage() {
                 </label>
                 <input
                   type="text"
-                  className="input h-12 rounded-3xl px-4 text-body-1 font-semibold"
-                  placeholder="Type your answer..."
+                  className="input h-12 rounded-3xl px-4 text-body-1 font-semibold disabled:bg-b-surface2 disabled:cursor-not-allowed disabled:text-t-tertiary"
+                  placeholder={isSectionBLimitReached(q) ? "Section B limit of 5 reached" : "Type your answer..."}
+                  disabled={isSectionBLimitReached(q)}
                   value={answers[q.id] || ""}
                   onChange={(e) => {
                     const val = e.target.value;
@@ -491,13 +519,17 @@ export default function TestPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {q.options.map((opt) => {
                   const selected = answers[q.id] === opt.id;
+                  const disabled = isSectionBLimitReached(q) && !selected;
                   return (
                     <button
                       key={opt.id}
                       id={`option-${opt.id}`}
+                      disabled={disabled}
                       className={`flex items-center gap-4 rounded-3xl border p-4 text-left transition-all ${
                         selected
                           ? "border-primary-01 bg-primary-01/5 shadow-widget"
+                          : disabled
+                          ? "border-s-stroke2 bg-b-surface2/50 cursor-not-allowed opacity-50"
                           : "border-s-stroke2 bg-b-surface2 hover:border-s-highlight"
                       }`}
                       onClick={() => selectAnswer(q.id, opt.id)}
@@ -534,6 +566,21 @@ export default function TestPage() {
             >
               {status[q.id] === "review" ? <><RiStarFill size={18} /> Marked</> : <><RiStarLine size={18} /> Mark for Review</>}
             </button>
+            {answers[q.id] && (
+              <button
+                className="btn btn-outline border-[#FF6A55]/40 text-[#FF6A55] hover:bg-[#FF6A55]/5 justify-center gap-2 sm:flex-1"
+                onClick={() => {
+                  setAnswers((a) => {
+                    const newA = { ...a };
+                    delete newA[q.id];
+                    return newA;
+                  });
+                  setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
+                }}
+              >
+                Clear Response
+              </button>
+            )}
             {current < questions.length - 1 ? (
               <button className="btn btn-primary justify-center gap-2 sm:flex-1" onClick={() => setCurrent((c) => c + 1)}>
                 Next Question <RiArrowRightLine size={18} />

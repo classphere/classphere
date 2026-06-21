@@ -218,7 +218,7 @@ function buildOverview(
   attemptId: string
 ): string {
   const seed = attemptId + "_overview";
-  const scoreStr = `${scoring.score}/${scoring.maxScore}`;
+  const scoreStr = `${scoring.score}/${scoring.maxScore} Marks`;
 
   let timeSummary = "";
   if (strategy.overtimeSubjects.length > 0) {
@@ -228,9 +228,9 @@ function buildOverview(
   }
 
   const templates = [
-    `You achieved a score of ${pct}% (${scoreStr}) this test, with ${weakCount} topic${weakCount !== 1 ? "s" : ""} falling below the target threshold. Of these, ${freeMarks.totalFreeMarks} marks were lost to simple slips rather than knowledge gaps. ${timeSummary}`,
-    `With ${pct}% (${scoreStr}) in this test, you've shown solid performance, but ${weakCount} key topic${weakCount !== 1 ? "s" : ""} require attention. Rushing and math slips cost you ${freeMarks.totalFreeMarks} marks which could be instantly recovered. ${timeSummary}`,
-    `This mock test result of ${pct}% (${scoreStr}) highlights ${weakCount} area${weakCount !== 1 ? "s" : ""} of improvement. You dropped ${freeMarks.totalFreeMarks} marks on silly/calculation slips. ${timeSummary}`
+    `You achieved a score of ${scoreStr} in this test, with ${weakCount} chapter${weakCount !== 1 ? "s" : ""} falling below the target threshold. Of these, ${freeMarks.totalFreeMarks} marks were lost to simple slips rather than knowledge gaps. ${timeSummary}`,
+    `With a score of ${scoreStr} in this test, you've shown solid baseline coverage, but ${weakCount} key chapter${weakCount !== 1 ? "s" : ""} require revision. Careless slips cost you ${freeMarks.totalFreeMarks} marks that you already had the knowledge to secure. ${timeSummary}`,
+    `This mock test result of ${scoreStr} highlights ${weakCount} area${weakCount !== 1 ? "s" : ""} for improvement. You dropped ${freeMarks.totalFreeMarks} marks on silly/calculation slips. ${timeSummary}`
   ];
 
   return templates[getDeterministicIndex(seed, templates.length)];
@@ -295,7 +295,7 @@ function buildMotivationalNote(
 
   if (freeMarks.totalFreeMarks > 0) {
     const templates = [
-      `If you fix just the silly errors, your score jumps to ${freeMarks.projectedScore} — that's ${freeMarks.projectedPercentage.toFixed(0)}% without learning a single new concept.`,
+      `If you fix just the silly errors, your score jumps to ${freeMarks.projectedScore} out of ${scoring.maxScore} marks without learning a single new concept.`,
       `Imagine starting the next test with an extra ${freeMarks.totalFreeMarks} marks. You already have the knowledge — just execute carefully.`
     ];
     parts.push(templates[getDeterministicIndex(seed, templates.length)]);
@@ -319,7 +319,7 @@ function buildMotivationalNote(
 
   if (parts.length === 0) {
     const templates = [
-      `The goal isn't a perfect score — it's a consistently improving one. ${weakCount} topics to fix. That's specific. That's solvable.`,
+      `The goal isn't a perfect score — it's a consistently improving one. ${weakCount} chapter${weakCount !== 1 ? "s" : ""} to fix. That's specific. That's solvable.`,
       `Every error solved now is a point saved on the final day. Keep pushing forward.`
     ];
     parts.push(templates[getDeterministicIndex(seed, templates.length)]);

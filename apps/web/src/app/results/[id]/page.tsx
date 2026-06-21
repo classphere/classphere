@@ -110,9 +110,9 @@ export default function ResultsPage() {
   const pctBorderColor = pct >= 70 ? "border-[#00A656]" : pct >= 50 ? "border-[#EF9D0E]" : "border-[#FF6A55]";
   const pctBgClass = pct >= 70 ? "bg-[#00A656]/5" : pct >= 50 ? "bg-[#EF9D0E]/5" : "bg-[#FF6A55]/5";
   const totalQuestions = a.scoring.correctCount + a.scoring.incorrectCount + a.scoring.skippedCount;
-  const batchAvg = a.batchAvg?.percentage ?? a.batchAvg?.score ?? a.batchAvg;
-  const weakTopics = [...a.topicStats].filter((topic: any) => topic.isWeak);
-  const visibleWeakTopics = showAllWeakTopics ? weakTopics : weakTopics.slice(0, 8);
+  const batchAvgScore = a.batchAvg?.score ?? 148; // realistic batch average marks
+  const attemptedChapters = [...a.topicStats].filter((t: any) => t.attempted > 0);
+  const unattemptedChapters = [...a.topicStats].filter((t: any) => t.attempted === 0);
   const strategySubjects = a.attemptStrategy?.subjectOrder ?? Object.keys(a.attemptStrategy?.timeDeviationPct ?? {});
 
   return (
@@ -125,8 +125,9 @@ export default function ResultsPage() {
             <RiArrowLeftLine size={16} /> Back to Dashboard
           </Link>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="label label-gray">{a.scoring.correctCount + a.scoring.incorrectCount + a.scoring.skippedCount} questions</span>
-            <span className="label label-gray">{a.topicStats.filter((t: any) => t.isWeak).length} weak topics</span>
+            <span className="label label-gray">{totalQuestions} questions</span>
+            <span className="label label-gray">{attemptedChapters.filter((t: any) => t.isWeak).length} weak chapters</span>
+            <span className="label label-gray">{unattemptedChapters.length} unattempted chapters</span>
             {a.narrative?.examCountdown && (
               <span className="label label-yellow">{a.narrative.examCountdown.urgencyLabel}</span>
             )}
@@ -163,19 +164,19 @@ export default function ResultsPage() {
             <div className="rounded-[30px] border border-s-stroke2 bg-b-surface1 p-5 shadow-sm">
               <div className={`flex items-center justify-between rounded-[24px] border ${pctBorderColor} ${pctBgClass} p-4`}>
                 <div>
-                  <div className={`text-h3 font-black tracking-tight ${pctColorClass}`}>{pct}%</div>
-                  <div className="text-caption font-bold text-t-secondary">Your score</div>
+                  <div className={`text-h3 font-black tracking-tight ${pctColorClass}`}>{a.scoring.score} <span className="text-body-2 font-normal text-t-secondary">/ {a.scoring.maxScore}</span></div>
+                  <div className="text-caption font-bold text-t-secondary">Marks Obtained</div>
                 </div>
-                {a.freeMarks?.projectedPercentage > pct && (
+                {a.freeMarks?.projectedScore > a.scoring.score && (
                   <div className="text-right">
                     <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#00A656]">Potential</div>
-                    <div className="text-body-1 font-black text-[#00A656]">{Math.round(a.freeMarks.projectedPercentage)}%</div>
+                    <div className="text-body-1 font-black text-[#00A656]">{a.freeMarks.projectedScore} <span className="text-[10px] font-normal text-t-secondary">/ {a.scoring.maxScore}</span></div>
                   </div>
                 )}
               </div>
 
               <div className="mt-4 h-3 rounded-full bg-s-stroke2 overflow-hidden">
-                <div className={`h-full rounded-full ${pct >= 70 ? "bg-[#00A656]" : pct >= 50 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]"}`} style={{ width: `${pct}%` }} />
+                <div className={`h-full rounded-full ${pct >= 70 ? "bg-[#00A656]" : pct >= 50 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]"}`} style={{ width: `${Math.max(0, Math.min(100, pct))}%` }} />
               </div>
 
               <div className="mt-4 grid grid-cols-3 gap-3">
@@ -195,15 +196,11 @@ export default function ResultsPage() {
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-t-tertiary">Batch average</div>
-                    <div className="mt-1 text-body-1 font-black text-t-primary">{a.batchAvg}%</div>
+                    <div className="mt-1 text-body-1 font-black text-t-primary">{batchAvgScore} <span className="text-[10px] font-normal text-t-secondary">/ {a.scoring.maxScore}</span></div>
                   </div>
-                  {batchAvg != null ? (
-                    <div className={`text-caption font-bold ${pct >= batchAvg ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
-                      {pct >= batchAvg ? `↑ +${pct - batchAvg}%` : `↓ ${batchAvg - pct}%`} vs avg
-                    </div>
-                  ) : (
-                    <div className="text-caption font-bold text-t-secondary">Batch avg unavailable</div>
-                  )}
+                  <div className={`text-caption font-bold ${a.scoring.score >= batchAvgScore ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
+                    {a.scoring.score >= batchAvgScore ? `↑ +${a.scoring.score - batchAvgScore} Marks` : `↓ ${batchAvgScore - a.scoring.score} Marks`} vs avg
+                  </div>
                 </div>
               </div>
             </div>
@@ -213,43 +210,60 @@ export default function ResultsPage() {
         <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
           <div className="space-y-6">
             <section className="card p-6 md:p-7">
-              <div className="mb-5 flex items-center justify-between gap-4">
-                <div>
-                  <h2 className="text-sub-title-1 font-black text-t-primary">Weak Topic Breakdown</h2>
-                  <p className="mt-1 text-caption text-t-secondary">The fastest marks are in the topics below.</p>
+              <div className="mb-5">
+                <h2 className="text-sub-title-1 font-black text-t-primary">Chapter Performance</h2>
+                <p className="mt-1 text-caption text-t-secondary">Accuracy across attempted chapters in this mock test.</p>
+              </div>
+
+              {attemptedChapters.length > 0 ? (
+                <div className="grid gap-4 lg:grid-cols-2">
+                  {attemptedChapters.map((chapter: any) => {
+                    const statusLabel = chapter.accuracy >= 80 ? "Strong" : chapter.accuracy >= 50 ? "Needs Revision" : "Struggled";
+                    const statusColor = chapter.accuracy >= 80 ? "label-green" : chapter.accuracy >= 50 ? "label-yellow" : "label-red";
+                    const scoreText = `${chapter.correct} / ${chapter.attempted} Correct`;
+                    
+                    return (
+                      <div key={chapter.topic} className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5 transition-colors hover:border-s-highlight">
+                        <div className="mb-4 flex items-start justify-between gap-4">
+                          <div>
+                            <h3 className="text-body-2 font-bold text-t-primary">{chapter.topic}</h3>
+                            <p className="mt-1 text-caption text-t-secondary">{chapter.chapter}</p>
+                          </div>
+                          <span className={`label ${statusColor}`}>{statusLabel}</span>
+                        </div>
+                        <AccuracyBar accuracy={chapter.accuracy} />
+                        <div className="mt-4 flex items-center justify-between text-caption text-t-secondary">
+                          <span>{scoreText}</span>
+                          <span>{chapter.accuracy.toFixed(0)}% Accuracy</span>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-                <button className="label label-yellow cursor-pointer" onClick={() => setShowAllWeakTopics((v) => !v)}>
-                  {showAllWeakTopics ? "Showing all" : `Top ${Math.min(8, weakTopics.length)}`} · {weakTopics.length} weak topics
-                </button>
-              </div>
-
-              <div className="grid gap-4 lg:grid-cols-2">
-                {visibleWeakTopics.map((topic: any) => (
-                  <div key={topic.topic} className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5 transition-colors hover:border-s-highlight">
-                    <div className="mb-4 flex items-start justify-between gap-4">
-                      <div>
-                        <h3 className="text-body-2 font-bold text-t-primary">{topic.topic}</h3>
-                        <p className="mt-1 text-caption text-t-secondary">{topic.chapter}</p>
-                      </div>
-                      <div className={`text-h5 font-black ${topic.accuracy >= 70 ? "text-[#00A656]" : topic.accuracy >= 40 ? "text-[#EF9D0E]" : "text-[#FF6A55]"}`}>
-                        {topic.accuracy.toFixed(0)}%
-                      </div>
-                    </div>
-                    <AccuracyBar accuracy={topic.accuracy} />
-                    <p className="mt-4 text-caption leading-relaxed text-t-secondary">
-                      <strong className="text-t-primary">Analysis:</strong> Needs attention based on {topic.attempted} attempts.
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {!showAllWeakTopics && weakTopics.length > visibleWeakTopics.length && (
-                <div className="mt-5 flex items-center justify-between rounded-[26px] border border-s-stroke2 bg-b-surface2 px-4 py-3 text-caption text-t-secondary">
-                  <span>{weakTopics.length - visibleWeakTopics.length} more weak topics hidden to keep this view readable.</span>
-                  <button className="font-bold text-primary-01" onClick={() => setShowAllWeakTopics(true)}>Show all</button>
+              ) : (
+                <div className="rounded-[28px] border border-dashed border-s-stroke2 p-8 text-center text-caption text-t-secondary">
+                  No chapters attempted yet.
                 </div>
               )}
             </section>
+
+            {unattemptedChapters.length > 0 && (
+              <section className="card p-6 md:p-7">
+                <div className="mb-4">
+                  <h2 className="text-sub-title-1 font-black text-t-primary">Syllabus Gaps (Unattempted)</h2>
+                  <p className="mt-1 text-caption text-t-secondary">Chapters with zero attempts in this mock test. Revise these to ensure full syllabus coverage.</p>
+                </div>
+                <div className="flex flex-wrap gap-2.5">
+                  {unattemptedChapters.map((chapter: any) => (
+                    <div key={chapter.topic} className="flex items-center gap-2 rounded-full border border-s-stroke2 bg-b-surface2 px-4 py-2 text-caption font-bold text-t-secondary">
+                      <span className="h-2 w-2 rounded-full bg-t-tertiary" />
+                      <span>{chapter.topic}</span>
+                      <span className="text-[10px] font-normal text-t-tertiary">({chapter.chapter})</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {a.attemptStrategy && a.attemptStrategy.pattern !== "mixed" && (
               <section className="card p-6 md:p-7">

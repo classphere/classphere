@@ -8,6 +8,31 @@ const AVG_TIME: Record<string, number> = {
 
 export function classifyMistake(ans: AttemptAnswer, hasTimingData = true): MistakeClassification {
   if (ans.is_correct) {
+    if (!hasTimingData) {
+      return { type: "correct", detail: "", tip: "", confidence: "high", source: "distractor_map" };
+    }
+    const avgT = AVG_TIME[ans.question.difficulty] ?? 120;
+    const isGuessed =
+      (ans.time_taken_sec < avgT * 0.4) ||
+      (ans.question.difficulty === "hard" && ans.time_taken_sec < AVG_TIME.easy) ||
+      ans.marked_review;
+
+    if (isGuessed) {
+      let detail = `Answered correctly in ${ans.time_taken_sec}s. `;
+      if (ans.marked_review) {
+        detail += "Marked for review during the test, suggesting lower confidence.";
+      } else {
+        detail += "This is much faster than the average duration for this difficulty level, which may indicate a lucky guess or quick option elimination.";
+      }
+      return {
+        type: "correct_guessed",
+        detail,
+        tip: "Verify you understand the step-by-step solution. Ensure you didn't just guess or get lucky.",
+        confidence: "medium",
+        source: "heuristic",
+      };
+    }
+
     return { type: "correct", detail: "", tip: "", confidence: "high", source: "distractor_map" };
   }
 
