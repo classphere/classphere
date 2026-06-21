@@ -36,74 +36,74 @@ export default function SuperAdminDashboardPage() {
   return (
     <>
       <Navbar title="Platform Health" subtitle="Real-time operational overview of the ExamPrep infrastructure." />
-      <main style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px 32px 32px", width: "100%" }}>
+      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
 
         {/* ── Page Header Add-on ── */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "6px 14px", background: "var(--p-10)", borderRadius: "var(--r-full)", border: "1px solid var(--p-20)" }}>
-            <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--p-50)", animation: "pulse 2s infinite" }} />
-            <span className="t-label" style={{ color: "var(--p-80)" }}>All Systems Operational</span>
+        <div className="mb-8 flex items-center gap-3">
+          <div className="flex items-center gap-2 rounded-full border border-primary-02/20 bg-primary-02/10 px-4 py-2">
+            <div className="size-2 rounded-full bg-primary-02" />
+            <span className="t-label text-primary-02">All Systems Operational</span>
           </div>
         </div>
 
         {/* ── KPI Cards ── */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginBottom: 40 }}>
+        <div className="mb-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
 
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+          <div className="card p-6">
+            <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="t-label" style={{ marginBottom: 12 }}>Active Institutes</p>
-                <div style={{ fontSize: 36, fontWeight: 800, color: "var(--fg-default)", letterSpacing: "-0.02em", lineHeight: 1 }}>{mockPlatformStats.totalInstitutes}</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 12 }}>
+                <p className="t-label mb-3">Active Institutes</p>
+                <div className="text-h4 font-bold leading-none tracking-tight text-t-primary">{mockPlatformStats.totalInstitutes}</div>
+                <div className="mt-3 flex items-center gap-1">
                   <span className="badge badge-green"><RiArrowRightUpLine size={12} /> +2 this month</span>
                 </div>
               </div>
-              <div className="stat-icon" style={{ background: "var(--n-10)", color: "var(--fg-muted)" }}>
+              <div className="stat-icon bg-b-surface1 text-t-secondary">
                 <RiBuilding4Line size={20} />
               </div>
             </div>
           </div>
 
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+          <div className="card p-6">
+            <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="t-label" style={{ marginBottom: 12 }}>Total Students</p>
-                <div style={{ fontSize: 36, fontWeight: 800, color: "var(--fg-default)", letterSpacing: "-0.02em", lineHeight: 1 }}>{mockPlatformStats.totalStudents.toLocaleString()}</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 12 }}>
+                <p className="t-label mb-3">Total Students</p>
+                <div className="text-h4 font-bold leading-none tracking-tight text-t-primary">{mockPlatformStats.totalStudents.toLocaleString()}</div>
+                <div className="mt-3 flex items-center gap-1">
                   <span className="badge badge-green"><RiArrowRightUpLine size={12} /> +840 this week</span>
                 </div>
               </div>
-              <div className="stat-icon" style={{ background: "var(--s-10)", color: "var(--s-50)" }}>
+              <div className="stat-icon bg-primary-01/10 text-primary-01">
                 <RiUserStarLine size={20} />
               </div>
             </div>
           </div>
 
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+          <div className="card p-6">
+            <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="t-label" style={{ marginBottom: 12 }}>AI Analyses Today</p>
-                <div style={{ fontSize: 36, fontWeight: 800, color: "var(--fg-default)", letterSpacing: "-0.02em", lineHeight: 1 }}>{mockPlatformStats.activeAIAnalyses.toLocaleString()}</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 12 }}>
+                <p className="t-label mb-3">AI Analyses Today</p>
+                <div className="text-h4 font-bold leading-none tracking-tight text-t-primary">{mockPlatformStats.activeAIAnalyses.toLocaleString()}</div>
+                <div className="mt-3 flex items-center gap-1">
                   <span className="badge badge-orange">8.4K / 10K quota</span>
                 </div>
               </div>
-              <div className="stat-icon" style={{ background: "var(--warning-10)", color: "var(--warning-50)" }}>
+              <div className="stat-icon bg-[#EF9D0E]/10 text-[#EF9D0E]">
                 <RiBrainLine size={20} />
               </div>
             </div>
           </div>
 
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+          <div className="card p-6">
+            <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="t-label" style={{ marginBottom: 12 }}>System Uptime</p>
-                <div style={{ fontSize: 36, fontWeight: 800, color: "var(--p-50)", letterSpacing: "-0.02em", lineHeight: 1 }}>{mockPlatformStats.systemUptime}</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 12 }}>
+                <p className="t-label mb-3">System Uptime</p>
+                <div className="text-h4 font-bold leading-none tracking-tight text-primary-02">{mockPlatformStats.systemUptime}</div>
+                <div className="mt-3 flex items-center gap-1">
                   <span className="t-body-sm">Last 90 days</span>
                 </div>
               </div>
-              <div className="stat-icon" style={{ background: "var(--p-10)", color: "var(--p-50)" }}>
+              <div className="stat-icon bg-primary-02/10 text-primary-02">
                 <RiShieldCheckLine size={20} />
               </div>
             </div>
@@ -112,28 +112,28 @@ export default function SuperAdminDashboardPage() {
         </div>
 
         {/* ── System Resources + Audit Logs ── */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
+        <div className="mb-6 grid gap-6 xl:grid-cols-2">
 
           {/* System Resources */}
-          <div className="rayum-card" style={{ padding: 32 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 32 }}>
+          <div className="card p-6 md:p-8">
+            <div className="mb-8 flex items-center justify-between gap-4">
               <div>
-                <h2 className="section-title" style={{ fontSize: 18 }}>System Resources</h2>
+                <h2 className="section-title">System Resources</h2>
                 <p className="section-subtitle">Live infrastructure metrics</p>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "4px 10px", background: "var(--p-10)", borderRadius: "var(--r-full)" }}>
-                <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--p-50)" }} />
-                <span className="t-label" style={{ color: "var(--p-80)" }}>Live</span>
+              <div className="flex items-center gap-2 rounded-full bg-primary-02/10 px-3 py-1.5">
+                <div className="size-1.5 rounded-full bg-primary-02" />
+                <span className="t-label text-primary-02">Live</span>
               </div>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+            <div className="flex flex-col gap-6">
               {systemResources.map((res, i) => {
                 const pct = Math.round((res.value / res.max) * 100);
                 const barColor = res.status === "warning" ? "var(--warning-50)" : res.status === "error" ? "var(--danger-50)" : "var(--p-50)";
                 return (
                   <div key={i}>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <div className="mb-2 flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-2">
                         <span className="text-bold">{res.label}</span>
                         {res.status === "warning" && <span className="badge badge-orange">High</span>}
                       </div>
@@ -141,8 +141,8 @@ export default function SuperAdminDashboardPage() {
                         {typeof res.value === "number" && res.unit ? `${res.value}${res.unit} / ${res.max}${res.unit}` : `${res.value} / ${res.max}`}
                       </span>
                     </div>
-                    <div style={{ height: 6, background: "var(--n-20)", borderRadius: "var(--r-full)", overflow: "hidden" }}>
-                      <div style={{ width: `${pct}%`, height: "100%", background: barColor, borderRadius: "var(--r-full)", transition: "width 0.5s ease" }} />
+                    <div className="h-1.5 overflow-hidden rounded-full bg-s-stroke2">
+                      <div className="h-full rounded-full transition-[width] duration-500" style={{ width: `${pct}%`, background: barColor }} />
                     </div>
                   </div>
                 );
@@ -151,27 +151,27 @@ export default function SuperAdminDashboardPage() {
           </div>
 
           {/* Audit Logs */}
-          <div className="rayum-card" style={{ padding: 32 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 32 }}>
+          <div className="card p-6 md:p-8">
+            <div className="mb-8 flex items-center justify-between gap-4">
               <div>
-                <h2 className="section-title" style={{ fontSize: 18 }}>Audit Log</h2>
+                <h2 className="section-title">Audit Log</h2>
                 <p className="section-subtitle">Recent platform events</p>
               </div>
-              <button className="btn btn-ghost" style={{ padding: "8px 16px" }}>View All</button>
+              <button className="btn btn-ghost px-4 py-2">View All</button>
             </div>
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div className="flex flex-col">
               {auditLogs.map((log, i) => {
                 const t = typeMap[log.type as keyof typeof typeMap];
                 return (
-                  <div key={log.id} style={{ display: "flex", gap: 16, alignItems: "flex-start", paddingBottom: 20, marginBottom: 20, borderBottom: i < auditLogs.length - 1 ? "1px solid var(--border-default)" : "none" }}>
-                    <div className="stat-icon" style={{ width: 36, height: 36, borderRadius: "var(--r-md)", background: t.bg, color: t.color }}>
+                  <div key={log.id} className={`flex items-start gap-4 pb-5 mb-5 ${i < auditLogs.length - 1 ? "border-b border-s-stroke2" : ""}`}>
+                    <div className="stat-icon size-9 rounded-xl" style={{ background: t.bg, color: t.color }}>
                       {t.icon}
                     </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div className="text-bold" style={{ marginBottom: 4 }}>{log.action}</div>
-                      <div className="t-body-sm" style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{log.detail}</div>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-bold mb-1">{log.action}</div>
+                      <div className="t-body-sm truncate">{log.detail}</div>
                     </div>
-                    <div className="t-body-sm" style={{ fontWeight: 500 }}>{log.time}</div>
+                    <div className="t-body-sm font-medium">{log.time}</div>
                   </div>
                 );
               })}
