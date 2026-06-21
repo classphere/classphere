@@ -488,7 +488,7 @@ export default function TestPage() {
                 />
               </div>
             ) : (
-              <div className="grid gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {q.options.map((opt) => {
                   const selected = answers[q.id] === opt.id;
                   return (
@@ -509,7 +509,7 @@ export default function TestPage() {
                         {opt.text && <Latex>{opt.text}</Latex>}
                         {opt.image_url && (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 max-w-full rounded-xl" referrerPolicy="no-referrer" />
+                          <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 size-36 object-contain rounded-2xl bg-white p-2 border border-s-stroke2/50" referrerPolicy="no-referrer" />
                         )}
                       </div>
                     </button>
