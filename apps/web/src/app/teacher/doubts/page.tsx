@@ -2,7 +2,14 @@
 
 import Navbar from "@/components/layout/Navbar";
 import { useState, useRef, useEffect } from "react";
-import { RiSendPlaneFill, RiImageAddLine, RiCheckDoubleLine, RiSearchLine, RiMore2Fill, RiGroupLine } from "@remixicon/react";
+import {
+  RiSendPlaneFill,
+  RiImageAddLine,
+  RiCheckDoubleLine,
+  RiSearchLine,
+  RiMore2Fill,
+  RiGroupLine,
+} from "@remixicon/react";
 
 const initialMockMessages = [
   { id: 1, author: "Rahul Verma", role: "student", isOwn: false, text: "Guys, how do we apply the Work-Energy Theorem in question 14 of yesterday's mock? Shouldn't friction be negative?", time: "10:30 AM", isVerified: false },
@@ -42,32 +49,39 @@ export default function TeacherChatPage() {
   }, [messages]);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden" }}>
+    <div className="flex flex-col h-screen overflow-hidden">
       <Navbar title="Batch Discussion Moderation" />
       
-      <main style={{ display: "flex", flex: 1, overflow: "hidden", background: "var(--bg-body)" }}>
+      <main className="flex flex-1 overflow-hidden bg-b-surface2">
         
         {/* Left Sidebar - Chat List */}
-        <aside style={{ width: 320, background: "var(--bg-surface)", borderRight: "1px solid var(--border-default)", display: "flex", flexDirection: "column" }}>
-          <div style={{ padding: 16, borderBottom: "1px solid var(--border-subtle)" }}>
-            <div className="input-field" style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px" }}>
-              <RiSearchLine size={18} color="var(--fg-muted)" />
-              <input type="text" placeholder="Search groups..." style={{ border: "none", background: "transparent", outline: "none", width: "100%", fontSize: 14 }} />
+        <aside className="flex w-[18rem] shrink-0 flex-col border-r border-s-stroke2 bg-b-surface1 lg:w-[20rem] xl:w-[22rem]">
+          <div className="p-4 border-b border-s-stroke2">
+            <div className="relative">
+              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-t-secondary">
+                <RiSearchLine size={18} />
+              </span>
+              <input
+                type="text"
+                placeholder="Search groups..."
+                className="input pl-10 h-10 text-caption font-semibold"
+              />
             </div>
           </div>
-          <div style={{ flex: 1, overflowY: "auto" }}>
+          
+          <div className="flex-1 overflow-y-auto">
             {/* Active Chat Item */}
-            <div style={{ padding: "16px 20px", display: "flex", gap: 16, cursor: "pointer", background: "var(--primary-10)", borderLeft: "4px solid var(--primary-50)" }}>
-              <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--primary-50)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                <RiGroupLine size={24} />
+            <div className="flex cursor-pointer gap-4 border-l-4 border-[#EF9D0E] bg-linear-to-r from-[#EF9D0E]/10 to-transparent p-5">
+              <div className="size-11 rounded-full bg-[#EF9D0E] text-white flex items-center justify-center shrink-0">
+                <RiGroupLine size={22} />
               </div>
-              <div style={{ flex: 1, overflow: "hidden" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                  <div style={{ fontWeight: 700, color: "var(--fg-default)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>JEE 2026 Morning</div>
-                  <div style={{ fontSize: 12, color: "var(--primary-50)", fontWeight: 600 }}>11:22 AM</div>
+              <div className="flex-1 min-w-0">
+                <div className="flex justify-between items-baseline mb-1">
+                  <div className="text-body-2 font-bold text-t-primary truncate">JEE 2026 Morning</div>
+                  <div className="text-caption font-bold text-[#EF9D0E]">11:22 AM</div>
                 </div>
-                <div style={{ fontSize: 13, color: "var(--fg-muted)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                  <span style={{ color: "var(--fg-default)", fontWeight: 600 }}>Priya:</span> Yeah, PCl5 is another common...
+                <div className="text-caption text-t-secondary truncate">
+                  <span className="font-bold text-t-primary">Priya:</span> Yeah, PCl5 is another common...
                 </div>
               </div>
             </div>
@@ -75,89 +89,89 @@ export default function TeacherChatPage() {
         </aside>
 
         {/* Main Chat Area */}
-        <section style={{ flex: 1, display: "flex", flexDirection: "column", position: "relative" }}>
+        <section className="relative flex flex-1 flex-col bg-b-surface2 min-w-0">
           
           {/* Chat Header */}
-          <header style={{ height: 64, padding: "0 24px", background: "var(--bg-surface)", borderBottom: "1px solid var(--border-default)", display: "flex", alignItems: "center", justifyContent: "space-between", zIndex: 10 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ width: 40, height: 40, borderRadius: "50%", background: "var(--primary-50)", color: "white", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <header className="z-10 flex h-16 items-center justify-between border-b border-s-stroke2 bg-b-surface1 px-6">
+            <div className="flex items-center gap-3">
+              <div className="size-10 rounded-full bg-[#EF9D0E] text-white flex items-center justify-center">
                 <RiGroupLine size={20} />
               </div>
               <div>
-                <h2 style={{ fontSize: 16, fontWeight: 700, margin: 0, color: "var(--fg-default)" }}>JEE 2026 Morning (Moderation View)</h2>
-                <div style={{ fontSize: 13, color: "var(--fg-muted)" }}>145 Members • 3 Faculty Online</div>
+                <h2 className="text-body-2 font-bold text-t-primary">JEE 2026 Morning (Moderation View)</h2>
+                <div className="text-caption text-t-secondary">145 Members • 3 Faculty Online</div>
               </div>
             </div>
-            <div style={{ display: "flex", gap: 16, color: "var(--fg-muted)" }}>
-              <RiSearchLine size={20} style={{ cursor: "pointer" }} />
-              <RiMore2Fill size={20} style={{ cursor: "pointer" }} />
+            <div className="flex gap-4 text-t-secondary">
+              <button className="flex items-center justify-center size-8 rounded-full text-t-secondary hover:text-t-primary hover:bg-b-surface2 border-0 bg-transparent transition-colors cursor-pointer">
+                <RiSearchLine size={18} />
+              </button>
+              <button className="flex items-center justify-center size-8 rounded-full text-t-secondary hover:text-t-primary hover:bg-b-surface2 border-0 bg-transparent transition-colors cursor-pointer">
+                <RiMore2Fill size={18} />
+              </button>
             </div>
           </header>
 
           {/* Chat Messages Scroll */}
-          <div style={{ flex: 1, overflowY: "auto", padding: "24px 10%", display: "flex", flexDirection: "column", gap: 16, backgroundImage: "radial-gradient(var(--border-subtle) 1px, transparent 0)", backgroundSize: "20px 20px" }}>
+          <div className="flex flex-1 flex-col gap-4 overflow-y-auto px-6 py-6 md:px-8">
             
-            <div style={{ textAlign: "center", margin: "16px 0" }}>
-              <span style={{ background: "var(--n-20)", color: "var(--fg-muted)", padding: "4px 12px", borderRadius: 16, fontSize: 12, fontWeight: 600 }}>Today</span>
+            <div className="text-center my-4">
+              <span className="label label-gray font-bold px-3 py-1">Today</span>
             </div>
 
             {messages.map((msg, idx) => {
               const showAuthor = idx === 0 || messages[idx - 1].author !== msg.author || messages[idx - 1].time !== msg.time;
 
               return (
-                <div key={msg.id} style={{ display: "flex", flexDirection: "column", alignItems: msg.isOwn ? "flex-end" : "flex-start", marginBottom: showAuthor ? 8 : 2 }}>
+                <div key={msg.id} className={`flex flex-col ${msg.isOwn ? "items-end" : "items-start"} mb-1`}>
                   {!msg.isOwn && showAuthor && (
-                    <div style={{ fontSize: 13, fontWeight: 700, color: msg.role === "teacher" ? "var(--warning-60)" : "var(--fg-muted)", marginLeft: 48, marginBottom: 4, display: "flex", alignItems: "center", gap: 4 }}>
+                    <div className="text-caption font-bold text-t-secondary ml-11 mb-1.5 flex items-center gap-2">
                       {msg.author}
+                      {msg.role === "teacher" && <span className="label label-yellow px-1.5 py-0.5 text-[9px] h-4">FACULTY</span>}
                     </div>
                   )}
 
-                  <div style={{ display: "flex", gap: 8, maxWidth: "75%" }}>
+                  <div className="flex max-w-[85%] items-center gap-3 sm:max-w-[70%]">
+                    {!msg.isOwn && msg.role === "student" && !msg.isVerified && (
+                      <button 
+                        onClick={() => handleEndorse(msg.id)}
+                        title="Endorse as correct solution"
+                        className="size-8 rounded-full flex items-center justify-center text-[#00A656] hover:bg-[#00A656]/10 border border-[#00A656]/20 transition-all shrink-0 cursor-pointer"
+                      >
+                        <RiCheckDoubleLine size={16} />
+                      </button>
+                    )}
+
                     {!msg.isOwn && showAuthor ? (
-                      <div style={{ width: 32, height: 32, borderRadius: "50%", background: msg.role === "teacher" ? "var(--warning-50)" : "var(--n-30)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, flexShrink: 0, marginTop: 4 }}>
+                      <div className={`size-8 rounded-full flex items-center justify-center shrink-0 text-caption font-bold ${
+                        msg.role === "teacher" ? "bg-[#EF9D0E]/20 text-[#EF9D0E]" : "bg-b-surface1 border border-s-stroke2 text-t-primary"
+                      }`}>
                         {msg.author === "Anonymous" ? "?" : msg.author[0]}
                       </div>
                     ) : (
-                      <div style={{ width: 32 }} /> // spacer
+                      !msg.isOwn && <div className="size-8 shrink-0" />
                     )}
 
-                    <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 8 }}>
-                      
-                      {/* Teacher Moderator Controls (Endorse Button for unverified student messages) */}
-                      {!msg.isOwn && msg.role === "student" && !msg.isVerified && (
-                         <button 
-                           onClick={() => handleEndorse(msg.id)}
-                           title="Endorse as correct solution"
-                           style={{ background: "none", border: "none", color: "var(--success-40)", cursor: "pointer", opacity: 0.6, padding: 4 }}
-                           className="hover-lift"
-                         >
-                           <RiCheckDoubleLine size={18} />
-                         </button>
+                    <div className="relative group">
+                      {msg.isVerified && (
+                        <div className="absolute -top-2 -right-2 bg-[#00A656] text-white rounded-full p-0.5 border-2 border-b-surface2 z-10 shadow-depth" title="Teacher Endorsed">
+                          <RiCheckDoubleLine size={10} />
+                        </div>
                       )}
-
-                      <div style={{ position: "relative" }}>
-                        {msg.isVerified && (
-                          <div style={{ position: "absolute", top: -10, right: -10, background: "var(--success-50)", color: "white", borderRadius: "50%", padding: 4, zIndex: 10, boxShadow: "0 0 0 2px var(--bg-body)" }} title="Teacher Endorsed">
-                            <RiCheckDoubleLine size={12} />
-                          </div>
-                        )}
-                        
-                        <div style={{ 
-                          background: msg.isOwn ? "var(--warning-50)" : "var(--bg-surface)", 
-                          color: msg.isOwn ? "white" : "var(--fg-default)",
-                          padding: "10px 14px", 
-                          borderRadius: "16px",
-                          borderTopLeftRadius: !msg.isOwn && showAuthor ? 0 : 16,
-                          borderTopRightRadius: msg.isOwn && showAuthor ? 0 : 16,
-                          boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
-                          border: msg.isVerified ? "2px solid var(--success-40)" : msg.isOwn ? "none" : "1px solid var(--border-default)",
-                          fontSize: 15,
-                          lineHeight: 1.5
-                        }}>
-                          {msg.text}
-                          <div style={{ fontSize: 11, color: msg.isOwn ? "rgba(255,255,255,0.7)" : "var(--fg-muted)", textAlign: "right", marginTop: 4, display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 4 }}>
-                            {msg.time} {msg.isOwn && <span style={{ fontWeight: 600 }}>✓ Faculty</span>}
-                          </div>
+                      
+                      <div className={`rounded-2xl p-4 leading-relaxed text-body-2 ${
+                        msg.isOwn 
+                          ? "bg-linear-to-b from-[#2C2C2C] to-[#282828] text-white rounded-tr-xs" 
+                          : msg.isVerified 
+                            ? "bg-[#00A656]/5 border-2 border-[#00A656] text-t-primary rounded-tl-xs" 
+                            : "bg-b-surface1 border border-s-stroke2 text-t-primary rounded-tl-xs"
+                      }`}>
+                        {msg.text}
+                        <div className={`text-[10px] text-right mt-2 flex justify-end items-center gap-1 font-semibold ${
+                          msg.isOwn ? "text-white/60" : "text-t-secondary"
+                        }`}>
+                          {msg.time} 
+                          {msg.isOwn && <span className="text-[#EF9D0E]">Faculty</span>}
                         </div>
                       </div>
                     </div>
@@ -169,26 +183,30 @@ export default function TeacherChatPage() {
           </div>
 
           {/* Sticky Input Bar */}
-          <div style={{ padding: "16px 24px", background: "var(--bg-surface)", borderTop: "1px solid var(--border-default)", display: "flex", gap: 12, alignItems: "center" }}>
-            <button style={{ width: 44, height: 44, borderRadius: "50%", background: "var(--n-10)", border: "none", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--fg-muted)", cursor: "pointer", transition: "all 0.2s" }} className="hover-lift">
-              <RiImageAddLine size={22} />
+          <div className="flex items-center gap-3 border-t border-s-stroke2 bg-b-surface1 p-4">
+            <button className="flex items-center justify-center size-11 rounded-full text-t-secondary hover:text-t-primary hover:bg-b-surface2 border border-s-stroke2 bg-b-surface1 transition-colors cursor-pointer shrink-0">
+              <RiImageAddLine size={20} />
             </button>
-            <div style={{ flex: 1, position: "relative" }}>
+            <div className="flex-1 relative">
               <input 
                 type="text" 
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                 placeholder="Post an official faculty response..." 
-                style={{ width: "100%", padding: "12px 20px", borderRadius: 24, border: "2px solid var(--warning-20)", background: "var(--bg-body)", fontSize: 15, outline: "none" }}
+                className="input pr-4"
               />
             </div>
             <button 
               onClick={handleSend}
               disabled={!inputValue.trim()}
-              style={{ width: 44, height: 44, borderRadius: "50%", background: inputValue.trim() ? "var(--warning-50)" : "var(--n-20)", border: "none", display: "flex", alignItems: "center", justifyContent: "center", color: "white", cursor: inputValue.trim() ? "pointer" : "not-allowed", transition: "all 0.2s" }}
+              className={`size-11 rounded-full border-none flex items-center justify-center text-white cursor-pointer transition-colors shrink-0 ${
+                inputValue.trim() 
+                  ? "bg-[#EF9D0E] hover:bg-[#EF9D0E]/80" 
+                  : "bg-b-surface2 text-t-secondary cursor-not-allowed"
+              }`}
             >
-              <RiSendPlaneFill size={20} style={{ transform: "translateX(-2px)" }} />
+              <RiSendPlaneFill size={18} className="translate-x-[-1px]" />
             </button>
           </div>
 

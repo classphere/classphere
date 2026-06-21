@@ -44,9 +44,9 @@ const subjectBreakdown = [
 ];
 
 const priorityColor: Record<string, string> = {
-  Critical: "badge-red",
-  High: "badge-orange",
-  Medium: "badge-yellow",
+  Critical: "label-red",
+  High: "label-yellow",
+  Medium: "label-gray",
 };
 
 export default function TeacherAnalyticsPage() {
@@ -60,17 +60,21 @@ export default function TeacherAnalyticsPage() {
         subtitle="Cross-batch performance insights, weak topic detection, and trap question analysis."
         breadcrumbs="Dashboard > Analytics"
       />
-      <main style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px 48px", width: "100%" }}>
-
+      
+      <main className="w-full max-w-[1200px] mx-auto px-8 pb-12">
         {/* Batch Selector */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
-          <span className="t-body-base-med">Viewing batch:</span>
-          <div style={{ display: "flex", gap: 8 }}>
+        <div className="flex items-center gap-4 mb-8">
+          <span className="text-body-2 font-bold text-t-secondary">Viewing batch:</span>
+          <div className="flex gap-2">
             {batchStats.map((b, i) => (
               <button
                 key={b.batchName}
                 onClick={() => setSelectedBatch(i)}
-                style={{ padding: "6px 16px", borderRadius: "var(--r-full)", border: `1.5px solid ${selectedBatch === i ? "var(--p-50)" : "var(--border-default)"}`, background: selectedBatch === i ? "var(--p-10)" : "transparent", color: selectedBatch === i ? "var(--p-80)" : "var(--fg-muted)", fontWeight: selectedBatch === i ? 600 : 500, fontSize: "14px", cursor: "pointer", transition: "all 0.15s" }}
+                className={`px-4 py-1.5 rounded-full text-caption font-bold border transition-all cursor-pointer ${
+                  selectedBatch === i
+                    ? "bg-linear-to-b from-[#2C2C2C] to-[#282828] text-t-light border-transparent"
+                    : "bg-b-surface2 border-s-stroke2 text-t-secondary hover:text-t-primary"
+                }`}
               >
                 {b.batchName}
               </button>
@@ -79,43 +83,47 @@ export default function TeacherAnalyticsPage() {
         </div>
 
         {/* KPI Row */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 28 }}>
+        <div className="grid grid-cols-4 gap-6 mb-8">
           {[
             { label: "Batch Average",    value: `${stat.avg}%`,      icon: <RiBarChartBoxLine size={20} />, trend: stat.trend,    trendLabel: "vs last test" },
             { label: "Top Score",        value: `${stat.top}%`,       icon: <RiCheckDoubleLine size={20} />, trend: null,           trendLabel: "highest in batch" },
             { label: "Lowest Score",     value: `${stat.bottom}%`,    icon: <RiAlertLine size={20} />,       trend: null,           trendLabel: "needs intervention" },
             { label: "Total Students",   value: stat.students,        icon: <RiTeamLine size={20} />,        trend: null,           trendLabel: stat.exam },
           ].map(k => (
-            <div key={k.label} className="rayum-card" style={{ padding: 20 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
-                <div style={{ padding: 8, background: "var(--n-10)", borderRadius: "var(--r-md)", color: "var(--fg-default)" }}>{k.icon}</div>
+            <div key={k.label} className="group relative card flex flex-col p-5 overflow-hidden hover:border-transparent transition-all border border-s-stroke2 bg-b-surface1">
+              <div className="box-hover" />
+              <div className="relative z-10 flex justify-between items-start mb-4">
+                <div className="p-2.5 bg-b-surface2 rounded-xl border border-s-stroke2 text-t-secondary">{k.icon}</div>
                 {k.trend != null && (
-                  <span style={{ fontSize: 12, fontWeight: 700, color: k.trend > 0 ? "#16A34A" : "#DC2626", display: "flex", alignItems: "center", gap: 2 }}>
+                  <span className={`text-caption font-bold flex items-center gap-0.5 ${k.trend > 0 ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
                     {k.trend > 0 ? <RiArrowRightUpLine size={14} /> : <RiArrowRightDownLine size={14} />}
                     {k.trend > 0 ? "+" : ""}{k.trend}%
                   </span>
                 )}
               </div>
-              <div className="t-kpi" style={{ color: "var(--fg-default)", marginBottom: 4 }}>{k.value}</div>
-              <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>{k.label} · {k.trendLabel}</div>
+              <div className="relative z-10 text-h4 font-bold text-t-primary mb-1 tracking-tight">{k.value}</div>
+              <div className="relative z-10 text-caption text-t-secondary">{k.label} · {k.trendLabel}</div>
             </div>
           ))}
         </div>
 
         {/* Subject Breakdown */}
-        <section className="rayum-card" style={{ padding: 24, marginBottom: 24 }}>
-          <h2 className="section-title" style={{ marginBottom: 20 }}>Subject-wise Performance</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+        <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1 mb-8">
+          <h2 className="text-sub-title-1 font-bold text-t-primary mb-6">Subject-wise Performance</h2>
+          <div className="grid grid-cols-3 gap-6">
             {subjectBreakdown.map(s => (
-              <div key={s.subject} style={{ padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-                  <span className="t-body-base-bold">{s.subject}</span>
-                  <span className="t-sub-b" style={{ color: s.avg >= 70 ? "var(--success-50, #16A34A)" : s.avg >= 55 ? "var(--warning-50, #D97706)" : "var(--danger-50, #DC2626)" }}>{s.avg}%</span>
+              <div key={s.subject} className="p-5 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-body-2 font-bold text-t-primary">{s.subject}</span>
+                  <span className={`text-body-2 font-bold ${s.avg >= 70 ? "text-[#00A656]" : s.avg >= 55 ? "text-[#EF9D0E]" : "text-[#FF6A55]"}`}>{s.avg}%</span>
                 </div>
-                <div className="progress-track" style={{ height: 6, marginBottom: 12 }}>
-                  <div className="progress-fill" style={{ height: "100%", width: `${s.avg}%`, background: s.avg >= 70 ? "var(--success-50, #22C55E)" : s.avg >= 55 ? "var(--warning-50, #F59E0B)" : "var(--danger-50, #EF4444)" }} />
+                <div className="h-1.5 bg-s-stroke2 rounded-full overflow-hidden mb-3">
+                  <div
+                    className={`h-full rounded-full ${s.avg >= 70 ? "bg-[#00A656]" : s.avg >= 55 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]"}`}
+                    style={{ width: `${s.avg}%` }}
+                  />
                 </div>
-                <div style={{ display: "flex", gap: 12, fontSize: 13, color: "var(--fg-muted)" }}>
+                <div className="flex justify-between text-caption text-t-secondary">
                   <span>✅ {s.correct} correct</span>
                   <span>❌ {s.wrong} wrong</span>
                   <span>⬜ {s.unattempted} skip</span>
@@ -123,107 +131,116 @@ export default function TeacherAnalyticsPage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
         {/* Weak Topics + Trap Questions */}
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 24 }}>
+        <div className="grid grid-cols-[2fr_1fr] gap-6 mb-8">
 
           {/* Weak Topics */}
-          <section className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-              <h2 className="section-title">Critical Weaknesses — Lecture Planning</h2>
-              <Link href="/teacher/dpps" className="btn btn-primary" style={{ padding: "8px 16px" }}>
-                <RiAddLine size={18} /> Assign Booster DPP
+          <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
+            <div className="flex justify-between items-center mb-2">
+              <h2 className="text-sub-title-1 font-bold text-t-primary">Critical Weaknesses — Lecture Planning</h2>
+              <Link href="/teacher/dpps" className="btn btn-sm btn-primary flex items-center gap-1">
+                <RiAddLine size={16} /> Assign Booster DPP
               </Link>
             </div>
-            <p className="t-body-sm" style={{ color: "var(--fg-muted)", marginBottom: 20 }}>Topics where the majority of your batch failed. Prioritise these in your next class.</p>
-            <table className="rayum-table">
-              <thead>
-                <tr>
-                  {["Topic", "Subject", "Fail Rate", "Priority"].map(h => (
-                    <th key={h} style={{ paddingBottom: 10, fontSize: 12, fontWeight: 700, color: "var(--fg-muted)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {weakTopics.map((t, i) => {
-                  const badgeClass = priorityColor[t.priority];
-                  return (
-                    <tr key={i}>
-                      <td className="t-body-sm-med">{t.topic}</td>
-                      <td className="t-body-sm" style={{ color: "var(--fg-muted)" }}>{t.subject}</td>
-                      <td className="t-body-sm-bold" style={{ color: "var(--danger-50, #DC2626)" }}>{t.failRate}%</td>
-                      <td>
-                        <span className={`badge ${badgeClass}`}>{t.priority}</span>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </section>
+            <p className="text-caption text-t-secondary mb-6">Topics where the majority of your batch failed. Prioritise these in your next class.</p>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-s-stroke2 text-caption font-bold text-t-secondary">
+                    <th className="pb-3 pr-4">Topic</th>
+                    <th className="pb-3 px-4">Subject</th>
+                    <th className="pb-3 px-4">Fail Rate</th>
+                    <th className="pb-3 pl-4 text-right">Priority</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {weakTopics.map((t, i) => {
+                    const badgeClass = priorityColor[t.priority];
+                    return (
+                      <tr key={i} className="border-b border-s-stroke2 last:border-b-0">
+                        <td className="py-4 pr-4 text-body-2 font-bold text-t-primary">{t.topic}</td>
+                        <td className="py-4 px-4 text-caption text-t-secondary">{t.subject}</td>
+                        <td className="py-4 px-4 text-caption font-bold text-[#FF6A55]">{t.failRate}%</td>
+                        <td className="py-4 pl-4 text-right">
+                          <span className={`label ${badgeClass}`}>{t.priority}</span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
 
           {/* Trap Questions */}
-          <section className="rayum-card" style={{ padding: 24 }}>
-            <h2 className="section-title" style={{ marginBottom: 6 }}>Common Trap Questions</h2>
-            <p className="t-body-sm" style={{ color: "var(--fg-muted)", marginBottom: 20 }}>Questions where students selected the same wrong answer.</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div className="card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
+            <h2 className="text-sub-title-1 font-bold text-t-primary mb-1">Common Trap Questions</h2>
+            <p className="text-caption text-t-secondary mb-6">Questions where students selected the same wrong answer.</p>
+            <div className="flex flex-col gap-4 flex-1">
               {trapQuestions.map((t, i) => (
-                <div key={i} className="rayum-card" style={{ padding: 16, border: "1px solid var(--danger-30, #FCA5A5)", background: "var(--danger-10, #FEF2F2)", boxShadow: "none" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-                    <span className="t-body-sm-med">{t.q} — Option {t.option}</span>
-                    <span className="t-body-sm-bold" style={{ color: "var(--danger-60, #DC2626)" }}>{t.pct}%</span>
+                <div key={i} className="p-4 bg-[#FF6A55]/5 border border-[#FF6A55]/20 rounded-2xl">
+                  <div className="flex justify-between mb-2">
+                    <span className="text-body-2 font-bold text-t-primary">{t.q} — Option {t.option}</span>
+                    <span className="text-caption font-bold text-[#FF6A55]">{t.pct}%</span>
                   </div>
-                  <p className="t-body-sm" style={{ color: "var(--danger-70, #7F1D1D)", marginBottom: 12 }}>{t.desc}</p>
-                  <span className="badge badge-red">{t.trap.replace(/_/g, " ")}</span>
+                  <p className="text-caption text-t-secondary leading-relaxed mb-3">{t.desc}</p>
+                  <span className="label label-red">{t.trap.replace(/_/g, " ")}</span>
                 </div>
               ))}
             </div>
-          </section>
+          </div>
         </div>
 
         {/* All Batches Summary Table */}
-        <section className="rayum-card" style={{ padding: "24px 0", marginTop: 24 }}>
-          <div style={{ padding: "0 24px 20px" }}>
-            <h2 className="section-title">All Batches — Quick Comparison</h2>
-          </div>
-          <table className="rayum-table">
-            <thead>
-              <tr>
-                <th style={{ paddingLeft: 24 }}>Batch</th>
-                <th>Exam</th>
-                <th>Students</th>
-                <th>Avg Score</th>
-                <th>Top Score</th>
-                <th style={{ paddingRight: 24, textAlign: "right" }}>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {batchStats.map((b, i) => (
-                <tr key={i}>
-                  <td className="t-body-sm-med" style={{ paddingLeft: 24 }}>{b.batchName}</td>
-                  <td className="t-body-sm">{b.exam}</td>
-                  <td className="t-body-sm">{b.students}</td>
-                  <td>
-                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                      <span className="t-body-sm-med">{b.avg}%</span>
-                      <div className="progress-track" style={{ width: 80, height: 6 }}>
-                        <div className="progress-fill" style={{ height: "100%", width: `${b.avg}%`, background: b.avg >= 70 ? "var(--success-50, #22C55E)" : "var(--p-50)" }} />
-                      </div>
-                      <span className="t-body-sm-med" style={{ color: b.trend > 0 ? "var(--success-50, #16A34A)" : "var(--danger-50, #DC2626)" }}>{b.trend > 0 ? "+" : ""}{b.trend}%</span>
-                    </div>
-                  </td>
-                  <td className="t-body-sm-med">{b.top}%</td>
-                  <td style={{ paddingRight: 24, textAlign: "right" }}>
-                    <Link href={`/teacher/batch/${mockBatches[i]?.id || "batch-001"}`} className="btn btn-outline" style={{ padding: "8px 16px" }}>
-                      <RiFileListLine size={18} style={{ verticalAlign: "middle" }} /> View Batch
-                    </Link>
-                  </td>
+        <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
+          <h2 className="text-sub-title-1 font-bold text-t-primary mb-6">All Batches — Quick Comparison</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-s-stroke2 text-caption font-bold text-t-secondary">
+                  <th className="pb-3 pr-4">Batch</th>
+                  <th className="pb-3 px-4">Exam</th>
+                  <th className="pb-3 px-4">Students</th>
+                  <th className="pb-3 px-4">Avg Score</th>
+                  <th className="pb-3 px-4">Top Score</th>
+                  <th className="pb-3 pl-4 text-right">Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
+              </thead>
+              <tbody>
+                {batchStats.map((b, i) => (
+                  <tr key={i} className="border-b border-s-stroke2 last:border-b-0">
+                    <td className="py-4 pr-4 text-body-2 font-bold text-t-primary">{b.batchName}</td>
+                    <td className="py-4 px-4 text-caption text-t-secondary">{b.exam}</td>
+                    <td className="py-4 px-4 text-caption font-bold text-t-primary">{b.students}</td>
+                    <td className="py-4 px-4">
+                      <div className="flex items-center gap-3">
+                        <span className="text-caption font-bold text-t-primary">{b.avg}%</span>
+                        <div className="w-[100px] h-1.5 bg-s-stroke2 rounded-full overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-linear-to-r from-primary-01 to-primary-02"
+                            style={{ width: `${b.avg}%` }}
+                          />
+                        </div>
+                        <span className={`text-caption font-bold ${b.trend > 0 ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
+                          {b.trend > 0 ? "+" : ""}{b.trend}%
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-4 text-caption font-bold text-t-primary">{b.top}%</td>
+                    <td className="py-4 pl-4 text-right">
+                      <Link href={`/teacher/batch/${mockBatches[i]?.id || "batch-001"}`} className="btn btn-sm btn-outline flex items-center justify-center gap-1.5 ml-auto w-fit">
+                        <RiFileListLine size={16} /> View Batch
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
 
       </main>
     </>

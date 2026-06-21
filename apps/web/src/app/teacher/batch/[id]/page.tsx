@@ -25,116 +25,147 @@ export default function BatchAnalysisPage() {
         subtitle={`${mockBatchAnalysis.attemptedCount} of ${mockBatchAnalysis.totalStudents} students attempted · ${batch.exam} · ${batch.name}`}
         breadcrumbs={`Dashboard > ${batch.name}`}
       />
-      <main style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px 48px", width: "100%" }}>
-
+      
+      <main className="w-full max-w-[1200px] mx-auto px-8 pb-12">
         {/* Action bar */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 28 }}>
-          <Link href="/teacher" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fg-muted)", fontSize: 14, textDecoration: "none" }}>
+        <div className="flex justify-between items-center mb-8">
+          <Link href="/teacher" className="inline-flex items-center gap-1.5 text-caption font-bold text-t-secondary hover:text-t-primary no-underline transition-colors">
             <RiArrowLeftLine size={16} /> Back to Dashboard
           </Link>
-          <div style={{ display: "flex", gap: 10 }}>
-            <Link href="/teacher/dpps" className="btn btn-outline" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, padding: "8px 16px" }}>
+          <div className="flex gap-3">
+            <Link href="/teacher/dpps" className="btn btn-sm btn-outline flex items-center gap-1">
               <RiAddLine size={16} /> Assign DPP for this Batch
             </Link>
-            <button className="btn btn-primary" style={{ padding: "8px 16px" }}>Export PDF Report</button>
+            <button className="btn btn-sm btn-primary">Export PDF Report</button>
           </div>
         </div>
 
         {/* Score + Recs */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
-
-          <section className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-              <div style={{ padding: 8, background: "var(--n-10)", borderRadius: "var(--r-md)" }}><RiPieChart2Line size={24} /></div>
-              <h2 className="section-title" style={{ marginBottom: 0 }}>Score Distribution</h2>
+        <div className="grid grid-cols-2 gap-6 mb-8">
+          {/* Score Distribution Card */}
+          <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2.5 bg-b-surface2 rounded-xl border border-s-stroke2 text-t-secondary">
+                <RiPieChart2Line size={20} />
+              </div>
+              <h2 className="text-sub-title-1 font-bold text-t-primary">Score Distribution</h2>
             </div>
-            <div style={{ display: "flex", gap: 16, marginBottom: 20 }}>
+            
+            <div className="flex gap-4 mb-6">
               {[
-                { label: "Average Score", value: `${mockBatchAnalysis.classSummary.avgScore}%`, color: "var(--fg-default)" },
-                { label: "Highest Score", value: `${mockBatchAnalysis.classSummary.topScore}%`,  color: "var(--accent-green)" },
-                { label: "Lowest Score",  value: `${mockBatchAnalysis.classSummary.bottomScore}%`, color: "var(--accent-red)" },
+                { label: "Average Score", value: `${mockBatchAnalysis.classSummary.avgScore}%`, textColor: "text-t-primary" },
+                { label: "Highest Score", value: `${mockBatchAnalysis.classSummary.topScore}%`,  textColor: "text-[#00A656]" },
+                { label: "Lowest Score",  value: `${mockBatchAnalysis.classSummary.bottomScore}%`, textColor: "text-[#FF6A55]" },
               ].map(s => (
-                <div key={s.label} style={{ flex: 1, padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)", textAlign: "center" }}>
-                  <div className="t-heading-b" style={{ color: s.color, marginBottom: 4 }}>{s.value}</div>
-                  <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>{s.label}</div>
+                <div key={s.label} className="flex-1 p-4 bg-b-surface2 border border-s-stroke2 rounded-2xl text-center">
+                  <div className={`text-h5 font-bold mb-1 ${s.textColor}`}>{s.value}</div>
+                  <div className="text-caption text-t-secondary">{s.label}</div>
                 </div>
               ))}
             </div>
-            <div style={{ background: "var(--n-10)", padding: 16, borderRadius: "var(--r-md)", display: "flex", alignItems: "center", gap: 16 }}>
-              <RiAlertLine size={24} color="var(--warning-50, #D97706)" />
+            
+            <div className="flex items-center gap-4 p-4 bg-[#EF9D0E]/5 border border-[#EF9D0E]/20 rounded-2xl mt-auto">
+              <RiAlertLine size={22} className="text-[#EF9D0E] shrink-0" />
               <div>
-                <div className="t-body-sm-med">{mockBatchAnalysis.classSummary.belowAverageCount} Students Below Average</div>
-                <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>Consider assigning a Booster DPP to this cohort.</div>
+                <div className="text-body-2 font-bold text-t-primary">{mockBatchAnalysis.classSummary.belowAverageCount} Students Below Average</div>
+                <div className="text-caption text-t-secondary mt-0.5">Consider assigning a Booster DPP to this cohort.</div>
               </div>
             </div>
-          </section>
+          </div>
 
-          <section className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-              <div style={{ padding: 8, background: "var(--n-10)", borderRadius: "var(--r-md)" }}><RiFocus2Line size={24} /></div>
-              <h2 className="section-title" style={{ marginBottom: 0 }}>AI Teaching Recommendations</h2>
+          {/* AI Teaching Recommendations */}
+          <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2.5 bg-b-surface2 rounded-xl border border-s-stroke2 text-t-secondary">
+                <RiFocus2Line size={20} />
+              </div>
+              <h2 className="text-sub-title-1 font-bold text-t-primary">AI Teaching Recommendations</h2>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            
+            <div className="flex flex-col gap-4">
               {mockBatchAnalysis.teachingRecs.map((rec, i) => (
-                <div key={i} style={{ padding: 16, border: "1px solid var(--border-default)", borderRadius: "var(--r-md)", display: "flex", gap: 16 }}>
-                  <div style={{ width: 32, height: 32, borderRadius: "var(--r-full)", background: rec.priority === "high" ? "var(--danger-10, #FEF2F2)" : "var(--warning-10, #FFFBEB)", color: rec.priority === "high" ? "var(--danger-50, #DC2626)" : "var(--warning-50, #D97706)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <div key={i} className="flex gap-4 p-4 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+                  <div className={`size-8 rounded-full flex items-center justify-center shrink-0 ${
+                    rec.priority === "high"
+                      ? "bg-[#FF6A55]/10 text-[#FF6A55]"
+                      : "bg-[#EF9D0E]/10 text-[#EF9D0E]"
+                  }`}>
                     <RiAlertLine size={16} />
                   </div>
                   <div>
-                    <div className="t-body-sm-med" style={{ marginBottom: 4 }}>{rec.priority === "high" ? "Critical Priority" : "Medium Priority"}</div>
-                    <p className="t-body-sm" style={{ color: "var(--fg-muted)", lineHeight: 1.5 }}>{rec.recommendation}</p>
+                    <div className="text-body-2 font-bold text-t-primary mb-1">
+                      {rec.priority === "high" ? "Critical Priority" : "Medium Priority"}
+                    </div>
+                    <p className="text-caption text-t-secondary leading-relaxed">{rec.recommendation}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </section>
+          </div>
         </div>
 
         {/* Chapter Heatmap */}
-        <section className="rayum-card" style={{ padding: 24 }}>
-          <h2 className="section-title" style={{ marginBottom: 20 }}>Chapter Performance Heatmap</h2>
-          <table className="rayum-table">
-            <thead>
-              <tr>
-                <th>Chapter</th>
-                <th>Batch Accuracy</th>
-                <th>Status</th>
-                <th style={{ textAlign: "right" }}>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {mockBatchAnalysis.chapterHeatmap.map((ch, idx) => (
-                <tr key={idx}>
-                  <td className="t-body-sm-med">{ch.chapter}</td>
-                  <td>
-                    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                      <div className="progress-track" style={{ flex: 1, height: 8, maxWidth: 200 }}>
-                        <div className="progress-fill" style={{ height: "100%", width: `${ch.avgAccuracy}%`, background: ch.flag === "good" ? "var(--success-50, #22C55E)" : ch.flag === "warning" ? "var(--warning-50, #F59E0B)" : "var(--danger-50, #EF4444)" }} />
-                      </div>
-                      <span className="t-body-sm-med">{ch.avgAccuracy}%</span>
-                    </div>
-                  </td>
-                  <td>
-                    {ch.flag === "good" ? (
-                      <span className="badge badge-green"><RiCheckDoubleLine size={14} /> Mastered</span>
-                    ) : ch.flag === "warning" ? (
-                      <span className="badge badge-orange"><RiAlertLine size={14} /> Needs Review</span>
-                    ) : (
-                      <span className="badge badge-red"><RiAlertLine size={14} /> Critical Weakness</span>
-                    )}
-                  </td>
-                  <td style={{ textAlign: "right" }}>
-                    {ch.flag !== "good" && (
-                      <Link href="/teacher/dpps" className="btn btn-outline" style={{ padding: "6px 12px", fontSize: 13 }}>
-                        + Assign DPP
-                      </Link>
-                    )}
-                  </td>
+        <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
+          <h2 className="text-sub-title-1 font-bold text-t-primary mb-6">Chapter Performance Heatmap</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-s-stroke2 text-caption font-bold text-t-secondary">
+                  <th className="pb-3 pr-4">Chapter</th>
+                  <th className="pb-3 px-4">Batch Accuracy</th>
+                  <th className="pb-3 px-4">Status</th>
+                  <th className="pb-3 pl-4 text-right">Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
+              </thead>
+              <tbody>
+                {mockBatchAnalysis.chapterHeatmap.map((ch, idx) => (
+                  <tr key={idx} className="border-b border-s-stroke2 last:border-b-0">
+                    <td className="py-4 pr-4 text-body-2 font-bold text-t-primary">{ch.chapter}</td>
+                    <td className="py-4 px-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-[120px] h-1.5 bg-s-stroke2 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full rounded-full ${
+                              ch.flag === "good"
+                                ? "bg-[#00A656]"
+                                : ch.flag === "warning"
+                                  ? "bg-[#EF9D0E]"
+                                  : "bg-[#FF6A55]"
+                            }`}
+                            style={{ width: `${ch.avgAccuracy}%` }}
+                          />
+                        </div>
+                        <span className="text-caption font-bold text-t-primary">{ch.avgAccuracy}%</span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-4">
+                      {ch.flag === "good" ? (
+                        <span className="label label-green flex items-center gap-1 w-fit">
+                          <RiCheckDoubleLine size={14} /> Mastered
+                        </span>
+                      ) : ch.flag === "warning" ? (
+                        <span className="label label-yellow flex items-center gap-1 w-fit">
+                          <RiAlertLine size={14} /> Needs Review
+                        </span>
+                      ) : (
+                        <span className="label label-red flex items-center gap-1 w-fit">
+                          <RiAlertLine size={14} /> Critical Weakness
+                        </span>
+                      )}
+                    </td>
+                    <td className="py-4 pl-4 text-right">
+                      {ch.flag !== "good" && (
+                        <Link href="/teacher/dpps" className="btn btn-sm btn-outline">
+                          + Assign DPP
+                        </Link>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
 
       </main>
     </>
