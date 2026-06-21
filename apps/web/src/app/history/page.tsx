@@ -94,6 +94,17 @@ function TestChainItem({ item, depth = 0 }: { item: HistoryItem; depth?: number 
 }
 
 export default function HistoryPage() {
+  const historyItems = mockHistory as unknown as HistoryItem[];
+
+  const countMastered = (items: HistoryItem[]): number => {
+    let count = 0;
+    for (const item of items) {
+      if (item.mastered) count++;
+      if (item.boosters) count += countMastered(item.boosters);
+    }
+    return count;
+  };
+
   return (
     <>
       <Navbar title="Test History" />
@@ -104,20 +115,20 @@ export default function HistoryPage() {
         <div className="mb-6 grid gap-4 md:grid-cols-3">
           <div className="card p-5">
             <div className="text-caption font-semibold uppercase tracking-wider text-t-tertiary">Attempts</div>
-            <div className="mt-2 text-h5 font-semibold tracking-tight text-t-primary">{mockHistory.length}</div>
+            <div className="mt-2 text-h5 font-semibold tracking-tight text-t-primary">{historyItems.length}</div>
             <div className="mt-1 text-caption text-t-secondary">Test chains in your history</div>
           </div>
           <div className="card p-5">
             <div className="text-caption font-semibold uppercase tracking-wider text-t-tertiary">Boosters</div>
             <div className="mt-2 text-h5 font-semibold tracking-tight text-t-primary">
-              {mockHistory.reduce((count, item) => count + item.boosters.length, 0)}
+              {historyItems.reduce((count, item) => count + item.boosters.length, 0)}
             </div>
             <div className="mt-1 text-caption text-t-secondary">Follow-up review loops</div>
           </div>
           <div className="card p-5">
             <div className="text-caption font-semibold uppercase tracking-wider text-t-tertiary">Mastered</div>
             <div className="mt-2 text-h5 font-semibold tracking-tight text-primary-02">
-              {mockHistory.filter(item => item.mastered).length}
+              {countMastered(historyItems)}
             </div>
             <div className="mt-1 text-caption text-t-secondary">Chains marked complete</div>
           </div>
