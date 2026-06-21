@@ -79,9 +79,9 @@ export default function DPPSolvePage() {
   // ── Not found ──────────────────────────────────────────────────────────────
   if (!dpp) {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16 }}>
-        <div style={{ fontSize: 48 }}>📭</div>
-        <p style={{ fontWeight: 600, color: "var(--fg-muted)" }}>DPP not found.</p>
+      <div className="min-h-screen bg-b-surface2 flex flex-col items-center justify-center gap-4">
+        <div className="text-h3">📭</div>
+        <p className="text-body-1 font-bold text-t-secondary">DPP not found.</p>
         <Link href="/" className="btn btn-outline">← Back to Dashboard</Link>
       </div>
     );
@@ -89,10 +89,10 @@ export default function DPPSolvePage() {
 
   if (dpp.status === "completed") {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16 }}>
-        <div style={{ fontSize: 48 }}>✅</div>
-        <p style={{ fontWeight: 700, fontSize: 20 }}>You have already completed this DPP.</p>
-        <p style={{ color: "var(--fg-muted)" }}>Score: {dpp.score} / {dpp.maxScore}</p>
+      <div className="min-h-screen bg-b-surface2 flex flex-col items-center justify-center gap-4">
+        <div className="text-h3">✅</div>
+        <p className="text-h6 font-bold text-t-primary">You have already completed this DPP.</p>
+        <p className="text-body-2 text-t-secondary">Score: {dpp.score} / {dpp.maxScore}</p>
         <Link href="/" className="btn btn-outline">← Back to Dashboard</Link>
       </div>
     );
@@ -102,47 +102,62 @@ export default function DPPSolvePage() {
   if (submitted && score) {
     const pct = Math.round((score.correct / score.total) * 100);
     return (
-      <div style={{ minHeight: "100vh", background: "var(--bg-default)", display: "flex", alignItems: "center", justifyContent: "center", padding: 32 }}>
-        <div className="rayum-card" style={{ maxWidth: 560, width: "100%", padding: 48, textAlign: "center" }}>
-          <div style={{ width: 80, height: 80, borderRadius: "50%", background: pct >= 70 ? "#F0FDF4" : pct >= 40 ? "#FFFBEB" : "#FEF2F2", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px", fontSize: 40 }}>
+      <div className="min-h-screen bg-b-surface2 flex items-center justify-center p-8">
+        <div className="card max-w-[560px] w-full p-8 text-center border border-s-stroke2 bg-b-surface1 shadow-depth">
+          <div className={`size-20 rounded-full flex items-center justify-center mx-auto mb-6 text-h4 ${
+            pct >= 70
+              ? "bg-[#00A656]/10 text-[#00A656]"
+              : pct >= 40
+                ? "bg-[#EF9D0E]/10 text-[#EF9D0E]"
+                : "bg-[#FF6A55]/10 text-[#FF6A55]"
+          }`}>
             {pct >= 70 ? "🎉" : pct >= 40 ? "📈" : "💪"}
           </div>
-          <span className="badge badge-dark" style={{ marginBottom: 16 }}>DPP Completed</span>
-          <h1 className="t-title-page-b" style={{ marginBottom: 8, fontWeight: 800 }}>{dpp.title}</h1>
-          <p className="t-body-sm" style={{ marginBottom: 32, color: "var(--fg-muted)" }}>{dpp.chapter} · {dpp.subject}</p>
+          <span className="label label-gray mb-4">DPP Completed</span>
+          <h1 className="text-h5 font-bold text-t-primary mb-1">{dpp.title}</h1>
+          <p className="text-caption text-t-secondary mb-8">{dpp.chapter} · {dpp.subject}</p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginBottom: 40 }}>
-            <div style={{ padding: 20, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
-              <div className="t-heading-b" style={{ color: "var(--s-50)", marginBottom: 4 }}>{score.correct}</div>
-              <div className="t-body-sm">Correct</div>
+          <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+              <div className="text-h4 font-bold text-[#00A656] mb-1">{score.correct}</div>
+              <div className="text-caption text-t-secondary">Correct</div>
             </div>
-            <div style={{ padding: 20, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
-              <div className="t-heading-b" style={{ color: "var(--danger-50)", marginBottom: 4 }}>{score.total - score.correct}</div>
-              <div className="t-body-sm">Wrong</div>
+            <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+              <div className="text-h4 font-bold text-[#FF6A55] mb-1">{score.total - score.correct}</div>
+              <div className="text-caption text-t-secondary">Wrong</div>
             </div>
-            <div style={{ padding: 20, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
-              <div className="t-heading-b" style={{ marginBottom: 4 }}>{Math.max(0, score.marks)}</div>
-              <div className="t-body-sm">Marks</div>
+            <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+              <div className="text-h4 font-bold text-t-primary mb-1">{Math.max(0, score.marks)}</div>
+              <div className="text-caption text-t-secondary">Marks</div>
             </div>
           </div>
 
           {/* Correct answer review */}
-          <div style={{ textAlign: "left", marginBottom: 32 }}>
-            <h3 className="section-title">Answer Review</h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <div className="text-left mb-8">
+            <h3 className="text-body-2 font-bold text-t-primary mb-4">Answer Review</h3>
+            <div className="flex flex-col gap-3">
               {questions.map((q, i) => {
                 const yourAns = answers[q.id];
                 const correct = q.correctAnswer;
                 const isRight = yourAns === correct;
                 return (
-                  <div key={q.id} style={{ padding: "12px 16px", borderRadius: "var(--r-md)", background: isRight ? "#F0FDF4" : "#FEF2F2", border: `1px solid ${isRight ? "#22C55E" : "#EF4444"}`, display: "flex", gap: 12, alignItems: "flex-start" }}>
-                    <div style={{ color: isRight ? "#22C55E" : "#EF4444", flexShrink: 0, marginTop: 2 }}>
+                  <div
+                    key={q.id}
+                    className={`p-4 rounded-2xl border flex gap-3 text-left ${
+                      isRight
+                        ? "bg-[#00A656]/5 border-[#00A656]/20 text-t-primary"
+                        : "bg-[#FF6A55]/5 border-[#FF6A55]/20 text-t-primary"
+                    }`}
+                  >
+                    <div className={`shrink-0 mt-0.5 ${isRight ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
                       {isRight ? <RiCheckLine size={18} /> : <RiAlertLine size={18} />}
                     </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <p className="t-body-sm-med" style={{ marginBottom: 4 }}>Q{i + 1}. {q.questionText.substring(0, 80)}{q.questionText.length > 80 ? "…" : ""}</p>
-                      <p className="t-body-sm" style={{ color: "var(--fg-muted)" }}>
-                        Your answer: <strong>{yourAns ?? "Not attempted"}</strong> &nbsp;·&nbsp; Correct: <strong style={{ color: "#22C55E" }}>{correct}</strong>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-body-2 font-bold text-t-primary mb-1">
+                        Q{i + 1}. {q.questionText.substring(0, 80)}{q.questionText.length > 80 ? "…" : ""}
+                      </p>
+                      <p className="text-caption text-t-secondary">
+                        Your answer: <strong className="text-t-primary">{yourAns ?? "Not attempted"}</strong> &nbsp;·&nbsp; Correct: <strong className="text-[#00A656]">{correct}</strong>
                       </p>
                     </div>
                   </div>
@@ -151,21 +166,21 @@ export default function DPPSolvePage() {
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: 12 }}>
-            <Link href="/" className="btn btn-outline" style={{ flex: 1 }}>← Dashboard</Link>
-            <Link href="/doubts" className="btn btn-primary" style={{ flex: 1 }}>Ask a Doubt</Link>
+          <div className="flex gap-4">
+            <Link href="/" className="btn btn-outline flex-1">← Dashboard</Link>
+            <Link href="/doubts" className="btn btn-primary flex-1">Ask a Doubt</Link>
           </div>
         </div>
       </div>
     );
   }
 
-  // ── No questions yet (upcoming/no data) ─────────────────────────────────────
+  // ── No questions yet ────────────────────────────────────────────────────────
   if (questions.length === 0) {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16 }}>
-        <RiBookOpenLine size={48} color="var(--fg-muted)" />
-        <p style={{ fontWeight: 600, color: "var(--fg-muted)" }}>Questions are not available yet.</p>
+      <div className="min-h-screen bg-b-surface2 flex flex-col items-center justify-center gap-4">
+        <RiBookOpenLine size={48} className="text-t-tertiary" />
+        <p className="text-body-1 font-bold text-t-secondary">Questions are not available yet.</p>
         <Link href="/" className="btn btn-outline">← Back to Dashboard</Link>
       </div>
     );
@@ -178,72 +193,87 @@ export default function DPPSolvePage() {
   const timeWarning = timeLeft < 120;
 
   return (
-    <div style={{ minHeight: "100vh", background: "var(--bg-default)", display: "flex", flexDirection: "column" }}>
-
+    <div className="min-h-screen bg-b-surface2 flex flex-col">
       {/* ── Top Bar ── */}
-      <header style={{ height: 64, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 32px", background: "var(--bg-surface)", borderBottom: "1px solid var(--border-default)", position: "sticky", top: 0, zIndex: 50, boxShadow: "var(--sh-100)" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <Link href="/" style={{ display: "flex", color: "var(--fg-muted)", textDecoration: "none" }}>
+      <header className="h-16 flex items-center justify-between px-8 bg-b-surface1 border-b border-s-stroke2 sticky top-0 z-50 shadow-widget">
+        <div className="flex items-center gap-4">
+          <Link href="/" className="flex text-t-secondary hover:text-t-primary transition-colors">
             <RiArrowLeftLine size={20} />
           </Link>
           <div>
-            <div className="t-body-base-bold" style={{ color: "var(--fg-default)" }}>
-              📝 DPP &nbsp;<span style={{ color: "var(--p-50)" }}>·</span>&nbsp; {dpp.title}
+            <div className="text-body-2 font-bold text-t-primary">
+              📝 DPP &nbsp;·&nbsp; {dpp.title}
             </div>
-            <div className="t-body-sm-med" style={{ color: "var(--fg-muted)" }}>
+            <div className="text-caption text-t-secondary mt-0.5">
               {dpp.subject} · {dpp.chapter}
             </div>
           </div>
         </div>
 
         {/* Timer */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 20px", borderRadius: "var(--r-full)", background: timeWarning ? "#FEF2F2" : "var(--n-10)", border: `1px solid ${timeWarning ? "#EF4444" : "var(--border-default)"}` }}>
-          <RiTimerLine size={18} color={timeWarning ? "#EF4444" : "var(--fg-default)"} />
-          <span style={{ fontWeight: 800, fontSize: 16, fontVariantNumeric: "tabular-nums", color: timeWarning ? "#EF4444" : "var(--fg-default)" }}>
+        <div className={`flex items-center gap-2 px-5 py-2 rounded-full border transition-all font-bold text-caption font-mono ${
+          timeWarning
+            ? "bg-[#FF6A55]/5 border-[#FF6A55]/20 text-[#FF6A55]"
+            : "bg-b-surface2 border-s-stroke2 text-t-primary"
+        }`}>
+          <RiTimerLine size={18} className={timeWarning ? "text-[#FF6A55]" : "text-t-secondary"} />
+          <span className="tabular-nums">
             {formatTime(timeLeft)}
           </span>
         </div>
 
-        <button className="btn btn-primary" onClick={() => setShowSubmitModal(true)}>Submit DPP</button>
+        <button className="btn btn-sm btn-primary" onClick={() => setShowSubmitModal(true)}>Submit DPP</button>
       </header>
 
-      <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
-
+      <div className="flex flex-1 overflow-hidden">
         {/* ── Question Area ── */}
-        <div style={{ flex: 1, padding: "40px 60px", overflowY: "auto" }}>
-          <div className="rayum-card" style={{ maxWidth: 860, margin: "0 auto", padding: 40 }}>
-
+        <div className="flex-1 p-8 overflow-y-auto">
+          <div className="card max-w-[860px] mx-auto p-8 border border-s-stroke2 bg-b-surface1">
             {/* Tags */}
-            <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
-              <span className="rayum-badge blue">{q.subject}</span>
-              <span className="rayum-badge orange">{q.chapter}</span>
-              {q.topic && <span className="rayum-badge">{q.topic}</span>}
-              <span className="rayum-badge" style={{ background: q.difficulty === "easy" ? "#F0FDF4" : q.difficulty === "hard" ? "#FEF2F2" : "#FFFBEB", color: q.difficulty === "easy" ? "#16A34A" : q.difficulty === "hard" ? "#DC2626" : "#D97706", border: "none" }}>
+            <div className="flex gap-2 mb-6 flex-wrap">
+              <span className="label label-gray">{q.subject}</span>
+              <span className="label label-yellow">{q.chapter}</span>
+              {q.topic && <span className="label label-gray">{q.topic}</span>}
+              <span className={`label ${
+                q.difficulty === "easy"
+                  ? "label-green"
+                  : q.difficulty === "hard"
+                    ? "label-red"
+                    : "label-yellow"
+              }`}>
                 {q.difficulty}
               </span>
             </div>
 
             {/* Question */}
-            <div style={{ marginBottom: 40 }}>
-              <div className="text-label" style={{ marginBottom: 12 }}>
+            <div className="mb-8">
+              <div className="text-caption font-bold text-t-secondary mb-2 uppercase tracking-wider">
                 QUESTION {current + 1} OF {questions.length}
               </div>
-              <p className="t-body-lg-med" style={{ color: "var(--fg-default)" }}>
+              <p className="text-body-1 font-bold text-t-primary leading-relaxed">
                 {q.questionText}
               </p>
             </div>
 
             {/* Options */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div className="flex flex-col gap-3">
               {q.options.map((opt) => {
                 const selected = answers[q.id] === opt.id;
                 return (
                   <button
                     key={opt.id}
-                    style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 20px", borderRadius: "var(--r-md)", cursor: "pointer", textAlign: "left", fontSize: 16, fontWeight: 500, background: selected ? "var(--p-10)" : "var(--bg-default)", border: selected ? "2px solid var(--p-50)" : "1.5px solid var(--border-default)", color: selected ? "var(--fg-default)" : "var(--fg-muted)", transition: "all 0.15s" }}
+                    className={`flex items-center gap-4 p-4 rounded-2xl cursor-pointer text-left text-body-2 transition-all ${
+                      selected
+                        ? "border-2 border-[#3765F6] bg-[#3765F6]/5 text-t-primary font-bold shadow-depth"
+                        : "border border-s-stroke2 bg-b-surface2 text-t-secondary hover:text-t-primary hover:border-s-highlight"
+                    }`}
                     onClick={() => selectAnswer(q.id, opt.id)}
                   >
-                    <div style={{ width: 32, height: 32, borderRadius: "50%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: selected ? "var(--p-60)" : "var(--n-20)", color: selected ? "white" : "var(--fg-default)", fontSize: 14, fontWeight: 700 }}>
+                    <div className={`size-8 rounded-full flex items-center justify-center shrink-0 text-caption font-bold transition-colors ${
+                      selected
+                        ? "bg-[#3765F6] text-white"
+                        : "bg-b-surface1 border border-s-stroke2 text-t-primary"
+                    }`}>
                       {opt.id}
                     </div>
                     <span>{opt.text}</span>
@@ -252,81 +282,127 @@ export default function DPPSolvePage() {
               })}
             </div>
 
-            {/* Nav */}
-            <div style={{ display: "flex", gap: 16, marginTop: 40, borderTop: "1px solid var(--border-default)", paddingTop: 32 }}>
-              <button className="btn btn-outline" style={{ display: "inline-flex", gap: 8 }} onClick={() => setCurrent((c) => Math.max(0, c - 1))} disabled={current === 0}>
-                <RiArrowLeftLine size={18} /> Previous
+            {/* Navigation Buttons */}
+            <div className="flex gap-4 mt-8 pt-6 border-t border-s-stroke2">
+              <button
+                className="btn btn-outline flex items-center gap-1"
+                onClick={() => setCurrent((c) => Math.max(0, c - 1))}
+                disabled={current === 0}
+              >
+                <RiArrowLeftLine size={16} /> Previous
               </button>
-              <button className="btn" onClick={() => toggleReview(q.id)} style={{ display: "inline-flex", gap: 8, background: status[q.id] === "review" ? "#FFFBEB" : "transparent", color: status[q.id] === "review" ? "#F59E0B" : "var(--fg-muted)", border: `1.5px solid ${status[q.id] === "review" ? "#F59E0B" : "var(--border-default)"}` }}>
-                {status[q.id] === "review" ? <><RiStarFill size={18} /> Marked</> : <><RiStarLine size={18} /> Mark for Review</>}
+              
+              <button
+                className={`btn flex items-center gap-1.5 ${
+                  status[q.id] === "review"
+                    ? "border border-[#EF9D0E] bg-[#EF9D0E]/10 text-[#EF9D0E]"
+                    : "btn-outline"
+                }`}
+                onClick={() => toggleReview(q.id)}
+              >
+                {status[q.id] === "review" ? (
+                  <>
+                    <RiStarFill size={16} /> Marked
+                  </>
+                ) : (
+                  <>
+                    <RiStarLine size={16} /> Mark for Review
+                  </>
+                )}
               </button>
+              
               {current < questions.length - 1 ? (
-                <button className="btn btn-primary" style={{ display: "inline-flex", gap: 8, marginLeft: "auto" }} onClick={() => setCurrent((c) => c + 1)}>
-                  Next <RiArrowRightLine size={18} />
+                <button
+                  className="btn btn-primary flex items-center gap-1 ml-auto"
+                  onClick={() => setCurrent((c) => c + 1)}
+                >
+                  Next <RiArrowRightLine size={16} />
                 </button>
               ) : (
-                <button className="btn btn-primary" style={{ marginLeft: "auto" }} onClick={() => setShowSubmitModal(true)}>Submit DPP</button>
+                <button className="btn btn-primary ml-auto" onClick={() => setShowSubmitModal(true)}>
+                  Submit DPP
+                </button>
               )}
             </div>
           </div>
         </div>
 
-        {/* ── Right Navigator ── */}
-        <div style={{ width: 280, borderLeft: "1px solid var(--border-default)", padding: "32px 24px", overflowY: "auto", background: "var(--bg-surface)" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginBottom: 24, padding: 16, borderRadius: "var(--r-md)", background: "var(--n-10)", border: "1px solid var(--border-default)" }}>
-            {[{ label: "Done", value: answered, color: "#22C55E" }, { label: "Review", value: marked, color: "#F59E0B" }, { label: "Left", value: unanswered, color: "var(--fg-muted)" }].map((s) => (
-              <div key={s.label} style={{ textAlign: "center" }}>
-                <div className="t-sub-b" style={{ color: s.color }}>{s.value}</div>
-                <div className="t-body-sm-med" style={{ color: "var(--fg-muted)", marginTop: 4 }}>{s.label}</div>
+        {/* ── Right Navigator Sidebar ── */}
+        <div className="w-[280px] border-l border-s-stroke2 p-6 overflow-y-auto bg-b-surface1 flex flex-col">
+          <div className="grid grid-cols-3 gap-2 p-4 bg-b-surface2 border border-s-stroke2 rounded-2xl mb-6">
+            {[
+              { label: "Done", value: answered, color: "text-[#00A656]" },
+              { label: "Review", value: marked, color: "text-[#EF9D0E]" },
+              { label: "Left", value: unanswered, color: "text-t-secondary" },
+            ].map((s) => (
+              <div key={s.label} className="text-center">
+                <div className={`text-body-2 font-bold ${s.color}`}>{s.value}</div>
+                <div className="text-caption text-t-secondary mt-1">{s.label}</div>
               </div>
             ))}
           </div>
-          <div className="text-label" style={{ marginBottom: 12 }}>Questions</div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 6 }}>
+          
+          <div className="text-caption font-bold text-t-secondary mb-3 uppercase tracking-wider">Questions</div>
+          
+          <div className="grid grid-cols-5 gap-2">
             {questions.map((sq, idx) => {
               const s = status[sq.id] || "unanswered";
               const isCurrent = idx === current;
-              let bg = "var(--bg-surface)", borderColor = "var(--border-default)", color = "var(--fg-muted)";
-              if (s === "answered") { bg = "#F0FDF4"; borderColor = "#22C55E"; color = "#22C55E"; }
-              else if (s === "review") { bg = "#FFFBEB"; borderColor = "#F59E0B"; color = "#F59E0B"; }
-              if (isCurrent) { bg = "var(--p-60)"; borderColor = "var(--p-60)"; color = "white"; }
+              
+              let btnClass = "bg-b-surface2 border border-s-stroke2 text-t-secondary hover:border-s-highlight";
+              if (s === "answered") {
+                btnClass = "bg-[#00A656]/10 border border-[#00A656] text-[#00A656]";
+              } else if (s === "review") {
+                btnClass = "bg-[#EF9D0E]/10 border border-[#EF9D0E] text-[#EF9D0E]";
+              }
+              if (isCurrent) {
+                btnClass = "bg-[#3765F6] text-white border-none shadow-depth";
+              }
+              
               return (
-                <button key={sq.id} style={{ aspectRatio: "1/1", borderRadius: "var(--r-sm)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, cursor: "pointer", background: bg, border: `2px solid ${borderColor}`, color }} onClick={() => setCurrent(idx)}>
+                <button
+                  key={sq.id}
+                  className={`aspect-square rounded-xl flex items-center justify-center text-caption font-bold cursor-pointer transition-all ${btnClass}`}
+                  onClick={() => setCurrent(idx)}
+                >
                   {idx + 1}
                 </button>
               );
             })}
           </div>
 
-          <div style={{ marginTop: 32, padding: 16, background: "var(--n-10)", borderRadius: "var(--r-md)" }}>
-            <div className="t-body-sm-bold" style={{ marginBottom: 8 }}>📌 Due Date</div>
-            <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>{dpp.dueDate}</div>
-            <div className="t-body-sm-bold" style={{ marginTop: 12, marginBottom: 4 }}>Marking Scheme</div>
-            <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>✅ +4 correct &nbsp;·&nbsp; ❌ -1 wrong</div>
+          <div className="mt-8 p-4 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+            <div className="text-caption font-bold text-t-primary mb-1">📌 Due Date</div>
+            <div className="text-caption text-t-secondary">{dpp.dueDate}</div>
+            
+            <div className="text-caption font-bold text-t-primary mt-4 mb-1">Marking Scheme</div>
+            <div className="text-caption text-t-secondary">✅ +4 correct &nbsp;·&nbsp; ❌ -1 wrong</div>
           </div>
         </div>
       </div>
 
       {/* ── Submit Modal ── */}
       {showSubmitModal && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.4)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 100, backdropFilter: "blur(4px)" }}>
-          <div className="rayum-card" style={{ maxWidth: 440, width: "90%", padding: 40, textAlign: "center" }}>
-            <RiFlag2Fill size={48} style={{ margin: "0 auto 16px", color: "var(--fg-default)" }} />
-            <h2 className="section-title" style={{ marginBottom: 12 }}>Submit DPP?</h2>
-            <p className="t-body-sm" style={{ color: "var(--fg-muted)", marginBottom: 32, lineHeight: 1.6 }}>
-              You&apos;ve answered <strong style={{ color: "var(--fg-default)" }}>{answered}</strong> of{" "}
-              <strong style={{ color: "var(--fg-default)" }}>{questions.length}</strong> questions.
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-xs flex items-center justify-center z-50">
+          <div className="card max-w-[440px] w-[90%] p-8 text-center border border-s-stroke2 bg-b-surface1 shadow-depth">
+            <RiFlag2Fill size={48} className="mx-auto mb-4 text-t-primary" />
+            <h2 className="text-sub-title-2 font-bold text-t-primary mb-2">Submit DPP?</h2>
+            <p className="text-caption text-t-secondary leading-relaxed mb-6">
+              You&apos;ve answered <strong className="text-t-primary">{answered}</strong> of{" "}
+              <strong className="text-t-primary">{questions.length}</strong> questions.
               {unanswered > 0 && ` ${unanswered} left unanswered.`}
             </p>
-            <div style={{ display: "flex", gap: 16 }}>
-              <button className="btn btn-outline" style={{ flex: 1 }} onClick={() => setShowSubmitModal(false)}>Keep Working</button>
-              <button className="btn btn-primary" style={{ flex: 1 }} onClick={handleSubmit}>Submit & See Score</button>
+            <div className="flex gap-4">
+              <button className="btn btn-outline flex-1" onClick={() => setShowSubmitModal(false)}>
+                Keep Working
+              </button>
+              <button className="btn btn-primary flex-1" onClick={handleSubmit}>
+                Submit & Score
+              </button>
             </div>
           </div>
         </div>
       )}
-
-      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </div>
   );
 }

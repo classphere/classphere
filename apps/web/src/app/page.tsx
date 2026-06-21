@@ -16,7 +16,7 @@ import {
   RiSparklingFill,
   RiShieldCrossFill
 } from "@remixicon/react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, LineChart, Line } from "recharts";
 
 const scoreDataOverallJEE = [ { name: 'Test 1', score: 120 }, { name: 'Test 2', score: 150 }, { name: 'Mock 1', score: 140 }, { name: 'Test 3', score: 180 }, { name: 'Test 4', score: 175 }, { name: 'Mock 2', score: 210 }, { name: 'Test 5', score: 200 }, { name: 'Mock 3', score: 255 } ];
 const scoreDataPhysicsJEE = [ { name: 'Test 1', score: 45 }, { name: 'Test 2', score: 52 }, { name: 'Mock 1', score: 48 }, { name: 'Test 3', score: 61 }, { name: 'Test 4', score: 58 }, { name: 'Mock 2', score: 72 }, { name: 'Test 5', score: 68 }, { name: 'Mock 3', score: 86 } ];
@@ -27,12 +27,6 @@ const scoreDataOverallNEET = [ { name: 'Test 1', score: 320 }, { name: 'Test 2',
 const scoreDataPhysicsNEET = [ { name: 'Test 1', score: 70 }, { name: 'Test 2', score: 95 }, { name: 'Mock 1', score: 85 }, { name: 'Test 3', score: 120 }, { name: 'Test 4', score: 110 }, { name: 'Mock 2', score: 145 }, { name: 'Test 5', score: 135 }, { name: 'Mock 3', score: 160 } ];
 const scoreDataChemNEET = [ { name: 'Test 1', score: 80 }, { name: 'Test 2', score: 105 }, { name: 'Mock 1', score: 95 }, { name: 'Test 3', score: 130 }, { name: 'Test 4', score: 120 }, { name: 'Mock 2', score: 155 }, { name: 'Test 5', score: 145 }, { name: 'Mock 3', score: 170 } ];
 const scoreDataBioNEET = [ { name: 'Test 1', score: 170 }, { name: 'Test 2', score: 210 }, { name: 'Mock 1', score: 210 }, { name: 'Test 3', score: 270 }, { name: 'Test 4', score: 260 }, { name: 'Mock 2', score: 310 }, { name: 'Test 5', score: 300 }, { name: 'Mock 3', score: 350 } ];
-
-const topicData = [
-  { name: 'Physics', value: 64, color: 'var(--s-50)' },
-  { name: 'Chemistry', value: 10, color: 'var(--p-50)' },
-  { name: 'Maths', value: 26, color: 'var(--p-20)' },
-];
 
 const microLineData = [
   { value: 12 }, { value: 15 }, { value: 18 }, { value: 14 }, { value: 20 }, { value: 24 }, { value: 34 }
@@ -80,61 +74,109 @@ export default function Dashboard() {
     <>
       <Navbar />
       
-      <main style={{ padding: "0 32px 32px 32px", maxWidth: 1400, margin: "0 auto", width: "100%" }}>
+      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
+        {/* Hero Summary */}
+        <div className="group relative card mb-6 overflow-hidden border border-s-stroke2 bg-b-surface1 p-6">
+          <div className="box-hover" />
+          <div className="relative z-10 grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(18rem,0.7fr)]">
+            <div className="min-w-0">
+              <div className="t-label mb-3 flex items-center gap-2 text-primary-01">
+                <RiSparklingFill size={14} /> Weekly snapshot
+              </div>
+              <h2 className="text-h4 font-semibold tracking-tight text-t-primary sm:text-h5">
+                You’re on a strong run this week.
+              </h2>
+              <p className="mt-2 max-w-2xl text-body-2 text-t-secondary">
+                Accuracy is trending up, the next booster is ready, and your pace is ahead of target. Keep momentum on the weak chapters before they snowball.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link href="/analytics" className="btn btn-primary">
+                  Review analytics
+                </Link>
+                <Link href="/history" className="btn btn-outline">
+                  Open test history
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              <div className="rounded-3xl bg-b-surface2 p-4">
+                <div className="text-caption font-semibold text-t-secondary">Tests this week</div>
+                <div className="mt-2 text-h5 font-semibold tracking-tight text-t-primary">8</div>
+                <div className="mt-1 text-caption text-primary-02">+2 from last week</div>
+              </div>
+              <div className="rounded-3xl bg-b-surface2 p-4">
+                <div className="text-caption font-semibold text-t-secondary">Accuracy</div>
+                <div className="mt-2 text-h5 font-semibold tracking-tight text-t-primary">71.2%</div>
+                <div className="mt-1 text-caption text-primary-02">+5.2% boost</div>
+              </div>
+              <div className="rounded-3xl bg-b-surface2 p-4">
+                <div className="text-caption font-semibold text-t-secondary">Booster queue</div>
+                <div className="mt-2 text-h5 font-semibold tracking-tight text-t-primary">3</div>
+                <div className="mt-1 text-caption text-[#EF9D0E]">Needs review</div>
+              </div>
+            </div>
+          </div>
+        </div>
         
         {/* ── Top Row: Performance Overview (Left) + Team Updates (Right) ── */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: 24, marginBottom: 24 }}>
+        <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_340px] mb-6 items-stretch">
           
           {/* Performance Overview Section */}
-          <div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-              <h2 className="section-title">Performance Overview</h2>
-              <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 500, color: "var(--fg-muted)", cursor: "pointer" }}>
+          <div className="min-w-0">
+            <div className="mb-4 flex items-center justify-between gap-4">
+              <h2 className="text-sub-title-1 font-bold text-t-primary">Performance Overview</h2>
+              <div className="flex items-center gap-1.5 text-caption font-semibold text-t-secondary cursor-pointer">
                 This week <RiArrowDownSLine size={16} />
               </div>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+            <div className="grid gap-4 md:grid-cols-3">
               
               {/* Stat 1: Total Tests */}
-              <div className="rayum-card" style={{ padding: 24, display: "flex", flexDirection: "column" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
-                  <span className="t-body-sm text-bold" style={{ color: "var(--fg-default)" }}>Total Tests Taken</span>
-                  <span style={{ color: "var(--fg-muted)" }}><RiBarChartBoxLine size={18} /></span>
+              <div className="group relative card flex min-h-[17rem] flex-col overflow-hidden border border-s-stroke2 bg-b-surface1 p-5 transition-all hover:border-transparent">
+                <div className="box-hover" />
+                <div className="relative z-10 flex justify-between items-center mb-3">
+                  <span className="text-body-2 font-bold text-t-primary">Total Tests Taken</span>
+                  <span className="text-t-secondary"><RiBarChartBoxLine size={18} /></span>
                 </div>
-                <div style={{ fontSize: 36, fontWeight: 800, color: "var(--fg-default)", marginBottom: 8, letterSpacing: "-0.02em" }}>
+                <div className="relative z-10 text-h4 font-bold text-t-primary mb-2 tracking-tight">
                   {mockStats.totalTests}
                 </div>
-                <div style={{ marginBottom: 24 }}>
-                  <span className="badge badge-dark" style={{ marginRight: 6 }}>+12% vs last week</span>
+                <div className="relative z-10 mb-6">
+                  <span className="label label-gray">
+                    +12% vs last week
+                  </span>
                 </div>
                 {/* Micro Chart (Line) */}
-                <div style={{ marginTop: "auto", height: 48, width: "100%" }}>
+                <div className="relative z-10 mt-auto h-16 w-full">
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={microLineData}>
-                      <Line type="monotone" dataKey="value" stroke="var(--p-50)" strokeWidth={3} dot={false} isAnimationActive={false} />
+                      <Line type="monotone" dataKey="value" stroke="var(--primary-01)" strokeWidth={3} dot={false} isAnimationActive={false} />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
               </div>
 
               {/* Stat 2: Avg Score */}
-              <div className="rayum-card" style={{ padding: 24, display: "flex", flexDirection: "column" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
-                  <span className="t-body-sm text-bold" style={{ color: "var(--fg-default)" }}>Average Score</span>
-                  <span style={{ color: "var(--fg-muted)" }}><RiBarChartBoxLine size={18} /></span>
+              <div className="group relative card flex min-h-[17rem] flex-col overflow-hidden border border-s-stroke2 bg-b-surface1 p-5 transition-all hover:border-transparent">
+                <div className="box-hover" />
+                <div className="relative z-10 flex justify-between items-center mb-3">
+                  <span className="text-body-2 font-bold text-t-primary">Average Score</span>
+                  <span className="text-t-secondary"><RiBarChartBoxLine size={18} /></span>
                 </div>
-                <p className="t-body-sm" style={{ marginBottom: 24 }}>
-                  <strong style={{ color: "var(--fg-default)" }}>86 marks</strong> avg. +15% vs last week.
+                <p className="relative z-10 text-caption text-t-secondary mb-6">
+                  <strong className="text-t-primary">86 marks</strong> avg. +15% vs last week.
                 </p>
                 {/* Micro Chart (Bars) */}
-                <div style={{ marginTop: "auto", height: 48, width: "100%" }}>
+                <div className="relative z-10 mt-auto h-16 w-full">
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={microBarData} margin={{ top: 0, bottom: 0, left: 0, right: 0 }}>
-                      <Bar dataKey="value" fill="var(--p-50)" radius={[2, 2, 0, 0]} isAnimationActive={false}>
+                      <Bar dataKey="value" fill="var(--primary-02)" radius={[2, 2, 0, 0]} isAnimationActive={false}>
                         {
                           microBarData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={index % 2 === 0 ? "var(--p-20)" : "var(--p-50)"} />
+                            <Cell key={`cell-${index}`} fill={index % 2 === 0 ? "rgba(0, 166, 86, 0.2)" : "var(--primary-02)"} />
                           ))
                         }
                       </Bar>
@@ -144,16 +186,17 @@ export default function Dashboard() {
               </div>
 
               {/* Stat 3: Accuracy */}
-              <div className="rayum-card" style={{ padding: 24, display: "flex", flexDirection: "column" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
-                  <span className="t-body-sm text-bold" style={{ color: "var(--fg-default)" }}>Accuracy Rate</span>
-                  <span style={{ color: "var(--fg-muted)" }}><RiMoreFill size={18} /></span>
+              <div className="group relative card flex min-h-[17rem] flex-col overflow-hidden border border-s-stroke2 bg-b-surface1 p-5 transition-all hover:border-transparent">
+                <div className="box-hover" />
+                <div className="relative z-10 flex justify-between items-center mb-3">
+                  <span className="text-body-2 font-bold text-t-primary">Accuracy Rate</span>
+                  <span className="text-t-secondary"><RiMoreFill size={18} /></span>
                 </div>
-                <div style={{ marginTop: "auto", marginBottom: 12 }}>
-                  <div style={{ fontSize: 36, fontWeight: 800, color: "var(--fg-default)", marginBottom: 8, letterSpacing: "-0.02em" }}>
+                <div className="relative z-10 mt-auto mb-3">
+                  <div className="text-h4 font-bold text-t-primary mb-2 tracking-tight">
                     {mockStats.accuracy}%
                   </div>
-                  <span className="badge badge-green">
+                  <span className="label label-green">
                     <RiArrowRightUpLine size={12} /> +5.2%
                   </span>
                 </div>
@@ -163,23 +206,24 @@ export default function Dashboard() {
           </div>
 
           {/* Team/Batch Updates Right Panel */}
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
-            <div className="rayum-card" style={{ padding: 32, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-              <div style={{ display: "flex", flexDirection: "column", gap: -8, marginBottom: 24 }}>
+          <div className="min-w-0">
+            <div className="group relative card flex h-full min-h-[17rem] flex-col items-center overflow-hidden border border-s-stroke2 bg-b-surface1 p-8 text-center transition-all hover:border-transparent">
+              <div className="box-hover" />
+              <div className="relative z-10 mb-6 flex flex-col gap-0">
                  {/* Top row of 2 avatars */}
-                 <div style={{ display: "flex", justifyContent: "center", marginBottom: -12, zIndex: 2 }}>
-                   <div className="avatar avatar-lg" style={{ border: "2px solid white", zIndex: 2, background: "var(--s-50)" }}>JD</div>
-                   <div className="avatar avatar-lg" style={{ border: "2px solid white", marginLeft: -12, zIndex: 1, background: "var(--p-50)" }}>AS</div>
+                 <div className="flex justify-center -mb-3 z-10">
+                   <div className="avatar avatar-lg border-2 border-b-surface2 z-10 bg-primary-01">JD</div>
+                   <div className="avatar avatar-lg border-2 border-b-surface2 -ml-3 z-[1] bg-primary-02">AS</div>
                  </div>
                  {/* Bottom row of 2 avatars */}
-                 <div style={{ display: "flex", justifyContent: "center", zIndex: 1 }}>
-                   <div className="avatar avatar-lg" style={{ border: "2px solid white", zIndex: 2, background: "var(--warning-50)" }}>MK</div>
-                   <div className="avatar avatar-lg" style={{ border: "2px solid white", marginLeft: -12, zIndex: 1, background: "var(--danger-50)" }}>RJ</div>
+                 <div className="flex justify-center z-0">
+                   <div className="avatar avatar-lg border-2 border-b-surface2 z-10 bg-primary-05">MK</div>
+                   <div className="avatar avatar-lg border-2 border-b-surface2 -ml-3 z-[1] bg-primary-03">RJ</div>
                  </div>
               </div>
-              <h3 className="t-sub-s" style={{ marginBottom: 4 }}>Batch Updates</h3>
-              <p className="t-body-sm" style={{ marginBottom: 24 }}>3 urgent from "Target JEE 2026"</p>
-              <button className="btn btn-outline" style={{ width: "100%" }}>
+              <h3 className="relative z-10 text-body-2 font-bold mb-1 text-t-primary">Batch Updates</h3>
+              <p className="relative z-10 text-caption text-t-secondary mb-6">3 urgent from "Target JEE 2026"</p>
+              <button className="relative z-10 btn btn-outline w-full bg-transparent">
                 Open Inbox
               </button>
             </div>
@@ -188,51 +232,45 @@ export default function Dashboard() {
         </div>
 
         {/* ── Middle Row: Charts ── */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: 24, marginBottom: 24 }}>
+        <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_340px] mb-6 items-stretch">
           
           {/* Main Chart Card */}
-          <div className="rayum-card" style={{ padding: 24, display: "flex", flexDirection: "column" }}>
-             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 32 }}>
-               <div>
-                 <h3 className="section-title">Score Performance</h3>
-                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
-                   <span style={{ fontSize: 24, fontWeight: 800 }}>{score}</span>
-                   <span className="badge badge-dark">
-                     <RiArrowRightUpLine size={12} /> 105% of Goal
-                   </span>
-                 </div>
-                 <p className="t-body-sm" style={{ marginTop: 8 }}>{text}</p>
-               </div>
-               
-               <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 16 }}>
-                 {/* Subject Tabs */}
-                 <div style={{ display: "flex", gap: 4, background: "var(--neutral-10)", padding: 4, borderRadius: "var(--r-md)" }}>
-                   {subjects.map(sub => (
-                     <button
-                       key={sub}
-                       onClick={() => setActiveSubject(sub)}
-                       style={{
-                         padding: "6px 12px",
-                         borderRadius: "var(--r-sm)",
-                         border: "none",
-                         background: activeSubject === sub ? "var(--bg-surface)" : "transparent",
-                         color: activeSubject === sub ? "var(--fg-default)" : "var(--fg-muted)",
-                         fontWeight: activeSubject === sub ? 700 : 500,
-                         fontSize: 12,
-                         cursor: "pointer",
-                         boxShadow: activeSubject === sub ? "var(--sh-100)" : "none",
-                         transition: "all 0.15s"
-                       }}
-                     >
-                       {sub}
-                     </button>
-                   ))}
-                 </div>
-               </div>
+          <div className="group relative card flex min-w-0 flex-col overflow-hidden border border-s-stroke2 bg-b-surface1 p-6 transition-all hover:border-transparent">
+             <div className="box-hover" />
+             <div className="relative z-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-start mb-8">
+                <div>
+                  <h3 className="text-sub-title-1 font-bold text-t-primary">Score Performance</h3>
+                  <div className="mt-1 flex items-center gap-3">
+                    <span className="text-h5 font-bold text-t-primary">{score}</span>
+                    <span className="label label-gray">
+                      <RiArrowRightUpLine size={12} /> 105% of Goal
+                    </span>
+                  </div>
+                  <p className="text-caption text-t-secondary mt-2">{text}</p>
+                </div>
+                
+                <div className="flex flex-col items-start gap-4 sm:items-end">
+                  {/* Subject Tabs */}
+                  <div className="flex max-w-full gap-1 overflow-x-auto rounded-3xl border border-s-stroke2 bg-b-surface2 p-1">
+                    {subjects.map(sub => (
+                      <button
+                        key={sub}
+                        onClick={() => setActiveSubject(sub)}
+                        className={`shrink-0 rounded-2xl border-none px-3 py-1.5 text-caption font-semibold transition-all cursor-pointer ${
+                          activeSubject === sub 
+                            ? "bg-b-surface1 text-t-primary shadow-widget" 
+                            : "bg-transparent text-t-secondary hover:text-t-primary"
+                        }`}
+                      >
+                        {sub}
+                      </button>
+                    ))}
+                  </div>
+                </div>
              </div>
              
              {/* Real Recharts Bar Chart */}
-             <div style={{ height: 240, width: "100%", marginTop: "auto", marginLeft: -20 }}>
+             <div className="relative z-10 mt-auto h-64 w-full min-w-0">
                <ResponsiveContainer width="100%" height="100%">
                  <BarChart data={currentScoreData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }} barSize={36}>
                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border-default)" />
@@ -248,83 +286,63 @@ export default function Dashboard() {
                </ResponsiveContainer>
              </div>
              {/* Chart Legend */}
-             <div style={{ display: "flex", gap: 16, fontSize: 12, color: "var(--fg-muted)", fontWeight: 500, marginTop: 16 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 6 }}><div style={{ width: 12, height: 12, background: "var(--s-50)", borderRadius: 2 }}/> Test Score</div>
+             <div className="relative z-10 mt-4 flex gap-4 text-caption font-semibold text-t-secondary">
+                <div className="flex items-center gap-1.5"><div className="size-3 bg-primary-01 rounded-[2px]"/> Test Score</div>
              </div>
           </div>
 
-          {/* Donut Chart Card */}
-          <div className="rayum-card" style={{ padding: 24, display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 32 }}>
-               <h3 className="section-title" style={{ fontSize: 18 }}>Topic Mastery</h3>
-               <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 13, color: "var(--fg-muted)", cursor: "pointer" }}>
-                 This week <RiArrowDownSLine size={16} />
+          {/* AI Insight Card */}
+           <div className="card flex min-h-[24rem] flex-col border border-s-stroke2 bg-b-dark1 p-8 text-t-light shadow-depth">
+            <div className="flex justify-between items-center mb-6">
+               <div className="flex items-center gap-2 font-bold text-t-light">
+                 <RiSparklingFill className="text-primary-05" size={18} /> AI Insight
                </div>
+               <span className="cursor-pointer text-t-tertiary hover:text-t-light"><RiMoreFill size={20} /></span>
             </div>
             
-            <div style={{ height: 180, width: "100%", position: "relative", marginBottom: 32 }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={topicData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={64}
-                    outerRadius={80}
-                    paddingAngle={4}
-                    dataKey="value"
-                    stroke="none"
-                  >
-                    {topicData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip 
-                    contentStyle={{ borderRadius: 'var(--r-md)', border: '1px solid var(--border-default)', boxShadow: 'var(--sh-200)' }}
-                    itemStyle={{ fontWeight: 600 }}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
-              <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", fontSize: 28, fontWeight: 800 }}>64%</div>
+            <h2 className="text-h6 font-bold mb-6 text-t-light">Topic Risk Alert</h2>
+            
+            <div className="flex-1 flex justify-center items-center mb-6">
+               <RiShieldCrossFill size={80} className="text-primary-03/80" />
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: "auto" }}>
-               <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--fg-muted)", fontWeight: 500 }}>
-                 <div style={{ width: 10, height: 10, background: "var(--s-50)", borderRadius: 2 }}/> Physics (64%)
-               </div>
-               <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--fg-muted)", fontWeight: 500 }}>
-                 <div style={{ width: 10, height: 10, background: "var(--p-50)", borderRadius: 2 }}/> Chemistry (10%)
-               </div>
-               <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--fg-muted)", fontWeight: 500 }}>
-                 <div style={{ width: 10, height: 10, background: "var(--p-20)", borderRadius: 2 }}/> Maths (26%)
-               </div>
-            </div>
+            <p className="text-body-2 font-semibold text-t-secondary leading-relaxed mb-8">
+               Accuracy for <span className="font-bold text-t-light">Laws of Motion</span> dropped <span className="text-primary-03 font-bold">-15%</span> this week. 
+               Knowledge gap identified by Friday. Est. impact: <span className="font-bold text-primary-03">-12 marks</span>.
+            </p>
+
+            <button className="btn btn-outline w-full bg-transparent mb-3 text-t-light border-white/20 hover:border-white/40">
+              Take Booster Test
+            </button>
+            <button className="btn btn-primary w-full">
+              Review Concepts
+            </button>
           </div>
-
         </div>
 
-        {/* ── Bottom Row ── */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
+        {/* ── Bottom Row: Recent Tests & Live Activity ── */}
+        <div className="grid gap-6 lg:grid-cols-2 mb-6">
           
           {/* Recent Tests List */}
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 24, alignItems: "center" }}>
-               <h3 className="section-title" style={{ fontSize: 18 }}>Recent Tests</h3>
-               <Link href="/history" style={{ fontSize: 13, color: "var(--s-50)", textDecoration: "none", fontWeight: 600 }}>View All</Link>
+          <div className="group relative card flex flex-col overflow-hidden border border-s-stroke2 bg-b-surface1 p-6 transition-all hover:border-transparent">
+            <div className="box-hover" />
+            <div className="relative z-10 flex justify-between items-center mb-6">
+               <h3 className="text-sub-title-1 font-bold text-t-primary">Recent Tests</h3>
+               <Link href="/history" className="text-caption text-primary-01 hover:text-primary-01/80 font-bold no-underline">View All</Link>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div className="relative z-10 flex flex-col gap-4">
               {mockRecentTests.slice(0, 4).map(test => (
-                <div key={test.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 16, borderBottom: "1px solid var(--border-default)" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <div style={{ width: 44, height: 44, background: "var(--n-10)", borderRadius: "var(--r-md)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--fg-muted)" }}>
+                <div key={test.id} className="flex justify-between items-center pb-4 border-b border-s-stroke2 last:border-b-0 last:pb-0">
+                  <div className="flex items-center gap-3">
+                    <div className="size-11 bg-b-surface2 rounded-xl flex items-center justify-center text-t-secondary">
                       {test.exam === "JEE" ? <RiRulerLine size={22} /> : <RiTestTubeLine size={22} />}
                     </div>
-                    <div>
-                      <div className="text-bold" style={{ fontSize: 14 }}>{test.title}</div>
-                      <div className="t-body-sm" style={{ marginTop: 2 }}>Score: {test.percentage}%</div>
+                    <div className="min-w-0">
+                      <div className="truncate text-body-2 font-bold text-t-primary">{test.title}</div>
+                      <div className="text-caption text-t-secondary mt-0.5">Score: {test.percentage}%</div>
                     </div>
                   </div>
-                  <span style={{ color: "var(--fg-muted)", cursor: "pointer", display: "flex" }}>
+                  <span className="text-t-secondary hover:text-t-primary cursor-pointer">
                     <RiMore2Fill size={20} />
                   </span>
                 </div>
@@ -333,114 +351,79 @@ export default function Dashboard() {
           </div>
 
           {/* Alerts & Live Activity */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-            <div className="rayum-card" style={{ padding: 24 }}>
-              <span className="badge badge-orange" style={{ marginBottom: 12 }}>
-                <RiAlertFill size={12} /> Action Required
-              </span>
-              <h3 className="section-title" style={{ fontSize: 20, marginBottom: 16 }}>Critical Boosters Ready</h3>
-              <div style={{ display: "flex", gap: -8, marginBottom: 16 }}>
-                 <div className="avatar avatar-lg" style={{ border: "2px solid white", zIndex: 3, background: "var(--n-90)" }}><RiShieldCrossFill size={20} /></div>
-                 <div className="avatar avatar-lg" style={{ border: "2px solid white", marginLeft: -12, zIndex: 2, background: "var(--n-70)" }}><RiTestTubeLine size={20} /></div>
-                 <div className="avatar avatar-lg" style={{ border: "2px solid white", marginLeft: -12, zIndex: 1, background: "var(--n-20)", color: "var(--n-60)" }}>+2</div>
+          <div className="flex flex-col gap-6">
+            <div className="group relative card flex flex-col overflow-hidden border border-s-stroke2 bg-b-surface1 p-6 transition-all hover:border-transparent">
+              <div className="box-hover" />
+              <div className="relative z-10 mb-3">
+                <span className="label label-red">
+                  <RiAlertFill size={12} className="mr-1" /> Action Required
+                </span>
               </div>
-              <div style={{ display: "flex", gap: 12, alignItems: "center", marginTop: 16 }}>
-                <span className="t-body-sm">Topics degrading</span>
-                <span className="badge badge-gray">High Risk</span>
+              <h3 className="relative z-10 text-sub-title-1 font-bold text-t-primary mb-4">Critical Boosters Ready</h3>
+              <div className="relative z-10 flex gap-0 mb-4">
+                <div className="avatar avatar-lg border-2 border-b-surface2 z-20 bg-shade-02"><RiShieldCrossFill size={20} /></div>
+                <div className="avatar avatar-lg border-2 border-b-surface2 -ml-3 z-10 bg-shade-04"><RiTestTubeLine size={20} /></div>
+                <div className="avatar avatar-lg border-2 border-b-surface2 -ml-3 z-[1] flex items-center justify-center bg-shade-08 text-shade-06">+2</div>
+              </div>
+              <div className="relative z-10 flex gap-3 items-center mt-auto">
+                <span className="text-caption text-t-secondary">Topics degrading</span>
+                <span className="label label-red">High Risk</span>
               </div>
             </div>
-
-            <div className="rayum-card" style={{ padding: 24 }}>
-               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
-                 <h3 className="section-title" style={{ fontSize: 16 }}>Live Batch Activity</h3>
-                 <span style={{ color: "var(--fg-muted)", display: "flex", cursor: "pointer" }}><RiMoreFill size={18} /></span>
-               </div>
-               <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 16 }}>
-                 <span style={{ fontSize: 32, fontWeight: 800, letterSpacing: "-0.02em" }}>842</span>
-                 <span className="t-body-sm">Taking tests right now.</span>
-               </div>
-               <div className="t-label" style={{ marginBottom: 12 }}>Students Online</div>
-               <div style={{ display: "flex", gap: -8 }}>
-                  {[1,2,3,4,5].map(i => (
-                    <div key={i} className="avatar avatar-md" style={{ background: "var(--s-50)", border: "2px solid white", marginLeft: i > 1 ? -8 : 0 }}>{i}</div>
-                  ))}
-                  <div className="avatar avatar-md" style={{ background: "var(--n-20)", color: "var(--n-60)", border: "2px solid white", marginLeft: -8 }}>+8</div>
-               </div>
-            </div>
-          </div>
-
-          {/* AI Insight Card */}
-          <div className="rayum-card" style={{ padding: 32, background: "var(--p-50)", border: "none", color: "var(--n-100)", display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 24 }}>
-               <div style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 700 }}>
-                 <RiSparklingFill size={18} /> Insight
-               </div>
-               <span style={{ cursor: "pointer", display: "flex" }}><RiMoreFill size={20} /></span>
-            </div>
-            
-            <h2 className="t-heading" style={{ marginBottom: 24 }}>Topic Risk</h2>
-            
-            <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
-               <RiShieldCrossFill size={100} color="rgba(0,0,0,0.8)" />
-            </div>
-
-            <p style={{ fontSize: 14, fontWeight: 500, lineHeight: 1.6, marginBottom: 32, color: "rgba(0,0,0,0.8)" }}>
-              Accuracy for <span style={{ fontWeight: 800, color: "black" }}>Laws of Motion</span> dropped -15% this week. 
-              Knowledge gap identified by Friday. Est. impact: <span style={{ fontWeight: 800, color: "black" }}>-12 marks</span>.
-            </p>
-
-            <button className="btn" style={{ width: "100%", background: "transparent", border: "1.5px solid rgba(0,0,0,0.2)", color: "black", marginBottom: 12 }}>
-              Take Booster Test
-            </button>
-            <button className="btn btn-dark" style={{ width: "100%" }}>
-              Review Concepts
-            </button>
           </div>
 
         </div>
 
         {/* ── DPP Row ── */}
-        <div style={{ marginTop: 24 }}>
-          <div className="rayum-card" style={{ padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
-              <div>
-                <h3 className="section-title" style={{ fontSize: 18 }}>📝 Pending DPPs</h3>
-                <p className="t-body-sm" style={{ marginTop: 4 }}>{mockStudentDPPs.filter(d => d.status === "pending" || d.status === "late").length} assignments need your attention</p>
-              </div>
-              <a href="/assignments" style={{ fontSize: 13, color: "var(--s-50)", textDecoration: "none", fontWeight: 600 }}>View All</a>
+        <div className="group relative card mt-6 flex flex-col overflow-hidden border border-s-stroke2 bg-b-surface1 p-6 transition-all hover:border-transparent">
+          <div className="box-hover" />
+          <div className="relative z-10 flex justify-between items-center mb-6">
+            <div>
+              <h3 className="text-sub-title-1 font-bold text-t-primary">Pending DPPs</h3>
+              <p className="text-caption text-t-secondary mt-1">{mockStudentDPPs.filter(d => d.status === "pending" || d.status === "late").length} assignments need your attention</p>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 16 }}>
-              {mockStudentDPPs.map(dpp => {
-                const isLate = dpp.status === "late";
-                const isPending = dpp.status === "pending";
-                const isDone = dpp.status === "completed";
-                return (
-                  <div key={dpp.id} style={{ padding: 20, borderRadius: "var(--r-md)", border: `1.5px solid ${isLate ? "#EF4444" : isDone ? "#22C55E" : "var(--border-default)"}`, background: isLate ? "#FEF2F2" : isDone ? "#F0FDF4" : "var(--bg-default)", display: "flex", flexDirection: "column", gap: 10 }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: "var(--fg-default)" }}>{dpp.title}</div>
-                        <div style={{ fontSize: 12, color: "var(--fg-muted)" }}>{dpp.subject} · {dpp.totalQuestions} questions</div>
-                      </div>
-                      <span className={`badge ${isLate ? "badge-orange" : isDone ? "badge-green" : "badge-dark"}`} style={{ marginLeft: 12, flexShrink: 0 }}>
-                        {isLate ? "⚠ Late" : isDone ? "✓ Done" : "Pending"}
-                      </span>
+            <Link href="/assignments" className="text-caption text-primary-01 hover:text-primary-01/80 font-bold no-underline">View All</Link>
+          </div>
+          <div className="relative z-10 grid gap-4 md:grid-cols-3">
+            {mockStudentDPPs.map(dpp => {
+              const isLate = dpp.status === "late";
+              const isPending = dpp.status === "pending";
+              const isDone = dpp.status === "completed";
+              return (
+                <div 
+                  key={dpp.id} 
+                  className={`flex min-h-[10rem] flex-col gap-3 rounded-3xl border p-5 ${
+                    isLate 
+                      ? "border-[#FF6A55]/20 bg-[#FF6A55]/5" 
+                      : isDone 
+                        ? "border-[#00A656]/20 bg-[#00A656]/5" 
+                        : "border-s-stroke2 bg-b-surface2"
+                  }`}
+                >
+                  <div className="flex justify-between items-start">
+                    <div className="min-w-0 flex-1">
+                      <div className="mb-1 truncate font-bold text-body-2 text-t-primary">{dpp.title}</div>
+                      <div className="text-caption text-t-secondary">{dpp.subject} · {dpp.totalQuestions} questions</div>
                     </div>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                      <span style={{ fontSize: 12, color: isLate ? "#DC2626" : "var(--fg-muted)", fontWeight: 500 }}>
-                        Due: {dpp.dueDate}
-                      </span>
-                      {isDone ? (
-                        <span style={{ fontSize: 13, fontWeight: 700, color: "#16A34A" }}>{dpp.score}/{dpp.maxScore} marks</span>
-                      ) : (
-                        <a href={`/assignments/${dpp.id}`} className="btn btn-primary" style={{ padding: "6px 16px", fontSize: 13 }}>
-                          {isLate ? "Submit Late" : "Start"}
-                        </a>
-                      )}
-                    </div>
+                    <span className={`label ${isLate ? "label-red" : isDone ? "label-green" : "label-gray"} ml-3 shrink-0`}>
+                      {isLate ? "⚠ Late" : isDone ? "✓ Done" : "Pending"}
+                    </span>
                   </div>
-                );
-              })}
-            </div>
+                  <div className="flex justify-between items-center mt-auto pt-2">
+                    <span className={`text-caption font-semibold ${isLate ? "text-[#FF6A55]" : "text-t-secondary"}`}>
+                      Due: {dpp.dueDate}
+                    </span>
+                    {isDone ? (
+                      <span className="text-caption font-bold text-[#00A656]">{dpp.score}/{dpp.maxScore} marks</span>
+                    ) : (
+                      <Link href={`/assignments/${dpp.id}`} className="btn btn-sm btn-primary">
+                        {isLate ? "Submit Late" : "Start"}
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 

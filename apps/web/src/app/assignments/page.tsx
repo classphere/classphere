@@ -11,13 +11,6 @@ import {
   RiArrowRightLine,
 } from "@remixicon/react";
 
-const statusConfig = {
-  pending:   { label: "Pending",   bg: "#FFFBEB", color: "#D97706", border: "#F59E0B" },
-  completed: { label: "Completed", bg: "#F0FDF4", color: "#16A34A", border: "#22C55E" },
-  late:      { label: "Late",      bg: "#FEF2F2", color: "#DC2626", border: "#EF4444" },
-  upcoming:  { label: "Upcoming",  bg: "var(--n-10)", color: "var(--fg-muted)", border: "var(--border-default)" },
-};
-
 export default function AssignmentsPage() {
   const pending   = mockStudentDPPs.filter(d => d.status === "pending");
   const late      = mockStudentDPPs.filter(d => d.status === "late");
@@ -26,22 +19,22 @@ export default function AssignmentsPage() {
   return (
     <>
       <Navbar title="My DPPs" subtitle="Daily practice problems assigned by your teacher." breadcrumbs="My DPPs" />
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "0 32px 48px" }}>
-
+      
+      <main className="mx-auto w-full max-w-screen-lg px-6 pb-10 md:px-8">
         {/* Stats row */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 32 }}>
+        <div className="mb-8 grid gap-4 md:grid-cols-3">
           {[
-            { label: "Pending",   value: pending.length,   color: "#D97706", bg: "#FFFBEB" },
-            { label: "Late",      value: late.length,      color: "#DC2626", bg: "#FEF2F2" },
-            { label: "Completed", value: completed.length, color: "#16A34A", bg: "#F0FDF4" },
+            { label: "Pending",   value: pending.length,   iconBg: "bg-[#EF9D0E]/10", textColor: "text-[#EF9D0E]" },
+            { label: "Late",      value: late.length,      iconBg: "bg-[#FF6A55]/10", textColor: "text-[#FF6A55]" },
+            { label: "Completed", value: completed.length, iconBg: "bg-[#00A656]/10", textColor: "text-[#00A656]" },
           ].map(s => (
-            <div key={s.label} className="rayum-card" style={{ padding: 20, display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ width: 44, height: 44, borderRadius: "var(--r-md)", background: s.bg, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <RiFileListLine size={22} color={s.color} />
+            <div key={s.label} className="card flex items-center gap-4 p-5">
+              <div className={`flex size-11 items-center justify-center rounded-xl ${s.iconBg}`}>
+                <RiFileListLine className={s.textColor} size={22} />
               </div>
               <div>
-                <div className="t-kpi" style={{ color: s.color, marginBottom: 4 }}>{s.value}</div>
-                <div className="t-body-sm">{s.label}</div>
+                <div className={`text-h5 font-bold tracking-tight ${s.textColor} mb-1`}>{s.value}</div>
+                <div className="text-caption text-t-secondary">{s.label}</div>
               </div>
             </div>
           ))}
@@ -49,12 +42,12 @@ export default function AssignmentsPage() {
 
         {/* Late — show first, most urgent */}
         {late.length > 0 && (
-          <div style={{ marginBottom: 32 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-              <RiAlertLine size={18} color="var(--danger-50, #DC2626)" />
-              <h2 className="t-body-base-bold" style={{ color: "var(--danger-50, #DC2626)", marginBottom: 0 }}>Overdue ({late.length})</h2>
+          <div className="mb-8">
+            <div className="flex items-center gap-2 mb-4 pl-1">
+              <RiAlertLine className="text-[#FF6A55]" size={18} />
+              <h2 className="text-sub-title-2 font-bold text-[#FF6A55]">Overdue ({late.length})</h2>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div className="flex flex-col gap-3">
               {late.map(dpp => <DPPCard key={dpp.id} dpp={dpp} />)}
             </div>
           </div>
@@ -62,12 +55,12 @@ export default function AssignmentsPage() {
 
         {/* Pending */}
         {pending.length > 0 && (
-          <div style={{ marginBottom: 32 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-              <RiTimeLine size={18} color="var(--warning-50, #D97706)" />
-              <h2 className="t-body-base-bold" style={{ marginBottom: 0 }}>Pending ({pending.length})</h2>
+          <div className="mb-8">
+            <div className="flex items-center gap-2 mb-4 pl-1">
+              <RiTimeLine className="text-[#EF9D0E]" size={18} />
+              <h2 className="text-sub-title-2 font-bold text-t-primary">Pending ({pending.length})</h2>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div className="flex flex-col gap-3">
               {pending.map(dpp => <DPPCard key={dpp.id} dpp={dpp} />)}
             </div>
           </div>
@@ -76,20 +69,20 @@ export default function AssignmentsPage() {
         {/* Completed */}
         {completed.length > 0 && (
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-              <RiCheckLine size={18} color="var(--success-50, #16A34A)" />
-              <h2 className="t-body-base-bold" style={{ marginBottom: 0 }}>Completed ({completed.length})</h2>
+            <div className="flex items-center gap-2 mb-4 pl-1">
+              <RiCheckLine className="text-[#00A656]" size={18} />
+              <h2 className="text-sub-title-2 font-bold text-t-primary">Completed ({completed.length})</h2>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div className="flex flex-col gap-3">
               {completed.map(dpp => <DPPCard key={dpp.id} dpp={dpp} />)}
             </div>
           </div>
         )}
 
         {mockStudentDPPs.length === 0 && (
-          <div style={{ textAlign: "center", padding: 80, color: "var(--fg-muted)" }}>
-            <RiFileListLine size={48} style={{ margin: "0 auto 16px" }} />
-            <p style={{ fontWeight: 600 }}>No DPPs assigned yet.</p>
+          <div className="card text-center py-20 text-t-secondary">
+            <RiFileListLine size={48} className="mx-auto mb-4 text-t-tertiary" />
+            <p className="font-semibold text-body-2">No DPPs assigned yet.</p>
           </div>
         )}
       </main>
@@ -98,42 +91,55 @@ export default function AssignmentsPage() {
 }
 
 function DPPCard({ dpp }: { dpp: typeof mockStudentDPPs[0] }) {
-  const cfg = statusConfig[dpp.status];
-  const isActionable = dpp.status === "pending" || dpp.status === "late";
+  const isCompleted = dpp.status === "completed";
+  const isLate = dpp.status === "late";
 
   return (
-    <div className="rayum-card" style={{ padding: 20, display: "flex", alignItems: "center", gap: 20, border: `1.5px solid ${cfg.border}`, background: dpp.status === "completed" ? "#F0FDF4" : dpp.status === "late" ? "#FEF2F2" : "var(--bg-surface)" }}>
-
+    <div className="group relative card flex min-w-0 items-center gap-5 overflow-hidden border border-s-stroke2 bg-b-surface1 p-5 transition-all hover:border-transparent">
+      {/* Signature Hover Effect */}
+      <div className="box-hover" />
+      
       {/* Icon */}
-      <div style={{ width: 48, height: 48, borderRadius: "var(--r-md)", background: cfg.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: 22 }}>
-        {dpp.status === "completed" ? "✅" : dpp.status === "late" ? "⚠️" : "📝"}
+      <div className={`relative z-10 flex size-11 shrink-0 items-center justify-center rounded-xl text-xl ${
+        isLate 
+          ? "bg-[#FF6A55]/10 text-[#FF6A55]" 
+          : isCompleted 
+            ? "bg-[#00A656]/10 text-[#00A656]" 
+            : "bg-[#EF9D0E]/10 text-[#EF9D0E]"
+      }`}>
+        {isCompleted ? "✅" : isLate ? "⚠️" : "📝"}
       </div>
 
       {/* Info */}
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div className="t-body-base-bold" style={{ marginBottom: 4 }}>{dpp.title}</div>
-        <div className="t-body-sm" style={{ color: "var(--fg-muted)", display: "flex", gap: 16, flexWrap: "wrap" }}>
+      <div className="relative z-10 flex-1 min-w-0">
+        <div className="text-body-2 font-bold text-t-primary mb-1 truncate">{dpp.title}</div>
+        <div className="flex items-center gap-4 text-caption text-t-secondary flex-wrap">
           <span>{dpp.subject} · {dpp.chapter}</span>
           <span>{dpp.totalQuestions} questions</span>
-          <span className="t-body-sm-med" style={{ color: cfg.color }}>Due: {dpp.dueDate}</span>
+          <span className={`font-semibold ${isLate ? "text-[#FF6A55]" : isCompleted ? "text-[#00A656]" : "text-[#EF9D0E]"}`}>
+            Due: {dpp.dueDate}
+          </span>
         </div>
       </div>
 
       {/* Score or Start button */}
-      {dpp.status === "completed" ? (
-        <div style={{ textAlign: "right", flexShrink: 0 }}>
-          <div className="t-heading-s" style={{ color: "var(--success-50, #16A34A)" }}>{dpp.score}/{dpp.maxScore}</div>
-          <div className="t-body-sm" style={{ color: "var(--fg-muted)" }}>{dpp.timeTakenMin} min</div>
-        </div>
-      ) : (
-        <Link
-          href={`/assignments/${dpp.id}`}
-          className={`btn btn-sm ${dpp.status === "late" ? "btn-danger" : "btn-primary"}`}
-          style={{ flexShrink: 0, display: "inline-flex", alignItems: "center" }}
-        >
-          {dpp.status === "late" ? "Submit Late" : "Start DPP"} <RiArrowRightLine size={16} />
-        </Link>
-      )}
+      <div className="relative z-10 shrink-0">
+        {isCompleted ? (
+          <div className="text-right">
+            <div className="text-body-1 font-bold text-[#00A656]">{dpp.score}/{dpp.maxScore}</div>
+            <div className="text-caption text-t-secondary">{dpp.timeTakenMin} min</div>
+          </div>
+        ) : (
+          <Link
+            href={`/assignments/${dpp.id}`}
+            className={`btn btn-sm ${
+              isLate ? "btn-danger" : "btn-primary"
+            }`}
+          >
+            {isLate ? "Submit Late" : "Start DPP"} <RiArrowRightLine size={16} className="ml-1" />
+          </Link>
+        )}
+      </div>
     </div>
   );
 }
