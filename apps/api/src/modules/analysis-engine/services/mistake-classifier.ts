@@ -8,22 +8,6 @@ const AVG_TIME: Record<string, number> = {
 
 export function classifyMistake(ans: AttemptAnswer, hasTimingData = true): MistakeClassification {
   if (ans.is_correct) {
-    const avgT = AVG_TIME[ans.question.difficulty] ?? 120;
-    const isGuessed = hasTimingData && (
-      (ans.time_taken_sec < avgT * 0.4) ||
-      (ans.question.difficulty === "hard" && ans.time_taken_sec < AVG_TIME.easy) ||
-      ans.marked_review
-    );
-    if (isGuessed) {
-      const fb = getDynamicFeedback("correct_guessed", ans, avgT);
-      return {
-        type: "correct_guessed",
-        detail: fb.detail,
-        tip: fb.tip,
-        confidence: "medium",
-        source: "heuristic"
-      };
-    }
     return { type: "correct", detail: "", tip: "", confidence: "high", source: "distractor_map" };
   }
 
@@ -302,17 +286,6 @@ function getDynamicFeedback(
     }
   ];
 
-  const correctGuessedFeedbacks = [
-    {
-      detail: `Lucky correct answer in ${subj} (${top}). You answered this in ${time}s (average is ${avgT}s), which is too fast for a full solution. This indicates a lucky guess or successful elimination.`,
-      tip: "Do not count this as a mastered topic. Review the official solution to ensure your reasoning matches the correct path."
-    },
-    {
-      detail: `Elimination/Guess victory in ${chap}. You got the marks, but the speed of ${time}s on this ${diff} question suggests a confidence gap.`,
-      tip: "Re-solve this question step-by-step without options to verify you can actually do it under exam conditions."
-    }
-  ];
-
   const unknownFeedbacks = [
     {
       detail: "Could not auto-classify. Please review the solution and self-tag this error.",
@@ -342,9 +315,6 @@ function getDynamicFeedback(
       break;
     case "strategic_skip":
       pool = strategicSkipFeedbacks;
-      break;
-    case "correct_guessed":
-      pool = correctGuessedFeedbacks;
       break;
     default:
       pool = unknownFeedbacks;
