@@ -72,6 +72,12 @@ export interface AttemptAnswer {
   is_correct: boolean;
   marks_awarded: number;
   time_taken_sec: number;
+  /** Option B: absolute clock offset in seconds from exam start (0 = exam opened).
+   *  Recorded by the test UI as Math.floor((Date.now() - examStartMs) / 1000)
+   *  when the student first navigates TO this question.
+   *  Used by behavioral-analysis.ts to assign questions to 30-min time buckets.
+   */
+  start_timestamp: number;
   marked_review: boolean;
   question: Question;
 }
@@ -160,6 +166,56 @@ export interface BoosterConfig {
   excludeQuestionIds: string[];
 }
 
+// ── v4: Behavioral Analysis ──
+
+/** Attempts Over 3 Hours — one entry per 30-min bucket */
+export interface TimeIntervalStat {
+  intervalLabel: string;   // "First 30 mins" | "Next 30 mins" | ...
+  startSec: number;        // bucket start offset from exam start
+  endSec: number;          // bucket end offset
+  correct: number;
+  incorrect: number;
+  skipped: number;
+  total: number;
+  accuracy: number;        // % of attempted that were correct (0 if none attempted)
+}
+
+/** One subject block in the navigation timeline */
+export interface SubjectSwitch {
+  subject: string;
+  durationSec: number;
+  sequenceIndex: number;   // 0-based order
+}
+
+/** Difficulty breakdown — one entry for "Overall" + one per subject */
+export interface DifficultyBreakdown {
+  subject: string;
+  easy:   { correct: number; incorrect: number; skipped: number; total: number };
+  medium: { correct: number; incorrect: number; skipped: number; total: number };
+  hard:   { correct: number; incorrect: number; skipped: number; total: number };
+}
+
+/** MathonGo-style attempt quality classification per subject */
+export interface AttemptClassification {
+  subject: string;
+  perfect: number;     // correct AND within efficient time
+  overtime: number;    // correct but spent way too long (≥ 2× avg)
+  wasted: number;      // incorrect AND spent lots of time (≥ 1.5× avg)
+  confused: number;    // skipped but spent noticeable time (15s–2× avg)
+  total: number;
+}
+
+/** Panic Cascade — cluster of rapid wrong answers indicating exam anxiety */
+export interface PanicCascade {
+  detected: boolean;
+  startQuestionNumber: number | null;
+  endQuestionNumber: number | null;
+  incorrectInWindow: number;
+  triggerSubject: string | null;
+  description: string;
+  tip: string;
+}
+
 export interface AnalysisResult {
   // Core (existing)
   scoring: ScoringResult;
@@ -176,6 +232,14 @@ export interface AnalysisResult {
   attemptStrategy: AttemptStrategy;
   longitudinalFlags: LongitudinalFlag[];
   narrative: AnalysisNarrative;
+
+  // v4 additions — behavioral analysis
+  timeIntervals: TimeIntervalStat[];
+  subjectMovement: SubjectSwitch[];
+  difficultyBreakdown: DifficultyBreakdown[];
+  attemptClassification: AttemptClassification[];
+  panicCascade: PanicCascade;
+  fatigueSummary: string;
 }
 
 // ── v3: Longitudinal Profiling ──
