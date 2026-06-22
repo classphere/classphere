@@ -140,9 +140,11 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
         is_correct: isCorrect,
         marks_awarded: isCorrect ? 4 : (selected ? -1 : 0),
         time_taken_sec: studentAns?.time_taken_sec || 0,
+        start_timestamp: studentAns?.start_timestamp ?? 0,
         marked_review: studentAns?.marked_review || false,
         question: q,
       });
+
     }
 
     // Mock: Store attempt in global db so orchestrator can fetch it

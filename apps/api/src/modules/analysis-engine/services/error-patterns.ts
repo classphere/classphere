@@ -12,6 +12,7 @@ const ALL_DETECTORS: PatternDetector[] = [
   detectDistractorTrap,
   detectFreeMarksLeak,
   detectConsistentGuesser,
+  detectEndgameFatigue,
 ];
 
 export function detectAllPatterns(answers: ClassifiedAnswer[]): ErrorPattern[] {
@@ -207,3 +208,39 @@ function detectConsistentGuesser(classified: ClassifiedAnswer[]): ErrorPattern |
   };
 }
 
+// 10. Endgame Fatigue: accuracy in last 30-min bucket ≥ 35% lower than first 60 min
+function detectEndgameFatigue(answers: ClassifiedAnswer[]): ErrorPattern | null {
+  if (answers.length < 10) return null;
+
+  // Sort by start_timestamp for time-based bucketing
+  const sorted = [...answers].sort((a, b) => a.start_timestamp - b.start_timestamp);
+  const lastTs = sorted[sorted.length - 1];
+  const totalTs = lastTs.start_timestamp + (lastTs.time_taken_sec || 60);
+  if (totalTs < 3600) return null; // Only meaningful for exams > 1 hour
+
+  const first60 = sorted.filter(a => a.start_timestamp < 3600);
+  const last30  = sorted.filter(a => a.start_timestamp >= totalTs - 1800);
+
+  const acc = (arr: ClassifiedAnswer[]) => {
+    const att = arr.filter(a => a.selected_answer).length;
+    return att > 0 ? (arr.filter(a => a.is_correct).length / att) * 100 : 0;
+  };
+
+  if (first60.length < 4 || last30.length < 3) return null;
+
+  const early = acc(first60);
+  const late  = acc(last30);
+  const drop  = early - late;
+
+  if (drop > 35) {
+    return {
+      id: "endgame_fatigue",
+      name: "Endgame Fatigue Detected",
+      description: `Your accuracy in the first 60 minutes was ${early.toFixed(0)}% but dropped to ${late.toFixed(0)}% in the final 30 minutes — a ${drop.toFixed(0)}% fall.`,
+      questionsAffected: last30.filter(a => !a.is_correct).map(a => a.question_id),
+      severity: drop > 50 ? "high" : "medium",
+      tip: "Train your stamina with back-to-back full 3-hour mocks. Eat a light snack before the real exam and stay hydrated. With 45 min left, do a quick mental reset.",
+    };
+  }
+  return null;
+}

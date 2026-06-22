@@ -14,6 +14,14 @@ import {
 } from "./longitudinal-profile";
 import { analyzeAttemptStrategy } from "./attempt-strategy";
 import { generateNarrative, getExamCountdown } from "./narrative-summary";
+import {
+  computeTimeIntervals,
+  computeSubjectMovement,
+  computeDifficultyBreakdown,
+  classifyAttempts,
+  detectPanicCascade,
+} from "./behavioral-analysis";
+
 
 export async function analyzeAttempt(attemptId: string, hasTimingData = true): Promise<AnalysisResult> {
   const start = Date.now();
@@ -56,7 +64,18 @@ export async function analyzeAttempt(attemptId: string, hasTimingData = true): P
   // ── Stage 6.7: v3 — Exam Countdown ────────────────────────────────────────
   const countdown = getExamCountdown(attempt.exam_code ?? "jee-main");
 
+  // ── Stage 6.8: v4 — Behavioral Analysis ──────────────────────────────────
+  const { intervals: timeIntervals, fatigueSummary } = computeTimeIntervals(
+    classified,
+    attempt.total_duration_sec ?? 10800
+  );
+  const subjectMovement       = computeSubjectMovement(classified);
+  const difficultyBreakdown   = computeDifficultyBreakdown(classified);
+  const attemptClassification = classifyAttempts(classified);
+  const panicCascade          = detectPanicCascade(classified);
+
   // ── Stages 7–8: Generate action items ──────────────────────────────────────
+
   const studyPlan = generateStudyPlan(
     topicStats,
     longitudinalFlags,
@@ -93,7 +112,15 @@ export async function analyzeAttempt(attemptId: string, hasTimingData = true): P
     attemptStrategy,
     longitudinalFlags,
     narrative,
+    // v4
+    timeIntervals,
+    subjectMovement,
+    difficultyBreakdown,
+    attemptClassification,
+    panicCascade,
+    fatigueSummary,
   };
+
 
   // ── Persist results ─────────────────────────────────────────────────────────
   const currentProfileEntries = buildCurrentTopicHistoryEntries(attemptId, topicStats);
