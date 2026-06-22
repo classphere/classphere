@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter, useParams } from "next/navigation";
 import {
   RiTimerLine,
@@ -184,6 +184,21 @@ export default function TestPage() {
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [isDemoMode, setIsDemoMode]       = useState(false);
 
+  // ── Timing tracking (Option B: start_timestamp) ─────────────────────────────
+  /** Unix ms when the exam timer started (set once when questions load) */
+  const examStartMsRef = useRef<number | null>(null);
+  /** Maps question_id → seconds-offset-from-exam-start when student first opened it */
+  const questionOpenTimestamps = useRef<Record<string, number>>({});
+
+  /** Called whenever the student navigates to a question */
+  const recordQuestionOpen = useCallback((qId: string) => {
+    if (examStartMsRef.current === null) return;
+    if (questionOpenTimestamps.current[qId] !== undefined) return; // only record FIRST visit
+    const offsetSec = Math.floor((Date.now() - examStartMsRef.current) / 1000);
+    questionOpenTimestamps.current[qId] = offsetSec;
+  }, []);
+
+
   // ── Load questions ──────────────────────────────────────────────────────────
   useEffect(() => {
     if (!testId) return;
@@ -205,6 +220,7 @@ export default function TestPage() {
             setMeta(res.data.paper);
             setTimeLeft(res.data.paper.duration * 60);
             setIsDemoMode(false);
+            examStartMsRef.current = Date.now(); // ← start the clock
           } else {
             setError(res.message ?? "Failed to load questions.");
           }
@@ -214,6 +230,7 @@ export default function TestPage() {
           setMeta(DEMO_META);
           setTimeLeft(DEMO_META.duration * 60);
           setIsDemoMode(true);
+          examStartMsRef.current = Date.now(); // ← start the clock (demo mode)
         })
         .finally(() => setLoading(false));
       return;
@@ -226,6 +243,9 @@ export default function TestPage() {
 
   // ── Timer ──────────────────────────────────────────────────────────────────
   const handleSubmit = useCallback(async () => {
+    // Guard: never submit if questions haven't loaded yet
+    if (questions.length === 0) return;
+
     setLoading(true);
     try {
       const payload = {
@@ -233,6 +253,7 @@ export default function TestPage() {
           acc[qId] = {
             selected_answer: answers[qId],
             time_taken_sec: 45, // mock time for now
+            start_timestamp: questionOpenTimestamps.current[qId] ?? 0,
             marked_review: status[qId] === "review",
           };
           return acc;
@@ -245,7 +266,11 @@ export default function TestPage() {
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error("Submit API failed");
+      if (!res.ok) {
+        const errBody = await res.text().catch(() => "(no body)");
+        console.error(`Submit failed: HTTP ${res.status}`, errBody);
+        throw new Error(`Submit API failed (${res.status}): ${errBody.slice(0, 200)}`);
+      }
       const contentType = res.headers.get("content-type");
       if (!contentType || !contentType.includes("application/json")) throw new Error("Invalid response format");
 
@@ -258,22 +283,38 @@ export default function TestPage() {
       }
     } catch (err) {
       console.error(err);
-      alert("Submission error");
+      alert("Submission error: " + (err instanceof Error ? err.message : String(err)));
       setLoading(false);
     }
-  }, [answers, status, testId, router]);
+  }, [answers, status, testId, router, questions.length]);
 
   useEffect(() => {
     if (timeLeft === null || timeLeft <= 0 || loading) return;
     const t = setTimeout(() => setTimeLeft((s) => (s !== null ? s - 1 : null)), 1000);
     return () => clearTimeout(t);
-  }, [timeLeft, loading, handleSubmit]);
+  }, [timeLeft, loading]);
 
   useEffect(() => {
     if (!loading && timeLeft === 0 && questions.length > 0) {
       handleSubmit();
     }
   }, [timeLeft, loading, questions.length, handleSubmit]);
+
+
+
+  // ── Wrapper: navigate and record timestamp (must be BEFORE early returns) ───────
+  const navigateTo = useCallback((idx: number) => {
+    const qId = questions[idx]?.id;
+    if (qId) recordQuestionOpen(qId);
+    setCurrent(idx);
+  }, [questions, recordQuestionOpen]);
+
+  // Record when the very first question is displayed
+  useEffect(() => {
+    if (questions.length > 0 && questions[0]?.id) {
+      recordQuestionOpen(questions[0].id);
+    }
+  }, [questions, recordQuestionOpen]);
 
   const formatTime = (s: number) => {
     const h   = Math.floor(s / 3600);
@@ -302,6 +343,7 @@ export default function TestPage() {
       alert(`You can only attempt a maximum of 5 numerical questions in ${q.subject}. Please clear another answer in this section first.`);
       return;
     }
+    recordQuestionOpen(qId);
     setAnswers((a) => ({ ...a, [qId]: optId }));
     setStatus((s)  => ({ ...s, [qId]: "answered" }));
   };
@@ -396,7 +438,8 @@ export default function TestPage() {
   const unanswered = questions.length - answered - marked;
   const timeWarning = timeLeft !== null && timeLeft < 300;
 
-  // ── Group questions by subject for navigator labels ─────────────────────────
+
+
   const subjects = [...new Set(questions.map((q) => q.subject))];
 
   return (
@@ -555,7 +598,7 @@ export default function TestPage() {
           <div className="mt-8 flex flex-col gap-3 border-t border-s-stroke2 pt-6 sm:flex-row">
             <button
               className="btn btn-outline justify-center gap-2 sm:flex-1"
-              onClick={() => setCurrent((c) => Math.max(0, c - 1))}
+              onClick={() => navigateTo(Math.max(0, current - 1))}
               disabled={current === 0}
             >
               <RiArrowLeftLine size={18} /> Previous
@@ -582,7 +625,7 @@ export default function TestPage() {
               </button>
             )}
             {current < questions.length - 1 ? (
-              <button className="btn btn-primary justify-center gap-2 sm:flex-1" onClick={() => setCurrent((c) => c + 1)}>
+              <button className="btn btn-primary justify-center gap-2 sm:flex-1" onClick={() => navigateTo(current + 1)}>
                 Next Question <RiArrowRightLine size={18} />
               </button>
             ) : (
@@ -631,7 +674,7 @@ export default function TestPage() {
                         key={sq.id}
                         id={`nav-q-${sq.question_number}`}
                         className={`aspect-square rounded-2xl border text-sm font-bold transition-all hover:scale-[1.02] ${classes}`}
-                        onClick={() => setCurrent(globalIdx)}
+                        onClick={() => navigateTo(globalIdx)}
                       >
                         {sq.question_number}
                       </button>

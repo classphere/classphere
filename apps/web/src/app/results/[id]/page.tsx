@@ -17,7 +17,15 @@ import {
   RiArrowLeftLine,
   RiArrowRightLine,
   RiLoader4Line,
-  RiBookmarkFill
+  RiBookmarkFill,
+  RiBarChartBoxLine,
+  RiPieChartLine,
+  RiPulseLine,
+  RiExchangeLine,
+  RiErrorWarningFill,
+  RiCheckboxCircleFill,
+  RiCloseCircleFill,
+  RiSubtractLine,
 } from "@remixicon/react";
 
 function AccuracyBar({ accuracy }: { accuracy: number }) {
@@ -325,6 +333,234 @@ export default function ResultsPage() {
                 ))}
               </div>
             </section>
+
+            {/* ── PANIC CASCADE ALERT ── */}
+            {a.panicCascade?.detected && (
+              <section className="rounded-[32px] border border-[#FF6A55]/30 bg-[#FF6A55]/5 p-6 md:p-7">
+                <div className="flex items-start gap-4">
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[#FF6A55]/10">
+                    <RiErrorWarningFill size={24} className="text-[#FF6A55]" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h2 className="text-body-1 font-black text-[#FF6A55]">⚡ Panic Cascade Detected</h2>
+                      <span className="label label-red">Critical Pattern</span>
+                    </div>
+                    <p className="mt-2 text-caption leading-relaxed text-t-secondary">{a.panicCascade.description}</p>
+                    <div className="mt-4 rounded-2xl border border-[#FF6A55]/20 bg-white/60 p-3 text-caption font-semibold text-t-primary">
+                      <span className="text-[#FF6A55]">Action:</span> {a.panicCascade.tip}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* ── FATIGUE CURVE ── */}
+            {a.timeIntervals && a.timeIntervals.length > 0 && (
+              <section className="card p-6 md:p-7">
+                <div className="mb-5 flex items-center justify-between gap-4">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <RiPulseLine size={18} className="text-[#3765F6]" />
+                      <h2 className="text-sub-title-1 font-black text-t-primary">Attempts Over 3 Hours</h2>
+                    </div>
+                    <p className="mt-1 text-caption text-t-secondary">How your performance changed across the exam duration.</p>
+                  </div>
+                </div>
+
+                {/* Fatigue summary narrative */}
+                {a.fatigueSummary && (
+                  <div className="mb-5 rounded-[24px] border border-s-stroke2 bg-b-surface2 p-4 text-caption leading-relaxed text-t-secondary">
+                    <span className="font-bold text-t-primary">Analysis: </span>{a.fatigueSummary}
+                  </div>
+                )}
+
+                {/* Interval table */}
+                <div className="overflow-x-auto">
+                  <table className="w-full text-caption">
+                    <thead>
+                      <tr className="border-b border-s-stroke2">
+                        <th className="pb-3 text-left font-bold uppercase tracking-[0.18em] text-t-tertiary">Interval</th>
+                        <th className="pb-3 text-center font-bold uppercase tracking-[0.18em] text-t-tertiary">Total</th>
+                        <th className="pb-3 text-center font-bold uppercase tracking-[0.18em] text-[#00A656]">Correct</th>
+                        <th className="pb-3 text-center font-bold uppercase tracking-[0.18em] text-[#FF6A55]">Wrong</th>
+                        <th className="pb-3 text-center font-bold uppercase tracking-[0.18em] text-t-tertiary">Skipped</th>
+                        <th className="pb-3 text-right font-bold uppercase tracking-[0.18em] text-t-tertiary">Accuracy</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-s-stroke2">
+                      {a.timeIntervals.map((interval: any, i: number) => {
+                        const accColor = interval.accuracy >= 70 ? "text-[#00A656]" : interval.accuracy >= 40 ? "text-[#EF9D0E]" : "text-[#FF6A55]";
+                        const label = i === 0 ? "First 30 mins" : `${(i * 30) + 1}–${(i + 1) * 30} mins`;
+                        return (
+                          <tr key={i} className="hover:bg-b-surface2/50 transition-colors">
+                            <td className="py-3 font-semibold text-t-primary">{label}</td>
+                            <td className="py-3 text-center text-t-secondary">{interval.total}</td>
+                            <td className="py-3 text-center font-bold text-[#00A656]">{interval.correct}</td>
+                            <td className="py-3 text-center font-bold text-[#FF6A55]">{interval.incorrect}</td>
+                            <td className="py-3 text-center text-t-secondary">{interval.skipped}</td>
+                            <td className="py-3 text-right">
+                              <span className={`font-black ${accColor}`}>{interval.accuracy}%</span>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Visual bar chart */}
+                <div className="mt-5 space-y-2">
+                  {a.timeIntervals.map((interval: any, i: number) => {
+                    const label = i === 0 ? "First 30 mins" : `${(i * 30) + 1}–${(i + 1) * 30} mins`;
+                    const barColor = interval.accuracy >= 70 ? "bg-[#00A656]" : interval.accuracy >= 40 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]";
+                    return (
+                      <div key={i} className="flex items-center gap-3">
+                        <span className="w-28 shrink-0 text-[10px] font-bold text-t-tertiary">{label}</span>
+                        <div className="flex-1 h-2.5 rounded-full bg-s-stroke2 overflow-hidden">
+                          <div className={`h-full rounded-full transition-all duration-500 ${barColor}`} style={{ width: `${interval.accuracy}%` }} />
+                        </div>
+                        <span className="w-8 text-right text-[10px] font-bold text-t-secondary">{interval.accuracy}%</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+
+            {/* ── DIFFICULTY ANALYSIS ── */}
+            {a.difficultyBreakdown && a.difficultyBreakdown.length > 0 && (
+              <section className="card p-6 md:p-7">
+                <div className="mb-5 flex items-center gap-2">
+                  <RiBarChartBoxLine size={18} className="text-[#EF9D0E]" />
+                  <div>
+                    <h2 className="text-sub-title-1 font-black text-t-primary">Difficulty Analysis</h2>
+                    <p className="mt-0.5 text-caption text-t-secondary">Performance breakdown by question difficulty, per subject.</p>
+                  </div>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
+                  {a.difficultyBreakdown.map((row: any) => (
+                    <div key={row.subject} className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5">
+                      <div className="mb-4 flex items-center justify-between">
+                        <h3 className="text-body-2 font-bold text-t-primary">{row.subject}</h3>
+                      </div>
+                      <div className="space-y-3">
+                        {(["easy", "medium", "hard"] as const).map((diff) => {
+                          const d = row[diff];
+                          const attempted = d.correct + d.incorrect;
+                          const acc = attempted > 0 ? Math.round((d.correct / attempted) * 100) : 0;
+                          const barColor = diff === "easy" ? "bg-[#00A656]" : diff === "medium" ? "bg-[#EF9D0E]" : "bg-[#FF6A55]";
+                          const labelColor = diff === "easy" ? "text-[#00A656]" : diff === "medium" ? "text-[#EF9D0E]" : "text-[#FF6A55]";
+                          return (
+                            <div key={diff}>
+                              <div className="mb-1.5 flex items-center justify-between">
+                                <span className={`text-[10px] font-bold uppercase tracking-[0.2em] ${labelColor}`}>{diff}</span>
+                                <div className="flex items-center gap-3 text-caption text-t-secondary">
+                                  <span className="text-[#00A656] font-bold">{d.correct}✓</span>
+                                  <span className="text-[#FF6A55] font-bold">{d.incorrect}✗</span>
+                                  <span className="text-t-tertiary">{d.skipped} skip</span>
+                                  {attempted > 0 && <span className={`font-black ${acc >= 70 ? "text-[#00A656]" : acc >= 40 ? "text-[#EF9D0E]" : "text-[#FF6A55]"}`}>{acc}%</span>}
+                                </div>
+                              </div>
+                              <div className="h-2 w-full rounded-full bg-s-stroke2 overflow-hidden">
+                                <div className={`h-full rounded-full ${barColor}`} style={{ width: `${acc}%` }} />
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* ── ATTEMPT CLASSIFICATION ── */}
+            {a.attemptClassification && a.attemptClassification.length > 0 && (
+              <section className="card p-6 md:p-7">
+                <div className="mb-5 flex items-center gap-2">
+                  <RiPieChartLine size={18} className="text-primary-01" />
+                  <div>
+                    <h2 className="text-sub-title-1 font-black text-t-primary">Attempt Classification</h2>
+                    <p className="mt-0.5 text-caption text-t-secondary">Quality of every attempt: Perfect, Overtime, Wasted, or Confused.</p>
+                  </div>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
+                  {a.attemptClassification.map((row: any) => {
+                    const cats = [
+                      { label: "Perfect", value: row.perfect, color: "bg-[#00A656]", textColor: "text-[#00A656]", desc: "Correct & efficient" },
+                      { label: "Overtime", value: row.overtime, color: "bg-[#3765F6]", textColor: "text-[#3765F6]", desc: "Correct but too slow" },
+                      { label: "Wasted", value: row.wasted, color: "bg-[#FF6A55]", textColor: "text-[#FF6A55]", desc: "Wrong & over-invested" },
+                      { label: "Confused", value: row.confused, color: "bg-[#EF9D0E]", textColor: "text-[#EF9D0E]", desc: "Skipped after pondering" },
+                    ];
+                    return (
+                      <div key={row.subject} className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5">
+                        <h3 className="mb-4 text-body-2 font-bold text-t-primary">{row.subject} <span className="text-t-tertiary font-normal">({row.total} attempts)</span></h3>
+                        <div className="grid grid-cols-2 gap-3">
+                          {cats.map(cat => (
+                            <div key={cat.label} className="rounded-2xl border border-s-stroke2 bg-b-surface2 p-3">
+                              <div className={`text-h5 font-black ${cat.textColor}`}>{cat.value}</div>
+                              <div className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.18em] text-t-tertiary">{cat.label}</div>
+                              <div className="mt-1 text-[10px] text-t-secondary">{cat.desc}</div>
+                              {/* Mini donut bar */}
+                              <div className="mt-2 h-1.5 w-full rounded-full bg-s-stroke2 overflow-hidden">
+                                <div className={`h-full rounded-full ${cat.color}`} style={{ width: row.total > 0 ? `${Math.round((cat.value / row.total) * 100)}%` : "0%" }} />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+
+            {/* ── SUBJECT MOVEMENT ── */}
+            {a.subjectMovement && a.subjectMovement.length > 0 && (
+              <section className="card p-6 md:p-7">
+                <div className="mb-5 flex items-center gap-2">
+                  <RiExchangeLine size={18} className="text-t-secondary" />
+                  <div>
+                    <h2 className="text-sub-title-1 font-black text-t-primary">Subject Movement</h2>
+                    <p className="mt-0.5 text-caption text-t-secondary">How you navigated between subjects during the test.</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  {a.subjectMovement.map((block: any, i: number) => {
+                    const subjectColors: Record<string, string> = {
+                      Physics: "border-[#3765F6]/30 bg-[#3765F6]/5 text-[#3765F6]",
+                      Chemistry: "border-[#00A656]/30 bg-[#00A656]/5 text-[#00A656]",
+                      Mathematics: "border-[#EF9D0E]/30 bg-[#EF9D0E]/5 text-[#EF9D0E]",
+                      Biology: "border-[#8B5CF6]/30 bg-[#8B5CF6]/5 text-[#8B5CF6]",
+                    };
+                    const colorClass = subjectColors[block.subject] ?? "border-s-stroke2 bg-b-surface2 text-t-secondary";
+                    const durationMin = Math.round(block.durationSec / 60);
+                    return (
+                      <div key={i} className="flex items-center gap-2">
+                        <div className={`rounded-2xl border px-4 py-2.5 text-center ${colorClass}`}>
+                          <div className="text-caption font-bold">{block.subject}</div>
+                          <div className="text-[10px] text-current/60">{durationMin > 0 ? `${durationMin} min` : "<1 min"}</div>
+                        </div>
+                        {i < a.subjectMovement.length - 1 && (
+                          <span className="text-t-tertiary">
+                            <RiArrowRightLine size={14} />
+                          </span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+                {a.subjectMovement.length === 1 && (
+                  <p className="mt-4 text-caption text-t-secondary">You stayed in one subject the entire test — linear approach.</p>
+                )}
+                {a.subjectMovement.length > 4 && (
+                  <p className="mt-4 rounded-2xl border border-[#EF9D0E]/30 bg-[#EF9D0E]/5 p-3 text-caption text-[#EF9D0E]">
+                    ⚠️ You switched subjects {a.subjectMovement.length - 1} times — frequent switching can fragment your focus and waste 2–3 minutes per switch.
+                  </p>
+                )}
+              </section>
+            )}
 
             <section className="card flex flex-col gap-4 rounded-[32px] border border-primary-01/20 bg-primary-01/5 p-6 md:flex-row md:items-center md:justify-between md:p-7">
               <div>
