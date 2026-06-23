@@ -180,32 +180,33 @@ export default function TeacherAnalyticsPage() {
               </Link>
             </div>
             
-            <div className="relative z-10 overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="border-b border-s-stroke2 text-caption font-bold text-t-secondary">
-                    <th className="pb-3 pr-4 font-semibold">Topic</th>
-                    <th className="pb-3 px-4 font-semibold">Subject</th>
-                    <th className="pb-3 px-4 font-semibold">Fail Rate</th>
-                    <th className="pb-3 pl-4 text-right font-semibold">Priority</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {weakTopics.map((t, i) => {
-                    const badgeClass = priorityColor[t.priority];
-                    return (
-                      <tr key={i} className="border-b border-s-stroke2/50 last:border-b-0 hover:bg-b-surface1/30 transition-colors">
-                        <td className="py-4 pr-4 text-body-2 font-bold text-[#101010] dark:text-t-primary">{t.topic}</td>
-                        <td className="py-4 px-4 text-caption text-t-secondary">{t.subject}</td>
-                        <td className="py-4 px-4 text-caption font-bold text-[#FF6A55]">{t.failRate}%</td>
-                        <td className="py-4 pl-4 text-right">
-                          <span className={`label ${badgeClass}`}>{t.priority}</span>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+            <div className="relative z-10 flex flex-col p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[24px]">
+              {weakTopics.map((t, i) => {
+                const badgeClass = priorityColor[t.priority];
+                return (
+                  <div 
+                    key={i} 
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[20px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="size-9 rounded-lg flex items-center justify-center bg-[#FF6A55]/10 border border-[#FF6A55]/20 text-[#FF6A55] shrink-0">
+                        <RiAlertLine size={18} />
+                      </div>
+                      <div>
+                        <div className="text-body-2 font-bold text-[#101010] dark:text-t-primary">{t.topic}</div>
+                        <div className="text-caption text-[#7B7B7B]">{t.subject}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4 self-end sm:self-auto">
+                      <div className="text-left sm:text-right">
+                        <div className="text-caption font-bold text-[#FF6A55]">{t.failRate}% Fail Rate</div>
+                        <div className="text-[10px] text-t-secondary">{t.students} students failed</div>
+                      </div>
+                      <span className={`label ${badgeClass}`}>{t.priority}</span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -214,15 +215,18 @@ export default function TeacherAnalyticsPage() {
             <div className="box-hover" />
             <h2 className="relative z-10 font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary mb-1">Common Trap Questions</h2>
             <p className="relative z-10 text-caption text-[#7B7B7B] mb-6">Questions where students selected the same wrong answer.</p>
-            <div className="relative z-10 flex flex-col gap-4 flex-1">
+            <div className="relative z-10 flex flex-col p-2 gap-4 bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[24px]">
               {trapQuestions.map((t, i) => (
-                <div key={i} className="p-4 bg-[#FF6A55]/5 border border-[#FF6A55]/20 rounded-2xl">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-body-2 font-bold text-t-primary">{t.q} — Option {t.option}</span>
-                    <span className="text-caption font-bold text-[#FF6A55]">{t.pct}%</span>
+                <div 
+                  key={i} 
+                  className="p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[20px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
+                >
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-body-2 font-bold text-[#101010] dark:text-t-primary">{t.q} · Option {t.option}</span>
+                    <span className="text-caption font-bold text-[#FF6A55] bg-[#FF6A55]/10 px-2 py-0.5 rounded-lg border border-[#FF6A55]/20">{t.pct}% trap</span>
                   </div>
                   <p className="text-caption text-t-secondary leading-relaxed mb-3">{t.desc}</p>
-                  <span className="label label-red">{t.trap.replace(/_/g, " ")}</span>
+                  <span className="label label-red font-medium capitalize">{t.trap.replace(/_/g, " ")}</span>
                 </div>
               ))}
             </div>
