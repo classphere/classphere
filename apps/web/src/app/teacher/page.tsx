@@ -76,119 +76,72 @@ export default function TeacherDashboardPage() {
       
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
         
-        {/* Figma-Inspired Dashboard Overview Wrapper */}
-        <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 mb-6 select-none">
-          <div className="box-hover" />
+        {/* Stats Section Wrapper (Row of 3 active highlighted boxes) */}
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-6">
           
-          {/* Header Row */}
-          <div className="relative z-10 flex flex-row justify-between items-center w-full mb-6">
-            <h3 className="font-sans text-[20px] font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">
-              Overview
-            </h3>
-            
-            {/* Custom Filter */}
-            <div className="relative">
-              <button 
-                onClick={() => setIsOverviewDropdownOpen(!isOverviewDropdownOpen)}
-                className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 cursor-pointer"
-              >
-                <span>This Week</span>
-                <RiArrowDownSLine size={20} className="text-[#727272] dark:text-t-secondary" />
-              </button>
-              
-              {isOverviewDropdownOpen && (
-                <>
-                  <div className="fixed inset-0 z-40" onClick={() => setIsOverviewDropdownOpen(false)} />
-                  <ul className="absolute right-0 top-13 z-50 w-full rounded-2xl border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
-                    <li>
-                      <button
-                        onClick={() => setIsOverviewDropdownOpen(false)}
-                        className="w-full rounded-xl px-3.5 py-2 text-left text-sm font-semibold bg-b-surface1 text-t-primary cursor-pointer"
-                      >
-                        This Week
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => setIsOverviewDropdownOpen(false)}
-                        className="w-full rounded-xl px-3.5 py-2 text-left text-sm font-semibold bg-transparent text-t-secondary hover:bg-b-surface3 hover:text-t-primary cursor-pointer"
-                      >
-                        Last Week
-                      </button>
-                    </li>
-                  </ul>
-                </>
-              )}
+          {/* Metric 1: Total Students */}
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-row items-center gap-3 w-full mb-1">
+              <span className="text-[#101010] dark:text-t-primary"><RiTeamLine size={20} /></span>
+              <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                Total Students
+              </span>
+            </div>
+            <div className="flex flex-row items-center gap-4 w-full mt-1">
+              <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
+                465
+              </div>
+              <div className="flex flex-col items-start gap-0.5">
+                <span className="text-[12px] font-sans text-[#7B7B7B]">
+                  across 3 batches
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Stats Section Wrapper (Row of 3 active highlighted boxes) */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
-            
-            {/* Metric 1: Total Students */}
-            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
-              <div className="flex flex-row items-center gap-3 w-full mb-1">
-                <span className="text-[#101010] dark:text-t-primary"><RiTeamLine size={20} /></span>
-                <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
-                  Total Students
+          {/* Metric 2: Avg Batch Score */}
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-row items-center gap-3 w-full mb-1">
+              <span className="text-[#101010] dark:text-t-primary"><RiFileChartLine size={20} /></span>
+              <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                Avg Batch Score
+              </span>
+            </div>
+            <div className="flex flex-row items-center gap-4 w-full mt-1">
+              <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
+                67.4%
+              </div>
+              <div className="flex flex-col items-start gap-0.5">
+                <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] rounded-lg">
+                  <span className="text-[#00A656] text-[12px] font-semibold leading-none">+2.1%</span>
+                </div>
+                <span className="text-[12px] font-sans text-[#7B7B7B]">
+                  vs last week
                 </span>
               </div>
-              <div className="flex flex-row items-center gap-4 w-full mt-1">
-                <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
-                  465
-                </div>
-                <div className="flex flex-col items-start gap-0.5">
-                  <span className="text-[12px] font-sans text-[#7B7B7B]">
-                    across 3 batches
-                  </span>
-                </div>
-              </div>
             </div>
-
-            {/* Metric 2: Avg Batch Score */}
-            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
-              <div className="flex flex-row items-center gap-3 w-full mb-1">
-                <span className="text-[#101010] dark:text-t-primary"><RiFileChartLine size={20} /></span>
-                <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
-                  Avg Batch Score
-                </span>
-              </div>
-              <div className="flex flex-row items-center gap-4 w-full mt-1">
-                <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
-                  67.4%
-                </div>
-                <div className="flex flex-col items-start gap-0.5">
-                  <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] rounded-lg">
-                    <span className="text-[#00A656] text-[12px] font-semibold leading-none">+2.1%</span>
-                  </div>
-                  <span className="text-[12px] font-sans text-[#7B7B7B]">
-                    vs last week
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Metric 3: Upcoming Tests */}
-            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
-              <div className="flex flex-row items-center gap-3 w-full mb-1">
-                <span className="text-[#101010] dark:text-t-primary"><RiCalendarEventLine size={20} /></span>
-                <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
-                  Upcoming Tests
-                </span>
-              </div>
-              <div className="flex flex-row items-center gap-4 w-full mt-1">
-                <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
-                  2
-                </div>
-                <div className="flex flex-col items-start gap-0.5">
-                  <span className="text-[12px] font-sans text-[#7B7B7B]">
-                    this week
-                  </span>
-                </div>
-              </div>
-            </div>
-            
           </div>
+
+          {/* Metric 3: Upcoming Tests */}
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-row items-center gap-3 w-full mb-1">
+              <span className="text-[#101010] dark:text-t-primary"><RiCalendarEventLine size={20} /></span>
+              <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                Upcoming Tests
+              </span>
+            </div>
+            <div className="flex flex-row items-center gap-4 w-full mt-1">
+              <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
+                2
+              </div>
+              <div className="flex flex-col items-start gap-0.5">
+                <span className="text-[12px] font-sans text-[#7B7B7B]">
+                  this week
+                </span>
+              </div>
+            </div>
+          </div>
+          
         </div>
 
         {/* Main Content Grid — Batches (left) + AI Flags (right) */}
@@ -247,7 +200,7 @@ export default function TeacherDashboardPage() {
           </div>
 
           {/* AI Attention Flags Card */}
-          <div className="flex w-full xl:max-w-[368px] flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8, 8, 8, 0.05)] border border-s-stroke2/40 p-3 pb-6 select-none box-sizing:border-box">
+          <div className="flex w-full xl:w-[368px] xl:h-[624px] shrink-0 flex-col justify-between overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8, 8, 8, 0.05)] border border-s-stroke2/40 p-3 pb-6 select-none box-sizing:border-box">
             
             {/* Container (Header + Product List) */}
             <div className="flex flex-col items-start p-0 gap-3 w-full">
