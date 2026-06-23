@@ -351,77 +351,67 @@ export default function TeacherDashboardPage() {
             </Link>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3 z-10">
+          {/* DPPs Grid Wrapper (p-2 grey nested background container) */}
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
             {mockDPPs.map(dpp => {
               const completion = Math.round((dpp.completedCount / dpp.totalStudents) * 100);
               const isComplete = dpp.status === "completed";
               const isUpcoming = dpp.status === "upcoming";
               
-              // Define status styles
-              let statusLabel = "Active";
-              let badgeStyle = "bg-[rgba(239,157,14,0.05)] border-[rgba(239,157,14,0.15)] text-[#EF9D0E]";
-              let progressColor = "bg-[#EF9D0E]";
-              
-              if (isComplete) {
-                statusLabel = "Done";
-                badgeStyle = "bg-[rgba(0,166,86,0.05)] border-[rgba(0,166,86,0.15)] text-[#00A656]";
-                progressColor = "bg-[#00A656]";
-              } else if (isUpcoming) {
-                statusLabel = "Upcoming";
-                badgeStyle = "bg-[rgba(123,123,123,0.05)] border-[rgba(123,123,123,0.15)] text-[#7B7B7B]";
-                progressColor = "bg-[#7B7B7B]";
-              }
-
               return (
                 <div
                   key={dpp.id}
-                  className="group relative flex min-h-[14rem] flex-col gap-4 overflow-hidden rounded-[28px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0px_10px_20px_-8px_rgba(8,8,8,0.06),0px_6px_4px_-4px_rgba(8,8,8,0.02)] select-none cursor-pointer"
+                  className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
                 >
-                  {/* Status Badge Row */}
-                  <div className="flex justify-between items-center w-full">
-                    <span className="font-sans text-[12px] font-bold text-[#7B7B7B] tracking-wider uppercase">
-                      {dpp.subject}
-                    </span>
-                    <div className={`box-sizing-border-box flex flex-row justify-center items-center px-2 py-0.5 gap-2 h-6 border-[1.5px] rounded-[8px] ${badgeStyle}`}>
-                      <span className="font-sans text-[12px] font-normal leading-[160%] tracking-[0.004em]">
-                        {statusLabel}
+                  <div className="min-w-0 flex-1">
+                    {/* Header Status Badge Row */}
+                    <div className="flex justify-between items-center mb-3">
+                      <span className="text-[12px] font-sans font-semibold text-[#7B7B7B] uppercase tracking-wider">
+                        {dpp.subject}
                       </span>
+                      <div className={`flex flex-row justify-center items-center px-1.5 py-0.5 border rounded-lg ${
+                        isComplete 
+                          ? "border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] text-[#00A656]" 
+                          : isUpcoming 
+                            ? "border-[rgba(123,123,123,0.15)] bg-[rgba(123,123,123,0.05)] text-[#7B7B7B]" 
+                            : "border-[rgba(239,157,14,0.15)] bg-[rgba(239,157,14,0.05)] text-[#EF9D0E]"
+                      }`}>
+                        <span className="text-[10px] font-bold leading-none">
+                          {isComplete ? "Done" : isUpcoming ? "Upcoming" : "Active"}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="truncate font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                      {dpp.title}
+                    </div>
+                    <div className="text-[12px] font-sans text-[#7B7B7B] mt-1">
+                      {dpp.batchName}
                     </div>
                   </div>
 
-                  {/* Title & Batch */}
-                  <div className="flex flex-col gap-1.5 flex-1 justify-center">
-                    <h4 className="font-sans font-bold text-[18px] text-[#101010] dark:text-t-primary leading-[140%] tracking-tight group-hover:text-t-blue transition-colors truncate">
-                      {dpp.title}
-                    </h4>
-                    <p className="font-sans text-[13px] font-normal text-[#7B7B7B] flex items-center gap-1.5">
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#7B7B7B]/50" />
-                      {dpp.batchName}
-                    </p>
-                  </div>
-
-                  {/* Divider line */}
-                  <div className="w-full h-px bg-s-stroke2/10 my-1" />
-
-                  {/* Progress Section */}
-                  <div className="flex flex-col gap-2 w-full mt-auto">
-                    <div className="flex justify-between items-center text-[12px] font-sans">
+                  <div className="mt-4 pt-3 border-t border-s-stroke2/30">
+                    <div className="flex justify-between items-center text-[12px] font-sans mb-2">
                       <span className="text-[#7B7B7B]">
-                        Due {dpp.dueDate}
+                        Due: {dpp.dueDate}
                       </span>
                       <span className="font-bold text-[#101010] dark:text-t-primary">
-                        {dpp.completedCount}/{dpp.totalStudents} ({completion}%)
+                        {dpp.completedCount}/{dpp.totalStudents}
                       </span>
                     </div>
-
-                    <div className="w-full h-2 bg-[#F5F5F5] dark:bg-b-surface3 rounded-full overflow-hidden">
+                    <div className="w-full h-1.5 bg-[rgba(123,123,123,0.15)] dark:bg-[rgba(229,229,229,0.08)] rounded-full overflow-hidden">
                       <div
-                        className={`h-full rounded-full transition-all duration-500 ${progressColor}`}
+                        className={`h-full rounded-full transition-all ${
+                          isComplete 
+                            ? "bg-[#00A656]" 
+                            : isUpcoming 
+                              ? "bg-[#7B7B7B]" 
+                              : "bg-gradient-to-r from-[#EF9D0E] to-[#F1C40F]"
+                        }`}
                         style={{ width: `${completion}%` }}
                       />
                     </div>
                   </div>
-
                 </div>
               );
             })}
