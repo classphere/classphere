@@ -12,6 +12,11 @@ import {
   RiTeamLine,
   RiFileListLine,
   RiAddLine,
+  RiCheckboxCircleFill,
+  RiCloseCircleFill,
+  RiQuestionLine,
+  RiFileList3Line,
+  RiBookOpenLine
 } from "@remixicon/react";
 import { mockBatches } from "@/lib/mock-data";
 
@@ -61,9 +66,9 @@ export default function TeacherAnalyticsPage() {
         breadcrumbs="Dashboard > Analytics"
       />
       
-      <main className="w-full max-w-[1200px] mx-auto px-8 pb-12">
+      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
         {/* Batch Selector */}
-        <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center gap-4 mb-8 mt-6">
           <span className="text-body-2 font-bold text-t-secondary">Viewing batch:</span>
           <div className="flex gap-2">
             {batchStats.map((b, i) => (
@@ -72,8 +77,8 @@ export default function TeacherAnalyticsPage() {
                 onClick={() => setSelectedBatch(i)}
                 className={`px-4 py-1.5 rounded-full text-caption font-bold border transition-all cursor-pointer ${
                   selectedBatch === i
-                    ? "bg-linear-to-b from-[#2C2C2C] to-[#282828] text-t-light border-transparent"
-                    : "bg-b-surface2 border-s-stroke2 text-t-secondary hover:text-t-primary"
+                    ? "bg-[#101010] dark:bg-t-primary text-[#FDFDFD] dark:text-black border-transparent"
+                    : "bg-[#FDFDFD] dark:bg-b-surface2 border-s-stroke2 text-t-secondary hover:text-t-primary"
                 }`}
               >
                 {b.batchName}
@@ -82,51 +87,74 @@ export default function TeacherAnalyticsPage() {
           </div>
         </div>
 
-        {/* KPI Row */}
-        <div className="grid grid-cols-4 gap-6 mb-8">
+        {/* KPI Row (p-2 grey nested background container) */}
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-8">
           {[
-            { label: "Batch Average",    value: `${stat.avg}%`,      icon: <RiBarChartBoxLine size={20} />, trend: stat.trend,    trendLabel: "vs last test" },
-            { label: "Top Score",        value: `${stat.top}%`,       icon: <RiCheckDoubleLine size={20} />, trend: null,           trendLabel: "highest in batch" },
-            { label: "Lowest Score",     value: `${stat.bottom}%`,    icon: <RiAlertLine size={20} />,       trend: null,           trendLabel: "needs intervention" },
-            { label: "Total Students",   value: stat.students,        icon: <RiTeamLine size={20} />,        trend: null,           trendLabel: stat.exam },
+            { label: "Batch Average",    value: `${stat.avg}%`,      icon: <RiBarChartBoxLine size={20} />, trend: stat.trend,    trendLabel: "vs last test",      bgClass: "bg-[#2A85FF]/10 border border-[#2A85FF]/20 text-[#2A85FF]", valColor: "text-[#2A85FF]" },
+            { label: "Top Score",        value: `${stat.top}%`,       icon: <RiCheckDoubleLine size={20} />, trend: null,           trendLabel: "highest in batch",  bgClass: "bg-[#00A656]/10 border border-[#00A656]/20 text-[#00A656]", valColor: "text-[#00A656]" },
+            { label: "Lowest Score",     value: `${stat.bottom}%`,    icon: <RiAlertLine size={20} />,       trend: null,           trendLabel: "needs intervention", bgClass: "bg-[#FF6A55]/10 border border-[#FF6A55]/20 text-[#FF6A55]", valColor: "text-[#FF6A55]" },
+            { label: "Total Students",   value: stat.students,        icon: <RiTeamLine size={20} />,        trend: null,           trendLabel: stat.exam,            bgClass: "bg-[#EF9D0E]/10 border border-[#EF9D0E]/20 text-[#EF9D0E]", valColor: "text-[#EF9D0E]" },
           ].map(k => (
-            <div key={k.label} className="group relative card flex flex-col p-5 overflow-hidden hover:border-transparent transition-all border border-s-stroke2 bg-b-surface1">
+            <div key={k.label} className="group relative flex flex-col p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all overflow-hidden w-full min-h-[140px] justify-between">
               <div className="box-hover" />
-              <div className="relative z-10 flex justify-between items-start mb-4">
-                <div className="p-2.5 bg-b-surface2 rounded-xl border border-s-stroke2 text-t-secondary">{k.icon}</div>
+              <div className="relative z-10 flex justify-between items-start w-full">
+                <div className={`p-2.5 rounded-xl flex items-center justify-center shrink-0 ${k.bgClass}`}>{k.icon}</div>
                 {k.trend != null && (
-                  <span className={`text-caption font-bold flex items-center gap-0.5 ${k.trend > 0 ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
+                  <span className={`text-caption font-bold flex items-center gap-0.5 px-2 py-0.5 rounded-lg ${k.trend > 0 ? "bg-[#00A656]/10 text-[#00A656]" : "bg-[#FF6A55]/10 text-[#FF6A55]"}`}>
                     {k.trend > 0 ? <RiArrowRightUpLine size={14} /> : <RiArrowRightDownLine size={14} />}
                     {k.trend > 0 ? "+" : ""}{k.trend}%
                   </span>
                 )}
               </div>
-              <div className="relative z-10 text-h4 font-bold text-t-primary mb-1 tracking-tight">{k.value}</div>
-              <div className="relative z-10 text-caption text-t-secondary">{k.label} · {k.trendLabel}</div>
+              <div className="relative z-10 mt-3">
+                <div className={`text-h4 font-bold mb-0.5 tracking-tight ${k.valColor}`}>{k.value}</div>
+                <div className="text-caption text-t-secondary">{k.label} · {k.trendLabel}</div>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Subject Breakdown */}
-        <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1 mb-8">
-          <h2 className="text-sub-title-1 font-bold text-t-primary mb-6">Subject-wise Performance</h2>
-          <div className="grid grid-cols-3 gap-6">
+        <div className="group relative flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none mb-8">
+          <div className="flex items-center gap-3.5 mb-6 z-10">
+            <div className="flex items-center justify-center size-10 rounded-xl bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/30 text-[#727272] dark:text-t-secondary shadow-xs">
+              <RiBarChartBoxLine size={20} />
+            </div>
+            <div>
+              <h2 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Subject-wise Performance</h2>
+              <p className="font-sans text-[12px] font-medium text-[#7B7B7B] tracking-[0.004em] mt-0.5">Average accuracy and error distribution across subjects</p>
+            </div>
+          </div>
+
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
             {subjectBreakdown.map(s => (
-              <div key={s.subject} className="p-5 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+              <div 
+                key={s.subject} 
+                className="flex flex-col p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
+              >
                 <div className="flex justify-between items-center mb-3">
-                  <span className="text-body-2 font-bold text-t-primary">{s.subject}</span>
-                  <span className={`text-body-2 font-bold ${s.avg >= 70 ? "text-[#00A656]" : s.avg >= 55 ? "text-[#EF9D0E]" : "text-[#FF6A55]"}`}>{s.avg}%</span>
+                  <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">{s.subject}</span>
+                  <span className={`text-[16px] font-sans font-bold ${s.avg >= 70 ? "text-[#00A656]" : s.avg >= 55 ? "text-[#EF9D0E]" : "text-[#FF6A55]"}`}>{s.avg}%</span>
                 </div>
-                <div className="h-1.5 bg-s-stroke2 rounded-full overflow-hidden mb-3">
+                <div className="h-1.5 bg-s-stroke2 rounded-full overflow-hidden mb-4">
                   <div
                     className={`h-full rounded-full ${s.avg >= 70 ? "bg-[#00A656]" : s.avg >= 55 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]"}`}
                     style={{ width: `${s.avg}%` }}
                   />
                 </div>
                 <div className="flex justify-between text-caption text-t-secondary">
-                  <span>✅ {s.correct} correct</span>
-                  <span>❌ {s.wrong} wrong</span>
-                  <span>⬜ {s.unattempted} skip</span>
+                  <span className="flex items-center gap-1">
+                    <RiCheckboxCircleFill size={14} className="text-[#00A656]" />
+                    <span>{s.correct} correct</span>
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <RiCloseCircleFill size={14} className="text-[#FF6A55]" />
+                    <span>{s.wrong} wrong</span>
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <RiQuestionLine size={14} className="text-[#7B7B7B]" />
+                    <span>{s.unattempted} skip</span>
+                  </span>
                 </div>
               </div>
             ))}
@@ -134,34 +162,40 @@ export default function TeacherAnalyticsPage() {
         </div>
 
         {/* Weak Topics + Trap Questions */}
-        <div className="grid grid-cols-[2fr_1fr] gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
 
           {/* Weak Topics */}
-          <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
-            <div className="flex justify-between items-center mb-2">
-              <h2 className="text-sub-title-1 font-bold text-t-primary">Critical Weaknesses — Lecture Planning</h2>
-              <Link href="/teacher/dpps" className="btn btn-sm btn-primary flex items-center gap-1">
+          <div className="group relative lg:col-span-2 flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
+            <div className="box-hover" />
+            <div className="relative z-10 flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-6">
+              <div>
+                <h2 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Critical Weaknesses — Lecture Planning</h2>
+                <p className="font-sans text-[12px] font-medium text-[#7B7B7B] tracking-[0.004em] mt-0.5">Topics where the majority of your batch failed. Prioritise these in class.</p>
+              </div>
+              <Link 
+                href="/teacher/dpps" 
+                className="h-9 px-4 rounded-xl text-xs font-semibold bg-[#101010] dark:bg-t-primary text-[#FDFDFD] dark:text-black hover:bg-[#202020] dark:hover:bg-t-secondary transition-all active:scale-95 shadow-xs shrink-0 flex items-center gap-1.5 cursor-pointer w-fit"
+              >
                 <RiAddLine size={16} /> Assign Booster DPP
               </Link>
             </div>
-            <p className="text-caption text-t-secondary mb-6">Topics where the majority of your batch failed. Prioritise these in your next class.</p>
             
-            <div className="overflow-x-auto">
+            <div className="relative z-10 overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-s-stroke2 text-caption font-bold text-t-secondary">
-                    <th className="pb-3 pr-4">Topic</th>
-                    <th className="pb-3 px-4">Subject</th>
-                    <th className="pb-3 px-4">Fail Rate</th>
-                    <th className="pb-3 pl-4 text-right">Priority</th>
+                    <th className="pb-3 pr-4 font-semibold">Topic</th>
+                    <th className="pb-3 px-4 font-semibold">Subject</th>
+                    <th className="pb-3 px-4 font-semibold">Fail Rate</th>
+                    <th className="pb-3 pl-4 text-right font-semibold">Priority</th>
                   </tr>
                 </thead>
                 <tbody>
                   {weakTopics.map((t, i) => {
                     const badgeClass = priorityColor[t.priority];
                     return (
-                      <tr key={i} className="border-b border-s-stroke2 last:border-b-0">
-                        <td className="py-4 pr-4 text-body-2 font-bold text-t-primary">{t.topic}</td>
+                      <tr key={i} className="border-b border-s-stroke2/50 last:border-b-0 hover:bg-b-surface1/30 transition-colors">
+                        <td className="py-4 pr-4 text-body-2 font-bold text-[#101010] dark:text-t-primary">{t.topic}</td>
                         <td className="py-4 px-4 text-caption text-t-secondary">{t.subject}</td>
                         <td className="py-4 px-4 text-caption font-bold text-[#FF6A55]">{t.failRate}%</td>
                         <td className="py-4 pl-4 text-right">
@@ -176,10 +210,11 @@ export default function TeacherAnalyticsPage() {
           </div>
 
           {/* Trap Questions */}
-          <div className="card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
-            <h2 className="text-sub-title-1 font-bold text-t-primary mb-1">Common Trap Questions</h2>
-            <p className="text-caption text-t-secondary mb-6">Questions where students selected the same wrong answer.</p>
-            <div className="flex flex-col gap-4 flex-1">
+          <div className="group relative lg:col-span-1 flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
+            <div className="box-hover" />
+            <h2 className="relative z-10 font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary mb-1">Common Trap Questions</h2>
+            <p className="relative z-10 text-caption text-[#7B7B7B] mb-6">Questions where students selected the same wrong answer.</p>
+            <div className="relative z-10 flex flex-col gap-4 flex-1">
               {trapQuestions.map((t, i) => (
                 <div key={i} className="p-4 bg-[#FF6A55]/5 border border-[#FF6A55]/20 rounded-2xl">
                   <div className="flex justify-between mb-2">
@@ -195,24 +230,25 @@ export default function TeacherAnalyticsPage() {
         </div>
 
         {/* All Batches Summary Table */}
-        <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
-          <h2 className="text-sub-title-1 font-bold text-t-primary mb-6">All Batches — Quick Comparison</h2>
-          <div className="overflow-x-auto">
+        <div className="group relative flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
+          <div className="box-hover" />
+          <h2 className="relative z-10 font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary mb-6">All Batches — Quick Comparison</h2>
+          <div className="relative z-10 overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-s-stroke2 text-caption font-bold text-t-secondary">
-                  <th className="pb-3 pr-4">Batch</th>
-                  <th className="pb-3 px-4">Exam</th>
-                  <th className="pb-3 px-4">Students</th>
-                  <th className="pb-3 px-4">Avg Score</th>
-                  <th className="pb-3 px-4">Top Score</th>
-                  <th className="pb-3 pl-4 text-right">Action</th>
+                  <th className="pb-3 pr-4 font-semibold">Batch</th>
+                  <th className="pb-3 px-4 font-semibold">Exam</th>
+                  <th className="pb-3 px-4 font-semibold">Students</th>
+                  <th className="pb-3 px-4 font-semibold">Avg Score</th>
+                  <th className="pb-3 px-4 font-semibold">Top Score</th>
+                  <th className="pb-3 pl-4 text-right font-semibold">Action</th>
                 </tr>
               </thead>
               <tbody>
                 {batchStats.map((b, i) => (
-                  <tr key={i} className="border-b border-s-stroke2 last:border-b-0">
-                    <td className="py-4 pr-4 text-body-2 font-bold text-t-primary">{b.batchName}</td>
+                  <tr key={i} className="border-b border-s-stroke2/50 last:border-b-0 hover:bg-b-surface1/30 transition-colors">
+                    <td className="py-4 pr-4 text-body-2 font-bold text-[#101010] dark:text-t-primary">{b.batchName}</td>
                     <td className="py-4 px-4 text-caption text-t-secondary">{b.exam}</td>
                     <td className="py-4 px-4 text-caption font-bold text-t-primary">{b.students}</td>
                     <td className="py-4 px-4">
@@ -231,7 +267,10 @@ export default function TeacherAnalyticsPage() {
                     </td>
                     <td className="py-4 px-4 text-caption font-bold text-t-primary">{b.top}%</td>
                     <td className="py-4 pl-4 text-right">
-                      <Link href={`/teacher/batch/${mockBatches[i]?.id || "batch-001"}`} className="btn btn-sm btn-outline flex items-center justify-center gap-1.5 ml-auto w-fit">
+                      <Link 
+                        href={`/teacher/batch/${mockBatches[i]?.id || "batch-001"}`} 
+                        className="h-9 px-4 rounded-xl text-xs font-semibold border border-s-stroke2 hover:border-t-primary text-t-secondary hover:text-t-primary transition-all active:scale-95 flex items-center gap-1.5 ml-auto cursor-pointer w-fit"
+                      >
                         <RiFileListLine size={16} /> View Batch
                       </Link>
                     </td>
