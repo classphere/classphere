@@ -138,9 +138,25 @@ export default function Dashboard() {
   const { bars, maxMarks } = performanceData;
   const activeBar = bars[selectedBarIndex];
 
+  // Dynamic greeting title based on selected bar score trend
+  let greetingTitle = `Good morning, ${mockUser.name.split(" ")[0]}`;
+  if (selectedBarIndex > 0) {
+    const prevBar = bars[selectedBarIndex - 1];
+    const diff = activeBar.score - prevBar.score;
+    if (diff > 0) {
+      greetingTitle = `Your scores are on the rise, ${mockUser.name.split(" ")[0]}! You're doing great.`;
+    } else if (diff < 0) {
+      greetingTitle = `Keep pushing, ${mockUser.name.split(" ")[0]}! Let's focus on improvement.`;
+    } else {
+      greetingTitle = `You're holding steady, ${mockUser.name.split(" ")[0]}! Push harder to break your peak.`;
+    }
+  } else {
+    greetingTitle = `Welcome back, ${mockUser.name.split(" ")[0]}! Ready to level up your score?`;
+  }
+
   return (
     <>
-      <Navbar />
+      <Navbar title={greetingTitle} />
       
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
         
