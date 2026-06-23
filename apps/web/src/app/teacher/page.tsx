@@ -104,11 +104,11 @@ export default function TeacherDashboardPage() {
                 </span>
               </div>
               <div className="flex flex-row items-center gap-4 w-full mt-1">
-                <span className="font-sans text-[48px] font-medium tracking-[-0.015em] text-[#101010] dark:text-t-primary leading-[110%]">
+                <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
                   465
-                </span>
-                <div className="flex flex-col items-start">
-                  <span className="text-[10px] font-sans font-medium text-[#7B7B7B] tracking-[0.004em]">
+                </div>
+                <div className="flex flex-col items-start gap-0.5">
+                  <span className="text-[12px] font-sans text-[#7B7B7B]">
                     across 3 batches
                   </span>
                 </div>
@@ -124,15 +124,14 @@ export default function TeacherDashboardPage() {
                 </span>
               </div>
               <div className="flex flex-row items-center gap-4 w-full mt-1">
-                <span className="font-sans text-[48px] font-medium tracking-[-0.015em] text-[#101010] dark:text-t-primary leading-[110%]">
+                <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
                   67.4%
-                </span>
-                <div className="flex flex-col items-start gap-1">
-                  <div className="flex flex-row justify-center items-center px-1.75 py-0.75 gap-0.5 border border-[#00A656]/15 bg-[#00A656]/5 text-[#00A656] rounded-[6px] h-6">
-                    <RiArrowRightUpLine size={12} className="shrink-0" />
-                    <span className="text-[11px] font-sans font-bold leading-none">+2.1%</span>
+                </div>
+                <div className="flex flex-col items-start gap-0.5">
+                  <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] rounded-lg">
+                    <span className="text-[#00A656] text-[12px] font-semibold leading-none">+2.1%</span>
                   </div>
-                  <span className="text-[10px] font-sans font-medium text-[#7B7B7B] tracking-[0.004em]">
+                  <span className="text-[12px] font-sans text-[#7B7B7B]">
                     vs last week
                   </span>
                 </div>
@@ -148,11 +147,11 @@ export default function TeacherDashboardPage() {
                 </span>
               </div>
               <div className="flex flex-row items-center gap-4 w-full mt-1">
-                <span className="font-sans text-[48px] font-medium tracking-[-0.015em] text-[#101010] dark:text-t-primary leading-[110%]">
+                <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
                   2
-                </span>
-                <div className="flex flex-col items-start">
-                  <span className="text-[10px] font-sans font-medium text-[#7B7B7B] tracking-[0.004em]">
+                </div>
+                <div className="flex flex-col items-start gap-0.5">
+                  <span className="text-[12px] font-sans text-[#7B7B7B]">
                     this week
                   </span>
                 </div>
