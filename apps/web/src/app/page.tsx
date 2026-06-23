@@ -377,49 +377,61 @@ export default function Dashboard() {
                 </div>
 
                 {/* Chart Container (Right Side) */}
-                <div className="flex flex-row items-end justify-between flex-1 gap-3 md:gap-5 h-[296px] min-w-0 select-none">
-                  {bars.map((bar, idx) => {
-                    const isSelected = selectedBarIndex === idx;
-                    
-                    return (
-                      <div 
-                        key={idx} 
-                        onClick={() => setSelectedBarIndex(idx)}
-                        className="flex flex-col justify-end items-center flex-1 gap-3 cursor-pointer group/bar h-full"
-                      >
-                        {/* Selected Tooltip Area */}
-                        <div className="relative w-full h-[42px] flex flex-col justify-end items-center shrink-0">
-                          {isSelected && (
-                            <div className="absolute bottom-0 flex flex-col items-center animate-in fade-in slide-in-from-bottom-2 duration-150">
-                              {/* Tooltip Box */}
-                              <div className="flex items-center justify-center bg-[#191919] px-2.5 py-1.5 rounded-[6px] text-[#FDFDFD] text-[11px] font-sans font-semibold leading-none shadow-depth">
-                                {bar.score} marks
-                              </div>
-                              {/* Tooltip Arrow */}
-                              <div className="w-2.5 h-1 bg-[#191919] clip-triangle -mt-0.5" style={{ clipPath: "polygon(50% 100%, 0 0, 100% 0)" }} />
-                              {/* Indicator Dot */}
-                              <div className="size-3 bg-[#FDFDFD] border-[3px] border-[#00B512] rounded-full mt-2" />
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Bar */}
+                {/* Chart Container (Right Side) */}
+                <div className="flex flex-col flex-1 h-[296px] min-w-0 select-none">
+                  {/* Row 1: Tooltips + Bars */}
+                  <div className="flex flex-row items-end justify-between flex-1 gap-3 md:gap-5 min-w-0">
+                    {bars.map((bar, idx) => {
+                      const isSelected = selectedBarIndex === idx;
+                      
+                      return (
                         <div 
-                          style={{ height: `${bar.height}px` }}
-                          className={`w-full rounded-lg transition-all ${
-                            isSelected 
-                              ? "bg-[#00B512]" 
-                              : "bg-[rgba(123,123,123,0.3)] dark:bg-[rgba(229,229,229,0.15)] group-hover/bar:bg-[rgba(123,123,123,0.45)] dark:group-hover/bar:bg-[rgba(229,229,229,0.25)]"
-                          }`}
-                        />
+                          key={idx} 
+                          onClick={() => setSelectedBarIndex(idx)}
+                          className="flex flex-col justify-end items-center flex-1 gap-3 cursor-pointer group/bar h-full"
+                        >
+                          {/* Selected Tooltip Area */}
+                          <div className="relative w-full h-[42px] flex flex-col justify-end items-center shrink-0">
+                            {isSelected && (
+                              <div className="absolute bottom-0 flex flex-col items-center animate-in fade-in slide-in-from-bottom-2 duration-150">
+                                {/* Tooltip Box */}
+                                <div className="flex items-center justify-center bg-[#191919] px-2.5 py-1.5 rounded-[6px] text-[#FDFDFD] text-[11px] font-sans font-semibold leading-none shadow-depth">
+                                  {bar.score} marks
+                                </div>
+                                {/* Tooltip Arrow */}
+                                <div className="w-2.5 h-1 bg-[#191919] clip-triangle -mt-0.5" style={{ clipPath: "polygon(50% 100%, 0 0, 100% 0)" }} />
+                                {/* Indicator Dot */}
+                                <div className="size-3 bg-[#FDFDFD] border-[3px] border-[#00B512] rounded-full mt-2" />
+                              </div>
+                            )}
+                          </div>
 
-                        {/* Bar Label */}
-                        <div className="text-center text-[12px] font-sans font-medium text-[#7B7B7B] leading-[160%] tracking-[0.004em] shrink-0">
-                          {bar.label}
+                          {/* Bar */}
+                          <div 
+                            style={{ height: `${bar.height}px` }}
+                            className={`w-full rounded-lg transition-all ${
+                              isSelected 
+                                ? "bg-[#00B512]" 
+                                : "bg-[rgba(123,123,123,0.3)] dark:bg-[rgba(229,229,229,0.15)] group-hover/bar:bg-[rgba(123,123,123,0.45)] dark:group-hover/bar:bg-[rgba(229,229,229,0.25)]"
+                            }`}
+                          />
                         </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Row 2: Labels */}
+                  <div className="flex flex-row justify-between gap-3 md:gap-5 mt-3 shrink-0">
+                    {bars.map((bar, idx) => (
+                      <div 
+                        key={idx}
+                        onClick={() => setSelectedBarIndex(idx)}
+                        className="flex-1 text-center text-[12px] font-sans font-medium text-[#7B7B7B] leading-[160%] tracking-[0.004em] shrink-0 cursor-pointer hover:text-t-primary transition-colors"
+                      >
+                        {bar.label}
                       </div>
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
 
               </div>
