@@ -220,10 +220,10 @@ export default function TeacherDoubtsPage() {
               </div>
             </div>
 
-            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] rounded-[24px] bg-transparent">
+            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-[#FDFDFD] dark:bg-b-surface2 border-[1.5px] border-[#FDFDFD] dark:border-s-stroke2/20 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex items-center gap-2.5">
-                <RiCheckDoubleLine size={20} className="text-[#727272] dark:text-t-secondary" />
-                <span className="font-sans font-semibold text-[15px] text-[#727272] dark:text-t-secondary">Resolved Doubts</span>
+                <RiCheckDoubleLine size={20} className="text-[#101010] dark:text-t-primary" />
+                <span className="font-sans font-semibold text-[15px] text-[#101010] dark:text-t-primary">Resolved Doubts</span>
               </div>
               <div className="flex items-center gap-4 mt-0.5">
                 <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-[#101010] dark:text-t-primary">{activeGroup.resolvedDoubts}</span>
