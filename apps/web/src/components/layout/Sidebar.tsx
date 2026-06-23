@@ -107,97 +107,87 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="hidden md:flex sticky top-0 z-40 h-screen w-[280px] shrink-0 flex-col overflow-y-auto border-r border-s-stroke2/70 bg-b-surface1 px-5 py-6 xl:w-[304px] select-none"
+      className="hidden md:flex sticky top-0 z-40 h-screen w-[300px] shrink-0 flex-col justify-between border-r border-s-stroke2/40 bg-b-surface1 px-6 py-8 select-none"
     >
-      {/* ── Logo ── */}
-      <div className="mb-8 pl-1">
-        <Link href="/" className="flex items-center gap-2.5 rounded-full px-2 py-1.5 transition-colors hover:bg-b-surface2/60">
-          <div className="flex size-8 items-center justify-center rounded-full bg-b-primary text-t-light">
-            <RiFlashlightFill size={18} />
+      {/* ── Top Menu Container ── */}
+      <div className="flex flex-col gap-6 w-full">
+        {/* Logo */}
+        <div className="pl-1">
+          <Link href="/" className="flex items-center gap-3.5 rounded-xl transition-colors">
+            {/* Logo Container 48px x 48px */}
+            <div className="flex size-12 items-center justify-center rounded-xl bg-[#101010] text-[#FDFDFD] shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
+              <RiFlashlightFill size={22} className="opacity-90" />
+            </div>
+            <span className="font-sans text-[20px] font-bold text-[#101010] dark:text-t-primary tracking-tight">
+              ExamPrep
+            </span>
+          </Link>
+        </div>
+
+        {/* ── Main Menu ── */}
+        <div className="flex flex-col gap-2 w-full">
+          <div className="text-[10px] font-bold tracking-wider text-[#727272] pl-3 uppercase">
+            Main menu
           </div>
-          <span className="font-bold text-h6 text-t-primary tracking-tight">
-            ExamPrep
-          </span>
-        </Link>
-      </div>
-
-      {/* ── Main Menu ── */}
-      <div className="mb-6">
-        <div className="t-label mb-3 pl-3">
-          Main menu
-        </div>
-        <nav className="flex flex-col gap-1">
-          {currentNav.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className={`group relative flex h-12 shrink-0 items-center gap-3 rounded-3xl px-5 text-button transition-colors hover:text-t-primary ${
-                item.active ? "text-t-primary font-bold" : "text-t-secondary"
-              }`}
-            >
-              {item.active && (
-                <div className="absolute inset-0 z-0 rounded-3xl gradient-menu shadow-depth-menu">
-                  <div className="absolute inset-[1.5px] rounded-[1.375rem] bg-b-pop"></div>
-                </div>
-              )}
-              <span className={`relative z-10 flex items-center transition-colors group-hover:text-t-primary ${
-                item.active ? "text-t-primary" : "text-t-secondary"
-              }`}>
-                {item.icon}
-              </span>
-              <span className="relative z-10">{item.label}</span>
-            </Link>
-          ))}
-        </nav>
-      </div>
-
-      {/* ── Others Menu ── */}
-      <div className="mb-auto">
-        <div className="t-label mb-3 pl-3">
-          Others
-        </div>
-        <nav className="flex flex-col gap-1">
-          {othersNav.map((item) => {
-            const isActive = pathname.startsWith(item.path);
-            return (
+          <nav className="flex flex-col gap-1 w-full">
+            {currentNav.map((item) => (
               <Link
-                key={item.href}
+                key={item.label}
                 href={item.href}
-                className={`group relative flex h-12 shrink-0 items-center gap-3 rounded-3xl px-5 text-button transition-colors hover:text-t-primary ${
-                  isActive ? "text-t-primary font-bold" : "text-t-secondary"
+                className={`group flex h-12 items-center gap-3 rounded-xl px-3 text-sm font-sans font-semibold transition-all ${
+                  item.active
+                    ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] border border-s-stroke2/30"
+                    : "text-[#727272] hover:text-[#101010] dark:hover:text-t-primary hover:bg-b-surface2/30"
                 }`}
               >
-                {isActive && (
-                  <div className="absolute inset-0 z-0 rounded-3xl gradient-menu shadow-depth-menu">
-                    <div className="absolute inset-[1.5px] rounded-[1.375rem] bg-b-pop"></div>
-                  </div>
-                )}
-                <span className={`relative z-10 flex items-center transition-colors group-hover:text-t-primary ${
-                  isActive ? "text-t-primary" : "text-t-secondary"
+                <span className={`flex items-center transition-colors ${
+                  item.active ? "text-[#101010] dark:text-t-primary" : "text-[#727272] group-hover:text-[#101010] dark:group-hover:text-t-primary"
                 }`}>
                   {item.icon}
                 </span>
-                <span className="relative z-10">{item.label}</span>
+                <span>{item.label}</span>
               </Link>
-            );
-          })}
-        </nav>
-      </div>
-
-      {/* ── Bottom Section (Profile + Demo Switcher) ── */}
-      <div className="mt-8">
-
-        {/* Download App block pattern */}
-        <div className="card mb-6 rounded-4xl border border-s-stroke2/70 bg-b-surface2 p-5 shadow-widget">
-          <h4 className="text-body-2 font-bold mb-1 text-t-primary">Download our<br />Mobile App</h4>
-          <p className="text-caption text-t-secondary mb-4">Get easy in another way</p>
-          <button className="btn btn-sm btn-outline w-full bg-transparent">Download</button>
+            ))}
+          </nav>
         </div>
 
+        {/* ── Others Menu ── */}
+        <div className="flex flex-col gap-2 w-full">
+          <div className="text-[10px] font-bold tracking-wider text-[#727272] pl-3 uppercase">
+            Others
+          </div>
+          <nav className="flex flex-col gap-1 w-full">
+            {othersNav.map((item) => {
+              const isActive = pathname.startsWith(item.path);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`group flex h-12 items-center gap-3 rounded-xl px-3 text-sm font-sans font-semibold transition-all ${
+                    isActive
+                      ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] border border-s-stroke2/30"
+                      : "text-[#727272] hover:text-[#101010] dark:hover:text-t-primary hover:bg-b-surface2/30"
+                  }`}
+                >
+                  <span className={`flex items-center transition-colors ${
+                    isActive ? "text-[#101010] dark:text-t-primary" : "text-[#727272] group-hover:text-[#101010] dark:group-hover:text-t-primary"
+                  }`}>
+                    {item.icon}
+                  </span>
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+      </div>
+
+      {/* ── Bottom Section (Switcher + Mode Container) ── */}
+      <div className="mt-auto flex flex-col items-center gap-6 w-full pt-6 border-t border-s-stroke2/20">
         {/* Demo Role Switcher */}
-        <div className="px-2">
+        <div className="w-full px-1">
           <select
-            className="input h-10 w-full rounded-3xl border border-s-stroke2 bg-b-surface2 px-3.5 py-1.5 text-caption font-semibold"
+            className="input h-10 w-full rounded-xl border border-s-stroke2 bg-b-surface2 px-3.5 py-1.5 text-caption font-semibold"
             value={isTeacher ? "/teacher" : isInstitute ? "/institute" : isSuperAdmin ? "/superadmin" : "/"}
             onChange={(e) => router.push(e.target.value)}
           >
@@ -208,36 +198,41 @@ export default function Sidebar() {
           </select>
         </div>
 
-        {/* Vertical Theme Toggle Pill */}
-        <div className="mt-4 px-2">
-          <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2/60 rounded-full p-0.5 h-10 w-full relative select-none shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)]">
-            <button 
+        {/* Mode Container: Width 48px, Height 148px, Gap 12px, centered */}
+        <div className="flex flex-col items-center gap-3 w-12 h-[148px]">
+          {/* Message Mail Button (Icon btt): 48px x 48px, rounded-full */}
+          <button className="flex size-12 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all active:scale-95 shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)] cursor-pointer">
+            <RiMailLine size={20} />
+          </button>
+
+          {/* Theme Toggle Capsule: 48px x 88px, rounded-full */}
+          <div className="flex flex-col items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-full p-1.5 h-[88px] w-12 relative select-none shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)]">
+            {/* Sun / Moon vertical layout */}
+            <button
               onClick={() => toggleTheme("light")}
-              className={`flex-1 flex items-center justify-center gap-2 h-8.5 rounded-full transition-all cursor-pointer text-caption font-semibold ${
-                theme === "light" 
-                  ? "bg-[#FDFDFD] dark:bg-b-surface1 text-[#101010] dark:text-t-primary shadow-widget" 
+              className={`flex size-9 items-center justify-center rounded-full transition-all cursor-pointer ${
+                theme === "light"
+                  ? "bg-[#F1F1F1] dark:bg-b-surface1 text-[#101010] dark:text-t-primary font-bold shadow-widget"
                   : "text-[#727272] hover:text-[#101010]"
               }`}
+              title="Light Mode"
             >
-              <RiSunLine size={14} />
-              <span>Light</span>
+              <RiSunLine size={16} />
             </button>
-            <button 
+            <button
               onClick={() => toggleTheme("dark")}
-              className={`flex-1 flex items-center justify-center gap-2 h-8.5 rounded-full transition-all cursor-pointer text-caption font-semibold ${
-                theme === "dark" 
-                  ? "bg-[#FDFDFD] dark:bg-b-surface1 text-[#101010] dark:text-t-primary shadow-widget" 
+              className={`flex size-9 items-center justify-center rounded-full transition-all cursor-pointer ${
+                theme === "dark"
+                  ? "bg-[#F1F1F1] dark:bg-b-surface1 text-[#101010] dark:text-t-primary font-bold shadow-widget"
                   : "text-[#727272] hover:text-[#101010] dark:hover:text-t-primary"
               }`}
+              title="Dark Mode"
             >
-              <RiMoonLine size={14} />
-              <span>Dark</span>
+              <RiMoonLine size={16} />
             </button>
           </div>
         </div>
-
       </div>
-
     </aside>
   );
 }
