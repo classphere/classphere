@@ -304,8 +304,8 @@ export default function TeacherDashboardPage() {
             </Link>
           </div>
 
-          {/* DPPs Grid Wrapper (p-2 grey nested background container) */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+          {/* DPPs Grid (Directly placed inside white parent card, matches student dashboard) */}
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6">
             {mockDPPs.map(dpp => {
               const completion = Math.round((dpp.completedCount / dpp.totalStudents) * 100);
               const isComplete = dpp.status === "completed";
@@ -314,7 +314,7 @@ export default function TeacherDashboardPage() {
               return (
                 <div
                   key={dpp.id}
-                  className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
+                  className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
                 >
                   <div className="min-w-0 flex-1">
                     {/* Header Status Badge Row */}
@@ -353,7 +353,7 @@ export default function TeacherDashboardPage() {
                     <span className="text-[12px] font-sans font-semibold text-[#7B7B7B]">
                       Due: {dpp.dueDate}
                     </span>
-                    <button className="flex flex-row justify-center items-center h-8 px-4.5 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-full transition-all active:scale-95 shadow-widget">
+                    <button className="flex flex-row justify-center items-center h-8 px-5 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget">
                       {isComplete ? "Reports" : isUpcoming ? "Edit" : "Stats"}
                     </button>
                   </div>

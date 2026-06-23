@@ -191,7 +191,7 @@ function DPPCard({ dpp }: { dpp: typeof mockStudentDPPs[0] }) {
 
   return (
     <div 
-      className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
+      className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
     >
       <div className="min-w-0 flex-1">
         {/* Header Status Badge Row */}
@@ -234,7 +234,7 @@ function DPPCard({ dpp }: { dpp: typeof mockStudentDPPs[0] }) {
         ) : (
           <Link 
             href={`/assignments/${dpp.id}`} 
-            className="flex flex-row justify-center items-center h-8 px-3.5 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-xl transition-all active:scale-95 shadow-widget"
+            className="flex flex-row justify-center items-center h-8 px-5 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-full transition-all active:scale-95 shadow-widget"
           >
             {isLate ? "Submit Late" : "Start"}
           </Link>
