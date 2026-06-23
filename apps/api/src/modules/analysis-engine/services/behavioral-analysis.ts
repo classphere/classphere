@@ -41,12 +41,16 @@ export function computeTimeIntervals(
 
   // Assign each answer to its bucket
   for (const a of classified) {
-    const ts = a.start_timestamp ?? 0; // fallback to 0 if not set
+    const ts = a.start_timestamp;
+    if (ts === undefined || ts === null || ts < 0) {
+      continue;
+    }
     const bucketIndex = Math.min(
       Math.floor(ts / BUCKET_SEC),
       numBuckets - 1
     );
     const bucket = buckets[bucketIndex];
+    if (!bucket) continue;
     bucket.total++;
     if (!a.selected_answer) {
       bucket.skipped++;
@@ -99,10 +103,12 @@ export function computeTimeIntervals(
  * e.g. Ph→Ch→Ph→Math = 4 blocks in the Subject Movement timeline.
  */
 export function computeSubjectMovement(classified: ClassifiedAnswer[]): SubjectSwitch[] {
-  if (classified.length === 0) return [];
+  // Only consider questions that were actually visited (start_timestamp >= 0)
+  const visited = classified.filter(a => a.start_timestamp !== undefined && a.start_timestamp !== null && a.start_timestamp >= 0);
+  if (visited.length === 0) return [];
 
   // Sort by start_timestamp (chronological visit order)
-  const sorted = [...classified].sort((a, b) => a.start_timestamp - b.start_timestamp);
+  const sorted = [...visited].sort((a, b) => a.start_timestamp - b.start_timestamp);
 
   const switches: SubjectSwitch[] = [];
   let currentSubject = sorted[0].question.subject;
@@ -155,7 +161,10 @@ export function computeDifficultyBreakdown(classified: ClassifiedAnswer[]): Diff
 
   for (const a of classified) {
     const subj = a.question.subject;
-    const diff = a.question.difficulty as "easy" | "medium" | "hard";
+    let diff = String(a.question.difficulty || "medium").toLowerCase() as "easy" | "medium" | "hard";
+    if (diff !== "easy" && diff !== "medium" && diff !== "hard") {
+      diff = "medium";
+    }
 
     if (!acc[subj]) {
       acc[subj] = { easy: emptyDiff(), medium: emptyDiff(), hard: emptyDiff() };
@@ -282,14 +291,16 @@ export function detectPanicCascade(classified: ClassifiedAnswer[]): PanicCascade
     tip: "Keep maintaining your composure during tests.",
   };
 
-  if (classified.length < 8) return NO_PANIC;
+  // Only consider questions that were actually visited (start_timestamp >= 0)
+  const visited = classified.filter(a => a.start_timestamp !== undefined && a.start_timestamp !== null && a.start_timestamp >= 0);
+  if (visited.length < 8) return NO_PANIC;
 
   const WINDOW = 6;
   const MIN_WRONG = 4;
   const TIME_DROP_THRESHOLD = 0.30; // 30% drop in avg time
 
   // Sort chronologically by start_timestamp
-  const sorted = [...classified].sort((a, b) => a.start_timestamp - b.start_timestamp);
+  const sorted = [...visited].sort((a, b) => a.start_timestamp - b.start_timestamp);
 
   const avgTime = (slice: ClassifiedAnswer[]) =>
     slice.reduce((s, a) => s + a.time_taken_sec, 0) / slice.length;

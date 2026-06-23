@@ -210,10 +210,12 @@ function detectConsistentGuesser(classified: ClassifiedAnswer[]): ErrorPattern |
 
 // 10. Endgame Fatigue: accuracy in last 30-min bucket ≥ 35% lower than first 60 min
 function detectEndgameFatigue(answers: ClassifiedAnswer[]): ErrorPattern | null {
-  if (answers.length < 10) return null;
+  // Only consider questions that were actually visited (start_timestamp >= 0)
+  const visited = answers.filter(a => a.start_timestamp !== undefined && a.start_timestamp !== null && a.start_timestamp >= 0);
+  if (visited.length < 10) return null;
 
   // Sort by start_timestamp for time-based bucketing
-  const sorted = [...answers].sort((a, b) => a.start_timestamp - b.start_timestamp);
+  const sorted = [...visited].sort((a, b) => a.start_timestamp - b.start_timestamp);
   const lastTs = sorted[sorted.length - 1];
   const totalTs = lastTs.start_timestamp + (lastTs.time_taken_sec || 60);
   if (totalTs < 3600) return null; // Only meaningful for exams > 1 hour

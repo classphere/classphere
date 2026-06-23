@@ -121,10 +121,11 @@ export function generateNarrative(
   const headline = buildHeadline(scoring, freeMarks, criticalFlag, attemptId);
 
   // ── Overview ──────────────────────────────────────────────────────────
+  // ── Overview ──────────────────────────────────────────────────────────
   const overview = buildOverview(scoring, pct, weakCount, freeMarks, strategy, attemptId);
 
   // ── Biggest win ───────────────────────────────────────────────────────
-  const biggestWin = identifyBiggestWin(errorPatterns, freeMarks, longitudinalFlags, strategy, attemptId);
+  const biggestWin = identifyBiggestWin(scoring, topicStats, freeMarks, strategy, attemptId);
 
   // ── Warning ───────────────────────────────────────────────────────────
   const warningMessage = criticalFlag
@@ -217,70 +218,85 @@ function buildOverview(
   strategy: AttemptStrategy,
   attemptId: string
 ): string {
-  const seed = attemptId + "_overview";
   const scoreStr = `${scoring.score}/${scoring.maxScore} Marks`;
+  const totalQuestions = scoring.correctCount + scoring.incorrectCount + scoring.skippedCount;
+  const skippedCount = scoring.skippedCount;
+  const attemptedCount = scoring.correctCount + scoring.incorrectCount;
+  const skipRate = totalQuestions > 0 ? skippedCount / totalQuestions : 0;
+  const attemptRate = totalQuestions > 0 ? attemptedCount / totalQuestions : 0;
+  const attemptPct = Math.round(attemptRate * 100);
 
-  let timeSummary = "";
-  if (strategy.overtimeSubjects.length > 0) {
-    timeSummary = `Time allocation shows over-investment in ${strategy.overtimeSubjects.join(" and ")}, which may have compressed time on other sections.`;
-  } else if (strategy.strategyScore >= 75) {
-    timeSummary = "Your time management across subjects was well-balanced.";
+  // PHRASE A: Coverage & Weak chapters
+  let phraseA = "";
+  if (skipRate < 0.4) {
+    phraseA = `With a score of ${scoreStr} in this test, you've shown solid baseline coverage, but ${weakCount} key chapter${weakCount !== 1 ? "s" : ""} require${weakCount === 1 ? "s" : ""} revision.`;
+  } else if (skipRate < 0.7) {
+    phraseA = `You attempted ${attemptPct}% of questions — focus on completing more of the paper before analyzing chapter-level weaknesses.`;
+  } else if (skipRate < 0.9) {
+    phraseA = `You skipped ${skippedCount} out of ${totalQuestions} questions. This test does not yet have enough data to diagnose specific weaknesses.`;
+  } else {
+    const attemptedText = attemptedCount === 1 ? "question" : "questions";
+    phraseA = `You attempted only ${attemptedCount} ${attemptedText} out of ${totalQuestions}. Complete a fuller attempt to get meaningful analysis.`;
   }
 
-  const templates = [
-    `You achieved a score of ${scoreStr} in this test, with ${weakCount} chapter${weakCount !== 1 ? "s" : ""} falling below the target threshold. Of these, ${freeMarks.totalFreeMarks} marks were lost to simple slips rather than knowledge gaps. ${timeSummary}`,
-    `With a score of ${scoreStr} in this test, you've shown solid baseline coverage, but ${weakCount} key chapter${weakCount !== 1 ? "s" : ""} require revision. Careless slips cost you ${freeMarks.totalFreeMarks} marks that you already had the knowledge to secure. ${timeSummary}`,
-    `This mock test result of ${scoreStr} highlights ${weakCount} area${weakCount !== 1 ? "s" : ""} for improvement. You dropped ${freeMarks.totalFreeMarks} marks on silly/calculation slips. ${timeSummary}`
-  ];
+  // PHRASE B: Careless slips count
+  const wrongCount = scoring.incorrectCount;
+  const slipCount = freeMarks.sillyCount;
+  let phraseB = "";
+  if (wrongCount > 0) {
+    if (slipCount === 0) {
+      phraseB = "No careless slips detected — every wrong answer was a genuine knowledge gap, not a rush.";
+    } else {
+      const markText = slipCount === 1 ? "mark" : "marks";
+      phraseB = `${slipCount} ${markText} lost to careless slips — you likely knew these but answered too quickly. Slow down on these question types.`;
+    }
+  }
 
-  return templates[getDeterministicIndex(seed, templates.length)];
+  // PHRASE C: Time balance
+  let phraseC = "";
+  if (attemptRate >= 0.5) {
+    if (strategy.overtimeSubjects.length > 0) {
+      phraseC = `Time allocation shows over-investment in ${strategy.overtimeSubjects.join(" and ")}, which may have compressed time on other sections.`;
+    } else if (strategy.strategyScore >= 75) {
+      phraseC = "Your time management across subjects was well-balanced.";
+    }
+  }
+
+  const parts = [phraseA, phraseB, phraseC].filter(Boolean);
+  return parts.join(" ");
 }
 
 function identifyBiggestWin(
-  errorPatterns: ErrorPattern[],
+  scoring: ScoringResult,
+  topicStats: TopicStat[],
   freeMarks: FreeMarksResult,
-  longitudinalFlags: LongitudinalFlag[],
   strategy: AttemptStrategy,
   attemptId: string
 ): string {
-  const seed = attemptId + "_win";
+  const totalQuestions = scoring.correctCount + scoring.incorrectCount + scoring.skippedCount;
+  const skipRate = totalQuestions > 0 ? scoring.skippedCount / totalQuestions : 0;
 
-  // Priority: critical longitudinal > free marks > strategy > error patterns
-  const critical = longitudinalFlags.find((f) => f.urgency === "critical");
-  if (critical) {
-    const templates = [
-      `Fix "${critical.topic}" — it's been your weakest point for ${critical.occurrences} tests. ${critical.actionRequired}`,
-      `Critical Action: Address the gap in "${critical.topic}" before your next mock test. It has been a persistent drain on your score.`
-    ];
-    return templates[getDeterministicIndex(seed, templates.length)];
+  // Priority 1 (Skip rate too high):
+  if (skipRate >= 0.7) {
+    return 'Syllabus expansion: Your skip rate is high. Focus on expanding your concept base to cover more topics before trying another mock.';
   }
 
-  if (freeMarks.totalFreeMarks >= 15) {
-    const templates = [
-      `Recover your free marks: ${freeMarks.totalFreeMarks} marks lost to silly + calculation errors. These require zero new studying — just more careful execution. Slow down on easy questions.`,
-      `Quickest score boost: Secure the ${freeMarks.totalFreeMarks} marks you lost to careless execution. No new revision needed, just more deliberate calculations.`
-    ];
-    return templates[getDeterministicIndex(seed, templates.length)];
+  // Priority 2 (High careless mistakes):
+  if (freeMarks.sillyCount >= 4) {
+    return 'Silly mistake reduction: Slow down by 15 seconds per question on easy-rated questions to recover simple slips.';
   }
 
-  if (strategy.overtimeSubjects.length > 0 && strategy.strategyScore < 70) {
-    const templates = [
-      `Fix your time strategy: you're over-investing in ${strategy.overtimeSubjects.join("/")}. ${strategy.recommendation}`,
-      `Pacing optimization: Adjust your subject timing. Over-allocating time to ${strategy.overtimeSubjects.join("/")} is hurting your overall score.`
-    ];
-    return templates[getDeterministicIndex(seed, templates.length)];
+  // Priority 3 (Weak chapters):
+  const weakChapters = topicStats.filter(t => t.attempted >= 3 && t.isWeak);
+  if (weakChapters.length > 0) {
+    // Sort by accuracy ascending (lowest accuracy first)
+    const sortedWeak = [...weakChapters].sort((a, b) => a.accuracy - b.accuracy);
+    const lowestAccuracyChapterName = sortedWeak[0].topic;
+    return `Concept revision: Re-derive core formulas in ${lowestAccuracyChapterName} and practice 5 solved examples.`;
   }
 
-  const highPattern = errorPatterns.find((p) => p.severity === "high");
-  if (highPattern) {
-    return `${highPattern.name}: ${highPattern.tip}`;
-  }
-
-  const templates = [
-    "Revisit your weakest topic this week with a focused 60-minute session before your next test.",
-    "Syllabus patching: Review the core concept of your lowest-accuracy topic before taking another test."
-  ];
-  return templates[getDeterministicIndex(seed, templates.length)];
+  // Priority 4 (Default / Baseline consistency):
+  return 'Pacing optimization: Adjust your subject timing. Over-allocating time to a single subject is hurting your overall score.';
 }
 
 function buildMotivationalNote(

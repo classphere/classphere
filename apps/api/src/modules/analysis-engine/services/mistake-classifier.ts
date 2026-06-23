@@ -84,8 +84,10 @@ function classifyByHeuristics(ans: AttemptAnswer, hasTimingData: boolean): Mista
   }
 
   // ── Online Mode Heuristics (Requires Time) ──
-  // Rule 1: Answered in <30% of average time → likely misread
-  if (t < avgT * 0.3) {
+  const SLIP_THRESHOLD = 30; // 30 seconds threshold for careless slip vs knowledge gap
+
+  // Guard: Fast wrong answers (t < 30s) are careless slips (silly)
+  if (t < SLIP_THRESHOLD) {
     const fb = getDynamicFeedback("silly", ans, avgT);
     return {
       type: "silly",
@@ -96,6 +98,7 @@ function classifyByHeuristics(ans: AttemptAnswer, hasTimingData: boolean): Mista
     };
   }
 
+  // Guard: Slow wrong answers (t >= 30s) are knowledge gaps (conceptual or calculation)
   // Rule 2: Spent >2x average time and still wrong → conceptual gap
   if (t > avgT * 2) {
     const fb = getDynamicFeedback("conceptual", ans, avgT);
@@ -132,10 +135,10 @@ function classifyByHeuristics(ans: AttemptAnswer, hasTimingData: boolean): Mista
     };
   }
 
-  // Default fallback
-  const fb = getDynamicFeedback("unknown", ans, avgT);
+  // Default fallback for slow wrong answers -> conceptual knowledge gap
+  const fb = getDynamicFeedback("conceptual", ans, avgT);
   return {
-    type: "unknown",
+    type: "conceptual",
     detail: fb.detail,
     tip: fb.tip,
     confidence: "low",

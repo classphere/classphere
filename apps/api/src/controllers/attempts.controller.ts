@@ -124,12 +124,12 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       let isCorrect = false;
 
       if (selected) {
-        if (q.question_type === "integer") {
-          isCorrect = q.correct_answer.includes(selected);
-        } else {
-          // MCQ: correct_answer is an array of IDs like ["B"] or ["B", "C"]
-          isCorrect = q.correct_answer.includes(selected);
-        }
+        const correctAnswersList = Array.isArray(q.correct_answer)
+          ? q.correct_answer.map(val => String(val).trim().toUpperCase())
+          : [String(q.correct_answer).trim().toUpperCase()];
+        
+        const selectedNormalized = String(selected).trim().toUpperCase();
+        isCorrect = correctAnswersList.includes(selectedNormalized);
       }
 
       attemptAnswers.push({

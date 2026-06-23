@@ -60,7 +60,25 @@ export function analyzeAttemptStrategy(
 
   // Total time actually recorded
   const totalRecordedSec = Object.values(timeBySubject).reduce((s, t) => s + t, 0);
-  const effectiveTotalSec = totalRecordedSec > 0 ? totalRecordedSec : totalTestDurationSec;
+
+  // If the total time recorded is under 5 minutes (300 seconds), we don't have enough data
+  // to perform meaningful pacing/subject over-investment analysis. Return early with neutral state.
+  if (totalRecordedSec < 300) {
+    return {
+      pattern: detectPattern(subjectAttemptOrder, classified),
+      subjectOrder: inferSubjectOrder(subjectAttemptOrder),
+      timePerSubjectSec: timeBySubject,
+      optimalTimeSec: {},
+      timeDeviationPct: {},
+      strategyScore: 100, // Neutral score
+      insight: "Test attempt was too brief to analyze subject pacing.",
+      recommendation: "Spend more time on questions in your next attempt to get detailed pacing insights.",
+      overtimeSubjects: [],
+      undertimeSubjects: [],
+    };
+  }
+
+  const effectiveTotalSec = totalRecordedSec;
 
   // ── Step 2: Optimal time (seconds) per subject ─────────────────────────
   const optimalTimeSec: Record<string, number> = {};

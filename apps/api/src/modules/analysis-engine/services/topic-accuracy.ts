@@ -29,8 +29,9 @@ export function computeTopicAccuracy(
       partial_solve: errors.filter(e => e.classification?.type === "partial_solve").length,
     };
 
-    // A chapter is only weak if it was actually attempted, and accuracy < 50% or significantly below batch average
-    const isWeak = attempted > 0 && (accuracy < 50 || accuracy < batchAvg - 15);
+    // A chapter is only weak if it meets the minimum attempt gate (attempted >= 3)
+    // AND accuracy < 50% or significantly below batch average
+    const isWeak = attempted >= 3 && (accuracy < 50 || accuracy < batchAvg - 15);
 
     stats.push({
       chapter: group[0].question.subject, // Display Subject (e.g. Physics) as secondary subtitle
