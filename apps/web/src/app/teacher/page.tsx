@@ -22,29 +22,29 @@ export default function TeacherDashboardPage() {
   const flags = [
     {
       name: "Rohan Gupta",
-      action: "on",
-      topic: "JEE 2026",
-      avatar: "https://ui-avatars.com/api/?name=Rohan+Gupta&background=FF6A55&color=fff&size=88",
-      time: "09:00 AM",
-      issue: "Score dropped 30% since last week's Physics test. Recommending a 1-on-1 session.",
+      batch: "JEE 2026 Morning",
+      avatar: "https://ui-avatars.com/api/?name=Rohan+Gupta&background=FF6A55&color=fff&size=128",
+      metric: "-30% Score",
+      status: "Critical",
+      statusType: "red",
       highlighted: true
     },
     {
-      name: "Carnot Cycle",
-      action: "on",
-      topic: "Revision",
-      avatar: "https://ui-avatars.com/api/?name=Carnot+Cycle&background=EF9D0E&color=fff&size=88",
-      time: "Yesterday",
-      issue: "73% of NEET 2026 Droppers failed Carnot Cycle efficiency problems. Needs revision class.",
+      name: "Carnot Cycle Failure",
+      batch: "NEET 2026 Droppers",
+      avatar: "https://ui-avatars.com/api/?name=Carnot+Cycle&background=EF9D0E&color=fff&size=128",
+      metric: "73% Fail Rate",
+      status: "Revision",
+      statusType: "yellow",
       highlighted: false
     },
     {
       name: "Sneha Reddy",
-      action: "on",
-      topic: "NEET Droppers",
-      avatar: "https://ui-avatars.com/api/?name=Sneha+Reddy&background=00A656&color=fff&size=88",
-      time: "2 days ago",
-      issue: "Missed 3 consecutive batch tests.",
+      batch: "NEET Droppers",
+      avatar: "https://ui-avatars.com/api/?name=Sneha+Reddy&background=00A656&color=fff&size=128",
+      metric: "3 Missed",
+      status: "Alert",
+      statusType: "red",
       highlighted: false
     }
   ];
@@ -249,10 +249,10 @@ export default function TeacherDashboardPage() {
           {/* AI Attention Flags Card */}
           <div className="flex w-full xl:max-w-[368px] flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8, 8, 8, 0.05)] border border-s-stroke2/40 p-3 pb-6 select-none box-sizing:border-box">
             
-            {/* Comment Section (Header + List) */}
+            {/* Container (Header + Product List) */}
             <div className="flex flex-col items-start p-0 gap-3 w-full">
               
-              {/* Comment Header */}
+              {/* Header */}
               <div className="flex flex-row items-center justify-between p-2.5 px-3 gap-2 w-full h-12">
                 <h3 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
                   AI Attention Flags
@@ -262,50 +262,56 @@ export default function TeacherDashboardPage() {
                 </button>
               </div>
 
-              {/* Comment List */}
+              {/* Product List */}
               <div className="flex flex-col items-start p-0 gap-1 w-full">
                 {flags.map((flag, idx) => (
                   <div 
                     key={idx} 
-                    className={`flex flex-row items-start p-5 px-3 gap-5 w-full rounded-[20px] transition-all ${
+                    className={`flex flex-row items-center p-3 gap-8 w-full h-[88px] rounded-[20px] transition-all ${
                       flag.highlighted 
                         ? "bg-[#F9F9F9] dark:bg-b-surface1 shadow-[inset_0_0_0_3px_#FFFFFF] dark:shadow-[inset_0_0_0_3px_rgba(255,255,255,0.05)] border border-s-stroke2/20" 
                         : "bg-transparent border border-transparent"
                     }`}
                   >
-                    {/* Avatar */}
-                    <img 
-                      src={flag.avatar} 
-                      alt={flag.name}
-                      className="w-11 h-11 rounded-full shrink-0 object-cover border border-s-stroke2/20"
-                    />
+                    {/* Frame 1000002574 (Image + Title/Batch) */}
+                    <div className="flex flex-row items-center gap-5 flex-1 min-w-0 h-16">
+                      {/* Image / Icon */}
+                      <img 
+                        src={flag.avatar} 
+                        alt={flag.name}
+                        className="w-16 h-16 rounded-[12px] shrink-0 object-cover border border-s-stroke2/20"
+                      />
 
-                    {/* Content Frame */}
-                    <div className="flex flex-col items-start p-0 gap-3 flex-1 min-w-0">
-                      {/* Name, Action, Topic & Time Frame */}
-                      <div className="flex flex-col items-start p-0 gap-1 w-full">
-                        {/* Meta Line */}
-                        <div className="flex flex-row items-center p-0 gap-1 w-full flex-wrap leading-tight">
-                          <span className="font-sans font-semibold text-[16px] text-[#101010] dark:text-t-primary truncate max-w-[90px]">
-                            {flag.name.split(" ")[0]}
-                          </span>
-                          <span className="font-sans font-semibold text-[16px] text-[#727272] shrink-0">
-                            {flag.action}
-                          </span>
-                          <span className="font-sans font-semibold text-[16px] text-[#101010] dark:text-t-primary truncate max-w-[100px]">
-                            {flag.topic}
-                          </span>
-                        </div>
-                        {/* Time */}
-                        <span className="font-sans text-[12px] font-normal leading-[160%] tracking-[0.004em] text-[#7B7B7B]">
-                          {flag.time}
+                      {/* Title & Batch */}
+                      <div className="flex flex-col items-start justify-center flex-1 min-w-0 h-12">
+                        <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary truncate w-full">
+                          {flag.name}
+                        </span>
+                        <span className="font-sans text-[12px] font-normal leading-[160%] tracking-[0.004em] text-[#7B7B7B] truncate w-full">
+                          {flag.batch}
                         </span>
                       </div>
+                    </div>
 
-                      {/* Issue Body */}
-                      <p className="font-sans text-[16px] font-normal leading-[150%] tracking-[0.005em] text-[#101010] dark:text-t-secondary break-words w-full">
-                        {flag.issue}
-                      </p>
+                    {/* Frame 1000002607 (Price/Metric + Status Badge) */}
+                    <div className="flex flex-col justify-center items-end p-0 gap-1 shrink-0 w-24">
+                      {/* Metric */}
+                      <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-right text-[#101010] dark:text-t-primary truncate w-full">
+                        {flag.metric}
+                      </span>
+                      
+                      {/* Status badge */}
+                      <div className={`box-sizing-border-box flex flex-row justify-center items-center px-2 py-0.5 gap-2 h-6 rounded-[8px] ${
+                        flag.statusType === "green"
+                          ? "bg-[#00A656]/5 border border-[#00A656]/15 text-[#00A656]"
+                          : flag.statusType === "yellow"
+                            ? "bg-[#EF9D0E]/5 border border-[#EF9D0E]/15 text-[#EF9D0E]"
+                            : "bg-[#FF6A55]/5 border border-[#FF6A55]/15 text-[#FF6A55]"
+                      }`}>
+                        <span className="font-sans text-[12px] font-normal leading-[160%] tracking-[0.004em]">
+                          {flag.status}
+                        </span>
+                      </div>
                     </div>
 
                   </div>
