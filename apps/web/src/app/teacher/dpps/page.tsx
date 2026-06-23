@@ -214,23 +214,17 @@ export default function TeacherDPPsPage() {
                       <span className="text-body-2 font-bold text-[#101010] dark:text-t-primary truncate">{dpp.title}</span>
                       <span className={`label ${meta.badgeClass}`}>{meta.label}</span>
                     </div>
-                    <div className="flex items-center gap-4 text-caption text-[#7B7B7B] flex-wrap mt-1">
+                    <div className="flex items-center gap-2 text-caption text-[#7B7B7B] flex-wrap mt-1">
                       <span className="flex items-center gap-1">
-                        <RiBookOpenLine size={14} className="text-t-secondary/70" />
-                        {dpp.subject} · {dpp.chapter}
+                        <RiBookOpenLine size={14} className="text-[#7B7B7B] shrink-0" />
+                        <span>{dpp.subject} · {dpp.chapter}</span>
                       </span>
-                      <span className="flex items-center gap-1">
-                        <RiFileListLine size={14} className="text-t-secondary/70" />
-                        {dpp.totalQuestions} questions
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <RiTeamLine size={14} className="text-t-secondary/70" />
-                        {dpp.batchName}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <RiCalendarLine size={14} className="text-t-secondary/70" />
-                        Due: {dpp.dueDate}
-                      </span>
+                      <span>·</span>
+                      <span>{dpp.totalQuestions} questions</span>
+                      <span>·</span>
+                      <span>{dpp.batchName}</span>
+                      <span>·</span>
+                      <span>Due: {dpp.dueDate}</span>
                     </div>
                   </div>
                 </div>
