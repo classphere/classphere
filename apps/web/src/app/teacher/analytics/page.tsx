@@ -162,10 +162,10 @@ export default function TeacherAnalyticsPage() {
         </div>
 
         {/* Weak Topics + Trap Questions */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
 
           {/* Weak Topics */}
-          <div className="group relative lg:col-span-2 flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
+          <div className="group relative flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-col sm:flex-row justify-between sm:items-center gap-3 px-3 pt-3">
               <div>
@@ -233,7 +233,7 @@ export default function TeacherAnalyticsPage() {
           </div>
 
           {/* Trap Questions */}
-          <div className="group relative lg:col-span-1 flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
+          <div className="group relative flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
             <div className="box-hover" />
             <div className="px-3 pt-3">
               <h2 className="relative z-10 font-sans font-semibold text-[20px] leading-[145%] text-[#101010] dark:text-t-primary">Common Traps</h2>
