@@ -11,14 +11,16 @@ import Link from "next/link";
 export default function Navbar({
   title,
   subtitle,
-  breadcrumbs
+  breadcrumbs,
+  className
 }: {
   title?: string;
   subtitle?: string;
   breadcrumbs?: string;
+  className?: string;
 }) {
   return (
-    <header className="sticky top-0 z-30 w-full max-w-screen-2xl mx-auto px-4 md:px-6 pt-6 bg-transparent select-none">
+    <header className={`sticky top-0 z-30 w-full mx-auto px-4 md:px-6 pt-6 bg-transparent select-none ${className || "max-w-screen-2xl"}`}>
       
       {/* Floating Rounded Card Navbar */}
       <div className="w-full h-20 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-[32px] px-8 flex items-center justify-between shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)]">
