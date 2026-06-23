@@ -5,19 +5,13 @@ import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import {
   RiSearchLine,
-  RiFilterLine,
   RiBookmarkLine,
   RiBookmarkFill,
   RiTimeLine,
   RiQuestionLine,
-  RiArrowRightLine,
-  RiCheckboxCircleLine,
-  RiFlashlightFill,
-  RiMicroscopeLine,
-  RiFlaskLine,
-  RiFireLine,
   RiBarChartBoxLine,
   RiLoader4Line,
+  RiCheckboxCircleLine,
 } from "@remixicon/react";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -42,24 +36,6 @@ const EXAMS = ["All", "JEE Main", "JEE Advanced", "NEET-UG"];
 const YEARS = ["All", "2024", "2023", "2022", "2021", "2020"];
 const DIFFICULTIES = ["All", "easy", "medium", "hard"];
 
-const difficultyMeta: Record<string, { label: string; color: string; bg: string }> = {
-  easy:   { label: "Easy",   color: "var(--success-60)", bg: "var(--success-10)" },
-  medium: { label: "Medium", color: "var(--warning-60)", bg: "var(--warning-10)" },
-  hard:   { label: "Hard",   color: "var(--danger-50)",  bg: "var(--danger-10)"  },
-};
-
-const examIcons: Record<string, React.ReactNode> = {
-  "JEE Main":     <RiFlaskLine size={20} />,
-  "JEE Advanced": <RiFlashlightFill size={20} />,
-  "NEET-UG":      <RiMicroscopeLine size={20} />,
-};
-
-const examColors: Record<string, string> = {
-  "JEE Main":     "var(--p-50)",
-  "JEE Advanced": "var(--s-50)",
-  "NEET-UG":      "#10b981",
-};
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function PYQsPage() {
@@ -75,7 +51,7 @@ export default function PYQsPage() {
   const [bookmarks, setBookmarks]         = useState<Set<string>>(new Set());
   const [showBookmarked, setShowBookmarked] = useState(false);
 
-  // ── Fetch paper list from backend ──
+  // Fetch paper list from backend
   useEffect(() => {
     setLoading(true);
     fetch(`${API_BASE}/pyqs`)
@@ -134,96 +110,152 @@ export default function PYQsPage() {
         breadcrumbs="Dashboard > PYQs"
       />
 
-      <main style={{ padding: "0 32px 40px 32px", maxWidth: 1400, margin: "0 auto", width: "100%" }}>
+      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
 
-        {/* ── Stats Strip ── */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 28 }}>
-          {[
-            { label: "Total Papers", value: papers.length,    icon: <RiBarChartBoxLine size={18} />, color: "var(--p-50)" },
-            { label: "Attempted",    value: attemptedCount,   icon: <RiCheckboxCircleLine size={18} />, color: "var(--s-50)" },
-            { label: "Bookmarked",   value: bookmarkedCount,  icon: <RiBookmarkFill size={18} />, color: "var(--warning-50)" },
-          ].map((stat) => (
-            <div key={stat.label} className="rayum-card" style={{ padding: "20px 24px", display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ width: 44, height: 44, borderRadius: "var(--r-md)", background: `${stat.color}18`, display: "flex", alignItems: "center", justifyContent: "center", color: stat.color, flexShrink: 0 }}>
-                {stat.icon}
+        {/* Stats Row Wrapper */}
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-8 select-none">
+          
+          {/* Metric 1: Total Papers */}
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-row items-center gap-3 w-full mb-1">
+              <span className="text-[#101010] dark:text-t-primary"><RiBarChartBoxLine size={20} /></span>
+              <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                Total Papers
+              </span>
+            </div>
+            <div className="flex flex-row items-center gap-4 w-full mt-1">
+              <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
+                {papers.length}
               </div>
-              <div>
-                <div style={{ fontSize: 28, fontWeight: 800, letterSpacing: "-0.02em", color: "var(--fg-default)", lineHeight: 1 }}>{stat.value}</div>
-                <div className="t-body-sm" style={{ marginTop: 4 }}>{stat.label}</div>
+              <div className="flex flex-col items-start gap-0.5">
+                <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-s-stroke2/20 bg-transparent rounded-lg">
+                  <span className="text-[#7B7B7B] text-[12px] font-semibold leading-none">Available</span>
+                </div>
+                <span className="text-[12px] font-sans text-[#7B7B7B]">
+                  in database
+                </span>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Metric 2: Attempted */}
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-row items-center gap-3 w-full mb-1">
+              <span className="text-[#101010] dark:text-t-primary"><RiCheckboxCircleLine size={20} /></span>
+              <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                Attempted
+              </span>
+            </div>
+            <div className="flex flex-row items-center gap-4 w-full mt-1">
+              <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
+                {attemptedCount}
+              </div>
+              <div className="flex flex-col items-start gap-0.5">
+                <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-s-stroke2/20 bg-transparent rounded-lg">
+                  <span className="text-[#7B7B7B] text-[12px] font-semibold leading-none">Done</span>
+                </div>
+                <span className="text-[12px] font-sans text-[#7B7B7B]">
+                  completed
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Metric 3: Saved */}
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-row items-center gap-3 w-full mb-1">
+              <span className="text-[#101010] dark:text-t-primary"><RiBookmarkFill size={20} /></span>
+              <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                Bookmarked
+              </span>
+            </div>
+            <div className="flex flex-row items-center gap-4 w-full mt-1">
+              <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
+                {bookmarkedCount}
+              </div>
+              <div className="flex flex-col items-start gap-0.5">
+                <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-s-stroke2/20 bg-transparent rounded-lg">
+                  <span className="text-[#7B7B7B] text-[12px] font-semibold leading-none">Saved</span>
+                </div>
+                <span className="text-[12px] font-sans text-[#7B7B7B]">
+                  for practice
+                </span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        {/* ── Filters Row ── */}
-        <div className="rayum-card" style={{ padding: "20px 24px", marginBottom: 24, display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
-
-          {/* Search */}
-          <div style={{ position: "relative", flex: "1 1 220px", minWidth: 200 }}>
-            <span style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", color: "var(--fg-muted)", display: "flex" }}>
-              <RiSearchLine size={16} />
-            </span>
+        {/* Filters Row */}
+        <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-6 p-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
+          
+          {/* Search Box */}
+          <div className="relative flex-1 min-w-[240px]">
+            <RiSearchLine size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#727272] dark:text-t-secondary" />
             <input
               id="pyq-search"
               type="text"
               placeholder="Search by exam, year, shift…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="input"
-              style={{ paddingLeft: 36, width: "100%", fontSize: 14 }}
+              className="w-full h-11 pl-11 pr-4 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-sm font-sans tracking-[0.0125em] text-[#101010] dark:text-t-primary placeholder-[#7B7B7B] focus:border-[#727272] outline-none transition-all"
             />
           </div>
 
-          <FilterGroup label="Exam"       options={EXAMS}        active={activeExam} onChange={setActiveExam} />
-          <FilterGroup label="Year"       options={YEARS}        active={activeYear} onChange={setActiveYear} />
-          <FilterGroup label="Difficulty" options={DIFFICULTIES} active={activeDiff} onChange={setActiveDiff} />
+          <div className="flex flex-row flex-wrap items-center gap-6">
+            <FilterGroup label="Exam"       options={EXAMS}        active={activeExam} onChange={setActiveExam} />
+            <FilterGroup label="Year"       options={YEARS}        active={activeYear} onChange={setActiveYear} />
+            <FilterGroup label="Difficulty" options={DIFFICULTIES} active={activeDiff} onChange={setActiveDiff} />
 
-          {/* Bookmark toggle */}
-          <button
-            id="pyq-bookmarks-toggle"
-            onClick={() => setShowBookmarked((v) => !v)}
-            style={{
-              display: "flex", alignItems: "center", gap: 6,
-              padding: "8px 14px", borderRadius: "var(--r-md)", border: "1px solid var(--border-default)",
-              background: showBookmarked ? "var(--warning-10)" : "transparent",
-              color: showBookmarked ? "var(--warning-60)" : "var(--fg-muted)",
-              fontWeight: 600, fontSize: 13, cursor: "pointer", transition: "all 0.15s", whiteSpace: "nowrap",
-            }}
-          >
-            {showBookmarked ? <RiBookmarkFill size={15} /> : <RiBookmarkLine size={15} />}
-            Saved
-          </button>
+            {/* Saved Toggle Button */}
+            <button
+              id="pyq-bookmarks-toggle"
+              onClick={() => setShowBookmarked((v) => !v)}
+              className={`flex flex-row items-center gap-1.5 px-4.5 h-11 rounded-full border text-sm font-sans font-semibold transition-all active:scale-95 cursor-pointer ${
+                showBookmarked 
+                  ? "border-[#101010] bg-[#101010] text-[#FDFDFD] dark:border-t-primary dark:bg-t-primary dark:text-b-surface1" 
+                  : "border-[#E2E2E2] dark:border-s-stroke2 bg-transparent text-[#727272] hover:border-[#727272] hover:text-[#101010]"
+              }`}
+            >
+              {showBookmarked ? <RiBookmarkFill size={15} /> : <RiBookmarkLine size={15} />}
+              <span>Saved Only</span>
+            </button>
+          </div>
+
         </div>
 
-        {/* ── Results Count ── */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-          <span className="t-body-sm" style={{ color: "var(--fg-muted)" }}>
-            Showing <strong style={{ color: "var(--fg-default)" }}>{filtered.length}</strong> papers
+        {/* Results Metadata Info */}
+        <div className="flex justify-between items-center mb-6 px-1 select-none">
+          <span className="text-xs font-sans text-[#7B7B7B] uppercase tracking-wider">
+            Showing <strong className="text-[#101010] dark:text-t-primary">{filtered.length}</strong> papers
           </span>
-          <span className="t-body-sm" style={{ color: "var(--fg-muted)" }}>
+          <span className="text-xs font-sans text-[#7B7B7B] uppercase tracking-wider">
             +4/−1 marking · NTA pattern
           </span>
         </div>
 
-        {/* ── Loading / Error / Cards ── */}
+        {/* Grid and States */}
         {loading ? (
-          <div className="rayum-card" style={{ padding: 64, textAlign: "center", color: "var(--fg-muted)" }}>
-            <RiLoader4Line size={40} style={{ animation: "spin 1s linear infinite", margin: "0 auto 16px" }} />
-            <p>Loading papers from backend…</p>
+          <div className="group relative card text-center py-20 text-t-secondary rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
+            <div className="box-hover" />
+            <RiLoader4Line size={40} className="animate-spin mx-auto mb-4 text-[#7B7B7B] relative z-10" />
+            <p className="font-semibold text-body-2 relative z-10">Loading papers from database…</p>
           </div>
         ) : error ? (
-          <div className="rayum-card" style={{ padding: 48, textAlign: "center", color: "var(--danger-50)" }}>
-            <div style={{ fontSize: 40, marginBottom: 12 }}>⚠️</div>
-            <p style={{ fontWeight: 600 }}>{error}</p>
+          <div className="group relative card text-center py-20 text-[#FF6A55] rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
+            <div className="box-hover" />
+            <div className="text-4xl mb-4 relative z-10">⚠️</div>
+            <p className="font-semibold text-body-2 relative z-10">{error}</p>
           </div>
         ) : filtered.length === 0 ? (
-          <div className="rayum-card" style={{ padding: 64, textAlign: "center" }}>
-            <div style={{ fontSize: 48, marginBottom: 16 }}>📋</div>
-            <h3 className="section-title" style={{ marginBottom: 8 }}>No papers found</h3>
-            <p className="t-body-sm">Try adjusting your filters or search term.</p>
+          <div className="group relative card text-center py-20 text-t-secondary rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
+            <div className="box-hover" />
+            <div className="text-4xl mb-4 relative z-10">📋</div>
+            <h3 className="font-semibold text-body-2 text-t-primary mb-1 relative z-10">No papers found</h3>
+            <p className="text-caption text-t-secondary relative z-10">Try adjusting your filters or search term.</p>
           </div>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: 16 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((paper) => (
               <PaperCard
                 key={paper.id}
@@ -237,10 +269,6 @@ export default function PYQsPage() {
         )}
 
       </main>
-
-      <style>{`
-        @keyframes spin { to { transform: rotate(360deg); } }
-      `}</style>
     </>
   );
 }
@@ -253,28 +281,23 @@ function FilterGroup({
   label: string; options: string[]; active: string; onChange: (v: string) => void;
 }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
-      <span className="t-label" style={{ marginRight: 4, color: "var(--fg-muted)" }}>{label}:</span>
-      {options.map((opt) => (
-        <button
-          key={opt}
-          onClick={() => onChange(opt)}
-          style={{
-            padding: "5px 12px",
-            borderRadius: "var(--r-full)",
-            border: active === opt ? "1.5px solid var(--p-50)" : "1px solid var(--border-default)",
-            background: active === opt ? "var(--p-10)" : "transparent",
-            color: active === opt ? "var(--p-60)" : "var(--fg-muted)",
-            fontWeight: active === opt ? 700 : 500,
-            fontSize: 12,
-            cursor: "pointer",
-            transition: "all 0.15s",
-            textTransform: opt === "All" ? "none" : "capitalize",
-          }}
-        >
-          {opt}
-        </button>
-      ))}
+    <div className="flex flex-row items-center gap-2 select-none">
+      <span className="text-xs font-sans font-semibold uppercase tracking-wider text-[#7B7B7B] mr-1">{label}:</span>
+      <div className="flex flex-row items-center gap-1.5">
+        {options.map((opt) => (
+          <button
+            key={opt}
+            onClick={() => onChange(opt)}
+            className={`px-3.5 h-8 rounded-full border text-[11px] font-sans font-semibold transition-all active:scale-95 cursor-pointer uppercase tracking-wider ${
+              active === opt 
+                ? "border-[#101010] bg-[#101010] text-[#FDFDFD] dark:border-t-primary dark:bg-t-primary dark:text-b-surface1" 
+                : "border-[#E2E2E2] dark:border-s-stroke2 bg-transparent text-[#727272] hover:border-[#727272] hover:text-[#101010]"
+            }`}
+          >
+            {opt === "All" ? "All" : opt}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
@@ -287,82 +310,74 @@ function PaperCard({
   onBookmark: (id: string, e: React.MouseEvent) => void;
   onStart: () => void;
 }) {
-  const accentColor = examColors[paper.exam] ?? "var(--p-50)";
-  const diff        = difficultyMeta[paper.difficulty];
-
   return (
-    <div
-      className="rayum-card"
-      style={{ padding: 24, cursor: "default", transition: "box-shadow 0.2s, transform 0.2s", display: "flex", flexDirection: "column", gap: 0 }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow = "var(--sh-300)";
-        (e.currentTarget as HTMLDivElement).style.transform = "translateY(-2px)";
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow = "";
-        (e.currentTarget as HTMLDivElement).style.transform = "";
-      }}
+    <div 
+      className="flex min-h-[14rem] flex-col justify-between p-6 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[28px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] select-none hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.08)] transition-all duration-200"
     >
-      {/* Header row */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 40, height: 40, borderRadius: "var(--r-md)", background: `${accentColor}18`, display: "flex", alignItems: "center", justifyContent: "center", color: accentColor, flexShrink: 0 }}>
-            {examIcons[paper.exam]}
+      <div>
+        {/* Header Subject/Exam Row */}
+        <div className="flex justify-between items-start mb-3">
+          <div className="min-w-0 flex-1">
+            <div className="truncate font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+              {paper.exam}
+            </div>
+            <div className="text-[12px] font-sans text-[#7B7B7B] mt-0.5">
+              {paper.year} · {paper.shift}
+            </div>
           </div>
-          <div>
-            <div style={{ fontWeight: 700, fontSize: 14, color: "var(--fg-default)", lineHeight: 1.3 }}>{paper.exam}</div>
-            <div className="t-body-sm" style={{ marginTop: 2, fontWeight: 600 }}>{paper.year} · {paper.shift}</div>
-          </div>
+          <button
+            id={`bookmark-${paper.id}`}
+            onClick={(e) => onBookmark(paper.id, e)}
+            className={`transition-colors cursor-pointer p-1 -mr-1 ${
+              isBookmarked ? "text-[#FF6A55]" : "text-[#727272] hover:text-[#FF6A55]"
+            }`}
+            title={isBookmarked ? "Remove bookmark" : "Bookmark"}
+          >
+            {isBookmarked ? <RiBookmarkFill size={18} /> : <RiBookmarkLine size={18} />}
+          </button>
         </div>
-        <button
-          id={`bookmark-${paper.id}`}
-          onClick={(e) => onBookmark(paper.id, e)}
-          style={{ background: "none", border: "none", cursor: "pointer", padding: 4, color: isBookmarked ? "var(--warning-50)" : "var(--fg-muted)", display: "flex", alignItems: "center", transition: "color 0.15s" }}
-          title={isBookmarked ? "Remove bookmark" : "Bookmark"}
+
+        {/* Subjects list as simple gray badges */}
+        <div className="flex flex-wrap gap-1.5 mt-3">
+          {paper.subjects.map((s) => (
+            <span 
+              key={s} 
+              className="text-[10px] font-sans font-semibold px-2 py-0.5 border border-s-stroke2/20 bg-[#F9F9F9] dark:bg-b-surface1/60 text-[#7B7B7B] rounded-lg uppercase tracking-wider"
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+
+        {/* Meta specs row */}
+        <div className="flex flex-row flex-wrap items-center gap-4 mt-5 text-[12px] font-sans text-[#7B7B7B]">
+          <span className="flex items-center gap-1.5">
+            <RiQuestionLine size={14} />
+            <span>{paper.questions} Questions</span>
+          </span>
+          <span className="flex items-center gap-1.5">
+            <RiTimeLine size={14} />
+            <span>{paper.duration} Min</span>
+          </span>
+          <span className="flex items-center gap-1.5">
+            <RiBarChartBoxLine size={14} />
+            <span>{paper.marks} Marks</span>
+          </span>
+        </div>
+      </div>
+
+      {/* Footer row with simple difficulty badge and action button */}
+      <div className="flex justify-between items-center mt-5 pt-4 border-t border-s-stroke2/30">
+        <span className="px-2 py-0.5 rounded-lg border border-s-stroke2/20 bg-transparent text-[#7B7B7B] text-[10px] font-semibold uppercase tracking-wider">
+          {paper.difficulty}
+        </span>
+        <button 
+          onClick={onStart}
+          className="flex flex-row justify-center items-center h-8 px-4 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-xl transition-all active:scale-95 shadow-widget cursor-pointer"
         >
-          {isBookmarked ? <RiBookmarkFill size={18} /> : <RiBookmarkLine size={18} />}
+          Start Paper
         </button>
       </div>
-
-      {/* Subjects */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 20 }}>
-        {paper.subjects.map((s) => (
-          <span key={s} style={{ fontSize: 11, fontWeight: 600, padding: "3px 8px", borderRadius: "var(--r-full)", background: "var(--n-10)", color: "var(--fg-muted)", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-            {s}
-          </span>
-        ))}
-      </div>
-
-      {/* Meta chips */}
-      <div style={{ display: "flex", gap: 16, marginBottom: 20, flexWrap: "wrap" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "var(--fg-muted)", fontWeight: 500 }}>
-          <RiQuestionLine size={14} /> {paper.questions} Questions
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "var(--fg-muted)", fontWeight: 500 }}>
-          <RiTimeLine size={14} /> {paper.duration} min
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "var(--fg-muted)", fontWeight: 500 }}>
-          <RiBarChartBoxLine size={14} /> {paper.marks} marks
-        </div>
-      </div>
-
-      {/* Difficulty */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
-        <span style={{ fontSize: 12, fontWeight: 700, padding: "4px 10px", borderRadius: "var(--r-full)", color: diff.color, background: diff.bg, textTransform: "capitalize" }}>
-          {diff.label}
-        </span>
-        <span style={{ fontSize: 12, color: "var(--fg-muted)", fontWeight: 500 }}>90 questions · +4/−1</span>
-      </div>
-
-      {/* CTA */}
-      <button
-        id={`start-pyq-${paper.id}`}
-        onClick={onStart}
-        className="btn btn-primary"
-        style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginTop: "auto" }}
-      >
-        <RiArrowRightLine size={16} /> Start Paper
-      </button>
     </div>
   );
 }
