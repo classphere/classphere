@@ -107,7 +107,7 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="hidden md:flex sticky top-0 z-40 h-screen w-[300px] shrink-0 flex-col justify-between border-r border-s-stroke2/40 bg-b-surface1 px-6 py-8 select-none"
+      className="hidden md:flex sticky top-0 z-40 h-screen w-[300px] shrink-0 flex-col border-r border-s-stroke2/40 bg-b-surface1 px-6 pt-8 pb-12 select-none overflow-y-auto scrollbar-none"
     >
       {/* ── Top Menu Container ── */}
       <div className="flex flex-col gap-6 w-full">
@@ -183,9 +183,9 @@ export default function Sidebar() {
       </div>
 
       {/* ── Bottom Section (Switcher + Mode Container) ── */}
-      <div className="mt-auto flex flex-col items-center gap-6 w-full pt-6 border-t border-s-stroke2/20">
+      <div className="mt-auto flex flex-col gap-5 w-full pt-6 border-t border-s-stroke2/20 shrink-0">
         {/* Demo Role Switcher */}
-        <div className="w-full px-1">
+        <div className="w-full">
           <select
             className="input h-10 w-full rounded-xl border border-s-stroke2 bg-b-surface2 px-3.5 py-1.5 text-caption font-semibold"
             value={isTeacher ? "/teacher" : isInstitute ? "/institute" : isSuperAdmin ? "/superadmin" : "/"}
@@ -198,19 +198,18 @@ export default function Sidebar() {
           </select>
         </div>
 
-        {/* Mode Container: Width 48px, Height 148px, Gap 12px, centered */}
-        <div className="flex flex-col items-center gap-3 w-12 h-[148px]">
+        {/* Mode Container: Horizontal row of Mail Button + Theme Capsule */}
+        <div className="flex flex-row items-center gap-3 w-full">
           {/* Message Mail Button (Icon btt): 48px x 48px, rounded-full */}
-          <button className="flex size-12 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all active:scale-95 shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)] cursor-pointer">
+          <button className="flex size-12 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all active:scale-95 shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)] cursor-pointer shrink-0">
             <RiMailLine size={20} />
           </button>
 
-          {/* Theme Toggle Capsule: 48px x 88px, rounded-full */}
-          <div className="flex flex-col items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-full p-1.5 h-[88px] w-12 relative select-none shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)]">
-            {/* Sun / Moon vertical layout */}
+          {/* Theme Toggle Capsule: Horizontal pill, rounded-full, 48px height */}
+          <div className="flex flex-row items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-full p-1 h-12 flex-1 relative select-none shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)]">
             <button
               onClick={() => toggleTheme("light")}
-              className={`flex size-9 items-center justify-center rounded-full transition-all cursor-pointer ${
+              className={`flex-1 flex items-center justify-center gap-1.5 h-10 rounded-full transition-all cursor-pointer text-caption font-semibold ${
                 theme === "light"
                   ? "bg-[#F1F1F1] dark:bg-b-surface1 text-[#101010] dark:text-t-primary font-bold shadow-widget"
                   : "text-[#727272] hover:text-[#101010]"
@@ -218,10 +217,11 @@ export default function Sidebar() {
               title="Light Mode"
             >
               <RiSunLine size={16} />
+              <span>Light</span>
             </button>
             <button
               onClick={() => toggleTheme("dark")}
-              className={`flex size-9 items-center justify-center rounded-full transition-all cursor-pointer ${
+              className={`flex-1 flex items-center justify-center gap-1.5 h-10 rounded-full transition-all cursor-pointer text-caption font-semibold ${
                 theme === "dark"
                   ? "bg-[#F1F1F1] dark:bg-b-surface1 text-[#101010] dark:text-t-primary font-bold shadow-widget"
                   : "text-[#727272] hover:text-[#101010] dark:hover:text-t-primary"
@@ -229,6 +229,7 @@ export default function Sidebar() {
               title="Dark Mode"
             >
               <RiMoonLine size={16} />
+              <span>Dark</span>
             </button>
           </div>
         </div>
