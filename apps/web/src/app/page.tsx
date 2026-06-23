@@ -388,7 +388,7 @@ export default function Dashboard() {
                     <span className="font-sans text-[60px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary">
                       {activeBar?.score}
                     </span>
-                    <span className="font-sans text-[36px] font-medium text-[#7B7B7B] pb-1.5">
+                    <span className="font-sans text-[36px] font-medium text-[#7B7B7B]">
                       / {maxMarks}
                     </span>
                   </div>
