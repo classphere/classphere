@@ -369,37 +369,20 @@ export default function TeacherDashboardPage() {
                       <span className="text-[12px] font-sans font-semibold text-[#7B7B7B] uppercase tracking-wider">
                         {dpp.subject}
                       </span>
-                      <div className={`flex flex-row justify-center items-center px-1.5 py-0.5 border rounded-lg ${
-                        isComplete 
-                          ? "border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] text-[#00A656]" 
-                          : isUpcoming 
-                            ? "border-[rgba(123,123,123,0.15)] bg-[rgba(123,123,123,0.05)] text-[#7B7B7B]" 
-                            : "border-[rgba(239,157,14,0.15)] bg-[rgba(239,157,14,0.05)] text-[#EF9D0E]"
-                      }`}>
-                        <span className="text-[10px] font-bold leading-none">
-                          {isComplete ? "Done" : isUpcoming ? "Upcoming" : "Active"}
-                        </span>
-                      </div>
+                      <span className="text-[12px] font-sans font-medium text-[#7B7B7B]">
+                        {isComplete ? "Completed" : isUpcoming ? "Upcoming" : "Pending"}
+                      </span>
                     </div>
                     
                     <div className="truncate font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
                       {dpp.title}
                     </div>
                     <div className="text-[12px] font-sans text-[#7B7B7B] mt-1">
-                      {dpp.batchName}
+                      {dpp.batchName} · {dpp.completedCount}/{dpp.totalStudents} Submitted ({completion}%)
                     </div>
-                  </div>
 
-                  <div className="mt-4 pt-3 border-t border-s-stroke2/30">
-                    <div className="flex justify-between items-center text-[12px] font-sans mb-2">
-                      <span className="text-[#7B7B7B]">
-                        Due: {dpp.dueDate}
-                      </span>
-                      <span className="font-bold text-[#101010] dark:text-t-primary">
-                        {dpp.completedCount}/{dpp.totalStudents}
-                      </span>
-                    </div>
-                    <div className="w-full h-1.5 bg-[rgba(123,123,123,0.15)] dark:bg-[rgba(229,229,229,0.08)] rounded-full overflow-hidden">
+                    {/* Progress Bar in between */}
+                    <div className="w-full h-1 bg-[rgba(123,123,123,0.15)] dark:bg-[rgba(229,229,229,0.08)] rounded-full overflow-hidden mt-3">
                       <div
                         className={`h-full rounded-full transition-all ${
                           isComplete 
@@ -411,6 +394,15 @@ export default function TeacherDashboardPage() {
                         style={{ width: `${completion}%` }}
                       />
                     </div>
+                  </div>
+
+                  <div className="flex justify-between items-center mt-4 pt-3 border-t border-s-stroke2/30">
+                    <span className="text-[12px] font-sans font-semibold text-[#7B7B7B]">
+                      Due: {dpp.dueDate}
+                    </span>
+                    <button className="flex flex-row justify-center items-center h-8 px-4.5 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-full transition-all active:scale-95 shadow-widget">
+                      {isComplete ? "Reports" : isUpcoming ? "Edit" : "Stats"}
+                    </button>
                   </div>
                 </div>
               );
