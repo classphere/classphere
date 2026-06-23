@@ -277,7 +277,7 @@ export default function StudentChatPage() {
 
       <Navbar title="Ask a Doubt" subtitle="Discuss test questions, clear doubts, and collaborate with classmates." breadcrumbs="Dashboard > Doubts" />
       
-      <main className="mx-auto w-full max-w-screen-2xl px-4 pt-6 md:px-6 flex justify-center bg-transparent select-none">
+      <main className="mx-auto w-full max-w-screen-2xl px-4 pt-12 md:px-6 flex justify-center bg-transparent select-none">
         
         {/* Main Figma Dashboard overview card container (Width: 1068px, Expanded Height: 780px to fit Stats + Chat Workspace) */}
         <div className="w-[1068px] h-[780px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-[32px] p-3 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] flex flex-col gap-4 overflow-hidden relative">
