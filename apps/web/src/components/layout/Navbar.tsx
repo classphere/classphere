@@ -23,7 +23,7 @@ export default function Navbar({
   const [searchVal, setSearchVal] = useState("");
 
   return (
-    <header className="sticky top-0 z-30 w-full bg-[#FDFDFD]/80 dark:bg-b-surface2/80 backdrop-blur-md border-b border-s-stroke2/40 select-none">
+    <header className="sticky top-0 z-30 w-full bg-[#F9F9F9] dark:bg-b-surface1 border-none select-none">
       <div className="mx-auto w-full max-w-screen-2xl px-4 py-3.5 md:px-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
         
         {/* Title & Breadcrumbs */}
