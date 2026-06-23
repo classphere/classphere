@@ -145,10 +145,10 @@ export default function TeacherDashboardPage() {
         </div>
 
         {/* Main Content Grid — Batches (left) + AI Flags (right) */}
-        <div className="mb-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px] items-start">
+        <div className="mb-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px]">
 
           {/* Batches Card */}
-          <div className="group relative flex min-w-0 flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
+          <div className="group relative flex min-w-0 flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none h-full">
             <div className="box-hover" />
 
             {/* Header */}
@@ -163,7 +163,7 @@ export default function TeacherDashboardPage() {
             </div>
 
             {/* Nested grey DPP-style list */}
-            <div className="relative z-10 flex flex-col p-2 gap-2.5 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+            <div className="relative z-10 flex flex-col flex-1 p-2 gap-3 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
               {mockBatches.map((batch, i) => {
                 const iconMeta = [
                   { iconContainerClass: "bg-[#2A85FF]/10 border border-[#2A85FF]/20 text-[#2A85FF]" },
