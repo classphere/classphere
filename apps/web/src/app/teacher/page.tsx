@@ -148,84 +148,83 @@ export default function TeacherDashboardPage() {
         <div className="mb-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px]">
 
           {/* Batches Card */}
-          <div className="group relative flex min-w-0 flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
+          <div className="group relative flex min-w-0 flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
             <div className="box-hover" />
 
             {/* Header */}
-            <div className="relative z-10 flex justify-between items-center px-3 pt-3">
-              <div>
-                <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-[#101010] dark:text-t-primary">Your Active Batches</h2>
-                <p className="font-sans text-[12px] font-medium text-[#7B7B7B] tracking-[0.004em] mt-0.5">{mockBatches.length} batches · {mockBatches.reduce((s, b) => s + b.studentsCount, 0)} students total</p>
-              </div>
-              <button className="h-9 px-4 rounded-xl text-xs font-semibold border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 text-[#727272] dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer">
+            <div className="relative z-10 flex justify-between items-center mb-6">
+              <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-[#101010] dark:text-t-primary">Your Active Batches</h2>
+              <Link
+                href="/teacher/analytics"
+                className="h-9 px-4 rounded-xl text-xs font-semibold border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 text-[#727272] hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
+              >
                 View All
-              </button>
+              </Link>
             </div>
 
-            {/* Batch List */}
-            <div className="relative z-10 flex flex-col gap-1 px-3">
+            {/* Nested grey DPP-style list */}
+            <div className="relative z-10 flex flex-col p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
               {mockBatches.map((batch, i) => {
-                const colors = [
-                  { bg: "bg-[#2A85FF]/10", border: "border-[#2A85FF]/20", text: "text-[#2A85FF]" },
-                  { bg: "bg-[#00A656]/10", border: "border-[#00A656]/20", text: "text-[#00A656]" },
-                  { bg: "bg-[#EF9D0E]/10", border: "border-[#EF9D0E]/20", text: "text-[#EF9D0E]" },
-                ];
-                const c = colors[i % colors.length];
+                const iconMeta = [
+                  { iconContainerClass: "bg-[#2A85FF]/10 border border-[#2A85FF]/20 text-[#2A85FF]" },
+                  { iconContainerClass: "bg-[#00A656]/10 border border-[#00A656]/20 text-[#00A656]" },
+                  { iconContainerClass: "bg-[#EF9D0E]/10 border border-[#EF9D0E]/20 text-[#EF9D0E]" },
+                ][i % 3];
+
                 return (
                   <div
                     key={batch.id}
-                    className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/40 border border-transparent hover:border-[#E2E2E2] dark:hover:border-s-stroke2/30 rounded-[20px] transition-all h-[88px]"
+                    className="group relative card flex flex-col md:flex-row min-w-0 md:items-center justify-between gap-5 overflow-hidden bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 p-5 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
                   >
-                    {/* Left — icon + batch name + exam + students */}
-                    <div className="flex flex-row items-center gap-5 flex-1 min-w-0">
-                      <div className={`size-16 rounded-[12px] flex items-center justify-center ${c.bg} border ${c.border} ${c.text} shrink-0`}>
-                        <RiTeamLine size={24} />
+                    <div className="box-hover" />
+
+                    {/* Left — icon + name + metadata */}
+                    <div className="flex items-center gap-4 flex-1 min-w-0">
+                      <div className={`relative z-10 size-11 rounded-xl flex items-center justify-center shrink-0 ${iconMeta.iconContainerClass}`}>
+                        <RiTeamLine size={20} />
                       </div>
-                      <div className="flex flex-col justify-center min-w-0 flex-1">
-                        <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary truncate">
-                          {batch.name}
-                        </span>
-                        <div className="flex items-center gap-2 mt-0.5">
-                          <span className="font-sans text-[12px] font-normal text-[#7B7B7B]">{batch.exam}</span>
-                          <span className="text-[#D4D4D4]">·</span>
-                          <span className="font-sans text-[12px] font-normal text-[#7B7B7B]">{batch.studentsCount} students</span>
+                      <div className="relative z-10 flex-1 min-w-0">
+                        <div className="flex items-center gap-3 mb-1">
+                          <span className="text-body-2 font-bold text-[#101010] dark:text-t-primary truncate">{batch.name}</span>
+                          <span className="label label-gray">{batch.exam}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-caption text-[#7B7B7B] flex-wrap mt-1">
+                          <RiTeamLine size={13} className="shrink-0" />
+                          <span>{batch.studentsCount} students</span>
+                          <span>·</span>
+                          <span>Avg {batch.avgScore}%</span>
+                          <span>·</span>
+                          <span>3 active DPPs</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* Right — avg score + bar + action */}
-                    <div className="flex flex-row items-center gap-6 shrink-0">
-                      <div className="hidden sm:flex flex-col items-end gap-1.5">
-                        <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary">
-                          {batch.avgScore}%
-                        </span>
-                        <div className="w-[80px] h-1.5 bg-[#F0F0F0] dark:bg-b-surface1 rounded-full overflow-hidden">
-                          <div
-                            className="h-full rounded-full bg-[#00A656]"
-                            style={{ width: `${batch.avgScore}%` }}
-                          />
+                    {/* Right — score + bar + button */}
+                    <div className="relative z-10 flex items-center justify-between md:justify-end gap-6 shrink-0 mt-4 md:mt-0">
+                      <div className="text-left md:text-right sm:w-40">
+                        <div className="text-caption font-bold text-[#101010] dark:text-t-primary mb-2">
+                          Avg Score: {batch.avgScore}%
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="flex-1 h-1.5 bg-s-stroke2 rounded-full overflow-hidden min-w-[80px]">
+                            <div
+                              className="h-full rounded-full bg-[#00A656]"
+                              style={{ width: `${batch.avgScore}%` }}
+                            />
+                          </div>
+                          <span className="text-caption font-semibold text-[#7B7B7B]">{batch.avgScore}%</span>
                         </div>
                       </div>
                       <Link
                         href={`/teacher/batch/${batch.id}`}
-                        className="h-9 px-4 rounded-xl text-xs font-semibold border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 text-[#727272] dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer w-fit shrink-0"
+                        className="flex flex-row justify-center items-center h-8 px-4 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget cursor-pointer"
                       >
-                        <RiArrowRightUpLine size={14} /> Analysis
+                        Analysis
                       </Link>
                     </div>
                   </div>
                 );
               })}
-            </div>
-
-            {/* Footer ghost button */}
-            <div className="relative z-10 px-3">
-              <Link
-                href="/teacher/analytics"
-                className="w-full h-12 flex items-center justify-center border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 rounded-[32px] text-[14px] font-semibold text-[#727272] dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
-              >
-                View Full Analytics
-              </Link>
             </div>
           </div>
 
