@@ -34,6 +34,7 @@ export default function TeacherDPPsPage() {
   const [dpps, setDpps] = useState<MockDPP[]>(mockDPPs);
   const [showModal, setShowModal] = useState(false);
   const [filter, setFilter] = useState<FilterStatus>("all");
+  const [searchQuery, setSearchQuery] = useState("");
   const [creating, setCreating] = useState(false);
   const [form, setForm] = useState({
     title: "",
@@ -44,7 +45,13 @@ export default function TeacherDPPsPage() {
     dueDate: "",
   });
 
-  const filtered = filter === "all" ? dpps : dpps.filter(d => d.status === filter);
+  const filtered = dpps.filter(d => {
+    const matchesStatus = filter === "all" ? true : d.status === filter;
+    const matchesSearch = d.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          d.chapter.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          d.subject.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesStatus && matchesSearch;
+  });
 
   const handleCreate = () => {
     if (!form.title || !form.dueDate) return;
@@ -90,15 +97,15 @@ export default function TeacherDPPsPage() {
       />
       
       <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
-        {/* KPI Row */}
-        <div className="mb-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {/* KPI Row (p-2 grey nested background container, matching top cards) */}
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-8">
           {[
             { label: "Total DPPs",  value: total,         icon: <RiFileListLine size={20} />, statusClass: "text-t-primary" },
             { label: "Active",      value: active,        icon: <RiTimeLine size={20} />,     statusClass: "text-[#EF9D0E]" },
             { label: "Completed",   value: completed,     icon: <RiCheckLine size={20} />,    statusClass: "text-[#00A656]" },
             { label: "Avg Completion", value: `${avgCompletion}%`, icon: <RiTeamLine size={20} />, statusClass: "text-t-blue" },
           ].map(s => (
-            <div key={s.label} className="group relative card flex items-center gap-4 p-5 border border-s-stroke2 bg-b-surface1 transition-all overflow-hidden hover:border-transparent">
+            <div key={s.label} className="group relative card flex items-center gap-4 p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all overflow-hidden">
               <div className="box-hover" />
               <div className={`relative z-10 p-2.5 bg-b-surface2 rounded-xl border border-s-stroke2 ${s.statusClass}`}>
                 {s.icon}
@@ -130,16 +137,34 @@ export default function TeacherDPPsPage() {
             ))}
           </div>
 
-          <button className="btn btn-sm btn-primary flex items-center gap-1 self-start lg:self-auto" onClick={() => setShowModal(true)}>
-            <RiAddLine size={16} /> Create DPP
-          </button>
+          {/* Search & Create Section */}
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+            {/* Search Input (Figma Spec: rounded 90px pill) */}
+            <div className="relative w-full sm:w-[315px] h-12 flex items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/30 rounded-[90px] px-4 shadow-[0px_2px_4px_rgba(8,8,8,0.02)]">
+              <input
+                type="text"
+                placeholder="Search DPPs..."
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                className="w-full h-full bg-transparent border-none text-[14px] font-sans font-normal text-[#101010] dark:text-t-primary placeholder-[#727272] focus:outline-none"
+              />
+            </div>
+
+            {/* Create DPP Button (Figma Spec: gradient background, rounded 32px pill, inset shadow) */}
+            <button 
+              className="flex flex-row justify-center items-center h-12 px-6 bg-gradient-to-b from-[#2C2C2C] to-[#282828] hover:from-[#3c3c3c] hover:to-[#383838] text-[#FDFDFD] dark:from-t-primary dark:to-t-primary/90 dark:text-b-surface1 text-[14px] font-sans font-semibold rounded-[32px] transition-all active:scale-95 shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] cursor-pointer"
+              onClick={() => setShowModal(true)}
+            >
+              <RiAddLine size={18} className="mr-1" /> Create DPP
+            </button>
+          </div>
         </div>
 
-        {/* DPP List */}
-        <div className="flex flex-col gap-4">
+        {/* DPP List (p-2 grey nested background container, matching dashboard style) */}
+        <div className="relative z-10 flex flex-col p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
           {filtered.length === 0 && (
-            <div className="card text-center py-20 text-t-secondary border border-s-stroke2 bg-b-surface1">
-              <RiFileListLine size={48} className="mx-auto mb-4 text-t-tertiary" />
+            <div className="card text-center py-20 text-[#7B7B7B] border border-[#E2E2E2] bg-[#FDFDFD] dark:bg-b-surface2 rounded-[24px]">
+              <RiFileListLine size={48} className="mx-auto mb-4 text-[#7B7B7B]/50" />
               <p className="font-semibold text-body-2">No DPPs in this category yet.</p>
             </div>
           )}
@@ -148,39 +173,50 @@ export default function TeacherDPPsPage() {
             const meta = statusMeta[dpp.status];
             const pct = Math.round((dpp.completedCount / dpp.totalStudents) * 100);
             return (
-              <div key={dpp.id} className="group relative card flex min-w-0 items-center gap-5 overflow-hidden border border-s-stroke2 bg-b-surface1 p-5 transition-all hover:border-transparent">
+              <div 
+                key={dpp.id} 
+                className="group relative card flex flex-col md:flex-row min-w-0 md:items-center justify-between gap-5 overflow-hidden bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 p-5 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
+              >
                 <div className="box-hover" />
                 
-                <div className={`relative z-10 size-11 rounded-xl flex items-center justify-center shrink-0 text-xl bg-b-surface2 border border-s-stroke2`}>
-                  {meta.icon}
-                </div>
+                <div className="flex items-center gap-4 flex-1 min-w-0">
+                  <div className="relative z-10 size-11 rounded-xl flex items-center justify-center shrink-0 text-xl bg-b-surface2 border border-s-stroke2">
+                    {meta.icon}
+                  </div>
 
-                <div className="relative z-10 flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-1">
-                    <span className="text-body-2 font-bold text-t-primary truncate">{dpp.title}</span>
-                    <span className={`label ${meta.badgeClass}`}>{meta.label}</span>
-                  </div>
-                  <div className="flex items-center gap-4 text-caption text-t-secondary flex-wrap mt-1">
-                    <span>📚 {dpp.subject} · {dpp.chapter}</span>
-                    <span>{dpp.totalQuestions} questions</span>
-                    <span>{dpp.batchName}</span>
-                    <span>Due: {dpp.dueDate}</span>
-                  </div>
-                </div>
-
-                <div className="relative z-10 shrink-0 text-right sm:w-40">
-                  <div className="text-caption font-bold text-t-primary mb-2">
-                    {dpp.completedCount}/{dpp.totalStudents} submitted
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="flex-1 h-1.5 bg-s-stroke2 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full rounded-full ${dpp.status === "completed" ? "bg-[#00A656]" : "bg-linear-to-r from-primary-01 to-primary-02"}`}
-                        style={{ width: `${pct}%` }}
-                      />
+                  <div className="relative z-10 flex-1 min-w-0">
+                    <div className="flex items-center gap-3 mb-1">
+                      <span className="text-body-2 font-bold text-[#101010] dark:text-t-primary truncate">{dpp.title}</span>
+                      <span className={`label ${meta.badgeClass}`}>{meta.label}</span>
                     </div>
-                    <span className="text-caption font-semibold text-t-secondary">{pct}%</span>
+                    <div className="flex items-center gap-4 text-caption text-[#7B7B7B] flex-wrap mt-1">
+                      <span>📚 {dpp.subject} · {dpp.chapter}</span>
+                      <span>{dpp.totalQuestions} questions</span>
+                      <span>{dpp.batchName}</span>
+                      <span>Due: {dpp.dueDate}</span>
+                    </div>
                   </div>
+                </div>
+
+                <div className="relative z-10 flex items-center justify-between md:justify-end gap-6 shrink-0 mt-4 md:mt-0">
+                  <div className="text-left md:text-right sm:w-40">
+                    <div className="text-caption font-bold text-[#101010] dark:text-t-primary mb-2">
+                      {dpp.completedCount}/{dpp.totalStudents} submitted
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex-1 h-1.5 bg-s-stroke2 rounded-full overflow-hidden min-w-[80px]">
+                        <div
+                          className={`h-full rounded-full ${dpp.status === "completed" ? "bg-[#00A656]" : "bg-gradient-to-r from-[#EF9D0E] to-[#F1C40F]"}`}
+                          style={{ width: `${pct}%` }}
+                        />
+                      </div>
+                      <span className="text-caption font-semibold text-[#7B7B7B]">{pct}%</span>
+                    </div>
+                  </div>
+
+                  <button className="flex flex-row justify-center items-center h-8 px-4 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget">
+                    {dpp.status === "completed" ? "Reports" : dpp.status === "upcoming" ? "Edit" : "Stats"}
+                  </button>
                 </div>
               </div>
             );
