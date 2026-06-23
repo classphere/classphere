@@ -138,25 +138,40 @@ export default function Dashboard() {
   const { bars, maxMarks } = performanceData;
   const activeBar = bars[selectedBarIndex];
 
-  // Dynamic greeting title based on selected bar score trend
-  let greetingTitle = `Good morning, ${mockUser.name.split(" ")[0]}`;
+  // Time-based greeting title
+  const getGreeting = () => {
+    const hours = new Date().getHours();
+    const firstName = mockUser.name.split(" ")[0];
+    if (hours < 12) {
+      return `Good morning, ${firstName}`;
+    } else if (hours < 17) {
+      return `Good afternoon, ${firstName}`;
+    } else {
+      return `Good evening, ${firstName}`;
+    }
+  };
+
+  const greetingTitle = getGreeting();
+
+  // Dynamic performance subtitle based on selected bar score trend
+  let performanceSubtitle = "";
   if (selectedBarIndex > 0) {
     const prevBar = bars[selectedBarIndex - 1];
     const diff = activeBar.score - prevBar.score;
     if (diff > 0) {
-      greetingTitle = `Your scores are on the rise, ${mockUser.name.split(" ")[0]}! You're doing great.`;
+      performanceSubtitle = "Your scores are on the rise! You're doing great.";
     } else if (diff < 0) {
-      greetingTitle = `Keep pushing, ${mockUser.name.split(" ")[0]}! Let's focus on improvement.`;
+      performanceSubtitle = "Keep pushing! Let's focus on improvement.";
     } else {
-      greetingTitle = `You're holding steady, ${mockUser.name.split(" ")[0]}! Push harder to break your peak.`;
+      performanceSubtitle = "You're holding steady! Push harder to break your peak.";
     }
   } else {
-    greetingTitle = `Welcome back, ${mockUser.name.split(" ")[0]}! Ready to level up your score?`;
+    performanceSubtitle = "Welcome back! Ready to level up your score?";
   }
 
   return (
     <>
-      <Navbar title={greetingTitle} />
+      <Navbar title={greetingTitle} subtitle={performanceSubtitle} />
       
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
         
