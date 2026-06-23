@@ -356,45 +356,72 @@ export default function TeacherDashboardPage() {
               const completion = Math.round((dpp.completedCount / dpp.totalStudents) * 100);
               const isComplete = dpp.status === "completed";
               const isUpcoming = dpp.status === "upcoming";
+              
+              // Define status styles
+              let statusLabel = "Active";
+              let badgeStyle = "bg-[rgba(239,157,14,0.05)] border-[rgba(239,157,14,0.15)] text-[#EF9D0E]";
+              let progressColor = "bg-[#EF9D0E]";
+              
+              if (isComplete) {
+                statusLabel = "Done";
+                badgeStyle = "bg-[rgba(0,166,86,0.05)] border-[rgba(0,166,86,0.15)] text-[#00A656]";
+                progressColor = "bg-[#00A656]";
+              } else if (isUpcoming) {
+                statusLabel = "Upcoming";
+                badgeStyle = "bg-[rgba(123,123,123,0.05)] border-[rgba(123,123,123,0.15)] text-[#7B7B7B]";
+                progressColor = "bg-[#7B7B7B]";
+              }
+
               return (
                 <div
                   key={dpp.id}
-                  className={`group relative flex min-h-[12rem] flex-col gap-3 overflow-hidden rounded-[24px] border p-6 transition-all hover:border-transparent cursor-pointer ${
-                    isComplete
-                      ? "border-[#00A656]/20 bg-[#00A656]/5"
-                      : isUpcoming
-                        ? "border-s-stroke2 bg-[#F9F9F9] dark:bg-[#1E1E1E]/40"
-                        : "border-[#EF9D0E]/20 bg-[#EF9D0E]/5"
-                  }`}
+                  className="group relative flex min-h-[14rem] flex-col gap-4 overflow-hidden rounded-[28px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0px_10px_20px_-8px_rgba(8,8,8,0.06),0px_6px_4px_-4px_rgba(8,8,8,0.02)] select-none cursor-pointer"
                 >
-                  <div className="box-hover" />
-                  
-                  <div className="relative z-10 flex justify-between items-start">
-                    <div className="mr-3 truncate font-sans font-bold text-sm text-[#101010] dark:text-t-primary">{dpp.title}</div>
-                    <span className={`flex flex-row justify-center items-center px-1.75 py-0.75 rounded-[6px] shrink-0 h-6 text-[10px] font-sans font-bold leading-none ${
-                      isComplete 
-                        ? "border border-[#00A656]/15 bg-[#00A656]/5 text-[#00A656]" 
-                        : isUpcoming 
-                          ? "border border-s-stroke2 bg-b-surface1 text-t-secondary" 
-                          : "border border-[#EF9D0E]/15 bg-[#EF9D0E]/5 text-[#EF9D0E]"
-                    } shrink-0`}>
-                      {isComplete ? "Done" : isUpcoming ? "Upcoming" : "Active"}
+                  {/* Status Badge Row */}
+                  <div className="flex justify-between items-center w-full">
+                    <span className="font-sans text-[12px] font-bold text-[#7B7B7B] tracking-wider uppercase">
+                      {dpp.subject}
                     </span>
+                    <div className={`box-sizing-border-box flex flex-row justify-center items-center px-2 py-0.5 gap-2 h-6 border-[1.5px] rounded-[8px] ${badgeStyle}`}>
+                      <span className="font-sans text-[12px] font-normal leading-[160%] tracking-[0.004em]">
+                        {statusLabel}
+                      </span>
+                    </div>
                   </div>
-                  
-                  <div className="relative z-10 mb-2 font-sans text-xs text-[#7B7B7B]">
-                    {dpp.batchName} · {dpp.subject} · Due {dpp.dueDate}
+
+                  {/* Title & Batch */}
+                  <div className="flex flex-col gap-1.5 flex-1 justify-center">
+                    <h4 className="font-sans font-bold text-[18px] text-[#101010] dark:text-t-primary leading-[140%] tracking-tight group-hover:text-t-blue transition-colors truncate">
+                      {dpp.title}
+                    </h4>
+                    <p className="font-sans text-[13px] font-normal text-[#7B7B7B] flex items-center gap-1.5">
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#7B7B7B]/50" />
+                      {dpp.batchName}
+                    </p>
                   </div>
-                  
-                  <div className="relative z-10 flex justify-between items-center gap-3 mt-auto pt-2">
-                    <div className="flex-1 h-1.5 bg-[rgba(123,123,123,0.15)] dark:bg-[rgba(229,229,229,0.08)] rounded-full overflow-hidden">
+
+                  {/* Divider line */}
+                  <div className="w-full h-px bg-s-stroke2/10 my-1" />
+
+                  {/* Progress Section */}
+                  <div className="flex flex-col gap-2 w-full mt-auto">
+                    <div className="flex justify-between items-center text-[12px] font-sans">
+                      <span className="text-[#7B7B7B]">
+                        Due {dpp.dueDate}
+                      </span>
+                      <span className="font-bold text-[#101010] dark:text-t-primary">
+                        {dpp.completedCount}/{dpp.totalStudents} ({completion}%)
+                      </span>
+                    </div>
+
+                    <div className="w-full h-2 bg-[#F5F5F5] dark:bg-b-surface3 rounded-full overflow-hidden">
                       <div
-                        className={`h-full rounded-full ${isComplete ? "bg-[#00A656]" : "bg-linear-to-r from-[#00B512] to-[#00A656]"}`}
+                        className={`h-full rounded-full transition-all duration-500 ${progressColor}`}
                         style={{ width: `${completion}%` }}
                       />
                     </div>
-                    <span className="font-sans text-xs font-bold text-[#101010] dark:text-t-primary shrink-0">{dpp.completedCount}/{dpp.totalStudents}</span>
                   </div>
+
                 </div>
               );
             })}
