@@ -19,6 +19,36 @@ export default function TeacherDashboardPage() {
   const completedDPPs = mockDPPs.filter(d => d.status === "completed");
   const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
 
+  const flags = [
+    {
+      name: "Rohan Gupta",
+      action: "on",
+      topic: "JEE 2026",
+      avatar: "https://ui-avatars.com/api/?name=Rohan+Gupta&background=FF6A55&color=fff&size=88",
+      time: "09:00 AM",
+      issue: "Score dropped 30% since last week's Physics test. Recommending a 1-on-1 session.",
+      highlighted: true
+    },
+    {
+      name: "Carnot Cycle",
+      action: "on",
+      topic: "Revision",
+      avatar: "https://ui-avatars.com/api/?name=Carnot+Cycle&background=EF9D0E&color=fff&size=88",
+      time: "Yesterday",
+      issue: "73% of NEET 2026 Droppers failed Carnot Cycle efficiency problems. Needs revision class.",
+      highlighted: false
+    },
+    {
+      name: "Sneha Reddy",
+      action: "on",
+      topic: "NEET Droppers",
+      avatar: "https://ui-avatars.com/api/?name=Sneha+Reddy&background=00A656&color=fff&size=88",
+      time: "2 days ago",
+      issue: "Missed 3 consecutive batch tests.",
+      highlighted: false
+    }
+  ];
+
   // Time-based greeting title
   const getGreeting = () => {
     const hours = new Date().getHours();
@@ -217,31 +247,80 @@ export default function TeacherDashboardPage() {
           </div>
 
           {/* AI Attention Flags Card */}
-          <div className="group relative card flex min-w-0 flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
-            <div className="flex justify-between items-center mb-6 z-10">
-              <h2 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">AI Attention Flags</h2>
-              <button className="flex items-center justify-center size-8 rounded-full text-[#7B7B7B] hover:text-[#101010] dark:hover:text-t-primary hover:bg-[#F9F9F9] dark:hover:bg-b-surface3 border border-s-stroke2/30 bg-[#FDFDFD] dark:bg-b-surface2 transition-all active:scale-95 shadow-xs cursor-pointer shrink-0">
-                <RiSettings4Line size={18} />
+          <div className="flex w-full xl:max-w-[368px] flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8, 8, 8, 0.05)] border border-s-stroke2/40 p-3 pb-6 select-none box-sizing:border-box">
+            
+            {/* Comment Section (Header + List) */}
+            <div className="flex flex-col items-start p-0 gap-3 w-full">
+              
+              {/* Comment Header */}
+              <div className="flex flex-row items-center justify-between p-2.5 px-3 gap-2 w-full h-12">
+                <h3 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                  AI Attention Flags
+                </h3>
+                <button className="flex items-center justify-center size-8 rounded-full text-[#7B7B7B] hover:text-[#101010] dark:hover:text-t-primary hover:bg-[#F9F9F9] dark:hover:bg-b-surface3 border border-s-stroke2/30 bg-[#FDFDFD] dark:bg-b-surface2 transition-all active:scale-95 shadow-xs cursor-pointer shrink-0">
+                  <RiSettings4Line size={18} />
+                </button>
+              </div>
+
+              {/* Comment List */}
+              <div className="flex flex-col items-start p-0 gap-1 w-full">
+                {flags.map((flag, idx) => (
+                  <div 
+                    key={idx} 
+                    className={`flex flex-row items-start p-5 px-3 gap-5 w-full rounded-[20px] transition-all ${
+                      flag.highlighted 
+                        ? "bg-[#F9F9F9] dark:bg-b-surface1 shadow-[inset_0_0_0_3px_#FFFFFF] dark:shadow-[inset_0_0_0_3px_rgba(255,255,255,0.05)] border border-s-stroke2/20" 
+                        : "bg-transparent border border-transparent"
+                    }`}
+                  >
+                    {/* Avatar */}
+                    <img 
+                      src={flag.avatar} 
+                      alt={flag.name}
+                      className="w-11 h-11 rounded-full shrink-0 object-cover border border-s-stroke2/20"
+                    />
+
+                    {/* Content Frame */}
+                    <div className="flex flex-col items-start p-0 gap-3 flex-1 min-w-0">
+                      {/* Name, Action, Topic & Time Frame */}
+                      <div className="flex flex-col items-start p-0 gap-1 w-full">
+                        {/* Meta Line */}
+                        <div className="flex flex-row items-center p-0 gap-1 w-full flex-wrap leading-tight">
+                          <span className="font-sans font-semibold text-[16px] text-[#101010] dark:text-t-primary truncate max-w-[90px]">
+                            {flag.name.split(" ")[0]}
+                          </span>
+                          <span className="font-sans font-semibold text-[16px] text-[#727272] shrink-0">
+                            {flag.action}
+                          </span>
+                          <span className="font-sans font-semibold text-[16px] text-[#101010] dark:text-t-primary truncate max-w-[100px]">
+                            {flag.topic}
+                          </span>
+                        </div>
+                        {/* Time */}
+                        <span className="font-sans text-[12px] font-normal leading-[160%] tracking-[0.004em] text-[#7B7B7B]">
+                          {flag.time}
+                        </span>
+                      </div>
+
+                      {/* Issue Body */}
+                      <p className="font-sans text-[16px] font-normal leading-[150%] tracking-[0.005em] text-[#101010] dark:text-t-secondary break-words w-full">
+                        {flag.issue}
+                      </p>
+                    </div>
+
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
+            {/* Footer / All Products Button */}
+            <div className="flex flex-col items-start p-0 px-3 gap-2 w-full mt-6">
+              <button className="flex flex-row justify-center items-center p-3.5 px-7 gap-2 w-full h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[32px] bg-transparent text-[#727272] dark:text-t-secondary font-sans font-semibold text-[14px] leading-none tracking-[0.0125em] transition-all hover:border-[#727272] hover:text-[#101010] dark:hover:text-t-primary active:scale-98 cursor-pointer">
+                View All Flags
               </button>
             </div>
 
-            <div className="flex flex-col gap-4 flex-1 z-10">
-              {[
-                { name: "Rohan Gupta", batch: "JEE 2026 Morning", issue: "Score dropped 30% since last week's Physics test. Recommending a 1-on-1 session." },
-                { name: "Carnot Cycle Failure", batch: "Concept revision", issue: "73% of NEET 2026 Droppers failed Carnot Cycle efficiency problems. Needs revision class." },
-                { name: "Sneha Reddy", batch: "NEET 2026 Droppers", issue: "Missed 3 consecutive batch tests." }
-              ].map((flag, idx) => (
-                <div key={idx} className="p-4 bg-[#F9F9F9] dark:bg-[#1E1E1E]/40 border border-s-stroke2/20 rounded-[20px] shadow-xs hover:border-s-stroke2/40 transition-colors">
-                  <h4 className="font-sans font-semibold text-sm text-[#101010] dark:text-t-primary mb-0.5">{flag.name}</h4>
-                  <div className="font-sans text-[11px] text-[#7B7B7B] font-bold tracking-wider uppercase mb-2">{flag.batch}</div>
-                  <p className="font-sans text-[12px] text-[#7B7B7B] dark:text-t-secondary leading-relaxed">{flag.issue}</p>
-                </div>
-              ))}
-            </div>
-
-            <button className="w-full h-10 rounded-xl text-xs font-semibold bg-[#FDFDFD] dark:bg-b-surface2 hover:bg-[#F9F9F9] dark:hover:bg-b-surface3 border border-s-stroke2/30 text-t-secondary hover:text-t-primary transition-all active:scale-95 shadow-xs cursor-pointer mt-6 z-10">
-              View All Flags
-            </button>
           </div>
 
         </div>
