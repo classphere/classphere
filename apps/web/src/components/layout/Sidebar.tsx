@@ -128,9 +128,6 @@ export default function Sidebar() {
 
         {/* ── Main Menu ── */}
         <div className="flex flex-col gap-2 w-full">
-          <div className="text-[10px] font-bold tracking-wider text-[#727272] pl-3 uppercase">
-            Main menu
-          </div>
           <nav className="flex flex-col gap-1 w-full">
             {currentNav.map((item) => (
               <Link

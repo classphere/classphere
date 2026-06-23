@@ -105,7 +105,7 @@ export default function TeacherDPPsPage() {
             { label: "Completed",   value: completed,     icon: <RiCheckLine size={20} />,    statusClass: "text-[#00A656]" },
             { label: "Avg Completion", value: `${avgCompletion}%`, icon: <RiTeamLine size={20} />, statusClass: "text-t-blue" },
           ].map(s => (
-            <div key={s.label} className="group relative card flex items-center gap-4 p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all overflow-hidden">
+            <div key={s.label} className="group relative flex items-center gap-4 p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all overflow-hidden w-full">
               <div className="box-hover" />
               <div className={`relative z-10 p-2.5 bg-b-surface2 rounded-xl border border-s-stroke2 ${s.statusClass}`}>
                 {s.icon}
