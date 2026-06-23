@@ -328,27 +328,27 @@ export default function StudentChatPage() {
           </div>
 
           {/* Stats Section */}
-          <div className="flex flex-row items-center p-2 gap-4 w-full h-[187px] bg-[#F9F9F9] dark:bg-b-surface1/20 border-[1.5px] border-[rgba(123,123,123,0.1)] rounded-[32px] shrink-0">
+          <div className="flex flex-row items-center p-2 gap-4 w-full h-[135px] bg-[#F9F9F9] dark:bg-b-surface1/20 border-[1.5px] border-[rgba(123,123,123,0.1)] rounded-[32px] shrink-0">
             
             {/* Active Doubts Stat Card */}
-            <div className="flex flex-col items-start p-8 py-5 px-12 gap-2 flex-grow h-[171px] bg-[#FDFDFD] dark:bg-b-surface2 border-[1.5px] border-[#FDFDFD] dark:border-s-stroke2/20 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
-              <div className="flex flex-row items-center gap-3 w-full">
-                <RiQuestionAnswerLine size={24} className="text-[#101010] dark:text-t-primary" />
-                <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-[#FDFDFD] dark:bg-b-surface2 border-[1.5px] border-[#FDFDFD] dark:border-s-stroke2/20 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+              <div className="flex flex-row items-center gap-2.5 w-full">
+                <RiQuestionAnswerLine size={20} className="text-[#101010] dark:text-t-primary" />
+                <span className="font-sans font-semibold text-[15px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
                   Active Doubts
                 </span>
               </div>
-              <div className="flex flex-row items-center gap-4 w-full mt-1.5">
-                <span className="font-sans font-medium text-[60px] leading-[125%] tracking-[-0.005em] text-[#101010] dark:text-t-primary">
+              <div className="flex flex-row items-center gap-4 w-full mt-0.5">
+                <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-[#101010] dark:text-t-primary">
                   {activeGroup.activeDoubts}
                 </span>
-                <div className="flex flex-col items-start gap-1">
-                  <div className="flex flex-row justify-center items-center px-2 py-[6px] gap-1 h-7 bg-[rgba(255,106,85,0.05)] border-[1.5px] border-[rgba(255,106,85,0.15)] rounded-lg">
-                    <span className="font-sans font-semibold text-[14px] leading-none text-[#FF6A55]">
+                <div className="flex flex-col items-start gap-0.5">
+                  <div className="flex flex-row justify-center items-center px-2 py-[2px] gap-1 h-5.5 bg-[rgba(255,106,85,0.05)] border-[1.5px] border-[rgba(255,106,85,0.15)] rounded-md">
+                    <span className="font-sans font-semibold text-[12px] leading-none text-[#FF6A55]">
                       {activeGroup.activeTrend}
                     </span>
                   </div>
-                  <span className="font-sans text-[14px] leading-[150%] tracking-[0.0025em] text-[#7B7B7B]">
+                  <span className="font-sans text-[12px] leading-[150%] tracking-[0.0025em] text-[#7B7B7B]">
                     from yesterday
                   </span>
                 </div>
@@ -356,24 +356,24 @@ export default function StudentChatPage() {
             </div>
 
             {/* Resolved Doubts Stat Card */}
-            <div className="flex flex-col items-start p-8 py-5 px-12 gap-2 flex-grow h-[171px] rounded-[24px] bg-transparent">
-              <div className="flex flex-row items-center gap-3 w-full">
-                <RiCheckDoubleLine size={24} className="text-[#727272] dark:text-t-secondary" />
-                <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#727272] dark:text-t-secondary">
+            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] rounded-[24px] bg-transparent">
+              <div className="flex flex-row items-center gap-2.5 w-full">
+                <RiCheckDoubleLine size={20} className="text-[#727272] dark:text-t-secondary" />
+                <span className="font-sans font-semibold text-[15px] leading-[150%] tracking-[0.0015em] text-[#727272] dark:text-t-secondary">
                   Resolved Doubts
                 </span>
               </div>
-              <div className="flex flex-row items-center gap-4 w-full mt-1.5">
-                <span className="font-sans font-medium text-[60px] leading-[125%] tracking-[-0.005em] text-[#101010] dark:text-t-primary">
+              <div className="flex flex-row items-center gap-4 w-full mt-0.5">
+                <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-[#101010] dark:text-t-primary">
                   {activeGroup.resolvedDoubts}
                 </span>
-                <div className="flex flex-col items-start gap-1">
-                  <div className="flex flex-row justify-center items-center px-2 py-[6px] gap-1 h-7 bg-[rgba(0,166,86,0.05)] border-[1.5px] border-[rgba(0,166,86,0.15)] rounded-lg">
-                    <span className="font-sans font-semibold text-[14px] leading-none text-[#00A656]">
+                <div className="flex flex-col items-start gap-0.5">
+                  <div className="flex flex-row justify-center items-center px-2 py-[2px] gap-1 h-5.5 bg-[rgba(0,166,86,0.05)] border-[1.5px] border-[rgba(0,166,86,0.15)] rounded-md">
+                    <span className="font-sans font-semibold text-[12px] leading-none text-[#00A656]">
                       {activeGroup.resolvedTrend}
                     </span>
                   </div>
-                  <span className="font-sans text-[14px] leading-[150%] tracking-[0.0025em] text-[#7B7B7B]">
+                  <span className="font-sans text-[12px] leading-[150%] tracking-[0.0025em] text-[#7B7B7B]">
                     from last week
                   </span>
                 </div>
