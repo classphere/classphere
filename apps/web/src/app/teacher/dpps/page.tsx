@@ -9,7 +9,11 @@ import {
   RiCalendarLine,
   RiCheckLine,
   RiTimeLine,
-  RiCloseLine
+  RiCloseLine,
+  RiBookOpenLine,
+  RiCheckboxCircleLine,
+  RiAlertLine,
+  RiEditBoxLine
 } from "@remixicon/react";
 import { mockDPPs, mockBatches, type MockDPP } from "@/lib/mock-data";
 
@@ -21,11 +25,11 @@ const CHAPTERS: Record<string, string[]> = {
   Biology: ["Cell Biology", "Genetics", "Ecology", "Human Physiology", "Plant Physiology"],
 };
 
-const statusMeta: Record<string, { label: string; badgeClass: string; icon: string }> = {
-  completed: { label: "Completed", badgeClass: "label-green", icon: "✅" },
-  upcoming:  { label: "Upcoming",  badgeClass: "label-gray", icon: "🕐" },
-  late:      { label: "Late",      badgeClass: "label-red", icon: "⚠️" },
-  pending:   { label: "Active",    badgeClass: "label-yellow", icon: "📝" },
+const statusMeta: Record<string, { label: string; badgeClass: string; icon: React.ReactNode }> = {
+  completed: { label: "Completed", badgeClass: "label-green", icon: <RiCheckboxCircleLine size={20} className="text-[#00A656]" /> },
+  upcoming:  { label: "Upcoming",  badgeClass: "label-gray", icon: <RiTimeLine size={20} className="text-t-secondary" /> },
+  late:      { label: "Late",      badgeClass: "label-red", icon: <RiAlertLine size={20} className="text-[#FF6A55]" /> },
+  pending:   { label: "Active",    badgeClass: "label-yellow", icon: <RiEditBoxLine size={20} className="text-[#EF9D0E]" /> },
 };
 
 type FilterStatus = "all" | "pending" | "completed" | "upcoming";
@@ -190,10 +194,22 @@ export default function TeacherDPPsPage() {
                       <span className={`label ${meta.badgeClass}`}>{meta.label}</span>
                     </div>
                     <div className="flex items-center gap-4 text-caption text-[#7B7B7B] flex-wrap mt-1">
-                      <span>📚 {dpp.subject} · {dpp.chapter}</span>
-                      <span>{dpp.totalQuestions} questions</span>
-                      <span>{dpp.batchName}</span>
-                      <span>Due: {dpp.dueDate}</span>
+                      <span className="flex items-center gap-1">
+                        <RiBookOpenLine size={14} className="text-t-secondary/70" />
+                        {dpp.subject} · {dpp.chapter}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <RiFileListLine size={14} className="text-t-secondary/70" />
+                        {dpp.totalQuestions} questions
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <RiTeamLine size={14} className="text-t-secondary/70" />
+                        {dpp.batchName}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <RiCalendarLine size={14} className="text-t-secondary/70" />
+                        Due: {dpp.dueDate}
+                      </span>
                     </div>
                   </div>
                 </div>
