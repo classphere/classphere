@@ -27,8 +27,10 @@ import {
   RiFileListLine,
   RiSunLine,
   RiMoonLine,
-  RiMailLine
+  RiMailLine,
+  RiNotification3Line
 } from "@remixicon/react";
+import { mockUser } from "@/lib/mock-data";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -182,8 +184,30 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* ── Bottom Section (Switcher + Mode Container) ── */}
+      {/* ── Bottom Section (Switcher + Profile + Action Container) ── */}
       <div className="mt-auto flex flex-col gap-5 w-full pt-6 border-t border-s-stroke2/20 shrink-0">
+        {/* Profile Card: Avatar + Info */}
+        <Link 
+          href="/profile" 
+          className="flex items-center gap-3 w-full p-2.5 rounded-2xl bg-transparent hover:bg-b-surface2/40 border border-transparent hover:border-s-stroke2/20 transition-all cursor-pointer select-none"
+        >
+          <div className="size-11 rounded-full overflow-hidden border border-s-stroke2/20 shrink-0 shadow-xs">
+            <img
+              src={`https://ui-avatars.com/api/?name=${encodeURIComponent(mockUser.name)}&background=101010&color=fff&size=80`}
+              alt="Avatar"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="font-sans font-semibold text-sm text-[#101010] dark:text-t-primary truncate leading-tight">
+              {mockUser.name}
+            </div>
+            <div className="font-sans text-[11px] text-[#7B7B7B] dark:text-t-tertiary truncate mt-0.5 leading-none">
+              {mockUser.email}
+            </div>
+          </div>
+        </Link>
+
         {/* Demo Role Switcher */}
         <div className="w-full">
           <select
@@ -198,38 +222,45 @@ export default function Sidebar() {
           </select>
         </div>
 
-        {/* Mode Container: Horizontal row of Mail Button + Theme Capsule */}
+        {/* Mode Container: Notification Bell + Mail Button + Theme Capsule */}
         <div className="flex flex-row items-center gap-3 w-full">
-          {/* Message Mail Button (Icon btt): 48px x 48px, rounded-full */}
-          <button className="flex size-12 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all active:scale-95 shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)] cursor-pointer shrink-0">
-            <RiMailLine size={20} />
+          {/* Notification Button */}
+          <button className="relative flex size-12 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all active:scale-95 shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)] cursor-pointer shrink-0">
+            <RiNotification3Line size={20} />
+            <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-[#FF6A55]" />
           </button>
 
-          {/* Theme Toggle Capsule: Horizontal pill, rounded-full, 48px height */}
+          {/* Message Mail Button */}
+          <Link 
+            href="/doubts" 
+            className="flex size-12 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all active:scale-95 shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)] cursor-pointer shrink-0"
+          >
+            <RiMailLine size={20} />
+          </Link>
+
+          {/* Theme Toggle Capsule: Horizontal pill, rounded-full, 48px height, icons only */}
           <div className="flex flex-row items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-full p-1 h-12 flex-1 relative select-none shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)]">
             <button
               onClick={() => toggleTheme("light")}
-              className={`flex-1 flex items-center justify-center gap-1.5 h-10 rounded-full transition-all cursor-pointer text-caption font-semibold ${
+              className={`flex-1 flex items-center justify-center h-10 rounded-full transition-all cursor-pointer text-[#727272] ${
                 theme === "light"
                   ? "bg-[#F1F1F1] dark:bg-b-surface1 text-[#101010] dark:text-t-primary font-bold shadow-widget"
-                  : "text-[#727272] hover:text-[#101010]"
+                  : "hover:text-[#101010]"
               }`}
               title="Light Mode"
             >
-              <RiSunLine size={16} />
-              <span>Light</span>
+              <RiSunLine size={18} />
             </button>
             <button
               onClick={() => toggleTheme("dark")}
-              className={`flex-1 flex items-center justify-center gap-1.5 h-10 rounded-full transition-all cursor-pointer text-caption font-semibold ${
+              className={`flex-1 flex items-center justify-center h-10 rounded-full transition-all cursor-pointer text-[#727272] ${
                 theme === "dark"
                   ? "bg-[#F1F1F1] dark:bg-b-surface1 text-[#101010] dark:text-t-primary font-bold shadow-widget"
-                  : "text-[#727272] hover:text-[#101010] dark:hover:text-t-primary"
+                  : "hover:text-[#101010] dark:hover:text-t-primary"
               }`}
               title="Dark Mode"
             >
-              <RiMoonLine size={16} />
-              <span>Dark</span>
+              <RiMoonLine size={18} />
             </button>
           </div>
         </div>
