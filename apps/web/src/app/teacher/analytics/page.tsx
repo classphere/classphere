@@ -165,12 +165,12 @@ export default function TeacherAnalyticsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
 
           {/* Weak Topics */}
-          <div className="group relative lg:col-span-2 flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
+          <div className="group relative lg:col-span-2 flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
             <div className="box-hover" />
-            <div className="relative z-10 flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-6">
+            <div className="relative z-10 flex flex-col sm:flex-row justify-between sm:items-center gap-3 px-3 pt-3">
               <div>
-                <h2 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Critical Weaknesses — Lecture Planning</h2>
-                <p className="font-sans text-[12px] font-medium text-[#7B7B7B] tracking-[0.004em] mt-0.5">Topics where the majority of your batch failed. Prioritise these in class.</p>
+                <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-[#101010] dark:text-t-primary">Critical Weaknesses</h2>
+                <p className="font-sans text-[12px] font-medium text-[#7B7B7B] tracking-[0.004em] mt-0.5">Topics where the majority of your batch failed.</p>
               </div>
               <Link 
                 href="/teacher/dpps" 
@@ -180,55 +180,106 @@ export default function TeacherAnalyticsPage() {
               </Link>
             </div>
             
-            <div className="relative z-10 flex flex-col p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[24px]">
+            <div className="relative z-10 flex flex-col gap-1 w-full px-3">
               {weakTopics.map((t, i) => {
                 const badgeClass = priorityColor[t.priority];
                 return (
                   <div 
                     key={i} 
-                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[20px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
+                    className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/40 border border-transparent hover:border-[#E2E2E2] dark:hover:border-s-stroke2/30 rounded-[20px] transition-all h-[88px]"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="size-9 rounded-lg flex items-center justify-center bg-[#FF6A55]/10 border border-[#FF6A55]/20 text-[#FF6A55] shrink-0">
-                        <RiAlertLine size={18} />
+                    <div className="flex flex-row items-center gap-5 flex-1 min-w-0">
+                      <div className="size-16 rounded-[12px] flex items-center justify-center bg-[#FF6A55]/10 border border-[#FF6A55]/20 text-[#FF6A55] shrink-0">
+                        <RiAlertLine size={24} />
                       </div>
-                      <div>
-                        <div className="text-body-2 font-bold text-[#101010] dark:text-t-primary">{t.topic}</div>
-                        <div className="text-caption text-[#7B7B7B]">{t.subject}</div>
+                      <div className="flex flex-col justify-center min-w-0 flex-1">
+                        <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary truncate">
+                          {t.topic}
+                        </span>
+                        <span className="font-sans text-[12px] font-normal text-t-secondary mt-0.5">
+                          {t.subject}
+                        </span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4 self-end sm:self-auto">
-                      <div className="text-left sm:text-right">
-                        <div className="text-caption font-bold text-[#FF6A55]">{t.failRate}% Fail Rate</div>
-                        <div className="text-[10px] text-t-secondary">{t.students} students failed</div>
+                    <div className="flex flex-row justify-center items-center gap-8 shrink-0">
+                      <div className="flex flex-col justify-center items-end gap-1">
+                        <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary">
+                          {t.failRate}%
+                        </span>
+                        <span className={`px-2 py-[2px] border-[1.5px] rounded-lg text-[12px] font-normal tracking-[0.004em] leading-[160%] ${
+                          t.priority === "Critical"
+                            ? "bg-[rgba(255,106,85,0.05)] border-[rgba(255,106,85,0.15)] text-[#FF6A55]"
+                            : t.priority === "High"
+                            ? "bg-[rgba(239,157,14,0.05)] border-[rgba(239,157,14,0.15)] text-[#EF9D0E]"
+                            : "bg-[rgba(123,123,123,0.05)] border-[rgba(123,123,123,0.15)] text-[#7B7B7B]"
+                        }`}>
+                          {t.priority}
+                        </span>
                       </div>
-                      <span className={`label ${badgeClass}`}>{t.priority}</span>
                     </div>
                   </div>
                 );
               })}
             </div>
+
+            <div className="relative z-10 flex flex-col items-start px-3 w-full">
+              <Link 
+                href="/teacher/analytics" 
+                className="w-full h-12 flex items-center justify-center border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 rounded-[32px] text-[14px] font-semibold text-[#727272] dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
+              >
+                View Topic Performance Report
+              </Link>
+            </div>
           </div>
 
           {/* Trap Questions */}
-          <div className="group relative lg:col-span-1 flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
+          <div className="group relative lg:col-span-1 flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
             <div className="box-hover" />
-            <h2 className="relative z-10 font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary mb-1">Common Trap Questions</h2>
-            <p className="relative z-10 text-caption text-[#7B7B7B] mb-6">Questions where students selected the same wrong answer.</p>
-            <div className="relative z-10 flex flex-col p-2 gap-4 bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[24px]">
+            <div className="px-3 pt-3">
+              <h2 className="relative z-10 font-sans font-semibold text-[20px] leading-[145%] text-[#101010] dark:text-t-primary">Common Traps</h2>
+              <p className="relative z-10 text-[12px] text-[#7B7B7B] mt-0.5">Questions where students select the same wrong answer.</p>
+            </div>
+            
+            <div className="relative z-10 flex flex-col gap-1 w-full px-3">
               {trapQuestions.map((t, i) => (
                 <div 
                   key={i} 
-                  className="p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[20px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
+                  className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/40 border border-transparent hover:border-[#E2E2E2] dark:hover:border-s-stroke2/30 rounded-[20px] transition-all h-[88px]"
                 >
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-body-2 font-bold text-[#101010] dark:text-t-primary">{t.q} · Option {t.option}</span>
-                    <span className="text-caption font-bold text-[#FF6A55] bg-[#FF6A55]/10 px-2 py-0.5 rounded-lg border border-[#FF6A55]/20">{t.pct}% trap</span>
+                  <div className="flex flex-row items-center gap-5 flex-1 min-w-0">
+                    <div className="size-16 rounded-[12px] flex items-center justify-center bg-[#FF6A55]/10 border border-[#FF6A55]/20 text-[#FF6A55] shrink-0">
+                      <RiCloseCircleFill size={24} />
+                    </div>
+                    <div className="flex flex-col justify-center min-w-0 flex-1">
+                      <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary truncate">
+                        {t.q} · Option {t.option}
+                      </span>
+                      <span className="font-sans text-[12px] font-normal text-[#7B7B7B] truncate mt-0.5">
+                        {t.desc}
+                      </span>
+                    </div>
                   </div>
-                  <p className="text-caption text-t-secondary leading-relaxed mb-3">{t.desc}</p>
-                  <span className="label label-red font-medium capitalize">{t.trap.replace(/_/g, " ")}</span>
+                  <div className="flex flex-row justify-center items-center gap-8 shrink-0">
+                    <div className="flex flex-col justify-center items-end gap-1">
+                      <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary">
+                        {t.pct}%
+                      </span>
+                      <span className="px-2 py-[2px] bg-[rgba(255,106,85,0.05)] border-[1.5px] border-[rgba(255,106,85,0.15)] text-[#FF6A55] rounded-lg text-[12px] font-normal tracking-[0.004em] leading-[160%] capitalize">
+                        {t.trap.replace(/_/g, " ")}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               ))}
+            </div>
+
+            <div className="relative z-10 flex flex-col items-start px-3 w-full">
+              <Link 
+                href="/teacher/analytics" 
+                className="w-full h-12 flex items-center justify-center border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 rounded-[32px] text-[14px] font-semibold text-[#727272] dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
+              >
+                View Detailed Trap Report
+              </Link>
             </div>
           </div>
         </div>
