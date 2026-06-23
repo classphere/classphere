@@ -11,9 +11,10 @@ import {
   RiTimeLine,
   RiCloseLine,
   RiBookOpenLine,
-  RiCheckboxCircleLine,
-  RiAlertLine,
-  RiEditBoxLine
+  RiCheckboxCircleFill,
+  RiAlertFill,
+  RiFileList3Line,
+  RiCalendarEventLine
 } from "@remixicon/react";
 import { mockDPPs, mockBatches, type MockDPP } from "@/lib/mock-data";
 
@@ -25,11 +26,31 @@ const CHAPTERS: Record<string, string[]> = {
   Biology: ["Cell Biology", "Genetics", "Ecology", "Human Physiology", "Plant Physiology"],
 };
 
-const statusMeta: Record<string, { label: string; badgeClass: string; icon: React.ReactNode }> = {
-  completed: { label: "Completed", badgeClass: "label-green", icon: <RiCheckboxCircleLine size={20} className="text-[#00A656]" /> },
-  upcoming:  { label: "Upcoming",  badgeClass: "label-gray", icon: <RiTimeLine size={20} className="text-t-secondary" /> },
-  late:      { label: "Late",      badgeClass: "label-red", icon: <RiAlertLine size={20} className="text-[#FF6A55]" /> },
-  pending:   { label: "Active",    badgeClass: "label-yellow", icon: <RiEditBoxLine size={20} className="text-[#EF9D0E]" /> },
+const statusMeta: Record<string, { label: string; badgeClass: string; icon: React.ReactNode; iconContainerClass: string }> = {
+  completed: { 
+    label: "Completed", 
+    badgeClass: "label-green", 
+    icon: <RiCheckboxCircleFill size={20} />, 
+    iconContainerClass: "bg-[#00A656]/10 border border-[#00A656]/20 text-[#00A656]" 
+  },
+  upcoming:  { 
+    label: "Upcoming",  
+    badgeClass: "label-gray",  
+    icon: <RiCalendarEventLine size={20} />, 
+    iconContainerClass: "bg-[rgba(123,123,123,0.1)] border border-[rgba(123,123,123,0.15)] text-[#7B7B7B]" 
+  },
+  late:      { 
+    label: "Late",      
+    badgeClass: "label-red",   
+    icon: <RiAlertFill size={20} />, 
+    iconContainerClass: "bg-[#FF6A55]/10 border border-[#FF6A55]/20 text-[#FF6A55]" 
+  },
+  pending:   { 
+    label: "Active",    
+    badgeClass: "label-yellow", 
+    icon: <RiFileList3Line size={20} />, 
+    iconContainerClass: "bg-[#EF9D0E]/10 border border-[#EF9D0E]/20 text-[#EF9D0E]" 
+  },
 };
 
 type FilterStatus = "all" | "pending" | "completed" | "upcoming";
@@ -104,14 +125,14 @@ export default function TeacherDPPsPage() {
         {/* KPI Row (p-2 grey nested background container, matching top cards) */}
         <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-8">
           {[
-            { label: "Total DPPs",  value: total,         icon: <RiFileListLine size={20} />, statusClass: "text-t-primary" },
-            { label: "Active",      value: active,        icon: <RiTimeLine size={20} />,     statusClass: "text-[#EF9D0E]" },
-            { label: "Completed",   value: completed,     icon: <RiCheckLine size={20} />,    statusClass: "text-[#00A656]" },
-            { label: "Avg Completion", value: `${avgCompletion}%`, icon: <RiTeamLine size={20} />, statusClass: "text-t-blue" },
+            { label: "Total DPPs",  value: total,         icon: <RiFileListLine size={20} />, statusClass: "text-[#101010] dark:text-t-primary", bgClass: "bg-b-surface2 border border-s-stroke2 text-t-primary" },
+            { label: "Active",      value: active,        icon: <RiFileList3Line size={20} />,     statusClass: "text-[#EF9D0E]", bgClass: "bg-[#EF9D0E]/10 border border-[#EF9D0E]/20 text-[#EF9D0E]" },
+            { label: "Completed",   value: completed,     icon: <RiCheckboxCircleFill size={20} />,    statusClass: "text-[#00A656]", bgClass: "bg-[#00A656]/10 border border-[#00A656]/20 text-[#00A656]" },
+            { label: "Avg Completion", value: `${avgCompletion}%`, icon: <RiTeamLine size={20} />, statusClass: "text-[#2A85FF]", bgClass: "bg-[#2A85FF]/10 border border-[#2A85FF]/20 text-[#2A85FF]" },
           ].map(s => (
             <div key={s.label} className="group relative flex items-center gap-4 p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all overflow-hidden w-full">
               <div className="box-hover" />
-              <div className={`relative z-10 p-2.5 bg-b-surface2 rounded-xl border border-s-stroke2 ${s.statusClass}`}>
+              <div className={`relative z-10 p-2.5 rounded-xl flex items-center justify-center shrink-0 ${s.bgClass}`}>
                 {s.icon}
               </div>
               <div className="relative z-10">
@@ -184,7 +205,7 @@ export default function TeacherDPPsPage() {
                 <div className="box-hover" />
                 
                 <div className="flex items-center gap-4 flex-1 min-w-0">
-                  <div className="relative z-10 size-11 rounded-xl flex items-center justify-center shrink-0 text-xl bg-b-surface2 border border-s-stroke2">
+                  <div className={`relative z-10 size-11 rounded-xl flex items-center justify-center shrink-0 ${meta.iconContainerClass}`}>
                     {meta.icon}
                   </div>
 
