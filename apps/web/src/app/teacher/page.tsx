@@ -147,55 +147,85 @@ export default function TeacherDashboardPage() {
         {/* Main Content Grid — Batches (left) + AI Flags (right) */}
         <div className="mb-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px]">
 
-          {/* Batches Table Card */}
-          <div className="group relative card flex min-w-0 flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
-            <div className="flex justify-between items-center mb-6 z-10">
-              <h2 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Your Active Batches</h2>
-              <button className="h-9 px-4 rounded-xl text-xs font-semibold bg-[#FDFDFD] dark:bg-b-surface2 hover:bg-[#F9F9F9] dark:hover:bg-b-surface3 border border-s-stroke2/30 text-t-secondary hover:text-t-primary transition-all active:scale-95 shadow-xs shrink-0 cursor-pointer">
+          {/* Batches Card */}
+          <div className="group relative flex min-w-0 flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
+            <div className="box-hover" />
+
+            {/* Header */}
+            <div className="relative z-10 flex justify-between items-center px-3 pt-3">
+              <div>
+                <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-[#101010] dark:text-t-primary">Your Active Batches</h2>
+                <p className="font-sans text-[12px] font-medium text-[#7B7B7B] tracking-[0.004em] mt-0.5">{mockBatches.length} batches · {mockBatches.reduce((s, b) => s + b.studentsCount, 0)} students total</p>
+              </div>
+              <button className="h-9 px-4 rounded-xl text-xs font-semibold border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 text-[#727272] dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer">
                 View All
               </button>
             </div>
-            
-            <div className="overflow-x-auto z-10 w-full">
-              <table className="w-full text-left border-collapse min-w-[500px]">
-                <thead>
-                  <tr className="border-b border-s-stroke2 text-[12px] font-bold text-[#7B7B7B] uppercase tracking-wider">
-                    <th className="pb-3 pr-4 font-semibold">Batch Name</th>
-                    <th className="pb-3 px-4 font-semibold">Exam</th>
-                    <th className="pb-3 px-4 font-semibold">Students</th>
-                    <th className="pb-3 px-4 font-semibold">Avg Score</th>
-                    <th className="pb-3 pl-4 text-right font-semibold">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {mockBatches.map(batch => (
-                    <tr key={batch.id} className="border-b border-s-stroke2 last:border-b-0 group/row hover:bg-[#FDFDFD]/50 dark:hover:bg-b-surface3/20 transition-colors">
-                      <td className="py-4 pr-4 font-sans font-semibold text-sm text-[#101010] dark:text-t-primary">{batch.name}</td>
-                      <td className="py-4 px-4 font-sans text-xs font-semibold text-[#7B7B7B]">{batch.exam}</td>
-                      <td className="py-4 px-4 font-sans text-xs font-bold text-[#101010] dark:text-t-primary">{batch.studentsCount}</td>
-                      <td className="py-4 px-4">
-                        <div className="flex items-center gap-3">
-                          <span className="font-sans text-xs font-bold text-[#101010] dark:text-t-primary min-w-[36px]">{batch.avgScore}%</span>
-                          <div className="flex-1 h-1.5 bg-[rgba(123,123,123,0.15)] dark:bg-[rgba(229,229,229,0.08)] rounded-full overflow-hidden max-w-[120px]">
-                            <div
-                              className="h-full rounded-full bg-linear-to-r from-[#00B512] to-[#00A656]"
-                              style={{ width: `${batch.avgScore}%` }}
-                            />
-                          </div>
+
+            {/* Batch List */}
+            <div className="relative z-10 flex flex-col gap-1 px-3">
+              {mockBatches.map((batch, i) => {
+                const colors = [
+                  { bg: "bg-[#2A85FF]/10", border: "border-[#2A85FF]/20", text: "text-[#2A85FF]" },
+                  { bg: "bg-[#00A656]/10", border: "border-[#00A656]/20", text: "text-[#00A656]" },
+                  { bg: "bg-[#EF9D0E]/10", border: "border-[#EF9D0E]/20", text: "text-[#EF9D0E]" },
+                ];
+                const c = colors[i % colors.length];
+                return (
+                  <div
+                    key={batch.id}
+                    className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/40 border border-transparent hover:border-[#E2E2E2] dark:hover:border-s-stroke2/30 rounded-[20px] transition-all h-[88px]"
+                  >
+                    {/* Left — icon + batch name + exam + students */}
+                    <div className="flex flex-row items-center gap-5 flex-1 min-w-0">
+                      <div className={`size-16 rounded-[12px] flex items-center justify-center ${c.bg} border ${c.border} ${c.text} shrink-0`}>
+                        <RiTeamLine size={24} />
+                      </div>
+                      <div className="flex flex-col justify-center min-w-0 flex-1">
+                        <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary truncate">
+                          {batch.name}
+                        </span>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          <span className="font-sans text-[12px] font-normal text-[#7B7B7B]">{batch.exam}</span>
+                          <span className="text-[#D4D4D4]">·</span>
+                          <span className="font-sans text-[12px] font-normal text-[#7B7B7B]">{batch.studentsCount} students</span>
                         </div>
-                      </td>
-                      <td className="py-4 pl-4 text-right">
-                        <Link 
-                          href={`/teacher/batch/${batch.id}`} 
-                          className="inline-flex items-center justify-center h-8 px-3 rounded-lg text-[11px] font-bold bg-[#FDFDFD] dark:bg-b-surface2 hover:bg-[#F9F9F9] dark:hover:bg-b-surface3 border border-s-stroke2/30 text-t-secondary hover:text-t-primary transition-all active:scale-95 shadow-xs cursor-pointer"
-                        >
-                          Analysis
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                      </div>
+                    </div>
+
+                    {/* Right — avg score + bar + action */}
+                    <div className="flex flex-row items-center gap-6 shrink-0">
+                      <div className="hidden sm:flex flex-col items-end gap-1.5">
+                        <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary">
+                          {batch.avgScore}%
+                        </span>
+                        <div className="w-[80px] h-1.5 bg-[#F0F0F0] dark:bg-b-surface1 rounded-full overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-[#00A656]"
+                            style={{ width: `${batch.avgScore}%` }}
+                          />
+                        </div>
+                      </div>
+                      <Link
+                        href={`/teacher/batch/${batch.id}`}
+                        className="h-9 px-4 rounded-xl text-xs font-semibold border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 text-[#727272] dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer w-fit shrink-0"
+                      >
+                        <RiArrowRightUpLine size={14} /> Analysis
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Footer ghost button */}
+            <div className="relative z-10 px-3">
+              <Link
+                href="/teacher/analytics"
+                className="w-full h-12 flex items-center justify-center border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 rounded-[32px] text-[14px] font-semibold text-[#727272] dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
+              >
+                View Full Analytics
+              </Link>
             </div>
           </div>
 
