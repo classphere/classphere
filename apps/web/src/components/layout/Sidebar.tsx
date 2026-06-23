@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 import {
   RiDashboardLine,
   RiFlashlightFill,
   RiBookOpenLine,
   RiTrophyLine,
-  RiMessage3Line,
   RiSettings4Line,
   RiInformationLine,
   RiTeamLine,
@@ -22,11 +22,12 @@ import {
   RiToggleLine,
   RiLifebuoyLine,
   RiQuestionAnswerLine,
-  RiBox3Line,
-  RiShoppingCartLine,
   RiFileList3Line,
   RiBookmarkLine,
-  RiFileListLine
+  RiFileListLine,
+  RiSunLine,
+  RiMoonLine,
+  RiMailLine
 } from "@remixicon/react";
 
 export default function Sidebar() {
@@ -36,7 +37,26 @@ export default function Sidebar() {
   const isTeacher = pathname.startsWith("/teacher");
   const isInstitute = pathname.startsWith("/institute");
   const isSuperAdmin = pathname.startsWith("/superadmin");
-  const isStudent = !isTeacher && !isInstitute && !isSuperAdmin;
+
+  // Theme Toggler Logic
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark";
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    } else {
+      const currentTheme = document.documentElement.getAttribute("data-theme") as "light" | "dark" || "light";
+      setTheme(currentTheme);
+    }
+  }, []);
+
+  const toggleTheme = (newTheme: "light" | "dark") => {
+    setTheme(newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
 
   // Navigations based on Role
   const studentNav = [
@@ -50,12 +70,11 @@ export default function Sidebar() {
     { label: "Ask a Doubt", href: "/doubts",             icon: <RiQuestionAnswerLine size={18} />, active: pathname.startsWith("/doubts") },
   ];
 
-
   const teacherNav = [
     { label: "Dashboard", href: "/teacher",          icon: <RiDashboardLine size={18} />,  active: pathname === "/teacher" },
     { label: "DPPs",      href: "/teacher/dpps",     icon: <RiFileListLine size={18} />,   active: pathname.startsWith("/teacher/dpps") },
     { label: "Analytics", href: "/teacher/analytics",icon: <RiBarChartBoxLine size={18} />,active: pathname.startsWith("/teacher/analytics") },
-    { label: "Doubts",    href: "/teacher/doubts",   icon: <RiMessage3Line size={18} />,   active: pathname.startsWith("/teacher/doubts") },
+    { label: "Doubts",    href: "/teacher/doubts",   icon: <RiQuestionAnswerLine size={18} />, active: pathname.startsWith("/teacher/doubts") },
   ];
 
   const instituteNav = [
@@ -88,108 +107,130 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="hidden md:flex sticky top-0 z-40 h-screen w-[280px] shrink-0 flex-col overflow-y-auto border-r border-s-stroke2/70 bg-b-surface1 px-5 py-6 xl:w-[304px]"
+      className="hidden md:flex sticky top-0 z-40 h-screen w-[300px] shrink-0 flex-col overflow-y-auto border-r border-s-stroke2/40 bg-b-surface1 px-5 pt-5 pb-8 select-none"
     >
-      {/* ── Logo ── */}
-      <div className="mb-8 pl-1">
-        <Link href="/" className="flex items-center gap-2.5 rounded-full px-2 py-1.5 transition-colors hover:bg-b-surface2">
-          <div className="flex size-8 items-center justify-center rounded-full bg-b-primary text-t-light">
-            <RiFlashlightFill size={18} />
-          </div>
-          <span className="font-bold text-h6 text-t-primary tracking-tight">
-            ExamPrep
-          </span>
-        </Link>
-      </div>
-
-      {/* ── Main Menu ── */}
-      <div className="mb-6">
-        <div className="t-label mb-3 pl-3">
-          Main menu
+      {/* Menu Container (Logo + Navigation Items) */}
+      <div className="flex flex-col gap-4 w-full">
+        {/* Logo */}
+        <div className="pl-1">
+          <Link href="/" className="flex items-center gap-2.5 rounded-full px-2 py-1 transition-colors hover:bg-b-surface2/60">
+            <div className="flex size-9 items-center justify-center rounded-xl bg-[#101010] text-[#FDFDFD] box-shadow: inset 0px 1px 1px rgba(214,214,214,0.25)">
+              <RiFlashlightFill size={18} />
+            </div>
+            <span className="font-sans text-[18px] font-semibold text-[#101010] dark:text-t-primary tracking-[0.0015em] leading-[140%]">
+              ExamPrep
+            </span>
+          </Link>
         </div>
-        <nav className="flex flex-col gap-1">
+
+        {/* Navigation Menu */}
+        <nav className="flex flex-col gap-0.5 w-full">
           {currentNav.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className={`group relative flex h-12 shrink-0 items-center gap-3 rounded-3xl px-5 text-button transition-colors hover:text-t-primary ${
-                item.active ? "text-t-primary font-bold" : "text-t-secondary"
+              className={`group flex h-10 items-center gap-2.5 rounded-lg px-2.5 text-sm font-sans font-semibold transition-all ${
+                item.active 
+                  ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05),0px_3px_1px_-3px_rgba(8,8,8,0.09)] border border-s-stroke2/30" 
+                  : "text-[#727272] hover:text-[#101010] dark:hover:text-t-primary hover:bg-b-surface2/30"
               }`}
             >
-              {item.active && (
-                <div className="absolute inset-0 z-0 rounded-3xl gradient-menu shadow-depth-menu">
-                  <div className="absolute inset-[1.5px] rounded-[1.375rem] bg-b-pop"></div>
-                </div>
-              )}
-              <span className={`relative z-10 flex items-center transition-colors group-hover:text-t-primary ${
-                item.active ? "text-t-primary" : "text-t-secondary"
+              <span className={`flex items-center transition-colors ${
+                item.active ? "text-[#101010] dark:text-t-primary" : "text-[#727272] group-hover:text-[#101010] dark:group-hover:text-t-primary"
               }`}>
                 {item.icon}
               </span>
-              <span className="relative z-10">{item.label}</span>
+              <span>{item.label}</span>
             </Link>
           ))}
         </nav>
       </div>
 
-      {/* ── Others Menu ── */}
-      <div className="mb-auto">
-        <div className="t-label mb-3 pl-3">
+      {/* Others Menu */}
+      <div className="mt-4 flex flex-col gap-2">
+        <div className="text-[10px] font-bold tracking-wider text-[#727272] pl-2.5 uppercase">
           Others
         </div>
-        <nav className="flex flex-col gap-1">
+        <nav className="flex flex-col gap-0.5 w-full">
           {othersNav.map((item) => {
             const isActive = pathname.startsWith(item.path);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`group relative flex h-12 shrink-0 items-center gap-3 rounded-3xl px-5 text-button transition-colors hover:text-t-primary ${
-                  isActive ? "text-t-primary font-bold" : "text-t-secondary"
+                className={`group flex h-10 items-center gap-2.5 rounded-lg px-2.5 text-sm font-sans font-semibold transition-all ${
+                  isActive 
+                    ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05),0px_3px_1px_-3px_rgba(8,8,8,0.09)] border border-s-stroke2/30" 
+                    : "text-[#727272] hover:text-[#101010] dark:hover:text-t-primary hover:bg-b-surface2/30"
                 }`}
               >
-                {isActive && (
-                  <div className="absolute inset-0 z-0 rounded-3xl gradient-menu shadow-depth-menu">
-                    <div className="absolute inset-[1.5px] rounded-[1.375rem] bg-b-pop"></div>
-                  </div>
-                )}
-                <span className={`relative z-10 flex items-center transition-colors group-hover:text-t-primary ${
-                  isActive ? "text-t-primary" : "text-t-secondary"
+                <span className={`flex items-center transition-colors ${
+                  isActive ? "text-[#101010] dark:text-t-primary" : "text-[#727272] group-hover:text-[#101010] dark:group-hover:text-t-primary"
                 }`}>
                   {item.icon}
                 </span>
-                <span className="relative z-10">{item.label}</span>
+                <span>{item.label}</span>
               </Link>
             );
           })}
         </nav>
       </div>
 
-      {/* ── Bottom Section (Profile + Demo Switcher) ── */}
-      <div className="mt-8">
-
-        {/* Download App block pattern */}
-        <div className="card mb-6 rounded-4xl border border-s-stroke2/70 bg-b-surface2 p-5 shadow-widget">
-          <h4 className="text-body-2 font-bold mb-1 text-t-primary">Download our<br />Mobile App</h4>
-          <p className="text-caption text-t-secondary mb-4">Get easy in another way</p>
-          <button className="btn btn-sm btn-outline w-full bg-transparent">Download</button>
-        </div>
-
+      {/* Bottom Section (Role Switcher & Custom Mode Container) */}
+      <div className="mt-auto pt-4 flex flex-col gap-4 w-full">
+        
         {/* Demo Role Switcher */}
-        <div className="px-2">
+        <div className="w-full">
           <select
-            className="input h-10 w-full rounded-3xl border border-s-stroke2 bg-b-surface2 px-3 py-1.5 text-caption"
+            className="input h-9.5 w-full rounded-lg border border-s-stroke2 bg-b-surface2 px-3.5 py-1.5 text-caption font-semibold"
             value={isTeacher ? "/teacher" : isInstitute ? "/institute" : isSuperAdmin ? "/superadmin" : "/"}
             onChange={(e) => router.push(e.target.value)}
           >
-            <option value="/">Student</option>
-            <option value="/teacher">Teacher</option>
+            <option value="/">Student Dashboard</option>
+            <option value="/teacher">Teacher Portal</option>
             <option value="/institute">Institute Admin</option>
             <option value="/superadmin">Super Admin</option>
           </select>
         </div>
 
+        {/* Figma Mode Container */}
+        <div className="flex flex-row items-center gap-3.5 w-full border-t border-s-stroke2/30 pt-3">
+          
+          {/* Message Indicator Button */}
+          <button className="flex size-10.5 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all hover:border-[#727272] active:scale-95 shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)] cursor-pointer">
+            <RiMailLine size={18} />
+          </button>
+
+          {/* Vertical Theme Toggle Pill */}
+          <div className="flex flex-row items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-full p-0.5 h-10.5 w-24 relative select-none shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)]">
+            <button 
+              onClick={() => toggleTheme("light")}
+              className={`flex-1 flex items-center justify-center h-8.5 rounded-full transition-all cursor-pointer ${
+                theme === "light" 
+                  ? "bg-[#F1F1F1] dark:bg-b-surface1 text-[#101010] dark:text-t-primary font-bold shadow-widget" 
+                  : "text-[#727272] hover:text-[#101010]"
+              }`}
+            >
+              <RiSunLine size={15} />
+            </button>
+            <button 
+              onClick={() => toggleTheme("dark")}
+              className={`flex-1 flex items-center justify-center h-8.5 rounded-full transition-all cursor-pointer ${
+                theme === "dark" 
+                  ? "bg-[#F1F1F1] dark:bg-b-surface1 text-[#101010] dark:text-t-primary font-bold shadow-widget" 
+                  : "text-[#727272] hover:text-[#101010] dark:hover:text-t-primary"
+              }`}
+            >
+              <RiMoonLine size={15} />
+            </button>
+          </div>
+
+        </div>
+
       </div>
+
+      {/* Bottom spacer to prevent scroll cutoff and Next.js toolbar interference */}
+      <div className="h-6 shrink-0 w-full" />
 
     </aside>
   );
