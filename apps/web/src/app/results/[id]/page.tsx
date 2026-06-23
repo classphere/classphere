@@ -43,6 +43,16 @@ function AccuracyBar({ accuracy }: { accuracy: number }) {
   );
 }
 
+
+function formatTimeSpent(seconds: number): string {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  if (mins > 0) {
+    return `${mins} min ${secs} s`;
+  }
+  return `${secs} s`;
+}
+
 export default function ResultsPage() {
   const router = useRouter();
   const params = useParams();
@@ -54,6 +64,7 @@ export default function ResultsPage() {
   const [microCount, setMicroCount] = useState(15);
   const [fullHours, setFullHours] = useState<1 | 2 | 3>(1);
   const [expandedDay, setExpandedDay] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<"overview" | "analysis" | "time" | "missed" | "complete">("overview");
 
   const [a, setAnalysis] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -82,25 +93,58 @@ export default function ResultsPage() {
     fetchAnalysis();
   }, [attemptId]);
 
+  const getSubjectStats = (subj: string | null) => {
+    const answers = subj 
+      ? a.classified.filter((ans: any) => ans.question.subject === subj)
+      : a.classified;
+    
+    const total = answers.length;
+    const correct = answers.filter((ans: any) => ans.is_correct).length;
+    const incorrect = answers.filter((ans: any) => ans.selected_answer && !ans.is_correct).length;
+    const skipped = answers.filter((ans: any) => !ans.selected_answer).length;
+    const notVisited = answers.filter((ans: any) => !ans.selected_answer && (ans.time_taken_sec || 0) < 3).length;
+    const unattempted = skipped - notVisited;
+
+    // Let's compute score
+    const score = answers.reduce((sum: number, ans: any) => sum + (ans.marks_awarded || 0), 0);
+    const maxScore = total * 4;
+
+    return { total, correct, incorrect, unattempted, notVisited, score, maxScore };
+  };
+
+  const getOverviewLabel = (ans: any) => {
+    const allotted = ans.question.difficulty === "easy" ? 90 : ans.question.difficulty === "medium" ? 120 : 210;
+    const spent = ans.time_taken_sec || 0;
+
+    if (ans.is_correct) {
+      return spent < allotted * 1.5 ? "Perfect" : "-";
+    }
+    if (!ans.selected_answer) {
+      return spent >= 15 ? "Confused" : "-";
+    }
+    if (spent >= allotted * 1.2) return "Wasted";
+    return "-";
+  };
+
   if (loading || !a) {
     return (
       <>
         <Navbar title="Results & Analysis" />
         <div className="min-h-[70vh] px-4 py-10 md:px-6">
-          <div className="mx-auto flex max-w-5xl flex-col gap-6 rounded-[36px] border border-s-stroke2/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(244,247,251,0.92))] p-8 shadow-depth md:p-10">
+          <div className="card mx-auto max-w-5xl flex flex-col gap-6 p-8 md:p-10">
             <div className="h-3 w-36 rounded-full bg-b-surface2" />
             <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_14rem]">
               <div className="space-y-3">
                 <div className="h-9 w-72 max-w-full rounded-2xl bg-b-surface2" />
                 <div className="h-5 w-96 max-w-full rounded-full bg-b-surface2" />
               </div>
-              <div className="h-24 rounded-[28px] border border-s-stroke2 bg-b-surface2" />
+              <div className="h-24 rounded-3xl border border-s-stroke2 bg-b-surface2" />
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="h-32 rounded-[28px] bg-b-surface2" />
-              <div className="h-32 rounded-[28px] bg-b-surface2" />
-              <div className="h-32 rounded-[28px] bg-b-surface2" />
+              <div className="h-32 rounded-3xl bg-b-surface2" />
+              <div className="h-32 rounded-3xl bg-b-surface2" />
+              <div className="h-32 rounded-3xl bg-b-surface2" />
             </div>
 
             <div className="flex items-center gap-3 text-t-secondary">
@@ -134,81 +178,83 @@ export default function ResultsPage() {
           </Link>
           <div className="flex flex-wrap items-center gap-2">
             <span className="label label-gray">{totalQuestions} questions</span>
-            <span className="label label-gray">{attemptedChapters.filter((t: any) => t.isWeak).length} weak chapters</span>
-            <span className="label label-gray">{unattemptedChapters.length} unattempted chapters</span>
+            <span className="label label-gray">
+              {attemptedChapters.filter((t: any) => t.isWeak).length} weak chapter{attemptedChapters.filter((t: any) => t.isWeak).length === 1 ? "" : "s"}
+            </span>
+            <span className="label label-gray">
+              {unattemptedChapters.length} unattempted chapter{unattemptedChapters.length === 1 ? "" : "s"}
+            </span>
             {a.narrative?.examCountdown && (
               <span className="label label-yellow">{a.narrative.examCountdown.urgencyLabel}</span>
             )}
           </div>
         </div>
 
-        <section className="mb-6 overflow-hidden rounded-[36px] border border-s-stroke2/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(246,249,252,0.92))] shadow-depth">
-          <div className="grid gap-6 p-6 md:p-8 xl:grid-cols-[minmax(0,1fr)_20rem]">
-            <div className="space-y-5">
-              <div>
-                <p className="text-caption font-bold uppercase tracking-[0.24em] text-t-tertiary">Test Results</p>
-                <h1 className="mt-2 text-h4 font-black tracking-tight text-t-primary md:text-h3">Test Results & Analysis</h1>
-                <p className="mt-2 text-body-2 text-t-secondary">{a.topicStats[0]?.chapter ?? "Practice set"} · JEE · {totalQuestions} questions</p>
-              </div>
+        <section className="card p-6 md:p-8 grid gap-6 xl:grid-cols-[minmax(0,1fr)_20rem]">
+          <div className="space-y-5">
+            <div>
+              <p className="text-caption font-bold uppercase tracking-[0.24em] text-t-tertiary">Test Results</p>
+              <h1 className="mt-2 text-h4 font-black tracking-tight text-t-primary md:text-h3">Test Results & Analysis</h1>
+              <p className="mt-2 text-body-2 text-t-secondary">{a.topicStats[0]?.chapter ?? "Practice set"} · JEE · {totalQuestions} questions</p>
+            </div>
 
-              {a.narrative && (
-                <div className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5 md:p-6">
-                  <div className="mb-4 flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-2 text-body-2 font-bold text-t-primary">
-                      <RiLightbulbFlashLine size={20} className="text-[#EF9D0E]" /> Performance summary
-                    </div>
-                    {a.narrative.examCountdown && <span className="label label-gray">{a.narrative.examCountdown.urgencyLabel}</span>}
+            {a.narrative && (
+              <div className="rounded-3xl border border-s-stroke2 bg-b-surface1 p-5 md:p-6">
+                <div className="mb-4 flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-2 text-body-2 font-bold text-t-primary">
+                    <RiLightbulbFlashLine size={20} className="text-[#EF9D0E]" /> Performance summary
                   </div>
-                  <p className="text-body-2 font-semibold leading-relaxed text-t-primary">{a.narrative.headline}</p>
-                  <p className="mt-3 max-w-3xl text-caption leading-relaxed text-t-secondary">{a.narrative.overview}</p>
-                  <div className="mt-4 rounded-2xl border border-s-stroke2 bg-b-surface2 p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary">Best next move</div>
-                    <div className="mt-1 text-body-2 font-semibold text-t-primary">{a.narrative.biggestWin}</div>
-                  </div>
+                  {a.narrative.examCountdown && <span className="label label-gray">{a.narrative.examCountdown.urgencyLabel}</span>}
+                </div>
+                <p className="text-body-2 font-semibold leading-relaxed text-t-primary">{a.narrative.headline}</p>
+                <p className="mt-3 max-w-3xl text-caption leading-relaxed text-t-secondary">{a.narrative.overview}</p>
+                <div className="mt-4 rounded-2xl border border-s-stroke2 bg-b-surface2 p-4">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary">Best next move</div>
+                  <div className="mt-1 text-body-2 font-semibold text-t-primary">{a.narrative.biggestWin}</div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="rounded-3xl border border-s-stroke2 bg-b-surface1 p-5 shadow-sm">
+            <div className={`flex items-center justify-between rounded-2xl border ${pctBorderColor} ${pctBgClass} p-4`}>
+              <div>
+                <div className={`text-h3 font-black tracking-tight ${pctColorClass}`}>{a.scoring.score} <span className="text-body-2 font-normal text-t-secondary">/ {a.scoring.maxScore}</span></div>
+                <div className="text-caption font-bold text-t-secondary">Marks Obtained</div>
+              </div>
+              {a.freeMarks?.projectedScore > a.scoring.score && (
+                <div className="text-right">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#00A656]">Potential</div>
+                  <div className="text-body-1 font-black text-[#00A656]">{a.freeMarks.projectedScore} <span className="text-[10px] font-normal text-t-secondary">/ {a.scoring.maxScore}</span></div>
                 </div>
               )}
             </div>
 
-            <div className="rounded-[30px] border border-s-stroke2 bg-b-surface1 p-5 shadow-sm">
-              <div className={`flex items-center justify-between rounded-[24px] border ${pctBorderColor} ${pctBgClass} p-4`}>
-                <div>
-                  <div className={`text-h3 font-black tracking-tight ${pctColorClass}`}>{a.scoring.score} <span className="text-body-2 font-normal text-t-secondary">/ {a.scoring.maxScore}</span></div>
-                  <div className="text-caption font-bold text-t-secondary">Marks Obtained</div>
+            <div className="mt-4 h-3 rounded-full bg-s-stroke2 overflow-hidden">
+              <div className={`h-full rounded-full ${pct >= 70 ? "bg-[#00A656]" : pct >= 50 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]"}`} style={{ width: `${Math.max(0, Math.min(100, pct))}%` }} />
+            </div>
+
+            <div className="mt-4 grid grid-cols-3 gap-3">
+              {[
+                { label: "Correct", value: a.scoring.correctCount, color: "text-[#00A656]" },
+                { label: "Wrong", value: a.scoring.incorrectCount, color: "text-[#FF6A55]" },
+                { label: "Skipped", value: a.scoring.skippedCount, color: "text-t-secondary" },
+              ].map((stat) => (
+                <div key={stat.label} className="rounded-2xl border border-s-stroke2 bg-b-surface2 p-3 text-center">
+                  <div className={`text-body-1 font-black ${stat.color}`}>{stat.value}</div>
+                  <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-t-tertiary">{stat.label}</div>
                 </div>
-                {a.freeMarks?.projectedScore > a.scoring.score && (
-                  <div className="text-right">
-                    <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#00A656]">Potential</div>
-                    <div className="text-body-1 font-black text-[#00A656]">{a.freeMarks.projectedScore} <span className="text-[10px] font-normal text-t-secondary">/ {a.scoring.maxScore}</span></div>
-                  </div>
-                )}
-              </div>
+              ))}
+            </div>
 
-              <div className="mt-4 h-3 rounded-full bg-s-stroke2 overflow-hidden">
-                <div className={`h-full rounded-full ${pct >= 70 ? "bg-[#00A656]" : pct >= 50 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]"}`} style={{ width: `${Math.max(0, Math.min(100, pct))}%` }} />
-              </div>
-
-              <div className="mt-4 grid grid-cols-3 gap-3">
-                {[
-                  { label: "Correct", value: a.scoring.correctCount, color: "text-[#00A656]" },
-                  { label: "Wrong", value: a.scoring.incorrectCount, color: "text-[#FF6A55]" },
-                  { label: "Skipped", value: a.scoring.skippedCount, color: "text-t-secondary" },
-                ].map((stat) => (
-                  <div key={stat.label} className="rounded-2xl border border-s-stroke2 bg-b-surface2 p-3 text-center">
-                    <div className={`text-body-1 font-black ${stat.color}`}>{stat.value}</div>
-                    <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-t-tertiary">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-4 rounded-2xl border border-s-stroke2 bg-b-surface2 p-4">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-t-tertiary">Batch average</div>
-                    <div className="mt-1 text-body-1 font-black text-t-primary">{batchAvgScore} <span className="text-[10px] font-normal text-t-secondary">/ {a.scoring.maxScore}</span></div>
-                  </div>
-                  <div className={`text-caption font-bold ${a.scoring.score >= batchAvgScore ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
-                    {a.scoring.score >= batchAvgScore ? `↑ +${a.scoring.score - batchAvgScore} Marks` : `↓ ${batchAvgScore - a.scoring.score} Marks`} vs avg
-                  </div>
+            <div className="mt-4 rounded-2xl border border-s-stroke2 bg-b-surface2 p-4">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-t-tertiary">Batch average</div>
+                  <div className="mt-1 text-body-1 font-black text-t-primary">{batchAvgScore} <span className="text-[10px] font-normal text-t-secondary">/ {a.scoring.maxScore}</span></div>
+                </div>
+                <div className={`text-caption font-bold ${a.scoring.score >= batchAvgScore ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
+                  {a.scoring.score >= batchAvgScore ? `↑ +${a.scoring.score - batchAvgScore} Marks` : `↓ ${batchAvgScore - a.scoring.score} Marks`} vs avg
                 </div>
               </div>
             </div>
@@ -217,40 +263,259 @@ export default function ResultsPage() {
 
         <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
           <div className="space-y-6">
+            {/* ── HIGH-FIDELITY DETAILED REPORT CARD ── */}
             <section className="card p-6 md:p-7">
-              <div className="mb-5">
-                <h2 className="text-sub-title-1 font-black text-t-primary">Chapter Performance</h2>
-                <p className="mt-1 text-caption text-t-secondary">Accuracy across attempted chapters in this mock test.</p>
+              <div className="mb-5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border-b border-s-stroke2 pb-5">
+                <div>
+                  <h2 className="text-sub-title-1 font-black text-t-primary">Detailed Performance Report</h2>
+                  <p className="mt-1 text-caption text-t-secondary">Deep-dive pedagogical analysis of your test attempts.</p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { id: "overview", label: "Overview" },
+                    { id: "analysis", label: "Analysis" },
+                    { id: "time", label: "Time & Accuracy" },
+                    { id: "missed", label: "Missed Concepts" },
+                    { id: "complete", label: "Complete Analysis" }
+                  ].map(t => (
+                    <button
+                      key={t.id}
+                      onClick={() => setActiveTab(t.id as any)}
+                      className={`btn btn-sm ${activeTab === t.id ? "btn-primary" : "btn-outline"}`}
+                    >
+                      {t.label}
+                    </button>
+                  ))}
+                </div>
               </div>
 
-              {attemptedChapters.length > 0 ? (
-                <div className="grid gap-4 lg:grid-cols-2">
-                  {attemptedChapters.map((chapter: any) => {
-                    const statusLabel = chapter.accuracy >= 80 ? "Strong" : chapter.accuracy >= 50 ? "Needs Revision" : "Struggled";
-                    const statusColor = chapter.accuracy >= 80 ? "label-green" : chapter.accuracy >= 50 ? "label-yellow" : "label-red";
-                    const scoreText = `${chapter.correct} / ${chapter.attempted} Correct`;
-                    
-                    return (
-                      <div key={chapter.topic} className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5 transition-colors hover:border-s-highlight">
-                        <div className="mb-4 flex items-start justify-between gap-4">
-                          <div>
-                            <h3 className="text-body-2 font-bold text-t-primary">{chapter.topic}</h3>
-                            <p className="mt-1 text-caption text-t-secondary">{chapter.chapter}</p>
-                          </div>
-                          <span className={`label ${statusColor}`}>{statusLabel}</span>
-                        </div>
-                        <AccuracyBar accuracy={chapter.accuracy} />
-                        <div className="mt-4 flex items-center justify-between text-caption text-t-secondary">
-                          <span>{scoreText}</span>
-                          <span>{chapter.accuracy.toFixed(0)}% Accuracy</span>
-                        </div>
+              {/* Render active tab content here */}
+              {activeTab === "overview" && (
+                <div className="space-y-6 animate-fadeIn">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary">Summary of marks scored in the test</div>
+                  <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                    {[
+                      { label: "Score", value: `${a.scoring.score}/${a.scoring.maxScore}`, sub: "Marks Obtained" },
+                      { label: "Accuracy", value: `${a.scoring.correctCount + a.scoring.incorrectCount > 0 ? Math.round((a.scoring.correctCount / (a.scoring.correctCount + a.scoring.incorrectCount)) * 100) : 0}%`, sub: "Attempt Accuracy" },
+                      { label: "Qs Attempted", value: `${a.scoring.correctCount + a.scoring.incorrectCount}/${totalQuestions}`, sub: "Out of Total Questions" },
+                      { label: "Time Taken", value: `${Math.round(Object.values(a.attemptStrategy?.timePerSubjectSec || {}).reduce((sum: number, val: any) => sum + val, 0) / 60)}/180 min`, sub: "Total Spent Time" }
+                    ].map((stat, i) => (
+                      <div key={i} className="rounded-3xl border border-s-stroke2 bg-b-surface1 p-5 text-center">
+                        <div className="text-caption font-bold uppercase tracking-[0.22em] text-t-tertiary mb-2">{stat.label}</div>
+                        <div className="text-h3 font-black tracking-tight text-t-primary">{stat.value}</div>
+                        <div className="text-caption text-t-secondary mt-1">{stat.sub}</div>
                       </div>
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
-              ) : (
-                <div className="rounded-[28px] border border-dashed border-s-stroke2 p-8 text-center text-caption text-t-secondary">
-                  No chapters attempted yet.
+              )}
+
+              {activeTab === "analysis" && (
+                <div className="space-y-6 animate-fadeIn">
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary mb-1">Detailed analysis of your performance</div>
+                    <p className="text-caption text-t-secondary leading-relaxed max-w-3xl">
+                      This is a quick snapshot of your performance measured in terms of attempts that were correct, incorrect, unattempted and questions that were not visited at all. The individual subject-wise analysis will help you gauge your performance on a subject level.
+                    </p>
+                  </div>
+                  <div className="overflow-x-auto rounded-2xl border border-s-stroke2">
+                    <table className="rayum-table">
+                      <thead>
+                        <tr>
+                          <th>SUBJECT</th>
+                          <th>SCORE</th>
+                          <th>CORRECT</th>
+                          <th>INCORRECT</th>
+                          <th>UNATTEMPTED</th>
+                          <th>NOT VISITED</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {/* Overall row */}
+                        {(() => {
+                          const overall = getSubjectStats(null);
+                          return (
+                            <tr className="font-bold bg-b-surface1/30">
+                              <td>Overall</td>
+                              <td>{overall.score}/{overall.maxScore}</td>
+                              <td>{overall.correct}/75</td>
+                              <td>{overall.incorrect}/75</td>
+                              <td>{overall.unattempted}/75</td>
+                              <td>{overall.notVisited}/75</td>
+                            </tr>
+                          );
+                        })()}
+                        {/* Subject rows */}
+                        {strategySubjects.map((subj: string) => {
+                          const stats = getSubjectStats(subj);
+                          return (
+                            <tr key={subj}>
+                              <td className="font-semibold">{subj}</td>
+                              <td>{stats.score}/{stats.maxScore}</td>
+                              <td>{stats.correct}/25</td>
+                              <td>{stats.incorrect}/25</td>
+                              <td>{stats.unattempted}/25</td>
+                              <td>{stats.notVisited}/25</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === "time" && (
+                <div className="space-y-6 animate-fadeIn">
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary mb-1">Time and Accuracy</div>
+                    <p className="text-caption text-t-secondary leading-relaxed max-w-3xl">
+                      Time is the most important resource in any competitive exam. And one major element of any test analysis is to check the time spent on an individual subject. This section will not only give you insight on the time spent but also the percentage attempt and accuracy at the subject level.
+                    </p>
+                  </div>
+                  <div className="overflow-x-auto rounded-2xl border border-s-stroke2">
+                    <table className="rayum-table">
+                      <thead>
+                        <tr>
+                          <th>SUBJECT</th>
+                          <th>TIME SPENT</th>
+                          <th>ATTEMPT (IN %)</th>
+                          <th>ACCURACY (IN %)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {/* Overall Row */}
+                        {(() => {
+                          const spent = Object.values(a.attemptStrategy?.timePerSubjectSec || {}).reduce((sum: number, val: any) => sum + val, 0);
+                          const attempted = a.scoring.correctCount + a.scoring.incorrectCount;
+                          const attemptPct = Math.round((attempted / 75) * 100);
+                          const accuracyPct = attempted > 0 ? Math.round((a.scoring.correctCount / attempted) * 100) : 0;
+                          return (
+                            <tr className="font-bold bg-b-surface1/30">
+                              <td>Overall</td>
+                              <td>{formatTimeSpent(spent)}</td>
+                              <td>{attemptPct}%</td>
+                              <td>{accuracyPct}%</td>
+                            </tr>
+                          );
+                        })()}
+                        {/* Subject Rows */}
+                        {strategySubjects.map((subj: string) => {
+                          const spent = a.attemptStrategy?.timePerSubjectSec?.[subj] || 0;
+                          const stats = getSubjectStats(subj);
+                          const attempted = stats.correct + stats.incorrect;
+                          const attemptPct = Math.round((attempted / 30) * 100);
+                          const accuracyPct = attempted > 0 ? Math.round((stats.correct / attempted) * 100) : 0;
+                          return (
+                            <tr key={subj}>
+                              <td className="font-semibold">{subj}</td>
+                              <td>{formatTimeSpent(spent)}</td>
+                              <td>{attemptPct}%</td>
+                              <td>{accuracyPct}%</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === "missed" && (
+                <div className="space-y-6 animate-fadeIn">
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-t-tertiary mb-1">Missed Concepts</div>
+                    <p className="text-caption text-t-secondary leading-relaxed max-w-3xl">
+                      This section lists all the concepts you got wrong in the exam on an individual subject level. This information becomes relevant for you as you will now need to spend some time brushing up these concepts.
+                    </p>
+                  </div>
+                  <div className="grid gap-6 md:grid-cols-3">
+                    {["Physics", "Chemistry", "Mathematics"].map((subj) => {
+                      const missed = a.classified
+                        .filter((ans: any) => ans.question.subject === subj && ans.selected_answer && !ans.is_correct)
+                        .map((ans: any) => ans.question.topic);
+                      const uniqueMissed = Array.from(new Set(missed));
+                      return (
+                        <div key={subj} className="rounded-3xl border border-s-stroke2 bg-b-surface1 p-5">
+                          <h3 className="text-body-2 font-bold text-t-primary mb-3 pb-2 border-b border-s-stroke2">{subj}</h3>
+                          {uniqueMissed.length > 0 ? (
+                            <ol className="list-decimal pl-5 space-y-2 text-caption text-t-secondary">
+                              {uniqueMissed.map((topic: any, idx) => (
+                                <li key={idx} className="leading-relaxed">{topic}</li>
+                              ))}
+                            </ol>
+                          ) : (
+                            <p className="text-caption text-t-tertiary italic">Great! You did not miss any concept.</p>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {activeTab === "complete" && (
+                <div className="space-y-6 animate-fadeIn">
+                  <div className="overflow-x-auto rounded-2xl border border-s-stroke2">
+                    <table className="rayum-table">
+                      <thead>
+                        <tr>
+                          <th>QNO</th>
+                          <th>CHAPTER</th>
+                          <th>TOPIC</th>
+                          <th>DIFFICULTY</th>
+                          <th>ALLOTTED</th>
+                          <th>SPENT</th>
+                          <th>ATTEMPTED</th>
+                          <th>ANSWER</th>
+                          <th>OVERVIEW</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {a.classified.map((ans: any) => {
+                          const qNum = ans.question.question_number;
+                          const chapter = ans.question.chapter;
+                          const topic = ans.question.topic;
+                          const difficulty = ans.question.difficulty === "easy" ? "Easy" : ans.question.difficulty === "medium" ? "Moderate" : "Difficult";
+                          const allotted = ans.question.difficulty === "easy" ? "90 s" : ans.question.difficulty === "medium" ? "120 s" : "210 s";
+                          const spent = `${ans.time_taken_sec || 0} s`;
+                          const attempted = ans.selected_answer ? "Yes" : "No";
+                          
+                          let ansLabel = "- Skipped";
+                          let ansColor = "text-t-tertiary";
+                          if (ans.selected_answer) {
+                            if (ans.is_correct) {
+                              ansLabel = "✓ Correct";
+                              ansColor = "text-[#00A656] font-bold";
+                            } else {
+                              ansLabel = "✗ Incorrect";
+                              ansColor = "text-[#FF6A55] font-bold";
+                            }
+                          }
+
+                          const overview = getOverviewLabel(ans);
+                          let overviewColor = "text-t-tertiary";
+                          if (overview === "Perfect") overviewColor = "text-[#00A656] font-bold";
+                          if (overview === "Wasted") overviewColor = "text-[#FF6A55] font-bold";
+                          if (overview === "Confused") overviewColor = "text-[#EF9D0E] font-bold";
+
+                          return (
+                            <tr key={ans.id}>
+                              <td>{qNum}</td>
+                              <td>{chapter}</td>
+                              <td>{topic}</td>
+                              <td>{difficulty}</td>
+                              <td>{allotted}</td>
+                              <td>{spent}</td>
+                              <td>{attempted}</td>
+                              <td className={ansColor}>{ansLabel}</td>
+                              <td className={overviewColor}>{overview}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               )}
             </section>
@@ -284,7 +549,7 @@ export default function ResultsPage() {
                     {a.attemptStrategy.strategyScore}/100
                   </div>
                 </div>
-                <div className="rounded-[24px] border border-s-stroke2 bg-b-surface2 p-4">
+                <div className="rounded-3xl border border-s-stroke2 bg-b-surface2 p-4">
                   <div className="grid gap-3 sm:grid-cols-3">
                     {strategySubjects.map((subject: string) => {
                       const deviation = a.attemptStrategy.timeDeviationPct?.[subject];
@@ -320,7 +585,7 @@ export default function ResultsPage() {
               </div>
               <div className="grid gap-4 md:grid-cols-2">
                 {a.errorPatterns.map((ep: any) => (
-                  <div key={ep.id} className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5">
+                  <div key={ep.id} className="rounded-3xl border border-s-stroke2 bg-b-surface1 p-5">
                     <h3 className="text-body-2 font-bold text-[#FF6A55]">{ep.name}</h3>
                     <p className="mt-2 text-caption leading-relaxed text-t-secondary">{ep.description}</p>
                     <div className="mt-4">
@@ -336,7 +601,7 @@ export default function ResultsPage() {
 
             {/* ── PANIC CASCADE ALERT ── */}
             {a.panicCascade?.detected && (
-              <section className="rounded-[32px] border border-[#FF6A55]/30 bg-[#FF6A55]/5 p-6 md:p-7">
+              <section className="rounded-4xl border border-[#FF6A55]/30 bg-[#FF6A55]/5 p-6 md:p-7">
                 <div className="flex items-start gap-4">
                   <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[#FF6A55]/10">
                     <RiErrorWarningFill size={24} className="text-[#FF6A55]" />
@@ -347,7 +612,7 @@ export default function ResultsPage() {
                       <span className="label label-red">Critical Pattern</span>
                     </div>
                     <p className="mt-2 text-caption leading-relaxed text-t-secondary">{a.panicCascade.description}</p>
-                    <div className="mt-4 rounded-2xl border border-[#FF6A55]/20 bg-white/60 p-3 text-caption font-semibold text-t-primary">
+                    <div className="mt-4 rounded-2xl border border-[#FF6A55]/20 bg-b-surface2/60 p-3 text-caption font-semibold text-t-primary">
                       <span className="text-[#FF6A55]">Action:</span> {a.panicCascade.tip}
                     </div>
                   </div>
@@ -370,37 +635,37 @@ export default function ResultsPage() {
 
                 {/* Fatigue summary narrative */}
                 {a.fatigueSummary && (
-                  <div className="mb-5 rounded-[24px] border border-s-stroke2 bg-b-surface2 p-4 text-caption leading-relaxed text-t-secondary">
+                  <div className="mb-5 rounded-3xl border border-s-stroke2 bg-b-surface2 p-4 text-caption leading-relaxed text-t-secondary">
                     <span className="font-bold text-t-primary">Analysis: </span>{a.fatigueSummary}
                   </div>
                 )}
 
                 {/* Interval table */}
-                <div className="overflow-x-auto">
-                  <table className="w-full text-caption">
+                <div className="overflow-x-auto rounded-2xl border border-s-stroke2 mb-5">
+                  <table className="rayum-table">
                     <thead>
-                      <tr className="border-b border-s-stroke2">
-                        <th className="pb-3 text-left font-bold uppercase tracking-[0.18em] text-t-tertiary">Interval</th>
-                        <th className="pb-3 text-center font-bold uppercase tracking-[0.18em] text-t-tertiary">Total</th>
-                        <th className="pb-3 text-center font-bold uppercase tracking-[0.18em] text-[#00A656]">Correct</th>
-                        <th className="pb-3 text-center font-bold uppercase tracking-[0.18em] text-[#FF6A55]">Wrong</th>
-                        <th className="pb-3 text-center font-bold uppercase tracking-[0.18em] text-t-tertiary">Skipped</th>
-                        <th className="pb-3 text-right font-bold uppercase tracking-[0.18em] text-t-tertiary">Accuracy</th>
+                      <tr>
+                        <th>Interval</th>
+                        <th className="text-center">Total</th>
+                        <th className="text-center text-[#00A656]">Correct</th>
+                        <th className="text-center text-[#FF6A55]">Wrong</th>
+                        <th className="text-center">Skipped</th>
+                        <th className="text-right">Accuracy</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-s-stroke2">
+                    <tbody>
                       {a.timeIntervals.map((interval: any, i: number) => {
                         const accColor = interval.accuracy >= 70 ? "text-[#00A656]" : interval.accuracy >= 40 ? "text-[#EF9D0E]" : "text-[#FF6A55]";
                         const label = i === 0 ? "First 30 mins" : `${(i * 30) + 1}–${(i + 1) * 30} mins`;
                         return (
-                          <tr key={i} className="hover:bg-b-surface2/50 transition-colors">
-                            <td className="py-3 font-semibold text-t-primary">{label}</td>
-                            <td className="py-3 text-center text-t-secondary">{interval.total}</td>
-                            <td className="py-3 text-center font-bold text-[#00A656]">{interval.correct}</td>
-                            <td className="py-3 text-center font-bold text-[#FF6A55]">{interval.incorrect}</td>
-                            <td className="py-3 text-center text-t-secondary">{interval.skipped}</td>
-                            <td className="py-3 text-right">
-                              <span className={`font-black ${accColor}`}>{interval.accuracy}%</span>
+                          <tr key={i}>
+                            <td className="font-semibold">{label}</td>
+                            <td className="text-center">{interval.total}</td>
+                            <td className="text-center font-bold text-[#00A656]">{interval.correct}</td>
+                            <td className="text-center font-bold text-[#FF6A55]">{interval.incorrect}</td>
+                            <td className="text-center">{interval.skipped}</td>
+                            <td className="text-right font-black">
+                              <span className={accColor}>{interval.accuracy}%</span>
                             </td>
                           </tr>
                         );
@@ -410,7 +675,7 @@ export default function ResultsPage() {
                 </div>
 
                 {/* Visual bar chart */}
-                <div className="mt-5 space-y-2">
+                <div className="space-y-2">
                   {a.timeIntervals.map((interval: any, i: number) => {
                     const label = i === 0 ? "First 30 mins" : `${(i * 30) + 1}–${(i + 1) * 30} mins`;
                     const barColor = interval.accuracy >= 70 ? "bg-[#00A656]" : interval.accuracy >= 40 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]";
@@ -440,7 +705,7 @@ export default function ResultsPage() {
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
                   {a.difficultyBreakdown.map((row: any) => (
-                    <div key={row.subject} className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5">
+                    <div key={row.subject} className="rounded-3xl border border-s-stroke2 bg-b-surface1 p-5">
                       <div className="mb-4 flex items-center justify-between">
                         <h3 className="text-body-2 font-bold text-t-primary">{row.subject}</h3>
                       </div>
@@ -494,7 +759,7 @@ export default function ResultsPage() {
                       { label: "Confused", value: row.confused, color: "bg-[#EF9D0E]", textColor: "text-[#EF9D0E]", desc: "Skipped after pondering" },
                     ];
                     return (
-                      <div key={row.subject} className="rounded-[28px] border border-s-stroke2 bg-b-surface1 p-5">
+                      <div key={row.subject} className="rounded-3xl border border-s-stroke2 bg-b-surface1 p-5">
                         <h3 className="mb-4 text-body-2 font-bold text-t-primary">{row.subject} <span className="text-t-tertiary font-normal">({row.total} attempts)</span></h3>
                         <div className="grid grid-cols-2 gap-3">
                           {cats.map(cat => (
@@ -562,7 +827,7 @@ export default function ResultsPage() {
               </section>
             )}
 
-            <section className="card flex flex-col gap-4 rounded-[32px] border border-primary-01/20 bg-primary-01/5 p-6 md:flex-row md:items-center md:justify-between md:p-7">
+            <section className="card flex flex-col gap-4 rounded-4xl border border-primary-01/20 bg-primary-01/5 p-6 md:flex-row md:items-center md:justify-between md:p-7">
               <div>
                 <h2 className="text-body-2 font-bold text-primary-01">Stop repeating these mistakes</h2>
                 <p className="mt-1 text-caption text-t-secondary">Add these {a.errorPatterns.length * 2} errors to your mistake diary for revision.</p>
@@ -584,7 +849,7 @@ export default function ResultsPage() {
                 {a.studyPlan.map((day: any) => (
                   <button
                     key={day.day}
-                    className={`w-full rounded-[26px] border p-4 text-left transition-colors ${
+                    className={`w-full rounded-3xl border p-4 text-left transition-colors ${
                       expandedDay === day.day ? "border-primary-01 bg-primary-01/5" : "border-s-stroke2 bg-b-surface1 hover:border-s-highlight"
                     }`}
                     onClick={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
@@ -632,7 +897,7 @@ export default function ResultsPage() {
               </div>
 
               {showBooster && (
-                <div className="mt-5 rounded-[26px] border border-s-stroke2 bg-b-surface2 p-4">
+                <div className="mt-5 rounded-3xl border border-s-stroke2 bg-b-surface2 p-4">
                   <div className="mb-3 text-caption font-bold uppercase tracking-[0.22em] text-t-tertiary">Quick set</div>
                   <div className="grid grid-cols-4 gap-2">
                     {[15, 20, 25, 30].map((n) => (
