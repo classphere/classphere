@@ -16,7 +16,7 @@ export default function AppShell({ children }: Readonly<{ children: React.ReactN
   }
 
   return (
-    <div className="relative isolate flex min-h-screen w-full overflow-x-clip bg-b-surface1">
+    <div className="relative isolate flex min-h-screen w-full overflow-x-clip bg-b-surface1 text-t-primary">
       <Sidebar />
       <div className="relative z-10 flex min-w-0 flex-1 flex-col gap-6 pt-4">
         {children}
