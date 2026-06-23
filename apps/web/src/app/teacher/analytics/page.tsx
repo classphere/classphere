@@ -16,7 +16,8 @@ import {
   RiCloseCircleFill,
   RiQuestionLine,
   RiFileList3Line,
-  RiBookOpenLine
+  RiBookOpenLine,
+  RiGroupLine
 } from "@remixicon/react";
 import { mockBatches } from "@/lib/mock-data";
 
@@ -284,55 +285,83 @@ export default function TeacherAnalyticsPage() {
           </div>
         </div>
 
-        {/* All Batches Summary Table */}
-        <div className="group relative flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
+        {/* All Batches Summary */}
+        <div className="group relative flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
           <div className="box-hover" />
-          <h2 className="relative z-10 font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary mb-6">All Batches — Quick Comparison</h2>
-          <div className="relative z-10 overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-s-stroke2 text-caption font-bold text-t-secondary">
-                  <th className="pb-3 pr-4 font-semibold">Batch</th>
-                  <th className="pb-3 px-4 font-semibold">Exam</th>
-                  <th className="pb-3 px-4 font-semibold">Students</th>
-                  <th className="pb-3 px-4 font-semibold">Avg Score</th>
-                  <th className="pb-3 px-4 font-semibold">Top Score</th>
-                  <th className="pb-3 pl-4 text-right font-semibold">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {batchStats.map((b, i) => (
-                  <tr key={i} className="border-b border-s-stroke2/50 last:border-b-0 hover:bg-b-surface1/30 transition-colors">
-                    <td className="py-4 pr-4 text-body-2 font-bold text-[#101010] dark:text-t-primary">{b.batchName}</td>
-                    <td className="py-4 px-4 text-caption text-t-secondary">{b.exam}</td>
-                    <td className="py-4 px-4 text-caption font-bold text-t-primary">{b.students}</td>
-                    <td className="py-4 px-4">
-                      <div className="flex items-center gap-3">
-                        <span className="text-caption font-bold text-t-primary">{b.avg}%</span>
-                        <div className="w-[100px] h-1.5 bg-s-stroke2 rounded-full overflow-hidden">
-                          <div
-                            className="h-full rounded-full bg-linear-to-r from-primary-01 to-primary-02"
-                            style={{ width: `${b.avg}%` }}
-                          />
-                        </div>
-                        <span className={`text-caption font-bold ${b.trend > 0 ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
-                          {b.trend > 0 ? "+" : ""}{b.trend}%
-                        </span>
-                      </div>
-                    </td>
-                    <td className="py-4 px-4 text-caption font-bold text-t-primary">{b.top}%</td>
-                    <td className="py-4 pl-4 text-right">
-                      <Link 
-                        href={`/teacher/batch/${mockBatches[i]?.id || "batch-001"}`} 
-                        className="h-9 px-4 rounded-xl text-xs font-semibold border border-s-stroke2 hover:border-t-primary text-t-secondary hover:text-t-primary transition-all active:scale-95 flex items-center gap-1.5 ml-auto cursor-pointer w-fit"
-                      >
-                        <RiFileListLine size={16} /> View Batch
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="relative z-10 px-3 pt-3">
+            <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-[#101010] dark:text-t-primary">All Batches — Quick Comparison</h2>
+            <p className="font-sans text-[12px] font-medium text-[#7B7B7B] tracking-[0.004em] mt-0.5">Average score, top performer, and trend across every batch.</p>
+          </div>
+
+          <div className="relative z-10 flex flex-col gap-1 w-full px-3">
+            {batchStats.map((b, i) => (
+              <div
+                key={i}
+                className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/40 border border-transparent hover:border-[#E2E2E2] dark:hover:border-s-stroke2/30 rounded-[20px] transition-all h-[88px]"
+              >
+                {/* Left — icon + batch name + exam */}
+                <div className="flex flex-row items-center gap-5 flex-1 min-w-0">
+                  <div className="size-16 rounded-[12px] flex items-center justify-center bg-[#2A85FF]/10 border border-[#2A85FF]/20 text-[#2A85FF] shrink-0">
+                    <RiGroupLine size={24} />
+                  </div>
+                  <div className="flex flex-col justify-center min-w-0 flex-1">
+                    <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary truncate">
+                      {b.batchName}
+                    </span>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      <span className="font-sans text-[12px] font-normal text-[#7B7B7B]">{b.exam}</span>
+                      <span className="text-[#D4D4D4]">·</span>
+                      <span className="font-sans text-[12px] font-normal text-[#7B7B7B]">{b.students} students</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right — avg score bar + top score + trend badge + action */}
+                <div className="flex flex-row items-center gap-6 shrink-0">
+                  {/* Avg score with progress bar */}
+                  <div className="hidden sm:flex flex-col items-end gap-1.5">
+                    <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary">
+                      {b.avg}%
+                    </span>
+                    <div className="w-[80px] h-1.5 bg-[#F0F0F0] dark:bg-b-surface1 rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-[#2A85FF]"
+                        style={{ width: `${b.avg}%` }}
+                      />
+                    </div>
+                  </div>
+                  {/* Top score */}
+                  <div className="hidden md:flex flex-col items-end gap-1">
+                    <span className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary">{b.top}%</span>
+                    <span className="font-sans text-[12px] text-[#7B7B7B]">top score</span>
+                  </div>
+                  {/* Trend badge */}
+                  <span className={`px-2 py-[2px] border-[1.5px] rounded-lg text-[12px] font-normal tracking-[0.004em] leading-[160%] ${
+                    b.trend > 0
+                      ? "bg-[rgba(0,166,86,0.05)] border-[rgba(0,166,86,0.15)] text-[#00A656]"
+                      : "bg-[rgba(255,106,85,0.05)] border-[rgba(255,106,85,0.15)] text-[#FF6A55]"
+                  }`}>
+                    {b.trend > 0 ? "+" : ""}{b.trend}%
+                  </span>
+                  {/* View Batch button */}
+                  <Link
+                    href={`/teacher/batch/${mockBatches[i]?.id || "batch-001"}`}
+                    className="h-9 px-4 rounded-xl text-xs font-semibold border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 text-[#727272] dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer w-fit shrink-0"
+                  >
+                    <RiFileListLine size={15} /> View Batch
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="relative z-10 flex flex-col items-start px-3 w-full">
+            <Link
+              href="/teacher/analytics"
+              className="w-full h-12 flex items-center justify-center border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 rounded-[32px] text-[14px] font-semibold text-[#727272] dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
+            >
+              View All Batch Reports
+            </Link>
           </div>
         </div>
 
