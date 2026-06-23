@@ -470,84 +470,88 @@ export default function StudentChatPage() {
               {/* Chat Messages scroll pane */}
               <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-4 bg-[#F9F9F9]/40 dark:bg-b-surface1/10 min-h-0">
                 {activeMessages.map((msg, idx) => {
-                  const showAuthor = idx === 0 || activeMessages[idx - 1].author !== msg.author || activeMessages[idx - 1].time !== msg.time;
-
                   return (
-                    <div key={msg.id} className={`flex flex-col ${msg.isOwn ? "items-end" : "items-start"} mb-0.5`}>
-                      {!msg.isOwn && showAuthor && (
-                        <div className={`text-[11px] font-sans font-bold ml-9 mb-1 flex items-center gap-2 ${msg.role === "teacher" ? "text-[#00A656]" : "text-[#7B7B7B]"
-                          }`}>
-                          <span>{msg.author}</span>
-                          {msg.role === "teacher" && (
-                            <span className="px-1 py-0.2 rounded border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] text-[#00A656] text-[8px] font-sans font-bold uppercase tracking-wider">
-                              FACULTY
-                            </span>
-                          )}
-                        </div>
-                      )}
+                    <div 
+                      key={msg.id} 
+                      className={`p-4 flex gap-4 rounded-[20px] transition-all relative border ${
+                        msg.isVerified
+                          ? "bg-[#00A656]/5 border-[#00A656]/20"
+                          : "bg-transparent border-transparent border-b border-s-stroke2/10 hover:bg-[#FDFDFD] dark:hover:bg-b-surface2 hover:shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:hover:shadow-[inset_0px_0px_0px_3px_#191919]"
+                      }`}
+                    >
+                      {/* Avatar of size 44px x 44px (size-11) */}
+                      <div className={`size-11 rounded-full flex items-center justify-center shrink-0 font-sans font-bold text-sm ${
+                        msg.role === "teacher" 
+                          ? "bg-[#00A656]/10 text-[#00A656] border border-[#00A656]/20" 
+                          : "bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/20 text-[#101010] dark:text-t-primary shadow-xs"
+                      }`}>
+                        {msg.author === "Anonymous" ? "?" : msg.author[0]}
+                      </div>
 
-                      <div className="flex gap-2.5 max-w-[80%]">
-                        {!msg.isOwn && showAuthor ? (
-                          <div className={`size-7 rounded-full flex items-center justify-center shrink-0 text-[10px] font-bold ${msg.role === "teacher" ? "bg-[#00A656]/10 text-[#00A656] border border-[#00A656]/20" : "bg-[#FDFDFD] border border-s-stroke2/20 text-[#101010] dark:text-t-primary shadow-xs"
-                            }`}>
-                            {msg.author === "Anonymous" ? "?" : msg.author[0]}
+                      {/* Content Column */}
+                      <div className="flex-grow min-w-0 flex flex-col gap-1.5">
+                        
+                        {/* Name, Role & Timestamp Row */}
+                        <div className="flex items-center justify-between gap-2 w-full">
+                          <div className="flex items-center gap-2">
+                            <span className="font-sans font-semibold text-[15px] text-[#101010] dark:text-t-primary">
+                              {msg.author}
+                            </span>
+                            {msg.role === "teacher" && (
+                              <span className="px-2 py-0.5 rounded-md border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] text-[#00A656] text-[8px] font-sans font-bold uppercase tracking-wider">
+                                FACULTY
+                              </span>
+                            )}
                           </div>
-                        ) : (
-                          !msg.isOwn && <div className="size-7 shrink-0" />
+                          <span className="text-[12px] font-sans text-[#7B7B7B]">
+                            {msg.time}
+                          </span>
+                        </div>
+
+                        {/* Tagged Doubt Badge if applicable */}
+                        {msg.isDoubt && (
+                          <div className="flex items-center gap-1 px-2 py-0.5 w-fit rounded-md border border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] text-[#FF6A55] text-[9px] font-sans font-bold uppercase tracking-wider">
+                            <RiQuestionLine size={10} />
+                            <span>Tagged Doubt</span>
+                          </div>
                         )}
 
-                        <div className="relative group">
-                          {msg.isVerified && (
-                            <div className="absolute -top-2 -right-2 bg-[#00A656] text-white rounded-full p-0.5 border-2 border-[#FDFDFD] dark:border-b-surface2 z-10 shadow-xs">
-                              <RiCheckDoubleLine size={9} />
+                        {/* Message Body */}
+                        <p className="font-sans font-normal text-[15px] leading-[150%] text-[#101010] dark:text-t-primary">
+                          {msg.text}
+                        </p>
+
+                        {/* Attached Image preview */}
+                        {msg.attachedImage && (
+                          <div className="mt-1 overflow-hidden rounded-xl border border-s-stroke2/20 max-w-xs">
+                            <img src={msg.attachedImage} alt="Attachment" className="w-full h-auto max-h-32 object-cover" />
+                          </div>
+                        )}
+
+                        {/* Reactions and Action Badges */}
+                        <div className="flex items-center justify-between gap-4 mt-1">
+                          {msg.isVerified ? (
+                            <div className="flex items-center gap-1.5 text-[#00A656]">
+                              <RiCheckDoubleLine size={14} />
+                              <span className="text-[11px] font-sans font-bold">Endorsed Answer</span>
                             </div>
+                          ) : (
+                            <div />
                           )}
 
-                          <div className={`p-3 px-4 rounded-[16px] shadow-xs leading-relaxed text-xs relative ${msg.isOwn
-                              ? "bg-[#101010] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 rounded-tr-xs"
-                              : msg.isVerified
-                                ? "bg-[#FDFDFD] border-[1.5px] border-[#00A656]/30 text-[#101010] dark:text-t-primary rounded-tl-xs"
-                                : "bg-[#FDFDFD] border border-s-stroke2/20 text-[#101010] dark:text-t-primary rounded-tl-xs"
-                            }`}>
-
-                            {msg.isDoubt && (
-                              <div className="mb-1.5 flex items-center gap-1 px-2 py-0.5 w-fit rounded-md border border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] text-[#FF6A55] text-[9px] font-sans font-bold uppercase tracking-wider">
-                                <RiQuestionLine size={10} />
-                                <span>Tagged Doubt</span>
-                              </div>
-                            )}
-
-                            <p className="font-sans font-medium text-[13px] leading-relaxed">{msg.text}</p>
-
-                            {msg.attachedImage && (
-                              <div className="mt-2.5 overflow-hidden rounded-xl border border-s-stroke2/20 max-w-xs">
-                                <img src={msg.attachedImage} alt="Attachment" className="w-full h-auto max-h-32 object-cover" />
-                              </div>
-                            )}
-
-                            <div className="mt-2 flex items-center justify-between gap-4">
-                              <div className={`text-[9px] font-sans font-semibold flex items-center gap-0.5 ${msg.isOwn ? "text-white/60" : "text-[#7B7B7B]"
-                                }`}>
-                                <span>{msg.time}</span>
-                                {msg.isOwn && <RiCheckDoubleLine size={10} className="text-white/80" />}
-                              </div>
-
-                              <button
-                                onClick={() => handleUpvote(msg.id)}
-                                className={`flex items-center gap-0.5 px-1.5 py-0.2 rounded-full border text-[9px] font-sans font-bold transition-all active:scale-95 cursor-pointer ${msg.hasUpvoted
-                                    ? "bg-[#101010] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 border-transparent"
-                                    : msg.isOwn
-                                      ? "bg-transparent text-white/80 border-white/20 hover:bg-white/10"
-                                      : "bg-[#F9F9F9] dark:bg-b-surface1 border-s-stroke2/20 text-[#7B7B7B] hover:text-[#101010]"
-                                  }`}
-                              >
-                                <RiThumbUpLine size={9} />
-                                <span>{msg.upvotes}</span>
-                              </button>
-                            </div>
-
-                          </div>
+                          <button
+                            onClick={() => handleUpvote(msg.id)}
+                            className={`flex items-center gap-1.5 px-3 py-1 rounded-full border text-[11px] font-sans font-bold transition-all active:scale-95 cursor-pointer ${
+                              msg.hasUpvoted
+                                ? "bg-[#101010] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 border-transparent"
+                                : "bg-[#F9F9F9] dark:bg-b-surface1 border-s-stroke2/20 text-[#7B7B7B] hover:text-[#101010]"
+                            }`}
+                          >
+                            <RiThumbUpLine size={11} />
+                            <span>{msg.upvotes}</span>
+                          </button>
                         </div>
+
                       </div>
                     </div>
                   );
