@@ -162,8 +162,8 @@ export default function TeacherDashboardPage() {
               </Link>
             </div>
 
-            {/* Nested grey DPP-style list */}
-            <div className="relative z-10 flex flex-col flex-1 p-2 gap-3 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+            {/* Nested grey DPP-style grid of cards */}
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 p-2 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
               {mockBatches.map((batch, i) => {
                 const iconMeta = [
                   { iconContainerClass: "bg-[#2A85FF]/10 border border-[#2A85FF]/20 text-[#2A85FF]" },
@@ -174,47 +174,39 @@ export default function TeacherDashboardPage() {
                 return (
                   <div
                     key={batch.id}
-                    className="group relative card flex flex-col md:flex-row min-w-0 md:items-center justify-between gap-4 overflow-hidden bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 p-3.5 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
+                    className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
                   >
-                    <div className="box-hover" />
-
-                    {/* Left — icon + name + metadata */}
-                    <div className="flex items-center gap-4 flex-1 min-w-0">
-                      <div className={`relative z-10 size-11 rounded-xl flex items-center justify-center shrink-0 ${iconMeta.iconContainerClass}`}>
-                        <RiTeamLine size={20} />
+                    <div className="min-w-0 flex-1">
+                      {/* Header Status Badge Row */}
+                      <div className="flex justify-between items-center mb-3">
+                        <span className="text-[12px] font-sans font-semibold text-[#7B7B7B] uppercase tracking-wider">
+                          {batch.exam}
+                        </span>
+                        <div className={`size-8 rounded-lg flex items-center justify-center shrink-0 ${iconMeta.iconContainerClass}`}>
+                          <RiTeamLine size={16} />
+                        </div>
                       </div>
-                      <div className="relative z-10 flex-1 min-w-0">
-                        <div className="flex items-center gap-3 mb-1">
-                          <span className="text-body-2 font-bold text-[#101010] dark:text-t-primary truncate">{batch.name}</span>
-                          <span className="label label-gray">{batch.exam}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-caption text-[#7B7B7B] flex-wrap mt-1">
-                          <RiTeamLine size={13} className="shrink-0" />
-                          <span>{batch.studentsCount} students</span>
-                          <span>·</span>
-                          <span>Avg {batch.avgScore}%</span>
-                          <span>·</span>
-                          <span>3 active DPPs</span>
-                        </div>
+                      
+                      <div className="truncate font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                        {batch.name}
+                      </div>
+                      <div className="text-[12px] font-sans text-[#7B7B7B] mt-1">
+                        {batch.studentsCount} students · 3 active DPPs
+                      </div>
+
+                      {/* Progress Bar representing Avg Score */}
+                      <div className="w-full h-1 bg-[rgba(123,123,123,0.15)] dark:bg-[rgba(229,229,229,0.08)] rounded-full overflow-hidden mt-3">
+                        <div
+                          className="h-full rounded-full bg-[#00A656]"
+                          style={{ width: `${batch.avgScore}%` }}
+                        />
                       </div>
                     </div>
 
-                    {/* Right — score + bar + button */}
-                    <div className="relative z-10 flex items-center justify-between md:justify-end gap-6 shrink-0 mt-4 md:mt-0">
-                      <div className="text-left md:text-right sm:w-40">
-                        <div className="text-caption font-bold text-[#101010] dark:text-t-primary mb-2">
-                          Avg Score: {batch.avgScore}%
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <div className="flex-1 h-1.5 bg-s-stroke2 rounded-full overflow-hidden min-w-[80px]">
-                            <div
-                              className="h-full rounded-full bg-[#00A656]"
-                              style={{ width: `${batch.avgScore}%` }}
-                            />
-                          </div>
-                          <span className="text-caption font-semibold text-[#7B7B7B]">{batch.avgScore}%</span>
-                        </div>
-                      </div>
+                    <div className="flex justify-between items-center mt-4 pt-3 border-t border-s-stroke2/30">
+                      <span className="text-[12px] font-sans font-semibold text-[#7B7B7B]">
+                        Avg: {batch.avgScore}%
+                      </span>
                       <Link
                         href={`/teacher/batch/${batch.id}`}
                         className="flex flex-row justify-center items-center h-8 px-4 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget cursor-pointer"
