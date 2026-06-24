@@ -1,176 +1,305 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import {
   RiTeamLine,
   RiGroupLine,
   RiBankCardLine,
   RiArrowRightUpLine,
-  RiMoreFill,
-  RiAddLine
+  RiMore2Fill,
+  RiAddLine,
+  RiArrowDownSLine,
+  RiArrowRightLine,
+  RiStarFill
 } from "@remixicon/react";
-import { mockInstituteAdmin, mockBatches, mockInstituteStudents, mockInstituteTests } from "../../lib/mock-data";
+import { mockInstituteAdmin, mockBatches, mockInstituteStudents } from "../../lib/mock-data";
 
 export default function InstituteDashboardPage() {
+  const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
+
   return (
     <>
-      <Navbar title={`${mockInstituteAdmin.instituteName} Dashboard`} subtitle={`Welcome back, ${mockInstituteAdmin.name}. Here is your institute overview.`} breadcrumbs="Dashboard" />
-      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
+      <Navbar
+        title={`${mockInstituteAdmin.instituteName} Dashboard`}
+        subtitle={`Welcome back, ${mockInstituteAdmin.name}. Here is your institute overview.`}
+        breadcrumbs="Dashboard"
+      >
+        {/* Create New Batch */}
+        <button className="flex flex-row justify-center items-center px-6 h-12 border border-[#E2E2E2] dark:border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary text-sm font-sans font-semibold rounded-full shadow-xs active:scale-95 transition-all cursor-pointer">
+          <RiAddLine size={18} className="mr-1.5" /> Create New Batch
+        </button>
 
-        {/* Header Actions */}
-        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:justify-end">
-          <button className="btn btn-outline flex items-center gap-2">
-            <RiAddLine size={18} /> Create New Batch
-          </button>
-          <Link href="/institute/tests/create" className="btn btn-primary flex items-center gap-2 no-underline">
-            <RiAddLine size={18} /> Schedule Batch Test
-          </Link>
-        </div>
+        {/* Schedule Batch Test (Gradient) */}
+        <Link
+          href="/institute/tests/create"
+          className="flex flex-row justify-center items-center px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-[#FDFDFD] dark:text-b-surface1 text-sm font-sans font-semibold rounded-full shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer no-underline"
+        >
+          <RiAddLine size={18} className="mr-1.5" /> Schedule Batch Test
+        </Link>
+      </Navbar>
+      
+      <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
 
-        {/* KPI Cards */}
-        <div className="mb-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          <div className="card p-6">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="rounded-2xl bg-b-surface1 p-2 text-t-primary">
-                <RiGroupLine size={20} />
-              </div>
-              <h3 className="text-bold text-t-secondary">Total Students</h3>
-            </div>
-            <div className="flex items-baseline gap-3">
-              <div className="text-h4 font-bold tracking-tight text-t-primary">{mockInstituteAdmin.studentsCount}</div>
-              <span className="badge badge-green"><RiArrowRightUpLine size={12} /> +12 this month</span>
-            </div>
-          </div>
-
-          <div className="card p-6">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="rounded-2xl bg-b-surface1 p-2 text-t-primary">
-                <RiTeamLine size={20} />
-              </div>
-              <h3 className="text-bold text-t-secondary">Active Batches</h3>
-            </div>
-            <div className="text-h4 font-bold tracking-tight text-t-primary">{mockInstituteAdmin.batchesCount}</div>
-            <p className="t-body-sm mt-2">2 batches completing soon</p>
-          </div>
-
-          <div className="card p-6">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="rounded-2xl bg-b-surface1 p-2 text-t-primary">
-                <RiBankCardLine size={20} />
-              </div>
-              <h3 className="text-bold text-t-secondary">Subscription</h3>
-            </div>
-            <div className="text-h6 font-bold text-primary-02">{mockInstituteAdmin.plan}</div>
-            <p className="t-body-sm mt-2">Renews on Aug 15, 2026</p>
-          </div>
-        </div>
-
-        {/* Collaborative Test Pipeline */}
-        <section className="card mb-6 overflow-hidden p-0">
-          <div className="mb-6 flex items-center justify-between gap-4 px-6 pt-6">
-            <h2 className="section-title mb-0">Test Pipeline</h2>
-            <Link href="/institute/tests" className="btn btn-outline btn-sm whitespace-nowrap">View All Tests</Link>
-          </div>
-          <table className="rayum-table">
-            <thead>
-              <tr>
-                <th className="pl-6">Test Name</th>
-                <th>Batch</th>
-                <th>Date</th>
-                <th>Section Status</th>
-                <th className="pr-6">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {mockInstituteTests.map(test => (
-                <tr key={test.id}>
-                  <td className="pl-6 text-bold">{test.name}</td>
-                  <td className="t-body-sm">{test.batch}</td>
-                  <td className="t-body-sm text-bold">{new Date(test.scheduledDate).toLocaleDateString()}</td>
-                  <td>
-                    <div className="flex gap-1.5">
-                      {Object.entries(test.progress).map(([subject, status]) => (
-                        <span key={subject} title={subject} className={`size-3 rounded-full ${status === "completed" ? "bg-primary-02" : "bg-primary-01"}`} />
-                      ))}
-                    </div>
-                  </td>
-                  <td className="pr-6">
-                    <span className={`badge ${test.status === 'ready' ? 'badge-green' : 'badge-orange'}`}>
-                      {test.status === 'ready' ? 'Ready to Publish' : 'Waiting on Teachers'}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-
-        <div className="grid gap-6 xl:grid-cols-2">
-
-          {/* Batches Overview */}
-          <section className="card overflow-hidden p-0">
-            <div className="mb-6 flex items-center justify-between gap-4 px-6 pt-6">
-              <h2 className="section-title mb-0">Recent Batches</h2>
-              <Link href="/institute/batches" className="btn btn-outline btn-sm whitespace-nowrap">View All</Link>
-            </div>
-            <table className="rayum-table">
-              <thead>
-                <tr>
-                  <th className="pl-6">Batch Name</th>
-                  <th>Students</th>
-                  <th>Avg Score</th>
-                  <th className="pr-6"></th>
-                </tr>
-              </thead>
-              <tbody>
-                {mockBatches.map(batch => (
-                  <tr key={batch.id}>
-                    <td className="pl-6">
-                      <div className="text-bold">{batch.name}</div>
-                      <div className="t-body-sm">{batch.exam}</div>
-                    </td>
-                    <td className="t-body-sm text-bold">{batch.studentsCount}</td>
-                    <td className="text-bold">{batch.avgScore}%</td>
-                    <td className="pr-6 text-right">
-                      <button className="btn btn-ghost p-1.5">
-                        <RiMoreFill size={20} />
+        {/* ── Figma-Inspired Dashboard Overview Wrapper ── */}
+        <div className="group relative flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+          <div className="box-hover" />
+          
+          {/* Header Row */}
+          <div className="relative z-10 flex flex-row justify-between items-center w-full mb-6">
+            <h3 className="font-sans text-[20px] font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">
+              Overview
+            </h3>
+            
+            {/* Custom Filter */}
+            <div className="relative">
+              <button 
+                onClick={() => setIsOverviewDropdownOpen(!isOverviewDropdownOpen)}
+                className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98"
+              >
+                <span>This Week</span>
+                <RiArrowDownSLine size={20} className="text-[#727272] dark:text-t-secondary" />
+              </button>
+              
+              {isOverviewDropdownOpen && (
+                <>
+                  <div className="fixed inset-0 z-40" onClick={() => setIsOverviewDropdownOpen(false)} />
+                  <ul className="absolute right-0 top-13 z-50 w-full rounded-2xl border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
+                    <li>
+                      <button
+                        onClick={() => setIsOverviewDropdownOpen(false)}
+                        className="w-full rounded-xl px-3.5 py-2 text-left text-sm font-semibold bg-b-surface1 text-t-primary"
+                      >
+                        This Week
                       </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </section>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => setIsOverviewDropdownOpen(false)}
+                        className="w-full rounded-xl px-3.5 py-2 text-left text-sm font-semibold bg-transparent text-t-secondary hover:bg-b-surface3 hover:text-t-primary"
+                      >
+                        Last Week
+                      </button>
+                    </li>
+                  </ul>
+                </>
+              )}
+            </div>
+          </div>
 
-          {/* Top Students */}
-          <section className="card p-6">
-            <div className="mb-6 flex items-center justify-between gap-4">
-              <h2 className="section-title mb-0">Top Performing Students</h2>
-              <Link href="/institute/students" className="btn btn-outline btn-sm whitespace-nowrap">View Directory</Link>
-            </div>
-            <div className="flex flex-col gap-4">
-              {mockInstituteStudents.slice(0, 5).map((student, index) => (
-                <div key={student.id} className="flex items-center justify-between rounded-3xl bg-b-surface2 p-4">
-                  <div className="flex items-center gap-4 min-w-0">
-                    <div className="flex size-9 items-center justify-center rounded-full bg-primary-02 text-sm font-bold text-t-light">
-                      {index + 1}
-                    </div>
-                    <div className="min-w-0">
-                      <div className="truncate text-body-2 font-bold text-t-primary">{student.name}</div>
-                      <div className="t-body-sm">{student.batch}</div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-h6 font-bold text-primary-02">{student.avgScore}%</div>
-                    <div className="t-body-sm">Avg Score</div>
-                  </div>
+          {/* Stats Section Wrapper (Row of 3 active highlighted boxes) */}
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+            
+            {/* Metric 1: Total Students */}
+            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+              <div className="flex flex-row items-center gap-3 w-full mb-1">
+                <span className="text-[#101010] dark:text-t-primary"><RiGroupLine size={20} /></span>
+                <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                  Total Students
+                </span>
+              </div>
+              <div className="flex flex-row items-center gap-4 w-full mt-1">
+                <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
+                  {mockInstituteAdmin.studentsCount}
                 </div>
-              ))}
+                <div className="flex flex-col items-start gap-0.5">
+                  <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] rounded-lg">
+                    <span className="text-[#00A656] text-[12px] font-semibold leading-none">+12</span>
+                  </div>
+                  <span className="text-[12px] font-sans text-[#7B7B7B]">
+                    this month
+                  </span>
+                </div>
+              </div>
             </div>
-          </section>
+
+            {/* Metric 2: Active Batches */}
+            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+              <div className="flex flex-row items-center gap-3 w-full mb-1">
+                <span className="text-[#101010] dark:text-t-primary"><RiTeamLine size={20} /></span>
+                <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                  Active Batches
+                </span>
+              </div>
+              <div className="flex flex-row items-center gap-4 w-full mt-1">
+                <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
+                  {mockInstituteAdmin.batchesCount}
+                </div>
+                <div className="flex flex-col items-start gap-0.5">
+                  <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] rounded-lg">
+                    <span className="text-[#00A656] text-[12px] font-semibold leading-none">+2</span>
+                  </div>
+                  <span className="text-[12px] font-sans text-[#7B7B7B]">
+                    completing soon
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Metric 3: Subscription */}
+            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+              <div className="flex flex-row items-center gap-3 w-full mb-1">
+                <span className="text-[#101010] dark:text-t-primary"><RiBankCardLine size={20} /></span>
+                <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                  Subscription
+                </span>
+              </div>
+              <div className="flex flex-row items-center gap-4 w-full mt-1">
+                <div className="font-sans text-[32px] font-bold tracking-[-0.005em] text-[#00A656] leading-none uppercase">
+                  {mockInstituteAdmin.plan}
+                </div>
+                <div className="flex flex-col items-start gap-0.5">
+                  <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] rounded-lg">
+                    <span className="text-[#00A656] text-[12px] font-semibold leading-none">Active</span>
+                  </div>
+                  <span className="text-[12px] font-sans text-[#7B7B7B]">
+                    Renews Aug 15
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
 
         </div>
+
+        {/* ── Main Content Grid (Recent Batches + Top Students) ── */}
+        <div className="grid gap-6 lg:grid-cols-2 items-start w-full">
+
+          {/* Recent Batches Section */}
+          <div className="flex flex-col p-3 pb-6 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-h-[580px] min-w-0 overflow-hidden select-none">
+            
+            {/* Header */}
+            <div className="flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
+              <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                Recent Batches
+              </h4>
+              <Link 
+                href="/institute/batches" 
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+              >
+                <span>View All</span>
+                <RiArrowRightLine size={16} />
+              </Link>
+            </div>
+
+            {/* List Rows */}
+            <div className="flex flex-col gap-2 w-full min-w-0">
+              {mockBatches.map((batch, index) => {
+                const isHoverItem = index === 1; // Highlight second item for premium design flavor
+                
+                return (
+                  <div 
+                    key={batch.id}
+                    className={`flex flex-row items-center justify-between p-3 gap-8 rounded-[20px] transition-all w-full h-[88px] min-w-0 overflow-hidden ${
+                      isHoverItem 
+                        ? "bg-[#F9F9F9] dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20" 
+                        : "bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30"
+                    }`}
+                  >
+                    {/* Left: Avatar/Icon + Title */}
+                    <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
+                      <div className="flex w-16 h-16 items-center justify-center rounded-xl bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
+                        <RiTeamLine size={24} className="text-[#727272]" />
+                      </div>
+                      <div className="min-w-0 flex-1 flex flex-col">
+                        <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary truncate">
+                          {batch.name}
+                        </span>
+                        <span className="text-xs text-[#7B7B7B] mt-0.5">
+                          {batch.exam} · {batch.studentsCount} Students
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Right: Metrics + Status */}
+                    <div className="flex flex-col justify-center items-end gap-1 shrink-0 min-w-[80px]">
+                      <div className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#00A656] text-right w-full">
+                        {batch.avgScore}%
+                      </div>
+                      <div className="flex flex-row justify-center items-center px-2 py-[2px] rounded-lg border-[1.5px] text-[10px] font-bold tracking-[0.004em] uppercase bg-[rgba(0,166,86,0.05)] border-[rgba(0,166,86,0.15)] text-[#00A656]">
+                        Active
+                      </div>
+                    </div>
+
+                  </div>
+                );
+              })}
+            </div>
+
+          </div>
+
+          {/* Top Students Section */}
+          <div className="flex flex-col p-3 pb-6 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-h-[580px] min-w-0 overflow-hidden select-none">
+            
+            {/* Header */}
+            <div className="flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
+              <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                Top Performing Students
+              </h4>
+              <Link 
+                href="/institute/students" 
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+              >
+                <span>View Directory</span>
+                <RiArrowRightLine size={16} />
+              </Link>
+            </div>
+
+            {/* List Rows */}
+            <div className="flex flex-col gap-2 w-full min-w-0">
+              {mockInstituteStudents.slice(0, 5).map((student, index) => {
+                const isHoverItem = index === 0; // Highlight first item for premium flavor
+                const scoreColor = student.avgScore >= 85 ? "text-[#00A656]" : "text-[#EF9D0E]";
+                const performanceLevel = student.avgScore >= 90 ? "Elite" : "Excellent";
+                const performanceBadgeClass = student.avgScore >= 90
+                  ? "bg-[#00A656]/5 border-[#00A656]/15 text-[#00A656]"
+                  : "bg-[#EF9D0E]/5 border-[#EF9D0E]/15 text-[#EF9D0E]";
+
+                return (
+                  <div 
+                    key={student.id}
+                    className={`flex flex-row items-center justify-between p-3 gap-8 rounded-[20px] transition-all w-full h-[88px] min-w-0 overflow-hidden ${
+                      isHoverItem 
+                        ? "bg-[#F9F9F9] dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20" 
+                        : "bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30"
+                    }`}
+                  >
+                    {/* Left: Rank box + Title */}
+                    <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
+                      <div className="flex w-16 h-16 items-center justify-center rounded-xl bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
+                        #{index + 1}
+                      </div>
+                      <div className="min-w-0 flex-1 flex flex-col">
+                        <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary truncate">
+                          {student.name}
+                        </span>
+                        <span className="text-xs text-[#7B7B7B] mt-0.5">
+                          {student.batch}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Right: Metrics + Performance tag */}
+                    <div className="flex flex-col justify-center items-end gap-1 shrink-0 min-w-[80px]">
+                      <div className={`font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] ${scoreColor} text-right w-full`}>
+                        {student.avgScore}%
+                      </div>
+                      <div className={`flex flex-row justify-center items-center px-2 py-[2px] rounded-lg border text-[10px] font-bold tracking-[0.004em] uppercase ${performanceBadgeClass}`}>
+                        {performanceLevel}
+                      </div>
+                    </div>
+
+                  </div>
+                );
+              })}
+            </div>
+
+          </div>
+
+        </div>
+
       </main>
     </>
   );

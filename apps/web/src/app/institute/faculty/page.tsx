@@ -1,7 +1,16 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import { RiAddLine, RiMoreFill, RiUserStarLine, RiSearchLine } from "@remixicon/react";
+import { useState } from "react";
+import {
+  RiSearchLine,
+  RiNotification3Line,
+  RiMailLine,
+  RiAddLine,
+  RiMore2Fill,
+  RiStarFill,
+  RiGraduationCapLine,
+  RiBookOpenLine
+} from "@remixicon/react";
 
 const mockFaculty = [
   { id: "FAC-001", name: "Aman Sir", subject: "Physics", role: "Senior Faculty", batches: 4, rating: 4.8 },
@@ -11,67 +20,161 @@ const mockFaculty = [
 ];
 
 export default function InstituteFacultyPage() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredFaculty = mockFaculty.filter(fac =>
+    fac.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    fac.subject.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <>
-      <Navbar title="Faculty Management" />
-      <main style={{ maxWidth: 1200, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
-        
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 32 }}>
-          <div style={{ position: "relative", width: 400 }}>
-            <RiSearchLine size={18} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", color: "var(--fg-muted)" }} />
-            <input 
-              type="text" 
-              placeholder="Search faculty by name or subject..." 
-              className="input-field"
-              style={{ width: "100%", paddingLeft: 36 }}
+    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
+
+      {/* ── Top Navigation Row (Figma Style) ── */}
+      <div className="flex flex-row justify-between items-center w-full h-12 gap-6">
+        {/* Title */}
+        <h1 className="font-sans font-semibold text-[32px] leading-[145%] tracking-[0.0025em] text-[#101010] dark:text-t-primary">
+          Faculty
+        </h1>
+
+        {/* Navigation Items (Right Side) */}
+        <div className="flex flex-row items-center gap-3">
+          {/* Search Box */}
+          <div className="flex flex-row items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/40 rounded-full px-3 py-2 w-72 h-12 gap-2 shadow-xs">
+            <RiSearchLine size={20} className="text-[#727272] dark:text-t-tertiary" />
+            <input
+              type="text"
+              placeholder="Search faculty..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="bg-transparent border-none outline-none text-sm text-[#101010] dark:text-t-primary placeholder-[#727272] w-full"
             />
           </div>
-          <button className="btn btn-primary" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <RiAddLine size={18} /> Add New Faculty
+
+          {/* Add Faculty Button (Gradient) */}
+          <button className="flex flex-row justify-center items-center px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-[#FDFDFD] dark:text-b-surface1 text-sm font-sans font-semibold rounded-full shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer">
+            + Add Faculty
           </button>
-        </div>
 
-        <div className="rayum-card" style={{ overflow: "hidden" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
-            <thead>
-              <tr style={{ background: "var(--bg-surface)", borderBottom: "1px solid var(--border-default)" }}>
-                <th style={{ padding: "16px 24px", color: "var(--fg-muted)", fontWeight: 600, fontSize: 13, textTransform: "uppercase" }}>Name</th>
-                <th style={{ padding: "16px 24px", color: "var(--fg-muted)", fontWeight: 600, fontSize: 13, textTransform: "uppercase" }}>Subject</th>
-                <th style={{ padding: "16px 24px", color: "var(--fg-muted)", fontWeight: 600, fontSize: 13, textTransform: "uppercase" }}>Role</th>
-                <th style={{ padding: "16px 24px", color: "var(--fg-muted)", fontWeight: 600, fontSize: 13, textTransform: "uppercase" }}>Active Batches</th>
-                <th style={{ padding: "16px 24px", color: "var(--fg-muted)", fontWeight: 600, fontSize: 13, textTransform: "uppercase" }}>Student Rating</th>
-                <th style={{ padding: "16px 24px" }}></th>
-              </tr>
-            </thead>
-            <tbody>
-              {mockFaculty.map(faculty => (
-                <tr key={faculty.id} style={{ borderBottom: "1px solid var(--border-subtle)" }}>
-                  <td style={{ padding: "16px 24px", color: "var(--fg-default)", fontWeight: 600, display: "flex", alignItems: "center", gap: 12 }}>
-                    <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--neutral-10)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--fg-muted)" }}>
-                      <RiUserStarLine size={16} />
-                    </div>
+          {/* Bell Button */}
+          <button className="relative flex size-12 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all active:scale-95 shadow-xs cursor-pointer shrink-0">
+            <RiNotification3Line size={20} />
+            <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-[#FF6A55]" />
+          </button>
+
+          {/* Mail Button */}
+          <button className="flex size-12 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all active:scale-95 shadow-xs cursor-pointer shrink-0">
+            <RiMailLine size={20} />
+          </button>
+
+          {/* Avatar Profile */}
+          <div className="flex items-center justify-center size-12 rounded-full border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 shrink-0 cursor-pointer shadow-xs">
+            <div className="size-9 rounded-full bg-[#101010] dark:bg-t-primary flex items-center justify-center text-xs font-bold text-[#FDFDFD] dark:text-b-surface1">
+              AA
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex flex-col gap-2 mt-6">
+        <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-[#101010] dark:text-t-primary">Faculty Directory</h2>
+        <p className="text-xs text-[#7B7B7B] dark:text-t-tertiary">Manage department heads, lecturing teachers, credentials, and student feedback performance ratings.</p>
+      </div>
+
+      {/* Vertical List of Rows */}
+      <div className="flex flex-col gap-3 w-full mt-4">
+        {filteredFaculty.map(faculty => {
+          const subjectColorMap = {
+            Physics: {
+              badge: "bg-[#2A85FF]/5 border-[#2A85FF]/15 text-[#2A85FF]",
+              initials: "bg-[#2A85FF]/10 text-[#2A85FF]"
+            },
+            Chemistry: {
+              badge: "bg-[#EF9D0E]/5 border-[#EF9D0E]/15 text-[#EF9D0E]",
+              initials: "bg-[#EF9D0E]/10 text-[#EF9D0E]"
+            },
+            Mathematics: {
+              badge: "bg-[#8F3FFF]/5 border-[#8F3FFF]/15 text-[#8F3FFF]",
+              initials: "bg-[#8F3FFF]/10 text-[#8F3FFF]"
+            },
+            Biology: {
+              badge: "bg-[#00A656]/5 border-[#00A656]/15 text-[#00A656]",
+              initials: "bg-[#00A656]/10 text-[#00A656]"
+            }
+          }[faculty.subject] || {
+            badge: "bg-[#727272]/5 border-[#727272]/15 text-[#727272]",
+            initials: "bg-[#727272]/10 text-[#727272]"
+          };
+
+          // Initials for avatar
+          const initials = faculty.name.split(" ").map(n => n[0]).join("");
+
+          return (
+            <div
+              key={faculty.id}
+              className="group relative flex flex-row items-center justify-between p-3 gap-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-[20px] shadow-xs hover:scale-[1.005] hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 transition-all h-[88px] cursor-pointer"
+            >
+              <div className="box-hover" />
+
+              {/* Left: Avatar/Initials Box */}
+              <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden relative z-10">
+                <div className={`flex w-16 h-16 items-center justify-center rounded-xl border border-s-stroke2/40 shrink-0 font-sans font-bold text-lg ${subjectColorMap.initials}`}>
+                  {initials}
+                </div>
+
+                {/* Faculty Name & Role Info */}
+                <div className="min-w-0 flex-1 flex flex-col justify-center">
+                  <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary truncate">
                     {faculty.name}
-                  </td>
-                  <td style={{ padding: "16px 24px" }}>
-                    <span className={`rayum-badge ${faculty.subject === 'Physics' ? 'blue' : faculty.subject === 'Chemistry' ? 'orange' : faculty.subject === 'Mathematics' ? 'purple' : 'green'}`}>
-                      {faculty.subject}
-                    </span>
-                  </td>
-                  <td style={{ padding: "16px 24px", color: "var(--fg-muted)", fontSize: 14 }}>{faculty.role}</td>
-                  <td style={{ padding: "16px 24px", color: "var(--fg-default)", fontWeight: 500 }}>{faculty.batches}</td>
-                  <td style={{ padding: "16px 24px", color: "var(--success-50)", fontWeight: 600 }}>★ {faculty.rating}</td>
-                  <td style={{ padding: "16px 24px", textAlign: "right" }}>
-                    <button className="btn btn-ghost" style={{ padding: "4px 8px" }}>
-                      <RiMoreFill size={18} />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                  </span>
+                  <span className="text-xs text-[#7B7B7B] dark:text-t-tertiary mt-0.5 flex items-center gap-1">
+                    <RiGraduationCapLine size={14} className="text-[#7B7B7B]/70" />
+                    {faculty.role}
+                  </span>
+                </div>
+              </div>
 
-      </main>
-    </>
+              {/* Right: Metrics + Subject Tag */}
+              <div className="flex flex-row items-center gap-8 shrink-0 relative z-10">
+                {/* Batches count */}
+                <div className="flex flex-col items-end justify-center min-w-[70px]">
+                  <span className="text-[10px] font-sans font-bold text-[#7B7B7B] uppercase tracking-wider">
+                    Batches
+                  </span>
+                  <span className="text-[16px] font-sans font-bold text-[#101010] dark:text-t-primary mt-0.5">
+                    {faculty.batches}
+                  </span>
+                </div>
+
+                {/* Rating score */}
+                <div className="flex flex-col items-end justify-center min-w-[70px]">
+                  <span className="text-[10px] font-sans font-bold text-[#7B7B7B] uppercase tracking-wider flex items-center gap-0.5">
+                    <RiStarFill size={10} className="text-[#F4A109]" /> Rating
+                  </span>
+                  <span className="text-[16px] font-sans font-bold text-[#00A656] mt-0.5">
+                    {faculty.rating}
+                  </span>
+                </div>
+
+                {/* Subject badge */}
+                <div className="min-w-[110px] flex justify-end">
+                  <span className={`px-3 py-1.5 border rounded-lg text-[10px] font-bold uppercase tracking-wider ${subjectColorMap.badge}`}>
+                    {faculty.subject}
+                  </span>
+                </div>
+
+                {/* Actions button */}
+                <button className="flex items-center justify-center size-8 rounded-full text-[#7B7B7B] hover:text-[#101010] dark:hover:text-t-primary hover:bg-[#F9F9F9] dark:hover:bg-b-surface3 border border-s-stroke2/30 bg-[#FDFDFD] dark:bg-b-surface2 transition-all active:scale-95 shadow-xs shrink-0">
+                  <RiMore2Fill size={18} />
+                </button>
+              </div>
+
+            </div>
+          );
+        })}
+      </div>
+
+    </main>
   );
 }
