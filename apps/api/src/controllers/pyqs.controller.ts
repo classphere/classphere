@@ -46,6 +46,18 @@ export const PYQ_REGISTRY: PYQMeta[] = [
     difficulty: "hard",
     fileName: "JEE Main 2024 (27 Jan Shift 2).json",
   },
+  {
+    id: "ssc-cgl-pre-disha-mock-1",
+    exam: "SSC CGL",
+    year: 2024,
+    shift: "DISHA CAREER INSTITUTE",
+    subjects: ["General Intelligence & Reasoning", "Quantitative Aptitude", "General Awareness", "English Language"],
+    questions: 100,
+    marks: 200,
+    duration: 60,
+    difficulty: "medium",
+    fileName: "ssc_mock.json",
+  },
 ];
 
 // ─── Controllers ──────────────────────────────────────────────────────────────

@@ -32,7 +32,7 @@ interface PYQPaper {
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api/v1";
 
-const EXAMS = ["All", "JEE Main", "JEE Advanced", "NEET-UG"];
+const EXAMS = ["All", "JEE Main", "JEE Advanced", "NEET-UG", "SSC CGL"];
 const YEARS = ["All", "2024", "2023", "2022", "2021", "2020"];
 const DIFFICULTIES = ["All", "easy", "medium", "hard"];
 
@@ -262,7 +262,7 @@ export default function PYQsPage() {
                 paper={paper}
                 isBookmarked={bookmarks.has(paper.id)}
                 onBookmark={toggleBookmark}
-                onStart={() => router.push(`/test/pyq-${paper.id}`)}
+                onStart={() => router.push(`/test/${paper.id.startsWith("ssc-") ? paper.id : `pyq-${paper.id}`}`)}
               />
             ))}
           </div>

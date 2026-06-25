@@ -99,6 +99,86 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
     let { id: test_id } = req.params;
     const { answers } = req.body; // { question_id: { selected_answer: string, time_taken_sec: number, marked_review: boolean } }
 
+    // ── SSC papers: "ssc-{paperId}" prefix ─────────────────────────────────────
+    if (test_id.startsWith("ssc-")) {
+      const paper = PYQ_REGISTRY.find((p) => p.id === test_id);
+      if (!paper) {
+        res.status(404).json({ success: false, message: "SSC test not found in registry." });
+        return;
+      }
+
+      const filePath = path.join(ROOT, paper.fileName);
+      const raw = fs.readFileSync(filePath, "utf-8");
+      const questions: Question[] = JSON.parse(raw);
+
+      const attemptAnswers: AttemptAnswer[] = [];
+      const attemptId = `attempt-${Date.now()}`;
+
+      for (const q of questions) {
+        const studentAns = answers?.[q.id];
+        const selected = studentAns?.selected_answer || null;
+
+        // IMPORTANT: many questions in ssc_mock.json have correct_answer: [] because no
+        // answer key was available at extraction time. For those, we cannot score — they
+        // are excluded from correct/incorrect tallying. Fill in the real answer key before
+        // this test goes live for actual students.
+        const correctAnswersList = Array.isArray(q.correct_answer)
+          ? q.correct_answer.map((v: any) => String(v).trim().toUpperCase())
+          : q.correct_answer ? [String(q.correct_answer).trim().toUpperCase()] : [];
+
+        const hasAnswerKey = correctAnswersList.length > 0;
+        const selectedNormalized = selected ? String(selected).trim().toUpperCase() : null;
+        const isCorrect = hasAnswerKey && selectedNormalized
+          ? correctAnswersList.includes(selectedNormalized)
+          : false;
+
+        // Use this question's own marking_scheme (correct: 2, incorrect: -0.5)
+        const ms = (q as any).marking_scheme ?? { correct: 2, incorrect: -0.5, unattempted: 0 };
+        let marksAwarded = 0;
+        if (hasAnswerKey) {
+          if (!selectedNormalized) {
+            marksAwarded = ms.unattempted ?? 0;
+          } else if (isCorrect) {
+            marksAwarded = ms.correct;
+          } else {
+            marksAwarded = ms.incorrect;
+          }
+        }
+        // If no answer key: marksAwarded stays 0 — question is excluded from scoring
+
+        attemptAnswers.push({
+          id: `ans-${q.id}`,
+          attempt_id: attemptId,
+          question_id: q.id,
+          selected_answer: selected,
+          is_correct: isCorrect,
+          marks_awarded: marksAwarded,
+          time_taken_sec: studentAns?.time_taken_sec || 0,
+          start_timestamp: studentAns?.start_timestamp ?? 0,
+          marked_review: studentAns?.marked_review || false,
+          question: q,
+        });
+      }
+
+      globalDbStore.attempts.set(attemptId, {
+        attempt: {
+          id: attemptId,
+          student_id: "demo-student",
+          exam_id: "ssc-cgl",
+          batch_id: "demo-batch",
+          marking_scheme: { correct: 2, incorrect: -0.5, unattempted: 0, partial: false },
+        },
+        answers: attemptAnswers,
+      });
+
+      const analysisResult = await analyzeAttempt(attemptId);
+      globalDbStore.analysisResults.set(attemptId, analysisResult);
+
+      res.status(200).json({ success: true, data: { attempt_id: attemptId } });
+      return;
+    }
+
+    // ── JEE/NEET PYQ papers: strip "pyq-" prefix ───────────────────────────────
     if (test_id.startsWith("pyq-")) {
       test_id = test_id.replace("pyq-", "");
     }

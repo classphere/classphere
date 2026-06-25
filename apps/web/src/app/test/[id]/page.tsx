@@ -236,6 +236,31 @@ export default function TestPage() {
       return;
     }
 
+    // SSC papers: id is "ssc-{paperId}" — registered in PYQ_REGISTRY, uses same questions endpoint
+    if (testId.startsWith("ssc-")) {
+      fetch(`${API_BASE}/pyqs/${testId}/questions`)
+        .then((r) => {
+          if (!r.ok) throw new Error("API error");
+          const contentType = r.headers.get("content-type");
+          if (!contentType || !contentType.includes("application/json")) throw new Error("Invalid response format");
+          return r.json();
+        })
+        .then((res) => {
+          if (res.success) {
+            setQuestions(res.data.questions);
+            setMeta(res.data.paper);
+            setTimeLeft(res.data.paper.duration * 60);
+            setIsDemoMode(false);
+            examStartMsRef.current = Date.now();
+          } else {
+            setError(res.message ?? "Failed to load questions.");
+          }
+        })
+        .catch(() => setError("Failed to connect to API. Make sure the backend is running."))
+        .finally(() => setLoading(false));
+      return;
+    }
+
     // Future: custom tests would use a different endpoint
     setError(`Unknown test format: "${testId}". Only PYQ papers are supported right now.`);
     setLoading(false);

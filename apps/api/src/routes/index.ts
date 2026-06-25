@@ -9,6 +9,7 @@ import institutesRouter from "./institutes.routes";
 import batchesRouter from "./batches.routes";
 import internalRouter from "./internal.routes";
 import pyqsRouter from "./pyqs.routes";
+import sscRouter from "./ssc.routes";
 
 const router = Router();
 
@@ -17,6 +18,8 @@ const router = Router();
 router.use("/auth", authRouter);
 // PYQs are public — no login needed to list or fetch questions
 router.use("/pyqs", pyqsRouter);
+// SSC tests are public — institute admins upload, students attempt
+router.use("/ssc", sscRouter);
 
 // ─── Authenticated ───────────────────────────────────────────────────────────
 // Each router is mounted at its explicit prefix so no router ever acts as a

@@ -1,0 +1,4566 @@
+[
+  {
+    "id": "e3054e54-3c6e-43e9-af97-a61ba8f635be",
+    "question_number": 1,
+    "question_text": "You are busy managing both your office work and a family health issue. While replying to colleagues, you accidentally post a personal message in the official professional group. Many colleagues notice it immediately. What should you do?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Leave the group to avoid embarrassment.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Stay silent and pretend nothing happened.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Argue with colleagues that it was their fault for noticing.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Quickly delete the message and give a polite apology.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Situation Reaction Test",
+    "topic": "Professional Mistake Handling",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1f3daae6-6570-483b-8b9a-44d45f756b77",
+    "question_number": 2,
+    "question_text": "A company is organizing a product launch event. Three employees are shortlisted:\n\nEmployee X – Excellent in public speaking and presentations, but weak in graphic design.\nEmployee Y – Creative in making posters and visuals, but shy in front of large audiences.\nEmployee Z – Good at time management and coordination, but average in technical knowledge.\n\nHow should their roles be assigned?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "X as presenter, Y as designer, Z as coordinator.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Y as presenter, Z as designer, X as coordinator.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Z as presenter, Y as coordinator, X as designer.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "All three share all responsibilities equally.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Analytical Decision Making",
+    "topic": "Team Role Assignment",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b03742d6-1389-4dae-9d23-28d9555138e3",
+    "question_number": 3,
+    "question_text": "Information given below represents the number codes for the given letters. Select the combination of numbers so that the letters arranged accordingly will form a meaningful word.\n\nT = 1, S = 2, L = 3, A = 4, U = 5, B = 6, E = 7, I = 8",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "2, 8, 5, 1, 4, 6, 3, 7",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "2, 4, 1, 8, 5, 6, 3, 7",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "2, 5, 8, 1, 4, 6, 3, 7",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "2, 1, 5, 6, 8, 4, 3, 7",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Coding Decoding",
+    "topic": "Number Coding for Word Formation",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c5270157-caef-42e8-b83a-2e8c3d2a75fe",
+    "question_number": 4,
+    "question_text": "Select the option in which the numbers share the same relationship as that shared by the given pair of numbers.\n\n(NOTE: Operations should be performed on whole numbers without breaking down the numbers into their constituent digits. E.g. 13 – Operations on 13, such as adding/deleting/multiplying, etc., to 13 can be performed. Breaking down 13 into 1 and 3 and then performing mathematical operations on 1 and 3 is not allowed.)\n\n3 : 81\n6 : 324",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "3 : 176",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "8 : 576",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "6 : 126",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "11 : 110",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Number Analogy",
+    "topic": "Mathematical Relationship",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "579631b0-0bb7-46f9-832f-a64fe70e40ad",
+    "question_number": 5,
+    "question_text": "Direction: In the following question, assume the given information to be true and mark the appropriate options.\n\nStatement: L > W > Q = G; B ≤ G < K = M\n\nConclusions: I. B > L\nII. M < W",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Only conclusion II is true",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Only conclusion I is true",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Neither conclusion I nor II is true",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Either conclusion I or II are true",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Inequality",
+    "topic": "Mathematical Inequality Conclusions",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0794fe1-9de9-4b2b-b3bb-4683d52cffc2",
+    "question_number": 6,
+    "question_text": "In a certain code language, 'truth was good' is coded as 'wt hj qr' and 'there good people' is coded as 'qr sy eg'. What is the code for 'good' in that language?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "wt",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "hj",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "eg",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "qr",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Coding Decoding",
+    "topic": "Letter Coding",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "358f18fe-b8a3-425f-b59c-6f75d8f4ee66",
+    "question_number": 7,
+    "question_text": "You are the principal of a reputed school. A bright student is caught cheating in the final exam. The parents request you to forgive the student, arguing it will ruin their future. Other students are aware of the cheating incident.\n\nWhat should you do?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Forgive the student privately to save their future.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Cancel the student's paper and take strict action to set an example.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Warn the student but allow them to pass the exam.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Shift the responsibility to the teachers and avoid direct action.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Situation Reaction Test",
+    "topic": "Educational Decision Making",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0adc1ffd-4b49-4f3c-8d82-e73c4ac7e68b",
+    "question_number": 8,
+    "question_text": "Directions: Each question given below consists of a statement, followed by two arguments numbered I and II. You have to decide which of the arguments is a \"strong\" argument and which is a \"weak\" argument.\n\nStatement: The railway authorities have announced a new rule requiring all passengers to carry valid identification while boarding long-distance trains.\n\nArguments: I. Carrying ID ensures better security and reduces cases of ticket fraud.\nII. People should be allowed to travel freely without any documentation.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "If only argument I is strong",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "If only argument II is strong",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "If either I or II is strong",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "If both I and II are strong.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Statement and Arguments",
+    "topic": "Strong vs Weak Arguments",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "805c3d1c-8f8a-4d07-8db4-a3fd37beca33",
+    "question_number": 9,
+    "question_text": "If 'west' means 'east', 'north' means 'west', 'south' means 'north' and 'east' means 'south'. O is 9m south of M. Q is 8m north of O. M is 8m west of R. P is 4m west of M. S is 6m east of R. N is 7m north of S. L is 15m south of N. What is the direction of M with respect to L?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "South-east",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "North-west",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "South-west",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "North-east",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Direction Sense Test",
+    "topic": "Coded Directions",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "880ebcbc-ca68-4816-b5f4-14f2cd67d836",
+    "question_number": 10,
+    "question_text": "Evaluate the following expression:\n\n[6 × 11 – 5 × 9 + 13] mod 19",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "15",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "9",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "17",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "21",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Mathematical Operations",
+    "topic": "Modulo Arithmetic",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b5cdf816-2566-4c33-a2ed-e4e2866a3ea3",
+    "question_number": 11,
+    "question_text": "Select the number from among the given options that can replace the question mark (?) in the following series.\n\n4, 10, 16, 25, 70, 122, ?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "538",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "590",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "530",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "560",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Number Series",
+    "topic": "Mixed Number Series",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "54de03d0-5f61-4ec5-a9ed-9dad4a233ee4",
+    "question_number": 12,
+    "question_text": "Three of the following words are alike in some manner and hence form a group. Which word does NOT belong to that group? (The words must be considered as meaningful English words and must not be grouped based on the number of letters/number of consonants/vowels in the word)\n\n(A) Iris\n(B) Retina\n(C) Pupil\n(D) Tongue",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Iris",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Retina",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Pupil",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Tongue",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Classification",
+    "topic": "Odd One Out - Body Parts",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9abba259-ab8a-43ce-bb4b-cac8765ba129",
+    "question_number": 13,
+    "question_text": "Select the option that represents the letters that when sequentially placed from left to right in the blanks below will complete the letter series.\n\nY _ Q S L _ S _ Q S Y L _ Y L _",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "QYQSL",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "LSYYQQ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "LQYSQL",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "LQYQS",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Letter Series",
+    "topic": "Alphabet Series Completion",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "97f4cdca-b0f4-4cb2-99d9-9f40b5a7340b",
+    "question_number": 14,
+    "question_text": "Find the wrong number in the given series.\n\n11, 23, 64, 119, 223, 335",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "64",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "119",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "11",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "23",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Number Series",
+    "topic": "Wrong Number in Series",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4c01afab-dfae-4650-a06d-36e64ad069c4",
+    "question_number": 15,
+    "question_text": "[Figure-based question: Select the correct mirror image of the given combination when the mirror is placed as shown below - see original PDF for the figure and options]",
+    "question_images": [],
+    "options": [],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Mirror Image",
+    "topic": "Mirror Image of Figure",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [
+      "image-based-not-extracted"
+    ],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4d087252-0ca4-45a8-a1a8-1d0ffdf28b49",
+    "question_number": 16,
+    "question_text": "Directions: A question and three statements labeled (I), (II), and (III) are given. You have to decide which statement(s) is/are sufficient to answer the question. In which year was Sanjay born?\n\nI. Sanjay is six years older than Gopal.\nII. Gopal's brother was born in 1982.\nIII. Sanjay's brother is two years younger than Gopal's brother who was eight years younger than Gopal.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "I and II together are sufficient",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "II and III together are sufficient",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "I and III together are sufficient",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "I, II and III together are sufficient",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Data Sufficiency",
+    "topic": "Year of Birth Data Sufficiency",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d881a4c6-0967-4da3-b0cb-53b9332603ee",
+    "question_number": 17,
+    "question_text": "In the question, assuming the given statements to be true, find which of the conclusion (s) among given two conclusions is /are definitely true and then give your answer accordingly.\n\nStatements: D > G = C > X > T; L ≥ E ≥ D\n\nConclusions: I. L > G\nII. X ≤ D",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Neither conclusion I nor II follows",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Only conclusion II follows",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Only conclusion I follows",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Both conclusions I and II follow",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Inequality",
+    "topic": "Mathematical Inequality Conclusions",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ae6ff68-0a07-40f5-812f-e2d701525171",
+    "question_number": 18,
+    "question_text": "'Generous' is related to 'Stingy' in the same way as 'Reveal' is related to ________. (The words must be considered as meaningful English words and must not be related to each other based on the number of letters/number of consonants/vowels in the word.)",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Expose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Conceal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Discover",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Hidden",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Analogy",
+    "topic": "Antonym Analogy",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3cce94ab-0d77-409d-bc2a-83f10702b17f",
+    "question_number": 19,
+    "question_text": "Three statements are given, followed by three conclusions numbered I, II, and III. Assuming the statements to be true, even if they seem to be at variance with commonly known facts, decide which of the conclusions logically follow(s) from the statements.\n\nStatements: All bus are bikes. Some bikes are train. No train is van.\n\nConclusions: I. All bus are van.\nII. Some Bus are train.\nIII. Some bikes are not van.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Only II follows",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Only I follows",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Only I and III follow",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Only III follows",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Syllogism",
+    "topic": "Syllogism Conclusions",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "68ec73c8-c04c-4373-9a41-3c7278e6b776",
+    "question_number": 20,
+    "question_text": "In a certain code language\nIf A @ B means A is brother of B\nA # B means A is father of B\nA $ B means A is mother of B\nA % B means A is wife of B\n\nIn the given expression, J % K, K # L, L % M, M @ N, N $ O, O @ I', how is M related to I?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Mother's mother",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Mother's sister",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Mother's brother",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Father's brother",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Blood Relations",
+    "topic": "Coded Blood Relations",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fd6df884-3207-45f9-b20c-1f0abe38f77d",
+    "question_number": 21,
+    "question_text": "In each of the following questions, two statements numbered I and II are given. These statements are independent causes or may be the effects of independent causes. One of the statements may be the effect of the other statement. Read both the statements carefully and mark your answer.\n\nI: The cricket team won the World Cup.\nII: Large-scale celebrations were held across the country.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Both statements I and II are effects of some common cause.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Both statements I and II are independent causes.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Statement I is the cause and statement II is its effect.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Statement II is the cause and statement I is its effect.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Cause and Effect",
+    "topic": "Cause Effect Relationship",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fc55bf1d-8058-470e-a007-753c47529df1",
+    "question_number": 22,
+    "question_text": "Select the correct combination of mathematical signs that can sequentially replace the $ signs and make the equation correct.\n\n15 @ 6 @ 12 @ 64 @ 8 @ 86",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "+, -, *, =, -",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "×, +, +, -, =",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "×, -, -, +, * =",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "+ , ×, -, -, +, +",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Mathematical Operations",
+    "topic": "Inserting Operators",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "444e30eb-33b7-4e37-90dc-2ac8ee22ffc2",
+    "question_number": 23,
+    "question_text": "[Figure-based question: The given Problem Figure is embedded in one of the given Answer Figures. Which is that Answer Figure? - see original PDF for the figures]",
+    "question_images": [],
+    "options": [],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Embedded Figures",
+    "topic": "Figure Embedding",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [
+      "image-based-not-extracted"
+    ],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ec7bcd87-89aa-4e31-ba17-06f66f28abf2",
+    "question_number": 24,
+    "question_text": "A question given below is followed by two statements numbered I, and II. You have to decide whether the data provided in the statements are sufficient to answer the question or not. Read both statements and choose the appropriate option.\n\nSix people P, Q, R, S, T, and U are sitting on a circular table and facing inside then who among the following sits second to the right of U?\n\nI. P sits opposite Q who sits immediately left of S.\nII. S sits opposite T who is a neighbor of R.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "If the data in Statement I alone is sufficient to answer the question.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "If the data in Statement II alone is sufficient to answer the question.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "If the data in Statements I, and II together are not sufficient to answer the question.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "If the data in Statements I, and II together are sufficient to answer the question.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Data Sufficiency",
+    "topic": "Circular Seating Arrangement Data Sufficiency",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dd5e70f4-912f-4694-bc32-4b4c7d6d4eb8",
+    "question_number": 25,
+    "question_text": "Select the set in which the numbers are related in the same way as the numbers of the following set.\n\n(8, 89, 9)",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "(2, 71, 8)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(7, 304, 4)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(7, 71, 8)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(17, 71, 8)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Intelligence and Reasoning",
+    "chapter": "Number Analogy",
+    "topic": "Set Relationship",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "15d34492-dc6e-4deb-af1a-349f9b9137fe",
+    "question_number": 26,
+    "question_text": "If $4a + \\frac{1}{4a} = 5$ then which of the following will be equal to 26?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$16a^2 + \\frac{1}{16a^2} + 1$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$16a^2 + \\frac{1}{16a^2}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$16a^2 + \\frac{1}{16a^2} + 3$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$16a^2 + \\frac{1}{16a^2} - 1$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Algebra",
+    "topic": "Algebraic Identities",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fa8c1b82-b7a9-482c-8fc7-8459d931cc2b",
+    "question_number": 27,
+    "question_text": "A polygon has 20 diagonals. Find the number of sides in the polygon.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "8",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Geometry",
+    "topic": "Polygons - Number of Diagonals",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29071df2-d344-43a9-9b0c-f5945172268b",
+    "question_number": 28,
+    "question_text": "Find the simplified value of the given expression:\n\n$\\frac{1}{2} \\times 14$ of $(\\frac{3}{4} \\times \\frac{16}{21}) + \\frac{1}{3} \\times \\frac{2}{8}$ of $\\frac{7}{15} + \\frac{3}{5}$",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "(208/45)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(212/45)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(22/9)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(32/5)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Simplification",
+    "topic": "BODMAS with Fractions and 'of'",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4de8b429-5f62-4798-838c-3b00489a0f9a",
+    "question_number": 29,
+    "question_text": "Find the value of the given expression:\n\n$(\\frac{1}{4} - \\frac{1}{4}) \\times (\\frac{1}{3} + \\frac{1}{3}) \\times (\\frac{1}{3} + \\frac{2}{3}) \\times (\\frac{1}{5} - \\frac{2}{5}) \\times (\\frac{1}{11} - \\frac{9}{13})$",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "-2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(-10/17)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(-20/13)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(10/23)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Simplification",
+    "topic": "Fraction Multiplication",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "93197137-9fa3-4657-931e-2be8e731728b",
+    "question_number": 30,
+    "question_text": "In a store, Arun has two options to buy a mobile phone either he can pay the full amount of ₹2,500, or he may buy at an installment scheme, i.e., ₹520 in down payment and four equal installments, rate of interest being charged at 25% p.a. simple interest. Arun buys a mobile phone on an installment scheme. What is the monthly instalment for Arun?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "₹510",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "₹530",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "₹550",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "₹520",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Simple Interest",
+    "topic": "Installment Calculation",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "746914de-74c3-404b-bbbb-5641c530cdd8",
+    "question_number": 31,
+    "question_text": "A cylindrical rod has an outer curved surface area of 9900 cm². If the length of the rod is 82 cm, then the outer radius (in cm) of the rod, correct to two places of decimal, is: (Take $\\pi = \\frac{22}{7}$)",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "17.09",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "20.39",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "17.55",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "19.22",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Mensuration",
+    "topic": "Cylinder - Curved Surface Area",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8b725a06-403b-468f-b07b-5e3b27e105c6",
+    "question_number": 32,
+    "question_text": "A thief steals a scooter at 1:40 p.m. and drives it at 54 km/h. The theft is discovered at 2:10 p.m. and the owner sets off to chase the thief on another scooter at 72 km/h. At what time will he catch the thief?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "3:40 p.m.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "3:20 p.m.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "4:50 p.m.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "4:10 p.m.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Time Speed and Distance",
+    "topic": "Relative Speed Chase",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "49068a22-0a1f-47dd-87b2-125f4ea70cb4",
+    "question_number": 33,
+    "question_text": "If $x^2 - 4x + 1 = 0$ then, find $(x^3 - 26)^2$.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "545",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "675",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "625",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "91,125",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Algebra",
+    "topic": "Quadratic Equation Value Finding",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "698cccf7-76bd-4ad9-aca5-90025e8b2cdc",
+    "question_number": 34,
+    "question_text": "The team of A, B, and C was supposed to complete a piece of work. Working alone, A could have completed the same work in 190 hours, B could have completed the same work in 285 hours, while C could have completed it in 342 hours. The trio decided that only one of the three would work at any point in time. In the first cycle of three days, A worked for two hours on Day 1, B worked for two hours on Day 2, and C worked for two hours on Day 3. In the second cycle of three days, A worked for four hours on Day 1, B worked for four hours on Day 2, and C worked for four hours on Day 3. In the third cycle of three days, A worked for six hours on Day 1, B worked for six hours on Day 2, and C worked for six hours on Day 3. This continued till the piece of work was completed, with each working for 2n hours in Cycle n, the sole exception being made, if necessary, in the last cycle, as the work may get completed mid-cycle. What was the total number of days needed for the work to be completed?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "26",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "25.5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "26.4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "25.8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Work and Time",
+    "topic": "Variable Daily Work Cycles",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e3701610-9189-44af-a2ec-3e60187581f6",
+    "question_number": 35,
+    "question_text": "$\\tan 73^\\circ \\tan 48^\\circ \\tan 25^\\circ = ?$",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\tan 25^\\circ + \\tan 48^\\circ - \\tan 73^\\circ$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\tan 73^\\circ + \\tan 25^\\circ + \\tan 48^\\circ$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\tan 73^\\circ - \\tan 25^\\circ - \\tan 48^\\circ$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\tan 25^\\circ - \\tan 48^\\circ - \\tan 73^\\circ$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Trigonometry",
+    "topic": "Trigonometric Product Identity",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3731fef3-0d27-4ada-96a1-9125bad30393",
+    "question_number": 36,
+    "question_text": "Base of a prism is a square of perimeter 60 cm. If the height of the prism is 24 cm, then find the volume (in cm³) of prism.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "6,000",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "4,800",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "5,400",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "5,700",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Mensuration",
+    "topic": "Prism Volume",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f32605a1-c9b3-48a1-b974-e3e25e3a8ea1",
+    "question_number": 37,
+    "question_text": "[Histogram-based Data Interpretation question: Study the given histogram representing the percentage of marks scored by a number of students in the class X Board Examination in 2018 in a school (Total number of students = 250). The number of students who have secured less than 60% of marks is approximately what percentage more than the number of students who have secured 90% marks and above? - see original PDF for the histogram]",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "40%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "50%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "60%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "75%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Data Interpretation",
+    "topic": "Histogram Analysis",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [
+      "image-based-not-extracted"
+    ],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0befeba4-0cc6-4c47-a9eb-14360fba9944",
+    "question_number": 38,
+    "question_text": "A family income is ₹35,000 in a month. The family spends the income on various expenditures, viz., food, health, education, entertainment, and rent. After incurring all the expenditures, 8% is saved every month. The expenditure on health is 50% more than that of food. While food is three times of the expenditure on entertainment, the expenditure on health is half of the expenditure on education. The expenditure on rent is one-third of the combined expenditure on food, health and education. How much expenditure (in ₹) is incurred on education?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "12600",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "8400",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "13200",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "7700",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Percentage",
+    "topic": "Expenditure Distribution and Ratios",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "51aabfec-fd33-4f66-afba-1a7d4d7d913b",
+    "question_number": 39,
+    "question_text": "Pipes A and B can fill a tank in 6 hours and 15 hours, respectively. Pipe C is a drain pipe. When all three pipes are opened together for 6 hours, then 65% of the tank is filled. Initially, pipes A and C are opened together for 8 hours, and then C is closed and B is opened. Pipes A and B together will fill the remaining part of tank in ______ hours.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "3 1/3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "2 5/7",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "3 2/3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "2 3/7",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Pipes and Cisterns",
+    "topic": "Pipes Fill and Drain Combined",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5567b85-08f2-4532-ad91-29751e52601b",
+    "question_number": 40,
+    "question_text": "Ratio of each angle of a quadrilateral is 7:5:4:9. Find the smallest angle of quadrilateral.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "57.6°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "54.4°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "51.2°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "58.4°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Geometry",
+    "topic": "Quadrilateral Angles",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5bafa4d3-962c-4e4d-9ff2-9101d09156ab",
+    "question_number": 41,
+    "question_text": "If x = p secA cosB, y = q secA sinB & z = r tanA, then what is the value of $\\frac{x^2}{p^2} + \\frac{y^2}{q^2} - \\frac{z^2}{r^2}$?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$p^2 + q^2 - r^2$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$p^2 - q^2 + r^2$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Trigonometry",
+    "topic": "Trigonometric Identities",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "31bc5600-e4a3-4387-8eb3-b217b17cd06e",
+    "question_number": 42,
+    "question_text": "In a parallelogram, one of the parallel sides is 16 cm and the other side is 12 cm. If the perpendicular distance between the two parallel sides of dimension 16 cm is 24 cm, then the perpendicular distance between its other two parallel sides is :",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "16 cm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "12 cm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "32 cm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "24 cm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Mensuration",
+    "topic": "Parallelogram Area and Height",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bfeb5e9b-3c56-4973-a3d0-f6226ac2609e",
+    "question_number": 43,
+    "question_text": "1/3 of the total of an article is sold at a profit of 15%, 1/4 is at a profit of 20% and the remained part is at a profit of 24%. If the total profit is Rs. 6,240 find the cost price of the article.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Rs. 35000",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Rs. 31000",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Rs. 32000",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Rs. 31200",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Profit and Loss",
+    "topic": "Part-wise Profit Calculation",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1a26eef2-3326-4c3f-8a68-7dfd8d5826e0",
+    "question_number": 44,
+    "question_text": "An urn contains 10 black and 5 white balls. Two balls are drawn from the urn one after the other without replacement. What is the probability that both drawn balls are black?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "2/5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "3/7",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "4/7",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "5/7",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Probability",
+    "topic": "Probability without Replacement",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ddd4607-6f0d-4e4e-8c16-5ee19dd0a8b4",
+    "question_number": 45,
+    "question_text": "Convert the binary number (101011110)₂ into the octal number.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "(546)₈",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(535)₈",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(536)₈",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(436)₈",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Number System",
+    "topic": "Binary to Octal Conversion",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "07c04545-55e6-4eca-b0a7-f7f95526a9f4",
+    "question_number": 46,
+    "question_text": "What is the length (in cm) of chord PQ in a circle with a radius of 7 cm, where a diameter AB and non-diameter chord PQ intersect perpendicularly at point C, and the ratio of AC to BC is 4 : 3?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "6√3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "2√3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "4√3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "8√3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Geometry",
+    "topic": "Circle - Chord Length",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a1cb88c1-3972-473b-8672-762bbd74ef7a",
+    "question_number": 47,
+    "question_text": "The angle of elevation of the top of a tower from a point A due south of the tower is α, and from point B due east of the tower is β. If AB = d, show that the height of the tower is:",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{d}{\\sqrt{\\tan \\alpha + \\tan \\beta}}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{d}{\\sqrt{\\cot^2 \\alpha + \\cot^2 \\beta}}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\frac{2d}{\\sqrt{\\cot^2 \\alpha + \\cot^2 \\beta}}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{d}{\\sqrt{\\cot^2 \\alpha + \\cot^2 \\beta}}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Height and Distance",
+    "topic": "Trigonometry in Height and Distance",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5bce6877-abed-407e-9513-a72fc2430416",
+    "question_number": 48,
+    "question_text": "Find the equation of the line which is parallel to line $5x + 8y = 73$ and passes through point (2, -3)?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$5x + 8y = 13$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$8x - 5y = 31$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$5x + 8y + 14 = 0$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$5x - 8y - 14 = 0$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Coordinate Geometry",
+    "topic": "Equation of Parallel Line",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "545568dc-1ad9-439e-a87c-bf4c05a20f17",
+    "question_number": 49,
+    "question_text": "During the lockdown, the state government gives 4.5 kg of rice to each person of a family at a cost price of Rs. 40 per kg. But the distributor uses a false weight of 3.75 kg instead of 4.5 kg and distributes the rice. The accumulated rice was sold in the black market at double the price. He showed the government that he distributed 2700 kg of rice. When caught, he was made to pay a fine of 125% of what he earned in the black market. What was his fine amount?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Rs. 54,000",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Rs. 45,000",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Rs. 28,000",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Rs. 36,000",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Percentage",
+    "topic": "Fraud and Fine Calculation",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e47f7cd0-5f09-408e-b835-4c21f43e2b5b",
+    "question_number": 50,
+    "question_text": "The mean and the standard deviation of 25 observations were given as 42 and 5, respectively. Later it was found that one of the observations was incorrectly entered as 10, when its correct value was 210. What would have been the correct standard deviation?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\sqrt{1049}$",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "$\\sqrt{1050}$",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "$\\sqrt{1048}$",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "$\\sqrt{1047}$",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "Quantitative Aptitude",
+    "chapter": "Statistics",
+    "topic": "Mean and Standard Deviation Correction",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2c18f6b6-9d4b-4f0a-a5f4-26adc1ca9044",
+    "question_number": 51,
+    "question_text": "Identify the incorrect statement(s) about the Aravalli Range:\n\nI. It is the oldest fold mountain range in India.\nII. It runs discontinuously from Gujarat to Delhi.\nIII. It forms a natural boundary between the Thar Desert and the Indo-Gangetic Plains.\nIV. Guru Shikhar is the highest peak in this range.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Only I",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Only II and III",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Only III and IV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "None of the statements are incorrect",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Geography",
+    "topic": "Indian Physical Geography - Aravalli Range",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "45a5cf65-87c8-4794-9316-51cfe2818a90",
+    "question_number": 52,
+    "question_text": "Consider the following statements and select the correct answer from the codes given below:\n\n1. A bill passed by the two Houses of Parliament cannot become law without the assent of the President.\n2. The President of India cannot return any bill passed by Parliament for reconsideration by the Houses.\n3. The President can return money bills to the Parliament for reconsideration by the Houses.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "2 and 3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "3 only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "2 only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "1 only",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Indian Polity",
+    "topic": "President's Legislative Powers",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bddc0b3e-3953-4641-af0c-7287a7ec0585",
+    "question_number": 53,
+    "question_text": "The fundamental object of the Panchayati Raj system is to ensure which among the following?\n\n1. People's participation in development\n2. Political accountability\n3. Democratic decentralisation\n4. Financial mobilisation\n\nSelect the correct answer using the code given below.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "1 and 2 Only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "1 and 3 Only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "3 and 4 Only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "1, 2, 3 and 4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Indian Polity",
+    "topic": "Panchayati Raj System",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eb82f249-960f-4ac4-8541-f24d51a8f77d",
+    "question_number": 54,
+    "question_text": "Which of the following statements is correct regarding five year plan in India?\n\nI. India had emerged as one of the fastest growing economy by the end of the Tenth Five year Plan.\nII. Tenth Five year Plan had set 'monitorable targets for few key indicators of development.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Neither I nor II",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Only II",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Both I and II",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Only I",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Indian Economy",
+    "topic": "Five Year Plans",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7486fcef-651c-431b-b438-4b6c905ae7af",
+    "question_number": 55,
+    "question_text": "According to Maxwell's theory, what happens when an electrically charged particle is accelerated?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "It emits only electric fields.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "It produces only magnetic fields.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "It generates alternating electrical and magnetic fields.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "It creates static fields with no variation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Physics",
+    "topic": "Electromagnetic Waves - Maxwell's Theory",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0213af14-2051-443e-ab24-d2e7a30ee1a6",
+    "question_number": 56,
+    "question_text": "Which of the following statements regarding Madhya Pradesh's new youth stipend initiative is incorrect?\n\n1. The scheme provides a ₹6,000 monthly stipend to women and a ₹5,000 stipend to men for industrial internships.\n2. It replaces the Ladli Behna Yojana by extending benefits only to unemployed men under the 'Ladli Bhaiyo' tag.\n3. The Achanpura Industrial Area near Bhopal is being developed as a key industrial hub under this scheme.\n4. The initiative promotes gender-sensitive employment and on-the-job training for youth.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "1 and 4 only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "1, 2 and 3 only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "2 only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "4 only",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Current Affairs",
+    "topic": "Government Schemes - MP Youth Stipend",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1676c6ab-82da-453e-a607-78cd1778629d",
+    "question_number": 57,
+    "question_text": "Identify the river:\n\n1. This river is the longest in South America and the second longest river in the world.\n2. It originates in the Andes Mountains and flows through several countries, including Brazil, Peru, and Colombia.\n3. The river basin is home to the Amazon Rainforest, the largest tropical rainforest in the world.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Amazon River",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Nile River",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Congo River",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Orinoco River",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Geography",
+    "topic": "World Rivers - Amazon",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4f59f6b9-705e-43d3-b46c-6b858d22b01a",
+    "question_number": 58,
+    "question_text": "With reference to the Sanchi Stupa, consider the following statements:\n\n1. It was originally commissioned by Emperor Ashoka in the 3rd century BCE.\n2. It is one of the oldest stone structures in India.\n3. The Stupa is located in Madhya Pradesh.\n4. It depicts scenes from the life of Lord Buddha through toranas (gateways).\n\nWhich of the above statements are correct?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "1, 2 and 4 only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "2 and 3 only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "1, 2, 3 and 4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "1 and 3 only",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "History",
+    "topic": "Ancient India - Sanchi Stupa",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7bf03563-0021-4404-b362-2b5d6ae28c98",
+    "question_number": 59,
+    "question_text": "With reference to the administrative and religious policies of Akbar, consider the following statements:\n\n1. The Mansabdari system established by Akbar was a military ranking system.\n2. The concept of Sulh-i-Kul, or universal peace, was promoted by Akbar.\n3. Akbar abolished the jizya, a tax historically levied on non-Muslims.\n\nWhich of the following statement/statements given above is/are correct?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "1, 2 and 3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Only 1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "1 and 3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Only 3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "History",
+    "topic": "Medieval India - Akbar's Policies",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "adfcfaa3-8808-4499-a182-550919140e4d",
+    "question_number": 60,
+    "question_text": "With reference to Lucknow Pact, a pact of unity between Indian National Congress and Muslim league, consider the following statements:\n\n1. Both Congress and Muslim league put forward a joint scheme of political reforms.\n2. It demanded Swaraj at an earlier date.\n3. The two organisations rejected separate electorate.\n\nWhich of the statements given above is/ are not correct?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "2 only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "1 only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "3 only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "1 and 3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "History",
+    "topic": "Modern India - Lucknow Pact",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72eecff2-5697-400c-8e7a-d98e44a66858",
+    "question_number": 61,
+    "question_text": "Which state recorded the highest number of in-migrants, according to the 2011 Census?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Maharashtra",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Gujarat",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Uttar Pradesh",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Rajasthan",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Geography",
+    "topic": "Census - Migration",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "608902fb-7402-4917-8ccc-f90b694f1329",
+    "question_number": 62,
+    "question_text": "Which among the following forces is required to maintain a body in Uniform Circular Motion?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Centripetal Force",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Centrifugal Force",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Coulomb's Force",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "None of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Physics",
+    "topic": "Circular Motion",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6ac75c37-3aab-44ec-a358-66e83ff6ce52",
+    "question_number": 63,
+    "question_text": "Which of the following kingdoms consists of prokaryotic cells?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Animalia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Protista",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Fungi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Monera",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Biology",
+    "topic": "Classification of Organisms",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "43d7e0d7-e122-41ff-8a58-19eb5043cfa0",
+    "question_number": 64,
+    "question_text": "In the temples built by the Gupta rulers in ancient India, which of the following parts was the idol of the main deity installed?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Garbhagriha",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Mandapa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Jagati",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Shikhara",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "History",
+    "topic": "Ancient India - Gupta Architecture",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fd3c61a4-4d4e-4357-8f5c-85cc09d13ad3",
+    "question_number": 65,
+    "question_text": "Which of the following organs in the human body does NOT appear in pairs?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Eye",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Mouth",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Lung",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Kidney",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Biology",
+    "topic": "Human Body Organs",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aeb31a9f-6cce-43a9-a761-646d91bc47ea",
+    "question_number": 66,
+    "question_text": "The first Khelo India Winter Games was hosted by which of the following places?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Manali",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Nainital",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Leh",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Shimla",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Current Affairs",
+    "topic": "Sports - Khelo India Winter Games",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "159a3d21-c349-416f-8dda-a986e7913693",
+    "question_number": 67,
+    "question_text": "With reference to the Ninth Schedule of the Indian Constitution, consider the following statements:\n\n1. It was added by the First Constitutional Amendment Act, 1951, to protect laws related to agrarian reform from judicial challenge on the ground of violating Fundamental Rights.\n2. The Supreme Court, in the I.R. Coelho case (2007), ruled that laws placed in the Ninth Schedule are entirely immune from judicial review.\n3. Laws placed in the Ninth Schedule after April 24, 1973 (the date of the Kesavananda Bharati judgment) are open to judicial review if they violate the basic structure of the Constitution.\n\nWhich of the statements given above is/are correct?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "1 only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "1 and 3 only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "2 and 3 only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "1, 2, and 3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Indian Polity",
+    "topic": "Constitutional Amendments - Ninth Schedule",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2bd4fff6-e733-494b-8342-c73243f08816",
+    "question_number": 68,
+    "question_text": "Mysuru Peta is a traditional attire worn on ______.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Head",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Shoulder",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Waist",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Wrist",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Culture",
+    "topic": "Traditional Attire - Mysuru Peta",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bde4179e-8305-4e4b-b7c0-588199e1b61d",
+    "question_number": 69,
+    "question_text": "Which article of the Indian Constitution, says that the State shall endeavour to organise agriculture and animal husbandry on modern and scientific lines and take steps for preserving and improving the breeds, and prohibiting the slaughter of cows and calves?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Article 29",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Article 34",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Article 48",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Article 53",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Indian Polity",
+    "topic": "Directive Principles of State Policy - Article 48",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5a3ec42b-6904-48bc-8f33-2be35a9ee6b8",
+    "question_number": 70,
+    "question_text": "Prince Salim was the third son born to Akbar and Mariam-uz-Zamani in Fatehpur Sikri on which of the following date?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "28 August 1569",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "31 August 1569",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "30 August 1569",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "27 August 1569",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "History",
+    "topic": "Mughal Empire - Akbar's Family",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3f665aa8-8086-4e03-b716-af1c0fccbc6c",
+    "question_number": 71,
+    "question_text": "The Padma Awards are announced around ______ every year.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Republic Day",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Sadbhavana Diwas",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Independence Day",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Hindi Diwas",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Current Affairs",
+    "topic": "Awards - Padma Awards",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5675ab2-3250-422d-a3f4-a45a065ef782",
+    "question_number": 72,
+    "question_text": "Arrange the following states in order of their initial adoption of Green Revolution technologies (from earliest to latest):\n\n1. Punjab\n2. Tamil Nadu\n3. Haryana\n4. Bihar",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "1 → 3 → 2 → 4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "3 → 1 → 2 → 4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "1 → 2 → 3 → 4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "2 → 1 → 4 → 3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Geography",
+    "topic": "Green Revolution in India",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "06f1214a-12e7-4ea4-8648-36471bf4794c",
+    "question_number": 73,
+    "question_text": "The rate of change of momentum of an object is proportional to the applied unbalanced force in the direction of force. This is known as:",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Law of inertia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "First law of motion",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Third law of motion",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Second law of motion",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Physics",
+    "topic": "Newton's Laws of Motion",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7d04b3fc-689a-47d8-8f4f-c6f49d6aeb80",
+    "question_number": 74,
+    "question_text": "What was Neeraj Chopra's exact javelin throw distance when he crossed 90 meters recently?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "90.05 meters",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "90.23 meters",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "91.00 meters",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "90.52 meters",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Current Affairs",
+    "topic": "Sports - Neeraj Chopra Javelin",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0da68b4d-23ea-4059-98b0-f9a8d7e6e63f",
+    "question_number": 75,
+    "question_text": "Where was the 'Bharat Bodh Kendra' inaugurated by Union Minister Manohar Lal on May 10, 2025?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Patna",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Bodhgaya",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "New Delhi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Gurugram",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "General Awareness",
+    "chapter": "Current Affairs",
+    "topic": "Recent Events - Bharat Bodh Kendra",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "07a1f98f-57de-4327-9101-dd3a44590aa6",
+    "question_number": 76,
+    "question_text": "Choose the most appropriate option to change the voice (active/passive) form of the given sentence. Don't touch the Joystick at the centre.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "The joystick at the centre does not be touched.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Let the joystick at the centre not be touched.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "The joystick at the centre don't be touched.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "The joystick at the centre need not be touched.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Active Passive Voice",
+    "topic": "Imperative Sentences Voice Change",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "decb16c4-c7ce-4975-a8cc-a62b8ab2334e",
+    "question_number": 77,
+    "question_text": "Select the incorrectly spelt word from the given sentence.\n\nAs a jazz lover, I want people to embrace the music for its entrinsic qualities, not its symbolic resonance.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "qualities",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "resonance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "entrinsic",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "embrace",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Spelling",
+    "topic": "Spelling Error Identification",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4527d28c-9c45-47fb-b606-4693d082fa67",
+    "question_number": 78,
+    "question_text": "Select the most appropriate synonym of the given word.\n\nTransgression",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Violation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Success",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Virtue",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Metamorphosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Synonyms",
+    "topic": "Synonym of Transgression",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "926ecbe5-0a1d-4b29-88d0-48d07a20e47e",
+    "question_number": 79,
+    "question_text": "Given below are four jumbled sentences. Pick the option that gives the logically correct order of the sentences.\n\n(A) Bhopal gas tragedy was a gas leak incident on the night of 2-3 December 1984 at the Union Carbide India Limited pesticide plant in Bhopal, Madhya Pradesh, India\n(B) The highly toxic substance made its way into and around the small towns located near the plant. Estimates vary on the death toll.\n(C) It is considered to be the world's worst industrial disaster. Over 500,000 people were exposed to methyl isocyanate gas.\n(D) The official immediate death toll was 2,259. In 2008, the Government of Madhya Pradesh had paid compensation to the family members of victims killed in the gas release, and to the injured victims too.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "ADBC",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "ACBD",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "ABCD",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "ACDB",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Para Jumbles",
+    "topic": "Sentence Rearrangement - Bhopal Gas Tragedy",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c2ccd2cd-46da-4e20-bfb8-3ce42a92133a",
+    "question_number": 80,
+    "question_text": "Select the most appropriate option to fill in the blank. After the scandal, the minister resigned from his position.\n\nThe denotation of the word 'position' is ______.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "authority",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "viewpoint",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "rank or job",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "influence",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Vocabulary",
+    "topic": "Denotation of Position",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4b3a4488-fc7f-43c6-9926-80308e07a707",
+    "question_number": 81,
+    "question_text": "Given below are four jumbled sentences. Pick the option that gives their correct order.\n\n(A) Late 18th century Paris, witness to deep polarisation along class lines, was replete with the rumour that the rich had distributed lethal, contaminated flour to the poor.\n(B) Such rumours are not new.\n(C) In 1984, just as Delhi was engulfed by a pogrom against the Sikhs, the city was rife with the rumour that they had poisoned the entire water supply.\n(D) For centuries, European Jews were falsely accused of poisoning wells during wars, epidemics or civic unrest.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "DABC",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "ACDB",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "CDAB",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "BACD",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Para Jumbles",
+    "topic": "Sentence Rearrangement - Rumours",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b7be117-7711-4fb7-a99d-a8e6a1cf719f",
+    "question_number": 82,
+    "question_text": "Select the option that best expresses the meaning of the given idiom.\n\nAll greek to me",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Out of danger",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Incomprehensible",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Very clear",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Consulting seriously",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Idioms and Phrases",
+    "topic": "Idiom Meaning - All Greek to Me",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "68f05451-4688-4235-b735-48db6d056b70",
+    "question_number": 83,
+    "question_text": "Fill in the blank with the most appropriate word. The Great Indian Bustard is a gravely ________ species with hardly about 200 alive in India today.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "protected",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "endangered",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "damaged",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "harmed",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Fill in the Blanks",
+    "topic": "Vocabulary - Endangered Species",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "718a0b28-94b4-425d-9334-5061f55b4ba1",
+    "question_number": 84,
+    "question_text": "Select the denotation of the highlighted word. The guile of the businessman is well known to his contemporaries.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Courage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Shyness",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Gentleness",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Slyness",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Vocabulary",
+    "topic": "Denotation of Guile",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9960cee3-279f-4da2-ab74-4bf285435bbe",
+    "question_number": 85,
+    "question_text": "Select the option that can be used as a one-word substitute for the given group of words. A sentimental memory of the past",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Hysteria",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Nostalgia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Mania",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Euphoria",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "One Word Substitution",
+    "topic": "Sentimental Memory - Nostalgia",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "86a42890-1dc6-4386-8e7c-bb87b90c47bf",
+    "question_number": 86,
+    "question_text": "In the following question, spellings of four words are given, out of which only one is correct. Find the correctly spelled word.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Provacation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Correspondent",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Appetiete",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Digniterry",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Spelling",
+    "topic": "Correct Spelling Identification",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "39465806-a2cf-4c23-b8be-dac880fcfe10",
+    "question_number": 87,
+    "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence. If there is no need to substitute it, select 'No substitution required'. He couldn't believe it at first, so the most he thought about it, the more he decided it must be true.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "but a most",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "but the more",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "although the more",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "No substitution required",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Sentence Improvement",
+    "topic": "Conjunction and Comparison Structure",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "de408bc2-7cc6-43a6-8309-c1b92db97edd",
+    "question_number": 88,
+    "question_text": "In the following question, a sentence has been given in the Direct/Indirect speech. Out of the four alternatives suggested, select the one which best expresses the sentence in the Indirect/Direct speech. Tim said to Roy, \"I will be eating the cake later at night.\"",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Tim told Roy that he would be eating the cake later at night.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Tim said to Roy that he would be eating the cake later at night.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Tim told to Roy that he will be eating the cake later at night.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Tim told Roy that he will be eating the cake later at night.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Direct Indirect Speech",
+    "topic": "Narration - Future Continuous",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c178594f-290c-4b69-bf3b-02a2dac9f9ca",
+    "question_number": 89,
+    "question_text": "In the following question, some part of the sentence may have errors. Find out which part of the sentence has an error and select the appropriate option. If a sentence is free from error, select 'No Error'.\n\nPeople would see bitcoin's current price rise (1)/ as merely a reflection of their bright future (2)/ as a stateless currency. (3)/ No error. (4)",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Error Spotting",
+    "topic": "Grammar Error Identification",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bf2da53a-9e34-4455-8a82-a149c6607060",
+    "question_number": 90,
+    "question_text": "Select the most appropriate ANTONYM of the underlined word. The rescue team found the emaciated survivors huddled together, waiting for help.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "scarce",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "relieved",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "healthy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "weakened",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Antonyms",
+    "topic": "Antonym of Emaciated",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "65de12b0-73d5-4c66-adf5-f6afb23dffa2",
+    "question_number": 91,
+    "question_text": "Select the word which means the same as the group of words given. A society or company provides these convenient features",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Equipment",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Facilitate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "System",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Amenities",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "One Word Substitution",
+    "topic": "Convenient Features - Amenities",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e9629b10-1e26-4595-9976-9e9cdd3c14c4",
+    "question_number": 92,
+    "question_text": "Choose the most appropriate option to change the voice (active/passive) of the given sentence. Serious actions must be taken by the judiciary against those who violate the codes on how to equalise gender.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "The judiciary should take serious actions against those who violate the codes on how to equalise gender.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "The judiciary must take serious actions against those who violate the codes on how to equalise gender.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "The judiciary could take serious actions against those who violate the codes on how to equalise gender.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "The judiciary will take serious actions against those who violate the codes on how to equalise gender.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Active Passive Voice",
+    "topic": "Modal Passive to Active",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "03458b9a-9aa0-46fb-b7ba-cd8845baded4",
+    "question_number": 93,
+    "question_text": "Choose the most appropriate option to change the narration (direct/indirect) of the given sentence. My father enquired the candidate, where he studied and what were his qualifications.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "My father said to the candidate, \"Where do you study and what are your qualifications?\"",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "My father said to the candidate, \"Where did you study and what are your qualifications?\"",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "My father said to the candidate, \"Where have you studied and what are your qualifications?\"",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "My father said to the candidate, \"Where you study and what are your qualifications?\"",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Direct Indirect Speech",
+    "topic": "Narration - Interrogative Sentence",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "58e1ab51-5129-45f2-bbeb-5546fee4d14f",
+    "question_number": 94,
+    "question_text": "Select the denotation of the highlighted word. His finicky attitude was the main cause of the conflict.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Fussy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Indolent",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Hasty",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Nervous",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Vocabulary",
+    "topic": "Denotation of Finicky",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "971df868-6376-45d1-aeeb-c8d9d2247bcb",
+    "question_number": 95,
+    "question_text": "The following sentence has been split into four segments. Identify the segment that contains a grammatical error.\n\nHe sang / beautifully but / the judges were / unimpress at the end.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "the judges were",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "unimpress at the end",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "He sang",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "beautifully but",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Error Spotting",
+    "topic": "Adjective Form Error",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4fca32c9-dff0-420c-b317-ca7e64915697",
+    "question_number": 96,
+    "question_text": "The scenic hill town of Darjeeling is famous for its 3T's - Tea, Timber, and Tourists. Originally established as a British sanatorium, it quickly earned the nickname 'Queen of Hills' and has become a popular tourist spot. The charming town welcomes visitors with stunning landscapes, drifting clouds, and pleasant weather. However, the other side of this hill station is marked by the struggles of Darjeeling's residents, who face challenges with basic water and sanitation services. Darjeeling has become synonymous with water scarcity, still depending on the water supply system set up by the British government between 1910 and 1915 for just 10,000 residents. However, the city's current population is around 118,805. This unexpected growth has posed a major challenge in the proper planning and installation of crucial municipal services like water and sewage systems. The city presents a dual effect, offering increased options for accommodating tourists, while also raising concerns about the capacity of the city to absorb this rampant growth and the pressure it exerts on municipal services. Darjeeling is located on a landscape with uneven layers, leading most homes to depend on stacked stairs and narrow, slippery paths for access. The electric wires and water pipelines are intertwined, demonstrating a harmonious coexistence that highlights a symbiotic relationship between fire and water elements. In Darjeeling, people usually throw household waste into the jhoras (drains going down the hill). Jhoras are local stormwater drains or flood harvesting systems that play a vital role in managing excess water during storms. Similar to the Aahar Pynes in Bihar and Nullahs in the northern regions, these systems help to prevent flooding and protect the local environment. This drain, among others, leads to one of the most visited sites, Rockville Garden, a picturesque tourist location known for its natural waterfall. The mismanaged disposal of waste has further exacerbated the problem of solid waste, creating a mountain of waste amid the scenic Eastern Himalayan mountain range.\n\nWhat is the primary function of the \"jhoras\" in Darjeeling, as described in the text?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "To serve as a historical British sanitation system for the city's 10,000 residents.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "To act as local stormwater drains or flood harvesting systems that manage excess water.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "To provide a picturesque tourist location featuring a natural waterfall at RockVille Garden.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "To create a symbiotic relationship between intertwined electric wires and water pipelines.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Reading Comprehension",
+    "topic": "Darjeeling Passage - Jhoras Function",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1e456b2e-0903-4e4e-9ec1-a80ecb72edc5",
+    "question_number": 97,
+    "question_text": "The scenic hill town of Darjeeling is famous for its 3T's - Tea, Timber, and Tourists. Originally established as a British sanatorium, it quickly earned the nickname 'Queen of Hills' and has become a popular tourist spot. The charming town welcomes visitors with stunning landscapes, drifting clouds, and pleasant weather. However, the other side of this hill station is marked by the struggles of Darjeeling's residents, who face challenges with basic water and sanitation services. Darjeeling has become synonymous with water scarcity, still depending on the water supply system set up by the British government between 1910 and 1915 for just 10,000 residents. However, the city's current population is around 118,805. This unexpected growth has posed a major challenge in the proper planning and installation of crucial municipal services like water and sewage systems. The city presents a dual effect, offering increased options for accommodating tourists, while also raising concerns about the capacity of the city to absorb this rampant growth and the pressure it exerts on municipal services. Darjeeling is located on a landscape with uneven layers, leading most homes to depend on stacked stairs and narrow, slippery paths for access. The electric wires and water pipelines are intertwined, demonstrating a harmonious coexistence that highlights a symbiotic relationship between fire and water elements. In Darjeeling, people usually throw household waste into the jhoras (drains going down the hill). Jhoras are local stormwater drains or flood harvesting systems that play a vital role in managing excess water during storms. Similar to the Aahar Pynes in Bihar and Nullahs in the northern regions, these systems help to prevent flooding and protect the local environment. This drain, among others, leads to one of the most visited sites, Rockville Garden, a picturesque tourist location known for its natural waterfall. The mismanaged disposal of waste has further exacerbated the problem of solid waste, creating a mountain of waste amid the scenic Eastern Himalayan mountain range.\n\nWhat dual impact does Darjeeling experience as a destination for travellers?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Boost in local revenue and improved facilities",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Increased tourism opportunities coupled with municipal strain",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Higher land prices and job creation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Better infrastructure and reduced local employment",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Reading Comprehension",
+    "topic": "Darjeeling Passage - Dual Impact of Tourism",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "11611bbb-fbc3-443c-bb4e-d06f5dc249b7",
+    "question_number": 98,
+    "question_text": "The scenic hill town of Darjeeling is famous for its 3T's - Tea, Timber, and Tourists. Originally established as a British sanatorium, it quickly earned the nickname 'Queen of Hills' and has become a popular tourist spot. The charming town welcomes visitors with stunning landscapes, drifting clouds, and pleasant weather. However, the other side of this hill station is marked by the struggles of Darjeeling's residents, who face challenges with basic water and sanitation services. Darjeeling has become synonymous with water scarcity, still depending on the water supply system set up by the British government between 1910 and 1915 for just 10,000 residents. However, the city's current population is around 118,805. This unexpected growth has posed a major challenge in the proper planning and installation of crucial municipal services like water and sewage systems. The city presents a dual effect, offering increased options for accommodating tourists, while also raising concerns about the capacity of the city to absorb this rampant growth and the pressure it exerts on municipal services. Darjeeling is located on a landscape with uneven layers, leading most homes to depend on stacked stairs and narrow, slippery paths for access. The electric wires and water pipelines are intertwined, demonstrating a harmonious coexistence that highlights a symbiotic relationship between fire and water elements. In Darjeeling, people usually throw household waste into the jhoras (drains going down the hill). Jhoras are local stormwater drains or flood harvesting systems that play a vital role in managing excess water during storms. Similar to the Aahar Pynes in Bihar and Nullahs in the northern regions, these systems help to prevent flooding and protect the local environment. This drain, among others, leads to one of the most visited sites, Rockville Garden, a picturesque tourist location known for its natural waterfall. The mismanaged disposal of waste has further exacerbated the problem of solid waste, creating a mountain of waste amid the scenic Eastern Himalayan mountain range.\n\nWhat role do jhoras play in Darjeeling's infrastructure?",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "They are used as community hubs for commerce.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "They are used for channelling and managing surplus water.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "They are historic residential structures.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "They offer scenic attractions featuring natural landscapes.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Reading Comprehension",
+    "topic": "Darjeeling Passage - Jhoras Role",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "03a86f57-45ae-45a3-83c0-d9ebcea7acfe",
+    "question_number": 99,
+    "question_text": "The scenic hill town of Darjeeling is famous for its 3T's - Tea, Timber, and Tourists. Originally established as a British sanatorium, it quickly earned the nickname 'Queen of Hills' and has become a popular tourist spot. The charming town welcomes visitors with stunning landscapes, drifting clouds, and pleasant weather. However, the other side of this hill station is marked by the struggles of Darjeeling's residents, who face challenges with basic water and sanitation services. Darjeeling has become synonymous with water scarcity, still depending on the water supply system set up by the British government between 1910 and 1915 for just 10,000 residents. However, the city's current population is around 118,805. This unexpected growth has posed a major challenge in the proper planning and installation of crucial municipal services like water and sewage systems. The city presents a dual effect, offering increased options for accommodating tourists, while also raising concerns about the capacity of the city to absorb this rampant growth and the pressure it exerts on municipal services. Darjeeling is located on a landscape with uneven layers, leading most homes to depend on stacked stairs and narrow, slippery paths for access. The electric wires and water pipelines are intertwined, demonstrating a harmonious coexistence that highlights a symbiotic relationship between fire and water elements. In Darjeeling, people usually throw household waste into the jhoras (drains going down the hill). Jhoras are local stormwater drains or flood harvesting systems that play a vital role in managing excess water during storms. Similar to the Aahar Pynes in Bihar and Nullahs in the northern regions, these systems help to prevent flooding and protect the local environment. This drain, among others, leads to one of the most visited sites, Rockville Garden, a picturesque tourist location known for its natural waterfall. The mismanaged disposal of waste has further exacerbated the problem of solid waste, creating a mountain of waste amid the scenic Eastern Himalayan mountain range.\n\nSelect the most appropriate synonym for the given word.\n\nRampant",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Uncontrolled",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "Amiable",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Placid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "Hazardous",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Reading Comprehension",
+    "topic": "Darjeeling Passage - Synonym Rampant",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5279f86c-7be6-445d-aa3d-a94b84c54ec6",
+    "question_number": 100,
+    "question_text": "The scenic hill town of Darjeeling is famous for its 3T's - Tea, Timber, and Tourists. Originally established as a British sanatorium, it quickly earned the nickname 'Queen of Hills' and has become a popular tourist spot. The charming town welcomes visitors with stunning landscapes, drifting clouds, and pleasant weather. However, the other side of this hill station is marked by the struggles of Darjeeling's residents, who face challenges with basic water and sanitation services. Darjeeling has become synonymous with water scarcity, still depending on the water supply system set up by the British government between 1910 and 1915 for just 10,000 residents. However, the city's current population is around 118,805. This unexpected growth has posed a major challenge in the proper planning and installation of crucial municipal services like water and sewage systems. The city presents a dual effect, offering increased options for accommodating tourists, while also raising concerns about the capacity of the city to absorb this rampant growth and the pressure it exerts on municipal services. Darjeeling is located on a landscape with uneven layers, leading most homes to depend on stacked stairs and narrow, slippery paths for access. The electric wires and water pipelines are intertwined, demonstrating a harmonious coexistence that highlights a symbiotic relationship between fire and water elements. In Darjeeling, people usually throw household waste into the jhoras (drains going down the hill). Jhoras are local stormwater drains or flood harvesting systems that play a vital role in managing excess water during storms. Similar to the Aahar Pynes in Bihar and Nullahs in the northern regions, these systems help to prevent flooding and protect the local environment. This drain, among others, leads to one of the most visited sites, Rockville Garden, a picturesque tourist location known for its natural waterfall. The mismanaged disposal of waste has further exacerbated the problem of solid waste, creating a mountain of waste amid the scenic Eastern Himalayan mountain range.\n\nSelect the most appropriate title for the passage.",
+    "question_images": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Darjeeling: A Blend of Beauty and Challenges",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "The Historical Significance of Darjeeling's Water Supply",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "Tourism and Tradition in the Queen of Hills",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "The Evolution of Municipal Services in Darjeeling",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "",
+    "explanation_images": [],
+    "question_type": "mcq_single",
+    "subject": "English Language",
+    "chapter": "Reading Comprehension",
+    "topic": "Darjeeling Passage - Appropriate Title",
+    "difficulty": "medium",
+    "source": "SSC CGL Pre Mock Test (DISHA CAREER INSTITUTE)",
+    "year": null,
+    "tags": [],
+    "distractor_map": null,
+    "marking_scheme": {
+      "correct": 2,
+      "incorrect": -0.5,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]
