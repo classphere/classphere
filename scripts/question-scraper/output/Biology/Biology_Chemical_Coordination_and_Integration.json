@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "9d9c1ea6-e126-4a49-9732-1e6e9e379b16",
+    "question_text": "Which hormone deficiency causes Addison’s disease?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoth Aldosterone and Cortisol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Addison’s disease occurs due to the deficiency of both aldosterone and cortisol, which are secreted by\n              the adrenal cortex.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "62dc4851-3509-4926-b7a9-7cd3c4cb5368",
+    "question_text": "Which of the following hormones is secreted by the placenta during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHuman chorionic gonadotropin (hCG)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTestosterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlucagon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "hCG is secreted by the placenta during pregnancy and helps maintain the corpus luteum to sustain\n              progesterone production.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "74cfb2ce-2cc8-45a8-9c4d-b8ec0663c310",
+    "question_text": "Which hormone is secreted by the pituitary gland and promotes the production of milk?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFSH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Prolactin, secreted by the anterior pituitary, stimulates milk production in the mammary glands.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4f388aa9-f21e-4f07-a931-db0b73855c1b",
+    "question_text": "Which of the following statements about insulin is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin lowers blood glucose levels.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInsulin is secreted by the alpha cells of the pancreas.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin promotes glucose uptake by cells.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin deficiency leads to diabetes mellitus.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Insulin is secreted by the beta cells of the pancreas, not the alpha cells. Alpha cells secrete\n              glucagon.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "636d4b5f-3d2e-4223-ae86-440180109a1d",
+    "question_text": "Which of the following statements about oxytocin is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin is secreted by the anterior pituitary.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxytocin helps in milk ejection.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOxytocin inhibits uterine contractions.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOxytocin lowers blood pressure.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Oxytocin, secreted by the posterior pituitary, stimulates uterine contractions and helps in milk ejection\n              during breastfeeding.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f7a6eb86-267a-4d8f-bd95-d7fe70db910a",
+    "question_text": "Which of the following statements about the endocrine system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEndocrine glands release hormones directly into the bloodstream.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHormones act on specific target cells with receptors for them.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHormones are always secreted in large amounts.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe endocrine system works with the nervous system to regulate body functions.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Hormones are secreted in small amounts, but they have significant physiological effects.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dc0a99a3-c89c-4361-a22d-602478a08acb",
+    "question_text": "Which of the following glands is referred to as the \"master gland\" in the human endocrine system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThyroid gland",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPituitary gland",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdrenal gland",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPancreas",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The pituitary gland is called the \"master gland\" as it controls the functions of other endocrine glands\n              by releasing various hormones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4970d290-b341-49b3-8485-15afa750c51b",
+    "question_text": "Which hormone is called the \"stress hormone\" because it helps the body respond to long-term stress?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdrenaline",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlucagon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVasopressin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cortisol, secreted by the adrenal cortex, helps the body cope with prolonged stress by increasing glucose\n              metabolism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b698071-669b-4aa4-8acd-02aef66d4724",
+    "question_text": "Which gland is known as the \"third eye\" due to its role in regulating circadian rhythms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPituitary gland",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThyroid gland",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPineal gland",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThymus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The pineal gland is referred to as the \"third eye\" because it regulates sleep-wake cycles by secreting\n              melatonin.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cfd5162d-a838-4edc-b0e1-21c47f66706a",
+    "question_text": "Which hormone stimulates the development of female secondary sexual characteristics?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTestosterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProlactin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Estrogen, secreted by the ovaries, is responsible for the development of female secondary sexual\n              characteristics.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6ccf6db4-06bd-4dd9-998a-ba8142a12054",
+    "question_text": "Which hormone is secreted by the posterior pituitary and plays a role in childbirth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVasopressin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEstrogen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Oxytocin is released by the posterior pituitary and stimulates uterine contractions during childbirth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "936e445e-ac01-437c-ae84-4bc8218e6294",
+    "question_text": "Which hormone is secreted by the kidney to regulate blood pressure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nErythropoietin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRenin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nANF",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Renin, secreted by the kidney, activates the renin-angiotensin-aldosterone system (RAAS) to regulate\n              blood pressure.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "08d5e063-12ff-430c-bfc4-c98e8a03f26a",
+    "question_text": "Which hormone deficiency leads to delayed puberty and infertility?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThyroxine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGonadotropins (LH & FSH)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlucagon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Deficiency of gonadotropins (LH & FSH) leads to delayed puberty and infertility due to impaired\n              reproductive function.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d909f86a-e96f-47e3-a235-f5538d324b18",
+    "question_text": "Which of the following is a correct function of thyroid hormones?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRegulation of metabolic rate.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPromotion of calcium absorption from the intestine.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSuppression of protein synthesis.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDecreasing heart rate.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Thyroid hormones (T3 & T4) regulate the body's metabolic rate and energy balance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2bff96c4-e820-46ae-8ff1-38070b2e9488",
+    "question_text": "Which of the following statements about the hypothalamus is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt produces releasing and inhibiting hormones.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt controls the autonomic nervous system.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt directly secretes insulin into the blood.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt regulates body temperature.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The hypothalamus does not secrete insulin; insulin is secreted by the pancreas.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9d1c8132-96d2-43b8-b203-7bfcdb6d2c04",
+    "question_text": "Which of the following statements about parathyroid hormone (PTH) is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPTH increases calcium reabsorption from the kidneys.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPTH is secreted by the thyroid gland.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPTH stimulates calcium absorption from the intestine.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPTH is secreted when blood calcium levels are low.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "PTH is secreted by the parathyroid gland, not the thyroid gland.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "da66c921-c5ba-4235-a706-6ec2e6739f95",
+    "question_text": "Which of the following is a function of oxytocin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStimulates milk ejection",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRegulates blood sugar",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIncreases metabolic rate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMaintains calcium balance",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Oxytocin stimulates uterine contractions during childbirth and milk ejection during lactation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a780f9b8-1c9a-4fab-840a-396ad57b5c63",
+    "question_text": "Which hormone is secreted by the adrenal cortex and plays a role in maintaining electrolyte balance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdrenaline",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlucagon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Aldosterone, a mineralocorticoid secreted by the adrenal cortex, regulates sodium and potassium balance\n              in the body.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23bf81ad-432b-4f97-8c62-b6a0d5794f67",
+    "question_text": "Which hormone plays a key role in regulating the menstrual cycle along with estrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFSH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProlactin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Progesterone works with estrogen to regulate the menstrual cycle and is essential for the maintenance of\n              pregnancy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "af8b06fa-b375-485a-b2d2-4ff2a3d4e250",
+    "question_text": "Which hormone is known as an \"anti-diuretic hormone\"?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVasopressin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nErythropoietin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vasopressin (ADH) reduces water loss by promoting reabsorption in the kidneys, thereby preventing\n              excessive urination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4adf3906-cb9b-4eaf-8583-ce5c61a1a6c5",
+    "question_text": "Which hormone plays a key role in increasing blood glucose levels during stress?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThyroxine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOxytocin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cortisol, a glucocorticoid secreted by the adrenal cortex, increases blood glucose levels by stimulating\n              gluconeogenesis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c3aa3e9-5e86-45c7-862c-60aacc98cd8f",
+    "question_text": "Which hormone is responsible for stimulating the growth and maintenance of bones?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParathyroid Hormone (PTH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCalcitonin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGrowth Hormone (GH)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Growth hormone (GH) stimulates bone growth and maintenance by promoting cell division and protein\n              synthesis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fd7f8dc-fd65-4fd0-9cb4-dae35f96fb27",
+    "question_text": "Which of the following statements about the endocrine system is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHormones are secreted directly into the bloodstream.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEndocrine glands have ducts for hormone secretion.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHormones act only on the organ that produces them.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe pituitary gland is located in the thoracic cavity.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Endocrine glands are ductless and release hormones directly into the bloodstream for transport to target\n              organs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "88a9871d-9dbb-4c69-bd8c-b8dda48d3a9f",
+    "question_text": "Which of the following statements about adrenal hormones is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCortisol helps in metabolism and stress response.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAdrenaline increases heart rate.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAldosterone regulates sodium and potassium balance.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdrenal medulla secretes glucocorticoids.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The adrenal medulla secretes adrenaline and noradrenaline, while the adrenal cortex secretes\n              glucocorticoids like cortisol.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6bce4022-538d-4e85-a39a-fe77718c5858",
+    "question_text": "Which of the following statements about parathyroid hormone (PTH) is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPTH lowers blood calcium levels.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPTH is secreted by the thyroid gland.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPTH increases calcium absorption in the intestine.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPTH inhibits bone resorption.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "PTH increases blood calcium levels by promoting calcium absorption from the intestines.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba1961a9-e630-4467-aab4-06732c58e37f",
+    "question_text": "Which of the following statements about the endocrine system is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEndocrine glands have ducts for hormone secretion.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHormones act only on the organs that produce them.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHormones are transported through the bloodstream to target organs.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe endocrine system does not interact with the nervous system.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Endocrine glands are ductless, and hormones travel through the bloodstream to act on target organs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53dba535-70bd-417d-b1ad-d9e1253e30db",
+    "question_text": "Which hormone is responsible for stimulating milk production in mammary glands?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProgesterone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Prolactin, secreted by the anterior pituitary, stimulates the production of milk in mammary glands.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0a108cf9-63f4-4860-a9d0-ebfe73ffbe0c",
+    "question_text": "Which hormone is involved in the regulation of red blood cell production?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nErythropoietin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThyroxine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlucagon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Erythropoietin, secreted by the kidneys, stimulates the bone marrow to produce red blood cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "65a474a7-31d0-400b-bdf8-941496d11415",
+    "question_text": "Which hormone is responsible for the regulation of water reabsorption in the kidneys?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVasopressin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParathyroid Hormone (PTH)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCalcitonin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vasopressin (ADH) promotes water reabsorption in the kidneys, reducing urine output and maintaining water\n              balance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "17fd70ed-9f34-41a8-97e6-62d6da906328",
+    "question_text": "Which hormone is secreted by the anterior pituitary and stimulates the thyroid gland?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdrenocorticotropic hormone (ACTH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThyroid-stimulating hormone (TSH)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLuteinizing hormone (LH)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFollicle-stimulating hormone (FSH)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "TSH stimulates the thyroid gland to produce and release thyroid hormones, which regulate metabolism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e03c5bd-426a-4ae3-9940-b23a9c251db2",
+    "question_text": "Which disorder is caused by excessive secretion of growth hormone in adulthood?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGigantism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAcromegaly",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDwarfism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMyxedema",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Acromegaly is caused by excessive secretion of GH in adults, leading to abnormal growth of bones and\n              tissues.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "25dfff20-6c03-4814-830f-9894d8291ce8",
+    "question_text": "Which hormone is released by the stomach and stimulates appetite?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLeptin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGhrelin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCCK",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSecretin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ghrelin, secreted by the stomach, is known as the \"hunger hormone\" as it stimulates appetite.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cb55251c-bad7-40f0-a446-f8dce5afbf9a",
+    "question_text": "Which of the following is an incorrect statement regarding the hypothalamus?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt controls the pituitary gland.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt produces releasing and inhibiting hormones.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt directly secretes TSH into the bloodstream.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt regulates homeostasis.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The hypothalamus does not secrete TSH; instead, it secretes Thyrotropin-releasing hormone (TRH), which\n              stimulates the pituitary to release TSH.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "199d10a0-f48a-43fd-ab51-98aae4992d0a",
+    "question_text": "Which of the following statements about insulin is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin increases blood glucose levels.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInsulin deficiency leads to diabetes insipidus.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin promotes glucose uptake by cells.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin is secreted by the alpha cells of the pancreas.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Insulin, secreted by beta cells of the pancreas, promotes glucose uptake by cells and helps lower blood\n              sugar levels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "deb5faab-2b77-4410-987c-fee10718a7c0",
+    "question_text": "Which of the following statements about glucagon is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucagon is secreted by alpha cells of the pancreas.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlucagon decreases blood glucose levels.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlucagon promotes glycogen breakdown in the liver.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlucagon has an opposite effect to insulin.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Glucagon increases blood glucose levels by promoting glycogen breakdown in the liver.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4445f04e-7be3-427e-8149-17e0e12a3608",
+    "question_text": "What is the primary function of insulin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncrease blood glucose levels",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLower blood glucose levels",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPromote glycogenolysis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStimulate gluconeogenesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Insulin promotes glucose uptake by cells and helps lower blood sugar levels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b4824a4-0971-46c5-961f-cbfe0e6fda7d",
+    "question_text": "Which hormone stimulates the contraction of the gallbladder and the release of bile?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGastrin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCholecystokinin (CCK)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSecretin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGIP",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cholecystokinin (CCK) stimulates the contraction of the gallbladder, leading to the release of bile for\n              fat digestion.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b6ab9fd-63af-4bc3-9db4-c84b7f487e63",
+    "question_text": "Which hormone stimulates the release of pancreatic enzymes and bile secretion?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGastrin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecretin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCholecystokinin (CCK)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVasopressin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "CCK stimulates the pancreas to release digestive enzymes and also triggers the gallbladder to release\n              bile.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09c80aec-f3c3-4d7e-aa90-efed1266d118",
+    "question_text": "Which hormone is secreted by the anterior pituitary and stimulates the adrenal cortex?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThyroid-stimulating hormone (TSH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAdrenocorticotropic hormone (ACTH)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLuteinizing hormone (LH)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFollicle-stimulating hormone (FSH)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "ACTH stimulates the adrenal cortex to produce glucocorticoids like cortisol, which helps in stress\n              response and metabolism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "90b56639-cd31-423e-b457-69c5c8bcb574",
+    "question_text": "Which gland is responsible for secreting thymosins, which aid in immune function?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThyroid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThymus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdrenal gland",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPituitary gland",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The thymus gland secretes thymosins, which promote the development of T-lymphocytes for immune function.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c49f88fa-2569-4fa4-b333-8375044dcf22",
+    "question_text": "Which hormone is responsible for milk ejection during breastfeeding?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEstrogen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Oxytocin, secreted by the posterior pituitary, stimulates the contraction of mammary ducts for milk\n              ejection.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f58e8f9-4e1d-4f38-87dc-ea259f6ae14a",
+    "question_text": "Which hormone is secreted by adipose tissue and helps regulate body weight?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLeptin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGhrelin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Leptin is secreted by adipose tissue and plays a key role in regulating appetite and body weight.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1cbbbf89-1aa5-4caa-846a-d29afd2a1a04",
+    "question_text": "Which of the following statements about the pituitary gland is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe anterior pituitary produces growth hormone.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe posterior pituitary synthesizes oxytocin.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe pituitary gland is also known as the master gland.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoth A and C.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The anterior pituitary produces growth hormone, and the pituitary is called the \"master gland\" because it\n              regulates other endocrine glands.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "80f45090-08aa-40f3-8129-b887742ed66b",
+    "question_text": "Which of the following is an incorrect statement regarding melatonin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMelatonin is secreted by the pineal gland.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMelatonin regulates the sleep-wake cycle.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMelatonin increases during daylight hours.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMelatonin levels are higher at night.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Melatonin secretion increases during the night and decreases during daylight hours.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "84f91ad6-f36b-4ec6-b864-389d55646943",
+    "question_text": "Which of the following is an incorrect statement about adrenaline?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdrenaline is secreted by the adrenal medulla.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAdrenaline decreases heart rate and blood pressure.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdrenaline is also called epinephrine.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdrenaline prepares the body for a \"fight or flight\" response.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Adrenaline increases heart rate and blood pressure, not decreases it.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "babf92a4-3541-4d66-9373-0d63f738b22d",
+    "question_text": "Which of the following statements about the hypothalamus is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe hypothalamus directly secretes thyroid-stimulating hormone (TSH).",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe hypothalamus regulates the pituitary gland.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe hypothalamus does not produce hormones.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe hypothalamus only controls temperature regulation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The hypothalamus regulates the pituitary gland by producing releasing and inhibiting hormones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "37bb813b-9f8c-431e-96b5-5d3e4b6508ef",
+    "question_text": "Which hormone is secreted by the corpus luteum after ovulation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFSH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "After ovulation, the corpus luteum secretes progesterone, which helps maintain pregnancy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4269effa-1823-45bb-a090-a1da2509910e",
+    "question_text": "Which hormone is secreted by the heart and helps regulate blood pressure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nErythropoietin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAtrial natriuretic factor (ANF)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVasopressin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAldosterone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Atrial natriuretic factor (ANF) is secreted by the heart and lowers blood pressure by promoting sodium\n              excretion.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ace8f812-ff91-4fa9-9bb4-1174d2456d34",
+    "question_text": "Which hormone is released from the stomach and stimulates hunger?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGhrelin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLeptin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSecretin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCholecystokinin (CCK)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ghrelin is a hunger-stimulating hormone secreted by the stomach.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef78d5f7-49e0-46fe-8c2e-d1152a731646",
+    "question_text": "Which part of the adrenal gland secretes glucocorticoids?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdrenal medulla",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nZona glomerulosa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nZona fasciculata",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZona reticularis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Glucocorticoids such as cortisol are secreted by the zona fasciculata of the adrenal cortex.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ccb752fa-b668-4f9a-bac3-b62e74f0713a",
+    "question_text": "Which hormone is released by the kidney and stimulates the production of red blood cells?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nANF",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nErythropoietin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVasopressin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMelatonin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Erythropoietin, secreted by the kidney, stimulates bone marrow to produce red blood cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "32c7e504-e723-460e-b254-e2c3c35487be",
+    "question_text": "Which hormone is secreted by the corpus luteum and helps in the maintenance of pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFSH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOxytocin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Progesterone, secreted by the corpus luteum, helps maintain pregnancy by supporting the uterine lining.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d2570da7-8bf4-4ce0-beed-fd2e7feb657e",
+    "question_text": "Which hormone is secreted by the parathyroid gland and increases blood calcium levels?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCalcitonin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParathyroid Hormone (PTH)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThyroxine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "PTH increases blood calcium levels by stimulating calcium release from bones and increasing absorption in\n              the intestines.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a979a799-1fab-496b-8d0d-f006203633fb",
+    "question_text": "What is the function of melanocyte-stimulating hormone (MSH)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRegulation of blood calcium levels",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRegulation of metabolic rate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nControl of pigmentation in the skin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRegulation of heart rate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Melanocyte-stimulating hormone (MSH) regulates pigmentation of the skin by acting on melanocytes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23b9d042-5305-4718-b70c-a33f9c4fec78",
+    "question_text": "Which hormone is responsible for stimulating the production of red blood cells?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nErythropoietin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlucagon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTestosterone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Erythropoietin, secreted by the kidneys, stimulates the bone marrow to produce red blood\n              cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6267c099-42c9-4740-b43d-fe186aaba73d",
+    "question_text": "Which hormone is responsible for stimulating the secretion of glucocorticoids from the adrenal cortex?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFSH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nACTH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTSH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Adrenocorticotropic hormone (ACTH) stimulates the adrenal cortex to release glucocorticoids like\n              cortisol.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cbf72fbb-47fc-4245-80eb-47991cecfdf8",
+    "question_text": "Which hormone is secreted by the adrenal cortex and regulates electrolyte balance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucagon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOxytocin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Aldosterone, secreted by the adrenal cortex, regulates sodium and potassium balance in the body.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f439a4c5-0dd8-4d65-ae88-43668f3740e3",
+    "question_text": "Which hormone is responsible for stimulating the adrenal cortex to produce cortisol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThyroid-stimulating hormone (TSH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLuteinizing hormone (LH)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdrenocorticotropic hormone (ACTH)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFollicle-stimulating hormone (FSH)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ACTH stimulates the adrenal cortex to secrete cortisol, which helps in metabolism and stress response.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ff2fbb3-7912-40c3-8ea7-be8793a33a81",
+    "question_text": "Which hormone is responsible for uterine contractions during childbirth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTSH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Oxytocin, released by the posterior pituitary, stimulates powerful contractions of the uterus during\n              childbirth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "327d233c-57f7-4b63-9fb1-32676c1666d2",
+    "question_text": "Which of the following statements about glucagon is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucagon promotes glycogen breakdown in the liver.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlucagon lowers blood glucose levels.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlucagon is secreted by beta cells of the pancreas.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlucagon and insulin have the same function.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Glucagon, secreted by alpha cells of the pancreas, promotes glycogen breakdown to increase blood\n              glucose levels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5bee6767-ef0d-4bf7-abc1-b8f441fe7468",
+    "question_text": "Which of the following statements about the pancreas is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe pancreas has both endocrine and exocrine functions.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe pancreas only produces digestive enzymes.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe pancreas does not regulate blood glucose levels.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe pancreas secretes thyroid hormones.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The pancreas functions as both an endocrine gland (secreting insulin and glucagon) and an\n              exocrine gland (producing digestive enzymes).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0fa27473-7026-4267-b8ac-288e75a4f08a",
+    "question_text": "Which of the following statements about cortisol is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCortisol is secreted by the adrenal medulla.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCortisol helps in coping with stress.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCortisol decreases blood glucose levels.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCortisol deficiency causes Graves' disease.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cortisol, secreted by the adrenal cortex, plays a role in stress response by increasing blood glucose and\n              metabolism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "097f44a5-c2f7-4c12-8ff7-81083c59d8d2",
+    "question_text": "Which part of the pituitary gland releases vasopressin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPars distalis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPars intermedia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPars nervosa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPars tuberalis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Vasopressin (ADH) is stored and released by the neurohypophysis (pars nervosa) of the posterior\n              pituitary.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c9c649d-4ff5-4b45-8489-811276f25034",
+    "question_text": "Which of the following statements about growth hormone (GH) is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGH is secreted by the posterior pituitary.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGH promotes protein synthesis and cell growth.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGH decreases blood glucose levels.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGH deficiency leads to acromegaly.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "GH is secreted by the anterior pituitary and promotes protein synthesis and cell growth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b0c811ff-0bba-4232-88f4-5c4d177d2cb8",
+    "question_text": "Which of the following hormones is secreted by the placenta during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHuman chorionic gonadotropin (hCG)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTestosterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCortisol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "hCG is secreted by the placenta and helps maintain the corpus luteum during early pregnancy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d811f37c-0355-4c85-86e9-c946c2d4a86a",
+    "question_text": "Which part of the adrenal gland secretes adrenaline and noradrenaline?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdrenal cortex",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAdrenal medulla",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nZona glomerulosa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZona fasciculata",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The adrenal medulla secretes adrenaline and noradrenaline, which are responsible for the fight-or-flight\n              response.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78c0529e-2d1c-41a3-9bdc-846e87124ace",
+    "question_text": "Which of the following is an incorrect statement about testosterone?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTestosterone is responsible for male secondary sexual characteristics.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTestosterone is secreted by the testes.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTestosterone is secreted in large amounts by the adrenal cortex.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTestosterone production is regulated by LH.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Testosterone is primarily secreted by the testes, not in large amounts by the adrenal cortex.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8c915081-4835-48b0-bebe-778de609639d",
+    "question_text": "Which hormone is known as the \"stress hormone\"?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEpinephrine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlucagon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cortisol, secreted by the adrenal cortex, is known as the \"stress hormone\" as it helps the body\n              respond to stress.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "857add95-f144-4940-a223-2ba50dd6e3b7",
+    "question_text": "Which hormone regulates calcium levels by inhibiting bone resorption?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParathyroid Hormone (PTH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCalcitonin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThyroxine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAldosterone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Calcitonin, secreted by the thyroid gland, lowers blood calcium levels by inhibiting bone resorption.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "80b2ced0-e555-4608-beae-b19401dc6b54",
+    "question_text": "Which hormone, secreted by the posterior pituitary, plays a role in kidney water retention?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVasopressin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nErythropoietin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vasopressin (ADH), secreted by the posterior pituitary, promotes water reabsorption in the kidneys,\n              reducing water loss in urine.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c81297b8-5ff3-4bd0-85d2-195e4ccc9442",
+    "question_text": "Which hormone is secreted by the posterior pituitary and is important during childbirth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVasopressin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMelatonin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Oxytocin stimulates uterine contractions during childbirth and aids in milk ejection.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "331f98f0-5416-4510-abfc-b259ada3169b",
+    "question_text": "Which hormone plays a crucial role in female pregnancy maintenance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFSH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Progesterone helps maintain pregnancy by preventing uterine contractions and supporting the uterine\n              lining.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "98b5ba36-e776-42d7-a0b1-63095b3d12fb",
+    "question_text": "Which hormone plays a significant role in glucose homeostasis by promoting glycogenesis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlucagon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdrenaline",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Insulin promotes glycogenesis, the conversion of glucose into glycogen for storage in the liver and\n              muscle cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c07ce285-c5ee-4bbe-bf5a-9011af293b0e",
+    "question_text": "Which hormone plays a role in regulating female reproductive functions and maintaining pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTestosterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlucagon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Progesterone, secreted by the corpus luteum and placenta, plays a key role in maintaining pregnancy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8fcd1a86-2dc3-4145-b676-0f3b70f4627a",
+    "question_text": "Which hormone deficiency leads to stunted growth and dwarfism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGrowth Hormone (GH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThyroxine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Deficiency of growth hormone (GH) during childhood results in pituitary dwarfism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "509682f9-d953-4653-922d-a2a29cc06f9d",
+    "question_text": "Which of the following hormones plays a role in female reproductive functions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTestosterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlucagon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Progesterone, secreted by the ovaries and placenta, is essential for maintaining pregnancy and\n              regulating the menstrual cycle.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f725fc17-f3fd-4e4f-9774-a02bd9aa5cae",
+    "question_text": "Which hormone secreted by the adrenal cortex helps in regulating water and electrolyte balance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdrenaline",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNoradrenaline",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Aldosterone, a mineralocorticoid, helps in regulating electrolyte and water balance by increasing sodium\n              reabsorption.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fd8d9599-9a27-4a09-b709-62d19a7e868d",
+    "question_text": "Which of the following hormones is secreted by the placenta during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHuman chorionic gonadotropin (hCG)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTestosterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCortisol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "hCG is secreted by the placenta and helps maintain the corpus luteum during early pregnancy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "529653a7-0499-46be-b999-fef533da0016",
+    "question_text": "Which hormone is responsible for stimulating the growth and development of ovarian follicles?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFSH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProlactin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Follicle-stimulating hormone (FSH) promotes the growth and maturation of ovarian follicles in females.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d058cd20-3a82-41dc-ba2d-16a57b104fd1",
+    "question_text": "Which of the following statements about insulin is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin helps in lowering blood glucose levels.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInsulin is secreted by the alpha cells of the pancreas.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin promotes glucose uptake by cells.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin deficiency leads to diabetes mellitus.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Insulin is secreted by the beta cells of the pancreas, while glucagon is secreted by the alpha\n              cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dd714c2c-10a5-4249-b948-9275da6830c4",
+    "question_text": "Which hormone is secreted by the pineal gland and regulates the sleep-wake cycle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMelatonin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVasopressin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Melatonin, secreted by the pineal gland, regulates circadian rhythms, including the sleep-wake cycle.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c065ff4f-9a09-4494-8478-43ee0b715a9c",
+    "question_text": "Which endocrine gland plays a major role in immune system development?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThymus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThyroid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdrenal gland",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPineal gland",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The thymus secretes thymosins, which are essential for T-cell differentiation and immune system\n              development.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "556922a8-0af5-4126-a72e-805fbb67e142",
+    "question_text": "Which hormone is secreted by the kidneys in response to low oxygen levels in the blood?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nErythropoietin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRenin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVasopressin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Erythropoietin is secreted by the kidneys to stimulate red blood cell production in response to low\n              oxygen levels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "60ee470f-03ab-485b-a530-94849e49b1ca",
+    "question_text": "Which hormone is secreted in response to low blood sugar levels?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlucagon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTSH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Glucagon is secreted by the pancreas in response to low blood sugar levels, promoting glycogenolysis and\n              gluconeogenesis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5b9a5a87-190a-445c-8a0a-01a8ce83af68",
+    "question_text": "Which hormone deficiency leads to a condition called diabetes insipidus?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVasopressin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCortisol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Diabetes insipidus is caused by a deficiency of vasopressin (ADH), leading to excessive urination and\n              dehydration.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "19826d23-03be-4f64-a7af-2f0840e9a62f",
+    "question_text": "Which of the following statements about the pancreas is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt has both endocrine and exocrine functions.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt secretes insulin from beta cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt secretes glucagon from delta cells.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt plays a role in blood sugar regulation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Glucagon is secreted by the alpha cells of the pancreas, not the delta cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "91444f7e-56a1-41ed-846f-5151887c2d9d",
+    "question_text": "Which of the following statements about oxytocin is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin stimulates uterine contractions during labor.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxytocin promotes milk ejection from mammary glands.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOxytocin is secreted by the anterior pituitary.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOxytocin secretion is regulated by a positive feedback mechanism.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Oxytocin is secreted by the posterior pituitary, not the anterior pituitary.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "525e5579-17cb-46a0-b849-82c3bc28cacb",
+    "question_text": "Which hormone deficiency causes goiter?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThyroxine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParathyroid Hormone (PTH)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCortisol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Deficiency of thyroxine (T4) due to iodine deficiency leads to goiter, which is an enlargement of the\n              thyroid gland.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d2f4437-10ce-4b15-bffe-682f29914801",
+    "question_text": "Which hormone is responsible for milk production in lactating mothers?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFSH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Prolactin, secreted by the anterior pituitary, stimulates milk production in the mammary glands.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "113be7ba-8bc8-497e-b3f9-9bb80bc0bcec",
+    "question_text": "Which hormone is secreted by the pancreas and acts to increase blood glucose levels?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucagon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSomatostatin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCortisol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Glucagon, secreted by the pancreas, increases blood glucose levels by promoting glycogen breakdown.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "54e9e11c-e142-4049-8b51-ebbfa7690466",
+    "question_text": "Which of the following statements about oxytocin is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin promotes uterine contractions during childbirth.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxytocin is secreted by the anterior pituitary.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOxytocin reduces milk ejection from the mammary glands.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOxytocin secretion is inhibited during labor.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Oxytocin, secreted by the posterior pituitary, stimulates uterine contractions during childbirth\n              and promotes milk ejection.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7978aea8-143d-4148-b942-b9735f0bd60e",
+    "question_text": "The adrenal medulla secretes which of the following hormones?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCortisol and Aldosterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEpinephrine and Norepinephrine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin and Glucagon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThyroxine and Calcitonin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The adrenal medulla secretes epinephrine and norepinephrine, which help the body respond to stress.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f210b340-a94e-4e1d-b226-6926a7b688e1",
+    "question_text": "Which hormone is secreted by the pancreas and inhibits both insulin and glucagon secretion?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSomatostatin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGastrin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSecretin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Somatostatin, secreted by the pancreas, inhibits the release of insulin and glucagon to regulate blood\n              sugar levels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3133d21a-b5a4-417a-97fc-9921756ac537",
+    "question_text": "Which of the following hormones plays a role in regulating biological rhythms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMelatonin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThyroxine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAldosterone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Melatonin, secreted by the pineal gland, regulates sleep-wake cycles and biological rhythms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "481ee01c-a136-4dc9-bb93-fc21209593d7",
+    "question_text": "Which of the following statements about calcitonin is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCalcitonin increases blood calcium levels.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCalcitonin is secreted by the parathyroid gland.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCalcitonin inhibits bone resorption.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCalcitonin is secreted in response to low blood calcium levels.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Calcitonin, secreted by the thyroid gland, inhibits bone resorption, thereby reducing blood calcium\n              levels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "45bbf47b-5095-49ed-ac50-783671495d80",
+    "question_text": "Which hormone promotes the uptake of glucose by cells and lowers blood sugar levels?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucagon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCortisol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdrenaline",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Insulin, secreted by the pancreas, facilitates glucose uptake by cells, reducing blood sugar levels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09e21f2a-c3d9-4ba4-a998-278b128a7f94",
+    "question_text": "Which of the following is a correct statement regarding aldosterone?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAldosterone regulates blood sodium and potassium levels.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldosterone is secreted by the adrenal medulla.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAldosterone decreases sodium reabsorption in the kidneys.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAldosterone is secreted in response to low blood glucose levels.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Aldosterone, secreted by the adrenal cortex, regulates sodium and potassium balance by increasing\n              sodium reabsorption and potassium excretion in the kidneys.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8c27c8fd-3e4d-4495-afaf-30bdc4f23b8f",
+    "question_text": "Which of the following statements about the endocrine system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEndocrine glands are ductless and release hormones into the bloodstream.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHormones act on specific target cells with receptors for them.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHormones always act immediately upon secretion.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe hypothalamus controls endocrine functions via releasing and inhibiting hormones.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Some hormones act immediately, while others have long-term effects (e.g., growth hormone, thyroid\n              hormones).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b929e563-68e7-4a5b-8372-36e3a608cfaa",
+    "question_text": "Which of the following statements about the posterior pituitary is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe posterior pituitary stores and releases ADH and oxytocin.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe posterior pituitary synthesizes its own hormones.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe posterior pituitary is connected to the hypothalamus.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe posterior pituitary releases hormones into the bloodstream.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The posterior pituitary does not synthesize hormones; it only stores and releases ADH and\n              oxytocin, which are produced by the hypothalamus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e06a5f10-6b34-4b99-b61d-b7cd5be22939",
+    "question_text": "Which hormone is primarily responsible for maintaining sodium and potassium balance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldosterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVasopressin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThyroxine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Aldosterone, a mineralocorticoid secreted by the adrenal cortex, regulates sodium and potassium balance\n              in the body.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Chemical Coordination and Integration",
+    "topic": "Chemical Coordination and Integration",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Chemical Coordination and Integration / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "chemical-coordination-and-integration"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

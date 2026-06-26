@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "c16fd2ad-3d6d-4d51-b63f-ff83a0c94797",
+    "question_text": "The bond order of \nNO\n+\n ion, considering its molecular orbital configuration, is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For NOA+ (14 electrons - 1 = 13): (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(π2px)2(π2py)2(σ2pz)2. Bonding = 10, antibonding = 4. Bond order = 10−42=3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f6a7aff5-da47-4504-b5ee-e24298afd98f",
+    "question_text": "The number of lone pairs on bromine in \nBrF\n3\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In BrFA3, bromine has 7 valence electrons and forms 3 single bonds (6 electrons used), leaving 4\n              electrons as 2 lone pairs. With sp3d hybridization, the 5 electron pairs (3 bonding, 2 lone) result\n              in a T-shaped molecular geometry.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a4dfde2e-3c02-4f6c-a990-b7f1768c5eef",
+    "question_text": "The bond angle in \nH\n2\nS\n is approximately:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n109.5°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n107°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n104.5°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n92°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In HA2S, sulfur is sp3 hybridized with two lone pairs, reducing the bond angle to about\n              92° due to lone pair repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a0b82824-515d-4fd1-87ce-eadff8e5f5f1",
+    "question_text": "The bond in \nHCl\n is an example of:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSingle covalent bond",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDouble covalent bond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIonic bond",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCoordinate bond",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In HCl, hydrogen and chlorine share one electron pair, forming a single covalent bond.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04f9f370-093f-4198-a312-e87842ec658b",
+    "question_text": "Which molecule has an equatorial bond angle of approximately 101° due to a lone pair?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPF\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSF\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nClF\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXeF\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In SFA4, sulfur is sp3d hybridized with 5 electron pairs (4 bonding, 1 lone), forming a\n              see-saw shape. The equatorial F-S-F bond angle is ~101° due to lone pair repulsion compressing the\n              equatorial bonds.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "346240c6-8a76-4439-bcbd-137d61a569c7",
+    "question_text": "The number of sigma bonds in \nC\n3\nH\n6\n (cyclopropane) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n9",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In CA3HA6 (cyclopropane), there are 3 C−C sigma bonds in the ring and 6 C−H sigma bonds, totaling 9 sigma bonds.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "df8d960d-4225-446c-936a-48f2999e30d3",
+    "question_text": "Which molecule has a linear geometry due to \n𝑠\n𝑝\n hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n2\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBF\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In CA2HA2, each carbon is sp hybridized, forming a triple bond and a linear structure with\n              a 180° bond angle.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f334efb3-f658-4335-b565-38d59248a55d",
+    "question_text": "Which molecule has a trigonal planar electron pair geometry and a trigonal planar molecular shape?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBCl\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In BClA3, boron has 3 bonding pairs and no lone pairs with sp2 hybridization, giving a\n              trigonal planar electron and molecular geometry.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "833acd27-167f-4518-bab4-b32461ea7eef",
+    "question_text": "Which molecule has an incomplete octet with only 6 electrons around the central atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPCl\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlCl\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In AlClA3, aluminum forms three bonds, using 6 electrons, resulting in an incomplete octet.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "16fa5b21-1a16-49f2-939e-7bb29b4ce39f",
+    "question_text": "The total number of sigma bonds in \nC\n6\nH\n6\n (benzene) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CA6HA6 (benzene), there are 6 C−C sigma bonds in the ring, 6 C−H sigma\n              bonds, totaling 12 sigma bonds (plus 3 pi bonds).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c80ff33e-b97f-4c5f-bd7d-9b75eb25a0b3",
+    "question_text": "The strongest type of bond in terms of bond dissociation energy is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTriple bond",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDouble bond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSingle bond",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydrogen bond",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "A triple bond, as in NA2 (bond enthalpy ~946 kJ/mol), is the strongest due to three shared\n              electron pairs.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0e29557-ef15-4085-a207-488187311970",
+    "question_text": "Which of the following has a triple bond?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n2\nH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n2\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In CA2HA2 (ethyne), the carbon atoms share three electron pairs, forming a triple bond (1 sigma\n              + 2 pi).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f019f9a5-8c33-46d1-8c68-080e26e8b9ed",
+    "question_text": "Which molecule violates the octet rule by having more than 8 electrons around the central atom and involves d-orbital hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSF\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBF\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In SFA6, sulfur has 6 bonds (12 electrons) with sp3d2 hybridization, exceeding the\n              octet using d-orbitals.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9d8c88c6-673e-4bf7-b9ee-e47854f1998d",
+    "question_text": "The bond order of \nH\n2\n molecule according to molecular orbital theory is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For HA2, electronic configuration is (σ1s)2. Bond order = 2−02=1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "05e56d5f-045b-4ab5-8c62-f25cd71d0b2c",
+    "question_text": "Which molecule has the shortest bond length among those with a double bond?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n2\nH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Among molecules with a double bond, OA2 has a bond length of ~121 pm, shorter than CA2HA4\n              (~134 pm), SOA2 (~143 pm), or NOA2 (~124 pm), due to higher bond strength and smaller\n              atomic radii.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ca5e17a0-1e6e-46bb-8e2e-1aa0706f9d35",
+    "question_text": "Which molecule contains a single bond with a bond length of approximately 154 pm?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n2\nH\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHF",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CA2HA6 (ethane), the C−C single bond has a bond length of ~154 pm, typical for\n              carbon-carbon single bonds.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "28460abb-0e50-4927-82a6-490e99de8c39",
+    "question_text": "The shape of \nXeF\n4\n molecule is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTetrahedral",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOctahedral",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTrigonal bipyramidal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSquare planar",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In XeFA4, xenon is sp3d2 hybridized with 6 electron pairs (4 bonding, 2 lone),\n              resulting in a square planar shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "066764ae-ba70-4052-a05c-a41255ba85dc",
+    "question_text": "Which molecule has a square planar shape?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSF\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPF\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nXeF\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nClF\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In XeFA4, xenon is sp3d2 hybridized with 6 electron pairs (4 bonding, 2 lone),\n              resulting in a square planar molecular shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "494f788e-f4aa-4d88-a806-0f0f37548853",
+    "question_text": "Which molecule exhibits \n𝑠\n𝑝\n3\n hybridization at its central atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n2\nH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBeCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBCl\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In CHA4, carbon uses one s and three p orbitals to form four sp3 hybrid orbitals,\n              resulting in a tetrahedral shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4a54a31c-8162-40ab-b4eb-caf46331b54a",
+    "question_text": "Which molecule has a trigonal planar electron pair geometry but a bent molecular shape?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBF\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In SOA2, sulfur has 3 electron domains (2 bonding, 1 lone pair), giving a trigonal planar\n              electron geometry (sp2), but a bent molecular shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a36fdbb5-6a7b-4dcb-a827-fd92f1f8b755",
+    "question_text": "Which molecule violates the octet rule by having fewer than 8 electrons around the central atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPCl\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSF\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In BHA3, boron has 3 bonds (6 electrons), resulting in an incomplete octet due to only 3\n              valence electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d389c0da-53a2-406b-aa12-c3bbcc736a58",
+    "question_text": "Which species has a bond order of 1.5 due to the addition of an electron to a diatomic molecule?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nN\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nF\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nO\n2\n−",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For OA2A−: (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(σ2pz)2(π2px)2(π2py)2(π∗2px)2(π∗2py)1. Bonding = 10, antibonding = 7. Bond order = 10−72=1.5.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c1f047e0-85f6-4d41-81c4-8f0d71d15e54",
+    "question_text": "Which molecule has a bond angle of approximately 90° in a square pyramidal shape?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBrF\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIF\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSF\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXeF\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In IFA5, iodine is sp3d2 hybridized with 6 electron pairs (5 bonding, 1 lone), forming a\n              square pyramidal shape. The axial-equatorial F-I-F bond angles are ~90°, slightly reduced by lone pair\n              repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "552913ea-dec2-4307-91d2-62a7137d131e",
+    "question_text": "The number of sigma bonds in \nC\n4\nH\n10\n (butane) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n13",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CHA3−CHA2−CHA2−CHA3: 3 C−C sigma bonds, 10 C−H sigma bonds. Total = 13\n              sigma bonds.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c5f5f5b8-34ac-4256-a050-ad9d6804de50",
+    "question_text": "Which species is diamagnetic and has a bond order of 3?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For NA2: (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(π2px)2(π2py)2(σ2pz)2. Bonding = 10, antibonding = 4. Bond order = 10−42=3, with\n              all electrons paired (diamagnetic).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f51bbd1d-97e8-4920-bf82-1c1461b5a48b",
+    "question_text": "Which molecule has a bond angle of approximately 107° due to lone pair repulsion?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBF\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In NHA3, nitrogen is sp3 hybridized with 4 electron pairs (3 bonding, 1 lone), reducing\n              the bond angle to ~107° due to lone pair repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b870b445-e709-47ee-b04f-a9c545c1f47e",
+    "question_text": "The hybridization of phosphorus in \nPCl\n5\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In PClA5, phosphorus forms 5 bonds using one s, three p, and one d orbital, resulting in sp3d hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "93505937-5921-4ef3-9ff4-3fb7151c0b71",
+    "question_text": "The hybridization of sulfur in \nSO\n3\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In SOA3, sulfur has 3 double bonds (3 bonding domains), requiring sp2 hybridization for\n              a trigonal planar shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bef038e1-631c-43e1-864a-add69458c46d",
+    "question_text": "The number of lone pairs on sulfur in \nSF\n4\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In SFA4, sulfur has 6 valence electrons, forms 4 bonds (8 electrons used), leaving 2 electrons\n              as 1 lone pair in a sp3d hybridized state.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7b5c4671-ec2d-4e56-bd45-e7a85bfff104",
+    "question_text": "The shape of \nClF\n5\n molecule is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTrigonal bipyramidal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOctahedral",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSquare pyramidal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSee-saw",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In ClFA5, chlorine is sp3d2 hybridized with 6 electron pairs (5 bonding, 1 lone),\n              resulting in a square pyramidal shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0b8f30f2-0dc1-4443-92d4-aab718cf78db",
+    "question_text": "Which molecule has a bond angle of approximately 102° due to lone pair repulsion?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNF\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In NFA3, nitrogen is sp3 hybridized with 4 electron pairs (3 bonding, 1 lone), forming a\n              trigonal pyramidal shape. The F-N-F bond angle is ~102°, reduced from 107° in NHA3 due to greater\n              lone pair repulsion from electronegative fluorine atoms.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "845fd0b7-cace-4957-8409-56fe746b87ab",
+    "question_text": "The hybridization of boron in \nB\n2\nH\n6\n (diborane) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In BA2HA6, each boron is sp3 hybridized, forming two normal B−H bonds and two\n              3-center-2-electron bridge bonds.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f017627-7e48-4168-9046-3c01536a60c3",
+    "question_text": "Which molecule has an intramolecular hydrogen bond?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHF",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\no-nitrophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In o-nitrophenol, the hydrogen of the OH group forms a hydrogen bond with the oxygen of the NOA2 group within the same molecule.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42253dbf-c1ec-4d7e-bd13-4357024a2d32",
+    "question_text": "The hybridization of carbon in \nHCN\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In HCN, carbon has 2 bonding domains (1 triple bond, 1 single bond), requiring sp\n              hybridization, forming a linear shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7082a94-6c8a-4c74-a521-19dbdb30bb5c",
+    "question_text": "The number of lone pairs on chlorine in \nClF\n5\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In ClFA5, chlorine has 7 valence electrons, forms 5 bonds (10 electrons used), leaving 2\n              electrons as 1 lone pair in a sp3d2 hybridized state.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bb7c0ee2-b3a8-4f86-8851-ac1f502b6a60",
+    "question_text": "Which ion achieves a stable noble gas configuration by gaining two electrons?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nO\n2\n−",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nF\n−",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCl\n−",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nS\n2\n−",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Oxygen (O) has 1s22s22p4. Gaining 2 electrons forms OA2− with 1s22s22p6,\n              matching Ne.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ce100ffc-abc1-4116-8b43-932f2544990b",
+    "question_text": "Which species is paramagnetic and has a bond order of 1.5?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nF\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nO\n2\n−",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For OA2A−: (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(σ2pz)2(π2px)2(π2py)2(π∗2px)2(π∗2py)1. Bonding = 10, antibonding = 7. Bond order = 10−72=1.5, with 1 unpaired electron (paramagnetic).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7aa1b66a-82a3-495d-b1ac-a476cf3c15c8",
+    "question_text": "Which molecule has a coordinate bond formed by donation of a lone pair?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNH\n4\n+",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nN\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In NHA4A+, nitrogen donates a lone pair to HA+, forming a coordinate bond.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bbae8b93-2229-4267-86ed-3cfd3e6ef9e2",
+    "question_text": "Which molecule is paramagnetic due to unpaired electrons?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nF\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nH\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "OA2 has two unpaired electrons in π∗2p orbitals, making it paramagnetic.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "93f30310-289f-4998-bff0-f4784a2b0888",
+    "question_text": "The number of sigma bonds in \nC\n2\nH\n4\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CA2HA4 (ethene), there is one C=C (1 sigma + 1 pi) and four C−H bonds\n              (4 sigma), totaling 5 sigma bonds.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e8df2993-a09b-4375-8b51-a55c356909c5",
+    "question_text": "The hybridization of nitrogen in \nNF\n3\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In NFA3, nitrogen has 4 electron pairs (3 bonding, 1 lone), requiring sp3 hybridization,\n              forming a trigonal pyramidal shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b90152f8-7b84-475a-b0c7-256806b21949",
+    "question_text": "The shape of \nSCl\n2\n molecule is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLinear",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTrigonal pyramidal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTetrahedral",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBent",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In SClA2, sulfur is sp3 hybridized with 4 electron pairs (2 bonding, 2 lone), resulting\n              in a bent shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6982b6f2-bab7-4803-9f36-7664fcad30d7",
+    "question_text": "In which compound does the central atom have a lone pair affecting its geometry?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBF\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In NHA3, nitrogen has one lone pair in its sp3 hybridized state, reducing the bond angle\n              to 107° and giving a pyramidal shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23308da6-1fda-45bb-b74d-faf529e05a35",
+    "question_text": "Which molecule has a tetrahedral electron pair geometry but a bent molecular shape?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nS",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBF\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In HA2S, sulfur has 4 electron pairs (2 bonding, 2 lone), giving a tetrahedral electron\n              geometry (sp3), but a bent shape due to lone pairs.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "76bbd4d6-d607-45f6-8d24-05146e4addf8",
+    "question_text": "The hybridization of tellurium in \nTeF\n6\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In TeFA6, tellurium has 6 bonding pairs and no lone pairs, requiring sp3d2\n              hybridization, forming an octahedral shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09293fac-6e93-4419-bc1b-23c17fe454e6",
+    "question_text": "Which molecule has a T-shaped molecular geometry?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nXeF\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nClF\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPF\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSF\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In ClFA3, chlorine is sp3d hybridized with 5 electron pairs (3 bonding, 2 lone),\n              resulting in a T-shaped geometry.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e497e6db-829b-401d-bf7e-7329743c434d",
+    "question_text": "Which molecule has a bond angle of approximately 180° due to a triple bond and no lone pairs on the central atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n2\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CA2HA2 (ethyne), each carbon is sp hybridized with a triple bond, resulting in a linear\n              shape and 180° bond angle.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "13b303c9-c457-4eab-bb95-df3e547c44b1",
+    "question_text": "The bond angle in \nSO\n2\n is approximately:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n109.5°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n180°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n119°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n90°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In SOA2, sulfur is sp2 hybridized with one lone pair, reducing the bond angle to about\n              119° due to lone pair-bond pair repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c97bd649-fedd-4929-a128-e08f782b1e44",
+    "question_text": "The number of pi bonds in \nC\n6\nH\n6\n (benzene) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In benzene (CA6HA6), there are 6 C−C sigma bonds, 6 C−H sigma bonds, and 3\n              pi bonds from alternating double bonds in its ring structure.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8564c9d2-3b84-464b-9ee7-6229a6bb4896",
+    "question_text": "Which species is diamagnetic and has a bond order of 3?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nB\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For NA2 (14 electrons): (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(π2px)2(π2py)2(σ2pz)2. Bonding = 10, antibonding = 4. Bond order = 10−42=3, with all electrons paired, making it diamagnetic.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33937a03-8d08-478c-8392-91067195be4d",
+    "question_text": "The bond angle in \nNH\n3\n is approximately:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n109.5°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n120°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n107°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In NHA3, nitrogen is sp3 hybridized with one lone pair, reducing the bond angle from\n              109.5° to 107° due to lone pair-bond pair repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "508ce131-b3b9-4df2-805a-ece3d47419e0",
+    "question_text": "The hybridization of sulfur in \nSF\n2\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In SFA2, sulfur has 4 electron pairs (2 bonding, 2 lone), requiring sp3 hybridization,\n              forming a bent shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0288224-d867-4f09-a944-763d286ebce6",
+    "question_text": "The bond order of \nB\n2\n molecule is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For BA2: (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(π2px)1(π2py)1. Bonding = 6, antibonding = 4. Bond order = 6−42=1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b6090367-16a8-4dba-854f-49f5fe99743d",
+    "question_text": "The hybridization of phosphorus in \nPH\n3\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In PHA3, phosphorus has 4 electron pairs (3 bonding, 1 lone), requiring sp3\n              hybridization, forming a trigonal pyramidal shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a204cc9a-576d-4e35-af86-19f9f51bfb26",
+    "question_text": "The hybridization of sulfur in \nSF\n4\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In SFA4, sulfur has 6 valence electrons and forms 4 bonds (8 electrons used), leaving 2\n              electrons as 1 lone pair. With 5 electron pairs (4 bonding, 1 lone), it adopts sp3d hybridization,\n              resulting in a see-saw shape with equatorial bond angles of ~101° and axial bond angles of ~86° due to\n              lone pair repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b6d246d2-6a2f-4fcf-a0e7-b30ad8264316",
+    "question_text": "Which molecule has a linear shape with a bond angle of 180°?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBCl\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBeCl\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In BeClA2, beryllium undergoes sp hybridization, resulting in a linear shape with a 180°\n              bond angle.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4cc1d51e-b19a-4ad0-8d7f-b882c660c038",
+    "question_text": "The shape of \nIF\n5\n molecule is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTrigonal bipyramidal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOctahedral",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSquare pyramidal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nT-shaped",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In IFA5, iodine is sp3d2 hybridized with 6 electron pairs (5 bonding, 1 lone),\n              resulting in a square pyramidal shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a978c58-59fe-4726-aa28-3ae35c2f700d",
+    "question_text": "The hybridization of oxygen in \nH\n2\nO\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In HA2O, oxygen has four electron pairs (two bonding, two lone), requiring sp3\n              hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5892fd7-18e8-4124-800a-d8a3f61ea9dc",
+    "question_text": "The hybridization of bromine in \nBrF\n5\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In BrFA5, bromine has 6 electron pairs (5 bonding, 1 lone), requiring sp3d2\n              hybridization, forming a square pyramidal shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6107e955-1f7b-4a77-90b5-70ba8014b6d2",
+    "question_text": "Which molecule has the longest bond length among those with a single bond?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHF",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHBr",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHI",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "HI has a single bond with a bond length of ~161 pm, longer than HF (92 pm), HCl (127 pm), or HBr (141 pm) due to larger atomic size.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3d776a36-3a91-4173-9c47-ee3699a5f00b",
+    "question_text": "The number of pi bonds in \nC\n2\nH\n2\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In CA2HA2 (ethyne), the triple bond between carbons consists of 1 sigma and 2 pi bonds, so there\n              are 2 pi bonds total.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "15e0aba7-839a-49cc-86c5-21f48cd70fb3",
+    "question_text": "Which molecule has a triple bond and exhibits linear geometry?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHCN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n2\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In HCN, carbon is sp hybridized, forming a triple bond with nitrogen and a single bond\n              with hydrogen, resulting in a linear shape with a 180° bond angle. No lone pairs on carbon affect the\n              geometry.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ac7b966-7380-4e26-b777-c399858e140f",
+    "question_text": "The hybridization of carbon in \nCS\n2\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CSA2, carbon has 2 double bonds (2 bonding domains), requiring sp hybridization for a\n              linear shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3723f99c-5f2b-4f2e-8744-174c7f88bd7b",
+    "question_text": "In which molecule does hydrogen bonding significantly influence its properties?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHF",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCl\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In HF, hydrogen bonding between H and F atoms leads to higher boiling points due to strong\n              intermolecular forces.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e6e56fe9-d912-41b8-894c-5ed0c5624f99",
+    "question_text": "The number of lone pairs on the central atom in \nXeF\n2\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In XeFA2, xenon has 8 valence electrons and forms 2 bonds (4 electrons used), leaving 4\n              electrons as 3 lone pairs. With sp3d hybridization, the 5 electron pairs (2 bonding, 3 lone) result\n              in a trigonal bipyramidal electron geometry and a linear molecular shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4a025595-20bb-4c75-9301-afce3fdb07d5",
+    "question_text": "The hybridization of carbon in \nC\n2\nH\n6\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In CA2HA6 (ethane), each carbon is bonded to three hydrogens and one carbon, using four sp3 hybrid orbitals.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04976343-b5f4-46a8-9e22-dedaa235f50d",
+    "question_text": "The bond order of \nB\n2\n−\n ion, based on molecular orbital theory, is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For BA2A− (11 electrons): (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(π2px)2(π2py)1. Bonding = 7, antibonding = 4. Bond order = 7−42=1.5.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "db20b6b4-b868-4d3a-97c0-3f9b9a442b45",
+    "question_text": "The stability of an ionic compound is primarily due to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLattice enthalpy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCovalent bonding",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHydrogen bonding",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVan der Waals forces",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The stability of ionic compounds like NaCl arises from the lattice enthalpy, which compensates\n              for the energy required to form ions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "325b8cc8-49b6-44b9-818d-4ae751d7358a",
+    "question_text": "The number of lone pairs on iodine in \nIF\n5\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In IFA5, iodine has 7 valence electrons, forms 5 bonds (10 electrons used), leaving 2 electrons\n              as 1 lone pair in a sp3d2 hybridized state.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b75e6c3c-e814-4ff1-936c-14771d6170b2",
+    "question_text": "Which species has a bond order of 2.5 and is paramagnetic?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nN\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nO\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For NO: (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(σ2pz)2(π2px)2(π2py)2(π∗2px)1. Bonding = 10, antibonding = 5. Bond order = 10−52=2.5, with 1 unpaired electron (paramagnetic).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7da82008-f2f6-40fb-9f51-40a7aec24892",
+    "question_text": "Which molecule violates the octet rule due to having more than 8 electrons around the central atom in its Lewis structure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBrF\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBF\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In BrFA5, bromine has 5 bonds (10 electrons) and 1 lone pair (2 electrons), totaling 12\n              electrons, exceeding the octet via d-orbital use.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "75715c92-1e0d-41f2-8942-303f324b9b8e",
+    "question_text": "Which of the following atoms achieves a stable octet by gaining one electron?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMg",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nS",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Chlorine (Cl) has 7 valence electrons ([Ne]3s23p5). Gaining one electron forms ClA− with a noble gas configuration ([Ar]).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e7e9eb7-9b3c-451f-995f-83ac813c2fc1",
+    "question_text": "The bond order of \nC\n2\n molecule, considering its molecular orbital configuration, is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For CA2: (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(π2px)2(π2py)2. Bonding = 8, antibonding = 4. Bond order = 8−42=2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b9455a28-2c15-4c09-b296-d0e585dc491a",
+    "question_text": "Which molecule has a double bond formed by sharing two electron pairs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In COA2, carbon forms two double bonds with oxygen atoms, each involving two shared electron\n              pairs.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "08121dbd-8114-4d3c-be9e-43a82953c3e6",
+    "question_text": "The shape of \nOF\n2\n molecule is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLinear",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTrigonal planar",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTetrahedral",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBent",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In OFA2, oxygen is sp3 hybridized with 4 electron pairs (2 bonding, 2 lone), resulting\n              in a bent shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0217fc71-06cd-48a0-99b1-36b0aa9d061c",
+    "question_text": "The hybridization of sulfur in \nSCl\n2\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nsp\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In SClA2, sulfur has 4 electron pairs (2 bonding, 2 lone), requiring sp3 hybridization,\n              forming a bent shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8e4e0f91-eda2-4eee-8de6-f6fd32be7c39",
+    "question_text": "Which molecule has a bond angle of approximately 98° due to two lone pairs on the central atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSF\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In SFA2, sulfur is sp3 hybridized with 4 electron pairs (2 bonding, 2 lone), forming a\n              bent shape. The F-S-F bond angle is ~98°, reduced from 104.5° in HA2O due to increased lone pair\n              repulsion from electronegative fluorine atoms.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2475126e-e4a1-4287-88e3-1a9e0184675e",
+    "question_text": "The total number of sigma bonds in \nC\n4\nH\n8\n (cyclobutane) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n11",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n13",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CA4HA8 (cyclobutane), there are 4 C−C sigma bonds in the ring and 8 C−H\n              sigma bonds, totaling 12 sigma bonds.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f9f7d0fd-b8cb-402a-a3ce-9a7d353c788d",
+    "question_text": "Which type of bond is represented by a dotted line in molecular structures?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCovalent bond",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIonic bond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHydrogen bond",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCoordinate bond",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "A hydrogen bond, such as in HF, is depicted with a dotted line, indicating a weaker\n              interaction than a covalent bond.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1bcf6002-d61c-4c62-abfd-b5731719ea17",
+    "question_text": "What is the bond order of \nF\n2\n molecule?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For FA2: (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(σ2pz)2(π2px)2(π2py)2(π∗2px)2(π∗2py)2. Bonding = 10, antibonding = 8. Bond order = 10−82=1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "13d85f0d-b70a-4358-a4f0-f8f03f1e9771",
+    "question_text": "The bond length of a \nC\n=\nC\n double bond is approximately:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n154 pm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n134 pm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n120 pm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n109 pm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The average bond length of a C=C double bond, as in ethene, is ~134 pm due to increased\n              electron density from two shared pairs, shorter than a C−C single bond (~154 pm) but longer\n              than a C≡C triple bond (~120 pm).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3c047a6e-3aae-45f5-a9f6-dadba15be731",
+    "question_text": "The bond angle in \nXeF\n2\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n109.5°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n120°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n180°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In XeFA2, xenon is sp3d hybridized with 5 electron pairs (2 bonding, 3 lone), resulting\n              in a linear shape with a 180° bond angle.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aba27846-ad83-47fd-afef-c8ae3a28624b",
+    "question_text": "Which molecule has a bond angle of approximately 90° due to lone pair repulsion in a square pyramidal geometry?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSF\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBrF\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nXeF\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPF\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In BrFA5, bromine is sp3d2 hybridized with 6 electron pairs (5 bonding, 1 lone),\n              forming a square pyramidal shape with ~90° bond angles.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04374212-6bd9-4556-8df3-60f6fe6dbf95",
+    "question_text": "The bond order of \nC\n2\n+\n ion, based on molecular orbital theory, is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For CA2A+ (11 electrons): (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(π2px)2(π2py)1. Bonding = 7, antibonding = 4. Bond order = 7−42=1.5.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7abf9f11-7ee6-4b8e-a286-57383e8bcacd",
+    "question_text": "The hybridization of xenon in \nXeF\n6\n is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n3\n𝑑\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In XeFA6, xenon has 8 valence electrons, forms 6 bonds (12 electrons used), leaving 2 electrons\n              as 1 lone pair. With 7 electron pairs (6 bonding, 1 lone), it adopts sp3d2 hybridization, forming\n              an octahedral electron geometry with a distorted octahedral molecular shape due to lone pair repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d157d16-76b8-4177-9667-d2b841167a33",
+    "question_text": "Which molecule has a trigonal bipyramidal electron pair geometry but a linear molecular shape?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nXeF\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSF\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPF\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nClF\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In XeFA2, xenon has 5 electron pairs (2 bonding, 3 lone) with sp3d hybridization, giving\n              a trigonal bipyramidal electron geometry and a linear shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "38acde86-78ae-4cfb-b15f-191697f629a0",
+    "question_text": "Which molecule contains a coordinate bond where oxygen donates a lone pair to a positively charged species?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n3\nO\n+",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In HA3OA+ (hydronium ion), oxygen donates a lone pair to HA+, forming a coordinate\n              bond.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "45349fe6-fcad-4dde-bdea-53b0cdf45095",
+    "question_text": "Which species has a bond order of 1 and is paramagnetic?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nF\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nN\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For BA2: (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(π2px)1(π2py)1. Bonding = 6, antibonding = 4. Bond order = 6−42=1, with 2 unpaired\n              electrons (paramagnetic).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bb1efaa8-8444-469f-9b79-76e81c7f05d7",
+    "question_text": "Which of the following molecules exhibits \n𝑠\n𝑝\n3\n𝑑\n hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSF\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAsF\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBCl\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In AsFA5, arsenic uses one s, three p, and one d orbital to form five sp3d hybrid\n              orbitals, giving a trigonal bipyramidal shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a2285396-3522-4955-a836-a7e5c4d2c274",
+    "question_text": "What is the bond angle in a molecule with a trigonal planar geometry?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n120°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n109.5°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n180°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n90°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In trigonal planar geometry, such as in BClA3, the bond angle is 120° due to three bonding\n              pairs arranged symmetrically.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dcccefe8-5be5-42b9-9e76-d8c11a0b7d38",
+    "question_text": "Which species has a bond order of 2.5 and is paramagnetic?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nF\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For NO: (σ1s)2(σ∗1s)2(σ2s)2(σ∗2s)2(σ2pz)2(π2px)2(π2py)2(π∗2px)1. Bonding = 10, antibonding = 5. Bond order = 10−52=2.5, with 1 unpaired electron (paramagnetic).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "59babca4-384c-475c-88e4-aac1fb8ae9cf",
+    "question_text": "Which molecule has an octahedral electron pair geometry but a square planar molecular shape?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nXeF\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSF\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBrF\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nClF\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In XeFA4, xenon has 6 electron pairs (4 bonding, 2 lone) with sp3d2 hybridization,\n              giving an octahedral electron geometry and a square planar shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e4ee65a-5a0a-4a96-9cd2-1a4b6b123552",
+    "question_text": "Which molecule has a see-saw shape with an equatorial bond angle of approximately 101°?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSF\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nClF\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nXeF\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPF\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In SFA4, sulfur is sp3d hybridized with 5 electron pairs (4 bonding, 1 lone), forming a\n              see-saw shape. The equatorial F-S-F bond angle is ~101°, reduced due to lone pair repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a01c63c0-8d0c-4d98-b4f3-c204a7bd45f1",
+    "question_text": "Which ion achieves a noble gas configuration by losing two electrons and belongs to Group 2?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMg\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCa\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNa\n+",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAl\n3\n+",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Magnesium (Mg) in Group 2 has [Ne]3s2. Losing 2 electrons forms MgA2+ with [Ne], a noble gas configuration.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b9e90cc9-0d41-4252-837d-8b43ed94481e",
+    "question_text": "The geometry of \nSF\n6\n molecule is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTetrahedral",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTrigonal bipyramidal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSquare planar",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOctahedral",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In SFA6, sulfur undergoes sp3d2 hybridization, forming an octahedral geometry with 6\n              fluorine atoms.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79d80c62-3d16-49a4-90cf-6fc55b3baac0",
+    "question_text": "Which of the following molecules has a single covalent bond formed by the sharing of one electron pair between two atoms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "A single covalent bond involves sharing one electron pair. In HA2, two hydrogen atoms share one\n              pair of electrons, forming a single bond.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa7c62a7-f4e7-409e-ac7d-721344395b50",
+    "question_text": "In which molecule does the central atom have an odd number of electrons, violating the octet rule?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nN\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In NO, nitrogen has 11 electrons total, leading to an odd-electron system that cannot satisfy\n              the octet rule for all atoms.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "90c14ae7-bd9e-4fbb-93a4-f22cd8b161f6",
+    "question_text": "Which molecule has a see-saw shape with an axial-equatorial bond angle of approximately 86°?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nClF\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSF\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nXeF\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPF\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In SFA4, sulfur is sp3d hybridized with 5 electron pairs (4 bonding, 1 lone), forming a\n              see-saw shape. The axial-equatorial F-S-F bond angle is ~86°, and the equatorial bond angle is ~101°, both\n              reduced due to lone pair repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e2b2b611-8c95-4d6e-9962-57b3d2c87dbb",
+    "question_text": "The hybridization of nitrogen in \nN\n2\nH\n4\n (hydrazine) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In NA2HA4, each nitrogen is bonded to two hydrogens and one nitrogen, with one lone pair,\n              requiring four sp3 hybrid orbitals.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "73edb348-d28e-432b-aa31-8b2773c43361",
+    "question_text": "The shape of \nPCl\n3\n molecule is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTrigonal planar",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBent",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTetrahedral",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTrigonal pyramidal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In PClA3, phosphorus is sp3 hybridized with 4 electron pairs (3 bonding, 1 lone),\n              resulting in a trigonal pyramidal shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Chemical Bonding and Molecular Structure / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "chemical-bonding-and-molecular-structure"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

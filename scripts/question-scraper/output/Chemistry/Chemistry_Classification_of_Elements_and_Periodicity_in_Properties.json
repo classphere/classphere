@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "e9c8c396-e66b-4ff3-9534-03d048f15857",
+    "question_text": "Which of the following chlorides has the highest covalent character?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMgCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBeCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCaCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSrCl\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Covalent character increases with higher charge and smaller cation size (Fajans’ rule). BeClA2\n              (Be²⁺, small) has the highest covalent character among group 2 chlorides.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c200ca76-fd3a-4cdb-857b-d649b62153dd",
+    "question_text": "What is the general outer electronic configuration of f-block elements?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n(\n𝑛\n−\n1\n)\n𝑑\n1\n−\n10\n𝑛\n𝑠\n0\n−\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n1\n−\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑛\n𝑠\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n(\n𝑛\n−\n2\n)\n𝑓\n1\n−\n14\n(\n𝑛\n−\n1\n)\n𝑑\n0\n−\n1\n𝑛\n𝑠\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "f-block elements (lanthanoids and actinoids) fill (n−2)f orbitals, with a general outer configuration\n              of (n−2)f1−14(n−1)d0−1ns2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8cd12710-781f-4574-97b9-bc3ddab7b51f",
+    "question_text": "Which group 17 element forms a hydride with the highest dipole moment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nF",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBr",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nI",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Dipole moment depends on electronegativity difference and bond length. HF (F, highest\n              electronegativity, shortest bond) has the highest dipole moment among HF, HCl, HBr, and HI.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1bf01118-66df-4131-ba46-1245b5a3e4c4",
+    "question_text": "Which element has the ground state electronic configuration \n1\n𝑠\n2\n2\n𝑠\n2\n2\n𝑝\n6\n3\n𝑠\n2\n3\n𝑝\n6\n3\n𝑑\n10\n4\n𝑠\n2\n4\n𝑝\n1\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZn",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGe",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "This configuration (Z=31) corresponds to Ga (period 4, group 13), with 4p1 distinguishing it from Zn\n              (4p0), Ge (4p2), or As (4p3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "28d24acd-0b78-4421-836c-b67a676c456c",
+    "question_text": "Which group 16 element forms the most stable dioxide at room temperature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA. Te",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB. O",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC. S",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD. Se",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Group 16 dioxides vary in stability. SOA2 (bent, gaseous) is the most stable at room temperature\n              due to strong S=O bonds, unlike OA2 (diatomic gas), SeOA2 (polymeric solid), or\n              TeOA2 (solid).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7eea3071-6d70-4854-b9d5-146eeb7b52ae",
+    "question_text": "What is the formula of the compound formed by carbon and chlorine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCCl\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n2\nCl\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "C (group 14, valence 4) and Cl (group 17, valence 1) form CClA4 by sharing electrons to achieve\n              stable configurations.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "75be24f0-6ce2-4c2a-a31c-772bb1320fa4",
+    "question_text": "Which oxide of a group 13 element is amphoteric and used in the extraction of aluminium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nB\n2\nO\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAl\n2\nO\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGa\n2\nO\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIn\n2\nO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Among group 13 oxides, AlA2OA3 is amphoteric and is the ore (bauxite) used in aluminium\n              extraction, unlike BA2OA3 (acidic), GaA2OA3, or InA2OA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6101b021-ca46-4a89-8159-eeaa483b98e7",
+    "question_text": "Which element has the highest density among the alkali metals?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nK",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Density generally increases down group 1 due to increasing atomic mass, with Cs having the highest\n              density among Li, Na, K, and Cs.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f02e15af-ff2c-4fad-bc06-cc38c721b454",
+    "question_text": "Which element in group 14 has the highest electronegativity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSi",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGe",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPb",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Electronegativity decreases down a group. Among C, Si, Ge, and Pb (group 14), C (period 2) has the\n              highest value.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a52f7c20-b03f-4730-b3f7-25577ad7a0f3",
+    "question_text": "What is the temporary systematic name of the element with atomic number 118?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUnunseptium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUnunpentium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUnuntrium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUnunoctium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For Z=118: 1 (un), 1 (un), 8 (oct) → ununoctium (before being named Oganesson).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "98f5a808-a28a-4558-af49-6666552ff895",
+    "question_text": "Which element has the highest melting point among the alkali metals?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nK",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRb",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Among alkali metals (group 1), melting point decreases down the group due to weaker metallic bonding with\n              increasing size. Li, being smallest, has the highest melting point.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0866b0cc-bb11-4ee2-9bbc-ecf7cc14788f",
+    "question_text": "Which d-block element in the fourth period has the highest first ionization enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZn",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSc",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCu",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In period 4 d-block (Sc to Zn), ionization enthalpy increases across due to increasing nuclear charge,\n              with Zn (3d104s2) having the highest due to its full d-subshell stability.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6373eeb2-307e-49cd-af3b-f5dea5c46096",
+    "question_text": "Which pair of elements from different periods shows the greatest similarity in oxide acidity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi, Na",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC, Si",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBe, Mg",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nN, P",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Diagonal relationships lead to similar oxide properties. C (period 2) and Si (period 3) both form acidic\n              oxides (COA2, SiOA2) with covalent character, unlike other pairs.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e3a37ac6-ca1f-4cb6-916b-fc14d321e423",
+    "question_text": "What is the systematic element name for the element with atomic number 117 before its official naming?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUnuntrium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUnunpentium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUnunoctium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUnunseptium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For Z=117: 1 (un), 1 (un), 7 (sept) → ununseptium (before being named Tennessine).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7342b0f5-e2cf-44e3-ba55-ed7ba79dee23",
+    "question_text": "Which element in group 17 has the highest tendency to form ionic compounds with group 1 elements?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBr",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nF",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nI",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ionic character increases with larger electronegativity difference. F (highest electronegativity, 4.0)\n              forms the most ionic compounds with group 1 elements (e.g., NaF) compared to Cl, Br, or I.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a788d035-f6da-4f8f-bbd5-f10126e9e35d",
+    "question_text": "Which element in group 17 shows an anomaly in electron gain enthalpy compared to its neighbors?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nF",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBr",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nI",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "F has less negative electron gain enthalpy than Cl due to electron repulsion in its compact 2p orbitals,\n              an anomaly in group 17 trends where Cl > Br > I.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "71e087a5-cf36-4933-9b2e-a0378a3a1c96",
+    "question_text": "Which of the following has the largest ionic radius among group 17 anions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nF\n−",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nI\n−",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCl\n−",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBr\n−",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ionic radius increases down group 17. Among FA−, ClA−, BrA−, and IA−,\n              IA− (from I, period 5) has the largest radius.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8282140d-1551-4bb3-aab0-36987996c134",
+    "question_text": "Which element in group 1 has the lowest second ionization enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nK",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Second ionization enthalpy for group 1 elements involves removing an electron from XA+ (noble gas\n              configuration). Cs⁺ (largest size) has the lowest value due to reduced nuclear attraction.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "897f3cc2-5d77-4618-894a-d7acc0905b90",
+    "question_text": "Which element in group 2 has the highest hydration energy in its ionic form?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMg",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBe",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSr",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Hydration energy increases with smaller cation size and higher charge density. Be²⁺ (smallest) has the\n              highest hydration energy among Be, Mg, Ca, and Sr.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c92884ff-dc4f-4f5a-a844-e00bae883b85",
+    "question_text": "Which element in group 14 has the lowest melting point?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGe",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSn",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Melting point in group 14 decreases from C (covalent network) to Sn and Pb (metallic), with Sn having the\n              lowest among C, Si, Ge, and Sn due to weaker metallic bonding.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4f38ef96-70e4-483b-9c80-9c0317a43287",
+    "question_text": "Which ion among the following isoelectronic species with 36 electrons has the largest radius?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBr\n−",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nK\n+",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCa\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSc\n3\n+",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For isoelectronic species (36 electrons), radius increases with decreasing nuclear charge. BrA−\n              (Z=35) has the largest radius compared to KA+, CaA2+, or ScA3+.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f532f5c0-4ed0-484b-be16-e435d551d3ea",
+    "question_text": "Which group contains only p-block elements?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNa, Mg",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB, C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLi, Be",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nK, Ca",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "p-block spans groups 13–18. Options: (1) Na (group 1), Mg (group 2) → s-block; (2) B (group\n              13), C (group 14) → p-block; (3) Li (group 1), Be (group 2) → s-block; (4) K (group 1), Ca\n              (group 2) → s-block.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "063d93b6-a29f-483f-8980-2af3ccd5ac37",
+    "question_text": "Which element in the fifth period has the highest electronegativity among p-block elements?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSn",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSb",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nI",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXe",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In period 5 p-block (Rb to Xe), electronegativity increases across. I (group 17) has the highest\n              electronegativity among Sn, Sb, and I, excluding noble gases.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c58d76bd-2c29-498e-99b0-9457fb021621",
+    "question_text": "Which group 16 element has the highest tendency to form stable compounds in the +4 oxidation state?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA. Se",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB. O",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC. S",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD. Te",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The +4 oxidation state is most stable for S in group 16, forming SOA2 (gaseous, strong S=O\n              bonds), more stable than OA2, SeOA2 (polymeric), or TeOA2 (solid).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cbe17b64-3db6-4453-a9a7-f2570490a49b",
+    "question_text": "Which element has the electronic configuration \n1\n𝑠\n2\n2\n𝑠\n2\n2\n𝑝\n6\n3\n𝑠\n2\n3\n𝑝\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nP",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMg",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Total electrons = 14, corresponding to Si (period 3, group 14). Others: Al (13 electrons), P (15\n              electrons), Mg (12 electrons).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dee890c0-bc10-474b-919d-3e995ee061d4",
+    "question_text": "Which group 17 element exhibits the least reactivity with hydrogen due to its bond strength?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nF",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBr",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nI",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reactivity with hydrogen decreases down group 17 as H-X bond strength weakens. F forms the strongest H-F\n              bond, making HF the least reactive among HF, HCl, HBr, and HI.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "efd5b4cb-9fbe-4915-9aba-adfa63773bbc",
+    "question_text": "Which ion among the following has the highest effective nuclear charge for an isoelectronic series with 10 electrons?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAl\n3\n+",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNa\n+",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMg\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nF\n−",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For isoelectronic species (10 electrons), effective nuclear charge increases with atomic number.\n              AlA3+ (Z=13) has the highest effective nuclear charge compared to NaA+, MgA2+,\n              or FA−.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "22cd8618-f33b-4016-b13e-13a1e0ba6388",
+    "question_text": "The atomic radius of which element is the largest among the following?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nI",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nF",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBr",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Atomic radius decreases across a period and increases down a group. Among F, Cl, Br, and I (group 17),\n              Iodine (I), being lowest in the group, has the largest atomic radius.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fb97ab9-4e85-4908-82fe-2f6ee6893e00",
+    "question_text": "Which element in the fourth period has the highest metallic character?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCa",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSc",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nK",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Metallic character decreases across a period and increases down a group. In period 4, K (group 1) has the\n              highest metallic character compared to Ca, Sc, or Ti.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72b8d748-6e1f-4c3e-8322-ecb7da996842",
+    "question_text": "Which pair of elements from different groups shows the closest similarity in ionization enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi, Mg",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBe, Al",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nB, Si",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC, P",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Diagonal relationships reduce ionization enthalpy differences. Be (group 2, period 2) and Al (group 13,\n              period 3) have similar values due to size and charge effects, unlike other pairs.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4c2432c7-db37-4117-8d7f-f02f3359fff9",
+    "question_text": "What is the formula of the compound formed between silicon and chlorine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSiCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSiCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSiCl\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSi\n2\nCl\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Si (group 14, valence 4) and Cl (group 17, valence 1) form SiClA4, a covalent compound, by\n              sharing electrons to complete octets.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "307b6694-a9a6-44fe-b34f-7ea9b87404e4",
+    "question_text": "Which element has the lowest electronegativity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nF",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nK",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Electronegativity decreases down a group and increases across a period. Among F, Cl, K, and\n              Cs, Cs (group 1, period 6) has the lowest value.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d989360-6241-4167-85e5-19fcbafe4cc0",
+    "question_text": "Which of the following shows a diagonal relationship with Li?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nK",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBe",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMg",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Diagonal relationships occur between second and third period elements (e.g., Li and Mg) due\n              to similar size and electronegativity, unlike Na, K, or Be.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82dee6a1-969d-4078-a3dc-326c7fa3eb37",
+    "question_text": "Which element in the second period has the least tendency to form ionic bonds?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBe",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nF",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nB",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ionic bonding decreases across a period as electronegativity increases. F (group 17, electronegativity\n              4.0) prefers covalent bonds, unlike Li, Be, or B.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "da7fff15-7452-4d3a-8d35-c378720fa95b",
+    "question_text": "Arrange the following elements in order of decreasing electron affinity: F, Cl, Br, I.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nI > Br > F > Cl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl > F > Br > I",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nF > Cl > Br > I",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBr > I > Cl > F",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Electron affinity decreases down group 17, with Cl highest due to optimal size and nuclear charge,\n              followed by F (anomaly due to repulsion). Order: Cl > F > Br > I.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0433421-d609-4946-95fd-f120c5a4f961",
+    "question_text": "Which element exhibits a diagonal relationship with carbon?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nB",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nN",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nP",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSi",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "C (group 14, period 2) has a diagonal relationship with Si (group 14, period 3) due to similar\n              properties, unlike B, N, or P.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "abc4d0b2-af5b-49f4-8c0c-200cfebb59ca",
+    "question_text": "Which of the following elements was predicted as Eka-boron by Mendeleev?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA. Ga",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB. Ge",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC. Tc",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD. Sc",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mendeleev predicted Eka-boron below B in group 13, later identified as Ga, with similar properties to B,\n              unlike Sc (group 3), Ge (group 14), or Tc (group 7).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2af0fa4d-bdad-4e8f-a260-a074617f9d01",
+    "question_text": "Which of the following sulfates has the highest solubility in water due to its hydration energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMgSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBeSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCaSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSrSO\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Solubility of group 2 sulfates decreases down the group as hydration energy drops with increasing cation\n              size. BeSOA4 (smallest cation) has the highest solubility.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bf4f9333-099a-4b3e-9b9e-220c0fb05f02",
+    "question_text": "Which element in group 14 has the highest tendency to exhibit catenation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGe",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSn",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Catenation (self-linking) is strongest for C due to its small size and strong C-C bond energy, far\n              exceeding Si, Ge, or Sn in group 14.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fe91cdaf-d764-480c-b689-d1471c30ade0",
+    "question_text": "What is the general outer electronic configuration of group 2 elements?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑛\n𝑠\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑛\n𝑠\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Group 2 elements (alkaline earth metals) have 2 valence electrons, with outer configuration ns2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f5c83e72-beff-47f7-a522-743a01c382b6",
+    "question_text": "Which element exhibits the most negative electron gain enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nS",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nF",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Electron gain enthalpy becomes more negative across a period and less negative down a group. Among O, S,\n              F, and Cl, Cl (group 17, period 3) has the most negative value due to its high effective nuclear charge\n              and smaller size than S.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6154e692-0d34-408d-972d-d2f318368243",
+    "question_text": "Which element in group 1 has the highest reactivity with water?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nK",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Reactivity with water increases down group 1 due to decreasing ionization enthalpy. Cs (lowest ionization\n              enthalpy) reacts most vigorously among Li, Na, K, and Cs.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ac6bc713-479b-4e44-90f9-265c10bfb07a",
+    "question_text": "Which element in group 13 shows the maximum deviation from typical metallic character?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIn",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nB",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Metallic character increases down group 13. B (period 2) is a metalloid with minimal metallic properties,\n              unlike Al, Ga, or In, which are more metallic.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "af48d20e-2bef-44a2-a689-0d0776b968d4",
+    "question_text": "Which group 2 element has the highest lattice energy in its chloride compound?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBe",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMg",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSr",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Lattice energy increases with smaller cation size and higher charge density. BeClA2 (Be²⁺,\n              smallest) has the highest lattice energy among Be, Mg, Ca, and Sr chlorides.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "56345807-4f01-4aa3-b117-659922f5a5d4",
+    "question_text": "Which group 1 element has the highest ionic conductivity in its molten chloride form?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nK",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ionic conductivity in molten salts increases with smaller cation size due to higher mobility. LiCl has\n              the highest conductivity among Li, Na, K, and Cs chlorides.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "048859cb-bd1e-49f5-a032-0f75504ba493",
+    "question_text": "Which element in group 15 forms a pentoxide with the highest thermal stability?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nP",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nN",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSb",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Thermal stability of group 15 pentoxides (XA2OA5) decreases down the group due to weaker X-O\n              bonds. NA2OA5 is the most stable thermally, decomposing at a higher temperature than PA2OA5,\n              AsA2OA5, or SbA2OA5.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "771c15f5-680c-4187-8dfd-2e4762d05398",
+    "question_text": "Which element in the second period has the highest electron affinity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA. Li",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB. Be",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC. F",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD. N",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Electron affinity increases across period 2. F has the highest electron affinity in period 2 (Li, Be, N,\n              F), though less than Cl (period 3) due to electron repulsion in its compact 2p orbitals.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53fb4643-99f3-4bbc-b145-a0ec6cb851b4",
+    "question_text": "Which group 1 element has the highest flame coloration intensity due to its ionization energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nK",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Flame color intensity increases with lower ionization energy, allowing easier electron excitation. Cs\n              (lowest ionization energy) exhibits the highest intensity among Li, Na, K, and Cs.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "690e10a6-d61d-4ee7-b657-464524b00463",
+    "question_text": "Which element has the electronic configuration \n1\n𝑠\n2\n2\n𝑠\n2\n2\n𝑝\n6\n3\n𝑠\n2\n3\n𝑝\n5\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nS",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAr",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nP",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Total electrons = 17, corresponding to Cl (period 3, group 17). Others: S (16 electrons), Ar\n              (18 electrons), P (15 electrons).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3dcd889c-775a-46de-892d-6eaf388e3ec8",
+    "question_text": "Which group 16 element forms a dioxide that exists as a linear gas at room temperature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSe",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTe",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In group 16, OA2 is a linear diatomic gas at room temperature, unlike SOA2 (bent),\n              SeOA2 (polymeric solid), or TeOA2 (solid).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3dd60096-f455-455d-8fc6-bd4ec01ea7e7",
+    "question_text": "What is the formula of the compound formed between phosphorus and oxygen in its highest oxidation state?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nP\n2\nO\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nP\n2\nO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "P (group 15, valence 5 in +5 state) forms PA2OA5 with oxygen (valence 2), a stable acidic oxide.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c27837a8-d6de-4225-9b6c-003db0b74b92",
+    "question_text": "What is the temporary systematic name of the element with atomic number 113?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUnunpentium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUnunseptium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUnunoctium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUnuntrium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For Z=113: 1 (un), 1 (un), 3 (tri) → ununtrium (before being named Nihonium).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "736d548a-2949-42fe-974f-448b094798c6",
+    "question_text": "Which of the following nitrates decomposes most readily to form a basic oxide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA.\nMg\n(\nNO\n3\n)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB.\nBe\n(\nNO\n3\n)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC.\nCa\n(\nNO\n3\n)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD.\nSr\n(\nNO\n3\n)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Group 2 nitrates decompose to basic oxides, NOA2, and OA2. Be(NOA3)A2 decomposes\n              most readily to BeO (basic) due to Be²⁺’s small size and high charge density, which weakens the\n              nitrate lattice.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e071d175-3581-4628-8a4f-3c9cf0126eb5",
+    "question_text": "What is the formula of the compound formed between aluminium and sulfur?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlS",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlS\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAl\n2\nS\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAl\n3\nS\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Al (group 13, valence 3) and S (group 16, valence 2) form AlA2SA3 by cross-multiplying valences, a\n              stable ionic compound.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "307a76f4-101f-4cb7-be94-0a829b37bf80",
+    "question_text": "What is the formula of the compound formed between boron and fluorine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBF",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBF\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBF\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nB\n2\nF\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "B (group 13, valence 3) and F (group 17, valence 1) form BFA3, a stable covalent compound, unlike\n              BF, BFA2, or BA2FA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e90785a3-3493-4ef4-9cfc-92c33bc48880",
+    "question_text": "Which element in group 13 has the lowest third ionization enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nB",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Third ionization enthalpy decreases down group 13 as size increases, reducing nuclear attraction. Tl\n              (period 6) has the lowest value among B, Al, Ga, and Tl.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba1d2232-fdbf-498e-8f6a-483fb81c56a2",
+    "question_text": "What is the formula of the compound formed between germanium and oxygen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGeO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGe\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGeO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGeO\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ge (group 14, valence 4) forms GeOA2 with oxygen (valence 2), a stable covalent oxide, unlike\n              GeO, GeA2O, or GeOA4.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79c9e01e-4721-4624-936b-ee26ae2fff3f",
+    "question_text": "Which element in group 17 has the lowest electron affinity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nF",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBr",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nI",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Electron affinity decreases down group 17 due to increasing size and reduced nuclear attraction. I\n              (period 5) has the lowest value among F, Cl, Br, and I.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b709b182-e8d5-4228-9b26-6b4b9160c164",
+    "question_text": "Which of the following has the smallest ionic radius?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nO\n2\n−",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMg\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nF\n−",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNa\n+",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For isoelectronic species (OA2−, FA−, NaA+, MgA2+, all\n              with 10 electrons), radius decreases with increasing nuclear charge. MgA2+ (Z=12) has\n              the smallest radius.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0cb47cba-0cc2-40e6-945e-6ebd62f6a1da",
+    "question_text": "Which element has the ground state electronic configuration \n1\n𝑠\n2\n2\n𝑠\n2\n2\n𝑝\n6\n3\n𝑠\n2\n3\n𝑝\n6\n3\n𝑑\n6\n4\n𝑠\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMn",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFe",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCo",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNi",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "This configuration (Z=26) corresponds to Fe (period 4, group 8), with 3d64s2, distinguishing it\n              from Mn (3d54s2), Co (3d74s2), or Ni (3d84s2).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5b0e0159-29aa-4a52-8736-1ea4f0a0f4f8",
+    "question_text": "Which element in group 2 has the highest hydration enthalpy due to its ionic size?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBe",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMg",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSr",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Hydration enthalpy increases with smaller ionic size and higher charge density. Be²⁺ (smallest in group\n              2) has the highest hydration enthalpy compared to Mg²⁺, Ca²⁺, or Sr²⁺.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4c6dcbf6-b311-40aa-989e-f586f4d8252e",
+    "question_text": "What is the formula of the compound formed by magnesium and nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMgN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMg\n2\nN\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMg\n3\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMgN\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mg (group 2, valence 2) and N (group 15, valence 3) form MgA3NA2 by cross-multiplying valences.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f32c4cda-2c21-45a7-b405-cf2cda0844c4",
+    "question_text": "Which element has the lowest first ionization enthalpy in the fifth period?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSr",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAg",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRb",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nI",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "First ionization enthalpy decreases across a period from right to left. In period 5, Rb (group 1) has the\n              lowest value compared to Sr, Ag, and I.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d3966611-7ae8-4764-842b-f9f3a90c2846",
+    "question_text": "Which element in group 13 has the highest ionization enthalpy after losing two electrons?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nB",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIn",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Third ionization enthalpy is highest for B (removing an electron from BA2+ with 1s2) due to\n              its small size and stable configuration, compared to Al, Ga, or In.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "064df360-06b6-4a35-b55f-802568f93cbf",
+    "question_text": "How many elements are present in the fourth period of the periodic table?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n18",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n32",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The fourth period (n=4) includes 4s, 3d, and 4p orbitals, accommodating 18\n              electrons, hence 18 elements (K to Kr).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3840a4ff-f7fc-4e57-8655-87826c1d9f3e",
+    "question_text": "What is the general outer electronic configuration of group 17 elements?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Group 17 elements (halogens) have 7 valence electrons, with outer configuration ns2np5.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bc5db3ff-d739-4244-b813-39af9ba4cbe4",
+    "question_text": "Which of the following elements has the highest metallic character?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nB",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Metallic character increases down a group and decreases across a period. Among B, Al, Ga, and Tl, Tl\n              (group 13, period 6) has the highest metallic character.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1e9a2b6e-dbf5-486c-8312-79e055b37c6c",
+    "question_text": "Arrange F, Cl, Br in order of decreasing electron gain enthalpy (most negative to least negative).",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA. F > Cl > Br",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB. Cl > F > Br",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC. Br > F > Cl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD. Cl > Br > F",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Electron gain enthalpy becomes less negative down group 17 due to increasing atomic size. Cl has the most\n              negative value due to optimal nuclear charge and size, followed by F (less negative due to electron\n              repulsion in its compact 2p orbitals), then Br. Order: Cl > F > Br.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b03aefe6-9974-4143-9202-c6396be019a3",
+    "question_text": "Arrange the following elements in order of increasing covalent radius: N, P, As, Sb.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSb < As < P < N",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nN < P < As < Sb",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nP < N < As < Sb",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAs < Sb < N < P",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Covalent radius increases down group 15 due to additional electron shells. Order: N < P < As <\n              Sb.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7436d03d-c001-4b9a-9bd5-12c082b6c198",
+    "question_text": "Which element forms a neutral oxide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nP",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Neutral oxides do not react with acids or bases. C (group 14) forms CO, a neutral oxide, unlike\n              NaA2O (basic), PA2OA5 (acidic), or AlA2OA3 (amphoteric).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "152c7add-174d-4363-a5e0-427b14706898",
+    "question_text": "Which oxide among the following is basic?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nN\n2\nO\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBaO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSiO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAl\n2\nO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Basic oxides are formed by metals, especially s-block elements. BaO (group 2) is basic, unlike\n              NA2OA5 (acidic), SiOA2 (acidic), or AlA2OA3 (amphoteric).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d013e00-3324-48ae-b3df-918bc3861e08",
+    "question_text": "Which of the following has the smallest atomic radius among group 15 elements?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nP",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nN",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSb",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Atomic radius increases down a group. Among N, P, As, and Sb (group 15), N (period 2) has the smallest\n              radius.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9c3a45de-6ccd-4737-97f0-6cc6194df133",
+    "question_text": "Which element has a positive electron gain enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNe",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Noble gases have positive electron gain enthalpies due to their stable configurations. Ne (group 18)\n              requires energy to add an electron, unlike O, S, or Cl.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "69a8472a-e8c2-4617-8339-3b6ea9f4cde4",
+    "question_text": "Which of the following elements exhibits variable valency due to d-orbital involvement?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCu",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKr",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "d-block elements exhibit variable valency due to partially filled d-orbitals. Cu (group 11) shows this,\n              unlike Na (s-block), Al (p-block), or Kr (p-block, full).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3d2c0ff2-258b-471c-bbd0-62754a31fcbd",
+    "question_text": "Which d-block element in period 4 forms a compound with oxygen exhibiting the highest oxidation state of +7?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCr",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFe",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCo",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMn",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In period 4 d-block (Sc to Zn), Mn (group 7) achieves a +7 oxidation state in MnA2OA7, unlike Cr\n              (+6), Fe (+3), or Co (+3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "236010d1-43ed-458b-8dc3-07487f1c3329",
+    "question_text": "Which pair of elements belongs to the same period?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi, Be",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNa, Al",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nK, Ca",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNa, K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Elements in the same period have the same principal quantum number. Na (3s¹) and Al (3p¹) are in period\n              3, unlike the other pairs spanning different periods.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29d386e6-0859-41a9-adc3-2f719b3f681c",
+    "question_text": "Which element in group 1 has the lowest first ionization enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nK",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "First ionization enthalpy decreases down a group due to increased atomic size and shielding. Among Li,\n              Na, K, and Cs, Cs (period 6) has the lowest value.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "564bfb54-3f9b-4ce8-be08-e29c053b8bd2",
+    "question_text": "Which of the following elements has the highest electronegativity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nF",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBe",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nN",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Electronegativity increases across a period and decreases down a group. Among Li, Be, N, and F, F (group\n              17, period 2) has the highest electronegativity due to its position on the far right of the periodic\n              table.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "59712edf-1272-4928-aa40-7e509ec7f00c",
+    "question_text": "Which element has the smallest ionic radius among the following cations?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi\n+",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBe\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n4\n+",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nB\n3\n+",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For isoelectronic cations (LiA+, BeA2+, BA3+, CA4+, all with 2\n              electrons), radius decreases with increasing nuclear charge. BA3+ (Z=5) is smaller than\n              LiA+ (Z=3), BeA2+ (Z=4), and CA4+ (Z=6).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "048b7986-0592-4531-ae82-bfa8b62f2541",
+    "question_text": "Which element was predicted as Eka-aluminium by Mendeleev?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGe",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIn",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGa",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Mendeleev predicted Eka-aluminium below Al, later identified as Gallium (Ga), matching its\n              properties like oxide formula GaA2OA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "50580b69-3a0e-4f4b-8413-4919fff3b24e",
+    "question_text": "Which oxide is neutral in nature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nK\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nP\n2\nO\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZnO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Neutral oxides do not react with acids or bases. CO (group 14) is neutral, unlike KA2O\n              (basic), PA2OA5 (acidic), or ZnO (amphoteric).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "24135a1e-1be0-4e29-babf-5bf876d4cd4a",
+    "question_text": "Which pair of elements exhibits a diagonal relationship?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi, Na",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB, Si",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBe, Mg",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC, N",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "B (group 13, period 2) and Si (group 14, period 3) show a diagonal relationship due to similar size and\n              properties, unlike the other pairs.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9cf84bc0-7adf-4b90-b64b-b5b5e4924cc2",
+    "question_text": "What is the general outer electronic configuration of group 16 elements?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑛\n𝑠\n2\n𝑛\n𝑝\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Group 16 elements (chalcogens) have 6 valence electrons, with outer configuration ns2np4.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d97bc532-3216-496e-8a49-2dd39f22d2c9",
+    "question_text": "What is the formula of the hydride formed by phosphorus?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "P (group 15) forms PHA3 with hydrogen, following the trend of group 15 hydrides.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a57ca0a9-49d6-4a60-8eab-ad8cfb7b9339",
+    "question_text": "Which element forms an oxide with the formula \nX\n2\nO\n, where X is a group 1 element?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRb",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMg",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nP",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Group 1 elements (except Li) form oxides of the type XA2O. Rb, being in group 1, forms\n              RbA2O, unlike Mg, Al, or P.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "233734df-9cb9-4062-be1f-36ebefabb42c",
+    "question_text": "Which element in group 13 has the highest tendency to form covalent compounds due to its polarizing power?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nB",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIn",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Polarizing power increases with smaller size and higher charge density. B³⁺ (smallest in group 13) has\n              the highest tendency to form covalent compounds (e.g., BFA3) compared to Al, Ga, or In.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6a18565c-4da9-4ef8-9b99-1f14bc296d3c",
+    "question_text": "Which group 13 element forms a hydride that is electron-deficient?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIn",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nB",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "B forms BA2HA6, an electron-deficient hydride with three-center two-electron bonds, unlike Al\n              (AlHA3, polymeric), Ga, or In, which form less distinct hydrides.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23e3fa71-60bb-44e2-9ce3-25e48beac09f",
+    "question_text": "Arrange the following elements in order of increasing first ionization enthalpy: B, C, N, O.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC < B < O < N",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB < C < O < N",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nB < O < C < N",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nO < B < C < N",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "First ionization enthalpy generally increases across period 2, but N (half-filled 2p3) has higher\n              stability than O. Order: B < C < O < N.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dfc07746-5914-42fb-a5e6-9bb0feb44ba1",
+    "question_text": "Which of the following elements has the highest first ionization enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBe",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMg",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "First ionization enthalpy increases across a period due to increasing nuclear charge and decreases down a\n              group due to increased shielding. Among Li, Be, Na, and Mg, Be (second period, group 2) has the highest\n              value due to its stable 2s2 configuration.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d431eceb-f88b-493d-a997-7bdab65cb92e",
+    "question_text": "Which of the following elements is a halogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBr",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nS",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSe",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Halogens belong to group 17. Among O, S, Se, and Br, only Br is in group 17, making it a halogen.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b9f82e3f-a7ef-4ef9-956e-8dcfd5b72f2e",
+    "question_text": "Arrange the following ions in order of increasing ionic radius: \nF\n−\n, \nNa\n+\n, \nMg\n2\n+\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nF\n−\n<\nNa\n+\n<\nMg\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMg\n2\n+\n<\nNa\n+\n<\nF\n−",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNa\n+\n<\nF\n−\n<\nMg\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMg\n2\n+\n<\nF\n−\n<\nNa\n+",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For isoelectronic species (10 electrons), radius decreases with increasing nuclear charge: MgA2+\n              (Z=12) < NaA+ (Z=11) < FA− (Z=9).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c5ffc7fb-737e-40e4-8c07-ff93f6094af3",
+    "question_text": "Which element in the fourth period has the highest boiling point among d-block elements?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCr",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSc",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZn",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In period 4 d-block (Sc to Zn), boiling point peaks with strong metallic bonding. Cr (group 6) has the\n              highest boiling point due to its 3d54s1 configuration and maximum unpaired electrons enhancing\n              bonding.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a9b2c3e-96ca-451b-85c5-1667bed0549e",
+    "question_text": "Which element in the fifth period has the highest second ionization enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSr",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nY",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRb",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZr",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Second ionization enthalpy peaks when removing an electron from a stable XA+ ion. Rb (after\n              losing one electron, becomes RbA+ with 1s22s22p63s23p63d104s24p6) has the\n              highest value in period 5.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6310b0f2-9007-4d22-ab87-d21bfeb43eb1",
+    "question_text": "Which oxide is acidic in nature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNa\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSO\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMgO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAl\n2\nO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Oxides of non-metals (right side of periodic table) are acidic. SOA3 (group 16) is\n              acidic, while NaA2O (group 1), MgO (group 2), and AlA2OA3 (group 13,\n              amphoteric) are not purely acidic.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c7f83b31-4dfa-46f5-ab28-052ac97b4e56",
+    "question_text": "Which of the following elements forms a basic oxide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nK",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nS",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nP",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Basic oxides are formed by metals, especially on the left side of the periodic table. K (group 1) forms\n              KA2O, a basic oxide, while C, S, and P form acidic or amphoteric oxides.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0c655bbc-c150-43f6-ad2a-5860e0ea00ef",
+    "question_text": "Which of the following carbonates has the highest thermal stability?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLi\n2\nCO\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCs\n2\nCO\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNa\n2\nCO\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nK\n2\nCO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Thermal stability of group 1 carbonates increases down the group due to larger cation size stabilizing\n              the lattice. CsA2COA3 is the most stable among Li, Na, K, and Cs carbonates.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6365ae47-c206-4861-acfa-f1775ee54176",
+    "question_text": "Which element in the third period has the highest third ionization enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMg",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSi",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Third ionization enthalpy peaks when removing an electron from a noble gas-like XA2+ ion. Mg\n              (after losing two electrons, becomes MgA2+ with 1s22s22p6) has the highest value.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "03050e85-523d-475d-97ed-b980fa89b6c8",
+    "question_text": "Which element in group 18 has the largest atomic radius?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRn",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHe",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNe",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAr",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Atomic radius increases down a group. Among He, Ne, Ar, and Rn (group 18), Rn (period 6) has the largest\n              radius.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "830b4b02-d705-4d1e-b15e-17697ac8d92b",
+    "question_text": "How many elements are present in the sixth period of the periodic table?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n18",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n32",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n14",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The sixth period (n=6) includes 6s, 4f, 5d, and 6p orbitals, accommodating 32\n              electrons, hence 32 elements (Cs to Rn).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "161a5724-c544-4ba3-b0f9-7d23cbfc2c23",
+    "question_text": "Which of the following has the highest second ionization enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMg",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNa",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Second ionization enthalpy is highest when removing an electron from a stable configuration.\n              Na (after losing one electron, becomes NaA+ with noble gas configuration) has the\n              highest value compared to Mg, Al, or Si.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Classification of Elements and Periodicity in Properties",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Classification of Elements and Periodicity in Properties / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "classification-of-elements-and-periodicity-in-properties"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

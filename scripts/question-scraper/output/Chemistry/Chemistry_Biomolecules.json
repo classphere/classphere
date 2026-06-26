@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "2947d3f5-4de4-4146-a3be-d6dc6cf8e17b",
+    "question_text": "Which amino acid is essential and contains a branched side chain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlycine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSerine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAlanine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nValine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Valine is an essential amino acid with a branched side chain (-CH(CH₃)₂), required in the diet.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cba216d2-cac8-497f-b2dd-439c718bc09f",
+    "question_text": "Which bond stabilizes the alpha-helix in proteins?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDisulfide bond",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrogen bond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIonic bond",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPeptide bond",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Hydrogen bonds between the -NH and -C=O groups of the peptide backbone stabilize the alpha-helix\n              structure.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8fa616c5-3024-44fb-9631-99060a186cdc",
+    "question_text": "Which nucleic acid delivers amino acids to the ribosome during translation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nmRNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nrRNA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\ntRNA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Transfer RNA (tRNA) carries specific amino acids to the ribosome for protein synthesis.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e5e8c9ae-c6b6-4edb-a8fe-dbc30907c7b5",
+    "question_text": "Which bond links the phosphate groups in a nucleotide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHydrogen bond",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhosphodiester bond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlycosidic bond",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPeptide bond",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Phosphodiester bonds connect the phosphate group of one nucleotide to the sugar of the next, forming the\n              nucleic acid backbone.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4e482ea5-7f10-4aad-babe-3605f1ad0b24",
+    "question_text": "What is the sugar component of a nucleotide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHexose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Nucleotides contain a pentose sugar, either ribose (in RNA) or deoxyribose (in DNA).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c31fad11-6c84-4ebb-ba54-4f23241bb33b",
+    "question_text": "Which monosaccharide has a molecular formula of \nC\n5\nH\n10\nO\n5\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRibose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGalactose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ribose, an aldopentose, has the formula CA5HA10OA5, consistent with its five-carbon structure.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "31853b25-8bab-472f-aca6-366c03db9db1",
+    "question_text": "Which biomolecule loses its biological activity when its tertiary structure is disrupted?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEnzyme",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarbohydrate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNucleic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Enzymes, which are proteins, lose activity when their tertiary structure is disrupted (denatured), as the\n              active site is altered.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0ff02b6e-ed9a-4778-843a-c8b5210cf5b5",
+    "question_text": "Which of the following is a globular protein?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKeratin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCollagen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMyosin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Globular proteins are spherical and water-soluble. Insulin is an example, unlike fibrous proteins like\n              keratin.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9ac90722-57ae-4592-9022-3eee0dfd6885",
+    "question_text": "Which disaccharide contains a β-glycosidic linkage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSucrose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLactose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMaltose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFructose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Lactose has a β-1,4-glycosidic linkage between galactose and glucose, making it a reducing sugar.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "df61b9ee-4e0a-4901-aba5-d7ce7fda492d",
+    "question_text": "What is the glycosidic linkage in lactose?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nα-1,4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nα-1,2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nβ-1,4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nβ-1,6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Lactose has a β-1,4-glycosidic linkage between the C1 of galactose and C4 of glucose, making it a\n              reducing sugar.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dc9f8781-bb8b-44ab-9f57-07f35b6c93df",
+    "question_text": "Which vitamin is a precursor to NAD+?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₂",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin B₅",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin B₃",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Vitamin B₃ (Niacin) is converted into nicotinamide, a component of NAD+, a coenzyme in redox reactions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "77e7b0a1-9e5d-4a8f-99a7-f5a3fb71f980",
+    "question_text": "Which amino acid contains an imidazole ring in its side chain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTyrosine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhenylalanine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHistidine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTryptophan",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Histidine has an imidazole ring in its side chain, which can act as a proton donor or acceptor.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "731c233d-2004-4238-bc9f-2e08dcc795c6",
+    "question_text": "Which protein structure is a sequence of amino acids?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSecondary",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTertiary",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nQuaternary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPrimary",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The primary structure of a protein is the linear sequence of amino acids linked by peptide bonds.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "120363b7-f433-45d0-96d4-3d076ef8575d",
+    "question_text": "Which vitamin aids in the synthesis of FAD?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₂",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin B₅",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin B₆",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vitamin B₂ (Riboflavin) is a precursor to flavin adenine dinucleotide (FAD), a coenzyme in redox\n              reactions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4791edb8-d309-48dd-9291-312cd35e5974",
+    "question_text": "Which amino acid has an acidic side chain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLysine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSerine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAspartic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlycine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Aspartic acid has an acidic side chain (-CH₂-COOH), capable of donating protons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0657521e-f550-4459-b964-87ed2698d884",
+    "question_text": "The primary structure of a protein is held together by which type of bond?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPeptide bond",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrogen bond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDisulfide bond",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIonic bond",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The primary structure of a protein is the sequence of amino acids linked by peptide bonds between\n              carboxyl and amino groups.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1708ff12-fcac-4410-bb89-9dbf525c9e43",
+    "question_text": "Which vitamin is a coenzyme in transamination reactions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₆",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin B₃",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin B₁₂",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Vitamin B₆ (Pyridoxine), as pyridoxal phosphate (PLP), is a coenzyme in transamination, aiding amino acid\n              metabolism.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "311756e4-0810-44aa-be7f-e513d3ddb862",
+    "question_text": "Which base pairs with adenine in RNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThymine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGuanine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytosine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUracil",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In RNA, adenine pairs with uracil via two hydrogen bonds, unlike DNA where it pairs with thymine.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "112cf663-1973-45cf-98de-9bef21d3dfdc",
+    "question_text": "Which monosaccharide gives a positive Fehling’s test?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGalactose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSucrose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDeoxyribose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFructose-6-phosphate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Galactose, an aldohexose with a free aldehyde group, reduces Cu²⁺ in Fehling’s solution, producing a red\n              precipitate.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "445b25fb-bd01-48e0-8bf8-8a7bfec2613b",
+    "question_text": "What is the functional group at C1 of glucose in its open chain form?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKetone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldehyde",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarboxyl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydroxyl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Glucose, an aldohexose, has an aldehyde group (-CHO) at C1 in its open chain form.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f0ed3c73-6b54-4b91-92b6-f4779e32ab27",
+    "question_text": "Which disaccharide is known as milk sugar?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSucrose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLactose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMaltose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFructose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Lactose, composed of glucose and galactose, is commonly referred to as milk sugar.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a7532a3b-24a5-4a15-aa18-2e445ec892b3",
+    "question_text": "Which vitamin is essential for the hydroxylation of proline in collagen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin D",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Vitamin C is required for the enzyme prolyl hydroxylase to hydroxylate proline, stabilizing collagen.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d4ee3ebc-973b-41e1-94f1-4e69aed18734",
+    "question_text": "Which bond type is disrupted by urea in protein denaturation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPeptide bond",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrogen bond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDisulfide bond",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIonic bond",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Urea disrupts hydrogen bonds in proteins, destabilizing secondary and tertiary structures.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7feaba98-eb76-44dc-bdf7-fc342eaea688",
+    "question_text": "What is the total number of hydroxyl groups in the open chain form of ribose?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ribose, a pentose, has four -OH groups in its open chain form (at C2, C3, C4, and C5), as C1 is part of\n              the aldehyde group.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "12290e14-2a60-4f55-852e-b8b0c2ff1273",
+    "question_text": "Which biomolecule serves as the genetic material in humans?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRNA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProtein",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCarbohydrate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "DNA (deoxyribonucleic acid) is the primary genetic material in humans, storing hereditary information.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "105024da-a9b1-4401-b128-67245cd60b91",
+    "question_text": "Which hormone increases blood glucose levels?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThyroxine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlucagon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCortisol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Glucagon raises blood glucose levels by promoting glycogenolysis and gluconeogenesis in the liver.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4c8c1045-1407-4b67-bad1-f6c8df89783d",
+    "question_text": "Which vitamin is critical for the synthesis of coenzyme A?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₅",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin B₆",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin B₁₂",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Vitamin B₅ (Pantothenic acid) is a key component of coenzyme A, essential for acyl transfer reactions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "981c9c2e-3a3e-4636-a0ff-5aa6291f1865",
+    "question_text": "Which monosaccharide is a pentose found in RNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDeoxyribose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRibose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ribose, a five-carbon sugar (pentose), is the sugar component of RNA nucleotides.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c9fd9674-fa81-4720-b952-e9aafc330c15",
+    "question_text": "Which monosaccharide yields a tetraacetate when treated with acetic anhydride?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRibose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGalactose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ribose, a pentose with four -OH groups, forms a tetraacetate when reacted with acetic anhydride.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "58e00c42-dbe8-452f-b727-e252c8ffa20e",
+    "question_text": "Which enzyme is a protein that speeds up hydrolysis of lactose?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLactase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSucrase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMaltase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInvertase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Lactase, a protein enzyme, catalyzes the hydrolysis of lactose into glucose and galactose.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "54d79998-2901-405a-86f7-7db99be31e7d",
+    "question_text": "Which vitamin deficiency leads to dermatitis as a symptom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₂",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin B₃",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin B₁₂",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Vitamin B₃ (Niacin) deficiency causes pellagra, which includes dermatitis among its symptoms.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "580d9ba1-eb92-4012-8703-643f8822384c",
+    "question_text": "Which biomolecule forms the structural framework of connective tissues?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCollagen",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHemoglobin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRNA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Collagen, a fibrous protein, provides strength and structure to connective tissues like tendons and\n              ligaments.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "69b15330-64d2-43a0-9e50-2b8946f6273c",
+    "question_text": "Which protein forms the structural framework of skin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHemoglobin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKeratin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMyosin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Keratin, a fibrous protein, provides strength and protection to skin, hair, and nails.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78292e27-38da-40bd-b54c-f747370eaf07",
+    "question_text": "Which vitamin is synthesized in the skin upon exposure to sunlight?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin D",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Vitamin D is synthesized in the skin from 7-dehydrocholesterol upon exposure to UV light.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9310bbef-7418-4757-8ae6-13abd7d9f027",
+    "question_text": "Which type of bond links nucleotides in a nucleic acid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhosphodiester bond",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPeptide bond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlycosidic bond",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydrogen bond",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Nucleotides in DNA and RNA are linked by phosphodiester bonds between the sugar and phosphate groups.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9ca659ff-dc06-4d4e-bef2-f73930ffd48d",
+    "question_text": "How many hydrogen bonds are formed between guanine and cytosine in DNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Guanine and cytosine form three hydrogen bonds in DNA, contributing to the stability of the double helix.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2d53ff37-a000-45ed-9b1b-62f5141668d3",
+    "question_text": "Which vitamin deficiency causes night blindness?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin D",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Vitamin A is essential for vision, and its deficiency leads to night blindness.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f87e50a6-4b9f-454e-ae73-567a885c9737",
+    "question_text": "Which of the following is a non-essential amino acid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLeucine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLysine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSerine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThreonine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Non-essential amino acids can be synthesized by the body. Serine is one such amino acid.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "068fb290-838c-471e-be39-34541be609cd",
+    "question_text": "How many carbon atoms are present in ribose?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ribose is a pentose sugar, meaning it has five carbon atoms in its structure.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "728ee803-61e5-4578-b47a-5fd9436435b7",
+    "question_text": "Which vitamin is involved in the synthesis of visual pigments?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₂",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin D",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Vitamin A (retinol) is essential for forming rhodopsin, a visual pigment in the retina.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5bdd72c-4c83-4127-a891-fb211d929a9d",
+    "question_text": "The linkage between amino acids in proteins is called?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlycosidic linkage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrogen bond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDisulfide linkage",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPeptide bond",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Amino acids in proteins are linked by peptide bonds formed between the carboxyl group of one amino acid\n              and the amino group of another.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d62c19ef-5caa-49e2-81aa-1f89b02fc0f6",
+    "question_text": "Which nucleic acid base is a purine with a double-ring structure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCytosine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThymine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUracil",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdenine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Adenine is a purine base with a double-ring structure (fused pyrimidine and imidazole rings), found in\n              both DNA and RNA.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ee8349c7-def9-41fb-b129-102633c24ffc",
+    "question_text": "What functional group is present in the open chain form of fructose?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKetone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarboxyl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydroxyl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fructose, a ketohexose, has a ketone group (-C=O) at C2 in its open chain form.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a2c50370-9bb3-43c7-a221-0ec5973fa5fd",
+    "question_text": "Which amino acid has an aromatic side chain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlycine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlanine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhenylalanine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProline",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phenylalanine contains an aromatic benzene ring in its side chain, distinguishing it from others.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3a402661-08a2-479e-8aaf-d6e8e12f733f",
+    "question_text": "Which biomolecule stores genetic information?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRNA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProtein",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCarbohydrate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "DNA (deoxyribonucleic acid) is the primary biomolecule responsible for storing genetic information in\n              cells.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "306bc6ea-58e1-4576-8cda-12d74b1a53a0",
+    "question_text": "Which vitamin is produced by gut bacteria?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin D",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Vitamin K is synthesized by gut bacteria and absorbed in the intestines, aiding in blood clotting.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e422d611-08e5-4f24-8359-18db9843bb04",
+    "question_text": "Which amino acid has a side chain with a positive charge at physiological pH?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAspartic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nArginine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlutamic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSerine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Arginine has a guanidinium group in its side chain, which is positively charged at pH ~7 due to\n              protonation.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ccb7d658-076e-4caf-949f-9293e98ac3f4",
+    "question_text": "What is the sugar moiety in RNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDeoxyribose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRibose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "RNA contains ribose, a five-carbon sugar, unlike DNA which has 2-deoxyribose.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "94a51b23-45e1-4ac9-a8e8-72e5a501c7a6",
+    "question_text": "Which of the following is an aldopentose?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRibose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGalactose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "An aldopentose is a five-carbon monosaccharide with an aldehyde group. Ribose fits this description.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9528df3a-5b1f-4324-89e7-9ee85368413e",
+    "question_text": "Which vitamin deficiency causes pellagra?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₂",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin B₃",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin B₆",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Vitamin B₃ (Niacin) deficiency leads to pellagra, characterized by dermatitis, diarrhea, and dementia.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "62d7fba6-54d2-452b-83c2-2f77b71fe374",
+    "question_text": "Which protein regulates blood sugar levels?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHemoglobin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCollagen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMyosin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Insulin, a protein hormone, lowers blood glucose by promoting its uptake into cells.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "46039bf7-7657-47ca-bdeb-e2ffd400b807",
+    "question_text": "Which vitamin is essential for calcium absorption?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin D",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Vitamin D enhances calcium absorption in the intestines, aiding bone health.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9cfea03f-161c-475a-bccf-d17194989924",
+    "question_text": "The cyclic structure of fructose is analogous to which compound?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPyran",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFuran",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCyclohexane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fructose forms a five-membered ring in its cyclic form, similar to furan, hence called fructofuranose.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7e5391fe-cb92-4ce8-9fbd-eb897469c708",
+    "question_text": "Which vitamin is a component of TPP (thiamine pyrophosphate)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₂",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin B₆",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin B₁₂",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vitamin B₁ (Thiamine) is a precursor to TPP, a coenzyme in decarboxylation reactions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b0009e1-186a-4d70-990d-e0209cb9a74e",
+    "question_text": "Which protein structure involves interactions between multiple polypeptide chains?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPrimary",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecondary",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTertiary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nQuaternary",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The quaternary structure involves interactions (e.g., hydrogen bonds, disulfide bonds) between multiple\n              polypeptide chains in a protein.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ec564c59-065a-40c9-99d1-b256a748d193",
+    "question_text": "Which vitamin deficiency causes cracks at the corners of the mouth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₂",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin B₆",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vitamin B₂ (Riboflavin) deficiency leads to cheilosis, characterized by cracks at the mouth corners.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9cd3bd36-af8b-45e7-a1af-2498e449ac34",
+    "question_text": "Which amino acid is the simplest in structure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlanine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nValine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLeucine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlycine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Glycine has the simplest structure with a hydrogen atom as its side chain (-H).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5d70bd50-0356-485d-996f-97399612c153",
+    "question_text": "Which base is a pyrimidine found in both DNA and RNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThymine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytosine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUracil",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdenine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cytosine is a pyrimidine base present in both DNA and RNA, pairing with guanine.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0f68b62-8dd0-43b9-8f70-0e9db58bbf80",
+    "question_text": "Which monosaccharide is produced alongside galactose during lactose hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRibose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMannose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Lactose hydrolysis yields glucose and galactose, catalyzed by lactase.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b12c492d-83f8-43ea-86dc-cd9d856e3e0c",
+    "question_text": "What is the product when fructose is reduced with hydrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMannitol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGalactose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSorbitol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reduction of fructose (a ketohexose) with hydrogen converts the ketone group to an alcohol, forming\n              mannitol, a sugar alcohol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bfc215d2-9edd-4efd-b13c-69988444ac10",
+    "question_text": "Which amino acid side chain can participate in hydrogen bonding?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlanine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThreonine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nValine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeucine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Threonine has a hydroxyl group (-OH) in its side chain (-CH(OH)-CH₃), enabling hydrogen bonding.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "12497ad8-861e-465e-95e6-54a00a7a772a",
+    "question_text": "Which nucleic acid carries the genetic code from DNA to ribosomes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\ntRNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nrRNA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nmRNA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Messenger RNA (mRNA) carries the genetic code from DNA to ribosomes during protein synthesis.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e47620c3-2cf4-4ac4-aed0-22e3bb7f9eb9",
+    "question_text": "Which vitamin deficiency leads to rickets?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin D",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Vitamin D deficiency causes rickets, a condition marked by poor bone mineralization in children.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0873b66-dec5-42c6-8cdf-163f929c398c",
+    "question_text": "Which nucleic acid is double-stranded in humans?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nmRNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\ntRNA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nrRNA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "DNA is double-stranded in humans, forming a double helix stabilized by hydrogen bonds between base pairs.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6262bdef-a720-4820-9422-22e43b958c75",
+    "question_text": "Which of the following is a water-soluble vitamin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin E",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vitamin B group vitamins are water-soluble and cannot be stored in the body, requiring regular dietary\n              intake.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "64373f74-2765-4fbe-99b2-38642b241cad",
+    "question_text": "Which base is present in DNA but not in RNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdenine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGuanine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThymine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUracil",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "DNA contains thymine, while RNA contains uracil instead of thymine, alongside adenine, guanine, and\n              cytosine.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a31314d-bac5-4075-8f00-5487e39290fe",
+    "question_text": "Which amino acid lacks a chiral carbon?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlanine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSerine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMethionine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlycine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Glycine lacks a chiral carbon because its side chain is a hydrogen atom, making Cα symmetrical.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c3c3ecab-e432-4dfa-96a2-ccf3a3e71ac2",
+    "question_text": "Which of the following is a fibrous protein?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHemoglobin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAlbumin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCollagen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fibrous proteins have elongated structures and are insoluble in water. Collagen, found in connective\n              tissues, is an example.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "045df270-1059-4cb6-bada-1bc1c8358f7a",
+    "question_text": "Which vitamin deficiency causes beriberi?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin D",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vitamin B₁ (Thiamine) deficiency leads to beriberi, affecting the nervous and cardiovascular systems.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78174d00-562d-46d0-9a24-69bafe121479",
+    "question_text": "What is the product of lactose hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucose and fructose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlucose and galactose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTwo glucose units",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFructose and galactose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Lactose, a disaccharide, hydrolyzes into glucose and galactose, catalyzed by the enzyme lactase.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6c9ec8e2-387e-4dc2-a9a5-34454c150a40",
+    "question_text": "Which amino acid contains an indole ring in its side chain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTyrosine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhenylalanine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHistidine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTryptophan",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Tryptophan has an indole ring (a benzene ring fused to a pyrrole ring) in its side chain, making it\n              aromatic.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9c3b3d86-2f1b-4641-96fd-afe5b00de305",
+    "question_text": "Which vitamin acts as a coenzyme in carboxylation reactions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin H",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin D",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Vitamin H (Biotin) functions as a coenzyme in carboxylation reactions, aiding in the transfer of carboxyl\n              groups.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "70306bbf-b3e7-4b1b-b679-36a8d5fd660b",
+    "question_text": "Which biomolecule acts as a coenzyme in metabolic reactions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarbohydrate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProtein",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNucleic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Vitamins, such as B vitamins, often function as coenzymes or their precursors in metabolic pathways.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa92a88a-d3dc-47be-844a-088a09c01b07",
+    "question_text": "Which monosaccharide is a pentose with a missing -OH group at C2?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRibose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDeoxyribose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Deoxyribose, found in DNA, is a pentose lacking an -OH group at C2, unlike ribose.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d3361b39-d19c-4fb5-ba67-1253cea9a729",
+    "question_text": "The glycosidic linkage in maltose is between which carbon atoms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC1 and C4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC1 and C2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC2 and C4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC1 and C6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Maltose consists of two glucose units linked by a glycosidic bond from C1 of one glucose to C4 of the\n              other.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d494bc8-8d9e-4e6b-8fb7-a0a5693c10f4",
+    "question_text": "Which disaccharide is hydrolyzed to produce fructose?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSucrose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMaltose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLactose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGalactose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Sucrose, upon hydrolysis, yields glucose and fructose, catalyzed by invertase or acid.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f71cf431-d984-4e00-820c-ed4b4a04a801",
+    "question_text": "Which of the following is a component of nucleic acids?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdenine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nValine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFatty acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Nucleic acids (DNA and RNA) are composed of nucleotides, each containing a nitrogenous base like adenine.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ff93e97e-9217-45bd-a5cc-44d700c25da6",
+    "question_text": "Which vitamin prevents oxidative damage to cell membranes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin E",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₆",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin B₁₂",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Vitamin E (tocopherol), a fat-soluble antioxidant, protects cell membranes by neutralizing free radicals.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "22d17e97-0e99-48a8-80f9-53601fa8bd5e",
+    "question_text": "Which biomolecule acts as a catalyst in biological reactions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEnzyme",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarbohydrate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNucleic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Enzymes, which are proteins, act as biological catalysts, speeding up reactions without being consumed.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "76ab6112-5afa-47ea-89df-8d34c0628311",
+    "question_text": "Which base is found in RNA but not in DNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThymine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUracil",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdenine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGuanine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Uracil is present in RNA, replacing thymine, which is exclusive to DNA.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0b23d768-b679-48c1-ad76-181ab25cf026",
+    "question_text": "Which protein is involved in oxygen transport?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCollagen",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKeratin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHemoglobin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Hemoglobin, a globular protein, transports oxygen in the blood by binding it to its heme groups.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "21ee9f2a-77f6-4264-b172-0ad439429102",
+    "question_text": "Which nucleic acid base forms a triple hydrogen bond with its complement?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGuanine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAdenine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThymine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUracil",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Guanine pairs with cytosine in DNA via three hydrogen bonds, enhancing stability.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "91b44c43-41d6-42af-9488-bd001c3a1329",
+    "question_text": "Which monosaccharide is a hexose with a ketone group?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGalactose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRibose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fructose is a ketohexose, a six-carbon sugar with a ketone group at C2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "509a24fb-10d7-453d-9394-702e20664062",
+    "question_text": "Which amino acid has a side chain that can act as a buffer in physiological pH?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLysine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSerine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMethionine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHistidine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Histidine’s imidazole side chain has a pKa near physiological pH (~6.0), allowing it to act as a buffer.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5d34642e-b54b-4b51-bf0c-ec4b861afd44",
+    "question_text": "Which vitamin deficiency causes inflammation of the tongue?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₂",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₆",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin D",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Vitamin B₂ (Riboflavin) deficiency leads to glossitis (tongue inflammation) and other symptoms like\n              cheilosis.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8145d5d0-cd6a-4f86-aaab-a2af1babd877",
+    "question_text": "Which vitamin is a component of coenzyme A?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin B₅",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin B₁",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin B₆",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Vitamin B₅ (Pantothenic acid) is a key component of coenzyme A, involved in acyl group transfer\n              reactions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e76080d7-d783-4add-81a9-b9b06fe0034a",
+    "question_text": "How many oxygen atoms are present in a sucrose molecule?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n11",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Sucrose (CA12HA22OA11) has 11 oxygen atoms, as indicated by its molecular formula.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f9894359-a7fc-4232-9d8a-61c3c7184185",
+    "question_text": "Which monosaccharide is a reducing sugar?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSucrose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFructose-1-phosphate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGalactose-6-phosphate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Glucose is a reducing sugar because it has a free aldehyde group in its open chain form that can reduce\n              oxidizing agents like Tollens’ or Fehling’s reagents.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9d4dd89d-a183-4e44-84a8-ef2746167e3e",
+    "question_text": "Which hormone is responsible for regulating blood glucose levels by decreasing it?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucagon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEpinephrine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThyroxine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Insulin lowers blood glucose levels by facilitating glucose uptake into cells.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dc13f4bd-fab6-4130-9b21-529ce66daee7",
+    "question_text": "Which protein facilitates muscle contraction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMyosin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHemoglobin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCollagen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Myosin, a fibrous protein, interacts with actin to enable muscle contraction in muscle fibers.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4655ae1b-8053-4e5d-b3cb-fc63ae1c0d35",
+    "question_text": "Which amino acid contributes to the yellow color of some proteins?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlycine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTyrosine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCysteine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLysine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Tyrosine, with its aromatic phenol side chain, can contribute to protein coloration due to its\n              light-absorbing properties.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6c334d23-890b-4ba1-89e8-8a7cb7995ec3",
+    "question_text": "Which nucleic acid forms a cloverleaf structure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nmRNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nrRNA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\ntRNA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Transfer RNA (tRNA) has a cloverleaf secondary structure due to intramolecular hydrogen bonding.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "446e15c1-8d2d-4474-b4f4-3a066b82b878",
+    "question_text": "Which nucleic acid base is a pyrimidine with a methyl group?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThymine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUracil",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytosine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdenine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Thymine, a pyrimidine base in DNA, has a methyl group (-CH₃) attached to its ring structure.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "de1344fa-4641-46ec-8c79-1825dd66f242",
+    "question_text": "What type of structure is disrupted during protein denaturation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPrimary",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nQuaternary",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTertiary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPeptide linkage",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Denaturation disrupts the secondary and tertiary structures of proteins due to the breaking of hydrogen\n              bonds and other interactions, while the primary structure remains intact.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6ee659fa-eed1-4942-ab75-1876cea7b162",
+    "question_text": "How many hydrogen bonds are formed between adenine and thymine in DNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Adenine and thymine form two hydrogen bonds in DNA, contributing to base pairing stability.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e75db74-6899-4840-a99d-960b2f917e2b",
+    "question_text": "Which enzyme hydrolyzes sucrose into glucose and fructose?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLactase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInvertase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMaltase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAmylase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Invertase (also called sucrase) catalyzes the hydrolysis of sucrose into glucose and fructose.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ea777be7-059b-45f1-8a3f-d9ab6bb1beee",
+    "question_text": "Which monosaccharide is found in RNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRibose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDeoxyribose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFructose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ribose, a five-carbon sugar, is the monosaccharide component of RNA nucleotides.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1a645c5c-5f48-4aa9-8382-41c7882440bb",
+    "question_text": "Which vitamin enhances the absorption of iron in the intestine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVitamin C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVitamin D",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVitamin B₆",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVitamin E",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Vitamin C (ascorbic acid) reduces Fe³⁺ to Fe²⁺, improving iron absorption in the gut.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1cc82d7d-c23c-4e8f-85be-93ed4e5a6fef",
+    "question_text": "Which monosaccharide forms a pentaacetate when reacted with acetic anhydride?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlucose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRibose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSucrose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Glucose, with five -OH groups in its open chain form, reacts with acetic anhydride to form a\n              pentaacetate, confirming its structure.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6afeb6c5-d5ea-4e19-b5af-6d4ccce9b36c",
+    "question_text": "Which of the following is a reducing disaccharide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSucrose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLactose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFructose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMaltose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Maltose is a reducing disaccharide because it has a free anomeric carbon on one glucose unit.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "topic": "Biomolecules",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Biomolecules / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "biomolecules"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

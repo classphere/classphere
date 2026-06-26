@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "29fbf172-b916-4c7d-8e50-4bfd1031dc48",
+    "question_text": "What is the change in oxidation number of sulfur in the reaction \nS\n+\n2\nH\n2\nSO\n4\n⟶\n3\nSO\n2\n+\n2\nH\n2\nO\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "S (0) becomes +4 in SOA2. Change = +4 - 0 = +4.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5b4bcdae-9b67-4d85-b78c-6031bc603cd0",
+    "question_text": "In the reaction \n2\nCu\n2\nO\n+\nCu\n2\nS\n⟶\n6\nCu\n+\nSO\n2\n, which element is reduced?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSulfur",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxygen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCopper",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of these",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cu (+1 in CuA2O and CuA2S) decreases to 0 in Cu, indicating reduction.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3715042b-50ea-425f-8d96-743a0160dab2",
+    "question_text": "Which reaction involves a redox process where the reducing agent is a metal hydride?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFe\n+\nS\n⟶\nFeS",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nNaH\n+\nO\n2\n⟶\nNa\n2\nO\n2\n+\nH\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In 2NaH+OA2⟶NaA2OA2+HA2, NaH (H: -1 to 0 in HA2) is oxidized,\n              reducing OA2 (0 to -1).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5e6c842a-4cc4-4ace-83f9-b77ca172d7fe",
+    "question_text": "What is the oxidation number of carbon in \nC\n2\nH\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Let C = x. H = +1. Equation: 2x+2(+1)=0, 2x+2=0, x=−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "98a039ec-c500-41e0-881b-1362d5d11710",
+    "question_text": "Which of the following is a redox reaction involving a metal?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNaCl\n+\nAgNO\n3\n⟶\nAgCl\n+\nNaNO\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCa\n(\nOH\n)\n2\n+\nCO\n2\n⟶\nCaCO\n3\n+\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNH\n3\n+\nHCl\n⟶\nNH\n4\nCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4\nLi\n+\nO\n2\n⟶\n2\nLi\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In 4Li+OA2⟶2LiA2O, Li (0) is oxidized to +1, and O (0) is reduced to -2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dac24cc6-9cf2-442e-8c92-a935ebdea718",
+    "question_text": "Which of the following reactions does not involve a change in oxidation state?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nH\n2\n+\nO\n2\n⟶\n2\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCu\n+\n2\nAgNO\n3\n⟶\nCu\n(\nNO\n3\n)\n2\n+\n2\nAg",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKOH\n+\nHNO\n3\n⟶\nKNO\n3\n+\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nFeCl\n2\n+\nCl\n2\n⟶\n2\nFeCl\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In KOH+HNOA3⟶KNOA3+HA2O, all elements retain their oxidation states (K: +1, O: -2, H:\n              +1, N: +5).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "416eb455-6379-434d-aee6-53cffb549827",
+    "question_text": "Which reaction represents a displacement redox reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\nH\n2\nO\n⟶\n2\nH\n2\n+\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nZn\n+\nCuSO\n4\n⟶\nZnSO\n4\n+\nCu",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In Zn+CuSOA4⟶ZnSOA4+Cu, Zn displaces Cu, with Zn oxidizing (0 to +2) and Cu reducing\n              (+2\n              to 0).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7419bfa-a27d-4110-8a3e-49b279e0ef7a",
+    "question_text": "Which reaction involves a redox process where the oxidizing agent contains a halogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nO\n2\n⟶\nNa\n2\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS\n+\nO\n2\n⟶\nSO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nFe\n+\n3\nI\n2\n⟶\n2\nFeI\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In 2Fe+3IA2⟶2FeIA3, IA2 (I: 0 to -1) is reduced, oxidizing Fe (0 to +3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "98a83805-8f67-467a-9e3f-39db8e758afa",
+    "question_text": "What is the oxidation number of vanadium in \nVOSO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Let V = x. O = -2, SOA4A2− = -2. In VO: x+(−2)=+2 (cation charge),\n              x=+4. Total: +4+(−2)=0.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b607357-1234-4803-91a0-936b6f8ee85e",
+    "question_text": "What is the change in oxidation number of nitrogen in the reaction \nN\n2\n⟶\n2\nNH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "N (0 in NA2) becomes -3 in NHA3. Change = -3 - 0 = -3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d36c4424-6aa9-4843-8bdc-dae111abc55a",
+    "question_text": "What is the oxidation number of phosphorus in \nH\n3\nPO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Let P = x. H = +1, O = -2. Equation: 3(+1)+x+4(−2)=0, 3+x−8=0, x=+5.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6e980afe-61d8-4ace-a46c-51db26610634",
+    "question_text": "In \n2\nNa\n2\nS\n2\nO\n3\n+\nI\n2\n⟶\nNa\n2\nS\n4\nO\n6\n+\n2\nNaI\n, which element undergoes oxidation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIodine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSodium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOxygen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSulfur",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "S (+2 avg. in SA2OA3A2−) becomes +2.5 avg. in SA4OA6A2−, losing electrons; I (0 to -1)\n              is reduced.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "31b80bd7-12a8-48d2-ae44-f492e87918d6",
+    "question_text": "In the reaction \n3\nCuO\n+\n2\nNH\n3\n⟶\n3\nCu\n+\nN\n2\n+\n3\nH\n2\nO\n, how many electrons are gained per copper atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cu (+2 in CuO) to 0 in Cu: change = 0 - (+2) = -2, meaning 2 electrons gained per\n              Cu atom.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ab24d927-cfae-476d-a91c-a4d382bfbbff",
+    "question_text": "In \n2\nH\n3\nPO\n3\n⟶\nH\n3\nPO\n4\n+\nPH\n3\n, how many electrons are transferred per mole of \nH\n3\nPO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "P (+3 in HA3POA3) to +5 in HA3POA4 and -3 in PHA3. 1 P loses 2 e⁻, 1 P gains\n              6 e⁻; total = 4 e⁻ per 2 HA3POA3, so 2 per mole.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ca515b0a-cb7f-4368-bb64-658fd2fdca67",
+    "question_text": "Which of the following is a redox reaction involving a displacement process?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nAl\n+\n3\nNiSO\n4\n⟶\nAl\n2\n(\nSO\n4\n)\n3\n+\n3\nNi",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNaCl\n+\nAgNO\n3\n⟶\nAgCl\n+\nNaNO\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nNaOH\n+\nH\n2\nSO\n4\n⟶\nNa\n2\nSO\n4\n+\n2\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCaCO\n3\n⟶\nCaO\n+\nCO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In 2Al+3NiSOA4⟶AlA2(SOA4)A3+3Ni, Al (0 to +3) is oxidized, and Ni (+2 to 0) is reduced,\n              with Al displacing Ni.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c8f0b57c-e73f-447b-b5ed-d15f695974b1",
+    "question_text": "In \n2\nH\n2\nS\n+\nSO\n2\n⟶\n3\nS\n+\n2\nH\n2\nO\n, what is the total number of electrons transferred per mole of \nSO\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "S (+4 in SOA2) to 0 in S: 1 S gains 4 electrons. 2HA2S (S: -2 to 0): 2 S\n              lose 4 electrons total. Per SOA2 = 4.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9697520f-9eb7-4cdd-8ed8-7892170b0361",
+    "question_text": "In the reaction \n2\nAg\n2\nO\n⟶\n4\nAg\n+\nO\n2\n, which species is reduced?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAg",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAg\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of these",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reduction involves electron gain. Ag (+1 in AgA2O) becomes 0 in Ag, gaining\n              electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "905c5622-df81-437b-a803-d7fe16a7bba5",
+    "question_text": "In \n2\nCrO\n3\n+\n3\nH\n2\nO\n2\n+\n2\nKOH\n⟶\n2\nKCrO\n4\n+\n4\nH\n2\nO\n, how many electrons are transferred per mole of \nCrO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cr (+6 in CrOA3) remains +6 in CrOA4A2−; O (-1 in HA2OA2) to -2: 3 O gain 6\n              electrons total. No redox for Cr; focus on H₂O₂, but per CrOA3 context = 0 for Cr change.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "99e38afb-0953-497a-bd4a-da53e7554890",
+    "question_text": "What is the oxidation number of sulfur in \nSO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Let S = x. O = -2. Equation: x+3(−2)=0, x−6=0, x=+6.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1a7ced06-8b0d-433b-9b92-0a988f990ccf",
+    "question_text": "Which reaction is an example of a displacement redox reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\n2\nH\n2\nO\n⟶\n2\nNaOH\n+\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\nAl\n+\n3\nNiSO\n4\n⟶\nAl\n2\n(\nSO\n4\n)\n3\n+\n3\nNi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCaCO\n3\n⟶\nCaO\n+\nCO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In 2Al+3NiSOA4⟶AlA2(SOA4)A3+3Ni, Al (0 to +3) is oxidized, and Ni (+2 to 0) is reduced,\n              with Al displacing Ni.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ab5bb628-9fce-44c5-9fcd-6c6f5200d5b0",
+    "question_text": "What is the oxidation number of chlorine in \nKClO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+7",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Let Cl = x. K = +1, O = -2. Equation: +1+x+3(−2)=0, 1+x−6=0, x=+5.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04c7d57e-b12a-4cc9-ac65-1d9af4f14060",
+    "question_text": "Which reaction is an example of a combination redox reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCaO\n+\nH\n2\nO\n⟶\nCa\n(\nOH\n)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS\n+\nO\n2\n⟶\nSO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nNaCl\n⟶\n2\nNa\n+\nCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNaOH\n+\nHCl\n⟶\nNaCl\n+\nH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In S+OA2⟶SOA2, S (0 to +4) is oxidized, and O₂ (0 to -2) is reduced, combining into one\n              product.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f84bdc3-5905-4e60-8ca8-929da2803e24",
+    "question_text": "What is the oxidation number of oxygen in \nH\n2\nO\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In peroxides, O has an oxidation number of -1. For HA2OA2: 2(+1)+2x=0, 2x=−2,\n              x=−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b4fc138a-8a61-4ad6-8ab7-c56cf0e9f1a0",
+    "question_text": "What is the oxidation number of chlorine in \nClO\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Let Cl = x. O = -2. Equation: x+2(−2)=0, x−4=0, x=+4.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "047546d4-9bb9-4fde-aca2-f20c2ad83e98",
+    "question_text": "What is the oxidation number of phosphorus in \nP\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In its elemental form, PA4, phosphorus has an oxidation number of 0.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d17486c1-41d8-4156-83f6-37ab0f62d7b1",
+    "question_text": "In \n2\nKMnO\n4\n+\n16\nHCl\n⟶\n2\nMnCl\n2\n+\n5\nCl\n2\n+\n2\nKCl\n+\n8\nH\n2\nO\n, which species contains the element reduced?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMnCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKMnO\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mn (+7 in KMnOA4) becomes +2 in MnClA2, gaining electrons; it’s the reduced species.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "18e7620c-3b5e-4920-87be-d102aacb1aa8",
+    "question_text": "In \n2\nCr\n(\nOH\n)\n3\n+\n3\nH\n2\nO\n2\n+\n4\nNaOH\n⟶\n2\nNa\n2\nCrO\n4\n+\n8\nH\n2\nO\n, how many electrons are lost per chromium atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Cr (+3 in Cr(OH)A3) to +6 in CrOA4A2−: change = +6 - (+3) = +3; each Cr loses 3\n              electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f8ffcf4f-15c7-40dd-8d59-29108495c67e",
+    "question_text": "In the reaction \n2\nAgNO\n3\n+\nH\n2\nS\n⟶\nAg\n2\nS\n+\n2\nHNO\n3\n, which species is oxidized?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nS",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAgNO\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAg\n2\nS",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHNO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Oxidation involves electron loss. S (-2 in HA2S) becomes -2 in AgA2S, but Ag (+1 to\n              0) is reduced; S is oxidized contextually.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ae0556b5-531a-4416-a9c7-f97460fcaae6",
+    "question_text": "What is the oxidation number of bromine in \nBrF\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+7",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Let Br = x. F = -1. Equation: x+3(−1)=0, x−3=0, x=+3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c47039d-1f15-4375-bca8-73e1d0c0af87",
+    "question_text": "In \nPbS\n+\n4\nH\n2\nO\n2\n⟶\nPbSO\n4\n+\n4\nH\n2\nO\n, which species is the reducing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPbS",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPbSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "PbS (S: -2 to +6 in PbSOA4) loses electrons, reducing HA2OA2 (O: -1 to -2).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "94169f4d-bc3c-425d-8f6e-3bdd0977b6c2",
+    "question_text": "In the reaction \n2\nKBr\n+\nCl\n2\n⟶\n2\nKCl\n+\nBr\n2\n, what is the oxidizing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKBr",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBr\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKCl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ClA2 (0) is reduced to -1 in KCl, oxidizing Br (-1 to 0).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "addd450b-4e00-4555-ad76-a3d050c5c705",
+    "question_text": "In the reaction \n2\nKI\n+\nCl\n2\n⟶\n2\nKCl\n+\nI\n2\n, what is the oxidizing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKI",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nI\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCl\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ClA2 (0) gains electrons to become ClA− (-1), oxidizing IA− to IA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "693f8e7c-3dc6-44a9-bfc1-61660a9c224e",
+    "question_text": "What is the oxidation number of selenium in \nH\n2\nSeO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Let Se = x. H = +1, O = -2. Equation: 2(+1)+x+3(−2)=0, 2+x−6=0, x=+4.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5e9bb91c-0fc4-4acb-9687-7be124e457da",
+    "question_text": "Which compound contains an element with a fractional oxidation number?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFeSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFe\n2\nO\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFe\n3\nO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFeCl\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In FeA3OA4 (FeO·Fe₂O₃), Fe has +2 and +3 states, averaging to +8/3: 3x+4(−2)=0, 3x−8=0, x=+8/3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "514003a5-d68d-47da-a51a-aa709e3089fe",
+    "question_text": "What is the oxidation number of nitrogen in \nNH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Let N = x. H = +1. Equation: x+3(+1)=0, x+3=0, x=−3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a7323362-a741-4a1f-90e7-00bd5867b2e7",
+    "question_text": "In \n2\nNa\n2\nS\n2\nO\n3\n+\nO\n2\n⟶\n2\nNa\n2\nSO\n4\n, what is the total number of electrons transferred per mole of \nNa\n2\nS\n2\nO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "S (+2 avg. in SA2OA3A2−) to +6 in SOA4A2−: 4 S lose 4 × (6 - 2) = 16 electrons total.\n              Per NaA2SA2OA3 = 16/2 = 8.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ddb8d108-e750-4fd0-9403-b02e30410be8",
+    "question_text": "In the reaction \n2\nFeCl\n2\n+\nCl\n2\n⟶\n2\nFeCl\n3\n, which element is oxidized?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrogen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIron",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of these",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fe (+2 in FeClA2) becomes +3 in FeClA3, losing electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "24fcd85d-d06f-4dfa-a08d-7d115d302c47",
+    "question_text": "What is the oxidation number of sulfur in \nNa\n2\nS\n2\nO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Let S = x. Na = +1, O = -2. Equation: 2(+1)+2x+3(−2)=0, 2+2x−6=0, 2x=4, x=+2 (average).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f2400b38-8895-4fc0-9b96-f0662df73c41",
+    "question_text": "Which of the following is a displacement reaction involving redox?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFe\n+\n2\nAgNO\n3\n⟶\nFe\n(\nNO\n3\n)\n2\n+\n2\nAg",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\nNaCl\n+\nF\n2\n⟶\n2\nNaF\n+\nCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCaO\n+\nSiO\n2\n⟶\nCaSiO\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNH\n3\n+\nH\n2\nO\n⟶\nNH\n4\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In Fe+2AgNOA3⟶Fe(NOA3)A2+2Ag, Fe (0 to +2) is oxidized, and Ag (+1 to 0) is reduced,\n              with Fe displacing Ag.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8679c4de-56e0-4985-8a32-5dcb9a88a88b",
+    "question_text": "In \n2\nNa\n2\nS\n+\n3\nO\n2\n⟶\n2\nNa\n2\nO\n+\n2\nSO\n2\n, what is the total number of electrons transferred per mole of \nNa\n2\nS\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "S (-2 in NaA2S) to +4 in SOA2: 2 S lose 2 × (4 - (-2)) = 12 electrons total. Per NaA2S = 12/2 = 6.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1e418bc9-0da9-4a29-8944-383884889d11",
+    "question_text": "Which reaction involves a redox process where the oxidizing agent is a compound with nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFe\n+\nS\n⟶\nFeS",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3\nCu\n+\n8\nHNO\n3\n⟶\n3\nCu\n(\nNO\n3\n)\n2\n+\n2\nNO\n+\n4\nH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In 3Cu+8HNOA3⟶3Cu(NOA3)A2+2NO+4HA2O, HNOA3 (N: +5 to +2) is reduced,\n              oxidizing Cu (0 to +2).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9b45a57e-adb6-4166-91ce-6f5aa299a1b3",
+    "question_text": "Which reaction is a combination redox reaction involving a non-metal?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nN\n2\n+\n3\nH\n2\n⟶\n2\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\nMg\n+\nCO\n2\n⟶\n2\nMgO\n+\nC",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNaCl\n+\nKNO\n3\n⟶\nNaNO\n3\n+\nKCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCaO\n+\nH\n2\nO\n⟶\nCa\n(\nOH\n)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In NA2+3HA2⟶2NHA3, N (0 to -3) is reduced, and H (0 to +1) is oxidized, forming one\n              compound.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "02b42a3f-0e26-4ec3-ac4d-bd87d0aa9597",
+    "question_text": "What is the oxidation number of nitrogen in \nN\n2\nO\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Let N = x. O = -2. Equation: 2x+(−2)=0, 2x=2, x=+1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8b7ea4b9-5182-4f2b-8d26-37d4f28037d1",
+    "question_text": "What is the oxidation number of carbon in \nCH\n3\nCl\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Let C = x. H = +1, Cl = -1. Equation: x+3(+1)+(−1)=0, x+3−1=0, x=−2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eeba447b-815b-4555-a617-d7932c3a9af3",
+    "question_text": "Which reaction involves a redox process where the reducing agent contains a halogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nO\n2\n⟶\nNa\n2\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS\n+\nO\n2\n⟶\nSO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nNaI\n+\nMnO\n2\n+\n2\nH\n2\nSO\n4\n⟶\nI\n2\n+\nMnSO\n4\n+\n2\nH\n2\nO\n+\nNa\n2\nSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In 2NaI+MnOA2+2HA2SOA4⟶IA2+MnSOA4+2HA2O+NaA2SOA4, NaI (I: -1 to 0) is\n              oxidized, reducing Mn (+4 to +2).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "930b3bce-f2cb-4dc7-8062-4e744dbf15c7",
+    "question_text": "Which of the following reactions involves the loss of hydrogen, indicating an oxidation process?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nOH\n+\nO\n⟶\nHCHO\n+\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\nH\n2\n+\nO\n2\n⟶\n2\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFe\n+\n2\nHCl\n⟶\nFeCl\n2\n+\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNa\n+\nH\n2\nO\n⟶\nNaOH\n+\nH\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Oxidation can involve hydrogen loss. In CHA3OH+O⟶HCHO+HA2O, C loses hydrogen,\n              increasing its oxidation state from -2 to 0.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72f8482e-b808-4874-979f-321170066bd1",
+    "question_text": "Which element shows a fractional oxidation state in \nFeS\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIron",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxygen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHydrogen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSulfur",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In FeSA2 (pyrite), Fe = +2, and S₂ acts as a peroxide-like unit with S = -1 (average). Sulfur’s\n              state is fractional in context.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c485946-83aa-45ab-9cd2-bc20456520a7",
+    "question_text": "In the reaction \nAs\n2\nS\n3\n+\n7\nH\n2\nO\n2\n+\n2\nH\n2\nO\n⟶\n2\nH\n3\nAsO\n4\n+\n3\nH\n2\nSO\n4\n, which element’s oxidation number increases the most?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSulfur",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nArsenic",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOxygen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydrogen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "As (+3 in AsA2SA3) to +5 in HA3AsOA4: change = +2. S (-2 in AsA2SA3) to +6 in\n              HA2SOA4: change = +8. S increases more.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "346e9e40-1b3c-4d32-b40e-288612c8f86a",
+    "question_text": "Which of the following is not a redox reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\n2\nH\n2\nO\n⟶\n2\nNaOH\n+\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFe\n+\nCuSO\n4\n⟶\nFeSO\n4\n+\nCu",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBaCl\n2\n+\nH\n2\nSO\n4\n⟶\nBaSO\n4\n+\n2\nHCl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In BaClA2+HA2SOA4⟶BaSOA4+2HCl, no element changes oxidation state; it’s a double\n              displacement reaction.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7bd6b7fe-a6d9-4c7e-b484-90313fac9cd5",
+    "question_text": "Which of the following reactions involves both oxidation and reduction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4\nFe\n+\n3\nO\n2\n⟶\n2\nFe\n2\nO\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNaOH\n+\nHCl\n⟶\nNaCl\n+\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCaCO\n3\n⟶\nCaO\n+\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAgNO\n3\n+\nNaCl\n⟶\nAgCl\n+\nNaNO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In 4Fe+3OA2⟶2FeA2OA3, Fe (0 to +3) is oxidized, and O₂ (0 to -2) is reduced, making it a\n              redox reaction.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "10a8fb00-6a85-450f-b39a-503d45a19800",
+    "question_text": "What is the oxidation number of bismuth in \nBi\n2\nO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Let Bi = x. O = -2. Equation: 2x+3(−2)=0, 2x−6=0, x=+3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0f5aa65c-2b98-4b9b-8757-4e864ee1fdb4",
+    "question_text": "Which reaction involves a redox process where the reducing agent is a compound containing sulfur?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFe\n+\nCuSO\n4\n⟶\nFeSO\n4\n+\nCu",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSO\n2\n+\n2\nH\n2\n⟶\nS\n+\n2\nH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In SOA2+2HA2⟶S+2HA2O, SOA2 (S: +4) is reduced to S (0), oxidizing\n              HA2 (0 to +1).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f0d57fad-1c6f-4e0b-856c-e31e0713269d",
+    "question_text": "In the reaction \nSn\n+\n2\nCuSO\n4\n⟶\nSnSO\n4\n+\nCu\n2\nSO\n4\n, what is the reducing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCuSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSn",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSnSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCu\n2\nSO\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The reducing agent loses electrons. Sn (0) oxidizes to SnA2+ (+2), reducing CuA2+\n              to CuA+.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "291fa483-b25b-4318-821a-f3af3fbb8d9d",
+    "question_text": "Which element is oxidized in the reaction \n2\nMnO\n2\n+\n4\nKOH\n+\nO\n2\n⟶\n2\nK\n2\nMnO\n4\n+\n2\nH\n2\nO\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxygen",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPotassium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nManganese",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydrogen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mn (+4 in MnOA2) increases to +6 in KA2MnOA4, losing electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3fd95eac-3095-4e94-9953-c44729d2a457",
+    "question_text": "In the reaction \n2\nNaI\n+\nCl\n2\n⟶\n2\nNaCl\n+\nI\n2\n, what is the reducing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nI\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNaI",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "NaI (I: -1 to 0 in IA2) loses electrons, reducing ClA2 (0 to -1).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79c95b93-bf0c-4382-aa55-2174ed4a17ff",
+    "question_text": "What is the change in oxidation number of nitrogen in the reaction \nN\n2\n⟶\n2\nNH\n3\n when balanced with H₂?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "N (0 in NA2) becomes -3 in NHA3. Change = -3 - 0 = -3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2eeeb9d8-8a73-450a-9136-d719266b0bbb",
+    "question_text": "In the reaction \n3\nCu\n+\n8\nHNO\n3\n⟶\n3\nCu\n(\nNO\n3\n)\n2\n+\n2\nNO\n+\n4\nH\n2\nO\n, what is the oxidizing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCu",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCu\n(\nNO\n3\n)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHNO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "HNOA3 (N: +5 to +2 in NO) accepts electrons, oxidizing Cu (0 to +2).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e792dac0-6691-4d03-9fe7-bc6c9794d0fa",
+    "question_text": "For the reaction \nSb\n2\nS\n3\n+\n6\nHCl\n⟶\n2\nSbCl\n3\n+\n3\nH\n2\nS\n, which species undergoes reduction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNone of these",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSb\n2\nS\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSbCl\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reduction is electron gain. Sb (+3 in SbA2SA3) remains +3 in SbClA3, but S (-2 to -2)\n              doesn’t change; no reduction occurs here—it’s not redox.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "862d8ca6-7979-4db2-bc57-c31d7791c606",
+    "question_text": "Which of the following is a redox reaction involving a non-metal?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCaO\n+\nCO\n2\n⟶\nCaCO\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHCl\n+\nNH\n3\n⟶\nNH\n4\nCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nP\n4\n+\n10\nCl\n2\n⟶\n4\nPCl\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In PA4+10ClA2⟶4PClA5, P (0) is oxidized to +5, and Cl (0) is reduced to -1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "81c4a210-66c1-40f4-8638-fba4e35079cc",
+    "question_text": "Which reaction involves a redox process where the reducing agent contains phosphorus?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nP\n4\n+\n6\nCl\n2\n⟶\n4\nPCl\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFe\n+\nS\n⟶\nFeS",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In PA4+6ClA2⟶4PClA3, PA4 (P: 0 to +3) is oxidized, reducing ClA2 (0\n              to -1).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23fc1270-6f9d-49d4-a78b-270f2cde93f4",
+    "question_text": "What is the oxidation number of iodine in \nI\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In its elemental form, IA2, iodine has an oxidation number of 0.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ddf5243d-a1a2-417c-8adc-de562d34b061",
+    "question_text": "In the reaction \n4\nZn\n+\n10\nHNO\n3\n⟶\n4\nZn\n(\nNO\n3\n)\n2\n+\nNH\n4\nNO\n3\n+\n3\nH\n2\nO\n, which species is the oxidizing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZn",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nZn\n(\nNO\n3\n)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHNO\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNH\n4\nNO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "HNOA3 (N: +5) is reduced to NHA4NOA3 (N: -3) and oxidizes Zn (0 to +2).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2444291f-bb1d-41e5-b586-8a6050e4c519",
+    "question_text": "In the reaction \n2\nS\n+\n3\nO\n2\n⟶\n2\nSO\n3\n, how many electrons are transferred per sulfur atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "S (0) becomes +6 in SOA3. Change = +6 - 0 = 6 electrons per S atom.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "184478c2-e0ec-4348-b110-5b2e1519f9a5",
+    "question_text": "Which reaction involves a redox process where the oxidizing agent contains nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3\nZn\n+\n2\nNO\n⟶\n3\nZnO\n+\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFe\n+\nS\n⟶\nFeS",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In 3Zn+2NO⟶3ZnO+NA2, NO (N: +2) is reduced to NA2 (N: 0),\n              oxidizing Zn (0 to +2).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b2d1dc09-5d25-4e94-9b2d-06d0210f71b3",
+    "question_text": "In the reaction \n2\nNaCl\n+\nF\n2\n⟶\n2\nNaF\n+\nCl\n2\n, which species is reduced?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNaF",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nF\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "F (0 in FA2) becomes -1 in NaF, gaining electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04111644-1625-433e-baaa-ec553213ddae",
+    "question_text": "What is the oxidation number of oxygen in \nKO\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-1/2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In superoxides, O has an oxidation number of -1/2. For KOA2: K = +1, so +1+2x=0, 2x=−1, x=−1/2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3da501dc-c5fb-4e66-bba7-c45dca43b3a4",
+    "question_text": "In the reaction \n2\nNa\n+\nS\n⟶\nNa\n2\nS\n, which species is the oxidizing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nS",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNa\n2\nS",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of these",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The oxidizing agent is reduced. S (0) gains electrons to become S (-2) in NaA2S, oxidizing Na\n              (0 to +1).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "19c05cd3-1d5b-4b19-990c-0fd8a6140cf6",
+    "question_text": "What is the oxidation number of tellurium in \nTeO\n3\n2\n−\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Let Te = x. O = -2. Equation: x+3(−2)=−2, x−6=−2, x=+4.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b94e7178-6083-4ada-a248-5ec2369cb66f",
+    "question_text": "Which species is oxidized in the reaction \n2\nFeCl\n3\n+\nH\n2\n⟶\n2\nFeCl\n2\n+\n2\nHCl\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFeCl\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFeCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHCl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Oxidation is loss of electrons. HA2 (0) becomes HA+ (+1) in HCl, losing\n              electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "32130c4e-5c3e-47d5-98d3-d15460661934",
+    "question_text": "What is the oxidation number of iron in \nFe\n3\n(\nPO\n4\n)\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Let Fe = x. POA4A3− has P (+5) and O (-2): +5+4(−2)=−3. For FeA3(POA4)A2: 3x+2(−3)=0, 3x−6=0, x=+2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c457679e-5fa6-4bcc-b881-b8851f138ce7",
+    "question_text": "In \n2\nK\n2\nCr\n2\nO\n7\n+\n2\nH\n2\nO\n+\n3\nS\n⟶\n4\nKOH\n+\n2\nCr\n2\nO\n3\n+\n3\nSO\n2\n, which element undergoes the largest decrease in oxidation number?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSulfur",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChromium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOxygen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPotassium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cr (+6 in CrA2OA7A2−) to +3 in CrA2OA3: -3. S (0) to +4 in SOA2: +4. Cr\n              decreases most.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bbe26d9d-38c1-4c3b-8533-72ebc5675c34",
+    "question_text": "In the reaction \nMg\n+\n2\nHCl\n⟶\nMgCl\n2\n+\nH\n2\n, what is the reducing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMg",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMgCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nH\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The reducing agent donates electrons. Mg (0) loses electrons to form MgA2+ (+2),\n              reducing HA+.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d1fd4a5a-7f6e-49dc-a07f-bdeb043523c7",
+    "question_text": "What is the oxidation number of manganese in \nMnO\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Let Mn = x. O = -2. Equation: x+2(−2)=0, x−4=0, x=+4.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2bbd75e7-e2db-4b83-8105-794beda3a300",
+    "question_text": "In the reaction \n3\nCl\n2\n+\n6\nNaOH\n⟶\n5\nNaCl\n+\nNaClO\n3\n+\n3\nH\n2\nO\n, which species acts as the reducing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNaOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNaClO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The reducing agent is oxidized. Cl (0 in ClA2) becomes +5 in NaClOA3 and -1 in NaCl; ClA2 reduces itself.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d06fdd0e-9586-4181-8b58-24fb47749f9e",
+    "question_text": "Which of the following is a redox reaction involving combination?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nN\n2\n+\nO\n2\n⟶\n2\nNO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCaO\n+\nCO\n2\n⟶\nCaCO\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHCl\n+\nNH\n3\n⟶\nNH\n4\nCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNaOH\n+\nH\n2\nSO\n4\n⟶\nNa\n2\nSO\n4\n+\nH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In NA2+OA2⟶2NO, N (0 to +2) is oxidized, and O (0 to -2) is reduced, forming one\n              product.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "85c9bdfe-a43e-4ef0-99ca-95759c77a7d0",
+    "question_text": "Which reaction involves a displacement redox process?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNaCl\n+\nF\n2\n⟶\n2\nNaF\n+\nCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCaO\n+\nH\n2\nO\n⟶\nCa\n(\nOH\n)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nK\n+\nZnSO\n4\n⟶\nK\n2\nSO\n4\n+\nZn",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHCl\n+\nNaOH\n⟶\nNaCl\n+\nH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In 2K+ZnSOA4⟶KA2SOA4+Zn, K (0 to +1) is oxidized, and Zn (+2 to 0) is reduced, with K\n              displacing Zn.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8f1633c4-6dc9-4277-9336-f270c90d8d40",
+    "question_text": "In the reaction \n2\nK\n+\nO\n2\n⟶\nK\n2\nO\n2\n, what is the oxidizing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nK",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nK\n2\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of these",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The oxidizing agent is reduced. OA2 (0) gains electrons to become OA2− (-1 in\n              peroxide), oxidizing K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fab1d9e7-bbb8-43b2-aa3a-7289274a0612",
+    "question_text": "In the reaction \n2\nH\n2\nS\n+\n3\nO\n2\n⟶\n2\nSO\n2\n+\n2\nH\n2\nO\n, how many electrons are transferred per molecule of \nH\n2\nS\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "S (-2 in HA2S) becomes +4 in SOA2. Change per S = +4 - (-2) = 6 electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e961d2a2-c93e-4c95-807b-162a264d5557",
+    "question_text": "Which reaction demonstrates oxidation by the addition of oxygen to a non-metal without hydrogen involvement?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nP\n4\n+\n5\nO\n2\n⟶\nP\n4\nO\n10",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n4\n+\n2\nO\n2\n⟶\nCO\n2\n+\n2\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nH\n2\nS\n+\nO\n2\n⟶\n2\nS\n+\n2\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNH\n3\n+\nO\n2\n⟶\nNO\n+\nH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In PA4+5OA2⟶PA4OA10, P (0) gains oxygen to become +5 in PA4OA10, with no hydrogen\n              present.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2d5ffe05-a897-497a-bed3-77e866d5bc53",
+    "question_text": "In \n2\nMnO\n2\n+\n4\nNaOH\n+\nO\n2\n⟶\n2\nNa\n2\nMnO\n4\n+\n2\nH\n2\nO\n, what is the total number of electrons transferred per mole of \nMnO\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mn (+4 in MnOA2) to +6 in NaA2MnOA4: 2 Mn atoms lose 2 × (6 - 4) = 4 electrons total.\n              Per MnOA2 = 4/2 = 2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0956703f-904e-4108-b374-df9c241e9c43",
+    "question_text": "Which reaction involves a redox process where the reducing agent loses electrons without gaining oxygen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nCo\n+\nBr\n2\n⟶\n2\nCoBr",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\nMg\n+\nO\n2\n⟶\n2\nMgO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n+\nO\n2\n⟶\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nCuO\n+\nCO\n⟶\n2\nCu\n+\nCO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In 2Co+BrA2⟶2CoBr, Co (0 to +1) loses electrons to reduce Br (0 to -1), with no oxygen\n              involved.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "81c3b813-1373-4c63-9a5c-0ebfb74da18d",
+    "question_text": "Which reaction involves a redox process where the oxidizing agent gains electrons without oxygen loss?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nBr\n2\n⟶\n2\nNaBr",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFe\n2\nO\n3\n+\n3\nCO\n⟶\n2\nFe\n+\n3\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMnO\n2\n+\n4\nHCl\n⟶\nMnCl\n2\n+\nCl\n2\n+\n2\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPbO\n+\nC\n⟶\nPb\n+\nCO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In 2Na+BrA2⟶2NaBr, BrA2 (Br: 0 to -1) gains electrons, oxidizing Na (0 to\n              +1), no oxygen involved.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "df608feb-8a2f-4df5-9b81-947ba0bd5e49",
+    "question_text": "Which compound contains carbon with an oxidation number higher than in \nCH\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n2\nH\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCHCl\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n2\nH\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "C in CHA4: -4. In CHClA3: x+1+3(−1)=0, x−2=0, x=+2,\n              which is higher.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c040e447-cf1a-4403-a7c3-71abde2d9622",
+    "question_text": "How many electrons are transferred in the balanced reaction \n2\nMnO\n4\n−\n+\n6\nI\n−\n+\n4\nH\n2\nO\n⟶\n2\nMnO\n2\n+\n3\nI\n2\n+\n8\nOH\n−\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Oxidation: 6IA−⟶3IA2+6eA−. Reduction: 2MnOA4A−+6eA−⟶2MnOA2. Total\n              electrons\n              = 6.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5e61684f-acfb-4faf-b6f0-3fa844472a0c",
+    "question_text": "In \n2\nHNO\n3\n+\n3\nH\n3\nAsO\n3\n⟶\n2\nNO\n+\n3\nH\n3\nAsO\n4\n+\nH\n2\nO\n, how many electrons are transferred per mole of \nHNO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "N (+5 in HNOA3) to +2 in NO: 2 N gain 6 electrons. As (+3 to +5): 3 As lose 6\n              electrons. Per HNOA3 = 6/2 = 3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "26991471-ba42-43ce-967e-fd4c66200679",
+    "question_text": "Which reaction involves a disproportionation process with a halogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3\nF\n2\n+\n3\nH\n2\nO\n⟶\n6\nHF\n+\nO\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFe\n+\nBr\n2\n⟶\nFeBr\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nKI\n+\nCl\n2\n⟶\n2\nKCl\n+\nI\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In 3FA2+3HA2O⟶6HF+OA3, F (0) is reduced to -1 in HF and O (-2 to 0 in OA3) is oxidized, but F drives it indirectly.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3c7c5551-7c0e-45b1-b237-b013a5106b0d",
+    "question_text": "Which of the following is a disproportionation reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFe\n+\nCuSO\n4\n⟶\nFeSO\n4\n+\nCu",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\nHNO\n2\n⟶\nHNO\n3\n+\n2\nNO\n+\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nKClO\n3\n⟶\n2\nKCl\n+\n3\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In 3HNOA2⟶HNOA3+2NO+HA2O, N (+3) is oxidized to +5 (HNOA3) and reduced to +2\n              (NO).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "92b725b8-e0fa-43e5-920a-8662b9662bc5",
+    "question_text": "In the reaction \n2\nI\n2\n+\n2\nH\n2\nO\n⟶\n4\nHI\n+\nO\n2\n, which element is reduced?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIodine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxygen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHydrogen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of these",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reduction involves electron gain. I (0 in IA2) becomes -1 in HI, gaining electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42362547-f99c-47b6-b1c3-5fe03fcea3ad",
+    "question_text": "In \n2\nVCl\n3\n+\nCl\n2\n⟶\n2\nVCl\n4\n, how many electrons are lost per vanadium atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "V (+3 in VClA3) to +4 in VClA4: change = +4 - (+3) = +1; each V loses 1 electron.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1751534b-705b-4397-bd3f-706b27628ec4",
+    "question_text": "In \n2\nAg\n2\nO\n+\nC\n⟶\n4\nAg\n+\nCO\n2\n, which element’s oxidation number changes by the largest magnitude?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSilver",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxygen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of these",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ag (+1 to 0): change = -1. C (0 to +4 in COA2): change = +4. C has the largest magnitude\n              change.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "83bfa8b1-7bd7-471d-a9eb-c16403de9f6f",
+    "question_text": "Which reaction involves a redox process where oxygen is neither gained nor lost by the element oxidized?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nO\n2\n⟶\nNa\n2\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS\n+\nO\n2\n⟶\nSO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nFeSO\n4\n+\nI\n2\n⟶\nFe\n2\n(\nSO\n4\n)\n3\n+\n2\nHI",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nCuO\n+\nC\n⟶\n2\nCu\n+\nCO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In 2FeSOA4+IA2⟶FeA2(SOA4)A3+2HI, Fe (+2 to +3) is oxidized without oxygen change; I (+2\n              to -1) is reduced.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc93935f-41fa-4e5f-9c37-3c9291876de1",
+    "question_text": "Which reaction involves a redox process where a single element acts as both oxidizing and reducing agent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3\nHNO\n2\n⟶\nHNO\n3\n+\n2\nNO\n+\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFe\n+\nCuSO\n4\n⟶\nFeSO\n4\n+\nCu",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nH\n2\n+\nO\n2\n⟶\n2\nH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In 3HNOA2⟶HNOA3+2NO+HA2O, N (+3) in HNOA2 is oxidized to +5 in HNOA3 and reduced to +2 in NO, a disproportionation.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6e555a57-211f-4635-88e3-99ca7992104e",
+    "question_text": "What is the oxidation number of oxygen in \nO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In its elemental form, OA3 (ozone), oxygen has an oxidation number of 0.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ce9b3094-d89e-4800-9653-4efc7248c00a",
+    "question_text": "Which reaction involves a redox process where the oxidizing agent contains sulfur?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n+\nO\n2\n⟶\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\nFe\n+\n3\nSO\n2\n⟶\nFe\n2\nO\n3\n+\n3\nS",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nH\n2\nO\n2\n⟶\n2\nH\n2\nO\n+\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In 2Fe+3SOA2⟶FeA2OA3+3S, SOA2 (S: +4 to 0) is reduced, oxidizing Fe (0 to\n              +3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a0b05348-c02a-430f-8672-cd969d0db45c",
+    "question_text": "In the reaction \n2\nMnO\n2\n+\n2\nKOH\n+\nO\n2\n⟶\n2\nK\n2\nMnO\n4\n+\nH\n2\n, which element is reduced?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nManganese",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrogen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOxygen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPotassium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "H (+1 in KOH) becomes 0 in HA2, gaining electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "799f1262-5497-47e1-920c-7c28a0136380",
+    "question_text": "Which of the following reactions is an example of disproportionation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\nNa\n+\nCl\n2\n⟶\n2\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nZn\n+\nCuSO\n4\n⟶\nZnSO\n4\n+\nCu",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCl\n2\n+\n2\nNaOH\n⟶\nNaCl\n+\nNaClO\n+\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nKClO\n3\n⟶\n2\nKCl\n+\n3\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In ClA2+2NaOH⟶NaCl+NaClO+HA2O, Cl (0) is both oxidized to +1 (NaClO) and\n              reduced to -1 (NaCl).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "39dcbffa-576a-4677-ae89-3c3188b4dc3b",
+    "question_text": "Which element undergoes reduction in the reaction \n2\nNa\n+\n2\nH\n2\nO\n⟶\n2\nNaOH\n+\nH\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSodium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxygen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNitrogen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydrogen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "H (+1 in HA2O) reduces to 0 in HA2, gaining electrons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2a971a61-5782-48c5-9e6a-bc3df57212cf",
+    "question_text": "Which reaction represents a decomposition redox process?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCaCO\n3\n⟶\nCaO\n+\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\nKClO\n3\n⟶\n2\nKCl\n+\n3\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNH\n4\nCl\n⟶\nNH\n3\n+\nHCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\nNaHCO\n3\n⟶\nNa\n2\nCO\n3\n+\nH\n2\nO\n+\nCO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In 2KClOA3⟶2KCl+3OA2, Cl (+5 to -1) is reduced, and O (-2 to 0) is oxidized.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d04d241e-3d75-4b24-a463-1bd9e1bb4de6",
+    "question_text": "What is the oxidation number of sulfur in \nS\n4\nO\n6\n2\n−\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+2.5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Let S = x. O = -2. Equation: 4x+6(−2)=−2, 4x−12=−2, 4x=10, x=+2.5 (average).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "faebd00d-427a-477d-9a79-ae9ae13ad187",
+    "question_text": "In \n2\nFeCl\n3\n+\nH\n2\nS\n⟶\n2\nFeCl\n2\n+\nS\n+\n2\nHCl\n, which species contains the element reduced?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nS",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFeCl\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHCl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fe (+3 in FeClA3) to +2 in FeClA2 is reduced; S (-2 to 0) is oxidized.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Redox Reactions",
+    "topic": "Redox Reactions",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Redox Reactions / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "redox-reactions"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "bc3a3416-81b9-424b-ab37-bcfd034425ae",
+    "question_text": "Which of the following best distinguishes self-pollination from cross-pollination in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIn self-pollination, pollen is transferred between different flowers of the same plant; in cross-pollination, pollen is transferred within the same flower.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIn self-pollination, pollen from the same flower fertilizes the ovules; in cross-pollination, pollen is transferred between different flowers.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSelf-pollination requires animal vectors while cross-pollination relies solely on wind.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThere is no difference between self-pollination and cross-pollination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Self-pollination occurs when pollen from a flower fertilizes its own ovules, whereas cross-pollination\n              involves pollen transfer between different flowers, promoting genetic variation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c7bd18d-b5a6-4839-b6c9-d4dc03072905",
+    "question_text": "Which of the following best defines sexual reproduction in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProduction of offspring by vegetative means",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFormation of new individuals through fusion of male and female gametes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nA process involving only mitosis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDevelopment of seeds without fertilization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sexual reproduction in flowering plants involves the fusion of male (pollen) and female (ovule) gametes,\n              resulting in genetic recombination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c41014c6-275d-42f8-8a39-160292d3a5de",
+    "question_text": "Fertilization in flowering plants involves the fusion of which cells?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPollen grain and ovule",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSperm and egg cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPollen tube and ovule",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOvule and seed coat",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fertilization is the process in which a sperm cell fuses with an egg cell to form a zygote.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5abf555e-aee5-4ce2-967f-5c665e1c2cac",
+    "question_text": "Which of the following best describes the function of the style in a flower?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt produces pollen grains.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt serves as a pathway for the pollen tube to reach the ovary.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt develops into the fruit after fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt secretes nectar to attract pollinators.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The style connects the stigma and ovary and provides a passageway for the pollen tube to deliver sperm\n              cells to the ovule.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72d4ca8e-92c7-4755-a9e6-a631a643e242",
+    "question_text": "Which of the following statements about self-incompatibility is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSelf-incompatibility prevents self-fertilization and promotes cross-pollination.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSelf-incompatibility is a genetic mechanism to avoid inbreeding.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSelf-incompatibility allows pollen from the same plant to fertilize its ovules.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSelf-incompatibility is controlled by S-genes.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Self-incompatibility is a mechanism that prevents self-fertilization; it does not allow pollen from the\n              same plant to fertilize its ovules.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d6582473-e1cb-4626-8725-e52cef3040e1",
+    "question_text": "Which of the following statements about bat pollination is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBat-pollinated flowers are typically large, pale or white, open at night, and emit a strong fruity or musky odor.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBat-pollinated flowers are small, brightly colored, and open during the day.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBat pollination relies exclusively on wind for pollen dispersal.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBat-pollinated flowers have no nectar to reward pollinators.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bat-pollinated (chiropterophilous) flowers are generally large, pale-colored, and open at night, with a\n              strong odor to attract bats.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e597972-40e1-49fb-ad81-6ae2362d6be4",
+    "question_text": "Which of the following statements regarding pollinator specificity and reproductive isolation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpecialized pollinator interactions can contribute to reproductive isolation, thereby facilitating speciation in flowering plants.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPollinator specificity has no effect on plant speciation.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGeneralist pollination always leads to complete reproductive isolation.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nReproductive isolation is solely determined by geographic separation, independent of pollinator behavior.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Specialized interactions between flowers and their pollinators can reinforce reproductive isolation by\n              limiting gene flow between populations, thus promoting speciation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fc8c9266-93d2-4fa7-8ebf-9f7c90901970",
+    "question_text": "During megasporogenesis, how many megaspores are typically produced and how many usually survive?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFour produced, one survives.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFour produced, two survive.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEight produced, one survives.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEight produced, four survive.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Meiosis produces a tetrad of megaspores, but typically only one functional megaspore survives while the\n              others degenerate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3c909447-663b-4d6b-8ab3-c6d101d2d7ad",
+    "question_text": "Cleistogamy is best described as:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPollination by wind",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCross-pollination between different plants",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSelf-pollination occurring in unopened, closed flowers",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPollination mediated by water currents",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cleistogamy is a form of self-pollination that occurs in closed flowers, ensuring reproduction without\n              attracting pollinators.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8f87b747-2763-4e53-b2bb-4f76678b1087",
+    "question_text": "Which of the following statements about nectaries is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNectaries produce pollen grains.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNectaries secrete nectar to attract pollinators.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNectaries are part of the male reproductive system.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNectaries develop into the fruit after fertilization.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Nectaries secrete a sugar-rich nectar that attracts pollinators, facilitating cross-pollination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2f391874-5d9f-47ff-bd91-ce54380cfc56",
+    "question_text": "In the process of fertilization in flowering plants, the male gamete reaches the ovule via:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPollen tube",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nStyle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSepal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPetal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "After pollination, the pollen germinates on the stigma and grows a pollen tube through the style to reach the ovule for fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0a079494-05e4-4ed3-9b56-e51a7450c598",
+    "question_text": "Flowers adapted for wind pollination typically exhibit which of the following characteristics?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLarge, colorful, and fragrant petals",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSmall, green, and inconspicuous flowers with exposed stamens",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTubular shape with nectar guides",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDense clustering of showy petals",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Wind-pollinated flowers are usually small, green, and lack showy petals because they do not rely on attracting animal pollinators.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8bd8c5e8-58df-4335-8bb3-846bd060306f",
+    "question_text": "During microsporogenesis, the microspore mother cell undergoes meiosis to produce how many microspores?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Meiosis in the microspore mother cell produces a tetrad of four haploid microspores.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9dab0005-9862-4d5a-9bdb-ac40f2d106eb",
+    "question_text": "Which of the following is NOT a typical characteristic of cleistogamous flowers?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey remain closed during pollination",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey exhibit self-pollination",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey produce large, showy petals",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey ensure reproduction under unfavorable conditions",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cleistogamous flowers are generally inconspicuous and do not produce showy petals since they self-pollinate while closed.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e666c5ae-d4b8-450a-8772-d95c05a26499",
+    "question_text": "Which of the following statements about apomixis in flowering plants is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nApomixis is a sexual process involving the fusion of gametes.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nApomixis results in seed formation without fertilization, producing clonal offspring.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nApomixis is exclusive to gymnosperms.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nApomixis increases genetic variation through recombination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Apomixis is an asexual form of reproduction where seeds develop without fertilization, resulting in offspring genetically identical to the parent.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fe84961d-e7cd-4f68-a3c9-8d2823d7c64f",
+    "question_text": "Which of the following statements about auxin's role in fruit set is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin plays a crucial role in initiating fruit development after fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAuxin completely inhibits fruit growth.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAuxin is not involved in the process of fruit set.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAuxin only affects vegetative growth and not reproductive development.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Auxin is involved in fruit set by stimulating cell division and growth in the ovary after fertilization, thus initiating fruit development.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b45b86c7-3428-4c98-bfd6-cf4f2391ad2f",
+    "question_text": "Which of the following statements about polyspermy prevention in flowering plants is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMechanisms exist that ensure only one sperm fuses with the egg cell, thereby preventing polyspermy.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPolyspermy is common and beneficial in flowering plants.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMultiple sperm typically fuse with the egg cell to increase genetic diversity.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThere is no mechanism to prevent polyspermy in angiosperms.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Flowering plants have evolved mechanisms to ensure that only a single sperm fertilizes the egg, thus preventing polyspermy, which would otherwise lead to abnormal development.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ab134045-74de-4a76-a931-cd913f9cd070",
+    "question_text": "What does the term 'gametophyte' refer to in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe structure that forms the seed coat",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe generation that produces gametes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe tissue that gives rise to the fruit",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe dormant stage of the embryo",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The gametophyte is the haploid generation in plants that produces gametes (pollen in the male and embryo sac in the female).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1dc0843a-448c-41f0-b44c-11ec28234a97",
+    "question_text": "Which of the following correctly defines herkogamy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTemporal separation of male and female functions",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpatial separation of stamens and pistils within the flower",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nA genetic mechanism preventing self-fertilization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTransfer of pollen by wind",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Herkogamy is the spatial separation of male and female reproductive organs within a flower, which helps reduce the chances of self-pollination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c2a81a5a-c957-4a0e-aec4-fd0bd2f2a8a9",
+    "question_text": "The term 'syngamy' in plant reproduction refers to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe production of gametes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe fusion of male and female gametes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe growth of the pollen tube",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe process of seed dispersal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Syngamy is the fusion of the male and female gametes, which results in the formation of a zygote.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0adea442-7106-47ea-8b2a-473597efdb6a",
+    "question_text": "Which part of the flower eventually develops into the fruit after fertilization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSepals",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPetals",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOvary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStamen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "After fertilization, the ovary develops into a fruit, which encloses and protects the developing seeds.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "305c4d96-8d29-4dcc-9453-ed3f71d70886",
+    "question_text": "The micropyle in an ovule functions to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProduce ovules",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nServe as an entry point for the pollen tube",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDevelop into the seed coat",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAttract pollinators",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The micropyle is a small opening in the ovule that allows the pollen tube to enter and deliver the sperm cells for fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "100c8d33-785d-44d2-a1f8-3b0773c76cc0",
+    "question_text": "Which of the following is a characteristic feature of entomophilous (insect-pollinated) flowers?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nReduced, greenish petals",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBrightly colored and scented petals",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbundant, lightweight pollen only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExposed stamens and pistils without nectar",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Entomophilous flowers are adapted to attract insects using bright colors, pleasant fragrances, and nectar rewards.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d42e5ee0-3cca-4952-af60-fb630893b29f",
+    "question_text": "Which of the following best explains the evolutionary significance of sexual reproduction in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt results in offspring that are genetically identical to the parent.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt generates genetic variability, enhancing adaptability to changing environments.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt reduces the chance of mutation.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt eliminates the need for pollinators.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sexual reproduction promotes genetic variation, which is crucial for the survival and adaptation of species under changing environmental conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e3a185b7-f8c5-49b6-a686-e50eca32952c",
+    "question_text": "Which of the following statements about the evolution of sexual reproduction in flowering plants is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSexual reproduction increases genetic diversity among offspring.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSexual reproduction allows plants to adapt to changing environments.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSexual reproduction always produces genetically identical offspring.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSexual reproduction has contributed to the evolutionary success of angiosperms.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Sexual reproduction generates genetic variation among offspring, unlike asexual reproduction which produces genetically identical individuals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a8c279f7-e3bc-46f8-b537-4624c7a304a3",
+    "question_text": "Which of the following statements about the function of synergid cells is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSynergid cells secrete chemical attractants to guide the pollen tube towards the embryo sac.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSynergid cells fuse with sperm cells to form the zygote.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSynergid cells develop into the endosperm.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSynergid cells form the seed coat.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Synergid cells produce attractant peptides (LURE) that direct the pollen tube to the egg apparatus, aiding in successful fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fb329769-ff21-4a9c-9bca-beaad0f65361",
+    "question_text": "Which part of the flower is responsible for producing pollen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCarpel",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPetal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStamen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSepal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The stamen, consisting of the anther and filament, produces pollen grains (male gametes).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fef02eca-1b90-461c-b04e-5698fccc3ab2",
+    "question_text": "The self-incompatibility mechanism in flowering plants prevents:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCross-pollination",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGenetic recombination",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSelf-pollination",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDouble fertilization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Self-incompatibility prevents self-pollination, thereby promoting cross-pollination and increasing genetic diversity.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d6f8220a-f3b4-414e-88a4-0d8a7860fca5",
+    "question_text": "Which layer in the anther is responsible for nourishing developing microspores?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEpidermis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEndothecium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTapetum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConnective tissue",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The tapetum provides nutrients and secretes materials required for the development and wall formation of microspores (pollen grains).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "16d2bfa9-bb2f-4237-b748-34208ffc143c",
+    "question_text": "What is the primary advantage of sexual reproduction in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt produces genetically identical offspring",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt increases genetic variation, enhancing adaptability",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt requires less energy than asexual reproduction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt eliminates the need for pollinators",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sexual reproduction increases genetic diversity among offspring, which is crucial for adaptability in changing environments.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f83652b9-67d9-4fda-8ab4-84a9ac70c9ed",
+    "question_text": "Megasporogenesis in flowering plants refers to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe formation of microspores by mitosis.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe formation of megaspores by meiosis in the nucellus.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe fusion of male and female gametes.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe formation of pollen grains by mitosis.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Megasporogenesis is the process in which the megaspore mother cell undergoes meiosis to produce megaspores in the nucellus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8b4a1d51-9d6d-4cd3-b414-7b4bd577a6d3",
+    "question_text": "Which of the following best describes dichogamy in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTemporal separation of male and female reproductive phases within the same flower",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpatial separation of male and female organs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGenetic incompatibility between self and non-self pollen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPollen dispersal by wind",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Dichogamy refers to the temporal separation of male and female phases in the same flower, helping to reduce self-pollination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9188019b-ad9c-482b-9988-6294e80a2b7d",
+    "question_text": "Which part of the flower is primarily responsible for attracting pollinators?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSepals",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPetals",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStamens",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOvary",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Petals are typically brightly colored and scented to attract pollinators such as insects, birds, and bats.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f11179bf-6574-4953-bab8-09871df9a154",
+    "question_text": "Which layer of the anther is primarily responsible for generating the tension that leads to anther dehiscence?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEpidermis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEndothecium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTapetum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConnective tissue",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The endothecium develops fibrous thickenings which create tension, leading to the opening (dehiscence) of the anther to release pollen.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "35f00f32-c8de-4164-961b-4672b0237f08",
+    "question_text": "Which of the following statements about the evolution of floral traits is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFloral traits evolve in response to pollinator preferences, enhancing reproductive success.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFloral traits remain unchanged over evolutionary time.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFloral traits have no impact on the efficiency of pollination.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFloral traits are solely determined by genetic drift.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Floral traits such as shape, color, and fragrance evolve under selective pressures from pollinators, thereby improving pollination efficiency and reproductive success.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6acf7a03-e19d-4e92-bf39-80dbd0afbb26",
+    "question_text": "Which of the following statements about embryogenesis in flowering plants is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAfter fertilization, the zygote undergoes mitotic divisions to form a proembryo that differentiates into the embryo proper.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe zygote immediately develops into a mature embryo without any cell division.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMultiple zygotes fuse together to form a single embryo.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEmbryogenesis in flowering plants occurs without fertilization.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "After fertilization, the zygote divides mitotically to form a proembryo, which then differentiates into the mature embryo.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "34dda719-1f2f-43f5-8b83-1522741151fb",
+    "question_text": "Which one of the following statements about double fertilization in angiosperms is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt involves the fusion of one sperm with one egg only.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt results in the formation of both the zygote and the endosperm.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt occurs only in gymnosperms.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt does not involve the formation of endosperm.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Double fertilization is unique to flowering plants—it involves one sperm fertilizing the egg (forming the zygote) and another fusing with the two polar nuclei to form the endosperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "83592ab2-45ab-403d-8d92-bb7a43d86093",
+    "question_text": "Which part of the flower is primarily responsible for producing pollen grains?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCarpel",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nStamen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPetal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSepal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The stamen, which consists of the anther and filament, is responsible for producing pollen grains (male gametes).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "efbb9922-52ce-4aa1-9c8c-953ea738f571",
+    "question_text": "Plants bearing separate male and female flowers on the same individual are termed:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDioecious",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMonoecious",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHermaphroditic",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPolygamous",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Monoecious plants bear both male (staminate) and female (pistillate) flowers on the same individual, promoting cross-pollination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "df77d6bf-7de8-44dc-be6f-4a0f6112215c",
+    "question_text": "Which of the following components is a key part of a pollen grain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nExine and intine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEmbryo sac and ovule",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInteguments and chalaza",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFuniculus and placenta",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pollen grains are composed of an outer resistant layer called the exine and an inner layer called the intine, along with cells that develop into sperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9db7f0ee-4c48-4fd6-8c01-f2104b5a6ac6",
+    "question_text": "Which of the following best defines sexual reproduction in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA process involving only vegetative propagation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe formation of new individuals by the fusion of male and female gametes.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe production of offspring by mitosis.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nA method of reproduction that does not involve any genetic variation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sexual reproduction in flowering plants involves the fusion of male (pollen) and female (ovule) gametes,\n              leading to genetic recombination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "718a20fb-5fd4-429c-b69f-338f5dd5419e",
+    "question_text": "Which sequence correctly describes the events of double fertilization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPollen lands on stigma, pollen tube grows, one sperm fuses with the egg, the other fuses with the two polar nuclei",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPollen lands on stigma, pollen tube grows, both sperm fuse with the egg",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPollen lands on style, pollen tube grows, one sperm fuses with the egg, and then the pollen tube degenerates",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPollen lands on stigma, two pollen tubes form, each carrying one sperm to the egg",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In double fertilization, one sperm fuses with the egg to form the zygote, while the other fuses with the two polar nuclei to form the triploid endosperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2332a141-9087-4ee7-ae2e-7ca17e291f6f",
+    "question_text": "Which of the following is NOT a mechanism of sexual reproduction in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDouble fertilization",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSelf-pollination",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nApomixis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCross-pollination",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Apomixis is an asexual reproduction process that bypasses fertilization, unlike the other mechanisms which involve gamete fusion.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7183dda4-bfcc-459c-affc-7fd1ca873beb",
+    "question_text": "An aggregate fruit is produced by:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFusion of ovaries from multiple flowers",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFusion of multiple carpels within a single flower",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDevelopment of accessory tissues outside the ovary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCoalescence of separate ovules in a single ovary",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "An aggregate fruit is formed from the fusion of several carpels of a single flower.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f254e3a4-e863-49cf-860a-98de5e3b9a09",
+    "question_text": "Which of the following statements about ornithophilous pollination is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBird-pollinated flowers are often red, tubular, and odorless.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBird-pollinated flowers are typically blue and strongly scented.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBird-pollinated flowers rely primarily on wind for pollen transfer.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBird-pollinated flowers produce heavy, sticky pollen.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ornithophilous (bird-pollinated) flowers usually exhibit red or orange hues, tubular shapes, and are often odorless to cater to bird vision and preferences.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "90852606-3b03-436c-8601-76527e082db4",
+    "question_text": "Which of the following statements about floral morphology and pollination efficiency is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDistinct floral traits, such as color, shape, and nectar guides, enhance pollinator attraction and improve pollination efficiency.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFloral morphology has no influence on pollination.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSimple, inconspicuous flowers always ensure higher pollination success.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFloral morphology only affects self-pollination processes.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Floral morphology, including traits like color, shape, and nectar guides, plays a crucial role in attracting pollinators and ensuring effective pollination, which in turn increases reproductive success.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "428277e7-b0f8-4535-81e1-4fae8fa64b12",
+    "question_text": "Which mechanism(s) is/are employed by many flowering plants to prevent self-pollination?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDichogamy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHerkogamy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSelf-incompatibility",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Plants use various mechanisms—dichogamy (temporal separation of male and female phases), herkogamy (spatial separation), and self-incompatibility—to reduce self-pollination and promote cross-pollination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8cbf80cf-a42d-44f8-ae47-8435bf839782",
+    "question_text": "Which pollination type is characterized by the absence of showy petals and relies on wind for pollen transfer?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZoophily",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEntomophily",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnemophily",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydrophily",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Anemophily refers to wind pollination. Such flowers are typically small, green, and inconspicuous as they do not rely on attracting pollinators.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4471e8f5-bae3-48cb-b073-ac6421c44c84",
+    "question_text": "Most angiosperms have which type of ovule?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUnitegmic and orthotropous",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBitegmic and anatropous",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBitegmic and orthotropous",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUnitegmic and anatropous",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The most common ovule in flowering plants is bitegmic (having two integuments) and anatropous (inverted), which facilitates fertilization and seed development.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6f7bfecb-a645-48c0-877e-f661d83f50f5",
+    "question_text": "Which of the following is NOT a function of the stigma in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTo receive pollen grains",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTo secrete substances that facilitate pollen adhesion and germination",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTo produce nectar for attracting pollinators",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTo act as a selective barrier for compatible pollen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The stigma primarily receives and processes pollen grains; nectar production is typically a function of other floral parts such as petals or nectaries.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8450e52a-898f-4cd5-904a-68ed2bf6206c",
+    "question_text": "Which pollinator is most commonly associated with entomophilous (insect) pollination in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBats",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBees",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBirds",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWind",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bees are one of the most common insect pollinators and play a key role in transferring pollen between\n              flowers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "20813506-e6b5-4e8f-99b1-2e27620bd68e",
+    "question_text": "Which of the following statements about floral scent and pollinator attraction is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFloral scent acts as a chemical cue to attract specific pollinators, enhancing the chances of effective pollination.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFloral scent has no effect on pollinator behavior.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFloral scent only repels potential pollinators.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFloral scent is produced solely by the pollen grains.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Many flowers emit specific scents that attract particular pollinators, thereby increasing the likelihood\n              of successful cross-pollination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "56dacad7-9cf0-4684-888d-054a373f4ec8",
+    "question_text": "Polyembryony in flowering plants refers to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFormation of multiple ovules in one ovary",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDevelopment of multiple embryos from a single fertilized ovule",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFusion of several pollen grains to form a compound pollen grain",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFormation of several fruits from one flower",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Polyembryony is the phenomenon where more than one embryo develops from a single fertilized ovule.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1a8c7678-b4f7-430f-82d4-2f0d019453d4",
+    "question_text": "Which structure of the flower develops into the fruit after fertilization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStamen",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPetal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOvary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSepal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "After fertilization, the ovary transforms into a fruit, which encloses the developing seeds.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cb1d9b0d-a23f-4cbc-8a04-13d3698138ef",
+    "question_text": "What is the ploidy level of the endosperm formed by double fertilization in angiosperms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHaploid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiploid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTriploid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTetraploid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In double fertilization, one sperm fuses with the egg to form a diploid zygote, and the other fuses with\n              the two polar nuclei to form a triploid endosperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e3a2803f-e4b7-48fc-8709-925eef9873ec",
+    "question_text": "Which of the following statements comparing sexual and asexual reproduction in flowering plants is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSexual reproduction, through processes like double fertilization, increases genetic recombination and diversity among offspring.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAsexual reproduction produces greater genetic variation than sexual reproduction.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSexual reproduction results in genetically identical offspring.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAsexual reproduction always involves the fusion of gametes.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Sexual reproduction involves the fusion of gametes and subsequent genetic recombination, which results in\n              increased genetic diversity compared to asexual reproduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef6b55fc-8205-4e2b-a61d-3e0d01454933",
+    "question_text": "Which of the following is the most common type of embryo sac found in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOenothera type",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAllium type",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPolygonum type",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDrusa type",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The Polygonum type embryo sac is the most common type in angiosperms, typically having seven cells and\n              eight nuclei.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29969671-1a2a-4928-8345-439f6f0c2522",
+    "question_text": "Which of the following statements about the structure of a mature pollen grain is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA mature pollen grain contains one vegetative cell and one generative cell (or two sperm cells, if the generative cell divides) depending on the species.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA mature pollen grain contains three vegetative cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nA mature pollen grain contains no generative cells.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nA mature pollen grain always contains only a single cell.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "A mature pollen grain typically comprises one vegetative cell and one generative cell; in many species,\n              the generative cell divides to form two sperm cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "af133e5e-1f9d-424b-b61f-42c8a0d3756e",
+    "question_text": "Which of the following statements about the genetic basis of self-incompatibility is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSelf-incompatibility is governed by multiple alleles at the S-locus, preventing self-fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSelf-incompatibility is controlled by a single gene with no allelic variation.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSelf-incompatibility operates independently of the plant’s genotype.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSelf-incompatibility is only observed in asexual reproduction.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Self-incompatibility is a genetically controlled mechanism, typically involving multiple alleles at the\n              S-locus, which prevents self-fertilization and promotes cross-pollination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fcd7088-71dd-4a61-8e9d-e51bd6daaaea",
+    "question_text": "Which of the following best describes the role of antipodal cells in the embryo sac?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey fuse with the sperm cell to form the zygote",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey assist in nourishing the embryo sac before degenerating",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey develop into the endosperm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey form the seed coat",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Antipodal cells are thought to help in nourishing the embryo sac and usually degenerate later in\n              development.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c3230a5b-16e2-47f9-8308-10ea91cfc118",
+    "question_text": "For wind-pollinated flowers, which environmental factor is most critical for effective pollen dispersal?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHumidity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWind speed",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSoil moisture",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAmbient light",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Wind speed is crucial in wind-pollinated (anemophilous) plants to carry pollen grains over distances for\n              successful pollination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f5955e8-2271-4da3-a43c-e022a79f8d71",
+    "question_text": "Which statement best summarizes the process of double fertilization in angiosperms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTwo sperm cells fuse with two egg cells to form twin zygotes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOne sperm fuses with the egg forming a zygote, while the other fuses with two polar nuclei to form the endosperm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBoth sperm cells fuse with the egg cell simultaneously",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFertilization occurs without the involvement of polar nuclei",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Double fertilization involves one sperm cell fusing with the egg to form the zygote and the other fusing\n              with the two polar nuclei to produce the triploid endosperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bc99d13f-d0df-48b3-b836-689fd7ba9c01",
+    "question_text": "Which of the following statements about the role of calcium ions in pollen tube elongation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCalcium ions are essential for regulating the growth and directional guidance of the pollen tube.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCalcium ions inhibit the growth of the pollen tube.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCalcium ions are only involved in seed germination.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCalcium ions are not found in the pollen tube.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Calcium ions play a crucial role in pollen tube elongation by regulating cytoskeletal dynamics and\n              signaling pathways that direct the tube's growth toward the ovule.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2f3e46ae-8e89-4f52-8323-a22c532dcf79",
+    "question_text": "Which factor is most likely to enhance cross-pollination in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStructural adaptation that prevents self-pollination",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProduction of clonal, genetically identical seeds",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe absence of pollinator attraction mechanisms",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigh levels of self-compatibility",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Structural and biochemical adaptations that prevent self-pollination promote cross-pollination, thereby\n              increasing genetic diversity.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "699900c7-c102-4f53-9f74-59aa1ae4bee0",
+    "question_text": "Double fertilization in angiosperms results in the formation of:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTwo zygotes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA diploid zygote and a triploid endosperm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTwo embryos",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAn embryo and a seed coat",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Double fertilization involves one sperm fusing with the egg to form a diploid zygote, and another sperm\n              fusing with the two polar nuclei to form a triploid endosperm, which nourishes the developing embryo.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d3405e0e-7e65-4f93-b118-91b9b230ac20",
+    "question_text": "Which of the following statements about seed development in monocots and dicots is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIn monocots, the endosperm is typically persistent in the mature seed, whereas in dicots it is usually absorbed by the developing embryo.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIn dicots, the endosperm is persistent, while in monocots it is absorbed by the embryo.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBoth monocots and dicots always retain a large endosperm in the mature seed.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNeither monocots nor dicots develop an endosperm during seed development.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Typically, monocot seeds (e.g., cereals) retain a substantial endosperm, whereas in dicots the endosperm\n              is often consumed by the embryo during development.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f60f18f-3a8a-4b5e-863d-fc97bf14f710",
+    "question_text": "What is the primary role of nectar in many flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTo serve as the male gametophyte",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTo attract pollinators by providing a sugar-rich reward",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTo initiate seed germination",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTo develop into the fruit",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Nectar is produced by many flowers to attract pollinators such as insects and birds, which in turn assist\n              in pollination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4f54cf9c-206d-41c0-b8ae-a3d2aa7400d9",
+    "question_text": "Which of the following is a false statement regarding self-compatibility in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSelf-compatibility allows a flower to fertilize itself.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt promotes genetic diversity by encouraging cross-pollination.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSelf-compatibility can lead to inbreeding depression.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSelf-compatible plants can produce offspring without the need for cross-pollination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Self-compatibility means that a plant can self-fertilize. While it offers reproductive assurance, it does\n              not promote genetic diversity; in fact, cross-pollination is needed for increased variability.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3603d0ab-a7a9-4cb5-b257-c511c2f193ea",
+    "question_text": "Which process is the primary source of genetic variation in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMitosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nClonal propagation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeiosis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBudding",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Meiosis during gametogenesis introduces genetic variation through recombination and independent\n              assortment of chromosomes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "58822254-8063-4161-9585-dd10b43367e8",
+    "question_text": "Which type of pollination involves transfer of pollen by wind?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZoophily",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEntomophily",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnemophily",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydrophily",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Anemophily is pollination by wind, typical in many grasses and some trees.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f10974ed-6d2e-4284-b4f4-d37732263d86",
+    "question_text": "Which of the following statements regarding seed coat formation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe seed coat is derived from the integuments of the ovule.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe seed coat originates from the nucellus.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe seed coat is formed by the fusion of the funiculus and chalaza.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe seed coat is a product of the embryo sac cells.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The integuments surrounding the ovule differentiate into the seed coat (testa) after fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "27a62fd7-d328-4237-a40a-c55135e51d84",
+    "question_text": "The process by which a microspore develops into a mature pollen grain is termed:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMegagametogenesis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMicrogametogenesis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPollen tube elongation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSporogenesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Microgametogenesis is the process in which the haploid microspore develops into the male gametophyte\n              (pollen grain) through mitotic divisions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fb1ef67c-caf6-40f7-8024-628bd53c7047",
+    "question_text": "Which of the following statements regarding fruit set is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEffective pollination leads to a higher fruit set, while inadequate pollination can result in fruit abortion.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFruit set is solely determined by the size of the flower.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFruit set is independent of pollination efficiency.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFruit set occurs even in the absence of fertilization.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Successful and effective pollination is essential for fruit set; inadequate pollination can cause the\n              flower or ovary to abort.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "81e25e81-fbe5-423d-bc21-ec1e37905e93",
+    "question_text": "Which of the following statements about nutrient transport within the ovule is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe chalaza is the region in the ovule that facilitates nutrient transfer from the placenta to the developing ovule.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNutrient transport in the ovule occurs solely through the funiculus.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNutrient transport is not necessary for ovule development.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe integuments are responsible for nutrient transport to the embryo.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The chalaza is the key region of the ovule where nutrient transfer occurs from the placenta, ensuring the\n              developing ovule is supplied with essential nutrients.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e844ae18-c541-4571-afb9-3ec3dce05215",
+    "question_text": "Which statement regarding pollen tube growth is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPollen tube growth is guided by a gradient of calcium ions and chemical attractants secreted by synergid cells.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPollen tube growth occurs randomly within the style.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPollen tube growth is independent of the pollen grain’s hydration.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPollen tube growth is inhibited by the presence of chemical attractants.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Calcium ions and attractant peptides (like LURE) secreted by synergid cells guide the pollen tube toward\n              the embryo sac.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "16fdad42-c04d-487a-95d6-5241bcc58f8d",
+    "question_text": "How many nuclei are present in the mature Polygonum type embryo sac?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n9",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The mature Polygonum type embryo sac contains 7 cells with a total of 8 nuclei.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bb8f42ed-0e29-4213-a478-f56f0078c1e5",
+    "question_text": "In hydrophilous pollination, pollen is primarily transferred by:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWind",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInsects",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWater currents",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBirds",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Hydrophilous pollination occurs when water currents carry pollen, a mechanism seen in some aquatic\n              plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0914be5e-b61a-4ccb-91cb-882d36759271",
+    "question_text": "Which structure in the ovule develops into the seed coat after fertilization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInteguments",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNucellus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFuniculus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChalaza",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The integuments surrounding the ovule develop into the seed coat (testa) after fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6f44f3d9-36f9-4325-9f6d-342675a589f1",
+    "question_text": "Which process leads to the formation of the embryo sac in flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMicrosporogenesis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMegasporogenesis followed by megagametogenesis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMicrogametogenesis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nApomixis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The embryo sac is formed from a functional megaspore that develops through megasporogenesis and then\n              undergoes mitotic divisions (megasporogenesis followed by megagametogenesis).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "50e8a303-3016-4134-8354-62ff2132cfca",
+    "question_text": "Which of the following statements about floral induction is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFlorigen is the hypothesized hormone that triggers flowering in response to photoperiod.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFlowering in plants is independent of day length.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFlorigen is produced in the roots and transported upward.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhotoperiodism has no effect on the timing of flowering.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Florigen is a putative hormone produced in leaves under specific photoperiodic conditions that travels to\n              the shoot apex to induce flowering.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "38669f47-f094-461e-87f5-851107fa54ee",
+    "question_text": "Which of the following statements about seed dispersal is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSeed dispersal mechanisms include wind, water, animals, and explosive dehiscence.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSeed dispersal occurs exclusively through animal ingestion.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSeed dispersal always prevents seed predation.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSeed dispersal is not important for plant population expansion.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Plants employ various seed dispersal mechanisms—wind, water, animals, and explosive dehiscence—to ensure\n              wide distribution and reduce competition among seedlings.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fbb88a05-f79f-4d16-aadd-bbebde7abd7e",
+    "question_text": "Which of the following statements about the S-locus in self-incompatibility is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe S-locus contains multiple alleles that prevent self-pollen from fertilizing the ovule.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe S-locus is responsible for forming the seed coat.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe S-locus promotes self-fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe S-locus is active only during fruit ripening.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The S-locus governs self-incompatibility through multiple alleles that enable the plant to recognize and\n              reject self-pollen, thereby promoting cross-pollination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2debf4b4-372a-4e82-9a12-06eacbc769d9",
+    "question_text": "Parthenocarpy in fruit development refers to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFruit development after normal fertilization",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFruit development without fertilization, resulting in seedless fruits",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFormation of multiple fruits from one flower",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbnormal seed development within the fruit",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Parthenocarpy is the process in which fruits develop without fertilization, usually leading to seedless\n              fruits.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "86ce5116-42c4-450d-bce7-b7afa4535d3f",
+    "question_text": "Which of the following statements about the timing of pollen dehiscence is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPollen dehiscence is often synchronized with the period of stigma receptivity to maximize successful fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPollen dehiscence occurs at random times, regardless of stigma receptivity.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPollen dehiscence is independent of environmental cues such as humidity and temperature.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPollen dehiscence always occurs only at night.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Successful pollination often depends on the synchronization of pollen release with the receptive phase of\n              the stigma, ensuring maximum chances of fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3f984df3-c3e6-4871-ab17-68ace05f7485",
+    "question_text": "Which of the following statements regarding the function of antipodal cells is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAntipodal cells fuse with sperm cells to form the zygote.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAntipodal cells contribute to nutrient absorption in the embryo sac and typically degenerate later.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAntipodal cells develop into the endosperm.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAntipodal cells form the seed coat.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Antipodal cells are part of the embryo sac and are thought to assist in nutrient absorption before they\n              eventually degenerate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d30ce0a3-95ff-43de-a0d8-1bfe6e01ce0d",
+    "question_text": "A pollen grain containing one vegetative cell and one generative cell is described as:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUnicellular",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBicellular",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTricellular",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMulticellular",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bicellular pollen grains contain one vegetative cell and one generative cell. The generative cell may\n              later divide to form two sperm cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba31684e-9d20-4abf-9da8-73dacb4a9b18",
+    "question_text": "Which of the following statements about nectar production is false?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNectar is produced to attract pollinators.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNectar contains sugars and amino acids.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll flowers produce nectar regardless of their pollination mechanism.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNectar rewards help facilitate cross-pollination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Not all flowers produce nectar; some, especially wind-pollinated species, do not rely on nectar to\n              attract pollinators.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c06fac5b-e8f5-4c75-980f-13742878cd65",
+    "question_text": "Which of the following is a feature of flowers that are adapted for water pollination (hydrophily)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLarge, bright petals",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nReduced or absent petals and stamens",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSticky surfaces to capture pollen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFragrant nectar production",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Hydrophilous flowers often lack showy petals and have reduced reproductive organs because water itself\n              facilitates pollen transfer.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9acb31cf-ef7c-4ef9-b0ca-2fbbd0f90fef",
+    "question_text": "Which of the following statements about endosperm absorption in dicot seeds is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIn many dicot seeds, the developing embryo absorbs most of the endosperm during embryogenesis, resulting in a mature seed with little or no endosperm.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDicot seeds always retain a large endosperm as a storage tissue in the mature seed.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEndosperm absorption in dicots occurs after the seed germinates.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDicot seeds do not develop an endosperm during double fertilization.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In many dicots, the endosperm is largely consumed by the growing embryo during seed development, so the\n              mature seed contains little to no endosperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ceee4be8-4332-41bf-b05a-ac892d8da48c",
+    "question_text": "Which of the following statements about megasporogenesis is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDuring megasporogenesis, one functional megaspore is produced from the megaspore mother cell while the others degenerate.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMegasporogenesis produces multiple functional megaspores that fuse to form the embryo sac.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll megaspores formed during megasporogenesis develop into embryo sacs.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMegasporogenesis is a form of asexual reproduction in the ovule.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Typically, meiosis in the megaspore mother cell produces four megaspores, but only one survives to\n              develop into the functional embryo sac.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9fa9617c-6b07-43c8-8911-4c0f3e7d7a8e",
+    "question_text": "The chalaza in an ovule functions primarily to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAnchor the ovule to the placenta and facilitate nutrient transport",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nForm the seed coat",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDevelop into the embryo sac",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProduce the funiculus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The chalaza is the region where the integuments and nucellus meet; it plays a role in nutrient transfer\n              from the placenta to the ovule.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e4457d9c-c802-4dbc-8ccf-3a06a6f2d1ae",
+    "question_text": "Which of the following structures secretes chemical attractants (LURE peptides) to guide the pollen tube in the embryo sac?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEgg cell",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSynergid cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCentral cell",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAntipodal cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Synergid cells in the embryo sac secrete LURE peptides that attract the pollen tube toward the egg\n              apparatus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a8cbe1c-7b81-4274-83ca-77aad9caa52c",
+    "question_text": "Which statement about pollen tube growth is true?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPollen tube growth is independent of external signals.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPollen tubes grow randomly in the style.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPollen tube growth is guided by chemical signals secreted by the embryo sac.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPollen tubes only grow if the flower is self-compatible.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Chemical attractants, such as LURE peptides from the synergid cells, guide the pollen tube to the embryo\n              sac for successful fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dae6bf58-2f7b-4ea3-acdc-d7e831f04050",
+    "question_text": "Which of the following statements about the function of the filament is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe filament supports the anther, ensuring its optimal position for pollen release.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe filament produces pollen grains.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe filament develops into the fruit after fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe filament secretes nectar to attract pollinators.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The filament serves to support the anther, positioning it so that pollen can be effectively dispersed.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ec7ba3a2-30de-4ea5-885c-75061338522a",
+    "question_text": "Which of the following statements about double fertilization is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDouble fertilization involves the fusion of two sperm cells with two egg cells.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDouble fertilization results in the formation of a zygote and a triploid endosperm.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDouble fertilization occurs in both angiosperms and gymnosperms.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDouble fertilization produces two embryos in one ovule.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In double fertilization, one sperm cell fuses with the egg to form a diploid zygote, while the other\n              fuses with the two polar nuclei to produce a triploid endosperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "52ca47ce-f62e-46f6-86bf-b1aa454f1e62",
+    "question_text": "Which of the following statements about self-pollination is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSelf-pollination increases homozygosity and reduces genetic diversity among offspring.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSelf-pollination results in high genetic variability among offspring.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSelf-pollination always leads to hybrid vigor.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSelf-pollination is solely determined by environmental factors.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Self-pollination often leads to increased homozygosity, which can reduce genetic diversity and may\n              increase susceptibility to inbreeding depression.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d835c9c-477d-4c27-9671-fec65483fc90",
+    "question_text": "Which of the following statements about the integuments of the ovule is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInteguments protect the ovule and later develop into the seed coat.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInteguments are responsible for forming the embryo sac.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInteguments attract pollinators.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInteguments fuse with the funiculus to form the fruit.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The integuments surround and protect the ovule and eventually develop into the seed coat after\n              fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dccd9037-23af-4780-9418-d6cf90bd2311",
+    "question_text": "Which hormone is primarily responsible for fruit ripening in many flowering plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthylene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGibberellin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ethylene is the key plant hormone that regulates and promotes fruit ripening in many species.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e1a55030-cbab-439f-86d6-5c1b345ef073",
+    "question_text": "Which of the following statements about the disadvantages of self-pollination is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSelf-pollination can lead to inbreeding depression and reduced genetic diversity among offspring.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSelf-pollination increases genetic variation.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSelf-pollination always results in more vigorous offspring than cross-pollination.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSelf-pollination eliminates the risk of inbreeding depression.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Self-pollination tends to increase homozygosity, which can lead to inbreeding depression and a reduction\n              in genetic diversity, making populations less adaptable.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cac7e8cf-3577-4231-ad24-c46777caaecd",
+    "question_text": "Megagametogenesis is the process by which:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMicrospores form the pollen grain",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe functional megaspore develops into the embryo sac",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTwo sperm cells are produced",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe pollen tube emerges from the pollen grain",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Megagametogenesis is the process through which the surviving megaspore undergoes mitotic divisions to\n              form the mature embryo sac (female gametophyte).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "topic": "Sexual Reproduction in Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Sexual Reproduction in Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "sexual-reproduction-in-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "total": 1037,
+  "total": 8023,
   "files": [
     {
       "subject": "Physics",
@@ -65,409 +65,409 @@
       "subject": "Physics",
       "chapter": "Thermodynamics",
       "file": "Physics_Thermodynamics.json",
-      "count": 0
+      "count": 118
     },
     {
       "subject": "Physics",
       "chapter": "Kinetic Theory",
       "file": "Physics_Kinetic_Theory.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Physics",
       "chapter": "Oscillations",
       "file": "Physics_Oscillations.json",
-      "count": 0
+      "count": 150
     },
     {
       "subject": "Physics",
       "chapter": "Waves",
       "file": "Physics_Waves.json",
-      "count": 0
+      "count": 135
     },
     {
       "subject": "Physics",
       "chapter": "Electric Charges and Fields",
       "file": "Physics_Electric_Charges_and_Fields.json",
-      "count": 0
+      "count": 135
     },
     {
       "subject": "Physics",
       "chapter": "Electrostatic Potential and Capacitance",
       "file": "Physics_Electrostatic_Potential_and_Capacitance.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Physics",
       "chapter": "Current Electricity",
       "file": "Physics_Current_Electricity.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Physics",
       "chapter": "Moving Charges and Magnetism",
       "file": "Physics_Moving_Charges_and_Magnetism.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Physics",
       "chapter": "Magnetism and Matter",
       "file": "Physics_Magnetism_and_Matter.json",
-      "count": 0
+      "count": 105
     },
     {
       "subject": "Physics",
       "chapter": "Electromagnetic Induction",
       "file": "Physics_Electromagnetic_Induction.json",
-      "count": 0
+      "count": 105
     },
     {
       "subject": "Physics",
       "chapter": "Alternating Current",
       "file": "Physics_Alternating_Current.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Physics",
       "chapter": "Electromagnetic Waves",
       "file": "Physics_Electromagnetic_Waves.json",
-      "count": 0
+      "count": 115
     },
     {
       "subject": "Physics",
       "chapter": "Ray Optics and Optical Instruments",
       "file": "Physics_Ray_Optics_and_Optical_Instruments.json",
-      "count": 0
+      "count": 150
     },
     {
       "subject": "Physics",
       "chapter": "Wave Optics",
       "file": "Physics_Wave_Optics.json",
-      "count": 0
+      "count": 119
     },
     {
       "subject": "Physics",
       "chapter": "Dual Nature of Radiation and Matter",
       "file": "Physics_Dual_Nature_of_Radiation_and_Matter.json",
-      "count": 0
+      "count": 90
     },
     {
       "subject": "Physics",
       "chapter": "Atoms and Nuclei",
       "file": "Physics_Atoms_and_Nuclei.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Physics",
       "chapter": "Semiconductor Electronics",
       "file": "Physics_Semiconductor_Electronics.json",
-      "count": 0
+      "count": 94
     },
     {
       "subject": "Chemistry",
       "chapter": "Some Basic Concepts of Chemistry",
       "file": "Chemistry_Some_Basic_Concepts_of_Chemistry.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Structure of Atom",
       "file": "Chemistry_Structure_of_Atom.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Classification of Elements and Periodicity in Properties",
       "file": "Chemistry_Classification_of_Elements_and_Periodicity_in_Properties.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Chemical Bonding and Molecular Structure",
       "file": "Chemistry_Chemical_Bonding_and_Molecular_Structure.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Thermodynamics",
       "file": "Chemistry_Thermodynamics.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Equilibrium",
       "file": "Chemistry_Equilibrium.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Redox Reactions",
       "file": "Chemistry_Redox_Reactions.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Some Basic Principles of Organic Chemistry",
       "file": "Chemistry_Some_Basic_Principles_of_Organic_Chemistry.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Hydrocarbons",
       "file": "Chemistry_Hydrocarbons.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Solutions",
       "file": "Chemistry_Solutions.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Electrochemistry",
       "file": "Chemistry_Electrochemistry.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Chemical Kinetics",
       "file": "Chemistry_Chemical_Kinetics.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "d and f Block Elements",
       "file": "Chemistry_d_and_f_Block_Elements.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Coordination Compounds",
       "file": "Chemistry_Coordination_Compounds.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Haloalkanes and Haloarenes",
       "file": "Chemistry_Haloalkanes_and_Haloarenes.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Alcohols, Phenols and Ethers",
       "file": "Chemistry_Alcohols_Phenols_and_Ethers.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Aldehydes, Ketones and Carboxylic Acids",
       "file": "Chemistry_Aldehydes_Ketones_and_Carboxylic_Acids.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Amines",
       "file": "Chemistry_Amines.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Chemistry",
       "chapter": "Biomolecules",
       "file": "Chemistry_Biomolecules.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "The Living World",
       "file": "Biology_The_Living_World.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Biological Classification",
       "file": "Biology_Biological_Classification.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Plant Kingdom",
       "file": "Biology_Plant_Kingdom.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Morphology of Flowering Plants",
       "file": "Biology_Morphology_of_Flowering_Plants.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Anatomy of Flowering Plants",
       "file": "Biology_Anatomy_of_Flowering_Plants.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Cell: The Unit of Life",
       "file": "Biology_Cell_The_Unit_of_Life.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Cell Cycle and Cell Division",
       "file": "Biology_Cell_Cycle_and_Cell_Division.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Photosynthesis in Higher Plants",
       "file": "Biology_Photosynthesis_in_Higher_Plants.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Respiration in Plants",
       "file": "Biology_Respiration_in_Plants.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Plant Growth and Development",
       "file": "Biology_Plant_Growth_and_Development.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Sexual Reproduction in Flowering Plants",
       "file": "Biology_Sexual_Reproduction_in_Flowering_Plants.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Principles of Inheritance and Variation",
       "file": "Biology_Principles_of_Inheritance_and_Variation.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Molecular Basis of Inheritance",
       "file": "Biology_Molecular_Basis_of_Inheritance.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Microbes in Human Welfare",
       "file": "Biology_Microbes_in_Human_Welfare.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Organisms and Populations",
       "file": "Biology_Organisms_and_Populations.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Ecosystem",
       "file": "Biology_Ecosystem.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Biodiversity and Conservation",
       "file": "Biology_Biodiversity_and_Conservation.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Animal Kingdom",
       "file": "Biology_Animal_Kingdom.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Structural Organisation in Animals",
       "file": "Biology_Structural_Organisation_in_Animals.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Biomolecules",
       "file": "Biology_Biomolecules.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Breathing and Exchange of Gases",
       "file": "Biology_Breathing_and_Exchange_of_Gases.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Body Fluids and Circulation",
       "file": "Biology_Body_Fluids_and_Circulation.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Excretory Products and their Elimination",
       "file": "Biology_Excretory_Products_and_their_Elimination.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Locomotion and Movement",
       "file": "Biology_Locomotion_and_Movement.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Neural Control and Coordination",
       "file": "Biology_Neural_Control_and_Coordination.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Chemical Coordination and Integration",
       "file": "Biology_Chemical_Coordination_and_Integration.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Human Reproduction",
       "file": "Biology_Human_Reproduction.json",
-      "count": 0
+      "count": 70
     },
     {
       "subject": "Biology",
       "chapter": "Reproductive Health",
       "file": "Biology_Reproductive_Health.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Evolution",
       "file": "Biology_Evolution.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Human Health and Disease",
       "file": "Biology_Human_Health_and_Disease.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Biotechnology: Principles and Processes",
       "file": "Biology_Biotechnology_Principles_and_Processes.json",
-      "count": 0
+      "count": 100
     },
     {
       "subject": "Biology",
       "chapter": "Biotechnology and its Applications",
       "file": "Biology_Biotechnology_and_its_Applications.json",
-      "count": 0
+      "count": 100
     }
   ]
 }

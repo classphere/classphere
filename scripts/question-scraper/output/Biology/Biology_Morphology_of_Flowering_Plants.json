@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "3dd2012c-30c2-4be5-af74-ae3dbb3d0537",
+    "question_text": "Which type of root system is commonly found in monocot plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTap root system",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFibrous root system",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdventitious root system",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoth B and C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Monocots typically have a fibrous root system, but some may develop adventitious roots.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "823536ff-fe04-4bdc-b445-973077080390",
+    "question_text": "Which part of the root helps in the absorption of water and minerals?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRoot cap",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRegion of elongation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRoot hairs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPericycle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Root hairs are delicate, thread-like structures that absorb water and minerals from the soil.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fa144803-07d5-47a0-8834-019b5d015aef",
+    "question_text": "Which part of a plant is responsible for the conduction of water and minerals?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhloem",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nXylem",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCortex",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpidermis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Xylem is responsible for the conduction of water and minerals from roots to other parts of the plant.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5abf6a8f-183f-49fd-8f35-51bcdfb9e1e0",
+    "question_text": "Which of the following statements about root modification is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPneumatophores are found in desert plants",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProp roots provide support in maize",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTaproots are present in monocot plants",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFibrous roots arise from the radicle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Prop roots arise from the branches and provide additional support, as seen in maize and banyan trees.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dc80ca65-cf5d-4caf-907f-b3f8639143a0",
+    "question_text": "Which of the following statements about the stem is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe stem bears leaves, flowers, and fruits",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nStems cannot perform photosynthesis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUnderground stems of ginger store food",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStem tendrils help plants climb",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Some stems, such as in Opuntia, are modified for photosynthesis, making the statement incorrect.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b8f46ec-65df-44ba-8a2f-fb8a20468496",
+    "question_text": "Which of the following statements about leaf modifications is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLeaf spines reduce transpiration in desert plants",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTendrils in pea plants are modified stems",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBulbils in onion are modified leaves",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeaves do not store food",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In desert plants, leaves are modified into spines to minimize transpiration and conserve water.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "640ebcd4-1a46-439a-bd32-d0ac123c08ef",
+    "question_text": "Which of the following is an incorrect statement about venation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParallel venation is found in monocots",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nReticulate venation is found in dicots",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMango leaves show parallel venation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrass leaves have parallel venation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mango leaves exhibit reticulate venation, which is typical of dicot plants, making this statement incorrect.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c63b9081-e394-4573-a8d9-a4cb2ad26efa",
+    "question_text": "Which of the following is NOT a function of the stem?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSupport",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhotosynthesis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnchorage",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTransport",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Anchorage is a function of the root, while the stem provides support, transport, and sometimes photosynthesis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f1dd7742-1a26-4142-b607-5715406926a8",
+    "question_text": "Which type of leaf venation is commonly found in dicot plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParallel venation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nReticulate venation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBoth A and B",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Dicot plants typically have reticulate venation, where veins form a network.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "41e602e3-d367-419a-a557-97bcc1b1d558",
+    "question_text": "What is the primary function of the leaf?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAbsorption",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhotosynthesis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTransport",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAnchorage",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The primary function of a leaf is photosynthesis, which helps in the synthesis of food.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "261d6e70-8b8c-43be-9e38-f7df2281f50e",
+    "question_text": "Which term describes the arrangement of veins and veinlets in the leaf?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlacentation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVenation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAestivation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInflorescence",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Venation refers to the pattern of veins in the leaf, which can be reticulate or parallel.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "88134137-606f-4b5c-8bd1-698cf3af8eff",
+    "question_text": "Which of the following describes an actinomorphic flower?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt has radial symmetry",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt has bilateral symmetry",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is asymmetrical",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt has no symmetry",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Actinomorphic flowers have radial symmetry, meaning they can be divided into equal halves in multiple\n              planes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c9a8cdc8-189b-49b0-a264-a7d560644aab",
+    "question_text": "Which of the following statements about phyllotaxy is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWhorled phyllotaxy is found in mustard",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlternate phyllotaxy is seen in sunflower",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOpposite phyllotaxy is found in Alstonia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWhorled phyllotaxy is common in monocots",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sunflower exhibits alternate phyllotaxy, where a single leaf arises at each node in an alternating\n              manner.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c363f50d-4866-4f6d-bae6-9a1172e7f645",
+    "question_text": "Which of the following statements about flower symmetry is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZygomorphic flowers have radial symmetry",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nActinomorphic flowers have bilateral symmetry",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPea flowers are zygomorphic",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSunflower flowers are zygomorphic",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Pea flowers exhibit zygomorphic symmetry, meaning they can be divided into two equal halves in only one\n              plane.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "17e80c01-503e-4de2-81aa-be1a241a1fec",
+    "question_text": "Which of the following statements about fruits is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDrupe is a fleshy fruit with a hard endocarp",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMango is a drupe",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCoconut is a dry fruit",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTomato is a berry",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Coconut is classified as a drupe, not a dry fruit, because it has a fibrous mesocarp and a hard endocarp.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b421f301-5837-4880-a1b9-be042325b5e0",
+    "question_text": "Which part of the flower is responsible for producing pollen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStigma",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nStyle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnther",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOvary",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The anther is part of the stamen and is responsible for producing pollen grains.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "87a64d7c-330e-447e-9058-9da4951f9444",
+    "question_text": "Which of the following is an underground modification of the stem?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTuber",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTap root",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFibrous root",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdventitious root",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Tubers, such as in potato, are underground modifications of the stem used for storage.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ddb07a44-d0db-4845-ab22-3c33cac5a5cf",
+    "question_text": "In which type of inflorescence does the main axis continue to grow and flowers are borne in an acropetal succession?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCymose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRacemose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSolitary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBasal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In racemose inflorescence, the main axis grows continuously, and flowers appear in acropetal succession.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "12ac6483-fb08-49d8-8625-2e32829c024f",
+    "question_text": "Which of the following statements about leaves is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCompound leaves have divided leaflets",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe petiole connects the lamina to the stem",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIn grasses, the leaf blade is not differentiated into a petiole and lamina",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nParallel venation is characteristic of dicot leaves",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Parallel venation is characteristic of monocots, while dicots usually have reticulate venation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6a48f0b2-1247-4950-95b5-a742e125c4c3",
+    "question_text": "Which of the following statements about phyllotaxy is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlternate phyllotaxy is found in guava",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWhorled phyllotaxy is found in Alstonia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOpposite phyllotaxy is common in sunflower",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlternate phyllotaxy is absent in dicots",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In Alstonia, multiple leaves grow in a whorl at each node, making it an example of whorled phyllotaxy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f30c81ac-f83c-4bb5-bfbd-e47e343ac240",
+    "question_text": "What is the function of the root cap?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAbsorbs water",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProtects root tip",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProduces root hairs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStores food",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The root cap is a thimble-like structure that protects the root tip as it grows through the soil.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "310e9482-4e8e-47f4-b62d-8f29ddea8314",
+    "question_text": "Which of the following statements about seed structure is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe seed coat protects the embryo",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe radicle develops into the shoot",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe plumule gives rise to the root",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe endosperm is always present in dicot seeds",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The seed coat provides protection to the embryo, preventing damage and desiccation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7d10dac3-ce1a-434d-893e-d33995a1a3b7",
+    "question_text": "Which of the following statements about the root system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTaproots are common in monocots",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFibrous roots are found in wheat",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdventitious roots develop from plant parts other than the radicle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPneumatophores help in gaseous exchange",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Taproots are characteristic of dicots, while monocots usually have fibrous root systems.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b6af8032-6dda-45b0-ba6b-288e9629ac07",
+    "question_text": "Which of the following statements about stem modifications is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRhizomes are aerial modifications of stems",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThorns in citrus plants are modified leaves",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTendrils in cucumber are modified stems",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTubers in potato store water",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Stem tendrils, as seen in cucumber, help in climbing by coiling around support structures.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ee94fe21-0ba0-4e13-8753-c06514ed46b8",
+    "question_text": "Which structure is present in the axil of a leaf and can develop into a branch?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPetiole",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAxillary bud",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLeaf base",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStipule",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "An axillary bud is present in the axil of a leaf and may develop into a branch.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "da9947d2-8a52-49e7-aec2-b1f42623bb0a",
+    "question_text": "What is the term for a leaf where the lamina is divided into leaflets?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSimple leaf",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCompound leaf",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nReticulate leaf",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPinnate leaf",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A compound leaf has a lamina divided into multiple leaflets.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c1c985d8-8a9a-4edf-b044-6f09129d5a0b",
+    "question_text": "Which term describes a flower with both androecium and gynoecium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUnisexual",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBisexual",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nZygomorphic",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nApocarpous",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bisexual flowers have both male (androecium) and female (gynoecium) reproductive organs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cd9d9455-06d8-487b-89b6-3e28420f85f7",
+    "question_text": "Which of the following is an incorrect statement about placentation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMarginal placentation is found in pea",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAxile placentation is seen in tomato",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParietal placentation is observed in mustard",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBasal placentation occurs in hibiscus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Basal placentation is found in sunflower, not hibiscus. Hibiscus has axile placentation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "84e02f9b-e7fa-4bb9-b459-6cf40245923f",
+    "question_text": "Which of the following statements about flower symmetry is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nActinomorphic flowers can be divided into two equal halves in only one plane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nZygomorphic flowers can be divided into multiple symmetrical halves",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nActinomorphic flowers exhibit radial symmetry",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPea flowers exhibit actinomorphic symmetry",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Actinomorphic flowers have radial symmetry, meaning they can be divided into equal halves in multiple\n              planes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9cf1684c-39bc-44ef-8e6f-8183ffe84ed7",
+    "question_text": "Which of the following is an incorrect statement about fruit types?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBerry fruits develop from a single ovary",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDrupe fruits have a hard endocarp",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAggregate fruits develop from multiple ovaries of a single flower",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDry dehiscent fruits do not split open at maturity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Dry dehiscent fruits, such as legumes, split open at maturity to release seeds.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ee3e49d0-9281-402c-a5b7-7be06c7ca5f5",
+    "question_text": "Which structure in the seed is responsible for storing food?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSeed coat",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCotyledon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlumule",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRadicle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The cotyledons in seeds store food and help nourish the developing embryo.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "433af2e8-a8dc-48f4-ba95-9cd82395bc83",
+    "question_text": "Which type of fruit is a coconut?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBerry",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCapsule",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDrupe",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNut",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Coconut is classified as a drupe, with a fibrous mesocarp and a hard endocarp.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7813471a-759e-40d3-8c76-bbdcf1627c60",
+    "question_text": "Which type of root system is commonly found in dicotyledonous plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFibrous root system",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTap root system",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdventitious root system",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In dicotyledonous plants, the radicle develops into the primary root, forming a tap root system.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8425a5fd-8a76-4998-8269-9266409196ae",
+    "question_text": "Which of the following statements about seeds is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDicot seeds always contain endosperm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMonocot seeds have a single cotyledon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe radicle develops into the shoot",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe cotyledons are absent in all monocots",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Monocot seeds, such as maize, have a single cotyledon called the scutellum.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "99c1ac40-c792-4162-bd9b-49051abcd1f6",
+    "question_text": "Which of the following statements about inflorescence is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIn racemose inflorescence, flowers develop in acropetal succession",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCymose inflorescence has a continuously growing main axis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUmbel is a type of racemose inflorescence",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCapitulum is found in sunflower",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In cymose inflorescence, the main axis terminates in a flower and does not grow continuously.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0332474-f735-499a-b73e-3118276bf391",
+    "question_text": "Which of the following statements about root functions is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRoots provide support and absorb nutrients",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRoots do not store food in any plant species",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRoots perform photosynthesis in all plants",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRoots do not play a role in water conduction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Roots primarily provide anchorage, absorb nutrients, and in some plants, store food.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "de79bd9e-7b39-4d1c-8ed3-1cebdd24bab2",
+    "question_text": "Which of the following statements about stem modifications is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBulbs are modified stems used for food storage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRhizomes grow underground",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStolons grow vertically into the soil",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTubers store starch and nutrients",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Stolons are horizontal stems that grow along the soil surface and help in vegetative propagation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "724e9c2b-f9d5-47fc-ad29-68e76e93c0fa",
+    "question_text": "Which of the following is NOT a function of the root system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAbsorption of water and minerals",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProviding anchorage",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTransport of food",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStorage of reserve food",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The root system does not transport food; this function is performed by the vascular tissue in stems.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "931b5a7d-ddbb-4587-8ccc-8a182217d68c",
+    "question_text": "Which region of the root is responsible for its lengthwise growth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRoot cap",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRegion of elongation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRegion of maturation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRegion of meristematic activity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The region of elongation consists of cells that enlarge and contribute to the root's growth in length.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "28892bdf-c2fb-49f4-a19a-ab6c4e963be2",
+    "question_text": "What distinguishes a stem from a root?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPresence of nodes and internodes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPositive geotropism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbsence of buds",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPresence of root hairs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The stem is characterized by the presence of nodes and internodes, which distinguish it from the root.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "edbb96dc-f524-4ff1-87d1-252ac2d9285c",
+    "question_text": "What is the term for the arrangement of leaves on a stem or branch?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVenation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlacentation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhyllotaxy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAestivation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phyllotaxy refers to the pattern of leaf arrangement on a stem or branch.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8386af7e-1259-4a60-a3e7-61444ac4ff8e",
+    "question_text": "Which type of flower has only one type of reproductive organ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUnisexual",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBisexual",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nZygomorphic",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIncomplete",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Unisexual flowers contain only stamens or only carpels, making them male or female flowers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "91538b26-54b2-4d59-89f9-d2ce3377f287",
+    "question_text": "Which of the following is an example of an epigynous flower?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMustard",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSunflower",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In epigynous flowers, such as sunflower, the ovary is completely enclosed by the thalamus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "578220ad-8e46-49db-b081-90a3e1800a74",
+    "question_text": "Which type of seed has both cotyledons and stores food in endosperm?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNon-endospermic monocot seed",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEndospermic dicot seed",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNon-endospermic dicot seed",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNon-endospermic seed",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In endospermic dicot seeds like castor, food is stored in the endosperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "de93c271-69b7-4b9f-80b6-5613de35abbe",
+    "question_text": "Which of the following statements about leaves is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSimple leaves have multiple leaflets",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIn compound leaves, the leaf blade is undivided",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe petiole helps attach the leaf to the stem",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeaves do not have vascular tissues",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The petiole connects the leaf blade (lamina) to the stem and supports it.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3570b13f-a9e5-464b-a9fa-287ccc38d422",
+    "question_text": "Which of the following statements about venation is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nReticulate venation is seen in monocots",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParallel venation is seen in grasses",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDicots typically have reticulate venation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonocots usually exhibit parallel venation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reticulate venation is found in dicots, not monocots. Monocots exhibit parallel venation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d70bb49c-d72b-40d2-bebd-83fa4703baa8",
+    "question_text": "Which of the following statements about phyllotaxy is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlternate phyllotaxy is found in mustard",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWhorled phyllotaxy is found in sunflower",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOpposite phyllotaxy is observed in guava",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nboth option (1) and option (3)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "both option (1) and option (3)",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9674689d-a8b9-405e-b6f9-8332031a8099",
+    "question_text": "Which of the following statements about placentation is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAxile placentation is seen in china rose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMarginal placentation is found in pea",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParietal placentation is observed in mustard",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFree central placentation is seen in sunflower",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Sunflower exhibits basal placentation, not free central placentation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b0eeab15-618f-408a-a95c-447dd9900143",
+    "question_text": "Which of the following stem modifications stores food and appears flattened?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTuber",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBulb",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCorm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhylloclade",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phylloclades, as seen in Opuntia, are flattened stem modifications that store food and perform\n              photosynthesis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bacd9e98-91a8-43a5-93bc-ea80c71415ea",
+    "question_text": "Which floral organ is modified into pappus in the family Asteraceae?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStamens",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCalyx",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPetals",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOvary",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In Asteraceae, the calyx is modified into a pappus, which aids in seed dispersal.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7baec9dd-d0b3-4ae3-aa81-ae65ff234451",
+    "question_text": "Which term is used for the leaf arrangement in Alstonia?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlternate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOpposite",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWhorled",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Alstonia exhibits whorled phyllotaxy, where more than two leaves arise at a node.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b32eaee9-1f07-42ec-aefc-286951dec15e",
+    "question_text": "Which of the following statements about inflorescence is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCymose inflorescence has an acropetal flower arrangement",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUmbel is a type of racemose inflorescence",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpadix is found in banana and maize",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCapitulum is a type of racemose inflorescence",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Cymose inflorescence has a basipetal arrangement, meaning older flowers are at the top and younger ones\n              at the base.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7a719e9b-6c53-4442-829d-75caf33c482c",
+    "question_text": "Which of the following fruit types is classified as a dry fruit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMango",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCoconut",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCapsule",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBerry",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "A capsule is a type of dry fruit that splits open to release seeds.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d066d88-f58f-4239-a02d-bac2078c9980",
+    "question_text": "What is the primary function of the pericarp in fruit development?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProtection of seeds",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFacilitating pollination",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAiding in photosynthesis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWater absorption",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The pericarp is the wall of the fruit, which develops from the ovary and protects the seeds.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e27241a6-e88e-4441-94ff-0914214e0ea0",
+    "question_text": "Which of the following statements about leaf modifications is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTendrils in pea are modified leaves",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpines in cactus reduce water loss",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStorage leaves are found in onion",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeaflets in neem are modified for climbing",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Neem leaflets are not modified for climbing. Climbing structures like tendrils are found in pea plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e1bb7d0d-716c-4fe3-9978-750d7ac387eb",
+    "question_text": "How does the modification of the leaf into a tendril benefit climbing plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt helps in support and attachment",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt increases the surface area for photosynthesis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt reduces transpiration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt enhances seed dispersal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Leaf tendrils help climbing plants by coiling around supports, allowing them to grow vertically and\n              access sunlight.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "be1107eb-4b9f-4b88-ae00-56029064f7cd",
+    "question_text": "Which of the following statements about placentation is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMarginal placentation is found in pea",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAxile placentation is seen in tomato",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParietal placentation is observed in mustard",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBasal placentation is found in hibiscus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Basal placentation is found in sunflower, not in hibiscus. Hibiscus has axile placentation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4d01c53b-98b7-4d8c-bd7c-bdb0beac4b81",
+    "question_text": "Which of the following statements about inflorescence is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCymose inflorescence has an acropetal flower arrangement",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUmbel is a type of racemose inflorescence",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpadix is found in banana and maize",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCapitulum is a type of racemose inflorescence",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Cymose inflorescence has a basipetal arrangement, where older flowers are at the top and younger ones at\n              the base.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1455a646-4c59-47d3-873d-a34c550eb150",
+    "question_text": "Which feature differentiates a hypogynous flower from an epigynous flower?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe position of the ovary in relation to other floral parts",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe number of floral whorls",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe number of stamens present",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe symmetry of the flower",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In hypogynous flowers, the ovary is superior, while in epigynous flowers, the ovary is inferior and\n              embedded in the thalamus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "52131bc6-8b5d-4657-90a9-f91897a70451",
+    "question_text": "Which of the following represents a whorled phyllotaxy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChina rose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGuava",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAlstonia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMustard",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In Alstonia, more than two leaves are arranged in a whorl at each node, exhibiting whorled phyllotaxy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1073e4ab-3e65-4a89-bd84-942909731174",
+    "question_text": "Which of the following statements about fruits is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDrupe fruits have a hard endocarp",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBerry fruits have a fleshy pericarp",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLegumes do not split open at maturity",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAggregate fruits develop from multiple ovaries of a single flower",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Legumes are dehiscent fruits that split open at maturity to release seeds.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "331460d4-4e7d-418a-a74f-32770c323138",
+    "question_text": "Which of the following statements about flower symmetry is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZygomorphic flowers can be divided into two equal halves in multiple planes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nActinomorphic flowers have bilateral symmetry",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPea flowers exhibit zygomorphic symmetry",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSunflower flowers are zygomorphic",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Pea flowers are zygomorphic, meaning they can be divided into two equal halves in only one plane.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "18e6080a-bca3-49ef-a57a-cf3d10ad3641",
+    "question_text": "Which of the following statements about phyllotaxy is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWhorled phyllotaxy is seen in Alstonia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlternate phyllotaxy is found in guava",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOpposite phyllotaxy is common in mustard",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll plants have the same type of phyllotaxy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Alstonia exhibits whorled phyllotaxy, where more than two leaves grow at a single node.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0a7c4d51-274d-47e0-8711-bdc432e763fb",
+    "question_text": "Which of the following statements about root modifications is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPneumatophores help in gaseous exchange",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFibrous roots penetrate deep into the soil",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStilt roots are found in mustard",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTaproots do not store food",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pneumatophores are specialized roots in mangrove plants that help in gaseous exchange in waterlogged\n              conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2e4ab0c0-d06d-48e7-970b-b03556f081cf",
+    "question_text": "Which of the following statements about flower symmetry is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZygomorphic flowers can be divided into two equal halves only in one plane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nActinomorphic flowers exhibit bilateral symmetry",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPea flowers exhibit actinomorphic symmetry",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSunflower flowers exhibit zygomorphic symmetry",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Zygomorphic flowers, such as those of pea, can be divided into equal halves in only one vertical plane.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f761666-f634-4415-a0ad-16e81b7ec0f0",
+    "question_text": "Which of the following statements about venation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMango exhibits parallel venation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGrass exhibits reticulate venation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMonocots typically have parallel venation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDicots usually have parallel venation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Monocot leaves generally have parallel venation, where veins run parallel to each other.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ff990ab6-7dc8-42a5-bc12-05ca20d84056",
+    "question_text": "Which of the following is an example of a parthenocarpic fruit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMango",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCoconut",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBanana",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTomato",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Parthenocarpic fruits, such as banana, develop without fertilization and lack seeds.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1370ec35-31c1-4c39-9aa7-71ddb06fb116",
+    "question_text": "Which of the following statements about inflorescence is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCymose inflorescence has acropetal flower arrangement",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUmbel is a type of racemose inflorescence",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCapitulum is found in pea",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpadix inflorescence is found in rose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Umbel is a type of racemose inflorescence where flowers arise from a common point, as seen in coriander.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d1cbdafa-74ac-4247-9a62-690ed21a107a",
+    "question_text": "Which of the following statements about placentation is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAxile placentation is found in tomato",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParietal placentation occurs in mustard",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBasal placentation is seen in sunflower",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMarginal placentation is found in China rose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "China rose exhibits axile placentation, not marginal placentation. Marginal placentation is found in pea.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ddbfbf75-bec3-4fe8-8183-2c4c1c296868",
+    "question_text": "Which structure in a seed protects it from mechanical injury and water loss?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEndosperm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSeed coat",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCotyledons",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEmbryo",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The seed coat provides protection to the seed from mechanical injury and water loss.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c5c3dc7b-8e42-4af9-ae07-cbd91222dec0",
+    "question_text": "Which of the following statements about seeds is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe radicle develops into the root",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe plumule gives rise to the root",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe cotyledons store food in monocots",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonocot seeds have two cotyledons",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The radicle develops into the root, while the plumule forms the shoot.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "68b89bc4-3d72-4573-a009-d66c75293e73",
+    "question_text": "Which type of root modification provides mechanical support in maize and sugarcane?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTuberous roots",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProp roots",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPneumatophores",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStilt roots",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Stilt roots arise from lower nodes and provide mechanical support in plants like maize and sugarcane.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c8ad5e7e-1fef-45f8-a2e6-234c497412ac",
+    "question_text": "Which part of the seed is responsible for providing nourishment to the developing embryo in legumes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEndosperm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCotyledons",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nScutellum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlumule",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In legumes (dicots), the cotyledons store and provide food to the developing embryo.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8e12eb75-5336-492d-a801-5202a6d4fe17",
+    "question_text": "Which of the following statements about leaves is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSimple leaves have an undivided lamina",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCompound leaves have multiple leaflets",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe petiole connects the leaf to the root",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeaf tendrils in pea help in climbing",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The petiole connects the leaf to the stem, not the root.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "330448ae-7c3e-49aa-8f6b-770bfdb9381d",
+    "question_text": "Which part of the embryo gives rise to the shoot system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlumule",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRadicle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCotyledons",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEndosperm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The plumule is the part of the embryo that develops into the shoot system.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "46b2bcab-7ed0-4cf0-927a-09fd19d0b0b0",
+    "question_text": "Which of the following statements about fruit types is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBerry fruits develop from a superior ovary",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDrupe fruits have a fleshy mesocarp",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAggregate fruits arise from multiple flowers",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLegumes split open at maturity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Aggregate fruits develop from multiple ovaries of a single flower, not from multiple flowers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6fe204fe-e174-4e4f-b844-d2792f8364b8",
+    "question_text": "Which of the following terms describes flowers in which the ovary occupies the highest position on the thalamus?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHypogynous",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPerigynous",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEpigynous",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHalf-inferior",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In hypogynous flowers, such as mustard, the ovary is superior and occupies the highest position on the\n              thalamus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2915e2be-4bdd-49fa-8cec-efa75f9378ed",
+    "question_text": "Which of the following statements about flower symmetry is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZygomorphic flowers can be divided into two equal halves in multiple planes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nActinomorphic flowers have radial symmetry",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPea flowers exhibit actinomorphic symmetry",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSunflower flowers are zygomorphic",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Actinomorphic flowers have radial symmetry, meaning they can be divided into equal halves in multiple\n              planes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6fdf054f-d872-47ea-b843-e76e71660cf3",
+    "question_text": "Which structure protects the root meristem as it grows through the soil?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRoot cap",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRoot hairs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPericycle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEndodermis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The root cap is a thimble-like structure that protects the root tip from mechanical damage as it grows\n              through the soil.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "14b9214e-505b-4725-8fe7-731b8ec9e72c",
+    "question_text": "Which part of a leaf contains the vascular tissue for transport?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLamina",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nStipule",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPetiole",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVeins",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Veins in a leaf provide mechanical support and act as channels for the transport of water, minerals, and\n              food.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2cffdea1-2f09-44a4-8b67-6896d2a52808",
+    "question_text": "Which of the following statements about fruits is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA drupe has a fleshy mesocarp",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBerry fruits have a dry pericarp",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLegumes split open at maturity",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAggregate fruits arise from multiple ovaries of a single flower",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Berry fruits, such as tomato, have a fleshy pericarp, not a dry one.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ad38c6bd-9853-4867-8e28-6d915c55d8a1",
+    "question_text": "Which of the following statements about floral symmetry is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZygomorphic flowers can be divided into two equal halves only in one plane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nActinomorphic flowers exhibit radial symmetry",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPea flowers exhibit actinomorphic symmetry",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSunflower flowers exhibit actinomorphic symmetry",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Pea flowers are zygomorphic, meaning they can be divided into two equal halves only along one plane.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "98c149be-aec3-4c34-b8cd-d4b1b10cc491",
+    "question_text": "Which part of a monocot seed is responsible for food storage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCotyledon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEndosperm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlumule",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRadicle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In monocot seeds like maize, the endosperm stores food for the developing embryo.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "461b0d17-c9a5-43e5-9d22-06a85e4b62b0",
+    "question_text": "Which of the following statements about inflorescence is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCymose inflorescence has a basipetal arrangement",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUmbel is a type of racemose inflorescence",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpadix is found in banana and maize",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCapitulum is a type of cymose inflorescence",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Capitulum is a type of racemose inflorescence, not cymose.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2e489605-71f8-463a-bd90-2aa9f035faa7",
+    "question_text": "Which of the following statements about leaves is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLeaf spines in cactus reduce transpiration",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTendrils in pea plants are modified stems",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLeaves perform transpiration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStorage leaves are found in onion",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Tendrils in pea plants are modified leaves, not stems. They help the plant climb.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b3a77c06-28a4-41d4-a646-44158a855d65",
+    "question_text": "Which structure is responsible for protecting young leaves in a plant?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStipules",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAxillary buds",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRoot hairs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpidermis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Stipules are small leaf-like structures at the base of a petiole that protect young developing leaves.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0a76410e-362e-4128-844e-82079baa46a6",
+    "question_text": "Which term describes the position of floral organs when they arise from a cup-like thalamus?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHypogynous",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPerigynous",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEpigynous",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In perigynous flowers, the floral organs arise from the rim of a cup-like thalamus, as seen in rose.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b9f8e55b-9b3f-4d66-ba20-bca536c4988a",
+    "question_text": "Which type of venation is present in monocot leaves?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nReticulate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParallel",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBoth A and B",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Monocot leaves typically have parallel venation, where veins run parallel to each other.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2e39a7a0-65d8-4292-9c51-1f92ad58285e",
+    "question_text": "Which of the following statements about stems is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRhizomes are aerial stems that store food",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTubers are underground modified stems",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThorns in citrus plants are modified leaves",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTendrils in pumpkins are modified roots",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Potato tubers are underground modified stems that store food and help in vegetative propagation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c3483c00-9dec-4564-a63c-0e5d423bd776",
+    "question_text": "What is the primary function of the mesophyll in a leaf?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProviding structural support",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarrying out photosynthesis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTransporting water",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPreventing water loss",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The mesophyll contains chloroplasts and is the main site for photosynthesis in a leaf.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b3ebc07-e37e-4d99-aa25-0dc465fc6266",
+    "question_text": "Which of the following correctly describes free central placentation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOvules are attached along the margins of the ovary",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOvules are attached to a central axis without septa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOvules are attached to the inner wall of a unilocular ovary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOvules are attached to the basal region of the ovary",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In free central placentation, as seen in Dianthus, ovules are attached to a central axis, and the ovary\n              lacks septa.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "982b2f79-f1af-4ab0-96d3-3ddf896735a6",
+    "question_text": "What is the function of stipules in some dicot leaves?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey help in leaf attachment",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey protect the leaf bud",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey store food",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey conduct water",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Stipules are small leaf-like structures at the base of petioles in some dicots that protect the young\n              leaf buds.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e002ca9e-62bf-4c9e-a934-139d600a3f2f",
+    "question_text": "Which type of aestivation is characterized by one petal overlapping the other in one particular direction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nValvate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTwisted",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nImbricate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVexillary",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Twisted aestivation, as seen in china rose, occurs when one petal overlaps the next one in a specific\n              direction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f25444ba-b64d-42b5-8ff6-8b3d41d6b7de",
+    "question_text": "Which of the following statements about venation is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParallel venation is seen in monocots",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nReticulate venation is seen in dicots",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMango exhibits parallel venation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrass exhibits parallel venation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mango exhibits reticulate venation, a characteristic feature of dicot plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "056dee7b-bcb5-49f0-b1e6-54f2fc626179",
+    "question_text": "Which of the following statements about phyllotaxy is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlternate phyllotaxy is seen in sunflower",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWhorled phyllotaxy is found in Alstonia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOpposite phyllotaxy is found in guava",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll plants have whorled phyllotaxy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Not all plants exhibit whorled phyllotaxy; different species may have alternate, opposite, or whorled\n              arrangements.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "361b8755-3aa3-459c-b495-36ae8009f1c8",
+    "question_text": "Which of the following statements about leaf venation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParallel venation is common in monocots",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nReticulate venation is characteristic of monocots",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMango exhibits parallel venation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrass exhibits reticulate venation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Parallel venation, where veins run parallel to each other, is a characteristic feature of monocots.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f46f3d87-fc59-412b-a478-4513ea34dd53",
+    "question_text": "Why do monocot plants generally lack a prominent taproot system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey do not have radicles in their seeds",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTheir primary root is short-lived and replaced by adventitious roots",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey require a shallow root system for water absorption",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey lack vascular tissues for deep root penetration",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Monocots have a fibrous root system because their primary root is short-lived and is replaced by a\n              cluster of adventitious roots arising from the stem base.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0b47919a-a0af-4ebf-bd1a-b207f581a863",
+    "question_text": "Which of the following statements about seeds is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe radicle develops into the shoot",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe plumule gives rise to the root",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe cotyledons store food in dicots",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonocot seeds have two cotyledons",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In dicot seeds, the cotyledons store food and provide nourishment to the developing embryo.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e9d1d0b-2433-49c9-8a05-e2cf132d82c3",
+    "question_text": "Which part of a dicot seed is responsible for food storage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEndosperm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCotyledons",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlumule",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRadicle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In dicot seeds like gram and pea, the cotyledons store food and provide nourishment to the embryo.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eaeb9050-cd16-4920-896f-fb817debf1e9",
+    "question_text": "Which part of the embryo emerges first during seed germination?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlumule",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRadicle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCotyledons",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpicotyl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The radicle is the first part of the embryo to emerge during germination, developing into the root\n              system.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Morphology of Flowering Plants",
+    "topic": "Morphology of Flowering Plants",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Morphology of Flowering Plants / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "morphology-of-flowering-plants"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

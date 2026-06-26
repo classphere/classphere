@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "c6fb595c-00fc-4a8c-9161-28c5df40d280",
+    "question_text": "A solution contains 5 ppm of \nNaCl\n by mass in water. What is its molality? (Molar mass: \nNaCl\n = 58.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.0 × 10⁻⁵ m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.0 × 10⁻⁴ m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.5 × 10⁻⁵ m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8.55 × 10⁻⁵ m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "5 ppm = 5 g NaCl in 10⁶ g water.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6b600716-dc62-4c60-a6ae-2aa90db6a106",
+    "question_text": "A welding gas (C and H only) produces 3.38 g \nCO\n2\n and 0.69 g \nH\n2\nO\n on burning. What is its empirical formula? (Atomic masses: C = 12, H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n2\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Mass of C = 1244 × 3.38 ≈ 0.922 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c32ba14d-da68-42ed-9f7d-a9408ebb130e",
+    "question_text": "A 1.5 L sample of a gas at STP weighs 2.1 g and contains only carbon and hydrogen. If it produces 3.52 g of \nCO\n2\n on burning, what is its molecular formula? (Atomic masses: C = 12, H = 1)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n2\nH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n3\nH\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n2\nH\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles of gas = 1.522.4 ≈ 0.067 mol; molar mass = 2.10.067 ≈ 31.34 g/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "70c17016-93e0-4a04-8321-5d4602e42794",
+    "question_text": "A mixture of 12 g \nC\n and 48 g \nO\n2\n is ignited to form \nCO\n2\n. What is the mass of \nCO\n2\n produced? (Atomic masses: C = 12, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n44 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n22 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n66 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n33 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: C+OA2⟶COA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "30f816e3-3e3c-400d-8f1e-4066071908cf",
+    "question_text": "A solution of \nHNO\n3\n has a molarity of 0.8 M and a density of 1.03 g/mL. What is its molality? (Molar mass: \nHNO\n3\n = 63 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.816 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.75 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.9 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.0 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mass of 1 L solution = 1000 × 1.03 = 1030 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8fd14b05-8b60-440d-8793-c7d7879a96ec",
+    "question_text": "How many grams of \nNa\n2\nSO\n4\n are produced when 14.2 g of \nNaOH\n reacts with excess \nH\n2\nSO\n4\n? (Molar masses: \nNaOH\n = 40 g/mol, \nNa\n2\nSO\n4\n = 142 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n14.2 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n25.2 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n50.4 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.6 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: 2NaOH+HA2SOA4⟶NaA2SOA4+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "64b2de5d-2b26-4b21-9bc8-52d355be943d",
+    "question_text": "What is the mass of \nH\n2\nO\n produced when 8 g of \nH\n2\n reacts with 32 g of \nO\n2\n? (Atomic masses: H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n36 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n72 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: 2HA2+OA2⟶2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b11754c7-27c7-4e7d-bb9c-9499156d5b40",
+    "question_text": "How many significant figures are present in the result of \n0.0821\n×\n300.15\n1.01325\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "0.0821 (3 sig figs), 300.15 (5 sig figs), 1.01325 (6 sig figs).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5fad8231-d7a7-4cfe-83a1-6a01c2509d77",
+    "question_text": "How many grams of \nCaCO\n3\n are required to produce 2.24 L of \nCO\n2\n at STP with excess \nHCl\n? (Molar mass: \nCaCO\n3\n = 100 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Reaction: CaCOA3+2HCl⟶CaClA2+COA2+HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ff84c17d-a958-491b-bb63-0cfe19491f38",
+    "question_text": "A solution contains 15 ppm of \nCaCl\n2\n by mass in water. What is its molality? (Molar mass: \nCaCl\n2\n = 111 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.0 × 10⁻⁴ m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.0 × 10⁻⁴ m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.351 × 10⁻⁴ m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.0 × 10⁻⁵ m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "15 ppm = 15 g CaClA2 in 10⁶ g water.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e26d1046-261f-4990-9b7c-54ed956ce873",
+    "question_text": "What volume of \nO\n2\n at STP is required to burn 5.6 g of \nC\n2\nH\n4\n completely to \nCO\n2\n and \nH\n2\nO\n? (Molar mass: \nC\n2\nH\n4\n = 28 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13.44 L",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.72 L",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n22.4 L",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.48 L",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: CA2HA4+3OA2⟶2COA2+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8c7258ab-7e2e-4632-bb1c-a15a10756614",
+    "question_text": "How many grams of \nAl\n2\nO\n3\n are required to produce 10.8 g of \nAl\n with excess \nCO\n? (Molar masses: \nAl\n2\nO\n3\n = 102 g/mol, Al = 27 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10.2 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n30.6 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15.3 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20.4 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: AlA2OA3+3CO⟶2Al+3COA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0b6fb29e-c93c-4e48-85f3-7c3bafd676ec",
+    "question_text": "What is the mass of \nCaCl\n2\n produced when 25 g of \nCa\n(\nOH\n)\n2\n reacts with excess \nHCl\n? (Molar masses: \nCa\n(\nOH\n)\n2\n = 74 g/mol, \nCaCl\n2\n = 111 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18.75 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n37.5 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n55.5 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n74 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: Ca(OH)A2+2HCl⟶CaClA2+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "84545759-9ae6-4784-8d62-48f9b6c506a5",
+    "question_text": "What volume of \nCO\n2\n at STP is produced when 9 g of \nC\n3\nH\n8\n is burned completely? (Molar mass: \nC\n3\nH\n8\n = 44 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.87 L",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20.61 L",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9.16 L",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n13.74 L",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: CA3HA8+5OA2⟶3COA2+4HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4447e0b-ca86-43a3-bf72-b767316ec5a6",
+    "question_text": "A 2.5 L sample of a gas at STP has a mass of 5 g. If it contains only nitrogen and oxygen, what is its empirical formula? (Atomic masses: N = 14, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nN\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nN\n2\nO\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Moles = 2.522.4 ≈ 0.1116 mol; molar mass = 50.1116 ≈ 44.8 g/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a8340e48-7a2a-42bd-b847-5da3b3d05e1f",
+    "question_text": "How many grams of \nK\n2\nSO\n4\n are produced when 11.2 g of \nKOH\n reacts with excess \nH\n2\nSO\n4\n? (Molar masses: \nKOH\n = 56 g/mol, \nK\n2\nSO\n4\n = 174 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8.7 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n17.4 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n34.8 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n13.05 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: 2KOH+HA2SOA4⟶KA2SOA4+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6cad1aa7-894e-42b1-b538-df2ec7a46c03",
+    "question_text": "A solution contains 30 ppm of \nNa\n2\nSO\n4\n by mass in water. What is its molarity if the density is 1 g/mL? (Molar mass: \nNa\n2\nSO\n4\n = 142 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.0 × 10⁻⁴ M",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5 × 10⁻⁴ M",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.113 × 10⁻⁴ M",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5 × 10⁻⁴ M",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "30 ppm = 30 g NaA2SOA4 in 10⁶ g solution.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b15b3f85-8c5c-42b6-86c7-cc2bf5caf574",
+    "question_text": "What is the mass of \nFeCl\n2\n produced when 11.2 g of \nFe\n reacts with excess \nHCl\n? (Molar masses: Fe = 56 g/mol, \nFeCl\n2\n = 126.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12.65 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n25.3 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n50.6 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18.9 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: Fe+2HCl⟶FeClA2+HA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "427bdd07-3638-4f9a-be9c-52d7af9e12a7",
+    "question_text": "A compound contains 27.27% carbon and 72.73% oxygen by mass. What is its empirical formula? (Atomic masses: C = 12, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n2\nO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For 100 g: C = 27.27 g, O = 72.73 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aab6636e-890c-4a7a-bb50-e9da10ed3665",
+    "question_text": "What is the mass percentage of \nKNO\n3\n in a solution made by dissolving 10.1 g of \nKNO\n3\n in 40 g of water? (Molar mass: \nKNO\n3\n = 101 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n25%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20.16%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Total mass = 10.1 + 40 = 50.1 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f715ca36-20eb-47d4-8a1a-72abd1fafbb3",
+    "question_text": "A 0.56 g sample of a hydrocarbon produces 1.76 g of \nCO\n2\n and 0.72 g of \nH\n2\nO\n on complete combustion. What is its molecular formula if its molar mass is 56 g/mol? (Atomic masses: C = 12, H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n4\nH\n8",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n3\nH\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n5\nH\n10",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n2\nH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mass of C = 1244 × 1.76 ≈ 0.48 g; mass of H = 218 × 0.72 = 0.08 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "31c6dbd0-2050-49d0-99f8-8bafe9db2402",
+    "question_text": "What is the mass of \nAlCl\n3\n produced when 13.5 g of \nAl\n reacts with excess \nCl\n2\n? (Molar masses: Al = 27 g/mol, \nAlCl\n3\n = 133.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n33.38 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n66.75 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n133.5 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n44.5 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: 2Al+3ClA2⟶2AlClA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "06a635ca-9225-4c0a-9cd2-2f4654a162ae",
+    "question_text": "A 0.25 M \nNaOH\n solution is diluted by adding 300 mL of water to 200 mL of the original solution. What is the final molarity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.15 M",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.05 M",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.2 M",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.1 M",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "M1V1=M2V2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3aef9640-c667-49d5-be49-0a687c45f655",
+    "question_text": "A compound contains 52.17% carbon, 13.04% hydrogen, and 34.78% oxygen by mass. What is its empirical formula? (Atomic masses: C = 12, H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n2\nH\n6\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n2\nH\n5\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For 100 g: C = 52.17 g, H = 13.04 g, O = 34.78 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "27e99cf5-37e0-44ea-934d-ba7eac2c2dd1",
+    "question_text": "How many significant figures are present in the result of \n0.0678\n×\n310.15\n0.0821\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "0.0678 (3 sig figs), 310.15 (5 sig figs), 0.0821 (3 sig figs).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a2a5787b-9e49-418d-9b2f-a222c708d429",
+    "question_text": "What volume of \nO\n2\n at STP is required to burn 6 g of \nCH\n4\n completely to \nCO\n2\n and \nH\n2\nO\n? (Molar mass: \nCH\n4\n = 16 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n16.8 L",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8.4 L",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n22.4 L",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n33.6 L",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: CHA4+2OA2⟶COA2+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "11c6e508-016b-4420-8397-fd92ae07a884",
+    "question_text": "What is the mass percentage of \nNH\n3\n in a solution made by dissolving 3.4 g of \nNH\n3\n in 16.6 g of water? (Molar mass: \nNH\n3\n = 17 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA. 15%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB. 20%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC. 17%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD. 25%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Total mass of solution = 3.4+16.6=20.0 g (3 significant figures).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ebfa66f-1ae8-4dc3-83f0-eb4088a07349",
+    "question_text": "How many grams of \nAl\n2\nO\n3\n are required to produce 5.4 g of \nAl\n with excess \nCO\n? (Molar masses: \nAl\n2\nO\n3\n = 102 g/mol, Al = 27 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.1 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20.4 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15.3 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10.2 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: AlA2OA3+3CO⟶2Al+3COA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cfc65ba4-a09c-422c-a5c9-b8b78f24823e",
+    "question_text": "What is the mass of \nMgSO\n4\n produced when 8.4 g of \nMg\n(\nOH\n)\n2\n reacts with excess \nH\n2\nSO\n4\n? (Molar masses: \nMg\n(\nOH\n)\n2\n = 58 g/mol, \nMgSO\n4\n = 120 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8.69 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n17.38 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n34.76 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.0 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: Mg(OH)A2+HA2SOA4⟶MgSOA4+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "012e6bbc-e0c6-4d01-a8d7-bf33027d2158",
+    "question_text": "A gas mixture contains 2 g of \nH\n2\n and 16 g of \nO\n2\n. What is the total number of molecules? (Molar masses: \nH\n2\n = 2 g/mol, \nO\n2\n = 32 g/mol, Avogadro number = \n6.022\n×\n10\n23\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.022\n×\n10\n23",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9.033\n×\n10\n23",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.011\n×\n10\n23",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.044\n×\n10\n23",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Moles of HA2 = 22 = 1 mol; moles of OA2 = 1632 = 0.5 mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1cf97aed-214b-47c5-89d4-0244152e4c30",
+    "question_text": "How many grams of \nNa\n2\nCO\n3\n are required to produce 8.4 g of \nNaCl\n with excess \nHCl\n? (Molar masses: \nNa\n2\nCO\n3\n = 106 g/mol, \nNaCl\n = 58.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.3 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10.6 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.61 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15.2 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Reaction: NaA2COA3+2HCl⟶2NaCl+COA2+HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "982df7e4-c281-48e8-a4d3-de2161d964ab",
+    "question_text": "A mixture of 6 g \nH\n2\n and 44 g \nO\n2\n is ignited to form \nH\n2\nO\n. What is the mass of \nH\n2\nO\n produced? (Atomic masses: H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n49.5 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n36 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n54 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: 2HA2+OA2⟶2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "069998ad-35d1-4abe-9736-b659315ba4d5",
+    "question_text": "What volume of \nCO\n2\n at STP is produced when 10 g of \nC\n2\nH\n2\n is burned completely? (Molar mass: \nC\n2\nH\n2\n = 26 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8.61 L",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n22.4 L",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n11.2 L",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n17.23 L",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: 2CA2HA2+5OA2⟶4COA2+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29929eda-7855-4b03-8f17-aaf9b484dc2c",
+    "question_text": "A 3 M solution of \nNaCl\n has a density of 1.25 g/mL. What is its molality? (Molar mass of \nNaCl\n = 58.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.79 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.00 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.50 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.25 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mass of 1 L solution = 1000 × 1.25 = 1250 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f4a795fc-7d11-41a2-884f-1a5624d9f75c",
+    "question_text": "What is the mass percentage of \nNH\n3\n in a solution made by dissolving 3.4 g of \nNH\n3\n in 16.6 g of water? (Molar mass: \nNH\n3\n = 17 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA. 15%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB. 20%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC. 17%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD. 25%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Total mass of solution = 3.4+16.6=20.0 g (3 significant figures).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "922956df-def2-472c-a7d9-8bb2f138a054",
+    "question_text": "A solution of \nH\n2\nSO\n4\n has a molarity of 0.5 M and a density of 1.02 g/mL. What is its molality? (Molar mass: \nH\n2\nSO\n4\n = 98 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.515 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.49 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.55 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.6 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mass of 1 L solution = 1000 × 1.02 = 1020 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "90633998-7f6c-4cec-bb8b-ccf2b641b299",
+    "question_text": "How many grams of \nKMnO\n4\n are required to oxidize 9.8 g of \nFeSO\n4\n in acidic medium to \nFe\n2\n(\nSO\n4\n)\n3\n? (Molar masses: \nKMnO\n4\n = 158 g/mol, \nFeSO\n4\n = 152 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.58 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.04 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.16 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.08 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: 2KMnOA4+10FeSOA4+8HA2SOA4⟶5FeA2(SOA4)A3+2MnSOA4+KA2SOA4+8HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "247f061a-ded3-43b8-826e-dadf49158471",
+    "question_text": "How many grams of \nZn\n are required to produce 2.24 L of \nH\n2\n at STP with excess \nH\n2\nSO\n4\n? (Atomic mass: Zn = 65)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.25 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n13 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9.75 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.5 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: Zn+HA2SOA4⟶ZnSOA4+HA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5f9ff36b-e1e8-4b74-9b52-20784eabcb2d",
+    "question_text": "What is the mass of \nAgCl\n produced when 17 g of \nAgNO\n3\n reacts with excess \nNaCl\n? (Molar masses: \nAgNO\n3\n = 170 g/mol, \nAgCl\n = 143.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7.15 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n28.7 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10.5 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n14.35 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: AgNOA3+NaCl⟶AgCl+NaNOA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e14d7b51-4190-44bc-8e0f-5628618f4106",
+    "question_text": "A 500 mL solution of \nH\n2\nSO\n4\n has a molarity of 0.2 M and density 1.02 g/mL. What is the mass percentage of \nH\n2\nSO\n4\n? (Molar mass: \nH\n2\nSO\n4\n = 98 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.98%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.92%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.45%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.84%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Moles = 0.2 × 0.5 = 0.1 mol; mass of HA2SOA4 = 0.1 × 98 = 9.8 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "310aaa34-d926-4668-bc1b-ca548918cda0",
+    "question_text": "How many grams of \nZnCl\n2\n are required to produce 6.5 g of \nZn\n with excess \nHCl\n? (Molar masses: \nZnCl\n2\n = 136 g/mol, Zn = 65 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.8 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n13.6 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n27.2 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20.4 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: ZnClA2+HA2⟶Zn+2HCl (reverse context with excess HCl).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "57eb7885-7e83-4b49-8e92-2846eef8b37d",
+    "question_text": "A compound has a molar mass of 180 g/mol and contains 40% carbon, 6.67% hydrogen, and 53.33% oxygen. What is its molecular formula? (Atomic masses: C = 12, H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n3\nH\n6\nO\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n4\nH\n8\nO\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n6\nH\n12\nO\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For 100 g: C = 40 g, H = 6.67 g, O = 53.33 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e1186459-c7ec-45d8-b6be-f14660d34ec7",
+    "question_text": "A gas occupies 0.56 L at STP and weighs 0.64 g. What is its molar mass?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n32 g/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n16 g/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n25.6 g/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n28 g/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Moles = 0.5622.4 = 0.025 mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cce13189-50e7-4171-b819-c2918adb240d",
+    "question_text": "How many grams of \nAlCl\n3\n are required to produce 5.4 g of \nAl\n with excess \nHCl\n? (Molar masses: \nAlCl\n3\n = 133.5 g/mol, Al = 27 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13.35 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n40.05 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20.03 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n26.7 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: 2AlClA3+3HA2⟶2Al+6HCl (contextual reverse).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23f605bf-231d-49df-8149-84f156fe669e",
+    "question_text": "How many grams of \nNaOH\n are required to produce 11.7 g of \nNaCl\n with excess \nHCl\n? (Molar masses: \nNaOH\n = 40 g/mol, \nNaCl\n = 58.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Reaction: NaOH+HCl⟶NaCl+HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f5606f46-ecd1-4bd3-be66-fcb7fe86069a",
+    "question_text": "How many grams of \nNaCl\n are produced when 10.6 g of \nNa\n2\nCO\n3\n reacts with excess \nHCl\n? (Molar masses: \nNa\n2\nCO\n3\n = 106 g/mol, \nNaCl\n = 58.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.85 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n11.7 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n23.4 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n17.55 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: NaA2COA3+2HCl⟶2NaCl+COA2+HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "88082e7b-5dd6-4a5d-934d-27aed86e51a7",
+    "question_text": "A 400 mL solution of \nHCl\n has a molarity of 0.25 M and a density of 1.01 g/mL. What is the mass percentage of \nHCl\n? (Molar mass: \nHCl\n = 36.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.904%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.5%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.0%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Moles = 0.25 × 0.4 = 0.1 mol; mass of HCl = 0.1 × 36.5 = 3.65 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "76f46941-e97c-4249-bbd4-16bc51bd8cd5",
+    "question_text": "What is the mole fraction of \nCH\n3\nOH\n in a solution containing 8 g of \nCH\n3\nOH\n and 54 g of \nH\n2\nO\n? (Molar masses: \nCH\n3\nOH\n = 32 g/mol, \nH\n2\nO\n = 18 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.0769",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.25",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.05",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Moles of CHA3OH = 832 = 0.25 mol; moles of HA2O = 5418\n              = 3 mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "000d5d12-f6b6-4d88-8618-c32be05f47c7",
+    "question_text": "A 300 mL solution contains 11.7 g of \nNaCl\n and has a density of 1.01 g/mL. What is its molarity? (Molar mass: \nNaCl\n = 58.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5 M",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.667 M",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.0 M",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.33 M",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Moles of NaCl = 11.758.5 = 0.2 mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6790b237-0ffa-45f0-a5e2-1c07b22944c4",
+    "question_text": "A 2 L sample of a gas at STP weighs 1.4 g and contains only carbon and hydrogen. If it produces 4.4 g of \nCO\n2\n on burning, what is its molecular formula? (Atomic masses: C = 12, H = 1)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA.\nC\n2\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB.\nC\n2\nH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC.\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD.\nCH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles of gas = 222.4≈0.0893 mol (3 significant figures).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "68d2877c-27bc-4bac-9d76-747ff1eab10b",
+    "question_text": "A 0.4 M \nHCl\n solution is diluted by adding 200 mL of water to 100 mL of the original solution. What is the final molarity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.2 M",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.1 M",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.15 M",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.133 M",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "M1V1=M2V2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5f236558-eb17-4c6e-940c-b7f610b56f36",
+    "question_text": "A compound contains 52.17% carbon, 13.04% hydrogen, and 34.78% oxygen by mass. What is its empirical formula? (Atomic masses: C = 12, H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA.\nCH\n3\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB.\nC\n2\nH\n6\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC.\nC\n4\nH\n12\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD.\nCH\n2\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For 100 g: C = 52.17 g, H = 13.04 g, O = 34.78 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "36756f23-6fe1-4056-ab06-3fb8ca6d561e",
+    "question_text": "A mixture of 2.3 g ethanol (\nC\n2\nH\n5\nOH\n) and 4.8 g methanol (\nCH\n3\nOH\n) is dissolved in water to make 250 mL of solution. What is the total molarity of alcohols? (Molar masses: ethanol = 46 g/mol, methanol = 32 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.6 M",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.0 M",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.4 M",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.8 M",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles of ethanol = 2.346 = 0.05 mol; moles of methanol = 4.832 = 0.15 mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4f853dad-e495-4e2b-b273-90df9dc5f6b8",
+    "question_text": "A 0.2 M \nNaCl\n solution is diluted by adding 250 mL of water to 150 mL of the original solution. What is the final molarity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1 M",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.05 M",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.15 M",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.075 M",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "M1V1=M2V2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d8efecb-f45d-44a9-81d1-4b3572deaae6",
+    "question_text": "What is the mass of \nMgO\n produced when 12 g of \nMg\n reacts with 16 g of \nO\n2\n? (Atomic masses: Mg = 24, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n30 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: 2Mg+OA2⟶2MgO.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0e5756c-7a9b-45f7-b1dc-c575a6a329ca",
+    "question_text": "A mixture of 6 g \nH\n2\n and 32 g \nO\n2\n is ignited to form \nH\n2\nO\n. What is the mass of \nH\n2\nO\n produced? (Atomic masses: H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n36 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n18 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n54 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n27 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: 2HA2+OA2⟶2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b0dc6c8-b7bc-47b6-a6fa-bd7362ea432c",
+    "question_text": "A compound contains 38.71% carbon, 9.68% hydrogen, and 51.61% oxygen by mass. What is its empirical formula? (Atomic masses: C = 12, H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n2\nH\n6\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n4\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For 100 g: C = 38.71 g, H = 9.68 g, O = 51.61 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53231aa2-bf56-49aa-91a8-e8e641b27476",
+    "question_text": "What is the mass of \nBaCl\n2\n produced when 26.1 g of \nBa\n(\nOH\n)\n2\n reacts with excess \nHCl\n? (Molar masses: \nBa\n(\nOH\n)\n2\n = 171 g/mol, \nBaCl\n2\n = 208 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n15.87 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n47.61 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20.8 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n31.74 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: Ba(OH)A2+2HCl⟶BaClA2+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6c014483-fb08-4731-ab1e-6a1ce833d108",
+    "question_text": "How many significant figures are present in the result of \n0.0732\n×\n310.15\n0.0821\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "0.0732 (3 sig figs), 310.15 (5 sig figs), 0.0821 (3 sig figs).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f996478-dd58-418e-ad16-13f29cd63cc8",
+    "question_text": "How many significant figures are present in the result of \n0.0567\n×\n298.15\n0.101\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "0.0567 (3 sig figs), 298.15 (5 sig figs), 0.101 (3 sig figs).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f5cfc0ca-b276-4130-861d-7bca4c7627bc",
+    "question_text": "A 0.2 M \nNaCl\n solution is diluted by adding 150 mL of water to 50 mL of the original solution. What is the final molarity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1 M",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.08 M",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.15 M",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.05 M",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "M1V1=M2V2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "00f69e0c-af63-45c0-84dd-09e124da12f3",
+    "question_text": "A 0.5 L sample of a gas at STP weighs 0.67 g and contains only carbon and hydrogen. If it produces 1.32 g of \nCO\n2\n on burning, what is its molecular formula? (Atomic masses: C = 12, H = 1)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA.\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB.\nC\n2\nH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC.\nC\n3\nH\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD.\nC\n2\nH\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles of gas = 0.522.4≈0.0223 mol (3 significant figures).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "12c6f1e4-bdb6-44f8-8487-8e04f0b9c8b7",
+    "question_text": "A 0.70 g sample of a hydrocarbon produces 2.20 g of \nCO\n2\n and 0.90 g of \nH\n2\nO\n on complete combustion. What is its molecular formula if its molar mass is 70 g/mol? (Atomic masses: C = 12, H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n5\nH\n10",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n4\nH\n8",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n6\nH\n12",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n3\nH\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mass of C = 1244 × 2.20 ≈ 0.60 g; mass of H = 218 × 0.90 = 0.10 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4d2193e9-ff2b-4a5e-88c4-7e0c913225c7",
+    "question_text": "A compound contains 24% magnesium, 28% sulfur, and 48% oxygen by mass. What is its empirical formula? (Atomic masses: Mg = 24, S = 32, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMgSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMgSO\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMg\n2\nSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMgS\n2\nO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For 100 g: Mg = 24 g, S = 28 g, O = 48 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f166751b-55cd-4788-83b1-a8b76e04032f",
+    "question_text": "What volume of \nN\n2\n at STP is required to react with 4 g of \nH\n2\n to produce \nNH\n3\n with 100% yield? (Molar mass: \nH\n2\n = 2 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n14.93 L",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n22.4 L",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.47 L",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n29.86 L",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: NA2+3HA2⟶2NHA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53d520dd-a9f8-451a-b580-414c2584381e",
+    "question_text": "A gas occupies 4.48 L at STP and weighs 6.4 g. What is its molar mass?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n16 g/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n48 g/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n32 g/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n28 g/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Moles = 4.4822.4 = 0.2 mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bdc0bc24-bf07-44ec-8b47-86edc4ec9292",
+    "question_text": "A mixture of 4 g \nH\n2\n and 56 g \nN\n2\n is used to synthesize \nNH\n3\n. What is the maximum mass of \nNH\n3\n produced? (Molar masses: \nH\n2\n = 2 g/mol, \nN\n2\n = 28 g/mol, \nNH\n3\n = 17 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n22.67 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n34 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n17 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n68 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: NA2+3HA2⟶2NHA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1802feeb-f6af-47bb-9375-86aca5a99803",
+    "question_text": "What is the mass of water produced when 8 g of \nCH\n4\n reacts with 24 g of \nO\n2\n? (Atomic masses: C = 12, H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n13.5 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n18 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: CHA4+2OA2⟶COA2+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "283bc80d-02a9-49e0-ae38-492874447bcb",
+    "question_text": "What is the mass percentage of \nNH\n4\nCl\n in a solution made by dissolving 10.7 g of \nNH\n4\nCl\n in 39.3 g of water? (Molar mass: \nNH\n4\nCl\n = 53.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n25%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n21.4%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Total mass = 10.7 + 39.3 = 50 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1edee499-77df-4261-ae25-1dcf28406298",
+    "question_text": "A 2 L sample of a gas at STP weighs 1.4 g and contains only carbon and hydrogen. If it produces 4.4 g of \nCO\n2\n on burning, what is its molecular formula? (Atomic masses: C = 12, H = 1)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA.\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB.\nC\n2\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC.\nC\n3\nH\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD.\nC\n2\nH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles of gas = 222.4≈0.0893 mol (3 significant figures).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f9ffd4ab-486f-4c0d-9428-69cddfc75f03",
+    "question_text": "A 0.5 M \nHNO\n3\n solution is diluted from 100 mL to 400 mL. What is the final molarity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.2 M",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.25 M",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.125 M",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.5 M",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "M1V1=M2V2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2cc4eff1-2800-4dcc-be31-9eed50e8cd94",
+    "question_text": "How many significant figures are present in the result of \n0.0456\n×\n298.15\n0.112\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "0.0456 (3 sig figs), 298.15 (5 sig figs), 0.112 (3 sig figs).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "994e8e76-91a4-481d-b6bb-4ef2f1edeeaf",
+    "question_text": "A mixture of 16 g \nCH\n4\n and 32 g \nO\n2\n is ignited. What is the mass of \nCO\n2\n produced? (Atomic masses: C = 12, H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n44 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n22 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n11 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n33 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: CHA4+2OA2⟶COA2+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a8bc614f-3a82-4ee4-8160-3994a278453e",
+    "question_text": "A solution of \nKOH\n has a molarity of 1.5 M and a density of 1.05 g/mL. What is its molality? (Molar mass: \nKOH\n = 56 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.55 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.45 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.65 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.75 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mass of 1 L solution = 1000 × 1.05 = 1050 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "094ff207-b222-4655-981b-e87df7aa7561",
+    "question_text": "How many grams of \nFe\n2\nO\n3\n are required to produce 11.2 g of \nFe\n with excess \nCO\n? (Molar masses: \nFe\n2\nO\n3\n = 160 g/mol, Fe = 56 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n32 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n24 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: FeA2OA3+3CO⟶2Fe+3COA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "885f644f-2e61-495c-8d5f-1f1ff380485b",
+    "question_text": "What is the mass of \nAgNO\n3\n produced when 14.3 g of \nAgCl\n reacts with excess \nHNO\n3\n? (Molar masses: \nAgCl\n = 143.5 g/mol, \nAgNO\n3\n = 170 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8.48 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n25.44 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.71 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16.95 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: AgCl+HNOA3⟶AgNOA3+HCl.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "47060db2-12d7-495f-8a73-e79847b8be20",
+    "question_text": "How many grams of \nMnO\n2\n are required to produce 1.42 g of \nCl\n2\n with excess \nHCl\n? (Molar masses: \nMnO\n2\n = 87 g/mol, \nCl\n2\n = 71 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.87 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.48 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.61 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.74 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: MnOA2+4HCl⟶MnClA2+2HA2O+ClA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9e7206b9-cb38-41cd-af9d-a4096057f181",
+    "question_text": "How many grams of \nNaOH\n are required to produce 14.6 g of \nNaNO\n3\n with excess \nHNO\n3\n? (Molar masses: \nNaOH\n = 40 g/mol, \nNaNO\n3\n = 85 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.43 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10.3 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.87 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8.5 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Reaction: NaOH+HNOA3⟶NaNOA3+HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b4e71b26-20f5-4ae0-a997-a9b81a3cb899",
+    "question_text": "How many grams of \nMgCO\n3\n are required to produce 4.4 g of \nCO\n2\n with excess \nHCl\n? (Molar masses: \nMgCO\n3\n = 84 g/mol, \nCO\n2\n = 44 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.2 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8.4 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.6 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16.8 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: MgCOA3+2HCl⟶MgClA2+COA2+HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09327716-4afa-47af-b735-bc8e66975e05",
+    "question_text": "A mixture of 12 g \nC\n and 40 g \nO\n2\n is ignited to form \nCO\n2\n and \nCO\n. If 22 g of \nCO\n2\n is produced, what is the mass of \nCO\n formed? (Atomic masses: C = 12, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n14 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n28 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n42 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Moles: C = 1212 = 1 mol, OA2 = 4032 = 1.25 mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "89114bce-a87d-445c-9e17-6e202ad2b7bc",
+    "question_text": "A 1 L sample of a gas at STP weighs 1.25 g and contains only carbon and hydrogen. If it produces 1.76 g of \nCO\n2\n on burning, what is its molecular formula? (Atomic masses: C = 12, H = 1)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA.\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB.\nC\n2\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC.\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nD.\nC\n2\nH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles of gas = 122.4≈0.0446 mol (3 significant figures).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7fc04ec-55a1-4b60-bfa7-ef22f63fc1f4",
+    "question_text": "A solution contains 15 ppm of \nCHCl\n3\n by mass in water. What is its molality? (Molar mass: \nCHCl\n3\n = 119.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5 × 10⁻³ m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.255 × 10⁻³ m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5 × 10⁻⁴ m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.255 × 10⁻⁴ m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "15 ppm = 15 g CHClA3 in 10⁶ g water.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "333412bb-c21b-4efb-a0a6-65d1c771e24e",
+    "question_text": "What is the mole fraction of water in a solution containing 36 g of water and 46 g of ethanol (\nC\n2\nH\n5\nOH\n)? (Molar masses: \nH\n2\nO\n = 18 g/mol, ethanol = 46 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.667",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.333",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.75",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Moles of HA2O = 3618 = 2 mol; moles of ethanol = 4646 = 1 mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "57eb02ae-9cec-4ac9-a643-3fb4e52fa3a7",
+    "question_text": "How many grams of \nSO\n2\n are produced when 8 g of sulfur is burned in 12 g of \nO\n2\n? (Atomic masses: S = 32, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n24 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: S+OA2⟶SOA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "80182f7d-473c-4a4d-a6d4-999c4e2b8bcb",
+    "question_text": "A solution of \nNaOH\n has a molarity of 1 M and a density of 1.04 g/mL. What is its molality? (Molar mass: \nNaOH\n = 40 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.96 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.04 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.2 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mass of 1 L solution = 1000 × 1.04 = 1040 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a0b57f9c-ddd9-403f-b49e-d830498e0323",
+    "question_text": "What is the mole fraction of ethanol in a solution where 46 g of ethanol (\nC\n2\nH\n5\nOH\n) is mixed with 18 g of water? (Molar masses: ethanol = 46 g/mol, water = 18 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.25",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.75",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Moles of ethanol = 4646 = 1 mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a7a216f7-6cc9-4685-9611-3d932b6dbfd4",
+    "question_text": "What is the mass of \nAgCl\n produced when 34 g of \nAgNO\n3\n reacts with excess \nNaCl\n? (Molar masses: \nAgNO\n3\n = 170 g/mol, \nAgCl\n = 143.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n14.35 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n43.05 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20.5 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n28.7 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: AgNOA3+NaCl⟶AgCl+NaNOA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72a8542e-840f-4788-a360-e9e6f42e9bb6",
+    "question_text": "What volume of \nO\n2\n at STP is needed to burn 36 g of carbon to \nCO\n2\n, assuming 25% wastage? (Atomic mass: C = 12)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n89.6 L",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n67.2 L",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n44.8 L",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n112 L",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Reaction: C+OA2⟶COA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e7551c4-1324-4bc3-8ad2-f6321f97b5f3",
+    "question_text": "What is the mass of \nBaSO\n4\n produced when 23.3 g of \nBaCl\n2\n reacts with excess \nNa\n2\nSO\n4\n? (Molar masses: \nBaCl\n2\n = 208 g/mol, \nBaSO\n4\n = 233 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n11.65 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n46.6 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20.8 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n26.1 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: BaClA2+NaA2SOA4⟶BaSOA4+2NaCl.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "541199e9-22e1-4b58-9a90-07c8ce2364b0",
+    "question_text": "How many grams of \nFe\n are required to produce 8.96 L of \nH\n2\n at STP with excess \nHCl\n? (Atomic mass: Fe = 56)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n11.2 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n22.4 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n33.6 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n44.8 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: Fe+2HCl⟶FeClA2+HA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fc2074e9-bf4c-47f2-aedc-9b99a9ba00c0",
+    "question_text": "How many grams of \nCa\n(\nOH\n)\n2\n are required to produce 11.1 g of \nCaCl\n2\n with excess \nHCl\n? (Molar masses: \nCa\n(\nOH\n)\n2\n = 74 g/mol, \nCaCl\n2\n = 111 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.7 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n14.8 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.4 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11.1 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Reaction: Ca(OH)A2+2HCl⟶CaClA2+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9defcb48-dd69-4f5f-9d9a-7ea3675f90ef",
+    "question_text": "What volume of \nCO\n2\n at STP is produced when 15 g of \nC\n3\nH\n6\n is burned completely? (Molar mass: \nC\n3\nH\n6\n = 42 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 L",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 L",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n16 L",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n24 L",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: 2CA3HA6+9OA2⟶6COA2+6HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "67123c95-a6df-4f83-b3bc-15c999eee98b",
+    "question_text": "How many significant figures are present in the result of \n0.0567\n×\n273.15\n0.0821\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "0.0567 (3 sig figs), 273.15 (5 sig figs), 0.0821 (3 sig figs).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8fa6bed0-dd1a-402c-9869-ca7b4664c261",
+    "question_text": "A 0.78 g sample of a hydrocarbon produces 2.64 g of \nCO\n2\n and 0.54 g of \nH\n2\nO\n on complete combustion. What is its molecular formula if its molar mass is 78 g/mol? (Atomic masses: C = 12, H = 1, O = 16)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n6\nH\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n5\nH\n10",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n4\nH\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n3\nH\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mass of C = 1244 × 2.64 ≈ 0.72 g; mass of H = 218 × 0.54 = 0.06 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "214a6b54-afb1-4e1f-8cd1-51e21e4f3b8b",
+    "question_text": "What volume of \nCO\n2\n at STP is produced when 12 g of \nC\n2\nH\n4\n is burned completely? (Molar mass: \nC\n2\nH\n4\n = 28 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9.6 L",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n22.4 L",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14.4 L",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n19.2 L",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: CA2HA4+3OA2⟶2COA2+2HA2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "643fdc17-fe74-4734-888b-b5f7f564c058",
+    "question_text": "A solution of \nHCl\n has a molarity of 2 M and a density of 1.06 g/mL. What is its molality? (Molar mass: \nHCl\n = 36.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.03 m",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.89 m",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.15 m",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.75 m",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mass of 1 L solution = 1000 × 1.06 = 1060 g.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a115c738-ba9a-40d2-811e-e0a1993fbb8f",
+    "question_text": "What is the mass of \nPbCl\n2\n produced when 27.8 g of \nPb\n(\nNO\n3\n)\n2\n reacts with excess \nNaCl\n? (Molar masses: \nPb\n(\nNO\n3\n)\n2\n = 331 g/mol, \nPbCl\n2\n = 278 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13.9 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n33.1 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n18.5 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n23.35 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: Pb(NOA3)A2+2NaCl⟶PbClA2+2NaNOA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "df9ab5c7-83f0-4dc1-9036-0f10e64d7ebe",
+    "question_text": "How many grams of \nAl\n are required to produce 5.6 L of \nH\n2\n at STP with excess \nHCl\n? (Atomic mass: Al = 27)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.7 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.5 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9.0 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n13.5 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reaction: 2Al+6HCl⟶2AlClA3+3HA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b9b620de-760f-4d34-a60b-949dd45add90",
+    "question_text": "What is the mass of \nPbSO\n4\n produced when 20.7 g of \nPb\n(\nNO\n3\n)\n2\n reacts with excess \nH\n2\nSO\n4\n? (Molar masses: \nPb\n(\nNO\n3\n)\n2\n = 331 g/mol, \nPbSO\n4\n = 303 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n15.15 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9.47 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n24.3 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18.94 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reaction: Pb(NOA3)A2+HA2SOA4⟶PbSOA4+2HNOA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "439f0c3a-13b9-42bc-b862-c6cd4409c625",
+    "question_text": "A solution contains 15 ppm of \nCaCl\n2\n by mass in water. What is its molarity if the density is 1 g/mL? (Molar mass: \nCaCl\n2\n = 111 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.2 × 10⁻⁴ M",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5 × 10⁻⁴ M",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.351 × 10⁻⁴ M",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.0 × 10⁻⁴ M",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "15 ppm = 15 g CaClA2 in 10⁶ g solution.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts of Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Concepts of Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-concepts-of-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

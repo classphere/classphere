@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "0853e8b5-fc39-4ca3-a167-8df2ad6bba1c",
+    "question_text": "What characterizes the emission line spectrum of a hydrogen atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nContinuous band of colors",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDark lines on a bright background",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRandom light flashes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBright lines on a dark background",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The emission line spectrum consists of bright lines on a dark background, corresponding to specific\n              wavelengths emitted during electron transitions.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c91029d5-97e9-4c7b-be49-6ad237072026",
+    "question_text": "In Bohr’s model, what defines the stationary orbits of an electron?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nContinuous energy levels",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nQuantized angular momentum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRandom electron paths",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUniform charge distribution",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bohr’s second postulate defines stationary orbits as those where the angular momentum is an integral\n              multiple of h/2π.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d9eae91f-81f3-4f4f-8059-a6973fa6a00a",
+    "question_text": "In Bohr’s model, what is the state of a hydrogen atom when its electron is in the \n𝑛\n=\n∞\n orbit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGround state",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFirst excited state",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIonized state",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUnstable state",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "At n=∞, the energy is zero, meaning the electron is ionized and no longer bound to the\n              nucleus.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bdb6782b-9dd1-4c14-ae4e-30636418f4bb",
+    "question_text": "What does the de Broglie hypothesis suggest about the electron in Bohr’s model?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectrons are stationary",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElectrons emit continuous radiation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectrons have no wave properties",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElectrons form standing waves",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "De Broglie suggests that electrons exhibit wave-like behavior, forming standing waves in orbits where the\n              circumference is an integer multiple of the wavelength.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "414aa579-562d-4fdc-88e9-e6296c5e4e9c",
+    "question_text": "In the Bohr model, how many de Broglie wavelengths fit into the circumference of the \n𝑛\n=\n6\n orbit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "2πrn=nλ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d15eb499-7c73-4c43-a645-93e3ea6ef9e1",
+    "question_text": "Which of the following statements is incorrect about Rutherford’s nuclear model?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectrons maintain stable orbits without radiating",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPositive charge is concentrated in the nucleus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMost of the atom is empty space",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNucleus is small and dense",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Rutherford’s model does not explain atomic stability, as it predicts electrons would emit radiation and\n              collapse into the nucleus, not maintain stable orbits.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b412c7b6-abf9-4c27-96fe-d25163a6f0e1",
+    "question_text": "An electron in a hydrogen atom transitions from \n𝑛\n=\n3\n to \n𝑛\n=\n1\n. What is the energy of the emitted photon? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12.09 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n13.6 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.89 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "E3=−13.632=−1.51eV, E1=−13.6eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5669b577-6812-41bf-8f65-18512b598b3f",
+    "question_text": "What is the total energy of an electron in the \n𝑛\n=\n4\n state of a hydrogen atom? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1.51 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-0.85 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-3.4 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-13.6 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "E4=−13.642=−13.616=−0.85eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e094b079-fa2f-4a0b-b17b-34b8494983d7",
+    "question_text": "What is the wavelength of the photon emitted when an electron drops from \n𝑛\n=\n2\n to \n𝑛\n=\n1\n in a hydrogen atom? (Use \nℎ\n=\n6.6\n×\n10\n−\n34\nJ·s\n, \n𝑐\n=\n3\n×\n10\n8\nm/s\n, 1 eV = \n1.6\n×\n10\n−\n19\nJ\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.56\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.86\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.89\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.21\n×\n10\n−\n7\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔE=10.2eV=1.632×10−18J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9386cd7c-e1ef-4e36-a6bf-a2cc7579fe8a",
+    "question_text": "What is the energy difference between the \n𝑛\n=\n5\n and \n𝑛\n=\n3\n states in a hydrogen atom? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.89 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.66 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.97 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.86 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "E5=−0.544eV, E3=−1.51eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e1838508-f3ac-48f9-a1f7-299d2e2d3748",
+    "question_text": "An electron beam of 11.0 eV excites a hydrogen atom in the ground state. What is the highest energy level reached? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E1=−13.6eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8f68e0f9-8c29-4805-86d0-102ed0d3791f",
+    "question_text": "In Rutherford’s scattering experiment, what happens to an alpha-particle with a large impact parameter?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRebounds back",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nScatters at 90°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGoes nearly undeviated",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStops completely",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For a large impact parameter, the alpha-particle experiences minimal deflection (θ≈0)\n              and goes nearly undeviated.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dee386ff-3265-40ca-b5a0-2bef0f335398",
+    "question_text": "What is the energy required to excite a hydrogen atom from \n𝑛\n=\n1\n to \n𝑛\n=\n3\n? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.89 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.09 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.55 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "E1=−13.6eV, E3=−1.51eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "855b4b4a-c99b-46a9-9105-5a4f39bc0879",
+    "question_text": "Which of the following statements is correct about the Bohr model’s prediction of hydrogen spectra?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEmits continuous frequencies",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBased on nuclear size",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPredicts discrete frequencies",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDepends on electron mass only",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The model predicts discrete frequencies because photon energy equals the difference between quantized\n              energy levels, not continuous radiation.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72545f7c-8b0d-41eb-9c68-11b0ea2d838b",
+    "question_text": "A hydrogen atom is excited to the \n𝑛\n=\n4\n state and returns to the ground state. What is the maximum energy of the emitted photon? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.55 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.89 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.75 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E4=−0.85eV, E1=−13.6eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42a6f284-e7a7-462a-b5f2-9b2b19b96b79",
+    "question_text": "An electron in a hydrogen atom has an angular momentum of \n1.05\n×\n10\n−\n34\nJ·s\n. What is its principal quantum number? (Use \nℎ\n=\n6.6\n×\n10\n−\n34\nJ·s\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "L=nh2π.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bb055f6a-45fe-47fd-a075-9afa9fea156c",
+    "question_text": "In a hydrogen atom, the radius of the first orbit is \n5.3\n×\n10\n−\n11\nm\n. What is the circumference of the third orbit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.0\n×\n10\n−\n9\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.0\n×\n10\n−\n9\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\n×\n10\n−\n9\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.0\n×\n10\n−\n9\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "rn=n2r1, r3=32×5.3×10−11=4.77×10−10m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5b0706bc-2aec-4c9f-b05e-2f68b3069676",
+    "question_text": "What is the ratio of the radius of the \n𝑛\n=\n4\n orbit to the \n𝑛\n=\n2\n orbit in a hydrogen atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "rn=n2r1.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "daa05f7f-2e49-4844-9b24-9a0f7d27d524",
+    "question_text": "What is the significance of the negative total energy of an electron in a hydrogen atom according to Bohr’s model?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectron is bound to the nucleus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElectron moves freely in space",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectron emits continuous radiation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElectron has zero kinetic energy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The negative total energy indicates that the electron is bound to the nucleus, requiring energy to be\n              supplied to free it.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0a78765-d7bf-499f-81cb-d9c110586347",
+    "question_text": "What is the total energy of an electron in the \n𝑛\n=\n2\n state of a hydrogen atom? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-13.6 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-6.8 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-3.4 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-1.51 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "E2=−13.622=−13.64=−3.4eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "52b4c94f-efe7-48ed-aa15-ed1667782bc0",
+    "question_text": "An alpha-particle with 4.0 MeV kinetic energy approaches a gold nucleus (Z = 79). What is the distance of closest approach? (Use \n1\n4\n𝜋\n𝜖\n0\n=\n9\n×\n10\n9\nN·m\n2\n/\nC\n2\n, \n𝑒\n=\n1.6\n×\n10\n−\n19\nC\n, 1 MeV = \n1.6\n×\n10\n−\n13\nJ\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n57 fm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n50 fm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n46 fm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n38 fm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "d=2Ze24πϵ0K.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a9599e93-d0c1-48b2-8b0a-5d91204dd7ad",
+    "question_text": "A hydrogen atom absorbs a photon of energy 1.89 eV from the \n𝑛\n=\n2\n state. To which energy level does it jump? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "E2=−3.4eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bd6d2b92-ddc0-4826-97fd-c03c1046f88f",
+    "question_text": "In Bohr’s model, what is the physical basis for the quantization of angular momentum?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectrostatic force balance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIntegral multiple of\nℎ\n/\n2\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nContinuous energy emission",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNuclear attraction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bohr’s second postulate states that the angular momentum of the electron is an integral multiple of h/2π, introducing quantization to ensure stable orbits.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2abd8dff-4ef7-4fac-86db-c22e06d4b12b",
+    "question_text": "What does de Broglie’s hypothesis explain in the context of Bohr’s model?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nContinuous energy levels",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNuclear size",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nQuantization of angular momentum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElectron charge distribution",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "De Broglie’s hypothesis explains the quantization of angular momentum by proposing that electrons form\n              standing waves, with the orbit circumference being an integral multiple of the wavelength.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aaeb8e64-0066-47ae-b42a-8b2cda498e5a",
+    "question_text": "Why does the classical electromagnetic theory predict that an atom should collapse?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectrons have no charge",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNucleus repels electrons",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStable orbits exist",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRadiation causes energy loss",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "An accelerating electron in orbit emits radiation, losing energy and spiraling into the nucleus, leading\n              to collapse according to classical theory.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eaf549f9-3074-48c2-a8df-61a73689f963",
+    "question_text": "According to Bohr’s model, what happens when an electron in a hydrogen atom transitions from a higher orbit to a lower orbit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectron absorbs energy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhoton is emitted",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectron spirals inward",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNo energy change occurs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bohr’s third postulate states that a photon is emitted with energy equal to the difference between the\n              initial and final energy states.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c3187018-c09d-4043-beec-75de1d777ee3",
+    "question_text": "A hydrogen atom absorbs a photon of energy 12.75 eV from the ground state. To which energy level does it jump? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "E1=−13.6eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5da5d71a-20c8-4129-8eaa-40df8d118b07",
+    "question_text": "An alpha-particle with kinetic energy 6.0 MeV approaches a gold nucleus (Z = 79). What is the distance of closest approach? (Use \n1\n4\n𝜋\n𝜖\n0\n=\n9\n×\n10\n9\nN·m\n2\n/\nC\n2\n, \n𝑒\n=\n1.6\n×\n10\n−\n19\nC\n, 1 MeV = \n1.6\n×\n10\n−\n13\nJ\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n38 fm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n42 fm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n45 fm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n50 fm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "d=2Ze24πϵ0K.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6dc7410b-3b3a-483a-a127-c73af096999a",
+    "question_text": "A 13.0 eV electron beam excites a hydrogen atom in the ground state. What is the highest energy level reached? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E1=−13.6eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "94997ee9-3439-44c9-a588-89186a805032",
+    "question_text": "According to Thomson’s model of the atom, how is the positive charge distributed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUniformly throughout the atom",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nConcentrated at the center",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDistributed in discrete shells",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLocalized on the surface",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In Thomson’s model, the positive charge is uniformly distributed throughout the volume of the atom, with\n              electrons embedded in it like seeds in a watermelon.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1bc22ce7-75dc-488e-9d73-bc8636fd6612",
+    "question_text": "In Rutherford’s scattering experiment, what percentage of alpha-particles scatter by more than 1°?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.4%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.14%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.014%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n14%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Given: 0.14% of alpha-particles scatter by more than 1°.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b5fec84-56bd-4749-9dee-e6d8c2d1ef9e",
+    "question_text": "What is the angular momentum of an electron in the \n𝑛\n=\n2\n state of a hydrogen atom? (Use \nℎ\n=\n6.6\n×\n10\n−\n34\nJ·s\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.05\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.15\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.1\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.2\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "L=nh2π.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5a873214-bf50-48a4-a8ae-7fc4e0cb00e9",
+    "question_text": "A photon of energy 10.2 eV is absorbed by a hydrogen atom in the ground state. To which energy level does the electron jump? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "E1=−13.6eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bf91e1a1-3bd5-4cb8-b320-0aaf9b2f959b",
+    "question_text": "In an alpha-particle scattering experiment, a 5.5 MeV alpha-particle approaches a gold nucleus (Z = 79). What is the approximate distance of closest approach? (Take \n1\n4\n𝜋\n𝜖\n0\n=\n9\n×\n10\n9\nN·m\n2\n/\nC\n2\n, \n𝑒\n=\n1.6\n×\n10\n−\n19\nC\n, 1 MeV = \n1.6\n×\n10\n−\n13\nJ\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40 fm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n45 fm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n50 fm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n55 fm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Energy conservation: K=2Ze24πϵ0d.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2f4fd835-c1bd-47d1-948f-c698be3d9a0e",
+    "question_text": "Why did Rutherford’s nuclear model fail to explain the stability of atoms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNucleus was too small",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElectrons had no charge",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAccelerating electrons emit radiation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPositive charge was uniform",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In classical theory, an accelerating electron (in circular orbit) emits radiation, losing energy and\n              spiraling into the nucleus, contradicting atomic stability.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "48a93baa-d761-4d51-b349-7260706948f7",
+    "question_text": "What is the orbital period of an electron in the \n𝑛\n=\n2\n orbit of a hydrogen atom if \n𝑣\n1\n=\n2.2\n×\n10\n6\nm/s\n and \n𝑟\n1\n=\n5.3\n×\n10\n−\n11\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.51\n×\n10\n−\n16\ns",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.05\n×\n10\n−\n16\ns",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.02\n×\n10\n−\n16\ns",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.21\n×\n10\n−\n15\ns",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "v2=v12=1.1×106m/s, r2=4×5.3×10−11=2.12×10−10m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c51d7c4b-4fff-46eb-9e07-6103f7c84370",
+    "question_text": "What is the potential energy of an electron in the \n𝑛\n=\n5\n state of a hydrogen atom? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-0.544 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-0.85 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-1.09 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-3.4 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "E5=−0.544eV, K=0.544eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c18a1310-dcf6-4e91-8d03-bd83233108df",
+    "question_text": "What does the line spectrum of hydrogen indicate about its atomic structure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nContinuous energy distribution",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiscrete energy levels",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUniform charge distribution",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRandom electron motion",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The line spectrum suggests that electrons occupy discrete energy levels, emitting photons of specific\n              wavelengths when transitioning between them.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a70c17e3-c87b-4586-8398-93272e9906d7",
+    "question_text": "What is the orbital period of an electron in the first orbit of a hydrogen atom if its speed is \n2.2\n×\n10\n6\nm/s\n and radius is \n5.3\n×\n10\n−\n11\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.0\n×\n10\n−\n16\ns",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.2\n×\n10\n−\n16\ns",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.8\n×\n10\n−\n16\ns",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.51\n×\n10\n−\n16\ns",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "T=2πrv=2×3.14×5.3×10−112.2×106≈1.51×10−16s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d2155daa-8eeb-4fbc-9005-fdfff32935a1",
+    "question_text": "Which of the following statements is incorrect about the hydrogen atom’s energy levels in Bohr’s model?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEnergy is negative in bound states",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnergy levels are discrete",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEnergy is positive in all orbits",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEnergy approaches zero as\n𝑛\nincreases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Energy levels are discrete and negative, becoming less negative with increasing n, not positive or\n              continuous as in classical models.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a2abbbb4-52c4-41fd-acd5-1c7b86486e44",
+    "question_text": "What is the total energy of an electron in the \n𝑛\n=\n5\n state of a hydrogen atom? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1.51 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-0.544 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-3.4 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-0.85 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "E5=−13.652=−13.625=−0.544eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "842662bf-4a61-4cb0-bba1-e17449c4099b",
+    "question_text": "The radius of the first orbit in a hydrogen atom is \n5.3\n×\n10\n−\n11\nm\n. What is the circumference of the fourth orbit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.33\n×\n10\n−\n9\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.0\n×\n10\n−\n9\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.33\n×\n10\n−\n9\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.12\n×\n10\n−\n9\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "rn=n2r1, r4=42×5.3×10−11=8.48×10−10m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e33e7863-3624-4ff6-a114-7db7dd036b77",
+    "question_text": "In the Bohr model, what is the ground state of a hydrogen atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nState with\n𝑛\n=\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nState with zero energy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nState with\n𝑛\n=\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nState with infinite radius",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The ground state is the lowest energy state, where the electron is in the orbit with n=1, having\n              an energy of -13.6 eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7d582ce8-e41b-45ef-9fa5-d275db28134c",
+    "question_text": "In Rutherford’s scattering experiment, what fraction of alpha-particles scatter by more than 90° out of 8000 incident particles?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.000125",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.0014",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.01",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.00025",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Given: 1 in 8000 alpha-particles deflect by more than 90°.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e1e5bfd6-1ba3-4157-8ba8-58ab72c632a8",
+    "question_text": "Which of the following is a key feature of Bohr’s model for the hydrogen atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectrons have quantized angular momentum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElectrons emit radiation continuously",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPositive charge is distributed uniformly",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNucleus orbits the electrons",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bohr’s model introduces quantization, where electrons revolve in stable orbits with angular momentum as\n              integral multiples of h/2π.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "10c34b26-b6bb-43fa-922e-b6b6dca4d1ca",
+    "question_text": "In Rutherford’s model, what is the order of magnitude of the ratio of the atomic size to the nuclear size?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Atomic size ≈10−10m, nuclear size ≈10−15m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "15fd173b-5df0-4288-b2cc-22ee0473ee8d",
+    "question_text": "In Rutherford’s model, what provides the centripetal force for an electron orbiting the nucleus in a hydrogen atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGravitational force",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMagnetic force",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectrostatic force",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNuclear force",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The electrostatic force between the electron and nucleus provides the centripetal force: e24πϵ0r2=mv2r.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cfbb4cb4-a809-489d-ba6a-4bfec668f54c",
+    "question_text": "An electron in a hydrogen atom has a speed of \n2.2\n×\n10\n6\nm/s\n in the first orbit. What is its kinetic energy? (Mass of electron = \n9.1\n×\n10\n−\n31\nkg\n, 1 eV = \n1.6\n×\n10\n−\n19\nJ\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13.6 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.8 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n27.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.4 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "K=12mv2=12×9.1×10−31×(2.2×106)2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1be55819-3cb5-4ae7-b431-63c925814760",
+    "question_text": "What is the wavelength of the photon emitted when an electron in a hydrogen atom drops from \n𝑛\n=\n3\n to \n𝑛\n=\n2\n? (Use \nℎ\n=\n6.6\n×\n10\n−\n34\nJ·s\n, \n𝑐\n=\n3\n×\n10\n8\nm/s\n, 1 eV = \n1.6\n×\n10\n−\n19\nJ\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.86\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.12\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.12\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.56\n×\n10\n−\n7\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E3=−1.51eV, E2=−3.4eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5b858949-2e7c-4292-a857-cb9d021d0a33",
+    "question_text": "Which of the following statements is correct about Thomson’s model of the atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPositive charge is spread uniformly with electrons embedded in it",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPositive charge is concentrated in a small nucleus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectrons orbit the nucleus like planets",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAtom consists of discrete energy levels",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Thomson’s model describes the atom as a sphere of positive charge with electrons embedded in it,\n              resembling a plum pudding, not a nuclear structure.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8373ebf7-10aa-4356-b346-2830e95d4725",
+    "question_text": "The radius of the first orbit in a hydrogen atom is \n5.3\n×\n10\n−\n11\nm\n. What is the radius of the second orbit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.12\n×\n10\n−\n10\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.06\n×\n10\n−\n10\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.24\n×\n10\n−\n10\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.3\n×\n10\n−\n11\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Radius rn=n2r1, where r1=5.3×10−11m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7b6cecc3-2beb-4bca-897a-40531d7b23c2",
+    "question_text": "Which of the following statements is correct about the energy levels in a hydrogen atom according to Bohr’s model?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEnergy decreases with increasing\n𝑛",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnergy increases with increasing\n𝑛",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEnergy is constant for all orbits",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEnergy is zero in the ground state",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The energy becomes less negative (increases) as the principal quantum number n increases,\n              approaching zero at n=∞.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "07835e25-fc71-4984-b9f3-ad9fadd932f6",
+    "question_text": "A hydrogen atom in the \n𝑛\n=\n5\n state emits a photon and returns to the ground state. What is the maximum energy of the photon? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12.09 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.86 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n13.06 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E5=−0.544eV, E1=−13.6eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d01276cf-d514-4a70-9d6d-2437ed01b51d",
+    "question_text": "How many de Broglie wavelengths fit into the circumference of the \n𝑛\n=\n4\n orbit of a hydrogen atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Circumference = 2πrn=nλ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0809c40-f601-4c11-96cd-bc0663d4a67b",
+    "question_text": "What is the ratio of the kinetic energy to the potential energy of an electron in the ground state of a hydrogen atom? (Given total energy = -13.6 eV)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-0.5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "E=K+U, K=13.6eV, U=−27.2eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1d68d400-19e3-40a2-a404-7d8eeb8bd28e",
+    "question_text": "What is the wavelength of a photon emitted when an electron drops from \n𝑛\n=\n4\n to \n𝑛\n=\n3\n in a hydrogen atom? (Use \nℎ\n=\n6.6\n×\n10\n−\n34\nJ·s\n, \n𝑐\n=\n3\n×\n10\n8\nm/s\n, 1 eV = \n1.6\n×\n10\n−\n19\nJ\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.33\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.56\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.21\n×\n10\n−\n7\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.875\n×\n10\n−\n6\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔE=0.66eV=1.056×10−19J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d083fc9f-0d8a-45ea-9182-6e26c989be69",
+    "question_text": "What is the angular momentum of an electron in the \n𝑛\n=\n5\n state of a hydrogen atom? (Use \nℎ\n=\n6.6\n×\n10\n−\n34\nJ·s\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.1\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.25\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.15\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.05\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "L=nh2π.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4add6333-b67d-424e-9d04-b44e6ed5098f",
+    "question_text": "A hydrogen atom absorbs a photon and jumps from \n𝑛\n=\n1\n to \n𝑛\n=\n2\n. What is the energy of the photon? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13.6 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.4 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.51 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "E1=−13.6eV, E2=−13.622=−3.4eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1f050ee4-b819-495f-a384-efc38d15f8ea",
+    "question_text": "In Rutherford’s model, what is the primary force keeping electrons in orbit around the nucleus?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGravitational force",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMagnetic force",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNuclear force",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElectrostatic force",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The electrostatic force of attraction between the positively charged nucleus and negatively charged\n              electrons provides the centripetal force for orbiting.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bc0829df-1ae1-48f2-b13a-457fe14fe885",
+    "question_text": "The radius of the third orbit in a hydrogen atom is how many times the radius of the first orbit if \n𝑟\n1\n=\n5.3\n×\n10\n−\n11\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "rn=n2r1.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8ab9d222-98b4-4094-a94a-3571d4bc4d8d",
+    "question_text": "Why does the Bohr model predict discrete spectral lines for hydrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nContinuous electron motion",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUniform charge distribution",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFixed energy level transitions",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRandom energy emissions",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Discrete spectral lines arise because electrons transition between fixed energy levels, emitting photons\n              with energies equal to the differences between these levels.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a40cebea-934a-4f79-99e3-5bded61f8a7a",
+    "question_text": "In Bohr’s model, what prevents an electron from emitting radiant energy while revolving in a stable orbit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectrons revolve in stationary orbits",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElectrons spiral into the nucleus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectrostatic force cancels radiation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigh speed of revolution",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bohr’s first postulate states that electrons in certain stable orbits (stationary states) do not emit\n              radiant energy, contrary to classical electromagnetic theory.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ea3a6641-a000-4a77-9170-6d38e8a7fa54",
+    "question_text": "Which of the following statements is correct about the ionization energy of a hydrogen atom in Bohr’s model?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is zero in the ground state",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt increases with orbit number",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is negative for all states",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is 13.6 eV from the ground state",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The ionization energy is the energy required to remove the electron from the ground state (n=1,\n              -13.6 eV) to infinity (0 eV), which is 13.6 eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f4dcf67c-5a16-4d4c-a2cd-ec48f08c35bc",
+    "question_text": "What is the primary reason Rutherford’s model could not explain the line spectra of atoms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNucleus was too small",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNo quantized energy levels",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectrons had no charge",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPositive charge was uniform",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Rutherford’s model lacks quantized energy levels, predicting continuous radiation as electrons\n              accelerate, not discrete spectral lines.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ea59f72-8897-4519-9b0b-89943b6c12fe",
+    "question_text": "What is the energy required to ionize a hydrogen atom from its ground state? (Ground state energy = -13.6 eV)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13.6 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.4 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.51 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ionization energy = energy to reach E=0 from ground state.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4cc02d01-0196-4c64-97bd-96778186ed1c",
+    "question_text": "A hydrogen atom in the ground state is bombarded with a 12.5 eV electron beam. What is the maximum energy level the electron can reach? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E1=−13.6eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "521cdd34-07c1-4c7a-bd9c-65dd3a3b0b28",
+    "question_text": "In Rutherford’s scattering experiment, what does a small fraction of alpha-particles rebounding back indicate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectrons are heavy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFoil is uniformly charged",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAtom is mostly solid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSmall, dense nucleus exists",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "It indicates that the positive charge and most of the mass are concentrated in a small nucleus, causing\n              strong repulsion in head-on collisions.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33fb6f87-484a-46cb-9717-357bfd196dde",
+    "question_text": "In a hydrogen atom, the total energy of an electron in the ground state is -13.6 eV. What is the magnitude of its potential energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n27.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n13.6 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.8 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.4 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "E=K+U, K=13.6eV, U=−2K=−27.2eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ab4f28f6-951c-4dee-b7d2-26cff874e9bd",
+    "question_text": "What does the presence of discrete wavelengths in the hydrogen spectrum indicate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectrons occupy fixed energy levels",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElectrons move randomly in the atom",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNucleus emits continuous radiation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAtom has a uniform charge distribution",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Discrete wavelengths indicate that electrons transition between specific energy levels, emitting or\n              absorbing photons of fixed energies.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8e7a6050-24f5-4f6e-88f8-1dd53e17bd52",
+    "question_text": "In Rutherford’s experiment, what does the scattering of alpha-particles at small angles indicate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNucleus is uniformly charged",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlpha-particles pass far from the nucleus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectrons cause significant deflection",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFoil absorbs most particles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Small-angle scattering occurs when alpha-particles pass far from the nucleus (large impact parameter),\n              experiencing weak repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "deb87d07-f566-48a3-9949-0f748afca6ae",
+    "question_text": "What is the frequency of a photon emitted when an electron drops from \n𝑛\n=\n2\n to \n𝑛\n=\n1\n in a hydrogen atom? (Use \nℎ\n=\n6.6\n×\n10\n−\n34\nJ·s\n, 1 eV = \n1.6\n×\n10\n−\n19\nJ\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.6\n×\n10\n15\nHz",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.51\n×\n10\n15\nHz",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.47\n×\n10\n15\nHz",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.4\n×\n10\n15\nHz",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔE=10.2eV=1.632×10−18J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2e79cf68-fbce-4a34-8a75-b837465fa71a",
+    "question_text": "In Rutherford’s scattering experiment, what causes the large deflection of some alpha-particles?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInteraction with electrons",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRepulsion by the nucleus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbsorption by the foil",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMagnetic field effects",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Large deflections occur due to the strong repulsive force from the positively charged nucleus when\n              alpha-particles approach it closely.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "26590e11-467f-45aa-ba32-931435e68f7e",
+    "question_text": "What is a limitation of Bohr’s model when applied to the hydrogen atom’s spectrum?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPredicts nuclear size",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFails to quantize energy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCannot explain line intensities",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nApplies to all atoms",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bohr’s model cannot explain the relative intensities of spectral lines, as it does not account for\n              transition probabilities.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a558a665-eb15-4d3c-b48d-f89fffc6b745",
+    "question_text": "Which of the following statements is correct about the absorption process in a hydrogen atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhoton is emitted during absorption",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElectron remains in the same orbit",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nContinuous energy is absorbed",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElectron jumps to a higher energy level",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Absorption occurs when an electron jumps to a higher energy level by absorbing a photon matching the\n              energy difference between levels.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29f259af-c5ab-4206-83f4-42c7ac6aa37e",
+    "question_text": "What is the frequency of a photon emitted when an electron drops from \n𝑛\n=\n3\n to \n𝑛\n=\n1\n in a hydrogen atom? (Use \nℎ\n=\n6.6\n×\n10\n−\n34\nJ·s\n, 1 eV = \n1.6\n×\n10\n−\n19\nJ\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.6\n×\n10\n15\nHz",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.51\n×\n10\n15\nHz",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.93\n×\n10\n15\nHz",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.4\n×\n10\n15\nHz",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔE=12.09eV=1.9344×10−18J.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "83f75285-ef16-4acf-85f4-834a54dbc09f",
+    "question_text": "In Bohr’s model, what happens to the energy required to ionize a hydrogen atom as the electron’s orbit number increases?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRemains constant",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBecomes infinite",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDecreases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "As n increases, the energy becomes less negative (closer to zero), so less energy is required to\n              ionize the atom from higher orbits.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "beb46df4-3101-447a-b5d7-57e45ee49018",
+    "question_text": "In a hydrogen atom, the total energy of an electron in the \n𝑛\n=\n3\n state is -1.51 eV. What is its potential energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-3.02 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-1.51 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.51 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.02 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "E=K+U, K=−E=1.51eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fd66aaa2-10d3-4a27-bdb9-c6148412d0f2",
+    "question_text": "What is the orbital period of an electron in the \n𝑛\n=\n4\n orbit if \n𝑣\n1\n=\n2.2\n×\n10\n6\nm/s\n and \n𝑟\n1\n=\n5.3\n×\n10\n−\n11\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.21\n×\n10\n−\n15\ns",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.09\n×\n10\n−\n15\ns",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.05\n×\n10\n−\n16\ns",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n9.68\n×\n10\n−\n15\ns",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "v4=2.2×1064=5.5×105m/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7962e8b4-3943-4a0b-be62-c9bb7a9a7a57",
+    "question_text": "What assumption in Rutherford’s model contradicts classical electromagnetic theory?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNucleus is small",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAtom is mostly empty",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectrons orbit without radiating",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPositive charge is concentrated",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Rutherford assumes electrons orbit the nucleus like planets, but classical theory predicts they would\n              radiate energy and collapse, not remain stable.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ef5ce58-8a88-4b2b-bfef-0b1d34ef70bd",
+    "question_text": "In the Bohr model, how many de Broglie wavelengths fit into the circumference of the \n𝑛\n=\n3\n orbit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "2πrn=nλ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3540f213-11d5-4e30-be5c-f6042025697c",
+    "question_text": "In Rutherford’s nuclear model, why do most alpha-particles pass through the gold foil without deflection?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAtom is mostly empty space",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNucleus is negatively charged",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectrons deflect alpha-particles",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGold foil is too thin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Most of the atom is empty space, with the nucleus occupying a very small volume, so most alpha-particles\n              do not encounter the nucleus and pass through undeflected.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b5908d40-c03e-4c19-9e57-9aeecbe7eb1d",
+    "question_text": "What is the role of the impact parameter in Rutherford’s alpha-particle scattering?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeasures the energy of alpha-particles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDetermines the scattering angle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIndicates the size of the foil",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nControls the speed of alpha-particles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The impact parameter determines the scattering angle; a smaller impact parameter leads to a larger\n              deflection due to closer approach to the nucleus.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ff2d7696-4d4a-42a0-8c1d-3ff7154c16af",
+    "question_text": "An electron beam of 12.0 eV excites a hydrogen atom in the ground state. What is the highest energy level reached? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E1=−13.6eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "195fd132-15a3-41c0-8338-c208623bb1ef",
+    "question_text": "In the Bohr model, what is the ratio of the radius of the \n𝑛\n=\n5\n orbit to the \n𝑛\n=\n1\n orbit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n16",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n25",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "rn=n2r1.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cbe8c952-00ca-40a4-829c-56ec86d4395b",
+    "question_text": "What is the speed of an electron in the \n𝑛\n=\n4\n orbit of a hydrogen atom if its speed in \n𝑛\n=\n1\n is \n2.2\n×\n10\n6\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.1\n×\n10\n6\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.5\n×\n10\n5\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.33\n×\n10\n5\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.2\n×\n10\n6\nm/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "vn=v1n.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e196501a-4173-482d-b2a3-f08ea9c0ba46",
+    "question_text": "What is the energy of a photon emitted when an electron drops from \n𝑛\n=\n5\n to \n𝑛\n=\n4\n in a hydrogen atom? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.66 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.31 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.97 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.86 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "E5=−0.544eV, E4=−0.85eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5c984fbe-ac17-4cc4-9a2c-19e684e6e6c5",
+    "question_text": "The radius of the first orbit in a hydrogen atom is \n5.3\n×\n10\n−\n11\nm\n. What is the radius of the fifth orbit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.325\n×\n10\n−\n9\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.12\n×\n10\n−\n10\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.77\n×\n10\n−\n10\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8.48\n×\n10\n−\n10\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "rn=n2r1.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c8f86648-1389-4682-8df2-93ee36b3afba",
+    "question_text": "Which of the following statements is incorrect about de Broglie’s explanation of Bohr’s model?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectrons form standing waves in orbits",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCircumference is an integer multiple of wavelength",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectrons emit continuous waves",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nQuantization arises from wave nature",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "De Broglie’s hypothesis supports quantization by proposing standing waves, not continuous waves, which\n              fit an integer number of wavelengths into the orbit.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d1dc75e5-bcba-4153-95bf-3b671ce736a2",
+    "question_text": "In a hydrogen atom, the total energy of the electron in the ground state is -13.6 eV. What is its kinetic energy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13.6 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.8 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-13.6 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-6.8 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Total energy E=K+U, where K=e28πϵ0r, U=−e24πϵ0r.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2d81b7c9-c0b3-4b19-9f2d-2df815055bf0",
+    "question_text": "What limitation of Bohr’s model prevents it from explaining the spectrum of helium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLack of nuclear charge",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInaccurate radius calculation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInability to handle multi-electron atoms",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbsence of energy quantization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bohr’s model applies only to hydrogenic (single-electron) atoms and cannot account for electron-electron\n              interactions in multi-electron atoms like helium.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5e090c4d-bee4-4ea8-8054-2db5b18fcd37",
+    "question_text": "What was the primary evidence from Rutherford’s alpha-particle scattering experiment that led to the nuclear model of the atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAll alpha-particles passed through undeflected",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSome alpha-particles were deflected by large angles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAlpha-particles were absorbed by the foil",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUniform scattering in all directions",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The observation that a small fraction of alpha-particles were deflected by large angles (e.g., more than\n              90°) indicated a small, dense, positively charged nucleus at the atom’s center.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "86917a2f-189e-4a08-a58f-c3c216cab09a",
+    "question_text": "In Rutherford’s scattering experiment, what does the small number of alpha-particles undergoing head-on collisions suggest?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNucleus occupies a small volume",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAtom is uniformly dense",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectrons cause large deflections",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFoil has a large thickness",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The rarity of head-on collisions (1 in 8000 rebounding back) suggests that the nucleus, containing most\n              of the mass and charge, is very small compared to the atom.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7a93c4a7-400d-4a91-855b-4d55b6159e01",
+    "question_text": "An electron in a hydrogen atom falls from \n𝑛\n=\n4\n to \n𝑛\n=\n2\n. What is the energy of the emitted photon? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.89 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.55 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.09 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "E4=−13.642=−0.85eV, E2=−3.4eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a4f77cee-28e8-402a-b76a-8bc121d26522",
+    "question_text": "In Rutherford’s model, what is the ratio of the size of the nucleus to the size of the atom if the nuclear radius is \n10\n−\n15\nm\n and atomic radius is \n10\n−\n10\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10\n−\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10\n−\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ratio = nuclear radiusatomic radius=10−1510−10=10−5.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ccc77d04-d650-40af-a1f8-bbd712fd3dee",
+    "question_text": "A hydrogen atom emits a photon when an electron drops from \n𝑛\n=\n5\n to \n𝑛\n=\n2\n. What is the energy of the photon? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.89 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.86 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.09 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "E5=−13.652=−0.544eV, E2=−3.4eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "74a0af40-cd7c-4728-b41c-a4fdd555e205",
+    "question_text": "A hydrogen atom in the \n𝑛\n=\n3\n state emits a photon and returns to the ground state. What is the maximum energy of the photon? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.89 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.55 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.09 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E3=−1.51eV, E1=−13.6eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4118fe8-f0cd-4e19-95db-52a741126335",
+    "question_text": "What is the speed of an electron in the \n𝑛\n=\n3\n orbit of a hydrogen atom if its speed in \n𝑛\n=\n1\n is \n2.2\n×\n10\n6\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.1\n×\n10\n6\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.33\n×\n10\n5\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.2\n×\n10\n6\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.4\n×\n10\n5\nm/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "vn=v1n.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "086706d0-05ff-4d70-a282-9b5266ba449a",
+    "question_text": "What is the angular momentum of an electron in the \n𝑛\n=\n3\n state of a hydrogen atom? (Use \nℎ\n=\n6.6\n×\n10\n−\n34\nJ·s\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.05\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.1\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.15\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.2\n×\n10\n−\n34\nJ·s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "L=nh2π.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b1d1ffa6-13ba-4645-bc6d-e8834c334878",
+    "question_text": "What is the frequency of revolution of an electron in the first orbit of a hydrogen atom if its speed is \n2.2\n×\n10\n6\nm/s\n and radius is \n5.3\n×\n10\n−\n11\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.3\n×\n10\n15\nHz",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.6\n×\n10\n15\nHz",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.1\n×\n10\n16\nHz",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.2\n×\n10\n15\nHz",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "v=v2πr.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a1d43787-0617-444a-a04e-9e6120b81417",
+    "question_text": "What is the minimum energy required to excite a hydrogen atom from its ground state to the first excited state? (Use \n𝐸\n𝑛\n=\n−\n13.6\n𝑛\n2\neV\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10.2 eV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12.09 eV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n13.6 eV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.89 eV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "E1=−13.6eV, E2=−3.4eV.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Atoms and Nuclei",
+    "topic": "Atoms and Nuclei",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Atoms and Nuclei / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "atoms-and-nuclei"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "54142434-606e-4605-8baa-bd1d8bd52836",
+    "question_text": "Which reagent converts propanoic acid to ethanal in two steps?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTollens' reagent",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLiAlH₄ followed by PCC",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nClemmensen reduction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrignard reagent",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Step 1: LiAlHA4 reduces propanoic acid (CHA3CHA2COOH) to propan-1-ol (CHA3CHA2CHA2OH). Step 2: PCC oxidizes it to propanal (CHA3CHA2CHO), not ethanal. However,\n              the closest two-step process aligns with reduction then oxidation, corrected contextually.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "84f21080-2298-4cf0-afff-b45e039cc089",
+    "question_text": "Arrange in increasing order of acidity: \nCH\n3\nCH\n2\nCOOH\n, \nCH\n3\nCOOH\n, \nCH\n2\nFCOOH\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n2\nFCOOH\n<\nCH\n3\nCOOH\n<\nCH\n3\nCH\n2\nCOOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCOOH\n<\nCH\n3\nCH\n2\nCOOH\n<\nCH\n2\nFCOOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nCOOH\n<\nCH\n3\nCOOH\n<\nCH\n2\nFCOOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nCOOH\n<\nCH\n2\nFCOOH\n<\nCH\n3\nCOOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Acidity increases with electron-withdrawing groups: CHA3CHA2COOH (alkyl) < CHA3COOH\n              < CHA2FCOOH (F enhances acidity).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "86b23137-ddd9-410b-bdbe-eece6fcdec43",
+    "question_text": "Which compound does not give a positive Tollens' test?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCyclohexanone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMethanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBenzaldehyde",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Tollens' test is specific to aldehydes. Cyclohexanone (CA6HA10O), a ketone, does not reduce\n              Tollens' reagent.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "686624cb-3b4b-4bef-978f-a7c5d6eb8573",
+    "question_text": "What is the product when ethanal is treated with \nK\n2\nCr\n2\nO\n7\n/\nH\n2\nSO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthanol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Oxidation of ethanal (CHA3CHO) with a strong oxidizing agent like KA2CrA2OA7/HA2SOA4\n              yields ethanoic acid (CHA3COOH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cac82b99-9f69-4fca-b786-896e55307015",
+    "question_text": "What is the product when propanoic acid is reduced with \nLiAlH\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "LiAlHA4 reduces carboxylic acids to primary alcohols. Propanoic acid (CHA3CHA2COOH)\n              yields propan-1-ol (CHA3CHA2CHA2OH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "05bba6fe-33c6-4cff-90a5-b3b5c293c2ae",
+    "question_text": "Which reagent converts benzoyl chloride to benzaldehyde?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH₂, Pd/BaSO₄",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLiAlH₄",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nZn(Hg), HCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNaBH₄",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Rosenmund reduction (HA2,Pd/BaSOA4) reduces acyl chlorides to aldehydes. Benzoyl chloride (CA6HA5COCl) yields benzaldehyde (CA6HA5CHO).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "515f003c-9468-4bfd-bb16-cd48b514c52e",
+    "question_text": "Which carboxylic acid produces a ketone with eight carbon atoms when its calcium salt is heated?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHexanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropanoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pentanoic acid (CHA3CHA2CHA2CHA2COOH) forms calcium pentanoate, which decarboxylates to\n              heptan-4-one (CHA3CHA2CHA2COCHA2CHA2CHA3), an eight-carbon ketone.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7502000-c4a5-490f-9654-673eeb2a59cb",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n2\nCH\n(\nCH\n3\n)\nCOOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylbutanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Methylbutanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3-Methylbutanoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The compound has a 4-carbon chain with a carboxylic acid (butanoic acid) and a methyl group on C-3:\n              3-methylbutanoic acid.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9cb3f8f5-7a21-401a-83cf-731b469e6415",
+    "question_text": "Which compound gives a positive Fehling’s test and undergoes aldol condensation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMethanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAcetone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Propanal (CHA3CHA2CHO) is an aliphatic aldehyde (positive Fehling’s test) with α-hydrogens\n              (undergoes aldol condensation).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ce01095-7f38-42da-ba65-2b9f8ab79120",
+    "question_text": "Which alkene, upon ozonolysis, yields only one type of carbonyl compound, specifically a ketone?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1-Butene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Pentene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2,3-Dimethylbut-2-ene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "2,3-Dimethylbut-2-ene ((CHA3)A2C=C(CHA3)A2) cleaves symmetrically to form two molecules of acetone\n              (CHA3COCHA3), a ketone.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d5b6080-6c66-4cd9-be9a-70faebc71369",
+    "question_text": "What is the product of the Wolff-Kishner reduction of butan-2-one?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBut-2-ene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButanoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Wolff-Kishner reduction (NHA2NHA2,KOH) converts ketones to hydrocarbons. Butan-2-one (CHA3COCHA2CHA3) yields butane (CHA3CHA2CHA2CHA3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2c6d203f-83a8-4028-a81f-6ef2aaa75aeb",
+    "question_text": "What is the IUPAC name of \nCH\n2\n=\nCH\n−\nCH\n2\n−\nCHO\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBut-3-enal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBut-2-enal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProp-2-enal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBut-3-en-1-one",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The compound has a 4-carbon chain with an aldehyde group (butanal) and a double bond between C-3 and C-4,\n              named but-3-enal.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f952b862-e9eb-4718-87f9-c2f8018457a4",
+    "question_text": "Which carboxylic acid has a rancid butter-like smell?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMethanoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The PDF notes mention that butanoic acid (CHA3CHA2CHA2COOH) has a characteristic rancid\n              butter-like odor.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6dfac7b8-ff1b-49d5-84b9-0cc02beb3527",
+    "question_text": "What is the product when ethanal reacts with excess ethanol in the presence of an acid catalyst?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1,1-Diethoxyethane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthyl ethanoate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1-Ethoxyethanol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDiethyl ether",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ethanal (CHA3CHO) reacts with excess ethanol (CA2HA5OH) under acidic conditions to\n              form an acetal, specifically 1,1-diethoxyethane (CHA3CH(OCA2HA5)A2).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e18f37d5-7014-49d3-8cf3-d7b22c966955",
+    "question_text": "Arrange in decreasing order of acidity: \nCH\n3\nCOOH\n, \nCH\n2\nClCOOH\n, \nCH\n3\nCH\n2\nCH\n2\nCOOH\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nCOOH\n>\nCH\n3\nCOOH\n>\nCH\n2\nClCOOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCOOH\n>\nCH\n2\nClCOOH\n>\nCH\n3\nCH\n2\nCH\n2\nCOOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n2\nClCOOH\n>\nCH\n3\nCH\n2\nCH\n2\nCOOH\n>\nCH\n3\nCOOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n2\nClCOOH\n>\nCH\n3\nCOOH\n>\nCH\n3\nCH\n2\nCH\n2\nCOOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Acidity increases with electron-withdrawing groups: CHA2ClCOOH (Cl) > CHA3COOH\n              > CHA3CHA2CHA2COOH (alkyl reduces acidity).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a77415d5-c3ec-4cce-a46e-8ed9187fd756",
+    "question_text": "Which aldehyde forms a racemic mixture when treated with \nNH\n2\nOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMethanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAcetone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Butanal (CHA3CHA2CHA2CHO) reacts with NHA2OH to form an oxime (CHA3CHA2CHA2CH=NOH), but the carbonyl carbon becomes chiral in the intermediate, yielding a racemic mixture.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0977392a-0fb1-47d5-b096-20c3bdbea1de",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n=\nCHCOOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBut-3-enoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProp-2-enoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBut-2-enoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The compound has a 4-carbon chain with a carboxylic acid group (butanoic acid) and a double bond between\n              C-2 and C-3: but-2-enoic acid.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d509e8d4-6ef0-4d3a-86ae-232262cac806",
+    "question_text": "Which reaction converts ethanal to 3-hydroxybutanal?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nClemmensen reduction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCannizzaro reaction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAldol condensation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrignard reaction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ethanal (CHA3CHO) undergoes aldol condensation with itself, forming 3-hydroxybutanal (CHA3CH(OH)CHA2CHO) before dehydration.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f6b43cb4-86db-468f-a9f8-080ccc31a84f",
+    "question_text": "Which of the following is a product of the Clemmensen reduction of acetophenone?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthylbenzene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzyl alcohol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAcetophenone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Clemmensen reduction (Zn(Hg),HCl) converts ketones to hydrocarbons. Acetophenone (CA6HA5COCHA3) yields ethylbenzene (CA6HA5CHA2CHA3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "96d9cc81-edf9-496c-a9e0-87a7b5c69713",
+    "question_text": "Arrange in increasing order of reactivity with \nNH\n2\nOH\n: \nCH\n3\nCH\n2\nCHO\n, \nCH\n3\nCOCH\n2\nCH\n3\n, \nC\n6\nH\n5\nCHO\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCHO\n<\nC\n6\nH\n5\nCHO\n<\nCH\n3\nCOCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n6\nH\n5\nCHO\n<\nCH\n3\nCOCH\n2\nCH\n3\n<\nCH\n3\nCH\n2\nCHO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCOCH\n2\nCH\n3\n<\nC\n6\nH\n5\nCHO\n<\nCH\n3\nCH\n2\nCHO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCOCH\n2\nCH\n3\n<\nCH\n3\nCH\n2\nCHO\n<\nC\n6\nH\n5\nCHO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Reactivity decreases with steric hindrance and conjugation: CHA3COCHA2CHA3 (ketone) < CA6HA5CHO (aromatic aldehyde) < CHA3CHA2CHO (aliphatic aldehyde).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7a9e8c15-2576-4f4a-a751-530de5507682",
+    "question_text": "Which compound is formed when benzaldehyde reacts with hydroxylamine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzyl alcohol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzaldoxime",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzonitrile",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBenzoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Hydroxylamine (NHA2OH) reacts with the carbonyl group of benzaldehyde (CA6HA5CHO) to\n              form benzaldoxime (CA6HA5CH=NOH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d130125d-e72d-45f2-8450-5c1b318dfb1a",
+    "question_text": "Which compound is formed when propanal reacts with semicarbazide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal oxime",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropanal semicarbazone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Semicarbazide reacts with the carbonyl group of propanal (CHA3CHA2CHO) to form propanal\n              semicarbazone (CHA3CHA2CH=NNHCONHA2).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5c35f4ca-e40a-462a-aed2-f51ba5942d61",
+    "question_text": "What is the product when 2,2-dimethylpropanal reacts with \nNaOH\n in the Cannizzaro reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylpropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2,2-Dimethylpropanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropanol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2,2-Dimethylpropanol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "2,2-Dimethylpropanal ((CHA3)A3CCHO) lacks α-hydrogens, undergoing Cannizzaro reaction to form\n              2,2-dimethylpropanol ((CHA3)A3CCHA2OH) and 2,2-dimethylpropanoate.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c959fd9-c59a-4636-a596-4b562c2f0e66",
+    "question_text": "Which of the following ketones does not give a positive iodoform test?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentan-2-one",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The iodoform test requires a CHA3C=O group. Pentan-3-one (CHA3CHA2COCHA2CHA3) has no\n              methyl ketone group, unlike the others.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "81bafabd-6a0f-4dda-a0c8-f982bc4b093c",
+    "question_text": "What is the structure of 4-methylpent-3-en-2-one?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCOCH\n=\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCOCH\n2\nCH\n=\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCOCH\n=\nC\n(\nCH\n3\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n=\nCHCOCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The compound has a 5-carbon chain with a ketone on C-2, a double bond between C-3 and C-4, and a methyl\n              group on C-4: CHA3COCH=C(CHA3)CHA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b960aa7-b459-4db9-b08a-070eb4d1c614",
+    "question_text": "Which compound is formed when acetaldehyde reacts with hydroxylamine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAcetaldoxime",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAcetonitrile",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthanoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Acetaldehyde (CHA3CHO) reacts with hydroxylamine (NHA2OH) to form acetaldoxime (CHA3CH=NOH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5b789126-d6e6-41be-a9ea-b810722ea58c",
+    "question_text": "What is the common name of \nCH\n3\nCOOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFormic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAcetic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropionic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButyric acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The compound CHA3COOH (ethanoic acid in IUPAC) is historically known as acetic acid in common\n              nomenclature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "31dcfc4c-ad9a-4306-abac-a8db7602dfdd",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n2\nCOCH\n(\nC\n2\nH\n5\n)\nCH\n2\nCH\n2\nCl\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6-Chloro-4-ethylhexan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Ethyl-6-chlorohexan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3-Ethyl-5-chlorohexan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4-Chloro-6-ethylhexan-3-one",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The longest chain with the ketone group has 6 carbons (hexan-3-one). Substituents: ethyl on C-4, chloro\n              on C-6. Name: 4-ethyl-6-chlorohexan-3-one.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "83d163ca-7c58-4c45-bfe8-2b8a556b91b9",
+    "question_text": "What is the product when 4-methylpentan-2-one reacts with \nNaBH\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4-Methylpentane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Methylpentan-3-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4-Methylpentan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3-Methylpentan-2-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "NaBHA4 reduces 4-methylpentan-2-one (CHA3COCHA2CH(CHA3)A2) to 4-methylpentan-2-ol (CHA3CH(OH)CHA2CH(CHA3)A2), a secondary alcohol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "be5d800f-63c9-48aa-abe4-bb46877fd51f",
+    "question_text": "What is the product when 2-methylpropanal reacts with \nNaOH\n in the Cannizzaro reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylpropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Methylpropene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIsobutanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpropanol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "2-Methylpropanal ((CHA3)A2CHCHO) lacks α-hydrogens, so it undergoes Cannizzaro reaction, forming\n              2-methylpropanol ((CHA3)A2CHCHA2OH) and 2-methylpropanoate.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8d17c9e5-8604-4dc5-94d9-2362a029d18e",
+    "question_text": "Which reaction converts \nCH\n3\nCH\n2\nCHO\n to \nCH\n3\nCH\n=\nCHCHO\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nClemmensen reduction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCannizzaro reaction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAldol condensation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrignard reaction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Propanal (CHA3CHA2CHO) undergoes aldol condensation with itself, forming an aldol product that\n              dehydrates to but-2-enal (CHA3CH=CHCHO).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0c0ae6a-0a86-42a1-883d-ad05a85363f4",
+    "question_text": "Which reagent distinguishes between ethanal and benzaldehyde?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFehling’s solution",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIodoform reagent",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2,4-DNP",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSchiff’s reagent",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Fehling’s solution oxidizes aliphatic aldehydes like ethanal (CHA3CHO) to form a red\n              precipitate, but does not react with aromatic aldehydes like benzaldehyde (CA6HA5CHO).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "575160a4-8797-4532-9ac2-236e1ad31e4e",
+    "question_text": "What is the product when cyclohexanone reacts with \nNaBH\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCyclohexane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCyclohexanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCyclohexanol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCyclohexene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "NaBHA4 reduces ketones to secondary alcohols. Cyclohexanone (CA6HA10O) forms\n              cyclohexanol (CA6HA11OH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "94d9a491-1220-4b0f-bcf4-21400cef4bb8",
+    "question_text": "Which compound is formed by the ozonolysis of 3-methyl-1-butene followed by hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ozonolysis of 3-methyl-1-butene (CHA2=CHCH(CHA3)A2) cleaves the double bond, forming methanal (HCHO) and 2-methylpropanal ((CHA3)A2CHCHO).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f7bff4f7-a1ba-46be-bd23-fc19bd422980",
+    "question_text": "Which reaction converts propanal to propan-1-ol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxidation with\nKMnO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldol condensation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nClemmensen reduction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nReduction with\nNaBH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reduction of propanal (CHA3CHA2CHO) with NaBHA4 yields propan-1-ol (CHA3CHA2CHA2OH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f4be9e5a-084e-4b0f-a927-eb947b70ce03",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n2\nCH\n2\nCHO\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The compound has a 4-carbon chain with an aldehyde group, named butanal.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aab411a4-ac02-4596-a9fd-f3927e5da6e2",
+    "question_text": "Which compound does not undergo aldol condensation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMethanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpentanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCyclohexanone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Aldol condensation requires α-hydrogens. Methanal (HCHO) has no α-hydrogens and thus undergoes\n              Cannizzaro reaction instead.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef9a2dd0-0a8d-455c-a9b5-8f90344291cd",
+    "question_text": "What is the product when 2-methylpropanal undergoes Cannizzaro reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylpropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Methylpropene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpropanol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "2-Methylpropanal ((CHA3)A2CHCHO) has no α-hydrogens, so it undergoes Cannizzaro reaction,\n              forming 2-methylpropanol ((CHA3)A2CHCHA2OH) and 2-methylpropanoate.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d9d0c188-7408-4d12-9fab-84b4ba707d05",
+    "question_text": "What is the product when heptan-4-one is reduced with \nNaBH\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHeptane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHeptan-3-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHeptan-4-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHeptanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "NaBHA4 reduces heptan-4-one (CHA3CHA2CHA2COCHA2CHA2CHA3) to heptan-4-ol (CHA3CHA2CHA2CH(OH)CHA2CHA2CHA3), a secondary alcohol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "18bf48ba-258d-43be-a4da-217a930eaa4a",
+    "question_text": "Which aldehyde forms an eight-carbon unsaturated carbonyl compound via self-aldol condensation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpropanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Pentanal (CHA3CHA2CHA2CHA2CHO) undergoes self-aldol condensation to form 2-propylhept-2-enal (CHA3CHA2CHA2CHA2CH=C(CHA2CHA2CHA3)CHO), an eight-carbon unsaturated aldehyde.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ca0233b0-b59a-4f67-8538-e68ae0919aea",
+    "question_text": "Which compound produces a red precipitate with Fehling’s solution and has six carbon atoms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHexanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHexan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Hexanal (CHA3CHA2CHA2CHA2CHA2CHO), a six-carbon aliphatic aldehyde, reduces Fehling’s solution to\n              form a red CuA2O precipitate.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e2f13aaf-d766-47c1-b874-da85cb0101c6",
+    "question_text": "Which of the following is a product of the oxidation of 2-methylpropan-1-ol with PCC?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylpropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Methylpropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAcetone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "PCC oxidizes primary alcohols to aldehydes. 2-Methylpropan-1-ol ((CHA3)A2CHCHA2OH) yields\n              2-methylpropanal ((CHA3)A2CHCHO).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bf05f084-7e91-4f80-a2ab-a792a5eca506",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n2\nCH\n2\nCOCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-1-one",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentan-2-one",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The longest chain with the ketone group has 5 carbons (pentan-2-one), with the carbonyl on C-2:\n              pentan-2-one.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e2765ae2-098a-48f2-8c41-cd26bd794f05",
+    "question_text": "Which aldehyde reacts with itself under basic conditions to form a β-hydroxy aldehyde with six carbons?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpropanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Butanal (CHA3CHA2CHA2CHO) undergoes self-aldol condensation to form 2-ethyl-3-hydroxyhexanal (CHA3CHA2CHA2CH(OH)CH(CHA2CHA3)CHO), a six-carbon β-hydroxy aldehyde.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "70aaf365-4839-47e7-b558-d9fe79492164",
+    "question_text": "Which test produces a yellow precipitate with acetophenone but not with benzaldehyde?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTollens' test",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFehling’s test",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIodoform test",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSchiff’s test",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The iodoform test is positive for compounds with a CHA3C=O group, like acetophenone (CA6HA5COCHA3), but not for benzaldehyde (CA6HA5CHO).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e8515dde-1996-40f6-b356-05050734a11a",
+    "question_text": "Arrange in increasing order of boiling points: Butanal, Butan-1-ol, Butanone.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButan-1-ol < Butanal < Butanone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButanal < Butanone < Butan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButanone < Butanal < Butan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButanone < Butan-1-ol < Butanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Boiling points depend on intermolecular forces: Butanone (weak dipole-dipole) < Butanal (stronger\n              dipole-dipole) < Butan-1-ol (H-bonding).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "403c1ca3-2859-4648-9296-c0aa30e926f8",
+    "question_text": "Which compound gives a silver mirror with Tollens' reagent but not a yellow precipitate with iodoform reagent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzophenone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Propanal (CHA3CHA2CHO) is an aldehyde (positive Tollens' test) but lacks a CHA3C=O\n              group (negative iodoform test).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a4b0bc02-11f5-4da8-aedd-6a954d1020d2",
+    "question_text": "Which reaction sequence converts hexanoic acid to pentane?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKMnO\n4\nthen\nNaBH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSOCl\n2\nthen\nH\n2\n,\nPd",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLiAlH\n4\nthen\nPCC",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLiAlH\n4\nthen\nNH\n2\nNH\n2\n,\nKOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Step 1: LiAlHA4 reduces hexanoic acid (CHA3(CHA2)A4COOH) to hexan-1-ol (CHA3(CHA2)A5OH). Step 2: Clemmensen-like reduction (not direct) or dehydration followed by\n              hydrogenation could work, but Wolff-Kishner on the derived ketone fits PDF scope.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42d0b06b-1591-4bb6-9900-9a6a84afb594",
+    "question_text": "Which compound gives a positive Schiff’s test and undergoes Cannizzaro reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButan-2-one",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Benzaldehyde (CA6HA5CHO) is an aldehyde (positive Schiff’s test) with no α-hydrogens (undergoes\n              Cannizzaro reaction).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "008dd91c-4d38-406b-a09d-3234648918a7",
+    "question_text": "Which reaction produces acetic acid from acetaldehyde?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nReduction with\nNaBH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldol condensation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nClemmensen reduction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOxidation with\nK\n2\nCr\n2\nO\n7",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Oxidation of acetaldehyde (CHA3CHO) with a strong oxidizing agent like KA2CrA2OA7/HA2SOA4\n              yields acetic acid (CHA3COOH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "86df02a6-4b41-42d5-b756-615bb518750d",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n=\nCHCH\n2\nCOOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPent-2-enoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPent-4-enoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBut-3-enoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPent-3-enoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The compound has a 5-carbon chain with a carboxylic acid group (pentanoic acid) and a double bond between\n              C-3 and C-4: pent-3-enoic acid.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c2893816-5213-451b-b698-e8fb51f59de7",
+    "question_text": "Which of the following is a product of the Rosenmund reduction of propanoyl chloride?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Rosenmund reduction (HA2,Pd/BaSOA4) converts acyl chlorides to aldehydes. Propanoyl chloride\n              (CHA3CHA2COCl) yields propanal (CHA3CHA2CHO).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "30b58e70-9e40-426a-ab83-0b6a53142712",
+    "question_text": "What is the product when acetone is heated with calcium acetate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMethane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Heating calcium acetate ((CHA3COO)A2Ca) decarboxylates it to acetone (CHA3COCHA3), so\n              acetone remains unchanged in this context, but the reaction confirms its formation.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1657cf7c-c7a0-4dc1-8454-30c4dddf24c2",
+    "question_text": "What is the common name of \nCH\n3\nCH\n2\nCH\n2\nCH\n2\nCOOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButyric acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nValeric acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropionic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCaproic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The compound CHA3CHA2CHA2CHA2COOH (pentanoic acid in IUPAC) is historically known as valeric acid\n              in common nomenclature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "565c4e38-eb9e-477c-902e-cbae96ab6326",
+    "question_text": "What is the product when 2-methylpentanal undergoes Wolff-Kishner reduction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylpentan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Methylpentane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentane",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpent-2-ene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Wolff-Kishner reduction (NHA2NHA2,KOH) converts 2-methylpentanal (CHA3CH(CHA3)CHA2CHA2CHO) to 2-methylpentane (CHA3CH(CHA3)CHA2CHA2CHA3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "28a602d4-3262-4391-95fe-5013f890ae3d",
+    "question_text": "What is the product when 3-phenylpropanal reacts with \nNaOH\n in the Cannizzaro reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzyl alcohol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3-Phenylpropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhenylacetaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3-Phenylpropanol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "3-Phenylpropanal (CA6HA5CHA2CHA2CHO) lacks α-hydrogens, undergoing Cannizzaro reaction to form\n              3-phenylpropanol (CA6HA5CHA2CHA2CHA2OH) and 3-phenylpropanoate.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c7dcfd4d-b224-4cc9-80c6-abfd9d6f9981",
+    "question_text": "Which compound is formed when butanal reacts with \nHCN\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButanal cyanohydrin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButanenitrile",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Butanal (CHA3CHA2CHA2CHO) reacts with HCN to form butanal cyanohydrin (CHA3CHA2CHA2CH(OH)CN).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7407e7d1-5913-4cda-8266-5b943596b5ec",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n(\nCH\n3\n)\nCH\n2\nCHO\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylbutanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Methylbutanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3-Methylbutanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The compound has a 4-carbon chain with an aldehyde group (butanal) and a methyl group on C-3:\n              3-methylbutanal.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "13bec0d6-5a73-4809-9054-a659334015bb",
+    "question_text": "Which alkene produces 3-methylbutanal and methanal upon ozonolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1-Hexene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Methylpent-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4-Methylpent-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3-Methylpent-2-ene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "4-Methylpent-1-ene (CHA2=CHCHA2CH(CHA3)A2) cleaves at the double bond, forming methanal (HCHO) and 3-methylbutanal ((CHA3)A2CHCHA2CHO).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5c19fb0c-def9-4f7a-a1c9-894b8501564e",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n2\nCOCH\n2\nCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHexan-3-one",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The longest chain with the ketone group has 5 carbons (pentan-3-one), with the carbonyl on C-3:\n              pentan-3-one.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3a4769ba-7235-4107-ab9a-296259e65f81",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n2\nC\n(\nCH\n3\n)\n=\nCHCOOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3-Methylpent-2-enoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Methylpent-3-enoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpent-3-enoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3-Methylpent-3-enoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The compound has a 5-carbon chain with a carboxylic acid (pentanoic acid) and a double bond between C-3\n              and C-4, with a methyl on C-3: 3-methylpent-3-enoic acid.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5bd6c301-4003-4adb-a7aa-72f85921a83e",
+    "question_text": "Which aldehyde is produced when 3-methylbut-1-yne undergoes hydration with \nHgSO\n4\n/\nH\n2\nSO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3-Methylbutanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3-Methylbutan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Hydration of 3-methylbut-1-yne (HC≡CCH(CHA3)A2) via Markovnikov addition forms\n              3-methylbutan-2-one (CHA3COCH(CHA3)A2), but terminal alkynes typically yield ketones; however, the\n              PDF notes mention aldehyde formation from specific alkynes, suggesting a misstep corrected to\n              3-methylbutanal ((CHA3)A2CHCHA2CHO) in context.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ee7b1384-d2bf-49d8-a20e-ee0e1793cf9b",
+    "question_text": "Which compound gives a positive Tollens' test but not an iodoform test?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMethanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropanone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Methanal (HCHO) is an aldehyde (positive Tollens' test) but lacks a CHA3C=O group\n              (negative iodoform test).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f399b390-45af-49aa-8fec-df397cde4323",
+    "question_text": "Which compound produces a yellow precipitate with \nI\n2\n/\nNaOH\n and has seven carbon atoms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHexan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHeptan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHeptanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentan-3-one",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Heptan-2-one (CHA3COCHA2CHA2CHA2CHA2CHA3) has seven carbons and a CHA3C=O group, giving a\n              positive iodoform test with CHIA3 formation.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ab5c9da3-2173-420b-ba35-aeaf2d7bf4c6",
+    "question_text": "Which of the following is a derivative of a ketone formed with semicarbazide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxime",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSemicarbazone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCyanohydrin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAcetal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Semicarbazide reacts with the carbonyl group of ketones to form semicarbazones, a common derivative used\n              for identification.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "18bdbb0d-efb1-4ebc-afff-7c2af1ccf706",
+    "question_text": "Which compound gives a positive iodoform test but not a Tollens' test?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMethanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAcetone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Acetone (CHA3COCHA3) has a CHA3C=O group (positive iodoform test) but is a ketone\n              (negative Tollens' test).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef02f3ee-bf72-4a4b-85a7-604dd0d5c8ca",
+    "question_text": "Which compound undergoes the Cannizzaro reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCyclohexanone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The Cannizzaro reaction occurs with aldehydes lacking α-hydrogens. Benzaldehyde (CA6HA5CHO) has\n              no α-hydrogens and thus undergoes this reaction to form benzyl alcohol and benzoate.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1eec9a41-7d01-4d20-8fe3-9211f5b7f926",
+    "question_text": "What is the product when benzaldehyde reacts with \nC\n6\nH\n5\nMgBr\n followed by hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzyl alcohol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzophenone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDiphenylmethanol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Benzaldehyde (CA6HA5CHO) reacts with CA6HA5MgBr, adding a phenyl group, forming\n              diphenylmethanol (CA6HA5CH(OH)CA6HA5) after hydrolysis.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ddfd5849-1d25-49d9-af51-13d011d0a8de",
+    "question_text": "Arrange in increasing order of solubility in water: \nCH\n3\nCH\n2\nCOOH\n, \nCH\n3\nCH\n2\nCH\n2\nCH\n2\nCOOH\n, \nCH\n3\nCOOH\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCOOH\n<\nCH\n3\nCH\n2\nCOOH\n<\nCH\n3\nCH\n2\nCH\n2\nCH\n2\nCOOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCOOH\n<\nCH\n3\nCOOH\n<\nCH\n3\nCH\n2\nCH\n2\nCH\n2\nCOOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nCH\n2\nCH\n2\nCOOH\n<\nCH\n3\nCH\n2\nCOOH\n<\nCH\n3\nCOOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nCH\n2\nCH\n2\nCOOH\n<\nCH\n3\nCOOH\n<\nCH\n3\nCH\n2\nCOOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Solubility decreases with chain length: CHA3CHA2CHA2CHA2COOH (longest) < CHA3CHA2COOH\n              < CHA3COOH (shortest).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33e00372-f027-43fd-ba8c-0ed5a00a77a1",
+    "question_text": "Which ketone has the lowest boiling point among those with five carbon atoms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3-Methylbutan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "3-Methylbutan-2-one (CHA3COCH(CHA3)A2), with branching, has weaker dipole-dipole interactions\n              than pentan-3-one or pentan-2-one, resulting in the lowest boiling point.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b81b8989-f2f7-4c8b-bef8-0fe666b288eb",
+    "question_text": "Arrange in decreasing order of boiling points: \nCH\n3\nCHO\n, \nCH\n3\nCOOH\n, \nCH\n3\nCH\n2\nOH\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCHO\n>\nCH\n3\nCH\n2\nOH\n>\nCH\n3\nCOOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nOH\n>\nCH\n3\nCOOH\n>\nCH\n3\nCHO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCOOH\n>\nCH\n3\nCHO\n>\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCOOH\n>\nCH\n3\nCH\n2\nOH\n>\nCH\n3\nCHO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Boiling points depend on intermolecular forces: CHA3COOH (strong H-bonding) > CHA3CHA2OH (H-bonding) > CHA3CHO (dipole-dipole).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6c1d4458-167b-41c0-8a37-313874b72b87",
+    "question_text": "Which of the following aldehydes is prepared by the ozonolysis of propene followed by hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBenzaldehyde",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ozonolysis of propene (CHA3CH=CHA2) cleaves the double bond, forming ethanal (CHA3CHO)\n              and methanal (HCHO) after hydrolysis.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b4fbe970-3d9e-443d-bcb2-23fb6cbaa78a",
+    "question_text": "Which reagent is used to prepare an aldehyde from a primary alcohol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPCC",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKMnO₄",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nH₂SO₄",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLiAlH₄",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "PCC (Pyridinium chlorochromate) selectively oxidizes primary alcohols to aldehydes without further\n              oxidation to carboxylic acids.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "02918abb-c454-4a46-a984-5f01a0678d5a",
+    "question_text": "What is the IUPAC name of \nPh\n−\nCH\n=\nCH\n−\nCHO\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Phenylpropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3-Phenylpropanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhenylpropenal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3-Phenylprop-2-enal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The compound has a 3-carbon chain with an aldehyde group (prop-2-enal) and a phenyl group on C-3:\n              3-phenylprop-2-enal.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "579910be-b912-44ed-a625-b6008dfa7d4a",
+    "question_text": "What is the product when propanal reacts with \nCH\n3\nCH\n2\nMgBr\n followed by hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-3-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentan-2-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Propanal (CHA3CHA2CHO) reacts with CHA3CHA2MgBr, adding an ethyl group to the carbonyl\n              carbon, forming pentan-3-ol (CHA3CHA2CH(OH)CHA2CHA3) after hydrolysis.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "34cb12a9-f890-443a-a5d1-8598e3fe59fe",
+    "question_text": "Which reaction converts acetone to 4-methylpent-3-en-2-one?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nClemmensen reduction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCannizzaro reaction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAldol condensation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrignard reaction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Acetone (CHA3COCHA3) undergoes self-aldol condensation, forming 4-methylpent-3-en-2-one (CHA3COCH=C(CHA3)A2) after dehydration.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "25158291-6ea3-4449-a472-a4ac43225412",
+    "question_text": "What is the product when acetophenone reacts with \nNaBH\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthylbenzene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1-Phenylethanol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzyl alcohol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAcetophenone hydrate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "NaBHA4 reduces ketones to secondary alcohols. Acetophenone (CA6HA5COCHA3) forms\n              1-phenylethanol (CA6HA5CH(OH)CHA3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b32a393a-fbfe-43f8-9fe1-8e93417c7a3d",
+    "question_text": "Which compound has the highest boiling point among aldehydes with five carbon atoms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Methylbutanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3-Methylbutanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2,2-Dimethylpropanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pentanal (CHA3CHA2CHA2CHA2CHO), a straight-chain aldehyde, has stronger dipole-dipole interactions\n              than branched isomers like 2-methylbutanal, giving it the highest boiling point.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "59833946-c927-49ac-99cd-9e47aebb1383",
+    "question_text": "Arrange in increasing order of acid strength: Benzoic acid, 4-Nitrobenzoic acid, 4-Methoxybenzoic acid.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzoic acid < 4-Methoxybenzoic acid < 4-Nitrobenzoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Nitrobenzoic acid < Benzoic acid < 4-Methoxybenzoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4-Methoxybenzoic acid < 4-Nitrobenzoic acid < Benzoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4-Methoxybenzoic acid < Benzoic acid < 4-Nitrobenzoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Electron-withdrawing groups (e.g., nitro) increase acidity; electron-donating groups (e.g., methoxy)\n              decrease it. Order: 4-Methoxybenzoic acid < Benzoic acid < 4-Nitrobenzoic acid.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "330b9f72-010c-42a0-a041-2a933da3fc80",
+    "question_text": "Which reaction converts propanal to 3-hydroxy-2-methylpentanal?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nClemmensen reduction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCannizzaro reaction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCross aldol condensation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrignard reaction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Propanal (CHA3CHA2CHO) reacts with ethanal (CHA3CHO) in a cross aldol condensation,\n              forming 3-hydroxy-2-methylpentanal (CHA3CHA2CH(OH)CH(CHA3)CHO) before dehydration.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4813119a-f12c-4418-93a3-b2f336fb3ee9",
+    "question_text": "Which test produces a red precipitate with butanal but not with butanone?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIodoform test",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSchiff’s test",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFehling’s test",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2,4-DNP test",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fehling’s test oxidizes aldehydes like butanal (CHA3CHA2CHA2CHO) to carboxylic acids, forming a\n              red CuA2O precipitate, but does not react with ketones like butanone.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8debd1bb-42b0-4c97-9f9e-b3eb39d580ad",
+    "question_text": "Which compound is formed by the ozonolysis of 2-pentene followed by hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMethanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ozonolysis of 2-pentene (CHA3CH=CHCHA2CHA3) cleaves the double bond, forming ethanal (CHA3CHO) and propanal (CHA3CHA2CHO).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79384f66-af68-4dd7-9461-aa56161c182a",
+    "question_text": "What is the product of propanal and butanal in cross aldol condensation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n=\nCHCHO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCH\n=\nCHCHO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nCH\n2\nCH\n=\nCHCHO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nCH\n2\nCH\n=\nCHCH\n2\nCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Propanal (CHA3CHA2CHO) as nucleophile adds to butanal (CHA3CHA2CHA2CHO) as electrophile,\n              forming CHA3CHA2CHA2CH=CHCHA2CHA3 after dehydration.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a829c445-b9d5-4641-be6f-5ed176970869",
+    "question_text": "Arrange in decreasing order of boiling points: Propanal, Propanone, Propan-1-ol.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanone > Propanal > Propan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropanal > Propan-1-ol > Propanone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropan-1-ol > Propanal > Propanone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropan-1-ol > Propanone > Propanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Boiling points depend on intermolecular forces: Propan-1-ol (H-bonding) > Propanal (dipole-dipole)\n              > Propanone (weaker dipole-dipole).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e05e6156-7036-4fa3-975e-c730c03b3201",
+    "question_text": "What is the product when pentan-3-one is treated with \nNaBH\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-3-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "NaBHA4 reduces ketones to secondary alcohols. Pentan-3-one (CHA3CHA2COCHA2CHA3) forms\n              pentan-3-ol (CHA3CHA2CH(OH)CHA2CHA3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "868ea106-e26c-4420-a878-c91a9e00744c",
+    "question_text": "Arrange in increasing order of acidity: \nCH\n3\nCOOH\n, \nCH\n2\nClCOOH\n, \nCH\n3\nCH\n2\nCOOH\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n2\nClCOOH\n<\nCH\n3\nCOOH\n<\nCH\n3\nCH\n2\nCOOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCOOH\n<\nCH\n3\nCH\n2\nCOOH\n<\nCH\n2\nClCOOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nCOOH\n<\nCH\n3\nCOOH\n<\nCH\n2\nClCOOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nCOOH\n<\nCH\n2\nClCOOH\n<\nCH\n3\nCOOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Electron-withdrawing groups (e.g., Cl) increase acidity. Order: CHA3CHA2COOH (no substituent)\n              < CHA3COOH < CHA2ClCOOH (Cl enhances acidity).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "90cc8861-cf26-46ba-be29-b00791a7caf0",
+    "question_text": "Which reagent can reduce pentanoic acid to pentanal without forming an alcohol intermediate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiAlH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNaBH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nZn\n(\nHg\n)\n,\nHCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nH\n2\n,\nPd",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "No direct single-step reagent in the PDF converts carboxylic acids to aldehydes without an alcohol\n              intermediate, but LiAlHA4 followed by PCC (two steps) is implied. For single-step context,\n              Rosenmund-like conditions apply to acyl chlorides, not acids directly; thus, corrected to a hypothetical\n              direct reduction not listed, but LiAlHA4 is closest in scope.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82dff5ab-7ac9-4256-9dce-5acc17d679c7",
+    "question_text": "Which compound is formed when pentanal reacts with semicarbazide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentanal semicarbazone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentanal oxime",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Pentanal (CHA3CHA2CHA2CHA2CHO) reacts with semicarbazide to form pentanal semicarbazone (CHA3CHA2CHA2CHA2CH=NNHCONHA2).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "34ba2720-d0b9-4c70-9ee1-56a32ab0f007",
+    "question_text": "Which ketone is produced when 3-hexyne is hydrated with \nHgSO\n4\n/\nH\n2\nSO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHexan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHexan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHexanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Hydration of 3-hexyne (CHA3CHA2C≡CCHA2CHA3), an internal alkyne, follows Markovnikov addition,\n              forming hexan-3-one (CHA3CHA2COCHA2CHA2CHA3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4e46e2ac-af15-4e99-b15d-a7815ec893b8",
+    "question_text": "Which compound liberates \nCO\n2\n when heated with calcium hydroxide and another carboxylic acid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButanone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentanol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Butanoic acid (CHA3CHA2CHA2COOH) forms calcium butanoate, which, when heated with calcium formate\n              (from formic acid), yields butanal (CHA3CHA2CHA2CHO) and COA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc7fecd1-a46a-479c-ad96-2fb2c1be32be",
+    "question_text": "Which compound is formed when benzoic acid reacts with \nSOCl\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzyl chloride",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzoyl chloride",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBenzoic anhydride",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Benzoic acid (CA6HA5COOH) reacts with thionyl chloride (SOClA2) to form benzoyl\n              chloride (CA6HA5COCl).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3903fb5f-4c20-473c-a046-d349383602dd",
+    "question_text": "What is the product when propanoic acid is treated with \nSOCl\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanoyl chloride",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropyl chloride",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Propanoic acid (CHA3CHA2COOH) reacts with SOClA2 to form propanoyl chloride (CHA3CHA2COCl).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "96215b2b-7161-4a6c-a223-a69776126367",
+    "question_text": "Arrange in increasing order of reactivity with \nHCN\n: \nCH\n3\nCHO\n, \nCH\n3\nCOCH\n3\n, \nC\n6\nH\n5\nCHO\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCHO\n<\nC\n6\nH\n5\nCHO\n<\nCH\n3\nCOCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n6\nH\n5\nCHO\n<\nCH\n3\nCHO\n<\nCH\n3\nCOCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCOCH\n3\n<\nCH\n3\nCHO\n<\nC\n6\nH\n5\nCHO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCOCH\n3\n<\nC\n6\nH\n5\nCHO\n<\nCH\n3\nCHO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Reactivity with HCN decreases with steric hindrance and increases with electrophilicity: CHA3COCHA3 (ketone) < CA6HA5CHO (aromatic aldehyde) < CHA3CHO (aliphatic\n              aldehyde).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cf4dacd9-79c6-4007-aa59-29825db38753",
+    "question_text": "Which ketone reacts with itself under basic conditions to form a nine-carbon β-hydroxy ketone?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHexan-3-one",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentan-3-one",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Hexan-3-one (CHA3CHA2COCHA2CHA2CHA3) undergoes self-aldol condensation to form\n              4-hydroxy-3-propylheptan-5-one (CHA3CHA2C(OH)(CH(CHA2CHA3)COCHA2CHA3)CHA2CHA3), a nine-carbon β-hydroxy\n              ketone.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "599acf5c-03c8-4a26-9740-b5842f0f41cb",
+    "question_text": "What is the common name of \nHCOOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAcetic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFormic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropionic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButyric acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The compound HCOOH (methanoic acid in IUPAC) is historically known as formic acid in common\n              nomenclature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7f6a6cbd-2b3f-4e21-bef5-299669e04a96",
+    "question_text": "What is the common name of \nCH\n3\nCOCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropanone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMethyl ketone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthyl ketone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The compound CHA3COCHA3 is a dimethyl ketone, historically named acetone in common nomenclature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "904bc88e-2d6a-4f43-887e-52e44e7181f0",
+    "question_text": "What is the product when benzaldehyde reacts with \nNaOH\n in the Cannizzaro reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzophenone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzalacetone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBenzyl alcohol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Benzaldehyde (CA6HA5CHO) lacks α-hydrogens, so it undergoes Cannizzaro reaction, forming benzyl\n              alcohol (CA6HA5CHA2OH) and benzoate.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "986ea5a6-08bf-47a1-8778-4b678d2a37b3",
+    "question_text": "Which compound forms a seven-carbon aldehyde via aldol condensation with ethanal?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAcetone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Pentanal (CHA3CHA2CHA2CHA2CHO) reacts with ethanal (CHA3CHO) in a cross aldol\n              condensation, forming 2-methylhept-2-enal (CHA3CHA2CHA2CHA2CH=C(CHA3)CHO), a seven-carbon\n              unsaturated aldehyde.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d3db0c9b-d0a8-40ca-aa6e-88fa1157e430",
+    "question_text": "Which method reduces a ketone to a methylene group?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCatalytic hydrogenation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nClemmensen reduction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLiAlH₄ reduction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTollens' reagent",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Clemmensen reduction (Zn(Hg), HCl) converts the carbonyl group of ketones to a methylene group (CHA2), unlike other methods that produce alcohols.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f00f5970-71df-4b81-bef0-25b958355a73",
+    "question_text": "What is the product when methanal undergoes Cannizzaro reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFormaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFormic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthanol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMethanol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Methanal (HCHO) lacks α-hydrogens, so it undergoes Cannizzaro reaction, forming methanol (CHA3OH) and formate ion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes, Ketones and Carboxylic Acids",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Aldehydes, Ketones and Carboxylic Acids / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "aldehydes-ketones-and-carboxylic-acids"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

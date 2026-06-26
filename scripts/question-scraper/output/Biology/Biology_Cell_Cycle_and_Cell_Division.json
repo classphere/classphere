@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "3a86ac23-2c14-4d58-9cf1-b5b6bad4b57c",
+    "question_text": "Which phase of the cell cycle is responsible for DNA replication?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nG1 phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nG2 phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nM phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The S phase (Synthesis phase) is the stage where DNA replication occurs, doubling the genetic material.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5e6b342-3389-4183-bf8d-9ea6eaeeffdc",
+    "question_text": "What distinguishes anaphase I of meiosis from anaphase of mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSister chromatids separate in meiosis but not in mitosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHomologous chromosomes separate in meiosis but not in mitosis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA replication occurs in anaphase I",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCentromeres do not split in mitosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In anaphase I of meiosis, homologous chromosomes separate, whereas in mitosis, sister chromatids\n              separate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9e7482fb-a065-4764-b477-e7069575e66c",
+    "question_text": "Which of the following events occurs during anaphase I of meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSister chromatids separate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHomologous chromosomes separate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChromosomes condense",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpindle fibers form",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In anaphase I of meiosis, homologous chromosomes separate, reducing the chromosome number by half.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1080a420-045a-48bb-b9f0-86f53a35489d",
+    "question_text": "Which of the following statements about anaphase is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSister chromatids separate and move to opposite poles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChromosomes align at the equator",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA replication occurs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromosomes condense",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "During anaphase, sister chromatids separate and move toward opposite poles of the cell.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b964d330-1412-468a-9f7c-9c7e1c25a96f",
+    "question_text": "Which of the following statements about cytokinesis is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAnimal cells form a cleavage furrow",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlant cells divide by forming a cleavage furrow",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinesis occurs before nuclear division",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCytokinesis does not occur in mitosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In animal cells, cytokinesis occurs by forming a cleavage furrow, while in plant cells, a cell plate\n              forms instead.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "97999083-639c-4522-ac11-4cca7384eaea",
+    "question_text": "Which of the following events occurs in anaphase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromosomes align at the center of the cell",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSister chromatids separate and move to opposite poles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNuclear membrane reforms",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpindle fibers disassemble",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During anaphase, sister chromatids separate and move toward opposite poles of the cell.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b5b94f38-6883-461e-bf72-1a710088efd7",
+    "question_text": "Which phase of mitosis directly follows metaphase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProphase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAnaphase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTelophase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInterphase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Anaphase follows metaphase, during which sister chromatids separate and move toward opposite poles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "052bf82f-49d8-47ba-8cb4-0130c3818ccc",
+    "question_text": "Which checkpoint ensures proper chromosome alignment before anaphase begins?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nG1 checkpoint",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nG2 checkpoint",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nM checkpoint",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nS checkpoint",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The M checkpoint ensures that all chromosomes are properly aligned at the metaphase plate before anaphase\n              begins.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "36107248-3a6f-495d-a114-6069845c57de",
+    "question_text": "What is the outcome of meiosis II?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFour haploid cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTwo diploid cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFour diploid cells",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTwo haploid cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Meiosis II results in four haploid daughter cells, each with half the chromosome number of the parent\n              cell.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f218b3db-c6c3-4648-850a-d252c92380f1",
+    "question_text": "Which of the following happens during pachytene of meiosis I?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromosome condensation begins",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSynapsis occurs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrossing over between homologous chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNuclear membrane reforms",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During pachytene, homologous chromosomes exchange genetic material through crossing over.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c04a5cee-81ce-4c00-9bcf-038bae2d8bed",
+    "question_text": "Which structure is responsible for chromosome movement during cell division?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGolgi apparatus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpindle fibers",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMitochondria",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEndoplasmic reticulum",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Spindle fibers, composed of microtubules, attach to kinetochores on chromosomes and facilitate their\n              movement.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4c140d6-4fba-44c5-a953-1f01848b263d",
+    "question_text": "Which phase of interphase is characterized by intense metabolic activity and cell growth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nG1 phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nG2 phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nM phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The G1 phase is the period between mitosis and DNA replication, characterized by active metabolism and\n              cell growth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "445acfa8-5369-4835-9aa5-ec750ff871d4",
+    "question_text": "Which of the following statements about mitosis is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt occurs only in haploid cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt results in genetically identical daughter cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt reduces the chromosome number by half",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt occurs only in reproductive cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mitosis produces two genetically identical daughter cells, maintaining the chromosome number of the\n              parent cell.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0cf2a58d-57e2-42e0-8132-0192984d8c7d",
+    "question_text": "Which of the following statements about G0 phase is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCells in G0 phase cannot divide again",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCells in G0 phase are metabolically inactive",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCells in G0 phase can re-enter the cell cycle under specific conditions",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nG0 phase is a part of mitosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cells in G0 phase are metabolically active and can re-enter the cell cycle when needed.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0136fbf5-193b-4a7d-b434-7cf2ba42e93f",
+    "question_text": "Which of the following statements about the G1 phase is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is the first phase of interphase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCell growth and metabolism occur in this phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA replication occurs in this phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt precedes the S phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "DNA replication does not occur in G1; it takes place in the S phase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eafec706-883f-423c-825a-d6ddcf704b56",
+    "question_text": "Which of the following statements about mitosis is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMitosis occurs in both somatic and germ cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMitosis produces two diploid daughter cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMitosis results in genetic variation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCrossing over occurs in mitosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mitosis produces two genetically identical diploid daughter cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "28d5afa5-f2cc-48c8-b27f-3240e6a45025",
+    "question_text": "Which of the following statements about telophase is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpindle fibers begin to form",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChromosomes condense further",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNuclear membrane reforms",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSister chromatids remain attached",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During telophase, the nuclear membrane reforms around each set of chromosomes, which decondense.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "725c67c5-4f37-49ec-9f9f-a0198caec71f",
+    "question_text": "Which of the following phases is also known as the “resting phase” of the cell cycle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nG1 phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nG2 phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nS phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nG0 phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The G0 phase is a quiescent phase where cells temporarily or permanently exit the cell cycle.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b81b2f71-7999-405a-875e-f46e8137cb40",
+    "question_text": "Which structure helps separate chromosomes during mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNucleolus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRibosomes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpindle fibers",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLysosomes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Spindle fibers attach to chromosomes via kinetochores and help pull them apart during mitosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fcd8d321-cccc-47c4-9cef-3cc33207fe38",
+    "question_text": "Which of the following statements about the cell cycle is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInterphase consists of G1, S, and G2 phases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMitosis is the longest phase of the cell cycle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA replication occurs in the G2 phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCell division does not occur in prokaryotes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Interphase consists of G1, S, and G2 phases, where the cell prepares for division. Mitosis is not the\n              longest phase, and DNA replication occurs in the S phase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4a27c99-b554-453e-bfdd-0f45948f7059",
+    "question_text": "Which phase of the cell cycle is known as the \"resting phase\"?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nG0 phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nG1 phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nS phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nM phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The G0 phase is a quiescent stage where cells do not divide but remain metabolically active.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "437e064c-5b88-4646-abf9-5a96ece2158e",
+    "question_text": "Which of the following statements about the quiescent phase (G0) is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCells in G0 never re-enter the cell cycle",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nG0 phase is a metabolically inactive state",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCells can re-enter the cell cycle when required",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nG0 phase is the shortest phase in the cell cycle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cells in G0 remain metabolically active and can re-enter the cell cycle when stimulated by external\n              signals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "521db787-7925-48a2-900c-eb654eda1b4b",
+    "question_text": "Which of the following occurs during telophase I of meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSister chromatids separate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHomologous chromosomes reach opposite poles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChromosomes condense",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpindle fibers attach to kinetochores",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During telophase I, homologous chromosomes reach opposite poles, and nuclear membranes may reappear.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d077ed0d-13be-4836-bde6-d69e0b015a0c",
+    "question_text": "What is the function of the centrioles during mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTo condense chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTo form spindle fibers",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTo initiate DNA replication",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTo form nuclear membrane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Centrioles help in forming spindle fibers that assist in the movement of chromosomes during mitosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "faa33cbf-86b2-41e2-b83a-3bb2880f16be",
+    "question_text": "Which of the following statements about diplotene is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSynapsis occurs in this stage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChiasmata become visible",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChromosomes condense completely",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNuclear membrane reforms",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During diplotene, chiasmata (points of crossing over) become visible as homologous chromosomes start\n              separating.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0bac1327-d865-4945-96e5-77be196186a7",
+    "question_text": "Which of the following statements about meiosis II is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeiosis II reduces the chromosome number",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeiosis II involves separation of homologous chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeiosis II resembles mitosis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMeiosis II produces diploid daughter cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Meiosis II is similar to mitosis in that sister chromatids separate, but it does not reduce the\n              chromosome number further.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa019ec4-a763-4802-8e47-9c7134835124",
+    "question_text": "Which of the following is incorrect about cytokinesis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCytokinesis follows nuclear division",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAnimal cells undergo cytokinesis by forming a cell plate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinesis ensures equal distribution of cytoplasm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCytokinesis differs between plant and animal cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Animal cells divide by forming a cleavage furrow, whereas plant cells form a cell plate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "02fddccf-6ad7-485a-89db-4de3e0dba7d1",
+    "question_text": "Which of the following phases is the longest in the cell cycle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nG1 phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nG2 phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nS phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nM phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "G1 phase is the longest phase of the cell cycle, where cells grow and prepare for DNA replication.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ed2dc9d8-82d6-48cd-a164-60ca43fb6d83",
+    "question_text": "Which of the following is NOT a function of mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGrowth of multicellular organisms",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRepair and replacement of damaged cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFormation of gametes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAsexual reproduction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Gamete formation occurs through meiosis, not mitosis. Mitosis is responsible for growth, repair, and\n              asexual reproduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a30b1ade-c50c-482c-89ae-cc9285f21965",
+    "question_text": "Which of the following is incorrect about prophase of mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromatin condenses into chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNuclear envelope breaks down",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpindle fibers start forming",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromosomes are aligned at the equator",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "During prophase, chromosomes condense, the nuclear membrane breaks down, and spindle fibers form, but\n              chromosome alignment occurs in metaphase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "74f45cb8-96d9-48bb-b5de-8b18474aae39",
+    "question_text": "Which phase of the cell cycle is the longest in a typical eukaryotic cell?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nM phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nG1 phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nS phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInterphase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Interphase occupies more than 95% of the cell cycle and includes G1, S, and G2 phases.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e16e8638-8d31-45fd-92e1-f3be852c619e",
+    "question_text": "What is the significance of meiosis in sexually reproducing organisms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt reduces the chromosome number to half, ensuring genetic diversity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt produces identical cells for growth and repair",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt increases the chromosome number",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt only helps in asexual reproduction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Meiosis reduces the chromosome number by half and ensures genetic variation in sexually reproducing\n              organisms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9de31126-b04d-4297-ab58-8db005001968",
+    "question_text": "Which of the following events occurs during prophase I of meiosis but not in prophase of mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpindle fiber formation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChromosome condensation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrossing over",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNuclear membrane breakdown",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Crossing over occurs during prophase I of meiosis, leading to genetic recombination, whereas it does not\n              occur in mitosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4bfe9346-bd17-4c73-baae-a798f5369b58",
+    "question_text": "Which of the following best describes the metaphase plate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSite where chromosomes replicate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRegion where spindle fibers are synthesized",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlane where chromosomes align during metaphase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStructure that holds sister chromatids together",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During metaphase, chromosomes align at the metaphase plate, an imaginary plane equidistant from the\n              spindle poles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e8494ddc-266b-4941-9109-b89ae58a8757",
+    "question_text": "What happens during the diplotene stage of prophase I?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSynaptonemal complex dissolves",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCrossing over occurs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpindle fibers attach to kinetochores",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromosomes align at the metaphase plate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "During diplotene, homologous chromosomes start separating as the synaptonemal complex dissolves, but\n              remain attached at chiasmata.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5e3b3fc-77a9-44be-9ff1-1665b2f96050",
+    "question_text": "Which of the following is true about anaphase I of meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSister chromatids separate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHomologous chromosomes move to opposite poles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChromosomes align at the equator",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpindle fibers disappear",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In anaphase I, homologous chromosomes (not sister chromatids) separate and move to opposite poles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6e8d06f3-b0fd-4103-8f00-7beff686457d",
+    "question_text": "Which of the following statements about the cell cycle is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInterphase is the longest phase of the cell cycle",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nM phase includes mitosis and cytokinesis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nG1 phase occurs after the S phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nS phase is responsible for DNA replication",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "G1 phase occurs before the S phase, not after it.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "02f6f141-c673-4cb8-a708-928993f8725e",
+    "question_text": "Which of the following statements about interphase is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInterphase consists of G1, S, and G2 phases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInterphase is the shortest phase of the cell cycle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA replication occurs in the S phase of interphase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInterphase prepares the cell for mitosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Interphase is the longest phase of the cell cycle, not the shortest.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0107df16-002a-4b98-ba29-fd014a2ffd75",
+    "question_text": "Which of the following is incorrect about the G1 phase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe cell grows in size during G1 phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOrganelles are duplicated in G1 phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA replication occurs in G1 phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCells prepare for DNA synthesis in G1 phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "DNA replication does not occur in G1 phase; it happens in the S phase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "34c32aa8-54de-46d8-b2fe-b7e6790ccb8b",
+    "question_text": "Which of the following is correct about the M checkpoint?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt ensures that DNA replication is complete",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt occurs at the end of G1 phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt ensures that all chromosomes are attached to spindle fibers before anaphase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt prevents cytokinesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The M checkpoint ensures that all chromosomes are properly attached to spindle fibers before anaphase\n              begins.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b1be107c-da61-4610-b4e4-7b470b22f2da",
+    "question_text": "Which of the following is correct about anaphase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSister chromatids separate and move to opposite poles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChromosomes align at the metaphase plate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA replication occurs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromosomes condense",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "During anaphase, sister chromatids separate and are pulled toward opposite poles by spindle fibers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3989e79f-9870-4179-acb5-59ed2c130e72",
+    "question_text": "Which phase of mitosis immediately follows metaphase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProphase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTelophase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnaphase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInterphase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Anaphase follows metaphase, where sister chromatids separate and move to opposite poles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "023936d1-4878-4518-8f02-5a144a7880cd",
+    "question_text": "Which of the following statements about telophase is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNuclear envelope reforms around chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChromosomes decondense",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpindle fibers disappear",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSister chromatids remain attached",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "During telophase, sister chromatids have already separated in anaphase; they do not remain attached.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0cb70fc-6aac-4f29-961a-b69692510e2f",
+    "question_text": "Which of the following is true about the S phase of interphase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA replication occurs, doubling the chromosome number",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe cell grows and prepares for mitosis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe cell performs metabolic activities",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe nuclear envelope reforms",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "During the S phase, DNA is replicated, doubling the chromosome content of the cell but not the chromosome\n              number.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "916d5e7a-22b0-4766-9e01-46d3be51d296",
+    "question_text": "Which of the following is an example of a cell type that remains in the G0 phase permanently?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiver cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNerve cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSkin cells",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStem cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Nerve cells enter G0 phase permanently and do not divide after differentiation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a062fec5-4d8b-430c-ba1a-818cf6941643",
+    "question_text": "Which of the following statements about meiosis II is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeiosis II reduces the chromosome number",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeiosis II involves separation of homologous chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeiosis II resembles mitosis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMeiosis II produces diploid daughter cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Meiosis II is similar to mitosis in that sister chromatids separate, but it does not reduce the\n              chromosome number further.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c38e188d-e6f9-427c-ad79-ebe8d4f58f4a",
+    "question_text": "Which of the following statements about the quiescent (G0) phase is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCells in G0 phase are metabolically inactive",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNerve and heart cells enter G0 permanently",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCells in G0 phase cannot re-enter the cell cycle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nG0 phase occurs after mitosis and before cytokinesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Nerve and heart cells remain in G0 permanently, while some other cells may re-enter the cycle under\n              specific conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3c2353d-abe3-4f3b-841c-f9f524ddd81d",
+    "question_text": "Which of the following structures plays a crucial role in cytokinesis of plant cells?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCleavage furrow",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCentrosome",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCell plate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAster fibers",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In plant cells, cytokinesis occurs via the formation of a cell plate, which eventually develops into a\n              new cell wall.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c6f750f8-57d8-4ebc-843a-5525dbc622d9",
+    "question_text": "Which of the following is incorrect about the centromere?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is the region where sister chromatids are attached",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpindle fibers attach to the centromere during cell division",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt helps in the separation of homologous chromosomes in meiosis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt disappears during metaphase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The centromere remains intact during metaphase and serves as the attachment site for spindle fibers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5e872aa4-bce2-473e-8129-2cd2e57bf97a",
+    "question_text": "Which of the following statements about interphase is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInterphase is also called the resting phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDNA replication occurs in the S phase of interphase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nG1 phase follows the S phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nG2 phase prepares the cell for mitosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "G1 phase comes before the S phase, not after it.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5e8ab9a8-baba-4564-95c7-0eda07892c14",
+    "question_text": "Which of the following occurs at the end of meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTwo diploid daughter cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFour haploid daughter cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOne diploid daughter cell",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFour diploid daughter cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Meiosis results in the formation of four genetically distinct haploid cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "772ce272-d665-4d60-985a-f1ef14fb0cb9",
+    "question_text": "During which phase of mitosis does chromatin condense into visible chromosomes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAnaphase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMetaphase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProphase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTelophase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During prophase, chromatin condenses into distinct chromosomes, making them visible under a microscope.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c9f9a8c2-0420-447f-97d7-5086e7b37d36",
+    "question_text": "Which of the following statements about meiosis is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeiosis results in four haploid cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeiosis increases genetic variation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeiosis is a type of asexual reproduction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCrossing over occurs during meiosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Meiosis is a type of sexual reproduction, not asexual reproduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "014f56ee-163a-4103-b04f-f73d40b7b177",
+    "question_text": "What is the role of kinetochores during cell division?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAct as sites of spindle fiber attachment",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAid in chromosome condensation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSynthesize DNA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHelp in cell plate formation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Kinetochores are protein structures on the centromere where spindle fibers attach to move chromosomes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "056a36be-929a-4ef0-bb16-09c881eef693",
+    "question_text": "What is the primary purpose of meiosis II?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTo separate homologous chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTo reduce chromosome number by half",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTo separate sister chromatids",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTo replicate DNA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Meiosis II is similar to mitosis and is responsible for the separation of sister chromatids into\n              different cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2942ae24-94c9-4ba6-b956-e8236afb6357",
+    "question_text": "How does meiosis contribute to genetic variation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBy ensuring identical copies of DNA are passed to daughter cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThrough crossing over and independent assortment",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBy producing diploid gametes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThrough DNA replication in meiosis II",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Meiosis introduces genetic variation through crossing over during prophase I and independent assortment\n              during metaphase I.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ea95937d-9731-408b-bb1d-7d6859315a5f",
+    "question_text": "What is the role of kinetochores during cell division?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey initiate DNA replication",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey help in chromosome movement by attaching to spindle fibers",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey synthesize spindle fibers",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey dissolve the nuclear membrane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Kinetochores are protein structures at the centromere that facilitate chromosome movement by attaching to\n              spindle fibers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1ef0e9e3-217b-4371-8dc8-0448d8bdd5e1",
+    "question_text": "Which of the following is NOT a characteristic feature of telophase in mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromosomes decondense",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpindle fibers disassemble",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNuclear membrane reforms",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCentromeres divide",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Centromeres divide in anaphase, not telophase. In telophase, chromosomes decondense and the nuclear\n              membrane reforms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "81b8081a-f146-42d1-b446-85db6fa2b602",
+    "question_text": "Which of the following is incorrect about metaphase I of meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHomologous chromosomes align at the metaphase plate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpindle fibers attach to kinetochores",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSister chromatids separate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIndependent assortment occurs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In metaphase I, homologous chromosomes align at the metaphase plate, but sister chromatids remain\n              together.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "49e1477e-b9ec-4331-b368-6c4fe3ed6f3b",
+    "question_text": "Which of the following statements about chromatin and chromosomes is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromatin is the condensed form of chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChromosomes exist only during cell division",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChromatin is composed of DNA and proteins",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromosomes remain decondensed throughout mitosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Chromatin consists of DNA and proteins (mainly histones) and condenses into chromosomes during cell\n              division.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "549efbe8-16d7-40ea-ad77-d527226f2549",
+    "question_text": "At which stage of mitosis do chromosomes align at the center of the cell?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProphase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMetaphase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnaphase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTelophase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During metaphase, chromosomes align at the metaphase plate, preparing for equal distribution to daughter\n              cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a7601b3b-ac39-4f6f-8f0c-abe9b6eda2cd",
+    "question_text": "Which of the following statements about telophase is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromosomes condense",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNuclear membrane reforms",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChromosomes align at the metaphase plate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDNA replication occurs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During telophase, the nuclear membrane reforms around the separated chromosomes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bf2f298f-6e10-44e5-b11a-c7f0ece3766d",
+    "question_text": "Which phase of meiosis is responsible for the formation of chiasmata?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLeptotene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nZygotene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPachytene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDiplotene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "During diplotene, homologous chromosomes begin to separate except at chiasmata, where crossing over has\n              occurred.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b14c1678-9e5f-4f0c-8105-4bb83023a4c7",
+    "question_text": "What is the function of recombinase enzyme in meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA replication",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChromosome condensation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrossing over during pachytene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpindle formation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Recombinase is an enzyme that facilitates crossing over during the pachytene stage of prophase I in\n              meiosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "01bddd08-5ce0-43eb-8fc4-9e43d260b1d9",
+    "question_text": "Which of the following statements about cell division checkpoints is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nG1 checkpoint ensures DNA has replicated correctly",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nM checkpoint ensures chromosomes are aligned properly",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nG2 checkpoint occurs before DNA replication",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nS checkpoint ensures cytokinesis occurs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The M checkpoint ensures that all chromosomes are properly aligned before proceeding to anaphase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8e238065-1a3c-4046-b988-df9bdec68a8e",
+    "question_text": "Which of the following statements about meiosis II is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeiosis II is identical to mitosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeiosis II reduces the chromosome number",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA replication occurs before meiosis II",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMeiosis II produces diploid daughter cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Meiosis II is similar to mitosis, as it involves the separation of sister chromatids without further\n              reduction in chromosome number.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5f5deb86-6896-4cc7-9a3f-c9a3a177d1e3",
+    "question_text": "Which structure disappears during prophase of mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpindle fibers",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCell membrane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNuclear envelope",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCentromere",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During prophase, the nuclear envelope disintegrates, allowing spindle fibers to attach to chromosomes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b45e785-8a92-4780-bbc5-9fbe552ac4a7",
+    "question_text": "What is the end result of meiosis in terms of chromosome number?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDiploid cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHaploid cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPolyploid cells",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTetraploid cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Meiosis results in haploid cells, ensuring that gametes have half the chromosome number of the parent\n              cell.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "32092455-7132-44fc-967f-72e91ec920b3",
+    "question_text": "Which of the following is incorrect about prophase I of meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is longer and more complex than prophase of mitosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt includes five sub-stages",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrossing over occurs in zygotene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHomologous chromosomes pair up",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Crossing over occurs in the pachytene stage, not in zygotene.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f4f36c81-598f-4e59-afea-4f1012180a8c",
+    "question_text": "What is a key difference between meiosis I and meiosis II?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA replication occurs in meiosis I but not in meiosis II",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHomologous chromosomes separate in meiosis II, not in meiosis I",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeiosis I produces haploid cells, while meiosis II produces diploid cells",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCytokinesis occurs only in meiosis I",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "DNA replication occurs only in meiosis I during the S phase, not in meiosis II, which is similar to\n              mitosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "96697c32-171a-488c-8ab0-97ede91a6c2d",
+    "question_text": "Which event is unique to meiosis and does not occur in mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromosome condensation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpindle fiber formation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrossing over",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCytokinesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Crossing over occurs during prophase I of meiosis and is responsible for genetic recombination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fc1231ad-efbd-41ed-a4ed-5ce6170a4cf3",
+    "question_text": "What is the primary function of the centromere during cell division?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA replication",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProtein synthesis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpindle fiber attachment",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNucleolus formation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The centromere serves as the attachment site for spindle fibers, ensuring proper chromosome movement\n              during division.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "07043fa7-89ce-45f2-a32d-9afc8af1d49e",
+    "question_text": "Which type of cell division occurs in the apical and lateral meristem of plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMitosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeiosis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBinary fission",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEndomitosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mitosis occurs in the apical and lateral meristem, leading to the continuous growth of plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "668502df-be09-4b20-a9d3-98a30e5277db",
+    "question_text": "Which of the following statements about meiosis is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeiosis occurs in both diploid and haploid cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeiosis involves two rounds of cell division",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeiosis results in the production of diploid cells",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMeiosis does not contribute to genetic variation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Meiosis consists of two divisions (meiosis I and II) and produces haploid cells, contributing to genetic\n              variation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3bc8193-3686-45fd-b25d-d84cf7f7a779",
+    "question_text": "Which event marks the transition from prophase to metaphase in mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromosome condensation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpindle fiber formation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNuclear envelope breakdown",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCytokinesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The complete disintegration of the nuclear envelope marks the transition from prophase to metaphase in\n              mitosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3cad4b82-04b1-46ee-8491-62ab22cd9c5b",
+    "question_text": "Which of the following statements about prophase is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromatin condenses into chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNuclear envelope remains intact",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCentrioles move to opposite poles",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpindle fibers begin to form",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During prophase, the nuclear envelope breaks down, allowing the spindle fibers to interact with\n              chromosomes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "10242e1d-05c0-4824-9332-5a53b87b8da7",
+    "question_text": "Which of the following is correct about G2 phase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nG2 phase occurs before the S phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe cell checks for DNA replication errors in G2 phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nG2 phase is longer than G1 phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDNA replication takes place in G2 phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The G2 phase is a checkpoint where the cell ensures that DNA replication was completed correctly before\n              mitosis begins.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ee2ded82-5e0a-44ab-9ebd-1c687a240b13",
+    "question_text": "Which of the following statements about metaphase is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromosomes align at the metaphase plate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpindle fibers attach to kinetochores",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSister chromatids move to opposite poles",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMetaphase is the best stage to study chromosome morphology",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During metaphase, chromosomes align at the metaphase plate, but sister chromatids move to opposite poles\n              in anaphase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "15ec8c56-685a-46b1-b330-6d58d5d02967",
+    "question_text": "During which phase of mitosis do spindle fibers attach to kinetochores?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProphase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMetaphase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnaphase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTelophase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During metaphase, spindle fibers attach to kinetochores and align the chromosomes at the equatorial\n              plate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23f3c68b-482f-48f2-90f9-7da899013e40",
+    "question_text": "Which of the following is incorrect about genetic variation in meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCrossing over occurs during prophase I",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIndependent assortment occurs during metaphase I",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeiosis results in genetically identical cells",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGenetic recombination occurs during meiosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Meiosis produces genetically varied cells due to crossing over and independent assortment, not identical\n              ones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5fbee582-7b77-48df-b34f-8d66886a9576",
+    "question_text": "Which of the following is incorrect about meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeiosis occurs in germ cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeiosis reduces the chromosome number by half",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeiosis consists of one round of division",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMeiosis contributes to genetic variation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Meiosis consists of two rounds of division (meiosis I and meiosis II), not just one.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "59bbac68-b62d-4328-a595-38ff87c3b132",
+    "question_text": "Which of the following occurs during anaphase II of meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHomologous chromosomes separate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSister chromatids separate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSynapsis occurs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCrossing over occurs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In anaphase II, sister chromatids separate, similar to anaphase of mitosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cf889589-f923-447e-888b-bd3ddf0dbc73",
+    "question_text": "Which of the following statements about mitosis is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMitosis occurs in somatic cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMitosis results in two genetically identical daughter cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrossing over occurs in mitosis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMitosis is essential for growth and repair",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Crossing over does not occur in mitosis; it occurs during prophase I of meiosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a41faeb-06fe-4ca0-80e3-d0d74e371078",
+    "question_text": "Which of the following is incorrect about G2 phase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt occurs before mitosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProteins necessary for mitosis are synthesized",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA replication occurs in this phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCell continues to grow",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "DNA replication occurs in the S phase, not in G2.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "64e7c520-7935-4e8f-87ab-2c9d65d007b8",
+    "question_text": "Which of the following is incorrect about metaphase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromosomes align at the metaphase plate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpindle fibers attach to kinetochores",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSister chromatids separate during metaphase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMetaphase is an important stage for karyotyping",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Sister chromatids do not separate in metaphase; they separate during anaphase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "73099f5d-0ac9-4f53-b223-c3f86dad84e1",
+    "question_text": "Which event distinguishes meiosis I from mitosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSister chromatids separate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDNA replication occurs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHomologous chromosomes pair and undergo recombination",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNuclear envelope dissolves",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During meiosis I, homologous chromosomes pair up and undergo recombination, which does not occur in\n              mitosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a6bcdc5e-97c9-4cd6-b9fe-f09b94c8ad5d",
+    "question_text": "Which phase of meiosis involves the separation of sister chromatids?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAnaphase I",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTelophase I",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnaphase II",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTelophase II",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During anaphase II, the sister chromatids of each chromosome separate and move toward opposite poles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3c564708-1c55-463c-a134-a7da23cb2a22",
+    "question_text": "Which of the following is incorrect about prophase I of meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is longer than prophase of mitosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCrossing over occurs in pachytene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHomologous chromosomes pair during zygotene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromosomes do not condense in prophase I",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Chromosomes condense during prophase I of meiosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d92dbf1b-74ba-4f95-ad5e-571e9eebf489",
+    "question_text": "What is the main feature of metaphase I of meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromosomes align at the equator as bivalents",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChromatids separate and move to opposite poles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSynapsis occurs between homologous chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHomologous chromosomes pair up",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In metaphase I, bivalents (paired homologous chromosomes) align at the metaphase plate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "65a89776-3444-49ac-bc85-0273108db124",
+    "question_text": "What is the function of spindle fibers during cell division?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nReplicate DNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCondense chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSeparate chromatids or homologous chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nForm the nuclear membrane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Spindle fibers attach to kinetochores and help in the movement and separation of chromatids or homologous\n              chromosomes during cell division.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c906e7ad-2ba8-44de-ae9c-3cdf3d9049eb",
+    "question_text": "What happens to the chromosome number during meiosis I?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt remains diploid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt doubles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt reduces to haploid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt remains unchanged",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During meiosis I, homologous chromosomes separate, reducing the chromosome number from diploid to\n              haploid.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "592745b1-f243-4ce5-a2be-b3dab6fccde0",
+    "question_text": "Which of the following occurs during anaphase I but not in mitotic anaphase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSister chromatids separate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHomologous chromosomes separate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNuclear envelope reforms",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpindle fibers disappear",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During anaphase I, homologous chromosomes separate, whereas in mitotic anaphase, sister chromatids\n              separate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9104bb54-f3f9-4320-9100-884f5037776f",
+    "question_text": "Which of the following statements about prophase is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChromosomes decondense",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNuclear envelope remains intact",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCentrosomes move to opposite poles",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDNA replication occurs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During prophase, centrosomes migrate to opposite poles to form the mitotic spindle.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e88cf9ac-8b5b-46e5-b29b-10a9e5da77f8",
+    "question_text": "Which event occurs in anaphase II but not in anaphase I?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHomologous chromosomes separate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSister chromatids separate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNuclear membrane reforms",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromosomes align at the equator",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In anaphase II, sister chromatids separate, whereas in anaphase I, homologous chromosomes separate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ea06678b-efb2-4058-97e7-94d18b095c93",
+    "question_text": "Which of the following is incorrect about crossing over in meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCrossing over occurs during pachytene of prophase I",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt involves exchange of genetic material between homologous chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrossing over leads to genetic recombination",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCrossing over occurs during metaphase II",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Crossing over occurs during pachytene of prophase I, not in metaphase II.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9ff6c1fb-166b-47fb-9af9-4ec5332b07de",
+    "question_text": "Which of the following is incorrect about meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeiosis occurs in germ cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeiosis reduces the chromosome number by half",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeiosis consists of one round of division",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMeiosis contributes to genetic variation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Meiosis consists of two rounds of division (meiosis I and meiosis II), not just one.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c43475d7-8412-458b-9817-01fa12b017d4",
+    "question_text": "Which of the following statements about telophase I of meiosis is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNuclear envelope reforms around chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinesis may occur",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA replication occurs before meiosis II",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromosomes may decondense partially",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "There is no DNA replication between meiosis I and II.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5356a2a4-fa8e-4e84-aee2-859e8b352b45",
+    "question_text": "What is the key difference between mitosis and meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMitosis produces haploid cells, meiosis produces diploid cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMitosis occurs in gametes, meiosis occurs in somatic cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMitosis produces identical cells, meiosis results in genetic variation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMitosis involves two cell divisions, meiosis involves one",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mitosis produces genetically identical cells, while meiosis introduces genetic variation through\n              recombination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f179c0be-4e80-4196-8ec7-adebf03f5b28",
+    "question_text": "Which stage of mitosis is best for studying chromosome morphology?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProphase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMetaphase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnaphase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTelophase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In metaphase, chromosomes are fully condensed and aligned at the equatorial plate, making them ideal for\n              studying morphology.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7e96dbc9-a66a-4c1c-961b-21c1178e37ff",
+    "question_text": "Which of the following is incorrect about the G0 phase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nG0 is a resting phase where cells do not divide",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNerve and muscle cells remain in G0 permanently",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll cells in G0 phase can never re-enter the cell cycle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nG0 phase occurs after the G1 phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Some cells in G0 can re-enter the cell cycle under specific conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Cell Cycle and Cell Division",
+    "topic": "Cell Cycle and Cell Division",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Cell Cycle and Cell Division / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "cell-cycle-and-cell-division"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

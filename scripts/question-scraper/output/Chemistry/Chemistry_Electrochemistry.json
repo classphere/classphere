@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "a95fa9ab-8afe-4f3e-ba7e-7ff2b5cd5e24",
+    "question_text": "A current of 1 A deposits 0.635 g of Cu from CuSO\n4\n in 1930 s. What is the time required to deposit 0.54 g of Al from Al\n2\n(SO\n4\n)\n3\n with the same current? (Atomic masses: Cu = 63.5 g/mol, Al = 27 g/mol, F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5790 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1930 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3860 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n9650 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Cu: Cu2++2e−→Cu, Moles = 0.63563.5=0.01mol, Charge = 0.01×2×96500=1930C, matches 1×1930.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5014663-ede8-4ccd-8cf8-3a02016b6e35",
+    "question_text": "The limiting molar conductivity of CaCl\n2\n is 258 S cm\n2\n mol\n−\n1\n. If \n𝜆\n𝐶\n𝑎\n2\n+\n∘\n=\n119\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n, what is \n𝜆\n𝐶\n𝑙\n−\n∘\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n69.5 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n119 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n139 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n258 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Λm∘=λCa2+∘+2λCl−∘.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ae8ea683-dae5-4b1c-9887-154ee66896ba",
+    "question_text": "The conductivity of a 0.025 M NaNO\n3\n solution is 0.003 S cm\n−\n1\n, and its molar conductivity is 120 S cm\n2\n mol\n−\n1\n. What is the degree of dissociation if \nΛ\n𝑚\n∘\n=\n126.5\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.90",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.95",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.00",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.85",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "α=ΛmΛm∘=120126.5=0.9486≈0.95.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4dcc8b28-68ad-40c9-a7bc-f77b5afdf46a",
+    "question_text": "What is the time (in seconds) required to deposit 0.405 g of calcium from molten CaCl\n2\n using a current of 1.5 A? (Atomic mass of Ca = 40.5 g/mol, F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1286.67 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n965 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1930 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2573.33 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ca2++2e−→Ca. 1 mol Ca (40.5 g) requires 2F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "669898f2-c795-4f4b-bb45-074009c980ac",
+    "question_text": "What is the emf of a cell with the reaction \n𝑀\n𝑔\n(\n𝑠\n)\n+\n2\n𝐴\n𝑔\n+\n(\n𝑎\n𝑞\n)\n→\n𝑀\n𝑔\n2\n+\n(\n𝑎\n𝑞\n)\n+\n2\n𝐴\n𝑔\n(\n𝑠\n)\n at standard conditions, given \n𝐸\n𝑀\n𝑔\n2\n+\n/\n𝑀\n𝑔\n∘\n=\n−\n2.36\n𝑉\n and \n𝐸\n𝐴\n𝑔\n+\n/\n𝐴\n𝑔\n∘\n=\n0.80\n𝑉\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.16 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.56 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.36 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-3.16 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ecell∘=Ecathode∘−Eanode∘=0.80−(−2.36)=3.16V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1a892646-ce68-4c4e-b51b-4a48941a8d94",
+    "question_text": "A current of 0.5 A is passed through a CuSO\n4\n solution for 9650 s, and then the same current is passed through an AlCl\n3\n solution for 6433.33 s. What is the total mass of metal deposited? (Atomic masses: Cu = 63.5 g/mol, Al = 27 g/mol, F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.8875 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5875 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.1875 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.2875 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Charge = 0.5×9650=4825C.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2267ab55-c5d6-4d9e-a19e-e417bc0fd9d0",
+    "question_text": "The conductivity of a 0.01 M solution is 0.00141 S cm\n−\n1\n. What is its molar conductivity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n14.1 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n141 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.41 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1410 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Λm=κ×1000c=0.00141×10000.01=141Scm2mol−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "efaef406-b998-44e7-a5ac-93e119650e7e",
+    "question_text": "The emf of a cell \n𝑁\n𝑖\n(\n𝑠\n)\n|\n𝑁\n𝑖\n2\n+\n(\n0.001\n𝑀\n)\n|\n|\n𝐴\n𝑔\n+\n(\n0.002\n𝑀\n)\n|\n𝐴\n𝑔\n(\n𝑠\n)\n at 298 K is (Given: \n𝐸\n𝑁\n𝑖\n2\n+\n/\n𝑁\n𝑖\n∘\n=\n−\n0.25\n𝑉\n, \n𝐸\n𝐴\n𝑔\n+\n/\n𝐴\n𝑔\n∘\n=\n0.80\n𝑉\n)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.05 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.95 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.989 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.10 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ecell∘=0.80−(−0.25)=1.05V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d031c917-d466-40f6-814b-ad5416e8d803",
+    "question_text": "A cell \n𝑍\n𝑛\n(\n𝑠\n)\n|\n𝑍\n𝑛\n2\n+\n(\n0.001\n𝑀\n)\n|\n|\n𝐵\n𝑟\n2\n(\n𝑙\n)\n|\n𝐵\n𝑟\n−\n(\n0.002\n𝑀\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n operates at 298 K. What is the cell potential? (Given: \n𝐸\n𝑍\n𝑛\n2\n+\n/\n𝑍\n𝑛\n∘\n=\n−\n0.76\n𝑉\n, \n𝐸\n𝐵\n𝑟\n2\n/\n𝐵\n𝑟\n−\n∘\n=\n1.07\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.83 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.682 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.10 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.978 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ecell∘=1.07−(−0.76)=1.83V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7dff53a9-21a6-471d-bdb1-5906dd4b4593",
+    "question_text": "The molar conductivity of LiCl at infinite dilution is 115.0 S cm\n2\n mol\n−\n1\n. If \n𝜆\n𝐿\n𝑖\n+\n∘\n=\n38.7\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n, what is \n𝜆\n𝐶\n𝑙\n−\n∘\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n76.3 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n38.7 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n115.0 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n19.3 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Λm∘=λLi+∘+λCl−∘.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc9de9fe-7210-4030-a49a-e54a2bec0472",
+    "question_text": "A lead storage battery delivers 1.5 A for 10 hours during discharge. How many grams of PbSO\n4\n (molar mass 303 g/mol) are formed at the anode? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n42.39 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n169.56 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30.3 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n84.78 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Charge = 1.5×10×3600=54000C.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4d461820-1492-4539-9bf8-020494dc0d60",
+    "question_text": "During electrolysis of aqueous NaI with inert electrodes, 0.224 L of H\n2\n (STP) is produced at the cathode. How many coulombs were passed? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n965 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3860 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1930 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4825 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cathode: 2H2O+2e−→H2+2OH−.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c3eff56e-197e-44a4-9b39-58993fd7a416",
+    "question_text": "A weak acid has \nΛ\n𝑚\n∘\n=\n350\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n and \nΛ\n𝑚\n=\n17.5\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n at 0.05 M. What is the dissociation constant \n𝐾\n𝑎\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.25 \\times 10^{-3}",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5 \\times 10^{-4}",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.0 \\times 10^{-5}",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.316 \\times 10^{-4}",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "α=ΛmΛm∘=17.5350=0.05.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fedb7586-0f6c-40f0-833f-0387f926551b",
+    "question_text": "A lead storage battery delivers 1 A for 4825 s. What is the mass of PbSO\n4\n (molar mass 303 g/mol) formed at the cathode? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7.575 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15.15 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.7875 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n30.3 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Charge = 1×4825=4825C.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "08f494d8-cf71-4df4-91b6-c995776c3345",
+    "question_text": "The resistance of a conductivity cell with 0.001 M KCl solution is 1500 Ω, and its conductivity is 0.146 × 10\n−\n3\n S cm\n−\n1\n. What is the cell constant?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.146 cm\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.500 cm\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.219 cm\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.073 cm\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "κ=cell constantR, \n0.146×10−3=cellconstant1500, cell constant = 0.219 cm−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f7086627-fb99-434b-839d-27efe87417ff",
+    "question_text": "How many electrons are involved in the reduction of 1 mole of \n𝑀\n𝑛\n𝑂\n4\n−\n to \n𝑀\n𝑛\n𝑂\n2\n in basic medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "MnO4−+2H2O+3e−→MnO2+4OH−. 3 electrons per mole.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23f7eea1-3c6c-4cd8-9798-fda6cda579b9",
+    "question_text": "A hydrogen electrode operates at 298 K with \n𝑃\n𝐻\n2\n=\n0.1\n𝑎\n𝑡\n𝑚\n and pH = 4. What is its potential? (Given: \n𝐸\n𝐻\n+\n/\n𝐻\n2\n∘\n=\n0.00\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.00 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-0.118 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-0.177 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-0.2065 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E=E∘−0.0592log⁡PH2[H+]2, [H+]=10−4.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "795eebf1-6511-4a28-b015-08fd188138d1",
+    "question_text": "In a lead storage battery, what is the electrolyte?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPbSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPbO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nH\n2\nSO\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The electrolyte in a lead storage battery is dilute sulfuric acid (H2SO4).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ccaf68ec-01ef-4f93-a296-52869755542d",
+    "question_text": "What is the emf of the cell \n𝑀\n𝑛\n(\n𝑠\n)\n|\n𝑀\n𝑛\n2\n+\n(\n0.05\n𝑀\n)\n|\n|\n𝐻\n+\n(\n0.005\n𝑀\n)\n|\n𝐻\n2\n(\n𝑔\n)\n(\n1\n𝑏\n𝑎\n𝑟\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n at 298 K? (Given: \n𝐸\n𝑀\n𝑛\n2\n+\n/\n𝑀\n𝑛\n∘\n=\n−\n1.18\n𝑉\n, \n𝐸\n𝐻\n+\n/\n𝐻\n2\n∘\n=\n0.00\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.18 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.25375 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.10625 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.05 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ecell∘=0.00−(−1.18)=1.18V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8bbb85c1-eb77-424a-b605-7b35c4e356de",
+    "question_text": "A cell reaction has \nΔ\n𝑟\n𝐺\n∘\n=\n−\n212300\n𝐽\n/\n𝑚\n𝑜\n𝑙\n and involves 2 electrons at 298 K. What is the equilibrium constant?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10\n35",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10\n36",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10\n37",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10\n38",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔrG∘=−nFEcell∘, Ecell∘=2123002×96500=1.10V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d844fde7-807d-426a-98d8-fe576ff73c31",
+    "question_text": "What is the standard Gibbs energy change for a cell with \n𝐸\n𝑐\n𝑒\n𝑙\n𝑙\n∘\n=\n1.23\n𝑉\n and 2 electrons transferred? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-118.695 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-474.78 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-237.39 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-96.5 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔrG∘=−nFEcell∘=−2×96500×1.23=−237390J/mol=−237.39kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "26648a68-9f54-4ce3-89fb-2713458768ee",
+    "question_text": "The molar conductivity of NaCl at infinite dilution is 126.4 S cm\n2\n mol\n−\n1\n. If \n𝜆\n𝑁\n𝑎\n+\n∘\n=\n50.1\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n, what is \n𝜆\n𝐶\n𝑙\n−\n∘\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n76.3 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n50.1 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n126.4 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n26.3 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Λm∘=λNa+∘+λCl−∘.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7aeb3b26-1f3d-41ce-934e-2cc8ed612063",
+    "question_text": "In a dry cell, what acts as the cathode?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZn container",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGraphite rod",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNH\n4\nCl paste",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMnO\n2\nalone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In a dry cell, the cathode is a graphite rod surrounded by MnO2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4a73addd-517d-475c-8d99-6e397e60c2de",
+    "question_text": "In a mercury cell, if 0.68 g of Zn (atomic mass 68 g/mol) is oxidized at the anode, how many Faradays are involved?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.01 F",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.04 F",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.02 F",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.005 F",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Zn+2OH−→ZnO+H2O+2e−. 1 mol Zn (68 g) requires 2F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "243cec93-2300-43da-9bfc-5c118dcb8510",
+    "question_text": "The conductivity of a 0.05 M solution is 0.006 S cm\n−\n1\n. What is its molar conductivity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n60 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n240 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n120 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Λm=κ×1000c=0.006×10000.05=120Scm2mol−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0a820efc-18ae-4753-b4f6-0364895af8e7",
+    "question_text": "How many electrons are involved in the reduction of 1 mole of \n𝐶\n𝑟\n2\n𝑂\n7\n2\n−\n to \n𝐶\n𝑟\n3\n+\n in acidic medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cr2O72−+14H++6e−→2Cr3++7H2O. 6 electrons per mole.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bfafe711-7e7f-4008-b053-ff965d5e4373",
+    "question_text": "During electrolysis of aqueous NiSO\n4\n with Ni electrodes, 0.59 g of Ni (atomic mass 59 g/mol) is deposited at the cathode. If the same charge oxidizes water at the anode, what volume of O\n2\n (STP) is produced? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.224 L",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.056 L",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.448 L",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.112 L",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Cathode: Ni2++2e−→Ni. Moles = 0.5959=0.01mol, Charge = 0.01×2×96500=1930C.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3a11cf3d-5ca1-42e3-a604-c2e86bd16095",
+    "question_text": "In the electrolysis of molten Al\n2\nO\n3\n, what is the product at the anode?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAl",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAl\n2\nO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Anode: 2O2−→O2+4e−. Oxygen gas is produced.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c0b6d2a-3510-4bf0-bf08-6ce3f7770463",
+    "question_text": "The limiting molar conductivity of MgSO\n4\n is 266 S cm\n2\n mol\n−\n1\n. If \n𝜆\n𝑀\n𝑔\n2\n+\n∘\n=\n106\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n, what is \n𝜆\n𝑆\n𝑂\n4\n2\n−\n∘\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n106 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n266 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n160 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n53 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Λm∘=λMg2+∘+λSO42−∘.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "88ed7424-30b6-476d-a94a-a4273edd1f04",
+    "question_text": "A weak electrolyte has \nΛ\n𝑚\n∘\n=\n400\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n and \nΛ\n𝑚\n=\n40\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n at 0.1 M. What is the dissociation constant \n𝐾\n𝑎\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.0 \\times 10^{-2}",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5 \\times 10^{-4}",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.0 \\times 10^{-3}",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.111 \\times 10^{-3}",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "α=ΛmΛm∘=40400=0.1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7633650f-1a61-470e-941f-1ea7bad14842",
+    "question_text": "A cell \n𝑍\n𝑛\n(\n𝑠\n)\n|\n𝑍\n𝑛\n2\n+\n(\n0.02\n𝑀\n)\n|\n|\n𝐹\n𝑒\n3\n+\n(\n0.05\n𝑀\n)\n,\n𝐹\n𝑒\n2\n+\n(\n0.01\n𝑀\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n operates at 298 K. What is the cell potential? (Given: \n𝐸\n𝑍\n𝑛\n2\n+\n/\n𝑍\n𝑛\n∘\n=\n−\n0.76\n𝑉\n, \n𝐸\n𝐹\n𝑒\n3\n+\n/\n𝐹\n𝑒\n2\n+\n∘\n=\n0.77\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.53 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5866 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.4734 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.60 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ecell∘=0.77−(−0.76)=1.53V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b022528-22da-4409-b67e-053c6694ce39",
+    "question_text": "In a mercury cell, what is the overall cell reaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑍\n𝑛\n+\n𝐻\n𝑔\n𝑂\n+\n𝐻\n2\n𝑂\n→\n𝑍\n𝑛\n𝑂\n+\n𝐻\n𝑔\n+\n𝑂\n𝐻\n−",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑍\n𝑛\n+\n2\n𝐻\n𝑔\n𝑂\n→\n𝑍\n𝑛\n𝑂\n+\n𝐻\n𝑔\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑍\n𝑛\n+\n𝐻\n𝑔\n2\n+\n→\n𝑍\n𝑛\n2\n+\n+\n𝐻\n𝑔",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑍\n𝑛\n+\n𝐻\n𝑔\n𝑂\n→\n𝑍\n𝑛\n𝑂\n+\n𝐻\n𝑔",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Anode: Zn+2OH−→ZnO+H2O+2e−.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c155460-1dd7-4622-a8a7-2f04ff46c22e",
+    "question_text": "What is the cell constant if the resistance of a 0.05 M KCl solution is 100 Ω and its conductivity is 0.0065 S cm\n−\n1\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.065 cm\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.65 cm\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.5 cm\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.3 cm\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "κ=cell constantR, 0.0065=cell constant100, cell\n              constant = 0.65 cm−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "86881c3d-347e-4b89-ad9b-f2d559236cb0",
+    "question_text": "What is the standard emf of a cell with the reaction \n𝑀\n𝑛\n(\n𝑠\n)\n+\n𝐻\n𝑔\n2\n+\n(\n𝑎\n𝑞\n)\n→\n𝑀\n𝑛\n2\n+\n(\n𝑎\n𝑞\n)\n+\n𝐻\n𝑔\n(\n𝑙\n)\n? (Given: \n𝐸\n𝑀\n𝑛\n2\n+\n/\n𝑀\n𝑛\n∘\n=\n−\n1.18\n𝑉\n, \n𝐸\n𝐻\n𝑔\n2\n+\n/\n𝐻\n𝑔\n∘\n=\n0.85\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.03 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.18 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.33 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-2.03 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ecell∘=Ecathode∘−Eanode∘=0.85−(−1.18)=2.03V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a507cdde-6835-4a22-a84d-8fd70db039a8",
+    "question_text": "The degree of dissociation of a weak acid is 0.1, and its molar conductivity at infinite dilution is 380 S cm\n2\n mol\n−\n1\n. What is its molar conductivity at that concentration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n380 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n190 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n76 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n38 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "α=ΛmΛm∘, 0.1=Λm380, Λm=38Scm2mol−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4ebe8c26-7b30-4a5a-acd8-c0294f4fb2ec",
+    "question_text": "What is the standard Gibbs energy change for a cell with \n𝐸\n𝑐\n𝑒\n𝑙\n𝑙\n∘\n=\n0.59\n𝑉\n and 1 electron transferred? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-96.5 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-56.935 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-28.468 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-118.295 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "ΔrG∘=−nFEcell∘=−1×96500×0.59=−56935J/mol=−56.935kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5c61bbd4-c928-49b5-a2fe-64aa917b28b0",
+    "question_text": "How much charge (in coulombs) is required to deposit 0.54 g of nickel from NiSO\n4\n solution? (Atomic mass of Ni = 54 g/mol, F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n965 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4825 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9650 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1930 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ni2++2e−→Ni. 1 mol Ni (54 g) requires 2F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "28723bd6-f340-4fc2-b489-46f384b5b2b0",
+    "question_text": "How much charge (in coulombs) is required to oxidize 1 mole of H\n2\nO to O\n2\n? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n96500 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n193000 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n289500 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n386000 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "2H2O→O2+4H++4e−. 1 mol O2 requires 4F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cd0dbf0d-3d5d-4d16-805c-0a7119f113b1",
+    "question_text": "A cell \n𝑆\n𝑛\n(\n𝑠\n)\n|\n𝑆\n𝑛\n2\n+\n(\n0.001\n𝑀\n)\n|\n|\n𝐼\n2\n(\n𝑠\n)\n|\n𝐼\n−\n(\n0.02\n𝑀\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n operates at 298 K. What is the cell potential? (Given: \n𝐸\n𝑆\n𝑛\n2\n+\n/\n𝑆\n𝑛\n∘\n=\n−\n0.14\n𝑉\n, \n𝐸\n𝐼\n2\n/\n𝐼\n−\n∘\n=\n0.54\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.68 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.577 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.783 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.85 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ecell∘=0.54−(−0.14)=0.68V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1148eda1-b727-44c7-92f2-a066661a2fa0",
+    "question_text": "In a fuel cell, the anode reaction produces 0.224 L of H\n2\nO vapor at STP from H\n2\n. How many coulombs are involved? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n965 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1930 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3860 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4825 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Anode: H2+2OH−→2H2O+2e−. 1 mol H2O (22.4 L as vapor) requires 2F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4e4ef264-bcaf-4976-a21f-9602cffad269",
+    "question_text": "How many Faradays are required to reduce 1 mole of \n𝐶\n𝑢\n2\n+\n to \n𝐶\n𝑢\n+\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 F",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 F",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1 F",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.5 F",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cu2++e−→Cu+. 1 mole requires 1F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "85497c02-3bb6-4530-ba13-43b76444f1d0",
+    "question_text": "A hydrogen electrode in a solution with \n𝑃\n𝐻\n2\n=\n2\n𝑎\n𝑡\n𝑚\n and \n[\n𝐻\n+\n]\n=\n0.002\n𝑀\n operates at 298 K. What is its potential? (Given: \n𝐸\n𝐻\n+\n/\n𝐻\n2\n∘\n=\n0.00\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.00 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-0.118 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-0.236 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-0.1681 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E=E∘−0.0592log⁡PH2[H+]2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33f88e24-2eb2-4cbb-9d7c-8b29825e3ebf",
+    "question_text": "A cell \n𝐹\n𝑒\n(\n𝑠\n)\n|\n𝐹\n𝑒\n2\n+\n(\n0.02\n𝑀\n)\n|\n|\n𝐼\n2\n(\n𝑠\n)\n|\n𝐼\n−\n(\n0.1\n𝑀\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n operates at 298 K. What is the cell potential? (Given: \n𝐸\n𝐹\n𝑒\n2\n+\n/\n𝐹\n𝑒\n∘\n=\n−\n0.44\n𝑉\n, \n𝐸\n𝐼\n2\n/\n𝐼\n−\n∘\n=\n0.54\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.98 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.912 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.10 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.048 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ecell∘=0.54−(−0.44)=0.98V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8d839c3e-8600-4f0b-a200-3f706871370b",
+    "question_text": "In a dry cell, what is the approximate cell potential?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.35 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.0 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.1 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The dry cell (Leclanché cell) has a potential of approximately 1.5 V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "692767e2-18b0-49b8-b379-ed3ab20e9f79",
+    "question_text": "What is the potential of a hydrogen electrode in a solution with \n[\n𝐻\n+\n]\n=\n10\n−\n5\n𝑀\n at 298 K? (Given: \n𝐸\n𝐻\n+\n/\n𝐻\n2\n∘\n=\n0.00\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.00 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-0.118 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-0.177 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-0.295 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E=E∘−0.059nlog⁡1[H+], [H+]=10−5, n=1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7423958-4778-4668-812b-ec023d7fa5a2",
+    "question_text": "In a dry cell, the cathode reaction produces MnO(OH). If 0.87 g of MnO\n2\n (atomic mass Mn = 55, O = 16) is reduced, how many coulombs are consumed? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1930 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4825 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n965 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2895 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "MnO2+H++e−→MnO(OH). Molar mass = 55+32=87g/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d2574d57-f63f-4642-a004-198ad879211f",
+    "question_text": "How many coulombs are required to deposit 0.965 g of barium from a BaCl\n2\n solution? (Atomic mass of Ba = 137 g/mol, F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1358.24 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9650 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n679.12 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n19300 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ba2++2e−→Ba. 1 mol Ba (137 g) requires 2F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a7e700ae-6965-4a7b-909a-dd0bf5791071",
+    "question_text": "What is the emf of the cell \n𝑆\n𝑛\n(\n𝑠\n)\n|\n𝑆\n𝑛\n2\n+\n(\n0.002\n𝑀\n)\n|\n|\n𝑃\n𝑏\n2\n+\n(\n0.02\n𝑀\n)\n|\n𝑃\n𝑏\n(\n𝑠\n)\n at 298 K? (Given: \n𝐸\n𝑆\n𝑛\n2\n+\n/\n𝑆\n𝑛\n∘\n=\n−\n0.14\n𝑉\n, \n𝐸\n𝑃\n𝑏\n2\n+\n/\n𝑃\n𝑏\n∘\n=\n−\n0.13\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.01 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.0395 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-0.0195 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.05 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ecell∘=−0.13−(−0.14)=0.01V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa1bab85-9a12-4e3d-a5f7-eba02aeb02f8",
+    "question_text": "How many electrons are transferred in the reduction of 1 mole of \n𝑁\n𝑂\n3\n−\n to \n𝑁\n𝐻\n4\n+\n in acidic medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "NO3−+10H++8e−→NH4++3H2O. 8 electrons per mole.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "16520059-7d4e-4955-af52-cb39ebae454d",
+    "question_text": "What is the emf of a cell \n𝐹\n𝑒\n(\n𝑠\n)\n|\n𝐹\n𝑒\n2\n+\n(\n0.1\n𝑀\n)\n|\n|\n𝐻\n+\n(\n0.001\n𝑀\n)\n|\n𝐻\n2\n(\n𝑔\n)\n(\n1\n𝑏\n𝑎\n𝑟\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n at 298 K? (Given: \n𝐸\n𝐹\n𝑒\n2\n+\n/\n𝐹\n𝑒\n∘\n=\n−\n0.44\n𝑉\n, \n𝐸\n𝐻\n+\n/\n𝐻\n2\n∘\n=\n0.00\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.44 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.5285 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.40 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.3515 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ecell∘=0.00−(−0.44)=0.44V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d8efebda-5a2b-404b-953a-3999550cafb8",
+    "question_text": "A cell \n𝐶\n𝑜\n(\n𝑠\n)\n|\n𝐶\n𝑜\n2\n+\n(\n0.01\n𝑀\n)\n|\n|\n𝐵\n𝑟\n2\n(\n𝑙\n)\n|\n𝐵\n𝑟\n−\n(\n0.05\n𝑀\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n operates at 298 K. What is the cell potential? (Given: \n𝐸\n𝐶\n𝑜\n2\n+\n/\n𝐶\n𝑜\n∘\n=\n−\n0.28\n𝑉\n, \n𝐸\n𝐵\n𝑟\n2\n/\n𝐵\n𝑟\n−\n∘\n=\n1.07\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.35 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.277 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.423 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.50 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ecell∘=1.07−(−0.28)=1.35V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ade6b095-03b4-4d2f-a932-e0777673cc21",
+    "question_text": "During electrolysis of aqueous NaBr with inert electrodes, 0.112 L of Br\n2\n gas (STP) is produced at the anode. How many coulombs were passed? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1930 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4825 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n965 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2895 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Anode: 2Br−→Br2+2e−. 1 mol Br2 (22.4 L) requires 2F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b0af2afd-9f8a-482b-bb02-e59a2395c015",
+    "question_text": "What is the time (in seconds) required to deposit 0.355 g of cobalt from a CoSO\n4\n solution using a current of 0.2 A? (Atomic mass of Co = 59 g/mol, F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5806.2 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2903.1 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9650 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1161.24 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Co2++2e−→Co. 1 mol Co (59 g) requires 2F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a9b878b1-d2ba-4acd-94c0-e6cce9f6a1f4",
+    "question_text": "How many coulombs are required to deposit 6.75 g of potassium from a KCl solution? (Atomic mass of K = 39 g/mol, F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n16700 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n96500 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n33400 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8350 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "K++e−→K. 1 mol K (39 g) requires 1F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aebfdea5-52f0-4495-ad84-ff6918fdf9d1",
+    "question_text": "A cell reaction has \n𝐸\n𝑐\n𝑒\n𝑙\n𝑙\n∘\n=\n1.36\n𝑉\n and an equilibrium constant of \n10\n46\n at 298 K. How many electrons are transferred?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ecell∘=0.059nlog⁡Kc, 1.36=0.059n×46, n=2.7141.36≈2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "edb0f9ed-aaa2-49c1-9323-3741b968332a",
+    "question_text": "In electrolysis, 0.635 g of Cu (atomic mass 63.5 g/mol) is deposited from CuSO\n4\n using 0.5 A for 3860 s. What is the percentage efficiency of the process? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n90%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n100%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n95%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n85%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Charge = 0.5×3860=1930C.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53eef17b-6adc-4b6c-b655-a212018ac5e5",
+    "question_text": "What is the emf of the cell \n𝐶\n𝑟\n(\n𝑠\n)\n|\n𝐶\n𝑟\n3\n+\n(\n0.002\n𝑀\n)\n|\n|\n𝐴\n𝑔\n+\n(\n0.05\n𝑀\n)\n|\n𝐴\n𝑔\n(\n𝑠\n)\n at 298 K? (Given: \n𝐸\n𝐶\n𝑟\n3\n+\n/\n𝐶\n𝑟\n∘\n=\n−\n0.74\n𝑉\n, \n𝐸\n𝐴\n𝑔\n+\n/\n𝐴\n𝑔\n∘\n=\n0.80\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.54 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.515 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.565 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.49 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ecell∘=0.80−(−0.74)=1.54V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "681d75a6-ce20-4e6e-8321-78bf46a03a38",
+    "question_text": "A cell reaction has \nΔ\n𝑟\n𝐺\n∘\n=\n−\n285900\n𝐽\n/\n𝑚\n𝑜\n𝑙\n and involves 3 electrons at 298 K. What is the standard emf? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.95 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.03 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.99 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.10 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔrG∘=−nFEcell∘, −285900=−3×96500×Ecell∘.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bdce78cf-c739-4b62-a773-f725a59246f7",
+    "question_text": "During the electrolysis of aqueous CuSO\n4\n using copper electrodes, what mass of copper is deposited at the cathode if a current of 1 A flows for 965 seconds? (Faraday constant = 96500 C/mol, Atomic mass of Cu = 63.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.3175 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.635 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.27 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.159 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Charge Q=I×t=1×965=965C.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82447e9e-7dd7-49f3-bfbf-183fbea840db",
+    "question_text": "The degree of dissociation of a weak electrolyte is 0.25, and its molar conductivity is 95 S cm\n2\n mol\n−\n1\n. What is its \nΛ\n𝑚\n∘\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n190 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n47.5 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n95 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n380 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "α=ΛmΛm∘, 0.25=95Λm∘, Λm∘=380Scm2mol−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bceeccb1-c9d5-44bd-8269-1e04d3486448",
+    "question_text": "A cell has \n𝐸\n𝑐\n𝑒\n𝑙\n𝑙\n∘\n=\n0.52\n𝑉\n and an equilibrium constant of \n10\n17\n at 298 K. How many electrons are transferred?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ecell∘=0.059nlog⁡Kc, 0.52=0.059n×17, n=1.0030.52≈2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a694e832-eae4-4b86-b222-44bfcdee852c",
+    "question_text": "A conductivity cell with a 0.015 M KNO\n3\n solution has a resistance of 300 Ω and a cell constant of 0.75 cm\n−\n1\n. What is the molar conductivity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n83.33 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n125 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n166.67 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n250 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "κ=cell constantR=0.75300=0.0025Scm−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "736fe527-2f44-498f-b563-ba1a504a907a",
+    "question_text": "A cell \n𝐶\n𝑑\n(\n𝑠\n)\n|\n𝐶\n𝑑\n2\n+\n(\n0.005\n𝑀\n)\n|\n|\n𝐵\n𝑟\n2\n(\n𝑙\n)\n|\n𝐵\n𝑟\n−\n(\n0.01\n𝑀\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n operates at 298 K. What is the cell potential? (Given: \n𝐸\n𝐶\n𝑑\n2\n+\n/\n𝐶\n𝑑\n∘\n=\n−\n0.40\n𝑉\n, \n𝐸\n𝐵\n𝑟\n2\n/\n𝐵\n𝑟\n−\n∘\n=\n1.07\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.47 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.367 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.60 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.573 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ecell∘=1.07−(−0.40)=1.47V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d1e43761-f897-4602-b906-458e93775277",
+    "question_text": "What is the time (in seconds) required to deposit 0.585 g of chromium from a Cr\n2\n(SO\n4\n)\n3\n solution using a current of 0.5 A? (Atomic mass of Cr = 52 g/mol, F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6513.75 s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2171.25 s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9650 s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3256.875 s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Cr3++3e−→Cr. 1 mol Cr (52 g) requires 3F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "afd8ea9c-93bf-4e24-9116-c9cdd6d84817",
+    "question_text": "How many electrons are involved in the reduction of 1 mole of \n𝑆\n𝑂\n4\n2\n−\n to \n𝑆\n in acidic medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "SO42−+8H++6e−→S+4H2O. 6 electrons per mole.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d505c391-c449-485e-9a8d-407eaea1445e",
+    "question_text": "In a fuel cell, what is the electrolyte commonly used?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNaCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNH\n4\nCl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fuel cells often use KOH as the electrolyte in alkaline conditions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "241dd5ef-83b8-414e-9cc3-01c885a3e88c",
+    "question_text": "What is the emf of the cell \n𝐶\n𝑜\n(\n𝑠\n)\n|\n𝐶\n𝑜\n2\n+\n(\n0.02\n𝑀\n)\n|\n|\n𝐻\n+\n(\n0.01\n𝑀\n)\n|\n𝐻\n2\n(\n𝑔\n)\n(\n1\n𝑏\n𝑎\n𝑟\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n at 298 K? (Given: \n𝐸\n𝐶\n𝑜\n2\n+\n/\n𝐶\n𝑜\n∘\n=\n−\n0.28\n𝑉\n, \n𝐸\n𝐻\n+\n/\n𝐻\n2\n∘\n=\n0.00\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.28 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.35375 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.20625 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.15 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ecell∘=0.00−(−0.28)=0.28V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "243218a1-58c3-431e-b5fc-d70d11d69ee9",
+    "question_text": "What is the emf of the cell \n𝑆\n𝑛\n(\n𝑠\n)\n|\n𝑆\n𝑛\n2\n+\n(\n0.05\n𝑀\n)\n|\n|\n𝐻\n+\n(\n0.1\n𝑀\n)\n|\n𝐻\n2\n(\n𝑔\n)\n(\n1\n𝑏\n𝑎\n𝑟\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n at 298 K? (Given: \n𝐸\n𝑆\n𝑛\n2\n+\n/\n𝑆\n𝑛\n∘\n=\n−\n0.14\n𝑉\n, \n𝐸\n𝐻\n+\n/\n𝐻\n2\n∘\n=\n0.00\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.14 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.10 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.179 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.25 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ecell∘=0.00−(−0.14)=0.14V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "563569df-99b2-4c95-a043-65cda1c38738",
+    "question_text": "During electrolysis of aqueous K\n2\nSO\n4\n with inert electrodes, 0.336 L of gas (STP) is collected at both electrodes. How many coulombs were passed? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1930 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n965 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3860 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5790 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cathode: 2H2O+2e−→H2+2OH−, Anode: 2H2O→O2+4H++4e−.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "acef24bb-2e44-4063-81ee-e2fa298a8c60",
+    "question_text": "How many Faradays are required to deposit 1.62 g of silver from AgNO\n3\n solution? (Atomic mass of Ag = 108 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 F",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.5 F",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.015 F",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.03 F",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ag++e−→Ag. 1 mol Ag (108 g) requires 1F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "64f9c12b-8775-42e1-83af-27de239434b7",
+    "question_text": "What is the standard emf of a cell with the reaction \n𝑃\n𝑏\n(\n𝑠\n)\n+\n𝐻\n𝑔\n2\n2\n+\n(\n𝑎\n𝑞\n)\n→\n𝑃\n𝑏\n2\n+\n(\n𝑎\n𝑞\n)\n+\n2\n𝐻\n𝑔\n(\n𝑙\n)\n? (Given: \n𝐸\n𝑃\n𝑏\n2\n+\n/\n𝑃\n𝑏\n∘\n=\n−\n0.13\n𝑉\n, \n𝐸\n𝐻\n𝑔\n2\n2\n+\n/\n𝐻\n𝑔\n∘\n=\n0.79\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.92 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.66 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.05 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-0.92 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ecell∘=Ecathode∘−Eanode∘=0.79−(−0.13)=0.92V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79821f0c-ad19-4881-8bf3-f0ec1ee0712e",
+    "question_text": "How many electrons are involved in the reduction of 1 mole of \n𝐹\n𝑒\n3\n+\n to \n𝐹\n𝑒\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fe3++3e−→Fe. 3 electrons are required per mole.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6bea9462-95dd-4d68-bde5-8121c7b731b2",
+    "question_text": "What is the emf of a cell \n𝐶\n𝑑\n(\n𝑠\n)\n|\n𝐶\n𝑑\n2\n+\n(\n0.1\n𝑀\n)\n|\n|\n𝐴\n𝑔\n+\n(\n0.001\n𝑀\n)\n|\n𝐴\n𝑔\n(\n𝑠\n)\n at 298 K? (Given: \n𝐸\n𝐶\n𝑑\n2\n+\n/\n𝐶\n𝑑\n∘\n=\n−\n0.40\n𝑉\n, \n𝐸\n𝐴\n𝑔\n+\n/\n𝐴\n𝑔\n∘\n=\n0.80\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.20 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.259 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.10 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.141 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ecell∘=0.80−(−0.40)=1.20V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fd048def-7161-47f1-a4d1-cafcd96b8266",
+    "question_text": "How many coulombs are required to reduce 1 mole of \n𝐵\n𝑟\n2\n to \n𝐵\n𝑟\n−\n? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n96500 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n48250 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n289500 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n193000 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Br2+2e−→2Br−. 1 mol Br2 requires 2F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "38d09b1c-0f2a-4811-b678-76f7f3ff1f53",
+    "question_text": "How many coulombs are required to reduce 1 mole of \n𝑀\n𝑛\n𝑂\n4\n−\n to \n𝑀\n𝑛\n2\n+\n in acidic medium? (Faraday constant = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n482500 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n96500 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n193000 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n289500 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "MnO4−+8H++5e−→Mn2++4H2O.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c721b3e6-0335-460d-8a53-2f3ec7a8c3a1",
+    "question_text": "A cell \n𝐶\n𝑢\n(\n𝑠\n)\n|\n𝐶\n𝑢\n2\n+\n(\n0.01\n𝑀\n)\n|\n|\n𝐶\n𝑙\n2\n(\n𝑔\n)\n(\n0.5\n𝑎\n𝑡\n𝑚\n)\n|\n𝐶\n𝑙\n−\n(\n0.05\n𝑀\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n operates at 298 K. What is the cell potential? (Given: \n𝐸\n𝐶\n𝑢\n2\n+\n/\n𝐶\n𝑢\n∘\n=\n0.34\n𝑉\n, \n𝐸\n𝐶\n𝑙\n2\n/\n𝐶\n𝑙\n−\n∘\n=\n1.36\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.02 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.967 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.15 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.073 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ecell∘=1.36−0.34=1.02V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fc72b417-aeb6-426c-b18c-34d5e85c27a7",
+    "question_text": "What is the potential of a hydrogen electrode in a solution with pH = 2 at 298 K? (Given: \n𝐸\n𝐻\n+\n/\n𝐻\n2\n∘\n=\n0.00\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.00 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-0.059 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-0.177 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-0.118 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "E=E∘−0.059nlog⁡1[H+], [H+]=10−2, n=1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0a4bca5a-96e7-4158-8b10-c843cf43b8b1",
+    "question_text": "In a lead storage battery during discharge, what is the total change in oxidation state of lead from reactants to products at both electrodes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Anode: Pb(0)+SO42−→PbSO4(+2)+2e−, Change = +2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9bfec410-301d-48a1-aa15-62a814d1b4bd",
+    "question_text": "In a lead storage battery during charging, what is the oxidation state of lead in the anode product?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n+2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n+4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n+1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Charging anode: PbSO4+2e−→Pb+SO42−. Pb has oxidation state 0.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0643197b-ad20-4451-b4d5-7befccf338f0",
+    "question_text": "What is the emf of the cell \n𝑃\n𝑏\n(\n𝑠\n)\n|\n𝑃\n𝑏\n2\n+\n(\n0.005\n𝑀\n)\n|\n|\n𝐴\n𝑔\n+\n(\n0.05\n𝑀\n)\n|\n𝐴\n𝑔\n(\n𝑠\n)\n at 298 K? (Given: \n𝐸\n𝑃\n𝑏\n2\n+\n/\n𝑃\n𝑏\n∘\n=\n−\n0.13\n𝑉\n, \n𝐸\n𝐴\n𝑔\n+\n/\n𝐴\n𝑔\n∘\n=\n0.80\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.93 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.9005 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.9595 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.87 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ecell∘=0.80−(−0.13)=0.93V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ede899f-f3dd-4de2-acf8-b51e7efe0ef6",
+    "question_text": "In a dry cell, what is the electrolyte paste made of?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMnO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nH\n2\nSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNH\n4\nCl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The electrolyte in a dry cell is a moist paste of NH4Cl and ZnCl2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "03a109fe-2382-4e3f-9aaa-5b38433c11a6",
+    "question_text": "What is the degree of dissociation of a weak electrolyte with \nΛ\n𝑚\n=\n46\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n and \nΛ\n𝑚\n∘\n=\n404\n𝑆\n𝑐\n𝑚\n2\n𝑚\n𝑜\n𝑙\n−\n1\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.46",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.404",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.114",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.14",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "α=ΛmΛm∘=46404=0.114.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "74ecea17-f94c-43ab-9424-d43cab60ad90",
+    "question_text": "What is the cell potential at 298 K for \n𝐶\n𝑢\n(\n𝑠\n)\n|\n𝐶\n𝑢\n2\n+\n(\n0.01\n𝑀\n)\n|\n|\n𝐴\n𝑔\n+\n(\n0.1\n𝑀\n)\n|\n𝐴\n𝑔\n(\n𝑠\n)\n? (Given: \n𝐸\n𝐶\n𝑢\n2\n+\n/\n𝐶\n𝑢\n∘\n=\n0.34\n𝑉\n, \n𝐸\n𝐴\n𝑔\n+\n/\n𝐴\n𝑔\n∘\n=\n0.80\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.4895 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.46 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.43 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.52 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ecell∘=0.80−0.34=0.46V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "786e5c90-ff26-4e75-9591-8864c27092ae",
+    "question_text": "In a lead storage battery during discharge, 0.1515 g of PbSO\n4\n (molar mass 303 g/mol) is formed at the anode. How many coulombs are involved? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n193 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n48.25 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n96.5 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n386 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Anode: Pb+SO42−→PbSO4+2e−.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09ce0eb9-8be6-4fca-bc04-e8c725e76468",
+    "question_text": "A dry cell delivers 0.25 A for 9650 s. How many grams of zinc are oxidized at the anode? (Atomic mass of Zn = 65 g/mol, F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.8125 g",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.625 g",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.40625 g",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.25 g",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Charge = 0.25×9650=2412.5C.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "759a360f-aea9-4523-b2e0-d9704f2e1a8c",
+    "question_text": "What is the equilibrium constant for a cell reaction with \n𝐸\n𝑐\n𝑒\n𝑙\n𝑙\n∘\n=\n0.118\n𝑉\n at 298 K involving 1 electron?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ecell∘=0.059nlog⁡Kc, 0.118=0.059log⁡Kc, log⁡Kc=2,Kc=102.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "600fdd6c-d2b4-4592-b327-4ce63a096d9c",
+    "question_text": "A fuel cell produces 0.448 L of H\n2\nO vapor (STP) at the cathode from O\n2\n. How many coulombs are involved? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1930 C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n965 C",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5790 C",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3860 C",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Cathode: O2+4H++4e−→2H2O. 2 mol H2O (44.8 L) requires 4F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "696bf99e-52e2-4eaf-b718-28dad7f4c005",
+    "question_text": "The molar conductivity of a 0.1 M KCl solution is 129 S cm\n2\n mol\n−\n1\n. If the conductivity of the solution is 0.0129 S cm\n−\n1\n, what is the concentration used in the calculation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1 M",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.01 M",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1 M",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.05 M",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Λm=κ×1000c.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5d8d0f4f-4a7e-438b-9228-4160e687077f",
+    "question_text": "What is the equilibrium constant for a cell reaction with \n𝐸\n𝑐\n𝑒\n𝑙\n𝑙\n∘\n=\n0.295\n𝑉\n at 298 K involving 1 electron?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10\n5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ecell∘=0.059nlog⁡Kc, 0.295=0.059log⁡Kc, log⁡Kc=5,Kc=105.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a2e09fa2-e6dc-494e-a985-d315de73e68f",
+    "question_text": "What is the approximate cell potential of a mercury cell?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.1 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.0 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.35 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The mercury cell has a potential of approximately 1.35 V, which remains constant.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9032d6f7-b406-4532-8852-1e70d85070af",
+    "question_text": "A cell \n𝑁\n𝑖\n(\n𝑠\n)\n|\n𝑁\n𝑖\n2\n+\n(\n0.001\n𝑀\n)\n|\n|\n𝐶\n𝑙\n2\n(\n𝑔\n)\n(\n2\n𝑎\n𝑡\n𝑚\n)\n|\n𝐶\n𝑙\n−\n(\n0.1\n𝑀\n)\n|\n𝑃\n𝑡\n(\n𝑠\n)\n operates at 298 K. What is the cell potential? (Given: \n𝐸\n𝑁\n𝑖\n2\n+\n/\n𝑁\n𝑖\n∘\n=\n−\n0.25\n𝑉\n, \n𝐸\n𝐶\n𝑙\n2\n/\n𝐶\n𝑙\n−\n∘\n=\n1.36\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.61 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.507 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.713 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.80 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ecell∘=1.36−(−0.25)=1.61V.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29d9923b-3ac2-4cda-9c66-dfa5b0cb86a9",
+    "question_text": "What is the potential of a hydrogen electrode in a solution with \n[\n𝐻\n+\n]\n=\n10\n−\n3\n𝑀\n at 298 K? (Given: \n𝐸\n𝐻\n+\n/\n𝐻\n2\n∘\n=\n0.00\n𝑉\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.00 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-0.059 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-0.177 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-0.295 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "E=E∘−0.059nlog⁡1[H+], n=1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "03b62e05-a925-4892-b211-21077c75ae1b",
+    "question_text": "The conductivity of a 0.005 M KBr solution is 0.00072 S cm\n−\n1\n. What is the molar conductivity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n72 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n144 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n288 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n36 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Λm=κ×1000c=0.00072×10000.005=144Scm2mol−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72085b97-0398-4c2f-bb89-f6dfa2df9374",
+    "question_text": "In electrolysis of molten CaCl\n2\n, 0.4 g of Ca (atomic mass 40 g/mol) is deposited. What volume of Cl\n2\n gas (STP) is produced at the anode? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.112 L",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.448 L",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.056 L",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.224 L",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cathode: Ca2++2e−→Ca, Moles = 0.440=0.01mol, Charge = 0.01×2×96500=1930C.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "60b8a32e-9ef8-4991-a81e-8b8df86ee4d1",
+    "question_text": "A conductivity cell with cell constant 0.4 cm\n−\n1\n shows a resistance of 250 Ω with a 0.02 M NaCl solution. What is the molar conductivity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n160 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n120 S cm\n2\nmol\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "κ=cell constantR=0.4250=0.0016Scm−1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "183890e0-92ad-460d-b9e6-7d0be54b7b4d",
+    "question_text": "In a mercury cell, what acts as the cathode during discharge?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZn",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHgO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nZnO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHg",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cathode: HgO+H2O+2e−→Hg+2OH−. HgO is the cathode material.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "064e01bb-6bca-484f-b1a7-6da27b383bb9",
+    "question_text": "How many electrons are involved in the reduction of 1 mole of \n𝐶\n𝑟\n2\n𝑂\n7\n2\n−\n to \n𝐶\n𝑟\n3\n+\n in acidic medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cr2O72−+14H++6e−→2Cr3++7H2O. 6 electrons per mole.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4b42289c-5901-4825-8888-8b60ad329961",
+    "question_text": "How many Faradays are required to deposit 0.295 g of cobalt from CoCl\n2\n solution? (Atomic mass of Co = 59 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 F",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.5 F",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.01 F",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.005 F",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Co2++2e−→Co. 1 mol Co (59 g) requires 2F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "968a7b1c-aca8-4e93-9308-031ff52a2672",
+    "question_text": "What is the standard Gibbs energy change for a cell with \n𝐸\n𝑐\n𝑒\n𝑙\n𝑙\n∘\n=\n0.77\n𝑉\n and 2 electrons transferred? (F = 96500 C/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-74.305 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-148.61 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-96.5 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-297.22 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "ΔrG∘=−nFEcell∘=−2×96500×0.77=−148610J/mol=−148.61kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4862e0b6-e6bb-4cb2-83f2-1434f266d6bb",
+    "question_text": "How many Faradays are required to deposit 5.85 g of sodium from NaNO\n3\n solution? (Atomic mass of Na = 23 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1 F",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.5 F",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.2543 F",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2 F",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Na++e−→Na. 1 mol Na (23 g) requires 1F.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "topic": "Electrochemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Electrochemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

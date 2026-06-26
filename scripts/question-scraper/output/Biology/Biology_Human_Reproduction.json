@@ -1,1 +1,4552 @@
-[]
+[
+  {
+    "id": "05b88305-7568-4335-a779-efd684139d18",
+    "question_text": "Which condition in males is characterized by the abnormal dilation of the pampiniform plexus within the scrotum?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVaricocele",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrocele",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEpididymitis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOrchitis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Varicocele is the condition where the veins within the pampiniform plexus become enlarged, often\n              affecting sperm quality and fertility.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6e55c471-cbfd-4182-ab8a-a37bfbbc02ee",
+    "question_text": "Which of the following is a feature of maternal-fetal circulation during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFetal oxygenation occurs in the lungs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe placenta serves as the primary site of gas exchange",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThere is direct mixing of maternal and fetal blood",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFetal blood remains completely separate due to a thick placental barrier",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In fetal circulation, the placenta is the main organ for gas exchange since the fetal lungs are\n              non-functional until birth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a22712b7-5dd3-4269-88a8-dc52f7bd8b7f",
+    "question_text": "Which process is responsible for the degradation of maternal hormones, leading to menstruation if no fertilization occurs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nActivation of the acrosomal reaction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCortical reaction in the oocyte",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHormonal withdrawal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSperm capacitation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "If fertilization does not occur, the withdrawal of progesterone and estrogen leads to the degeneration of\n              the endometrium and the onset of menstruation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7aa24acf-791c-4fb3-9c4a-89f3d3de90d7",
+    "question_text": "Which of the following best describes the process of spermiogenesis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFormation of primary spermatocytes from spermatogonia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeiotic division of secondary spermatocytes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTransformation of spermatids into mature spermatozoa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStorage of sperm in the epididymis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Spermiogenesis is the process in which round spermatids undergo morphological changes to become mature,\n              motile spermatozoa.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c8fc1d7-d0dd-45a4-ab3d-96c9a0d8dcfc",
+    "question_text": "High levels of estrogen during the late follicular phase result in which of the following effects on the hypothalamic-pituitary axis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNegative feedback, reducing LH secretion",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPositive feedback, triggering the LH surge",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNo effect on LH secretion",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSuppression of FSH release only",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Rising estrogen levels during the late follicular phase cause a positive feedback effect, leading to a\n              surge in LH that triggers ovulation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "484eb263-9982-4b22-ab6c-bff69af40a60",
+    "question_text": "Which structure in the male reproductive system secretes an alkaline fluid that neutralizes the acidic environment of the vagina?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSeminal vesicles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProstate gland",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBulbourethral glands",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpididymis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The prostate gland secretes an alkaline fluid that helps neutralize the vaginal pH, enhancing sperm\n              viability.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09fca966-2394-44bd-9b3f-cd18350ff574",
+    "question_text": "Which of the following conditions is associated with maternal hyperglycemia during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGestational diabetes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPreeclampsia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlacenta previa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHyperemesis gravidarum",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Gestational diabetes is characterized by maternal hyperglycemia and can affect both maternal and fetal\n              outcomes if not managed properly.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0520587a-1a45-4cde-a5e7-f1a9ba565b24",
+    "question_text": "Which medication is commonly used to induce ovulation in women with infertility due to anovulation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nClomiphene citrate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBromocriptine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLetrozole",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMetformin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Clomiphene citrate is widely used to induce ovulation in women with anovulatory infertility, particularly\n              in PCOS.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "46695c70-9126-4d6f-9f34-646c60926413",
+    "question_text": "Which of the following maternal cardiovascular changes is most prominent during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDecreased blood volume",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDecreased cardiac output",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIncreased systemic vascular resistance",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIncreased cardiac output",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "During pregnancy, maternal blood volume and cardiac output increase significantly to meet the heightened\n              metabolic demands.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "212d2b04-f25a-4a76-b8e5-fcc46cea8a80",
+    "question_text": "Which of the following is the primary purpose of embryo cryopreservation in assisted reproductive technology?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTo allow delayed embryo transfer for future cycles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTo increase the fertilization rate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTo enhance sperm motility",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTo induce ovarian hyperstimulation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Embryo cryopreservation enables the storage of embryos for future use, allowing flexibility in timing\n              embryo transfer and reducing repeated ovarian stimulation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bff84251-0189-4fb6-b1a7-7611efe91a87",
+    "question_text": "In which region of the uterus does implantation most commonly occur?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUterine fundus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUterine body",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUterine isthmus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCervix",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The uterine fundus, being rich in blood supply, is the most common site for implantation of the\n              blastocyst.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "782aee06-ba72-4177-8ff3-70e8e5db8d0a",
+    "question_text": "Which event triggers the acrosomal reaction in human sperm?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCapacitation of sperm in the female reproductive tract",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBinding of sperm to the zona pellucida",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nExposure to ovarian hormones",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFusion with the oocyte membrane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The binding of sperm to specific glycoproteins in the zona pellucida triggers the acrosomal reaction,\n              releasing enzymes necessary for penetration.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "89f3bb74-0191-4586-a87c-614118cfd349",
+    "question_text": "Which condition in males is characterized by decreased sperm motility, leading to reduced fertility?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOligospermia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAzoospermia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAsthenospermia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTeratospermia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Asthenospermia is characterized by reduced sperm motility, which can impair the ability of sperm to reach\n              and fertilize the oocyte.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e055c990-76b5-47c2-b162-d489b7f000a9",
+    "question_text": "During the first trimester of pregnancy, which structure is the main source of progesterone?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlacenta",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCorpus luteum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnterior pituitary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdrenal glands",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In early pregnancy, the corpus luteum is the primary source of progesterone until the placenta takes over\n              later in gestation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aba55c27-ce78-4394-b5e3-baa5a762b1bb",
+    "question_text": "Which structure is primarily responsible for early fetal nutrition before placental circulation is fully established?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChorionic villi",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nYolk sac",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmnion",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUmbilical cord",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The yolk sac provides early nutrition to the developing embryo before the placenta takes over nutrient\n              exchange.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "781982c5-4c57-43a9-b394-fd4fee9d68bb",
+    "question_text": "Which technique involves the direct extraction of oocytes for fertilization outside the body?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIntrauterine insemination (IUI)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGamete intrafallopian transfer (GIFT)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOocyte retrieval for in vitro fertilization (IVF)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZygote intrafallopian transfer (ZIFT)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Oocyte retrieval is the process of extracting eggs directly from the ovaries for IVF procedures.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b3d9e96b-a5db-4184-8ba5-72c1cd811813",
+    "question_text": "Which structure in the male reproductive system is primarily responsible for secreting the bulk of the seminal fluid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProstate gland",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSeminal vesicles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBulbourethral glands",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpididymis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The seminal vesicles contribute approximately 60-70% of the total volume of seminal fluid, which\n              nourishes and transports sperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79cfa90c-63bc-4e3c-a015-2fde5cd991ca",
+    "question_text": "Which structure in the placenta is primarily involved in the exchange of nutrients and gases between the mother and the fetus?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChorionic villi",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUmbilical cord",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDecidua basalis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAmniotic sac",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The chorionic villi, which extend into maternal blood spaces, facilitate the exchange of oxygen,\n              nutrients, and waste products between the mother and the fetus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6be5f915-d1b4-4384-ad8e-578bc20e5cc2",
+    "question_text": "Where does fertilization typically occur in the female reproductive tract?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUterus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCervix",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFallopian tube",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOvary",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fertilization most commonly occurs in the fallopian tube, where the sperm meets the ovum.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "119a90f0-4cb3-410b-ad0c-d4f955aced5f",
+    "question_text": "Which process describes the transformation of a primary oocyte into a secondary oocyte along with the formation of polar bodies?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOogenesis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpermatogenesis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeiosis II",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFertilization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Oogenesis is the process by which primary oocytes mature into secondary oocytes with the formation of\n              polar bodies.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "01513bce-01e5-4145-91dd-2f8e541993b1",
+    "question_text": "Which of the following statements about cervical mucus during the menstrual cycle is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is thick and acidic throughout the cycle, preventing sperm passage.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt becomes thin and alkaline around ovulation, facilitating sperm passage.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt remains unchanged in consistency during the cycle.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is only produced after fertilization occurs.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During the peri-ovulatory phase, cervical mucus becomes thin and alkaline to help sperm move easily\n              towards the ovum.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "85da7e13-e8c3-4cd0-861e-87fefe6ef6aa",
+    "question_text": "Which phase of the menstrual cycle is marked by the regrowth of the endometrium after menstruation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMenstrual phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProliferative (follicular) phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOvulatory phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLuteal phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The proliferative phase, part of the follicular phase, is when estrogen promotes the regrowth of the\n              endometrium following menstruation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b82f51f9-3488-40cb-a95e-3da0b84ea42d",
+    "question_text": "Which event marks the completion of oocyte maturation in humans?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeiosis I with formation of polar bodies",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFormation of the secondary oocyte arrested at metaphase II",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCompletion of meiosis II",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOvulation of the primary oocyte",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Oocyte maturation is marked by the formation of a secondary oocyte that arrests at metaphase II until\n              fertilization occurs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f63de03c-2007-415b-8108-8cac2524ac61",
+    "question_text": "Which hormone, produced by the ovaries, inhibits FSH secretion to regulate follicular development?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInhibin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOxytocin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Inhibin, produced by granulosa cells of the ovary, specifically inhibits FSH secretion to prevent\n              overstimulation of follicular development.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "45a29ebe-5b24-45e2-bbbe-10189d583307",
+    "question_text": "Which segment of the fallopian tube is the most common site for fertilization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInfundibulum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAmpulla",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIsthmus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInterstitial part",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The ampulla is the widest segment of the fallopian tube and is the most common site for fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e6008930-6d72-411d-baaf-aeade6772ef5",
+    "question_text": "Which of the following is NOT a primary function of seminal fluid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNourishes and transports sperm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProvides an alkaline medium to neutralize vaginal acidity",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStimulates sperm motility",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDirectly secretes testosterone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Testosterone is produced by the testes (Leydig cells), not by the accessory glands that contribute to\n              seminal fluid.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42a1ff5f-8c16-49c6-bedd-421bcb77358c",
+    "question_text": "Which of the following is responsible for maintaining the corpus luteum during early pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLuteinizing hormone (LH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFollicle-stimulating hormone (FSH)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHuman chorionic gonadotropin (hCG)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProgesterone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "hCG, secreted by the trophoblast, maintains the corpus luteum and ensures continued progesterone\n              production during early pregnancy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d9185ae7-3d90-42b3-8a1f-48a5c148d1d5",
+    "question_text": "Where does fertilization typically occur in the human female reproductive tract?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUterus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCervix",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFallopian tube",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOvary",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fertilization usually takes place in the fallopian tube, where the sperm meets the ovum.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bec84127-6d1c-4d42-98f7-fe61fdf4417b",
+    "question_text": "Which of the following assisted reproductive techniques involves the direct transfer of a fertilized egg into the fallopian tube?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIn vitro fertilization (IVF)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nZygote intrafallopian transfer (ZIFT)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGamete intrafallopian transfer (GIFT)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIntrauterine insemination (IUI)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "ZIFT involves fertilization in vitro and the transfer of the resulting zygote into the fallopian tube.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5bcacd97-3ec6-4f21-8b99-a0dac6d354d0",
+    "question_text": "Which of the following disorders is characterized by multiple ovarian cysts, irregular menstrual cycles, and hyperandrogenism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEndometriosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPolycystic Ovary Syndrome (PCOS)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUterine fibroids",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPrimary amenorrhea",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "PCOS is marked by the presence of multiple cysts on the ovaries, irregular cycles, and elevated androgen\n              levels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e9a18a3d-932e-4cb4-b404-dd0ee47724df",
+    "question_text": "Which cell type in the testes is responsible for supporting and nourishing developing sperm cells?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLeydig cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSertoli cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGerm cells",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpididymal cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sertoli cells provide structural and nutritional support to developing sperm within the seminiferous\n              tubules.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6386cae5-1d20-4eeb-af14-57f46b5e8633",
+    "question_text": "Which of the following best describes fetal circulation during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFetal blood oxygenation occurs entirely in the lungs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe placenta is the primary organ for gas exchange",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe ductus arteriosus directs oxygenated blood away from the heart",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe foramen ovale is a permanent structure in the fetal heart",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In fetal circulation, the placenta serves as the main organ for oxygenation and gas exchange since the\n              lungs are non-functional.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "20949a00-80aa-4cc6-bec9-0ef1e5851380",
+    "question_text": "During which phase of the menstrual cycle do estrogen levels peak?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEarly follicular phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLate follicular phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOvulatory phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLuteal phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Estrogen levels gradually rise during the follicular phase and peak in the late follicular phase, just\n              before the LH surge triggers ovulation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b8d3ced6-21e5-4cf8-b60e-978fe32782e3",
+    "question_text": "Which condition in males is defined as the complete absence of sperm in the ejaculate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOligospermia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAzoospermia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAsthenospermia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTeratospermia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Azoospermia is the condition where no sperm are present in the ejaculate, leading to infertility.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5ea48ce0-0b93-459e-97e7-2bc68bf85eb6",
+    "question_text": "Which of the following is a characteristic feature of azoospermia in males?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nReduced sperm count",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAbsence of sperm in the ejaculate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPoor sperm motility",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbnormal sperm morphology",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Azoospermia is defined as the complete absence of sperm in the ejaculate, a major cause of male\n              infertility.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d8cb8833-76a1-484c-9a1f-c130cc81ad4a",
+    "question_text": "Which part of the uterus is shed during menstruation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMyometrium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPerimetrium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEndometrium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCervix",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The endometrium, or the inner lining of the uterus, is shed during menstruation if no implantation\n              occurs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5d519e19-4312-41be-ad7e-56e2f8d486a9",
+    "question_text": "Which tissue layer of the uterus is responsible for the cyclic regeneration and shedding during the menstrual cycle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPerimetrium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMyometrium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEndometrium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSerosa",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The endometrium is the innermost layer of the uterus that undergoes cyclical regeneration and shedding\n              during menstruation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c68fabe0-7bd3-4863-b2a3-f4ab78daa594",
+    "question_text": "Which of the following events marks the initiation of the luteal phase in the menstrual cycle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMenstruation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOvulation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFollicular phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProliferative phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ovulation triggers the transition from the follicular phase to the luteal phase, during which the corpus\n              luteum forms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cd886b7c-0318-4a17-8153-9f99b817dcde",
+    "question_text": "Which hormone, produced by the placenta later in pregnancy, plays a key role in preparing the maternal body for lactation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHuman placental lactogen (hPL)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOxytocin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Human placental lactogen (hPL) is secreted by the placenta and helps prepare the breasts for lactation by\n              altering maternal metabolism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "90a1ab89-2164-4204-880a-222388eb079a",
+    "question_text": "Which hormone is secreted in a pulsatile manner by the hypothalamus to regulate the reproductive axis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGonadotropin-releasing hormone (GnRH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLuteinizing hormone (LH)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFollicle-stimulating hormone (FSH)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProlactin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "GnRH is released in pulses by the hypothalamus to stimulate the anterior pituitary to secrete LH and FSH,\n              thereby regulating reproduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fbb0dfb8-aa08-4481-b17f-c6323add0e51",
+    "question_text": "Which hormone is released from the anterior pituitary to trigger ovulation in females?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFollicle-stimulating hormone (FSH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLuteinizing hormone (LH)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOxytocin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A surge in luteinizing hormone (LH) from the anterior pituitary triggers ovulation during the menstrual\n              cycle.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fe1a2a14-31af-4b68-b4d8-92c162ed9482",
+    "question_text": "During which phase of the menstrual cycle is the endometrium most receptive to implantation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFollicular phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOvulatory phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLuteal phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMenstrual phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During the luteal phase, under the influence of progesterone, the endometrium becomes thick and receptive\n              to the implantation of a fertilized egg.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "43beab00-07a5-441e-9796-54e51dc9647d",
+    "question_text": "Which hormone is used as a marker in clinical pregnancy tests due to its early secretion by the developing placenta?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHuman chorionic gonadotropin (hCG)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLuteinizing hormone (LH)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "hCG is secreted by the trophoblast soon after implantation and is the hormone detected by pregnancy\n              tests.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b3a49531-2620-4e30-a06d-611686c7845f",
+    "question_text": "Which assisted reproductive technique involves transferring a fertilized embryo directly into the uterine cavity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIntracytoplasmic sperm injection (ICSI)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGamete intrafallopian transfer (GIFT)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nZygote intrafallopian transfer (ZIFT)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEmbryo transfer (ET) following in vitro fertilization (IVF)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Embryo transfer (ET) is the final step in IVF where the cultured embryo is placed into the uterine cavity\n              for implantation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "574cfa4f-1443-41d6-bdec-49420014249c",
+    "question_text": "What is the primary function of the hormone relaxin during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStimulate uterine contractions",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRelax pelvic ligaments and soften the cervix",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIncrease milk production",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMaintain the corpus luteum",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Relaxin helps prepare the female body for childbirth by relaxing pelvic ligaments and softening the\n              cervix.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7f9e22eb-fc2e-4f64-b409-070cd077c4ff",
+    "question_text": "Which of the following best describes the process of embryogenesis immediately following fertilization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCleavage resulting in a morula",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFormation of a blastocyst",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nImplantation in the endometrium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGastrulation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Following fertilization, the zygote undergoes cleavage, forming a morula before further development into\n              a blastocyst.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4b55af99-1401-4ee4-af68-f00ea4844bd3",
+    "question_text": "Which of the following best describes the type of placentation seen in humans?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDiffuse placentation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCotyledonary placentation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDiscoid placentation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZonary placentation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Humans exhibit discoid placentation, where the placenta forms a disc-shaped structure on the uterine\n              wall.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f04ae50f-018b-4773-86e2-3082228f9ce8",
+    "question_text": "During spermatogenesis, which stage directly produces spermatids?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpermatogonia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPrimary spermatocytes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSecondary spermatocytes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSertoli cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Secondary spermatocytes undergo meiosis II to form spermatids, which later mature into spermatozoa.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2e39ed41-3a8f-4d5d-86cf-e48cbd23fcad",
+    "question_text": "What is the primary role of the acrosomal reaction during fertilization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTo provide energy for sperm motility",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTo initiate the capacitation process",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTo facilitate the penetration of the zona pellucida",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTo trigger the cortical reaction in the oocyte",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The acrosomal reaction releases enzymes that digest the zona pellucida, enabling the sperm to penetrate\n              and fuse with the oocyte.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1e245adf-99d4-4fa0-bd84-e100c4477651",
+    "question_text": "Which contraceptive method primarily works by preventing sperm from reaching the ovum?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBarrier methods (e.g., condoms)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOral contraceptive pills",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIntrauterine device (IUD)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSurgical sterilization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Barrier methods, such as condoms, physically block sperm from entering the female reproductive tract and\n              reaching the ovum.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1eebc61e-d1e8-4c11-a450-131abe529fcc",
+    "question_text": "Which process is responsible for the shedding of the endometrial lining during menstruation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOvulation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCortical reaction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHormonal withdrawal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nImplantation failure",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The withdrawal of estrogen and progesterone levels, when fertilization does not occur, leads to the\n              shedding of the endometrium (menstruation).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e13786ed-15da-4423-becf-c8cf0e064616",
+    "question_text": "Which of the following statements regarding ovulation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOvulation occurs at the beginning of the menstrual cycle.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA surge in luteinizing hormone (LH) triggers ovulation.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProgesterone triggers the release of the oocyte.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOvulation occurs during menstruation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The LH surge in the mid-cycle triggers the release of the oocyte from the follicle.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "21749b6b-9573-4951-8922-7f66fba12cfb",
+    "question_text": "Which of the following maternal adaptations is observed during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDecrease in blood volume",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIncreased systemic vascular resistance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIncrease in cardiac output",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDecrease in heart rate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Maternal cardiac output increases during pregnancy due to increased blood volume and heart rate to meet\n              the metabolic demands of both mother and fetus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2334ea5b-079e-4584-98ad-8d44f75cd82b",
+    "question_text": "Which structure in the testes is primarily responsible for androgen secretion?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSertoli cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLeydig cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSeminiferous tubules",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpididymis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Androgens, including testosterone, are mainly produced by Leydig cells located in the interstitial tissue\n              of the testes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5eb1745-29b5-40db-a924-7335253dfcb5",
+    "question_text": "Which hormone is administered in assisted reproduction to induce final oocyte maturation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHuman chorionic gonadotropin (hCG)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGonadotropin-releasing hormone (GnRH)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFollicle-stimulating hormone (FSH)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "hCG is administered to mimic the natural LH surge, inducing final oocyte maturation before retrieval in\n              IVF procedures.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7f4ddfa-4821-4474-a046-00146827bfda",
+    "question_text": "Which part of the male reproductive system is responsible for the maturation and storage of sperm?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTestes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEpididymis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSeminiferous tubules",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVas deferens",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The epididymis is the site where sperm mature and are stored until ejaculation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "32ee8bb9-88ce-4fac-be31-840eacf33d4a",
+    "question_text": "Which structure in the male reproductive system is primarily responsible for sperm production?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEpididymis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVas deferens",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSeminiferous tubules",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProstate gland",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Sperm are produced in the seminiferous tubules of the testes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e9b5ee8-5445-48c4-b276-f4bba2767c02",
+    "question_text": "Which assisted reproductive technique involves injecting a single sperm directly into an oocyte?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIntrauterine insemination (IUI)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nConventional in vitro fertilization (IVF)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIntracytoplasmic sperm injection (ICSI)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGamete intrafallopian transfer (GIFT)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ICSI is a technique where a single sperm is injected directly into an oocyte, widely used to overcome\n              severe male infertility.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cfb8abb1-92e7-4613-ac72-33aa86d06c1b",
+    "question_text": "Which hormone from the anterior pituitary is essential for stimulating testosterone production in males?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFollicle-stimulating hormone (FSH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLuteinizing hormone (LH)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGnRH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Luteinizing hormone (LH) stimulates Leydig cells in the testes to produce testosterone.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f0855429-b0e0-4a43-ae4c-9b6ab602afaf",
+    "question_text": "Which process marks the initiation of embryonic genome activation (EGA)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFormation of the morula",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBlastocyst formation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nImplantation into the endometrium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGastrulation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Embryonic genome activation typically begins during the blastocyst stage when the embryo starts\n              transcribing its own genes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e57b4ba9-6c09-4e7b-9a54-02eaa9fed915",
+    "question_text": "Which tissue covers the surface of the ovary?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTunica albuginea",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGerminal epithelium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOvarian stroma",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMedulla",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The ovary is covered by the germinal epithelium, which is derived from mesothelium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a3dcc992-9fa5-4155-b410-9fe6c5f9abc0",
+    "question_text": "Which of the following best describes the blood-placental barrier?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt allows direct mixing of maternal and fetal blood",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is formed by the trophoblast layers, preventing direct blood mixing while allowing nutrient exchange",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is impermeable to all substances",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt functions only during the first trimester",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The blood-placental barrier, primarily formed by trophoblast layers, prevents direct mixing of maternal\n              and fetal blood while permitting the exchange of nutrients, gases, and wastes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "65dbda93-d9a5-4f61-8323-76a74cfc9f59",
+    "question_text": "Which hormone is known to maintain uterine quiescence during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEstrogen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Progesterone maintains uterine quiescence (prevents contractions) throughout pregnancy until labor\n              begins.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "50bbd088-37b9-4821-8385-4c8bd22ec411",
+    "question_text": "Which test is commonly used to assess ovarian reserve in women?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSerum follicle-stimulating hormone (FSH) measurement",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHysterosalpingography (HSG)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSemen analysis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThyroid function test",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Serum FSH levels, particularly measured on day 3 of the menstrual cycle, are commonly used to assess\n              ovarian reserve.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4e43e1ed-6450-4413-ba58-3cc9e54dff8c",
+    "question_text": "Which of the following conditions is characterized by the presence of endometrial tissue outside the uterine cavity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdenomyosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEndometriosis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPolycystic Ovarian Syndrome (PCOS)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUterine fibroids",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Endometriosis is the condition in which endometrial tissue is found outside the uterus, often causing\n              pelvic pain and infertility.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8a13b657-7cd2-4c7f-bf34-7b6f77e4b427",
+    "question_text": "Which hormone plays a critical role in stimulating the maturation of ovarian follicles during the early menstrual cycle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLuteinizing hormone (LH)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFollicle-stimulating hormone (FSH)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEstrogen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "FSH stimulates the growth and maturation of ovarian follicles during the early (follicular) phase of the\n              menstrual cycle.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c61241f7-3c40-4fe7-b985-a9b82a4b6505",
+    "question_text": "Which hormone is primarily responsible for the milk ejection (let-down) reflex in lactating females?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProlactin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOxytocin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProgesterone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Oxytocin is released from the posterior pituitary and triggers the contraction of myoepithelial cells,\n              leading to milk ejection.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "457d1620-d642-4b70-8ca9-c334b3cd0678",
+    "question_text": "Which of the following describes cryptorchidism in male infants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUndescended testis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnlarged epididymis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbnormal sperm morphology",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBilateral testicular torsion",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Cryptorchidism refers to the condition where one or both testes fail to descend into the scrotum.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4a98355a-07d5-4378-8f2f-bceead8d2dcb",
+    "question_text": "Which cell type in the testis secretes Anti-Müllerian Hormone (AMH) during male fetal development?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSertoli cells",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLeydig cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpermatogonia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpididymal cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Sertoli cells secrete Anti-Müllerian Hormone (AMH) during fetal development, leading to regression of\n              Müllerian ducts in males.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ec0ee673-e88f-4fcc-b71a-d40cd10fd982",
+    "question_text": "Which hormone is primarily responsible for the development of secondary sexual characteristics in females?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTestosterone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProgesterone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEstrogen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFollicle-stimulating hormone (FSH)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Estrogen is the key hormone responsible for the development of secondary sexual characteristics in\n              females.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "topic": "Human Reproduction",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Human Reproduction / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "human-reproduction"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

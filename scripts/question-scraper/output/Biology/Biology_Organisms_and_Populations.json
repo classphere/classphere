@@ -1,1 +1,6463 @@
-[]
+[
+  {
+    "id": "901bf56d-4a5b-4782-bf98-cfb3eeaf38ed",
+    "question_text": "Which of the following is NOT a level of ecological organization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOrganism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPopulation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEcosystem",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCell",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ecology deals with levels from organisms to biomes, but the cell is a structural and functional unit of\n              life, not an ecological level.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e3845c4e-9451-4f21-bd03-9e3c7ca767fa",
+    "question_text": "What is the term for the number of individuals per unit area or volume in a habitat?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPopulation density",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarrying capacity",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBiomass",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAge pyramid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Population density refers to the number of individuals in a specific area or volume, reflecting the\n              population size in a habitat.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eb1cc678-382d-43ae-9b64-04c7d8bfd3c9",
+    "question_text": "Which factor does NOT contribute to an increase in population density?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNatality",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nImmigration",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEmigration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoth 1 and 2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Emigration reduces population density as individuals leave the habitat, while natality and immigration\n              increase it.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2622dbf5-8272-4a72-b0b3-14431bfb06ae",
+    "question_text": "Which of the following statements about population growth is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nExponential growth occurs when resources are limited.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLogistic growth includes a carrying capacity.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPopulation growth is unaffected by resource availability.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBirth and death rates have no effect on population size.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Logistic growth considers carrying capacity, which limits population growth as resources become scarce.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8d2b0626-13a8-452e-b01b-a294a9da189e",
+    "question_text": "Which of the following statements about species interactions is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMutualism benefits both species involved.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCommensalism harms one species and benefits the other.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParasitism benefits one species at the expense of the host.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCompetition occurs when two species vie for the same limited resource.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Commensalism benefits one species while having no effect on the other, making the given statement\n              incorrect.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "55fbe691-543d-44ad-bbe7-f64d4b1e1e60",
+    "question_text": "Which of the following statements about ecological succession is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPrimary succession begins on existing soil.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecondary succession occurs after a disturbance in an area with existing life.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPioneer species appear at the end of succession.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nClimax communities are unstable and constantly changing.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Secondary succession occurs in areas where an ecosystem existed before but was disturbed, such as after a\n              wildfire.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fec7195-3e6c-4d90-80de-7a2832481444",
+    "question_text": "Which of the following statements about density-dependent factors is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDisease spreads more rapidly in dense populations.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFood scarcity affects population size in a density-independent manner.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPredation pressure increases with higher population density.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCompetition for resources is a density-dependent factor.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Food scarcity is a density-dependent factor, as its effects increase with population density.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d8026f2c-6031-4405-8abf-40167e097dc0",
+    "question_text": "Which of the following is an example of mutualism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTiger hunting deer",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLichen (algae and fungi)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCattle egret and grazing cattle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTicks on a dog",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In lichens, both algae and fungi benefit. Algae provide food through photosynthesis, while fungi offer\n              structural support.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b82486ec-2288-4a66-b308-f686b63c2300",
+    "question_text": "Which of the following correctly represents an age pyramid of a stable population?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBroad base, narrow top",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBell-shaped",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInverted pyramid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNarrow base, broad middle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A bell-shaped age pyramid represents a stable population with nearly equal birth and death rates.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "36f1d855-59aa-4c30-8a3c-5ad666c83bf2",
+    "question_text": "What type of growth curve is seen when resources are unlimited?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLogistic growth curve",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS-shaped growth curve",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nJ-shaped growth curve",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLinear growth curve",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Exponential growth results in a J-shaped curve when resources are unlimited, leading to rapid population\n              increase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8e62eb01-cfd5-447d-987e-eb8454e696d7",
+    "question_text": "What is carrying capacity (K) in population ecology?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTotal population at a given time",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMaximum population a habitat can support",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTotal number of births in a year",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe ratio of males to females",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Carrying capacity (K) is the maximum number of individuals that an environment can support sustainably.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4412cf54-4cbd-429b-8675-e2dd2d5898a0",
+    "question_text": "Which type of species interaction benefits one species while harming the other?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMutualism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCommensalism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParasitism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAmensalism",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Parasitism benefits the parasite while harming the host by extracting nutrients or causing disease.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b28e0ad6-9781-4e73-a8a1-17452b5c6af2",
+    "question_text": "Which of the following is an example of commensalism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBarnacles on a whale",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBee pollinating a flower",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLion hunting a zebra",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMosquito biting a human",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Barnacles benefit from attachment to a whale without harming or benefiting the whale, making it a\n              commensal relationship.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5c9850c2-56bf-49b6-b9ba-64765f837ad5",
+    "question_text": "Which of the following is a correct statement about predator-prey relationships?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPredators always eliminate their prey completely.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPrey populations are unaffected by predator numbers.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPredator and prey populations often fluctuate in cycles.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPredators only affect prey populations, but prey do not influence predator populations.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Predator and prey populations are interdependent and fluctuate cyclically based on each other's numbers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "45059cbf-ed06-4b38-bda3-7810989d0160",
+    "question_text": "Which of the following statements about carrying capacity is incorrect?",
+    "image_url": null,
+    "options": [],
+    "correct_answer": [],
+    "explanation": "",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {},
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5e2c17f-1a1c-464a-9647-2ae9ef1abc07",
+    "question_text": "Which of the following statements about population dispersion patterns is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUniform dispersion is the most common in nature.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nClumped dispersion occurs when resources are evenly distributed.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRandom dispersion occurs when individuals are neither attracted to nor repelled by one another.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpecies never show more than one type of dispersion pattern.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Random dispersion occurs when individuals are distributed unpredictably, without attraction or repulsion.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5eaa62ab-96a6-48b6-b804-21898a5f71f2",
+    "question_text": "Which of the following statements about biotic potential is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBiotic potential is the maximum reproductive capacity of a population.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is always reached under natural conditions.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEnvironmental resistance prevents populations from reaching biotic potential.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nr-selected species have a higher biotic potential than K-selected species.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Populations rarely reach their full biotic potential due to limiting environmental factors.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "440816e3-c5a1-4052-89d8-735f86ecd09b",
+    "question_text": "Which species interaction is most important for pollination?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPredation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMutualism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmensalism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCompetition",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mutualism benefits both species, such as pollinators receiving nectar while aiding plant reproduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8837a02c-53a8-4913-a89d-bfebca5b6190",
+    "question_text": "Which of the following factors directly affects population density?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNatality",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMortality",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nImmigration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Population density is influenced by natality (birth rate), mortality (death rate), immigration (arrival),\n              and emigration (departure).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "49519636-1c7c-482f-9b87-48a0a8b7ff18",
+    "question_text": "Which type of population growth is represented by a sigmoid (S-shaped) curve?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nExponential growth",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLogistic growth",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nArithmetic growth",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGeometric growth",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Logistic growth occurs when population expansion slows as resources become limited, resulting in an\n              S-shaped curve.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d9399a17-6514-40c9-8f48-8947ec0b4361",
+    "question_text": "Which of the following is an example of amensalism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCattle egret and grazing cattle",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPenicillium releasing antibiotics inhibiting bacterial growth",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBee and flower interaction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTiger preying on deer",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Amensalism occurs when one species is harmed while the other remains unaffected, such as fungi releasing\n              antibiotics that inhibit bacterial growth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d8f0121a-bc6d-4c17-b69c-e8e68a5c48de",
+    "question_text": "Which scientist is considered the ‘Father of Ecology’ in India?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSalim Ali",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nJ.C. Bose",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRamdeo Misra",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nM.S. Swaminathan",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ramdeo Misra is regarded as the ‘Father of Ecology’ in India for his contributions to ecological research\n              and teaching.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42aa257d-1aed-4dea-865f-fc09fdd7d5df",
+    "question_text": "Which of the following species interactions is NOT a form of symbiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParasitism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMutualism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCommensalism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCompetition",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Symbiosis involves close and prolonged interactions between species, while competition is a struggle for\n              limited resources without direct dependency.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5149040d-0ea6-4306-b980-063c52ee7cd7",
+    "question_text": "Which of the following statements about invasive species is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInvasive species always increase biodiversity.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey can outcompete native species and disrupt ecosystems.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey have no impact on ecosystem stability.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInvasive species are always introduced intentionally by humans.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Invasive species often outcompete native species, leading to reduced biodiversity and ecosystem\n              disruption.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "691f66a8-ccb3-4eaf-8613-0992f6a505fb",
+    "question_text": "Which of the following statements about trophic levels is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProducers form the first trophic level.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnergy transfer between trophic levels is 100% efficient.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPrimary consumers feed directly on producers.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDecomposers recycle nutrients back into the ecosystem.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Energy transfer between trophic levels is inefficient, with only about 10% being passed on.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "16477541-4fb0-4db9-9418-9dd6d3ec706c",
+    "question_text": "Which of the following statements about competition is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIntraspecific competition occurs between different species.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInterspecific competition occurs between members of the same species.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCompetitive exclusion principle states that two species competing for the same resource cannot coexist indefinitely.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCompetition always leads to the extinction of one species.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The competitive exclusion principle states that two species cannot coexist indefinitely if they compete\n              for\n              the same limiting resource.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9907fb42-7298-4842-b175-b2e35d0a2269",
+    "question_text": "Which of the following statements about age pyramids is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA broad-based pyramid indicates a growing population.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA bell-shaped pyramid represents a stable population.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAn inverted pyramid represents a rapidly growing population.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAge pyramids provide insights into future population trends.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "An inverted age pyramid represents a declining population, not a rapidly growing one.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04346112-ff23-4652-bd23-9b3df6e6e8a1",
+    "question_text": "What is the term for a species that plays a crucial role in maintaining ecosystem stability?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInvasive species",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKeystone species",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEndangered species",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExotic species",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Keystone species have a disproportionate impact on their ecosystem, influencing species diversity and\n              stability.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e493e6f7-96dd-4a2f-a381-8c5eb3bcd80d",
+    "question_text": "Which type of plant defense mechanism is represented by thorns on Acacia?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChemical defense",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMorphological defense",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhysiological defense",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSymbiotic defense",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Thorns are a morphological defense that protect plants from herbivores by deterring feeding.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cdf62b5d-c649-41ab-bd3e-9754be751557",
+    "question_text": "Which of the following interactions is an example of brood parasitism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTiger preying on deer",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCuckoo laying eggs in a crow’s nest",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nClownfish living among sea anemone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOrchid growing on a tree",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Brood parasitism occurs when one species lays its eggs in another species' nest, as seen in cuckoos using\n              crow nests for incubation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cf580d9c-86f8-4a88-bb94-5a9ce7b5bc83",
+    "question_text": "Which term describes the maximum number of individuals a habitat can support?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPopulation density",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarrying capacity",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGrowth rate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNatality",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Carrying capacity (K) is the maximum population size that an environment can support indefinitely without\n              resource depletion.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33dd4595-2470-4d86-ae97-a1ce0701be73",
+    "question_text": "Which equation represents exponential population growth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\ndN/dt = rN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\ndN/dt = K – N",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNt = N0 + K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nN = rK",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The equation dN/dt = rN represents exponential growth, where population increases rapidly without\n              resource limitations.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f4b89fcf-ece1-4d8e-bf11-a831852a74db",
+    "question_text": "Which parameter is used to measure the reproductive fitness of a population?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCarrying capacity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNatality rate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIntrinsic rate of natural increase (r)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSex ratio",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The intrinsic rate of natural increase (r) measures how fast a population can grow under ideal\n              conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f4772752-313f-4b87-8990-5c8db2f36bb4",
+    "question_text": "Which of the following is a correct statement about parasitism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParasites always kill their host immediately.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParasitism benefits one species while harming the other.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParasites obtain energy without harming the host.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nParasitism is a form of mutualism.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Parasitism benefits the parasite while harming the host, often weakening but not immediately killing it.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0df0afa-1bda-4d88-9e1d-8a17afb99a59",
+    "question_text": "Which of the following statements about biotic and abiotic factors is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAbiotic factors include sunlight, water, and temperature.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBiotic factors include all living organisms in an ecosystem.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbiotic factors do not influence population growth.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoth biotic and abiotic factors shape ecosystems.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Abiotic factors, such as climate and resource availability, strongly influence population growth and\n              distribution.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "008ad3e7-b7ee-44ae-b6aa-65418c8c28b3",
+    "question_text": "Which of the following statements about ecological succession is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPrimary succession occurs in areas with existing soil.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecondary succession happens after disturbances like wildfires.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPioneer species appear at the climax stage.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEcological succession never leads to a stable community.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Secondary succession occurs in areas where a disturbance has removed vegetation but left the soil intact.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c59f2177-9cba-4277-ad7d-4cfc72af380b",
+    "question_text": "Which of the following is an incorrect statement about r-selected species?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey produce many offspring with minimal parental care.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey tend to have a short lifespan.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey exhibit slow growth and delayed reproduction.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey often thrive in unpredictable environments.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "r-selected species reproduce quickly, grow rapidly, and do not exhibit delayed reproduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9efe111e-76a8-4380-8791-9d80ea85a4bd",
+    "question_text": "Which of the following is an example of resource partitioning?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLion and tiger hunting the same prey in the same area",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDifferent species of warblers feeding on different parts of the same tree",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTwo species of finches competing for the same food",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCuckoo laying eggs in a crow's nest",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Resource partitioning occurs when species use different parts of a resource to reduce competition, such\n              as warblers feeding on different tree zones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "029ad07a-bcce-4ddd-9420-459592d0dd2a",
+    "question_text": "Which of the following equations represents logistic growth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\ndN/dt = rN",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\ndN/dt = rN (K-N)/K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNt = N0 e^rt",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nN = K+r",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The logistic growth equation accounts for limited resources, with growth slowing as population nears\n              carrying capacity (K).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4624161d-7669-49a8-8a7d-4ab09ce5dd28",
+    "question_text": "Which of the following statements about mutualism is FALSE?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBoth species benefit in mutualism.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMycorrhizae help plants absorb nutrients while receiving carbohydrates.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPredation is a form of mutualism.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFig trees and wasps show a highly specific mutualistic relationship.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Predation is not mutualism because it benefits only one species while harming the other.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "627f6722-4f1e-4934-9300-c9c9021982ef",
+    "question_text": "In which type of age pyramid does the pre-reproductive population size dominate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStable",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDeclining",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nExpanding",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "An expanding age pyramid has a broad base, indicating a high proportion of pre-reproductive individuals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "187a4b6b-77ac-471f-b1ca-b92d1549ad24",
+    "question_text": "Which of the following interactions is NOT correctly matched?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCommensalism - One benefits, other is unaffected",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParasitism - Both species benefit",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMutualism - Both species benefit",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCompetition - Both species are harmed",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Parasitism benefits the parasite while harming the host, unlike mutualism where both species benefit.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2c5083d1-8eea-40cf-b283-d77b88ddc09c",
+    "question_text": "Which of the following is an example of cryptic coloration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA vulture feeding on dead animals",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA chameleon changing color to blend with its surroundings",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nA cuckoo laying eggs in a crow’s nest",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nA mosquito feeding on human blood",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cryptic coloration helps organisms blend with their surroundings to avoid predators, as seen in\n              chameleons.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f04d24ae-3fad-42b9-bcd1-b0e201ae7ccc",
+    "question_text": "Which of the following statements about food chains is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEnergy flow in a food chain is unidirectional.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAll organisms in a food chain occupy the same trophic level.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPrimary consumers feed on secondary consumers.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProducers obtain energy from consumers.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Energy in a food chain flows in one direction, from producers to consumers and then to decomposers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f1f4ec73-8864-4790-bbee-db510b8de28a",
+    "question_text": "Which of the following is an incorrect statement about keystone species?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKeystone species have a significant impact on ecosystem stability.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey are always the most abundant species in an ecosystem.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRemoving a keystone species can cause ecosystem collapse.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPredators and primary producers can both be keystone species.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Keystone species are not necessarily the most abundant but play a critical role in maintaining ecosystem\n              structure.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "47433d76-f9e8-471a-95f9-d39dafcfc387",
+    "question_text": "Which of the following statements about biodiversity is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHigher biodiversity leads to greater ecosystem stability.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBiodiversity is unaffected by habitat destruction.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEcosystems with low biodiversity are more resilient to disturbances.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBiodiversity only refers to the number of different species in an ecosystem.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Higher biodiversity increases ecosystem stability and resilience to environmental changes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3d4a6386-9e76-4f1c-848a-1917f4b2c1a4",
+    "question_text": "Which of the following statements about invasive species is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInvasive species can outcompete native species.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey always improve ecosystem biodiversity.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInvasive species may lack natural predators in their new habitat.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey can alter ecosystem structure and function.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Invasive species often reduce biodiversity by outcompeting native species and disrupting ecosystem\n              balance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2870dbb3-e2d5-444e-b090-6842d4499d7b",
+    "question_text": "What is Gause’s Competitive Exclusion Principle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTwo species can coexist indefinitely in the same niche.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTwo closely related species cannot coexist indefinitely in the same niche.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCompetition always results in extinction.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHerbivory is a type of competition.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gause’s Competitive Exclusion Principle states that when two species compete for the same resources, the\n              inferior competitor will be eliminated.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0ac87ce6-a3bf-4378-99b9-f8929b419d6f",
+    "question_text": "Which of the following interactions is observed between sea anemone and clownfish?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPredation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParasitism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCommensalism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMutualism",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The clownfish benefits from the protection of the sea anemone, while the sea anemone remains unaffected.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e30efa04-1605-4772-b924-68bce076600f",
+    "question_text": "Which of the following is an r-selected species characteristic?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLong lifespan",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFew offspring with high parental care",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRapid reproduction and high number of offspring",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSlow development",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "r-selected species reproduce rapidly, producing many offspring with little or no parental care.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cd54215d-247e-4230-8a5d-90064cf054bf",
+    "question_text": "Which of the following factors is NOT involved in regulating population size?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNatality",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMortality",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nImmigration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdaptation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Adaptation is an evolutionary process rather than a direct factor in regulating population size, unlike\n              natality, mortality, and migration.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0e7ee21-200a-48b6-bad5-5f3a413922f7",
+    "question_text": "Which method is commonly used for estimating tiger population in India?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDirect headcount",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPugmark and fecal pellet analysis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nQuadrat sampling",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMark-recapture method",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Tiger populations are estimated using indirect methods such as pugmark and fecal pellet analysis to avoid\n              disturbing the animals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b21ab0a2-fcf1-4cd6-b2a0-e9dc30f95946",
+    "question_text": "Which of the following is an example of interference competition?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlants competing for sunlight",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLions and leopards fighting over a kill",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTwo species of birds feeding on the same seeds",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFish competing for dissolved oxygen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Interference competition occurs when organisms directly interact and obstruct access to resources, such\n              as lions and leopards fighting over a kill.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4d1f8f77-ff0c-49e6-8a5c-b3b97514fa5a",
+    "question_text": "Which of the following statements about primary succession is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt occurs in areas where no life previously existed.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt happens after a forest fire.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt begins with the establishment of large trees.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt leads to the immediate formation of a climax community.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Primary succession occurs in lifeless areas, such as newly formed volcanic islands, where no life\n              previously\n              existed.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d4c39c75-62f9-43f7-b6ed-bc10a3618fab",
+    "question_text": "Which of the following statements about the logistic growth model is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt accounts for environmental resistance.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt follows an S-shaped curve.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt assumes unlimited resources.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrowth rate decreases as population size approaches carrying capacity.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The logistic growth model does not assume unlimited resources; instead, it includes carrying capacity,\n              which\n              limits population growth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79cee387-8831-4c02-8076-1a593207061f",
+    "question_text": "Which of the following is a correct statement about food webs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey represent a single pathway of energy flow.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey show multiple interconnected food chains.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey consist only of herbivores and carnivores.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey do not include decomposers.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Food webs depict multiple interconnected food chains, showing complex feeding relationships within an\n              ecosystem.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "258ec9bc-7631-410f-8e49-15f548be4ecc",
+    "question_text": "Which of the following statements about mutualism is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBoth species benefit from the relationship.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is an example of a symbiotic interaction.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOne species benefits while the other is harmed.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPollination by bees is an example of mutualism.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In mutualism, both species benefit from the interaction, unlike parasitism, where one species is harmed.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "313b4b19-a25b-4c1c-905d-c9abf2fa577d",
+    "question_text": "Which of the following is an example of an invasive species?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBanyan tree",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEucalyptus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParthenium (Carrot grass)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPeepal tree",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Parthenium (Carrot grass) is an invasive species that spreads rapidly and disrupts native ecosystems.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dbb6b9b4-518a-4948-84fd-e201f147d058",
+    "question_text": "Which species interaction benefits one species but harms the other?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMutualism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCommensalism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParasitism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAmensalism",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Parasitism benefits the parasite while harming the host, as seen in ticks feeding on a dog's blood.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c02a22d7-ffdb-4069-9d67-d56e1a099dfc",
+    "question_text": "Which of the following represents an example of a stable population?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nExpanding age pyramid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDeclining age pyramid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBell-shaped age pyramid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInverted age pyramid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "A bell-shaped age pyramid indicates a stable population with birth and death rates in balance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "17004cf5-897a-475b-95f5-2285aace5829",
+    "question_text": "What type of relationship is observed between the fig tree and the wasp?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParasitism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCommensalism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMutualism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPredation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The fig tree provides a site for wasp egg-laying, while the wasp pollinates the fig tree, making it a\n              mutualistic relationship.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7f2d9d8d-c690-43fc-b19d-d41d9240d26c",
+    "question_text": "Which of the following factors causes population decline?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHigh natality",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nImmigration",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEmigration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoth 2 and 3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Emigration leads to a decrease in population size as individuals leave a habitat.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8c9f3bd0-3812-473d-86e9-4c80c3d2ccf5",
+    "question_text": "Which of the following correctly describes the relationship between orchid and mango tree?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCommensalism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMutualism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParasitism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAmensalism",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Orchid benefits by growing on the mango tree without harming or benefiting it, which is an example of\n              commensalism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3a0df987-d0c1-451e-9652-67e18eadcc2e",
+    "question_text": "Which of the following is a correct statement about ecological footprints?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt measures the total energy stored by producers.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt quantifies the amount of land and resources required to support an individual or population.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt only accounts for carbon emissions.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt remains constant regardless of resource consumption.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The ecological footprint measures the resources required to sustain an individual or population,\n              including\n              land use, energy, and waste production.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5ed97063-9f34-47e9-851c-663be9c40ca6",
+    "question_text": "Which of the following statements about energy flow in an ecosystem is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEnergy flow is unidirectional in an ecosystem.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProducers convert solar energy into chemical energy.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOnly 10% of energy is transferred from one trophic level to the next.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEnergy is recycled within an ecosystem.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Energy is not recycled; it flows in one direction through the ecosystem and is eventually lost as heat.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4b2f153d-df07-48d0-8764-9cd79794636d",
+    "question_text": "Which of the following is an incorrect statement about biodiversity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBiodiversity includes genetic, species, and ecosystem diversity.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigher biodiversity generally increases ecosystem stability.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBiodiversity loss has no impact on ecosystem functions.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConservation efforts aim to preserve biodiversity.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Biodiversity loss negatively impacts ecosystem functions, reducing resilience and stability.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f024585d-768f-47cd-bf1b-1381848d9e43",
+    "question_text": "Which of the following statements about niche differentiation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt prevents competition by allowing species to use different resources.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt increases direct competition between species.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt causes two species to occupy the exact same niche.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt reduces species diversity within an ecosystem.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Niche differentiation allows species to coexist by utilizing different resources, reducing direct\n              competition.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "95ccf324-1ea6-4699-9d3f-ca5f94f6e234",
+    "question_text": "Which of the following is a characteristic of K-selected species?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHigh reproductive rate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nShort lifespan",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParental care and low number of offspring",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRapid population growth",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "K-selected species invest in fewer offspring with high parental care, ensuring their survival.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b8d258bd-90f6-405a-aee5-c0fbc4d8d345",
+    "question_text": "Which of the following best defines a population?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA group of organisms of different species living in an area",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA community of interacting organisms in an ecosystem",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nA group of individuals of the same species living in a specific area",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll organisms living in a habitat",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "A population consists of individuals of the same species inhabiting a particular area, sharing resources,\n              and interbreeding.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "63fc0d82-bb9b-4207-8154-bea2fcbc95eb",
+    "question_text": "What does a declining age pyramid indicate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHigh natality and low mortality",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMore pre-reproductive individuals",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMore post-reproductive individuals",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nA stable population",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "A declining age pyramid has more post-reproductive individuals, indicating a shrinking population due to\n              low birth rates.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0558f0aa-5bb7-497f-9c7e-3cbe3778620b",
+    "question_text": "Which of the following is an example of secondary succession?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nColonization of a newly formed volcanic island",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGrowth of plants in an abandoned farmland",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDevelopment of life on a glacier",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFormation of a coral reef",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Secondary succession occurs in areas where life existed before, such as abandoned farmland.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "facecc5a-0ed2-424f-8444-b1f8aaa8a0f1",
+    "question_text": "Which of the following statements about the nitrogen cycle is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNitrogen fixation converts nitrogen gas into a usable form for plants.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDenitrification increases soil nitrogen levels.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlants can absorb nitrogen directly from the atmosphere.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe nitrogen cycle does not involve bacteria.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Nitrogen fixation by bacteria converts atmospheric nitrogen into ammonia, which can be used by plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "46f183d2-f721-4a01-81a2-c0aad06a72d7",
+    "question_text": "Which of the following is an incorrect statement about population ecology?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPopulation size is influenced by birth and death rates.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nImmigration increases population size.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarrying capacity can change due to environmental factors.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPopulation growth is never affected by resource availability.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Resource availability affects population growth, as limited resources lead to competition and population\n              regulation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eeccf19f-e8ee-4568-a681-c363f9def00f",
+    "question_text": "Which of the following statements about population dispersion patterns is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nClumped dispersion occurs when resources are evenly distributed.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRandom dispersion is the most common pattern in nature.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUniform dispersion is often due to competition among individuals.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDispersion patterns do not affect population interactions.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Uniform dispersion occurs when individuals compete for limited resources, leading to evenly spaced\n              distribution.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "88b08c87-9974-489e-9e20-3695c5209c49",
+    "question_text": "Which of the following is a common strategy used by prey to avoid predation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCamouflage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProducing large numbers of offspring",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHibernation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSymbiosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Camouflage helps prey blend into their surroundings, making it harder for predators to detect them.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c1882592-d891-47bb-9c52-81eea873a3e1",
+    "question_text": "Which species interaction is similar to parasitism but does NOT result in the immediate death of the host?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPredation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCommensalism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmensalism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nParasitism",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Parasitism, like predation, benefits one species while harming the other, but it does not cause immediate\n              death of the host.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e2f2d38a-6130-4c5a-a403-fc07b7211fca",
+    "question_text": "Which of the following statements about biogeochemical cycles is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNitrogen fixation converts nitrogen gas into ammonia.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDenitrification increases soil nitrogen levels.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe phosphorus cycle includes an atmospheric component.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe carbon cycle does not involve respiration.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Nitrogen fixation by bacteria converts atmospheric nitrogen (N₂) into ammonia (NH₃), making it available\n              for\n              plant uptake.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6b1fe5d5-9d6d-40be-8e09-53af3b432c97",
+    "question_text": "What is the role of pioneer species in ecological succession?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are the final stage in succession",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey prepare the habitat for other species",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey are always trees",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey cause habitat destruction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Pioneer species colonize barren environments and modify them, enabling other species to establish.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7509a23c-4d55-4a08-8123-60b9722d42fb",
+    "question_text": "Which factor is most likely to cause a population bottleneck?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGenetic drift",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOverhunting",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMutation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStable environment",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Overhunting or natural disasters can drastically reduce population size, leading to a bottleneck effect\n              and loss of genetic diversity.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "26f92ab9-78c5-4a41-aeb1-7fb6c56a95ed",
+    "question_text": "Which of the following population characteristics is most useful for predicting future population growth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCarrying capacity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAge structure",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBody size",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFood preferences",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Age structure helps predict future population growth by showing the proportion of individuals in\n              reproductive and pre-reproductive stages.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "020b2237-59c7-433e-a28d-45b5987858e0",
+    "question_text": "Which of the following statements about population growth is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nExponential growth occurs when resources are unlimited.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLogistic growth does not consider carrying capacity.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBirth and death rates do not affect population size.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEnvironmental resistance has no impact on population growth.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Exponential growth occurs when resources are abundant, allowing populations to grow without limits.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b45ace9f-9318-4f5b-93d2-d76a1f48add8",
+    "question_text": "Which of the following interactions occurs when one species benefits and the other remains unaffected?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParasitism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMutualism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCommensalism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCompetition",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In commensalism, one species benefits while the other is neither helped nor harmed, such as barnacles on\n              a whale.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "946869c2-a0c1-4bfc-b982-438900b72cd0",
+    "question_text": "Which of the following statements about ecological pyramids is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPyramids of energy are always upright.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPyramids of biomass can sometimes be inverted.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPyramids of numbers always have a larger base than upper levels.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEcological pyramids show the flow of energy and biomass in ecosystems.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Pyramids of numbers can be inverted in certain ecosystems, such as in forests where a few large trees\n              support\n              many consumers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ff988128-939a-41a1-81fd-ae51a554e84d",
+    "question_text": "Which of the following is a correct statement about ecosystem resilience?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEcosystem resilience refers to the ability to recover from disturbances.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nResilient ecosystems are always fragile.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBiodiversity has no effect on resilience.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nResilience decreases when species interactions are strong.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Ecological resilience refers to an ecosystem's ability to recover from disturbances while maintaining\n              function and stability.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "599dae93-f259-4d4a-89f5-ed40fd20747c",
+    "question_text": "Which type of competition occurs between individuals of the same species?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInterspecific competition",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIntraspecific competition",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMutualism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCommensalism",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Intraspecific competition occurs among individuals of the same species competing for limited resources.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e36aa8d3-6fc8-4d82-a2e3-a985b78465a3",
+    "question_text": "What happens when a population reaches carrying capacity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPopulation growth stops or stabilizes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPopulation growth accelerates",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nResources become unlimited",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBirth rate increases indefinitely",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "When a population reaches carrying capacity, growth slows due to limited resources and increased\n              competition.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8f7cdb28-5e07-4efe-809d-e326a064fa5a",
+    "question_text": "Which factor is most responsible for fluctuations in population size?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nClimate change",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAvailability of food and resources",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGenetic mutations",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIndividual adaptations",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Availability of food and resources directly affects population size by influencing birth and death rates.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b1e00d9b-15a2-49de-8310-6b5b9b67f0de",
+    "question_text": "Which of the following best describes Gause’s Competitive Exclusion Principle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTwo species can occupy the same niche indefinitely",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTwo species competing for the same resources cannot coexist indefinitely",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpecies always evolve to avoid competition",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPredation prevents competition among species",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gause’s Competitive Exclusion Principle states that two species competing for the same resources cannot\n              coexist indefinitely; one will outcompete the other.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dfb734c5-39d6-4b1b-9c20-dba8537d822f",
+    "question_text": "Which of the following statements about the greenhouse effect is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGreenhouse gases absorb and trap heat in the atmosphere.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarbon dioxide is not a greenhouse gas.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe greenhouse effect has no impact on global temperatures.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGreenhouse gases decrease heat retention on Earth.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Greenhouse gases like CO₂ and methane trap heat in the Earth's atmosphere, contributing to global\n              warming.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ed5aec18-3812-40c7-a87b-071d74b13f29",
+    "question_text": "Which population interaction is responsible for the success of biological control programs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMutualism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParasitism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPredation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCompetition",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Biological control relies on predation, where natural predators control pest populations.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b1c663e-975f-4649-ba11-bb97de65d34a",
+    "question_text": "Which of the following is an incorrect statement about invasive species?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInvasive species can outcompete native species for resources.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey have no impact on ecosystem stability.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey often lack natural predators in their new habitat.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey can alter nutrient cycling and ecosystem functions.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Invasive species often disrupt ecosystem stability by altering food webs, reducing biodiversity, and\n              outcompeting native species.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "07b0c2e6-ca5f-4a09-bd0f-15b2bcd2add4",
+    "question_text": "What does the term \"biotic potential\" refer to?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe maximum reproductive capacity of a species under ideal conditions",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe number of individuals in a population",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe rate of immigration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe carrying capacity of an environment",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Biotic potential is the highest possible reproductive capacity of a species when environmental conditions\n              are optimal.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "880045db-edf5-455c-906f-7500c1daf389",
+    "question_text": "Which of the following is an example of an r-selected species?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElephant",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHuman",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBacteria",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWhale",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "r-selected species, such as bacteria, reproduce quickly and produce many offspring with little parental\n              care.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42688093-cd29-4ef9-94eb-3e4f021cf6c1",
+    "question_text": "Which of the following is a correct statement about nutrient cycles?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe nitrogen cycle involves bacteria in nitrogen fixation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe phosphorus cycle has a significant atmospheric component.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe water cycle does not include transpiration.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCarbon is only cycled in terrestrial ecosystems.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bacteria play a key role in the nitrogen cycle by converting atmospheric nitrogen into forms usable by\n              plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a0d97e04-a0ae-4270-b8a3-0733fb051922",
+    "question_text": "Which of the following statements about the greenhouse effect is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGreenhouse gases trap heat in Earth's atmosphere.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarbon dioxide and methane are greenhouse gases.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe greenhouse effect causes a decrease in global temperatures.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWater vapor contributes to the greenhouse effect.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The greenhouse effect increases global temperatures by trapping heat in the atmosphere, not decreasing\n              it.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2f8eb20f-1376-4965-809e-53b1ee2c4e9f",
+    "question_text": "Which of the following represents a density-independent factor affecting population growth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDisease",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPredation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEarthquake",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCompetition",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Earthquakes are density-independent because they impact populations regardless of their size.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d9758a79-f2cd-494f-ab90-7d8215fbdafa",
+    "question_text": "Which of the following statements about biodiversity is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBiodiversity includes genetic, species, and ecosystem diversity.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigher biodiversity increases ecosystem resilience.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBiodiversity loss has no impact on ecosystem stability.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConservation efforts help preserve biodiversity.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Biodiversity loss negatively affects ecosystem functions, reducing stability and resilience to\n              disturbances.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e40b4fbd-fbf2-42b3-a1ad-28c46d7cc1b1",
+    "question_text": "Which of the following is an example of secondary succession?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLichen colonizing bare rocks",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRegrowth of a forest after a wildfire",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCoral reef formation in deep waters",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBacteria colonizing a new volcanic island",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Secondary succession occurs when an existing ecosystem is disturbed but soil remains, such as after a\n              wildfire.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7d394683-236a-4d05-ab41-fd07576c34cf",
+    "question_text": "Which of the following statements about carrying capacity is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is the maximum population size an environment can support indefinitely.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPopulations always remain exactly at carrying capacity.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is fixed and does not change with environmental conditions.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExceeding carrying capacity has no impact on population stability.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Carrying capacity represents the largest population an environment can sustainably support over time.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "283f0aa7-cc82-477b-b2b7-e4934347be29",
+    "question_text": "Which factor is most important in determining the distribution of a species?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPredation pressure",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAbiotic and biotic factors",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNumber of mutations",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGeographical latitude",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Species distribution is determined by abiotic (temperature, water) and biotic (predation, competition)\n              factors.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Organisms and Populations",
+    "topic": "Organisms and Populations",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Organisms and Populations / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "organisms-and-populations"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

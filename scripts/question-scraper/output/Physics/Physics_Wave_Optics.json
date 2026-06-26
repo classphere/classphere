@@ -1,1 +1,7737 @@
-[]
+[
+  {
+    "id": "06c812c5-2366-4ea0-9baf-7e63329e3eb6",
+    "question_text": "What determines the visibility of interference fringes when light passes through two slits?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAmplitude equality",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWavelength variation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nConstant phase difference",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpeed uniformity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Coherence, or a constant phase difference between the waves from the slits, is essential for a visible,\n              stable interference pattern.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "977705dd-84f9-42e2-96a3-a0153c2eca16",
+    "question_text": "What fundamental principle allows the prediction of a new wavefront’s shape from a known wavefront using secondary wavelets?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSuperposition",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nConservation of energy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHuygens’ principle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMalus’ law",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Huygens’ principle states that every point on a wavefront acts as a source of secondary wavelets, whose\n              envelope forms the new wavefront.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ca4db1cd-2bd5-4267-9e54-eba9098ba9aa",
+    "question_text": "What is the path difference for the seventh bright fringe in a double-slit experiment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6\n𝜆",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7\n𝜆",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n13\n𝜆\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5\n𝜆",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Constructive interference occurs at Δ=nλ. For the seventh bright fringe, n=7,\n              so Δ=7λ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "878325fc-c7af-44e6-9bfd-8620fc782c09",
+    "question_text": "What is the shape of the wavefront emitted by a point source at a large distance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpherical",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCylindrical",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElliptical",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "At a large distance from a point source, the spherical wavefront appears plane over a small region.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "86c3fb14-a2b7-4ac8-8600-6a7d791529ad",
+    "question_text": "What prevents the formation of an interference pattern when two independent light sources are used?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDifferent amplitudes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLack of coherence",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUnequal wavelengths",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpeed variation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Independent sources lack a fixed phase relationship (incoherence), causing rapid phase fluctuations that\n              average out interference effects.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "007f9d6f-3008-46f1-b3b2-cc224e3e843b",
+    "question_text": "What is the refractive index of a medium if the speed of light in it is \n2.25\n×\n10\n8\nm/s\n and in vacuum is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.25",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.33",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Refractive index n=cv.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e453c828-d30c-4ba6-a4ea-ed26efc5a4a2",
+    "question_text": "What is the frequency of light with a wavelength of \n480\nnm\n in air, given the speed of light in air is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.0\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.25\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.0\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.0\n×\n10\n14\nHz",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frequency ν=cλ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "936ce42a-665e-4bb1-b473-d9c93f5820c6",
+    "question_text": "What distinguishes the interference pattern of a double-slit experiment from the diffraction pattern of a single slit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDifferent frequencies",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAmplitude variation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNumber of sources",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWavelength change",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Interference involves superposition from two sources, producing evenly spaced fringes, while diffraction\n              from one slit creates a broad central maximum with weaker secondary maxima.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b26e189-ec68-4eac-9ec6-4029af0e47e0",
+    "question_text": "What is the intensity of light transmitted through two polaroids with their pass-axes at \n45\n∘\n to each other, if the initial intensity after the first polaroid is \n𝐼\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝐼\n0\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝐼\n0\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Using Malus’ law, I=I0cos2⁡θ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7e8b3355-f015-47ce-b124-6aa8b660176e",
+    "question_text": "Why does total internal reflection occur only when light travels from a denser to a rarer medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLight’s amplitude increases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWavelength doubles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCritical angle exists in denser medium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrequency changes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In a denser medium, the critical angle exists due to a lower speed, beyond which refraction cannot occur,\n              leading to reflection; this doesn’t happen in the reverse direction.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5f243ed4-9b18-45ab-b4da-1461e4a72055",
+    "question_text": "What happens to the central maximum’s width in a single-slit diffraction pattern if the slit width is reduced to half?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHalves",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTriples",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDoubles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Angular width 2θ=2λa. If a is halved, 2θ doubles.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a0616eac-24ec-4a20-83bb-95a3e7df7016",
+    "question_text": "What is the distance of the fifth dark fringe from the central maximum in a double-slit experiment if \n𝜆\n=\n650\nnm\n, \n𝑑\n=\n0.5\nmm\n, and \n𝐷\n=\n1.0\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.2 mm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.5 mm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.85 mm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7.8 mm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Dark fringe position xn=(n+12)λDd. For the fifth dark\n              fringe, n=4.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "19f1a4e1-6a72-4d84-a227-ad3ed32e4907",
+    "question_text": "What is the nature of the interference pattern formed by incoherent sources?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBright and dark fringes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOnly bright fringes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOnly dark fringes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUniform illumination",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Incoherent sources produce no stable interference pattern; intensities simply add up, resulting in\n              uniform illumination.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ca6a6fcd-a39e-40f6-8330-bd78a9729d87",
+    "question_text": "In a single-slit diffraction pattern, what happens to the central maximum’s width if the slit width is tripled?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTriples",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDoubles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nReduces to one-third",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Angular width 2θ=2λa. If a is tripled, 2θ is reduced to\n              one-third.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b820d830-4aac-4033-80e1-be627d0d2af3",
+    "question_text": "What is the amplitude of the resultant wave when two coherent waves of amplitude \n𝑎\n interfere with a phase difference of \n𝜋\n/\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑎\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Resultant amplitude A=2acos⁡(ϕ/2).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c10751b7-cc39-44f7-945f-0e1dff27c617",
+    "question_text": "What happens to the frequency of light when it refracts from air into water?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIncreases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDecreases",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDoubles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The frequency of light depends on the source and remains constant during refraction, as only speed and\n              wavelength change with the medium.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "76e973b9-5656-44d1-8916-719ffa4077c3",
+    "question_text": "What is the angular position of the fourth minimum in a single-slit diffraction pattern if the slit width is \n5.0\n𝜇\nm\n and the wavelength is \n500\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n17.5°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n23.6°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n13.9°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Minima occur at sin⁡θ=nλa. For the fourth minimum, n=4.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "88a5d5df-a4e8-4994-b13c-48751b74aad7",
+    "question_text": "When a plane wave reflects off a plane surface, what is the relationship between the angle of incidence and the angle of reflection?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAngle of incidence = Angle of reflection",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAngle of incidence > Angle of reflection",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAngle of incidence < Angle of reflection",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAngle of reflection = 90°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The law of reflection states that the angle of incidence equals the angle of reflection.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d49d1750-7dc3-4995-af4b-0fb44b193f38",
+    "question_text": "Why does the intensity of light transmitted through three polaroids reach a maximum when the middle one is at 45° to the crossed first and third polaroids?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrequency alignment",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWavelength matching",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmplitude doubling",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMaximum projection of polarization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "At 45°, the middle polaroid allows maximum projection of the polarized light from the first to pass\n              through the third, optimizing the cosine-squared term in Malus’ law.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82397db1-b31d-45c2-ae13-af14caa596c5",
+    "question_text": "What is the intensity of light after passing through two polaroids with pass-axes at \n60\n∘\n, if the initial unpolarized intensity is \n𝐼\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝐼\n0\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝐼\n0\n8",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝐼\n0\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "After the first polaroid, I=I02. After the second at 60∘, I=I02cos2⁡60∘=I02×14=I08.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0db90f4a-32f4-4ee7-9657-7473fbf64d11",
+    "question_text": "What is the intensity of light after passing through two polaroids with their pass-axes perpendicular to each other, if the initial intensity is \n𝐼\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝐼\n0\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝐼\n0\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝐼\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "After the first polaroid, intensity is I02. For the second polaroid at 90∘, I=I02cos2⁡90∘=I02×0=0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "97d47e8a-76ec-4147-8ddd-c71c22bd2d62",
+    "question_text": "What property of light waves causes the bending of rays around corners in a diffraction experiment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWave nature",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigh speed",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nConstant frequency",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPolarization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Light’s wave nature allows it to spread and bend around obstacles when encountering apertures comparable\n              to its wavelength, unlike particle-like straight paths.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b53b03b3-a0d5-4128-a63a-d9434ce07d5f",
+    "question_text": "What ensures that a convex lens can focus light from a plane wave into a single point?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDifferential delay across the lens",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIncrease in light speed",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUniform amplitude",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChange in frequency",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The lens delays the central part of the plane wave more than the edges due to its thickness, transforming\n              it into a spherical wavefront converging at the focus.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b347a16-a0c2-43f1-99cf-95f447c91309",
+    "question_text": "What is the shape of the wavefront after a plane wave reflects off a plane mirror?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpherical",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCylindrical",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTilted",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "A plane wave reflecting off a plane mirror remains a plane wavefront, as the reflection preserves its\n              flat nature.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d534b74-58e2-43af-804b-5034d67dcae8",
+    "question_text": "What is the speed of light in a medium with refractive index 1.3, given the speed in vacuum is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.31\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.07\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.0\n×\n10\n8\nm/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Speed in a medium v=cn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "50084193-27f4-40c0-be3c-9aff078577fd",
+    "question_text": "In a single-slit diffraction pattern, what happens to the intensity of secondary maxima as their order increases?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBecomes zero",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDecreases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The intensity of secondary maxima decreases with increasing order, becoming weaker away from the central\n              maximum.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "91e523f6-19aa-44f8-b8fe-0d9b106f9717",
+    "question_text": "What is the effect on the energy of a light wave when its speed decreases in a denser medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRemains unchanged",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDecreases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIncreases",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBecomes zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Energy of a light wave depends on its amplitude, not its speed, so it remains unchanged when speed\n              decreases.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e9ea2939-fa9b-45c2-8a08-1854df1d007c",
+    "question_text": "What is the frequency of light with a wavelength of \n630\nnm\n in air, given the speed of light in air is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.56\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.76\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.0\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.25\n×\n10\n14\nHz",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frequency ν=cλ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e43d2de6-9abb-43c8-8d01-ea9c3011b9c8",
+    "question_text": "What is the distance of the sixth bright fringe from the central maximum in a double-slit experiment if \n𝜆\n=\n470\nnm\n, \n𝑑\n=\n0.4\nmm\n, and \n𝐷\n=\n2.0\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n14.1 mm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n11.75 mm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9.4 mm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16.45 mm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bright fringe position xn=nλDd. For the sixth bright fringe, n=6.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "35b45a1c-54af-4325-9133-220680eb29b4",
+    "question_text": "What is the speed of light in a medium with refractive index 1.6, given the speed in vacuum is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.875\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.31\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.07\n×\n10\n8\nm/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Speed in a medium v=cn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c025ba30-400f-4a6e-8d42-cb337dd92a9f",
+    "question_text": "What is the wavelength of light in a medium with refractive index 1.2 if its wavelength in vacuum is \n600\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n500 nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n600 nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n400 nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n720 nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Wavelength in a medium λm=λvacuumn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0a6777f0-cfeb-4e7a-802d-19eb3df2fd4c",
+    "question_text": "What is the phase difference corresponding to a path difference of \n5\n𝜆\n/\n8\n in a double-slit experiment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3\n𝜋\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5\n𝜋\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n𝜋",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phase difference ϕ=2πλΔ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "152901c3-e488-4772-9beb-53ea24b80651",
+    "question_text": "What is the frequency of light with a wavelength of \n540\nnm\n in air, given the speed of light in air is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.0\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.56\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.0\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.5\n×\n10\n14\nHz",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frequency ν=cλ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bce94197-3857-4d69-8b18-3749a0282a42",
+    "question_text": "What happens to the wavelength of light when it enters a denser medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBecomes zero",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDecreases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In a denser medium, the speed decreases, and since frequency remains constant, wavelength decreases (λ=vν).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6724d440-b605-4307-a277-c7f2b92fc96f",
+    "question_text": "What is the direction of rays relative to the wavefront in a light wave?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParallel",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAt 45°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRandom",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPerpendicular",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Rays are perpendicular to the wavefront, representing the direction of energy propagation.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "804e9241-dc54-47b5-8f3b-74676a5b66d0",
+    "question_text": "What is the path difference for the second dark fringe in a double-slit experiment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝜆",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3\n𝜆\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝜆\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n𝜆",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Destructive interference occurs at Δ=(n+12)λ. For the second\n              dark fringe, n=1, Δ=(1+12)λ=3λ2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e7e4a3c9-a158-4e33-9f73-10a619faa6c5",
+    "question_text": "What is the wavelength of light in a medium with refractive index 1.75 if its wavelength in vacuum is \n700\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n400 nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n700 nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n350 nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n525 nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Wavelength in a medium λm=λvacuumn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8b5ce97f-4b8e-4fb1-8c8f-10cde0db4f50",
+    "question_text": "What is the intensity at a point in a double-slit experiment where the phase difference is \n𝜋\n/\n2\n, if the maximum intensity is \n4\n𝐼\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Intensity I=4I0cos2⁡(ϕ/2).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e63429a5-c25a-4957-8f63-cacfba4bf782",
+    "question_text": "What is the phase difference between two coherent waves resulting in destructive interference?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝜋\n/\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n𝜋",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Destructive interference occurs when the phase difference is an odd multiple of π, with the\n              simplest case being ϕ=π.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f54057b4-d79c-4afa-bc6a-25371eaa6062",
+    "question_text": "Why does the wave model predict that light bends away from the normal when entering a rarer medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAmplitude increases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrequency decreases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWavelength remains constant",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpeed increases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In a rarer medium, light speeds up, causing the wavefront to tilt away from the normal as it takes less\n              time to travel a longer path.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "393d0282-2f53-400d-91a6-c2c338b355c9",
+    "question_text": "What is the intensity of two incoherent light sources each of intensity \n𝐼\n0\n when combined at a point?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n𝐼\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For incoherent sources, intensities add directly, so I=I0+I0=2I0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3245cae0-9be7-4e35-a907-be5a9b28ae91",
+    "question_text": "Why does the intensity of light not depend on its speed when it enters a denser medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrequency increases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWavelength remains constant",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmplitude determines intensity",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpeed equals frequency",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Intensity depends on the amplitude squared, not speed, which only affects wavelength and not the energy\n              carried per unit area.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "35faff04-405f-4f56-a33a-dc38f4ea1442",
+    "question_text": "What is the angular position of the second minimum in a single-slit diffraction pattern if the slit width is \n3.0\n𝜇\nm\n and the wavelength is \n600\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n23.6°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Minima occur at sin⁡θ=nλa. For the second minimum, n=2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8f7e653b-aac9-44ff-83f8-e3971e523e34",
+    "question_text": "What is the phase difference corresponding to a path difference of \n9\n𝜆\n/\n4\n in a double-slit experiment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9\n𝜋\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7\n𝜋\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phase difference ϕ=2πλΔ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6ac3f678-64b9-4ec0-bcc3-79ea8d1c850e",
+    "question_text": "Why does light exhibit both interference and diffraction despite traveling in straight lines in everyday observations?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSmall wavelength relative to obstacles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigh frequency",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nConstant speed",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLarge amplitude",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Light’s wavelength is very small compared to typical objects, making straight-line behavior dominant, but\n              wave effects like interference and diffraction emerge with small apertures.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b1569754-9dae-431e-8915-e6fe46230671",
+    "question_text": "In a single-slit diffraction pattern, what happens to the central maximum’s width if the wavelength is quadrupled?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHalves",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDoubles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTriples",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIncreases four times",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Angular width 2θ=2λa. If λ is quadrupled, 2θ increases\n              four times.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e2113d6-d2b6-410f-b9b2-ac1e818724a7",
+    "question_text": "In a double-slit experiment, if the slit separation is doubled, what happens to the fringe width?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDoubles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTriples",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHalves",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fringe width β=λDd. If d is doubled, β is halved.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7fdc73c6-2ad0-4b6c-a770-ac3581db6aea",
+    "question_text": "Why does the wave theory require light to propagate as transverse waves to explain polarization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpeed variation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrequency stability",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmplitude consistency",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPerpendicular oscillations",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Only transverse waves have oscillations perpendicular to propagation that can be filtered in specific\n              directions, unlike longitudinal waves, enabling polarization.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "68a9789e-7501-49fe-8440-aeba94100dcd",
+    "question_text": "What is the refractive index of a medium if the critical angle for light passing into air is \n36.9\n∘\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.33",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.67",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "sin⁡ic=n2n1, where n2=1.0 (air), ic=36.9∘.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9c53b8aa-d71a-40db-b03a-86cba4d7b08c",
+    "question_text": "What is the shape of the wavefront emitted by a point source in a uniform medium close to the source?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpherical",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCylindrical",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTilted",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "A point source in a uniform medium emits spherical wavefronts, especially close to the source.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "40344b57-e91b-4052-9c2e-a62062cba077",
+    "question_text": "What is the resultant amplitude of two coherent waves of amplitude \n𝑎\n with a phase difference of \n6\n𝜋\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑎\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n𝑎",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Resultant amplitude A=2acos⁡(ϕ/2).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bca9b371-010e-4eaf-bf72-947ad23d456f",
+    "question_text": "What is the shape of the wavefront after a plane wave passes through a thin prism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTilted plane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpherical",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCylindrical",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "A plane wave passing through a thin prism gets delayed variably, resulting in a tilted plane wavefront.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8452c14f-87fa-4769-981d-1cb953c4485d",
+    "question_text": "What is the angular width of the central maximum in a single-slit diffraction pattern if the slit width is \n3.0\n𝜇\nm\n and the wavelength is \n450\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n15°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n17.2°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Angular width 2θ=2λa.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "83a9e39d-05b0-4bee-9af5-61a3f5d99885",
+    "question_text": "In a double-slit experiment, if the intensity at the central maximum is \n4\n𝐼\n0\n, what is the intensity where the path difference is \n𝜆\n/\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Intensity I=4I0cos2⁡(ϕ/2), where ϕ=2πλΔ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4ce2cb98-e04d-45f6-9eac-2bdb105f927d",
+    "question_text": "Why does the intensity of light transmitted through two polaroids drop to zero when their pass-axes are perpendicular?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrequency cancels",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWavelength doubles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmplitude increases",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNo electric field component passes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "When pass-axes are perpendicular, the electric field component along the second polaroid’s axis is zero\n              (cos 90° = 0), blocking all light per Malus’ law.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c49fc970-1ad5-47b9-b3f7-aadf4c055986",
+    "question_text": "What is the angular position of the third minimum in a single-slit diffraction pattern if the slit width is \n6.0\n𝜇\nm\n and the wavelength is \n480\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n17.5°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n13.9°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Minima occur at sin⁡θ=nλa. For the third minimum, n=3.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1e95f935-34a6-4770-9fca-1ca2cad974f7",
+    "question_text": "Why does the intensity of transmitted light through a polaroid decrease when rotated, even if the incident light is unpolarized?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrequency reduction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPolarization of unpolarized light",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmplitude doubling",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpeed variation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Unpolarized light becomes polarized after the first polaroid, and the second polaroid’s pass-axis\n              alignment determines the transmitted component, reducing intensity as the angle increases.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0469e53f-32d9-4b7f-9981-61d472e483f6",
+    "question_text": "What happens to the intensity of light when it passes through a polaroid and the polaroid is rotated by \n90\n∘\n from its initial position?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDoubles",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nReduces to zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For unpolarized light, intensity after one polaroid is I02. Rotating by 90∘\n              from the pass-axis gives I=I02cos2⁡90∘=0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba1939b6-b361-4cfb-94dc-b6b3fbd0ae0f",
+    "question_text": "Why does the intensity of light remain unchanged in terms of energy when it undergoes interference or diffraction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEnergy is redistributed, not lost",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAmplitude increases overall",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrequency changes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWavelength decreases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Interference and diffraction redistribute light energy without loss, as bright and dark regions balance\n              out, conserving total energy.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "83f72803-dc6a-4dd6-aa94-c8f9dd8cf90e",
+    "question_text": "What is the maximum intensity of light transmitted through three polaroids when the first and third are crossed, and the middle one is rotated, if the initial intensity is \n𝐼\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝐼\n0\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝐼\n0\n8",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝐼\n0\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For crossed polaroids, intensity after the second polaroid is I0cos2⁡θ, and after the\n              third (at 90∘−θ) is I=I0cos2⁡θsin2⁡θ=I04sin2⁡2θ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7210de80-0335-41ab-b3a4-88dbfd9c689d",
+    "question_text": "What is the intensity of unpolarised light after passing through a single polaroid, if the initial intensity is \n𝐼\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝐼\n0\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝐼\n0\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Unpolarised light has its intensity reduced to half after passing through a polaroid, so I=I02.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7bbf0949-4ab1-4f87-895e-3d8ce984f896",
+    "question_text": "What is the nature of unpolarized light?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOscillates in one direction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLongitudinal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStationary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRandomly oscillating in all transverse directions",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Unpolarized light has electric vectors oscillating in all directions in the plane perpendicular to the\n              propagation direction, randomly changing over time.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7de33de1-c2a4-42b4-89df-88f8522331f2",
+    "question_text": "What happens to the refracted ray when the angle of incidence exceeds the critical angle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBends towards the normal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBends away from the normal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUndergoes total internal reflection",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPasses undeflected",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "When the angle of incidence exceeds the critical angle, no refraction occurs, and the ray undergoes total\n              internal reflection.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f8962cc1-e651-4f56-96e4-267af4d7f726",
+    "question_text": "What is the angular position of the second minimum in a single-slit diffraction pattern if the slit width is \n8.0\n𝜇\nm\n and the wavelength is \n640\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n13.9°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9.2°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.6°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n23.6°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Minima occur at sin⁡θ=nλa. For the second minimum, n=2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e941fe1-60a7-4ef1-82ef-e2d64ca246b6",
+    "question_text": "What is the phase difference corresponding to a path difference of \n3\n𝜆\n/\n4\n in a double-slit experiment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\n𝜋\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝜋\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phase difference ϕ=2πλΔ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a79a5a7d-7a7c-4745-b4e1-727b508c8811",
+    "question_text": "What is the condition for the second secondary maximum in a single-slit diffraction pattern?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝜃\n=\n3\n𝜆\n2\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝜃\n=\n2\n𝜆\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝜃\n=\n𝜆\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝜃\n=\n5\n𝜆\n2\n𝑎",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Secondary maxima occur at θ≈(n+12)λa. For the second\n              secondary maximum, n=2, θ≈5λ2a.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "65d9bfd8-68d9-4473-86ba-c7a01856838e",
+    "question_text": "What is the condition for total internal reflection to occur?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAngle of incidence < Critical angle",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAngle of incidence = 90°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLight travels from rarer to denser medium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAngle of incidence > Critical angle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Total internal reflection occurs when the angle of incidence exceeds the critical angle, and light\n              travels from a denser to a rarer medium.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9cbb1d44-388b-4df0-b6f9-d324351d1a46",
+    "question_text": "Why does the diffraction pattern of a single slit show a central maximum broader than its secondary maxima?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrequency variation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAmplitude increase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWavelength change",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConstructive interference of wavelets",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The central maximum results from constructive interference of all secondary wavelets in phase, while\n              secondary maxima involve partial cancellations, reducing their width and intensity.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7d397477-43e2-42f0-9943-1a93ab28b3ae",
+    "question_text": "What is the wavelength of light in a medium with refractive index 1.65 if its wavelength in air is \n660\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n400 nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n660 nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n500 nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n330 nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Wavelength in a medium λm=λairn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0b2aa07b-a2a7-434a-b468-bc11e40e12c2",
+    "question_text": "What is the path difference for the third bright fringe in a double-slit experiment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\n𝜆",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3\n𝜆",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝜆",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3\n𝜆\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Constructive interference occurs at Δ=nλ. For the third bright fringe, n=3, so\n              Δ=3λ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e4c910e4-474b-4035-985a-965ffeb54743",
+    "question_text": "What is the nature of light waves demonstrated by polarization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTransverse",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLongitudinal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStationary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMechanical",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Polarization shows that light waves are transverse, as only transverse waves can be polarized.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "774cd277-feef-4f76-91b2-c82894b0066c",
+    "question_text": "What ensures that the laws of reflection hold true when derived using the wave model?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrequency matching",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAmplitude variation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWavelength adjustment",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEqual angles of incidence and reflection",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The wave model uses secondary wavelets, where the reflected wavefront’s envelope forms when the incident\n              and reflected angles are equal, satisfying geometric congruence.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3ec1443-51d5-40b9-80a0-c4ba7b5119c7",
+    "question_text": "What is the phase difference corresponding to a path difference of \n7\n𝜆\n/\n4\n in a double-slit experiment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7\n𝜋\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n𝜋",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phase difference ϕ=2πλΔ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3a4e0984-cfb6-46a3-9e6e-26dec95a77dd",
+    "question_text": "What is the angular position of the second minimum in a single-slit diffraction pattern if the slit width is \n2.0\n𝜇\nm\n and the wavelength is \n400\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n20°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n23.6°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Minima occur at sin⁡θ=nλa. For the second minimum, n=2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3ecd2b3f-df11-42d6-a6af-eb9658c9596f",
+    "question_text": "What is the refractive index of a medium if the critical angle for light passing into air is \n48.6\n∘\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.25",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.33",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "sin⁡ic=n2n1, where n2=1.0 (air), ic=48.6∘.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a726bc41-f1dc-41ae-94bd-a17664bbbbdf",
+    "question_text": "What is the speed of light in a medium with refractive index 1.35, given the speed in vacuum is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.22\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.0\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.0\n×\n10\n8\nm/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Speed in a medium v=cn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "978298c9-da06-47be-8f66-c11957678e06",
+    "question_text": "What happens to the refracted wavefront when light enters a medium where its speed increases?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBends towards the normal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBends away from the normal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRemains unchanged",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBecomes spherical",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "When speed increases (e.g., from glass to air), the refracted wavefront bends away from the normal.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5671a3d-1fe7-40a1-926f-53e3675f9e73",
+    "question_text": "Why does the wave theory predict that light bends towards the normal when entering a medium where its speed is lower?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAmplitude decreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrequency increases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWavelength doubles",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWavefront tilts due to slower speed",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The wavefront tilts towards the normal because the part entering the slower medium lags, reducing the\n              angle of propagation relative to the boundary.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6b8981bb-2971-4369-9aa7-4c311711874a",
+    "question_text": "What is the refractive index of a medium if the speed of light in it is \n2.1\n×\n10\n8\nm/s\n and in vacuum is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.33",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.43",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.67",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Refractive index n=cv.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d131b9c4-a2b7-4013-9d5d-21ed9b71ef61",
+    "question_text": "What characteristic of light waves allows polarization to occur, distinguishing them from sound waves?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTransverse nature",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigh frequency",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLongitudinal nature",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVariable amplitude",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Light waves are transverse, with electric fields oscillating perpendicular to the propagation direction,\n              enabling polarization, unlike longitudinal sound waves.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "36504040-2f0d-44b3-a465-b9f543ed8e54",
+    "question_text": "Why does the intensity of light remain unaffected by changes in its speed during refraction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrequency increases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAmplitude remains constant",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWavelength stays the same",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhase shifts",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Intensity depends on the square of the amplitude, which remains constant during refraction, while speed\n              changes do not alter the energy per unit area.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eb83d5ba-fda5-4eb9-a264-0b7e3fb43780",
+    "question_text": "What happens to the fringe width in a double-slit experiment if the slit separation is reduced to one-third?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nReduces to one-third",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDoubles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTriples",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fringe width β=λDd. If d is reduced to d3, β\n              increases to 3β, i.e., triples.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "792f5f80-7a18-47b1-b846-960e370a599e",
+    "question_text": "Why does light exhibit polarization only in specific directions when passing through a polaroid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWavelength variation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpeed reduction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrequency alignment",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElectric field alignment",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The polaroid aligns the electric field along its pass-axis, absorbing components in other directions,\n              restricting polarization to that plane.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "734e2d6b-a574-40af-b27e-dd8928680808",
+    "question_text": "What is the path difference for the first dark fringe in a double-slit experiment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝜆",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝜆\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n𝜆",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Destructive interference occurs at Δ=(n+12)λ. For the first dark\n              fringe, n=0, so Δ=λ2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78517d90-24f9-4e6f-ab49-491cf2b2657d",
+    "question_text": "Why is the backwave not observed in the reflection of light according to the wave model?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAmplitude is zero in the backward direction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLight travels only forward",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nReflection cancels the backwave",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrequency doubles in reflection",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The wave model assumes the amplitude of secondary wavelets is zero in the backward direction, though this\n              is an ad-hoc assumption later justified by advanced wave theory.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fcad26e5-2d68-47ff-86df-d61fed984e79",
+    "question_text": "What happens to the fringe width in a double-slit experiment if both the slit separation and screen distance are doubled?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDoubles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHalves",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTriples",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRemains the same",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fringe width β=λDd. If D and d are both doubled, β=λ(2D)2d=λDd, so it remains the same.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b8cf8f87-6c9f-40b7-a18c-0fb3e85506da",
+    "question_text": "What property of light ensures that the time taken from an object point to its image point is the same along any ray path in a lens system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrequency",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEqual travel time along rays",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmplitude",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWavelength",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The principle that light travels such that the optical path length (or time) is equal along all rays\n              explains this, as the slower speed in a denser medium balances the shorter path.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "59cd44c1-d307-4dd4-a02a-9637e4b2f8ae",
+    "question_text": "What happens to the fringe width in a double-slit experiment if the distance between the slits and the screen is tripled?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHalves",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDoubles",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTriples",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fringe width β=λDd. If D is tripled, β triples.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cfdc86c9-f738-4dde-a015-138052c5a920",
+    "question_text": "What is the distance of the second bright fringe from the central maximum in a double-slit experiment if \n𝜆\n=\n670\nnm\n, \n𝑑\n=\n0.6\nmm\n, and \n𝐷\n=\n1.8\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.0 mm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.0 mm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.02 mm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.0 mm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bright fringe position xn=nλDd. For the second bright fringe, n=2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dcfa5ae3-4280-4dee-86ec-396bf8e71d68",
+    "question_text": "What is the resultant amplitude of two coherent waves of amplitude \n𝑎\n with a phase difference of \n3\n𝜋\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑎\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Resultant amplitude A=2acos⁡(ϕ/2).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f8c9d11a-1c18-4618-8912-5bcb621b1863",
+    "question_text": "What is the distance of the first dark fringe from the central maximum in a double-slit experiment if \n𝜆\n=\n540\nnm\n, \n𝑑\n=\n0.2\nmm\n, and \n𝐷\n=\n1.6\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.8 mm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.7 mm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.16 mm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.24 mm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Dark fringe position xn=(n+12)λDd. For the first dark\n              fringe, n=0.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5c069e5-14e7-4e01-882f-a40cc7638a1d",
+    "question_text": "In a double-slit experiment, if the screen is moved closer to the slits, what happens to the fringe width?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDoubles",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDecreases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fringe width β=λDd. If D decreases, β decreases.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33615fe8-d148-4e26-b0b9-87f5337465da",
+    "question_text": "What is the intensity of light after passing through two polaroids with pass-axes at \n30\n∘\n, if the initial unpolarized intensity is \n𝐼\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝐼\n0\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3\n𝐼\n0\n8",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝐼\n0\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝐼\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "After the first polaroid, I=I02. After the second at 30∘, I=I02cos2⁡30∘=I02×34=3I08.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5eadcf49-3b79-43e3-87b8-4a2df5143fae",
+    "question_text": "What is the condition for the first secondary maximum in a single-slit diffraction pattern?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝜃\n=\n𝜆\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝜃\n=\n2\n𝜆\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝜃\n=\n𝜆\n2\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝜃\n=\n3\n𝜆\n2\n𝑎",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The first secondary maximum occurs approximately at θ=3λ2a, where a is\n              the slit width and λ is the wavelength.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dce3bc04-cac3-4d34-8e56-32d47bad67f6",
+    "question_text": "What is the resultant amplitude of two coherent waves of amplitude \n𝑎\n with a phase difference of \n2\n𝜋\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑎\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2\n𝑎",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Resultant amplitude A=2acos⁡(ϕ/2).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d6743ad5-818e-4521-91b4-57505c02e30b",
+    "question_text": "What is the shape of the wavefront produced by a point source in a uniform medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpherical",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCylindrical",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElliptical",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "A point source emits waves uniformly in all directions, producing spherical wavefronts in a medium where\n              the speed is isotropic.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9d842986-9e75-4ba7-93d9-a3d7b42a7b8f",
+    "question_text": "What is the wavelength of light in a medium with refractive index 1.4 if its wavelength in air is \n560\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n400 nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n560 nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n800 nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n280 nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Wavelength in a medium λm=λairn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "03248c79-0d98-4355-8628-2c26e4e05c84",
+    "question_text": "In Young’s double-slit experiment, if the slit separation is \n0.25\nmm\n, the screen is \n1.0\nm\n away, and the fringe width is \n2.4\nmm\n, what is the wavelength of light?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n600 nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n500 nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n650 nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n700 nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Fringe width β=λDd. Given β=2.4mm=2.4×10−3m, D=1.0m, d=0.25mm=2.5×10−4m.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "64ded694-2ecd-47a3-a36c-76592ff02f1c",
+    "question_text": "What is the wavelength of light in water if its wavelength in air is \n600\nnm\n and the refractive index of water is 1.33?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n451 nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n500 nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n600 nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n800 nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Wavelength in a medium λm=λairn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "30a21840-edb3-43cd-afb8-685518cee111",
+    "question_text": "What is the wavelength of light in a medium with refractive index 1.6 if its wavelength in vacuum is \n640\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n400 nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n640 nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n320 nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n500 nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Wavelength in a medium λm=λvacuumn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "009a6ab1-c3f9-4cdb-9713-a66c55001485",
+    "question_text": "What is the intensity at a point in a double-slit experiment where the phase difference is \n𝜋\n/\n4\n, if the maximum intensity is \n4\n𝐼\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4\n𝐼\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Intensity I=4I0cos2⁡(ϕ/2).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "236efb8f-922b-44da-9633-2900cabf1157",
+    "question_text": "What is the resultant amplitude of two coherent waves of amplitude \n𝑎\n with a phase difference of \n5\n𝜋\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑎\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑎",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Resultant amplitude A=2acos⁡(ϕ/2).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8e0e1651-254d-436f-8301-a385ee200d71",
+    "question_text": "What type of wavefront emerges from a convex lens when a plane wave is incident on it?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpherical",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCylindrical",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTilted plane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "A plane wave incident on a convex lens produces a spherical wavefront converging to the focal point.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6987c704-70cd-49cb-a6c2-5a5f25bd9ee3",
+    "question_text": "Why does the interference pattern disappear if the phase difference between two sources changes rapidly over time?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAmplitude becomes zero",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSources become incoherent",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWavelength increases",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrequency decreases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Rapid phase changes make the sources incoherent, averaging out the interference effects, resulting in a\n              uniform intensity distribution.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "24ee1301-2149-4575-b47b-f8e7c758959a",
+    "question_text": "What type of wave is light, based on the direction of its electric field relative to its propagation direction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTransverse",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLongitudinal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStationary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMechanical",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Light is a transverse wave because its electric field oscillates perpendicular to the direction of\n              propagation.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "146b2b0a-b460-45a7-9e34-09ba2da40780",
+    "question_text": "What is the wavelength of light in a medium with refractive index 1.5 if its wavelength in air is \n720\nnm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n480 nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n720 nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n360 nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n600 nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Wavelength in a medium λm=λairn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6c0d3e20-f799-47e8-b4ff-5a583767dfe3",
+    "question_text": "What is the refractive index of a medium if the speed of light in it is \n2.4\n×\n10\n8\nm/s\n and in vacuum is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.25",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.33",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Refractive index n=cv.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e65930c8-98d8-43d8-a032-8bca34641057",
+    "question_text": "What is the distance of the fourth dark fringe from the central maximum in a double-slit experiment if \n𝜆\n=\n610\nnm\n, \n𝑑\n=\n0.3\nmm\n, and \n𝐷\n=\n1.5\nm\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9.15 mm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12.2 mm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10.7 mm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7.6 mm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Dark fringe position xn=(n+12)λDd. For the fourth dark\n              fringe, n=3.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4cb2af86-685e-478a-8e8b-b9de10060cf5",
+    "question_text": "What is the refractive index of a medium if the critical angle for light passing into air is \n42\n∘\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.33",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.67",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.49",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.55",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "sin⁡ic=n2n1, where n2=1.0 (air), ic=42∘.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "30dcd503-5ee9-42aa-8e6d-48dd6955564d",
+    "question_text": "In a double-slit experiment, if the screen distance is doubled, what happens to the fringe width?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHalves",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nQuadruples",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDoubles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fringe width β=λDd. If D is doubled, β doubles.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "beba55c6-8209-4696-8303-b864213fa920",
+    "question_text": "What is the phase difference corresponding to a path difference of \n3\n𝜆\n/\n2\n in a double-slit experiment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3\n𝜋",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝜋\n/\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phase difference ϕ=2πλΔ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8808b0da-1a15-4ea3-81f9-211f090f89ed",
+    "question_text": "What is the frequency of light with a wavelength of \n570\nnm\n in air, given the speed of light in air is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.88\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.26\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.76\n×\n10\n14\nHz",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.25\n×\n10\n14\nHz",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frequency ν=cλ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "efab64d5-28c9-4fe4-80e5-ffa507262bb2",
+    "question_text": "In a double-slit experiment, if the path difference at a point is \n𝜆\n/\n2\n, what is the resulting intensity if the maximum intensity is \n4\n𝐼\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2\n𝐼\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝐼\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Intensity I=4I0cos2⁡(ϕ/2), where ϕ=2πλΔ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b159a9f0-2a6d-426b-87ea-18665b2b9f69",
+    "question_text": "Why does the wave theory suggest that light’s behavior approximates straight-line propagation in large-scale scenarios?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHigh speed",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSmall wavelength",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nConstant phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLarge amplitude",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Light’s wavelength is extremely small compared to everyday objects, minimizing wave effects like\n              diffraction, making straight-line propagation dominant.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "37abc907-19f7-4ac9-bc72-e383bf291482",
+    "question_text": "What is the speed of light in a medium with refractive index 1.4, given the speed in vacuum is \n3.0\n×\n10\n8\nm/s\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.14\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.0\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\n×\n10\n8\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.0\n×\n10\n8\nm/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Speed in a medium v=cn.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "495c04f5-24d4-450e-bb9c-fb85c19b791c",
+    "question_text": "What happens to the fringe width in a double-slit experiment if the wavelength of light is halved?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDoubles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nQuadruples",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHalves",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fringe width β=λDd. If λ is halved, β is halved.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3d4fdce0-e630-4a3a-91ed-ae989ed8e309",
+    "question_text": "What happens to the central maximum’s width in a single-slit diffraction pattern if the wavelength is doubled?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHalves",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRemains the same",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nQuadruples",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDoubles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Angular width 2θ=2λa. If λ doubles, the width doubles.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ed5dadc0-1e81-4e78-a507-6cc120c5fe4b",
+    "question_text": "Why does the wave theory predict a change in wavelength but not frequency during refraction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAmplitude varies",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpeed equals frequency",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrequency is source-dependent",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhase shifts randomly",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frequency is source-dependent and constant, while wavelength adjusts inversely to the speed change in the\n              medium (v = fλ), maintaining the wave equation.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "13f083a7-ae8a-4fe6-a4bd-50854da04987",
+    "question_text": "What is the intensity of light after passing through two polaroids with pass-axes at \n15\n∘\n, if the initial unpolarized intensity is \n𝐼\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝐼\n0\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7\n𝐼\n0\n16",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝐼\n0\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝐼\n0\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "After the first polaroid, I=I02. After the second at 15∘, I=I02cos2⁡15∘.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Wave Optics",
+    "topic": "Wave Optics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Wave Optics / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "wave-optics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

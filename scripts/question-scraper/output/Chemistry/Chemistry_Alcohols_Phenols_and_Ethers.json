@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "b870be70-3f59-4281-9504-7ca8cd86dcb0",
+    "question_text": "What is the major product when pentan-2-ol is dehydrated with conc. \nH\n2\nSO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPent-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPent-2-ene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylbut-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Dehydration of pentan-2-ol gives a mixture of alkenes, with pent-2-ene as the major product according to\n              Saytzeff’s rule.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f06bc459-cce1-4269-99d2-a0e6cc1982f1",
+    "question_text": "What is the product when 2-methylpropan-1-ol is oxidized with PCC?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylpropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpropanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "2-Methylpropan-1-ol ((CHA3)A2CHCHA2OH), a primary alcohol, is oxidized to 2-methylpropanal ((CHA3)A2CHCHO) with PCC, stopping at the aldehyde.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7a98cb94-8390-4a31-b7c4-0fabbccbf12f",
+    "question_text": "What is the product when 2-methylpropan-1-ol is oxidized with \nKMnO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylpropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAcetone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpropene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "2-Methylpropan-1-ol ((CHA3)A2CHCHA2OH), a primary alcohol, is oxidized to 2-methylpropanoic acid\n              ((CHA3)A2CHCOOH) with KMnOA4, a strong oxidant.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "39df2a19-aca1-41ac-bd38-c6302fd2c7ec",
+    "question_text": "What is observed when phenol reacts with \nBr\n2\n in water?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWhite precipitate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nYellow solution",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nViolet color",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNo reaction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Phenol reacts with BrA2 in water to form a white precipitate of 2,4,6-tribromophenol due to the\n              strong activation of the ring by the -OH group.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa5dd7a5-0aa9-4de2-b33b-058de5b345de",
+    "question_text": "Which compound is formed when benzyl alcohol reacts with \nKMnO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBenzoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Benzyl alcohol (CA6HA5CHA2OH), a primary alcohol, is oxidized to benzoic acid (CA6HA5COOH) with KMnOA4, a strong oxidizing agent.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "51a45583-5d27-4767-aca5-afa71e94bbc3",
+    "question_text": "Which reagent converts propene to propan-2-ol following Markovnikov’s rule?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBH\n3\nfollowed by\nH\n2\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nH\n2\nSO\n4\nand\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKMnO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBr\n2\nin\nCCl\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Acid-catalyzed hydration follows Markovnikov’s rule, giving propan-2-ol. Hydroboration-oxidation gives\n              propan-1-ol (anti-Markovnikov).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33b0e0f0-f899-4c7e-94e8-944d1e285bd2",
+    "question_text": "Which alcohol produces 2-methylpropanal on oxidation with PCC?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n(\nCH\n3\n)\n2\nCHCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n(\nCH\n3\n)\n3\nCOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "2-Methylpropan-1-ol ((CHA3)A2CHCHA2OH), a primary alcohol, oxidizes to 2-methylpropanal ((CHA3)A2CHCHO) with PCC.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "898a9141-7a4c-4b6c-b89a-f5f76f9d8e47",
+    "question_text": "Which reagent is used to oxidize a primary alcohol to an aldehyde without further oxidation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPCC",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKMnO\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nH\n2\nSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNaBH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pyridinium chlorochromate (PCC) selectively oxidizes primary alcohols to aldehydes without converting\n              them to carboxylic acids.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "785fb71c-1db1-4243-8870-f4b692b5473e",
+    "question_text": "What is the product when phenol reacts with \nCHCl\n3\n and \nNaOH\n followed by acidification?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSalicylaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4-Hydroxybenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Nitrophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In the Reimer-Tiemann reaction, phenol reacts with CHClA3 and NaOH to form\n              salicylaldehyde (2-hydroxybenzaldehyde) after acidification.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b74c2d3c-046d-4d7b-964d-16dc1496df98",
+    "question_text": "Which reagent reduces acetophenone to 1-phenylethanol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNaBH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKMnO\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPCC",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConc.\nH\n2\nSO\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Acetophenone (CA6HA5COCHA3) is reduced to 1-phenylethanol (CA6HA5CH(OH)CHA3) using NaBHA4, a selective reducing agent for ketones.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f13858bf-9ba5-41a0-8051-105b1745d0b3",
+    "question_text": "What is the product when benzyl alcohol is oxidized with \nKMnO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Benzyl alcohol is oxidized by strong oxidizing agents like KMnOA4 to benzoic acid.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d054efbc-2bdc-458e-b338-4a7ed65bb309",
+    "question_text": "What is the major product of acid dehydration of butan-2-ol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBut-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBut-2-ene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Dehydration of butan-2-ol gives a mixture of alkenes, with but-2-ene as the major product according to\n              Saytzeff’s rule.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "356c9a8d-000c-451e-bc93-ef97bfdd2745",
+    "question_text": "What is the IUPAC name of \nCH\n3\n−\nCH\n2\n−\nCH\n(\nOH\n)\n−\nCH\n2\n−\nOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButane-1,2-diol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButane-2,3-diol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropane-1,3-diol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButane-1,3-diol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The compound has a 4-carbon chain with -OH groups on carbons 1 and 3, named butane-1,3-diol in IUPAC\n              nomenclature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c355496e-7d59-4e08-94f8-52db7c7f2624",
+    "question_text": "Which alcohol has the highest solubility in water among the following?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n(\nOH\n)\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n(\nCH\n3\n)\n2\nCHCH\n2\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Propane-1,2-diol (CHA3CH(OH)CHA2OH) has two -OH groups, enhancing hydrogen bonding with water,\n              making it more soluble than monohydric alcohols like propan-1-ol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d11b3be0-5353-4726-992d-940625b68129",
+    "question_text": "What is the common name of \nCH\n3\nCH\n(\nOH\n)\nCH\n2\nOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthylene glycol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlycerol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIsopropyl alcohol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropylene glycol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "CHA3CH(OH)CHA2OH (propane-1,2-diol) is commonly known as propylene glycol, a widely used diol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "233d9d6d-026f-43d0-aefc-cabebb61ff3c",
+    "question_text": "Which alcohol is produced by the acid-catalyzed hydration of 1-butene?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n(\nOH\n)\nCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n(\nCH\n3\n)\n2\nCHCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "1-Butene (CHA2=CH−CHA2−CHA3) undergoes acid-catalyzed hydration with HA2SOA4 and HA2O, following Markovnikov’s rule, to form butan-2-ol (CHA3CH(OH)CHA2CHA3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "341f878b-7504-4067-9337-7005ae834a76",
+    "question_text": "What is the IUPAC name of the compound \nCH\n3\n−\nCH\n(\nOH\n)\n−\nCH\n2\n−\nCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropan-2-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The longest chain containing the -OH group has 4 carbons, so the base name is butane. The -OH is on the\n              second carbon from the end nearest to it, so it is butan-2-ol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3a484996-2c12-4803-9c86-c0054b244022",
+    "question_text": "Which reagent produces a ketone from a secondary alcohol without forming an acid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKMnO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNaBH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPCC",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConc.\nH\n2\nSO\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "PCC oxidizes secondary alcohols to ketones selectively, stopping at the ketone stage without further\n              oxidation to a carboxylic acid.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3826300d-d367-4f3d-9a88-af85528c9622",
+    "question_text": "What is the IUPAC name of \nCH\n3\n−\nCH\n(\nOH\n)\n−\nCH\n2\n−\nCH\n2\n−\nOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButane-1,2-diol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButane-1,3-diol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropane-1,2-diol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButane-2,3-diol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The compound has a 4-carbon chain with -OH groups on carbons 1 and 3, named butane-1,3-diol in IUPAC\n              nomenclature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6722fea9-592e-4a92-96bd-eff953c7aa64",
+    "question_text": "How is 2-methylpropan-2-ol synthesized from methyl magnesium bromide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWith\nHCHO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWith\nCH\n3\nCHO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWith\nCH\n3\nCH\n2\nCHO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWith\nCH\n3\nCOCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Methyl magnesium bromide (CHA3MgBr) reacts with acetone (CHA3COCHA3), adding the\n              methyl group to the carbonyl carbon, and hydrolysis yields 2-methylpropan-2-ol ((CHA3)A3COH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3d5d340-1530-4665-9503-3d7e281587e1",
+    "question_text": "What is the reagent used to convert butan-2-one to butan-2-ol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKMnO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNaBH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nH\n2\nSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPCC",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Butan-2-one (CHA3−CO−CHA2−CHA3) is reduced to butan-2-ol (CHA3−CH(OH)−CHA2−CHA3) using a\n              reducing agent like NaBHA4, which selectively reduces ketones to secondary alcohols.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ce6e039d-5f29-49b1-b693-a538f1d18c01",
+    "question_text": "The reaction of phenol with \nCO\n2\n and \nNaOH\n at high pressure and temperature yields which product?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSalicylic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4-Hydroxybenzoic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhenylacetic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In Kolbe’s reaction, phenol reacts with COA2 and NaOH under heat and pressure,\n              followed by acidification, to form salicylic acid (2-hydroxybenzoic acid).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e703086d-42ae-44a8-b74f-567dae95b49a",
+    "question_text": "Which reaction condition converts cyclohexanol to cyclohexene?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nConc.\nH\n2\nSO\n4\nat 160°C",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPCC in\nCH\n2\nCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKMnO\n4\nin alkaline medium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNaBH\n4\nin ethanol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Cyclohexanol dehydrates to cyclohexene with conc. HA2SOA4 at 160°C via an E1 mechanism,\n              eliminating water.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4d789743-1626-4604-b88c-0400aa8814c4",
+    "question_text": "What is the product when phenol reacts with \nNaOH\n and \nCHCl\n3\n followed by acidification?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Hydroxybenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSalicylaldehyde",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In the Reimer-Tiemann reaction, phenol reacts with CHClA3 and NaOH to form\n              salicylaldehyde (CA6HA4(OH)CHO) after acidification.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3d28bbef-bc32-419d-ad82-e128ffe180e9",
+    "question_text": "The major product of dehydration of butan-1-ol with conc. \nH\n2\nSO\n4\n at 170°C is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBut-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBut-2-ene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Primary alcohols undergo dehydration to give mainly terminal alkenes like but-1-ene.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "801ee1a1-598f-4d4d-8468-8890bd5e009b",
+    "question_text": "Which compound is produced when phenol reacts with \nNa\n at room temperature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSodium benzoate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhenol remains unchanged",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSodium phenoxide",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phenol (CA6HA5OH) reacts with Na to form sodium phenoxide (CA6HA5ONa) and HA2 gas, showcasing its acidic nature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e01be98a-8cc1-406b-9035-9b320feb1128",
+    "question_text": "Which of the following compounds reacts most vigorously with sodium metal?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n(\nCH\n3\n)\n3\nCOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n6\nH\n5\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phenol is more acidic than alcohols due to resonance stabilization of the phenoxide ion, so it reacts\n              more vigorously with sodium metal.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3f0812cd-7fc0-4a7e-b9de-0494bb0c0b92",
+    "question_text": "What is the IUPAC name of \nCH\n3\n−\nCH\n(\nOH\n)\n−\nCH\n2\n−\nCH\n2\n−\nCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentan-3-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylbutan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentan-2-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The compound has a 5-carbon chain with the -OH on the second carbon from the end nearest to it, named\n              pentan-2-ol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a51199d1-39c1-476c-a7e2-01a58b93f4c8",
+    "question_text": "Which alcohol produces a tertiary carbocation as an intermediate during dehydration with conc. \nH\n2\nSO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n(\nCH\n3\n)\n3\nCOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "2-Methylpropan-2-ol ((CHA3)A3COH), a tertiary alcohol, forms a stable tertiary carbocation ((CHA3)A3CA+) during dehydration via an E1 mechanism.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b53185be-ac49-4330-978f-ddc9e66f799d",
+    "question_text": "Which of the following is an allylic alcohol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n2\n=\nCH\n−\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n6\nH\n5\nCH\n2\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "An allylic alcohol has the -OH group on a carbon adjacent to a double bond. CHA2=CH−CHA2OH\n              (allyl alcohol) fits this definition.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cca3b1d0-393d-4d57-8295-0ed6b556098b",
+    "question_text": "Which alcohol, when treated with Lucas reagent, shows turbidity within 5–10 minutes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n(\nCH\n3\n)\n3\nCOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Propan-2-ol (CHA3CH(OH)CHA3), a secondary alcohol, forms a secondary carbocation with Lucas\n              reagent (ZnClA2 in conc. HCl), causing turbidity in 5–10 minutes.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "91a63351-0643-48ca-b9e6-d4f787b75059",
+    "question_text": "What is the maximum number of carbon atoms in the longest chain of \nCH\n3\n−\nC\n(\nOH\n)\n(\nCH\n3\n)\n−\nCH\n2\n−\nCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The longest chain in CHA3−C(OH)(CHA3)−CHA2−CHA3 (2-methylbutan-2-ol) includes four carbons: CHA3−CHA2−C(OH)−CHA3, with -OH and a methyl branch on the second carbon.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b3541a66-df41-4742-8f51-f2482f328a5f",
+    "question_text": "What is the product of the Reimer-Tiemann reaction with phenol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Hydroxybenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhenyl acetate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSalicylaldehyde",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phenol reacts with CHClA3 and aqueous NaOH in the Reimer-Tiemann reaction to form\n              salicylaldehyde (2-hydroxybenzaldehyde) via electrophilic substitution at the ortho position.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a99bfd76-af81-4671-bc21-dcbd6a714c8f",
+    "question_text": "Which alcohol is produced when ethyl magnesium bromide reacts with ethanal followed by hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpropan-2-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ethyl magnesium bromide (CHA3CHA2MgBr) reacts with ethanal (CHA3CHO), adding the ethyl\n              group to the carbonyl, yielding butan-2-ol (CHA3CH(OH)CHA2CHA3) after hydrolysis.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c7dccd48-55c8-4bdc-9e13-ea6a2bfc4a1c",
+    "question_text": "Which alcohol is produced when methyl magnesium bromide reacts with butanal followed by hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylbutan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Methyl magnesium bromide (CHA3MgBr) reacts with butanal (CHA3CHA2CHA2CHO), adding the\n              methyl group to the carbonyl, yielding pentan-2-ol (CHA3CH(OH)CHA2CHA2CHA3) after hydrolysis.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a601d04f-cd1e-46d3-8e69-4cb0f9595c18",
+    "question_text": "Which alcohol is most commonly used as a solvent in pharmaceutical preparations?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMethanol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlycerol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthanol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ethanol is the most commonly used solvent in pharmaceutical preparations due to its effectiveness and\n              relatively low toxicity.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d1bf2db5-87b5-45bb-b65b-39c38c1a8de6",
+    "question_text": "Which alcohol is produced when ethyl magnesium bromide reacts with propanal followed by hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-3-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylbutan-2-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ethyl magnesium bromide (CHA3CHA2MgBr) reacts with propanal (CHA3CHA2CHO), adding the\n              ethyl group to the carbonyl, yielding pentan-3-ol (CHA3CHA2CH(OH)CHA2CHA3) after hydrolysis.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3be62df0-3331-48dd-80e6-f4f93144cdb8",
+    "question_text": "What is the product when phenol reacts with \nBr\n2\n in water?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Bromophenol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Bromophenol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2,4-Dibromophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2,4,6-Tribromophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phenol reacts with BrA2 in water to form 2,4,6-tribromophenol due to the strong activation of\n              the ring by the -OH group, leading to trisubstitution.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "15e19d63-99c1-4287-87a2-0f78bd338250",
+    "question_text": "Which compound is formed when 2-methylpropan-2-ol is dehydrated?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Methylpropene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBut-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBut-2-ene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "2-Methylpropan-2-ol ((CHA3)A3COH) dehydrates with conc. HA2SOA4 to form 2-methylpropene\n              (CHA2=C(CHA3)CHA3), following Saytzeff’s rule.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "266bd8d8-879e-47aa-ac74-87c1f21e2004",
+    "question_text": "Which reagent confirms the presence of a phenolic -OH group in a compound?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nI\n2\nwith\nNaOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLucas reagent",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNeutral\nFeCl\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKMnO\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Neutral FeClA3 forms a violet complex with phenols due to coordination with the phenoxide ion,\n              distinguishing them from alcohols.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5d41b772-4116-4cfa-b50d-b16bde4cb6a8",
+    "question_text": "Which phenol derivative is used as an explosive?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2,4,6-Trinitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2,4-Dinitrophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "2,4,6-Trinitrophenol (picric acid), formed by nitrating phenol with conc. HNOA3, is used as an\n              explosive due to its high reactivity.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ec85c82-b6e8-44b1-903b-01f4597062fa",
+    "question_text": "Which compound is produced when phenol reacts with conc. \nHNO\n3\n at 60°C?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2,4-Dinitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2,4,6-Trinitrophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phenol reacts with conc. HNOA3 at 60°C to form 2,4,6-trinitrophenol (picric acid) due to the\n              strong activation of the ring by the -OH group, allowing trisubstitution.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4381059d-679d-4e70-8b3b-10088d11eee6",
+    "question_text": "What is the product when propan-1-ol is oxidized with alkaline \nKMnO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropanoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthanoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Propan-1-ol (CHA3−CHA2−CHA2OH), a primary alcohol, is oxidized to propanoic acid (CHA3−CHA2−COOH) with a strong oxidizing agent like alkaline KMnOA4.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a079b9b7-644e-44ae-90ca-a2a3b54fad7f",
+    "question_text": "Which alcohol produces propanal on oxidation with PCC?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n(\nCH\n3\n)\n3\nCOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Propan-1-ol (CHA3CHA2CHA2OH), a primary alcohol, oxidizes to propanal (CHA3CHA2CHO) with\n              PCC.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d229054-3e2c-4891-ac46-af939f5b2e99",
+    "question_text": "Phenol reacts with chloroform in the presence of aqueous \nNaOH\n to produce which compound?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSalicylaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4-Hydroxybenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Nitrophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "This is the Reimer-Tiemann reaction, where phenol reacts with CHClA3 and NaOH to\n              form salicylaldehyde (2-hydroxybenzaldehyde) via ortho substitution.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "13b0ed9b-90ed-4e75-a3ca-d0597165ef4f",
+    "question_text": "What is the product when 2-methylbutan-2-ol reacts with Lucas reagent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylbut-2-ene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Chloro-2-methylbutane",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylbutanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "2-Methylbutan-2-ol (CHA3C(OH)(CHA3)CHA2CHA3), a tertiary alcohol, reacts with Lucas reagent (ZnClA2 in conc. HCl) to form 2-chloro-2-methylbutane (CHA3C(Cl)(CHA3)CHA2CHA3)\n              via an SAN1 mechanism.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "926e89ec-0e39-442a-a133-b692f87fbcb4",
+    "question_text": "Which factor explains the lower boiling point of methanol compared to ethanol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStronger hydrogen bonding",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nShorter carbon chain",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLower molecular weight",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigher polarity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Methanol (CHA3OH) has a lower molecular weight (32 g/mol) than ethanol (CHA3CHA2OH, 46\n              g/mol), reducing van der Waals forces and thus lowering its boiling point.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7f3174e4-46be-4363-a444-196793201589",
+    "question_text": "Which alcohol is produced by the acid-catalyzed hydration of 2-methylpropene?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n(\nCH\n3\n)\n3\nCOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n(\nCH\n3\n)\n2\nCHCH\n2\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "2-Methylpropene (CHA2=C(CHA3)CHA3) undergoes acid-catalyzed hydration with HA2SOA4 and\n              HA2O, following Markovnikov’s rule, to form 2-methylpropan-2-ol ((CHA3)A3COH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cfbfb255-1a2a-4b48-adb0-3a410f29c545",
+    "question_text": "Which compound is formed when ethanol reacts with \nI\n2\n and \nNaOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChloroform",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthanal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthyl iodide",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIodoform",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ethanol (CHA3CHA2OH) oxidizes to acetaldehyde, which reacts with IA2 and NaOH in the iodoform test to form iodoform (CHIA3), a yellow precipitate.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9be8ddfd-1275-4d8b-a788-d99795438275",
+    "question_text": "Which reagent oxidizes benzyl alcohol to benzoic acid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPCC",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNaBH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKMnO\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBr\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Benzyl alcohol (CA6HA5CHA2OH) is oxidized to benzoic acid (CA6HA5COOH) using a strong\n              oxidizing agent like KMnOA4 in alkaline conditions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f03f8efa-4ca1-46c1-b5b2-9307eff279a4",
+    "question_text": "How is benzyl alcohol synthesized from benzyl chloride?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nSO\n4\nand\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKMnO\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAqueous\nNaOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBH\n3\nand\nH\n2\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Benzyl chloride (CA6HA5CHA2Cl) undergoes nucleophilic substitution with aqueous NaOH\n              to replace -Cl with -OH, forming benzyl alcohol (CA6HA5CHA2OH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8ba564fc-a9ac-43a3-888c-bfe847c844eb",
+    "question_text": "Why does ethanol have a higher boiling point than methoxymethane?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHigher molecular weight",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrogen bonding",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStronger van der Waals forces",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPresence of oxygen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ethanol (CHA3CHA2OH) forms hydrogen bonds due to the -OH group, requiring more energy to break,\n              whereas methoxymethane (CHA3OCHA3) lacks hydrogen bonding, leading to a lower boiling point.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e2a2eeed-575d-403f-a34f-fdf01e6fedce",
+    "question_text": "What is the IUPAC name of \nCH\n3\n−\nCH\n2\n−\nCH\n2\n−\nCH\n(\nOH\n)\n−\nCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentan-3-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylbutan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentan-2-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The compound has a 5-carbon chain with the -OH on the second carbon from the end nearest to it, named\n              pentan-2-ol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa035f6b-fb99-4f49-b6cb-41c7188cc82d",
+    "question_text": "Which of the following is a benzylic alcohol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n6\nH\n5\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n2\n=\nCH\n−\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n(\nCH\n3\n)\n3\nCOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "A benzylic alcohol has the -OH group on a carbon directly attached to a benzene ring. CA6HA5CHA2OH (benzyl alcohol) fits this definition.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4e3b1d9e-4f66-430f-9399-7acd71c872de",
+    "question_text": "What is the product when phenol reacts with conc. \nHNO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2,4-Dinitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2,4,6-Trinitrophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phenol reacts with conc. HNOA3 to form 2,4,6-trinitrophenol (picric acid) due to the strong\n              activation of the ring by the -OH group, allowing trisubstitution.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7733d46-ccde-423f-bd40-b6f72cc7f415",
+    "question_text": "Which reagent is used to oxidize a primary alcohol to a carboxylic acid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlkaline\nKMnO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPyridinium chlorochromate (PCC)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nH\n2\nSO\n4\nalone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBr\n2\nin\nCS\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Primary alcohols are oxidized to carboxylic acids using strong oxidizing agents like alkaline KMnOA4, which fully oxidizes the alcohol through the aldehyde stage.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b8017317-bd37-4ea1-940c-0b18a545d91b",
+    "question_text": "Which reagent is used to convert cyclohexanol to cyclohexanone?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNaBH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKMnO\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPCC",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConc.\nH\n2\nSO\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cyclohexanol, a secondary alcohol, is oxidized to cyclohexanone with PCC, which selectively oxidizes\n              secondary alcohols to ketones.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ec572c92-00cf-4bc3-98af-5cdcc220515d",
+    "question_text": "Which alcohol yields 2-methylbut-2-ene as the major product on dehydration with conc. \nH\n2\nSO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Methylbutan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-3-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylbutan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "2-Methylbutan-2-ol (CHA3C(OH)(CHA3)CHA2CHA3) dehydrates to 2-methylbut-2-ene (CHA3C(CHA3)=CHCHA3) as the major product, following Saytzeff’s rule.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "12b5053c-73aa-44b2-a049-5d03303718e6",
+    "question_text": "Which alcohol produces butan-2-one upon oxidation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Butan-2-ol (CHA3CH(OH)CHA2CHA3), a secondary alcohol, oxidizes to butan-2-one (CHA3COCHA2CHA3) with reagents like PCC or CrOA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0073f3f7-98b6-4252-b531-dc018e7f337d",
+    "question_text": "What is the product when propan-1-ol reacts with excess conc. \nH\n2\nSO\n4\n at 140°C?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDi-n-propyl ether",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "At 140°C, propan-1-ol undergoes intermolecular dehydration in the presence of conc. HA2SOA4 to\n              form di-n-propyl ether (CHA3CHA2CHA2−O−CHA2CHA2CHA3). Alkene formation occurs at higher temperature\n              (~170°C).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "adf9a70e-1bae-40fc-b7f4-f3a12782b921",
+    "question_text": "Which compound is produced when ethyl magnesium chloride reacts with formaldehyde followed by hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthanol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ethyl magnesium chloride (CHA3CHA2MgCl) reacts with formaldehyde (HCHO), adding the\n              ethyl group to the carbonyl carbon, and hydrolysis yields propan-1-ol (CHA3CHA2CHA2OH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0f4fd91e-dbf5-4b3d-b2b8-a4cea532101e",
+    "question_text": "Which compound is formed when phenol reacts with dilute \nHNO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4-Nitrophenol only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2,4,6-Trinitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3-Nitrophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Phenol reacts with dilute HNOA3 to form a mixture of 2-nitrophenol and 4-nitrophenol, with\n              2-nitrophenol being a significant product due to ortho-para directing effect of -OH.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "084c39df-65ba-4f4e-a6a5-a4dbe734078d",
+    "question_text": "Which alcohol yields pent-2-ene as the major product on dehydration with conc. \nH\n2\nSO\n4\n at 160°C?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-3-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylbutan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Pentan-2-ol (CHA3CH(OH)CHA2CHA2CHA3) dehydrates to pent-2-ene (CHA3CH=CHCHA2CHA3) as the\n              major product, following Saytzeff’s rule.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "259f646e-e86a-4363-9c95-922847b1d49f",
+    "question_text": "The dehydration of ethanol to ethene proceeds via which type of mechanism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nE1 mechanism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nE2 mechanism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFree radical mechanism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNucleophilic substitution",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ethanol, a primary alcohol, undergoes acid-catalyzed dehydration via a concerted E2 mechanism because\n              formation of a primary carbocation is unstable.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d16bc148-e997-4b5f-956e-a73d68b639dc",
+    "question_text": "Which compound is formed when phenol reacts with \nNa\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhenol sodium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSodium benzoate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSodium phenoxide",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phenol (CA6HA5OH) reacts with sodium metal to form sodium phenoxide (CA6HA5ONa) and\n              hydrogen gas, showcasing its acidic nature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "85f871a5-616f-4e81-b620-6c02ec4dbb5c",
+    "question_text": "Which compound results when 2-methylbutan-2-ol is dehydrated with conc. \nH\n2\nSO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylbut-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPent-2-ene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylbutane",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylbut-2-ene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "2-Methylbutan-2-ol (CHA3C(OH)(CHA3)CHA2CHA3) dehydrates to 2-methylbut-2-ene (CHA3C(CHA3)=CHCHA3) as the major product, following Saytzeff’s rule.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6fb49d09-c830-494f-90eb-be4c2bde3db1",
+    "question_text": "What is the IUPAC name of \nCH\n3\n−\nCH\n(\nOH\n)\n−\nCH\n2\n−\nCH\n(\nOH\n)\n−\nCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentane-1,2-diol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentane-2,3-diol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentane-1,4-diol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentane-2,4-diol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The compound has a 5-carbon chain with -OH groups on carbons 2 and 4, named pentane-2,4-diol in IUPAC\n              nomenclature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "97f08009-829f-4839-a9f8-cf3b0a826b36",
+    "question_text": "Which compound is produced when phenol is heated with zinc dust?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCyclohexane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nToluene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhenol remains unchanged",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBenzene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phenol (CA6HA5OH) is reduced to benzene (CA6HA6) when heated with zinc dust, removing\n              the -OH group as ZnO and HA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "40150288-1034-447c-be39-ba72b814d8ba",
+    "question_text": "Which of the following alcohols reacts fastest with Lucas reagent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n(\nCH\n3\n)\n3\nCOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Lucas reagent (ZnClA2 in conc. HCl) reacts fastest with tertiary alcohols like (CHA3)A3COH due to the stability of the tertiary carbocation, causing immediate turbidity.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c249f3f5-dc01-4d2c-b048-abf884b346ca",
+    "question_text": "What gas is evolved when phenol reacts with sodium metal?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nO\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCl\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Phenol (CA6HA5OH) reacts with Na to form sodium phenoxide and releases hydrogen gas\n              (HA2), indicating its acidic nature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d9df2b08-9066-4df5-96a2-8d54c6c3673d",
+    "question_text": "Why does ethane-1,2-diol have a higher boiling point than ethanol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHigher molecular weight only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nExtensive hydrogen bonding",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPresence of two carbon atoms",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLower volatility",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ethane-1,2-diol (CHA2OH−CHA2OH) has two -OH groups, leading to more extensive hydrogen bonding\n              than ethanol (CHA3CHA2OH), which has one -OH group, increasing its boiling point.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "02bf308c-e353-4ad7-8b45-958b5f26827d",
+    "question_text": "Which alcohol is produced when ethyl magnesium bromide reacts with acetaldehyde followed by hydrolysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpropan-2-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ethyl magnesium bromide (CHA3CHA2MgBr) reacts with acetaldehyde (CHA3CHO), adding the\n              ethyl group to the carbonyl, yielding butan-2-ol (CHA3CH(OH)CHA2CHA3) after hydrolysis.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "445b4853-aa7d-4966-a015-c5317cb82079",
+    "question_text": "What is the product when benzyl alcohol is oxidized with PCC?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzoic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Benzyl alcohol (CA6HA5CHA2OH), a primary alcohol, is oxidized to benzaldehyde (CA6HA5CHO) with PCC, which stops at the aldehyde stage.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7e3666be-ebbb-4d37-8ad0-95d648f3e7c5",
+    "question_text": "What is the IUPAC name of \nCH\n3\n−\nCH\n(\nOH\n)\n−\nCH\n(\nOH\n)\n−\nCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButane-1,2-diol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButane-2,3-diol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropane-1,2-diol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButane-1,3-diol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The compound has a 4-carbon chain with -OH groups on carbons 2 and 3, named butane-2,3-diol in IUPAC\n              nomenclature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "85d794c1-00a2-4d14-80d6-f03c904e5e52",
+    "question_text": "Which phenol derivative has the highest acidity among the following?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhenol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2,4,6-Trinitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4-Nitrophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "2,4,6-Trinitrophenol (picric acid) is the most acidic due to three electron-withdrawing -NO₂ groups\n              stabilizing the phenoxide ion via resonance and inductive effects.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f6d9c2a0-1436-42f9-9062-df8fbc60ef5a",
+    "question_text": "Why is ortho-nitrophenol more acidic than ortho-methoxyphenol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHigher molecular weight",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrogen bonding",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectron-withdrawing effect of -NO₂",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSteric hindrance",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The -NO₂ group is electron-withdrawing, stabilizing the phenoxide ion via resonance and inductive\n              effects, increasing acidity. The -OCH₃ group is electron-donating, reducing acidity.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ca8af6dc-9e48-4fb6-b338-2b4ed2aadc30",
+    "question_text": "Which phenol derivative is steam volatile?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2,4,6-Trinitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "2-Nitrophenol is steam volatile due to intramolecular hydrogen bonding between -OH and -NO₂, reducing\n              intermolecular forces, unlike 4-nitrophenol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "36b1e2ab-e75d-4612-922c-1d18c1bf8b98",
+    "question_text": "Which alcohol is produced by the reduction of propanal with \nNaBH\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n(\nCH\n3\n)\n2\nCHOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Propanal (CHA3CHA2CHO) is reduced to propan-1-ol (CHA3CHA2CHA2OH), a primary alcohol,\n              using NaBHA4, which reduces aldehydes to alcohols.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "98a8d660-9739-48d5-9ddb-d4e691291e81",
+    "question_text": "What is the product when phenol reacts with \nCHCl\n3\n and \nNaOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Hydroxybenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSalicylaldehyde",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In the Reimer-Tiemann reaction, phenol reacts with CHClA3 and NaOH to form\n              salicylaldehyde (2-hydroxybenzaldehyde) after acidification.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cd389a1d-1b79-4b6c-8c19-81e762bb0a20",
+    "question_text": "Which compound is formed when phenol reacts with \nBr\n2\n in water at room temperature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Bromophenol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4-Bromophenol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2,4-Dibromophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2,4,6-Tribromophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phenol reacts with BrA2 in water to form 2,4,6-tribromophenol due to the strong activation of\n              the ring by the -OH group, leading to trisubstitution.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dea093d5-3e4b-40c7-9e3d-0f7d8f5def11",
+    "question_text": "What is the product when 1-phenylethanol is oxidized with \nKMnO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzaldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBenzoic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAcetophenone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "1-Phenylethanol (CA6HA5CH(OH)CHA3), a secondary alcohol, is oxidized to acetophenone (CA6HA5COCHA3) with KMnOA4, stopping at the ketone stage.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b63fdbf8-f1a4-4c02-923a-6c79355ef42a",
+    "question_text": "What is the common name of \nCH\n3\n−\nCH\n(\nOH\n)\n−\nCH\n2\n−\nOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthylene glycol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlycerol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIsopropyl alcohol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropylene glycol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "CHA3−CH(OH)−CHA2−OH (propane-1,2-diol) is a 3-carbon diol, commonly known as propylene glycol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "11a5fbd2-648b-4193-9864-0d85d2b6ccbd",
+    "question_text": "What is the key factor that makes ortho-nitrophenol more acidic than phenol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSteric hindrance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrogen bonding",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectron-withdrawing effect",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nResonance in benzene ring",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The -NO₂ group in ortho-nitrophenol exerts a strong electron-withdrawing effect, stabilizing the\n              phenoxide ion and increasing acidity compared to phenol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ccaf6cf2-49cc-4f56-af5b-6f4f7c74ffa7",
+    "question_text": "Which compound is formed when butan-1-ol is oxidized with \nKMnO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBut-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButanoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Butan-1-ol (CHA3CHA2CHA2CHA2OH), a primary alcohol, is oxidized to butanoic acid (CHA3CHA2CHA2COOH) with KMnOA4, a strong oxidant.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "98486a31-0bf5-4222-8cb1-0ccc3380d219",
+    "question_text": "Which alcohol is produced by the hydroboration-oxidation of 1-pentene?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Methylbutan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPentan-3-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "1-Pentene (CHA2=CH−CHA2CHA2CHA3) undergoes hydroboration-oxidation with BHA3 and HA2OA2, adding -OH anti-Markovnikov to form pentan-1-ol (CHA3(CHA2)A3CHA2OH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6363e7c0-1fed-414e-ab58-b6530ae81217",
+    "question_text": "Which alcohol can be prepared from an alkene using \nBH\n3\n followed by \nH\n2\nO\n2\n and \nOH\n−\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nButan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpropan-2-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Hydroboration-oxidation of propene (CHA3−CH=CHA2) follows anti-Markovnikov addition, yielding\n              propan-1-ol (CHA3−CHA2−CHA2OH).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9c08900c-69f4-4e45-93ef-21aa1cacf07c",
+    "question_text": "Which compound is formed when propan-1-ol is oxidized with \nKMnO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropanal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropanoic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Propan-1-ol (CHA3CHA2CHA2OH), a primary alcohol, is oxidized to propanoic acid (CHA3CHA2COOH) with KMnOA4, a strong oxidizing agent.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "74738b82-fed1-4887-a7f3-7483aba39e00",
+    "question_text": "Which compound is formed when phenol reacts with \nNaOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBenzene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSodium phenoxide",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhenol sodium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSodium benzoate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Phenol (CA6HA5OH) reacts with NaOH to form sodium phenoxide (CA6HA5ONa),\n              demonstrating its acidic nature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "67d3f033-02ee-4399-aced-c8cd776e7c64",
+    "question_text": "What is the product when pentan-3-ol is dehydrated with conc. \nH\n2\nSO\n4\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPent-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPent-2-ene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentane",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylbut-2-ene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Pentan-3-ol (CHA3CHA2CH(OH)CHA2CHA3) dehydrates to pent-2-ene (CHA3CH=CHCHA2CHA3) as the\n              major product with conc. HA2SOA4, following Saytzeff’s rule.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f96908d8-6bfc-4bf8-a509-f84b68bbb853",
+    "question_text": "Which products are formed when phenol reacts with dilute \nHNO\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOnly 4-nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOnly 2-nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMixture of o- and p-nitrophenol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3-nitrophenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phenol reacts with dilute HNOA3 to form a mixture of o-nitrophenol and p-nitrophenol due to the\n              ortho-para directing effect of the -OH group.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7fac236e-7dbb-45f2-875e-5425a64a6ab3",
+    "question_text": "What is the IUPAC name of glycerol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropane-1,2-diol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPropane-1,2,3-triol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthane-1,2-diol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Glycerol (HO−CHA2−CH(OH)−CHA2−OH) has a 3-carbon chain with -OH groups on all three carbons,\n              named propane-1,2,3-triol in IUPAC nomenclature.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "424fa4c4-8a67-4cbf-9192-d4126adb23f9",
+    "question_text": "Which alcohol specifically yields pentan-3-one on oxidation with PCC?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPentan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPentan-3-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylbutan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Pentan-3-ol (CHA3CHA2CH(OH)CHA2CHA3), a secondary alcohol, oxidizes to pentan-3-one (CHA3CHA2COCHA2CHA3) with PCC.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "df060909-7dd1-49f6-a968-9593bf69a44c",
+    "question_text": "Which of the following is a primary alcohol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n(\nCH\n3\n)\n3\nCOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n(\nOH\n)\nCH\n2\nCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "A primary alcohol has the -OH group attached to a carbon bonded to only one other carbon. CHA3CHA2CHA2OH (propan-1-ol) is a primary alcohol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cd5f6aa2-cd63-4598-b396-52747116f3c9",
+    "question_text": "What is the intermediate formed during the dehydration of butan-2-ol to but-2-ene?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFree radical",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarbanion",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarbocation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlkoxide ion",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Dehydration of butan-2-ol (CHA3CH(OH)CHA2CHA3) with conc. HA2SOA4 proceeds via an E1\n              mechanism, forming a carbocation (CHA3CHA+CHA2CHA3) as the intermediate.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b306c1c-d488-4184-93ca-1fb0e7985488",
+    "question_text": "What is the common name of \nCH\n2\n=\nCH\n−\nCH\n2\nOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVinyl alcohol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthanol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropanol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAllyl alcohol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "CHA2=CH−CHA2OH is a 3-carbon compound with a double bond and an -OH group, commonly known as\n              allyl alcohol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78ed74ce-e9d8-46e7-bb48-f005d283b519",
+    "question_text": "Which alcohol is used as a fuel additive to increase octane rating?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMethanol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlycerol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthanol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ethanol (CHA3CHA2OH) is commonly used as a fuel additive (e.g., in gasoline) to improve the\n              octane rating and reduce emissions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1ae255e2-dd4e-435c-bb01-8cfae0790f45",
+    "question_text": "Which alcohol resists oxidation with \nKMnO\n4\n due to its structure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n(\nOH\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n(\nCH\n3\n)\n3\nCOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nCH\n2\nOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "2-Methylpropan-2-ol ((CHA3)A3COH), a tertiary alcohol, resists oxidation with KMnOA4\n              because it lacks an alpha hydrogen.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "49a98f16-70a1-4a3f-8365-be9b9dc33c58",
+    "question_text": "What is the total number of hydroxyl groups in propane-1,2,3-triol?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Propane-1,2,3-triol (glycerol, CHA2OH−CHOH−CHA2OH) has three -OH groups, as indicated by ‘triol’\n              in its name.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c034c81a-9df8-4cbe-a2e1-12ac52f48c80",
+    "question_text": "Which alcohol is used as an antifreeze in automobile radiators?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMethanol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthanol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlycerol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthane-1,2-diol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ethane-1,2-diol (CHA2OH−CHA2OH), commonly called ethylene glycol, is widely used as an\n              antifreeze due to its ability to lower the freezing point of water.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "93bcd187-dea1-49c1-89f9-9369a53c385b",
+    "question_text": "What activates the benzene ring in phenol towards electrophilic substitution?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInductive effect",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSteric hindrance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nResonance effect of -OH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAcidity of phenol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The -OH group donates electrons to the benzene ring via resonance, increasing electron density at ortho\n              and para positions, thus activating it for electrophilic substitution.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Alcohols, Phenols and Ethers",
+    "topic": "Alcohols, Phenols and Ethers",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Alcohols, Phenols and Ethers / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "alcohols-phenols-and-ethers"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

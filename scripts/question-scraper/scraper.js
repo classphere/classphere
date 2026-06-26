@@ -2,6 +2,16 @@
  * scraper.js
  * NEET Question Scraper — sciencelesson.in
  * Output: one JSON file per chapter, each question matching the analysis engine schema.
+ *
+ * Fixes applied (v2):
+ *  1. Fresh Puppeteer page created per chapter — eliminates the "detached Frame" cascade.
+ *  2. Detached frame error bubbles up from scrapeTestPage so the caller can recreate the page.
+ *  3. In-test recovery: if a frame detaches mid-chapter, the page is closed and reopened and
+ *     the test is retried once before giving up.
+ *  4. RESUME MODE: chapters whose output file already has > 0 questions are skipped. Run the
+ *     scraper again after a crash and it picks up where it left off.
+ *  5. Dialogs (alerts, confirms, popups) are auto-dismissed on every new page.
+ *  6. Request interception blocks known ad/tracking domains to reduce popup frequency.
  */
 
 const puppeteer = require('puppeteer');
@@ -11,6 +21,22 @@ const { v4: uuidv4 } = require('uuid');
 
 const BASE_URL = 'https://sciencelesson.in/NEET-Mock-Test';
 const OUTPUT_DIR = path.join(__dirname, 'output');
+const USER_AGENT =
+  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+
+// Ad/tracker domains to block (reduces popups & speeds up loads)
+const BLOCKED_DOMAINS = [
+  'doubleclick.net',
+  'googlesyndication.com',
+  'adservice.google.com',
+  'googletagmanager.com',
+  'googletagservices.com',
+  'adnxs.com',
+  'outbrain.com',
+  'taboola.com',
+  'moatads.com',
+  'amazon-adsystem.com',
+];
 
 // ─── CHAPTER MANIFEST ─────────────────────────────────────────────────────────
 const CHAPTERS = {
@@ -111,81 +137,117 @@ const CHAPTERS = {
 
 const OPTION_IDS = ['A', 'B', 'C', 'D'];
 
+// ─── HELPER: check if a string is a frame-detach error ────────────────────────
+function isDetachedFrameError(err) {
+  return (
+    err.message.includes('detached Frame') ||
+    err.message.includes('Execution context was destroyed') ||
+    err.message.includes('Session closed') ||
+    err.message.includes('Target closed')
+  );
+}
+
+// ─── HELPER: create a fresh, hardened Puppeteer page ─────────────────────────
+async function newPage(browser) {
+  const page = await browser.newPage();
+
+  await page.setUserAgent(USER_AGENT);
+  await page.setViewport({ width: 1280, height: 900 });
+
+  // Auto-dismiss all dialogs (alert/confirm/prompt/beforeunload)
+  page.on('dialog', async (dialog) => {
+    try { await dialog.dismiss(); } catch (_) {}
+  });
+
+  // Block ad/tracker requests to cut popup triggers
+  await page.setRequestInterception(true);
+  page.on('request', (req) => {
+    const url = req.url();
+    const blocked = BLOCKED_DOMAINS.some((d) => url.includes(d));
+    if (blocked) {
+      req.abort();
+    } else {
+      req.continue();
+    }
+  });
+
+  return page;
+}
+
+// ─── HELPER: safe page close (never throws) ──────────────────────────────────
+async function closePage(page) {
+  try { await page.close(); } catch (_) {}
+}
+
 // ─── DETECT HOW MANY TESTS A CHAPTER HAS ─────────────────────────────────────
 async function detectTestCount(page, baseChapterUrl) {
   try {
-    await page.goto(baseChapterUrl, { waitUntil: 'networkidle2', timeout: 20000 });
+    await page.goto(baseChapterUrl, { waitUntil: 'networkidle2', timeout: 25000 });
     const count = await page.evaluate(() => {
       const links = Array.from(document.querySelectorAll('a[href*="/test-"]'));
       let max = 0;
-      links.forEach(a => {
+      links.forEach((a) => {
         const m = a.href.match(/test-(\d+)$/);
         if (m) max = Math.max(max, parseInt(m[1]));
       });
       return max;
     });
     return count > 0 ? count : 10; // fallback to 10
-  } catch {
+  } catch (err) {
+    if (isDetachedFrameError(err)) throw err; // bubble up so caller recreates the page
     return 10;
   }
 }
 
 // ─── SCRAPE ONE TEST PAGE ─────────────────────────────────────────────────────
-async function scrapeTestPage(page, url, subject, chapterName, testNum) {
-  try {
-    const response = await page.goto(url, { waitUntil: 'networkidle2', timeout: 25000 });
+// Returns:
+//   null            → 404 / no such page (stop this chapter's test loop)
+//   []              → page loaded but no questions found (non-fatal, keep going)
+//   Question[]      → success
+//   throws          → detached frame / session crash (caller must recreate page)
+async function scrapeTestPage(page, url) {
+  const response = await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
 
-    // 404 or redirect means no more tests
-    if (!response || response.status() === 404) return null;
+  // 404 or redirect means no more tests for this chapter
+  if (!response || response.status() === 404) return null;
 
-    const questions = await page.evaluate((subject, chapterName, testNum, OPTION_IDS) => {
-      const questionEls = document.querySelectorAll('.question');
-      if (!questionEls.length) return [];
+  const questions = await page.evaluate((OPTION_IDS) => {
+    const questionEls = document.querySelectorAll('.question');
+    if (!questionEls.length) return [];
 
-      return Array.from(questionEls).map((qEl, idx) => {
-        // Question text
-        const questionText = qEl.querySelector('.writeQuestion p')?.innerText?.trim() || '';
+    return Array.from(questionEls).map((qEl) => {
+      // Question text
+      const questionText = qEl.querySelector('.writeQuestion p')?.innerText?.trim() || '';
 
-        // Question image (if any)
-        const qImg = qEl.querySelector('.writeQuestion img');
-        const imageUrl = qImg ? qImg.src : null;
+      // Question image (if any)
+      const qImg = qEl.querySelector('.writeQuestion img');
+      const imageUrl = qImg ? qImg.src : null;
 
-        // Options
-        const optionEls = qEl.querySelectorAll('.option');
-        const options = Array.from(optionEls).map((el, i) => {
-          const img = el.querySelector('img');
-          return {
-            id: OPTION_IDS[i] || String.fromCharCode(65 + i),
-            text: el.innerText?.trim() || '',
-            image_url: img ? img.src : null,
-          };
-        });
-
-        // Correct answer — stored as 1-indexed number in .ans div
-        const ansText = qEl.querySelector('.ans')?.innerText?.trim() || '';
-        const ansNum = parseInt(ansText);
-        const correctAnswer = (!isNaN(ansNum) && ansNum >= 1 && ansNum <= 4)
-          ? [OPTION_IDS[ansNum - 1]]
-          : [];
-
-        // Explanation
-        const explanation = qEl.querySelector('.explanation p')?.innerText?.trim() || '';
-
+      // Options
+      const optionEls = qEl.querySelectorAll('.option');
+      const options = Array.from(optionEls).map((el, i) => {
+        const img = el.querySelector('img');
         return {
-          question_text: questionText,
-          image_url: imageUrl,
-          options,
-          correct_answer: correctAnswer,
-          explanation,
+          id: OPTION_IDS[i] || String.fromCharCode(65 + i),
+          text: el.innerText?.trim() || '',
+          image_url: img ? img.src : null,
         };
-      }).filter(q => q.question_text.length > 0);
-    }, subject, chapterName, testNum, OPTION_IDS);
+      });
 
-    return questions;
-  } catch (err) {
-    console.error(`    ✗ Error at ${url}: ${err.message}`);
-    return [];
-  }
+      // Correct answer — stored as 1-indexed number in .ans div
+      const ansText = qEl.querySelector('.ans')?.innerText?.trim() || '';
+      const ansNum = parseInt(ansText);
+      const correctAnswer =
+        !isNaN(ansNum) && ansNum >= 1 && ansNum <= 4 ? [OPTION_IDS[ansNum - 1]] : [];
+
+      // Explanation
+      const explanation = qEl.querySelector('.explanation p')?.innerText?.trim() || '';
+
+      return { question_text: questionText, image_url: imageUrl, options, correct_answer: correctAnswer, explanation };
+    }).filter((q) => q.question_text.length > 0);
+  }, OPTION_IDS);
+
+  return questions;
 }
 
 // ─── BUILD FINAL SCHEMA OBJECT ────────────────────────────────────────────────
@@ -193,8 +255,7 @@ function buildQuestion(raw, subject, chapter, testNum) {
   const correctId = raw.correct_answer[0] || null;
   const distractor_map = {};
 
-  // Build distractor_map for wrong options
-  raw.options.forEach(opt => {
+  raw.options.forEach((opt) => {
     if (opt.id !== correctId) {
       distractor_map[opt.id] = {
         error_type: 'conceptual',
@@ -224,20 +285,26 @@ function buildQuestion(raw, subject, chapter, testNum) {
   };
 }
 
+// ─── HELPER: get output file path for a chapter ──────────────────────────────
+function chapterFilePath(subject, chapterName) {
+  const safeName = chapterName.replace(/[^a-zA-Z0-9]/g, '_').replace(/_+/g, '_');
+  const fileName = `${subject}_${safeName}.json`;
+  return { fileName, filePath: path.join(OUTPUT_DIR, subject, fileName) };
+}
+
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 async function main() {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu',
+    ],
   });
-
-  const page = await browser.newPage();
-  await page.setUserAgent(
-    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-  );
-  await page.setViewport({ width: 1280, height: 900 });
 
   let grandTotal = 0;
   const summary = [];
@@ -247,43 +314,95 @@ async function main() {
     if (!fs.existsSync(subjectDir)) fs.mkdirSync(subjectDir, { recursive: true });
 
     for (const ch of chapters) {
-      const chapterBaseUrl = `${BASE_URL}/${prefix}/${ch.slug}/`;
-      console.log(`\n📚 [${subject}] ${ch.name}`);
+      const { fileName, filePath } = chapterFilePath(subject, ch.name);
 
-      // Auto-detect test count
-      const testCount = await detectTestCount(page, chapterBaseUrl);
-      console.log(`   Detected ${testCount} tests`);
-
-      const allQuestions = [];
-
-      for (let t = 1; t <= testCount; t++) {
-        const testUrl = `${BASE_URL}/${prefix}/${ch.slug}/test-${t}`;
-        process.stdout.write(`   Test ${String(t).padStart(2)}: `);
-
-        const raw = await scrapeTestPage(page, testUrl, subject, ch.name, t);
-
-        if (raw === null) {
-          console.log('(no page — stopping)');
-          break;
+      // ── RESUME MODE: skip chapters that already have data ─────────────────
+      if (fs.existsSync(filePath)) {
+        try {
+          const existing = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          if (Array.isArray(existing) && existing.length > 0) {
+            console.log(`\n⏭️  [${subject}] ${ch.name} — skipping (${existing.length} questions already scraped)`);
+            summary.push({ subject, chapter: ch.name, file: fileName, count: existing.length });
+            grandTotal += existing.length;
+            continue;
+          }
+        } catch (_) {
+          // file is corrupt or empty — re-scrape it
         }
-
-        const built = raw.map(q => buildQuestion(q, subject, ch.name, t));
-        allQuestions.push(...built);
-        console.log(`${built.length} questions`);
-
-        // Polite delay (1.5s between requests)
-        await new Promise(r => setTimeout(r, 1500));
       }
 
-      // Output filename: Subject_Chapter_Name.json
-      const safeName = ch.name.replace(/[^a-zA-Z0-9]/g, '_').replace(/_+/g, '_');
-      const fileName = `${subject}_${safeName}.json`;
-      const filePath = path.join(subjectDir, fileName);
+      console.log(`\n📚 [${subject}] ${ch.name}`);
 
+      const chapterBaseUrl = `${BASE_URL}/${prefix}/${ch.slug}/`;
+      const allQuestions = [];
+
+      // ── Create a fresh page for this chapter ──────────────────────────────
+      let page = await newPage(browser);
+
+      try {
+        // Detect test count (will throw on detached frame so we catch below)
+        let testCount;
+        try {
+          testCount = await detectTestCount(page, chapterBaseUrl);
+        } catch (err) {
+          if (isDetachedFrameError(err)) {
+            console.log(`   ⚠️  Frame detached during test-count detection — recreating page`);
+            await closePage(page);
+            page = await newPage(browser);
+            testCount = await detectTestCount(page, chapterBaseUrl).catch(() => 10);
+          } else {
+            testCount = 10;
+          }
+        }
+        console.log(`   Detected ${testCount} tests`);
+
+        for (let t = 1; t <= testCount; t++) {
+          const testUrl = `${BASE_URL}/${prefix}/${ch.slug}/test-${t}`;
+          process.stdout.write(`   Test ${String(t).padStart(2)}: `);
+
+          let raw;
+          try {
+            raw = await scrapeTestPage(page, testUrl);
+          } catch (err) {
+            if (isDetachedFrameError(err)) {
+              // ── Recovery: recreate page and retry this test once ──────────
+              console.log(`\n   ⚠️  Frame detached at test-${t} — recreating page and retrying...`);
+              await closePage(page);
+              page = await newPage(browser);
+
+              try {
+                raw = await scrapeTestPage(page, testUrl);
+              } catch (retryErr) {
+                console.log(`   ✗ Retry also failed: ${retryErr.message}`);
+                raw = []; // give up on this test, continue to next
+              }
+            } else {
+              console.log(`\n   ✗ Error at test-${t}: ${err.message}`);
+              raw = [];
+            }
+          }
+
+          if (raw === null) {
+            console.log('(no page — stopping)');
+            break;
+          }
+
+          const built = raw.map((q) => buildQuestion(q, subject, ch.name, t));
+          allQuestions.push(...built);
+          console.log(`${built.length} questions`);
+
+          // Polite delay between requests
+          await new Promise((r) => setTimeout(r, 1500));
+        }
+      } finally {
+        // Always close the page when done with this chapter
+        await closePage(page);
+      }
+
+      // Write output for this chapter
       fs.writeFileSync(filePath, JSON.stringify(allQuestions, null, 2), 'utf8');
 
-      const entry = { subject, chapter: ch.name, file: fileName, count: allQuestions.length };
-      summary.push(entry);
+      summary.push({ subject, chapter: ch.name, file: fileName, count: allQuestions.length });
       grandTotal += allQuestions.length;
 
       console.log(`   ✅ Saved ${allQuestions.length} questions → ${fileName}`);
@@ -306,7 +425,7 @@ async function main() {
   console.log(`${'─'.repeat(60)}`);
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error('Fatal error:', err);
   process.exit(1);
 });

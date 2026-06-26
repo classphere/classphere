@@ -1,1 +1,6505 @@
-[]
+[
+  {
+    "id": "4e97b4ae-7cac-488e-8036-b61d7e820549",
+    "question_text": "A system at constant volume absorbs 208 J of heat, and its temperature increases from 300 K to 310 K. What is \n𝐶\n𝑣\n? (1 mol diatomic gas)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12.5 J/mol·K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20.8 J/mol·K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30.0 J/mol·K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n90.0 J/mol·K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For a diatomic ideal gas at constant volume, ΔU=qv=nCvΔT. Given qv=208J, n=1mol, ΔT=310−300=10K, we get 208=1×Cv×10, so Cv=208/10=20.8J/mol·K, typical for a diatomic gas (Cv≈2.5R).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6972409f-130b-4555-b2b8-01b0536a4a19",
+    "question_text": "Calculate \nΔ\n𝐻\n for \n𝐶\n(\n𝑠\n)\n+\n2\n𝐻\n2\n𝑂\n(\n𝑔\n)\n→\n𝐶\n𝑂\n2\n(\n𝑔\n)\n+\n2\n𝐻\n2\n(\n𝑔\n)\n using: \nΔ\n𝐻\n𝑓\n∘\n(\n𝐻\n2\n𝑂\n,\n𝑔\n)\n=\n−\n241.8\nkJ/mol\n, \nΔ\n𝐻\n𝑓\n∘\n(\n𝐶\n𝑂\n2\n,\n𝑔\n)\n=\n−\n393.5\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-90.1 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n483.6 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90.1 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-393.5 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔH=[ΔHf∘(CO2)+2×ΔHf∘(H2)]−[ΔHf∘(C)+2×ΔHf∘(H2O)]=[−393.5+0]−[0+2(−241.8)]=−393.5+483.6=90.1kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "496f6f37-9f62-433c-8752-dfe534700e80",
+    "question_text": "Calculate the work done when 1 mol of an ideal gas expands isothermally and reversibly from 5 atm to 1 atm at 300 K. (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2494 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4013 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-4013 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-2494 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "w=−nRTln⁡(P1/P2)=−1×8.314×300×ln⁡(5/1)=−2494.2×1.609=−4013J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a916fbf9-3841-4db2-9a09-7ad30c5591bd",
+    "question_text": "The enthalpy of combustion of glucose is -2808 kJ/mol. How much heat is released when 90 g of glucose is burnt? (Molar mass of \n𝐶\n6\n𝐻\n12\n𝑂\n6\n=\n180\ng/mol\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2808 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n702 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5616 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1404 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles = 90/180=0.5mol, heat released = 0.5×2808=1404kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "28cbc95c-0345-4e72-abc4-24df87b55e5f",
+    "question_text": "The standard enthalpy change for the reaction \n𝑁\n2\n(\n𝑔\n)\n+\n3\n𝐻\n2\n(\n𝑔\n)\n→\n2\n𝑁\n𝐻\n3\n(\n𝑔\n)\n is given by:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2\n×\nΔ\n𝑓\n𝐻\n∘\n(\n𝑁\n𝐻\n3\n)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nΔ\n𝑓\n𝐻\n∘\n(\n𝑁\n2\n)\n+\n3\n×\nΔ\n𝑓\n𝐻\n∘\n(\n𝐻\n2\n)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nΔ\n𝑓\n𝐻\n∘\n(\n𝑁\n𝐻\n3\n)\n−\nΔ\n𝑓\n𝐻\n∘\n(\n𝑁\n2\n)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nΔ\n𝑓\n𝐻\n∘\n(\n𝑁\n𝐻\n3\n)\n/\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The standard enthalpy change for a reaction forming a compound from its elements in their standard states\n              is the enthalpy of formation (ΔfH∘) multiplied by the moles formed. For 2NH3,\n              ΔH=2×ΔfH∘(NH3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3d6ba82a-2419-4d15-8a99-dc38b7aff609",
+    "question_text": "Calculate \nΔ\n𝑆\n𝑠\n𝑢\n𝑟\n𝑟\n when 2 mol of water freezes at 273 K if \nΔ\n𝐻\n𝑓\n𝑢\n𝑠\n=\n6.01\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-44.03 J/K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n22.01 J/K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.01 J/K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n44.03 J/K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For freezing, ΔH=−n×ΔHfus=−2×6.01=−12.02kJ, ΔSsurr=−ΔH/T=−(−12.02×103)/273=44.03J/K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a3541ffb-c1d8-4f40-a593-5abfb37466f6",
+    "question_text": "Calculate the heat required to raise the temperature of 40 g of water from 25°C to 35°C. (Specific heat of water = 4.18 J/g·K)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.836 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.18 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.344 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.672 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "q=m×C×ΔT=40×4.18×10=1672J=1.672kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "49acd9fd-62c7-46b1-816e-a15863c728ef",
+    "question_text": "The equilibrium constant for a reaction is 100 at 300 K. Calculate \nΔ\n𝐺\n∘\n. (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-5.74 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n11.49 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-22.98 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-11.49 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔG∘=−RTln⁡K=−8.314×300×ln⁡(100)=−8.314×300×4.605=−11488J/mol=−11.49kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a4a7847b-0aac-4126-a707-64e13c29d34b",
+    "question_text": "Calculate \nΔ\n𝐻\n for \n𝐶\n(\n𝑠\n)\n+\n1\n2\n𝑂\n2\n(\n𝑔\n)\n→\n𝐶\n𝑂\n(\n𝑔\n)\n given: \n𝐶\n(\n𝑠\n)\n+\n𝑂\n2\n(\n𝑔\n)\n→\n𝐶\n𝑂\n2\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n393.5\nkJ/mol\n; \n𝐶\n𝑂\n(\n𝑔\n)\n+\n1\n2\n𝑂\n2\n(\n𝑔\n)\n→\n𝐶\n𝑂\n2\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n283\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-676.5 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n283 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-110.5 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n393.5 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Using Hess’s law: ΔH=−393.5−(−283)=−393.5+283=−110.5kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b289ee4-992a-4fee-8cbf-17f9a670b8fe",
+    "question_text": "For an ideal gas undergoing reversible adiabatic compression, which relationship holds?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑃\n1\n−\n𝛾\n𝑇\n𝛾\n=\nconstant",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑃\n𝑉\n=\nconstant",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑇\n/\n𝑉\n=\nconstant",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑃\n/\n𝑇\n=\nconstant",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In a reversible adiabatic process, P1−γTγ=constant, derived from PVγ=constant and the ideal gas law.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f2d1c363-b903-4508-835f-b41901ba23e7",
+    "question_text": "For the reaction \n2\n𝐴\n(\n𝑔\n)\n+\n𝐵\n(\n𝑔\n)\n→\n2\n𝐷\n(\n𝑔\n)\n, \nΔ\n𝑈\n=\n−\n10.5\nkJ\n, \nΔ\n𝑆\n=\n−\n44.1\nJ/K\n at 298 K. What is \nΔ\n𝐺\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-10.5 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10.5 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.15 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-0.15 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Calculate ΔH=ΔU+ΔngRT, where Δng=2−3=−1, RT=8.314×298×10−3=2.4776kJ. Thus, ΔH=−10.5−2.4776=−12.9776kJ. Then, ΔG=ΔH−TΔS=−12.9776−298×(−0.0441)=−12.9776+13.1418=0.15kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9387cee0-c80b-42f7-a60d-371464055b9b",
+    "question_text": "The bond enthalpy of C-Cl in \nCCl\n4\n(\ng\n)\n is to be calculated given: \nΔ\n𝐻\n𝑓\n∘\n(\nCCl\n4\n,\ng\n)\n=\n−\n95.7\nkJ/mol\n, \nΔ\n𝐻\n𝑎\n(\nC\n,\ng\n)\n=\n715\nkJ/mol\n, \nΔ\n𝐻\n𝑎\n(\nCl\n2\n,\ng\n)\n=\n242\nkJ/mol\n. What is the bond enthalpy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n242.0 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n715.0 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n323.7 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n95.7 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For CClA4(g)→C(g)+4Cl(g), ΔH=ΔHa(C)+2×ΔHa(ClA2)−ΔHf∘(CClA4,g)=715+2×242−(−95.7)=715+484+95.7=1294.7kJ/mol. Bond enthalpy = 1294.7/4=323.7kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cadef292-366a-4e4e-8a6d-500bbdd21629",
+    "question_text": "Which thermodynamic quantity is a measure of disorder in a system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEntropy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnthalpy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInternal energy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGibbs free energy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Entropy (S) is a measure of the disorder or randomness in a system, as defined in thermodynamics.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9824bf89-2625-4619-bbd5-ddff7be60cbb",
+    "question_text": "For a reaction with \nΔ\n𝐻\n=\n120\nkJ/mol\n and \nΔ\n𝑆\n=\n300\nJ/K\n, what is \nΔ\n𝐺\n at 400 K?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n120 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-120 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n300 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔG=ΔH−TΔS=120−400×0.3=120−120=0kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d9b46a47-141d-4a06-a108-150b43f31cb9",
+    "question_text": "For an exothermic reaction at constant pressure, the heat evolved is equal to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nΔ\n𝑈",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nΔ\n𝐻",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nΔ\n𝐺",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n−\nΔ\n𝑈",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For an exothermic reaction at constant pressure, heat evolved qp=ΔH, and since it’s\n              exothermic, ΔH<0, so qp=ΔH.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "be561634-66c8-4a4a-a05d-3cd51f8d1d62",
+    "question_text": "For an ideal gas (\n𝛾\n=\n1.4\n) expanding adiabatically from 15 L to 30 L at 450 K, what is the final temperature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n225 K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n341 K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n595 K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n450 K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "T2=T1(V1/V2)γ−1=450×(15/30)0.4=450×(0.5)0.4=450×0.7579=341K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "216e3d8d-fa9f-4c20-a4b5-75d610c48d3b",
+    "question_text": "For a process with \nΔ\n𝐻\n=\n50\nkJ\n and \nΔ\n𝐺\n=\n20\nkJ\n at 300 K, what is \nΔ\n𝑆\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n150 J/K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n50 J/K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-100 J/K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n100 J/K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔG=ΔH−TΔS, so 20=50−300ΔS, 300ΔS=30, ΔS=0.1kJ/K=100J/K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "411f69e5-499c-4ecc-8e96-d54172d62942",
+    "question_text": "What is the relationship between \nΔ\n𝐻\n and \nΔ\n𝑈\n for the reaction \n2\n𝑆\n𝑂\n2\n(\n𝑔\n)\n+\n𝑂\n2\n(\n𝑔\n)\n→\n2\n𝑆\n𝑂\n3\n(\n𝑔\n)\n at 298 K? (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nΔ\n𝐻\n=\nΔ\n𝑈\n+\n2.48\nkJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nΔ\n𝐻\n=\nΔ\n𝑈\n−\n2.48\nkJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nΔ\n𝐻\n=\nΔ\n𝑈",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nΔ\n𝐻\n=\nΔ\n𝑈\n+\n4.96\nkJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "ΔH=ΔU+ΔngRT. Here, Δng=2−3=−1, RT=8.314×298×10−3=2.48kJ, so ΔH=ΔU−2.48kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3a667120-6e9e-4a03-92c6-d7b81ae86965",
+    "question_text": "Which of the following processes has a negative \nΔ\n𝑆\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝐻\n2\n𝑂\n(\n𝑠\n)\n→\n𝐻\n2\n𝑂\n(\n𝑙\n)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝐻\n2\n𝑂\n(\n𝑔\n)\n→\n𝐻\n2\n𝑂\n(\n𝑙\n)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2\n𝐻\n2\n(\n𝑔\n)\n+\n𝑂\n2\n(\n𝑔\n)\n→\n2\n𝐻\n2\n𝑂\n(\n𝑔\n)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑁\n𝐻\n4\n𝐶\n𝑙\n(\n𝑠\n)\n→\n𝑁\n𝐻\n3\n(\n𝑔\n)\n+\n𝐻\n𝐶\n𝑙\n(\n𝑔\n)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Entropy decreases when disorder decreases, e.g., in condensation (H2O(g)→H2O(l)), as\n              gas to liquid reduces randomness.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "067d004e-ed10-4fd7-b02c-7775305c89ae",
+    "question_text": "Using Hess’s law, calculate \nΔ\n𝐻\n for \n2\n𝑆\n(\n𝑠\n)\n+\n3\n𝑂\n2\n(\n𝑔\n)\n→\n2\n𝑆\n𝑂\n3\n(\n𝑔\n)\n given: \n𝑆\n(\n𝑠\n)\n+\n𝑂\n2\n(\n𝑔\n)\n→\n𝑆\n𝑂\n2\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n296.8\nkJ/mol\n; \n2\n𝑆\n𝑂\n2\n(\n𝑔\n)\n+\n𝑂\n2\n(\n𝑔\n)\n→\n2\n𝑆\n𝑂\n3\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n197.8\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-494.6 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n791.4 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-791.4 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-98.9 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Multiply first by 2: 2S(s)+2O2(g)→2SO2(g), ΔH=−593.6kJ. Add\n              second: ΔH=−593.6+(−197.8)=−791.4kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8b04d43d-810c-46b6-9cd8-de4895f7a4da",
+    "question_text": "For a reaction with \nΔ\n𝐻\n=\n60\nkJ/mol\n and \nΔ\n𝑆\n=\n150\nJ/K\n, what is \nΔ\n𝐺\n at 400 K?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n60 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-60 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔG=ΔH−TΔS=60−400×0.15=60−60=0kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "baba84bd-dd1d-49ae-a4bc-e7065a8189b0",
+    "question_text": "A system absorbs 1500 J of heat and expands by 0.6 L against 3 atm at constant pressure. What is \nΔ\n𝑈\n? (1 atm·L = 101.325 J)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1500.0 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1318.0 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1682.0 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1196.0 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Work done: w=−PΔV=−3×0.6×101.325=−181.985J. Heat absorbed: q=1500J. Using the first law, ΔU=q+w=1500−181.985=1318.0J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5f227ce-dd19-45ed-ba18-c2228f76560f",
+    "question_text": "Calculate the heat absorbed when 40 g of iron is heated from 20°C to 100°C at constant pressure. (\n𝐶\n𝑝\n=\n25.1\nJ/mol·K\n, molar mass = 56 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.008 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.717 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n25.1 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.434 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles = 40/56=0.7143mol, ΔT=100−20=80K, qp=nCpΔT=0.7143×25.1×80=1434.3J=1.434kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0c92fe5b-07b7-417c-ba6e-a520f09f19b0",
+    "question_text": "For a reaction with \nΔ\n𝐻\n=\n100\nkJ/mol\n and \nΔ\n𝑆\n=\n200\nJ/K\n, at what temperature does \nΔ\n𝐺\n=\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n250 K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1000 K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n500 K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n200 K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔG=ΔH−TΔS=0, 100×103−T×200=0, T=100000/200=500K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "512b03c3-06a8-483a-a759-f38b99d5c6bd",
+    "question_text": "For a reaction with \nΔ\n𝐺\n∘\n=\n13.8\nkJ/mol\n at 298 K, what is the equilibrium constant \n𝐾\n? (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.38",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.038",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n260",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.0038",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Using ΔG∘=−RTln⁡K, we get 13.8×103=−8.314×298×ln⁡K.\n              Thus, ln⁡K=−13.8×1038.314×298=−5.57, and K=e−5.57≈0.0038.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ede2ce06-a656-4379-94c4-99a0d176fb39",
+    "question_text": "Calculate the heat absorbed when 36 g of ice melts at 0°C. (\nΔ\n𝐻\n𝑓\n𝑢\n𝑠\n=\n6.01\nkJ/mol\n, molar mass of \n𝐻\n2\n𝑂\n=\n18\ng/mol\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.01 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12.02 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.005 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18.03 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Moles of ice = 36/18=2mol. Heat absorbed = 2×6.01=12.02kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5cd62fe9-7105-43c5-ac70-c0a2464edd01",
+    "question_text": "Using bond enthalpies (\n𝐶\n−\n𝐻\n=\n413\nkJ/mol\n, \n𝑂\n=\n𝑂\n=\n498\nkJ/mol\n, \n𝐶\n=\n𝑂\n=\n803\nkJ/mol\n, \n𝑂\n−\n𝐻\n=\n467\nkJ/mol\n), calculate \nΔ\n𝐻\n for \n𝐶\n𝐻\n4\n(\n𝑔\n)\n+\n2\n𝑂\n2\n(\n𝑔\n)\n→\n𝐶\n𝑂\n2\n(\n𝑔\n)\n+\n2\n𝐻\n2\n𝑂\n(\n𝑔\n)\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n826 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-413 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-826 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-890 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bonds broken: 4(C−H)+2(O=O)=4×413+2×498=1652+996=2648kJ. Bonds\n              formed: 2(C=O)+4(O−H)=2×803+4×467=1606+1868=3474kJ. ΔH=2648−3474=−826kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "229dfa5d-c83e-4a85-a366-926d43f2b233",
+    "question_text": "Calculate the heat absorbed when 50 g of copper is heated from 25°C to 125°C at constant volume. (\n𝐶\n𝑣\n=\n22.6\nJ/mol·K\n, molar mass = 63.5 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.26 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.89 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n22.6 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.78 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles = 50/63.5=0.7874mol, ΔT=125−25=100K, qv=nCvΔT=0.7874×22.6×100=1779.5J=1.78kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ad83b5fd-6b01-47e6-b3cd-01e90328ee05",
+    "question_text": "What is the work done during the free expansion of an ideal gas into a vacuum?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPositive",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nZero",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNegative",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEqual to heat absorbed",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In free expansion, pex=0, so w=−pexΔV=0, regardless of whether it’s reversible\n              or irreversible.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7cc3a294-3a3e-487c-8f38-69e00bc17f29",
+    "question_text": "For a reaction with \nΔ\n𝐻\n=\n75\nkJ\n and \nΔ\n𝑆\n=\n150\nJ/K\n, above what temperature is it spontaneous?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n250 K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n750 K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n500 K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1000 K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔG=ΔH−TΔS<0, 75×103−T×150<0, T>75000/150=500K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "12ef12ae-e2f1-48db-85ab-8811f7239f94",
+    "question_text": "Which of the following is always true for an isothermal process involving an ideal gas?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nΔ\n𝑈\n=\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nΔ\n𝐻\n=\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑞\n=\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑤\n=\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For an ideal gas in an isothermal process (ΔT=0), ΔU=nCvΔT=0, regardless\n              of the path.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dedde43f-b7e5-4c95-b8bb-79144696e1b5",
+    "question_text": "For the process \nCO\n(\ng\n)\n+\n2\nH\n2\n(\ng\n)\n \n→\nCH\n3\nOH\n(\nl\n)\n, \nΔ\n𝐻\n=\n−\n128\nkJ/mol\n at 298 K, calculate \nΔ\n𝑈\n. (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-130.48 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-125.52 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-128.00 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-120.57 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For CO(g)+2HA2(g) →CHA3OH(l), Δng=0−(1+2)=−3. Then, RT=8.314×298×10−3=2.4776kJ. Using ΔH=ΔU+ΔngRT,\n              we get ΔU=ΔH−ΔngRT=−128−(−3×2.4776)=−128+7.4328=−120.57kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7966f980-9ed3-48c2-9cb3-b68fb8f93307",
+    "question_text": "Calculate \nΔ\n𝑆\n𝑡\n𝑜\n𝑡\n𝑎\n𝑙\n when 1 mol of ice melts at 263 K if \nΔ\n𝐻\n𝑓\n𝑢\n𝑠\n=\n6.01\nkJ/mol\n and melting point is 273 K.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n22.01 J/K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-22.85 J/K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0 J/K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-0.84 J/K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔSsys=ΔHfus/Tm=6.01×103/273=22.01J/K, ΔSsurr=−ΔH/T=−6.01×103/263=−22.85J/K, ΔStotal=22.01−22.85=−0.84J/K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "30b456a1-e308-4272-adb8-5599c5280093",
+    "question_text": "During the isothermal reversible expansion of an ideal gas, the change in internal energy (\nΔ\n𝑈\n) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZero",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPositive",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNegative",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEqual to work done",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For an ideal gas, ΔU=nCvΔT. In an isothermal process (ΔT=0), ΔU=0.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5f5efc82-dea5-4ea9-b1a0-adf001b46f12",
+    "question_text": "The bond enthalpy of \n𝑂\n=\n𝑂\n in \n𝑂\n2\n(\n𝑔\n)\n is 498 kJ/mol. What is \nΔ\n𝐻\n𝑓\n of \n𝑂\n(\n𝑔\n)\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n498 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n124.5 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n249 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n996 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For O2(g)→2O(g), ΔH=498kJ/mol. ΔHf(O2)=0, so\n              ΔH=2×ΔHf(O)−0, ΔHf(O)=498/2=249kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cd0e37f4-12df-4614-acc0-df21db743e7b",
+    "question_text": "What is the work done when 1 mol of an ideal gas expands isothermally and reversibly from 1 atm to 0.5 atm at 300 K? (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2494 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-1728 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-2494 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "w=−nRTln⁡(P1/P2)=−1×8.314×300×ln⁡(1/0.5)=−2494.2×0.693=−1728J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "11c25a56-5d41-4860-ba60-65c44354a3e9",
+    "question_text": "Calculate the heat released when 60 g of ethanol is combusted if \nΔ\n𝐻\n𝑐\n=\n−\n1366.7\nkJ/mol\n. (Molar mass = 46 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1366.7 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n683.35 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2733.4 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1782.2 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles = 60/46=1.304mol, heat released = 1.304×1366.7=1782.2kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bd24442c-341f-4ba7-8104-d05f1499853b",
+    "question_text": "For a system at constant pressure, the heat absorbed is equal to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nΔ\n𝐻",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nΔ\n𝑈",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nΔ\n𝐺",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n−\nΔ\n𝑈",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "At constant pressure, the heat absorbed qp=ΔH, the change in enthalpy.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bbba1955-ede6-4a11-b1a0-41771b0b80ce",
+    "question_text": "For \n𝐶\n𝑂\n(\n𝑔\n)\n+\n𝐶\n𝑙\n2\n(\n𝑔\n)\n→\n𝐶\n𝑂\n𝐶\n𝑙\n2\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n108.3\nkJ/mol\n, \nΔ\n𝑆\n=\n−\n137\nJ/K\n at 298 K, what is \nΔ\n𝐺\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n108.3 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-40.83 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n67.47 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-67.47 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔG=ΔH−TΔS=−108.3−298×(−0.137)=−108.3+40.83=−67.47kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8c230d90-b2e3-47f6-a0c4-0e49cd0b68d8",
+    "question_text": "A system releases 700 J of heat and performs 400 J of work on the surroundings. What is \nΔ\n𝑈\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1100 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1100 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-300 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n300 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "ΔU=q+w. Here, q=−700J (heat released), w=−400J (work done\n              by system), so ΔU=−700−400=−1100J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "128ab86c-f990-44cb-9780-b4605fdbf787",
+    "question_text": "A system absorbs 1200 J of heat and does 500 J of work on the surroundings at constant pressure. What is \nΔ\n𝐻\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1200 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n700 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1700 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-700 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "At constant pressure, ΔH=qp. Here, q=1200J (heat absorbed), so ΔH=1200J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "035dbdc9-1ce4-4874-af27-d239d72e1b2f",
+    "question_text": "Calculate \nΔ\n𝐻\n for \n𝐶\n𝐻\n4\n(\n𝑔\n)\n→\n𝐶\n(\n𝑔\n)\n+\n4\n𝐻\n(\n𝑔\n)\n using: \nΔ\n𝐻\n𝑓\n∘\n(\n𝐶\n𝐻\n4\n,\n𝑔\n)\n=\n−\n74.8\nkJ/mol\n, \nΔ\n𝐻\n𝑎\n(\n𝐶\n,\n𝑔\n)\n=\n715\nkJ/mol\n, \nΔ\n𝐻\n𝑎\n(\n𝐻\n,\n𝑔\n)\n=\n218\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n789.8 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-1661.8 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1661.8 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n74.8 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔH=[ΔHf∘(C)+4×ΔHf∘(H)]−ΔHf∘(CH4)=[715+4×218]−(−74.8)=715+872+74.8=1661.8kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b2ea724-fa8b-4466-9916-ab7fdc707dde",
+    "question_text": "A system at constant pressure absorbs 1000 J of heat and expands by 0.4 L against 2.5 atm. What is \nΔ\n𝑈\n? (1 atm·L = 101.3 J)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n898.7 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1101.3 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1000 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n797.4 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "w=−PΔV=−2.5×0.4×101.3=−101.3J, q=1000J,\n              ΔU=q+w=1000−101.3=898.7J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b0c295f-7cd9-4624-93a1-ff11c715f0d7",
+    "question_text": "What is the change in internal energy (\nΔ\n𝑈\n) for the vaporization of 1 mol of water at 373 K if \nΔ\n𝐻\n=\n40.79\nkJ/mol\n? (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40.79 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n37.69 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n43.89 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n34.60 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For HA2O(l) →HA2O(g), Δng=1. Using ΔH=ΔU+ΔngRT, where RT=8.314×373×10−3=3.1012kJ, we get ΔU=ΔH−ΔngRT=40.79−3.1012=37.69kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fb49b7f7-62e4-4a39-aff4-1b14161b6b0a",
+    "question_text": "What is the work done when 2 mol of an ideal gas expands isothermally and reversibly from 5 L to 10 L at 300 K? (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2494 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4988 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1728 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-3456 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "w=−nRTln⁡(V2/V1)=−2×8.314×300×ln⁡(10/5)=−2×2494.2×0.693=−3455.6J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e6c7991b-8e76-4f4c-a0e8-1c7b3a8c2f93",
+    "question_text": "Calculate \nΔ\n𝑆\n𝑠\n𝑦\n𝑠\n when 1 mol of water vaporizes at 373 K. (\nΔ\n𝐻\n𝑣\n𝑎\n𝑝\n=\n40.79\nkJ/mol\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40.79 J/K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n80.00 J/K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n109.4 J/K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n150.0 J/K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For HA2O(l) →HA2O(g) at 373 K, ΔSsys=ΔHvapT=40.79×103373=109.4J/K, representing the entropy increase due to phase\n              change from liquid to gas.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53a2da2e-92fb-4830-afde-06c98ea742e8",
+    "question_text": "In a process, 300 J of heat is absorbed by a system, and 100 J of work is done on the system. What is \nΔ\n𝑈\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n400 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n200 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-400 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n100 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Using the first law: ΔU=q+w. Here, q=+300J (heat absorbed), w=+100J (work done on system), so ΔU=300+100=400J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e63310b3-8fbf-408c-8458-273b776462d8",
+    "question_text": "For an ideal gas (\n𝛾\n=\n1.33\n) expanding adiabatically from 8 L to 16 L at 500 K, what is the final temperature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n250 K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n396.5 K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n630 K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n500 K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "T2=T1(V1/V2)γ−1=500×(8/16)0.33=500×(0.5)0.33=500×0.793=396.5K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e5409d57-0f36-4e28-933d-4aff38ed9d9b",
+    "question_text": "Calculate \nΔ\n𝐺\n∘\n for a reaction with \n𝐾\n=\n2.5\n×\n10\n−\n3\n at 298 K. (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-14.84 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.99 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-7.42 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n14.84 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔG∘=−RTln⁡K=−8.314×298×ln⁡(2.5×10−3)=−2477.6×(−5.991)=14843J/mol=14.84kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9984b2df-6bb0-4641-9a6f-bc4972f8f177",
+    "question_text": "A system absorbs 500 J of heat and performs 200 J of work. What is the change in internal energy (\nΔ\n𝑈\n)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n300 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n700 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-300 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n200 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Using the first law: ΔU=q+w. Here, q=+500J (heat absorbed), w=−200J (work done by system), so ΔU=500−200=300J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "40a6a5c0-c535-4839-b435-3f568810ebf4",
+    "question_text": "A reaction has \nΔ\n𝐻\n=\n−\n100\nkJ\n and \nΔ\n𝑆\n=\n−\n200\nJ/K\n. At what temperature does it become spontaneous?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAbove 500 K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAt 500 K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBelow 500 K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNever spontaneous",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For spontaneity, ΔG=ΔH−TΔS<0. So, −100×103−T(−200)<0,\n              100000>200T, T<500K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "621d51a9-2191-45ef-882e-0341ee811ca5",
+    "question_text": "A reaction has \nΔ\n𝐻\n=\n80.00\nkJ/mol\n, \nΔ\n𝑆\n=\n200.0\nJ/K·mol\n, and is spontaneous at 450 K. What is \nΔ\n𝐺\n at 450 K?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n90 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-10 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-80 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔG=ΔH−TΔS=80.00−450×0.2000=80.00−90.00=−10.00kJ/mol. The negative ΔG confirms the reaction is spontaneous at 450 K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "99e1086e-aaf0-427b-beb3-f8b41e2ed5aa",
+    "question_text": "Calculate \nΔ\n𝐻\n for the reaction \n𝐶\n(\n𝑠\n)\n+\n2\n𝐻\n2\n(\n𝑔\n)\n→\n𝐶\n𝐻\n4\n(\n𝑔\n)\n given: \n𝐶\n𝐻\n4\n(\n𝑔\n)\n+\n2\n𝑂\n2\n(\n𝑔\n)\n→\n𝐶\n𝑂\n2\n(\n𝑔\n)\n+\n2\n𝐻\n2\n𝑂\n(\n𝑙\n)\n, \nΔ\n𝐻\n=\n−\n890.3\nkJ/mol\n; \n𝐶\n(\n𝑠\n)\n+\n𝑂\n2\n(\n𝑔\n)\n→\n𝐶\n𝑂\n2\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n393.5\nkJ/mol\n; \n𝐻\n2\n(\n𝑔\n)\n+\n1\n2\n𝑂\n2\n(\n𝑔\n)\n→\n𝐻\n2\n𝑂\n(\n𝑙\n)\n, \nΔ\n𝐻\n=\n−\n285.8\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n74.8 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-74.8 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-890.3 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-52.3 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reverse first: ΔH=890.3kJ. Second: ΔH=−393.5kJ. Third (×2):\n              ΔH=−571.6kJ. Add: 890.3−393.5−571.6=−74.8kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c940133-4db0-46aa-9273-22529f31aa6d",
+    "question_text": "For the process \n𝐻\n2\n𝑂\n(\n𝑙\n)\n→\n𝐻\n2\n𝑂\n(\n𝑔\n)\n at 373 K, \nΔ\n𝐻\n=\n40.79\nkJ/mol\n, what is \nΔ\n𝑆\n𝑠\n𝑢\n𝑟\n𝑟\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n109.4 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-109.4 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n40.79 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-373 J/K·mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "ΔSsurr=−ΔH/T=−40.79×103/373=−109.4J/K·mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d785ccfb-c76a-43a9-b742-a279ea6e2401",
+    "question_text": "For the reaction \n2\n𝐻\n2\n(\n𝑔\n)\n+\n𝑂\n2\n(\n𝑔\n)\n→\n2\n𝐻\n2\n𝑂\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n483.6\nkJ/mol\n at 298 K. What is \nΔ\n𝑈\n? (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-481.1 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-483.6 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-486.1 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-478.6 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For Δng=2−3=−1, RT=8.314×298×10−3=2.4776kJ.\n              Using ΔH=ΔU+ΔngRT, ΔU=−483.60−(−1×2.4776)=−483.60+2.4776=−481.12kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e20a759d-ada9-4fae-a5b4-5d97a0e45070",
+    "question_text": "Which of the following is always true for a spontaneous process at constant temperature and pressure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nΔ\n𝐺\n<\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nΔ\n𝐻\n<\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nΔ\n𝑆\n>\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nΔ\n𝑈\n<\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For a spontaneous process at constant T and P, the Gibbs free energy must decrease (ΔG<0), as it determines spontaneity under these conditions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "88cc50c5-67e6-4ddb-8e2d-e3f488a591b6",
+    "question_text": "The work done in the reversible adiabatic expansion of 1 mol of an ideal gas from 10 L to 20 L is (\n𝛾\n=\n1.4\n) at 300 K. Calculate \n𝑤\n. (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1509.2 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-1509.2 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-2494.0 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For adiabatic reversible expansion, T2=T1(V1/V2)γ−1=300×(10/20)0.4≈300×0.7579=227.4K. Then, Cv=R/(γ−1)=8.314/0.4=20.785J/mol·K. Work done: w=nCvΔT=1×20.785×(227.4−300)≈−1509.2J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29fb7502-a187-47b6-a833-52e5abeb49de",
+    "question_text": "Calculate \nΔ\n𝑆\n𝑠\n𝑢\n𝑟\n𝑟\n when 2 mol of a substance melts at 300 K if \nΔ\n𝐻\n𝑓\n𝑢\n𝑠\n=\n8\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n53.33 J/K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 J/K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-53.33 J/K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-26.67 J/K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔH=2×8=16kJ, ΔSsurr=−ΔH/T=−16×103/300=−53.33J/K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f9cb795d-b7f8-4b37-9cd2-92f2ea692be8",
+    "question_text": "For an ideal gas expanding reversibly and adiabatically, the relationship between temperature and volume is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑇\n𝑉\n𝛾\n−\n1\n=\nconstant",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑃\n𝑉\n=\nconstant",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑇\n/\n𝑉\n=\nconstant",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑃\n/\n𝑇\n=\nconstant",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For a reversible adiabatic process, TVγ−1=constant, where γ=Cp/Cv.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4791220b-34a2-4194-a783-728949105089",
+    "question_text": "The standard enthalpy of formation of \n𝑁\n𝐻\n3\n(\n𝑔\n)\n is -46.1 kJ/mol. What is \nΔ\n𝐻\n for \n𝑁\n2\n(\n𝑔\n)\n+\n3\n𝐻\n2\n(\n𝑔\n)\n→\n2\n𝑁\n𝐻\n3\n(\n𝑔\n)\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-92.2 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-46.1 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n92.2 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n46.1 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "ΔH=2×ΔHf∘(NH3)−[ΔHf∘(N2)+3×ΔHf∘(H2)]=2×(−46.1)−[0+0]=−92.2kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "234e8348-0da7-47b7-922f-99ba319c5464",
+    "question_text": "Calculate the heat released when 22 g of \n𝐶\n𝑂\n2\n is formed from \n𝐶\n(\n𝑠\n)\n+\n𝑂\n2\n(\n𝑔\n)\n→\n𝐶\n𝑂\n2\n(\n𝑔\n)\n. (\nΔ\n𝐻\n=\n−\n393.5\nkJ/mol\n, molar mass of \n𝐶\n𝑂\n2\n=\n44\ng/mol\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n393.5 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n98.4 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n196.8 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n787 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Moles of CO2=22/44=0.5mol. For C(s)+O2(g)→CO2(g), ΔH=−393.5kJ/mol. Heat released = 0.5×393.5=196.75kJ (positive, as\n              heat is released in exothermic reaction).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8ce2b0ed-1a38-4256-9566-3b65c4a42625",
+    "question_text": "For an isolated system with \nΔ\n𝑈\n=\n0\n, what can be said about \nΔ\n𝑆\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nΔ\n𝑆\n=\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nΔ\n𝑆\n<\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nΔ\n𝑆\n=\nΔ\n𝑈",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nΔ\n𝑆\n>\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For an isolated system, a spontaneous process increases entropy (ΔS>0) until equilibrium,\n              where ΔS=0. Since ΔU=0, ΔS>0 for spontaneity.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "039437a9-fd6d-4b4f-8184-037a577ff85c",
+    "question_text": "Calculate \nΔ\n𝐻\n for \n𝐶\n2\n𝐻\n5\n𝑂\n𝐻\n(\n𝑙\n)\n+\n3\n𝑂\n2\n(\n𝑔\n)\n→\n2\n𝐶\n𝑂\n2\n(\n𝑔\n)\n+\n3\n𝐻\n2\n𝑂\n(\n𝑙\n)\n using: \nΔ\n𝐻\n𝑓\n∘\n(\n𝐶\n2\n𝐻\n5\n𝑂\n𝐻\n,\n𝑙\n)\n=\n−\n277.7\nkJ/mol\n, \nΔ\n𝐻\n𝑓\n∘\n(\n𝐶\n𝑂\n2\n,\n𝑔\n)\n=\n−\n393.5\nkJ/mol\n, \nΔ\n𝐻\n𝑓\n∘\n(\n𝐻\n2\n𝑂\n,\n𝑙\n)\n=\n−\n285.8\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1089 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1366.7 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-1366.7 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-277.7 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔH=[2(−393.5)+3(−285.8)]−[−277.7+3(0)]=−787−857.4+277.7=−1366.7kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0b14e669-cde6-48ab-b7b9-2281264d9f99",
+    "question_text": "The standard state of carbon used to define enthalpies of formation is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGraphite",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiamond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGas",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLiquid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The standard state of an element is its most stable form at 1 bar and 298 K. For carbon, this is\n              graphite.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72755257-ea4d-491c-855d-f20b84802317",
+    "question_text": "For the reaction \n2\n𝐴\n(\n𝑔\n)\n→\n𝐵\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n40.00\nkJ/mol\n, \nΔ\n𝑆\n=\n−\n100.0\nJ/K·mol\n at 300 K. What is \nΔ\n𝐺\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-30 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-10 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔG=ΔH−TΔS=−40.00−300×(−0.1000)=−40.00+30.00=−10.00kJ/mol. The negative ΔG indicates spontaneity at 300 K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "299ee7b8-e690-4e0c-be43-0da56b1f51d9",
+    "question_text": "What is the entropy change (\nΔ\n𝑆\n) for the vaporization of 18 g of water at 373 K if \nΔ\n𝐻\n𝑣\n𝑎\n𝑝\n=\n40.79\nkJ/mol\n? (Molar mass of \n𝐻\n2\n𝑂\n=\n18\ng/mol\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n54.68 J/K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n40.79 J/K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n109.4 J/K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n373 J/K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Moles = 18/18=1mol, ΔS=ΔHvap/T=40.79×103/373=109.36J/K·mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8da7507c-2ea2-4210-aa65-7bf302c0097b",
+    "question_text": "For the reaction \n2\n𝐶\n𝑙\n(\n𝑔\n)\n→\n𝐶\n𝑙\n2\n(\n𝑔\n)\n, what are the signs of \nΔ\n𝐻\n and \nΔ\n𝑆\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nΔ\n𝐻\n>\n0\n,\nΔ\n𝑆\n>\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nΔ\n𝐻\n<\n0\n,\nΔ\n𝑆\n>\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nΔ\n𝐻\n>\n0\n,\nΔ\n𝑆\n<\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nΔ\n𝐻\n<\n0\n,\nΔ\n𝑆\n<\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Bond formation is exothermic (ΔH<0), and entropy decreases as two particles form one\n              (ΔS<0).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d181f62-8956-470d-90fd-0c059c45b13d",
+    "question_text": "For \n𝐶\n2\n𝐻\n4\n(\n𝑔\n)\n+\n3\n𝑂\n2\n(\n𝑔\n)\n→\n2\n𝐶\n𝑂\n2\n(\n𝑔\n)\n+\n2\n𝐻\n2\n𝑂\n(\n𝑙\n)\n, \nΔ\n𝐻\n=\n−\n1411\nkJ/mol\n at 298 K, what is \nΔ\n𝑈\n? (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1413.5 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-1411 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-1406 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-1408.5 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Δng=2−3=−1, RT=2.48kJ, ΔH=ΔU+ΔngRT,\n              ΔU=−1411−(−1×2.48)=−1411+2.48=−1408.52kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d3779179-a745-4faa-a9fb-6dc7082c7945",
+    "question_text": "The enthalpy of neutralization of a strong acid with a strong base is approximately:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-57.1 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-25.5 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n57.1 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For strong acid-strong base neutralization, ΔH=−57.1kJ/mol due to the formation of\n              water, a constant value under standard conditions.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "65ef8435-ea97-401a-b049-8caa2808ea03",
+    "question_text": "Calculate \nΔ\n𝑆\n𝑠\n𝑦\n𝑠\n for the condensation of 1 mol of ethanol at 351 K. (\nΔ\n𝐻\n𝑣\n𝑎\n𝑝\n=\n38.6\nkJ/mol\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n38.6 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n110.0 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-110.0 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-351.0 J/K·mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For C2H5OH(g)→C2H5OH(l), ΔSsys=−ΔHvapT=−38.6×103351≈−110.0J/K·mol, as condensation decreases entropy.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "826c57c1-c502-4642-b9a2-d6caf82a975c",
+    "question_text": "Calculate the heat absorbed when 32 g of sulfur is heated from 30°C to 130°C at constant pressure. (\n𝐶\n𝑝\n=\n22.7\nJ/mol·K\n, molar mass = 32 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.135 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.54 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n22.7 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.27 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles = 32/32=1mol, ΔT=130−30=100K, qp=nCpΔT=1×22.7×100=2270J=2.27kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e4c044c-9579-4e20-84b1-70da2d782b17",
+    "question_text": "Calculate \nΔ\n𝑆\n𝑠\n𝑦\n𝑠\n for the condensation of 1 mol of ethanol at 351 K. (\nΔ\n𝐻\n𝑣\n𝑎\n𝑝\n=\n38.6\nkJ/mol\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n38.6 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n110.0 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-110.0 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-351.0 J/K·mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For C2H5OH(g)→C2H5OH(l), ΔSsys=−ΔHvapT=−38.6×103351≈−110.0J/K·mol, as condensation decreases entropy.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a3af8256-8aa1-47bd-babf-1b2b777ba8f4",
+    "question_text": "For which process does entropy decrease?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝐻\n2\n(\n𝑔\n)\n→\n2\n𝐻\n(\n𝑔\n)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑁\n𝑎\n𝐻\n𝐶\n𝑂\n3\n(\n𝑠\n)\n→\n𝑁\n𝑎\n2\n𝐶\n𝑂\n3\n(\n𝑠\n)\n+\n𝐶\n𝑂\n2\n(\n𝑔\n)\n+\n𝐻\n2\n𝑂\n(\n𝑔\n)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝐻\n2\n𝑂\n(\n𝑙\n)\n→\n𝐻\n2\n𝑂\n(\n𝑠\n)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTemperature rise from 0 K to 100 K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Entropy decreases when disorder decreases, e.g., H2O(l)→H2O(s), as liquid to solid\n              reduces randomness.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1d62d282-930e-4fff-a3b6-c37d48d78587",
+    "question_text": "For an ideal gas undergoing adiabatic expansion from 2 L to 4 L at 400 K (\n𝛾\n=\n1.67\n), what is the final temperature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200 K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n252 K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n315 K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n400 K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For adiabatic process, T2=T1(V1/V2)γ−1=400×(2/4)0.67≈400×0.62996=252.0K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5eb5778-1e86-4377-bcd8-5ffc76d7d07a",
+    "question_text": "Calculate \nΔ\n𝑆\n𝑠\n𝑢\n𝑟\n𝑟\n when 1 mol of \n𝐻\n2\n𝑂\n(\n𝑙\n)\n forms under standard conditions at 298 K, given \nΔ\n𝑓\n𝐻\n∘\n=\n−\n286\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-959.7 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n286 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-286 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n959.7 J/K·mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔSsurr=−ΔH/T=−(−286×103)/298=959.7J/K·mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1157e6a5-0611-43fd-86de-0e5bf47b1251",
+    "question_text": "Calculate the work done when 1 mol of an ideal gas (\n𝛾\n=\n1.67\n) is compressed adiabatically from 20 L to 4 L at 300 K. (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-6068.3 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6068.3 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3034.2 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For adiabatic compression, T2=T1(V1/V2)γ−1=300×(20/4)0.67≈300×2.63=789.0K. Then, Cv=R/(γ−1)=8.314/0.67≈12.41J/mol·K. Work done: w=nCvΔT=1×12.41×(789.0−300)≈6068.3J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cd6b8111-7829-4608-a24f-756b548aedd0",
+    "question_text": "For a reversible isothermal expansion of an ideal gas, the work done is given by:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑛\n𝑅\n𝑇\nln\n⁡\n(\n𝑉\n2\n/\n𝑉\n1\n)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n−\n𝑛\n𝑅\n𝑇\nln\n⁡\n(\n𝑉\n2\n/\n𝑉\n1\n)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑛\n𝑅\n𝑇",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For reversible isothermal expansion, w=−nRTln⁡(V2/V1), where V2>V1.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "866d99b4-a025-4bd7-b359-2058acc6b042",
+    "question_text": "Calculate \nΔ\n𝐻\n for \n𝐶\n2\n𝐻\n5\n𝑂\n𝐻\n(\n𝑙\n)\n→\n𝐶\n2\n𝐻\n4\n(\n𝑔\n)\n+\n𝐻\n2\n𝑂\n(\n𝑙\n)\n using: \nΔ\n𝐻\n𝑓\n∘\n(\n𝐶\n2\n𝐻\n5\n𝑂\n𝐻\n,\n𝑙\n)\n=\n−\n277.7\nkJ/mol\n, \nΔ\n𝐻\n𝑓\n∘\n(\n𝐶\n2\n𝐻\n4\n,\n𝑔\n)\n=\n52.3\nkJ/mol\n, \nΔ\n𝐻\n𝑓\n∘\n(\n𝐻\n2\n𝑂\n,\n𝑙\n)\n=\n−\n285.8\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-44.2 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n277.7 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n44.2 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n615.8 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔH=[ΔHf∘(C2H4)+ΔHf∘(H2O)]−ΔHf∘(C2H5OH)=[52.3+(−285.8)]−(−277.7)=−233.5+277.7=44.2kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0618cebd-d860-430a-a237-2b2698725c32",
+    "question_text": "Calculate \nΔ\n𝑆\n𝑠\n𝑢\n𝑟\n𝑟\n when 1 mol of a substance melts at 300 K with \nΔ\n𝐻\n𝑓\n𝑢\n𝑠\n=\n9\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n300 J/K·mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-30 J/K·mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔSsurr=−ΔH/T=−9×103/300=−30J/K·mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3c06000e-d7f3-4553-962c-cbb3d0abd6cf",
+    "question_text": "Using bond enthalpies (\n𝐶\n−\n𝐻\n=\n413\nkJ/mol\n, \n𝐶\n𝑙\n−\n𝐶\n𝑙\n=\n243\nkJ/mol\n, \n𝐶\n−\n𝐶\n𝑙\n=\n328\nkJ/mol\n, \n𝐻\n−\n𝐶\n𝑙\n=\n431\nkJ/mol\n), calculate \nΔ\n𝐻\n for \n𝐶\n𝐻\n4\n(\n𝑔\n)\n+\n𝐶\n𝑙\n2\n(\n𝑔\n)\n→\n𝐶\n𝐻\n3\n𝐶\n𝑙\n(\n𝑔\n)\n+\n𝐻\n𝐶\n𝑙\n(\n𝑔\n)\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "103 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "-656 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "-103 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "759 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [],
+    "explanation": "Bonds broken: C−H(413)+Cl−Cl(243)=656kJ. Bonds formed: C−Cl(328)+H−Cl(431)=759kJ. ΔH=656−759=−103kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "23d6f6f5-0519-4eb3-a9bc-0c49d9990da1",
+    "question_text": "For the reaction \n𝐶\n2\n𝐻\n2\n(\n𝑔\n)\n+\n5\n2\n𝑂\n2\n(\n𝑔\n)\n→\n2\n𝐶\n𝑂\n2\n(\n𝑔\n)\n+\n𝐻\n2\n𝑂\n(\n𝑙\n)\n, \nΔ\n𝐻\n=\n−\n1299.5\nkJ/mol\n at 298 K. What is \nΔ\n𝑈\n? (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-1299.5 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-1295.8 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-1303.2 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-1292.0 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For Δng=2−(1+2.5)=−1.5, RT=8.314×298×10−3=2.4776kJ. Using ΔH=ΔU+ΔngRT, ΔU=−1299.50−(−1.5×2.4776)=−1299.50+3.7164=−1295.78kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b3b0a3f9-129e-4d62-b3a5-c217212de5ac",
+    "question_text": "Which of the following represents an extensive property?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEnthalpy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPressure",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTemperature",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDensity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Extensive properties depend on the amount of substance. Enthalpy (H) varies with the system’s size,\n              unlike pressure, temperature, or density.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "329a1906-a58c-4e75-904b-6a174b21d1e9",
+    "question_text": "For an ideal gas, if \n𝐶\n𝑣\n=\n12.5\nJ/mol·K\n, what is \n𝐶\n𝑝\n? (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.186 J/mol·K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12.5 J/mol·K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8.314 J/mol·K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20.8 J/mol·K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For an ideal gas, Cp=Cv+R=12.5+8.314=20.814J/mol·K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "664bafc3-8613-4573-bdc4-7792049c111d",
+    "question_text": "Calculate the work done when 2 mol of an ideal gas expands adiabatically and reversibly from 10 L to 20 L at 600 K (\n𝛾\n=\n1.4\n). (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6042 J",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-6042 J",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-3021 J",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0 J",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "T2=600×(10/20)0.4=600×0.7579=454.74K, Cv=R/(γ−1)=8.314/0.4=20.785J/mol·K, w=nCvΔT=2×20.785×(454.74−600)=−6042J.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ad424710-685d-4378-8d28-a25e90660f74",
+    "question_text": "Calculate \nΔ\n𝐻\n for \n2\n𝐶\n(\n𝑠\n)\n+\n3\n𝐻\n2\n(\n𝑔\n)\n→\n𝐶\n2\n𝐻\n6\n(\n𝑔\n)\n if \nΔ\n𝐻\n𝑓\n∘\n(\n𝐶\n2\n𝐻\n6\n,\n𝑔\n)\n=\n−\n84.7\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-84.7 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n84.7 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-42.35 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n169.4 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "ΔH=ΔHf∘(C2H6)−[2×ΔHf∘(C)+3×ΔHf∘(H2)]=−84.7−[0+0]=−84.7kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ea8c3b05-137e-49ca-b913-df52b00999d2",
+    "question_text": "Calculate \nΔ\n𝐻\n for \n𝐶\n(\n𝑠\n)\n+\n𝐻\n2\n𝑂\n(\n𝑔\n)\n→\n𝐶\n𝑂\n(\n𝑔\n)\n+\n𝐻\n2\n(\n𝑔\n)\n given: \n𝐶\n(\n𝑠\n)\n+\n𝑂\n2\n(\n𝑔\n)\n→\n𝐶\n𝑂\n2\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n393.5\nkJ/mol\n; \n𝐶\n𝑂\n(\n𝑔\n)\n+\n1\n2\n𝑂\n2\n(\n𝑔\n)\n→\n𝐶\n𝑂\n2\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n283\nkJ/mol\n; \n𝐻\n2\n𝑂\n(\n𝑔\n)\n→\n𝐻\n2\n(\n𝑔\n)\n+\n1\n2\n𝑂\n2\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n241.8\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-131.3 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n131.3 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-434.8 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n434.8 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reverse second: ΔH=283kJ. Add third: ΔH=241.8kJ. Subtract\n              first: ΔH=283+241.8−393.5=131.3kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "37029a5a-0b65-42f2-af90-a0527f0d5593",
+    "question_text": "A reaction has \nΔ\n𝐻\n=\n60\nkJ/mol\n and \nΔ\n𝑆\n=\n150\nJ/K\n. At what temperature does \nΔ\n𝐺\n=\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n300 K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n600 K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n400 K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n150 K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔG=ΔH−TΔS=0, 60×103−T×150=0, T=60000/150=400K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d231e2de-80f6-419b-b487-76f4884b47ec",
+    "question_text": "For a reaction with \nΔ\n𝐻\n=\n−\n120\nkJ\n and \nΔ\n𝐺\n=\n−\n130\nkJ\n at 298 K, what is \nΔ\n𝑆\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-33.6 J/K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n120 J/K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n130 J/K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n33.6 J/K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔG=ΔH−TΔS, −130=−120−298ΔS, ΔS=(−130+120)/−298=0.0336kJ/K=33.6J/K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a430a09e-6b8f-4bab-be8d-12320cb7ed55",
+    "question_text": "Calculate \nΔ\n𝐻\n for \n𝐶\n3\n𝐻\n8\n(\n𝑔\n)\n+\n5\n𝑂\n2\n(\n𝑔\n)\n→\n3\n𝐶\n𝑂\n2\n(\n𝑔\n)\n+\n4\n𝐻\n2\n𝑂\n(\n𝑙\n)\n using: \nΔ\n𝐻\n𝑓\n∘\n(\n𝐶\n3\n𝐻\n8\n,\n𝑔\n)\n=\n−\n103.8\nkJ/mol\n, \nΔ\n𝐻\n𝑓\n∘\n(\n𝐶\n𝑂\n2\n,\n𝑔\n)\n=\n−\n393.5\nkJ/mol\n, \nΔ\n𝐻\n𝑓\n∘\n(\n𝐻\n2\n𝑂\n,\n𝑙\n)\n=\n−\n285.8\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n-2323.7 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2219.9 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-2219.9 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-103.8 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ΔH=[3(−393.5)+4(−285.8)]−[−103.8+5(0)]=−1180.5−1143.2+103.8=−2219.9kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "54f014de-2250-4256-aba4-1288f5136501",
+    "question_text": "Which of the following is true for an endothermic process with \nΔ\n𝑆\n>\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlways spontaneous",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpontaneous at high temperature",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNever spontaneous",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpontaneous at low temperature",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For an endothermic process (ΔH>0) with ΔS>0, ΔG=ΔH−TΔS. It becomes spontaneous (ΔG<0) at high temperatures when TΔS>ΔH.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a566987-cc92-4ca4-9c67-52a8092d411b",
+    "question_text": "Calculate \nΔ\n𝑆\n𝑠\n𝑦\n𝑠\n for the vaporization of 36 g of ethanol at 351 K if \nΔ\n𝐻\n𝑣\n𝑎\n𝑝\n=\n38.6\nkJ/mol\n. (Molar mass of \n𝐶\n2\n𝐻\n5\n𝑂\n𝐻\n=\n46.07\ng/mol\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n110.0 J/K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n38.6 J/K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n86.0 J/K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n43.0 J/K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Moles = 36/46.07≈0.7812mol. For vaporization, ΔSsys=n×ΔHvap/T=0.7812×38.6×103/351≈86.0J/K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "55eee8a2-b75c-44fc-ab24-8a2c94d6fea6",
+    "question_text": "For an ideal gas (\n𝛾\n=\n1.67\n) compressed adiabatically from 10 L to 2 L at 300 K, what is the final temperature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n60 K",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n526 K",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n789 K",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1500 K",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "T2=T1(V1/V2)γ−1=300×(10/2)0.67=300×50.67=300×2.63=789K.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a0a1f748-c164-4317-9a8b-e5d8bb8cbe62",
+    "question_text": "Calculate the heat absorbed when 54 g of water is heated from 20°C to 80°C at constant pressure. (\n𝐶\n𝑝\n=\n75.3\nJ/mol·K\n, molar mass = 18 g/mol)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.52 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n75.3 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9.03 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n13.55 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles = 54/18=3mol, ΔT=80−20=60K, qp=nCpΔT=3×75.3×60=13554J=13.55kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7b68132e-0a67-4439-b254-0c73e755da8f",
+    "question_text": "The enthalpy change for vaporization of 1 mol of water at 373 K is 40.79 kJ/mol. What is \nΔ\n𝑈\n if water vapor behaves as an ideal gas? (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40.79 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n37.7 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n43.9 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n34.6 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For H2O(l)→H2O(g), Δng=1. Using ΔH=ΔU+ΔngRT, where RT=8.314×373×10−3=3.1012kJ, ΔU=40.79−3.1012=37.69kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f787739f-019b-48ae-82fa-36aa89427501",
+    "question_text": "For \n𝐻\n2\n(\n𝑔\n)\n+\n𝐵\n𝑟\n2\n(\n𝑔\n)\n→\n2\n𝐻\n𝐵\n𝑟\n(\n𝑔\n)\n, \nΔ\n𝐻\n=\n−\n72.6\nkJ/mol\n, \nΔ\n𝑆\n=\n114\nJ/K\n at 298 K. What is \nΔ\n𝐺\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n72.6 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n-33.97 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n106.57 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-106.6 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔG=ΔH−TΔS=−72.6−298×0.114=−72.6−33.97=−106.57kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9fca4a2e-fc8c-4334-b2b3-83fb58cb5e88",
+    "question_text": "Calculate \nΔ\n𝐻\n for \n𝐶\n2\n𝐻\n4\n(\n𝑔\n)\n+\n𝐻\n2\n(\n𝑔\n)\n→\n𝐶\n2\n𝐻\n6\n(\n𝑔\n)\n using bond enthalpies: \n𝐶\n=\n𝐶\n=\n610\nkJ/mol\n, \n𝐻\n−\n𝐻\n=\n436\nkJ/mol\n, \n𝐶\n−\n𝐻\n=\n413\nkJ/mol\n, \n𝐶\n−\n𝐶\n=\n346\nkJ/mol\n.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n126 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n610 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-126 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n-436 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bonds broken: C=C(610)+H−H(436)=1046kJ. Bonds formed: C−C(346)+2×C−H(2×413=826)=1172kJ. ΔH=1046−1172=−126kJ/mol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c848e138-881c-4f10-9a47-75b8b17554e5",
+    "question_text": "For a reaction with \nΔ\n𝐺\n∘\n=\n−\n25.7\nkJ/mol\n at 298 K, calculate \n𝐾\n. (\n𝑅\n=\n8.314\nJ/mol·K\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.00318",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1000",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n31800",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "ΔG∘=−RTln⁡K, −25.7×103=−8.314×298×ln⁡K, ln⁡K=10.37, K=e10.37≈31800.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3acf96ca-e02a-4ed1-b51a-7f7428bd80a9",
+    "question_text": "The enthalpy of combustion of methane is -890 kJ/mol. What is the heat released when 8 g of methane is burnt? (Molar mass of \n𝐶\n𝐻\n4\n=\n16\ng/mol\n)",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n890 kJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n445 kJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1780 kJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n222.5 kJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Moles of CH4=8/16=0.5mol. Heat released = 0.5×890=445kJ.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f0c2d42f-c391-4c1e-b284-8c1541f569ac",
+    "question_text": "The standard enthalpy change for \n2\n𝐶\n(\n𝑠\n)\n+\n2\n𝐻\n2\n(\n𝑔\n)\n→\n𝐶\n2\n𝐻\n4\n(\n𝑔\n)\n is 52.3 kJ/mol. What is \nΔ\n𝐻\n𝑓\n∘\n of \n𝐶\n2\n𝐻\n4\n(\n𝑔\n)\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n52.3 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n26.15 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n-52.3 kJ/mol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n104.6 kJ/mol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The reaction forms 1 mol of C2H4(g) from its elements in standard states, so ΔH=ΔHf∘(C2H4)=52.3kJ/mol, as ΔHf∘(C)=0 and ΔHf∘(H2)=0.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0de81f7e-a926-4b8f-88a5-49f297e7619b",
+    "question_text": "Which of the following is true for an endothermic process where \nΔ\n𝑆\n<\n0\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nΔ\n𝐺\n>\n0",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nΔ\n𝐺\n<\n0",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nΔ\n𝑈\n=\n0",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nΔ\n𝐻\n<\n0",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For an endothermic process, ΔH>0. If ΔS<0, then TΔS<0, and\n              ΔG=ΔH−TΔS>0, making the process non-spontaneous at all temperatures.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "topic": "Thermodynamics",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Thermodynamics / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "thermodynamics"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

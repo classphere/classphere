@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "3a724203-7b2b-4d00-91f2-4f337b3fae1b",
+    "question_text": "What is the primary goal of biotechnology in the field of agriculture?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncrease pesticide usage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnhance crop yield and resistance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nReduce soil fertility",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPromote monoculture",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Biotechnology aims to improve crop yield, resistance to pests, and environmental stress tolerance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "91421fb4-e261-4981-9e7a-c77de2da52d4",
+    "question_text": "Which enzyme is deficient in individuals with ADA deficiency?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdenosine deaminase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlucose-6-phosphate dehydrogenase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLactase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhenylalanine hydroxylase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Adenosine deaminase deficiency affects the immune system, making gene therapy necessary.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a9741fd6-fea3-4c17-b347-dbefe47118d5",
+    "question_text": "Which biotechnological technique is used to fuse protoplasts from different plant species?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMicropropagation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSomatic hybridization",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTissue culture",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGene therapy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Somatic hybridization is the fusion of protoplasts from different plant species to form a hybrid.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9713a8bc-87ad-425a-93cd-bd2d81848525",
+    "question_text": "Which organism's protoplast fusion resulted in the formation of 'Pomato'?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPotato and tomato",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTomato and maize",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPotato and wheat",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMaize and tomato",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pomato is produced by the fusion of protoplasts from potato and tomato plants through somatic\n              hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8dccca13-c15a-4ec2-b6c9-7cb9fa2c5b26",
+    "question_text": "Which term describes plants produced through genetic engineering techniques?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHybrids",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTransgenic plants",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSomaclones",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrafted plants",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Transgenic plants are produced using genetic engineering techniques to introduce new traits.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0896554-7ede-40b2-9f25-37daefdd8ba0",
+    "question_text": "Which term describes the introduction of foreign DNA into an organism to create a genetically modified organism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHybridization",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRecombinant DNA technology",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSomatic hybridization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGene therapy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Recombinant DNA technology involves introducing foreign DNA into an organism to create genetically\n              modified organisms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c9c00e6c-7fb0-4cf3-a538-06b791e6caef",
+    "question_text": "Which organism is commonly used for the production of recombinant human insulin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSaccharomyces cerevisiae",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBacillus subtilis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEscherichia coli",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAgrobacterium tumefaciens",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Escherichia coli is commonly used to produce recombinant human insulin through genetic engineering.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "187800d9-d67d-4772-9327-2b73772c9c85",
+    "question_text": "Which of the following statements about Bt cotton is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBt cotton produces Cry proteins toxic to insect pests.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBt cotton is developed using Agrobacterium tumefaciens.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBt cotton is resistant to bacterial infections.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBt cotton increases soil fertility.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bt cotton produces Cry proteins derived from Bacillus thuringiensis, which are toxic to specific insect\n              pests.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d7f03e5-5066-4d4c-8ff2-9e5c8d53efa6",
+    "question_text": "Which of the following is correct about biopiracy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBiopiracy refers to the legal use of biological resources with permission.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBiopiracy is the exploitation of biological resources without proper authorization.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBiopiracy is related only to the pharmaceutical industry.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBiopiracy promotes biodiversity conservation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Biopiracy is the unauthorized exploitation of biological resources, often leading to the commercial\n              benefit of one party without fair compensation to the source region.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ceac8861-8eb8-4ec1-ae1e-563e603abe78",
+    "question_text": "Which of the following is correct about Agrobacterium tumefaciens in plant biotechnology?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAgrobacterium tumefaciens is used to produce antibiotics in plants.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAgrobacterium tumefaciens acts as a vector for gene transfer in plants.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAgrobacterium tumefaciens is a viral vector used in animals.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAgrobacterium tumefaciens produces Bt toxin in plants.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Agrobacterium tumefaciens is a bacterium that acts as a vector for transferring genes into plants using\n              its Ti plasmid.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b33869e-b814-492c-a612-b9cc44ed1fda",
+    "question_text": "Which method is used to produce virus-free plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMicropropagation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGrafting",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGenetic engineering",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTissue culture of meristem",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The meristem is usually virus-free and can be cultured to produce virus-free plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5d7ee44c-aca1-485d-8abe-d6685dbcb2ef",
+    "question_text": "What is the role of cryIAb gene in genetically modified crops?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nResistance to nematodes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nResistance to corn borer",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIncreased vitamin A production",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDrought resistance",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The cryIAb gene provides resistance to the corn borer pest in genetically modified crops.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0f133598-ff0f-49a3-adf2-70905e424e82",
+    "question_text": "Which type of RNA is involved in the RNA interference mechanism for gene silencing?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nmRNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\ntRNA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nrRNA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\ndsRNA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Double-stranded RNA (dsRNA) is involved in RNA interference, leading to the silencing of specific genes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7affdcd-bb3a-4ef2-ac84-047d492aef09",
+    "question_text": "Which crop is genetically modified with cryIIAb gene for resistance to pests?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTomato",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCotton",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRice",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPotato",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cotton is genetically modified with cryIIAb gene for resistance to bollworms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "394d9a84-0dbd-4c3f-b800-8b2b35f1102f",
+    "question_text": "What is the function of GEAC in India?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nApproving GM crop exports",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRegulating research and release of GMOs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProviding agricultural subsidies",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIssuing patents for GMOs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The Genetic Engineering Approval Committee (GEAC) regulates the research, development, and release of\n              genetically modified organisms in India.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "94a05236-9c2f-4173-bada-9bea4ab94c7b",
+    "question_text": "Which vector is commonly used in gene therapy for transferring therapeutic genes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasmid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRetrovirus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCosmid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhagemid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Retrovirus is commonly used as a vector in gene therapy to transfer therapeutic genes into host cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "71fc5a9a-1dc7-4e29-988c-79af16999cb9",
+    "question_text": "Which plant was used to demonstrate RNA interference for nematode resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPotato",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTomato",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTobacco",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMaize",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Tobacco plants were genetically modified using RNA interference to demonstrate resistance against\n              nematodes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2e67f01e-b5ef-4aa8-b4cf-1406e47d690b",
+    "question_text": "Which of the following is incorrect regarding RNA interference (RNAi)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRNA interference involves double-stranded RNA.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRNAi silences specific gene expression.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRNAi is used to enhance protein synthesis in cells.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRNAi is employed to develop pest-resistant crops.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "RNA interference is used to silence specific gene expression, not to enhance protein synthesis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c5c5edf6-c7c5-4c02-9fe6-98244baff1a1",
+    "question_text": "Which of the following statements about vectors in genetic engineering is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVectors are RNA molecules that carry genes for replication.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVectors are DNA molecules used to transfer foreign genes into host cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVectors are enzymes used to cut DNA.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVectors are lipids used in cell membrane synthesis.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Vectors are DNA molecules, such as plasmids, used to transfer foreign genes into host cells in genetic\n              engineering.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b6d0d60-58cc-4ff1-9ac2-9683710476c3",
+    "question_text": "Which of the following is incorrect about Bt cotton?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBt cotton is genetically modified to produce Cry proteins.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBt cotton is resistant to insect pests like bollworms.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBt cotton improves soil fertility naturally.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBt cotton reduces the need for chemical pesticides.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bt cotton does not improve soil fertility naturally; it is engineered to produce insecticidal proteins\n              for pest resistance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9e6ed7ab-8cbc-4d9b-b8cb-f091217ae09b",
+    "question_text": "What is totipotency in plant tissue culture?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAbility to produce roots only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAbility to regenerate a whole plant from a single cell",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbility to produce seeds from leaves",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbility to enhance photosynthesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Totipotency is the ability of a single cell or explant to regenerate into a whole plant under sterile\n              conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ffb63034-2fe5-45b3-832e-9c81c7d79f06",
+    "question_text": "What does the term 'somaclones' refer to?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlants produced through hybridization",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGenetically identical plants produced via tissue culture",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlants with random mutations",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlants produced through genetic engineering",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Somaclones are genetically identical plants produced through micropropagation in tissue culture.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e0196b54-dc3e-490c-9922-fcebcae3ae32",
+    "question_text": "What is the key benefit of Bt cotton in agriculture?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncreased water absorption",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nResistance to bollworm pests",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEnhanced seed germination",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHigher nutrient content",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bt cotton contains cry genes from Bacillus thuringiensis, providing resistance against bollworm pests.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "35e0343f-302e-40fd-bb52-9247bc8c219d",
+    "question_text": "Which Indian law prevents the unauthorized exploitation of bio-resources?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIndian Patents Bill",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnvironment Protection Act",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBiodiversity Act",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nForest Conservation Act",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The Biodiversity Act in India helps prevent the unauthorized exploitation of bio-resources.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b5ec231-8daf-4bed-bbb6-2d63a9667505",
+    "question_text": "Which plant hormone is essential for cell division and is used in tissue culture media?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthylene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cytokinin promotes cell division and is an essential component of tissue culture media.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "36e38ace-a5dc-406f-ba33-8b926b1ec227",
+    "question_text": "Which enzyme is used to join DNA fragments during recombinant DNA formation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA polymerase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLigase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEndonuclease",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nReverse transcriptase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ligase is used to join DNA fragments by forming phosphodiester bonds between them during recombinant DNA\n              formation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4ed6d39-85ac-4a92-b936-1765cfb00b89",
+    "question_text": "Which genetically modified plant produces beta-carotene to prevent vitamin A deficiency?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBt cotton",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGolden rice",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFlavr Savr tomato",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHybrid maize",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Golden rice is genetically modified to produce beta-carotene, which helps prevent vitamin A deficiency.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "189fa42a-6e9d-4485-89d3-b05c6b016374",
+    "question_text": "Which of the following is correct about plasmids used in genetic engineering?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasmids are linear DNA molecules.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlasmids replicate independently within host cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlasmids are never used as vectors.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlasmids are found only in eukaryotic cells.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Plasmids are circular DNA molecules that replicate independently within host cells and are often used as\n              vectors in genetic engineering.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4c5280a8-c695-4052-afb1-d98065023a64",
+    "question_text": "Which of the following is correct about tissue culture?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTissue culture produces genetically identical plants.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTissue culture is used only for animal cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTissue culture cannot produce whole plants from a single cell.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTissue culture is not used in plant biotechnology.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Tissue culture is used to produce genetically identical plants through micropropagation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e8118a08-df8c-459f-af6b-6745f6111a7f",
+    "question_text": "Which of the following is correct about plasmid vectors used in genetic engineering?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasmid vectors cannot replicate independently.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlasmid vectors are used to transfer foreign genes into host cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlasmid vectors degrade DNA in host cells.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlasmid vectors are only used in animal cell culture.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Plasmid vectors are used in genetic engineering to transfer foreign genes into host cells, where they\n              replicate independently.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e56eccc1-52e9-469c-bfa1-6020448e9185",
+    "question_text": "Which bacterium produces Bt toxin used in GM crops?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBacillus subtilis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBacillus thuringiensis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nClostridium botulinum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPseudomonas fluorescens",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bacillus thuringiensis produces Bt toxin, which is used in GM crops to kill insect pests.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "21b77786-fa30-4872-8715-0af3b051ae04",
+    "question_text": "Which technology allows the mass production of therapeutic drugs using genetically modified organisms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTissue culture",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRecombinant DNA technology",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSomatic hybridization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGene mapping",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Recombinant DNA technology is used for mass production of therapeutic drugs by genetically modifying\n              organisms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "85f5b06d-e760-41df-ac0b-64822000b00b",
+    "question_text": "What is the main reason for developing transgenic animals?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTo enhance animal breeding",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTo study gene function and disease",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTo increase milk production",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTo produce fertilizers",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Transgenic animals are developed to study gene function and to model human diseases for research.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "637fb82e-44a8-4875-94fe-73f2bc395f36",
+    "question_text": "Which technique allows the fusion of two plant protoplasts to form a somatic hybrid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMicropropagation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTissue culture",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSomatic hybridization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGene cloning",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Somatic hybridization allows the fusion of two plant protoplasts to form a somatic hybrid.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ec66df91-d6f0-46c8-afae-7e5443f62736",
+    "question_text": "Which vector is commonly used for introducing nematode-specific genes into host plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasmid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAgrobacterium vector",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhage vector",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRetrovirus vector",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Agrobacterium vectors are commonly used to introduce nematode-specific genes into host plants for pest\n              resistance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82b56f6d-4ef5-4e2d-a743-0c84b35e62c8",
+    "question_text": "Which term refers to the transfer of genetic material from one organism to another?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTransduction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTransformation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nConjugation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRecombination",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Transformation refers to the transfer of genetic material from one organism to another, especially in\n              genetic engineering.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3367dc80-d82c-4fbe-8dd5-81900e896aaf",
+    "question_text": "Which technique is used to detect specific DNA sequences using radioactive probes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPCR",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nELISA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAutoradiography",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNorthern blotting",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Autoradiography is used to detect specific DNA sequences by hybridizing them with radioactive probes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "708fb535-baea-4e88-a1d6-2c77295daf1d",
+    "question_text": "Which of the following is incorrect about Bt toxin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBt toxin is derived from Bacillus thuringiensis.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBt toxin is harmful to all living organisms.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBt toxin is activated in the alkaline gut of insect larvae.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBt toxin genes are introduced into crops for pest resistance.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bt toxin is specific to insect larvae and is not harmful to all living organisms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4b373396-6008-4239-a62c-9cc4e2a81982",
+    "question_text": "Which of the following is correct about recombinant human insulin production?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin is produced by genetically modified E. coli bacteria.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInsulin is produced by hybridizing plant and animal cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsulin is synthesized using chemical reactions only.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin production does not involve any genetic engineering.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Recombinant human insulin is produced by genetically modified E. coli bacteria using gene cloning\n              techniques.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8c9b9310-09e2-4262-ae3a-f1a2f1bc32d4",
+    "question_text": "Which of the following is correct about restriction enzymes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRestriction enzymes are used to join DNA fragments.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRestriction enzymes cut DNA at specific recognition sites.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRestriction enzymes synthesize DNA molecules.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRestriction enzymes degrade mRNA molecules.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Restriction enzymes act as molecular scissors, cutting DNA at specific recognition sequences, crucial for\n              recombinant DNA technology.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f5b4a548-0a6c-4022-809d-4ddd29c790fb",
+    "question_text": "Which term refers to the fusion of protoplasts from different plant species to form a hybrid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTissue culture",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSomatic hybridization",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMicropropagation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGene editing",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Somatic hybridization involves the fusion of protoplasts from different plant species to produce hybrids.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cd888b67-ad41-4be2-bf21-4cb5af0b05e3",
+    "question_text": "What is the significance of transgenic mice in biotechnology?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncreased milk production",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDisease modeling for human research",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProduction of biofuels",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCrop improvement",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Transgenic mice are widely used as models to study human diseases such as cancer and Alzheimer’s.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ab6e4087-0233-44df-ad9e-9d036e4043dc",
+    "question_text": "Which property allows a single plant cell to regenerate into a whole plant in tissue culture?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPluripotency",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTotipotency",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMultipotency",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSomatic hybridization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Totipotency is the ability of a single plant cell to regenerate into a complete plant under suitable\n              conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a44a8051-6c94-4a6d-93d0-812b3523efc3",
+    "question_text": "Which term refers to the use of biological resources without proper authorization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBioethics",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBioremediation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBiopiracy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBiosafety",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Biopiracy refers to the use of biological resources without proper authorization or compensation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1e6341a4-9558-408d-8cd7-192cc7f52f1e",
+    "question_text": "Which enzyme is used to cut DNA at specific sequences in genetic engineering?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA ligase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRestriction enzyme",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nReverse transcriptase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDNA polymerase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Restriction enzymes are used to cut DNA at specific sequences in genetic engineering processes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "14aa6a72-3be6-44da-bee4-40642e305c8f",
+    "question_text": "Which term refers to the process of making DNA from an RNA template?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTranscription",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nReverse transcription",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nReplication",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTranslation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reverse transcription is the process of making complementary DNA (cDNA) from an RNA template.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "831de712-678a-4b7e-80d5-9ddcc2a7b837",
+    "question_text": "Which genetically modified plant was developed for resistance to the stem borer pest?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBt cotton",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBt rice",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGolden rice",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHybrid maize",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bacillus thuringiensis (Bt) rice is genetically modified for resistance to the stem borer pest.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "86b14d96-dc3a-4924-877c-a57e61ac7c6e",
+    "question_text": "Which of the following is a correct statement regarding recombinant DNA technology?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRecombinant DNA technology involves the use of ribosomes to cut DNA.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRecombinant DNA is formed by joining DNA segments from different sources.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRecombinant DNA technology is used to produce hybrid seeds.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRecombinant DNA technology is only used in plant breeding.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Recombinant DNA technology involves combining DNA from different sources to form recombinant DNA for\n              various applications, including medicine and agriculture.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c238fc6-79cb-4dcb-bc0d-bc82872b7ba5",
+    "question_text": "Which of the following is correct regarding RNA interference (RNAi)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRNAi enhances gene expression in cells.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRNAi silences specific gene expression using double-stranded RNA.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRNAi is used for DNA replication.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRNAi prevents cell division.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "RNA interference (RNAi) silences specific gene expression using double-stranded RNA molecules.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2580fdd9-d046-4227-b450-d652decf6f85",
+    "question_text": "Which of the following statements is correct about DNA ligase in genetic engineering?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA ligase is used to cut DNA at specific sites.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDNA ligase joins DNA fragments by forming phosphodiester bonds.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA ligase inhibits DNA replication in cells.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDNA ligase synthesizes mRNA from DNA.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "DNA ligase is an enzyme used to join DNA fragments by forming phosphodiester bonds during recombinant DNA\n              formation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d44baf6a-a087-4bd9-9c23-ff5bd693b2fd",
+    "question_text": "Which term refers to genetically modified animals used to study human diseases?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHybrid animals",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTransgenic animals",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCloned animals",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGermline mutants",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Transgenic animals are genetically modified to study human diseases and test new treatments.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "59c0599d-36e4-4318-a7cf-d79b2fc12824",
+    "question_text": "Which regulatory body in India is responsible for the approval of genetically modified organisms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nICMR",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDBT",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGEAC",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCSIR",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The Genetic Engineering Approval Committee (GEAC) is responsible for the approval and regulation of GMOs\n              in India.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53e3b200-5eb5-44b8-aff9-a821ce8ad228",
+    "question_text": "Which of the following is correct about Agrobacterium tumefaciens?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAgrobacterium tumefaciens is used to produce antibiotics.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAgrobacterium tumefaciens is used as a vector for gene transfer in plants.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAgrobacterium tumefaciens is a virus used in animal genetic engineering.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAgrobacterium tumefaciens is used for producing insulin in bacteria.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Agrobacterium tumefaciens is a bacterium used as a vector for transferring genes into plants through its\n              Ti plasmid.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eee2b455-82a5-4a7c-915f-f788017937f6",
+    "question_text": "Which of the following is correct about somatic hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSomatic hybridization involves the fusion of whole plant cells.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSomatic hybridization is a type of sexual reproduction.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSomatic hybridization involves fusion of protoplasts from different species.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSomatic hybridization is used only for animal cells.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Somatic hybridization involves the fusion of protoplasts from different plant species to form hybrid\n              plants with combined traits.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b05dd0fc-cde0-4b94-9777-53c601ef08f2",
+    "question_text": "Which plant was used to demonstrate RNA interference for pest resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTomato",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTobacco",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPotato",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRice",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "RNA interference was demonstrated in tobacco plants to provide resistance against nematode infestation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8cbcee78-799e-4d00-8254-a68dfd988408",
+    "question_text": "Which biotechnological method helps recover virus-free plants from diseased ones?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCryopreservation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGene editing",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeristem culture",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSomatic hybridization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Meristem culture is used to recover virus-free plants from diseased plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a198a67-57f1-4d64-9f59-adf9f3dca2be",
+    "question_text": "Which of the following is incorrect about tissue culture in plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTissue culture produces genetically identical plants.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTissue culture is used for micropropagation.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTissue culture requires sterile conditions.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTissue culture produces genetically diverse plants.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Tissue culture produces genetically identical plants, not genetically diverse ones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "459afe76-b528-4b86-8569-744e73fc2335",
+    "question_text": "Which plant tissue culture technique is used for large-scale plant propagation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSomatic hybridization",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMicropropagation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCallus culture",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProtoplast fusion",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Micropropagation is used for large-scale production of genetically identical plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5a21acdb-65f6-40d9-b772-c6a97a30c012",
+    "question_text": "Which method uses high voltage to create temporary pores in cell membranes for DNA entry?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMicroinjection",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGene gun",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectroporation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLipofection",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Electroporation uses high voltage to create temporary pores in cell membranes, allowing DNA to enter the\n              cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7684910-2f52-4063-87e6-dab71309cdbd",
+    "question_text": "Which of the following is correct about gene cloning?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGene cloning produces genetically different copies of genes.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGene cloning is unrelated to recombinant DNA technology.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGene cloning produces identical copies of a gene.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGene cloning prevents DNA replication in cells.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Gene cloning is a process used to produce identical copies of a specific gene through recombinant DNA\n              technology.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dfc2e615-ab9e-4a79-a4ae-7e8b522d7dfc",
+    "question_text": "Which of the following is incorrect about recombinant DNA technology?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRecombinant DNA is formed by combining DNA from different sources.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRecombinant DNA technology is used for gene cloning.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRecombinant DNA technology involves protein folding.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRecombinant DNA technology is used to produce insulin.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Recombinant DNA technology involves gene manipulation, not protein folding.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f0677870-a18c-4fac-825c-a5efdb8dfea8",
+    "question_text": "Which recombinant DNA product is used for treating growth hormone deficiency?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSomatotropin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInterferon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThyroxine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Recombinant human growth hormone (somatotropin) is used to treat growth hormone deficiency.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "35209c84-b1f0-413e-a362-fe74d083ae35",
+    "question_text": "Which molecular diagnostic technique uses hybridization with radioactive probes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPCR",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nELISA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAutoradiography",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMicroarray",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Autoradiography uses radioactive probes to detect specific DNA sequences by hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5e3fbf0-cdd1-4e43-a451-39f5f8c13da2",
+    "question_text": "Which genetically modified crop is resistant to Lepidopteran pests?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBt cotton",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGolden rice",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTomato",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSoybean",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bt cotton is genetically modified to resist Lepidopteran pests like bollworms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e1042b7e-6d7e-49d1-a0ab-41c1e53fccb8",
+    "question_text": "Which technique uses RNA interference to silence specific gene expression in pests?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMicropropagation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGene editing",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRNA interference (RNAi)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSomatic hybridization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "RNA interference (RNAi) is used to silence specific gene expression, including in pests for crop\n              protection.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "65ffec95-f114-47ac-828d-b72ecc6c0c0e",
+    "question_text": "Which technique is used to separate and visualize DNA fragments?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nELISA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPCR",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGel electrophoresis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNorthern blotting",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Gel electrophoresis is used to separate and visualize DNA fragments based on size.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c42fdecb-5596-4018-b917-d68364e15415",
+    "question_text": "Which gene in Bt cotton provides resistance to bollworms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\ncryIAc",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\ncryIAb",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\ncryIIAb",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\ncryIIIa",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The cryIAc gene from Bacillus thuringiensis provides resistance to cotton bollworms in Bt cotton.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6045377a-4447-40f5-8062-f17c49bfb335",
+    "question_text": "Which of the following is incorrect about the Genetic Engineering Approval Committee (GEAC)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGEAC regulates the use of genetically modified organisms in India.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGEAC ensures the safety of GMOs for the environment.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGEAC approves genetically engineered products for commercial use.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGEAC regulates traditional plant breeding methods.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "GEAC does not regulate traditional plant breeding methods; it regulates the approval and safety of\n              genetically modified organisms in India.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "156ec46e-f205-4c55-9ec7-0e0d76d10139",
+    "question_text": "Which bacterial species is used for the transfer of genes into plants in biotechnology?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBacillus thuringiensis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAgrobacterium tumefaciens",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEscherichia coli",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPseudomonas fluorescens",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Agrobacterium tumefaciens is used for transferring genes into plants in biotechnology.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e75e96ea-320e-415c-ab00-080fee2b2ccc",
+    "question_text": "Which of the following is incorrect regarding cry genes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCry genes encode proteins that are toxic to insect larvae.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCry genes are obtained from Bacillus thuringiensis.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCry proteins are produced during the log phase of bacterial growth.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCry proteins form crystals that disrupt the insect gut.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cry proteins are produced during the stationary phase of bacterial growth, not the log phase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2fd6779d-d875-48ce-9b79-29753d0e89f0",
+    "question_text": "Which enzyme is used as a marker in molecular biology techniques like ELISA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA polymerase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nReverse transcriptase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAlkaline phosphatase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLigase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Alkaline phosphatase is commonly used as an enzyme marker in ELISA to detect antigens or antibodies.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7c80396-29d3-44cf-b9b8-4e4b60b9ccb6",
+    "question_text": "What is the key feature of transgenic animals used in vaccine testing?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEnhanced growth rates",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigh disease resistance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIncreased sensitivity to pathogens",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbility to produce antibiotics",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Transgenic animals are designed to have increased sensitivity to pathogens, making them useful for\n              vaccine testing.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e307e832-ae93-471c-8dff-2fb4ba0ff756",
+    "question_text": "Which of the following is correct about restriction enzymes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRestriction enzymes join DNA fragments during cloning.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRestriction enzymes cut DNA at specific recognition sites.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRestriction enzymes are used for protein synthesis.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRestriction enzymes degrade RNA molecules in cells.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Restriction enzymes are used to cut DNA at specific recognition sites, which is essential in genetic\n              engineering and cloning.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "05f4b3bd-de89-49c3-8682-ed11420864cf",
+    "question_text": "Which of the following is correct about the Polymerase Chain Reaction (PCR)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPCR is used to synthesize proteins from DNA.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPCR amplifies specific DNA sequences through repeated cycles.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPCR does not require a DNA template.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPCR is unrelated to molecular diagnostics.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "PCR amplifies specific DNA sequences through repeated cycles of denaturation, annealing, and extension.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e3d59c4c-49a7-446b-b2aa-fa63b2cb6a04",
+    "question_text": "Which enzyme is used to join DNA fragments during recombinant DNA formation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA polymerase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLigase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEndonuclease",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nReverse transcriptase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "DNA ligase is used to join DNA fragments during recombinant DNA formation by forming phosphodiester\n              bonds.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d167093-2c64-4f39-a3ad-a860fdaf0d62",
+    "question_text": "Which biotechnological technique was developed when traditional breeding methods were insufficient?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTissue culture",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHybridization",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCloning",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGene editing",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Tissue culture was developed as a biotechnological technique when traditional breeding methods could not\n              meet the demand for crop improvement.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "babcc0eb-e225-4303-989a-c9941034beb0",
+    "question_text": "Which of the following is correct about gene therapy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGene therapy is used to replace defective genes with functional ones.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGene therapy is used to amplify proteins in cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGene therapy is unrelated to genetic disorders.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGene therapy inhibits DNA synthesis.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Gene therapy is used to replace defective genes with functional ones to treat genetic disorders.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5e7a3b21-7249-4029-a221-f5ff75ab53dc",
+    "question_text": "Which product of transgenic animals is used for treating phenylketonuria (PKU)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHuman insulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHuman growth hormone",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhenylalanine hydroxylase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlpha-1-antitrypsin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Transgenic animals are being explored for producing phenylalanine hydroxylase to treat PKU.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d8eab702-a681-4e0e-9bf6-3fa668eb26b6",
+    "question_text": "What is the primary purpose of molecular diagnostics in disease management?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCrop improvement",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEarly detection of diseases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProduction of transgenic animals",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEnhancing drug metabolism",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Molecular diagnostics enable early detection and management of diseases by identifying pathogens or\n              genetic mutations.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6aadb7fb-af0b-45a4-84c2-1131f31d7927",
+    "question_text": "Which of the following statements is incorrect about PCR?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPCR is used for amplifying DNA sequences.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPCR requires DNA polymerase enzyme.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPCR is used for detecting proteins in a sample.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPCR involves cycles of denaturation, annealing, and extension.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "PCR is used to amplify DNA sequences, not for detecting proteins. ELISA is used for protein detection.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "060a06b5-7f21-4b14-a963-364dc27f74cf",
+    "question_text": "Which biotechnological method is used to introduce foreign DNA into animal cells?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMicropropagation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMicroinjection",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSomatic hybridization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGene mapping",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Microinjection is a method used to introduce foreign DNA directly into animal cells using fine glass\n              needles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e627e1d4-e5fd-429d-b702-8c7ccb61f221",
+    "question_text": "Which nematode infects tobacco plant roots and is controlled by RNAi?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeloidogyne incognita",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHeterodera avenae",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCaenorhabditis elegans",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAncylostoma duodenale",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Meloidogyne incognita is a nematode that infects tobacco roots and is controlled using RNAi technology.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "640f1198-b87a-46ac-95e2-f8d96303bd54",
+    "question_text": "Which process involves the fusion of isolated protoplasts to form hybrid cells?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGene editing",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSomatic hybridization",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMicropropagation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMutation breeding",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Somatic hybridization involves the fusion of isolated protoplasts from different plant species to form\n              hybrid cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9719fbaf-b60c-45db-af33-e25deefa080c",
+    "question_text": "Which method is used to insert genes into plant cells using Agrobacterium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGene gun",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElectroporation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMicroinjection",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTi plasmid vector",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ti plasmid vector from Agrobacterium tumefaciens is used to insert genes into plant cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6876360f-0335-4402-bc2f-3ac1e423b1bb",
+    "question_text": "Which of the following is incorrect about plasmids?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasmids are circular DNA molecules.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlasmids replicate independently within host cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlasmids are used as vectors in genetic engineering.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlasmids are part of the eukaryotic chromosome.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Plasmids are not part of the eukaryotic chromosome; they are extra-chromosomal circular DNA found\n              primarily in bacteria and used as vectors in genetic engineering.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "49aae2cd-1abb-4c74-aca5-e0f0f10d9e03",
+    "question_text": "Which of the following statements about Golden Rice is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGolden Rice is genetically modified for higher protein content.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGolden Rice is genetically modified for drought resistance.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGolden Rice produces beta-carotene to combat vitamin A deficiency.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGolden Rice is used as an insect-resistant crop.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Golden Rice is genetically modified to produce beta-carotene, which helps combat vitamin A deficiency.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09ba7fd1-7210-4fc1-a9e4-3e296aecf8d6",
+    "question_text": "Which Indian crop faced biopiracy when patented by an American company in 1997?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWheat",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBasmati rice",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSugarcane",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTea",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Basmati rice faced biopiracy when an American company patented it in 1997.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a7ed1f62-c644-4f61-8046-5ba063697229",
+    "question_text": "Which of the following is correct about the Genetic Engineering Approval Committee (GEAC)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGEAC regulates the use of GMOs in India.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGEAC approves traditional plant breeding methods.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGEAC monitors the use of antibiotics in hospitals.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGEAC is responsible for conducting genetic research.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The Genetic Engineering Approval Committee (GEAC) regulates the use, approval, and safety of genetically\n              modified organisms (GMOs) in India.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "51113e07-8032-428a-80c9-5ccb2bab22c4",
+    "question_text": "Which of the following is incorrect about DNA ligase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDNA ligase joins DNA fragments by forming phosphodiester bonds.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDNA ligase is used in recombinant DNA technology.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDNA ligase breaks DNA strands at specific sites.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDNA ligase is essential in DNA replication and repair.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "DNA ligase does not break DNA strands; it joins DNA fragments by forming phosphodiester bonds.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "31a9390b-d1e1-4c8d-bc51-92a2aff0f8d8",
+    "question_text": "What is the primary role of cry genes in genetically modified crops?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEnhancing crop yield",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProviding pest resistance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nImproving nutritional value",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIncreasing drought tolerance",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cry genes produce proteins toxic to insect pests, providing pest resistance in genetically modified\n              crops.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a8504585-23ce-4f31-a85c-ec5bfb73d6b6",
+    "question_text": "Which of the following statements about gene therapy is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGene therapy is used to replace defective genes with functional ones.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGene therapy is used for treating genetic disorders like ADA deficiency.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGene therapy is performed at the protein level.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGene therapy can involve viral vectors for gene delivery.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Gene therapy is performed at the genetic (DNA) level, not at the protein level.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7b381cd9-af1e-48bb-956f-41ca03d48c63",
+    "question_text": "Which molecule is used as a probe in molecular diagnostics for detecting specific DNA sequences?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nmRNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDNA probe",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\ntRNA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nrRNA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "DNA probes are used in molecular diagnostics to detect specific DNA sequences by hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04c48103-10d7-488b-a9a2-032e53aa3ca4",
+    "question_text": "Which technique is used for early detection of genetic disorders by amplifying specific DNA sequences?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nELISA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPCR",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGel electrophoresis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSouthern blotting",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "PCR (Polymerase Chain Reaction) is used for early detection of genetic disorders by amplifying specific\n              DNA sequences.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9ff6b932-3aef-44c6-893d-d0bf2e1525f9",
+    "question_text": "Which plant part is used in somatic hybridization after enzymatic removal of cell walls?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProtoplast",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCallus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeristem",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEmbryo",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Protoplasts are used in somatic hybridization after the enzymatic removal of cell walls.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "91a6d34c-ecdc-4321-aaa5-5c19bea6425a",
+    "question_text": "Which enzyme is responsible for removing the C peptide during the maturation of insulin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPeptidase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProtease",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEndonuclease",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExonuclease",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Protease removes the C peptide during the maturation of proinsulin into active insulin.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8da3dff8-819f-4d85-bdae-9196ef789cdc",
+    "question_text": "Which regulatory body in India is responsible for approving genetically modified organisms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nICMR",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGEAC",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDBT",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCSIR",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The Genetic Engineering Approval Committee (GEAC) is responsible for approving and regulating genetically\n              modified organisms in India.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7bca77c8-5f1a-404d-9b15-39c88c3e0f95",
+    "question_text": "Which of the following is incorrect about Golden Rice?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGolden Rice is genetically modified to produce beta-carotene.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGolden Rice helps reduce vitamin A deficiency.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGolden Rice is produced naturally without genetic modification.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGolden Rice was developed using genetic engineering techniques.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Golden Rice is genetically modified to produce beta-carotene and is not produced naturally without\n              genetic modification.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "af4d4d6c-e79a-4939-b786-976ad74bfb71",
+    "question_text": "Which protein crystals produced by Bacillus thuringiensis kill insect pests?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nToxin B",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCry protein",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBt protein",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLysin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cry proteins produced by Bacillus thuringiensis form crystals that are toxic to insect pests.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4818a22e-5b72-402c-8eb7-80ab12fda8b5",
+    "question_text": "Which protein produced by Bacillus thuringiensis is toxic to insect larvae?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBt protein",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCry protein",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProtease",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCollagen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cry protein produced by Bacillus thuringiensis is toxic to insect larvae and is used in pest-resistant\n              crops.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fae49a54-287a-4a2c-897f-268d81bf7ff7",
+    "question_text": "Which enzyme is used to cut DNA at specific sites during genetic manipulation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLigase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEndonuclease",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nReverse transcriptase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDNA polymerase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Endonuclease enzymes cut DNA at specific recognition sites during genetic manipulation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biotechnology and its Applications",
+    "topic": "Biotechnology and its Applications",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biotechnology and its Applications / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biotechnology-and-its-applications"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

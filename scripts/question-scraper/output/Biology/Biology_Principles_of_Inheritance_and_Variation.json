@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "50d6e44c-61b6-4059-b021-eb978c78c850",
+    "question_text": "Which type of cross did Mendel perform to study the inheritance of two different traits?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonohybrid cross",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTest cross",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDihybrid cross",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBack cross",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "A dihybrid cross was performed by Mendel to study the inheritance of two different traits simultaneously.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6ded83be-5d61-46eb-ab99-0f9c9f2f74cf",
+    "question_text": "Which type of mutation results from a single base substitution in DNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPoint mutation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrameshift mutation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChromosomal aberration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPolyploidy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "A point mutation occurs when a single base is changed, as seen in sickle-cell anemia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3ff612ec-786e-462a-8e5a-1b96021ebdc7",
+    "question_text": "What is the function of the SRY gene located on the Y chromosome?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDetermines female characteristics",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTriggers male sex determination",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRegulates blood clotting",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nControls eye color",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The SRY gene on the Y chromosome triggers male sex determination by promoting testes development.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c2a845a3-5bd7-4ae0-a44e-93b74ebc9652",
+    "question_text": "Which process occurs during meiosis and increases genetic variation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCrossing over",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMitosis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nReplication",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTranscription",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Crossing over during meiosis exchanges genetic material between homologous chromosomes, increasing\n              genetic diversity.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "647104b7-08f5-4c1b-80e1-88af294c200f",
+    "question_text": "Which of the following statements about Mendel's experiments is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMendel used Drosophila melanogaster for his experiments.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMendel formulated the Law of Evolution.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMendel's work was initially ignored by the scientific community.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMendel studied inheritance only in animals.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mendel's work was initially ignored but later recognized as the foundation of genetics.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7e577b3e-91d6-4e41-be92-989acbcaa3cf",
+    "question_text": "Which of the following is an incorrect statement about sex determination?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHumans follow the XY sex determination system.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBirds follow the ZW sex determination system.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsects such as grasshoppers use the XO system.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMammals use the haplodiploidy system for sex determination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Haplodiploidy is observed in insects like bees, not mammals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "97b47632-aa06-4758-8572-466ff969e9a4",
+    "question_text": "Which of the following is an incorrect statement about Mendelian inheritance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA monohybrid cross follows a 3:1 phenotypic ratio in the F2 generation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMendel’s laws are applicable only to plants.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe Law of Segregation explains how alleles separate during gamete formation.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDihybrid crosses result in a 9:3:3:1 phenotypic ratio.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mendel’s laws apply to all sexually reproducing organisms, not just plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b30588f3-1672-4c58-812b-e1216c8edc21",
+    "question_text": "What is the function of a Punnett square in genetics?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTo analyze DNA sequences",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTo predict the probability of traits in offspring",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTo determine chromosome number",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTo identify mutations in genes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A Punnett square is used to predict the probability of offspring inheriting particular traits.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "936629ac-f68e-4850-959b-f7f76a368a3a",
+    "question_text": "Which genetic disorder is caused by the absence of an X chromosome in females?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDown’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTurner’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKlinefelter’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSickle-cell anemia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Turner’s syndrome occurs due to the absence of one X chromosome, leading to a 45, XO karyotype.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "722d6c36-03b6-412e-ab63-62b3f8fbed29",
+    "question_text": "Which disorder is caused due to the deletion of a small portion of chromosome 5?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDown’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTurner’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCri-du-chat syndrome",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKlinefelter’s syndrome",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cri-du-chat syndrome is caused by a deletion in the short arm of chromosome 5.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "28473678-524b-4d16-9c4a-7aecac2582b8",
+    "question_text": "Which of the following statements best describes co-dominance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBoth alleles blend to form an intermediate phenotype",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOnly the dominant allele is expressed",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBoth alleles are expressed equally in the phenotype",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNeither allele is expressed",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In co-dominance, both alleles contribute equally to the phenotype, as seen in AB blood group.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4093a73a-c1f9-4d65-8da0-3406fcd930b5",
+    "question_text": "Which of the following represents the genotype of a carrier female for hemophilia?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nXX",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nXhX",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nXhY",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXY",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A carrier female for hemophilia has the genotype XhX, where one X chromosome carries the recessive\n              hemophilia allele.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b31afeb1-bd62-4472-b25e-1b03388c399e",
+    "question_text": "Which of the following statements regarding mutations is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPoint mutations involve a single nucleotide change.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrameshift mutations occur due to insertions or deletions.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll mutations are harmful to an organism.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMutations can be spontaneous or induced.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Not all mutations are harmful; some may be beneficial or have no effect.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "58fb9850-95d6-4023-a41c-8f7704b7f401",
+    "question_text": "Which of the following statements about Mendelian genetics is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMendel’s laws apply only to plants.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA recessive trait is always expressed in heterozygous individuals.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe Law of Independent Assortment applies to genes on different chromosomes.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLinked genes always assort independently.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The Law of Independent Assortment applies to genes on different chromosomes but may not hold true for\n              linked genes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "68cb18cc-4355-4de2-af3c-72aaa9cfbea8",
+    "question_text": "Which of the following statements about sex determination is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHumans follow the XY system of sex determination.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBirds use the ZW system for sex determination.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInsects such as grasshoppers follow the XO system.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll mammals follow the ZW system of sex determination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Mammals follow the XY system, where males have XY chromosomes and females have XX.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "24be59c3-d3c8-44bd-a984-0e999db994eb",
+    "question_text": "Which of the following genetic disorders is caused due to a point mutation in the β-globin gene?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDown’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSickle-cell anemia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTurner’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHemophilia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sickle-cell anemia is caused by a single base substitution in the β-globin gene, leading to the formation\n              of abnormal hemoglobin.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "426ab24d-b381-46e4-adea-83042978128b",
+    "question_text": "What is the genetic composition of a male in the XY sex determination system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nXX",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nXY",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nXO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZZ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In the XY sex determination system, males have XY chromosomes, while females have XX.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b37d3b48-1fe0-435a-b259-c223c00cee94",
+    "question_text": "Which of the following inheritance patterns is exhibited by human blood groups?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncomplete dominance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCo-dominance and multiple allelism",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPolygenic inheritance",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPleiotropy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Human blood groups show co-dominance (A and B alleles) and multiple allelism (IA, IB, and i alleles).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4baa72d-46bc-4c1c-88ad-0684b8329019",
+    "question_text": "What is the term for a single gene controlling multiple phenotypic traits?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPolygenic inheritance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPleiotropy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCo-dominance",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMultiple allelism",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Pleiotropy occurs when a single gene affects multiple phenotypic traits, such as in sickle-cell anemia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "298b94d0-44c7-46b2-988e-5fa2d7d30484",
+    "question_text": "Which of the following is an example of a disorder caused by non-disjunction of sex chromosomes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDown’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKlinefelter’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThalassemia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSickle-cell anemia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Klinefelter’s syndrome (47, XXY) results from the non-disjunction of sex chromosomes during meiosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "14679e5e-0fc3-48dc-b391-ec2043bb9ab1",
+    "question_text": "Which of the following laws was proposed by Gregor Mendel based on his pea plant experiments?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLaw of Evolution",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLaw of Segregation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLaw of Independent Mutation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLaw of Genetic Drift",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mendel proposed the Law of Segregation, stating that alleles separate independently during gamete\n              formation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "506e0b6a-f46b-44fe-b47e-ce4c33d3240c",
+    "question_text": "What is the probability of a female child being born in humans?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n75%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n50%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n25%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The probability of having a female child is 50% since fertilization is equally likely to occur with an X\n              or Y sperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f0571ab9-4479-449f-b8cd-634f7f99d360",
+    "question_text": "Which scientist developed the Punnett square to predict genetic crosses?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGregor Mendel",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nReginald C. Punnett",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThomas Hunt Morgan",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWalter Sutton",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Reginald C. Punnett developed the Punnett square as a graphical representation to predict genetic\n              outcomes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "36c7f9ba-260f-4c7f-90f1-bcf80d9b4da1",
+    "question_text": "Which concept explains the inheritance of two genes located on different chromosomes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLinkage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLaw of Independent Assortment",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPleiotropy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpistasis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The Law of Independent Assortment states that genes located on different chromosomes assort independently\n              during gamete formation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "000912eb-b0ab-4e5a-9383-126c83507bc9",
+    "question_text": "Which of the following statements about Turner’s syndrome is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is caused by trisomy of chromosome 21.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIndividuals have a 47, XXY chromosome composition.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAffected individuals have only one X chromosome (45, XO).",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt affects only males.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Turner’s syndrome is caused by monosomy of the X chromosome, leading to a 45, XO genotype.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "80078362-d546-4b10-ba94-43967fd3cb57",
+    "question_text": "Which of the following statements about the Law of Segregation is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt states that allele pairs separate during gamete formation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt explains why recessive traits can reappear in later generations.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt applies only to genes on the same chromosome.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is one of Mendel’s fundamental principles of inheritance.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The Law of Segregation applies to all genes, not just those on the same chromosome.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "85f109dd-68d4-468e-9654-d7fbd024ce79",
+    "question_text": "Which of the following statements about genetic disorders is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDown’s syndrome is caused by trisomy of chromosome 18.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSickle-cell anemia is caused by a mutation in the β-globin gene.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKlinefelter’s syndrome is caused by monosomy of the Y chromosome.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHemophilia is an autosomal dominant disorder.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sickle-cell anemia is caused by a single base mutation in the β-globin gene, leading to abnormal\n              hemoglobin.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "94ee4d58-a541-421a-b2a8-4b9c6e12fefd",
+    "question_text": "Who proposed the Chromosomal Theory of Inheritance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMendel and Morgan",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSutton and Boveri",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWatson and Crick",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHenking and Sturtevant",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sutton and Boveri proposed the Chromosomal Theory of Inheritance, linking genes to chromosomes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9253b3a9-e637-42da-8ec8-4f3c055d4d9f",
+    "question_text": "Which type of inheritance is observed when a single gene influences multiple traits?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPolygenic inheritance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIncomplete dominance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCo-dominance",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPleiotropy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Pleiotropy occurs when a single gene affects multiple phenotypic traits, such as in phenylketonuria.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e86391f4-e6e7-46fe-acbb-6276bc3a34f8",
+    "question_text": "Which of the following best describes polygenic inheritance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA single gene controls multiple traits",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMultiple genes influence a single trait",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOne gene completely masks another gene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nA single mutation affects multiple systems",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Polygenic inheritance occurs when multiple genes contribute to a single phenotype, as seen in human\n              height and skin color.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "157464bf-2069-4795-a2c9-3ae04cb72801",
+    "question_text": "Which of the following traits in pea plants was NOT studied by Mendel?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSeed color",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPod shape",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLeaf venation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFlower position",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mendel studied traits such as seed color, pod shape, and flower position but not leaf venation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "be7c182e-ab75-42b2-a359-f0f7c309b4c9",
+    "question_text": "Which type of mutation occurs when a single base substitution results in a premature stop codon?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMissense mutation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNonsense mutation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSilent mutation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrameshift mutation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A nonsense mutation introduces a premature stop codon, leading to an incomplete and nonfunctional\n              protein.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f4cba1b3-d182-4adc-8cfb-0acafac3386b",
+    "question_text": "Which of the following statements about Mendelian inheritance is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMendel proposed the Law of Segregation and Law of Independent Assortment.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA monohybrid cross produces a 3:1 phenotypic ratio in the F2 generation.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDihybrid crosses result in a 9:3:3:1 phenotypic ratio.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMendel's laws apply only to plants and not to animals.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Mendel’s laws apply to all sexually reproducing organisms, not just plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc87e144-dad6-43e5-b5d5-4dcb0f0034a7",
+    "question_text": "Which of the following genetic disorders is incorrectly matched with its cause?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDown’s syndrome - Trisomy 21",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTurner’s syndrome - 45, XO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKlinefelter’s syndrome - 47, XYY",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPatau syndrome - Trisomy 13",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Klinefelter’s syndrome is caused by the XXY karyotype, not XYY.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c9d11506-12ff-4838-8c2a-8f674d5e2413",
+    "question_text": "Which of the following statements about Mendelian inheritance is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMendel's experiments were conducted on pea plants.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe Law of Dominance explains why heterozygous individuals express the dominant trait.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDihybrid crosses do not follow the Law of Independent Assortment.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe Law of Segregation states that allele pairs separate during gamete formation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The Law of Independent Assortment applies to dihybrid crosses unless genes are linked.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eae4c752-3553-48e5-8c59-cf926818c785",
+    "question_text": "Which genetic disorder is caused by trisomy of chromosome 21?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTurner’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKlinefelter’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDown’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEdward’s syndrome",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Down’s syndrome is caused by trisomy of chromosome 21, leading to developmental and cognitive\n              impairments.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c9f20d25-cf61-4cce-8328-9db860e4613e",
+    "question_text": "Which of the following best describes a test cross?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA cross between two homozygous individuals",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA cross between an individual of unknown genotype and a homozygous recessive individual",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nA cross between two heterozygous individuals",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nA cross between two recessive individuals",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A test cross is used to determine the genotype of an organism by crossing it with a homozygous recessive\n              individual.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "da16ed49-b274-4998-97b6-ec9b4c80f7ae",
+    "question_text": "Which of the following represents a heterozygous genotype for a Mendelian trait?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\naa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAa",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAAA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "A heterozygous genotype contains two different alleles, such as Aa.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6e2a33db-3489-44d8-af0f-c107d4a0f764",
+    "question_text": "Which of the following is an example of a chromosomal disorder caused by trisomy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTurner’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSickle-cell anemia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDown’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhenylketonuria",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Down’s syndrome is caused by trisomy of chromosome 21, leading to developmental and cognitive\n              impairments.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a6f1d4d6-a0e1-41ca-be67-cefd56d6c412",
+    "question_text": "Which law of inheritance states that alleles segregate independently during gamete formation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLaw of Dominance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLaw of Segregation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLaw of Independent Assortment",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHardy-Weinberg Law",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The Law of Independent Assortment states that different gene pairs assort independently during gamete\n              formation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "acb29714-ad56-4611-8640-435e841c878f",
+    "question_text": "Which of the following represents a dihybrid cross phenotypic ratio?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3:1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9:3:3:1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1:1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1:2:1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A dihybrid cross results in a 9:3:3:1 phenotypic ratio in the F2 generation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dcc0c21e-7212-4b2e-b339-244db25eb1cb",
+    "question_text": "Which scientist used the fruit fly Drosophila melanogaster for genetic experiments?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGregor Mendel",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThomas Hunt Morgan",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWalter Sutton",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrancis Crick",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Thomas Hunt Morgan used Drosophila melanogaster to study linkage and recombination in genetics.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ad773499-628f-4418-91e6-516a4e8094a1",
+    "question_text": "Which of the following best describes multiple allelism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA gene with two alleles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA gene with three or more alleles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTwo genes affecting the same trait",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGenes located on the same chromosome",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Multiple allelism occurs when a gene has three or more alleles, such as in the ABO blood group system.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5ffb1f96-35e8-4ebb-b5cd-3be5a4c0f265",
+    "question_text": "Which of the following inheritance patterns is observed in color blindness?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAutosomal dominant",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAutosomal recessive",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nX-linked recessive",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nY-linked",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Color blindness follows an X-linked recessive inheritance pattern, primarily affecting males.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "097af216-6965-47b5-9d5d-b77c2a2e8515",
+    "question_text": "Which inheritance pattern is followed by Huntington’s disease?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAutosomal dominant",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAutosomal recessive",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nX-linked dominant",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nX-linked recessive",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Huntington’s disease follows an autosomal dominant pattern, meaning only one copy of the mutant gene is\n              needed for expression.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "da3aafa0-aced-4897-8ea7-2555e604fbd6",
+    "question_text": "Which of the following statements about linked genes is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLinked genes are found on different chromosomes.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCrossing over can separate linked genes.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLinked genes always follow the Law of Independent Assortment.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll genes on the same chromosome are always linked.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Crossing over can break the linkage between genes and create new allele combinations.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a8250cae-6d90-40a7-97a0-d490926add75",
+    "question_text": "Which of the following statements about Down’s syndrome is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is caused by trisomy of chromosome 21.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt results in developmental and cognitive impairments.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt occurs due to the presence of an extra Y chromosome.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is a type of aneuploidy.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Down’s syndrome is caused by an extra copy of chromosome 21, not the Y chromosome.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a794a9bd-32d9-4e08-8f56-91c67ad3102f",
+    "question_text": "Which trait did Mendel study in pea plants to explain the inheritance of a single gene?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSeed shape",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nStem color",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLeaf texture",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRoot length",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mendel studied traits like seed shape to explain monohybrid inheritance patterns.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cb1930af-36a8-4ff1-8879-24c859a1fd49",
+    "question_text": "What is the chromosomal composition of a female with Turner’s syndrome?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n47, XXY",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n45, XO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n46, XY",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n47, XYY",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Turner’s syndrome is characterized by the absence of one X chromosome, leading to a 45, XO karyotype.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b1f69b24-f487-4585-8a48-1973af7a3601",
+    "question_text": "Which term describes an individual having two different alleles for a gene?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHomozygous",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHeterozygous",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHemizygous",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPolygenic",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "An individual with two different alleles for a gene (e.g., Tt) is called heterozygous.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "07b532f6-da52-4454-8248-5b9fd0ec410e",
+    "question_text": "Which chromosomal disorder is also referred to as Trisomy 18?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDown’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEdward’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPatau syndrome",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTurner’s syndrome",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Edward’s syndrome is caused by trisomy of chromosome 18, leading to severe developmental issues.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e63bb6f0-38d3-44dd-8351-b2bee69be6ef",
+    "question_text": "Which of the following statements about mutations is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMutations can be harmful, beneficial, or neutral.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPoint mutations always result in frameshift mutations.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMutations can occur spontaneously or be induced by mutagens.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSome mutations may lead to genetic disorders.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Point mutations do not always cause frameshift mutations; they can also be silent or missense mutations.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7bcc1a2c-9a80-4183-a598-02806d03f07d",
+    "question_text": "Which scientist's work formed the basis for the chromosomal theory of inheritance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWatson and Crick",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMendel and Morgan",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSutton and Boveri",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDarwin and Wallace",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Sutton and Boveri proposed the chromosomal theory of inheritance, linking chromosomes to Mendel’s\n              principles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "60f00e20-03f9-462c-97b1-6a77a3a7473a",
+    "question_text": "Which of the following correctly describes aneuploidy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt refers to the complete extra sets of chromosomes.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is caused by nondisjunction during cell division.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt always results in viable offspring.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt only occurs in sex chromosomes.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Aneuploidy is caused by nondisjunction, where chromosomes fail to separate properly during meiosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7790b033-ddb0-4208-8560-46709dee969e",
+    "question_text": "Which of the following statements about polygenic inheritance is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA single gene controls multiple traits.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMultiple genes influence a single trait.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt follows simple Mendelian ratios.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPolygenic traits show discontinuous variation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Polygenic inheritance involves multiple genes contributing to a single trait, such as skin color and\n              height.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d1650f4-6104-420e-893d-6654e93505e1",
+    "question_text": "What type of sex determination system is found in honeybees?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nXY system",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nZW system",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nXO system",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHaplodiploidy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Honeybees follow the haplodiploidy system, where females are diploid (fertilized eggs) and males are\n              haploid (unfertilized eggs).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ac184145-98ba-4417-99ca-fad9d3b505fb",
+    "question_text": "Which of the following represents an example of a test cross?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCrossing a heterozygous individual with a homozygous dominant individual",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCrossing a homozygous dominant individual with a homozygous recessive individual",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrossing an individual with unknown genotype with a homozygous recessive individual",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCrossing two heterozygous individuals",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "A test cross involves crossing an individual with an unknown genotype with a homozygous recessive\n              individual to determine its genotype.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4168a14b-b101-448b-9a43-944887d85f78",
+    "question_text": "Which genetic condition is caused by the deletion of a portion of chromosome 5?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDown’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKlinefelter’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCri-du-chat syndrome",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTurner’s syndrome",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cri-du-chat syndrome is caused by a deletion in the short arm of chromosome 5, leading to developmental\n              abnormalities.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9bcea323-b32b-4495-9682-43fc60d2312c",
+    "question_text": "Which of the following correctly describes a test cross?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA cross between two dominant individuals.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA cross between an individual of unknown genotype and a homozygous recessive individual.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nA cross between two heterozygous individuals.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nA cross between two recessive individuals.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A test cross helps determine an organism’s genotype by crossing it with a homozygous recessive\n              individual.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "214e1e2e-bfae-4140-a939-6b5287b85fac",
+    "question_text": "Which term describes an organism with identical alleles for a given trait?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHeterozygous",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHomozygous",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDiploid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHybrid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A homozygous organism has two identical alleles for a trait.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3827a749-72c9-4a58-b1f4-f18f664df7ab",
+    "question_text": "Which of the following is an incorrect statement about linkage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLinked genes are located on the same chromosome.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCrossing over can break the linkage between genes.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLinked genes always assort independently.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe closer two genes are, the less likely they are to be separated by crossing over.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Linked genes do not follow independent assortment; they tend to be inherited together unless crossing\n              over occurs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e8749960-c35a-4f82-bf95-d8c4f384051b",
+    "question_text": "What is the sex chromosome composition of an individual with Turner’s syndrome?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n47, XXY",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n45, XO",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n46, XY",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n47, XYY",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Turner’s syndrome results from monosomy of the X chromosome, leading to a 45, XO karyotype.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e669b2f8-23e3-406e-8754-8817b2e5ec33",
+    "question_text": "Which of the following is a correct statement about epistasis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt occurs when one gene influences multiple traits.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt follows Mendel’s Law of Independent Assortment.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOne gene masks the effect of another gene.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpistasis is the same as pleiotropy.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Epistasis occurs when one gene masks or modifies the expression of another gene.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fc3ced24-4bbf-4203-9bb6-ba6f2a6161db",
+    "question_text": "Which of the following is a correct statement about sex-linked inheritance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nY-linked traits can be passed to both male and female offspring.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nX-linked recessive disorders are more common in males.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFemales can never be carriers of X-linked disorders.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nX-linked dominant traits only affect males.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Since males have only one X chromosome, X-linked recessive disorders are more common in them.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2c64b97d-6b2b-4abd-b287-4a749c7e6e36",
+    "question_text": "Which of the following statements about genes and alleles is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA gene is a segment of DNA that codes for a protein.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlleles are different versions of the same gene.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll genes have only two possible alleles.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDominant alleles always express their trait in heterozygous individuals.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Some genes have more than two alleles, as seen in the ABO blood group system.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "947dfc6f-c56d-47d3-a2fe-a3073a583dad",
+    "question_text": "Which disorder is caused due to a defect in the dystrophin gene on the X chromosome?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCystic fibrosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDuchenne muscular dystrophy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHuntington’s disease",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSickle-cell anemia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Duchenne muscular dystrophy is an X-linked disorder caused by mutations in the dystrophin gene.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6e05728c-9f56-4422-b0e5-bde01d73258b",
+    "question_text": "Which of the following is an example of polygenic inheritance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHemophilia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSickle-cell anemia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHuman skin color",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCystic fibrosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Human skin color is a polygenic trait influenced by multiple genes, leading to a continuous range of skin\n              tones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4fb17590-6963-4c23-92e6-e6f06d13910a",
+    "question_text": "Which genetic disorder is caused by an expansion of CAG repeats?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSickle-cell anemia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHuntington’s disease",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHemophilia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCystic fibrosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Huntington’s disease is caused by the expansion of CAG repeats in the HTT gene.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1747cd93-1307-4c2b-b208-63950d176c46",
+    "question_text": "Which of the following is an incorrect statement about linkage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLinked genes are located close together on the same chromosome.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGenes far apart on a chromosome assort independently.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLinked genes always segregate independently.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCrossing over can break the linkage between genes.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Linked genes do not always segregate independently; they tend to be inherited together.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "75a3dc4a-54d7-483b-a411-79eb7724a36a",
+    "question_text": "Which of the following statements about genetic mutations is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrameshift mutations can be caused by insertions or deletions.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSilent mutations change the amino acid sequence of a protein.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMissense mutations result in a single amino acid change.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNonsense mutations introduce a premature stop codon.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Silent mutations do not change the amino acid sequence, as the altered codon still codes for the same\n              amino acid.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cba477b2-7854-4f4e-b06e-c70a7ed1e3cd",
+    "question_text": "Which of the following genetic disorders follows a Y-linked inheritance pattern?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nColor blindness",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHemophilia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHypertrichosis (hairy ears)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSickle-cell anemia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Hypertrichosis (hairy ears) follows a Y-linked inheritance pattern, as the gene is located on the Y\n              chromosome and is only passed from father to son.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fd254529-1cc3-4cea-b256-faf251544d7e",
+    "question_text": "What is the function of a Barr body in female cells?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nActivates all X chromosomes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPrevents expression of autosomal genes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInactivates one X chromosome",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDetermines the sex of the individual",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "A Barr body is an inactivated X chromosome in female cells, ensuring dosage compensation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "96ec2746-7982-424e-b092-8c3d53aedea3",
+    "question_text": "Which of the following explains why some traits disappear in the F1 generation but reappear in the F2 generation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIncomplete dominance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCo-dominance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLaw of Dominance",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLaw of Segregation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The Law of Segregation explains that recessive traits can be masked in the F1 generation and reappear in\n              the F2 generation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1073362b-bded-48e3-810e-252b9358e76d",
+    "question_text": "Which of the following is an incorrect statement about co-dominance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBoth alleles are expressed in the heterozygous state.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAB blood group is an example of co-dominance.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOne allele completely suppresses the other in co-dominance.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCo-dominance differs from incomplete dominance.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In co-dominance, both alleles are equally expressed rather than one suppressing the other.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8bbf2912-5195-4584-97e7-d5ed09675197",
+    "question_text": "What is the role of the Y-chromosome in human sex determination?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt determines female characteristics",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt triggers male development",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt carries genes for blood type",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is inherited only from the mother",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The Y-chromosome carries the SRY gene, which triggers male development in humans.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f2c39d41-79e6-4980-adaf-de63d975aa16",
+    "question_text": "Which type of sex determination system is seen in birds?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nXY system",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nXO system",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nZW system",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHaplodiploidy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In birds, the ZW system determines sex, where males are ZZ and females are ZW.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "af296f64-cdf7-4f06-83e0-edbf88856f09",
+    "question_text": "What is the primary cause of Down’s syndrome?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMutation in the hemoglobin gene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTrisomy of chromosome 21",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDeletion of chromosome 18",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLoss of the Y chromosome",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Down’s syndrome is caused by trisomy of chromosome 21, leading to developmental and cognitive\n              impairments.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0b91e9d6-74be-4527-9eaf-3dbb9ba10955",
+    "question_text": "Which of the following conditions results from monosomy of the X chromosome?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKlinefelter’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTurner’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDown’s syndrome",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEdward’s syndrome",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Turner’s syndrome is caused by monosomy of the X chromosome (45, XO), leading to sterility and other\n              developmental issues.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c8beed07-a817-46f6-b115-6d9255e8fe97",
+    "question_text": "Which of the following correctly describes pleiotropy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOne gene affects multiple traits.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMultiple genes affect a single trait.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOne gene determines only one phenotype.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTraits are inherited through mitochondrial DNA.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pleiotropy occurs when a single gene influences multiple phenotypic traits, as seen in sickle-cell\n              anemia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5db1dc28-41d3-4193-b039-179e8794de4d",
+    "question_text": "Which of the following statements about genetic variation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMutation is the only source of genetic variation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGenetic variation can result from recombination.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll mutations lead to harmful effects.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGenetic drift does not contribute to variation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Recombination during meiosis is a major source of genetic variation along with mutation and gene flow.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2d34f6ee-1924-4555-b09b-1bde53517b0b",
+    "question_text": "Which of the following statements about pleiotropy is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOne gene influences multiple traits.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMultiple genes control a single phenotype.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPleiotropy occurs only in plants.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt follows Mendel’s Law of Segregation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pleiotropy occurs when a single gene affects multiple phenotypic traits, such as in sickle-cell anemia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "26f73e77-d267-485e-89bb-ad06bf87a5de",
+    "question_text": "Which of the following is an incorrect statement about co-dominance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBoth alleles are fully expressed in heterozygous individuals.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAB blood group is an example of co-dominance.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOne allele completely suppresses the other in co-dominance.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCo-dominance differs from incomplete dominance.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In co-dominance, both alleles contribute equally to the phenotype, instead of one suppressing the other.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "64286dd9-478e-4c9a-a655-0f99b5719c96",
+    "question_text": "Which of the following statements regarding the Law of Segregation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt states that two alleles for a trait separate during gamete formation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt explains why linked genes are always inherited together.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt applies only to dominant alleles.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt was discovered through dihybrid crosses only.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The Law of Segregation states that two alleles segregate independently into gametes during meiosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "681f6507-3b85-49b0-98a6-a818534cedd5",
+    "question_text": "Which of the following statements about sex determination is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHumans follow the XY sex determination system.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBirds follow the XO sex determination system.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMales in humans have two X chromosomes.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSex determination in all organisms is controlled by the same genetic mechanism.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Humans follow the XY system, where males are XY and females are XX.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f5ffc111-ea15-4ed2-a6fb-df7f15bc561a",
+    "question_text": "Which of the following is an incorrect statement about the chromosomal theory of inheritance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt was proposed by Sutton and Boveri.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt states that genes are located on chromosomes.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt suggests that alleles segregate independently during meiosis.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt was developed based on Mendel’s experiments on fruit flies.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The chromosomal theory of inheritance was based on Mendel’s work on pea plants, not fruit flies.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1258cd81-533a-43a2-b31d-8b3beb2a3ecf",
+    "question_text": "Which scientist’s work on fruit flies led to the discovery of linkage and recombination?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGregor Mendel",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThomas Hunt Morgan",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWatson and Crick",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSutton and Boveri",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Thomas Hunt Morgan’s experiments on Drosophila melanogaster led to the discovery of linkage and\n              recombination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "55b2ddcd-b21b-48ae-a6ae-2c719bebdd43",
+    "question_text": "Which term describes a genetic cross between an individual of unknown genotype and a homozygous recessive individual?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBack cross",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTest cross",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDihybrid cross",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonohybrid cross",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A test cross is performed to determine an unknown genotype by crossing with a homozygous recessive\n              individual.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bb1534ba-36da-47f9-a27c-6d8ac2876186",
+    "question_text": "Which type of inheritance pattern is observed in polygenic traits like human skin color?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMendelian inheritance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPolygenic inheritance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCo-dominance",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIncomplete dominance",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Polygenic inheritance involves multiple genes contributing to a trait, as seen in human skin color\n              variation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e6685495-8c69-434c-938b-82cb8676dcaa",
+    "question_text": "Which of the following is an incorrect statement about Turner’s syndrome?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt results from monosomy of the X chromosome.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIndividuals with Turner’s syndrome have a 45, XO karyotype.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt affects only males.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAffected individuals are usually sterile.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Turner’s syndrome affects females and is caused by the absence of one X chromosome (45, XO).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c30c8ed9-0190-46d8-9e9b-9332264e2aab",
+    "question_text": "Which type of mutation leads to a change in the number of chromosomes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPoint mutation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrameshift mutation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAneuploidy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSilent mutation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Aneuploidy occurs when there is an abnormal number of chromosomes, such as in Down’s syndrome (trisomy\n              21).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3ab11e65-490c-4896-8a73-8f2a2afda82d",
+    "question_text": "What is the expected genotypic ratio of a monohybrid cross in the F2 generation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3:1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9:3:3:1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1:2:1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2:1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The genotypic ratio of a monohybrid cross (F2 generation) is 1:2:1 (homozygous dominant: heterozygous:\n              homozygous recessive).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "344629ed-761b-488c-b03c-30a9f2a75d51",
+    "question_text": "Which genetic concept explains why males are more likely to express X-linked recessive traits?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDosage compensation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHemizygosity",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPolygenic inheritance",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEpistasis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Hemizygosity explains why males (XY) express X-linked recessive traits more frequently, as they have only\n              one X chromosome.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e9bd6e6d-3922-40c8-b886-8b2f93dcef1c",
+    "question_text": "What is the role of crossing over during meiosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPrevents genetic variation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIncreases genetic diversity",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEnsures mitosis occurs properly",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMaintains identical copies of genes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Crossing over during meiosis increases genetic diversity by exchanging genetic material between\n              homologous chromosomes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3f23f85f-9f9c-49d7-ad21-b59ad2afcf04",
+    "question_text": "What is the primary genetic cause of hemophilia?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTrisomy of chromosome 21",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA mutation in the X chromosome",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDeletion of chromosome 5",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nA mutation in the Y chromosome",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Hemophilia is a sex-linked recessive disorder caused by a mutation in the X chromosome.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7c557c7-cf7c-45b1-ad35-6a10d772c09b",
+    "question_text": "In Mendelian inheritance, what is the expected genotypic ratio of the F2 generation in a monohybrid cross?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3:1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9:3:3:1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1:2:1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2:1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The expected genotypic ratio in a monohybrid cross (F2 generation) is 1:2:1 (homozygous dominant:\n              heterozygous: homozygous recessive).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "acc49ad6-e77e-44b2-9fad-8baa191fdb2f",
+    "question_text": "Which scientist discovered the concept of sex-linked inheritance through experiments on fruit flies?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGregor Mendel",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThomas Hunt Morgan",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSutton and Boveri",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWatson and Crick",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Thomas Hunt Morgan discovered sex-linked inheritance by studying eye color inheritance in Drosophila\n              melanogaster.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "418933cd-106e-42fc-bf95-48d29e0cea9c",
+    "question_text": "Which of the following is a correct statement about pleiotropy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA single gene affects multiple traits.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMultiple genes control a single phenotype.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPleiotropy follows Mendel’s Law of Independent Assortment.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt occurs only in plants.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pleiotropy occurs when a single gene influences multiple phenotypic traits, such as in sickle-cell\n              anemia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc0a732e-5dfd-4388-aebb-0082a871b1c9",
+    "question_text": "Which of the following statements about dominant and recessive traits is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA dominant allele expresses its trait in both homozygous and heterozygous conditions.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nA recessive allele expresses its trait only in the homozygous condition.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDominant traits are always more common in a population than recessive traits.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRecessive traits can be passed on through generations without being expressed.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Dominant traits are not necessarily more common; frequency depends on factors like natural selection and\n              genetic drift.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fa24591c-c85f-4292-9b4a-dc6a11742f7c",
+    "question_text": "Which of the following correctly describes polygenic inheritance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOne gene controls multiple traits.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMultiple genes influence a single trait.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nA single gene determines a single phenotype.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTraits are inherited only from one parent.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Polygenic inheritance occurs when multiple genes contribute to a single phenotype, such as human height.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9c1a31d8-1ba8-4b22-9d85-240788b8cd1d",
+    "question_text": "Which scientist proposed the Chromosomal Theory of Inheritance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGregor Mendel",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThomas Hunt Morgan",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSutton and Boveri",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWatson and Crick",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Sutton and Boveri proposed the Chromosomal Theory of Inheritance, linking Mendel’s principles to\n              chromosome behavior.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "topic": "Principles of Inheritance and Variation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Principles of Inheritance and Variation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "principles-of-inheritance-and-variation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

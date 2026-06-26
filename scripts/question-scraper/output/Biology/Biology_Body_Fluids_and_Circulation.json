@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "21e5b0c4-284f-4dc1-af41-79278683b3a1",
+    "question_text": "Which hormone is released in response to low blood pressure and helps retain water?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdrenaline",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAntidiuretic hormone (ADH)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGlucagon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Antidiuretic hormone (ADH) increases water reabsorption in the kidneys, helping to raise blood pressure.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7853029-853e-4cc1-9b11-e360b434e742",
+    "question_text": "Which of the following is correct about hemoglobin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHemoglobin is present in WBCs.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHemoglobin binds with oxygen for transport.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHemoglobin does not contain iron.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHemoglobin plays no role in carbon dioxide transport.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "**Hemoglobin binds oxygen in RBCs and also helps transport carbon dioxide.**",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ffeff784-302d-433b-a83f-598244a83435",
+    "question_text": "Which component of blood is responsible for oxygen transport?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasma",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLeukocytes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nErythrocytes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlatelets",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Erythrocytes (RBCs) contain hemoglobin, which binds with oxygen and facilitates its transport.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a3d07341-0cd9-40cd-a051-620fae6cca82",
+    "question_text": "What is the lifespan of red blood cells (RBCs) in humans?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30 days",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n60 days",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90 days",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n120 days",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The average lifespan of RBCs is 120 days before they are broken down in the spleen.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7e2ab49-1499-4fcb-afb8-1970f74e2cf2",
+    "question_text": "Which of the following statements about veins is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVeins have thicker walls than arteries.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVeins carry blood under low pressure.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVeins do not contain any valves.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVeins always carry oxygenated blood.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Veins have **thin walls** and carry blood under **low pressure** back to the heart.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6c1a582e-4046-4a90-b794-cbf26639463e",
+    "question_text": "Which of the following statements about blood clotting is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlatelets do not play any role in clot formation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProthrombin is converted into thrombin by calcium ions and clotting factors.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFibrinogen is an inactive form of thrombin.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBlood clotting is an enzymatic process but does not require calcium ions.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "**Prothrombin is converted into thrombin** by the action of calcium ions and clotting factors like\n              **thromboplastin**.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e07e27ff-71c2-48b5-a86d-40b2bf985143",
+    "question_text": "Which of the following is incorrect about the function of veins?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVeins carry blood toward the heart.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVeins have thinner walls than arteries.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVeins always carry deoxygenated blood.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVeins contain valves to prevent backflow.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Not all veins carry deoxygenated blood. **Pulmonary veins carry oxygenated blood** from the lungs to the\n              left atrium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "be007867-e509-4efd-b023-6c23ad39978b",
+    "question_text": "Which of the following is the most abundant plasma protein?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFibrinogen",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlbumin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlobulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProthrombin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Albumin is the most abundant plasma protein and helps maintain osmotic pressure.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "21233f9b-0e28-4097-991b-7fad762224c9",
+    "question_text": "Which part of the circulatory system directly supplies oxygenated blood to the heart muscle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPulmonary circulation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSystemic circulation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCoronary circulation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHepatic portal circulation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Coronary circulation supplies oxygenated blood to the heart muscle through coronary arteries.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3105049-ac8b-4744-8d0f-73cf8a91e402",
+    "question_text": "Which of the following statements is correct regarding blood?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBlood is a specialized epithelial tissue.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBlood consists of plasma and formed elements.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBlood transports only oxygen and no other substances.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBlood does not contain proteins.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Blood consists of a liquid matrix (plasma) and formed elements (RBCs, WBCs, platelets).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1d51e6ef-3bad-4f1d-be51-df58c4ff8ea2",
+    "question_text": "Which valve prevents backflow of blood into the left atrium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTricuspid valve",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBicuspid valve",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSemilunar valve",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMitral valve",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The mitral valve (bicuspid valve) prevents backflow of blood from the left ventricle into the left\n              atrium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7993a260-aba8-4c54-87e9-d896c08d7eaf",
+    "question_text": "Which ion plays a key role in muscle contraction, including that of the heart?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSodium (Na⁺)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPotassium (K⁺)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCalcium (Ca²⁺)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMagnesium (Mg²⁺)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Calcium ions (Ca²⁺) are essential for muscle contraction, including cardiac muscle function.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d8f82965-cc3c-42c2-8032-b776c38d29a5",
+    "question_text": "Which of the following statements about blood composition is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBlood consists of plasma and formed elements.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLeukocytes are responsible for transporting oxygen.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlatelets play a role in blood clotting.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlasma contains water, proteins, and electrolytes.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Leukocytes (WBCs) are involved in **immune defense**, while oxygen transport is carried out by\n              **erythrocytes (RBCs)**.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e338d19-ddbf-44ab-940e-b1b688ed60a6",
+    "question_text": "Which of the following is incorrect about the functions of the lymphatic system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt helps in the absorption of fats from the intestine.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt plays a role in the body's immune defense.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt transports oxygen and carbon dioxide in the body.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt drains excess interstitial fluid from tissues.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The **lymphatic system does not transport oxygen or carbon dioxide**; it mainly helps with **immune\n              responses and fat absorption**.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dea29c58-b730-4754-a046-4b192926903d",
+    "question_text": "Which of the following statements about blood plasma is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasma makes up about 55% of total blood volume.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlasma contains water, proteins, and dissolved substances.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlasma plays no role in immune response.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlasma helps in the transport of nutrients and hormones.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Plasma contains **globulins**, which are proteins involved in **immune response**.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9c5a2688-38f0-4814-aab8-9213c613a402",
+    "question_text": "Which condition is caused by the narrowing of coronary arteries due to plaque buildup?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAneurysm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAtherosclerosis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVaricose veins",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeukemia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Atherosclerosis is caused by the accumulation of cholesterol plaques in coronary arteries, reducing blood\n              flow to the heart.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0f747b9-ddba-4863-8a13-8c9f9421d8f4",
+    "question_text": "Which type of circulation carries blood between the heart and lungs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSystemic circulation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCoronary circulation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPulmonary circulation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHepatic portal circulation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Pulmonary circulation carries deoxygenated blood from the right ventricle to the lungs and returns\n              oxygenated blood to the left atrium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e136db15-d7f6-4062-a6e3-ef4806f211df",
+    "question_text": "Which part of the ECG represents atrial depolarization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nP wave",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nQRS complex",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nT wave",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nST segment",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The P wave in an ECG represents the depolarization of the atria, leading to atrial contraction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "34c83a0b-0267-4b85-a0c5-e015ad2a1f43",
+    "question_text": "Which of the following is responsible for maintaining blood osmotic pressure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFibrinogen",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlbumin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlobulin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHemoglobin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Albumin helps maintain blood osmotic pressure and prevents excessive loss of fluid from blood vessels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9c6e3cf3-0971-45c2-aa97-d3b821b4f0c1",
+    "question_text": "Which of the following statements is incorrect regarding blood groups?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBlood group O is the universal donor.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBlood group AB is the universal recipient.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBlood grouping is based on the presence of antigens A and B.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRh-negative individuals can receive Rh-positive blood without any reaction.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Rh-negative individuals **develop antibodies** against Rh-positive blood, causing incompatibility.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ff919503-b81d-46db-a4d1-c74fb2fcad44",
+    "question_text": "Which type of WBCs are responsible for allergic reactions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNeutrophils",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBasophils",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLymphocytes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonocytes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Basophils release histamine and other chemicals that cause allergic reactions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c5106b49-01e4-4b2b-bc98-86dd9a9c86f2",
+    "question_text": "Which structure in the heart ensures unidirectional blood flow?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSeptum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNodes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nValves",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nArteries",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Heart valves prevent the backflow of blood and ensure unidirectional flow.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "25e4746c-d680-4e6a-a016-514f7210d36b",
+    "question_text": "Which of the following statements about veins is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVeins always carry deoxygenated blood.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVeins have thinner walls compared to arteries.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVeins do not contain any valves.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVeins transport blood away from the heart.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Veins have **thinner walls** than arteries because they carry blood under **low pressure**. However,\n              **pulmonary veins carry oxygenated blood.**",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc706539-a095-46c8-bce7-4ec5beb35b0c",
+    "question_text": "Which of the following statements about the heart is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe heart is enclosed in a protective pericardium.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe right atrium receives oxygenated blood from the lungs.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe left ventricle pumps blood into the aorta.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe heart has four chambers.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The **right atrium receives deoxygenated blood** from the body via the superior and inferior vena cava,\n              not oxygenated blood.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "119e38d5-0c3a-4a38-a03d-debd13e397f7",
+    "question_text": "Which of the following is incorrect about ECG (electrocardiogram)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nECG records the electrical activity of the heart.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe P-wave represents atrial depolarization.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe T-wave represents ventricular repolarization.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe QRS complex represents atrial contraction.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The **QRS complex represents ventricular depolarization**, not atrial contraction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b8fa653e-1798-4f83-9c97-b6262604da54",
+    "question_text": "Which of the following statements about thrombocytes (platelets) is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlatelets help in blood clotting.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlatelets are cell fragments derived from megakaryocytes.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlatelets release clotting factors upon activation.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlatelets transport oxygen to tissues.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Platelets are **not involved in oxygen transport**; their primary function is in **blood clotting**.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5d46eb0d-9827-480a-a76b-8e5dca136624",
+    "question_text": "Which of the following is a function of the lymphatic system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxygen transport",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFat absorption",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlucose metabolism",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBlood clotting",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The lymphatic system helps in the absorption of fats from the intestine through lacteals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e01cf068-aacb-4cd9-9dcc-0f127d7fb73d",
+    "question_text": "Which enzyme plays a key role in blood clotting?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPepsin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThrombin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTrypsin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAmylase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Thrombin converts fibrinogen into fibrin, which helps in blood clot formation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "13c4c76a-cf9c-48cf-822b-2051e58a2b58",
+    "question_text": "Which ion plays a crucial role in blood clotting?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSodium (Na⁺)",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPotassium (K⁺)",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCalcium (Ca²⁺)",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMagnesium (Mg²⁺)",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Calcium ions (Ca²⁺) help activate clotting factors, which are essential for blood coagulation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "44f7c41e-ed3b-4a3a-a019-4c029944cfe7",
+    "question_text": "Which of the following statements about blood plasma is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasma contains dissolved proteins such as albumin.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlasma is responsible for oxygen transport in the blood.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlasma constitutes about 55% of total blood volume.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlasma helps in the transport of hormones and nutrients.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Oxygen transport is primarily the function of **hemoglobin in RBCs**, not plasma.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "acb86565-d07b-4bd3-8767-0159807366d2",
+    "question_text": "What is the normal blood pressure of a healthy adult?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n90/60 mmHg",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n100/70 mmHg",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n120/80 mmHg",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n140/90 mmHg",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Normal blood pressure is considered to be **120/80 mmHg**.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7b1494ae-e835-4ece-a61f-7946494fc8f8",
+    "question_text": "Which of the following hormones increases heart rate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInsulin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlucagon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdrenaline",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThyroxine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Adrenaline (epinephrine) is a stress hormone that increases heart rate and cardiac output.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82d41ada-ccf8-4648-8a56-52fa700da2f6",
+    "question_text": "Which part of the brain regulates heart rate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCerebrum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCerebellum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMedulla oblongata",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThalamus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The medulla oblongata regulates heart rate by controlling autonomic nervous system signals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a871b27d-d10a-48ec-96f8-3f0bdede4068",
+    "question_text": "Which of the following statements about blood is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBlood is a type of connective tissue.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBlood transports hormones and waste products.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBlood has a pH range of 5.0 to 6.0.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBlood helps in temperature regulation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The normal pH range of human blood is **7.35 to 7.45**, making it slightly alkaline.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2c324e9a-b942-4a41-9fad-c4fb2cb15770",
+    "question_text": "Which of the following is correct about blood flow in the heart?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe left ventricle pumps blood into the pulmonary artery.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe right atrium receives blood from the pulmonary veins.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe left atrium receives oxygenated blood from the lungs.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe right ventricle pumps blood into the aorta.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The **left atrium receives oxygenated blood** from the **pulmonary veins**, which carry blood from the\n              lungs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b34fda2a-51c7-42e7-b4bf-c893788010c6",
+    "question_text": "Which of the following statements about blood is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBlood is a type of connective tissue.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBlood helps in the regulation of body temperature.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBlood is primarily composed of water, proteins, and formed elements.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBlood does not transport hormones.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Blood **does transport hormones**, along with gases, nutrients, and waste products.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cfb321c5-bc78-4b42-823a-a6f689e335d4",
+    "question_text": "Which of the following statements about lymph is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLymph is derived from interstitial fluid.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLymph carries oxygen and nutrients to tissues.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLymph plays a role in immunity.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLymph drains into the venous system.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "**Lymph does not transport oxygen**; it primarily carries **white blood cells and immune cells**.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6a184b7d-2ab2-414a-b6c4-f82bc841f13a",
+    "question_text": "Which type of blood vessel has the thickest muscular walls?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCapillaries",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVeins",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nArteries",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVenules",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Arteries have thick muscular walls to withstand high blood pressure from the heart.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2fa86de8-1136-49c6-b97b-83edf7b4ea12",
+    "question_text": "Which of the following blood vessels carries deoxygenated blood in the systemic circulation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPulmonary vein",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAorta",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVena cava",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPulmonary artery",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The vena cava carries deoxygenated blood from the body back to the right atrium of the heart.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c445409c-347c-499a-b64e-86414e113c6e",
+    "question_text": "Which of the following is incorrect regarding cardiac output?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is the amount of blood pumped by each ventricle per minute.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is calculated as stroke volume × heart rate.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAn average human has a cardiac output of about 5 liters per minute.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCardiac output remains constant under all conditions.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Cardiac output **varies** depending on physical activity, stress, and health conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6411e98e-8a71-4bde-9594-4a53cfc6455c",
+    "question_text": "Which blood cells are responsible for antibody production?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nT-lymphocytes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB-lymphocytes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMonocytes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEosinophils",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "B-lymphocytes produce antibodies that play a key role in the immune response.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a44c915e-654e-43af-87ba-1467094e9aa2",
+    "question_text": "Which structure initiates the contraction of the heart?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAV node",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPurkinje fibers",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSinoatrial (SA) node",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBundle of His",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The SA node, also called the pacemaker of the heart, initiates the heartbeat by generating electrical\n              impulses.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0a72922-8d37-4061-a594-8547a878b1d1",
+    "question_text": "Which of the following is correct about the function of the atrioventricular (AV) valves?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey prevent backflow of blood into the atria during ventricular contraction.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey allow blood to flow from ventricles to the atria.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey close during atrial contraction.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey are present only in the right side of the heart.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The **AV valves (tricuspid and bicuspid)** prevent backflow into the atria when the **ventricles\n              contract**.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c9ac9455-26ab-4b8f-a056-338fef28035c",
+    "question_text": "Which of the following statements about red blood cells (RBCs) is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRBCs lack a nucleus in their mature form.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRBCs contain hemoglobin for oxygen transport.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRBCs have a lifespan of about 60 days.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRBCs are produced in the bone marrow.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "RBCs have a lifespan of **about 120 days**, not 60 days.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c804ca3-a67f-4c80-94ac-e7b6aae8dea8",
+    "question_text": "Which of the following statements about heart valves is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe bicuspid valve is located between the left atrium and left ventricle.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe tricuspid valve prevents backflow into the right atrium.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe pulmonary valve prevents backflow into the left ventricle.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe aortic valve prevents backflow into the left ventricle.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The **pulmonary valve prevents backflow into the right ventricle**, not the left ventricle.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e80ab32f-802e-4efd-a9d9-42a14838cb32",
+    "question_text": "Which of the following is correct about cardiac output?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCardiac output is the amount of blood pumped per beat.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCardiac output is calculated as heart rate × stroke volume.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCardiac output remains constant at all times.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExercise has no effect on cardiac output.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "**Cardiac output = stroke volume × heart rate**, and it varies based on activity level.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8f0c06e7-28ee-4a49-9d0e-3482b738ea4b",
+    "question_text": "Which of the following blood components is involved in antigen-antibody reactions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlatelets",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nErythrocytes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGlobulins",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFibrinogen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Globulins are plasma proteins that function in immune responses, including antigen-antibody reactions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3169cb06-8862-4055-9ac8-b95352454ff4",
+    "question_text": "Which type of WBCs produces histamine during allergic reactions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNeutrophils",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBasophils",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEosinophils",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonocytes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Basophils release histamine, which plays a role in allergic responses and inflammation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c2f6aef6-8423-423e-9650-183026daaf0f",
+    "question_text": "Which of the following is responsible for maintaining the pH of blood?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHemoglobin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBicarbonate buffer system",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFibrinogen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlatelets",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The bicarbonate buffer system helps maintain blood pH by regulating hydrogen ion concentration.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0ed924a2-ed9f-413f-8699-7a352e0c67de",
+    "question_text": "Which of the following statements about erythropoiesis is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nErythropoiesis occurs in the liver of adults.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nErythropoietin is a hormone that stimulates RBC production.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIron plays no role in erythropoiesis.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRBCs are produced in lymph nodes.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Erythropoietin is a hormone released by the **kidneys** that stimulates RBC production in bone marrow.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "38ab8513-807c-4f02-8cdf-d83abad657de",
+    "question_text": "Which heart valve prevents the backflow of blood from the aorta into the left ventricle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTricuspid valve",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPulmonary valve",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAortic valve",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMitral valve",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The aortic valve prevents blood from flowing back into the left ventricle from the aorta.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7028ee7c-af23-48cf-b192-2fab0749a744",
+    "question_text": "Which of the following statements about blood pressure is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSystolic pressure is higher than diastolic pressure.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiastolic pressure occurs when the ventricles contract.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nA normal blood pressure reading is around 120/80 mmHg.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBlood pressure is measured using a sphygmomanometer.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Diastolic pressure occurs when the heart relaxes, while systolic pressure occurs during\n              ventricular contraction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f4d2353b-a2dc-4100-9d39-348109d208b3",
+    "question_text": "Which of the following statements about ECG is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe P-wave represents ventricular contraction.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe QRS complex represents ventricular depolarization.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe T-wave represents atrial depolarization.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nECG does not measure electrical activity of the heart.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The QRS complex represents ventricular depolarization, leading to ventricular contraction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33c506a7-5a66-466b-8297-9e2906461431",
+    "question_text": "Which of the following is correct about the role of the AV node?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt generates the heartbeat independently.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt slows down the electrical impulse before it reaches the ventricles.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is located in the left ventricle.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt transmits signals directly to the Purkinje fibers.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The AV node slows down the electrical signal from the SA node before sending it to the\n              ventricles, allowing the atria to contract first.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d335e416-fdfe-4b7c-b6db-5646d0850de6",
+    "question_text": "Which of the following statements about the structure of the heart is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe heart is composed of cardiac muscle tissue.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe left ventricle pumps blood to the lungs.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe right atrium receives deoxygenated blood from the body.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe heart is enclosed within a pericardial membrane.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The left ventricle pumps blood to the aorta, not the lungs. The right ventricle pumps blood to the\n              lungs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "903c3736-370a-467e-8bd8-9b0bee721159",
+    "question_text": "Which part of the heart has the thickest wall?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRight atrium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLeft atrium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRight ventricle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeft ventricle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The left ventricle has the thickest wall to generate high pressure for pumping blood to the entire body.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f89c97b-b373-4519-8ef5-6c4e94a79d7f",
+    "question_text": "Which blood cells are the largest in size?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nErythrocytes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNeutrophils",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLymphocytes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonocytes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Monocytes are the largest WBCs and play a role in phagocytosis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8839332f-69b0-4da0-a423-216aacd09325",
+    "question_text": "Which of the following statements about the cardiac cycle is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSystole refers to heart relaxation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiastole refers to heart contraction.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOne complete cardiac cycle lasts approximately 0.8 seconds.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe atria and ventricles contract simultaneously.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The duration of one complete cardiac cycle is about 0.8 seconds in a healthy adult.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c3d5a7c9-b138-41fb-93ae-b2edc954406d",
+    "question_text": "Which blood vessels carry oxygenated blood to the heart?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPulmonary veins",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPulmonary artery",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVena cava",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAorta",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Pulmonary veins carry oxygenated blood from the lungs to the left atrium of the heart.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "904d0063-6a5a-4ac6-82ed-818bc0ecc56a",
+    "question_text": "Which of the following is correct about cardiac output?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCardiac output is the amount of blood pumped per second.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCardiac output = stroke volume × heart rate.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCardiac output remains constant under all conditions.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCardiac output is not influenced by exercise.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cardiac output is calculated as stroke volume × heart rate and varies depending on physical\n              activity.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78271801-294e-4ddf-bc4b-58302d6d08da",
+    "question_text": "Which blood component is responsible for carrying oxygen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasma",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlatelets",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nErythrocytes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeukocytes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Erythrocytes (RBCs) contain hemoglobin, which binds with oxygen and facilitates its transport.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29bd67b8-b9b6-4b57-82d2-1db8bc5b9d19",
+    "question_text": "Which of the following statements about plasma proteins is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlbumin helps maintain blood osmotic pressure.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGlobulins are not involved in immunity.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFibrinogen plays no role in blood clotting.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlasma proteins are mainly produced in the spleen.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Albumin maintains osmotic pressure, ensuring proper fluid balance between blood and tissues.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e44a7623-fb5d-4d55-be96-239a09158d2a",
+    "question_text": "Which of the following blood cells play a role in immunity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nErythrocytes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLeukocytes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlatelets",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThrombocytes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Leukocytes (WBCs) are responsible for the immune response and protecting the body from infections.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7312e5cc-0729-48f3-bd3a-46176cbc0630",
+    "question_text": "Which of the following structures prevents the mixing of oxygenated and deoxygenated blood in the heart?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInteratrial septum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAtrio-ventricular septum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInterventricular septum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPurkinje fibers",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The interventricular septum separates the left and right ventricles, preventing mixing of oxygenated and\n              deoxygenated blood.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4857f25e-dff1-41cb-8810-f7a4421fec0a",
+    "question_text": "Which disorder occurs due to an increase in blood pressure above normal levels?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHypotension",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHypertension",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBradycardia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAnemia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Hypertension (high blood pressure) occurs when blood pressure consistently exceeds normal levels (120/80\n              mmHg).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cda215d2-6429-4e41-ad08-64de1b206da9",
+    "question_text": "Which of the following is correct about the circulatory system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe human circulatory system is an open circulatory system.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVeins always carry oxygenated blood.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe systemic circulation carries oxygenated blood to body tissues.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPulmonary veins carry deoxygenated blood.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Systemic circulation distributes oxygenated blood from the left ventricle to body tissues and\n              returns deoxygenated blood to the right atrium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7ab08cf-bfe8-4abc-b259-cf6b07cf8911",
+    "question_text": "Which of the following is incorrect about the function of platelets?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey help in blood clotting.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey are derived from megakaryocytes.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey transport oxygen to tissues.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey release clotting factors upon activation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Platelets are primarily involved in blood clotting, not oxygen transport, which is the function of\n              RBCs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ad0b043-c083-41dd-8080-1ba87af067c4",
+    "question_text": "Which blood vessel carries oxygenated blood from the lungs to the heart?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPulmonary artery",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAorta",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVena cava",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPulmonary vein",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The pulmonary vein carries oxygenated blood from the lungs to the left atrium of the heart.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "68854619-be69-45e9-ad42-803396f802b3",
+    "question_text": "Which of the following statements about hypertension is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is characterized by low blood pressure.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt can lead to heart diseases and kidney damage.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt occurs when blood pressure is below 90/60 mmHg.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is not affected by lifestyle factors.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Hypertension (high blood pressure) increases the risk of heart diseases, stroke, and kidney\n              damage.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53f2a1a5-e8f6-4088-b7f8-7cad5e993c7f",
+    "question_text": "What is the function of lymph in the body?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOxygen transport",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFat absorption",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarbon dioxide removal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProtein synthesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Lymph helps in the absorption of fats from the small intestine through lacteals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cf2ad2fa-7f4d-40f2-9819-10833bf21392",
+    "question_text": "Which condition occurs due to Rh incompatibility during pregnancy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThalassemia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSickle cell anemia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nErythroblastosis fetalis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHemophilia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Erythroblastosis fetalis occurs when an Rh-negative mother carries an Rh-positive fetus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e909f62-1dd1-46f8-9fe9-fbd2b372c3da",
+    "question_text": "Which of the following statements about blood clotting is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThrombin converts fibrin into fibrinogen.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlatelets release clotting factors.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nClotting requires sodium ions.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlasma does not contain clotting factors.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Platelets release clotting factors to initiate the coagulation cascade.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0005b5e5-379d-4fc4-b5ae-4feb62d63abf",
+    "question_text": "Which of the following is incorrect about the hepatic portal system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt carries nutrient-rich blood from the intestine to the liver.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt bypasses the heart before reaching the liver.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt directly carries oxygenated blood to the liver.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt allows the liver to regulate absorbed nutrients before they enter systemic circulation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The hepatic portal vein carries nutrient-rich, deoxygenated blood from the intestine to the\n              liver, not oxygenated blood.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d338c39b-ad7e-4b41-b08f-a7de75686575",
+    "question_text": "Which of the following is correct about the heart valves?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe bicuspid valve is found on the right side of the heart.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe pulmonary valve prevents backflow into the right ventricle.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe tricuspid valve separates the left atrium and left ventricle.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe aortic valve prevents blood from entering the lungs.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The pulmonary valve prevents backflow of blood into the right ventricle after it enters the pulmonary\n              artery.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1ff3b018-a885-4c5e-a30c-54e5b3fef97d",
+    "question_text": "Which of the following is a granulocyte?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonocytes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLymphocytes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBasophils",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoth 2 and 3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Basophils are granulocytes, along with neutrophils and eosinophils, and play a role in inflammatory\n              responses.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3ba121c5-8154-4917-bfc8-d74749bfd6e7",
+    "question_text": "Which of the following is incorrect about ECG waves?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe P-wave represents atrial depolarization.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe QRS complex corresponds to ventricular contraction.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe T-wave represents ventricular repolarization.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe P-wave represents ventricular depolarization.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The P-wave represents atrial depolarization, while ventricular depolarization is represented by\n              the QRS complex.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "752777e4-7ebc-49de-8f34-2c089cde7db7",
+    "question_text": "Which of the following is correct about the function of lymph nodes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey filter out old red blood cells.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey help in immune response by trapping pathogens.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey produce platelets for blood clotting.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey store oxygen for circulation.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Lymph nodes trap pathogens and activate immune responses by producing WBCs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dc5fa927-4bcb-4ab8-bed8-569343f397a5",
+    "question_text": "Which of the following is incorrect about arteries?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nArteries carry blood away from the heart.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey have thick muscular walls to withstand high pressure.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll arteries carry oxygenated blood.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe aorta is the largest artery in the body.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Not all arteries carry oxygenated blood. The pulmonary artery carries deoxygenated blood from the\n              right ventricle to the lungs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fe7d3aaa-8204-4563-9cb8-03ecaa08f3fe",
+    "question_text": "Which heart sound is produced due to the closure of the AV valves?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLub",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDub",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBoth Lub and Dub",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The first heart sound \"Lub\" is caused by the closure of the atrioventricular (AV) valves.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a08afca-f903-4cea-afb3-a605918ca2d9",
+    "question_text": "Which of the following is incorrect about hypertension?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHypertension is characterized by high blood pressure.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt increases the risk of heart disease and stroke.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt has no connection with dietary habits or lifestyle.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt can damage blood vessels over time.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Hypertension is influenced by diet, lifestyle, and genetics, making healthy habits essential in\n              its prevention.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0306c80e-d923-4b98-b8dd-31ba946a845f",
+    "question_text": "Which of the following is incorrect regarding the function of hemoglobin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHemoglobin binds oxygen in the lungs.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHemoglobin does not play a role in carbon dioxide transport.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHemoglobin contains iron.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHemoglobin is found in red blood cells.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Hemoglobin plays a role in transporting both oxygen and carbon dioxide in the blood.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c5db69d-dec7-41aa-844e-9c49b27b495e",
+    "question_text": "Which of the following is the universal recipient blood group?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nB",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAB",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nO",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Blood group AB individuals are universal recipients as they lack anti-A and anti-B antibodies.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "728441ba-489b-47ca-ac6d-f5c996ff4106",
+    "question_text": "Which condition results when the SA node fails to function properly?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHypertension",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBradycardia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnemia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThrombosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bradycardia is a condition where the heart rate is slower than normal due to SA node dysfunction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "da000a5c-efac-444f-8ddf-e27099e4aa41",
+    "question_text": "Which of the following statements about veins is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVeins carry blood toward the heart.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVeins always carry deoxygenated blood.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVeins have valves to prevent backflow of blood.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVeins have thinner walls than arteries.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Not all veins carry deoxygenated blood. Pulmonary veins carry oxygenated blood from the lungs to\n              the heart.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b5ee84c3-e1f4-43be-8b37-69226aa50a09",
+    "question_text": "Which of the following is correct about the pulmonary circulation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt carries deoxygenated blood from the lungs to the heart.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt supplies oxygenated blood to body tissues.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt involves the pulmonary arteries and veins.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt includes the aorta and systemic capillaries.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Pulmonary circulation involves pulmonary arteries and veins, carrying blood between the heart\n              and lungs for oxygenation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1ba1c6d9-9ba5-4edc-ac26-e176b8e2e3a6",
+    "question_text": "Which blood disorder is caused by reduced hemoglobin levels?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPolycythemia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAnemia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThrombocytosis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeukocytosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Anemia is a condition characterized by reduced hemoglobin levels, leading to decreased oxygen transport.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "39216728-65ed-4014-8344-289a3163897b",
+    "question_text": "Which of the following statements about the human heart is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe right atrium receives deoxygenated blood from the body.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe left ventricle pumps blood into the pulmonary artery.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe SA node acts as the pacemaker of the heart.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe heart has four chambers.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The left ventricle pumps blood into the aorta, not the pulmonary artery. The right ventricle\n              pumps blood into the pulmonary artery.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f2b133a9-b504-4a28-8fef-b889b9471db1",
+    "question_text": "Which of the following statements about blood clotting is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThrombin converts fibrinogen into fibrin.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlatelets release clotting factors.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCalcium ions are not required for blood clotting.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nA clot is also called a thrombus.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Calcium ions are essential for the activation of clotting factors in the blood clotting process.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2c1cdb6b-26e1-4692-aba5-fb1efc4f668f",
+    "question_text": "Which of the following conditions is characterized by an irregular heartbeat?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBradycardia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTachycardia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nArrhythmia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAngina",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Arrhythmia is a condition where the heartbeat is irregular, either too fast or too slow.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c89bbb9-e4fd-4cad-97cb-8b6537196104",
+    "question_text": "Which of the following is correct about erythropoiesis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nErythropoiesis occurs in the spleen of adults.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIron is essential for erythropoiesis.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nErythropoietin is released by the liver to stimulate RBC production.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nErythrocytes retain their nucleus throughout their lifespan.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Iron is required for the synthesis of hemoglobin, which is crucial for erythropoiesis (RBC\n              formation).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3fd27208-a89a-4e2f-b163-c54701818e58",
+    "question_text": "Which of the following is incorrect about the lymphatic system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt helps in fat absorption.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt transports oxygen to tissues.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt plays a role in immune responses.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt drains excess interstitial fluid.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The lymphatic system does not transport oxygen; it mainly helps in immune defense and fat\n              absorption.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b0cb22e-c203-433d-9b70-a1f4ed97a78e",
+    "question_text": "Which of the following is incorrect about capillaries?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCapillaries connect arterioles and venules.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCapillaries have thick walls for strength.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCapillaries allow exchange of gases and nutrients.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCapillaries are the smallest blood vessels.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Capillaries have thin, single-layered walls to facilitate exchange of gases, nutrients, and\n              waste.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4b05519f-0560-46bd-91c5-4c116ed214c5",
+    "question_text": "Which part of the heart acts as the pacemaker?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAV node",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPurkinje fibers",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSinoatrial node",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBundle of His",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The Sinoatrial (SA) node generates electrical impulses to regulate the heartbeat.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "14abb8dc-65e5-4ebc-a9e9-85f95d0b6af1",
+    "question_text": "Which of the following blood cells helps in allergic reactions and parasitic infections?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNeutrophils",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBasophils",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEosinophils",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonocytes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Eosinophils help in fighting parasitic infections and play a role in allergic reactions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "acea5135-dda9-49f2-a409-d2d29016f787",
+    "question_text": "Which type of blood vessel is responsible for exchange of gases and nutrients?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nArteries",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVeins",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCapillaries",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVenules",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Capillaries are thin-walled blood vessels that allow the exchange of gases, nutrients, and waste between\n              blood and tissues.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "44a890fc-d44d-4b79-b8a4-e875bba4ffca",
+    "question_text": "What is the primary function of the pulmonary artery?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTransport oxygenated blood to the body",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarry deoxygenated blood to the lungs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSupply oxygen to the heart muscle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nReturn blood from the lungs to the heart",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The pulmonary artery carries deoxygenated blood from the right ventricle to the lungs for oxygenation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "60474a24-384c-4ac2-803b-fc95f2469d7f",
+    "question_text": "What is the major function of neutrophils in the immune system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProduction of antibodies",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecretion of histamine",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhagocytosis of pathogens",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBlood clotting",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Neutrophils are the first line of defense in immunity and act by engulfing and destroying pathogens.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "539b7abc-744c-45b4-940a-ca44e77a39eb",
+    "question_text": "Which heart chamber receives oxygenated blood from the lungs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRight atrium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRight ventricle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLeft atrium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeft ventricle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The left atrium receives oxygenated blood from the pulmonary veins.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "89e632d2-ef33-4519-acea-740fcf360f4f",
+    "question_text": "Which of the following is correct about hypertension?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHypertension is characterized by high blood pressure.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt has no effect on cardiovascular health.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt cannot be influenced by lifestyle changes.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHypertension increases the risk of heart disease and stroke.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Hypertension increases the risk of heart diseases, strokes, and kidney damage.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e77ffb1e-3221-4096-8b4e-bdf36cce6816",
+    "question_text": "Which of the following statements about arteries is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nArteries always carry oxygenated blood.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nArteries have thick muscular walls.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nArteries transport blood away from the heart.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe aorta is the largest artery in the body.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Not all arteries carry oxygenated blood. The pulmonary artery carries deoxygenated blood to the\n              lungs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Body Fluids and Circulation",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Body Fluids and Circulation / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "body-fluids-and-circulation"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

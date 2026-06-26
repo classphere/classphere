@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "15db9c50-0037-4e99-8dc9-b844913e43e9",
+    "question_text": "A wire of length \n2\nm\n and resistance \n4\nΩ\n is stretched to \n4\nm\n. What is the new resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n14\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n16\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Volume constant: lA=l′A′⇒A′=A2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "43d535e7-ad1b-4afd-b886-a194b33fb3de",
+    "question_text": "What ensures that the total voltage drop across a series circuit equals the source voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCurrent cancellation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nResistance equality",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCharge accumulation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEnergy conservation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Kirchhoff’s loop rule (conservation of energy) ensures that the sum of potential drops across all\n              elements in a closed loop equals the supplied voltage, as energy is conserved in the circuit.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7a30e21-8f7f-4300-b903-5fd777dfbba1",
+    "question_text": "Why does the resistance of a metallic conductor increase with temperature?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNumber of free electrons decreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCollision frequency of electrons increases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectron charge increases",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConductor length increases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Resistance (R=ρl/A) depends on resistivity (ρ), which is ρ=m/(ne2τ). As temperature increases, the average time between collisions (τ) decreases due to\n              increased lattice vibrations, leading to higher ρ and thus higher R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bf8b16b5-ca62-4226-98cc-4772fd8a4070",
+    "question_text": "A nichrome wire has a resistance of \n60\nΩ\n at \n30\n∘\nC\n and \n𝛼\n=\n1.7\n×\n10\n−\n4\n∘\nC\n−\n1\n. What is its resistance at \n330\n∘\nC\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n62\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n63.06\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n64\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n65\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use: Rt=R0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eb5619b0-0071-4377-85f4-a651b8efd065",
+    "question_text": "A Wheatstone bridge has \n𝑅\n1\n=\n14\nΩ\n, \n𝑅\n2\n=\n28\nΩ\n, \n𝑅\n3\n=\n10\nΩ\n. What is \n𝑅\n4\n for balance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n22\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n24\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Balance condition: R1R2=R3R4.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "71b00809-561c-433b-900a-d00ecd9862ec",
+    "question_text": "In a circuit with a battery and a resistor, if the internal resistance of the battery equals the external resistance, what fraction of the total power is dissipated in the external resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1/4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1/3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1/2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2/3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Let emf = ε, internal resistance = r, external resistance = R=r. Total\n              resistance = r+R=2r. Current = I=ε/(2r). Power in external resistor = I2R=(ε/2r)2r=ε2r/(4r2)=ε2/(4r). Total power = εI=ε⋅ε/(2r)=ε2/(2r). Fraction = (ε2/4r)/(ε2/2r)=1/2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "93205ed4-d058-40fe-9c5d-eb111d770d2f",
+    "question_text": "A \n16\nV\n battery with \n2\nΩ\n internal resistance delivers a current of \n2\nA\n to a resistor. What is the resistance of the resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.0\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.5\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.0\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.5\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Terminal voltage: V=ε−Ir=16−2×2=12V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "75e5c7fa-bcc7-4171-b1ed-c3088ac8640b",
+    "question_text": "What causes the resistivity of a conductor to deviate from Ohm’s law at very high electric fields?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCurrent stops flowing",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVoltage becomes zero",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nResistivity becomes field-dependent",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCharge carriers vanish",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "At high fields, resistivity (ρ=m/(ne2τ)) may change as τ or n varies\n              (e.g., due to electron saturation or heating), making the I-versus-V relationship non-linear\n              and violating Ohm’s law.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "16f70481-8730-4063-b634-5bbda79695a1",
+    "question_text": "What causes the potential difference across a resistor to drop when current flows through it?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCurrent stops",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVoltage increases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEnergy conversion to heat",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nResistance disappears",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Current through a resistor (I=V/R) causes a potential drop (V=IR) as electrical energy\n              is converted to thermal energy due to collisions with lattice ions.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "13a8dbcb-3bf7-472b-816a-be410a9b6374",
+    "question_text": "A conductor has a resistivity of \n4\n×\n10\n−\n8\nΩ\nm\n at \n20\n∘\nC\n and a temperature coefficient of \n4\n×\n10\n−\n3\n∘\nC\n−\n1\n. What is its resistivity at \n60\n∘\nC\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.48\n×\n10\n−\n8\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.64\n×\n10\n−\n8\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.80\n×\n10\n−\n8\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.00\n×\n10\n−\n8\nΩ\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use: ρt=ρ0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c6771855-97e1-46a1-9e4b-24ecaba694f6",
+    "question_text": "A copper wire of cross-sectional area \n6\n×\n10\n−\n7\nm\n2\n carries a current of \n1.8\nA\n. If \n𝑛\n=\n8.5\n×\n10\n28\nm\n−\n3\n and \n𝑒\n=\n1.6\n×\n10\n−\n19\nC\n, what is the drift speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.0\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.21\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.4\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.6\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Drift speed: vd=IneA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1636b97b-b709-4580-a64d-ff26138df7ad",
+    "question_text": "In a Wheatstone bridge, if the bridge is unbalanced, what determines the direction of current through the galvanometer?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBattery resistance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGalvanometer resistance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPotential difference across the bridge",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTotal current in the circuit",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "When unbalanced (R1/R2≠R3/R4), the potentials at the galvanometer’s nodes differ. The\n              current flows from the higher-potential node to the lower one, determined by the relative voltage drops\n              across the bridge arms.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "04b5a9e1-8f24-477c-a9e1-2f0cd5553f02",
+    "question_text": "A nichrome wire has a resistance of \n80\nΩ\n at \n20\n∘\nC\n and \n𝛼\n=\n1.7\n×\n10\n−\n4\n∘\nC\n−\n1\n. What is its resistance at \n300\n∘\nC\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n82\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n83.81\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n85\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n87\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use: Rt=R0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "af6a5288-d8b1-4d57-a10d-37256fa968a1",
+    "question_text": "In a metallic conductor, if the temperature increases significantly, what happens to the conductivity of the material?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt decreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt increases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt remains constant",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt doubles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Conductivity (σ=1/ρ) is inversely proportional to resistivity (ρ=m/(ne2τ)). As temperature increases, the relaxation time (τ) decreases due to more frequent\n              collisions, increasing ρ and thus decreasing σ.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f003afc6-0216-4182-a7cc-522964a26ea4",
+    "question_text": "A circuit has a \n18\nV\n battery with \n3\nΩ\n internal resistance and three resistors \n4\nΩ\n, \n8\nΩ\n, \n16\nΩ\n in parallel. What is the current through the \n8\nΩ\n resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.8\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.9\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.95\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.97\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Parallel resistance: 1Rp=14+18+116=4+2+116=716⇒Rp=167≈2.29Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "800527b5-741d-4469-b9c4-3fcbf98c645a",
+    "question_text": "A \n45\nV\n battery with negligible internal resistance is connected to a cubical network of 12 resistors, each \n5\nΩ\n. What is the total current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10.8\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11.5\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Equivalent resistance: Req=56R=56×5=256≈4.17Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c40581c-049d-463c-bd97-519f13da3e71",
+    "question_text": "A wire has a resistance of \n30\nΩ\n at \n25\n∘\nC\n and \n31.5\nΩ\n at \n75\n∘\nC\n. What is the temperature coefficient of resistivity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.0\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.2\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.8\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use: Rt=R0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b4a28910-51f3-4574-b82b-1925caadbf6a",
+    "question_text": "A \n10\nV\n battery with negligible internal resistance is connected to a \n2\nΩ\n and \n3\nΩ\n resistor in series. What is the power dissipated in the \n3\nΩ\n resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10\nW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12\nW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14\nW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16\nW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Total resistance: R=2+3=5Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e539c2bc-6630-4cb9-8df4-71ea55435600",
+    "question_text": "In a circuit with a battery, if the external resistance is reduced to zero, what limits the current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBattery emf",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nExternal resistor",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInternal resistance of the battery",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWire conductivity",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "When external resistance R=0, total resistance becomes the battery’s internal resistance (r). Current is then I=ε/r, limited solely by r.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b0b415f5-e62a-4ade-aa11-eaacd8f31c68",
+    "question_text": "A wire has a resistance of \n15\nΩ\n at \n20\n∘\nC\n and \n16.5\nΩ\n at \n70\n∘\nC\n. What is the temperature coefficient of resistivity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.0\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.2\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.5\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.0\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use: Rt=R0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "925ffdf6-fddd-4115-8069-e6a92064e45b",
+    "question_text": "A circuit has a \n28\nV\n battery with \n4\nΩ\n internal resistance and three resistors \n4\nΩ\n, \n8\nΩ\n, \n16\nΩ\n in parallel. What is the current through the \n8\nΩ\n resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.2\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.25\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.27\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Parallel resistance: 1Rp=14+18+116=4+2+116=716⇒Rp=167≈2.29Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b9fd6558-8e09-43a1-94f1-1e4c9198e169",
+    "question_text": "A \n6\nV\n battery with \n0.5\nΩ\n internal resistance is connected to a \n5.5\nΩ\n resistor. What is the power dissipated in the external resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.5\nW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.0\nW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.25\nW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.5\nW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Total resistance: Rtotal=5.5+0.5=6Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5b0b1801-a1ef-42c3-9a16-c95b93ef0e0b",
+    "question_text": "A \n18\nV\n battery with negligible internal resistance is connected to a \n6\nΩ\n and \n12\nΩ\n resistor in series. What is the power dissipated in the \n6\nΩ\n resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5\nW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6\nW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7\nW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8\nW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Total resistance: R=6+12=18Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f06f65ae-5eab-41bf-b836-dc4d10bb2d4c",
+    "question_text": "A \n10\nV\n battery with \n1\nΩ\n internal resistance is connected to a \n9\nΩ\n resistor. What is the power dissipated in the internal resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5\nW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.8\nW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.9\nW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.0\nW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Total resistance: Rtotal=9+1=10Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3eddd95-ae29-4aeb-9de8-b070c026c278",
+    "question_text": "In a circuit with two resistors of different resistances in series, which resistor dissipates more power if the same current flows through both?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe one with higher resistance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe one with lower resistance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBoth dissipate equal power",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDepends on voltage",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Power P=I2R. With the same current (I) in series, power is proportional to resistance (R). The resistor with higher resistance dissipates more power.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4b06b3bf-e895-448c-9200-ddbdf729db15",
+    "question_text": "A wire of length \n3\nm\n and cross-sectional area \n3\n×\n10\n−\n6\nm\n2\n has a resistance of \n5\nΩ\n. What is the resistivity of the material?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.0\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.0\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.0\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8.0\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Resistance: R=ρlA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0f7db80-9731-4a4e-b125-e7479e66d949",
+    "question_text": "A cell of emf \n7\nV\n and internal resistance \n1\nΩ\n is connected to a \n6\nΩ\n resistor. What is the terminal voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7.5\nV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Total resistance: Rtotal=6+1=7Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cbb583d6-59c4-4345-8eed-f181c026f90d",
+    "question_text": "A circuit has a \n16\nV\n battery with \n2\nΩ\n internal resistance and three resistors \n2\nΩ\n, \n4\nΩ\n, \n8\nΩ\n in parallel. What is the current through the \n2\nΩ\n resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.7\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.8\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.9\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.91\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Parallel resistance: 1Rp=12+14+18=4+2+18=78⇒Rp=87≈1.14Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "35e4db91-d5a9-4510-baff-e67c1e3f498f",
+    "question_text": "Two cells of emf \n2.5\nV\n and \n3.5\nV\n with internal resistances \n0.5\nΩ\n and \n1\nΩ\n are connected in series. What is the equivalent emf?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7.5\nV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For series: εeq=ε1+ε2=2.5+3.5=6.0V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ee60a81c-6314-46f0-8a05-4f99183794d3",
+    "question_text": "A \n5\nΩ\n resistor carries a current of \n2\nA\n for \n10\ns\n. How much energy is dissipated as heat?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n150\nJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n200\nJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n250\nJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n300\nJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Energy dissipated: W=I2Rt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "db04ac56-aa63-434a-9ff8-ebfd7605446b",
+    "question_text": "A Wheatstone bridge with \n𝑅\n1\n=\n4\nΩ\n, \n𝑅\n2\n=\n8\nΩ\n, \n𝑅\n3\n=\n6\nΩ\n, \n𝑅\n4\n=\n12\nΩ\n has a \n12\nV\n battery across AC and a galvanometer (\n2\nΩ\n) across BD. What is the current through the galvanometer?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.05\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.02\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Check balance: R1R2=48=0.5, R3R4=612=0.5.\n              Bridge is balanced.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ece8ba85-1d91-464c-88e0-b725fe2c195c",
+    "question_text": "A circuit has a \n12\nV\n battery with \n1\nΩ\n internal resistance and two resistors \n2\nΩ\n and \n6\nΩ\n in parallel. What is the total current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.5\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.8\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Parallel resistance: 1Rp=12+16=3+16=46=23⇒Rp=32=1.5Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "307ba054-8869-40ef-b270-0f2c18e01104",
+    "question_text": "A wire has a resistance of \n12\nΩ\n at \n25\n∘\nC\n and \n13.2\nΩ\n at \n85\n∘\nC\n. What is the temperature coefficient of resistivity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.67\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.8\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.0\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.2\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use: Rt=R0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "070a6e56-68f8-48f6-ac12-760c0a446312",
+    "question_text": "A \n12\nΩ\n resistor dissipates \n48\nW\n of power. What is the voltage across it?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n24\nV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n26\nV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n28\nV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n30\nV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Power: P=V2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a6b1674c-f4c4-4748-83c6-ef7c560858af",
+    "question_text": "A Wheatstone bridge with \n𝑅\n1\n=\n16\nΩ\n, \n𝑅\n2\n=\n32\nΩ\n, \n𝑅\n3\n=\n24\nΩ\n, \n𝑅\n4\n=\n48\nΩ\n has a \n20\nV\n battery across AC and a galvanometer (\n5\nΩ\n) across BD. What is the current through the galvanometer?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.05\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.02\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Check balance: R1R2=1632=0.5, R3R4=2448=0.5.\n              Bridge is balanced.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "94f822fc-7c04-4311-a292-8f8ceee67b52",
+    "question_text": "A \n18\nV\n battery with negligible internal resistance is connected to a cubical network of 12 resistors, each \n3\nΩ\n. What is the total current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.5\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.2\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8.0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Equivalent resistance: Req=56R=56×3=2.5Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fbb76f24-7ff2-4fc3-a6cc-7dee78338af3",
+    "question_text": "A Wheatstone bridge with \n𝑅\n1\n=\n10\nΩ\n, \n𝑅\n2\n=\n20\nΩ\n, \n𝑅\n3\n=\n15\nΩ\n, \n𝑅\n4\n=\n30\nΩ\n has a \n15\nV\n battery across AC and a galvanometer (\n10\nΩ\n) across BD. What is the current through the galvanometer?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.05\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.02\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.01\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Check balance: R1R2=1020=0.5, R3R4=1530=0.5. Bridge is balanced.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bb72beef-685e-4f72-a769-f7d2e9ab0af4",
+    "question_text": "Why does the drift velocity of electrons in a conductor remain much smaller than their thermal velocity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectric field cancels thermal motion",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElectrons lose charge",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nResistance stops motion",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrequent collisions limit net motion",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Drift velocity (vd=eEτ/m) is small because E is typically weak and τ is short due to frequent collisions, whereas thermal velocity arises from random motion at high speeds (proportional to kT/m), unaffected by the field.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "215012ec-7c45-4cb3-baa6-71e41cbfe8c1",
+    "question_text": "A cell of emf \n5\nV\n and internal resistance \n0.5\nΩ\n is connected to a \n4.5\nΩ\n resistor. What is the current in the circuit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.2\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Total resistance: Rtotal=4.5+0.5=5Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dea96403-f805-44b0-bbc7-99c6a29937c6",
+    "question_text": "Why does a non-ohmic device, like a diode, exhibit a non-linear current-voltage relationship?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTemperature fluctuates",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nResistance varies with voltage",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCurrent is constant",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConductor length changes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In a diode, resistance depends on the direction and magnitude of the applied voltage due to its semiconductor junction properties. Forward bias reduces resistance, while reverse bias increases it, leading to a non-linear I-versus-V curve.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "97ea2614-c3fd-403b-a056-1d2231e4ffba",
+    "question_text": "A \n24\nV\n battery with negligible internal resistance is connected to a cubical network of 12 resistors, each \n4\nΩ\n. What is the total current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.5\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.2\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8.0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Equivalent resistance: Req=56R=56×4=206=103≈3.33Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b78bc2c2-2584-49c2-bd15-75a0c0507c6f",
+    "question_text": "A \n20\nV\n battery with \n2\nΩ\n internal resistance delivers a current of \n2.5\nA\n to a resistor. What is the resistance of the resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.0\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.5\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.0\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.5\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Terminal voltage: V=ε−Ir=20−2.5×2=15V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9a87f530-a0a0-4ff4-81f5-52318213862c",
+    "question_text": "A \n4\nΩ\n resistor dissipates \n16\nW\n of power. What is the voltage across it?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n8\nV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10\nV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12\nV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16\nV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Power: P=V2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "be52ab30-b1f9-4df9-b577-0fc70b8c5226",
+    "question_text": "A copper wire carries \n3\nA\n with a drift speed of \n9\n×\n10\n−\n5\nm/s\n. If \n𝑛\n=\n8.5\n×\n10\n28\nm\n−\n3\n and \n𝑒\n=\n1.6\n×\n10\n−\n19\nC\n, what is the cross-sectional area?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.0\n×\n10\n−\n5\nm\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.2\n×\n10\n−\n5\nm\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.4\n×\n10\n−\n5\nm\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.45\n×\n10\n−\n5\nm\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Drift speed: vd=IneA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "95cffb89-cf69-4a59-b028-9713c95701cc",
+    "question_text": "A \n15\nV\n battery with negligible internal resistance is connected to a \n3\nΩ\n and \n12\nΩ\n resistor in series. What is the power dissipated in the \n12\nΩ\n resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10\nW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12\nW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14\nW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n16\nW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Total resistance: R=3+12=15Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5810789e-c113-41d9-8f05-b87e7827a49e",
+    "question_text": "A \n8\nV\n battery with \n1\nΩ\n internal resistance is connected to a \n7\nΩ\n resistor. What is the power dissipated in the internal resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5\nW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.8\nW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.9\nW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.0\nW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Total resistance: Rtotal=7+1=8Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "125f91f4-6898-41ed-98c6-c260a5d78b50",
+    "question_text": "A \n12\nΩ\n resistor dissipates \n48\nW\n of power. What is the current through it?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Power: P=I2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f2ff8993-e3dd-4d0c-87d7-f6e6d0c1729e",
+    "question_text": "A wire of length \n5\nm\n and resistance \n20\nΩ\n is stretched to \n10\nm\n. What is the new resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n60\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n70\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n90\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Volume constant: lA=l′A′⇒A′=A2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79f392a6-b43d-4043-99d1-e026293751f7",
+    "question_text": "A \n20\nV\n battery with negligible internal resistance is connected to a \n5\nΩ\n and \n15\nΩ\n resistor in series. What is the power dissipated in the \n15\nΩ\n resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12\nW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n15\nW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n18\nW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20\nW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Total resistance: R=5+15=20Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0ab8961f-a737-4889-a490-b1839029156b",
+    "question_text": "A Wheatstone bridge with \n𝑅\n1\n=\n9\nΩ\n, \n𝑅\n2\n=\n18\nΩ\n, \n𝑅\n3\n=\n12\nΩ\n, \n𝑅\n4\n=\n24\nΩ\n has a \n20\nV\n battery across AC and a galvanometer (\n5\nΩ\n) across BD. What is the current through the galvanometer?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.05\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.02\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Check balance: R1R2=918=0.5, R3R4=1224=0.5.\n              Bridge is balanced.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6b1b2437-eb24-4f62-b20d-0e9c0a7b43c0",
+    "question_text": "A wire of length \n5\nm\n and resistance \n10\nΩ\n is stretched to \n10\nm\n. What is the new resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n35\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n40\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n45\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Volume constant: lA=l′A′⇒A′=A2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e6c88835-8300-4444-a22c-7cd84de6e254",
+    "question_text": "A conductor has a resistivity of \n9\n×\n10\n−\n8\nΩ\nm\n and \n𝛼\n=\n4\n×\n10\n−\n3\n∘\nC\n−\n1\n at \n20\n∘\nC\n. What is its resistivity at \n60\n∘\nC\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.0\n×\n10\n−\n7\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.02\n×\n10\n−\n7\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.044\n×\n10\n−\n7\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.1\n×\n10\n−\n7\nΩ\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use: ρt=ρ0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d3f80f57-88fd-4255-8174-f27f5079b4c8",
+    "question_text": "A Wheatstone bridge with \n𝑅\n1\n=\n12\nΩ\n, \n𝑅\n2\n=\n24\nΩ\n, \n𝑅\n3\n=\n18\nΩ\n, \n𝑅\n4\n=\n36\nΩ\n has a \n12\nV\n battery across AC and a galvanometer (\n5\nΩ\n) across BD. What is the current through the galvanometer?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.05\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.01\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Check balance: R1R2=1224=0.5, R3R4=1836=0.5.\n              Bridge is balanced.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba588e32-3100-43dd-b02d-4d1f779e39f1",
+    "question_text": "A nichrome wire has a resistance of \n70\nΩ\n at \n30\n∘\nC\n and \n𝛼\n=\n1.7\n×\n10\n−\n4\n∘\nC\n−\n1\n. What is its resistance at \n270\n∘\nC\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n71\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n72.86\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n74\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n75\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use: Rt=R0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f17402cc-f607-4ab1-aa59-df064b51bf34",
+    "question_text": "A \n14\nV\n battery with \n2\nΩ\n internal resistance delivers a current of \n2\nA\n to a resistor. What is the resistance of the resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.0\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.5\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.0\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.5\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Terminal voltage: V=ε−Ir=14−2×2=10V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f50adb9c-4138-48d3-80b4-f73eb37b68dc",
+    "question_text": "Why does a conductor’s current density increase when its length is halved while keeping the potential difference constant?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nArea doubles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVoltage halves",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nResistivity decreases",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCurrent doubles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Resistance R=ρl/A. Halving length (l′=l/2) halves R (R′=R/2). Current\n              I=V/R, so I′=V/(R/2)=2I. Current density j=I/A, so j′=2I/A=2j.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c01fee13-a4da-48eb-8bb4-ad16c40e7588",
+    "question_text": "Two cells of emf \n4\nV\n and \n5\nV\n with internal resistances \n0.5\nΩ\n and \n1\nΩ\n are connected in series with a \n5.5\nΩ\n resistor. What is the current through the circuit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.29\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.3\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.6\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Equivalent emf: εeq=4+5=9V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "860283fa-de4f-4c79-a6f9-b80dd73eeae1",
+    "question_text": "A \n15\nV\n battery with negligible internal resistance is connected to a \n3\nΩ\n and \n9\nΩ\n resistor in series. What is the power dissipated in the \n9\nΩ\n resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12\nW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n14\nW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n16\nW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18\nW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Total resistance: R=3+9=12Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82eefb19-adb5-4a6e-bb0d-fefa3cc1bd5b",
+    "question_text": "Why does a battery’s emf remain constant even when it delivers a large current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCurrent cancels internal resistance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVoltage drop increases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBattery resistance decreases",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChemical energy source is fixed",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Emf is the potential difference across the battery terminals when no current flows, determined by the\n              chemical reactions inside. It’s an intrinsic property, independent of current, though terminal voltage\n              drops due to internal resistance.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7653ea45-5ae3-4ba4-b535-6ed33c623630",
+    "question_text": "A nichrome wire has a resistance of \n90\nΩ\n at \n20\n∘\nC\n and \n𝛼\n=\n1.7\n×\n10\n−\n4\n∘\nC\n−\n1\n. What is its resistance at \n260\n∘\nC\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n92\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n93.67\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n95\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n96\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use: Rt=R0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "235f617c-9eb5-4fba-b193-7f3c26ba54de",
+    "question_text": "A wire of length \n2\nm\n and resistance \n5\nΩ\n is stretched to \n4\nm\n. What is the new resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n15\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n18\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n25\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Volume constant: lA=l′A′⇒A′=A2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "433e2f9f-c862-4ed6-870d-7b6bedf2a90a",
+    "question_text": "Two cells in parallel have emf \n12\nV\n and \n3\nV\n with internal resistances \n4\nΩ\n and \n1\nΩ\n. What is the equivalent emf?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.8\nV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.5\nV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For parallel: εeq=ε1r2+ε2r1r1+r2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "df4eb433-3630-4e76-b17b-b865ea35e359",
+    "question_text": "A \n10\nV\n battery with negligible internal resistance is connected to a cubical network of 12 resistors, each \n1.5\nΩ\n. What is the current through one edge from a corner?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.67\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Equivalent resistance: Req=56R=56×1.5=1.25Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "92d82a2a-317d-4d49-a804-74d63e25d4e8",
+    "question_text": "A copper wire of cross-sectional area \n8\n×\n10\n−\n7\nm\n2\n carries a current of \n2\nA\n. If \n𝑛\n=\n8.5\n×\n10\n28\nm\n−\n3\n and \n𝑒\n=\n1.6\n×\n10\n−\n19\nC\n, what is the drift speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.6\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.84\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.0\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.2\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Drift speed: vd=IneA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8001757c-59c8-450b-a411-915db44e908b",
+    "question_text": "A wire has a resistance of \n24\nΩ\n at \n25\n∘\nC\n and \n25.8\nΩ\n at \n75\n∘\nC\n. What is the temperature coefficient of resistivity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.8\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.0\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.2\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use: Rt=R0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dbeea2a6-1f59-4902-921d-33d0fcb6419e",
+    "question_text": "A nichrome wire has a resistance of \n60\nΩ\n at \n25\n∘\nC\n and \n𝛼\n=\n1.7\n×\n10\n−\n4\n∘\nC\n−\n1\n. What is its resistance at \n225\n∘\nC\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n61\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n62.04\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n63\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n64\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Use: Rt=R0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9bffce77-6a5a-445c-b67e-33fbd155176e",
+    "question_text": "A conductor has a resistivity of \n1.2\n×\n10\n−\n7\nΩ\nm\n and \n𝛼\n=\n4\n×\n10\n−\n3\n∘\nC\n−\n1\n at \n20\n∘\nC\n. What is its resistivity at \n80\n∘\nC\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.4\n×\n10\n−\n7\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.45\n×\n10\n−\n7\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.488\n×\n10\n−\n7\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5\n×\n10\n−\n7\nΩ\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use: ρt=ρ0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f044aa97-a017-4b47-95aa-3b142fcc446f",
+    "question_text": "A \n18\nV\n battery with \n3\nΩ\n internal resistance delivers a current of \n2\nA\n to a resistor. What is the resistance of the resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.0\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.5\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.0\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.5\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Terminal voltage: V=ε−Ir=18−2×3=12V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "103ebe18-2bb3-4c92-ba23-708a410a88f6",
+    "question_text": "A cell of emf \n10\nV\n and internal resistance \n1\nΩ\n is connected to a \n9\nΩ\n resistor. What is the terminal voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n9.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11.0\nV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Total resistance: Rtotal=9+1=10Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "962b45eb-25a9-4589-8068-aa62501e0c03",
+    "question_text": "A cell of emf \n6\nV\n and internal resistance \n1.5\nΩ\n is connected to a \n4.5\nΩ\n resistor. What is the terminal voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.0\nV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Total resistance: Rtotal=4.5+1.5=6Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5730556-a974-4ec1-ad40-14aba0bfbabb",
+    "question_text": "A Wheatstone bridge with \n𝑅\n1\n=\n5\nΩ\n, \n𝑅\n2\n=\n10\nΩ\n, \n𝑅\n3\n=\n15\nΩ\n, \n𝑅\n4\n=\n30\nΩ\n has a \n18\nV\n battery across AC and a galvanometer (\n3\nΩ\n) across BD. What is the current through the galvanometer?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.1\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.05\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.02\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Check balance: R1R2=510=0.5, R3R4=1530=0.5.\n              Bridge is balanced.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "572a72c9-137a-4e43-9392-aa8278fd7229",
+    "question_text": "Two cells in parallel have emf \n6\nV\n and \n3\nV\n with internal resistances \n3\nΩ\n and \n1\nΩ\n. What is the equivalent emf?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.75\nV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.5\nV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For parallel: εeq=ε1r2+ε2r1r1+r2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e91b129c-25b9-47c8-aca9-29c1ce0028ab",
+    "question_text": "A copper wire of cross-sectional area \n1\n×\n10\n−\n6\nm\n2\n carries a current of \n1.5\nA\n. If \n𝑛\n=\n8.5\n×\n10\n28\nm\n−\n3\n and \n𝑒\n=\n1.6\n×\n10\n−\n19\nC\n, what is the drift speed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.9\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.1\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.3\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5\n×\n10\n−\n4\nm/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Drift speed: vd=IneA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "301d631b-2826-4b22-82e1-aba30721aca7",
+    "question_text": "In a circuit with two resistors in series, why does the voltage divide proportionally to their resistances?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCurrent doubles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nResistance cancels out",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVoltage drop is proportional to resistance",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nElectric field varies",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Voltage drop across each resistor is V=IR. With the same current in series, V∝R,\n              so the total voltage splits in proportion to the resistances (e.g., V1/V2=R1/R2).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2d9c5a8d-df8c-40cf-ac19-9cb08e93a510",
+    "question_text": "A wire of length \n3\nm\n and resistance \n6\nΩ\n is stretched to \n6\nm\n. What is the new resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n24\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n28\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Volume constant: lA=l′A′⇒A′=A2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "45d089b7-bc95-454f-b334-af4966f7cab7",
+    "question_text": "A Wheatstone bridge has \n𝑅\n1\n=\n16\nΩ\n, \n𝑅\n2\n=\n32\nΩ\n, \n𝑅\n3\n=\n20\nΩ\n. What is \n𝑅\n4\n for balance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n35\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n40\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n45\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n50\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Balance condition: R1R2=R3R4.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c3000c92-5091-4e01-b43b-94df63c959d7",
+    "question_text": "Why does the drift velocity of electrons in a conductor remain constant despite continuous acceleration by an electric field?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectric field cancels out",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCollisions with ions limit acceleration",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nElectron mass increases",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nField strength decreases over time",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Electrons accelerate due to the electric field but collide with lattice ions, losing momentum. These\n              collisions occur at random intervals, and the average time between collisions (τ) stabilizes the\n              drift velocity (vd=eEτ/m), balancing acceleration with energy loss.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1e4612d4-231a-466b-8095-5ba03fcba9d0",
+    "question_text": "When two identical resistors are connected in series and then in parallel, how does the equivalent resistance change?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSeries resistance is four times parallel resistance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParallel resistance is four times series resistance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey become equal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSeries resistance doubles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For resistors R in series: Req=R+R=2R. In parallel: 1/Req=1/R+1/R=2/R⇒Req=R/2. The series resistance (2R) is four times the parallel\n              resistance (R/2), as 2R/(R/2)=4.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d2fd8d5-45c5-46c5-8eb7-a73e5d3d1472",
+    "question_text": "A wire of length \n12\nm\n and cross-sectional area \n3\n×\n10\n−\n6\nm\n2\n has a resistance of \n24\nΩ\n. What is the resistivity of the material?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.0\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.5\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.0\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7.5\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Resistance: R=ρlA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "669bbfe6-e151-4bd6-9fb6-57852d7dfa27",
+    "question_text": "A circuit has a \n15\nV\n battery with \n2\nΩ\n internal resistance and three resistors \n3\nΩ\n, \n6\nΩ\n, \n12\nΩ\n in parallel. What is the current through the \n6\nΩ\n resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.1\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.12\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.15\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Parallel resistance: 1Rp=13+16+112=4+2+112=712⇒Rp=127≈1.71Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "05c9b0b8-2d74-4b76-8c65-53fa64fc4fe0",
+    "question_text": "A battery of emf \n15\nV\n and internal resistance \n3\nΩ\n is connected to a resistor. If the terminal voltage is \n12\nV\n, what is the resistance of the resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n15\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Voltage drop: Ir=ε−V=15−12=3V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0030e413-5aac-4085-bd50-e27f16a9660a",
+    "question_text": "A \n27\nV\n battery with negligible internal resistance is connected to a cubical network of 12 resistors, each \n3\nΩ\n. What is the total current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n9.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n10.8\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11.5\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Equivalent resistance: Req=56R=56×3=156=2.5Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba2b7a51-a20d-468a-842c-8fd11d7e8655",
+    "question_text": "Two cells in parallel have emf \n8\nV\n and \n2\nV\n with internal resistances \n2\nΩ\n and \n1\nΩ\n. What is the equivalent emf?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.0\nV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For parallel: εeq=ε1r2+ε2r1r1+r2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3e125eb-f974-4e4d-a1c6-ae04666a72c9",
+    "question_text": "In a circuit with resistors in parallel, what happens to the voltage across each resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt doubles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt halves",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt remains the same across all",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt varies inversely with resistance",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In a parallel configuration, all resistors share the same two nodes, so the potential difference\n              (voltage) across each is equal to the source voltage, per Kirchhoff’s loop rule applied to each branch.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "734fc18e-2e77-4dee-a0d4-22af3bd06817",
+    "question_text": "Why does a conductor exhibit zero net current in the absence of an electric field?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElectrons stop moving",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRandom motion cancels net flow",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCharge carriers disappear",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nResistance becomes infinite",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Without an electric field, electrons move randomly due to thermal energy, with no preferred direction.\n              The average velocity of electrons cancels out, resulting in zero net current.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6b1f185e-37f4-492c-b250-0849830e8d8a",
+    "question_text": "In a circuit with two cells in series, why does the equivalent internal resistance increase compared to a single cell?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEmf doubles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nResistances add together",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCurrent cancels out",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVoltage divides",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In series, internal resistances add (req=r1+r2) because current flows through both\n              resistances sequentially, increasing the total opposition to current flow.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7286d6f1-18a3-4907-950d-4e838f1e01cf",
+    "question_text": "A wire of length \n8\nm\n and resistance \n16\nΩ\n is stretched to \n16\nm\n. What is the new resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n50\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n60\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n64\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n70\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Volume constant: lA=l′A′⇒A′=A2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "270bc9bf-c60a-44f8-99ed-f95a8548ce2b",
+    "question_text": "A wire of length \n4\nm\n and cross-sectional area \n2\n×\n10\n−\n6\nm\n2\n has a resistance of \n8\nΩ\n. What is the resistivity of the material?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.0\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.5\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.0\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.0\n×\n10\n−\n6\nΩ\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Resistance: R=ρlA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42a91a1a-45dd-4614-976d-eaff33ebef7c",
+    "question_text": "A wire of length \n4\nm\n and resistance \n10\nΩ\n is stretched to \n8\nm\n. What is the new resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n35\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n40\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n45\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Volume constant: lA=l′A′⇒A′=A2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dfedd3c7-fd8a-4948-944b-20491133b786",
+    "question_text": "A \n6\nV\n battery with \n0.5\nΩ\n internal resistance is connected to a \n5.5\nΩ\n resistor. What is the power dissipated in the external resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n5.0\nW",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5.2\nW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.25\nW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.5\nW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Total resistance: Rtotal=5.5+0.5=6Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9fdc19d5-f0a6-4b14-9740-aa1746225de2",
+    "question_text": "A wire has a resistance of \n25\nΩ\n at \n20\n∘\nC\n and \n27.5\nΩ\n at \n90\n∘\nC\n. What is the temperature coefficient of resistivity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.43\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.6\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.8\n×\n10\n−\n3\n∘\nC\n−\n1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Use: Rt=R0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f7ebb154-5d09-4cbc-866f-bd2ef88fa388",
+    "question_text": "Two cells in parallel have emf \n12\nV\n and \n6\nV\n with internal resistances \n4\nΩ\n and \n2\nΩ\n. What is the equivalent emf?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8.0\nV",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8.5\nV",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n9.0\nV",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "For parallel: εeq=ε1r2+ε2r1r1+r2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7a3b3290-8553-44e4-b778-b2680604f242",
+    "question_text": "A \n12\nV\n battery with \n1\nΩ\n internal resistance delivers a current of \n2\nA\n to a resistor. What is the resistance of the resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.0\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.5\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5.0\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5.5\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Terminal voltage: V=ε−Ir=12−2×1=10V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5e9fbdea-50bb-434a-9ef1-4f79518e092b",
+    "question_text": "A Wheatstone bridge has \n𝑅\n1\n=\n30\nΩ\n, \n𝑅\n2\n=\n60\nΩ\n, \n𝑅\n3\n=\n25\nΩ\n. What is \n𝑅\n4\n for balance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n45\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n50\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n55\nΩ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n60\nΩ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Balance condition: R1R2=R3R4.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b16c66d-491b-4cd8-b122-f0bf823a0bce",
+    "question_text": "A copper wire carries \n3.4\nA\n with a drift speed of \n1.25\n×\n10\n−\n4\nm/s\n. If \n𝑛\n=\n8.5\n×\n10\n28\nm\n−\n3\n and \n𝑒\n=\n1.6\n×\n10\n−\n19\nC\n, what is the cross-sectional area?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.8\n×\n10\n−\n5\nm\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.9\n×\n10\n−\n5\nm\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.95\n×\n10\n−\n5\nm\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.0\n×\n10\n−\n5\nm\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Drift speed: vd=IneA.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ec062cd7-b4aa-4ef6-9cfe-90fe229bde94",
+    "question_text": "A conductor has a resistivity of \n6\n×\n10\n−\n8\nΩ\nm\n and \n𝛼\n=\n4\n×\n10\n−\n3\n∘\nC\n−\n1\n at \n20\n∘\nC\n. What is its resistivity at \n90\n∘\nC\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7.2\n×\n10\n−\n8\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.5\n×\n10\n−\n8\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.68\n×\n10\n−\n8\nΩ\nm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8.0\n×\n10\n−\n8\nΩ\nm",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Use: ρt=ρ0[1+α(T−T0)].",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "667990a4-0ef4-424e-b10d-0ff47fd3a5d4",
+    "question_text": "A circuit has a \n30\nV\n battery with \n3\nΩ\n internal resistance and three resistors \n3\nΩ\n, \n6\nΩ\n, \n12\nΩ\n in parallel. What is the current through the \n6\nΩ\n resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.6\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.7\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.8\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.82\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Parallel resistance: 1Rp=13+16+112=4+2+112=712⇒Rp=127≈1.71Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c0251edb-03da-4e7e-9f2e-cc937137d9bf",
+    "question_text": "A \n5\nΩ\n resistor carries a current of \n4\nA\n for \n15\ns\n. What is the energy dissipated?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1000\nJ",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1100\nJ",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1150\nJ",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1200\nJ",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Energy: W=I2Rt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e210f83d-0fa7-4880-9416-e3a532d17f11",
+    "question_text": "A circuit has a \n6\nV\n battery with \n1\nΩ\n internal resistance and two resistors \n2\nΩ\n and \n3\nΩ\n in parallel. What is the total current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.0\nA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5\nA",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.73\nA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.0\nA",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Parallel resistance: 1Rp=12+13=3+26=56⇒Rp=65=1.2Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "62c89b95-2199-4abc-8954-ed81a0cca9c2",
+    "question_text": "What happens to the total resistance of a circuit when an additional resistor is added in parallel to an existing resistor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt decreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt increases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt remains unchanged",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt doubles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "For resistors in parallel, 1/Rtotal=1/R1+1/R2. Adding another resistor increases\n              the sum of reciprocals, reducing Rtotal below the smallest individual resistance.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "topic": "Current Electricity",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Current Electricity / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "current-electricity"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

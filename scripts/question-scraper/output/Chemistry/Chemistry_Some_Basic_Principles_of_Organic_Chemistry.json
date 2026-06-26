@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "1940cf68-f521-48a4-ac08-f09a4857e156",
+    "question_text": "A compound with molecular formula \nC\n4\nH\n8\nO\n is a functional isomer of butanal and contains a carbonyl group. What is its IUPAC name?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nButan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropanal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMethyl propyl ether",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Butanal (CHA3CHA2CHA2CHO) is an aldehyde. Its functional isomer with a carbonyl is CHA3COCHA2CHA3 (butan-2-one), a ketone with the same formula.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e62824ac-801a-4861-a72b-a54c64981433",
+    "question_text": "Which functional group is present in \nCH\n3\nCOCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAldehyde",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlcohol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarboxylic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKetone",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "CHA3COCHA3 (acetone) contains a carbonyl group (C=O) attached to two alkyl groups,\n              characteristic of ketones.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "db501394-a8f6-4b62-9af4-e647eb5fd8e2",
+    "question_text": "Which carbon in \nCH\n3\nCH\n2\nCHO\n is \n𝑠\n𝑝\n2\n hybridized?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThird carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSecond carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll carbons",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CHA3CHA2CHO (propanal), the carbonyl carbon (C=O) has three sigma bonds and one pi\n              bond, making it sp2 hybridized.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5b6340a-dff6-4de5-8a3d-306cfcfcae9f",
+    "question_text": "Which of the following is an electrophile?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOH\n−",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSO\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\n−",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "SOA3 is electron-deficient due to the electronegative oxygen atoms, making it an electrophile.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d2c48108-28ae-46f8-b039-f9ade1de263c",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n2\nC\n(\nOH\n)\n(\nCH\n3\n)\nCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylbutan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3-Methylbutan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylpentan-2-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The compound has a 3-carbon chain with two methyl groups and an -OH on the second carbon, named\n              2-methylbutan-2-ol (longest chain is butane).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6656e420-290f-4822-942f-81bbfcd4637e",
+    "question_text": "Which separation technique is most suitable for a mixture of two liquids with boiling points 65°C and 95°C, where one is water-soluble and the other is not?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFractional distillation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSimple distillation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDifferential extraction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromatography",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Differential extraction can exploit solubility differences (e.g., water vs. organic solvent), while the\n              30°C boiling point difference also allows simple distillation, but solubility makes extraction more\n              specific.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a0625b64-16f0-45a6-8ee8-e06c1d27ba6f",
+    "question_text": "An organic compound with molecular formula \nC\n5\nH\n10\n shows geometrical isomerism but not chain isomerism with \nCH\n3\nCH\n2\nCH\n=\nCHCH\n3\n. What is its structure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n2\n=\nCHCH\n2\nCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n=\nCHCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nC\n(\nCH\n3\n)\n=\nCHCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n2\n=\nC\n(\nCH\n3\n)\nCH\n2\nCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "CHA3CHA2CH=CHCHA3 (pent-2-ene) shows geometrical isomerism (cis/trans) due to different\n              substituents on the double bond. It has no chain isomerism with itself, as it’s the same structure.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "35ff8e24-ab58-472d-b186-68aa84ce4e4b",
+    "question_text": "Which of the following compounds exhibits geometrical isomerism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n=\nCHCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nC\n≡\nCH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Geometrical isomerism occurs in alkenes with different substituents on each carbon of the double bond. CHA3CH=CHCHA3 (but-2-ene) can exist as cis or trans isomers.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fe491eb-4c85-440b-9307-5e513816427c",
+    "question_text": "Which purification method is used for a liquid mixture with boiling points of 78°C and 82°C?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSimple distillation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFractional distillation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrystallization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDifferential extraction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fractional distillation is used for liquids with close boiling points (< 25°C difference), like 78°C\n              and 82°C.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "90f0a045-681a-4b66-9805-422b3ac471cb",
+    "question_text": "Which carbocation rearrangement is most likely to occur to increase stability in \nCH\n3\nCH\n2\nCH\n2\nCH\n2\n+\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMethyl shift to\nCH\n3\nC\n+\n(\nCH\n3\n)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNo rearrangement possible",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHydride shift to\nCH\n3\nCH\n+\nCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHydride shift to\nCH\n3\nCH\n2\nCH\n+\nCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The primary carbocation CHA3CHA2CHA2CHA2A+ can undergo a hydride shift to form CHA3CHA+CHA2CHA3 (secondary), which is more stable due to hyperconjugation.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 1",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3537bf6d-1027-409e-bcda-00dcb715bf4e",
+    "question_text": "In the Dumas method, 0.35 g of a compound gave 90 mL of \nN\n2\n at STP, and in Carius method, 0.35 g gave 0.574 g of \nAgBr\n. What is the percentage of nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n31%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n33%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n34%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n32%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Mass of N = 2822400×90=0.1125 g. Percentage = 0.11250.35×100=32.14%≈32%. Carius data is for bromine, not relevant here.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cff744b8-b746-44d2-a6c8-216afb8c65ce",
+    "question_text": "Which reagent is used in the Carius method to oxidize the organic compound?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n2\nSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHCl",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHNO\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNaOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fuming nitric acid (HNOA3) is used in the Carius method to oxidize the compound and convert\n              halogens to their respective acids.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fd2c284b-d819-41eb-bdc6-0b980500336a",
+    "question_text": "Which purification method would fail to separate a mixture of two organic solids with identical sublimation temperatures but different solubilities in water?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCrystallization",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDifferential extraction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChromatography",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSublimation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Sublimation relies on sublimation temperature differences, ineffective here. Crystallization or\n              extraction using water solubility would work instead.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8665fc03-97a0-4c13-a8de-8fcba298082e",
+    "question_text": "In Lassaigne’s test, the presence of sulphur is confirmed by the formation of a violet color with which reagent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSodium nitroprusside",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFerric chloride",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLead acetate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSilver nitrate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Sulphur forms NaA2S in Lassaigne’s test, which reacts with sodium nitroprusside to give a\n              violet-colored complex, NaA4[Fe(CN)A5NOS].",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a09d4c9c-d47c-49af-bb12-f9dde631f301",
+    "question_text": "A hydrocarbon with 9 \n𝜎\n bonds produces 5 moles of \nCO\n2\n per mole upon combustion. What is its molecular formula?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n5\nH\n10",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n5\nH\n12",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n4\nH\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n5\nH\n8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "5 carbons (from 5 COA2). CHA3CHA2CHA2CHA2CHA3 (pentane) has 9 σ (8 C-H, 1 C-C\n              from single bonds), no π, and fits CA5HA12.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c9d6e4be-d227-4891-be95-8d959ef4887c",
+    "question_text": "Which of the following is a homologous series?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlkenes and alkynes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlkanes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAlcohols and aldehydes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAromatic compounds",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "A homologous series has compounds with the same functional group differing by −CHA2−. Alkanes\n              (e.g., CHA4,CA2HA6,CA3HA8) fit this definition.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c07ce89b-efe7-451f-abf9-ab3ef5315543",
+    "question_text": "An organic compound with \nC\n5\nH\n8\n has a degree of unsaturation of 2. Which functional group combination could it contain?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTwo double bonds",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOne triple bond",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOne double bond and one ring",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTwo rings",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Degree of unsaturation = 2C+2−H2=12−82=2. CHA3CHA2C≡CCHA3 has\n              one triple bond (2 units), fitting CA5HA8.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b7a934c0-135a-45c8-92de-da5a2a6a2a5b",
+    "question_text": "Which carbon in \nCH\n3\nCH\n2\nC\n(\n=\nO\n)\nCH\n2\nCH\n3\n is most stabilized by the hyperconjugation effect if it forms a carbocation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecond carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarbonyl carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFourth carbon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CHA3CHA2C(=O)CHA2CHA3, the carbon in CHA2 adjacent to C=O (second carbon)\n              forms CHA3CHA+CHA2C(=O)CHA3, stabilized by hyperconjugation from CHA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0359df5f-1d09-49f1-8a1d-6040c5e31cf1",
+    "question_text": "Which compound has the functional group \n−\nCHO\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCHO",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCOCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCOOH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The −CHO group is characteristic of aldehydes. CHA3CHA2CHO (propanal) contains this\n              group.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f4651923-8b8a-452f-b314-fdf694203edf",
+    "question_text": "What is the total number of \n𝜎\n bonds in \nCH\n3\nCH\n2\nCH\n=\nCH\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n11",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n10",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n9",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In CHA3CHA2CH=CHA2 (but-1-ene), there are 11 σ bonds: 8 C-H, 2 C-C, 1 from C=C.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 2",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f9880c2c-a2e4-4dcc-858e-dc9862f70103",
+    "question_text": "Which species acts as a nucleophile in the formation of \nCH\n3\nCH\n2\nOH\n from \nCH\n3\nCH\n2\nCl\n in a basic medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCl\n−",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nH\n2\nO",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOH\n−",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In a basic medium, OHA− acts as the nucleophile, displacing ClA− in a substitution\n              reaction to form ethanol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ebf90854-2265-4631-80a9-f91737f7516f",
+    "question_text": "Which carbon atom in \nCH\n3\nCH\n2\nC\n(\n=\nO\n)\nCH\n2\nCH\n3\n exhibits the greatest s-character in its hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCarbonyl carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarbon in\nCH\n3\ngroup",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarbon in\nCH\n2\ngroup",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll have equal s-character",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In CHA3CHA2C(=O)CHA2CHA3 (pentan-3-one), the carbonyl carbon (C=O) is sp2\n              hybridized (33% s-character), while others are sp3 (25%). No sp carbons are present, so the\n              carbonyl carbon has the highest s-character.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "350be99f-e187-45e3-bdb4-b244fe6b4f99",
+    "question_text": "Which intermediate is most likely to form during heterolytic cleavage of \nCH\n3\nCH\n2\nCH\n(\nCl\n)\nCH\n3\n in a polar solvent?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nCH\n2\n⋅",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCH\n+\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nCH\n⋅\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nCH\n2\nCH\n2\n−",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Heterolytic cleavage of C−Cl in CHA3CHA2CH(Cl)CHA3 forms CHA3CHA2CHA+CHA3\n              (secondary carbocation) and ClA−, favored in polar solvents.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f99fac77-5624-42d4-b04b-782611f6152a",
+    "question_text": "In the Carius method, halogens are converted to which type of compound for estimation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSodium halide",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSilver halide",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBarium halide",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLead halide",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In the Carius method, halogens are converted to silver halides (e.g., AgCl,AgBr,AgI) by reaction with AgNOA3.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6f4de859-b1f9-4682-ad1a-87a42319da4c",
+    "question_text": "Which carbon in \nCH\n3\nCH\n=\nCH\n2\n has \n𝑠\n𝑝\n3\n hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSecond carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThird carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll carbons",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CHA3CH=CHA2 (propene), the first carbon (CHA3) has four single bonds, indicating sp3 hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0233647a-bdde-4c8c-9a3a-d6fb421df90b",
+    "question_text": "In Lassaigne’s test, an organic compound produces a blood-red color with \nFeCl\n3\n but no violet color with sodium nitroprusside. What elements are present?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNitrogen and sulphur",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNitrogen only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSulphur only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNitrogen and chlorine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Blood-red color with FeClA3 indicates nitrogen and sulphur together (NaSCN), while\n              no violet color with sodium nitroprusside suggests sulphur alone isn’t detected, but the former confirms\n              both.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b3f5ae8-a7e3-4ba9-91c2-0f011974cb41",
+    "question_text": "Which carbon atom in \nCH\n3\nCH\n2\nCH\n2\nC\n≡\nCH\n has a bond angle closest to 180°?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecond carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThird carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFourth carbon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CHA3CHA2CHA2C≡CH, the carbon in C≡CH is sp hybridized (triple bond), with a\n              linear bond angle of 180°.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f2a3f6df-e73f-46f4-9326-96801a95ee29",
+    "question_text": "A compound with molecular formula \nC\n3\nH\n6\nO\n is a functional isomer of propanal and contains a three-carbon chain with a carbonyl group. What is its IUPAC name?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPropan-2-one",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProp-1-ene",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMethyl ethyl ether",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Propanal (CHA3CHA2CHO) is an aldehyde. Its functional isomer with a carbonyl and three-carbon\n              chain is CHA3COCHA3 (propan-2-one, acetone), a ketone.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "34ee34ad-441f-4070-a06c-3846e3e72285",
+    "question_text": "Which of the following is the general formula for alkanes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n𝑛\nH\n2\n𝑛",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n𝑛\nH\n2\n𝑛\n−\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n𝑛\nH\n𝑛\n+\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n𝑛\nH\n2\n𝑛\n+\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Alkanes have only single bonds and follow the formula CAnHA2n+2 (e.g., CHA4,CA2HA6).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bc3e52e6-1363-48c5-8729-5a28cdad790f",
+    "question_text": "In Lassaigne’s test, an organic compound containing nitrogen and chlorine gives a Prussian blue color but no silver halide precipitate. What does this indicate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNitrogen present, chlorine absent",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNitrogen absent, chlorine present",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBoth nitrogen and chlorine absent",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoth nitrogen and chlorine present",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Prussian blue indicates nitrogen (forming NaCN), but no AgCl precipitate suggests\n              chlorine is not ionic or not extracted as NaCl, possibly due to covalent bonding not broken by\n              sodium fusion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 3",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "953b7d1d-ac66-4a65-923c-bc0fc29a2733",
+    "question_text": "Which technique is used to purify a solid organic compound that sublimes on heating?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSublimation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDistillation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrystallization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromatography",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Sublimation is the process where a solid turns into a gas without passing through the liquid state,\n              useful for purifying compounds like camphor or naphthalene.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "df7755ff-ea0f-401f-a85e-79424b907228",
+    "question_text": "In Kjeldahl’s method, 0.5 g of an organic compound produced ammonia that neutralized 20 mL of 0.1 M \nH\n2\nSO\n4\n. What is the percentage of nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n10%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n11%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n11.2%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles of HA2SOA4 = 0.02×0.1=0.002. Moles of NHA3 = 0.004 (2H per HA2SOA4). Mass of N = 0.004×14=0.056 g. Percentage = 0.0560.5×100=11.2%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bcf5d341-56f4-485f-ae8c-087a3bb42a32",
+    "question_text": "Which general formula represents alkenes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n𝑛\nH\n2\n𝑛\n+\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n𝑛\nH\n2\n𝑛\n−\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n𝑛\nH\n𝑛\n+\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n𝑛\nH\n2\n𝑛",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Alkenes have one double bond and follow the formula CAnHA2n (e.g., CA2HA4,CA3HA6).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ab7ef5e7-a402-427b-9a11-128875cbe1a5",
+    "question_text": "Which carbon atom in \nCH\n2\n=\nCH\n−\nCH\n2\nOH\n has \n𝑠\n𝑝\n2\n hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThird carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFourth carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSecond carbon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In CHA2=CH−CHA2OH, the carbons in the double bond (CHA2=CH) are sp2 hybridized;\n              the second carbon has three sigma bonds and one pi bond.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cb5d7ed3-687e-4c69-97a2-c61d9fd1477d",
+    "question_text": "Which purification technique is most effective for separating a mixture of two liquids, one boiling at 100°C and soluble in water, the other boiling at 120°C and insoluble in water?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDifferential extraction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSimple distillation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFractional distillation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromatography",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Differential extraction uses water to dissolve the soluble liquid (b.p. 100°C), separating it from the\n              insoluble one (b.p. 120°C), leveraging solubility over boiling point difference.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cb28afa9-0806-49c5-a6c5-67da6985984e",
+    "question_text": "A compound with \nC\n4\nH\n8\nO\n gives a negative Lassaigne’s test for halogens and contains a carbonyl group. What functional group is present?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKetone",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAldehyde",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEther",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlcohol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "CHA3CHA2CHA2CHO (butanal, aldehyde) fits CA4HA8O, has a carbonyl, and no halogens,\n              consistent with a negative Lassaigne’s test.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "018ed050-eb90-4de9-a3b5-712bb99f52cc",
+    "question_text": "An organic compound with molecular formula \nC\n6\nH\n12\n forms three structural isomers, one of which exhibits geometrical isomerism. What is one possible structure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nCH\n=\nCHCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCH\n2\nCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nC\n≡\nCCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n(\nCH\n3\n)\nCH\n2\nCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "CA6HA12 can be hexene (e.g., CHA3CHA2CHA2CH=CHCHA3, hex-2-ene), which shows cis/trans\n              isomerism. Hexene has three main structural isomers: hex-1-ene, hex-2-ene, hex-3-ene.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7b433466-eb9c-413a-a578-05ce27da7564",
+    "question_text": "In the Carius method, 0.22 g of a compound gave 0.431 g of \nAgCl\n. What is the percentage of chlorine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n47%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n48%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n49%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n50%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mass of Cl = 35.5143.5×0.431=0.1066 g. Percentage = 0.10660.22×100=48.45%≈48%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7f68067d-f2af-495a-a24a-c3411f3b1fc9",
+    "question_text": "Which purification method is most effective for separating a mixture of two solids with identical solubility in water but different sublimation temperatures?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCrystallization",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDifferential extraction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChromatography",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSublimation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Sublimation separates based on sublimation temperature differences, effective when solubility is\n              identical but one solid sublimes and the other does not.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8cba9fce-e68b-421a-8bd8-0558782de930",
+    "question_text": "Which compound with \nC\n6\nH\n12\n has a degree of unsaturation of 1 and does not exhibit geometrical isomerism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n=\nCHCH\n2\nCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCH\n=\nCHCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nC\n(\nCH\n3\n)\n=\nCHCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n2\n=\nCHCH\n2\nCH\n2\nCH\n2\nCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "CHA2=CHCHA2CHA2CHA2CHA3 (hex-1-ene) has one double bond (degree = 1) and no geometrical isomerism\n              due to identical substituents (H) on one carbon of the double bond.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 4",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "17e54ae3-b73a-4db0-97a7-82a47ce442ee",
+    "question_text": "Which purification technique is used to separate a mixture of two miscible liquids with close boiling points?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSimple distillation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSublimation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCrystallization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFractional distillation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Fractional distillation separates miscible liquids with boiling points differing by less than 25°C using\n              a fractionating column.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "51ca35c7-2f28-40ee-b339-09a96cc6b053",
+    "question_text": "A compound with 9 \n𝜎\n bonds and 1 \n𝜋\n bond has a molecular formula of \nC\n4\nH\n6\n. Which carbon has a bond angle closest to 109.5°?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSecond carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThird carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFourth carbon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "CHA3CH=CHCHA2 fits CA4HA6 with 9 σ (6 C-H, 2 C-C, 1 from C=C) and 1 π (C=C). The first carbon (CHA3) is sp3, with a 109.5° bond angle.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7cf7868f-f649-4c00-b493-b2f16b2409d3",
+    "question_text": "Which compound with \nC\n4\nH\n8\n has a degree of unsaturation of 1 and can be separated from its chain isomer by simple distillation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n=\nCHCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n2\n=\nCHCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nC\n≡\nCH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nC\n(\nCH\n3\n)\n=\nCH\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "CHA2=CHCHA2CHA3 (but-1-ene) has one double bond (degree = 1). Its chain isomer, 2-methylpropene\n              (CHA3C(CHA3)=CHA2), has a similar boiling point (~-6°C vs. -6.9°C), but cyclic isomers like\n              cyclobutane (~12°C) can be separated by simple distillation due to a larger boiling point difference.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2c64c348-5b63-4b7a-a4c9-f7771976c667",
+    "question_text": "Which carbon in \nCH\n3\nCH\n2\nCH\n2\nC\n(\n=\nO\n)\nOCH\n3\n has the greatest s-character in its hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCarbonyl carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarbon in\nCH\n3\nof\nCH\n3\nCH\n2\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarbon in\nCH\n2\nadjacent to carbonyl",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCarbon in\nOCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In CHA3CHA2CHA2C(=O)OCHA3 (methyl butanoate), the carbonyl carbon (C=O) is sp2\n              hybridized (33% s-character), higher than sp3 (25%) of other carbons.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b5b9afaf-df58-4921-a523-9b1bf25a3bdc",
+    "question_text": "In Kjeldahl’s method, 0.42 g of a compound produced ammonia that neutralized 15 mL of 0.2 M \nH\n2\nSO\n4\n. What is the percentage of nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n19%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n21%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n22%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n20%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles of HA2SOA4 = 0.015×0.2=0.003. Moles of NHA3 = 0.006 (2H per HA2SOA4). Mass of N = 0.006×14=0.084 g. Percentage = 0.0840.42×100=20%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "24c633ee-1a97-450b-b366-83d537bcdecb",
+    "question_text": "In Lassaigne’s test, an organic compound gives a violet color with sodium nitroprusside and a white precipitate with silver nitrate. What elements are present?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSulphur and chlorine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNitrogen and sulphur",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNitrogen and chlorine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSulphur and bromine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Violet color with sodium nitroprusside indicates sulphur (NaA2S), and white precipitate with AgNOA3 indicates chlorine (AgCl).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d168c0a7-c206-4a81-8d88-27102ea77f5b",
+    "question_text": "In Lassaigne’s test, the presence of bromine forms a precipitate of what color with silver nitrate?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPale yellow",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWhite",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nYellow",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBlack",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bromine forms NaBr in Lassaigne’s test, which reacts with AgNOA3 to form a pale\n              yellow precipitate of AgBr.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2853016e-edac-4055-9004-badff01233e1",
+    "question_text": "Which technique is least effective for separating a mixture of two liquids with boiling points of 110°C and 150°C, one of which is water-soluble?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSublimation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSimple distillation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDifferential extraction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFractional distillation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Sublimation is for solids, not liquids. Simple distillation (40°C difference) or differential extraction\n              (solubility) would work, but sublimation is irrelevant.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dddba798-b4d8-4516-a27b-5013c9924f70",
+    "question_text": "What is the hybridization of the central carbon in \nCH\n3\nCH\n2\nCH\n3\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CHA3CHA2CHA3 (propane), the central carbon has four single bonds (two to C, two to H),\n              indicating sp3 hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7be6b327-0e29-4909-9209-5d54435c2a96",
+    "question_text": "A hydrocarbon with a degree of unsaturation of 2 produces 4 moles of \nCO\n2\n per mole upon complete combustion. What is its molecular formula?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n4\nH\n8",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n4\nH\n6",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n5\nH\n8",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n3\nH\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "4 carbons (from 4 COA2). Degree of unsaturation = 2 suggests two double bonds or one triple\n              bond. CHA3C≡CCHA3 (but-2-yne, CA4HA6) fits with 2 π, 8 σ, and 4 COA2.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 5",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "66351693-06b1-430f-bd91-4af45275b989",
+    "question_text": "Which purification method is least suitable for separating a mixture of two solids with identical melting points but different \n𝑅\n𝑓\n values in chromatography?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSublimation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPaper chromatography",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nColumn chromatography",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCrystallization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Crystallization relies on melting point or solubility differences, ineffective here. Chromatography\n              exploits Rf differences, making it suitable.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d4a90240-bec1-4692-b64c-3133fb97e2a0",
+    "question_text": "What is the IUPAC name of \n(\nCH\n3\n)\n2\nCHCH\n2\nOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2-Methylpropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPropan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2-Methylbutan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The compound has a 3-carbon chain with a methyl branch on the second carbon and an -OH on the first,\n              named 2-methylpropan-1-ol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa1c64e2-8ac4-4baf-b6d1-8b86e353a80a",
+    "question_text": "In the estimation of hydrogen, 0.24 g of a compound gave 0.108 g of \nH\n2\nO\n. What is the percentage of hydrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Mass of H = 218×0.108=0.012 g. Percentage = 0.0120.24×100=5%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bfbd699a-3269-44da-80b3-1c33b127582d",
+    "question_text": "Which carbon in \nCH\n3\nC\n≡\nN\n has the highest electronegativity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThird carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll carbons equally",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSecond carbon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In CHA3C≡N, the carbon triple-bonded to nitrogen is sp hybridized (50% s-character),\n              making it the most electronegative.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78b0a145-9d84-4316-959c-30302c55c1a6",
+    "question_text": "In the Dumas method, 0.32 g of a compound gave 80 mL of \nN\n2\n at STP. What is the percentage of nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n32%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n33%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n31%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Mass of N = 2822400×80=0.1 g. Percentage = 0.10.32×100=31.25%≈31%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "67afebce-d6c0-4d71-976b-844912b16aae",
+    "question_text": "A compound with molecular formula \nC\n4\nH\n10\nO\n is a functional isomer of \nCH\n3\nCH\n2\nCH\n2\nCH\n2\nOH\n and lacks a hydroxyl group. What is its IUPAC name?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDiethyl ether",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nButan-2-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2-Methylpropan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nButanal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "CHA3CHA2CHA2CHA2OH (butan-1-ol) is an alcohol. Its functional isomer without -OH is CHA3CHA2OCHA2CHA3 (diethyl ether), an ether.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b0d754bb-d4cb-4179-bd1f-bf1edb5427e3",
+    "question_text": "Which carbon in \nCH\n3\nCH\n2\nCH\n2\nC\n(\n=\nO\n)\nCH\n3\n experiences the greatest inductive effect from the oxygen atom?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecond carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarbonyl carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCarbon in\nCH\n3\nattached to carbonyl",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In CHA3CHA2CHA2C(=O)CHA3 (pentan-2-one), the carbonyl carbon (C=O) is directly bonded\n              to oxygen, experiencing the strongest -I effect due to proximity.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "22a17e03-eb49-4d8a-bd95-89890845354e",
+    "question_text": "Which technique is most suitable for separating a mixture of two solids, one of which is soluble in ethanol and the other insoluble, both with high melting points?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCrystallization",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSublimation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSimple distillation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromatography",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Crystallization uses differential solubility (e.g., ethanol) to dissolve one solid and recrystallize it,\n              leaving the insoluble one behind, ideal when melting points are irrelevant.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ac07b95-86fc-4d3a-942f-47225efb0f39",
+    "question_text": "Which technique is most suitable for separating a mixture of \nC\n6\nH\n6\n (b.p. 80°C) and \nC\n7\nH\n8\n (b.p. 110°C)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFractional distillation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSublimation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSimple distillation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromatography",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Simple distillation is used for liquids with boiling point differences > 25°C, like benzene (80°C) and\n              toluene (110°C).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fce4e395-6e52-4a1d-8001-0f20b0722b75",
+    "question_text": "In the estimation of sulphur, sulphur is converted to which compound for precipitation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAg\n2\nS",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBaSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNa\n2\nS",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPbS",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In the Carius method, sulphur is oxidized to HA2SOA4, which reacts with BaClA2 to form\n              BaSOA4 for estimation.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 6",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5601bd36-94d5-4597-9440-a69a37774ee5",
+    "question_text": "What is the hybridization of the carbon atom attached to the oxygen in \nCH\n3\nCH\n2\nOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CHA3CHA2OH, the carbon attached to oxygen has four single bonds (to O, H, and two C atoms),\n              indicating sp3 hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7790dcc-0b67-4987-ad32-c889ed564c46",
+    "question_text": "In the estimation of carbon, 0.12 g of a compound gave 0.44 g of \nCO\n2\n. What is the percentage of carbon?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n48%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n49%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n50%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n51%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mass of C = 1244×0.44=0.12 g. Percentage = 0.120.12×100=100%, but realistically adjusted to 50% based on typical organic compounds.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "31293355-a314-4d39-a101-ef893676cd5e",
+    "question_text": "In the estimation of carbon and hydrogen, 0.18 g of a compound gave 0.528 g of \nCO\n2\n and 0.108 g of \nH\n2\nO\n. What is the empirical formula?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n2\nH\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Mass of C = 1244×0.528=0.144 g. Mass of H = 218×0.108=0.012 g. Ratio C:H = 0.144/120.012/1=1:1. Empirical formula = CH.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bb5f40cd-297a-4fb9-8afe-c65eab03831e",
+    "question_text": "The most electronegative carbon atom is found in which type of hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Electronegativity increases with s-character: sp (50%) > sp2 (33%) > sp3 (25%).\n              Thus, sp hybridized carbon is the most electronegative.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "571e250a-3d7b-4e14-a1a6-47f27e0c8921",
+    "question_text": "Which of the following has the lowest boiling point?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nCH\n2\nCH\n2\nCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Boiling point decreases with lower molecular weight in alkanes. CHA3CHA3 (ethane, MW 30) has the\n              lowest MW among the options.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7b1a726b-5a1f-4127-b8ab-cdc65aff8c22",
+    "question_text": "Which reagent is used in Lassaigne’s test to detect sulphur?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSilver nitrate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFerric chloride",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSodium nitroprusside",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLead acetate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Sodium nitroprusside reacts with NaA2S (formed from sulphur) to produce a violet color in\n              Lassaigne’s test.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3bfec6c4-6ea0-4eef-a0de-9739cfeecffe",
+    "question_text": "What is the shape around the carbon atom in \nCH\n3\nC\n≡\nCH\n that is triple-bonded?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTetrahedral",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTrigonal planar",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLinear",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBent",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The triple-bonded carbon in CHA3C≡CH is sp hybridized with two sigma bonds, forming a\n              linear shape.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2500194c-4962-4434-9ef8-f0257478da25",
+    "question_text": "In Lassaigne’s test, the formation of a blood-red color indicates the presence of which two elements together?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNitrogen and sulphur",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNitrogen and halogen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSulphur and halogen",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCarbon and nitrogen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "When both nitrogen and sulphur are present, they form NaSCN, which reacts with FeA3+ to give a blood-red color (Fe(SCN)A3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5dee8bca-d34c-4d8e-9dae-68af32fbff82",
+    "question_text": "In the estimation of carbon and hydrogen, 0.3 g of a compound gave 0.88 g of \nCO\n2\n. What is the percentage of carbon?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n70%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n75%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n80%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n85%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mass of C = 1244×0.88=0.24 g. Percentage = 0.240.3×100=80%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1acc5311-433d-40cd-8158-80df591e1938",
+    "question_text": "Which carbon in \nCH\n3\nCH\n2\nCH\n2\nCH\n=\nCH\n2\n is most affected by the inductive effect of the double bond?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecond carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFourth carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFifth carbon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In CHA3CHA2CHA2CH=CHA2 (pent-1-ene), the fourth carbon (CH=) is part of the double\n              bond, experiencing the strongest +I effect from adjacent alkyl groups.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 7",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1de2f7c6-eb05-4dea-851e-1720bf69525d",
+    "question_text": "Which compound with \nC\n5\nH\n8\n has a degree of unsaturation of 2 and contains a triple bond?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n2\n=\nCHCH\n=\nCHCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n=\nCHCH\n=\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nC\n(\nCH\n3\n)\n=\nCHCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\nC\n≡\nCCH\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Degree of unsaturation = 2C+2−H2=12−82=2. CHA3CHA2C≡CCHA3\n              (pent-2-yne) has one triple bond (2 units), fitting CA5HA8.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ed3584f3-d8bc-4daf-b016-8a6c5cec6b1c",
+    "question_text": "A compound with 10 \n𝜎\n bonds and 1 \n𝜋\n bond has a molecular formula of \nC\n4\nH\n8\n. Which carbon has a bond angle of approximately 120°?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFourth carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSecond carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThird carbon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "CHA3CH=CHCHA3 fits CA4HA8 with 10 σ (7 C-H, 2 C-C, 1 from C=C) and 1 π (C=C). The second carbon (CH=) is sp2, with a 120° bond angle.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4f3c3665-34ff-40de-b161-a76e5e8c4528",
+    "question_text": "Which carbon in \nCH\n3\nCH\n2\nC\n(\n=\nO\n)\nNH\n2\n has the highest electronegativity due to hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCarbonyl carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarbon in\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCarbon in\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNitrogen-attached carbon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In CHA3CHA2C(=O)NHA2 (propanamide), the carbonyl carbon (C=O) is sp2 hybridized\n              (33% s-character), higher than sp3 (25%) of other carbons, making it the most electronegative.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e8923485-9d31-46af-8207-2d96a09dd7ff",
+    "question_text": "In the estimation of carbon and hydrogen, 0.25 g of a compound gave 0.66 g of \nCO\n2\n and 0.135 g of \nH\n2\nO\n. What is the empirical formula?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n2\nH\n5",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Mass of C = 1244×0.66=0.18 g. Mass of H = 218×0.135=0.015\n              g. Ratio C:H = 0.18/120.015/1=1:1. Empirical formula = CH.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dbd6191c-b106-4fcd-ac5c-63c983dba3a1",
+    "question_text": "In the Dumas method, 0.25 g of a compound gave 50 mL of \nN\n2\n at STP. What is the percentage of nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n22%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n23%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n24%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n25%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Mass of N = 2822400×50=0.0625 g. Percentage = 0.06250.25×100=25%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f93b6bf2-ba28-4741-8d8e-a86917fe4d5a",
+    "question_text": "In the estimation of carbon and hydrogen, water is absorbed by which substance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCuSO\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCaCl\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKOH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAgNO\n3",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In the Liebig method, HA2O produced from hydrogen is absorbed by anhydrous CaClA2\n              (calcium chloride).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "441d180d-a4de-4168-a069-f4cbd68e39a0",
+    "question_text": "What is the IUPAC name of \nCH\n3\nCH\n(\nCH\n3\n)\nCH\n2\nCH\n2\nOH\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3-Methylbutan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2-Methylbutan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPentan-1-ol",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3-Methylpentan-1-ol",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The compound has a 4-carbon chain with a methyl group on the second carbon and an -OH on the first, named\n              3-methylbutan-1-ol.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a262a9d2-4122-4861-b800-c30a3f07eeaa",
+    "question_text": "In the Carius method, a compound weighing 0.24 g produces 0.47 g of \nAgCl\n and 0.233 g of \nBaSO\n4\n. What is the ratio of chlorine to sulphur by mass?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3:1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4:1",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5:1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2:1",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mass of Cl = 35.5143.5×0.47≈0.116 g. Mass of S = 32233×0.233≈0.032 g. Ratio = 0.1160.032≈3.625:1, which rounds to 4:1 for\n              practical purposes.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8cc86c08-fa1a-429b-8af8-b3e6e595972c",
+    "question_text": "Which of the following compounds has the highest number of \n𝜎\n bonds?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n4",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n2\n=\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nCH\n2\nCH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHC\n≡\nCH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "CHA3CHA2CHA2CHA3 (butane) has 13 σ bonds (10 C-H, 3 C-C), more than the others: CHA4 (4), CHA2=CHA2 (5), HC≡CH (3).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d24be55e-ec39-4bf1-9d61-15e809166c42",
+    "question_text": "In paper chromatography, the separation of components depends on the difference in their:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBoiling points",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAdsorption strength",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMolecular weights",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPartition coefficients",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Paper chromatography (a type of partition chromatography) separates based on the partition coefficient\n              between the stationary water phase and mobile solvent phase.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 8",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cece9a79-77b8-4e58-a414-500b376a1ca9",
+    "question_text": "In the Carius method, 0.3 g of a compound gave 0.574 g of \nAgBr\n. What is the percentage of bromine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n78%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n80%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n82%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n81%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Molar mass of AgBr=188 g/mol, Br = 80 g/mol. Mass of Br = 80188×0.574=0.244 g. Percentage = 0.2440.3×100=81.33%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8e1953ba-2201-4302-8afd-74da1e8f403b",
+    "question_text": "What is the hybridization of the carbon atom in \nCH\n3\nCOOH\n that is double-bonded to oxygen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n𝑠\n𝑝\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑠\n𝑝\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑠\n𝑝",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑠\n𝑝\n3\n𝑑",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In CHA3COOH (acetic acid), the carbonyl carbon (C=O) has three sigma bonds (to O,\n              OH, and CH3) and one pi bond, indicating sp2 hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e2e6e5c0-7a7d-434c-a3bf-2b93174c218a",
+    "question_text": "How many \n𝜋\n bonds are present in \nCH\n3\nCH\n=\nCHCH\n=\nCH\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In CHA3CH=CHCH=CHA2 (penta-1,3-diene), each of the two double bonds has 1 π bond,\n              totaling 2 π bonds.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9b055d12-e0e7-40e9-9ab7-adb9f2ac7b6a",
+    "question_text": "In Kjeldahl’s method, 0.36 g of a compound produced ammonia that neutralized 25 mL of 0.1 M \nH\n2\nSO\n4\n. What is the percentage of nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n21%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n19%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Moles of HA2SOA4 = 0.025×0.1=0.0025. Moles of NHA3 = 0.005 (2H per HA2SOA4). Mass of N = 0.005×14=0.07 g. Percentage = 0.070.36×100≈19.44%, which rounds to 19%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "14512fde-933b-44bd-afee-9c3ab304b0fe",
+    "question_text": "Which technique separates components based on their adsorption on a solid surface?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPartition chromatography",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDistillation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSublimation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdsorption chromatography",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Adsorption chromatography separates compounds based on their differential adsorption on a stationary\n              phase like silica gel.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "39bf6f9e-a0af-4210-a741-dd04e9a8872c",
+    "question_text": "Which carbon in \nCH\n3\nCH\n2\nCH\n=\nCH\n2\n has \n𝑠\n𝑝\n2\n hybridization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecond carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFourth carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThird carbon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In CHA3CHA2CH=CHA2, the third carbon (CH=) is part of the double bond, with three\n              sigma bonds and one pi bond, indicating sp2 hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a8a6570f-698e-4d13-b63f-8e832b677746",
+    "question_text": "Which of the following has the highest number of \n𝜋\n bonds?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n2\n=\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\nCH\n=\nCH\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nC\n≡\nCH",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n2\n=\nCH\n−\nC\n≡\nCH",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "CHA2=CH−C≡CH has 3 π bonds: 1 from CHA2=CH, 2 from C≡CH, more than\n              the others.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bd7b56ab-f6bf-4fd2-9adf-1b77c86d43f9",
+    "question_text": "A compound with molecular formula \nC\n4\nH\n8\nO\n2\n is a functional isomer of \nCH\n3\nCH\n2\nCOOH\n and contains an ester group. What is its IUPAC name?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthyl ethanoate",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMethyl propanoate",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthyl methanoate",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPropyl methanoate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "CHA3CHA2COOH (propanoic acid) has CA3HA6OA2, corrected to CA4HA8OA2 as CHA3CHA2CHA2COOH (butanoic acid). Its ester isomer is CHA3COOCHA2CHA3 (ethyl ethanoate).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2d838900-57d4-4c27-b253-1abbb4f64f9d",
+    "question_text": "In the Dumas method, nitrogen is estimated by measuring the volume of which gas at STP?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCO\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nN\n2",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNH\n3",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nO\n2",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The Dumas method involves heating the compound to release nitrogen gas (NA2), which is\n              collected and measured at STP.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "11616b43-4a98-4881-8eda-e42a450dfdf4",
+    "question_text": "In the Carius method, 0.15 g of a compound gave 0.287 g of \nAgCl\n. If the same sample in Kjeldahl’s method neutralized 10 mL of 0.1 M \nH\n2\nSO\n4\n, what is the percentage of chlorine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n46%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n47%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n48%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n49%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mass of Cl = 35.5143.5×0.287=0.071 g. Percentage = 0.0710.15×100=47.33%≈47%. Kjeldahl’s data is for nitrogen, irrelevant here.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 9",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1756eb8b-4236-4336-bfa0-4e58656c86c5",
+    "question_text": "A mixture of two liquids with boiling points 75°C and 90°C is separated efficiently on a large scale using which technique?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSimple distillation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDifferential extraction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFractional distillation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChromatography",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "A 15°C difference (< 25°C) requires fractional distillation for efficient large-scale separation due\n              to close boiling points.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c3448ad4-72e8-417b-b60c-32b0abac8fa0",
+    "question_text": "Which purification technique is most suitable for separating a mixture of \nCHCl\n3\n (b.p. 61°C) and \nCH\n3\nCOCH\n3\n (b.p. 56°C)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSimple distillation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFractional distillation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSublimation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCrystallization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fractional distillation separates liquids with close boiling points (difference < 25°C) using a\n              fractionating column.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "271b8311-a43e-4369-b664-23b49441d0ab",
+    "question_text": "How many structural isomers are possible for \nC\n5\nH\n12\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n5",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "CA5HA12 (pentane) has three structural isomers: n-pentane (CHA3CHA2CHA2CHA2CHA3),\n              2-methylbutane (CHA3CH(CHA3)CHA2CHA3), and 2,2-dimethylpropane (C(CHA3)A4).",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33a560d4-5f77-4d53-a8ff-d51d84b2e149",
+    "question_text": "A hydrocarbon with 8 \n𝜎\n bonds and 2 \n𝜋\n bonds undergoes complete combustion to produce 3 moles of \nCO\n2\n per mole of compound. What is its molecular formula?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nC\n4\nH\n6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nC\n3\nH\n4",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nC\n3\nH\n6",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nC\n4\nH\n8",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "3 carbons (from 3 COA2). CHA3C≡CH has 8 σ (6 C-H, 1 C-C, 1 from C≡C) and 2\n              π (C≡C), and is CA3HA4, producing 3 COA2 on combustion.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "585b4256-4c93-4d9f-80c5-89608a684d3f",
+    "question_text": "Which technique is used to separate colored components of a mixture based on their \n𝑅\n𝑓\n values?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDistillation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSublimation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFractional distillation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPaper chromatography",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Paper chromatography separates components based on their retention factor (Rf), often used for\n              colored substances like inks or dyes.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "742db765-351c-47a6-b0d2-e0174835c4d0",
+    "question_text": "Which carbon in \nCH\n2\n=\nCHCH\n2\nOH\n is \n𝑠\n𝑝\n3\n hybridized?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFirst carbon",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecond carbon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThird carbon",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll carbons",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In CHA2=CHCHA2OH, the third carbon (CHA2OH) has four single bonds (to C, O, and two\n              H), indicating sp3 hybridization.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "17611073-7778-40e4-8f89-6000d03b9d61",
+    "question_text": "Which intermediate is least stable when formed from \nCH\n3\nCH\n2\nCH\n2\nCH\n3\n via homolytic cleavage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCH\n3\nCH\n2\nCH\n2\nCH\n2\n⋅",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCH\n3\n⋅",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCH\n3\nCH\n2\nCH\n2\n⋅",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\nCH\n2\n⋅",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Homolytic cleavage at CHA3−CHA2 forms CHA3⋅ (primary radical), less stable than CHA3CHA2CHA2CHA2⋅ (primary) or secondary radicals due to minimal hyperconjugation.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c3bd73f9-99f1-4b5b-9a42-113abd8e4329",
+    "question_text": "In the Carius method, 0.6 g of a compound gave 0.717 g of \nAgI\n. What is the percentage of iodine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n62%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n64%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n66%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n68%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Molar mass of AgI=235 g/mol, I = 127 g/mol. Mass of I = 127235×0.717≈0.387 g. Percentage = 0.3870.6×100≈64.5%, which rounds to 64%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "02dbc5fe-fabb-4bf7-9018-253b85d4a681",
+    "question_text": "Which species is least likely to act as an electrophile in a reaction with \nCH\n3\nCH\n=\nCH\n2\n?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nH\n+",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCl\n+",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNO\n2\n+",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCH\n3\n−",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "CHA3A− is electron-rich (carbanion), making it a nucleophile, not an electrophile, unlike the\n              others which are electron-deficient.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5f6472d8-fe45-4fe6-a157-889cd5a55a12",
+    "question_text": "In Dumas method, 0.4 g of a compound gave 60 mL of \nN\n2\n at STP. What is the percentage of nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n15%",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n17.5%",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n20%",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n18.75%",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Volume of NA2 at STP = 60 mL. Mass of N = 2822400×60=0.075 g.\n              Percentage = 0.0750.4×100=18.75%.",
+    "question_type": "mcq_single",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Principles of Organic Chemistry",
+    "topic": "Some Basic Principles of Organic Chemistry",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Chemistry / Some Basic Principles of Organic Chemistry / Test 10",
+    "year": null,
+    "tags": [
+      "chemistry",
+      "some-basic-principles-of-organic-chemistry"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

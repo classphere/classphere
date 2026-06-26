@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "1e200cea-c549-44db-a629-264a9b8bd737",
+    "question_text": "A transformer steps up \n220\nV\n to \n440\nV\n. If the primary current is \n10\nA\n, what is the secondary current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n5 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Power input = Power output: VpIp=VsIs.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "48a28b5b-c2b8-4fcc-9432-4e8afced5374",
+    "question_text": "What is the behavior of the impedance in a series LCR circuit at very high frequencies?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt behaves as predominantly inductive",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt behaves as predominantly capacitive",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt becomes purely resistive",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt approaches zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "At very high frequencies, XL=ωL becomes very large, while XC=1ωC becomes very small. The impedance Z=R2+(XL−XC)2 is dominated by XL, making the circuit behave as predominantly inductive.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "196554dd-75be-4456-b2c4-6581d1482a48",
+    "question_text": "In an AC circuit with only an inductor, what is the instantaneous power when the current is at its maximum?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZero",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMaximum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHalf the peak power",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNegative maximum",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In a purely inductive circuit, current lags voltage by 90°. When the current is at its maximum, the voltage is zero (since voltage leads by 90°), making the instantaneous power (P=VI) zero at that instant.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "01dc41c5-5767-4904-972b-48b11eb8e8b6",
+    "question_text": "A transformer has \n𝑁\n𝑝\n=\n550\n, \n𝑁\n𝑠\n=\n1100\n. If \n𝑉\n𝑝\n=\n110\nV\n (rms), what is the secondary voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n220 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n240 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n260 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "VsVp=NsNp.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "218a4834-101b-4b43-a038-0317f8f5824a",
+    "question_text": "A series LCR circuit with \n𝑅\n=\n100\nΩ\n, \n𝑋\n𝐿\n=\n130\nΩ\n, \n𝑋\n𝐶\n=\n70\nΩ\n has a \n300\nV\n (rms) source. What is the power dissipated?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n640 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n650 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n670 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n661.8 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Z=R2+(XL−XC)2=1002+(130−70)2=10000+3600=13600≈116.62Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d5f9f57-88ff-437d-9f33-60d22d6f3993",
+    "question_text": "A \n85\nmH\n inductor is connected to a \n230\nV\n, \n50\nHz\n source. What is the peak current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12.1 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.19 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.5 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "XL=ωL, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ade5cdd4-17f6-4fa2-b909-3fbfe3741feb",
+    "question_text": "In a series LCR circuit, under what condition does the circuit behave as if it has only resistance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWhen frequency is zero",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWhen inductive and capacitive reactances are equal",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWhen resistance is zero",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWhen capacitance is infinite",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In a series LCR circuit, the circuit behaves as purely resistive at resonance, where the inductive reactance equals the capacitive reactance (XL=XC). This cancels the reactive components, leaving only the resistance to determine the impedance.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5f81bcc5-9322-4d2b-a4f9-af4d4195bf90",
+    "question_text": "A \n254.6\nV\n (peak) AC source is connected to a \n90\nΩ\n resistor. What is the average power consumed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n360 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n380 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n400 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n420 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "RMS voltage: V=vm2=254.61.414≈180V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fb8c83e-74ec-4c88-9d8a-1ec647b89e0d",
+    "question_text": "A \n60\nmH\n inductor is connected to a \n220\nV\n, \n50\nHz\n AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n11 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n11.68 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.5 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "XL=ωL, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "348a03b0-ae41-4b09-8667-bf982c1c7e73",
+    "question_text": "In a series LCR circuit at resonance, what is the relationship between the inductive and capacitive reactances?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are equal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInductive reactance is greater",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCapacitive reactance is greater",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey are inversely proportional",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "At resonance in a series LCR circuit, the inductive reactance (XL) equals the capacitive reactance (XC). This balance cancels out the reactive components, making the impedance purely resistive and maximizing the current.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 1",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0d65c87b-2c06-4872-8b64-085880f80fa9",
+    "question_text": "A series LCR circuit with \n𝑅\n=\n80\nΩ\n, \n𝑋\n𝐿\n=\n100\nΩ\n, \n𝑋\n𝐶\n=\n40\nΩ\n has a \n240\nV\n (rms) source. What is the power dissipated?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n440 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n450 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n470 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n460.8 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Z=R2+(XL−XC)2=802+(100−40)2=6400+3600=10000=100Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "88e777d0-7a51-4f94-815f-5ca7747ef8d8",
+    "question_text": "A \n45\n𝜇\nF\n capacitor is connected to a \n110\nV\n, \n60\nHz\n AC source. What is the peak current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.64 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2.8 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "XC=1ωC, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "53929372-6135-4929-b381-741a7ffc8b1c",
+    "question_text": "What happens to the average power dissipated in an AC circuit with only a capacitor over one complete cycle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is maximum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is zero",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt depends on the frequency",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is half of the peak power",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In a purely capacitive AC circuit, the current leads the voltage by 90°. The instantaneous power\n              alternates between positive and negative, and over a complete cycle, these values cancel out, resulting in\n              zero average power dissipation. The capacitor stores and releases energy without dissipating it as heat.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e48494f7-5029-4ddc-aa4f-e704053b7b88",
+    "question_text": "A \n15\n𝜇\nF\n capacitor is connected to a \n110\nV\n, \n60\nHz\n source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.6 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.7 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.621 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "XC=1ωC, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e3f5fe04-0e5c-4f80-9584-16ac817a28b5",
+    "question_text": "In an AC circuit with only a resistor, how does the current behave relative to the applied voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is in phase with the voltage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt lags the voltage by 90°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt leads the voltage by 90°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is 180° out of phase with the voltage",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In a purely resistive AC circuit, the current and voltage oscillate in phase, meaning they reach their\n              peak, zero, and minimum values simultaneously. This occurs because a resistor does not introduce any phase\n              shift between voltage and current.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "237634ad-ad1d-4251-a610-210d024a0d81",
+    "question_text": "A transformer has \n𝑁\n𝑝\n=\n300\n, \n𝑁\n𝑠\n=\n150\n. If \n𝑉\n𝑠\n=\n120\nV\n (rms), what is the primary voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n220 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n260 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n240 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "VsVp=NsNp.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72a488db-a5cf-4eca-a7d5-2f597691e56e",
+    "question_text": "What is the significance of the rms value in specifying AC quantities?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt indicates the peak voltage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt measures the frequency",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt represents the equivalent DC value for power",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt shows the phase difference",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The rms (root mean square) value of an AC quantity (e.g., voltage or current) is the equivalent DC value\n              that produces the same average power in a resistive load. It accounts for the time-varying nature of AC,\n              making it a standard measure for power calculations.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f5dfe794-5eb6-440e-9ec4-63181cc44048",
+    "question_text": "A \n200\nV\n (rms) source supplies a \n80\nΩ\n resistor. What is the peak current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.2 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3.8 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.535 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "RMS current: I=VR=20080=2.5A.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6fd491eb-2d22-4c04-b2aa-4f9ea508572c",
+    "question_text": "A \n70\nmH\n inductor is connected to a \n110\nV\n, \n50\nHz\n AC source. What is the inductive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n21.98 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n25 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n28 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n30 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XL=ωL, ω=2πf.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a80bba30-203a-43fd-8e67-e7613af30937",
+    "question_text": "A \n226.3\nV\n (peak) AC source is connected to a \n80\nΩ\n resistor. What is the average power consumed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n320 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n340 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n360 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n380 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "RMS voltage: V=vm2=226.31.414≈160V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 2",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f2f4543e-a1d4-428d-a7b6-905970b5ff05",
+    "question_text": "A \n12\n𝜇\nF\n capacitor is connected to a \n230\nV\n, \n50\nHz\n source. What is the capacitive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n260 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n262 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n265.3 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n270 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "XC=1ωC, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ec010711-0451-4378-9a08-671b2857e0e4",
+    "question_text": "In a step-up transformer, how does the current in the secondary coil compare to the primary coil, assuming ideal conditions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is higher",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is lower",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is equal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In an ideal step-up transformer (where Vs>Vp and Ns>Np), power is conserved (VpIp=VsIs). Since the secondary voltage is higher, the secondary current must be lower than the\n              primary current (Is=Ip×NpNs), where NpNs<1.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "05375a78-6d28-4fee-830f-03024fcd2379",
+    "question_text": "A \n55\nmH\n inductor is connected to a \n230\nV\n, \n50\nHz\n AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n13.32 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n14 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n15 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "XL=ωL, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6acbb066-1a96-4921-a7cf-67e8f48a81f8",
+    "question_text": "A \n150\nΩ\n resistor is connected to a \n300\nV\n (peak) AC supply. What is the rms current in the circuit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.414 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.5 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.5 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Peak voltage: vm=300V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e20f53cb-6d5c-4c82-b587-60ab08844c9d",
+    "question_text": "A \n160\nV\n (rms) AC source supplies a \n80\nΩ\n resistor. What is the average power consumed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n300 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n320 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n340 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n360 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "RMS current: I=VR=16080=2A.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "125a262c-4868-4e0d-a6b8-67654fdfd866",
+    "question_text": "A \n120\nmH\n inductor is connected to a \n110\nV\n, \n50\nHz\n AC source. What is the inductive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n37.68 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n38 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n39 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n40 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XL=ωL, ω=2πf.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d7cf159d-b13b-4ed6-be51-c2f4861a0f48",
+    "question_text": "A series LCR circuit has \n𝐿\n=\n3.5\nH\n, \n𝐶\n=\n8\n𝜇\nF\n. What is the resonant angular frequency?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n188.98 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n190 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n195 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n200 rad/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "ω0=1LC.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f13d39f2-694c-4054-a161-9c0a0c79aa0f",
+    "question_text": "In a purely capacitive AC circuit, the current leads the voltage by what phase angle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n45°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n90°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n180°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "For a capacitor, i=imsin⁡(ωt+π2), v=vmsin⁡ωt.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "575d2831-5026-46e8-a290-cb0a243c04ba",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n40\nΩ\n, \n𝐿\n=\n5\nH\n, \n𝐶\n=\n80\n𝜇\nF\n. What is the resonant frequency in Hz?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7 Hz",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n8 Hz",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n9 Hz",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n10 Hz",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "ω0=1LC.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a384ccd7-e7a8-421c-94b8-73fd79a004ca",
+    "question_text": "In an AC circuit with a series combination of resistor, inductor, and capacitor, what is the condition for the circuit to be purely resistive?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWhen resistance is zero",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWhen inductance is infinite",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWhen capacitance is zero",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWhen inductive and capacitive reactances cancel",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "For an LCR series circuit to be purely resistive, the net reactance must be zero (XL−XC=0),\n              which occurs at resonance when XL=XC. This makes the impedance equal to the resistance (Z=R), and the circuit behaves as if only resistance is present.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 3",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6bc3c549-aa45-4609-93c2-2108daadb798",
+    "question_text": "A transformer has \n𝑁\n𝑝\n=\n400\n, \n𝑁\n𝑠\n=\n800\n. If \n𝑉\n𝑝\n=\n120\nV\n (rms), what is the secondary voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n240 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n260 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n300 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "VsVp=NsNp.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3841c6a1-4183-4f54-8313-2a6a332ca787",
+    "question_text": "A \n100\nΩ\n resistor is connected to a \n220\nV\n, \n50\nHz\n AC supply. What is the average power consumed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n450 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n484 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n500 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n520 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Average power: P=I2R, where I=VR.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ac45afcd-76d3-4982-a8ce-dd8288834d37",
+    "question_text": "In an AC circuit with only a capacitor, why does the current lead the voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBecause of high resistance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBecause of inductance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBecause current charges the capacitor before voltage builds",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBecause frequency is low",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In a capacitor, current flows to charge or discharge the plates before the voltage across it changes.\n              This causes the current to reach its maximum 90° ahead of the voltage, as the voltage builds up after the\n              current starts flowing.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ef619d9-9e7b-4a4a-b224-e1c4502cbb62",
+    "question_text": "A series LCR circuit with \n𝑅\n=\n40\nΩ\n, \n𝑋\n𝐿\n=\n50\nΩ\n, \n𝑋\n𝐶\n=\n30\nΩ\n has a \n120\nV\n (rms) source. What is the power dissipated?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n250 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n270 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n300 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n287.3 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Z=R2+(XL−XC)2=402+(50−30)2=1600+400=2000≈44.72Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3f36279d-36a8-4dc9-9b6e-718758931b45",
+    "question_text": "A \n60\nΩ\n resistor and \n40\n𝜇\nF\n capacitor are in series with a \n230\nV\n, \n50\nHz\n source. What is the impedance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n95 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n97 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n100 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n99.8 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "XC=1ωC=1314×40×10−6≈79.6Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef57b79b-6a3a-4fbd-bb2e-80da13731d77",
+    "question_text": "A \n14\n𝜇\nF\n capacitor is connected to a \n230\nV\n, \n50\nHz\n AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.01 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.2 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.3 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.5 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XC=1ωC, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a3eeae4a-21b4-43f9-b74a-4df32443070f",
+    "question_text": "A \n100\nΩ\n resistor and \n50\n𝜇\nF\n capacitor are in series with a \n220\nV\n, \n50\nHz\n source. What is the impedance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n110 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n115 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n120 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n118.7 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "XC=1ωC=1314×50×10−6≈63.7Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a7949f24-f26e-4611-b439-a34579344402",
+    "question_text": "A \n9\n𝜇\nF\n capacitor is connected to a \n230\nV\n, \n50\nHz\n source. What is the capacitive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n340 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n350 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n353.7 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n360 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "XC=1ωC, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "26d2ee18-a733-4c9c-a666-78dc0eb0d9aa",
+    "question_text": "A transformer has \n𝑁\n𝑝\n=\n400\n, \n𝑁\n𝑠\n=\n800\n. If \n𝑉\n𝑝\n=\n120\nV\n (rms), what is the secondary voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n220 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n240 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n260 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n280 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "VsVp=NsNp.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ad086515-5799-4d80-9b9b-32bab6c42137",
+    "question_text": "In a series LCR circuit, what happens to the total voltage across the inductor and capacitor at resonance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt equals the source voltage",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is maximum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is zero",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt doubles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "At resonance, XL=XC, and the voltages across the inductor (VL=IXL) and capacitor (VC=IXC) are equal in magnitude but 180° out of phase. Thus, they cancel each other, making the net\n              voltage across the LC combination zero.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 4",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b80fe51-89aa-4dcb-86b7-121e13261290",
+    "question_text": "A \n70\nmH\n inductor is connected to a \n230\nV\n, \n60\nHz\n source. What is the peak current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n12 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n12.2 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n12.33 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n12.5 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "XL=ωL, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3ea8949-a0d9-46ce-b241-023bb2e157d9",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n20\nΩ\n, \n𝑋\n𝐿\n=\n35\nΩ\n, \n𝑋\n𝐶\n=\n55\nΩ\n. What is the phase angle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n40°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n42°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n45°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n50°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "tan⁡ϕ=XC−XLR=55−3520=1.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "30ea790f-44ea-4aa3-9ad4-6a2b3363913d",
+    "question_text": "A transformer steps down \n440\nV\n to \n220\nV\n. If the secondary current is \n8\nA\n, what is the primary current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n5 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "VpIp=VsIs.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "74f217e0-af25-4f16-bbc4-1a7d54834ae5",
+    "question_text": "An AC source provides a peak voltage of \n424.2\nV\n to a \n200\nΩ\n resistor. What is the average power consumed?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n450 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n500 W",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n550 W",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n600 W",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "RMS voltage: V=vm2=424.21.414=300V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f2213f3-e234-4190-879f-b69ca4712a8d",
+    "question_text": "A \n27\n𝜇\nF\n capacitor is connected to a \n220\nV\n, \n50\nHz\n source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.7 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.8 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.9 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.867 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "XC=1ωC, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aa42794e-66f2-4128-a309-80e3d5236c20",
+    "question_text": "A \n25\n𝜇\nF\n capacitor is connected to a \n110\nV\n, \n60\nHz\n AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.036 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.2 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.5 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.8 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XC=1ωC, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fac0fbc6-a4a0-4aa9-a4d7-e29f6038a216",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n40\nΩ\n, \n𝑋\n𝐿\n=\n60\nΩ\n, \n𝑋\n𝐶\n=\n20\nΩ\n. What is the power factor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.65",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.707",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.75",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Z=R2+(XL−XC)2=402+(60−20)2=1600+1600=3200≈56.57Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ccf411c5-e3c0-43e0-9c63-ea9d122f94f0",
+    "question_text": "A \n10\n𝜇\nF\n capacitor is connected to a \n110\nV\n, \n60\nHz\n AC supply. What is the peak current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.5 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.585 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.65 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.7 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "XC=1ωC, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "24459212-6fc4-4f37-ba31-89b385502791",
+    "question_text": "A \n85\nmH\n inductor is connected to a \n230\nV\n, \n50\nHz\n AC source. What is the inductive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n26.69 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n28 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n32 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XL=ωL, ω=2πf.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "07c149fc-a4b9-44ec-8244-92396564ccbd",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n110\nΩ\n, \n𝑋\n𝐿\n=\n90\nΩ\n, \n𝑋\n𝐶\n=\n70\nΩ\n. What is the impedance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n110 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n111.8 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n115 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n120 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Z=R2+(XL−XC)2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 5",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ed2eb11d-a131-412b-8a8a-0d083c9892cb",
+    "question_text": "In an AC circuit with a series combination of resistor and capacitor, what happens to the phase difference if the frequency approaches infinity?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt increases to 90°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt remains constant",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt increases to 180°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt approaches 0°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In an RC series circuit, ϕ=tan−1⁡(XCR), where XC=1ωC. As frequency (ω) approaches infinity, XC approaches zero, making\n              ϕ approach 0°, so the circuit becomes nearly resistive.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b8012585-6874-46a0-8dcb-69a43f42f1e6",
+    "question_text": "A series LCR circuit with \n𝑅\n=\n25\nΩ\n is at resonance with a \n200\nV\n (rms) source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7.5 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.8 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n8 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8.2 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "At resonance, Z=R=25Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0cfd0869-f13d-4592-8161-cce0f4da3cbb",
+    "question_text": "A \n18\n𝜇\nF\n capacitor is connected to a \n110\nV\n, \n60\nHz\n AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.747 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.8 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.9 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XC=1ωC, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c699353f-ceb2-46d9-b8d8-7f1a7f371838",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n100\nΩ\n, \n𝑋\n𝐿\n=\n80\nΩ\n, \n𝑋\n𝐶\n=\n60\nΩ\n. What is the impedance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n102 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n105 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n110 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Z=R2+(XL−XC)2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "64bfeb14-997c-4571-9a3d-f3c986497f53",
+    "question_text": "A \n30\n𝜇\nF\n capacitor is connected to a \n220\nV\n, \n50\nHz\n AC source. What is the peak current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.8 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.93 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.2 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "XC=1ωC, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "382da71d-85cc-4a8d-affc-2ded8cc83996",
+    "question_text": "What is the effect on the power factor of an LCR series circuit when the frequency is decreased below resonance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt increases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt decreases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt remains 1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt becomes zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Below resonance, XC>XL, making the circuit capacitive. The phase angle ϕ=tan−1⁡(XC−XLR) is positive, and the power factor cos⁡ϕ decreases (less\n              than 1) as the circuit becomes less resistive.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "121fdf2a-23ab-454a-8451-8015b41b73f4",
+    "question_text": "A transformer has \n𝑁\n𝑝\n=\n100\n and \n𝑁\n𝑠\n=\n200\n. If the primary voltage is \n220\nV\n (rms), what is the secondary voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n400 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n440 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n480 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n500 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "VsVp=NsNp.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cad8d8de-6852-4569-b846-bec6405609dc",
+    "question_text": "A \n50\nmH\n inductor is connected to a \n110\nV\n, \n60\nHz\n AC source. What is the inductive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n18.84 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n20 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n22 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n25 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XL=ωL, where ω=2πf.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78ed801a-b1bf-4455-977f-a185c9cc30bb",
+    "question_text": "What is the average power dissipated in a purely capacitive circuit over one complete cycle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0 W",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n𝑖\n𝑚\n𝑣\n𝑚\n2\nW",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n𝑖\n𝑚\n𝑣\n𝑚\nW",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n𝑣\n𝑚\n2\n𝑋\n𝐶\nW",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Power: pC=iv=imvmcos⁡(ωt)sin⁡(ωt)=imvm2sin⁡(2ωt).",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "446d2e4a-73f8-4429-8c4a-2199f7eba4bc",
+    "question_text": "A \n80\nmH\n inductor is connected to a \n230\nV\n, \n60\nHz\n AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7.5 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.63 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.8 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n8 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "XL=ωL, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 6",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ac06b43f-21fe-4351-93f5-509a294cae86",
+    "question_text": "In an AC circuit with a resistor and inductor in series, what happens to the power factor if the inductance is increased?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt increases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt remains constant",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt becomes 1",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt decreases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In an RL series circuit, power factor cos⁡ϕ=RZ, where Z=R2+XL2\n              and XL=ωL. Increasing inductance increases XL, which increases Z, reducing cos⁡ϕ (closer to 0), as the circuit becomes more inductive.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "da3a794a-b7f5-489e-b927-d4dc3e1487f4",
+    "question_text": "A \n8\n𝜇\nF\n capacitor is connected to a \n110\nV\n, \n60\nHz\n source. What is the capacitive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n320 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n325 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n331.6 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n340 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "XC=1ωC, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ece55a3-f6f6-409c-b628-b1fc89001f97",
+    "question_text": "What happens to the current in a purely inductive AC circuit when the frequency of the source decreases?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt decreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt remains constant",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt increases",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt becomes zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In a purely inductive circuit, XL=ωL, and current I=VXL. Decreasing\n              frequency reduces ω, lowering XL, which increases the current since I is inversely\n              proportional to XL.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3c3de248-95fd-403a-b27d-0d9dc2ab1cd2",
+    "question_text": "A sinusoidal voltage of peak value \n283\nV\n is applied to a \n5\nΩ\n resistor. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n35 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n40 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n45 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n50 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "RMS voltage: V=vm2=2832≈200V.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fb7e8b2-3d40-4b7c-b661-aa0992fe0dce",
+    "question_text": "What is the key requirement for an AC circuit to exhibit resonance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPresence of both inductance and capacitance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHigh resistance",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nConstant voltage source",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nZero frequency",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Resonance in an AC circuit requires both inductance and capacitance to be present (e.g., in an LCR\n              circuit). This allows the inductive and capacitive reactances to balance at a specific frequency, a\n              condition not possible with only one reactive component.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ba87f619-a13c-4e38-98e3-83a06a9bd65e",
+    "question_text": "A \n15\n𝜇\nF\n capacitor is connected to a \n220\nV\n, \n50\nHz\n source. What is the capacitive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n212 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n220 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n230 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "XC=1ωC, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc380433-59d4-4752-9220-409baf538126",
+    "question_text": "A \n55\nmH\n inductor is connected to a \n110\nV\n, \n60\nHz\n source. What is the peak current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n7 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n7.2 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n7.51 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n7.8 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "XL=ωL, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "286b8c46-83c1-471c-b5eb-9b2927e171ec",
+    "question_text": "What is the role of a capacitor in improving the power factor of an AC circuit with an inductive load?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt increases resistance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt reduces frequency",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt increases inductance",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt counteracts the lagging current",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "An inductive load causes the current to lag the voltage, reducing the power factor. Adding a capacitor in\n              parallel introduces a leading current that counteracts the lagging current, bringing the net phase\n              difference closer to zero, thus improving the power factor.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b89f1cfc-717d-46a4-9ec7-a2fe8b514ea0",
+    "question_text": "A \n90\nmH\n inductor is connected to a \n220\nV\n, \n60\nHz\n AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n6.2 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n6.49 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n6.6 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n6.8 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "XL=ωL, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "952fdfb8-1e84-4733-817c-cfbeedccd45a",
+    "question_text": "A series LCR circuit has \n𝐿\n=\n4\nH\n, \n𝐶\n=\n10\n𝜇\nF\n. What is the resonant angular frequency?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n158.1 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n160 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n165 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n170 rad/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "ω0=1LC.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 7",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e3e4d8b9-2be4-42ba-9f51-ca4a237cef1c",
+    "question_text": "What is the physical significance of the term \"wattless current\" in an AC circuit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is the current with maximum power",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt is the current in a resistive circuit",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt is the current that heats the circuit",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt is the current that does not contribute to average power",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "\"Wattless current\" refers to the component of current in a purely reactive (inductive or capacitive) AC\n              circuit that is 90° out of phase with the voltage. It does not contribute to average power dissipation, as\n              power is zero when cos⁡90°=0, hence \"wattless.\"",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "964e4290-c67c-4932-8f26-8a77bd4a68d1",
+    "question_text": "A \n90\nmH\n inductor is connected to a \n220\nV\n, \n50\nHz\n AC source. What is the inductive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n25 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n28.26 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n30 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n32 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XL=ωL, ω=2πf.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "def77ba9-1134-422e-8083-8598e1b80bef",
+    "question_text": "A series LCR circuit has \n𝐿\n=\n8\nH\n, \n𝐶\n=\n5\n𝜇\nF\n. What is the resonant angular frequency?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n158.1 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n160 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n170 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n180 rad/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "ω0=1LC.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8bfc7a6c-fdcb-4749-80c5-8b61c2e9ee37",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n40\nΩ\n, \n𝑋\n𝐿\n=\n65\nΩ\n, \n𝑋\n𝐶\n=\n25\nΩ\n. What is the power factor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.65",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.707",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.75",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Z=R2+(XL−XC)2=402+(65−25)2=1600+1600=3200≈56.57Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e90abe5-20d8-4ef6-9fc4-774386243657",
+    "question_text": "A \n40\n𝜇\nF\n capacitor is connected to a \n220\nV\n, \n50\nHz\n source. What is the capacitive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n75 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n78 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n79.6 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n82 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "XC=1ωC, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d0881ff0-225e-4a44-965c-7108c55fe2f0",
+    "question_text": "A \n16\n𝜇\nF\n capacitor is connected to a \n230\nV\n, \n50\nHz\n AC source. What is the peak current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.5 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.63 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.7 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.8 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "XC=1ωC, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c5104002-86e9-4c76-bd1a-3305929f81af",
+    "question_text": "A \n95\nmH\n inductor is connected to a \n110\nV\n, \n50\nHz\n AC source. What is the inductive reactance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n29.83 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n30 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n32 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n35 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XL=ωL, ω=2πf.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "88f56ddb-5f18-4bef-b3da-e231664820b0",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n30\nΩ\n, \n𝑋\n𝐿\n=\n50\nΩ\n, \n𝑋\n𝐶\n=\n20\nΩ\n. What is the power factor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.65",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.707",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.75",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Z=R2+(XL−XC)2=302+(50−20)2=900+900=1800≈42.43Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9bd58e98-ef1f-4f39-9182-72390ee4d3cd",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n30\nΩ\n, \n𝑋\n𝐿\n=\n40\nΩ\n, \n𝑋\n𝐶\n=\n60\nΩ\n. What is the phase angle?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n30°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n32°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n33.7°",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n35°",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "tan⁡ϕ=XC−XLR=60−4030=2030=0.667.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e8c5049-e303-443a-ab2c-35c3345f6678",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n90\nΩ\n, \n𝑋\n𝐿\n=\n70\nΩ\n, \n𝑋\n𝐶\n=\n50\nΩ\n. What is the impedance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n90 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n92.2 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n95 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n100 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Z=R2+(XL−XC)2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 8",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0f4f99c5-61cc-48b0-899e-9ed589dcaf70",
+    "question_text": "In an AC circuit with only an inductor, what is the phase relationship between the current and the voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCurrent lags voltage by 90°",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCurrent leads voltage by 90°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCurrent is in phase with voltage",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCurrent is 180° out of phase with voltage",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In a purely inductive AC circuit, the current lags the voltage by 90°. This is because the inductor\n              opposes changes in current, causing the current to reach its peak after the voltage.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c5c0d2ca-a527-47c5-b2ed-b9cd5b66a965",
+    "question_text": "A transformer has \n𝑁\n𝑝\n=\n500\n, \n𝑁\n𝑠\n=\n250\n. If \n𝑉\n𝑠\n=\n120\nV\n (rms), what is the primary voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n220 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n230 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n250 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n240 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "VsVp=NsNp.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a24f07d6-6274-495e-9689-3c8f4b18e0cd",
+    "question_text": "A series LCR circuit with \n𝑅\n=\n60\nΩ\n is at resonance with a \n240\nV\n (rms) source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n3.5 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n3.8 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.5 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "At resonance, Z=R=60Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4bf72025-60b7-4daa-b017-0d66617400c3",
+    "question_text": "A transformer has \n𝑁\n𝑝\n=\n800\n, \n𝑁\n𝑠\n=\n400\n. If \n𝑉\n𝑠\n=\n110\nV\n (rms), what is the primary voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n200 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n210 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n230 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n220 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "VsVp=NsNp.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "042c4ff8-6131-4de9-acb5-bce78265ebc6",
+    "question_text": "A \n70\nΩ\n resistor and \n30\n𝜇\nF\n capacitor are in series with a \n220\nV\n, \n50\nHz\n source. What is the impedance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n120 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n125 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n130 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n127.3 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "XC=1ωC=1314×30×10−6≈106.1Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78581922-4f18-4666-9056-9a3e500f8963",
+    "question_text": "A \n230\nV\n (rms) source supplies a \n115\nΩ\n resistor. What is the peak current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2.5 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.7 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2.828 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "RMS current: I=VR=230115=2A.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "13149ccf-0a8f-4f93-beb5-82c9d7af2d50",
+    "question_text": "A \n22\n𝜇\nF\n capacitor is connected to a \n220\nV\n, \n50\nHz\n AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.52 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.6 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.8 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n2 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XC=1ωC, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4165726d-c0b9-4139-918f-dc4a2f5fc4f8",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n35\nΩ\n, \n𝑋\n𝐿\n=\n60\nΩ\n, \n𝑋\n𝐶\n=\n25\nΩ\n. What is the power factor?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n0.6",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n0.65",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n0.707",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n0.75",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Z=R2+(XL−XC)2=352+(60−25)2=1225+1225=2450≈49.5Ω.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fee99f3-b6f3-490a-8aaf-a33ce35667bf",
+    "question_text": "In an LCR series circuit, what happens to the circuit’s behavior when the frequency is significantly above the resonant frequency?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt becomes purely resistive",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt becomes predominantly capacitive",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt becomes predominantly inductive",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt stops conducting",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Above resonance, XL=ωL becomes much larger than XC=1ωC, making the\n              net reactance positive. The circuit behaves as predominantly inductive, with the current lagging the\n              voltage.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "20d24263-8743-4d42-bcae-6679f5fdc742",
+    "question_text": "In an AC circuit with only a capacitor, what happens to the impedance if the capacitance is decreased?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt decreases",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt increases",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt remains constant",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt becomes zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In a purely capacitive circuit, impedance is XC=1ωC. Decreasing capacitance (C) increases XC because they are inversely proportional, thus increasing the impedance.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 9",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fcb75eca-4b73-4aee-bf7a-4ae41eb1d663",
+    "question_text": "A transformer has \n𝑁\n𝑝\n=\n450\n, \n𝑁\n𝑠\n=\n900\n. If \n𝑉\n𝑝\n=\n120\nV\n (rms), what is the secondary voltage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n220 V",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n240 V",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n260 V",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n280 V",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "VsVp=NsNp.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "93b4e4bf-63e0-4882-8730-08e79193f0f7",
+    "question_text": "A \n65\nmH\n inductor is connected to a \n110\nV\n, \n60\nHz\n AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n4.2 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n4.49 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n4.6 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n4.8 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "XL=ωL, ω=2π×60=376.8rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9ddc0a29-3fd6-48f1-b3b0-2d2a2d5343f4",
+    "question_text": "A \n21\n𝜇\nF\n capacitor is connected to a \n230\nV\n, \n50\nHz\n AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n1.517 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n1.6 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n1.7 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n1.8 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "XC=1ωC, ω=2π×50=314rad/s.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9f9dabc8-ebfb-4e65-a689-929c866c89f2",
+    "question_text": "A \n100\nW\n bulb is connected to a \n110\nV\n (rms) AC supply. What is the resistance of the bulb?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n121 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n130 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n150 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Average power: P=V2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6cf76232-a7e7-492c-82c6-bff7885a1505",
+    "question_text": "A series LCR circuit has \n𝐿\n=\n2\nH\n, \n𝐶\n=\n50\n𝜇\nF\n. What is the resonant angular frequency?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n100 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n120 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n150 rad/s",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n200 rad/s",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Resonant frequency: ω0=1LC.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dad572d0-b256-43e8-a52f-148755e6180a",
+    "question_text": "A series LCR circuit has \n𝑅\n=\n130\nΩ\n, \n𝑋\n𝐿\n=\n110\nΩ\n, \n𝑋\n𝐶\n=\n90\nΩ\n. What is the impedance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n130 Ω",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n131.5 Ω",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n135 Ω",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n140 Ω",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Z=R2+(XL−XC)2.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9904761a-b0e6-4aa7-bb32-3af6668abec2",
+    "question_text": "A \n80\nΩ\n resistor is connected to a \n160\nV\n (rms) AC source. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n2 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n2.5 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n3 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n3.5 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "RMS current: I=VR.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8f6d7069-f098-46de-917f-59e922ecda55",
+    "question_text": "In a series LCR circuit at resonance, the power dissipated is \n4800\nW\n with \n𝑅\n=\n3\nΩ\n. What is the rms current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\n35 A",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\n40 A",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n45 A",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\n50 A",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "At resonance, Z=R, and power P=I2R.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "40ba3432-7b88-47e3-be21-22e9c4339bff",
+    "question_text": "What is the primary reason AC voltage is preferred over DC voltage for long-distance power transmission?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt can be transformed to different voltages easily",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt has a constant magnitude",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt does not require conductors",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt generates less heat",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "AC voltage is preferred for long-distance power transmission because it can be easily stepped up or down\n              using transformers. This allows for high-voltage transmission to reduce energy losses due to resistance,\n              followed by stepping down to safer levels for distribution.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6574696d-3763-4904-aacf-1c4615b5e901",
+    "question_text": "Why does an AC circuit with only an inductor exhibit a \"wattless\" current?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBecause the inductor has high resistance",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBecause the phase difference is 90°",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBecause the current is constant",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBecause the voltage is zero",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In a purely inductive AC circuit, the current lags the voltage by 90°. The power factor (cos⁡90∘=0) is zero, meaning no average power is dissipated; the current is \"wattless\" because it only stores\n              and releases energy without consuming it.",
+    "question_type": "mcq_single",
+    "subject": "Physics",
+    "chapter": "Alternating Current",
+    "topic": "Alternating Current",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Physics / Alternating Current / Test 10",
+    "year": null,
+    "tags": [
+      "physics",
+      "alternating-current"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

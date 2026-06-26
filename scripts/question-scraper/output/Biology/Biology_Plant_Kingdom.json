@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "4c6b381e-4f45-4163-b10c-45064e37f612",
+    "question_text": "Which algae produces agar, commonly used for microbial culture?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nUlothrix",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGelidium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChara",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEctocarpus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gelidium, a red alga, is used for commercial production of agar, a culture medium for microbes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5638888c-cee4-4f96-9f79-48ac9314e79c",
+    "question_text": "Which of the following structures helps mosses absorb and retain water?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLeaves",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCapsules",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhizoids",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProtonema",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Rhizoids in mosses function like roots, helping in water absorption and anchorage to the substrate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c018710c-fd64-4a36-99ec-71b880f205de",
+    "question_text": "Which part of the gymnosperm seed provides nourishment to the developing embryo?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEndosperm",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCotyledon",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPericarp",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOvule",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In gymnosperms, the endosperm, which is haploid, provides nourishment to the developing embryo.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8a1082b8-ac44-44f5-958d-f36c23719102",
+    "question_text": "Which of the following statements about Chlorophyceae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae have two unequal laterally attached flagella.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSexual reproduction in Chlorophyceae can be isogamous.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe stored food in Chlorophyceae is laminarin.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChlorophyceae are brown algae with fucoxanthin.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sexual reproduction in Chlorophyceae can be isogamous, as seen in Ulothrix, with similar-sized gametes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f63d9345-47af-4cfb-a0f9-1ca2faa5e16c",
+    "question_text": "Which of the following statements about algae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlgae are heterotrophic and lack photosynthetic pigments.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLaminaria, a brown alga, is used as food by humans.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll algae have complex plant bodies like gymnosperms.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlgae reproduce only sexually by gamete fusion.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Laminaria, a marine brown alga, is among the 70 species of algae used as food.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d674d73a-3d67-42a4-86c5-3b988ccfcc32",
+    "question_text": "Which of the following statements about Chlorophyceae is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae have flagellated zoospores produced in zoosporangia.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTheir cell wall has an outer layer of pectose.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChlorophyceae include filamentous forms like Ulothrix.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChlorophyceae are red algae with phycoerythrin as the dominant pigment.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Chlorophyceae are green algae with chlorophyll a and b, not red algae with phycoerythrin.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1a80cc02-891f-4b15-abb7-eb971781e558",
+    "question_text": "Which of the following statements about liverworts is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiverworts have a thalloid gametophyte in species like Marchantia.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe sporophyte in liverworts is attached to the gametophyte.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLiverworts produce gemmae in gemma cups for asexual reproduction.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe antherozoids in liverworts are non-motile.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Antherozoids in liverworts are biflagellate and motile, not non-motile.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b1f217b7-cc15-4145-b5fd-457aa45f55a9",
+    "question_text": "In which group of plants do microspores and megaspores develop into separate male and female gametophytes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBryophytes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPteridophytes and Gymnosperms",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAlgae",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of these",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Some pteridophytes (e.g., Selaginella, Salvinia) show heterospory, where microspores form\n              male gametophytes and megaspores form female gametophytes. All gymnosperms are also heterosporous. Hence,\n              the correct answer is \"Pteridophytes and Gymnosperms\".",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a2124818-ce37-4413-b5e8-fcf1bc3726c4",
+    "question_text": "Which plant group shows embryo retention but lacks vascular tissues?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlgae",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBryophytes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPteridophytes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGymnosperms",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bryophytes show embryo retention but do not have vascular tissues, unlike pteridophytes and seed plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a4f867be-bd09-4e0c-89fa-b781c8852aad",
+    "question_text": "Which of the following statements about gymnosperms is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGymnosperms produce seeds enclosed in fruits.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe male and female gametophytes in gymnosperms are free-living.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGymnosperms are heterosporous, producing microspores and megaspores.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGymnosperms lack pollen grains.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Gymnosperms are heterosporous, forming microspores (pollen grains) and megaspores in cones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7737b42c-b596-4ff5-ab51-19af193593e6",
+    "question_text": "Which of the following pteridophytes is heterosporous?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSelaginella",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEquisetum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLycopodium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdiantum",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Selaginella is a heterosporous pteridophyte, producing both megaspores and microspores.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b8720a40-677d-4e60-8de9-b762b3e04a53",
+    "question_text": "Which classification system is based on the natural affinities of organisms and considers both external and internal features?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nArtificial classification",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNumerical taxonomy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNatural classification",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhylogenetic classification",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The natural classification system considers natural affinities and includes both external and internal\n              features such as anatomy and embryology.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0bbe3b27-988e-477b-9560-9fe1a0d8cc7b",
+    "question_text": "In liverworts, which structure contains gemmae for asexual reproduction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCapsule",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGemma cup",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAntheridium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProtonema",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In liverworts like Marchantia, gemmae are produced in gemma cups, which aid in asexual reproduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7f0ad094-a7c1-49dc-b159-3633caf19adc",
+    "question_text": "Which of the following statements about mosses is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSphagnum moss provides peat used as fuel.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVegetative reproduction in mosses occurs by budding in the secondary protonema.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe sporophyte in mosses is less elaborate than in liverworts.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMosses reduce soil erosion by forming dense mats.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The sporophyte in mosses is more elaborate than in liverworts, with a foot, seta, and capsule.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ad3e31e5-d2f7-4ad3-a367-e9a1daed01f0",
+    "question_text": "Which of the following statements about Chlorophyceae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae have fucoxanthin as their dominant pigment.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSome Chlorophyceae store food in the form of oil droplets.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChlorophyceae reproduce asexually only by fragmentation.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTheir cell walls are made of algin and pectin.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Some Chlorophyceae store food as oil droplets in addition to starch in pyrenoids.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "68e9b1e0-56d3-4458-96ad-224cb38ae6c5",
+    "question_text": "Which of the following statements about Rhodophyceae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRhodophyceae have flagellated zoospores for asexual reproduction.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAgar, used in microbiology, is obtained from red algae like Gelidium.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhodophyceae store food as starch in pyrenoids.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTheir dominant pigment is chlorophyll a alone.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Agar, a commercial product, is obtained from Rhodophyceae members like Gelidium and Gracilaria.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fba87880-9fc2-4ea0-972c-ed988f152735",
+    "question_text": "Which of the following statements about Rhodophyceae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRhodophyceae have flagellated gametes for sexual reproduction.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTheir cell wall contains pectin and polysulphate esters.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhodophyceae store food as laminarin and mannitol.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe dominant pigment in Rhodophyceae is chlorophyll c.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The cell wall of Rhodophyceae includes cellulose, pectin, and polysulphate esters.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "59adb970-8c97-45c5-9341-2763fa4fdee5",
+    "question_text": "Which group of plants is considered the \"amphibians of the plant kingdom\"?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlgae",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBryophytes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPteridophytes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGymnosperms",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bryophytes are called the amphibians of the plant kingdom because they require water for sexual\n              reproduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "497c602c-f6b3-42ec-93c3-df778f1ddbaf",
+    "question_text": "Which of the following algae forms symbiotic associations with fungi in lichens?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorella",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVolvox",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUlothrix",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNostoc",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Chlorella, a green alga, commonly forms a symbiotic association with fungi to form lichens.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "44815046-3ece-4a1b-9da9-2f216dcd443e",
+    "question_text": "Which bryophyte is commercially important for forming peat, a fuel source?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMarchantia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFunaria",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSphagnum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRiccia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Sphagnum, also known as peat moss, is commercially valuable for peat production, used as a fuel and soil\n              conditioner.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "587f2ee9-6c9a-402f-bcac-126d77c68285",
+    "question_text": "Which of the following structures is haploid in gymnosperms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPollen grain",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nZygote",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSporophyte",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSeed",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The pollen grain is the male gametophytic generation and is haploid in gymnosperms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3b625b14-ceb0-4d63-a9dc-f191bc7edcdf",
+    "question_text": "Which type of spores are produced by homosporous pteridophytes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOnly megaspores",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOnly microspores",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpores of the same type",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoth megaspores and microspores",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Homosporous pteridophytes produce spores that are morphologically similar but may develop into bisexual\n              gametophytes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e4df4d07-0640-4e2c-8240-9e660312ae8f",
+    "question_text": "Which of the following statements about algae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlgae are heterotrophic organisms lacking chlorophyll.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSome algae form symbiotic associations with fungi in lichens.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAlgae are primary consumers in aquatic food chains.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll algae reproduce asexually by fragmentation only.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Some algae associate with fungi to form lichens, as mentioned with examples like sloth bear associations.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "602b4414-80c8-4c1f-a80e-35ad85e1a62a",
+    "question_text": "Which of the following statements about Phaeophyceae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhaeophyceae lack photosynthetic pigments like chlorophyll.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe vegetative cells in Phaeophyceae have a gelatinous coating of algin.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhaeophyceae reproduce asexually only by fragmentation.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTheir dominant pigment is chlorophyll b.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The vegetative cells of Phaeophyceae have a cellulosic wall covered by a gelatinous coating of algin.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7d2ff762-bf42-4f12-a917-eb2d021619ee",
+    "question_text": "Which of the following statements about algae is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFusion of a large, non-motile female gamete with a smaller, motile male gamete in algae is oogamous.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlgae like Volvox and Fucus exhibit oogamous reproduction.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll algae are aquatic and lack terrestrial forms.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlgae can form colonial structures like Volvox.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Algae are not all aquatic; they also occur on moist stones, soils, and wood, as stated in the PDF.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8dc9b2be-09e3-40ba-8a21-d31636025df0",
+    "question_text": "Which of the following statements about algae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlgae lack photosynthetic pigments and are heterotrophic.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSome algae occur on moist stones and wood.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll algae produce carrageen as a hydrocolloid.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlgae are classified into two classes only.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Algae occur in diverse habitats, including moist stones, soils, and wood, beyond just aquatic\n              environments.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0c518794-835e-41a9-aeb6-2db3f47c7976",
+    "question_text": "Which type of sporangia arrangement is seen in Equisetum?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nClustered in sori",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nArranged in cones",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nScattered on leaves",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBorne on rhizoids",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In Equisetum, sporangia are borne in strobili (cones), which are compact structures formed by\n              sporophylls.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c161a611-a7e0-488d-af0f-dfd7be843ba2",
+    "question_text": "Which class of algae is characterized by the presence of r-phycoerythrin pigment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhaeophyceae",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhodophyceae",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXanthophyceae",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Rhodophyceae (red algae) are characterized by the red pigment r-phycoerythrin.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "808cee3c-f86a-48b3-b047-a267a3636a8a",
+    "question_text": "What is the role of columella in the capsule of a moss?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhotosynthesis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpore protection",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpore dispersal",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAnchorage",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In mosses, the columella is a sterile tissue that provides mechanical support and protects developing\n              spores.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "660b3fcf-1e64-4bc8-a57c-04ee0a590e59",
+    "question_text": "Which of the following statements about Chlorophyceae is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae have a rigid cell wall made of cellulose and pectose.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPyrenoids in Chlorophyceae contain protein and starch.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChlorophyceae are exclusively marine algae.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExamples include Chlamydomonas and Ulothrix.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Chlorophyceae are not exclusively marine; they occur in freshwater, brackish water, and saltwater.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "807532fd-ad51-4388-b190-c8905034a3c4",
+    "question_text": "Which of the following statements about algae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlgae are exclusively marine organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlgae reproduce only by vegetative methods.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAlgae contribute significantly to global carbon dioxide fixation.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlgae lack chlorophyll and are heterotrophic.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Algae play a crucial role in carbon dioxide fixation through photosynthesis, contributing to global\n              oxygen production.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8518843a-2832-4484-8179-b41dd3e7ff3a",
+    "question_text": "Which class of algae is characterized by cup-shaped chloroplasts?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRhodophyceae",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhaeophyceae",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChlorophyceae",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXanthophyceae",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Members of Chlorophyceae (green algae) such as Chlamydomonas have cup-shaped chloroplasts.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2c6b37ce-a94c-4034-9991-339914aba13f",
+    "question_text": "Which structure anchors the thallus to the substrate in bryophytes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRoots",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRhizoids",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProtonema",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGemma cups",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In bryophytes, rhizoids are root-like structures that anchor the thallus to the substrate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "610dd1d7-32af-44c3-a5af-543c58c7b9b9",
+    "question_text": "Which of the following statements about pteridophytes is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPteridophytes are aquatic plants with no terrestrial forms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSporophylls in some pteridophytes form compact structures called strobili.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe gametophyte in pteridophytes is the dominant phase.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPteridophytes lack sporangia for spore production.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In some pteridophytes like Selaginella and Equisetum, sporophylls form strobili or cones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6529e151-febe-4089-8f1b-c75043dd4ee6",
+    "question_text": "Which of the following statements about Rhodophyceae is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRhodophyceae contain chlorophyll a, d, and phycoerythrin.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarrageen is a hydrocolloid produced by red algae.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhodophyceae have flagella in their reproductive structures.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTheir sexual reproduction involves complex post-fertilization developments.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Rhodophyceae lack flagella; their spores and gametes are non-motile.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "af0c8be1-b810-4e34-ad2a-4614fea57be1",
+    "question_text": "Which of the following statements about pteridophytes is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPteridophytes are the first terrestrial plants with xylem and phloem.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe gametophytes in pteridophytes require cool, damp, shady places to grow.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPteridophytes produce naked seeds after fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSome pteridophytes, like Selaginella, are heterosporous.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Pteridophytes do not produce seeds; seed formation occurs in gymnosperms and angiosperms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "330e360c-494c-496c-93a8-58828fc0e830",
+    "question_text": "Which of the following statements about Phaeophyceae is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhaeophyceae possess chlorophyll a, c, carotenoids, and xanthophylls.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTheir vegetative cells contain a centrally located vacuole and nucleus.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhaeophyceae include forms like Dictyota and Fucus.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhaeophyceae are unicellular algae with no multicellular forms.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Phaeophyceae are multicellular, ranging from filamentous Ectocarpus to massive kelps, not unicellular.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef5cdd0f-53fc-4387-9424-cd9fdfe2c632",
+    "question_text": "Which of the following pteridophytes produces two types of spores (heterospory)?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLycopodium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSelaginella",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPteris",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdiantum",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Selaginella is a heterosporous pteridophyte, producing both microspores and megaspores.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1a4e49cf-27c4-446e-b9b8-1d614278e69c",
+    "question_text": "Which pteridophyte structure bears sporangia?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRhizome",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSporophyll",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProthallus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGemma",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In pteridophytes, sporophylls (leaf-like structures) bear sporangia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6c59e3e5-5d6f-4df9-a495-4b927e69e0c0",
+    "question_text": "What is the term for the multicellular structure that produces eggs in bryophytes and pteridophytes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAntheridium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nArchegonium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProtonema",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGemma cup",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Archegonium is the female reproductive organ that produces eggs in bryophytes and pteridophytes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bb2364ff-df94-4454-b010-824f70ba3b4c",
+    "question_text": "Which of the following statements about algae is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlgae increase dissolved oxygen levels through photosynthesis.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSargassum is a marine alga used as food.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll algae have flagellated gametes in sexual reproduction.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlgae are primary producers of energy-rich compounds in aquatic ecosystems.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Not all algae have flagellated gametes; e.g., Spirogyra has non-flagellated gametes in isogamous\n              reproduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "37bd6655-fc06-427b-bb58-2a603a6d3183",
+    "question_text": "Which division of algae has members that store food as floridean starch?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhaeophyceae",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhodophyceae",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXanthophyceae",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Rhodophyceae (red algae) store food as floridean starch, which is similar to glycogen in structure.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ce11f461-df5a-4668-83e7-3ab1261ca078",
+    "question_text": "Which of the following statements about liverworts is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiverworts have a dominant sporophyte with needle-like leaves.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe gemmae in liverworts germinate to form new individuals.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLiverworts lack sex organs like antheridia and archegonia.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe sporophyte in liverworts is haploid and free-living.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gemmae, asexual buds in liverworts, detach from the parent and germinate to form new individuals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0e97249d-7c2a-45e4-8ef6-d7928775db0c",
+    "question_text": "Which of the following algae is used as a protein supplement, even by astronauts?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpirogyra",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChlorella",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUlothrix",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPorphyra",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Chlorella, a unicellular green alga, is rich in protein and used as a food supplement, including for\n              astronauts.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d5d4594-1352-43d6-af0f-64d5605883ae",
+    "question_text": "In gymnosperms, which structure carries the male gametes to the ovule?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPollen grain",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPollen tube",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSporangium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStrobilus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In gymnosperms, the pollen tube carries the male gametes from the pollen grain to the ovule for\n              fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b36e04a-554e-48c0-a9ce-2746c3723298",
+    "question_text": "Which of the following statements about liverworts is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiverworts produce spores within a capsule after meiosis.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe gametophyte in liverworts can be thalloid or leafy.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLiverworts have a sporophyte with true roots and stems.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMarchantia is an example of a liverwort with a thalloid body.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The sporophyte in liverworts lacks true roots and stems; it is simple, with a foot, seta, and capsule.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79b6c4fc-1954-4f30-80b2-89ed59513753",
+    "question_text": "Which plant group was the first to develop vascular tissues?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBryophytes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPteridophytes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGymnosperms",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAngiosperms",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Pteridophytes were the first terrestrial plants to develop vascular tissues (xylem and phloem) for\n              conduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "06520a41-5b45-450f-bad7-77d57922b7c9",
+    "question_text": "Which of the following statements about gymnosperms is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGymnosperms produce fruits to enclose their seeds.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe female gametophyte in gymnosperms bears two or more archegonia.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGymnosperms lack a pollen tube for fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll gymnosperms have pinnate leaves like Pinus.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The female gametophyte in gymnosperms, retained within the megasporangium, bears two or more archegonia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "77d1df59-b0fd-416e-bacc-1627d72fdd8c",
+    "question_text": "Which of the following statements about algae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlgae lack chlorophyll and are not autotrophic.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFusion of gametes dissimilar in size in algae is termed anisogamous.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll algae produce flagellated zoospores for asexual reproduction.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlgae are classified into five classes including gymnosperms.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Anisogamous reproduction in algae involves the fusion of two gametes dissimilar in size, as seen in\n              Eudorina.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4457c257-1466-4094-a370-0ed284be3ad3",
+    "question_text": "Which of the following statements about Rhodophyceae is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRhodophyceae are mostly marine and multicellular.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSexual reproduction in Rhodophyceae is oogamous.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhodophyceae reproduce asexually by flagellated zoospores.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExamples include Polysiphonia and Porphyra.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Rhodophyceae reproduce asexually by non-motile spores, not flagellated zoospores.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "239c0647-c75d-443f-b119-01a7f14d8a50",
+    "question_text": "Which of the following statements about liverworts is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiverworts can have leafy members with tiny leaf-like appendages.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe archegonium in liverworts is flask-shaped and produces one egg.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLiverworts reproduce sexually by fusion of motile and non-motile gametes.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe sporophyte in liverworts is diploid and produces haploid spores.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In liverworts, the male gamete (antherozoid) is motile, but the egg is non-motile; the statement implies\n              both gametes’ motility is incorrect.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2f75d40f-b7e6-4d8f-aca9-baa065d9289c",
+    "question_text": "Which group of algae produces carrageenan, a commercial hydrocolloid?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhaeophyceae",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhodophyceae",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXanthophyceae",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Rhodophyceae (red algae) produce carrageenan, which is used as a thickener in various food products.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8408b52e-839c-49de-aee6-77c52b89e312",
+    "question_text": "Which structure in brown algae functions as the main site for photosynthesis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHoldfast",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nStipe",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBlade",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAir bladder",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In brown algae (e.g., Laminaria), the blade functions as the primary photosynthetic organ.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "86b403a8-351f-4555-9d55-edf585204e62",
+    "question_text": "Which of the following algae has a filamentous body structure?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVolvox",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUlothrix",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChlorella",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGelidium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ulothrix, a green alga, has a filamentous thallus structure.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d90e9b11-64ef-4381-a9c9-7b9e794ac8cc",
+    "question_text": "Which of the following statements about Phaeophyceae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhaeophyceae lack chlorophyll and rely on phycoerythrin.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTheir plant body can reach heights of 100 meters in kelps.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhaeophyceae store food as floridean starch.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll Phaeophyceae are unicellular and microscopic.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Kelps, a type of Phaeophyceae, can grow up to 100 meters, forming massive plant bodies.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8445c145-6dbf-4897-884c-6e177eb360bd",
+    "question_text": "Which of the following methods is used in numerical taxonomy?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStudying chromosome structure",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAssigning numbers and codes to characters",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAnalyzing evolutionary history",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStudying chemical constituents",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Numerical taxonomy uses numbers and codes for all observable characters, processed by computers to\n              classify organisms objectively.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "67316419-6954-4340-9606-87a4087a03e7",
+    "question_text": "Which of the following statements about bryophytes is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBryophytes are attached to the substratum by rhizoids.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe sporophyte in bryophytes derives nourishment from the gametophyte.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBryophytes reproduce sexually without water.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBryophytes include mosses and liverworts.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bryophytes depend on water for sexual reproduction, as antherozoids swim to the archegonium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "72bcd699-9cdf-4e40-9b38-9a9a37eb445d",
+    "question_text": "Which of the following statements about pteridophytes is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPteridophytes lack vascular tissues and have a dominant gametophyte.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe sporophytes in pteridophytes bear sporangia on sporophylls.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPteridophytes produce seeds enclosed in fruits.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe prothallus in pteridophytes is diploid and spore-producing.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The sporophytes in pteridophytes bear sporangia on leaf-like sporophylls, which produce spores.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42159365-309a-42db-84ee-4555e5ae14e9",
+    "question_text": "Which part of the moss plant develops into the gametophyte?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZygote",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProtonema",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSporangium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCapsule",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In mosses, the protonema, which develops from spores, gives rise to the leafy gametophyte.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8800818d-91f6-48f4-8d5e-dc313d83c104",
+    "question_text": "Which taxonomic approach utilizes chromosome structure, number, and behavior for classification?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNumerical taxonomy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytotaxonomy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChemotaxonomy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nArtificial taxonomy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cytotaxonomy uses cytological information such as chromosome number, structure, and behavior to classify\n              organisms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "45118783-468d-4c28-947f-3bd7ee82b6af",
+    "question_text": "Which of the following statements about mosses is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMosses have true roots instead of rhizoids.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSome mosses provide peat used as fuel.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMosses possess vascular tissues like xylem.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll mosses grow in dry, sunny areas.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Sphagnum, a moss, provides peat, which has been used as fuel due to its water-holding capacity.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1d4d40da-6d90-4225-a751-d74c6e291b2c",
+    "question_text": "Which of the following algae is commonly used as a food supplement for space travelers?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpirogyra",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChlamydomonas",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChlorella",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFucus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Chlorella, a protein-rich unicellular alga, is used as a dietary supplement, including for space\n              missions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5d3b813-5f4b-44fd-b37e-0dd65aa2f897",
+    "question_text": "Which of the following is a unique feature of liverworts?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGemma cups for asexual reproduction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSporangia borne on strobili",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVascular tissues in stem",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCone formation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Liverworts reproduce asexually through gemmae, which develop inside gemma cups on the thallus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ec9b0491-f113-4e91-b2e7-13aaa65aa534",
+    "question_text": "Which pteridophyte is commonly known as \"horsetail\"?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSelaginella",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEquisetum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAdiantum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLycopodium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Equisetum is commonly known as \"horsetail\" due to its brush-like appearance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4cca29ff-fe7f-497d-a500-a072c2288a1e",
+    "question_text": "Which pteridophyte forms strobili or cones?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAdiantum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEquisetum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPteris",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDryopteris",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Equisetum, a pteridophyte, forms distinct strobili or cones that bear sporangia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ac282af7-086e-4d04-b18a-6596120484d8",
+    "question_text": "Which term describes the fusion of two similar, non-flagellated gametes in algae?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOogamy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAnisogamy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIsogamy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nParthenogenesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Isogamy refers to the fusion of two morphologically similar but non-flagellated gametes, as seen in\n              Spirogyra.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5901ae37-2a39-4253-ac84-698a60a7c1b9",
+    "question_text": "Which of the following statements about bryophytes is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBryophytes decompose rocks, aiding plant succession.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe sporophyte in bryophytes undergoes meiosis to produce spores.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBryophytes have a thallus-like gametophyte attached by true roots.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSome mosses provide food for herbaceous mammals.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Bryophytes lack true roots; their gametophyte is attached by unicellular or multicellular rhizoids.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2a865495-6362-4b89-aac3-b2fee8a08035",
+    "question_text": "Which of the following statements about pteridophytes is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPteridophytes include horsetails like Equisetum.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTheir sporophytes have well-differentiated vascular tissues.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPteridophytes lack true stems and rely on rhizoids.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExamples include Dryopteris and Adiantum.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Pteridophytes have true stems, roots, and leaves with vascular tissues, not just rhizoids.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c2e6e23d-2c7f-4b96-a8c2-026a24f825cf",
+    "question_text": "Which pigment is responsible for the red color in Rhodophyceae?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyll a",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFucoxanthin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhycoerythrin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXanthophyll",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phycoerythrin is the red pigment responsible for the characteristic color of red algae (Rhodophyceae).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "412e97fb-d1db-4a60-b253-90f8b811e5aa",
+    "question_text": "Which type of sexual reproduction involves the fusion of morphologically similar but physiologically different gametes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIsogamy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAnisogamy",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOogamy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHologamy",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Anisogamy involves the fusion of gametes that are different in size or form but functionally similar.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fb46bcf8-0029-445c-85d0-23b8d51f6247",
+    "question_text": "Which of the following statements about Phaeophyceae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhaeophyceae lack chlorophyll and rely solely on fucoxanthin.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTheir sexual reproduction can be isogamous, anisogamous, or oogamous.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhaeophyceae store food as floridean starch.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey are unicellular algae found in freshwater only.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Phaeophyceae exhibit sexual reproduction that can be isogamous, anisogamous, or oogamous.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c66a11c-19cf-4654-8028-3c56ac90b153",
+    "question_text": "Which of the following statements about bryophytes is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBryophytes have a dominant sporophyte attached to the gametophyte.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe antherozoids in bryophytes are biflagellate.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBryophytes possess well-differentiated vascular tissues.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe gametophyte in bryophytes is diploid.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The male gametes (antherozoids) in bryophytes are biflagellate and produced by the antheridium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2a8490c7-2e41-485c-b324-679dfe4e2f29",
+    "question_text": "Which of the following statements about algae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlgae are of no economic importance to humans.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCertain algae like Chlorella are used as food supplements.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAlgae decrease dissolved oxygen levels in their environment.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll algae form massive plant bodies like kelps.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Chlorella, a unicellular alga rich in proteins, is used as a food supplement, even by space travelers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bd9621f8-90e2-4be9-87ef-0b297ce1267a",
+    "question_text": "Which class of algae has cell walls made of cellulose and pectic substances?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhaeophyceae",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhodophyceae",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXanthophyceae",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "In Chlorophyceae (green algae), the cell wall is composed of cellulose and pectic substances.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "737c1902-4de7-41e4-b239-8578c565b225",
+    "question_text": "Which type of reproduction in algae involves the release of biflagellate zoospores?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVegetative reproduction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAsexual reproduction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIsogamous reproduction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOogamous reproduction",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In algae, asexual reproduction occurs by biflagellate, motile zoospores, which germinate to form new\n              plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "30137db6-751a-46ec-9048-b7831a8c070f",
+    "question_text": "Which feature differentiates liverworts from mosses?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPresence of rhizoids",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDominant gametophyte stage",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGemma cup formation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSporophyte dependency",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Liverworts, such as Marchantia, reproduce asexually through specialized structures called gemma cups,\n              which are absent in mosses.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c7a013e-0d6b-411f-999a-6389ff8a6528",
+    "question_text": "Which of the following statements about liverworts is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiverworts grow on marshy ground and tree bark.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTheir thallus is dorsiventral and closely appressed to the substrate.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLiverworts have true leaves like pteridophytes.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExamples include Marchantia with a thalloid body.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Liverworts lack true leaves; they have thalloid or leaf-like structures, unlike pteridophytes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef424c3f-5761-4975-b618-41d6adf25209",
+    "question_text": "Which of the following statements about Phaeophyceae is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhaeophyceae include profusely branched forms like kelps.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTheir cell walls are covered with a gelatinous algin layer.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhaeophyceae are exclusively freshwater algae.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExamples include Ectocarpus and Sargassum.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phaeophyceae are primarily marine, with rare freshwater occurrences, not exclusively freshwater.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5b651dd9-a0b3-4adb-91ef-ba8e4440795d",
+    "question_text": "Which of the following statements about mosses is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe protonema in mosses is a creeping, branched structure.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMosses have a sporophyte differentiated into foot, seta, and capsule.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe leafy stage in mosses is haploid and bears sex organs.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMosses reproduce sexually by fusion of non-motile antherozoids.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Antherozoids in mosses are motile and biflagellate, not non-motile, and swim to the archegonium for\n              fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8526c09e-362f-427e-bc4e-a59ca1bb95e9",
+    "question_text": "Which classification system assigns numbers and codes to all characters for analysis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nArtificial classification",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNatural classification",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNumerical taxonomy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhylogenetic classification",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Numerical taxonomy assigns numbers and codes to all observable characters, and computers analyze the data\n              for classification.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6209664c-ce16-4a19-a30b-ef8b81d0efd5",
+    "question_text": "Which of the following is a distinguishing feature of gymnosperm leaves?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParallel venation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSunken stomata",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpiral arrangement",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBroad lamina",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gymnosperm leaves, especially in conifers, have sunken stomata to reduce water loss and adapt to dry\n              conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4e0fb7d7-f010-45e8-9625-ceef24aaf72b",
+    "question_text": "Which of the following statements about Chlorophyceae is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae have unequal lateral flagella like Phaeophyceae.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAsexual reproduction in Chlorophyceae involves flagellated zoospores.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChlorophyceae store food as floridean starch.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTheir dominant pigments are chlorophyll a and c.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Asexual reproduction in Chlorophyceae occurs via flagellated zoospores produced in zoosporangia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "af112f21-3ed1-4d99-85b1-073efd451414",
+    "question_text": "Which of the following statements about Chlorophyceae is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae can have colonial forms like Volvox.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTheir chloroplasts contain pyrenoids with protein and starch.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nChlorophyceae reproduce sexually only by anisogamy.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe cell wall in Chlorophyceae has an inner layer of cellulose.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Chlorophyceae exhibit isogamous, anisogamous, or oogamous sexual reproduction, not only anisogamy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8674e4b1-a8de-49ff-879e-d82ad9337386",
+    "question_text": "Which component of the moss sporophyte is responsible for spore dispersal?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSeta",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCapsule",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProtonema",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRhizoids",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In mosses, the capsule, part of the sporophyte, produces and releases spores for dispersal.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "107d3d11-9cb8-4ddb-9d99-db4d1db3af4d",
+    "question_text": "Which part of the ovule forms the micropyle, facilitating pollen tube entry?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFunicle",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nInteguments",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNucellus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChalaza",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The micropyle is an opening formed by the integuments of the ovule, allowing pollen tube entry for\n              fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "06b90fc5-8364-47f0-b412-f7b999693270",
+    "question_text": "Which bryophyte structure is functionally equivalent to the root system in higher plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProtonema",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGemmae",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhizoids",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSporophyte",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Rhizoids in bryophytes anchor the plant to the substrate and absorb water, performing a function similar\n              to roots.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "471efa10-081a-4091-a907-c898e09b370d",
+    "question_text": "Which of the following pteridophytes produces both microspores and megaspores?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDryopteris",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPteris",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSalvinia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdiantum",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Salvinia is a heterosporous pteridophyte that produces both microspores (male) and megaspores (female).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f9bda60c-08da-42b3-b869-8c1551857114",
+    "question_text": "Which type of chloroplast is found in Spirogyra?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCup-shaped",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRibbon-shaped",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSpiral-shaped",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlate-like",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Spirogyra is known for its characteristic spiral-shaped chloroplasts.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4f4086f-0022-45a4-95bd-99dfc0a327e8",
+    "question_text": "Which bryophyte genus is known for forming dense mats that help in soil conservation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMarchantia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRiccia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSphagnum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFunaria",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Funaria, a moss, forms dense mats that reduce the impact of rainfall and help prevent soil erosion.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1ab62dcb-1f2f-401a-87a2-89b496307bc1",
+    "question_text": "Which of the following statements about gymnosperms is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGymnosperms lack a sporophyte phase in their life cycle.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe nucellus in gymnosperms is protected by envelopes, forming an ovule.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGymnosperms produce seeds enclosed in fruits like angiosperms.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe male gametophyte in gymnosperms is a free-living prothallus.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The nucellus, protected by envelopes, forms the ovule in gymnosperms, which develops into a naked seed.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0ebf151d-df79-4ba6-b391-1dd04ede8117",
+    "question_text": "Which of the following statements about bryophytes is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBryophytes have true stems and leaves like gymnosperms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMosses and lichens are the first to colonize bare rocks.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBryophytes possess vascular tissues for nutrient transport.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll bryophytes grow in dry, arid regions.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mosses, along with lichens, are pioneer species that colonize rocks, aiding ecological succession.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1e5d3b7e-0073-41bc-8a03-544d3178977d",
+    "question_text": "Which of the following statements about mosses is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe protonema in mosses is the sporophyte stage.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMosses lack rhizoids for attachment to the substrate.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe sex organs in mosses are borne on the leafy shoots.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe sporophyte in mosses is haploid and free-living.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Antheridia and archegonia (sex organs) in mosses are produced at the apex of the leafy shoots.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "18af842b-076f-4f9a-8e3c-ead9fa5955cd",
+    "question_text": "Which class of algae has a cell wall with algin and cellulose?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorophyceae",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPhaeophyceae",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhodophyceae",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXanthophyceae",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Phaeophyceae (brown algae) have cell walls made of cellulose and algin, a hydrocolloid.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "720e2b5c-6b32-48c9-a2cd-b46309b458af",
+    "question_text": "Which type of cell division occurs in the microspore mother cell to form pollen grains in gymnosperms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMitosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeiosis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBinary fission",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBudding",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In gymnosperms, the microspore mother cell undergoes meiosis to produce haploid pollen grains.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fa4a3488-fa15-4672-8073-bedeaac2ef1b",
+    "question_text": "Which of the following statements about pteridophytes is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPteridophytes lack sporophylls and produce seeds directly.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe prothallus in pteridophytes is a small, multicellular gametophyte.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPteridophytes have a dominant haploid sporophyte phase.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll pteridophytes are heterosporous like gymnosperms.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The prothallus is the inconspicuous, multicellular gametophyte in pteridophytes that bears sex organs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d8328904-5d5f-49e9-bb0e-1650576be39b",
+    "question_text": "Which part of the ovule encloses the nucellus and forms the seed coat after fertilization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInteguments",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFunicle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMicropyle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChalaza",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The integuments of the ovule develop into the seed coat after fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "77c78dfe-7464-4ee3-b337-71f4f7a45063",
+    "question_text": "Which of the following statements about algae is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAlgae are simple, thalloid, and autotrophic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAll algae are exclusively marine organisms.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAsexual reproduction in algae occurs via zoospores.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAlgae include forms like Volvox and Spirogyra.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Algae are not exclusively marine; they occur in freshwater, moist stones, soils, and other habitats too.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dfbf648d-af26-444e-bf4d-d4f667c1c1ee",
+    "question_text": "Which type of vascular tissue is unique to gymnosperms and absent in angiosperms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTracheids",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVessels",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSieve tubes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCompanion cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Gymnosperms primarily use tracheids for water conduction, whereas angiosperms mainly use vessels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef605b22-61e2-4c2c-8436-31da836ceebc",
+    "question_text": "Which type of vascular tissue arrangement is found in gymnosperms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nClosed vascular bundles",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nScattered vascular bundles",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOpen vascular bundles arranged in a ring",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVascular bundles with cambium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Gymnosperms have vascular bundles with cambium, enabling secondary growth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c140134-071d-43fa-9635-400c6ca44768",
+    "question_text": "Which of the following statements about liverworts is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiverworts have a sporophyte with vascular tissues.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe sex organs in liverworts are produced on the same or different thalli.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLiverworts reproduce asexually only by spores.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe gametophyte in liverworts is diploid and photosynthetic.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Male and female sex organs in liverworts can be on the same thallus or different thalli.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Kingdom",
+    "topic": "Plant Kingdom",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Kingdom / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-kingdom"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "fe63fe6e-3eee-4748-b48f-008e88b4eee0",
+    "question_text": "Which of the following statements about plant growth is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGrowth is a reversible increase in size.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGrowth is a permanent and irreversible increase in size.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGrowth in plants occurs only during the seedling stage.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAll plant cells continue to grow indefinitely.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Growth in plants is defined as an irreversible permanent increase in size of an organ, part, or cell.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1ac849f5-f2e1-4213-be6a-f7c5a0777dd8",
+    "question_text": "Which meristem is responsible for the increase in girth of dicotyledonous plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nApical meristem",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIntercalary meristem",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLateral meristem",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Lateral meristem, such as vascular cambium and cork cambium, is responsible for secondary growth,\n              increasing the girth of dicot plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "58c44fe8-1bce-45b6-9139-e5af1fefe7b6",
+    "question_text": "Which phase of growth is characterized by active cell division?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMaturation phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElongation phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeristematic phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSenescence phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The meristematic phase involves continuous cell division, leading to growth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "74cc25ae-198f-4b62-8ca3-7cb38da9d3b9",
+    "question_text": "Which of the following statements about plant growth is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGrowth is a reversible increase in size.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlant growth is always determinate.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeristematic tissues are responsible for growth.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGrowth in plants does not require energy.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Meristematic tissues are the sites of active cell division, contributing to plant growth. Growth is\n              irreversible and can be indeterminate in plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0af85c45-f622-4872-8697-af3a0722f64f",
+    "question_text": "Which of the following statements about plant hormones is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin promotes cell elongation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellins induce seed dormancy.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinins promote cell division.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene promotes fruit ripening.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gibberellins break seed dormancy; they do not induce it. Abscisic acid (ABA) induces seed dormancy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a028143a-dcfd-4009-9259-71e43c11ce17",
+    "question_text": "Which statement regarding phases of growth is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe meristematic phase has actively dividing cells.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElongation phase occurs only in roots.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMaturation phase cells have thin walls.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLag phase shows rapid cell division.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The meristematic phase consists of actively dividing cells with prominent nuclei. Elongation occurs in\n              both roots and shoots, and maturation cells develop thick walls.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fa8ef3bb-a03a-4b28-aaee-fd40effa8da8",
+    "question_text": "Which type of growth curve is typically observed in plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLinear",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSigmoid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nExponential",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLogarithmic",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The sigmoid growth curve consists of the lag phase, log phase, and stationary phase, representing plant\n              growth over time.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "71f274ba-7122-49a2-b494-25bb0e264be3",
+    "question_text": "What is the primary site of auxin synthesis in plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRoot tip",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nShoot apical meristem",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMature leaves",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXylem",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Auxins are primarily synthesized in the shoot apical meristem and transported to other parts of the\n              plant.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f20465d7-172c-440b-a3dd-28b38bd1bb0c",
+    "question_text": "Which plant hormone is used to induce fruit ripening?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthylene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ethylene is a gaseous hormone that promotes fruit ripening.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "90e3c502-2e71-41b6-8e6d-645a2552b65c",
+    "question_text": "Which of the following about dedifferentiation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDedifferentiation leads to loss of cell function.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nXylem vessels can undergo dedifferentiation.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDedifferentiation results in the formation of meristematic tissues.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDedifferentiation is a permanent process.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Dedifferentiation is when specialized cells regain their ability to divide and become meristematic\n              tissue. Xylem vessels cannot dedifferentiate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6b98626f-bd00-409b-ad3a-73d502ee29e2",
+    "question_text": "Which type of heterophylly is observed in coriander?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGenetic",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDevelopmental",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEnvironmental",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNone of the above",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Developmental heterophylly is observed in coriander, where leaves of juvenile and mature plants differ.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c2009614-711e-4640-84b8-ea8cd78c7c9b",
+    "question_text": "Which plant hormone is responsible for apical dominance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Auxin inhibits the growth of lateral buds, maintaining apical dominance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a41ef991-8277-4be6-a4a8-a07b8030a70f",
+    "question_text": "What is dedifferentiation in plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFormation of new tissues",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRegaining of cell division ability by differentiated cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDeath of cells",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFormation of xylem and phloem",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Dedifferentiation refers to the ability of fully differentiated cells to regain the capacity for cell\n              division.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "79f3ab44-326e-4887-b262-c57aa9397b1f",
+    "question_text": "Which type of growth occurs due to the activity of intercalary meristem?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPrimary growth",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecondary growth",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nApical growth",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIntermittent growth",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Intercalary meristem contributes to primary growth, particularly in elongation of internodes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f1df9a7d-407c-4568-abcb-19ce98879ef3",
+    "question_text": "Which of the following statements about gibberellins is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellins promote bolting in rosette plants.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellins cause parthenocarpy.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGibberellins delay fruit ripening.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGibberellins promote seed germination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Gibberellins promote seed germination, bolting, and parthenocarpy but do not delay fruit ripening.\n              Ethylene is responsible for fruit ripening.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "80abf3b5-b089-4763-8522-f3daef89e536",
+    "question_text": "Select the correct statement regarding plant growth regulators:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin inhibits root formation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin promotes apical dominance.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbscisic acid induces dormancy.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene delays senescence.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Abscisic acid induces dormancy. Cytokinin overcomes apical dominance, while auxin promotes rooting.\n              Ethylene accelerates senescence, not delays it.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b5be4e02-8404-41e8-b9c2-7ba141de583b",
+    "question_text": "Which of the following about the sigmoid growth curve is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLag phase represents rapid growth.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLog phase shows exponential growth.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStationary phase is the phase of cell division.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLog phase occurs after the stationary phase.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The log (exponential) phase shows rapid cell division and growth. The lag phase is slow, and the\n              stationary phase is where growth slows down.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a29f88eb-9b48-47b7-bc8e-17be0a3a3f96",
+    "question_text": "In which phase of the growth curve does rapid cell division occur?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLag phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLog phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStationary phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDecline phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During the log (exponential) phase, cells divide rapidly, leading to a steep increase in growth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82017103-3812-4780-9c8d-274d928e697a",
+    "question_text": "Which plant growth regulator induces parthenocarpy in tomatoes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Auxin promotes parthenocarpy, enabling fruit development without fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ee9e35c-600c-4b4e-9153-1f8bd815f72a",
+    "question_text": "What is the primary role of gibberellins in sugarcane crops?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPromotes flowering",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIncreases stem length",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInduces leaf fall",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEnhances root growth",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gibberellins increase internode length in sugarcane, boosting sugar yield.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "38ac6afd-d349-4922-9ca8-00f5c3004c76",
+    "question_text": "Which plant hormone is known as the 'stress hormone'?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbscisic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCytokinin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Abscisic acid (ABA) is called the stress hormone as it helps plants respond to environmental stress and\n              induces stomatal closure.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ce0a95e0-8cbd-4e26-85c4-1af25422f217",
+    "question_text": "Which phase of growth is characterized by maximum cell enlargement and thickening of cell walls?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeristematic phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElongation phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMaturation phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLag phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "During the maturation phase, cells attain their final size with thickened walls and protoplasmic\n              modifications.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "745db589-0547-4bf6-9e03-80010050d534",
+    "question_text": "Who discovered the plant hormone responsible for phototropism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nE. Kurosawa",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCharles Darwin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nF.W. Went",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nH.H. Cousins",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Charles Darwin and his son Francis observed that coleoptiles of canary grass bend towards light,\n              demonstrating phototropism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a866ab3d-43bf-4e10-8f9c-d89240cd6bb4",
+    "question_text": "Which plant hormone is used for thinning of cotton, cherries, and walnuts?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthylene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAuxin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ethylene, released from ethephon, is used for thinning flowers and fruits in crops like cotton, cherry,\n              and walnut.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2692d95e-4519-43df-a8e6-20ed9c481b4e",
+    "question_text": "What happens if cytokinin is not added to a plant tissue culture medium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRoot formation is inhibited",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nShoot formation is inhibited",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFlowering is delayed",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLeaf abscission increases",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cytokinin promotes shoot formation; without it, shoot growth is inhibited in tissue culture.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "092f379a-5a2f-42c7-aea3-665ed1c3e3b2",
+    "question_text": "Which of the following statements about auxins is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxins promote apical dominance.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAuxins induce parthenocarpy.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2,4-D is a synthetic auxin.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAuxins are produced mainly in roots.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Auxins are primarily produced in the shoot apical meristem and young leaves, not in roots.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "457267ee-b789-4ff9-816f-1ae40dd78560",
+    "question_text": "Which of the following about differentiation and dedifferentiation is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDedifferentiation is when cells lose their ability to divide.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDifferentiation produces specialized cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDedifferentiated cells cannot redifferentiate.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDifferentiation is a reversible process.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Differentiation is the process by which cells become specialized. Dedifferentiation allows cells to\n              regain division ability, which can lead to redifferentiation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4034baeb-88ae-4476-8aa2-5a71eb7516e5",
+    "question_text": "Which of the following about plant growth measurement is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGrowth can be measured by an increase in dry weight.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGrowth can be measured by an increase in cell number.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSurface area increase is not a measure of growth.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFresh weight is used to measure growth.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Surface area increase, such as in leaves, is a valid measure of growth. Growth can also be measured by\n              dry weight, fresh weight, or cell number.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6cb44f79-0713-46d2-9a5a-1f6992624119",
+    "question_text": "Which parameter is commonly used to measure growth in a dorsiventral leaf?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nVolume",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCell number",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSurface area",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDry weight",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In a dorsiventral leaf, growth is typically measured in terms of the increase in surface area.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9df09130-6c96-4135-ad75-356149d47f89",
+    "question_text": "Which type of growth pattern produces a sigmoid curve?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nArithmetic growth",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGeometric growth",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLinear growth",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExponential growth",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Geometric growth results in a sigmoid (S-shaped) curve, with lag, log, and stationary phases.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d2450018-5e1a-4cba-9fc8-2c8c80ecb0d9",
+    "question_text": "Which plant hormone is involved in the formation of adventitious roots from stem cuttings?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Auxins, such as IAA and IBA, promote the formation of adventitious roots in stem cuttings.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1bcc7194-d4f4-48ab-95aa-2dc37f85a599",
+    "question_text": "Which plant growth regulator is responsible for bolting in rosette plants like cabbage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthylene",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gibberellins promote bolting (rapid internode elongation) in rosette plants like cabbage and beet.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "28f137fd-b93f-4923-b238-315e56857b0f",
+    "question_text": "Which process involves the loss of cell division capacity in mature cells?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDedifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRedifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSenescence",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Differentiation is the process by which cells lose their ability to divide and become specialized.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c21b6f12-a11b-45df-9198-68daba336c2a",
+    "question_text": "Which plant growth regulator is responsible for delaying senescence and promoting nutrient mobilization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cytokinins delay leaf senescence (anti-aging hormone) and promote nutrient mobilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "59500762-9de0-4e10-9fe0-6570ea56e1b5",
+    "question_text": "Select the correct statement regarding plant plasticity:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasticity is the ability to perform photosynthesis.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCotton shows environmental plasticity.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlasticity results in the same leaf forms.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHeterophylly is a form of plasticity.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Heterophylly, the occurrence of different leaf forms in the same plant (e.g., coriander), is an example\n              of plasticity.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dbafc1b6-da73-405f-928b-319265e93d9b",
+    "question_text": "Which of the following statements about plant growth regulators is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthylene promotes root elongation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAuxin inhibits apical dominance.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinin delays leaf senescence.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGibberellins inhibit seed germination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cytokinins delay leaf senescence (anti-aging hormone). Auxin promotes apical dominance, and gibberellins\n              promote, not inhibit, seed germination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "09f08354-437e-49ea-b39a-e20d7e4ff9a9",
+    "question_text": "Select the correct statement about seed germination:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellins promote the production of alpha-amylase.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAbscisic acid breaks seed dormancy.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthylene inhibits seed germination.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAuxins promote seed germination directly.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Gibberellins stimulate alpha-amylase production, which breaks down starch into sugars during seed\n              germination. Abscisic acid induces, not breaks, dormancy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dad69c37-b828-4a91-b8d2-68fba74b277e",
+    "question_text": "What is the process by which living differentiated cells regain the ability to divide?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDedifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRedifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nApoptosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Dedifferentiation is the process where mature cells regain their ability to divide, forming meristematic\n              tissue.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7d293f2e-767a-4407-94aa-2a4a08799b43",
+    "question_text": "Which plant growth regulator is commonly used in the brewing industry to accelerate malting?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gibberellin (GA3) is used in the brewing industry to speed up the malting process by promoting enzyme\n              production.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "03cfa914-4750-49c3-9ee8-9162bcd3422f",
+    "question_text": "Which phenomenon in plants refers to the ability to produce different types of leaves in different conditions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhotoperiodism",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPlasticity",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVernalization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscission",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Plasticity refers to the ability of plants to show different forms under different environmental or\n              developmental conditions, such as heterophylly.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "17f17da0-792c-45ff-ae28-95c6e7123efa",
+    "question_text": "Which plant growth regulator promotes the formation of female flowers in cucumbers, increasing their yield?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ethylene promotes the formation of female flowers in cucumbers, which helps increase yield.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7981df35-013c-4692-a0e5-76437920d640",
+    "question_text": "Which plant growth phase is associated with increased vacuolation, cell enlargement, and new cell wall deposition?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeristematic phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElongation phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMaturation phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStationary phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During the elongation phase, cells increase in size due to vacuolation, enlargement, and new cell wall\n              deposition.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0f6905ef-026b-4e4d-9834-c9adc9d75523",
+    "question_text": "Which type of meristem is responsible for secondary growth in dicotyledonous plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nApical meristem",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIntercalary meristem",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLateral meristem",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPrimary meristem",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Lateral meristem, such as vascular cambium and cork cambium, is responsible for secondary growth in\n              dicots.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fd0722f4-ceec-410f-a34d-f38ec3d12de8",
+    "question_text": "Which plant hormone is known to regulate stomatal closure during water stress?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbscisic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCytokinin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Abscisic acid (ABA) acts as a stress hormone and triggers stomatal closure to reduce water loss during\n              drought.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fb72e9f1-de06-4ad3-b493-c31d324dda99",
+    "question_text": "Which statement about senescence in plants is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSenescence involves the degradation of chlorophyll.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinins accelerate senescence.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthylene promotes leaf abscission.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSenescence is a form of programmed cell death.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cytokinins delay senescence; they do not accelerate it. Ethylene promotes senescence and abscission.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "170f5222-3e80-417e-88e6-7e257aa90df8",
+    "question_text": "Select the incorrect statement about plant growth phases:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe lag phase shows slow growth.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe log phase shows rapid growth.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe stationary phase shows reduced growth.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe maturation phase occurs before the elongation phase.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "The maturation phase occurs after the elongation phase, not before.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0a8e9626-e439-4faf-9ab8-b90bfd74b058",
+    "question_text": "Which statement regarding lateral meristem is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLateral meristems contribute to primary growth.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVascular cambium is a lateral meristem.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLateral meristem is found only in monocots.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLateral meristems increase plant height.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The vascular cambium is a type of lateral meristem responsible for secondary growth, increasing girth\n              (thickness) in dicots.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7b219c39-5c3b-41fc-a0b1-08628d2427e8",
+    "question_text": "Which plant hormone was first discovered due to its role in the 'foolish seedling' disease of rice?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthylene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCytokinin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gibberellins were discovered from the 'foolish seedling' disease of rice caused by the fungus *Gibberella\n              fujikuroi*.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4556b737-0b68-4e1f-b6be-bba1b3ce9b24",
+    "question_text": "In arithmetic growth, how does the length of an organ change over time?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nExponentially",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLinearly",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLogarithmically",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRandomly",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "In arithmetic growth, the length increases linearly with time, producing a straight-line graph.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cd14e874-73ba-42c3-9d23-23688dcd4f9a",
+    "question_text": "What is the function of kinetin, a cytokinin discovered from autoclaved herring sperm DNA?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPromotes fruit ripening",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPromotes cell division",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nInduces seed dormancy",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPromotes apical dominance",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Kinetin is a cytokinin that promotes cell division (cytokinesis) and is widely used in tissue culture.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f11f4934-905a-4f28-8b34-b005db0e28d9",
+    "question_text": "Which plant hormone was discovered by observing the effect of a volatile substance from ripened oranges on bananas?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthylene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGibberellin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ethylene was identified when H.H. Cousins observed that a volatile compound from ripened oranges\n              accelerated the ripening of bananas.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "73f77573-5e8c-43c1-857a-4e2b9729319b",
+    "question_text": "Which plant growth regulator promotes cell division and is naturally found in coconut milk?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cytokinins, such as zeatin (found in coconut milk), promote cell division and shoot growth in tissue\n              cultures.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "be506b59-342e-47fb-981a-0d769531717d",
+    "question_text": "Select the incorrect statement regarding phases of growth:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe meristematic phase shows active cell division.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe elongation phase increases cell size.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe maturation phase occurs before the elongation phase.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe log phase represents rapid growth in a sigmoid curve.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The maturation phase occurs after the elongation phase, not before.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c902e56f-2985-423d-a267-91e02b37c97d",
+    "question_text": "Which plant growth regulator is used to delay the ripening of fruits during storage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAbscisic acid",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGibberellin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cytokinins are used to delay senescence and prolong the shelf life of fruits during storage.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1740f9c3-2e33-4623-8590-6f3750dfff7b",
+    "question_text": "What is the term for the capacity of plant cells to regenerate a whole plant?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDedifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTotipotency",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRedifferentiation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Totipotency is the ability of a single cell to regenerate an entire organism, a key principle in plant\n              tissue culture.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6fef7dbd-0a65-412c-9dd2-e4dc1d173b11",
+    "question_text": "Who demonstrated that the tip of the coleoptile is the site of auxin production?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCharles Darwin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nE. Kurosawa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nF.W. Went",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nH.H. Cousins",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Charles Darwin and his son Francis demonstrated that the tip of the coleoptile produces auxin, which\n              causes phototropic bending.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c771eb16-29d9-41c2-8de0-9782a9c5e7a0",
+    "question_text": "Which plant growth regulator is involved in the formation of parthenocarpic fruits?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Auxins promote the formation of parthenocarpic fruits, such as seedless tomatoes and cucumbers.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ca8b2bca-5e5d-4d8c-9e6e-f8520e0202a7",
+    "question_text": "Select the correct statement regarding abscisic acid (ABA):",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nABA promotes seed germination.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nABA induces stomatal opening.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nABA promotes seed dormancy.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nABA delays leaf senescence.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "ABA (abscisic acid) induces seed dormancy and promotes stomatal closure during water stress.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "48e8e2fa-8165-4f54-bab0-3283af60bd9f",
+    "question_text": "Which plant hormone is used to promote root formation in stem cuttings?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Auxins, such as IAA and IBA, are used to promote root formation in stem cuttings for plant propagation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8770aa7b-56d9-4df7-8e40-9f29c81ba4b7",
+    "question_text": "Which plant hormone was first identified from human urine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Auxin was first isolated from human urine and is known for promoting cell elongation and apical\n              dominance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "863c439a-533e-4dce-bb45-1dab14180914",
+    "question_text": "Which growth curve phase is known for a slow initial growth rate before the exponential phase?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLog phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLag phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStationary phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDecline phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The lag phase is the initial phase with slow growth, preparing cells for rapid division in the log phase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dc654af6-554b-46c9-bc43-f2d4306f0064",
+    "question_text": "During which phase of growth do cells show maximum increase in their size and develop thick cell walls?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeristematic phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElongation phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMaturation phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStationary phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In the maturation phase, cells attain their maximal size with thickened walls and fully developed\n              structures.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a5c858b6-a85b-42a1-8c96-fedc61c1e6b6",
+    "question_text": "Which statement regarding plant growth is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGrowth is a permanent and irreversible increase in size.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPrimary growth increases the thickness of plants.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSecondary growth occurs due to lateral meristems.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIntercalary meristems contribute to elongation in grasses.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Primary growth increases the length of plants, not thickness. Secondary growth, caused by lateral\n              meristems, increases thickness.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2bc41b94-d909-4424-8f7b-5b09e5ea8fe2",
+    "question_text": "Which plant growth regulator is known to promote female flowers in cucumbers, increasing yield?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthylene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGibberellin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ethylene promotes the formation of female flowers in cucumbers, thereby increasing yield.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2ad49f56-3ba0-4824-b614-e2958485691f",
+    "question_text": "Which phase of growth involves cells attaining their maximal size with thickened cell walls?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nElongation phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMeristematic phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMaturation phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLag phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In the maturation phase, cells attain their maximal size and develop thickened walls to perform\n              specialized functions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "08b78b3f-6d37-4d29-8a38-d2e7f1513e72",
+    "question_text": "What is the process by which differentiated cells regain the ability to divide and form new meristematic tissue?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDedifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRedifferentiation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nApoptosis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Dedifferentiation occurs when mature cells regain the ability to divide and become meristematic.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2d53fefe-d0a9-4d56-af82-56716dbb166a",
+    "question_text": "Which plant hormone is used commercially for fruit ripening?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEthylene",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAuxin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Ethylene is widely used for the artificial ripening of fruits such as bananas and tomatoes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "36c08c93-f0fb-437d-ae5e-83dd92b95cd1",
+    "question_text": "Which plant growth regulator is widely used to induce flowering in long-day plants under short-day conditions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Gibberellins can induce flowering in long-day plants even under short-day conditions by promoting stem\n              elongation and floral initiation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "41fcbbe2-8041-429c-aced-58a4780e6a39",
+    "question_text": "Which plant growth regulator is responsible for promoting nutrient mobilization, thereby delaying leaf senescence?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cytokinins delay senescence by mobilizing nutrients and promoting protein synthesis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "411564a6-7af3-44fe-ac3f-04c103e140cc",
+    "question_text": "Which hormone is responsible for the phenomenon of apical dominance?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Auxin produced at the apical bud suppresses the growth of lateral buds, resulting in apical dominance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7b1ed3c1-fc55-4e44-802c-3c444beb549a",
+    "question_text": "Which scientist discovered that gibberellins cause abnormal elongation of rice seedlings?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCharles Darwin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nE. Kurosawa",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nF.W. Went",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nH.H. Cousins",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "E. Kurosawa discovered that gibberellins from the fungus *Gibberella fujikuroi* caused abnormal\n              elongation in rice seedlings.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "16c339bc-8ce1-497b-afc4-3955881866c5",
+    "question_text": "Which plant growth regulator delays leaf senescence and promotes nutrient mobilization?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cytokinins delay leaf senescence by mobilizing nutrients and promoting cell division.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0c0f52e2-d216-49d3-8465-d7a4f569248a",
+    "question_text": "Select the incorrect statement regarding auxins:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxins promote root initiation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAuxins inhibit lateral bud growth.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\n2,4-D is a natural auxin.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIAA is a naturally occurring auxin.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "2,4-D (2,4-dichlorophenoxyacetic acid) is a synthetic auxin, not a natural one. IAA (indole-3-acetic\n              acid) is a natural auxin.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4ba96ddd-358f-431c-8459-22b34e6a644f",
+    "question_text": "Which statement about plant hormones is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEthylene inhibits fruit ripening.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAuxin promotes lateral bud growth.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbscisic acid induces seed dormancy.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGibberellins prevent seed germination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Abscisic acid induces seed dormancy and inhibits germination. Ethylene promotes fruit ripening, and auxin\n              suppresses lateral bud growth (apical dominance).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3c8168ac-0158-4068-8b51-7bd1cd124a22",
+    "question_text": "Which of the following statements about senescence is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSenescence involves the synthesis of chlorophyll.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthylene delays senescence.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinins promote leaf senescence.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSenescence is a form of programmed cell death.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Senescence is a programmed cell death process involving the breakdown of cellular components. Ethylene\n              accelerates senescence, while cytokinins delay it.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dd3f0c3d-04d8-42c6-bb65-a431df43d59e",
+    "question_text": "Which of the following statements about auxin is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin promotes cell elongation.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAuxin promotes root initiation.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAuxin inhibits apical dominance.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIndole-3-acetic acid (IAA) is a natural auxin.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Auxin promotes apical dominance; it does not inhibit it. Cytokinins help overcome apical dominance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0821ed02-0a31-42ec-9c80-f5479bfa1192",
+    "question_text": "Select the correct statement regarding parthenocarpy:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nParthenocarpy results in seedless fruits.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParthenocarpy is induced only by cytokinins.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParthenocarpy requires fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nParthenocarpy is common in cereals.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Parthenocarpy is the development of seedless fruits without fertilization. Auxins and gibberellins can\n              induce parthenocarpy, not only cytokinins.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e3d1f470-1db5-493e-bc31-2c9cb9ba08db",
+    "question_text": "Which plant growth regulator is used to promote parthenocarpy in fruits like tomatoes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Auxin is commonly used to induce parthenocarpy, which results in seedless fruit development.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b0235fd-3a0d-42e4-9475-316dcca64d0b",
+    "question_text": "Which of the following statements about seed germination is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nWater absorption is not essential for germination.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellins promote the production of hydrolytic enzymes.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbscisic acid accelerates seed germination.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSeed germination is independent of temperature.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gibberellins stimulate the production of enzymes like alpha-amylase, which breaks down starch during seed\n              germination. Water, temperature, and oxygen are essential for germination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ef47876e-9667-4041-8658-9d86562a211f",
+    "question_text": "What type of curve is obtained when growth is plotted against time in geometric growth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLinear curve",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nS-shaped curve",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParabolic curve",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExponential curve",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "In geometric growth, plotting growth against time results in an exponential curve during the log phase.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "732681cd-53f0-4ce7-90f2-dba5be5dbdb7",
+    "question_text": "Which phase of growth is represented by a plateau in the sigmoid growth curve?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLag phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLog phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStationary phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExponential phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The stationary phase is represented by a plateau in the sigmoid growth curve, where the growth rate\n              stabilizes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2b8d178a-3db7-4f70-9038-0acd010039ab",
+    "question_text": "Which plant hormone increases sugar yield in sugarcane by promoting stem elongation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gibberellins increase internode length in sugarcane, thereby increasing sugar yield per plant.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c2b43352-614b-45e4-a5e6-317a26522f38",
+    "question_text": "Which plant hormone accelerates the abscission of leaves and fruits?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAbscisic acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ethylene promotes senescence and abscission of plant organs, including leaves and fruits.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3bcfc7c0-78b3-45e1-abd1-e219ccbd6915",
+    "question_text": "Which type of cell division produces new cells in the root apical meristem?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMeiosis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMitosis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBinary fission",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBudding",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mitosis occurs in the root apical meristem, producing genetically identical daughter cells for growth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "215fc1e1-78bd-49a8-b36f-0557daa269f1",
+    "question_text": "Which type of growth occurs due to the activity of intercalary meristem?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPrimary growth",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSecondary growth",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nApical growth",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLateral growth",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Intercalary meristems contribute to primary growth by elongating internodes, especially in grasses.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "cc2f30fd-1d98-41ff-93cf-370966a8b70d",
+    "question_text": "Which plant growth regulator is referred to as the 'stress hormone'?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAbscisic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGibberellin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Abscisic acid (ABA) is called the stress hormone as it helps plants respond to drought by closing stomata\n              and inducing dormancy.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "626af708-76f5-4491-b10b-491ae2a35f4a",
+    "question_text": "Select the incorrect statement regarding senescence and abscission:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSenescence involves the breakdown of cellular components.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEthylene accelerates leaf abscission.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinins promote leaf abscission.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSenescence is a form of programmed cell death.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cytokinins delay, not promote, leaf abscission. Ethylene promotes abscission and senescence.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3e5ef0b-ac04-4139-a349-987f9d041a1f",
+    "question_text": "Which type of heterophylly occurs in cotton where juvenile and mature leaves differ in shape?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHabitual heterophylly",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEnvironmental heterophylly",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDevelopmental heterophylly",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhysiological heterophylly",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Developmental heterophylly occurs in cotton, where leaves show different shapes during juvenile and\n              mature stages.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "100f482d-a10e-43e6-96f0-262efd19477d",
+    "question_text": "Which phase of growth shows the highest increase in protoplasm content?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMaturation phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nElongation phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMeristematic phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSenescent phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In the meristematic phase, cells actively divide and have high protoplasm content with large nuclei.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3da9c2f-3938-4b16-9f41-8e3b83f0fc0e",
+    "question_text": "Which plant growth regulator was discovered through experiments on tobacco stem callus proliferation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cytokinin was discovered by F. Skoog and co-workers during experiments on tobacco stem callus\n              proliferation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7f0ee376-75a3-4290-bd9a-f7a2a21313c7",
+    "question_text": "Select the correct statement regarding the phases of plant growth:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe meristematic phase has fully matured cells.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe elongation phase increases cell size.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe maturation phase occurs before the elongation phase.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe log phase represents slow growth.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "During the elongation phase, cells increase in size due to water absorption and cell wall loosening. The\n              maturation phase occurs after elongation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1c55d732-f47a-4cd1-847b-d4a377437615",
+    "question_text": "Which plant hormone induces apical hook formation in dicot seedlings?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Ethylene induces apical hook formation in dicot seedlings to protect the shoot tip during germination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dd8e631a-76f1-48b3-a14e-48a01e96c079",
+    "question_text": "Select the correct statement regarding abscisic acid (ABA):",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nABA promotes seed germination.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nABA induces stomatal closure during drought.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nABA delays seed dormancy.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nABA promotes cell division.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Abscisic acid (ABA) is a stress hormone that induces stomatal closure to reduce water loss during\n              drought. It promotes dormancy, not germination.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1b6ee30b-7b9d-46a1-9334-bb12d28f3979",
+    "question_text": "Which plant growth regulator delays senescence and is commonly used in plant tissue culture to promote shoot growth?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAbscisic acid",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Cytokinins delay senescence (aging) and promote cell division, making them essential for shoot formation\n              in tissue culture.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "310a2fd7-5c0b-42d4-bc0a-838c53cbb888",
+    "question_text": "What is the term for leaves of different shapes found in the same plant due to environmental factors?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGenetic plasticity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDevelopmental plasticity",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEnvironmental heterophylly",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHabitual heterophylly",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Environmental heterophylly occurs when the shape of leaves changes in response to environmental\n              conditions, such as in buttercup plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b6656bb7-e54f-4a41-b9e7-0b620a339343",
+    "question_text": "Which plant growth regulator is known to promote bolting in rosette plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAuxin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGibberellin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCytokinin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Gibberellins promote bolting, which is the rapid elongation of the internodes just before flowering,\n              particularly in rosette plants like cabbage and beet.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f5a2bc03-bf07-4c26-a97a-3bd2028af118",
+    "question_text": "Which of the following about seed germination is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGibberellins promote enzyme production for germination.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAbscisic acid promotes seed germination.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOxygen is required for seed germination.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWater uptake is essential for germination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Abscisic acid (ABA) inhibits seed germination by inducing dormancy. Gibberellins promote germination by\n              breaking down starch into sugars.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4611ea97-6c9c-41f2-b986-640ad5c4a7fd",
+    "question_text": "Which phase of the sigmoid growth curve represents rapid cell division and elongation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLag phase",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLog phase",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nStationary phase",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDecline phase",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The log phase represents exponential growth, characterized by rapid cell division and elongation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "62fc0ac9-3763-4480-9c05-b57efcdae101",
+    "question_text": "Select the correct statement about plant hormones:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCytokinins inhibit cell division.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAbscisic acid promotes seed dormancy.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGibberellins suppress bolting in rosette plants.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEthylene delays fruit ripening.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Abscisic acid induces seed dormancy, helping seeds survive unfavorable conditions. Cytokinins promote,\n              not inhibit, cell division, and ethylene promotes, not delays, fruit ripening.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c15c7b4e-9a6f-4d75-9e74-9321367345ab",
+    "question_text": "Which growth pattern in plants results in a linear curve when plotted against time?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGeometric growth",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nArithmetic growth",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSigmoid growth",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nExponential growth",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Arithmetic growth results in a linear curve, as one daughter cell divides while the other differentiates.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Plant Growth and Development",
+    "topic": "Plant Growth and Development",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Plant Growth and Development / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "plant-growth-and-development"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

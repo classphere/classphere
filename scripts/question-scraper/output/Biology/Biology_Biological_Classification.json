@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "a3ae6262-1530-4fe0-9dc7-73f734190fee",
+    "question_text": "Who proposed the Five Kingdom Classification system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAristotle",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLinnaeus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nR.H. Whittaker",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHaeckel",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "R.H. Whittaker proposed the Five Kingdom Classification in 1969, which included Monera, Protista, Fungi,\n              Plantae, and Animalia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "302c348e-168e-4805-bbd8-5e5e17f0f0bc",
+    "question_text": "Which of the following statements about bacterial reproduction is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBacteria reproduce primarily by binary fission.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBacteria undergo mitosis during cell division.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBacteria reproduce only sexually.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBacteria have a multicellular body structure.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bacteria primarily reproduce asexually by binary fission, a rapid method of cell division.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4d8db591-327e-4742-a9a2-4fe09b5791ec",
+    "question_text": "Which of the following is a characteristic of Kingdom Monera?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEukaryotic cell structure",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPresence of nuclear membrane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUnicellular prokaryotic organisms",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMulticellular body organization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Kingdom Monera includes unicellular prokaryotic organisms, such as bacteria, that lack a nuclear\n              membrane.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2df0b7df-894c-45bd-b923-5f21641ad5b1",
+    "question_text": "Which of the following kingdoms includes organisms that lack a nuclear membrane?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonera",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProtista",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFungi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlantae",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Kingdom Monera consists of prokaryotic organisms that lack a well-defined nuclear membrane.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b1bad0c3-55b2-4a17-9459-519d253c0d7f",
+    "question_text": "Which of the following statements about Kingdom Monera is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonerans include both bacteria and cyanobacteria.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMonerans possess a well-defined nucleus.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMonerans have membrane-bound organelles.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonerans reproduce only sexually.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Kingdom Monera includes bacteria and cyanobacteria, which are prokaryotic organisms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "103001af-7319-450c-8a11-ddfb6df05e1f",
+    "question_text": "Which of the following is NOT a characteristic of Kingdom Fungi?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHeterotrophic mode of nutrition",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPresence of chitin in the cell wall",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMulticellular body organization only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nReproduction by spores",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fungi can be unicellular (e.g., yeast) or multicellular (e.g., mushrooms). Therefore, stating that they\n              are only multicellular is incorrect.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "19774214-f563-4c8b-875f-52e148448123",
+    "question_text": "Which of the following statements about Kingdom Monera is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonerans are prokaryotic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMonerans reproduce mainly by binary fission.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAll Monerans are autotrophic.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSome Monerans can fix atmospheric nitrogen.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Monerans include both autotrophic and heterotrophic organisms, not just autotrophic ones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7808f06f-1c3a-4746-a031-2a9f561d2201",
+    "question_text": "Which of the following kingdoms includes organisms that are exclusively heterotrophic?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonera",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProtista",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFungi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlantae",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Kingdom Fungi includes organisms that are exclusively heterotrophic, obtaining nutrition through\n              saprophytism or parasitism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c88ce080-95f5-46ef-8286-04beab7952aa",
+    "question_text": "Which of the following statements about bacteria is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAll bacteria are pathogenic to humans.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBacteria lack membrane-bound organelles.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBacteria have a well-defined nucleus.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBacteria reproduce only by sexual reproduction.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Bacteria lack membrane-bound organelles such as the nucleus, mitochondria, and endoplasmic reticulum.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3d282633-c5c6-45eb-bbc2-ed8dc9992036",
+    "question_text": "Who was the first to attempt a scientific basis for the classification of organisms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLinnaeus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAristotle",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nWhittaker",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHaeckel",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Aristotle was the first to attempt a scientific classification of organisms based on simple morphological\n              characteristics.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3d54a586-461e-499c-8ffe-b6ca665f2156",
+    "question_text": "Which of the following is NOT a characteristic of Kingdom Plantae?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPresence of cell wall",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAutotrophic mode of nutrition",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHeterotrophic members",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChlorophyll-containing cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Kingdom Plantae primarily includes autotrophic organisms, but some parasitic plants exist. However, they\n              are exceptions and not a general characteristic.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bcc682a0-c22e-4d44-a75e-87e99a755dd4",
+    "question_text": "Which of the following organisms reproduces primarily by fragmentation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSpirogyra",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParamecium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmoeba",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMucor",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Spirogyra reproduces asexually by fragmentation, where the filament breaks into smaller pieces that grow\n              into\n              new individuals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "70b0acc5-3aa1-4032-8dd8-de221ac05667",
+    "question_text": "Which of the following is an example of an obligate anaerobe?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLactobacillus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRhizobium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nClostridium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nE. coli",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Clostridium is an obligate anaerobe, meaning it can only survive in the absence of oxygen.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0bbd2c74-510e-40ff-bb30-6cb4fcc9d815",
+    "question_text": "Which of the following statements is true about Mycoplasma?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey have a rigid cell wall",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey are the smallest living cells",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey possess a well-defined nucleus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey are obligate aerobes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mycoplasma are the smallest living cells and lack a cell wall, making them highly flexible.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "740cc950-f9fb-4cb1-9b50-92af277b0da1",
+    "question_text": "Which of the following is the primary reason why viruses are considered non-living outside a host?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey contain either DNA or RNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey cannot replicate independently",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey have a protein coat",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey can mutate",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Viruses lack cellular machinery for independent replication and require a host cell to reproduce.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "65c3c4f2-4d51-41db-bca0-f4184c81d316",
+    "question_text": "Which of the following best explains why fungi are more closely related to animals than to plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are heterotrophic",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey contain chlorophyll",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey have cellulose cell walls",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey reproduce by seeds",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Fungi, like animals, are heterotrophic and obtain their food by absorption, unlike plants that are\n              autotrophic.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f14992d4-83f1-494f-9af8-58828c8796d1",
+    "question_text": "Which of the following structures is responsible for motility in bacteria?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFimbriae",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPili",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFlagella",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCapsule",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Flagella are whip-like structures that enable bacterial motility in liquid environments by rotating like\n              propellers. Fimbriae and pili are hair-like structures used for attachment to surfaces or other cells, and\n              pili can facilitate genetic exchange via conjugation, but they do not contribute to motility. The capsule\n              is a polysaccharide layer that protects bacteria but is not involved in movement.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "88b4f6f0-7be6-46ec-bd26-495752a0be81",
+    "question_text": "Which of the following statements about Kingdom Monera is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAll Monerans are unicellular.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMonerans have a well-defined nucleus.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMonerans reproduce mainly by binary fission.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonerans lack membrane-bound organelles.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Monerans are prokaryotic organisms and lack a well-defined nucleus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "73516846-0fb4-4fd8-bef9-4ecede52840d",
+    "question_text": "Which of the following kingdoms consists of organisms that are exclusively unicellular and eukaryotic?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonera",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProtista",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFungi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlantae",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Kingdom Protista includes unicellular eukaryotic organisms such as Amoeba, Euglena, and Paramecium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4ea5410b-e7af-4c40-95cb-21bf03918ca9",
+    "question_text": "Which of the following statements about Kingdom Monera is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonerans include both autotrophic and heterotrophic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMonerans lack membrane-bound organelles.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMonerans have a well-defined nucleus.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonerans reproduce asexually by binary fission.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Monerans are prokaryotic organisms and lack a well-defined nucleus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7db1ec9a-c8ee-4d27-9da9-7f8296c75707",
+    "question_text": "Which kingdom includes prokaryotic organisms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonera",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProtista",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFungi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlantae",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Kingdom Monera consists of all prokaryotic organisms, including bacteria and archaebacteria.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b6e95414-2083-4d91-b0ff-27476a24912d",
+    "question_text": "Which of the following organisms lacks a cell wall?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMycoplasma",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEubacteria",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFungi",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCyanobacteria",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Mycoplasma completely lack a cell wall, making them different from bacteria, fungi, and cyanobacteria.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "03d29c99-fb92-4862-b587-f61dba6b3647",
+    "question_text": "Which of the following is NOT a characteristic of Kingdom Plantae?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPresence of cell wall",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAutotrophic mode of nutrition",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHeterotrophic members",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChlorophyll-containing cells",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Kingdom Plantae primarily includes autotrophic organisms, but some parasitic plants exist. However, they\n              are exceptions and not a general characteristic.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7cd0ab45-d8c7-4f5b-840f-7220a19a6557",
+    "question_text": "Which of the following statements about viruses is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nViruses contain both DNA and RNA as genetic material.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nViruses are obligate intracellular parasites.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nViruses cannot replicate outside a host cell.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nViruses lack a cellular structure.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Viruses contain either DNA or RNA, but never both, as their genetic material.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "03578805-ce59-47f0-a9dc-6550658b4a9d",
+    "question_text": "Which of the following statements about Kingdom Monera is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonerans are unicellular prokaryotic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMonerans include both autotrophic and heterotrophic members.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMonerans lack membrane-bound organelles.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonerans reproduce only by sexual reproduction.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Monerans primarily reproduce asexually through binary fission, not sexual reproduction.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dc174100-d4e9-4296-b2f8-3c1298c132e2",
+    "question_text": "Which of the following best describes the structure of a virus?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nA cellular organism with a nucleus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAn acellular structure with a protein coat and nucleic acid",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nA prokaryotic cell with a cell wall",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nA multicellular organism with organelles",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Viruses are acellular entities consisting of a protein coat (capsid) surrounding either DNA or RNA as\n              their genetic material, but they lack cellular structures like a nucleus or organelles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fd876e96-44ca-4df5-858b-4a13557b9fce",
+    "question_text": "Which of the following statements about Kingdom Monera is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonerans are unicellular prokaryotic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMonerans contain membrane-bound organelles.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMonerans reproduce mainly through binary fission.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonerans lack a well-defined nucleus.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Monerans are prokaryotic organisms and lack membrane-bound organelles such as mitochondria and the\n              nucleus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f3e7ab34-bfa3-4d86-99a9-d41c29772114",
+    "question_text": "Which of the following groups includes organisms that can fix atmospheric nitrogen?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFungi",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCyanobacteria",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDinoflagellates",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSlime moulds",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cyanobacteria such as Nostoc and Anabaena can fix atmospheric nitrogen using specialized cells called\n              heterocysts.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b5d19472-6fcb-4f67-8c8b-0a97b4eea5db",
+    "question_text": "Which of the following fungi reproduces sexually through zygospores?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRhizopus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSaccharomyces",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPenicillium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPuccinia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Rhizopus, a member of Phycomycetes, reproduces sexually through zygospores.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d4d45368-53e3-4cae-a7bd-8045254fbac3",
+    "question_text": "Which of the following is a characteristic feature of prions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey contain both DNA and RNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey lack a nucleic acid genome",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey infect only plants",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey are surrounded by a lipid membrane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Prions are infectious protein particles that lack DNA or RNA, unlike viruses and viroids.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6dafa537-71d9-4a18-9658-f14fbde2e0e8",
+    "question_text": "Which of the following is an example of a eukaryotic unicellular organism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNostoc",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAmoeba",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhizobium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMycoplasma",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Amoeba is a unicellular eukaryotic organism belonging to Kingdom Protista.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "31ccb0ea-c4c0-49fe-b011-4f519a559ce5",
+    "question_text": "What is the main mode of reproduction in bacteria under favorable conditions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBinary fission",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nConjugation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBudding",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpore formation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Bacteria primarily reproduce through binary fission, a rapid asexual mode of reproduction under favorable\n              conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fb86e3c7-8e81-4ac4-b6bc-e9bf4b44133f",
+    "question_text": "Which of the following statements about viruses is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nViruses can be crystallized.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nViruses require a host cell to replicate.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nViruses contain ribosomes for protein synthesis.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nViruses are acellular structures.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Viruses lack ribosomes and depend on the host's cellular machinery for protein synthesis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c698c047-f2ae-4d88-aba0-72868e65598f",
+    "question_text": "Which of the following statements about viruses is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nViruses are acellular organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nViruses can reproduce independently.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nViruses possess both DNA and RNA in the same particle.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nViruses have their own ribosomes for protein synthesis.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Viruses are acellular entities that require a host cell for replication and lack independent metabolism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "654c9bf7-427f-48a3-98d9-1d4f7ef484ab",
+    "question_text": "Which of the following statements about Kingdom Monera is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonerans include both autotrophic and heterotrophic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMonerans have membrane-bound organelles.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMonerans reproduce primarily by binary fission.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonerans include cyanobacteria and bacteria.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Monerans lack membrane-bound organelles since they are prokaryotic organisms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7284e1bd-4f8e-4743-9100-0320ece24a0c",
+    "question_text": "Which characteristic is unique to fungi compared to plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPresence of chlorophyll",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHeterotrophic mode of nutrition",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCell wall made of cellulose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProduction of seeds",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Unlike plants, fungi lack chlorophyll and obtain nutrients through heterotrophic absorption.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6f69bcc8-1f14-4199-8943-5705e3998ba9",
+    "question_text": "Which of the following is an example of a saprophytic bacterium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLactobacillus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRhizobium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlasmodium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTrypanosoma",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Lactobacillus is a saprophytic bacterium involved in curd formation from milk.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e4a8952b-9dc9-4d64-8c9b-a1828e709439",
+    "question_text": "Which of the following is a characteristic feature of Kingdom Protista?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMulticellular body organization",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPresence of a true nucleus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLack of membrane-bound organelles",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProkaryotic nature",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Protists are unicellular eukaryotic organisms that have a well-defined nucleus and membrane-bound\n              organelles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "40bfa7d1-eb4c-413e-8c40-d8f6f2e35d18",
+    "question_text": "Which of the following adaptations help cyanobacteria to survive in aquatic environments?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nHeterocysts for nitrogen fixation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFormation of cilia for movement",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMulticellular body organization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nChloroplasts for photosynthesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Cyanobacteria possess heterocysts, specialized cells that help fix nitrogen in aquatic environments.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "102c3b63-8d11-41c4-b11c-b7d2a19ab5d1",
+    "question_text": "Which of the following organisms exhibits both autotrophic and heterotrophic modes of nutrition?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEuglena",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSpirogyra",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRhizopus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nParamecium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Euglena can perform photosynthesis in the presence of light but switches to heterotrophic nutrition in\n              the\n              absence of light.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3836fee7-1d9e-46dc-a7e4-d26d0a3c336d",
+    "question_text": "Which of the following statements about fungi is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are heterotrophic",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey reproduce both sexually and asexually",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTheir cell wall is made of cellulose",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey can be unicellular or multicellular",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The fungal cell wall is composed of chitin, not cellulose, which is found in plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "de056764-d6f0-4ee1-9824-411f83f1da6a",
+    "question_text": "Which of the following is a key feature of viral reproduction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIndependent replication using ribosomes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUse of host cell machinery for replication",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBinary fission in the absence of a host",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMitosis within the viral particle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Viruses rely on the host cell’s machinery, such as ribosomes and enzymes, to replicate their genetic\n              material and produce new viral particles, as they lack their own metabolic machinery.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f6e7a035-10e9-45fd-a755-33fa4133bab1",
+    "question_text": "Which of the following is a key feature of viral reproduction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIndependent replication using ribosomes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUse of host cell machinery for replication",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBinary fission in the absence of a host",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMitosis within the viral particle",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Viruses rely on the host cell’s machinery, such as ribosomes and enzymes, to replicate their genetic\n              material and produce new viral particles, as they lack their own metabolic machinery.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6c618546-32f1-421d-8088-440c02eaf296",
+    "question_text": "Which of the following statements about Kingdom Monera is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonerans include only autotrophic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMonerans have a circular DNA molecule.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMonerans have membrane-bound organelles.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMonerans reproduce mainly by mitosis.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Monerans have a circular DNA molecule that is not enclosed within a nuclear membrane.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a7f5e98f-0282-4b76-ada7-8f2ab158c8dd",
+    "question_text": "Which of the following statements is true about cyanobacteria?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are eukaryotic",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey perform nitrogen fixation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey are heterotrophic",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey lack a cell wall",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cyanobacteria, also called blue-green algae, are capable of nitrogen fixation in specialized cells called\n              heterocysts.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6f6da772-0d91-4df3-9910-7965c605e27e",
+    "question_text": "Which of the following is a characteristic feature of Kingdom Protista?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPresence of a well-defined nucleus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAlways multicellular",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLack of membrane-bound organelles",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProkaryotic nature",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Kingdom Protista consists of eukaryotic organisms that have a well-defined nucleus and membrane-bound\n              organelles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "10a84587-13bd-4676-ad60-cab2e7760326",
+    "question_text": "Which of the following organisms is an example of a flagellated protozoan?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAmoeba",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParamecium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTrypanosoma",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlasmodium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Trypanosoma is a flagellated protozoan that causes sleeping sickness.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4b316f81-f99a-40ff-9d89-f64733b1d278",
+    "question_text": "Which of the following is NOT a characteristic of viruses?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are acellular",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey can reproduce outside a host",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey contain either DNA or RNA",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey are obligate intracellular parasites",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Viruses cannot reproduce outside a host; they require a living cell to replicate.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "468bed2f-744e-41b1-b052-80a95a301f73",
+    "question_text": "Which of the following organisms is considered a link between plants and animals?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEuglena",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParamecium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmoeba",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpirogyra",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Euglena exhibits both autotrophic (photosynthesis) and heterotrophic modes of nutrition, making it a link\n              between plants and animals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "65c1c7ce-668a-423c-b0fa-270accdd8484",
+    "question_text": "Which of the following correctly describes the mode of nutrition in fungi?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOnly autotrophic",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nOnly parasitic",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSaprophytic and heterotrophic",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOnly photosynthetic",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fungi obtain nutrients through saprophytic (decomposing organic matter) and heterotrophic modes of\n              nutrition.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5002f889-c7e0-45c7-adf6-120446a1aab6",
+    "question_text": "Which of the following statements about Mycoplasma is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMycoplasma have a well-defined cell wall.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMycoplasma are the smallest living cells known.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMycoplasma can perform photosynthesis.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMycoplasma have a double-membrane nucleus.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mycoplasma are the smallest known living cells and are unique among bacteria as they lack a cell wall.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e4bec84-9855-47e9-8553-abfd9393bb40",
+    "question_text": "Which of the following organisms is a cyanobacterium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEuglena",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nParamecium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNostoc",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPlasmodium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Nostoc is a cyanobacterium capable of photosynthesis and nitrogen fixation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "59b964fd-4cc8-486d-ac7f-63cb1a33174b",
+    "question_text": "Which of the following statements about diatoms is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDiatoms are exclusively heterotrophic.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiatoms have silica-embedded cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDiatoms lack a nucleus.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDiatoms reproduce only sexually.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Diatoms have silica-embedded cell walls, making them ecologically important in marine environments.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a4f03d03-a7bb-48ad-9dfe-bc76fefb2773",
+    "question_text": "Which of the following statements about diatoms is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDiatoms have silica-embedded cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiatoms reproduce only sexually.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDiatoms are prokaryotic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDiatoms do not contribute to marine ecosystems.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Diatoms have siliceous cell walls, making them ecologically important in marine and freshwater\n              ecosystems.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b4e33993-5bf6-4477-af46-c7abfd8ba8b3",
+    "question_text": "Which type of spore is formed by fungi during unfavorable conditions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nZoospore",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBasidiospore",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nConidia",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOospore",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Oospores are thick-walled, resistant spores formed by fungi to survive unfavorable conditions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "154ad2de-0072-43c4-9709-67733450a9c2",
+    "question_text": "Which of the following is a distinguishing feature of dinoflagellates?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPresence of cilia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTwo flagella in different orientations",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCell wall made of silica",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nParasitic mode of nutrition",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Dinoflagellates have two flagella, one lying longitudinally and the other transversely in a groove\n              between\n              cellulose plates.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f767feb7-6f3f-4011-9e61-56f87831a3f8",
+    "question_text": "Which of the following statements about Mycoplasma is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMycoplasma are the smallest free-living organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMycoplasma lack a cell wall.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMycoplasma contain peptidoglycan in their cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMycoplasma are resistant to antibiotics that target cell wall synthesis.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mycoplasma lack a cell wall and therefore do not contain peptidoglycan.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4b7d8659-2409-42dd-97ca-48a4153a10fb",
+    "question_text": "What is the main function of the gelatinous sheath found in cyanobacteria?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProtection and buoyancy",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMovement",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDigestion of food",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProtein synthesis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The gelatinous sheath in cyanobacteria provides protection and helps maintain buoyancy in water.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e76283f-129b-4dce-81e0-19d015376906",
+    "question_text": "Which of the following groups includes organisms that use pseudopodia for locomotion?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCiliates",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFlagellates",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAmoeboids",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSporozoans",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Amoeboids, such as Amoeba, use pseudopodia (false feet) for movement and capturing food.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c11a8c52-296c-44c6-acd6-44222e4a18ea",
+    "question_text": "Which of the following statements about diatoms is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDiatoms have silica-embedded cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiatoms are exclusively heterotrophic.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDiatoms do not contribute to oxygen production.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDiatoms lack a nucleus.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Diatoms have silica-embedded cell walls, making them ecologically significant in aquatic ecosystems.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f8749c72-7cc1-4605-9e22-b2fb27d340c7",
+    "question_text": "Which of the following statements about Mycoplasma is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMycoplasma have a rigid cell wall.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMycoplasma lack a cell wall.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMycoplasma contain peptidoglycan in their cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMycoplasma are not affected by antibiotics that target cell walls.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mycoplasma are unique bacteria that completely lack a cell wall.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8519d4e3-00b3-491b-913f-d6be26856d24",
+    "question_text": "Which of the following statements about protozoans is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProtozoans are unicellular eukaryotic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProtozoans can be free-living or parasitic.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProtozoans reproduce only sexually.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProtozoans exhibit locomotion using cilia, flagella, or pseudopodia.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Protozoans reproduce both sexually and asexually, depending on the species.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fa158175-3854-4128-a4da-f40142110fa6",
+    "question_text": "Which type of organism is responsible for causing malaria?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasmodium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTrypanosoma",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParamecium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nEuglena",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Plasmodium, a sporozoan protozoan, is the causative agent of malaria in humans, transmitted through the\n              bite of infected Anopheles mosquitoes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a4e3f6e1-41d7-44a7-8a7c-8a9ace15fe92",
+    "question_text": "What is the major component of the fungal cell wall?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCellulose",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nChitin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPeptidoglycan",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLignin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The fungal cell wall is primarily composed of chitin, which provides structural support.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dc7ca0c9-ad97-4dcc-a65a-692ff4510b3e",
+    "question_text": "Which of the following statements about Mycoplasma is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMycoplasma are the smallest free-living organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMycoplasma lack a cell wall.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMycoplasma contain peptidoglycan in their cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMycoplasma are resistant to antibiotics targeting cell walls.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Mycoplasma lack a cell wall and therefore do not contain peptidoglycan.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d67e804e-9266-4b59-91bd-5c2fff1c1232",
+    "question_text": "Which of the following statements about prions is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPrions are infectious proteins.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPrions contain RNA as genetic material.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPrions have a cellular structure.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPrions infect only plants.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Prions are infectious proteins that cause neurodegenerative diseases such as mad cow disease.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "144546b6-1e3f-4ad9-9db4-d66ed3efff5c",
+    "question_text": "What distinguishes Viroids from Viruses?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nViroids contain both DNA and RNA",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nViroids lack a protein coat",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nViroids infect animals",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nViroids have a lipid membrane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Viroids are infectious RNA molecules that lack a protein coat, unlike viruses.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e9415f9-4c88-45a9-a13f-0e31a9fd98dd",
+    "question_text": "Which of the following statements about fungi is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFungi are exclusively autotrophic.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFungi have chitin in their cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFungi store carbohydrates as starch.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFungi reproduce only through sexual reproduction.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fungi have cell walls made of chitin, distinguishing them from plants that have cellulose-based cell\n              walls.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "90bd3a2a-d522-4e8b-b450-73375d9b2ce7",
+    "question_text": "Which of the following statements about protozoans is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAll protozoans are multicellular.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProtozoans reproduce only sexually.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nProtozoans include free-living and parasitic forms.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nProtozoans do not exhibit locomotion.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Protozoans include both free-living and parasitic species, such as Amoeba and Plasmodium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dbb6100a-88fd-48d4-882a-65bd394f6a85",
+    "question_text": "What makes Euglena unique among protists?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nIt is entirely autotrophic",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nIt has a cell wall like plants",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nIt can switch between autotrophic and heterotrophic nutrition",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIt reproduces sexually",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Euglena can photosynthesize in light but becomes heterotrophic in the absence of light.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5c324596-ddbd-486b-b8d6-01e9f6ea9836",
+    "question_text": "Which of the following fungal groups is also called sac fungi?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhycomycetes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAscomycetes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBasidiomycetes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDeuteromycetes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ascomycetes are known as sac fungi because they produce ascospores inside sac-like asci.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "549e5d51-a959-4f6f-a03d-89c0f18c6f6c",
+    "question_text": "Which of the following statements about lichens is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLichens are a symbiotic association of fungi and algae.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLichens are sensitive to air pollution.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFungi in lichens provide food through photosynthesis.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLichens can grow in extreme environments.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In lichens, the algae perform photosynthesis and provide food, while fungi offer protection and moisture.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a83765ae-5d9d-40af-a896-8cdfd515e5c0",
+    "question_text": "Which kingdom includes both unicellular and multicellular heterotrophic organisms?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonera",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFungi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlantae",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAnimalia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Kingdom Fungi includes both unicellular (e.g., yeast) and multicellular (e.g., mushrooms) heterotrophic\n              organisms.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b87e2618-907b-4959-be20-9b6d1b536865",
+    "question_text": "Which of the following statements about Mycoplasma is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMycoplasma have a well-defined cell wall.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMycoplasma are the smallest free-living organisms.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMycoplasma contain peptidoglycan in their cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMycoplasma are obligate intracellular parasites.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mycoplasma are the smallest free-living organisms and are unique in lacking a cell wall.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b264201e-b24c-41b7-a775-423a8a466381",
+    "question_text": "Which of the following is a characteristic feature of archaebacteria?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPresence of peptidoglycan in their cell walls",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAbility to survive in extreme environments",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nObligate intracellular parasites",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPhotosynthetic nutrition",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Archaebacteria are known for their ability to survive in extreme environments, such as high temperatures\n              or salinity, and have unique cell walls lacking peptidoglycan.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "33870170-1fc4-4cd7-a489-bd6bb4db5864",
+    "question_text": "Which of the following is an example of a saprophytic protist?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSlime moulds",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEuglenoids",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDinoflagellates",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDiatoms",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Slime moulds are saprophytic protists that feed on decaying organic material.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fccf3370-858a-4e0d-b136-5fbff0dbda7f",
+    "question_text": "Which of the following statements about prions is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPrions are infectious proteins.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPrions contain nucleic acids.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPrions have a cellular structure.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPrions infect only plants.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Prions are infectious proteins that cause neurodegenerative diseases such as mad cow disease.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "10080021-2745-4e1a-8d2d-adc69b16a1af",
+    "question_text": "Which of the following organisms causes sleeping sickness?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPlasmodium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTrypanosoma",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEntamoeba",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGonyaulax",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Trypanosoma, a flagellated protozoan, causes sleeping sickness in humans.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "78b5b2ac-6a22-485e-9262-48989bc323b4",
+    "question_text": "Which of the following is an example of a free-living nitrogen-fixing bacterium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRhizobium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAzotobacter",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMycobacterium",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nClostridium",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Azotobacter is a free-living nitrogen-fixing bacterium found in the soil.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "575c1949-aca1-4232-a7f5-49e553fe9720",
+    "question_text": "Which feature of diatoms makes them ecologically important in aquatic ecosystems?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey act as decomposers",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey fix atmospheric nitrogen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey form the primary producers in the food chain",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey cause red tides",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Diatoms are primary producers in aquatic ecosystems, forming the base of the food chain by\n              photosynthesizing.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "00179e2e-e051-4acb-acc4-f4b765f29a03",
+    "question_text": "Which of the following statements about diatoms is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDiatoms have silica-embedded cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiatoms are heterotrophic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDiatoms lack a nucleus.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDiatoms reproduce only sexually.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Diatoms have silica-embedded cell walls, making them ecologically significant in aquatic ecosystems.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "df87c55f-b7ad-4e5d-95b5-c6d193eb30f9",
+    "question_text": "Which kingdom includes organisms that exhibit alternation of generations?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMonera",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFungi",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPlantae",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAnimalia",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Plants exhibit alternation of generations, alternating between haploid gametophyte and diploid sporophyte\n              stages.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c35edf25-c66d-4aef-9db4-684ab78da024",
+    "question_text": "Which of the following statements is NOT true about Kingdom Animalia?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey lack a cell wall",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey are heterotrophic",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey store food as starch",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey reproduce sexually",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Animals store food reserves in the form of glycogen, not starch.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "abf89690-5381-468c-8168-d26625b9e491",
+    "question_text": "Which of the following is NOT a characteristic of Kingdom Protista?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSingle-celled eukaryotes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWell-defined nucleus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMulticellular body organization",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBoth autotrophic and heterotrophic modes of nutrition",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Kingdom Protista consists mainly of unicellular eukaryotic organisms, not multicellular ones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "273cedc0-eaf4-454b-a000-4de7f18485c5",
+    "question_text": "Which of the following allows some bacteria to survive harsh environmental conditions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFormation of cysts",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProduction of toxins",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nExcretion of antibiotics",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDevelopment of flagella",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Some bacteria survive extreme conditions by forming cysts or endospores that protect them from heat,\n              radiation, and chemicals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "291f839e-0f22-4dad-9636-8f1b3aa3bbf4",
+    "question_text": "Which of the following statements about viruses is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nViruses can replicate outside a host cell.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nViruses are obligate intracellular parasites.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nViruses lack a cellular structure.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nViruses can infect both plants and animals.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Viruses cannot replicate outside a host cell, as they lack the necessary cellular machinery.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f961d3da-cece-47ff-843f-5400852a1669",
+    "question_text": "Which of the following statements about Mycoplasma is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMycoplasma have a rigid cell wall.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMycoplasma are the smallest known living cells.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMycoplasma contain peptidoglycan in their cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMycoplasma cannot survive outside a host cell.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Mycoplasma are the smallest known living cells and are unique in lacking a cell wall.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "27a68bbe-3dbd-436f-bd00-8015602ece73",
+    "question_text": "Which of the following is a characteristic of nitrogen-fixing bacteria?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey produce antibiotics",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey convert atmospheric nitrogen to ammonia",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey perform oxygenic photosynthesis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey are obligate aerobes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Nitrogen-fixing bacteria, such as Rhizobium and Azotobacter, convert atmospheric nitrogen (N₂) into\n              ammonia, which can be used by plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9de6b012-6324-4aa9-b241-8802ab876069",
+    "question_text": "Which of the following statements about diatoms is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDiatoms have silica-embedded cell walls.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiatoms are photosynthetic.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDiatoms lack a nucleus and other organelles.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDiatoms contribute significantly to marine oxygen production.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Diatoms are eukaryotic and possess a nucleus, mitochondria, and other organelles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "248aab0c-f6e8-4519-91ea-687f2b926600",
+    "question_text": "Which of the following statements about lichens is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are purely autotrophic",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey are symbiotic associations",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey consist of fungi only",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey cannot survive in extreme conditions",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Lichens are symbiotic associations between fungi (mycobiont) and algae (phycobiont), where algae provide\n              food and fungi offer protection.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e75c1c29-2888-43a7-8059-14a1d82f2e47",
+    "question_text": "Which of the following is a symbiotic association between fungi and algae?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMycorrhiza",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLichen",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSlime mould",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBasidiocarp",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Lichen is a mutualistic association between fungi and algae, where fungi provide shelter and moisture\n              while algae perform photosynthesis.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "514f5e80-9dbc-4f30-9a1f-66e62780b36c",
+    "question_text": "Which of the following statements about viruses is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nViruses lack a cellular structure.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nViruses contain both DNA and RNA in the same particle.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nViruses require a host cell for replication.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nViruses can infect both animals and plants.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Viruses contain either DNA or RNA as their genetic material, but never both in a single viral particle,\n              making option 2 incorrect. Viruses lack a cellular structure (option 1), are obligate intracellular\n              parasites requiring a host cell for replication (option 3), and can infect a wide range of organisms,\n              including animals and plants (option 4).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "682f6eec-c3d3-4dc0-b05c-412943972e34",
+    "question_text": "Which of the following statements about lichens is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLichens are a symbiotic association of fungi and algae.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLichens can survive in extreme environmental conditions.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLichens grow rapidly in polluted environments.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLichens are used as bioindicators of air pollution.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Lichens are highly sensitive to pollution and do not grow well in polluted environments.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "532e98b2-d579-4abe-9948-3842e14b5efd",
+    "question_text": "Which of the following fungal divisions includes species that reproduce using zoospores?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAscomycetes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBasidiomycetes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPhycomycetes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDeuteromycetes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Phycomycetes reproduce using motile zoospores (or non-motile aplanospores) produced inside sporangia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d66794f1-1f02-4bd5-8594-70a09a96906f",
+    "question_text": "Which of the following statements about fungi is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFungi are autotrophic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFungi store carbohydrates as glycogen.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFungi lack a cell wall.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFungi reproduce only through spores.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fungi store carbohydrates as glycogen, similar to animals, rather than as starch like plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "38ea7d52-3ca8-43f2-ab0c-631379d0fdda",
+    "question_text": "Why are fungi classified separately from plants?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey have a prokaryotic cell structure",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey store food as starch",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey lack chlorophyll and are heterotrophic",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey reproduce only sexually",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Fungi are heterotrophic and lack chlorophyll, unlike plants, which are autotrophic.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "205c2a59-0e37-4109-83d8-e4fadc173dc3",
+    "question_text": "Which of the following statements about fungi is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFungi are heterotrophic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFungi store carbohydrates as starch.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFungi reproduce through spores.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFungal cell walls contain chitin.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fungi store carbohydrates as glycogen, similar to animals, rather than starch, which is characteristic of\n              plants.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4418386e-d6c8-4058-ad7b-6f9f2ce4b95d",
+    "question_text": "Which of the following statements about cyanobacteria is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCyanobacteria perform oxygenic photosynthesis.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCyanobacteria are eukaryotic organisms.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCyanobacteria can fix atmospheric nitrogen.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCyanobacteria lack a well-defined nucleus.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Cyanobacteria are prokaryotic, not eukaryotic, and lack a true nucleus.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "76e001eb-c5ef-4ce2-a2d4-1a67a210cb6a",
+    "question_text": "Which of the following statements about viruses is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nViruses are acellular entities.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nViruses contain both DNA and RNA in a single particle.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nViruses can replicate without a host cell.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nViruses have their own ribosomes for protein synthesis.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Viruses are acellular, meaning they do not have a cellular structure like bacteria or eukaryotic cells.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4a28fc55-0052-40c9-bfd7-c602f222ae8e",
+    "question_text": "Which group of fungi reproduces primarily by conidia?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPhycomycetes",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAscomycetes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBasidiomycetes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDeuteromycetes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Ascomycetes reproduce asexually by conidia, which are borne on specialized hyphae called conidiophores.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "topic": "Biological Classification",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Biological Classification / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "biological-classification"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]

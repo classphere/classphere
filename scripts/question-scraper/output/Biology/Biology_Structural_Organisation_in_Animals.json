@@ -1,1 +1,6502 @@
-[]
+[
+  {
+    "id": "37411584-d1a8-4fed-82dc-137096f4fe08",
+    "question_text": "Which of the following structures in frogs acts as an aquatic respiratory organ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLungs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSkin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nBuccal cavity",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKidney",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs respire through their skin in water, a process known as cutaneous respiration.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6480071e-9ebd-4483-8261-b0f435a42bf2",
+    "question_text": "Which part of the frog's nervous system connects the brain to the spinal cord?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCerebrum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCerebellum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMedulla oblongata",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOlfactory lobes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The medulla oblongata extends from the brain and continues into the spinal cord, controlling involuntary\n              functions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "12b9bb9e-a9cf-47d4-90ce-279ccb3dfe2d",
+    "question_text": "Which type of skeleton does a frog possess?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nExoskeleton",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHydrostatic skeleton",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEndoskeleton",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCartilaginous skeleton",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs have an endoskeleton made of bones that provide structural support and aid in movement.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a37c78be-9523-4bd0-ac3f-424f01ea3717",
+    "question_text": "Which excretory product is removed by frogs to maintain water balance in their body?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAmmonia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUrea",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUric acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCreatinine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs are ureotelic animals that excrete urea as their primary nitrogenous waste to maintain water\n              balance.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ed9a3784-bdb8-4ee2-8d35-f4e0432d1c85",
+    "question_text": "Which of the following statements about the frog’s digestive system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a well-developed alimentary canal.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDigestion in frogs begins in the stomach.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe intestine of a frog is longer because it is a herbivore.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe liver secretes bile that helps in digestion.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The intestine in frogs is relatively short because they are carnivorous, unlike herbivores that require\n              longer intestines for plant digestion.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d18fa466-faed-4d1b-b41a-8b2b50b199e0",
+    "question_text": "Which of the following statements about frog sense organs is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have external ears for detecting sound.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe tympanum in frogs functions as an external ear.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs lack eyes and rely only on other senses.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs have taste buds located only on their tongue.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The tympanum in frogs functions as an external ear, detecting sound vibrations from the environment.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ca9704bb-007c-47ed-8b8d-63750913745a",
+    "question_text": "Where does the digestion of food in a frog begin?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStomach",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMouth",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDuodenum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCloaca",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Digestion in frogs begins in the mouth, where enzymes start breaking down food.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9b4dc396-a8c8-43c6-af9c-67473a89ef3e",
+    "question_text": "What is the function of the pancreas in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSecretes bile",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProduces pancreatic juice",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRegulates heartbeat",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStores glucose",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The pancreas produces pancreatic juice, which contains digestive enzymes for breaking down food.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e7d3ec29-58dd-4a7f-8a81-7e52bf478993",
+    "question_text": "Which structure in a frog helps to capture prey?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nForelimbs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNictitating membrane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTongue",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTeeth",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs use their long, sticky tongue to capture prey quickly.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aeb47a46-3089-4e39-a0e4-8c489f11f575",
+    "question_text": "Which type of blood circulation is present in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSingle circulation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDouble circulation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOpen circulation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLymphatic circulation only",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs have double circulation, meaning blood passes through the heart twice in one complete cycle.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 1",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fbdf447-127d-436a-9224-4f5d9df476b9",
+    "question_text": "What type of circulation is present in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDouble circulation",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nSingle circulation",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nClosed circulation",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOpen circulation",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs have a well-developed closed circulatory system with a three-chambered heart.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6ce2e5fa-7703-447a-8faf-9245c680614f",
+    "question_text": "Which type of tissue is responsible for movement in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEpithelial tissue",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMuscular tissue",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNervous tissue",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConnective tissue",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Muscular tissue is responsible for movement in frogs, as it helps in contraction and relaxation of\n              muscles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9431065e-5483-4a22-a96b-a2b9ab48e378",
+    "question_text": "Which organ is absent in the frog’s digestive system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiver",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPancreas",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGall bladder",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAppendix",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Frogs lack an appendix, which is present in some mammals but not in amphibians.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c7df172d-13cb-4618-9749-f1169bad1cf7",
+    "question_text": "Which organ in frogs stores bile before releasing it into the intestine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiver",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGall bladder",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPancreas",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSpleen",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The gall bladder stores bile secreted by the liver and releases it into the duodenum for digestion.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "71fe316b-0b2b-4ec8-9bcc-d4111ad6f1c3",
+    "question_text": "Which of the following statements about the frog’s nervous system is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have 12 pairs of cranial nerves.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe cerebrum in frogs is responsible for reflex actions.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrog brains have forebrain, midbrain, and hindbrain divisions.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe optic lobes in frogs are responsible for balance and coordination.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The frog’s brain is divided into three regions: forebrain, midbrain, and hindbrain, each with different\n              functions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "780a72e1-b020-48af-b34d-944ac1843b43",
+    "question_text": "Which of the following statements about the frog’s reproductive system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs undergo external fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs lay fertilized eggs on land.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMale frogs use vocal sacs to attract females.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe female frog lays eggs in water.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs lay eggs in water, where external fertilization occurs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "81024bbc-07d7-4bfc-8959-c66eca656c21",
+    "question_text": "Which part of the frog’s brain is responsible for balance and coordination?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCerebrum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCerebellum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMedulla oblongata",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDiencephalon",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The cerebellum in a frog’s brain is responsible for maintaining balance and coordinating movements.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "18995ae6-faa3-4f5e-863a-939ff484eb4a",
+    "question_text": "Which part of the frog’s brain is responsible for olfaction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCerebrum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCerebellum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOlfactory lobes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMedulla oblongata",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The olfactory lobes in a frog’s brain are responsible for the sense of smell.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "67738fbc-3edd-4ee1-b642-2efaacd2f8a5",
+    "question_text": "What type of circulatory system is present in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOpen circulatory system",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nClosed circulatory system",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLymphatic circulatory system",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSingle circulation system",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs have a closed circulatory system where blood flows through a network of blood vessels.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4862d65a-0895-47bb-89c5-3f6c8cc6efa6",
+    "question_text": "Which of the following statements about the frog's RBCs is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThey are non-nucleated",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThey lack hemoglobin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThey are biconcave",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThey are nucleated",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Unlike mammalian RBCs, frog RBCs are nucleated and contain hemoglobin for oxygen transport.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 2",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4769564e-e7ba-4583-b034-52ffd58bba91",
+    "question_text": "Which of the following organs in a frog is responsible for bile secretion?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStomach",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nGall bladder",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLiver",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPancreas",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The liver secretes bile, which is stored in the gall bladder before being released into the duodenum.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "29f0e4b9-fea7-4c06-a17f-c9aa25711870",
+    "question_text": "Which gland in frogs is responsible for regulating metamorphosis?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThyroid gland",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPituitary gland",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPancreatic islets",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nAdrenal glands",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The thyroid gland secretes hormones that regulate metamorphosis in frogs, helping tadpoles develop into\n              adults.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "66c7bbd7-cdf0-41d8-a982-dfefdf91d96f",
+    "question_text": "Which organ system in frogs is responsible for maintaining water balance and excreting nitrogenous wastes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRespiratory system",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCirculatory system",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nExcretory system",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nDigestive system",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The excretory system in frogs, consisting of kidneys, ureters, cloaca, and urinary bladder, maintains\n              water balance and excretes nitrogenous wastes.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4887a516-d97a-48b1-b256-1f851b53a2fc",
+    "question_text": "Which of the following organ systems in frogs is involved in osmoregulation?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNervous system",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEndocrine system",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nExcretory system",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nRespiratory system",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The excretory system, including kidneys and urinary bladder, regulates water balance in frogs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c4355e7d-1e75-45f8-a97b-214ad474ea5f",
+    "question_text": "Which of the following statements about the frog’s digestive system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a short alimentary canal suited for carnivorous feeding.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe stomach opens directly into the cloaca without an intestine.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe pancreas secretes digestive enzymes.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe liver secretes bile, which aids in digestion.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The stomach does not open directly into the cloaca; food passes through the intestine for digestion and\n              absorption.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "062b0d6e-38ac-42e5-8ef6-efa0373144c1",
+    "question_text": "Which of the following statements about frog respiration is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs respire through lungs on land.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBuccal respiration occurs when frogs are inactive.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs continue to use gills throughout their life.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCutaneous respiration allows gas exchange through the skin.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs use gills only during their larval (tadpole) stage; adults rely on lungs, skin, and buccal\n              respiration.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "bff489c5-ec32-4764-912d-1797ac43810b",
+    "question_text": "Which structure in a male frog helps in sound production?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCloaca",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nVocal sacs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTympanum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLarynx",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Male frogs have vocal sacs that amplify their mating calls.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9e4b8925-f437-41df-98cc-8c3ccdc2c5f3",
+    "question_text": "Which part of the frog’s brain controls voluntary actions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMedulla oblongata",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCerebellum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nCerebrum",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOptic lobes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The cerebrum is responsible for voluntary actions and higher neural functions in frogs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "16c2eeb7-03f1-4e4a-a4ce-feca125216b3",
+    "question_text": "Which blood pigment is responsible for oxygen transport in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nChlorocruorin",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHaemocyanin",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHemoglobin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMyoglobin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Hemoglobin, present in frog’s RBCs, binds to oxygen and transports it throughout the body.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d8bd0046-4d33-4222-b857-0f74111a4eec",
+    "question_text": "Which of the following statements about frog circulation is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a three-chambered heart.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe heart of a frog has two atria and one ventricle.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs have a single circulatory system like fish.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs have a closed circulatory system.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs have a double circulatory system, unlike fish, which have a single circulatory system.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 3",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0ef65b87-4b91-40bf-9818-b22dc6ecf03b",
+    "question_text": "Which of the following is the excretory product of frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAmmonia",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUrea",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUric acid",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCreatinine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs excrete urea as their primary nitrogenous waste and are classified as ureotelic animals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f1886827-cc3c-4e44-b8e7-c66aa7faf584",
+    "question_text": "Which of the following organs in a frog is responsible for producing digestive enzymes?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiver",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPancreas",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nGall bladder",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKidney",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The pancreas produces pancreatic juice, which contains digestive enzymes for breaking down carbohydrates,\n              proteins, and fats.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b37800c5-cf2a-43c3-b1f2-fa70b0876760",
+    "question_text": "What is the role of the fat bodies in frogs during reproduction?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nProduce hormones",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nProvide energy for gamete production",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nAid in digestion",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFacilitate fertilization",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fat bodies store energy, which is utilized during reproduction for gamete production and development.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c95796e9-f048-4f7c-81e0-b52420b33bf8",
+    "question_text": "Which of the following statements about frog respiration is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs respire only through their lungs.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs use cutaneous respiration in water and pulmonary respiration on land.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs have gills throughout their life for respiration.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs rely only on buccal respiration for gas exchange.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs use their skin for respiration in water (cutaneous respiration) and lungs for respiration on land\n              (pulmonary respiration).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c6121b9-b285-4bed-8b19-d417665257f5",
+    "question_text": "Which of the following statements about the frog’s endocrine system is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe thyroid gland regulates metamorphosis in frogs.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe pancreas does not function as an endocrine gland.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs do not have an adrenal gland.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe pituitary gland only controls digestion.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The thyroid gland in frogs regulates metamorphosis from the tadpole to the adult stage.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "fae11ea1-cf66-4232-9b15-2b0153220603",
+    "question_text": "Which of the following statements about the frog’s skeletal system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have an internal skeleton made of bones.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe vertebral column provides body support.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrog skeletons are composed entirely of cartilage.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrog skulls are bony structures protecting the brain.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The frog's skeleton is made primarily of bones, not cartilage.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7ba1cd33-d242-4386-8417-4c1203b8c032",
+    "question_text": "What is the function of the hepatic portal system in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTransport oxygenated blood to the lungs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarry blood from intestine to the liver",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nRegulate heartbeat",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nStore digestive enzymes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The hepatic portal system in frogs carries nutrient-rich blood from the intestine to the liver for\n              metabolism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5aca4794-3c90-4fd0-bb80-3e00b39fef47",
+    "question_text": "Which of the following structures is absent in the frog’s body?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLiver",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nDiaphragm",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLungs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nKidneys",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs lack a diaphragm; they use buccal pumping to aid in respiration.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d43c5838-d0db-4581-adff-fbaea7dbcf0b",
+    "question_text": "Which chamber of the frog’s heart pumps blood to the body?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRight atrium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLeft atrium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVentricle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSinus venosus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The ventricle of the frog's heart pumps mixed oxygenated and deoxygenated blood to the body.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "893e9457-8eb2-4e88-ae6c-ac1c4a2f1ca5",
+    "question_text": "Which of the following statements about the skeletal system of frogs is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have an exoskeleton made of chitin.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe skeleton of a frog is entirely cartilaginous.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs have an endoskeleton made primarily of bones.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs do not have a vertebral column.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs have an endoskeleton composed mainly of bones, supporting their body structure and movement.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 4",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9337c4af-0fc7-45e4-a04d-2e3677737561",
+    "question_text": "Which of the following tissues is NOT found in the frog’s heart?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nEpithelial tissue",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nConnective tissue",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMuscular tissue",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNervous tissue",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The frog’s heart is composed of connective, muscular, and nervous tissues, but not epithelial tissue.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aad688dc-2c3c-4e98-b3c0-4f2fcad2b8ff",
+    "question_text": "What is the mode of fertilization in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nInternal fertilization",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nExternal fertilization",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParthenogenesis",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBudding",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs undergo external fertilization, where the male fertilizes the eggs in water.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a87d0859-af5b-4e97-b996-524310016599",
+    "question_text": "Which structure in a frog's body is responsible for receiving sound vibrations?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nNictitating membrane",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTympanum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOlfactory lobes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nVocal sacs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The tympanum is the external ear structure in frogs that receives sound vibrations and transmits them to\n              the inner ear.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7c7ab771-ed53-4e89-ae52-ca857508162c",
+    "question_text": "Which of the following statements about the frog’s digestive system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe pancreas secretes digestive enzymes.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe liver secretes bile, which is stored in the gall bladder.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe stomach leads directly to the cloaca without an intestine.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs capture food using their bilobed, sticky tongue.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The stomach does not lead directly to the cloaca; food passes through the intestine for digestion and\n              absorption before reaching the cloaca.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "edb3fcd3-d154-4ef6-9f9a-ac9a5eb60c84",
+    "question_text": "Which of the following statements about the frog’s skeletal system is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have an endoskeleton made primarily of bones.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs have an exoskeleton for protection.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe skeleton of frogs is composed entirely of cartilage.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs lack a vertebral column.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Frogs have an endoskeleton composed mainly of bones, providing structural support and aiding in movement.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "edd78180-09fc-446f-93a9-cb2c46f50fd6",
+    "question_text": "Which of the following is absent in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nExternal ears",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTympanum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nNictitating membrane",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nForelimbs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Frogs lack external ears, but they have a tympanum for receiving sound signals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "775204a7-83d0-40cf-9675-18454bf28d9b",
+    "question_text": "Which of the following statements about frog respiration is TRUE?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs use gills for respiration throughout their life.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs respire only through lungs.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs respire through skin, lungs, and buccal cavity.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs can only breathe in water.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs use their skin (cutaneous respiration), lungs (pulmonary respiration), and buccal cavity for\n              breathing at different stages of life.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b0e9a700-d1ea-4bb6-9b21-3ffdaf8cc524",
+    "question_text": "What is the function of the ureters in male frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTransport urine only",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTransport sperm only",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTransport both urine and sperm",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTransport bile",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "In male frogs, ureters function as urinogenital ducts, transporting both urine and sperm.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f56cb819-7a7a-4562-b9f0-5dc319555c19",
+    "question_text": "Which of the following structures helps frogs during swimming?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nForelimbs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nWebbed feet",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVocal sacs",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNostrils",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs have webbed feet that help them propel through water while swimming.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3c64c17e-f36e-41ba-8645-5d737a4ad719",
+    "question_text": "Which of the following statements about frog excretion is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs excrete uric acid as their primary waste product.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs have a pair of kidneys that help in excretion and osmoregulation.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe urinary bladder of a frog is absent.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs excrete solid waste in the form of ammonia.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs excrete urea (not uric acid or ammonia) and have kidneys that help in excretion and osmoregulation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 5",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5052b4e-d961-4b9b-bd21-1f2efc9d85cf",
+    "question_text": "Which of the following statements about the frog’s circulatory system is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a three-chambered heart.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs have a four-chambered heart like mammals.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs exhibit single circulation like fish.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBlood flows through an open circulatory system.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Frogs have a three-chambered heart consisting of two atria and one ventricle, allowing partial mixing of\n              oxygenated and deoxygenated blood.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "9beb9623-ee25-490c-bc9a-ec9beb885578",
+    "question_text": "Which of the following statements about frog reproduction is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFertilization in frogs is internal.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMale frogs release sperm over eggs externally.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs reproduce through budding.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFemale frogs store fertilized eggs inside their body.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs undergo external fertilization where male frogs release sperm over eggs laid by females in water.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "722b1cff-6713-40a2-bb48-c16ba1a2df32",
+    "question_text": "What is the function of the cloaca in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDigestion",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nExcretion and reproduction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHearing",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGas exchange",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The cloaca in frogs is a common chamber for excretion, reproduction, and digestive waste removal.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "11a744ac-2b60-4021-b6e1-d7006bf91317",
+    "question_text": "Which of the following statements about frog respiration is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs respire through their skin in water.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs rely on buccal respiration when hibernating.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs use their lungs for respiration on land.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs continue to use gills throughout their life.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Frogs use gills only during the larval stage. Adult frogs rely on lungs, skin (cutaneous respiration),\n              and\n              buccal respiration.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "57ffeb07-f99b-4a14-8908-1749a7b46b22",
+    "question_text": "Which blood vessels carry deoxygenated blood to the frog’s heart?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPulmonary veins",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCarotid arteries",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVena cava",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSystemic arteries",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The vena cava collects deoxygenated blood from the body and delivers it to the right atrium of the frog’s\n              heart.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d8f4f382-f72f-49b5-b95f-81fe9d86c7bc",
+    "question_text": "Which of the following statements about the frog’s circulatory system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a three-chambered heart.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe ventricle pumps only oxygenated blood to the body.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs have both pulmonary and systemic circulation.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBlood is circulated through a closed circulatory system.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The ventricle in frogs pumps mixed blood (both oxygenated and deoxygenated) to the body.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d2b0589b-87cf-41a9-80e5-07547edc232d",
+    "question_text": "Which of the following statements about frog locomotion is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs use their hind limbs for jumping.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs have webbed feet that help in swimming.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs move using only their forelimbs.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs can leap long distances due to strong leg muscles.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs primarily use their powerful hind limbs, not just their forelimbs, for movement, jumping, and\n              swimming.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "8f7a8eb6-d196-48ab-a8f2-7348a85a6b83",
+    "question_text": "Which structure in frogs receives blood from the body and directs it to the right atrium?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nSinus venosus",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nConus arteriosus",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVentricle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nPulmonary veins",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The sinus venosus is a triangular structure that receives deoxygenated blood from the body and directs it\n              to the right atrium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2fbeb708-2db4-4087-a18f-fc07b16e0b0b",
+    "question_text": "Which structure in the frog prevents food from entering the windpipe during swallowing?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nGlottis",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nEpiglottis",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nEsophagus",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nNictitating membrane",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The glottis in frogs prevents food from entering the trachea during swallowing.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "2606f1e6-fe04-4ba4-b9ba-2927ca91feb6",
+    "question_text": "Which of the following statements about the frog’s heart is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a three-chambered heart.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs have two ventricles and one atrium.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe heart pumps mixed oxygenated and deoxygenated blood.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe circulatory system in frogs is closed.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs have one ventricle and two atria, not two ventricles and one atrium.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 6",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "1fc03f1f-81c4-46e1-b1dd-cbcdea3ee220",
+    "question_text": "Which chamber in a frog’s heart receives deoxygenated blood?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLeft atrium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRight atrium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVentricle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nConus arteriosus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The right atrium of the frog’s heart receives deoxygenated blood from the body through the vena cava.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "703a240c-6c49-41a6-a2f3-98d7c4fe0bd4",
+    "question_text": "Which of the following features helps frogs in camouflage?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTympanum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNictitating membrane",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMimicry",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nWebbed feet",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs use mimicry to blend into their surroundings, helping them avoid predators.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "240ebc65-b407-41d5-b892-9ca8d303a9b4",
+    "question_text": "Which organ in a frog acts as the site for nitrogenous waste filtration?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLungs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nKidneys",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nLiver",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nHeart",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The kidneys filter nitrogenous waste from the blood and help maintain osmoregulation.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "62661a6b-be00-4e37-8d1a-be9a86c850f4",
+    "question_text": "Which part of a frog’s nervous system controls involuntary actions?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCerebrum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCerebellum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMedulla oblongata",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOlfactory lobes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The medulla oblongata controls involuntary actions like heartbeat and respiration in frogs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "93025733-d56d-4615-85c7-6ca12d9e984b",
+    "question_text": "Which of the following statements about the frog’s skin is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrog skin is highly vascularized and helps in respiration.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs have dry, scaly skin to prevent water loss.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe skin of frogs contains mucus glands.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrog skin plays a role in camouflage.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frog skin is moist and lacks scales, allowing cutaneous respiration and water absorption.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "465ceadb-c82b-4d42-8d1a-53e690775f17",
+    "question_text": "Which of the following statements about the nervous system of frogs is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a well-developed brain with forebrain, midbrain, and hindbrain.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs have 10 pairs of cranial nerves.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe spinal cord extends throughout the length of the body.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrog brains contain optic lobes responsible for vision.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs have 10 pairs of cranial nerves, not 12 as seen in mammals.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "572c4991-72b7-4d99-93c9-0c37b789fa05",
+    "question_text": "Which part of the frog's digestive system is responsible for nutrient absorption?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nStomach",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLiver",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSmall intestine",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLarge intestine",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The small intestine contains villi and microvilli that absorb nutrients from digested food.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "4c3838d8-7de5-4077-b841-a8767e8eb565",
+    "question_text": "Which of the following statements about frog reproduction is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMale frogs have vocal sacs to attract females during mating.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs undergo external fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs reproduce through asexual reproduction.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFemale frogs lay eggs in water.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs reproduce sexually through external fertilization, where males fertilize eggs in water.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "40140e4d-16c1-4c12-bd5c-a12dfc3cf3f2",
+    "question_text": "Which hormone in frogs is responsible for regulating calcium metabolism?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThyroxine",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nAdrenaline",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nParathyroid hormone",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nInsulin",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The parathyroid hormone regulates calcium metabolism and maintains calcium levels in frogs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "58f176ae-c5ed-4c28-84bc-8bbd077861d3",
+    "question_text": "Which part of the frog’s excretory system temporarily stores urine?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKidney",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nUreter",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUrinary bladder",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCloaca",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The urinary bladder stores urine temporarily before it is excreted through the cloaca.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 7",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "25dce749-4017-4a79-89e6-d5c94cb055a4",
+    "question_text": "Which of the following statements about the excretory system of frogs is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a pair of kidneys that filter nitrogenous waste.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs excrete urea and are ureotelic animals.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe cloaca in frogs is used only for excretion.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nIn male frogs, ureters also function as urinogenital ducts.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The cloaca in frogs is a common chamber for excretion, reproduction, and digestive waste removal.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e9edd4c0-85bd-40bc-8bc5-6aae9591b181",
+    "question_text": "Which chamber of the frog’s heart receives oxygenated blood?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLeft atrium",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nRight atrium",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nVentricle",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nSinus venosus",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The left atrium of the frog’s heart receives oxygenated blood from the lungs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5b5bd11-f2b2-48b5-9191-277aaa822c2e",
+    "question_text": "Which is the common species of frog found in India?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nRana tigrina",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBufo bufo",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nDendrobates tinctorius",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nXenopus laevis",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The common species of frog found in India is Rana tigrina (now known as Hoplobatrachus tigerinus).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "143b1a8c-53f5-4b5d-8787-01c15bb81c1d",
+    "question_text": "Which of the following statements about frog reproduction is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFertilization in frogs is internal.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMale frogs fertilize eggs externally in water.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs give birth to live young.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFemale frogs produce sound during mating.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs undergo external fertilization, where males release sperm over eggs laid by females in water.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "aed1b2b1-d5f7-4f61-a805-d68760b7e8c7",
+    "question_text": "Which part of the frog’s nervous system directly connects the brain to the spinal cord?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nCerebrum",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCerebellum",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMedulla oblongata",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOlfactory lobes",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The medulla oblongata connects the brain to the spinal cord and controls involuntary functions.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "ee00aac8-5938-4f45-9e7e-840725b9b4dc",
+    "question_text": "Which structure in a frog allows gas exchange while the animal is submerged underwater?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLungs",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nNostrils",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSkin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGills",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs use cutaneous respiration, where gases are exchanged through their moist skin while underwater.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "eaf2c648-8a6e-47fb-a1fd-2b03d6f53f16",
+    "question_text": "Where does the exchange of gases primarily occur in a frog when it is submerged in water?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nBuccal cavity",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nLungs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nSkin",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nCloaca",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "When submerged in water, frogs rely on cutaneous respiration, where gas exchange occurs through their\n              moist skin.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3ae23784-e86a-4f1f-953e-a90a1ea89b2a",
+    "question_text": "Which of the following structures helps male frogs distinguish themselves from females?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nLarger body size",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nPresence of vocal sacs",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMore webbing between toes",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nLack of tympanum",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Male frogs have vocal sacs, which help in producing calls to attract females.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "dead7f0e-979b-4139-9ccc-29d6652bd20c",
+    "question_text": "Which of the following statements about the frog’s endocrine system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe thyroid gland in frogs helps regulate metamorphosis.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs do not have an adrenal gland.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe pituitary gland controls various endocrine functions in frogs.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe pancreas secretes insulin for glucose metabolism.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs do have adrenal glands, which help regulate stress responses and metabolism.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "0dfd46ec-7d9c-404d-bc9b-f6358a9068c4",
+    "question_text": "Which of the following statements about frog reproduction is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFertilization in frogs is internal.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs undergo direct development without a larval stage.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nMale frogs have vocal sacs used for attracting females.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFemale frogs lay fertilized eggs on land.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Male frogs have vocal sacs that help them produce mating calls to attract females.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 8",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "40691df0-fbdb-4e1e-a8b8-11f9990db533",
+    "question_text": "Which of the following statements about frog metamorphosis is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nMetamorphosis in frogs is controlled by thyroid hormones.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrog eggs hatch directly into small frogs without a larval stage.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTadpoles respire through gills before developing lungs.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nTadpoles undergo morphological changes before becoming adult frogs.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs undergo indirect development, where eggs hatch into tadpoles, which later metamorphose into adult\n              frogs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "7dfd6e7a-36c3-403a-a3fb-e25b43251c10",
+    "question_text": "What is the function of the cloaca in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nDigestion",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nExcretion and reproduction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nHearing",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nGas exchange",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The cloaca in frogs serves as a common chamber for excretion, reproduction, and digestive waste removal.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "970e95b6-a1f4-4b9f-ba25-f5962e5cead0",
+    "question_text": "Which of the following statements about frog metamorphosis is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTadpoles undergo metamorphosis to become adult frogs.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThyroid hormones regulate metamorphosis.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTadpoles respire using gills before developing lungs.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMetamorphosis in frogs is controlled by the adrenal gland.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Metamorphosis in frogs is primarily controlled by thyroid hormones, not the adrenal gland.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "d5e4cc01-e179-436e-91c1-1fbd98e7bcab",
+    "question_text": "Which type of respiration is used by frogs when they are both on land and in water?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nPulmonary and cutaneous respiration",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nBuccal and branchial respiration",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nPulmonary and gill respiration",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nOnly pulmonary respiration",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Frogs use pulmonary respiration on land (lungs) and cutaneous respiration in water (skin).",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "59c101cf-da37-4cca-aa0c-ec1438dda99c",
+    "question_text": "Which of the following statements about the frog’s endocrine system is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe thyroid gland regulates metamorphosis in frogs.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs do not have an adrenal gland.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe pancreas is not an endocrine gland in frogs.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe pituitary gland only controls digestion.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "The thyroid gland plays a crucial role in regulating metamorphosis in frogs, controlling the transition\n              from\n              tadpole to adult.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6c4141c8-325f-4393-8d7e-816a32851033",
+    "question_text": "Which of the following statements about the frog’s excretory system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a pair of kidneys for excretion.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs excrete urea as their primary waste product.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe urinary bladder stores urine temporarily.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs excrete solid waste through the skin.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "Frogs do not excrete solid waste through their skin; they excrete liquid nitrogenous waste through their\n              kidneys and cloaca.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "a29eea81-cd73-4fa2-b903-01e9e9ba4d31",
+    "question_text": "Which of the following statements about frog reproduction is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFertilization is internal",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFertilization is external",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFertilization occurs in the ovary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMale frogs lay eggs",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Fertilization in frogs is external, occurring in water where the male fertilizes the eggs laid by the\n              female.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "3e65e4c7-8289-4df2-b0ef-f26d53ed9598",
+    "question_text": "Which type of reproduction is found in frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nAsexual reproduction",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nViviparous reproduction",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOviparous reproduction",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBinary fission",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs are oviparous, meaning they lay eggs that hatch into tadpoles.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "5f8ebecb-4d7d-4a3c-b18d-e48c9ae09815",
+    "question_text": "Which of the following statements about the frog’s reproductive system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs exhibit external fertilization.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFemale frogs lay eggs in water.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs undergo direct development without a larval stage.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nMale frogs have vocal sacs used during mating.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs undergo indirect development with a larval stage (tadpole) before transforming into an adult.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f1dbbbd1-d4d5-4574-8991-3ebe408ee504",
+    "question_text": "Which of the following statements about frog locomotion is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have powerful hind limbs adapted for jumping.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nForelimbs are longer than hind limbs to help with movement.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs use only their front limbs for swimming.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs cannot move on land.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Frogs have strong, muscular hind limbs that help them jump on land and swim in water.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 9",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "834132a6-1c02-474a-a45f-f01865d9b37d",
+    "question_text": "Which of the following statements about the frog’s nervous system is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a central nervous system consisting of a brain and spinal cord.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs do not have cranial nerves.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nThe cerebellum in frogs is responsible for vision.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe frog’s brain is divided into two regions only.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "Frogs have a central nervous system that consists of a brain and spinal cord, along with a peripheral\n              nervous system that includes cranial and spinal nerves.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6b1d2177-d797-40bb-b7b8-2abcbd9bf84a",
+    "question_text": "Which reproductive organ in female frogs is responsible for producing eggs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOviduct",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nCloaca",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOvary",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBidder’s canal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The ovaries in female frogs produce eggs, which are later released into water for external fertilization.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "159e3521-66ca-47a1-a3bb-7066a6a895a3",
+    "question_text": "Which excretory organ is found in both male and female frogs?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nOviduct",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTestes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nKidneys",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nBidder’s canal",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Both male and female frogs have kidneys, which function as excretory organs.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "f1681fed-0f1b-40f7-b713-8985b4978aeb",
+    "question_text": "Which of the following statements about the frog’s skeletal system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have an endoskeleton composed of bones.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nThe vertebral column in frogs provides body support.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrog skeletons are entirely made of cartilage.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe skull of frogs is bony and protects the brain.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "The frog's skeleton is made of bones, except for some cartilaginous structures in the developing tadpole.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "82b9794e-46d6-4fa4-80f1-7837101fb912",
+    "question_text": "Which of the following statements about frog locomotion is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs use their hind limbs for jumping.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs have webbed feet that aid in swimming.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs rely only on forelimbs for movement.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs can leap long distances using their muscular legs.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Frogs use their hind limbs, not just their forelimbs, for movement, jumping, and swimming.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "B": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "e7993512-4db9-4c9d-9fbc-5fb3dfafd0eb",
+    "question_text": "Which structure in male frogs produces sperm?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nKidney",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nTestes",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nOviduct",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nUreter",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "The testes in male frogs produce sperm, which is transported through the urinogenital ducts.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "b527f2e4-ac5e-466e-8f26-ec99f16b5009",
+    "question_text": "Which of the following statements about frog metamorphosis is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nTadpoles have gills for respiration.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nMetamorphosis in frogs is controlled by growth hormones.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nTadpoles undergo drastic morphological changes to become adult frogs.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs develop lungs as they transition from tadpoles to adults.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Metamorphosis in frogs is primarily controlled by thyroid hormones, not general growth hormones.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "c44ecc85-8c17-4af5-a308-09a193dfc397",
+    "question_text": "Which of the following statements about frog sense organs is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nThe tympanum functions as an external ear.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs lack a well-developed vision system.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs have taste buds on their tongue.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe nictitating membrane protects the frog’s eyes underwater.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs have well-developed eyes that help them detect movement and depth.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "42781e77-9652-4f4f-86a2-fea7cae0c4b3",
+    "question_text": "Which of the following statements about the frog’s excretory system is incorrect?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs have a pair of kidneys for excretion.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nFrogs excrete ammonia as their primary waste product.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nUrinogenital ducts in male frogs transport both urine and sperm.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nThe urinary bladder stores urine temporarily before excretion.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs are ureotelic, meaning they excrete urea as their primary nitrogenous waste, not ammonia.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  },
+  {
+    "id": "6d764614-aadd-4773-8abb-fd807604964c",
+    "question_text": "Which of the following statements about frog locomotion is correct?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "(1)\nFrogs use only their front limbs for movement.",
+        "image_url": null
+      },
+      {
+        "id": "B",
+        "text": "(2)\nHind limbs are muscular and adapted for jumping.",
+        "image_url": null
+      },
+      {
+        "id": "C",
+        "text": "(3)\nFrogs cannot move on land.",
+        "image_url": null
+      },
+      {
+        "id": "D",
+        "text": "(4)\nFrogs lack webbed feet.",
+        "image_url": null
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Frogs have strong hind limbs that are adapted for jumping and swimming.",
+    "question_type": "mcq_single",
+    "subject": "Biology",
+    "chapter": "Structural Organisation in Animals",
+    "topic": "Structural Organisation in Animals",
+    "difficulty": "medium",
+    "source": "ScienceLesson.in — Biology / Structural Organisation in Animals / Test 10",
+    "year": null,
+    "tags": [
+      "biology",
+      "structural-organisation-in-animals"
+    ],
+    "distractor_map": {
+      "A": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "C": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      },
+      "D": {
+        "error_type": "conceptual",
+        "trap_description": "",
+        "common_mistake": ""
+      }
+    },
+    "marking_scheme": {
+      "correct": 4,
+      "incorrect": -1,
+      "unattempted": 0,
+      "partial": false
+    }
+  }
+]
