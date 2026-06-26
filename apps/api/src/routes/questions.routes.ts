@@ -8,20 +8,28 @@ import {
   createQuestion,
   updateQuestion,
   deleteQuestion,
+  bulkUpsertQuestions,
+  listTests,
 } from "../controllers/questions.controller";
 
 const router = Router();
 
-// ⚠️  ORDER MATTERS: the static "/meta/exams" path must be declared BEFORE "/:id"
-// so Express doesn't match "meta" as an :id parameter.
+// ⚠️ ORDER MATTERS — static paths before dynamic /:id
+
+// Tests Hub — list papers from DB (chapter-wise / mock-test / pyq)
+router.get("/tests", authenticate, listTests);
+
+// Exam meta for dropdowns (subject/chapter lists)
 router.get("/meta/exams", authenticate, getExamsMeta);
 
-router.get("/", authenticate, listQuestions);
+// Standard CRUD
+router.get("/",    authenticate, listQuestions);
 router.get("/:id", authenticate, getQuestion);
 
-// super_admin only routes
-router.post("/", authenticate, requireRole("super_admin"), createQuestion);
-router.patch("/:id", authenticate, requireRole("super_admin"), updateQuestion);
-router.delete("/:id", authenticate, requireRole("super_admin"), deleteQuestion); // soft delete
+// super_admin only
+router.post("/",        authenticate, requireRole("super_admin"), createQuestion);
+router.post("/bulk",    authenticate, requireRole("super_admin"), bulkUpsertQuestions);
+router.patch("/:id",   authenticate, requireRole("super_admin"), updateQuestion);
+router.delete("/:id",  authenticate, requireRole("super_admin"), deleteQuestion);
 
 export default router;

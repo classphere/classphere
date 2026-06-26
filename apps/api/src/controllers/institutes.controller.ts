@@ -10,9 +10,9 @@ export const createInstitute = async (req: Request, res: Response): Promise<void
   try {
     // TODO: implement
     // 1. Validate req.body: { name, owner_id (user who becomes institute_admin),
-    //    max_students?, max_batches?, metadata? }
+    //    institute_type, price_per_student, max_students?, max_batches?, metadata? }
     // 2. Verify owner_id user exists
-    // 3. INSERT INTO institutes (name, owner_id, subscription_plan='trial',
+    // 3. INSERT INTO institutes (name, owner_id, institute_type, price_per_student, subscription_plan='trial',
     //    trial_ends_at = now() + 30 days, max_students, max_batches) RETURNING *
     // 4. UPDATE users SET role = 'institute_admin' WHERE id = owner_id
     // 5. Return { success: true, data: { institute } } with 201

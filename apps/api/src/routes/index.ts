@@ -9,18 +9,15 @@ import institutesRouter from "./institutes.routes";
 import batchesRouter from "./batches.routes";
 import internalRouter from "./internal.routes";
 import pyqsRouter from "./pyqs.routes";
+import superadminRouter from "./superadmin.routes";
 
 const router = Router();
 
 // ─── Public ──────────────────────────────────────────────────────────────────
-// /auth/signup and /auth/login are public; other /auth/* routes require auth
 router.use("/auth", authRouter);
-// PYQs are public — no login needed to list or fetch questions
 router.use("/pyqs", pyqsRouter);
 
 // ─── Authenticated ───────────────────────────────────────────────────────────
-// Each router is mounted at its explicit prefix so no router ever acts as a
-// catch-all that could intercept unrelated requests via blanket middleware.
 router.use("/questions", questionsRouter);
 router.use("/tests", testsRouter);
 router.use("/attempts", attemptsRouter);
@@ -28,6 +25,9 @@ router.use("/analysis", analysisRouter);
 router.use("/rankings", rankingsRouter);
 router.use("/institutes", institutesRouter);
 router.use("/batches", batchesRouter);
+
+// ─── SuperAdmin (super_admin role required) ───────────────────────────────────
+router.use("/superadmin", superadminRouter);
 
 // ─── Internal (cron only — INTERNAL_API_KEY protected) ───────────────────────
 router.use("/internal", internalRouter);
