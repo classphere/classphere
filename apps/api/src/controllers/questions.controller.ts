@@ -1,5 +1,26 @@
 import { Request, Response } from "express";
 
+const SUPABASE_URL = process.env.SUPABASE_URL!;
+const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
+
+// ─── Supabase REST helper ─────────────────────────────────────────────────────
+async function sbFetch(path: string, options: RequestInit = {}) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+    ...options,
+    headers: {
+      "Content-Type":  "application/json",
+      "apikey":        SUPABASE_SERVICE_KEY,
+      "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
+      ...(options.headers ?? {}),
+    },
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Supabase error (${res.status}): ${text}`);
+  }
+  return res.json();
+}
+
 /**
  * GET /api/v1/questions
  * Authenticated — List questions with optional filters.
@@ -110,6 +131,64 @@ export const deleteQuestion = async (req: Request, res: Response): Promise<void>
     // 2. UPDATE questions SET is_active = false, updated_at = now() WHERE id = $id
     // 3. Return { success: true, message: "Question deactivated" }
     res.status(200).json({ success: true, message: "deleteQuestion (soft) — TODO: implement", id });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * POST /api/v1/questions/bulk
+ * [super_admin / service_role only] — Upsert an array of questions in one shot.
+ * Used by the seed script. Max 500 per call.
+ */
+export const bulkUpsertQuestions = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { questions } = req.body as { questions: any[] };
+
+    if (!Array.isArray(questions) || questions.length === 0) {
+      res.status(400).json({ success: false, message: "Body must have a non-empty 'questions' array." });
+      return;
+    }
+    if (questions.length > 500) {
+      res.status(400).json({ success: false, message: "Max 500 questions per bulk call." });
+      return;
+    }
+
+    await sbFetch(`questions`, {
+      method: "POST",
+      headers: { "Prefer": "resolution=merge-duplicates,return=minimal" },
+      body: JSON.stringify(questions),
+    });
+
+    res.status(201).json({ success: true, message: `Upserted ${questions.length} questions.` });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * GET /api/v1/questions/tests
+ * Authenticated — Returns available test papers grouped by test_type.
+ * Used by the Tests Hub frontend to list tests dynamically.
+ * Query params: exam (jee-main|neet-ug|ssc-cgl), type (chapter-wise|mock-test|pyq)
+ */
+export const listTests = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { exam, type } = req.query;
+
+    let query = `papers?is_active=eq.true&select=id,title,test_type,subject,chapter,year,shift,total_questions,total_marks,duration_min,difficulty,exams(code,full_name)&order=created_at.desc`;
+
+    if (type) query += `&test_type=eq.${type}`;
+
+    // Filter by exam code using the exams foreign key
+    const data = await sbFetch(query);
+
+    // If exam filter provided, filter in memory (Supabase REST join filtering has limitations)
+    const filtered = exam
+      ? data.filter((p: any) => p.exams?.code === exam)
+      : data;
+
+    res.json({ success: true, data: { papers: filtered, total: filtered.length } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
