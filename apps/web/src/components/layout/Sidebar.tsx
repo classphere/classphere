@@ -28,7 +28,8 @@ import {
   RiSunLine,
   RiMoonLine,
   RiMailLine,
-  RiNotification3Line
+  RiNotification3Line,
+  RiUploadCloud2Line
 } from "@remixicon/react";
 import { mockUser } from "@/lib/mock-data";
 
@@ -61,10 +62,11 @@ export default function Sidebar() {
   };
 
   // Navigations based on Role
+  const studentExam = mockUser.batch.includes("NEET") ? "neet" : mockUser.batch.includes("SSC") ? "ssc" : "jee";
   const studentNav = [
     { label: "Dashboard",    href: "/",                  icon: <RiDashboardLine size={18} />,      active: pathname === "/" },
-    { label: "My DPPs",     href: "/assignments",        icon: <RiFileListLine size={18} />,       active: pathname.startsWith("/assignments") },
-    { label: "PYQs",        href: "/pyqs",               icon: <RiFileList3Line size={18} />,      active: pathname.startsWith("/pyqs") },
+    { label: "Tests Hub",    href: "/tests",             icon: <RiFileList3Line size={18} />,      active: pathname.startsWith("/tests") },
+    { label: "My DPPs",      href: "/assignments",        icon: <RiFileListLine size={18} />,       active: pathname.startsWith("/assignments") },
     { label: "Test History", href: "/history",           icon: <RiBookOpenLine size={18} />,       active: pathname.startsWith("/history") },
     { label: "Mistake Diary",href: "/student/mistakes",  icon: <RiBookmarkLine size={18} />,       active: pathname.startsWith("/student/mistakes") },
     { label: "Analytics",   href: "/analytics",          icon: <RiLineChartLine size={18} />,      active: pathname.startsWith("/analytics") },
@@ -93,7 +95,8 @@ export default function Sidebar() {
     { label: "Platform Health", href: "/superadmin", icon: <RiDashboardLine size={18} />, active: pathname === "/superadmin" },
     { label: "Global Analytics", href: "/superadmin/analytics", icon: <RiLineChartLine size={18} />, active: pathname.startsWith("/superadmin/analytics") },
     { label: "Revenue", href: "/superadmin/revenue", icon: <RiMoneyDollarCircleLine size={18} />, active: pathname.startsWith("/superadmin/revenue") },
-    { label: "Questions", href: "/superadmin/questions", icon: <RiDatabase2Line size={18} />, active: pathname.startsWith("/superadmin/questions") },
+    { label: "Questions", href: "/superadmin/questions", icon: <RiDatabase2Line size={18} />, active: pathname === "/superadmin/questions" },
+    { label: "Upload Questions", href: "/superadmin/questions/upload", icon: <RiUploadCloud2Line size={18} />, active: pathname.startsWith("/superadmin/questions/upload") },
     { label: "Institutes", href: "/superadmin/institutes", icon: <RiBuilding4Line size={18} />, active: pathname.startsWith("/superadmin/institutes") },
     { label: "Configuration", href: "/superadmin/configuration", icon: <RiToggleLine size={18} />, active: pathname.startsWith("/superadmin/configuration") },
     { label: "Support", href: "/superadmin/support", icon: <RiLifebuoyLine size={18} />, active: pathname.startsWith("/superadmin/support") },
