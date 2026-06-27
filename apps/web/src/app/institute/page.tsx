@@ -12,12 +12,40 @@ import {
   RiAddLine,
   RiArrowDownSLine,
   RiArrowRightLine,
-  RiStarFill
+  RiStarFill,
+  RiCloseLine
 } from "@remixicon/react";
 import { mockInstituteAdmin, mockBatches, mockInstituteStudents } from "../../lib/mock-data";
 
+// Exam mapping based on institute type
+const EXAM_OPTIONS = {
+  "jee-neet": [
+    { id: "jee-main", label: "JEE Main" },
+    { id: "jee-adv", label: "JEE Advanced" },
+    { id: "neet", label: "NEET UG" },
+  ],
+  "ssc": [
+    { id: "ssc-cgl", label: "SSC CGL" },
+    { id: "ssc-chsl", label: "SSC CHSL" },
+    { id: "ssc-mts", label: "SSC MTS" },
+  ],
+  "hybrid": [
+    { id: "jee-main", label: "JEE Main" },
+    { id: "neet", label: "NEET UG" },
+    { id: "ssc-cgl", label: "SSC CGL" },
+    { id: "ssc-chsl", label: "SSC CHSL" },
+  ],
+};
+
 export default function InstituteDashboardPage() {
   const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
+  const [isBatchModalOpen, setIsBatchModalOpen] = useState(false);
+  const [newBatchData, setNewBatchData] = useState({
+    name: "",
+    examCode: "",
+  });
+
+  const availableExams = EXAM_OPTIONS[mockInstituteAdmin.instituteType as keyof typeof EXAM_OPTIONS] || EXAM_OPTIONS["hybrid"];
 
   return (
     <>
@@ -27,7 +55,7 @@ export default function InstituteDashboardPage() {
         breadcrumbs="Dashboard"
       >
         {/* Create New Batch */}
-        <button className="flex flex-row justify-center items-center px-6 h-12 border border-[#E2E2E2] dark:border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary text-sm font-sans font-semibold rounded-full shadow-xs active:scale-95 transition-all cursor-pointer">
+        <button onClick={() => setIsBatchModalOpen(true)} className="flex flex-row justify-center items-center px-6 h-12 border border-[#E2E2E2] dark:border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary text-sm font-sans font-semibold rounded-full shadow-xs active:scale-95 transition-all cursor-pointer">
           <RiAddLine size={18} className="mr-1.5" /> Create New Batch
         </button>
 
@@ -301,6 +329,58 @@ export default function InstituteDashboardPage() {
         </div>
 
       </main>
+
+      {/* Create Batch Modal */}
+      {isBatchModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 animate-in fade-in duration-200">
+          <div className="w-full max-w-md rounded-2xl bg-b-surface1 p-6 shadow-xl animate-in zoom-in-95 duration-200">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h2 className="text-xl font-bold text-t-primary">Create New Batch</h2>
+                <p className="text-sm text-t-secondary mt-1">
+                  Institute Type: <span className="font-semibold text-t-primary uppercase">{mockInstituteAdmin.instituteType}</span>
+                </p>
+              </div>
+              <button onClick={() => setIsBatchModalOpen(false)} className="rounded-full p-2 hover:bg-b-surface2 text-t-secondary transition-colors">
+                <RiCloseLine size={24} />
+              </button>
+            </div>
+            
+            <div className="flex flex-col gap-5">
+              <div>
+                <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Batch Name</label>
+                <input type="text" className="input-field w-full" placeholder="e.g., Target 2026 Morning" value={newBatchData.name} onChange={(e) => setNewBatchData({ ...newBatchData, name: e.target.value })} />
+              </div>
+
+              <div>
+                <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Target Exam</label>
+                <div className="relative">
+                  <select className="input-field w-full appearance-none pr-10" value={newBatchData.examCode} onChange={(e) => setNewBatchData({ ...newBatchData, examCode: e.target.value })}>
+                    <option value="" disabled>Select Exam...</option>
+                    {availableExams.map(exam => (
+                      <option key={exam.id} value={exam.id}>{exam.label}</option>
+                    ))}
+                  </select>
+                  <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
+                </div>
+                <p className="text-xs text-t-secondary mt-2">
+                  Showing exams based on your institute type ({mockInstituteAdmin.instituteType}).
+                </p>
+              </div>
+
+              <div className="mt-4 flex items-center justify-end gap-3 pt-4 border-t border-s-stroke2/50">
+                <button onClick={() => setIsBatchModalOpen(false)} className="btn btn-ghost px-5">Cancel</button>
+                <button className="btn btn-primary px-6 shadow-md" onClick={() => {
+                  console.log("Creating batch:", newBatchData);
+                  setIsBatchModalOpen(false);
+                }} disabled={!newBatchData.name || !newBatchData.examCode}>
+                  Create Batch
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

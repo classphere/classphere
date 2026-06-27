@@ -33,6 +33,8 @@ export const mockInstituteAdmin = {
   email: "admin@aakash.test",
   role: "institute_admin" as const,
   instituteName: "Aakash Institute",
+  instituteType: "jee-neet",
+  pricePerStudent: 50,
   plan: "Institute Growth",
   studentsCount: 420,
   batchesCount: 8,
@@ -849,3 +851,39 @@ export const mockDPPQuestions: Record<string, typeof mockQuestions> = {
     },
   ],
 };
+
+export const mockTestLibrary = [
+  // JEE - Mock Tests
+  { id: "test-lib-001", exam: "jee", type: "mock-tests", category: "Full Syllabus", title: "JEE Main 2026 Full Mock 1", questions: 75, duration: 180, marks: 300, difficulty: "hard", attempts: 0 },
+  { id: "test-lib-002", exam: "jee", type: "mock-tests", category: "Full Syllabus", title: "JEE Main 2026 Full Mock 2", questions: 75, duration: 180, marks: 300, difficulty: "medium", attempts: 0 },
+  
+  // JEE - Chapter-wise (Physics)
+  { id: "test-lib-003", exam: "jee", type: "chapter-wise", category: "Physics", title: "Laws of Motion - Advanced", questions: 25, duration: 60, marks: 100, difficulty: "hard", attempts: 1 },
+  { id: "test-lib-004", exam: "jee", type: "chapter-wise", category: "Physics", title: "Kinematics 1D & 2D", questions: 30, duration: 60, marks: 120, difficulty: "medium", attempts: 0 },
+  
+  // JEE - Chapter-wise (Chemistry)
+  { id: "test-lib-005", exam: "jee", type: "chapter-wise", category: "Chemistry", title: "Chemical Bonding", questions: 25, duration: 45, marks: 100, difficulty: "medium", attempts: 2 },
+  
+  // JEE - Chapter-wise (Mathematics)
+  { id: "test-lib-006", exam: "jee", type: "chapter-wise", category: "Mathematics", title: "Calculus - Integration", questions: 20, duration: 60, marks: 80, difficulty: "hard", attempts: 0 },
+
+  // JEE - PYQs
+  { id: "test-lib-007", exam: "jee", type: "pyqs", category: "2024", title: "JEE Main 2024 Jan Shift 1", questions: 75, duration: 180, marks: 300, difficulty: "hard", attempts: 0 },
+  
+  // NEET - Mock Tests
+  { id: "test-lib-008", exam: "neet", type: "mock-tests", category: "Full Syllabus", title: "NEET 2026 Full Mock 1", questions: 200, duration: 200, marks: 720, difficulty: "medium", attempts: 0 },
+
+  // NEET - Chapter-wise (Biology)
+  { id: "test-lib-009", exam: "neet", type: "chapter-wise", category: "Biology", title: "Human Reproduction", questions: 50, duration: 45, marks: 200, difficulty: "medium", attempts: 1 },
+  { id: "test-lib-010", exam: "neet", type: "chapter-wise", category: "Biology", title: "Genetics & Evolution", questions: 45, duration: 45, marks: 180, difficulty: "hard", attempts: 0 },
+
+  // SSC - Mock Tests
+  { id: "test-lib-011", exam: "ssc", type: "mock-tests", category: "Tier 1", title: "SSC CGL Tier 1 Mock", questions: 100, duration: 60, marks: 200, difficulty: "medium", attempts: 0 },
+
+  // SSC - Chapter-wise
+  { id: "test-lib-012", exam: "ssc", type: "chapter-wise", category: "Quantitative Aptitude", title: "Percentage & Ratio", questions: 25, duration: 30, marks: 50, difficulty: "medium", attempts: 0 },
+  { id: "test-lib-013", exam: "ssc", type: "chapter-wise", category: "General Intelligence", title: "Blood Relations & Coding", questions: 25, duration: 30, marks: 50, difficulty: "easy", attempts: 0 },
+  { id: "test-lib-014", exam: "ssc", type: "chapter-wise", category: "English Language", title: "Reading Comprehension", questions: 25, duration: 30, marks: 50, difficulty: "medium", attempts: 1 },
+  { id: "test-lib-015", exam: "ssc", type: "chapter-wise", category: "General Awareness", title: "Current Affairs - May 2026", questions: 25, duration: 20, marks: 50, difficulty: "medium", attempts: 0 },
+];
+
