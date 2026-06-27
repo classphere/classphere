@@ -1,4 +1,5 @@
 import { AnalysisResult, ClassifiedAnswer } from "../../../../../../packages/types/src/analysis.types";
+import { analyzeSscAttempt } from "./ssc/ssc-analysis.service";
 import { scoreAttempt } from "./scoring.service";
 import { classifyMistake } from "./mistake-classifier";
 import { computeTopicAccuracy } from "./topic-accuracy";
@@ -28,6 +29,13 @@ export async function analyzeAttempt(attemptId: string, hasTimingData = true): P
 
   // ── Single DB round-trip: fetch attempt + all answers + questions (JOIN) ──
   const { attempt, answers } = await db.getAttemptWithAnswers(attemptId);
+
+  // ── Engine Router: dispatch SSC exams to the dedicated SSC engine ──────────
+  // SSC exam codes: "ssc-cgl", "ssc-chsl", "ssc-mts", "ssc-gd", etc.
+  // This keeps the JEE/NEET pipeline completely isolated from SSC logic.
+  if (attempt.exam_code?.startsWith("ssc")) {
+    return analyzeSscAttempt(attemptId, hasTimingData);
+  }
 
   // ── Stage 1: Score ──────────────────────────────────────────────────────────
   const scoring = scoreAttempt(answers, attempt.marking_scheme);
