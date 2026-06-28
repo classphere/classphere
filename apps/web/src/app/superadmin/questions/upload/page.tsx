@@ -138,7 +138,18 @@ export default function UploadQuestionsPage() {
     setResultMsg("");
 
     try {
-      const token = localStorage.getItem("auth_token") ?? "";
+      const token  = localStorage.getItem("auth_token") ?? "";
+      const apiKey = process.env.NEXT_PUBLIC_INTERNAL_API_KEY ?? "";
+
+      const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+      };
+      // Use API key bypass when no real JWT is available (before Supabase auth is wired up)
+      if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+      } else if (apiKey) {
+        headers["x-api-key"] = apiKey;
+      }
 
       const body = {
         exam:       form.exam,
@@ -146,7 +157,7 @@ export default function UploadQuestionsPage() {
         title:      form.title,
         subject:    form.subject || null,
         chapter:    form.chapter || null,
-        year:       form.year    ? parseInt(form.year)     : null,
+        year:       form.year    ? parseInt(form.year)    : null,
         shift:      form.shift   || null,
         duration:   parseInt(form.duration),
         marks:      parseInt(form.marks),
@@ -156,10 +167,7 @@ export default function UploadQuestionsPage() {
 
       const res = await fetch(`${API_BASE}/superadmin/upload-questions`, {
         method: "POST",
-        headers: {
-          "Content-Type":  "application/json",
-          "Authorization": `Bearer ${token}`,
-        },
+        headers,
         body: JSON.stringify(body),
       });
 
@@ -177,6 +185,7 @@ export default function UploadQuestionsPage() {
       setResultMsg(err.message || "Network error.");
     }
   };
+
 
   const isChapterWise = form.test_type === "chapter-wise";
   const isPYQ         = form.test_type === "pyq";

@@ -46,9 +46,17 @@ function chunk<T>(arr: T[], size: number): T[][] {
 function validateQuestion(q: any, index: number): string | null {
   if (!q.id)            return `Question #${index + 1}: missing 'id'`;
   if (!q.question_text) return `Question #${index + 1}: missing 'question_text'`;
-  if (!Array.isArray(q.options) || q.options.length < 2)
-    return `Question #${index + 1}: 'options' must be an array with at least 2 items`;
-  if (!q.correct_answer) return `Question #${index + 1}: missing 'correct_answer'`;
+  // correct_answer can be a bare number (integer questions), string, or array — 0 is a valid answer
+  if (q.correct_answer === null || q.correct_answer === undefined || q.correct_answer === "")
+    return `Question #${index + 1}: missing 'correct_answer'`;
+
+  // Integer/numerical questions (JEE Section B) have no options — that's valid
+  const isInteger = q.question_type === "integer" || q.question_type === "integer_type";
+  if (!isInteger) {
+    if (!Array.isArray(q.options) || q.options.length < 2)
+      return `Question #${index + 1}: 'options' must be an array with at least 2 items`;
+  }
+
   return null;
 }
 
@@ -148,7 +156,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       exam_id:        examId,
       test_type,
       subject:        q.subject  || subject  || "General",
-      chapter:        q.chapter  || chapter  || null,
+      chapter:        q.chapter  || chapter  || "General",
       topic:          q.topic    || null,
       difficulty:     q.difficulty || difficulty,
       year:           q.year     || year     || null,
@@ -156,7 +164,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       question_type:  q.question_type || "mcq_single",
       question_text:  q.question_text,
       image_url:      q.image_url || null,
-      options:        q.options,
+      options:        q.options ?? [],
       correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
       explanation:    q.explanation || null,
       tags:           q.tags || [],
@@ -193,7 +201,20 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
 
     const paper = Array.isArray(createdPapers) ? createdPapers[0] : null;
 
-    // ── 7. Respond ────────────────────────────────────────────────────────────
+    // ── 7. Link questions to paper via paper_questions join table ─────────────
+    if (paper?.id) {
+      const pqRows = questionRows.map((q: any, idx: number) => ({
+        paper_id:    paper.id,
+        question_id: q.id,
+        position:    idx + 1,
+      }));
+      const pqBatches = chunk(pqRows, 100);
+      for (const batch of pqBatches) {
+        await sbPost("paper_questions", batch, "resolution=merge-duplicates,return=minimal");
+      }
+    }
+
+    // ── 8. Respond ────────────────────────────────────────────────────────────
     res.status(201).json({
       success: true,
       message: `Successfully uploaded ${questionRows.length} questions as "${title}".`,
@@ -206,7 +227,8 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       },
     });
   } catch (err: any) {
-    console.error("[uploadQuestions]", err.message);
+    console.error("[uploadQuestions] ERROR:", err.message);
+    // Surface Supabase error details to the client in dev
     res.status(500).json({ success: false, message: err.message });
   }
 };
