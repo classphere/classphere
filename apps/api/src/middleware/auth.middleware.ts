@@ -20,13 +20,31 @@ declare global {
  * On failure, returns 401.
  */
 export const authenticate = (req: Request, res: Response, next: NextFunction): void => {
+  // ── API Key bypass (for superadmin tooling before real auth is wired up) ──
+  const internalKey = process.env.INTERNAL_API_KEY;
+  const providedKey = req.headers["x-api-key"];
+  if (internalKey && providedKey === internalKey) {
+    req.user = { id: "superadmin", email: "admin@local", role: "super_admin" };
+    next();
+    return;
+  }
+
+  // ── Standard JWT auth (Supabase Bearer token) ──────────────────────────────
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    res.status(401).json({ success: false, message: "Missing or malformed Authorization header" });
+    // Fallback to mock student for local development/mock login flow
+    req.user = { id: "mock-student-id", email: "student@local.com", role: "student" };
+    next();
     return;
   }
 
   const token = authHeader.split(" ")[1];
+  if (token === "mock" || token === "undefined" || token === "") {
+    req.user = { id: "mock-student-id", email: "student@local.com", role: "student" };
+    next();
+    return;
+  }
+
   const jwtSecret = process.env.SUPABASE_JWT_SECRET;
 
   if (!jwtSecret) {
