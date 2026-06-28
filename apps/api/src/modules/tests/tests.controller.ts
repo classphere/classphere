@@ -64,19 +64,74 @@ export const getAssignedTests = async (req: Request, res: Response): Promise<voi
 
 /**
  * GET /api/v1/tests/:id
- * Authenticated — Get test config WITHOUT correct answers.
+ * Authenticated — Get a paper's metadata + full question list (with correct_answer, for now).
+ * Used by /test/[id] page when the test was uploaded via the superadmin upload tool.
  */
 export const getTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // 1. SELECT * FROM tests WHERE id = $id
-    // 2. If not found: 404
-    // 3. Fetch questions: SELECT id, question_text, options, type, difficulty, subject, chapter
-    //      FROM questions WHERE id = ANY(test.question_ids)
-    //    — NOTE: correct_answer is deliberately excluded here
-    // 4. Return { success: true, data: { test: { ...test, questions } } }
-    res.status(200).json({ success: true, message: "getTest — TODO: implement", id });
+
+    const SUPABASE_URL      = process.env.SUPABASE_URL!;
+    const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
+
+    async function sbFetch(path: string) {
+      const r = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+        headers: {
+          "Content-Type":  "application/json",
+          "apikey":        SUPABASE_SERVICE_KEY,
+          "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
+        },
+      });
+      if (!r.ok) throw new Error(`Supabase error (${r.status}): ${await r.text()}`);
+      return r.json();
+    }
+
+    // 1. Fetch paper metadata
+    const papers = await sbFetch(
+      `papers?id=eq.${id}&is_active=eq.true&select=*,exams(code,full_name)`
+    );
+    if (!papers.length) {
+      res.status(404).json({ success: false, message: `Test '${id}' not found.` });
+      return;
+    }
+    const paper = papers[0];
+
+    // 2. Fetch ordered question IDs from join table
+    const pqs = await sbFetch(
+      `paper_questions?paper_id=eq.${id}&order=position.asc&select=question_id,position`
+    );
+    const questionIds: string[] = pqs.map((r: any) => r.question_id);
+
+    let questions: any[] = [];
+    if (questionIds.length > 0) {
+      const ids = questionIds.join(",");
+      const rawQs = await sbFetch(
+        `questions?id=in.(${ids})&is_active=eq.true&select=id,question_text,image_url,options,correct_answer,explanation,question_type,subject,chapter,topic,difficulty,distractor_map,marking_scheme`
+      );
+
+      // Re-order to match paper_questions position order
+      const byId: Record<string, any> = {};
+      for (const q of rawQs) byId[q.id] = q;
+      questions = questionIds
+        .map((qid, idx) => byId[qid] ? { ...byId[qid], question_number: idx + 1 } : null)
+        .filter(Boolean);
+    }
+
+    // Build meta shape matching what the test attempt page expects
+    const examCode  = paper.exams?.code ?? "";
+    const examLabel = paper.exams?.full_name ?? "";
+    const meta = {
+      id:       paper.id,
+      exam:     examLabel || examCode,
+      year:     paper.year     ?? null,
+      shift:    paper.shift    ?? paper.title,
+      questions: questions.length,
+      duration:  paper.duration_min,
+      title:    paper.title,
+      test_type: paper.test_type,
+    };
+
+    res.json({ success: true, data: { paper: meta, questions, total: questions.length } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

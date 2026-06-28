@@ -204,7 +204,36 @@ export default function TestPage() {
     if (!testId) return;
     setLoading(true);
 
-    // PYQ papers: id is "pyq-{paperId}"
+    // ── Helper: fetch from the generic /tests/:id endpoint (Tests Hub papers) ──
+    const loadFromTestsEndpoint = (paperId: string) => {
+      const token = typeof window !== "undefined" ? (localStorage.getItem("auth_token") ?? "") : "";
+      fetch(`${API_BASE}/tests/${paperId}`, {
+        headers: token ? { "Authorization": `Bearer ${token}` } : {},
+      })
+        .then((r) => {
+          if (!r.ok) throw new Error("API error");
+          const ct = r.headers.get("content-type");
+          if (!ct || !ct.includes("application/json")) throw new Error("Invalid response format");
+          return r.json();
+        })
+        .then((res) => {
+          if (res.success) {
+            setQuestions(res.data.questions);
+            setMeta(res.data.paper);
+            setTimeLeft(res.data.paper.duration * 60);
+            setIsDemoMode(false);
+            examStartMsRef.current = Date.now();
+          } else {
+            setError(res.message ?? "Failed to load questions.");
+          }
+        })
+        .catch((err) => {
+          setError(err.message || "Failed to load test.");
+        })
+        .finally(() => setLoading(false));
+    };
+
+    // PYQ papers routed from /pyqs page: id is "pyq-{paperId}"
     if (testId.startsWith("pyq-")) {
       const paperId = testId.replace(/^pyq-/, "");
       fetch(`${API_BASE}/pyqs/${paperId}/questions`)
@@ -236,10 +265,19 @@ export default function TestPage() {
       return;
     }
 
-    // Future: custom tests would use a different endpoint
-    setError(`Unknown test format: "${testId}". Only PYQ papers are supported right now.`);
+    // Tests Hub papers: id is a raw UUID from the papers table
+    // Matches the UUIDs returned by GET /api/v1/questions/tests
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (uuidRegex.test(testId)) {
+      loadFromTestsEndpoint(testId);
+      return;
+    }
+
+    // Unknown format
+    setError(`Unknown test format: "${testId}".`);
     setLoading(false);
   }, [testId]);
+
 
   // ── Timer ──────────────────────────────────────────────────────────────────
   const handleSubmit = useCallback(async () => {
