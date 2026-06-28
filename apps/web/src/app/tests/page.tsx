@@ -54,6 +54,9 @@ export default function TestsHubPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError]     = useState<string | null>(null);
 
+  const [activeExam, setActiveExam]         = useState("jee-main");
+  const EXAM_OPTIONS = ["jee-main", "jee-advanced", "neet-ug", "ssc-cgl"];
+
   const [activeType, setActiveType]         = useState("chapter-wise");
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch]                 = useState("");
@@ -62,7 +65,7 @@ export default function TestsHubPage() {
   useEffect(() => {
     setLoading(true);
     setError(null);
-    fetch(`${API_BASE}/questions/tests?exam=${DEFAULT_EXAM}&type=${activeType}`)
+    fetch(`${API_BASE}/questions/tests?exam=${activeExam}&type=${activeType}`)
       .then(r => {
         if (!r.ok) throw new Error("API error");
         return r.json();
@@ -73,7 +76,7 @@ export default function TestsHubPage() {
       })
       .catch(err => setError(err.message))
       .finally(() => setLoading(false));
-  }, [activeType]);
+  }, [activeType, activeExam]);
 
   // Derive categories from fetched papers (subject for chapter-wise, year for pyqs)
   const categories = useMemo(() => {
@@ -147,14 +150,24 @@ export default function TestsHubPage() {
             />
           </div>
 
-          {categories.length > 1 && (
+          <div className="flex flex-row flex-wrap items-center gap-6">
             <FilterGroup
-              label={activeType === "pyq" ? "Year" : "Subject"}
-              options={categories}
-              active={activeCategory}
-              onChange={setActiveCategory}
+              label="Exam"
+              options={EXAM_OPTIONS}
+              active={activeExam}
+              onChange={setActiveExam}
+              displayMap={EXAM_LABELS}
             />
-          )}
+
+            {categories.length > 1 && (
+              <FilterGroup
+                label={activeType === "pyq" ? "Year" : "Subject"}
+                options={categories}
+                active={activeCategory}
+                onChange={setActiveCategory}
+              />
+            )}
+          </div>
         </div>
 
         {/* Results count */}
@@ -202,9 +215,13 @@ export default function TestsHubPage() {
 // ── Sub-components ────────────────────────────────────────────────────────────
 
 function FilterGroup({
-  label, options, active, onChange,
+  label, options, active, onChange, displayMap,
 }: {
-  label: string; options: string[]; active: string; onChange: (v: string) => void;
+  label: string;
+  options: string[];
+  active: string;
+  onChange: (v: string) => void;
+  displayMap?: Record<string, string>;
 }) {
   return (
     <div className="flex flex-row items-center gap-2 flex-wrap">
@@ -219,7 +236,7 @@ function FilterGroup({
               : "border-[#E2E2E2] dark:border-s-stroke2 bg-transparent text-[#727272] hover:border-[#727272] hover:text-[#101010]"
           }`}
         >
-          {opt}
+          {displayMap ? (displayMap[opt] ?? opt) : opt}
         </button>
       ))}
     </div>
