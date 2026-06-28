@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { requireInternalApiKey } from "../middleware/internalAuth.middleware";
-import { computeRankings, resetStreaks, sendWeeklyReports } from "../controllers/internal.controller";
+import { requireInternalApiKey } from "../../middleware/internalAuth.middleware";
+import { computeRankings, resetStreaks, sendWeeklyReports } from "./internal.controller";
 
 const router = Router();
 

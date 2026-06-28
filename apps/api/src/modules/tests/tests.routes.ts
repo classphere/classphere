@@ -1,13 +1,13 @@
 import { Router } from "express";
-import { authenticate } from "../middleware/auth.middleware";
-import { requireRole } from "../middleware/rbac.middleware";
+import { authenticate } from "../../middleware/auth.middleware";
+import { requireRole } from "../../middleware/rbac.middleware";
 import {
   createTest,
   getMyTests,
   getAssignedTests,
   getTest,
   publishTest,
-} from "../controllers/tests.controller";
+} from "./tests.controller";
 
 const router = Router();
 

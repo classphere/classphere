@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { authenticate } from "../middleware/auth.middleware";
-import { requireRole } from "../middleware/rbac.middleware";
+import { authenticate } from "../../middleware/auth.middleware";
+import { requireRole } from "../../middleware/rbac.middleware";
 import {
   createBatch,
   listBatches,
@@ -11,7 +11,7 @@ import {
   removeStudentFromBatch,
   addTeacherToBatch,
   generateBatchInvite,
-} from "../controllers/institutes.controller";
+} from "../institutes/institutes.controller";
 
 const router = Router();
 

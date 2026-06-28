@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getPYQList, getPYQQuestions } from "../controllers/pyqs.controller";
+import { getPYQList, getPYQQuestions } from "./pyqs.controller";
 
 const router = Router();
 

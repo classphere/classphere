@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { authenticate } from "../middleware/auth.middleware";
-import { requireRole } from "../middleware/rbac.middleware";
+import { authenticate } from "../../middleware/auth.middleware";
+import { requireRole } from "../../middleware/rbac.middleware";
 import {
   listQuestions,
   getExamsMeta,
@@ -10,7 +10,7 @@ import {
   deleteQuestion,
   bulkUpsertQuestions,
   listTests,
-} from "../controllers/questions.controller";
+} from "./questions.controller";
 
 const router = Router();
 

@@ -1,15 +1,15 @@
 import { Router } from "express";
-import authRouter from "./auth.routes";
-import questionsRouter from "./questions.routes";
-import testsRouter from "./tests.routes";
-import attemptsRouter from "./attempts.routes";
+import authRouter from "../modules/auth/auth.routes";
+import questionsRouter from "../modules/questions/questions.routes";
+import testsRouter from "../modules/tests/tests.routes";
+import attemptsRouter from "../modules/attempts/attempts.routes";
 import analysisRouter from "../modules/analysis-engine/analysis.routes";
-import rankingsRouter from "./rankings.routes";
-import institutesRouter from "./institutes.routes";
-import batchesRouter from "./batches.routes";
-import internalRouter from "./internal.routes";
-import pyqsRouter from "./pyqs.routes";
-import superadminRouter from "./superadmin.routes";
+import rankingsRouter from "../modules/rankings/rankings.routes";
+import institutesRouter from "../modules/institutes/institutes.routes";
+import batchesRouter from "../modules/batches/batches.routes";
+import internalRouter from "../modules/internal/internal.routes";
+import pyqsRouter from "../modules/pyqs/pyqs.routes";
+import superadminRouter from "../modules/superadmin/superadmin.routes";
 
 const router = Router();
 

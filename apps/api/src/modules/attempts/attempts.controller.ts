@@ -89,10 +89,10 @@ export const saveAttempt = async (req: Request, res: Response): Promise<void> =>
  */
 import fs from "fs";
 import path from "path";
-import { PYQ_REGISTRY, ROOT } from "./pyqs.controller";
-import { analyzeAttempt } from "../modules/analysis-engine/services/analysis.service";
-import { globalDbStore } from "../modules/analysis-engine/services/db.mock";
-import { AttemptAnswer, Question } from "../../../../packages/types/src/analysis.types";
+import { PYQ_REGISTRY, ROOT } from "../pyqs/pyqs.service";
+import { analyzeAttempt } from "../analysis-engine/services/analysis.service";
+import { globalDbStore } from "../analysis-engine/services/db.mock";
+import { AttemptAnswer, Question } from "../../../../../packages/types/src/analysis.types";
 
 export const submitAttempt = async (req: Request, res: Response): Promise<void> => {
   try {

@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { authenticate } from "../middleware/auth.middleware";
-import { requireRole } from "../middleware/rbac.middleware";
-import { uploadQuestions } from "../controllers/superadmin.controller";
+import { authenticate } from "../../middleware/auth.middleware";
+import { requireRole } from "../../middleware/rbac.middleware";
+import { uploadQuestions } from "./superadmin.controller";
 
 const router = Router();
 

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { authenticate } from "../middleware/auth.middleware";
-import { getMyRanks, getLeaderboard, getRankCard } from "../controllers/rankings.controller";
+import { authenticate } from "../../middleware/auth.middleware";
+import { getMyRanks, getLeaderboard, getRankCard } from "./rankings.controller";
 
 const router = Router();
 

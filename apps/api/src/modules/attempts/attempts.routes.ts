@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { authenticate } from "../middleware/auth.middleware";
+import { authenticate } from "../../middleware/auth.middleware";
 import {
   startAttempt,
   getMyAttempts,
   getAttempt,
   saveAttempt,
   submitAttempt,
-} from "../controllers/attempts.controller";
+} from "./attempts.controller";
 
 const router = Router();
 

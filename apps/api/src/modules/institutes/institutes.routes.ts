@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { authenticate } from "../middleware/auth.middleware";
-import { requireRole } from "../middleware/rbac.middleware";
+import { authenticate } from "../../middleware/auth.middleware";
+import { requireRole } from "../../middleware/rbac.middleware";
 import {
   createInstitute,
   getMyInstitute,
   updateInstitute,
   getInstituteStats,
-} from "../controllers/institutes.controller";
+} from "./institutes.controller";
 
 const router = Router();
 
