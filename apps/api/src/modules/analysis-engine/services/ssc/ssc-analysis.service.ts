@@ -2,15 +2,15 @@ import { AnalysisResult, ClassifiedAnswer } from "../../../../../../../packages/
 import { scoreSscAttempt } from "./ssc-scoring.service";
 import { classifySscMistake } from "./ssc-mistake-classifier";
 import { computeSscTopicAccuracy } from "./ssc-topic-accuracy";
-import { calculateFreeMarks } from "../free-marks";
-import { analyzeSkips } from "../skip-analysis";
-import { detectAllPatterns } from "../error-patterns";
-import { generateStudyPlan } from "../study-plan";
-import { generateBoosterConfig } from "../booster";
+import { calculateFreeMarks } from "./ssc-free-marks";
+import { analyzeSkips } from "./ssc-skip-analysis";
+import { detectAllPatterns } from "./ssc-error-patterns";
+import { generateStudyPlan } from "./ssc-study-plan";
+import { generateBoosterConfig } from "./ssc-booster";
 import {
   detectLongitudinalPatterns,
   buildCurrentTopicHistoryEntries,
-} from "../longitudinal-profile";
+} from "./ssc-longitudinal-profile";
 import {
   computeSscSectionIntervals,
   detectSscBlockPanic,
