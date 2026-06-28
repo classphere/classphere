@@ -1,4 +1,4 @@
-import { TopicStat, BoosterConfig } from "../../../../../../packages/types/src/analysis.types";
+import { TopicStat, BoosterConfig } from "../../../../../../../packages/types/src/analysis.types";
 
 export function generateBoosterConfig(
   topicStats: TopicStat[],

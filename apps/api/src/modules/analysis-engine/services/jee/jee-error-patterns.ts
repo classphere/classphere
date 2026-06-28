@@ -1,4 +1,4 @@
-import { ClassifiedAnswer, ErrorPattern } from "../../../../../../packages/types/src/analysis.types";
+import { ClassifiedAnswer, ErrorPattern } from "../../../../../../../packages/types/src/analysis.types";
 
 type PatternDetector = (answers: ClassifiedAnswer[]) => ErrorPattern | null;
 

@@ -5,7 +5,7 @@ import {
   DifficultyBreakdown,
   AttemptClassification,
   PanicCascade,
-} from "../../../../../../packages/types/src/analysis.types";
+} from "../../../../../../../packages/types/src/analysis.types";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 1. TIME INTERVALS — "Attempts Over 3 Hours" (Fatigue Curve)

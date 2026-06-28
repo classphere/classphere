@@ -2,7 +2,7 @@ import {
   ClassifiedAnswer,
   ScoringResult,
   FreeMarksResult,
-} from "../../../../../../packages/types/src/analysis.types";
+} from "../../../../../../../packages/types/src/analysis.types";
 
 export function calculateFreeMarks(
   classified: ClassifiedAnswer[],

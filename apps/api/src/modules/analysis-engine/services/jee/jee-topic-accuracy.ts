@@ -1,4 +1,4 @@
-import { ClassifiedAnswer, TopicStat } from "../../../../../../packages/types/src/analysis.types";
+import { ClassifiedAnswer, TopicStat } from "../../../../../../../packages/types/src/analysis.types";
 
 export function computeTopicAccuracy(
   classified: ClassifiedAnswer[],

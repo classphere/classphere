@@ -1,4 +1,4 @@
-import { AttemptAnswer, MistakeClassification } from "../../../../../../packages/types/src/analysis.types";
+import { AttemptAnswer, MistakeClassification } from "../../../../../../../packages/types/src/analysis.types";
 
 const AVG_TIME: Record<string, number> = {
   easy: 60,

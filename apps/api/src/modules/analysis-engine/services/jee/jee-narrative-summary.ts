@@ -7,7 +7,7 @@ import {
   AttemptStrategy,
   AnalysisNarrative,
   ExamCountdown,
-} from "../../../../../../packages/types/src/analysis.types";
+} from "../../../../../../../packages/types/src/analysis.types";
 
 // ── JEE exam windows (hardcoded per user spec) ──────────────────────────────
 //

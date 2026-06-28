@@ -4,7 +4,7 @@ import {
   LongitudinalFlag,
   FreeMarksResult,
   ExamCountdown,
-} from "../../../../../../packages/types/src/analysis.types";
+} from "../../../../../../../packages/types/src/analysis.types";
 
 /**
  * Generates a personalized study plan.

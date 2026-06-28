@@ -1,4 +1,4 @@
-import { ClassifiedAnswer, SkipAnalysis } from "../../../../../../packages/types/src/analysis.types";
+import { ClassifiedAnswer, SkipAnalysis } from "../../../../../../../packages/types/src/analysis.types";
 
 export function analyzeSkips(classified: ClassifiedAnswer[]): SkipAnalysis {
   const skips = classified.filter(a => !a.selected_answer);

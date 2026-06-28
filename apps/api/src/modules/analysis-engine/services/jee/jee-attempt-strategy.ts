@@ -1,7 +1,7 @@
 import {
   ClassifiedAnswer,
   AttemptStrategy,
-} from "../../../../../../packages/types/src/analysis.types";
+} from "../../../../../../../packages/types/src/analysis.types";
 
 /**
  * Optimal time split (percentage of total test time) per subject, by exam type.

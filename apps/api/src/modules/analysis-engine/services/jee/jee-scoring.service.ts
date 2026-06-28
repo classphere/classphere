@@ -1,4 +1,4 @@
-import { AttemptAnswer, ScoringResult } from "../../../../../../packages/types/src/analysis.types";
+import { AttemptAnswer, ScoringResult } from "../../../../../../../packages/types/src/analysis.types";
 
 export function scoreAttempt(
   answers: AttemptAnswer[],

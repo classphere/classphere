@@ -4,7 +4,7 @@ import {
   StudentErrorProfile,
   TopicErrorHistoryEntry,
   TopicStat,
-} from "../../../../../../packages/types/src/analysis.types";
+} from "../../../../../../../packages/types/src/analysis.types";
 
 /**
  * Builds the updated error-profile entry for the CURRENT attempt
