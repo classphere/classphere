@@ -1,5 +1,48 @@
 import { Request, Response } from "express";
 
+const SUPABASE_URL = process.env.SUPABASE_URL!;
+const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
+
+async function sbSelect(table: string, query: string) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?${query}`, {
+    headers: {
+      "apikey":        SUPABASE_SERVICE_KEY,
+      "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
+    },
+  });
+  if (!res.ok) throw new Error(`Supabase select failed: ${await res.text()}`);
+  return res.json();
+}
+
+async function sbPost(table: string, rows: any[], prefer = "return=representation") {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
+    method: "POST",
+    headers: {
+      "Content-Type":  "application/json",
+      "apikey":        SUPABASE_SERVICE_KEY,
+      "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
+      "Prefer":        prefer,
+    },
+    body: JSON.stringify(rows),
+  });
+  if (!res.ok) throw new Error(`Supabase ${table} insert failed (${res.status}): ${await res.text()}`);
+  if (prefer.includes("return=representation")) return res.json();
+  return null;
+}
+
+async function sbPatch(table: string, query: string, updates: any) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?${query}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type":  "application/json",
+      "apikey":        SUPABASE_SERVICE_KEY,
+      "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
+    },
+    body: JSON.stringify(updates),
+  });
+  if (!res.ok) throw new Error(`Supabase ${table} update failed: ${await res.text()}`);
+}
+
 // ─── Institute Handlers ─────────────────────────────────────────────────────
 
 /**
@@ -8,16 +51,50 @@ import { Request, Response } from "express";
  */
 export const createInstitute = async (req: Request, res: Response): Promise<void> => {
   try {
-    // TODO: implement
-    // 1. Validate req.body: { name, owner_id (user who becomes institute_admin),
-    //    institute_type, price_per_student, max_students?, max_batches?, metadata? }
-    // 2. Verify owner_id user exists
-    // 3. INSERT INTO institutes (name, owner_id, institute_type, price_per_student, subscription_plan='trial',
-    //    trial_ends_at = now() + 30 days, max_students, max_batches) RETURNING *
-    // 4. UPDATE users SET role = 'institute_admin' WHERE id = owner_id
-    // 5. Return { success: true, data: { institute } } with 201
-    res.status(201).json({ success: true, message: "createInstitute — TODO: implement" });
+    const { name, adminEmail, type, price } = req.body;
+    
+    if (!name || !adminEmail || !type || price === undefined) {
+      res.status(400).json({ success: false, message: "Missing required fields (name, adminEmail, type, price)" });
+      return;
+    }
+
+    // 1. Verify adminEmail user exists
+    const users = await sbSelect("users", `email=eq.${encodeURIComponent(adminEmail)}&select=id,role`);
+    if (!users || users.length === 0) {
+      res.status(404).json({ success: false, message: `No user found with email ${adminEmail}. They must sign up first.` });
+      return;
+    }
+    const owner = users[0];
+
+    // 2. Check if they already own an active institute
+    const existingInst = await sbSelect("institutes", `owner_id=eq.${owner.id}&is_active=eq.true`);
+    if (existingInst && existingInst.length > 0) {
+      res.status(400).json({ success: false, message: "User is already an active institute admin." });
+      return;
+    }
+
+    // 3. INSERT INTO institutes
+    const newInsts = await sbPost("institutes", [{
+      name,
+      owner_id: owner.id,
+      institute_type: type,
+      price_per_student: price,
+      subscription_plan: 'trial'
+    }]);
+
+    if (!newInsts || newInsts.length === 0) {
+      throw new Error("Failed to insert institute record.");
+    }
+    const institute = newInsts[0];
+
+    // 4. UPDATE users SET role = 'institute_admin'
+    if (owner.role !== 'institute_admin' && owner.role !== 'super_admin') {
+      await sbPatch("users", `id=eq.${owner.id}`, { role: 'institute_admin' });
+    }
+
+    res.status(201).json({ success: true, message: "Institute provisioned successfully", data: institute });
   } catch (err: any) {
+    console.error("[createInstitute error]", err);
     res.status(500).json({ success: false, message: err.message });
   }
 };

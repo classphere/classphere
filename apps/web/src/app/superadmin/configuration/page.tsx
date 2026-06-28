@@ -1,116 +1,239 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
 import { useState } from "react";
-import { RiToggleLine, RiToggleFill, RiErrorWarningLine } from "@remixicon/react";
+import Navbar from "@/components/layout/Navbar";
+import { 
+  RiErrorWarningLine, 
+  RiSave3Line,
+  RiSettings4Line,
+  RiShieldCheckLine,
+  RiCpuLine,
+  RiBuilding3Line,
+  RiServerLine
+} from "@remixicon/react";
 
 export default function ConfigurationPage() {
   const [maintenance, setMaintenance] = useState(false);
-  const [aiAnalysis, setAiAnalysis] = useState(true);
-  const [newLeaderboard, setNewLeaderboard] = useState(false);
-  const [betaFeatures, setBetaFeatures] = useState(true);
+  
+  // Analysis Engine Settings
+  const [deterministicEngine, setDeterministicEngine] = useState(true);
+  const [sscPacing, setSscPacing] = useState(true);
+  
+  // B2B & Platform Settings
+  const [customDomain, setCustomDomain] = useState(true);
+  const [forumModeration, setForumModeration] = useState(false);
+
+  // Toggle Component Helper
+  const Toggle = ({ enabled, onChange }: { enabled: boolean, onChange: () => void }) => (
+    <button 
+      onClick={onChange}
+      className={`relative w-12 h-[26px] rounded-full p-1 flex items-center transition-colors cursor-pointer shrink-0 ${
+        enabled ? 'bg-[#101010] dark:bg-t-primary' : 'bg-[#EAEAEA] dark:bg-s-stroke2/50'
+      }`}
+    >
+      <div 
+        className={`w-[18px] h-[18px] rounded-full bg-white shadow-sm transition-transform duration-200 ease-out ${
+          enabled ? 'translate-x-[22px]' : 'translate-x-0'
+        }`} 
+      />
+    </button>
+  );
 
   return (
     <>
-      <Navbar title="Platform Configuration" />
-      <main style={{ maxWidth: 1000, margin: "0 auto", padding: "var(--space-600)", width: "100%" }}>
+      <Navbar title="Platform Configuration" subtitle="Manage system behaviors, feature flags, and infrastructure limits." />
+      
+      <main className="mx-auto w-full max-w-[1200px] px-6 pb-16 pt-6">
         
-        {/* Global System State */}
-        <div className="rayum-card" style={{ padding: 32, marginBottom: 32, borderTop: maintenance ? "4px solid var(--error-50)" : "4px solid var(--success-50)" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-            <h2 className="text-heading-m" style={{ margin: 0, color: "var(--fg-default)" }}>System Maintenance Mode</h2>
-            <button 
-              onClick={() => setMaintenance(!maintenance)}
-              style={{ background: "transparent", border: "none", cursor: "pointer", color: maintenance ? "var(--error-50)" : "var(--fg-muted)", padding: 0 }}
-            >
-              {maintenance ? <RiToggleFill size={48} /> : <RiToggleLine size={48} />}
-            </button>
-          </div>
-          <p className="text-body-large" style={{ color: "var(--fg-muted)", marginBottom: 16 }}>
-            Enabling maintenance mode will force log out all active users and display a maintenance screen. Only Super Admins will be able to log in.
-          </p>
-          {maintenance && (
-            <div style={{ padding: 16, background: "rgba(239, 68, 68, 0.1)", borderRadius: 8, display: "flex", alignItems: "center", gap: 12, color: "var(--error-50)", fontWeight: 600 }}>
-              <RiErrorWarningLine size={24} />
-              The platform is currently in maintenance mode.
-            </div>
-          )}
-        </div>
-
-        {/* Feature Flags */}
-        <h2 className="text-heading-m" style={{ color: "var(--fg-default)", marginBottom: 16 }}>Global Feature Flags</h2>
-        <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 32 }}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
-          <div className="rayum-card" style={{ padding: "20px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div>
-              <div className="text-heading-s" style={{ color: "var(--fg-default)", marginBottom: 4 }}>Generative AI Analysis</div>
-              <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>Enables the "View Analysis" AI button on student test results. High token cost.</div>
-            </div>
-            <button 
-              onClick={() => setAiAnalysis(!aiAnalysis)}
-              style={{ background: "transparent", border: "none", cursor: "pointer", color: aiAnalysis ? "var(--primary-50)" : "var(--fg-muted)", padding: 0 }}
-            >
-              {aiAnalysis ? <RiToggleFill size={40} /> : <RiToggleLine size={40} />}
-            </button>
-          </div>
-
-          <div className="rayum-card" style={{ padding: "20px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div>
-              <div className="text-heading-s" style={{ color: "var(--fg-default)", marginBottom: 4 }}>Beta Leaderboard UI V2</div>
-              <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>Rolls out the new interactive 3D leaderboard UI to all student portals.</div>
-            </div>
-            <button 
-              onClick={() => setNewLeaderboard(!newLeaderboard)}
-              style={{ background: "transparent", border: "none", cursor: "pointer", color: newLeaderboard ? "var(--primary-50)" : "var(--fg-muted)", padding: 0 }}
-            >
-              {newLeaderboard ? <RiToggleFill size={40} /> : <RiToggleLine size={40} />}
-            </button>
-          </div>
-
-          <div className="rayum-card" style={{ padding: "20px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-                <span className="text-heading-s" style={{ color: "var(--fg-default)" }}>Experimental Features</span>
-                <span className="rayum-badge orange" style={{ fontSize: 10 }}>Beta</span>
+          {/* Left Column: Toggles */}
+          <div className="lg:col-span-8 flex flex-col gap-8">
+            
+            {/* System Maintenance */}
+            <div className={`group relative card flex flex-col p-8 rounded-[32px] shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border overflow-hidden transition-colors ${
+              maintenance 
+                ? 'bg-[#FDFDFD] dark:bg-b-surface2 border-red-500/40' 
+                : 'bg-[#FDFDFD] dark:bg-b-surface2 border-s-stroke2/40'
+            }`}>
+              <div className="box-hover" />
+              
+              <div className="relative z-10 flex justify-between items-center w-full mb-4">
+                <div className="flex items-center gap-3">
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${maintenance ? 'bg-red-50 text-red-500' : 'bg-[#F9F9F9] dark:bg-b-surface1 text-[#101010] dark:text-t-primary'}`}>
+                    <RiSettings4Line size={20} />
+                  </div>
+                  <div>
+                    <h2 className="text-[18px] font-bold text-[#101010] dark:text-t-primary tracking-tight">System Maintenance Mode</h2>
+                  </div>
+                </div>
+                <Toggle enabled={maintenance} onChange={() => setMaintenance(!maintenance)} />
               </div>
-              <div className="text-body-small" style={{ color: "var(--fg-muted)" }}>Allows institutes on the "Enterprise" tier to opt-in to early access features.</div>
+              
+              <p className="relative z-10 text-[14px] text-[#7B7B7B] leading-relaxed mb-5 pl-13">
+                Enabling maintenance mode will force log out all active users and display a maintenance screen. Only Super Admins will be able to log in to bypass this block.
+              </p>
+              
+              {maintenance && (
+                <div className="relative z-10 ml-13 p-4 bg-[rgba(239,68,68,0.05)] border border-[rgba(239,68,68,0.15)] rounded-2xl flex items-start gap-3">
+                  <RiErrorWarningLine size={20} className="text-[#EF4444] shrink-0 mt-0.5" />
+                  <span className="text-[14px] font-semibold text-[#EF4444]">
+                    The platform is currently in maintenance mode. Active scaling and background jobs are paused.
+                  </span>
+                </div>
+              )}
             </div>
-            <button 
-              onClick={() => setBetaFeatures(!betaFeatures)}
-              style={{ background: "transparent", border: "none", cursor: "pointer", color: betaFeatures ? "var(--primary-50)" : "var(--fg-muted)", padding: 0 }}
-            >
-              {betaFeatures ? <RiToggleFill size={40} /> : <RiToggleLine size={40} />}
-            </button>
-          </div>
-        </div>
 
-        {/* Global Limits */}
-        <h2 className="text-heading-m" style={{ color: "var(--fg-default)", marginBottom: 16 }}>Global API & Rate Limits</h2>
-        <div className="rayum-card" style={{ padding: 24 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              <label className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-default)" }}>API Rate Limit (Req/Min/IP)</label>
-              <input type="number" className="input-field" defaultValue={100} />
+            {/* Analysis Engine Config */}
+            <div className="group relative card flex flex-col p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden">
+              <div className="box-hover" />
+              
+              <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
+                <div className="w-10 h-10 rounded-xl bg-[#F9F9F9] dark:bg-b-surface1 flex items-center justify-center text-[#101010] dark:text-t-primary border border-s-stroke2/30">
+                  <RiCpuLine size={20} />
+                </div>
+                <div>
+                  <h2 className="text-[18px] font-bold text-[#101010] dark:text-t-primary tracking-tight">Analysis Engine</h2>
+                  <p className="text-[13px] text-[#7B7B7B] font-medium mt-0.5">Control the 9-stage deterministic evaluation pipeline</p>
+                </div>
+              </div>
+
+              <div className="relative z-10 flex flex-col gap-6">
+                <div className="flex justify-between items-start gap-6">
+                  <div>
+                    <h3 className="text-[15px] font-bold text-[#101010] dark:text-t-primary mb-1">Deterministic Pedagogical Reporting</h3>
+                    <p className="text-[13px] text-[#7B7B7B] leading-relaxed">
+                      Enables the 9-stage rule-based analysis engine (Fatigue Curve, Panic Cascade, Subject Movement) across all JEE/NEET exams. Replaces legacy generative AI reporting.
+                    </p>
+                  </div>
+                  <Toggle enabled={deterministicEngine} onChange={() => setDeterministicEngine(!deterministicEngine)} />
+                </div>
+
+                <div className="w-full h-px bg-s-stroke2/30" />
+
+                <div className="flex justify-between items-start gap-6">
+                  <div>
+                    <h3 className="text-[15px] font-bold text-[#101010] dark:text-t-primary mb-1">Strict SSC Pacing Locks</h3>
+                    <p className="text-[13px] text-[#7B7B7B] leading-relaxed">
+                      Enforces the 15-minute intra-section locks specifically for SSC and Bank PO examinations. Applies universally across all B2B partner platforms.
+                    </p>
+                  </div>
+                  <Toggle enabled={sscPacing} onChange={() => setSscPacing(!sscPacing)} />
+                </div>
+              </div>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              <label className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-default)" }}>Global Session Timeout (Minutes)</label>
-              <input type="number" className="input-field" defaultValue={120} />
+
+            {/* B2B Settings */}
+            <div className="group relative card flex flex-col p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden">
+              <div className="box-hover" />
+              
+              <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
+                <div className="w-10 h-10 rounded-xl bg-[#F9F9F9] dark:bg-b-surface1 flex items-center justify-center text-[#101010] dark:text-t-primary border border-s-stroke2/30">
+                  <RiBuilding3Line size={20} />
+                </div>
+                <div>
+                  <h2 className="text-[18px] font-bold text-[#101010] dark:text-t-primary tracking-tight">B2B & White-Labeling</h2>
+                  <p className="text-[13px] text-[#7B7B7B] font-medium mt-0.5">Manage partner features and multi-tenant isolation</p>
+                </div>
+              </div>
+
+              <div className="relative z-10 flex flex-col gap-6">
+                <div className="flex justify-between items-start gap-6">
+                  <div>
+                    <h3 className="text-[15px] font-bold text-[#101010] dark:text-t-primary mb-1">Custom Domain Routing</h3>
+                    <p className="text-[13px] text-[#7B7B7B] leading-relaxed">
+                      Allows Enterprise coaching partners to route their student portals via custom domains with automated SSL provisioning.
+                    </p>
+                  </div>
+                  <Toggle enabled={customDomain} onChange={() => setCustomDomain(!customDomain)} />
+                </div>
+
+                <div className="w-full h-px bg-s-stroke2/30" />
+
+                <div className="flex justify-between items-start gap-6">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="text-[15px] font-bold text-[#101010] dark:text-t-primary">Community Forum Moderation</h3>
+                      <span className="px-2 py-0.5 rounded-md bg-[rgba(255,159,10,0.1)] text-[#FF9F0A] text-[10px] font-bold uppercase tracking-wider">Beta</span>
+                    </div>
+                    <p className="text-[13px] text-[#7B7B7B] leading-relaxed">
+                      Enables the peer-to-peer Batch Discussion Forum for students, featuring reputation-based gamification to reduce direct faculty doubt-resolution workload.
+                    </p>
+                  </div>
+                  <Toggle enabled={forumModeration} onChange={() => setForumModeration(!forumModeration)} />
+                </div>
+              </div>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              <label className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-default)" }}>Max Upload Size (MB)</label>
-              <input type="number" className="input-field" defaultValue={25} />
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              <label className="text-body-small" style={{ fontWeight: 600, color: "var(--fg-default)" }}>Default Language</label>
-              <select className="input-field">
-                <option>English (US)</option>
-                <option>Hindi (IN)</option>
-              </select>
+
+          </div>
+
+          {/* Right Column: Infrastructure Limits */}
+          <div className="lg:col-span-4 flex flex-col gap-6">
+            <div className="group relative card flex flex-col p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden sticky top-6">
+              <div className="box-hover" />
+              
+              <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
+                <div className="w-10 h-10 rounded-xl bg-[#F9F9F9] dark:bg-b-surface1 flex items-center justify-center text-[#101010] dark:text-t-primary border border-s-stroke2/30">
+                  <RiServerLine size={20} />
+                </div>
+                <div>
+                  <h2 className="text-[18px] font-bold text-[#101010] dark:text-t-primary tracking-tight">Infrastructure</h2>
+                  <p className="text-[13px] text-[#7B7B7B] font-medium mt-0.5">Global scale & rate limits</p>
+                </div>
+              </div>
+
+              <div className="relative z-10 flex flex-col gap-5">
+                <div className="flex flex-col gap-2">
+                  <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Max Concurrent Users</label>
+                  <input 
+                    type="number" 
+                    className="w-full h-11 px-4 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-[16px] text-[14px] font-medium text-[#101010] dark:text-t-primary focus:border-[#101010] dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
+                    defaultValue={250000} 
+                  />
+                </div>
+                
+                <div className="flex flex-col gap-2">
+                  <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">OMR Ingestion Rate (Req/Min)</label>
+                  <input 
+                    type="number" 
+                    className="w-full h-11 px-4 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-[16px] text-[14px] font-medium text-[#101010] dark:text-t-primary focus:border-[#101010] dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
+                    defaultValue={1200} 
+                  />
+                </div>
+                
+                <div className="flex flex-col gap-2">
+                  <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Max Bulk Upload Size</label>
+                  <div className="relative">
+                    <input 
+                      type="number" 
+                      className="w-full h-11 px-4 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-[16px] text-[14px] font-medium text-[#101010] dark:text-t-primary focus:border-[#101010] dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
+                      defaultValue={500} 
+                    />
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[13px] text-[#7B7B7B] font-medium pointer-events-none">
+                      Files
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Session Timeout (Min)</label>
+                  <input 
+                    type="number" 
+                    className="w-full h-11 px-4 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-[16px] text-[14px] font-medium text-[#101010] dark:text-t-primary focus:border-[#101010] dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
+                    defaultValue={120} 
+                  />
+                </div>
+              </div>
+              
+              <div className="relative z-10 w-full h-px bg-s-stroke2/30 my-6" />
+              
+              <button className="relative z-10 flex items-center justify-center gap-2 w-full h-12 rounded-[16px] bg-[#101010] dark:bg-t-primary text-[#FDFDFD] dark:text-b-surface1 text-[14px] font-bold hover:bg-[#202020] transition-all shadow-sm active:scale-[0.98] cursor-pointer">
+                <RiSave3Line size={18} />
+                Save Changes
+              </button>
             </div>
           </div>
-          <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 24 }}>
-            <button className="btn btn-primary">Save Settings</button>
-          </div>
+
         </div>
 
       </main>

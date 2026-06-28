@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import {
   RiDashboardLine,
@@ -36,10 +36,12 @@ import { mockUser } from "@/lib/mock-data";
 export default function Sidebar() {
   const pathname = usePathname();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const queryRole = searchParams.get("role");
 
-  const isTeacher = pathname.startsWith("/teacher");
-  const isInstitute = pathname.startsWith("/institute");
-  const isSuperAdmin = pathname.startsWith("/superadmin");
+  const isTeacher = pathname.startsWith("/teacher") || queryRole === "teacher";
+  const isInstitute = pathname.startsWith("/institute") || queryRole === "institute_admin" || queryRole === "institute";
+  const isSuperAdmin = pathname.startsWith("/superadmin") || queryRole === "super_admin" || queryRole === "superadmin";
 
   // Theme Toggler Logic
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -103,7 +105,7 @@ export default function Sidebar() {
   ];
 
   const currentNav = isTeacher ? teacherNav : isInstitute ? instituteNav : isSuperAdmin ? superAdminNav : studentNav;
-  const roleQuery = isTeacher ? "?role=teacher" : isInstitute ? "?role=institute" : isSuperAdmin ? "?role=superadmin" : "?role=student";
+  const roleQuery = isTeacher ? "?role=teacher" : isInstitute ? "?role=institute_admin" : isSuperAdmin ? "?role=super_admin" : "?role=student";
 
   const othersNav = [
     { label: "Settings", path: "/settings", href: `/settings${roleQuery}`, icon: <RiSettings4Line size={18} /> },
