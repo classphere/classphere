@@ -155,3 +155,44 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
     res.status(500).json({ success: false, message: err.message });
   }
 };
+
+/**
+ * DELETE /api/v1/tests/:id
+ * [super_admin / institute_admin only] — Soft delete a test by setting is_active = false in Supabase.
+ */
+export const deleteTest = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+
+    const SUPABASE_URL = process.env.SUPABASE_URL!;
+    const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
+
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/papers?id=eq.${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": SUPABASE_SERVICE_KEY,
+        "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
+        "Prefer": "return=representation"
+      },
+      body: JSON.stringify({ is_active: false }),
+    });
+
+    if (!r.ok) {
+      const text = await r.text();
+      res.status(500).json({ success: false, message: `Supabase error (${r.status}): ${text}` });
+      return;
+    }
+
+    const data = await r.json();
+    if (!data || data.length === 0) {
+      res.status(404).json({ success: false, message: `Test '${id}' not found.` });
+      return;
+    }
+
+    res.status(200).json({ success: true, message: "Test successfully deactivated." });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+

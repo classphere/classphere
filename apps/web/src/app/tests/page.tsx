@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useMemo, useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import {
   RiSearchLine,
@@ -9,6 +9,7 @@ import {
   RiQuestionLine,
   RiBarChartBoxLine,
   RiLoader4Line,
+  RiDeleteBinLine,
 } from "@remixicon/react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -48,9 +49,58 @@ const DEFAULT_EXAM = "neet-ug"; // will be replaced by auth context
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function TestsHubPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-[400px]">
+        <RiLoader4Line size={40} className="animate-spin text-[#7B7B7B]" />
+      </div>
+    }>
+      <TestsHubContent />
+    </Suspense>
+  );
+}
+
+function TestsHubContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const role = searchParams.get("role") || "student";
+  const isAdmin = role === "super_admin" || role === "institute_admin";
 
   const [papers, setPapers] = useState<Paper[]>([]);
+
+  const handleDelete = async (paperId: string, title: string) => {
+    const confirmDelete = window.confirm(`Are you sure you want to delete "${title}"?`);
+    if (!confirmDelete) return;
+
+    try {
+      const token = localStorage.getItem("auth_token") ?? "";
+      const apiKey = process.env.NEXT_PUBLIC_INTERNAL_API_KEY ?? "";
+
+      const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+      };
+
+      if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+      } else if (apiKey) {
+        headers["x-api-key"] = apiKey;
+      }
+
+      const res = await fetch(`${API_BASE}/tests/${paperId}`, {
+        method: "DELETE",
+        headers,
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message || "Failed to delete test.");
+      }
+
+      setPapers(prev => prev.filter(p => p.id !== paperId));
+    } catch (err: any) {
+      alert(err.message || "An error occurred during deletion.");
+    }
+  };
   const [loading, setLoading] = useState(true);
   const [error, setError]     = useState<string | null>(null);
 
@@ -201,6 +251,8 @@ export default function TestsHubPage() {
               <TestCard
                 key={paper.id}
                 paper={paper}
+                isAdmin={isAdmin}
+                onDelete={() => handleDelete(paper.id, paper.title)}
                 onStart={() => router.push(`/test/${paper.id}`)}
               />
             ))}
@@ -243,7 +295,17 @@ function FilterGroup({
   );
 }
 
-function TestCard({ paper, onStart }: { paper: Paper; onStart: () => void }) {
+function TestCard({
+  paper,
+  isAdmin,
+  onDelete,
+  onStart,
+}: {
+  paper: Paper;
+  isAdmin?: boolean;
+  onDelete?: () => void;
+  onStart: () => void;
+}) {
   const subtitle = paper.test_type === "pyq"
     ? `${paper.year}${paper.shift ? ` · ${paper.shift}` : ""}`
     : paper.subject
@@ -281,12 +343,23 @@ function TestCard({ paper, onStart }: { paper: Paper; onStart: () => void }) {
         }`}>
           {paper.difficulty}
         </span>
-        <button
-          onClick={onStart}
-          className="flex flex-row justify-center items-center h-8 px-4 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] text-[12px] font-sans font-semibold rounded-xl transition-all active:scale-95 cursor-pointer"
-        >
-          Start Test
-        </button>
+        <div className="flex items-center gap-2">
+          {isAdmin && onDelete && (
+            <button
+              onClick={onDelete}
+              className="flex justify-center items-center h-8 w-8 text-[#FF6A55] hover:bg-red-50 dark:hover:bg-red-900/15 rounded-xl border border-red-200 dark:border-red-900/30 transition-all active:scale-95 cursor-pointer"
+              title="Delete Test"
+            >
+              <RiDeleteBinLine size={16} />
+            </button>
+          )}
+          <button
+            onClick={onStart}
+            className="flex flex-row justify-center items-center h-8 px-4 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] text-[12px] font-sans font-semibold rounded-xl transition-all active:scale-95 cursor-pointer"
+          >
+            Start Test
+          </button>
+        </div>
       </div>
     </div>
   );

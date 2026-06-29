@@ -7,6 +7,7 @@ import {
   getAssignedTests,
   getTest,
   publishTest,
+  deleteTest,
 } from "./tests.controller";
 
 const router = Router();
@@ -17,6 +18,7 @@ router.get("/assigned", authenticate, getAssignedTests);
 
 router.post("/", authenticate, createTest);
 router.get("/:id", authenticate, getTest);
+router.delete("/:id", authenticate, requireRole("super_admin", "institute_admin"), deleteTest);
 
 // teacher only
 router.post("/:id/publish", authenticate, requireRole("teacher", "institute_admin", "super_admin"), publishTest);

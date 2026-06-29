@@ -543,10 +543,10 @@ export default function UploadQuestionsPage() {
           {resultMsg && (
             <div className={`p-4 rounded-xl border text-[14px] font-semibold flex items-center gap-2 shadow-sm ${
               status === "success"
-                ? "bg-[rgb(3, 147, 77)] border-[rgb(3, 147, 77)] text-[#00A656]"
+                ? "bg-[rgba(34,197,94,0.05)] border-[rgba(34,197,94,0.3)] text-[#22C55E]"
                 : "bg-[rgba(239,68,68,0.05)] border-[rgba(239,68,68,0.3)] text-[#EF4444]"
             }`}>
-              {status === "success" ? null : <RiAlertLine size={18} />}
+              {status === "success" ? <RiCheckLine size={18} /> : <RiAlertLine size={18} />}
               {resultMsg}
             </div>
           )}
