@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import BulkUpload from "./BulkUpload";
@@ -82,6 +82,15 @@ export default function UploadQuestionsPage() {
   const [resultMsg, setResultMsg]             = useState<string>("");
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const redirectTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (redirectTimeoutRef.current) {
+        clearTimeout(redirectTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const setField = (key: keyof FormState, value: string) => {
     setForm(prev => {
@@ -175,7 +184,30 @@ export default function UploadQuestionsPage() {
 
       if (data.success) {
         setStatus("success");
-        setResultMsg(`✅ ${data.message}`);
+        setResultMsg(data.message);
+        
+        // Reset the form
+        setForm({
+          exam:       "",
+          test_type:  "",
+          title:      "",
+          subject:    "",
+          chapter:    "",
+          year:       "",
+          shift:      "",
+          duration:   "180",
+          marks:      "300",
+          difficulty: "medium",
+        });
+        setParsedQuestions(null);
+        setFileName(null);
+        setParseError(null);
+
+        // Redirect to /tests after 3 seconds
+        if (redirectTimeoutRef.current) clearTimeout(redirectTimeoutRef.current);
+        redirectTimeoutRef.current = setTimeout(() => {
+          router.push("/tests");
+        }, 5000);
       } else {
         setStatus("error");
         setResultMsg(data.message || "Upload failed.");
@@ -511,10 +543,10 @@ export default function UploadQuestionsPage() {
           {resultMsg && (
             <div className={`p-4 rounded-xl border text-[14px] font-semibold flex items-center gap-2 shadow-sm ${
               status === "success"
-                ? "bg-[rgba(0,166,86,0.05)] border-[rgba(0,166,86,0.3)] text-[#00A656]"
+                ? "bg-[rgb(3, 147, 77)] border-[rgb(3, 147, 77)] text-[#00A656]"
                 : "bg-[rgba(239,68,68,0.05)] border-[rgba(239,68,68,0.3)] text-[#EF4444]"
             }`}>
-              {status === "success" ? <RiCheckLine size={18} /> : <RiAlertLine size={18} />}
+              {status === "success" ? null : <RiAlertLine size={18} />}
               {resultMsg}
             </div>
           )}
