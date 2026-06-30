@@ -168,14 +168,14 @@ function TestsHubContent() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
 
         {/* Top Type Tabs */}
-        <div className="flex flex-row items-center gap-2 mb-6 p-1 bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-2xl w-fit select-none">
+        <div className="flex flex-row items-center gap-2 mb-6 p-1 bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg w-fit select-none">
           {TYPES.map(type => {
             const isActive = activeType === type.id;
             return (
               <button
                 key={type.id}
                 onClick={() => handleTypeChange(type.id)}
-                className={`px-5 py-2.5 rounded-xl text-sm font-sans font-semibold transition-all cursor-pointer ${
+                className={`px-5 py-2.5 rounded-lg text-sm font-sans font-semibold transition-all cursor-pointer ${
                   isActive
                     ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-[0px_4px_4px_-4px_rgba(8,8,8,0.05),0px_3px_1px_-4px_rgba(8,8,8,0.09)] border border-s-stroke2/30"
                     : "bg-transparent text-[#7B7B7B] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary"
@@ -188,7 +188,7 @@ function TestsHubContent() {
         </div>
 
         {/* Filters Row */}
-        <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-6 p-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
+        <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-6 p-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
           <div className="relative flex-1 min-w-[240px]">
             <RiSearchLine size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#727272]" />
             <input
@@ -196,7 +196,7 @@ function TestsHubContent() {
               placeholder={`Search in ${TYPES.find(t => t.id === activeType)?.label}...`}
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full h-11 pl-11 pr-4 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-sm font-sans text-[#101010] dark:text-t-primary placeholder-[#7B7B7B] focus:border-[#727272] outline-none transition-all"
+              className="w-full h-11 pl-11 pr-4 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-sm font-sans text-[#101010] dark:text-t-primary placeholder-[#7B7B7B] focus:border-[#727272] outline-none transition-all"
             />
           </div>
 
@@ -229,18 +229,18 @@ function TestsHubContent() {
 
         {/* States */}
         {loading ? (
-          <div className="text-center py-20 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40">
+          <div className="text-center py-20 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40">
             <RiLoader4Line size={40} className="animate-spin mx-auto mb-4 text-[#7B7B7B]" />
             <p className="font-semibold text-sm text-[#7B7B7B]">Loading from database…</p>
           </div>
         ) : error ? (
-          <div className="text-center py-20 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40">
+          <div className="text-center py-20 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40">
             <div className="text-4xl mb-4">⚠️</div>
             <p className="font-semibold text-sm text-[#FF6A55]">{error}</p>
             <p className="text-xs text-[#7B7B7B] mt-2">Make sure the API server is running on port 3001.</p>
           </div>
         ) : filtered.length === 0 ? (
-          <div className="text-center py-20 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40">
+          <div className="text-center py-20 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40">
             <div className="text-4xl mb-4">📋</div>
             <h3 className="font-semibold text-sm text-[#101010] dark:text-t-primary mb-1">No tests found</h3>
             <p className="text-xs text-[#7B7B7B]">Seed the database first using the seed script.</p>
@@ -282,7 +282,7 @@ function FilterGroup({
         <button
           key={opt}
           onClick={() => onChange(opt)}
-          className={`px-3.5 h-8 rounded-full border text-[11px] font-sans font-semibold transition-all active:scale-95 cursor-pointer uppercase tracking-wider ${
+          className={`px-3.5 h-8 rounded-lg border text-[11px] font-sans font-semibold transition-all active:scale-95 cursor-pointer uppercase tracking-wider ${
             active === opt
               ? "border-[#101010] bg-[#101010] text-[#FDFDFD] dark:border-t-primary dark:bg-t-primary dark:text-b-surface1"
               : "border-[#E2E2E2] dark:border-s-stroke2 bg-transparent text-[#727272] hover:border-[#727272] hover:text-[#101010]"
@@ -313,7 +313,7 @@ function TestCard({
     : paper.exams?.full_name || "";
 
   return (
-    <div className="flex min-h-[14rem] flex-col justify-between p-6 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[28px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] select-none hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.08)] transition-all duration-200">
+    <div className="flex min-h-[14rem] flex-col justify-between p-6 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] select-none hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.08)] transition-all duration-200">
       <div>
         <div className="font-sans font-semibold text-[16px] leading-[150%] text-[#101010] dark:text-t-primary mb-1">
           {paper.title}
@@ -347,7 +347,7 @@ function TestCard({
           {isAdmin && onDelete && (
             <button
               onClick={onDelete}
-              className="flex justify-center items-center h-8 w-8 text-[#FF6A55] hover:bg-red-50 dark:hover:bg-red-900/15 rounded-xl border border-red-200 dark:border-red-900/30 transition-all active:scale-95 cursor-pointer"
+              className="flex justify-center items-center h-8 w-8 text-[#FF6A55] hover:bg-red-50 dark:hover:bg-red-900/15 rounded-lg border border-red-200 dark:border-red-900/30 transition-all active:scale-95 cursor-pointer"
               title="Delete Test"
             >
               <RiDeleteBinLine size={16} />
@@ -355,7 +355,7 @@ function TestCard({
           )}
           <button
             onClick={onStart}
-            className="flex flex-row justify-center items-center h-8 px-4 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] text-[12px] font-sans font-semibold rounded-xl transition-all active:scale-95 cursor-pointer"
+            className="flex flex-row justify-center items-center h-8 px-4 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 cursor-pointer"
           >
             Start Test
           </button>

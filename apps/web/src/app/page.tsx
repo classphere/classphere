@@ -176,7 +176,7 @@ export default function Dashboard() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
         
         {/* Figma-Inspired Dashboard Overview Wrapper */}
-        <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 mb-6 select-none">
+        <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 mb-6 select-none">
           <div className="box-hover" />
           
           {/* Header Row */}
@@ -189,7 +189,7 @@ export default function Dashboard() {
             <div className="relative">
               <button 
                 onClick={() => setIsOverviewDropdownOpen(!isOverviewDropdownOpen)}
-                className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98"
+                className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98"
               >
                 <span>This Week</span>
                 <RiArrowDownSLine size={20} className="text-[#727272] dark:text-t-secondary" />
@@ -198,11 +198,11 @@ export default function Dashboard() {
               {isOverviewDropdownOpen && (
                 <>
                   <div className="fixed inset-0 z-40" onClick={() => setIsOverviewDropdownOpen(false)} />
-                  <ul className="absolute right-0 top-13 z-50 w-full rounded-2xl border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
+                  <ul className="absolute right-0 top-13 z-50 w-full rounded-lg border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
                     <li>
                       <button
                         onClick={() => setIsOverviewDropdownOpen(false)}
-                        className="w-full rounded-xl px-3.5 py-2 text-left text-sm font-semibold bg-b-surface1 text-t-primary"
+                        className="w-full rounded-lg px-3.5 py-2 text-left text-sm font-semibold bg-b-surface1 text-t-primary"
                       >
                         This Week
                       </button>
@@ -210,7 +210,7 @@ export default function Dashboard() {
                     <li>
                       <button
                         onClick={() => setIsOverviewDropdownOpen(false)}
-                        className="w-full rounded-xl px-3.5 py-2 text-left text-sm font-semibold bg-transparent text-t-secondary hover:bg-b-surface3 hover:text-t-primary"
+                        className="w-full rounded-lg px-3.5 py-2 text-left text-sm font-semibold bg-transparent text-t-secondary hover:bg-b-surface3 hover:text-t-primary"
                       >
                         Last Week
                       </button>
@@ -222,10 +222,10 @@ export default function Dashboard() {
           </div>
 
           {/* Stats Section Wrapper (Row of 4 active highlighted boxes) */}
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
             
             {/* Metric 1: Tests Taken */}
-            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex flex-row items-center gap-3 w-full mb-1">
                 <span className="text-[#101010] dark:text-t-primary"><RiBarChartBoxLine size={20} /></span>
                 <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -248,7 +248,7 @@ export default function Dashboard() {
             </div>
 
             {/* Metric 2: Accuracy Rate */}
-            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex flex-row items-center gap-3 w-full mb-1">
                 <span className="text-[#101010] dark:text-t-primary"><RiArrowRightUpLine size={20} /></span>
                 <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -271,7 +271,7 @@ export default function Dashboard() {
             </div>
 
             {/* Metric 3: Average Score */}
-            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex flex-row items-center gap-3 w-full mb-1">
                 <span className="text-[#101010] dark:text-t-primary"><RiRulerLine size={20} /></span>
                 <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -294,7 +294,7 @@ export default function Dashboard() {
             </div>
 
             {/* Metric 4: Booster Queue */}
-            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex flex-row items-center gap-3 w-full mb-1">
                 <span className="text-[#101010] dark:text-t-primary"><RiAlertFill size={20} className="text-[#EF9D0E]" /></span>
                 <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -327,7 +327,7 @@ export default function Dashboard() {
           <div className="grid gap-6 min-w-0 overflow-x-hidden">
             
             {/* Figma-Inspired Score Performance Widget */}
-            <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
+            <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
               <div className="box-hover" />
               
               {/* Widget Header */}
@@ -343,7 +343,7 @@ export default function Dashboard() {
                 <div className="relative">
                   <button 
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98"
+                    className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98"
                   >
                     <span>{activeSubject}</span>
                     <RiArrowDownSLine size={20} className="text-[#727272] dark:text-t-secondary" />
@@ -352,7 +352,7 @@ export default function Dashboard() {
                   {isDropdownOpen && (
                     <>
                       <div className="fixed inset-0 z-40" onClick={() => setIsDropdownOpen(false)} />
-                      <ul className="absolute right-0 top-13 z-50 w-full rounded-2xl border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
+                      <ul className="absolute right-0 top-13 z-50 w-full rounded-lg border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
                         {subjects.map((sub) => (
                           <li key={sub}>
                             <button
@@ -361,7 +361,7 @@ export default function Dashboard() {
                                 setIsDropdownOpen(false);
                                 setSelectedBarIndex(3); // Reset to active bar 4
                               }}
-                              className={`w-full rounded-xl px-3.5 py-2 text-left text-sm font-semibold transition-colors ${
+                              className={`w-full rounded-lg px-3.5 py-2 text-left text-sm font-semibold transition-colors ${
                                 activeSubject === sub
                                   ? "bg-b-surface1 text-t-primary"
                                   : "bg-transparent text-t-secondary hover:bg-b-surface3 hover:text-t-primary"
@@ -470,7 +470,7 @@ export default function Dashboard() {
             </div>
 
             {/* Pending DPPs - Restructured to look exactly like the Overview Widget container */}
-            <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+            <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
               <div className="box-hover" />
               
               {/* Header Row */}
@@ -485,7 +485,7 @@ export default function Dashboard() {
                 </div>
                 <Link 
                   href="/assignments" 
-                  className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98"
+                  className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98"
                 >
                   <span>View All</span>
                   <RiArrowRightLine size={16} />
@@ -500,7 +500,7 @@ export default function Dashboard() {
                   return (
                     <div 
                       key={dpp.id} 
-                      className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
+                      className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/30 rounded-lg shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
                     >
                       <div className="min-w-0 flex-1">
                         {/* Header Status Badge Row */}
@@ -532,7 +532,7 @@ export default function Dashboard() {
                         ) : (
                           <Link 
                             href={`/assignments/${dpp.id}`} 
-                            className="flex flex-row justify-center items-center h-8 px-5 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-full transition-all active:scale-95 shadow-widget"
+                            className="flex flex-row justify-center items-center h-8 px-5 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget"
                           >
                             Start
                           </Link>
@@ -550,7 +550,7 @@ export default function Dashboard() {
           <div className="grid gap-6 min-w-0 overflow-x-hidden">
             
             {/* Recent Tests Widget (Figma 624px Height Sidebar Widget Style) */}
-            <div className="flex flex-col p-3 pb-6 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full h-[624px] min-w-0 overflow-hidden select-none">
+            <div className="flex flex-col p-3 pb-6 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full h-[624px] min-w-0 overflow-hidden select-none">
               
               {/* Header */}
               <div className="flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
@@ -568,7 +568,7 @@ export default function Dashboard() {
                   return (
                     <div 
                       key={test.id}
-                      className={`flex flex-row items-center justify-between p-3 gap-8 rounded-[20px] transition-all w-full h-[88px] min-w-0 overflow-hidden ${
+                      className={`flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden ${
                         isHoverItem 
                           ? "bg-[#F9F9F9] dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20" 
                           : "bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30"
@@ -577,7 +577,7 @@ export default function Dashboard() {
                       {/* Left: Avatar/Icon + Title */}
                       <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
                         {/* 64x64px rounded image box */}
-                        <div className="flex w-16 h-16 items-center justify-center rounded-xl bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
+                        <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
                           {test.exam === "JEE" ? <RiRulerLine size={24} /> : <RiTestTubeLine size={24} />}
                         </div>
                         {/* Title text */}
@@ -611,7 +611,7 @@ export default function Dashboard() {
               <div className="px-3 w-full h-12 flex flex-col items-start gap-2">
                 <Link 
                   href="/history" 
-                  className="flex flex-row justify-center items-center py-3.5 px-7 border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2 rounded-[32px] w-full h-12 text-center text-sm font-sans font-semibold tracking-[0.0125em] text-[#727272] dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary transition-all active:scale-98"
+                  className="flex flex-row justify-center items-center py-3.5 px-7 border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2 rounded-lg w-full h-12 text-center text-sm font-sans font-semibold tracking-[0.0125em] text-[#727272] dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary transition-all active:scale-98"
                 >
                   All tests
                 </Link>
@@ -620,7 +620,7 @@ export default function Dashboard() {
             </div>
 
             {/* AI Insight Card (Figma AI Risk Alert Widget Style) */}
-            <div className="flex flex-col p-3 pb-6 justify-between rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full h-[240px] select-none">
+            <div className="flex flex-col p-3 pb-6 justify-between rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full h-[240px] select-none">
               
               {/* Header */}
               <div className="flex flex-row items-center p-2.5 px-3 w-full h-12">
@@ -644,7 +644,7 @@ export default function Dashboard() {
               {/* Button Container */}
               <div className="px-3 w-full h-12">
                 <button 
-                  className="flex flex-row justify-center items-center py-3 px-7 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[32px] w-full h-12 text-center text-sm font-sans font-semibold tracking-[0.0125em] text-[#727272] dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary transition-all active:scale-98 cursor-pointer"
+                  className="flex flex-row justify-center items-center py-3 px-7 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg w-full h-12 text-center text-sm font-sans font-semibold tracking-[0.0125em] text-[#727272] dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary transition-all active:scale-98 cursor-pointer"
                 >
                   Take Booster Test
                 </button>
@@ -653,7 +653,7 @@ export default function Dashboard() {
             </div>
 
             {/* Action Required Widget (Figma Sidebar Widget Style) */}
-            <div className="flex flex-col p-3 pb-6 justify-between rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full h-[240px] select-none">
+            <div className="flex flex-col p-3 pb-6 justify-between rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full h-[240px] select-none">
               
               {/* Header */}
               <div className="flex flex-row items-center justify-between p-2.5 px-3 w-full h-12">
@@ -685,7 +685,7 @@ export default function Dashboard() {
               {/* Button Container */}
               <div className="px-3 w-full h-12">
                 <button 
-                  className="flex flex-row justify-center items-center py-3 px-7 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[32px] w-full h-12 text-center text-sm font-sans font-semibold tracking-[0.0125em] text-[#727272] dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary transition-all active:scale-98 cursor-pointer"
+                  className="flex flex-row justify-center items-center py-3 px-7 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg w-full h-12 text-center text-sm font-sans font-semibold tracking-[0.0125em] text-[#727272] dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary transition-all active:scale-98 cursor-pointer"
                 >
                   Start Booster Queue
                 </button>

@@ -114,15 +114,15 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="hidden md:flex sticky top-0 z-40 h-screen w-[300px] shrink-0 flex-col border-r border-s-stroke2/40 bg-b-surface1 px-6 pt-8 pb-12 select-none overflow-y-auto scrollbar-none"
+      className="hidden md:flex sticky top-0 z-40 h-screen w-[340px] shrink-0 flex-col bg-b-surface1 px-6 pt-8 pb-12 select-none overflow-y-auto scrollbar-none"
     >
       {/* ── Top Menu Container ── */}
       <div className="flex flex-col gap-6 w-full">
         {/* Logo */}
         <div className="pl-1">
-          <Link href="/" className="flex items-center gap-3.5 rounded-xl transition-colors">
+          <Link href="/" className="flex items-center gap-3.5 rounded-lg transition-colors">
             {/* Logo Container 48px x 48px */}
-            <div className="flex size-12 items-center justify-center rounded-xl bg-[#101010] text-[#FDFDFD] shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
+            <div className="flex size-12 items-center justify-center rounded-lg bg-[#101010] text-[#FDFDFD] shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
               <RiFlashlightFill size={22} className="opacity-90" />
             </div>
             <span className="font-sans text-[20px] font-bold text-[#101010] dark:text-t-primary tracking-tight">
@@ -138,14 +138,14 @@ export default function Sidebar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`group flex h-12 items-center gap-3 rounded-xl px-3 text-sm font-sans font-semibold transition-all ${
+                className={`group flex h-12 items-center gap-3 rounded-lg px-4 text-[13px] font-sans font-semibold transition-all ${
                   item.active
-                    ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] border border-s-stroke2/30"
-                    : "text-[#727272] hover:text-[#101010] dark:hover:text-t-primary hover:bg-b-surface2/30"
+                    ? "bg-b-surface2 text-t-primary shadow-widget dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5),0px_6px_4px_-4px_rgba(8,8,8,0.05)]"
+                    : "text-t-secondary hover:text-t-primary hover:bg-b-surface2/50"
                 }`}
               >
                 <span className={`flex items-center transition-colors ${
-                  item.active ? "text-[#101010] dark:text-t-primary" : "text-[#727272] group-hover:text-[#101010] dark:group-hover:text-t-primary"
+                  item.active ? "text-t-primary" : "text-t-secondary group-hover:text-t-primary"
                 }`}>
                   {item.icon}
                 </span>
@@ -167,14 +167,14 @@ export default function Sidebar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`group flex h-12 items-center gap-3 rounded-xl px-3 text-sm font-sans font-semibold transition-all ${
+                  className={`group flex h-12 items-center gap-3 rounded-lg px-4 text-[13px] font-sans font-semibold transition-all ${
                     isActive
-                      ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] border border-s-stroke2/30"
-                      : "text-[#727272] hover:text-[#101010] dark:hover:text-t-primary hover:bg-b-surface2/30"
+                      ? "bg-b-surface2 text-t-primary shadow-widget dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5),0px_6px_4px_-4px_rgba(8,8,8,0.05)]"
+                      : "text-t-secondary hover:text-t-primary hover:bg-b-surface2/50"
                   }`}
                 >
                   <span className={`flex items-center transition-colors ${
-                    isActive ? "text-[#101010] dark:text-t-primary" : "text-[#727272] group-hover:text-[#101010] dark:group-hover:text-t-primary"
+                    isActive ? "text-t-primary" : "text-t-secondary group-hover:text-t-primary"
                   }`}>
                     {item.icon}
                   </span>
@@ -191,9 +191,9 @@ export default function Sidebar() {
         {/* Profile Card: Avatar + Info */}
         <Link 
           href="/profile" 
-          className="flex items-center gap-3 w-full p-2.5 rounded-2xl bg-transparent hover:bg-b-surface2/40 border border-transparent hover:border-s-stroke2/20 transition-all cursor-pointer select-none"
+          className="flex items-center gap-3 w-full p-2.5 rounded-lg bg-transparent hover:bg-b-surface2 border border-transparent transition-all cursor-pointer select-none"
         >
-          <div className="size-11 rounded-full overflow-hidden border border-s-stroke2/20 shrink-0 shadow-xs">
+          <div className="size-11 rounded-full overflow-hidden shrink-0 shadow-widget">
             <img
               src={`https://ui-avatars.com/api/?name=${encodeURIComponent(mockUser.name)}&background=101010&color=fff&size=80`}
               alt="Avatar"
@@ -201,10 +201,10 @@ export default function Sidebar() {
             />
           </div>
           <div className="flex-1 min-w-0">
-            <div className="font-sans font-semibold text-sm text-[#101010] dark:text-t-primary truncate leading-tight">
+            <div className="font-sans font-semibold text-[13px] text-t-primary truncate leading-tight">
               {mockUser.name}
             </div>
-            <div className="font-sans text-[11px] text-[#7B7B7B] dark:text-t-tertiary truncate mt-0.5 leading-none">
+            <div className="font-sans text-[11px] text-t-tertiary truncate mt-0.5 leading-none">
               {mockUser.email}
             </div>
           </div>
@@ -213,7 +213,7 @@ export default function Sidebar() {
         {/* Demo Role Switcher */}
         <div className="w-full">
           <select
-            className="input h-10 w-full rounded-xl border border-s-stroke2 bg-b-surface2 px-3.5 py-1.5 text-caption font-semibold"
+            className="h-12 w-full rounded-lg border border-s-stroke2 bg-b-surface2 px-4 py-2 text-button transition-all focus:border-s-highlight outline-none cursor-pointer"
             value={isTeacher ? "/teacher" : isInstitute ? "/institute" : isSuperAdmin ? "/superadmin" : "/"}
             onChange={(e) => router.push(e.target.value)}
           >
@@ -227,7 +227,7 @@ export default function Sidebar() {
         {/* Mode Container: Notification Bell + Mail Button + Theme Capsule */}
         <div className="flex flex-row items-center gap-3 w-full">
           {/* Notification Button */}
-          <button className="relative flex size-12 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all active:scale-95 shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)] cursor-pointer shrink-0">
+          <button className="relative flex size-12 items-center justify-center rounded-full bg-b-surface2 border border-s-stroke2 transition-all active:scale-95 shadow-widget hover:border-s-highlight cursor-pointer shrink-0 text-t-secondary hover:text-t-primary">
             <RiNotification3Line size={20} />
             <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-[#FF6A55]" />
           </button>
@@ -235,19 +235,19 @@ export default function Sidebar() {
           {/* Message Mail Button */}
           <Link 
             href="/doubts" 
-            className="flex size-12 items-center justify-center rounded-full bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary transition-all active:scale-95 shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)] cursor-pointer shrink-0"
+            className="relative flex size-12 items-center justify-center rounded-full bg-b-surface2 border border-s-stroke2 transition-all active:scale-95 shadow-widget hover:border-s-highlight cursor-pointer shrink-0 text-t-secondary hover:text-t-primary"
           >
             <RiMailLine size={20} />
           </Link>
 
           {/* Theme Toggle Capsule: Horizontal pill, rounded-full, 48px height, icons only */}
-          <div className="flex flex-row items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-full p-1 h-12 flex-1 relative select-none shadow-[0px_4px_3px_-3px_rgba(8,8,8,0.05)]">
+          <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-lg p-1 h-12 flex-1 relative select-none shadow-widget">
             <button
               onClick={() => toggleTheme("light")}
-              className={`flex-1 flex items-center justify-center h-10 rounded-full transition-all cursor-pointer text-[#727272] ${
+              className={`flex-1 flex items-center justify-center h-10 rounded-lg transition-all cursor-pointer text-t-secondary ${
                 theme === "light"
-                  ? "bg-[#F1F1F1] dark:bg-b-surface1 text-[#101010] dark:text-t-primary font-bold shadow-widget"
-                  : "hover:text-[#101010]"
+                  ? "bg-b-surface1 text-t-primary font-bold shadow-depth"
+                  : "hover:text-t-primary"
               }`}
               title="Light Mode"
             >
@@ -255,10 +255,10 @@ export default function Sidebar() {
             </button>
             <button
               onClick={() => toggleTheme("dark")}
-              className={`flex-1 flex items-center justify-center h-10 rounded-full transition-all cursor-pointer text-[#727272] ${
+              className={`flex-1 flex items-center justify-center h-10 rounded-lg transition-all cursor-pointer text-t-secondary ${
                 theme === "dark"
-                  ? "bg-[#F1F1F1] dark:bg-b-surface1 text-[#101010] dark:text-t-primary font-bold shadow-widget"
-                  : "hover:text-[#101010] dark:hover:text-t-primary"
+                  ? "bg-b-surface1 text-t-primary font-bold shadow-depth"
+                  : "hover:text-t-primary"
               }`}
               title="Dark Mode"
             >
