@@ -15,5 +15,8 @@
   "devDependencies": {
     "turbo": "latest"
   },
-  "packageManager": "npm@10.5.0"
+  "packageManager": "npm@10.5.0",
+  "dependencies": {
+    "openai": "^6.45.0"
+  }
 }

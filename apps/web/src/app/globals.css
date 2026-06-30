@@ -368,7 +368,7 @@
     background-image: linear-gradient(to bottom, var(--gradient-card));
   }
   .card, .rayum-card {
-    @apply mb-3 p-5 rounded-4xl bg-b-surface2 shadow-widget last:mb-0 dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5),0px_6px_4px_-4px_rgba(8,8,8,0.05)];
+    @apply mb-3 p-5 rounded-lg bg-b-surface2 shadow-widget last:mb-0 dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5),0px_6px_4px_-4px_rgba(8,8,8,0.05)];
   }
   .label, .badge {
     @apply inline-flex items-center h-7 px-2.5 rounded-lg text-button font-semibold;
@@ -386,24 +386,24 @@
     @apply border border-s-stroke2 bg-b-surface1 text-t-secondary;
   }
   .box-hover {
-    @apply absolute inset-0 rounded-[20px] bg-linear-to-b from-shade-09 to-[#ebebeb] before:absolute before:inset-[1.5px] before:bg-b-highlight before:rounded-[18.5px] before:border-[1.5px] before:border-b-surface2 invisible opacity-0 transition-all group-hover:visible group-hover:opacity-100 dark:from-shade-09/[0.075] dark:to-[#ebebeb]/[0.075];
+    @apply absolute inset-0 rounded-lg bg-linear-to-b from-shade-09 to-[#ebebeb] before:absolute before:inset-[1.5px] before:bg-b-highlight before:rounded-[7px] before:border-[1.5px] before:border-b-surface2 invisible opacity-0 transition-all group-hover:visible group-hover:opacity-100 dark:from-shade-09/[0.075] dark:to-[#ebebeb]/[0.075];
   }
   
   .btn {
-    @apply inline-flex items-center justify-center h-11 px-6 rounded-3xl text-button font-semibold transition-all cursor-pointer disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center h-11 px-6 rounded-lg text-button font-semibold transition-all cursor-pointer disabled:pointer-events-none;
   }
   .btn:active {
     transform: scale(0.96);
   }
   .btn-sm {
-    @apply h-8 px-4 text-caption rounded-2xl;
+    @apply h-8 px-4 text-caption rounded-lg;
   }
   .btn-md {
-    @apply h-10 px-5 text-button rounded-3xl;
+    @apply h-10 px-5 text-button rounded-lg;
   }
   
   .btn-primary, .btn-dark {
-    @apply relative bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20)] border-0 text-t-light fill-t-light !transition-all after:absolute after:inset-0 after:border-[1.5px] after:border-white/20 after:rounded-3xl after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] hover:shadow-none dark:from-shade-10 dark:to-[#DEDEDE] dark:after:border-white/50 dark:after:shadow-[inset_2px_0px_8px_2px_rgba(24,24,24,0.25)] dark:after:transition-all dark:hover:text-shade-03 dark:hover:fill-shade-01 dark:hover:after:opacity-0;
+    @apply relative bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20)] border-0 text-t-light fill-t-light !transition-all after:absolute after:inset-0 after:border-[1.5px] after:border-white/20 after:rounded-lg after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] hover:shadow-none dark:from-shade-10 dark:to-[#DEDEDE] dark:after:border-white/50 dark:after:shadow-[inset_2px_0px_8px_2px_rgba(24,24,24,0.25)] dark:after:transition-all dark:hover:text-shade-03 dark:hover:fill-shade-01 dark:hover:after:opacity-0;
   }
   .btn-outline {
     @apply border-s-stroke2 bg-b-surface2 text-t-secondary fill-t-secondary hover:border-s-highlight hover:text-t-primary hover:fill-t-primary disabled:border-transparent;
@@ -416,10 +416,10 @@
   }
 
   .input, .input-field {
-    @apply w-full h-11 px-4 border border-s-stroke2 rounded-full text-body-2 text-t-primary outline-none transition-colors hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
+    @apply w-full h-11 px-4 border border-s-stroke2 rounded-lg text-body-2 text-t-primary outline-none transition-colors hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
   }
   .textarea {
-    @apply w-full h-24 px-4.5 py-3 border border-s-stroke2 rounded-3xl text-body-2 text-t-primary outline-none transition-colors resize-none hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
+    @apply w-full h-24 px-4.5 py-3 border border-s-stroke2 rounded-lg text-body-2 text-t-primary outline-none transition-colors resize-none hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
   }
 
   .rayum-table {
