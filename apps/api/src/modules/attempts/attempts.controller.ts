@@ -103,16 +103,63 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       test_id = test_id.replace("pyq-", "");
     }
 
-    // Mock: Fetch the actual JSON questions
+    // 1. Try fetching from PYQ_REGISTRY first
+    let questions: any[] = [];
+    let examCode = "jee-main"; // Default
+
     const paper = PYQ_REGISTRY.find((p) => p.id === test_id);
-    if (!paper) {
-      res.status(404).json({ success: false, message: "Test not found in PYQ registry." });
-      return;
+    if (paper) {
+      const filePath = path.join(ROOT, paper.fileName);
+      const raw = fs.readFileSync(filePath, "utf-8");
+      questions = JSON.parse(raw);
+    } else {
+      // 2. Fallback to Supabase Database
+      const SUPABASE_URL = process.env.SUPABASE_URL!;
+      const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
+
+      const reqHeaders = {
+        "apikey": SUPABASE_SERVICE_KEY,
+        "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`
+      };
+
+      const pRes = await fetch(`${SUPABASE_URL}/rest/v1/papers?id=eq.${test_id}&is_active=eq.true&select=exams(code)`, {
+        headers: reqHeaders
+      });
+      
+      if (!pRes.ok) {
+        res.status(404).json({ success: false, message: "Test not found in PYQ registry or DB (Invalid ID)." });
+        return;
+      }
+
+      const pData = await pRes.json();
+      if (!pData || pData.length === 0) {
+        res.status(404).json({ success: false, message: "Test not found in PYQ registry or DB." });
+        return;
+      }
+      examCode = pData[0]?.exams?.code || "jee-main";
+
+      const pqRes = await fetch(`${SUPABASE_URL}/rest/v1/paper_questions?paper_id=eq.${test_id}&order=position.asc&select=question_id`, {
+        headers: reqHeaders
+      });
+      const pqs = await pqRes.json();
+      const questionIds = pqs.map((r: any) => r.question_id);
+
+      if (questionIds.length > 0) {
+        const ids = questionIds.join(",");
+        const qRes = await fetch(`${SUPABASE_URL}/rest/v1/questions?id=in.(${ids})&is_active=eq.true&select=*`, {
+          headers: reqHeaders
+        });
+        const rawQs = await qRes.json();
+        const byId: Record<string, any> = {};
+        for (const q of rawQs) byId[q.id] = q;
+        questions = questionIds.map((qid: string) => byId[qid]).filter(Boolean);
+      }
     }
 
-    const filePath = path.join(ROOT, paper.fileName);
-    const raw = fs.readFileSync(filePath, "utf-8");
-    const questions: Question[] = JSON.parse(raw);
+    if (!questions || questions.length === 0) {
+      res.status(404).json({ success: false, message: "Test has no questions or was not found." });
+      return;
+    }
 
     // Mock: Create AttemptAnswer objects
     const attemptAnswers: AttemptAnswer[] = [];
@@ -140,7 +187,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
         is_correct: isCorrect,
         marks_awarded: isCorrect ? 4 : (selected ? -1 : 0),
         time_taken_sec: studentAns?.time_taken_sec || 0,
-        start_timestamp: studentAns?.start_timestamp ?? 0,
+        start_timestamp: studentAns?.start_timestamp ?? -1,
         marked_review: studentAns?.marked_review || false,
         question: q,
       });
@@ -152,7 +199,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       attempt: {
         id: attemptId,
         student_id: "demo-student",
-        exam_id: "jee-main",
+        exam_id: examCode,
         batch_id: "demo-batch",
         marking_scheme: { correct: 4, incorrect: -1, unattempted: 0, partial: false },
       },

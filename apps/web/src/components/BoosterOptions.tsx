@@ -25,7 +25,7 @@ export const BoosterOptions: React.FC<BoosterOptionsProps> = ({ weakTopics, exam
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white rounded-xl shadow-md border border-gray-200">
+    <div className="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md border border-gray-200">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">🎯 Improvement Options Ready</h2>
       
       <div className="mb-6">

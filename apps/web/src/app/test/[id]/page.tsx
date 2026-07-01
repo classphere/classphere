@@ -180,6 +180,7 @@ export default function TestPage() {
   const [current, setCurrent]             = useState(0);
   const [answers, setAnswers]             = useState<AnswerMap>({});
   const [status, setStatus]               = useState<StatusMap>({});
+  const [visitedQs, setVisitedQs]         = useState<Record<string, boolean>>({});
   const [timeLeft, setTimeLeft]           = useState<number | null>(null);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [isDemoMode, setIsDemoMode]       = useState(false);
@@ -189,14 +190,33 @@ export default function TestPage() {
   const examStartMsRef = useRef<number | null>(null);
   /** Maps question_id → seconds-offset-from-exam-start when student first opened it */
   const questionOpenTimestamps = useRef<Record<string, number>>({});
+  /** Maps question_id → cumulative milliseconds spent on it */
+  const questionTimeSpentRef = useRef<Record<string, number>>({});
+  
+  const currentQuestionEntryTime = useRef<number>(Date.now());
+  const currentQuestionIdRef = useRef<string | null>(null);
 
   /** Called whenever the student navigates to a question */
   const recordQuestionOpen = useCallback((qId: string) => {
+    setVisitedQs((prev) => prev[qId] ? prev : { ...prev, [qId]: true });
     if (examStartMsRef.current === null) return;
     if (questionOpenTimestamps.current[qId] !== undefined) return; // only record FIRST visit
     const offsetSec = Math.floor((Date.now() - examStartMsRef.current) / 1000);
     questionOpenTimestamps.current[qId] = offsetSec;
   }, []);
+
+  // Flush time spent when navigating between questions
+  useEffect(() => {
+    const now = Date.now();
+    const prevQId = currentQuestionIdRef.current;
+    if (prevQId) {
+      const spentMs = now - currentQuestionEntryTime.current;
+      questionTimeSpentRef.current[prevQId] = (questionTimeSpentRef.current[prevQId] || 0) + spentMs;
+    }
+    const nextQId = questions[current]?.id;
+    currentQuestionIdRef.current = nextQId ?? null;
+    currentQuestionEntryTime.current = now;
+  }, [current, questions]);
 
 
   // ── Load questions ──────────────────────────────────────────────────────────
@@ -284,14 +304,28 @@ export default function TestPage() {
     // Guard: never submit if questions haven't loaded yet
     if (questions.length === 0) return;
 
+    // Flush the time for the currently active question
+    const now = Date.now();
+    const prevQId = currentQuestionIdRef.current;
+    if (prevQId) {
+      const spentMs = now - currentQuestionEntryTime.current;
+      questionTimeSpentRef.current[prevQId] = (questionTimeSpentRef.current[prevQId] || 0) + spentMs;
+      currentQuestionEntryTime.current = now;
+    }
+
     setLoading(true);
     try {
       const payload = {
-        answers: Object.keys(answers).reduce((acc, qId) => {
+        answers: questions.reduce((acc, q) => {
+          const qId = q.id;
+          const rawMs = questionTimeSpentRef.current[qId] || 0;
+          const actualSec = Math.floor(rawMs / 1000);
+          const finalSec = (actualSec === 0 && answers[qId]) ? 2 : actualSec;
+
           acc[qId] = {
-            selected_answer: answers[qId],
-            time_taken_sec: 45, // mock time for now
-            start_timestamp: questionOpenTimestamps.current[qId] ?? 0,
+            selected_answer: answers[qId] || null,
+            time_taken_sec: finalSec,
+            start_timestamp: questionOpenTimestamps.current[qId] ?? -1,
             marked_review: status[qId] === "review",
           };
           return acc;
@@ -403,43 +437,43 @@ export default function TestPage() {
           <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="space-y-2">
               <div className="h-5 w-28 rounded-full bg-b-surface2" />
-              <div className="h-8 w-72 max-w-full rounded-2xl bg-b-surface2" />
+              <div className="h-8 w-72 max-w-full rounded-lg bg-b-surface2" />
             </div>
             <div className="flex items-center gap-3">
-              <div className="h-11 w-28 rounded-3xl bg-b-surface2" />
-              <div className="h-11 w-36 rounded-3xl bg-b-surface2" />
+              <div className="h-11 w-28 rounded-lg bg-b-surface2" />
+              <div className="h-11 w-36 rounded-lg bg-b-surface2" />
             </div>
           </div>
         </header>
         <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
           <section className="card min-w-0 p-5 md:p-7">
             <div className="mb-5 flex flex-wrap gap-2">
-              <div className="h-7 w-20 rounded-full bg-b-surface2" />
-              <div className="h-7 w-28 rounded-full bg-b-surface2" />
-              <div className="h-7 w-20 rounded-full bg-b-surface2" />
+              <div className="h-7 w-20 rounded-lg bg-b-surface2" />
+              <div className="h-7 w-28 rounded-lg bg-b-surface2" />
+              <div className="h-7 w-20 rounded-lg bg-b-surface2" />
             </div>
             <div className="mb-6 h-6 w-40 rounded-full bg-b-surface2" />
             <div className="space-y-3">
-              <div className="h-20 rounded-3xl bg-b-surface2" />
-              <div className="h-20 rounded-3xl bg-b-surface2" />
-              <div className="h-20 rounded-3xl bg-b-surface2" />
-              <div className="h-20 rounded-3xl bg-b-surface2" />
+              <div className="h-20 rounded-lg bg-b-surface2" />
+              <div className="h-20 rounded-lg bg-b-surface2" />
+              <div className="h-20 rounded-lg bg-b-surface2" />
+              <div className="h-20 rounded-lg bg-b-surface2" />
             </div>
             <div className="mt-8 flex gap-3 border-t border-s-stroke2 pt-6">
-              <div className="h-11 flex-1 rounded-3xl bg-b-surface2" />
-              <div className="h-11 flex-1 rounded-3xl bg-b-surface2" />
-              <div className="h-11 flex-1 rounded-3xl bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-lg bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-lg bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-lg bg-b-surface2" />
             </div>
           </section>
           <aside className="card min-w-0 p-5 md:p-6">
             <div className="mb-5 grid grid-cols-3 gap-3">
-              <div className="h-20 rounded-3xl bg-b-surface2" />
-              <div className="h-20 rounded-3xl bg-b-surface2" />
-              <div className="h-20 rounded-3xl bg-b-surface2" />
+              <div className="h-20 rounded-lg bg-b-surface2" />
+              <div className="h-20 rounded-lg bg-b-surface2" />
+              <div className="h-20 rounded-lg bg-b-surface2" />
             </div>
             <div className="space-y-5">
-              <div className="h-28 rounded-3xl bg-b-surface2" />
-              <div className="h-28 rounded-3xl bg-b-surface2" />
+              <div className="h-28 rounded-lg bg-b-surface2" />
+              <div className="h-28 rounded-lg bg-b-surface2" />
             </div>
           </aside>
         </main>
@@ -471,9 +505,30 @@ export default function TestPage() {
   }
 
   const q          = questions[current];
-  const answered   = Object.values(status).filter((s) => s === "answered").length;
-  const marked     = Object.values(status).filter((s) => s === "review").length;
-  const unanswered = questions.length - answered - marked;
+  let notVisitedCount = 0;
+  let notAnsweredCount = 0;
+  let answeredCount = 0;
+  let markedCount = 0;
+  let answeredMarkedCount = 0;
+
+  questions.forEach((_q) => {
+    const s = status[_q.id];
+    const hasAns = !!answers[_q.id];
+    const visited = !!visitedQs[_q.id];
+    
+    if (s === "answered") {
+      answeredCount++;
+    } else if (s === "review") {
+      if (hasAns) answeredMarkedCount++;
+      else markedCount++;
+    } else {
+      if (visited) notAnsweredCount++;
+      else notVisitedCount++;
+    }
+  });
+
+  const answered   = answeredCount + answeredMarkedCount;
+  const unanswered = questions.length - answered;
   const timeWarning = timeLeft !== null && timeLeft < 300;
 
 
@@ -500,7 +555,7 @@ export default function TestPage() {
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <div className={`flex items-center gap-3 rounded-3xl border px-4 py-2.5 ${timeWarning ? "border-[#FF6A55]/30 bg-[#FF6A55]/5" : "border-s-stroke2 bg-b-surface2"}`}>
+            <div className={`flex items-center gap-3 rounded-lg border px-4 py-2.5 shadow-widget ${timeWarning ? "border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)]" : "border-s-stroke2 bg-b-surface2"}`}>
               <span className={`${timeWarning ? "text-[#FF6A55]" : "text-t-primary"}`}>
                 <RiTimerLine size={18} />
               </span>
@@ -509,17 +564,21 @@ export default function TestPage() {
               </span>
             </div>
 
-            <button id="submit-test-btn" className="btn btn-primary" onClick={() => setShowSubmitModal(true)}>
-              Submit Test
+            <button 
+              id="submit-test-btn" 
+              className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-[#FDFDFD] transition-all active:scale-98 cursor-pointer relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]" 
+              onClick={() => setShowSubmitModal(true)}
+            >
+              <span className="relative z-10">Submit Test</span>
             </button>
           </div>
         </div>
       </header>
 
-      <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
+      <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem] items-stretch">
         {isDemoMode && (
           <div className="xl:col-span-2">
-            <div className="flex flex-col gap-3 rounded-[32px] border border-amber-200/70 bg-amber-50/70 px-5 py-4 text-amber-950 shadow-sm backdrop-blur-sm md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-col gap-3 rounded-lg border border-amber-200/70 bg-amber-50/70 px-5 py-4 text-amber-950 shadow-sm backdrop-blur-sm md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="text-caption font-bold uppercase tracking-[0.24em] text-amber-700">Demo preview</p>
                 <p className="mt-1 text-body-2 font-medium text-amber-950/90">
@@ -532,17 +591,19 @@ export default function TestPage() {
         )}
 
         {/* ── Question Area ── */}
-        <section className="card min-w-0 p-5 md:p-7">
-          <div className="mb-5 flex flex-wrap items-center gap-2">
-            <span className="label label-gray">{q.subject}</span>
-            <span className="label label-gray">{q.chapter}</span>
-            {q.topic && <span className="label label-gray">{q.topic}</span>}
-            <span className={`label ${q.difficulty === "easy" ? "label-green" : q.difficulty === "hard" ? "label-red" : "label-yellow"}`}>
+        <section className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
+          <div className="box-hover" />
+          
+          <div className="relative z-10 mb-5 flex flex-wrap items-center gap-2">
+            <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.subject}</span>
+            <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.chapter}</span>
+            {q.topic && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.topic}</span>}
+            <span className={`flex flex-row justify-center items-center px-2 py-0.5 border text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em] ${q.difficulty === "easy" ? "border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] text-[#00A656]" : q.difficulty === "hard" ? "border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] text-[#FF6A55]" : "border-[rgba(239,157,14,0.15)] bg-[rgba(239,157,14,0.05)] text-[#EF9D0E]"}`}>
               {q.difficulty}
             </span>
           </div>
 
-          <div className="mb-6 flex items-start justify-between gap-4 border-b border-s-stroke2 pb-5">
+          <div className="relative z-10 mb-6 flex items-start justify-between gap-4 border-b border-s-stroke2 pb-5">
             <div className="min-w-0">
               <div className="text-overline font-bold uppercase tracking-wider text-t-tertiary">
                 Question {current + 1} of {questions.length}
@@ -551,9 +612,9 @@ export default function TestPage() {
                 <Latex>{q.question_text}</Latex>
               </p>
             </div>
-            <div className="hidden shrink-0 rounded-3xl border border-s-stroke2 bg-b-surface2 px-4 py-2 text-right sm:block">
+            <div className="hidden shrink-0 rounded-lg border border-s-stroke2 bg-b-surface2 px-4 py-2 text-right sm:block">
               <div className="text-caption text-t-secondary">Progress</div>
-              <div className="text-body-2 font-bold text-t-primary">{answered + marked}/{questions.length}</div>
+              <div className="text-body-2 font-bold text-t-primary">{answered + markedCount}/{questions.length}</div>
             </div>
           </div>
 
@@ -562,15 +623,15 @@ export default function TestPage() {
             <div className="mb-6 flex flex-wrap gap-3">
               {q.question_images.map((url, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={i} src={url} alt={`Figure ${i + 1}`} className="max-w-full rounded-2xl border border-s-stroke2" referrerPolicy="no-referrer" />
+                <img key={i} src={url} alt={`Figure ${i + 1}`} className="max-w-full rounded-lg border border-s-stroke2" referrerPolicy="no-referrer" />
               ))}
             </div>
           )}
 
           {/* Options or Text Input */}
-          <div className="space-y-3">
+          <div className="relative z-10 space-y-3">
             {isSectionBLimitReached(q) && (
-              <div className="rounded-[24px] border border-amber-200/50 bg-amber-50/50 p-4 text-amber-950">
+              <div className="rounded-lg border border-amber-200/50 bg-amber-50/50 p-4 text-amber-950">
                 <p className="text-caption font-bold uppercase tracking-wider text-amber-800">⚠️ Section B limit reached</p>
                 <p className="mt-1 text-caption font-semibold">
                   You have already answered 5 numerical questions in {q.subject}. To attempt this question, please clear your answer on another numerical question in this subject first.
@@ -585,7 +646,7 @@ export default function TestPage() {
                 </label>
                 <input
                   type="text"
-                  className="input h-12 rounded-3xl px-4 text-body-1 font-semibold disabled:bg-b-surface2 disabled:cursor-not-allowed disabled:text-t-tertiary"
+                  className="input h-12 rounded-lg px-4 text-body-1 font-semibold disabled:bg-b-surface2 disabled:cursor-not-allowed disabled:text-t-tertiary"
                   placeholder={isSectionBLimitReached(q) ? "Section B limit of 5 reached" : "Type your answer..."}
                   disabled={isSectionBLimitReached(q)}
                   value={answers[q.id] || ""}
@@ -606,23 +667,23 @@ export default function TestPage() {
                       key={opt.id}
                       id={`option-${opt.id}`}
                       disabled={disabled}
-                      className={`flex items-center gap-4 rounded-3xl border p-4 text-left transition-all ${
+                      className={`group/opt flex items-center gap-4 rounded-lg border p-4 text-left transition-all relative overflow-hidden ${
                         selected
                           ? "border-primary-01 bg-primary-01/5 shadow-widget"
                           : disabled
                           ? "border-s-stroke2 bg-b-surface2/50 cursor-not-allowed opacity-50"
-                          : "border-s-stroke2 bg-b-surface2 hover:border-s-highlight"
+                          : "border-s-stroke2 bg-b-surface2 hover:border-s-highlight shadow-sm"
                       }`}
                       onClick={() => selectAnswer(q.id, opt.id)}
                     >
-                      <div className={`flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold ${selected ? "bg-primary-01 text-t-light" : "bg-b-surface1 text-t-primary"}`}>
+                      <div className={`flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold shadow-sm transition-colors ${selected ? "bg-primary-01 text-t-light" : "bg-b-surface1 text-t-primary border border-s-stroke2 group-hover/opt:border-s-highlight"}`}>
                         {opt.id}
                       </div>
                       <div className="min-w-0 flex-1 text-body-2 font-medium text-t-primary">
                         {opt.text && <Latex>{opt.text}</Latex>}
                         {opt.image_url && (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 size-36 object-contain rounded-2xl bg-white p-2 border border-s-stroke2/50" referrerPolicy="no-referrer" />
+                          <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 size-36 object-contain rounded-lg bg-white p-2 border border-s-stroke2/50 shadow-sm" referrerPolicy="no-referrer" />
                         )}
                       </div>
                     </button>
@@ -633,114 +694,200 @@ export default function TestPage() {
           </div>
 
           {/* Nav buttons */}
-          <div className="mt-8 flex flex-col gap-3 border-t border-s-stroke2 pt-6 sm:flex-row">
+          <div className="relative z-10 mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 border-t border-s-stroke2 pt-6">
             <button
-              className="btn btn-outline justify-center gap-2 sm:flex-1"
-              onClick={() => navigateTo(Math.max(0, current - 1))}
-              disabled={current === 0}
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-[#FDFDFD] transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#00A656] to-[#008A47] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+              onClick={() => {
+                if (answers[q.id]) setStatus((s) => ({ ...s, [q.id]: "answered" }));
+                else setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
+                if (current < questions.length - 1) navigateTo(current + 1);
+                else setShowSubmitModal(true);
+              }}
             >
-              <RiArrowLeftLine size={18} /> Previous
+              <span className="relative z-10 text-center">{current < questions.length - 1 ? "Save & Next" : "Save & Submit"}</span>
             </button>
+
             <button
-              className={`btn justify-center gap-2 sm:flex-1 ${status[q.id] === "review" ? "btn-outline" : "btn-ghost"}`}
-              onClick={() => toggleReview(q.id)}
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 border border-[#E2E2E2] dark:border-s-stroke2 bg-transparent text-[#727272] dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] transition-all active:scale-98 uppercase w-full"
+              onClick={() => {
+                setAnswers((a) => {
+                  const newA = { ...a };
+                  delete newA[q.id];
+                  return newA;
+                });
+                setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
+              }}
             >
-              {status[q.id] === "review" ? <><RiStarFill size={18} /> Marked</> : <><RiStarLine size={18} /> Mark for Review</>}
+              Clear
             </button>
-            {answers[q.id] && (
-              <button
-                className="btn btn-outline border-[#FF6A55]/40 text-[#FF6A55] hover:bg-[#FF6A55]/5 justify-center gap-2 sm:flex-1"
-                onClick={() => {
-                  setAnswers((a) => {
-                    const newA = { ...a };
-                    delete newA[q.id];
-                    return newA;
-                  });
-                  setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
-                }}
-              >
-                Clear Response
-              </button>
-            )}
-            {current < questions.length - 1 ? (
-              <button className="btn btn-primary justify-center gap-2 sm:flex-1" onClick={() => navigateTo(current + 1)}>
-                Next Question <RiArrowRightLine size={18} />
-              </button>
-            ) : (
-              <button className="btn btn-primary justify-center sm:flex-1" onClick={() => setShowSubmitModal(true)}>
-                Submit Test
-              </button>
-            )}
+
+            <button
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-[#FDFDFD] transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#EF9D0E] to-[#D98500] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+              onClick={() => {
+                setStatus((s) => ({ ...s, [q.id]: "review" }));
+                if (current < questions.length - 1) navigateTo(current + 1);
+                else setShowSubmitModal(true);
+              }}
+            >
+              <span className="relative z-10 text-center">Save & Mark for Review</span>
+            </button>
+
+            <button
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-[#FDFDFD] transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2563EB] to-[#1D4ED8] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+              onClick={() => {
+                setStatus((s) => ({ ...s, [q.id]: "review" }));
+                if (current < questions.length - 1) navigateTo(current + 1);
+                else setShowSubmitModal(true);
+              }}
+            >
+              <span className="relative z-10 text-center text-[10px] xl:text-[11px]">Mark for Review & Next</span>
+            </button>
           </div>
         </section>
 
         {/* ── Right Panel: Question Navigator ── */}
-        <aside className="card min-w-0 p-5 md:p-6 xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
-          <div className="mb-5 grid grid-cols-3 gap-3">
-            {[
-              { label: "Done", value: answered, color: "text-[#00A656]" },
-              { label: "Review", value: marked, color: "text-[#EF9D0E]" },
-              { label: "Left", value: unanswered, color: "text-t-secondary" },
-            ].map((s) => (
-              <div key={s.label} className="rounded-3xl bg-b-surface2 p-3 text-center">
-                <div className={`text-h6 font-bold ${s.color}`}>{s.value}</div>
-                <div className="text-caption font-semibold text-t-secondary">{s.label}</div>
-              </div>
-            ))}
+        <aside className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
+          <div className="box-hover" />
+          
+          <div className="relative z-10 mb-6 grid grid-cols-2 gap-y-3 gap-x-2 text-[13px] font-sans text-t-primary font-medium">
+             {/* 1. Not Visited */}
+             <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
+               <div className="w-8 h-8 flex items-center justify-center rounded-[4px] border border-[#B0B0B0] bg-gradient-to-br from-[#FFFFFF] to-[#E0E0E0] shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)] text-black font-semibold text-xs shrink-0">
+                 {notVisitedCount}
+               </div>
+               <span className="leading-tight">Not Visited</span>
+             </div>
+             {/* 2. Not Answered */}
+             <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
+               <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white font-semibold text-xs [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm shrink-0">
+                 {notAnsweredCount}
+               </div>
+               <span className="leading-tight">Not Answered</span>
+             </div>
+             {/* 3. Answered */}
+             <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
+               <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white font-semibold text-xs [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm shrink-0">
+                 {answeredCount}
+               </div>
+               <span className="leading-tight">Answered</span>
+             </div>
+             {/* 4. Marked for Review */}
+             <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
+               <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] shrink-0">
+                 {markedCount}
+               </div>
+               <span className="leading-tight">Marked for Review</span>
+             </div>
+             {/* 5. Answered & Marked */}
+             <div className="flex items-center gap-2 col-span-2">
+               <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] relative shrink-0">
+                 {answeredMarkedCount}
+                 <div className="absolute -bottom-0.5 -right-0.5 size-[12px] bg-[#4CAF50] rounded-full border border-white flex items-center justify-center">
+                   <svg viewBox="0 0 10 10" className="w-2 h-2 text-white" fill="none">
+                     <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                   </svg>
+                 </div>
+               </div>
+               <span className="leading-tight text-[11px] xl:text-[12px]">Answered & Marked for Review (will be considered for evaluation)</span>
+             </div>
           </div>
 
-          {subjects.map((subj) => {
-            const subjQs = questions.filter((item) => item.subject === subj);
-            return (
-              <div key={subj} className="mb-5 last:mb-0">
-                <div className="mb-3 text-overline font-bold uppercase tracking-wider text-t-tertiary">
-                  {subj}
-                </div>
-                <div className="grid grid-cols-5 gap-2 sm:grid-cols-6 lg:grid-cols-5">
-                  {subjQs.map((sq) => {
-                    const globalIdx = questions.findIndex((gq) => gq.id === sq.id);
-                    const s = status[sq.id] || "unanswered";
-                    const isCurrent = globalIdx === current;
+          <div className="relative z-10">
+            {subjects.map((subj) => {
+              const subjQs = questions.filter((item) => item.subject === subj);
+              return (
+                <div key={subj} className="mb-6 last:mb-0">
+                  <div className="mb-4 text-overline font-bold uppercase tracking-[0.05em] text-t-tertiary">
+                    {subj}
+                  </div>
+                  <div className="grid grid-cols-5 gap-2 sm:grid-cols-6 lg:grid-cols-5">
+                    {subjQs.map((sq) => {
+                      const globalIdx = questions.findIndex((gq) => gq.id === sq.id);
+                      const s = status[sq.id];
+                      const hasAns = !!answers[sq.id];
+                      const visited = !!visitedQs[sq.id];
+                      const isCurrent = globalIdx === current;
 
-                    let classes = "border-s-stroke2 bg-b-surface1 text-t-secondary";
-                    if (s === "answered") classes = "border-[#00A656]/30 bg-[#00A656]/5 text-[#00A656]";
-                    if (s === "review") classes = "border-[#EF9D0E]/30 bg-[#EF9D0E]/5 text-[#EF9D0E]";
-                    if (isCurrent) classes = "border-primary-01 bg-primary-01 text-t-light shadow-widget";
+                      let btnClass = "w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center text-[15px] font-bold transition-all hover:scale-[1.05] active:scale-95 cursor-pointer shrink-0 ";
+                      let content: React.ReactNode = sq.question_number;
 
-                    return (
-                      <button
-                        key={sq.id}
-                        id={`nav-q-${sq.question_number}`}
-                        className={`aspect-square rounded-2xl border text-sm font-bold transition-all hover:scale-[1.02] ${classes}`}
-                        onClick={() => navigateTo(globalIdx)}
-                      >
-                        {sq.question_number}
-                      </button>
-                    );
-                  })}
+                      if (s === "answered") {
+                        btnClass += "bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm";
+                      } else if (s === "review") { 
+                        if (hasAns) {
+                          btnClass += "rounded-full bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] relative";
+                          content = (
+                            <>
+                              {sq.question_number}
+                              <div className="absolute -bottom-0.5 -right-0.5 size-[14px] bg-[#4CAF50] rounded-full border-[1.5px] border-white flex items-center justify-center">
+                                <svg viewBox="0 0 10 10" className="w-2 h-2 text-white" fill="none">
+                                  <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                              </div>
+                            </>
+                          );
+                        } else {
+                          btnClass += "rounded-full bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)]";
+                        }
+                      } else {
+                        if (visited) {
+                          btnClass += "bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm";
+                        } else {
+                          btnClass += "rounded-[4px] border border-[#B0B0B0] bg-gradient-to-br from-[#FFFFFF] to-[#E0E0E0] text-black shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)]";
+                        }
+                      }
+
+                      const wrapperClass = "p-0.5";
+
+                      return (
+                        <div key={sq.id} className={`flex items-center justify-center ${wrapperClass}`}>
+                          <button
+                            id={`nav-q-${sq.question_number}`}
+                            className={btnClass}
+                            onClick={() => navigateTo(globalIdx)}
+                          >
+                            {content}
+                          </button>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </aside>
       </main>
 
       {/* ── Submit Modal ── */}
       {showSubmitModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-4 py-6">
-          <div className="card w-full max-w-lg p-6 text-center md:p-8">
-            <div className="mb-4 flex justify-center text-t-primary">
-              <RiFlag2Fill size={48} />
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-4 py-6 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="card w-full max-w-lg p-6 text-center md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05),0_0_0_1.5px_rgba(229,229,229,0.04)_inset] border border-s-stroke2/40 animate-in zoom-in-95 duration-200">
+            <div className="mb-5 flex justify-center text-t-primary">
+              <div className="flex size-20 items-center justify-center rounded-full bg-gradient-to-b from-[#E2E2E2] to-[#C2C2C2] dark:from-[#3A3A3A] dark:to-[#222]">
+                <RiFlag2Fill size={40} className="text-[#101010] dark:text-white" />
+              </div>
             </div>
-            <h2 className="text-h4 font-semibold text-t-primary">Ready to Submit?</h2>
-            <p className="mt-3 text-body-2 leading-relaxed text-t-secondary">
-              You&apos;ve answered <strong className="text-t-primary">{answered}</strong> of{" "}
-              <strong className="text-t-primary">{questions.length}</strong> questions.
+            <h2 className="text-[24px] font-sans font-semibold tracking-[0.0015em] text-[#101010] dark:text-t-primary">Ready to Submit?</h2>
+            <p className="mt-4 text-[14px] font-sans text-[#727272] dark:text-t-secondary leading-[150%]">
+              You&apos;ve answered <strong className="text-[#101010] dark:text-t-primary">{answered}</strong> of{" "}
+              <strong className="text-[#101010] dark:text-t-primary">{questions.length}</strong> questions.
               {unanswered > 0 && ` ${unanswered} questions are still unanswered.`}
             </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <button className="btn btn-outline flex-1" onClick={() => setShowSubmitModal(false)}>Keep Working</button>
-              <button id="confirm-submit-btn" className="btn btn-primary flex-1" onClick={handleSubmit}>Submit Test</button>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <button 
+                className="flex flex-row justify-center items-center py-3 px-7 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans font-semibold transition-all hover:border-[#727272] active:scale-98 flex-1 h-12" 
+                onClick={() => setShowSubmitModal(false)}
+              >
+                Keep Working
+              </button>
+              <button 
+                id="confirm-submit-btn" 
+                className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-[#FDFDFD] transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] flex-1" 
+                onClick={handleSubmit}
+              >
+                <span className="relative z-10">Submit Test</span>
+              </button>
             </div>
           </div>
         </div>
