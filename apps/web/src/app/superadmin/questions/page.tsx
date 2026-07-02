@@ -24,14 +24,14 @@ export default function QuestionBankPage() {
               Manage Questions
             </h2>
           </div>
-          <button className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#101010] text-[#FDFDFD] hover:bg-[#202020] dark:bg-[#FDFDFD] dark:text-[#101010] dark:hover:bg-[#EAEAEA] transition-colors font-sans text-[14px] font-semibold shadow-sm">
+          <button className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#101010] text-[#FDFDFD] hover:bg-[#202020] dark:bg-[#FDFDFD] dark:text-[#101010] dark:hover:bg-[#EAEAEA] transition-colors font-sans text-[14px] font-semibold shadow-sm">
             <RiAddLine size={18} /> 
             <span>Add New Question</span>
           </button>
         </div>
 
         {/* ── Filters & Search ── */}
-        <div className="group relative card flex flex-col md:flex-row justify-between items-center w-full p-4 md:p-6 rounded-[24px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 gap-4 select-none">
+        <div className="group relative card flex flex-col md:flex-row justify-between items-center w-full p-4 md:p-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 gap-4 select-none">
           <div className="box-hover" />
           
           <div className="relative z-10 flex-1 w-full max-w-[500px]">
@@ -39,12 +39,12 @@ export default function QuestionBankPage() {
             <input 
               type="text" 
               placeholder="Search questions by ID, subject, or topic..." 
-              className="w-full pl-10 pr-4 py-2.5 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-xl font-sans text-[14px] text-[#101010] dark:text-t-primary outline-none focus:border-[#101010] dark:focus:border-[#FDFDFD] transition-colors placeholder:text-[#7B7B7B]"
+              className="w-full pl-10 pr-4 py-2.5 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg font-sans text-[14px] text-[#101010] dark:text-t-primary outline-none focus:border-[#101010] dark:focus:border-[#FDFDFD] transition-colors placeholder:text-[#7B7B7B]"
             />
           </div>
           
           <div className="relative z-10 flex flex-row flex-wrap items-center gap-3 w-full md:w-auto">
-            <select className="px-4 py-2.5 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-xl font-sans text-[14px] text-[#101010] dark:text-t-primary outline-none focus:border-[#101010] dark:focus:border-[#FDFDFD] transition-colors cursor-pointer appearance-none min-w-[140px]">
+            <select className="px-4 py-2.5 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg font-sans text-[14px] text-[#101010] dark:text-t-primary outline-none focus:border-[#101010] dark:focus:border-[#FDFDFD] transition-colors cursor-pointer appearance-none min-w-[140px]">
               <option value="">All Subjects</option>
               <option value="Physics">Physics</option>
               <option value="Chemistry">Chemistry</option>
@@ -52,14 +52,14 @@ export default function QuestionBankPage() {
               <option value="Biology">Biology</option>
             </select>
             
-            <select className="px-4 py-2.5 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-xl font-sans text-[14px] text-[#101010] dark:text-t-primary outline-none focus:border-[#101010] dark:focus:border-[#FDFDFD] transition-colors cursor-pointer appearance-none min-w-[140px]">
+            <select className="px-4 py-2.5 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg font-sans text-[14px] text-[#101010] dark:text-t-primary outline-none focus:border-[#101010] dark:focus:border-[#FDFDFD] transition-colors cursor-pointer appearance-none min-w-[140px]">
               <option value="">All Difficulties</option>
               <option value="Easy">Easy</option>
               <option value="Medium">Medium</option>
               <option value="Hard">Hard</option>
             </select>
             
-            <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 transition-colors font-sans text-[14px] font-semibold text-[#101010] dark:text-t-primary">
+            <button className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 transition-colors font-sans text-[14px] font-semibold text-[#101010] dark:text-t-primary">
               <RiFilter3Line size={18} />
               <span>More Filters</span>
             </button>
@@ -67,7 +67,7 @@ export default function QuestionBankPage() {
         </div>
 
         {/* ── Questions Table ── */}
-        <div className="group relative card flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
+        <div className="group relative card flex flex-col overflow-hidden rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
           <div className="box-hover" />
           
           <div className="relative z-10 w-full overflow-x-auto">
@@ -98,7 +98,7 @@ export default function QuestionBankPage() {
                       </div>
                     </td>
                     <td className="py-4 px-6">
-                      <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${
+                      <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border ${
                         question.status === "Active" ? "bg-[rgba(0,166,86,0.05)] border-[rgba(0,166,86,0.2)] text-[#00A656]" :
                         "bg-[#F9F9F9] dark:bg-b-surface1 border-s-stroke2/40 text-[#7B7B7B]"
                       }`}>
@@ -131,10 +131,10 @@ export default function QuestionBankPage() {
               Showing <span className="font-semibold text-[#101010] dark:text-t-primary">1</span> to <span className="font-semibold text-[#101010] dark:text-t-primary">5</span> of <span className="font-semibold text-[#101010] dark:text-t-primary">1,245</span> entries
             </span>
             <div className="flex flex-row items-center gap-2">
-              <button className="px-4 py-2 rounded-xl border border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 text-[#7B7B7B] opacity-50 cursor-not-allowed font-sans text-[13px] font-semibold">
+              <button className="px-4 py-2 rounded-lg border border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 text-[#7B7B7B] opacity-50 cursor-not-allowed font-sans text-[13px] font-semibold">
                 Previous
               </button>
-              <button className="px-4 py-2 rounded-xl border border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 transition-colors font-sans text-[13px] font-semibold text-[#101010] dark:text-t-primary">
+              <button className="px-4 py-2 rounded-lg border border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 transition-colors font-sans text-[13px] font-semibold text-[#101010] dark:text-t-primary">
                 Next
               </button>
             </div>

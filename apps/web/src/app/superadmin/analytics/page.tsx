@@ -31,7 +31,7 @@ export default function GlobalAnalyticsPage() {
       <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-6 px-6 bg-transparent">
 
         {/* ── KPI Cards (Full Width) ── */}
-        <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
+        <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
           <div className="box-hover" />
           
           <div className="relative z-10 flex flex-row justify-between items-center w-full mb-6">
@@ -40,7 +40,7 @@ export default function GlobalAnalyticsPage() {
             </h3>
           </div>
 
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
             
             {[
               { label: "Total Tests Conducted", value: "845,210", sub: "+45K", subLabel: "this week", icon: <RiGlobalLine size={20} /> },
@@ -48,7 +48,7 @@ export default function GlobalAnalyticsPage() {
               { label: "AI Tokens (Monthly)", value: "142.8M", sub: "84%", subLabel: "of limit", icon: <RiBrainLine size={20} /> },
               { label: "Booster Tests Generated", value: "12,450", sub: "+12%", subLabel: "growth", icon: <RiRobot2Line size={20} /> },
             ].map((kpi, i) => (
-              <div key={i} className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+              <div key={i} className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
                 <div className="flex flex-row items-center gap-3 w-full mb-1">
                   <span className="text-[#101010] dark:text-t-primary">{kpi.icon}</span>
                   <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -78,7 +78,7 @@ export default function GlobalAnalyticsPage() {
         <div className="flex flex-col xl:flex-row items-start gap-6 w-full">
           
           {/* Tests by Exam Type */}
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 flex-1 min-w-0 h-full">
+          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 flex-1 min-w-0 h-full">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-col items-start gap-6 w-full h-full">
               
@@ -113,7 +113,7 @@ export default function GlobalAnalyticsPage() {
           </div>
 
           {/* Top Institutes by Activity */}
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full xl:w-[600px] shrink-0 h-full min-h-[354px]">
+          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full xl:w-[600px] shrink-0 h-full min-h-[354px]">
             <div className="box-hover" />
             
             <div className="relative z-10 flex flex-col items-start gap-6 w-full">
@@ -126,14 +126,14 @@ export default function GlobalAnalyticsPage() {
 
               <div className="flex flex-col items-start gap-2 w-full">
                 {/* Table Header */}
-                <div className="flex flex-row items-center w-full px-4 py-2 bg-[#F9F9F9] dark:bg-b-surface1/60 rounded-xl border border-s-stroke2/20">
+                <div className="flex flex-row items-center w-full px-4 py-2 bg-[#F9F9F9] dark:bg-b-surface1/60 rounded-lg border border-s-stroke2/20">
                   <span className="flex-1 font-sans text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Institute</span>
                   <span className="w-24 font-sans text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em] text-right">Tests</span>
                   <span className="w-24 font-sans text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em] text-right">AI Tokens</span>
                 </div>
 
                 {topInstitutes.map((inst, i) => (
-                  <div key={i} className="flex flex-row items-center w-full px-4 py-3 rounded-2xl hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/40 transition-colors cursor-pointer">
+                  <div key={i} className="flex flex-row items-center w-full px-4 py-3 rounded-lg hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/40 transition-colors cursor-pointer">
                     <div className="flex-1 flex flex-row items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center font-sans font-bold text-[13px] text-[#101010] dark:text-t-primary shrink-0">
                         {i + 1}
@@ -151,7 +151,7 @@ export default function GlobalAnalyticsPage() {
         </div>
 
         {/* ── Bottom Row: AI Token Consumption ── */}
-        <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
+        <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
           <div className="box-hover" />
           <div className="relative z-10 flex flex-col items-start gap-6 w-full">
             
@@ -162,7 +162,7 @@ export default function GlobalAnalyticsPage() {
                 </h3>
                 <span className="font-sans text-[14px] text-[#7B7B7B]">142.8M tokens used this month across all generative workflows</span>
               </div>
-              <div className="flex flex-row justify-center items-center px-4 py-2 gap-2 border border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] rounded-full">
+              <div className="flex flex-row justify-center items-center px-4 py-2 gap-2 border border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] rounded-lg">
                 <span className="text-[#FF6A55] text-[14px] font-semibold leading-none">84% of monthly budget</span>
               </div>
             </div>

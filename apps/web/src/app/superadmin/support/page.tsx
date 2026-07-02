@@ -25,9 +25,9 @@ export default function SupportPage() {
       <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6">
         
         {/* KPI Cards (Row of 3 active highlighted boxes) */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-8">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg mb-8">
           
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiCustomerService2Fill size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -49,7 +49,7 @@ export default function SupportPage() {
             </div>
           </div>
           
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiTimeLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -71,7 +71,7 @@ export default function SupportPage() {
             </div>
           </div>
           
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#00A656]"><RiCustomerService2Fill size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -97,7 +97,7 @@ export default function SupportPage() {
         </div>
 
         {/* Tickets Table */}
-        <div className="group relative card flex flex-col rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden">
+        <div className="group relative card flex flex-col rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden">
           <div className="box-hover" />
           
           {/* Table Header Controls */}
@@ -107,13 +107,13 @@ export default function SupportPage() {
               <input 
                 type="text" 
                 placeholder="Search tickets by ID, Institute, or Subject..." 
-                className="w-full h-11 pl-11 pr-4 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-[16px] text-[14px] text-[#101010] dark:text-t-primary placeholder:text-[#7B7B7B] focus:border-[#101010] dark:focus:border-t-primary outline-none transition-colors shadow-inner"
+                className="w-full h-11 pl-11 pr-4 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg text-[14px] text-[#101010] dark:text-t-primary placeholder:text-[#7B7B7B] focus:border-[#101010] dark:focus:border-t-primary outline-none transition-colors shadow-inner"
               />
             </div>
             
             <div className="flex flex-wrap items-center gap-3">
               <div className="relative">
-                <select className="h-11 pl-4 pr-10 appearance-none rounded-[16px] bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 text-[14px] font-medium text-[#101010] dark:text-t-primary hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 transition-colors shadow-sm outline-none cursor-pointer">
+                <select className="h-11 pl-4 pr-10 appearance-none rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 text-[14px] font-medium text-[#101010] dark:text-t-primary hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 transition-colors shadow-sm outline-none cursor-pointer">
                   <option value="">All Priorities</option>
                   <option value="High">High Priority</option>
                   <option value="Medium">Medium Priority</option>
@@ -123,7 +123,7 @@ export default function SupportPage() {
               </div>
               
               <div className="relative">
-                <select className="h-11 pl-4 pr-10 appearance-none rounded-[16px] bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 text-[14px] font-medium text-[#101010] dark:text-t-primary hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 transition-colors shadow-sm outline-none cursor-pointer">
+                <select className="h-11 pl-4 pr-10 appearance-none rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 text-[14px] font-medium text-[#101010] dark:text-t-primary hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 transition-colors shadow-sm outline-none cursor-pointer">
                   <option value="">All Statuses</option>
                   <option value="Open">Open</option>
                   <option value="In Progress">In Progress</option>
@@ -132,7 +132,7 @@ export default function SupportPage() {
                 <RiArrowDownSLine size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-[#7B7B7B] pointer-events-none" />
               </div>
 
-              <button className="flex items-center gap-2 h-11 px-5 rounded-[16px] bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 text-[14px] font-semibold text-[#101010] dark:text-t-primary hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 transition-colors shadow-sm">
+              <button className="flex items-center gap-2 h-11 px-5 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 text-[14px] font-semibold text-[#101010] dark:text-t-primary hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 transition-colors shadow-sm">
                 <RiFilter3Line size={16} className="text-[#7B7B7B]" /> More
               </button>
             </div>
@@ -158,7 +158,7 @@ export default function SupportPage() {
                     <td className="px-6 py-4 font-bold">{ticket.institute}</td>
                     <td className="px-6 py-4 text-[#7B7B7B] font-medium max-w-[300px] truncate">{ticket.subject}</td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded-full text-[12px] font-bold uppercase tracking-wider ${
+                      <span className={`inline-flex items-center px-3 py-1 rounded-lg text-[12px] font-bold uppercase tracking-wider ${
                         ticket.priority === "High" 
                           ? "bg-[rgba(239,68,68,0.08)] text-[#EF4444]" 
                           : ticket.priority === "Medium"
@@ -169,7 +169,7 @@ export default function SupportPage() {
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded-full text-[12px] font-bold uppercase tracking-wider ${
+                      <span className={`inline-flex items-center px-3 py-1 rounded-lg text-[12px] font-bold uppercase tracking-wider ${
                         ticket.status === "Open" 
                           ? "bg-[rgba(10,132,255,0.08)] text-[#0A84FF]" 
                           : ticket.status === "In Progress"

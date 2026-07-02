@@ -64,7 +64,7 @@ export default function SuperAdminDashboardPage() {
         <div className="flex flex-col gap-6 w-full">
           
           {/* Top Row: Dashboard Overview (Full Width) */}
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
+          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
             <div className="box-hover" />
             
             {/* Widget Header */}
@@ -72,17 +72,17 @@ export default function SuperAdminDashboardPage() {
               <h3 className="font-sans text-[20px] font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary m-0">
                 Dashboard overview
               </h3>
-              <div className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] cursor-pointer">
+              <div className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg cursor-pointer">
                 <span className="font-sans font-normal text-[14px] leading-[150%] tracking-[0.0025em] text-[#727272] dark:text-t-secondary">This Week</span>
                 <RiArrowDownSLine size={20} className="text-[#727272] dark:text-t-secondary" />
               </div>
             </div>
 
             {/* Stats Section Wrapper (Row of 4 active highlighted boxes) */}
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
               
               {/* Metric 1: Total Institutes */}
-              <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+              <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
                 <div className="flex flex-row items-center gap-3 w-full mb-1">
                   <span className="text-[#101010] dark:text-t-primary"><RiBuilding4Line size={20} /></span>
                   <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -105,7 +105,7 @@ export default function SuperAdminDashboardPage() {
               </div>
 
               {/* Metric 2: Total Students */}
-              <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+              <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
                 <div className="flex flex-row items-center gap-3 w-full mb-1">
                   <span className="text-[#101010] dark:text-t-primary"><RiUserStarLine size={20} /></span>
                   <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -128,7 +128,7 @@ export default function SuperAdminDashboardPage() {
               </div>
 
               {/* Metric 3: Active AI Analyses */}
-              <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+              <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
                 <div className="flex flex-row items-center gap-3 w-full mb-1">
                   <span className="text-[#101010] dark:text-t-primary"><RiBrainLine size={20} /></span>
                   <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -151,7 +151,7 @@ export default function SuperAdminDashboardPage() {
               </div>
 
               {/* Metric 4: System Uptime */}
-              <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+              <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
                 <div className="flex flex-row items-center gap-3 w-full mb-1">
                   <span className="text-[#101010] dark:text-t-primary"><RiShieldCheckLine size={20} className="text-[#00A656]" /></span>
                   <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -182,7 +182,7 @@ export default function SuperAdminDashboardPage() {
             {/* Left Column (System Resources) */}
             <div className="flex flex-col items-start gap-6 flex-1 min-w-0">
               {/* Product view (System Resources) */}
-              <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
+              <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
                 <div className="box-hover" />
                 
                 {/* Widget Header */}
@@ -198,7 +198,7 @@ export default function SuperAdminDashboardPage() {
                 {/* Widget Content Area (Rows) */}
                 <div className="relative z-10 flex flex-col items-start w-full gap-4 pt-2">
                   {systemResources.map((bar, idx) => (
-                    <div key={idx} className="flex flex-row items-center justify-between w-full h-12 p-2 px-4 rounded-2xl hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/40 transition-colors cursor-pointer group/row">
+                    <div key={idx} className="flex flex-row items-center justify-between w-full h-12 p-2 px-4 rounded-lg hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/40 transition-colors cursor-pointer group/row">
                       
                       {/* Component Label */}
                       <div className="w-[140px] md:w-[160px] flex flex-col justify-center shrink-0">
@@ -243,7 +243,7 @@ export default function SuperAdminDashboardPage() {
             <div className="flex flex-col items-start gap-6 w-full xl:w-[420px] shrink-0">
               
               {/* Support Tickets (Comment Section) */}
-              <div className="group relative card flex flex-col overflow-hidden p-3 pb-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none h-full min-h-[354px]">
+              <div className="group relative card flex flex-col overflow-hidden p-3 pb-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none h-full min-h-[354px]">
                 <div className="box-hover" />
                 
                 <div className="relative z-10 flex flex-col items-start gap-3 w-full">
@@ -261,7 +261,7 @@ export default function SuperAdminDashboardPage() {
                       const isActive = index === 1; // Highlight active mock
                       
                       return (
-                        <div key={ticket.id} className={`flex flex-row items-start p-5 gap-5 w-full rounded-[20px] cursor-pointer transition-all ${
+                        <div key={ticket.id} className={`flex flex-row items-start p-5 gap-5 w-full rounded-lg cursor-pointer transition-all ${
                           isActive ? 'bg-[#F9F9F9] dark:bg-b-surface1/60 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20' : 'bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent dark:hover:border-s-stroke2/20'
                         }`}>
                           
@@ -299,7 +299,7 @@ export default function SuperAdminDashboardPage() {
 
                   {/* Footer */}
                   <div className="flex flex-col items-start px-3 w-full mt-2">
-                    <button className="flex flex-row justify-center items-center px-7 py-[14px] gap-2 w-full h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[32px] bg-transparent cursor-pointer hover:bg-b-surface1 transition-colors">
+                    <button className="flex flex-row justify-center items-center px-7 py-[14px] gap-2 w-full h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent cursor-pointer hover:bg-b-surface1 transition-colors">
                       <span className="font-sans font-semibold text-[14px] leading-none text-center tracking-[0.0125em] text-[#727272] dark:text-t-secondary">
                         Go to Helpdesk
                       </span>
@@ -316,7 +316,7 @@ export default function SuperAdminDashboardPage() {
           {/* Bottom Row: Audit Logs (Full Width) */}
           <div className="flex flex-col w-full">
             {/* Audit Logs (Product List) */}
-            <div className="group relative card flex flex-col overflow-hidden p-3 pb-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
+            <div className="group relative card flex flex-col overflow-hidden p-3 pb-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full select-none">
               <div className="box-hover" />
               
               <div className="relative z-10 flex flex-col items-start gap-3 w-full">
@@ -337,12 +337,12 @@ export default function SuperAdminDashboardPage() {
                                       'bg-[rgba(42,133,255,0.05)] border-[rgba(42,133,255,0.15)] text-[#2A85FF]';
                     
                     return (
-                      <div key={log.id} className={`flex flex-row items-center p-4 gap-6 w-full h-[88px] rounded-[20px] cursor-pointer transition-all ${
+                      <div key={log.id} className={`flex flex-row items-center p-4 gap-6 w-full h-[88px] rounded-lg cursor-pointer transition-all ${
                         isActive ? 'bg-[#F9F9F9] dark:bg-b-surface1/60 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20' : 'bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent dark:hover:border-s-stroke2/20'
                       }`}>
                         
                         <div className="flex flex-row items-center gap-6 flex-1 min-w-0">
-                          <div className={`flex items-center justify-center w-14 h-14 rounded-xl shrink-0 ${statusClass} border`}>
+                          <div className={`flex items-center justify-center w-14 h-14 rounded-lg shrink-0 ${statusClass} border`}>
                             {log.type === 'success' ? <RiCheckFill size={20} /> : log.type === 'error' ? <RiAlertLine size={20} /> : <RiTimeLine size={20} />}
                           </div>
                           <div className="flex flex-col justify-center gap-1 min-w-0 w-[400px]">
@@ -359,7 +359,7 @@ export default function SuperAdminDashboardPage() {
                           <span className="font-sans font-medium text-[14px] leading-none text-right text-[#727272]">
                             {log.time}
                           </span>
-                          <div className={`flex flex-row justify-center items-center px-3 py-1 gap-2 border rounded-[8px] w-[80px] ${statusClass}`}>
+                          <div className={`flex flex-row justify-center items-center px-3 py-1 gap-2 border rounded-lg w-[80px] ${statusClass}`}>
                             <span className="font-sans font-bold text-[12px] leading-none tracking-[0.01em]">
                               {log.type === 'success' ? 'Resolved' : log.type === 'error' ? 'Failed' : 'Info'}
                             </span>
@@ -373,7 +373,7 @@ export default function SuperAdminDashboardPage() {
 
                 {/* Footer */}
                 <div className="flex flex-col items-start px-3 w-full mt-4">
-                  <button className="flex flex-row justify-center items-center px-7 py-[14px] gap-2 w-[200px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent cursor-pointer hover:bg-b-surface1 transition-colors">
+                  <button className="flex flex-row justify-center items-center px-7 py-[14px] gap-2 w-[200px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent cursor-pointer hover:bg-b-surface1 transition-colors">
                     <span className="font-sans font-semibold text-[14px] leading-none text-center tracking-[0.0125em] text-[#727272] dark:text-t-secondary">
                       View full audit log
                     </span>
