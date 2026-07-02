@@ -152,7 +152,7 @@ export default function TeacherDoubtsPage() {
     <div className="flex flex-col min-h-screen bg-[#F9F9F9] dark:bg-b-surface1/60 pb-10">
 
       {toastMessage && (
-        <div className="fixed top-20 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-[#101010] text-[#FDFDFD] text-xs font-sans font-semibold rounded-xl shadow-lg border border-s-stroke2/20">
+        <div className="fixed top-20 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-[#101010] text-[#FDFDFD] text-xs font-sans font-semibold rounded-lg shadow-lg border border-s-stroke2/20">
           <div className="size-2 rounded-full bg-[#00A656] animate-pulse" />
           <span>{toastMessage}</span>
         </div>
@@ -162,7 +162,7 @@ export default function TeacherDoubtsPage() {
 
       <main className="mx-auto w-full max-w-screen-2xl px-4 pt-12 md:px-6 flex justify-center bg-transparent select-none">
 
-        <div className="w-[1068px] h-[780px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-[32px] p-3 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] flex flex-col gap-4 overflow-hidden relative">
+        <div className="w-[1068px] h-[780px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg p-3 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] flex flex-col gap-4 overflow-hidden relative">
 
           {/* Header Row */}
           <div className="flex flex-row justify-between items-center w-full h-12 relative px-2.5 shrink-0">
@@ -171,7 +171,7 @@ export default function TeacherDoubtsPage() {
                 Doubts Moderation
               </h6>
               {pendingDoubts > 0 && (
-                <span className="px-2 py-0.5 rounded-full bg-[#FF6A55]/10 border border-[#FF6A55]/20 text-[#FF6A55] text-[11px] font-bold">
+                <span className="px-2 py-0.5 rounded-lg bg-[#FF6A55]/10 border border-[#FF6A55]/20 text-[#FF6A55] text-[11px] font-bold">
                   {pendingDoubts} pending
                 </span>
               )}
@@ -180,13 +180,13 @@ export default function TeacherDoubtsPage() {
             <div className="relative">
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
-                className="flex flex-row justify-between items-center px-5 py-3 h-12 w-[190px] border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-left cursor-pointer transition-all hover:bg-[#F9F9F9] dark:hover:bg-b-surface1"
+                className="flex flex-row justify-between items-center px-5 py-3 h-12 w-[190px] border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-left cursor-pointer transition-all hover:bg-[#F9F9F9] dark:hover:bg-b-surface1"
               >
                 <span className="font-sans text-[14px] font-normal text-[#727272] dark:text-t-secondary truncate">{activeGroup.name}</span>
                 <RiArrowDownSLine size={20} className="text-[#727272] shrink-0" />
               </button>
               {showDropdown && (
-                <div className="absolute right-0 top-14 w-[190px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-2xl shadow-lg z-25 overflow-hidden">
+                <div className="absolute right-0 top-14 w-[190px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-lg z-25 overflow-hidden">
                   {groups.map(g => (
                     <div
                       key={g.id}
@@ -202,9 +202,9 @@ export default function TeacherDoubtsPage() {
           </div>
 
           {/* Stats Row */}
-          <div className="flex flex-row items-center p-2 gap-4 w-full h-[135px] bg-[#F9F9F9] dark:bg-b-surface1/20 border-[1.5px] border-[rgba(123,123,123,0.1)] rounded-[32px] shrink-0">
+          <div className="flex flex-row items-center p-2 gap-4 w-full h-[135px] bg-[#F9F9F9] dark:bg-b-surface1/20 border-[1.5px] border-[rgba(123,123,123,0.1)] rounded-lg shrink-0">
 
-            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-[#FDFDFD] dark:bg-b-surface2 border-[1.5px] border-[#FDFDFD] dark:border-s-stroke2/20 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-[#FDFDFD] dark:bg-b-surface2 border-[1.5px] border-[#FDFDFD] dark:border-s-stroke2/20 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex items-center gap-2.5">
                 <RiQuestionAnswerLine size={20} className="text-[#101010] dark:text-t-primary" />
                 <span className="font-sans font-semibold text-[15px] text-[#101010] dark:text-t-primary">Active Doubts</span>
@@ -220,7 +220,7 @@ export default function TeacherDoubtsPage() {
               </div>
             </div>
 
-            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-[#FDFDFD] dark:bg-b-surface2 border-[1.5px] border-[#FDFDFD] dark:border-s-stroke2/20 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-[#FDFDFD] dark:bg-b-surface2 border-[1.5px] border-[#FDFDFD] dark:border-s-stroke2/20 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex items-center gap-2.5">
                 <RiCheckDoubleLine size={20} className="text-[#101010] dark:text-t-primary" />
                 <span className="font-sans font-semibold text-[15px] text-[#101010] dark:text-t-primary">Resolved Doubts</span>
@@ -239,7 +239,7 @@ export default function TeacherDoubtsPage() {
           </div>
 
           {/* Workspace */}
-          <div className="flex-grow flex flex-row border border-s-stroke2/20 rounded-[24px] overflow-hidden min-h-0">
+          <div className="flex-grow flex flex-row border border-s-stroke2/20 rounded-lg overflow-hidden min-h-0">
 
             {/* Sidebar */}
             <div className="w-[260px] border-r border-s-stroke2/10 bg-[#F9F9F9] dark:bg-b-surface1/20 flex flex-col shrink-0">
@@ -249,7 +249,7 @@ export default function TeacherDoubtsPage() {
                   <input
                     type="text"
                     placeholder="Search groups..."
-                    className="w-full pl-9 pr-3 h-9 rounded-[90px] border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-[#101010] transition-all font-semibold placeholder-[#7B7B7B]"
+                    className="w-full pl-9 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-[#101010] transition-all font-semibold placeholder-[#7B7B7B]"
                   />
                 </div>
               </div>
@@ -261,7 +261,7 @@ export default function TeacherDoubtsPage() {
                     <div
                       key={group.id}
                       onClick={() => setActiveGroupId(group.id)}
-                      className={`p-3 flex gap-3 cursor-pointer rounded-xl transition-all border ${isActive ? "bg-[#FDFDFD] dark:bg-b-surface2 border-l-4 border-l-[#101010] border-s-stroke2/20 shadow-xs" : "bg-transparent border-transparent hover:bg-[#FDFDFD]/50"}`}
+                      className={`p-3 flex gap-3 cursor-pointer rounded-lg transition-all border ${isActive ? "bg-[#FDFDFD] dark:bg-b-surface2 border-l-4 border-l-[#101010] border-s-stroke2/20 shadow-xs" : "bg-transparent border-transparent hover:bg-[#FDFDFD]/50"}`}
                     >
                       <div className={`size-8 rounded-full flex items-center justify-center shrink-0 ${isActive ? "bg-[#101010] text-[#FDFDFD]" : "bg-[#FDFDFD] text-[#7B7B7B] border border-s-stroke2/20"}`}>
                         <RiGroupLine size={16} />
@@ -293,7 +293,7 @@ export default function TeacherDoubtsPage() {
                   <span className="text-[10.5px] font-sans text-[#7B7B7B]">{activeGroup.membersCount} Members · {activeGroup.facultyCount} Faculty Online</span>
                 </div>
                 {/* Filter tabs */}
-                <div className="flex items-center gap-1 bg-[#F9F9F9] dark:bg-b-surface1/40 border border-s-stroke2/20 rounded-xl p-1">
+                <div className="flex items-center gap-1 bg-[#F9F9F9] dark:bg-b-surface1/40 border border-s-stroke2/20 rounded-lg p-1">
                   {(["all", "doubts"] as FilterTab[]).map(tab => (
                     <button
                       key={tab}
@@ -314,7 +314,7 @@ export default function TeacherDoubtsPage() {
                   return (
                     <div
                       key={msg.id}
-                      className={`p-4 flex gap-4 rounded-[20px] transition-all relative border ${
+                      className={`p-4 flex gap-4 rounded-lg transition-all relative border ${
                         msg.isDoubt && !msg.isVerified
                           ? "bg-[#FF6A55]/5 border-[#FF6A55]/20"
                           : msg.isVerified
@@ -372,7 +372,7 @@ export default function TeacherDoubtsPage() {
                             !msg.isOwn && msg.role === "student" ? (
                               <button
                                 onClick={() => handleEndorse(msg.id)}
-                                className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#00A656]/25 bg-[#00A656]/5 text-[#00A656] text-[11px] font-sans font-bold hover:bg-[#00A656]/10 transition-all active:scale-95 cursor-pointer"
+                                className="flex items-center gap-1.5 px-3 py-1 rounded-lg border border-[#00A656]/25 bg-[#00A656]/5 text-[#00A656] text-[11px] font-sans font-bold hover:bg-[#00A656]/10 transition-all active:scale-95 cursor-pointer"
                               >
                                 <RiShieldCheckLine size={12} /> Endorse Answer
                               </button>
@@ -399,7 +399,7 @@ export default function TeacherDoubtsPage() {
                     onChange={e => setInputValue(e.target.value)}
                     onKeyDown={e => e.key === "Enter" && handleSend()}
                     placeholder="Post an official faculty response..."
-                    className="w-full pl-4 pr-3 h-9 rounded-[90px] border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-[#101010] transition-all font-semibold placeholder-[#7B7B7B] text-[#101010]"
+                    className="w-full pl-4 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-[#101010] transition-all font-semibold placeholder-[#7B7B7B] text-[#101010]"
                   />
                 </div>
                 <button

@@ -45,7 +45,7 @@ export default function BatchAnalysisPage() {
           {/* Score Distribution Card */}
           <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2.5 bg-b-surface2 rounded-xl border border-s-stroke2 text-t-secondary">
+              <div className="p-2.5 bg-b-surface2 rounded-lg border border-s-stroke2 text-t-secondary">
                 <RiPieChart2Line size={20} />
               </div>
               <h2 className="text-sub-title-1 font-bold text-t-primary">Score Distribution</h2>
@@ -57,14 +57,14 @@ export default function BatchAnalysisPage() {
                 { label: "Highest Score", value: `${mockBatchAnalysis.classSummary.topScore}%`,  textColor: "text-[#00A656]" },
                 { label: "Lowest Score",  value: `${mockBatchAnalysis.classSummary.bottomScore}%`, textColor: "text-[#FF6A55]" },
               ].map(s => (
-                <div key={s.label} className="flex-1 p-4 bg-b-surface2 border border-s-stroke2 rounded-2xl text-center">
+                <div key={s.label} className="flex-1 p-4 bg-b-surface2 border border-s-stroke2 rounded-lg text-center">
                   <div className={`text-h5 font-bold mb-1 ${s.textColor}`}>{s.value}</div>
                   <div className="text-caption text-t-secondary">{s.label}</div>
                 </div>
               ))}
             </div>
             
-            <div className="flex items-center gap-4 p-4 bg-[#EF9D0E]/5 border border-[#EF9D0E]/20 rounded-2xl mt-auto">
+            <div className="flex items-center gap-4 p-4 bg-[#EF9D0E]/5 border border-[#EF9D0E]/20 rounded-lg mt-auto">
               <RiAlertLine size={22} className="text-[#EF9D0E] shrink-0" />
               <div>
                 <div className="text-body-2 font-bold text-t-primary">{mockBatchAnalysis.classSummary.belowAverageCount} Students Below Average</div>
@@ -76,7 +76,7 @@ export default function BatchAnalysisPage() {
           {/* AI Teaching Recommendations */}
           <div className="group relative card flex flex-col p-6 border border-s-stroke2 bg-b-surface1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2.5 bg-b-surface2 rounded-xl border border-s-stroke2 text-t-secondary">
+              <div className="p-2.5 bg-b-surface2 rounded-lg border border-s-stroke2 text-t-secondary">
                 <RiFocus2Line size={20} />
               </div>
               <h2 className="text-sub-title-1 font-bold text-t-primary">AI Teaching Recommendations</h2>
@@ -84,7 +84,7 @@ export default function BatchAnalysisPage() {
             
             <div className="flex flex-col gap-4">
               {mockBatchAnalysis.teachingRecs.map((rec, i) => (
-                <div key={i} className="flex gap-4 p-4 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+                <div key={i} className="flex gap-4 p-4 bg-b-surface2 border border-s-stroke2 rounded-lg">
                   <div className={`size-8 rounded-full flex items-center justify-center shrink-0 ${
                     rec.priority === "high"
                       ? "bg-[#FF6A55]/10 text-[#FF6A55]"

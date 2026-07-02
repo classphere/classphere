@@ -123,16 +123,16 @@ export default function TeacherDPPsPage() {
       
       <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
         {/* KPI Row (p-2 grey nested background container, matching top cards) */}
-        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-8">
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg mb-8">
           {[
             { label: "Total DPPs",  value: total,         icon: <RiFileListLine size={20} />, statusClass: "text-[#101010] dark:text-t-primary", bgClass: "bg-b-surface2 border border-s-stroke2 text-t-primary" },
             { label: "Active",      value: active,        icon: <RiFileList3Line size={20} />,     statusClass: "text-[#EF9D0E]", bgClass: "bg-[#EF9D0E]/10 border border-[#EF9D0E]/20 text-[#EF9D0E]" },
             { label: "Completed",   value: completed,     icon: <RiCheckboxCircleFill size={20} />,    statusClass: "text-[#00A656]", bgClass: "bg-[#00A656]/10 border border-[#00A656]/20 text-[#00A656]" },
             { label: "Avg Completion", value: `${avgCompletion}%`, icon: <RiTeamLine size={20} />, statusClass: "text-[#2A85FF]", bgClass: "bg-[#2A85FF]/10 border border-[#2A85FF]/20 text-[#2A85FF]" },
           ].map(s => (
-            <div key={s.label} className="group relative flex items-center gap-4 p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all overflow-hidden w-full">
+            <div key={s.label} className="group relative flex items-center gap-4 p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all overflow-hidden w-full">
               <div className="box-hover" />
-              <div className={`relative z-10 p-2.5 rounded-xl flex items-center justify-center shrink-0 ${s.bgClass}`}>
+              <div className={`relative z-10 p-2.5 rounded-lg flex items-center justify-center shrink-0 ${s.bgClass}`}>
                 {s.icon}
               </div>
               <div className="relative z-10">
@@ -146,12 +146,12 @@ export default function TeacherDPPsPage() {
         {/* Toolbar */}
         <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           {/* Filter tabs */}
-          <div className="flex max-w-full gap-1 overflow-x-auto rounded-3xl border border-s-stroke2 bg-b-surface2 p-1">
+          <div className="flex max-w-full gap-1 overflow-x-auto rounded-lg border border-s-stroke2 bg-b-surface2 p-1">
             {(["all", "pending", "completed", "upcoming"] as FilterStatus[]).map(f => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className={`shrink-0 rounded-2xl border-none px-4 py-1.5 text-caption font-semibold capitalize transition-all cursor-pointer ${
+                className={`shrink-0 rounded-lg border-none px-4 py-1.5 text-caption font-semibold capitalize transition-all cursor-pointer ${
                   filter === f
                     ? "bg-b-surface1 text-t-primary shadow-widget"
                     : "bg-transparent text-t-secondary hover:text-t-primary"
@@ -165,7 +165,7 @@ export default function TeacherDPPsPage() {
           {/* Search & Create Section */}
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
             {/* Search Input (Figma Spec: rounded 90px pill) */}
-            <div className="relative w-full sm:w-[315px] h-12 flex items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/30 rounded-[90px] px-4 shadow-[0px_2px_4px_rgba(8,8,8,0.02)]">
+            <div className="relative w-full sm:w-[315px] h-12 flex items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/30 rounded-lg px-4 shadow-[0px_2px_4px_rgba(8,8,8,0.02)]">
               <input
                 type="text"
                 placeholder="Search DPPs..."
@@ -177,7 +177,7 @@ export default function TeacherDPPsPage() {
 
             {/* Create DPP Button (Figma Spec: gradient background, rounded 32px pill, inset shadow) */}
             <button 
-              className="flex flex-row justify-center items-center h-12 px-6 bg-gradient-to-b from-[#2C2C2C] to-[#282828] hover:from-[#3c3c3c] hover:to-[#383838] text-[#FDFDFD] dark:from-t-primary dark:to-t-primary/90 dark:text-b-surface1 text-[14px] font-sans font-semibold rounded-[32px] transition-all active:scale-95 shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] cursor-pointer"
+              className="flex flex-row justify-center items-center h-12 px-6 bg-gradient-to-b from-[#2C2C2C] to-[#282828] hover:from-[#3c3c3c] hover:to-[#383838] text-[#FDFDFD] dark:from-t-primary dark:to-t-primary/90 dark:text-b-surface1 text-[14px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] cursor-pointer"
               onClick={() => setShowModal(true)}
             >
               <RiAddLine size={18} className="mr-1" /> Create DPP
@@ -186,9 +186,9 @@ export default function TeacherDPPsPage() {
         </div>
 
         {/* DPP List (p-2 grey nested background container, matching dashboard style) */}
-        <div className="relative z-10 flex flex-col p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+        <div className="relative z-10 flex flex-col p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
           {filtered.length === 0 && (
-            <div className="card text-center py-20 text-[#7B7B7B] border border-[#E2E2E2] bg-[#FDFDFD] dark:bg-b-surface2 rounded-[24px]">
+            <div className="card text-center py-20 text-[#7B7B7B] border border-[#E2E2E2] bg-[#FDFDFD] dark:bg-b-surface2 rounded-lg">
               <RiFileListLine size={48} className="mx-auto mb-4 text-[#7B7B7B]/50" />
               <p className="font-semibold text-body-2">No DPPs in this category yet.</p>
             </div>
@@ -200,12 +200,12 @@ export default function TeacherDPPsPage() {
             return (
               <div 
                 key={dpp.id} 
-                className="group relative card flex flex-col md:flex-row min-w-0 md:items-center justify-between gap-5 overflow-hidden bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 p-5 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
+                className="group relative card flex flex-col md:flex-row min-w-0 md:items-center justify-between gap-5 overflow-hidden bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 p-5 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
               >
                 <div className="box-hover" />
                 
                 <div className="flex items-center gap-4 flex-1 min-w-0">
-                  <div className={`relative z-10 size-11 rounded-xl flex items-center justify-center shrink-0 ${meta.iconContainerClass}`}>
+                  <div className={`relative z-10 size-11 rounded-lg flex items-center justify-center shrink-0 ${meta.iconContainerClass}`}>
                     {meta.icon}
                   </div>
 
@@ -345,7 +345,7 @@ export default function TeacherDPPsPage() {
                 </div>
               </div>
 
-              <div className="text-caption text-t-secondary p-3.5 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+              <div className="text-caption text-t-secondary p-3.5 bg-b-surface2 border border-s-stroke2 rounded-lg">
                 Marking scheme: <strong className="text-t-primary">+4 correct · −1 wrong · 0 unattempted</strong>
               </div>
 

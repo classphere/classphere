@@ -77,10 +77,10 @@ export default function TeacherDashboardPage() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
         
         {/* Stats Section Wrapper (Row of 3 active highlighted boxes) */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-6">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg mb-6">
           
           {/* Metric 1: Total Students */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiTeamLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -100,7 +100,7 @@ export default function TeacherDashboardPage() {
           </div>
 
           {/* Metric 2: Avg Batch Score */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiFileChartLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -123,7 +123,7 @@ export default function TeacherDashboardPage() {
           </div>
 
           {/* Metric 3: Upcoming Tests */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiCalendarEventLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -148,7 +148,7 @@ export default function TeacherDashboardPage() {
         <div className="mb-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px]">
 
           {/* Batches Card */}
-          <div className="group relative flex min-w-0 flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none h-full">
+          <div className="group relative flex min-w-0 flex-col overflow-hidden rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none h-full">
             <div className="box-hover" />
 
             {/* Header */}
@@ -156,14 +156,14 @@ export default function TeacherDashboardPage() {
               <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-[#101010] dark:text-t-primary">Your Active Batches</h2>
               <Link
                 href="/teacher/analytics"
-                className="h-9 px-4 rounded-xl text-xs font-semibold border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 text-[#727272] hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
+                className="h-9 px-4 rounded-lg text-xs font-semibold border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2/50 text-[#727272] hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
               >
                 View All
               </Link>
             </div>
 
             {/* Nested grey DPP-style grid of cards */}
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 p-2 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 p-2 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
               {mockBatches.map((batch, i) => {
                 const iconMeta = [
                   { iconContainerClass: "bg-[#2A85FF]/10 border border-[#2A85FF]/20 text-[#2A85FF]" },
@@ -174,7 +174,7 @@ export default function TeacherDashboardPage() {
                 return (
                   <div
                     key={batch.id}
-                    className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
+                    className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
                   >
                     <div className="min-w-0 flex-1">
                       {/* Header Status Badge Row */}
@@ -221,7 +221,7 @@ export default function TeacherDashboardPage() {
           </div>
 
           {/* AI Attention Flags Card */}
-          <div className="flex w-full xl:w-[368px] xl:h-[624px] shrink-0 flex-col justify-between overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8, 8, 8, 0.05)] border border-s-stroke2/40 p-3 pb-6 select-none box-sizing:border-box">
+          <div className="flex w-full xl:w-[368px] xl:h-[624px] shrink-0 flex-col justify-between overflow-hidden rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8, 8, 8, 0.05)] border border-s-stroke2/40 p-3 pb-6 select-none box-sizing:border-box">
             
             {/* Container (Header + Product List) */}
             <div className="flex flex-col items-start p-0 gap-3 w-full">
@@ -241,7 +241,7 @@ export default function TeacherDashboardPage() {
                 {flags.map((flag, idx) => (
                   <div 
                     key={idx} 
-                    className={`flex flex-row items-center p-3 gap-8 w-full h-[88px] rounded-[20px] transition-all ${
+                    className={`flex flex-row items-center p-3 gap-8 w-full h-[88px] rounded-lg transition-all ${
                       flag.highlighted 
                         ? "bg-[#F9F9F9] dark:bg-b-surface1 shadow-[inset_0_0_0_3px_#FFFFFF] dark:shadow-[inset_0_0_0_3px_rgba(255,255,255,0.05)] border border-s-stroke2/20" 
                         : "bg-transparent border border-transparent"
@@ -253,7 +253,7 @@ export default function TeacherDashboardPage() {
                       <img 
                         src={flag.avatar} 
                         alt={flag.name}
-                        className="w-16 h-16 rounded-[12px] shrink-0 object-cover border border-s-stroke2/20"
+                        className="w-16 h-16 rounded-lg shrink-0 object-cover border border-s-stroke2/20"
                       />
 
                       {/* Title & Batch */}
@@ -275,7 +275,7 @@ export default function TeacherDashboardPage() {
                       </span>
                       
                       {/* Status badge */}
-                      <div className={`box-sizing-border-box flex flex-row justify-center items-center px-2 py-0.5 gap-2 h-6 rounded-[8px] ${
+                      <div className={`box-sizing-border-box flex flex-row justify-center items-center px-2 py-0.5 gap-2 h-6 rounded-lg ${
                         flag.statusType === "green"
                           ? "bg-[#00A656]/5 border border-[#00A656]/15 text-[#00A656]"
                           : flag.statusType === "yellow"
@@ -296,7 +296,7 @@ export default function TeacherDashboardPage() {
 
             {/* Footer / All Products Button */}
             <div className="flex flex-col items-start p-0 px-3 gap-2 w-full mt-6">
-              <button className="flex flex-row justify-center items-center p-3.5 px-7 gap-2 w-full h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[32px] bg-transparent text-[#727272] dark:text-t-secondary font-sans font-semibold text-[14px] leading-none tracking-[0.0125em] transition-all hover:border-[#727272] hover:text-[#101010] dark:hover:text-t-primary active:scale-98 cursor-pointer">
+              <button className="flex flex-row justify-center items-center p-3.5 px-7 gap-2 w-full h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary font-sans font-semibold text-[14px] leading-none tracking-[0.0125em] transition-all hover:border-[#727272] hover:text-[#101010] dark:hover:text-t-primary active:scale-98 cursor-pointer">
                 View All Flags
               </button>
             </div>
@@ -306,10 +306,10 @@ export default function TeacherDashboardPage() {
         </div>
 
         {/* DPP Activity — full width row below the main grid */}
-        <div className="group relative card flex flex-col overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
+        <div className="group relative card flex flex-col overflow-hidden rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
           <div className="flex justify-between items-center mb-6 z-10">
             <div className="flex items-center gap-3.5">
-              <div className="flex items-center justify-center size-10 rounded-xl bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/30 text-[#727272] dark:text-t-secondary shadow-xs">
+              <div className="flex items-center justify-center size-10 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/30 text-[#727272] dark:text-t-secondary shadow-xs">
                 <RiFileListLine size={20} />
               </div>
               <div>
@@ -319,14 +319,14 @@ export default function TeacherDashboardPage() {
             </div>
             <Link 
               href="/teacher/dpps" 
-              className="h-9 px-4 rounded-xl text-xs font-semibold bg-[#101010] dark:bg-t-primary text-[#FDFDFD] dark:text-black hover:bg-[#202020] dark:hover:bg-t-secondary transition-all active:scale-95 shadow-xs shrink-0 flex items-center gap-1.5 cursor-pointer"
+              className="h-9 px-4 rounded-lg text-xs font-semibold bg-[#101010] dark:bg-t-primary text-[#FDFDFD] dark:text-black hover:bg-[#202020] dark:hover:bg-t-secondary transition-all active:scale-95 shadow-xs shrink-0 flex items-center gap-1.5 cursor-pointer"
             >
               <RiFileListLine size={16} /> Manage DPPs
             </Link>
           </div>
 
           {/* DPPs Grid Wrapper (p-2 grey nested background container, matching top cards) */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
             {mockDPPs.map(dpp => {
               const completion = Math.round((dpp.completedCount / dpp.totalStudents) * 100);
               const isComplete = dpp.status === "completed";
@@ -335,7 +335,7 @@ export default function TeacherDashboardPage() {
               return (
                 <div
                   key={dpp.id}
-                  className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
+                  className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
                 >
                   <div className="min-w-0 flex-1">
                     {/* Header Status Badge Row */}
