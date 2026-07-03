@@ -81,13 +81,13 @@ export default function MistakeDiary() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
         
         {/* Filters/Tabs Row */}
-        <div className="flex flex-col md:flex-row flex-wrap items-stretch md:items-center justify-between gap-6 p-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
+        <div className="flex flex-col md:flex-row flex-wrap items-stretch md:items-center justify-between gap-6 p-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
           
           {/* Custom Tab Segment Controller */}
-          <div className="flex gap-1 rounded-[90px] border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 p-1 select-none">
+          <div className="flex gap-1 rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 p-1 select-none">
             <button 
               onClick={() => setActiveTab("unresolved")}
-              className={`px-6 py-2.5 text-xs font-sans font-semibold rounded-[90px] transition-all cursor-pointer ${
+              className={`px-6 py-2.5 text-xs font-sans font-semibold rounded-lg transition-all cursor-pointer ${
                 activeTab === "unresolved"
                   ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-widget"
                   : "bg-transparent text-[#7B7B7B] hover:text-[#101010]"
@@ -97,7 +97,7 @@ export default function MistakeDiary() {
             </button>
             <button 
               onClick={() => setActiveTab("resolved")}
-              className={`px-6 py-2.5 text-xs font-sans font-semibold rounded-[90px] transition-all cursor-pointer ${
+              className={`px-6 py-2.5 text-xs font-sans font-semibold rounded-lg transition-all cursor-pointer ${
                 activeTab === "resolved"
                   ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-widget"
                   : "bg-transparent text-[#7B7B7B] hover:text-[#101010]"
@@ -111,7 +111,7 @@ export default function MistakeDiary() {
           <div className="relative min-w-[200px]">
             <button 
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex h-11 w-full items-center justify-between rounded-[90px] border border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 px-5 text-sm font-sans font-semibold text-[#101010] dark:text-t-primary shadow-widget cursor-pointer active:scale-98 transition-all"
+              className="flex h-11 w-full items-center justify-between rounded-lg border border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 px-5 text-sm font-sans font-semibold text-[#101010] dark:text-t-primary shadow-widget cursor-pointer active:scale-98 transition-all"
             >
               <span>{filterSubject === "All" ? "All Subjects" : filterSubject}</span>
               <RiArrowDownSLine size={16} className={`text-t-secondary transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} />
@@ -119,7 +119,7 @@ export default function MistakeDiary() {
             {isDropdownOpen && (
               <>
                 <div className="fixed inset-0 z-40" onClick={() => setIsDropdownOpen(false)} />
-                <ul className="absolute right-0 top-13 z-50 rounded-2xl border border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
+                <ul className="absolute right-0 top-13 z-50 rounded-lg border border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
                   {SUBJECT_OPTIONS.map((sub) => (
                     <li key={sub}>
                       <button
@@ -127,7 +127,7 @@ export default function MistakeDiary() {
                           setFilterSubject(sub);
                           setIsDropdownOpen(false);
                         }}
-                        className={`w-full rounded-xl px-4 py-2.5 text-left text-sm font-sans font-semibold transition-colors cursor-pointer ${
+                        className={`w-full rounded-lg px-4 py-2.5 text-left text-sm font-sans font-semibold transition-colors cursor-pointer ${
                           filterSubject === sub
                             ? "bg-[#F9F9F9] dark:bg-b-surface1 text-[#101010] dark:text-t-primary"
                             : "bg-transparent text-[#7B7B7B] hover:bg-[#F9F9F9] hover:text-[#101010] dark:hover:bg-b-surface3"
@@ -145,7 +145,7 @@ export default function MistakeDiary() {
 
         {/* List of Mistakes */}
         {filteredMistakes.length === 0 ? (
-          <div className="group relative card text-center py-20 text-t-secondary rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
+          <div className="group relative card text-center py-20 text-t-secondary rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
             <div className="box-hover" />
             <RiCheckLine size={48} className="mx-auto mb-4 text-[#7B7B7B] relative z-10" />
             <h3 className="font-semibold text-body-2 text-t-primary mb-1 relative z-10">No mistakes found here!</h3>
@@ -154,7 +154,7 @@ export default function MistakeDiary() {
         ) : (
           <div className="flex flex-col gap-6">
             {filteredMistakes.map(m => (
-              <div key={m.id} className="group relative flex flex-col p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.06)] transition-all duration-200">
+              <div key={m.id} className="group relative flex flex-col p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.06)] transition-all duration-200">
                 <div className="box-hover" />
                 
                 {/* Card Header */}
@@ -180,18 +180,18 @@ export default function MistakeDiary() {
 
                 {/* Answers Grid */}
                 <div className="relative z-10 mb-6 grid gap-4 md:grid-cols-2">
-                  <div className="rounded-[24px] border border-[#FF6A55]/15 bg-[rgba(255,106,85,0.03)] p-5">
+                  <div className="rounded-lg border border-[#FF6A55]/15 bg-[rgba(255,106,85,0.03)] p-5">
                     <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#FF6A55] mb-1.5">Your Answer</div>
                     <div className="font-sans font-bold text-[18px] text-[#FF6A55]">{m.studentAnswer}</div>
                   </div>
-                  <div className="rounded-[24px] border border-[#00A656]/15 bg-[rgba(0,166,86,0.03)] p-5">
+                  <div className="rounded-lg border border-[#00A656]/15 bg-[rgba(0,166,86,0.03)] p-5">
                     <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#00A656] mb-1.5">Correct Answer</div>
                     <div className="font-sans font-bold text-[18px] text-[#00A656]">{m.correctAnswer}</div>
                   </div>
                 </div>
 
                 {/* Diagnostic & Actionable Tip Box */}
-                <div className="relative z-10 mb-6 rounded-[24px] bg-[#F9F9F9] dark:bg-b-surface1/60 p-5 border border-s-stroke2/30 flex flex-col gap-4">
+                <div className="relative z-10 mb-6 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1/60 p-5 border border-s-stroke2/30 flex flex-col gap-4">
                   <div className="flex gap-3">
                     <RiAlertFill size={20} className="shrink-0 text-[#7B7B7B]" />
                     <div>
@@ -212,7 +212,7 @@ export default function MistakeDiary() {
                 <div className="relative z-10 flex justify-end">
                   <button 
                     onClick={() => toggleResolved(m.id)}
-                    className={`flex flex-row justify-center items-center h-8 px-4 text-[12px] font-sans font-semibold rounded-xl transition-all active:scale-95 cursor-pointer ${
+                    className={`flex flex-row justify-center items-center h-8 px-4 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 cursor-pointer ${
                       m.resolved 
                         ? "border border-[#E2E2E2] dark:border-s-stroke2 bg-transparent text-[#727272] hover:text-[#101010] dark:hover:text-t-primary" 
                         : "bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 shadow-widget"

@@ -22,10 +22,10 @@ export default function AssignmentsPage() {
       
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
         {/* Stats Row Wrapper */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-8 select-none">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg mb-8 select-none">
           
           {/* Metric 1: Pending */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiTimeLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -48,7 +48,7 @@ export default function AssignmentsPage() {
           </div>
 
           {/* Metric 2: Overdue */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiAlertLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -71,7 +71,7 @@ export default function AssignmentsPage() {
           </div>
 
           {/* Metric 3: Completed */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiCheckLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -97,7 +97,7 @@ export default function AssignmentsPage() {
 
         {/* Overdue - show first, most urgent */}
         {late.length > 0 && (
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
+          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row justify-between items-center w-full mb-6">
               <div>
@@ -113,7 +113,7 @@ export default function AssignmentsPage() {
               </span>
             </div>
             
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
               {late.map(dpp => (
                 <DPPCard key={dpp.id} dpp={dpp} />
               ))}
@@ -123,7 +123,7 @@ export default function AssignmentsPage() {
 
         {/* Pending */}
         {pending.length > 0 && (
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
+          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row justify-between items-center w-full mb-6">
               <div>
@@ -139,7 +139,7 @@ export default function AssignmentsPage() {
               </span>
             </div>
             
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
               {pending.map(dpp => (
                 <DPPCard key={dpp.id} dpp={dpp} />
               ))}
@@ -149,7 +149,7 @@ export default function AssignmentsPage() {
 
         {/* Completed */}
         {completed.length > 0 && (
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row justify-between items-center w-full mb-6">
               <div>
@@ -165,7 +165,7 @@ export default function AssignmentsPage() {
               </span>
             </div>
             
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
               {completed.map(dpp => (
                 <DPPCard key={dpp.id} dpp={dpp} />
               ))}
@@ -174,7 +174,7 @@ export default function AssignmentsPage() {
         )}
 
         {mockStudentDPPs.length === 0 && (
-          <div className="group relative card text-center py-20 text-t-secondary rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
+          <div className="group relative card text-center py-20 text-t-secondary rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
             <div className="box-hover" />
             <RiFileListLine size={48} className="mx-auto mb-4 text-t-tertiary relative z-10" />
             <p className="font-semibold text-body-2 relative z-10">No DPPs assigned yet.</p>
@@ -191,7 +191,7 @@ function DPPCard({ dpp }: { dpp: typeof mockStudentDPPs[0] }) {
 
   return (
     <div 
-      className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
+      className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/30 rounded-lg shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
     >
       <div className="min-w-0 flex-1">
         {/* Header Status Badge Row */}
@@ -234,7 +234,7 @@ function DPPCard({ dpp }: { dpp: typeof mockStudentDPPs[0] }) {
         ) : (
           <Link 
             href={`/assignments/${dpp.id}`} 
-            className="flex flex-row justify-center items-center h-8 px-5 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-full transition-all active:scale-95 shadow-widget"
+            className="flex flex-row justify-center items-center h-8 px-5 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget"
           >
             {isLate ? "Submit Late" : "Start"}
           </Link>

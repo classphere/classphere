@@ -118,15 +118,15 @@ export default function DPPSolvePage() {
           <p className="text-caption text-t-secondary mb-8">{dpp.chapter} · {dpp.subject}</p>
 
           <div className="grid grid-cols-3 gap-4 mb-8">
-            <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+            <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-lg">
               <div className="text-h4 font-bold text-[#00A656] mb-1">{score.correct}</div>
               <div className="text-caption text-t-secondary">Correct</div>
             </div>
-            <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+            <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-lg">
               <div className="text-h4 font-bold text-[#FF6A55] mb-1">{score.total - score.correct}</div>
               <div className="text-caption text-t-secondary">Wrong</div>
             </div>
-            <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+            <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-lg">
               <div className="text-h4 font-bold text-t-primary mb-1">{Math.max(0, score.marks)}</div>
               <div className="text-caption text-t-secondary">Marks</div>
             </div>
@@ -143,7 +143,7 @@ export default function DPPSolvePage() {
                 return (
                   <div
                     key={q.id}
-                    className={`p-4 rounded-2xl border flex gap-3 text-left ${
+                    className={`p-4 rounded-lg border flex gap-3 text-left ${
                       isRight
                         ? "bg-[#00A656]/5 border-[#00A656]/20 text-t-primary"
                         : "bg-[#FF6A55]/5 border-[#FF6A55]/20 text-t-primary"
@@ -211,7 +211,7 @@ export default function DPPSolvePage() {
         </div>
 
         {/* Timer */}
-        <div className={`flex items-center gap-2 px-5 py-2 rounded-full border transition-all font-bold text-caption font-mono ${
+        <div className={`flex items-center gap-2 px-5 py-2 rounded-lg border transition-all font-bold text-caption font-mono ${
           timeWarning
             ? "bg-[#FF6A55]/5 border-[#FF6A55]/20 text-[#FF6A55]"
             : "bg-b-surface2 border-s-stroke2 text-t-primary"
@@ -262,7 +262,7 @@ export default function DPPSolvePage() {
                 return (
                   <button
                     key={opt.id}
-                    className={`flex items-center gap-4 p-4 rounded-2xl cursor-pointer text-left text-body-2 transition-all ${
+                    className={`flex items-center gap-4 p-4 rounded-lg cursor-pointer text-left text-body-2 transition-all ${
                       selected
                         ? "border-2 border-[#3765F6] bg-[#3765F6]/5 text-t-primary font-bold shadow-depth"
                         : "border border-s-stroke2 bg-b-surface2 text-t-secondary hover:text-t-primary hover:border-s-highlight"
@@ -329,7 +329,7 @@ export default function DPPSolvePage() {
 
         {/* ── Right Navigator Sidebar ── */}
         <div className="w-[280px] border-l border-s-stroke2 p-6 overflow-y-auto bg-b-surface1 flex flex-col">
-          <div className="grid grid-cols-3 gap-2 p-4 bg-b-surface2 border border-s-stroke2 rounded-2xl mb-6">
+          <div className="grid grid-cols-3 gap-2 p-4 bg-b-surface2 border border-s-stroke2 rounded-lg mb-6">
             {[
               { label: "Done", value: answered, color: "text-[#00A656]" },
               { label: "Review", value: marked, color: "text-[#EF9D0E]" },
@@ -362,7 +362,7 @@ export default function DPPSolvePage() {
               return (
                 <button
                   key={sq.id}
-                  className={`aspect-square rounded-xl flex items-center justify-center text-caption font-bold cursor-pointer transition-all ${btnClass}`}
+                  className={`aspect-square rounded-lg flex items-center justify-center text-caption font-bold cursor-pointer transition-all ${btnClass}`}
                   onClick={() => setCurrent(idx)}
                 >
                   {idx + 1}
@@ -371,7 +371,7 @@ export default function DPPSolvePage() {
             })}
           </div>
 
-          <div className="mt-8 p-4 bg-b-surface2 border border-s-stroke2 rounded-2xl">
+          <div className="mt-8 p-4 bg-b-surface2 border border-s-stroke2 rounded-lg">
             <div className="text-caption font-bold text-t-primary mb-1">📌 Due Date</div>
             <div className="text-caption text-t-secondary">{dpp.dueDate}</div>
             

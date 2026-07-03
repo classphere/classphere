@@ -59,7 +59,7 @@ function HelpContent() {
           <input 
             type="text" 
             placeholder="Search for articles, features, or guides..." 
-            className="w-full h-14 pl-12 pr-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-[24px] text-[15px] text-[#101010] dark:text-t-primary placeholder:text-[#7B7B7B] focus:border-[#101010] dark:focus:border-t-primary outline-none transition-colors shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
+            className="w-full h-14 pl-12 pr-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg text-[15px] text-[#101010] dark:text-t-primary placeholder:text-[#7B7B7B] focus:border-[#101010] dark:focus:border-t-primary outline-none transition-colors shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -68,10 +68,10 @@ function HelpContent() {
         {/* Support Blocks */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          <div className="group relative card flex flex-col p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden cursor-pointer hover:border-[#101010] dark:hover:border-t-primary transition-colors">
+          <div className="group relative card flex flex-col p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden cursor-pointer hover:border-[#101010] dark:hover:border-t-primary transition-colors">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-col items-center text-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-[rgba(10,132,255,0.08)] flex items-center justify-center text-[#0A84FF]">
+              <div className="w-14 h-14 rounded-lg bg-[rgba(10,132,255,0.08)] flex items-center justify-center text-[#0A84FF]">
                 <RiBookOpenLine size={28} />
               </div>
               <div>
@@ -84,10 +84,10 @@ function HelpContent() {
             </div>
           </div>
 
-          <div className="group relative card flex flex-col p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden cursor-pointer hover:border-[#101010] dark:hover:border-t-primary transition-colors">
+          <div className="group relative card flex flex-col p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden cursor-pointer hover:border-[#101010] dark:hover:border-t-primary transition-colors">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-col items-center text-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-[rgba(0,166,86,0.08)] flex items-center justify-center text-[#00A656]">
+              <div className="w-14 h-14 rounded-lg bg-[rgba(0,166,86,0.08)] flex items-center justify-center text-[#00A656]">
                 {role === "student" ? <RiTeamLine size={28} /> : role === "super_admin" ? <RiServerLine size={28} /> : <RiCustomerService2Fill size={28} />}
               </div>
               <div>
@@ -119,7 +119,7 @@ function HelpContent() {
           <div className="flex flex-col gap-4">
             {filteredFaqs.length > 0 ? (
               filteredFaqs.map((faq, i) => (
-                <div key={i} className="card flex flex-col p-6 rounded-[24px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 shadow-sm transition-all hover:shadow-md">
+                <div key={i} className="card flex flex-col p-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 shadow-sm transition-all hover:shadow-md">
                   <div className="flex gap-4 items-start">
                     <div className="mt-0.5 text-[#101010] dark:text-t-primary">
                       <RiQuestionLine size={20} />
@@ -132,7 +132,7 @@ function HelpContent() {
                 </div>
               ))
             ) : (
-              <div className="text-center py-12 px-6 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-[24px]">
+              <div className="text-center py-12 px-6 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg">
                 <p className="text-[15px] font-medium text-[#7B7B7B]">No FAQs found matching "{searchQuery}"</p>
               </div>
             )}
