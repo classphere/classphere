@@ -55,14 +55,14 @@ export default function InstituteDashboardPage() {
         breadcrumbs="Dashboard"
       >
         {/* Create New Batch */}
-        <button onClick={() => setIsBatchModalOpen(true)} className="flex flex-row justify-center items-center px-6 h-12 border border-[#E2E2E2] dark:border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary text-sm font-sans font-semibold rounded-full shadow-xs active:scale-95 transition-all cursor-pointer">
+        <button onClick={() => setIsBatchModalOpen(true)} className="flex flex-row justify-center items-center px-6 h-12 border border-[#E2E2E2] dark:border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary text-sm font-sans font-semibold rounded-lg shadow-xs active:scale-95 transition-all cursor-pointer">
           <RiAddLine size={18} className="mr-1.5" /> Create New Batch
         </button>
 
         {/* Schedule Batch Test (Gradient) */}
         <Link
           href="/institute/tests/create"
-          className="flex flex-row justify-center items-center px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-[#FDFDFD] dark:text-b-surface1 text-sm font-sans font-semibold rounded-full shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer no-underline"
+          className="flex flex-row justify-center items-center px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-[#FDFDFD] dark:text-b-surface1 text-sm font-sans font-semibold rounded-lg shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer no-underline"
         >
           <RiAddLine size={18} className="mr-1.5" /> Schedule Batch Test
         </Link>
@@ -71,7 +71,7 @@ export default function InstituteDashboardPage() {
       <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
 
         {/* ── Figma-Inspired Dashboard Overview Wrapper ── */}
-        <div className="group relative flex flex-col overflow-hidden p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+        <div className="group relative flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
           <div className="box-hover" />
           
           {/* Header Row */}
@@ -84,7 +84,7 @@ export default function InstituteDashboardPage() {
             <div className="relative">
               <button 
                 onClick={() => setIsOverviewDropdownOpen(!isOverviewDropdownOpen)}
-                className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98"
+                className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98"
               >
                 <span>This Week</span>
                 <RiArrowDownSLine size={20} className="text-[#727272] dark:text-t-secondary" />
@@ -93,11 +93,11 @@ export default function InstituteDashboardPage() {
               {isOverviewDropdownOpen && (
                 <>
                   <div className="fixed inset-0 z-40" onClick={() => setIsOverviewDropdownOpen(false)} />
-                  <ul className="absolute right-0 top-13 z-50 w-full rounded-2xl border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
+                  <ul className="absolute right-0 top-13 z-50 w-full rounded-lg border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
                     <li>
                       <button
                         onClick={() => setIsOverviewDropdownOpen(false)}
-                        className="w-full rounded-xl px-3.5 py-2 text-left text-sm font-semibold bg-b-surface1 text-t-primary"
+                        className="w-full rounded-lg px-3.5 py-2 text-left text-sm font-semibold bg-b-surface1 text-t-primary"
                       >
                         This Week
                       </button>
@@ -105,7 +105,7 @@ export default function InstituteDashboardPage() {
                     <li>
                       <button
                         onClick={() => setIsOverviewDropdownOpen(false)}
-                        className="w-full rounded-xl px-3.5 py-2 text-left text-sm font-semibold bg-transparent text-t-secondary hover:bg-b-surface3 hover:text-t-primary"
+                        className="w-full rounded-lg px-3.5 py-2 text-left text-sm font-semibold bg-transparent text-t-secondary hover:bg-b-surface3 hover:text-t-primary"
                       >
                         Last Week
                       </button>
@@ -117,10 +117,10 @@ export default function InstituteDashboardPage() {
           </div>
 
           {/* Stats Section Wrapper (Row of 3 active highlighted boxes) */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px]">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
             
             {/* Metric 1: Total Students */}
-            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex flex-row items-center gap-3 w-full mb-1">
                 <span className="text-[#101010] dark:text-t-primary"><RiGroupLine size={20} /></span>
                 <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -143,7 +143,7 @@ export default function InstituteDashboardPage() {
             </div>
 
             {/* Metric 2: Active Batches */}
-            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex flex-row items-center gap-3 w-full mb-1">
                 <span className="text-[#101010] dark:text-t-primary"><RiTeamLine size={20} /></span>
                 <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -166,7 +166,7 @@ export default function InstituteDashboardPage() {
             </div>
 
             {/* Metric 3: Subscription */}
-            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex flex-row items-center gap-3 w-full mb-1">
                 <span className="text-[#101010] dark:text-t-primary"><RiBankCardLine size={20} /></span>
                 <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -196,7 +196,7 @@ export default function InstituteDashboardPage() {
         <div className="grid gap-6 lg:grid-cols-2 items-start w-full">
 
           {/* Recent Batches Section */}
-          <div className="flex flex-col p-3 pb-6 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-h-[580px] min-w-0 overflow-hidden select-none">
+          <div className="flex flex-col p-3 pb-6 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-h-[580px] min-w-0 overflow-hidden select-none">
             
             {/* Header */}
             <div className="flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
@@ -205,7 +205,7 @@ export default function InstituteDashboardPage() {
               </h4>
               <Link 
                 href="/institute/batches" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
               >
                 <span>View All</span>
                 <RiArrowRightLine size={16} />
@@ -220,7 +220,7 @@ export default function InstituteDashboardPage() {
                 return (
                   <div 
                     key={batch.id}
-                    className={`flex flex-row items-center justify-between p-3 gap-8 rounded-[20px] transition-all w-full h-[88px] min-w-0 overflow-hidden ${
+                    className={`flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden ${
                       isHoverItem 
                         ? "bg-[#F9F9F9] dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20" 
                         : "bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30"
@@ -228,7 +228,7 @@ export default function InstituteDashboardPage() {
                   >
                     {/* Left: Avatar/Icon + Title */}
                     <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                      <div className="flex w-16 h-16 items-center justify-center rounded-xl bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
+                      <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
                         <RiTeamLine size={24} className="text-[#727272]" />
                       </div>
                       <div className="min-w-0 flex-1 flex flex-col">
@@ -259,7 +259,7 @@ export default function InstituteDashboardPage() {
           </div>
 
           {/* Top Students Section */}
-          <div className="flex flex-col p-3 pb-6 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-h-[580px] min-w-0 overflow-hidden select-none">
+          <div className="flex flex-col p-3 pb-6 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-h-[580px] min-w-0 overflow-hidden select-none">
             
             {/* Header */}
             <div className="flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
@@ -268,7 +268,7 @@ export default function InstituteDashboardPage() {
               </h4>
               <Link 
                 href="/institute/students" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
               >
                 <span>View Directory</span>
                 <RiArrowRightLine size={16} />
@@ -288,7 +288,7 @@ export default function InstituteDashboardPage() {
                 return (
                   <div 
                     key={student.id}
-                    className={`flex flex-row items-center justify-between p-3 gap-8 rounded-[20px] transition-all w-full h-[88px] min-w-0 overflow-hidden ${
+                    className={`flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden ${
                       isHoverItem 
                         ? "bg-[#F9F9F9] dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20" 
                         : "bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30"
@@ -296,7 +296,7 @@ export default function InstituteDashboardPage() {
                   >
                     {/* Left: Rank box + Title */}
                     <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                      <div className="flex w-16 h-16 items-center justify-center rounded-xl bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
+                      <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
                         #{index + 1}
                       </div>
                       <div className="min-w-0 flex-1 flex flex-col">
@@ -333,7 +333,7 @@ export default function InstituteDashboardPage() {
       {/* Create Batch Modal */}
       {isBatchModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 animate-in fade-in duration-200">
-          <div className="w-full max-w-md rounded-2xl bg-b-surface1 p-6 shadow-xl animate-in zoom-in-95 duration-200">
+          <div className="w-full max-w-md rounded-lg bg-b-surface1 p-6 shadow-xl animate-in zoom-in-95 duration-200">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h2 className="text-xl font-bold text-t-primary">Create New Batch</h2>

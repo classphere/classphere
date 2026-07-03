@@ -59,7 +59,7 @@ const masteryData = [
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-b-surface2 border border-s-subtle rounded-2xl px-4 py-3.5 shadow-dropdown text-left z-50">
+      <div className="bg-b-surface2 border border-s-subtle rounded-lg px-4 py-3.5 shadow-dropdown text-left z-50">
         <p className="text-[10px] font-sans font-bold text-t-tertiary uppercase tracking-wider mb-2.5">{label}</p>
         <div className="flex flex-col gap-2 min-w-[120px]">
           {payload.map((entry: any, index: number) => (
@@ -83,7 +83,7 @@ const CustomRadarTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const entry = payload[0];
     return (
-      <div className="bg-b-surface2 border border-s-subtle rounded-2xl px-4 py-2.5 shadow-dropdown text-left z-50">
+      <div className="bg-b-surface2 border border-s-subtle rounded-lg px-4 py-2.5 shadow-dropdown text-left z-50">
         <p className="text-[10px] font-sans font-bold text-t-tertiary uppercase tracking-wider mb-1.5">{entry.payload.subject}</p>
         <div className="flex items-center gap-4 justify-between min-w-[120px]">
           <div className="flex items-center gap-2">
@@ -120,7 +120,7 @@ export default function ReportsPage() {
         {/* Navigation Items (Right Side) */}
         <div className="flex flex-row items-center gap-3">
           {/* Search Box */}
-          <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-full px-3 py-2 w-[315px] h-12 gap-2 shadow-xs">
+          <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-lg px-3 py-2 w-[315px] h-12 gap-2 shadow-xs">
             <RiSearchLine size={20} className="text-[#727272] dark:text-t-tertiary" />
             <input
               type="text"
@@ -130,18 +130,18 @@ export default function ReportsPage() {
           </div>
 
           {/* Export PDF Button (Gradient) */}
-          <button className="btn btn-primary w-[100px] h-12 rounded-full cursor-pointer">
+          <button className="btn btn-primary w-[100px] h-12 rounded-lg cursor-pointer">
             Export
           </button>
 
           {/* Bell Button */}
-          <button className="btn btn-outline w-12 h-12 !px-0 rounded-full flex items-center justify-center relative shrink-0">
+          <button className="btn btn-outline w-12 h-12 !px-0 rounded-lg flex items-center justify-center relative shrink-0">
             <RiNotification3Line size={20} />
             <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-[#FF6A55]" />
           </button>
 
           {/* Mail Button */}
-          <button className="btn btn-outline w-12 h-12 !px-0 rounded-full flex items-center justify-center shrink-0">
+          <button className="btn btn-outline w-12 h-12 !px-0 rounded-lg flex items-center justify-center shrink-0">
             <RiMailLine size={20} />
           </button>
 
@@ -170,7 +170,7 @@ export default function ReportsPage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab as any)}
-                className={`btn h-10 px-5 rounded-full text-xs font-semibold font-sans transition-all active:scale-95 shadow-xs cursor-pointer ${
+                className={`btn h-10 px-5 rounded-lg text-xs font-semibold font-sans transition-all active:scale-95 shadow-xs cursor-pointer ${
                   activeTab === tab
                     ? "btn-primary"
                     : "btn-outline"
@@ -188,7 +188,7 @@ export default function ReportsPage() {
             <select
               value={timeRange}
               onChange={(e) => setTimeRange(e.target.value)}
-              className="appearance-none pl-4.5 pr-10 h-10 border border-s-stroke2 rounded-full bg-b-surface2 text-xs font-sans font-semibold text-t-secondary hover:border-s-highlight transition-all outline-none cursor-pointer"
+              className="appearance-none pl-4.5 pr-10 h-10 border border-s-stroke2 rounded-lg bg-b-surface2 text-xs font-sans font-semibold text-t-secondary hover:border-s-highlight transition-all outline-none cursor-pointer"
             >
               <option>Last 30 Days</option>
               <option>Last 3 Months</option>
@@ -203,7 +203,7 @@ export default function ReportsPage() {
       {activeTab === "Overview" && (
         <>
           {/* KPI Cards Row */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mt-4">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg mt-4">
             {[
               { label: "Average Test Score", value: "76.4%", desc: "+1.8%", descSuffix: "vs last month", icon: <RiBarChartBoxLine size={20} />, iconColor: "text-[#2A85FF]" },
               { label: "Tests Conducted", value: "142", desc: "12 tests", descSuffix: "scheduled this week", icon: <RiLineChartLine size={20} />, iconColor: "text-[#00A656]" },
@@ -211,7 +211,7 @@ export default function ReportsPage() {
             ].map((card, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
+                className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
               >
                 <div className="flex flex-row items-center gap-3 w-full mb-1">
                   <span className={card.iconColor}>{card.icon}</span>
@@ -240,7 +240,7 @@ export default function ReportsPage() {
           {/* Visual Chart Row */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mt-4 items-stretch">
             {/* Batch Performance Area Chart Card (ColSpan 2) */}
-            <div className="group lg:col-span-2 relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-[32px] shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+            <div className="group lg:col-span-2 relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
               <div className="box-hover" />
               <div className="relative z-10 flex flex-row justify-between items-start mb-6 w-full">
                 <div className="flex flex-col gap-1">
@@ -248,7 +248,7 @@ export default function ReportsPage() {
                   <p className="text-xs text-[#7B7B7B] dark:text-t-tertiary">Subject performance index over consecutive cycles</p>
                 </div>
                 {/* Custom Legend */}
-                <div className="flex flex-row items-center gap-4 bg-[#F9F9F9] dark:bg-b-surface1/40 px-3 py-1.5 rounded-full border border-s-stroke2/10 shrink-0">
+                <div className="flex flex-row items-center gap-4 bg-[#F9F9F9] dark:bg-b-surface1/40 px-3 py-1.5 rounded-lg border border-s-stroke2/10 shrink-0">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-[#2A85FF]" />
                     <span className="text-[11px] font-sans font-semibold text-[#727272] dark:text-t-secondary">Physics</span>
@@ -298,7 +298,7 @@ export default function ReportsPage() {
             </div>
 
             {/* Subject Mastery Radar Chart Card (ColSpan 1) */}
-            <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-[32px] shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+            <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
               <div className="box-hover" />
               <div className="relative z-10 flex flex-col gap-1 mb-6">
                 <h3 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Subject Mastery</h3>
@@ -330,7 +330,7 @@ export default function ReportsPage() {
           </div>
 
           {/* Recent Test Reports List */}
-          <div className="group relative flex flex-col p-6 md:p-8 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col p-6 md:p-8 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
               <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -338,7 +338,7 @@ export default function ReportsPage() {
               </h4>
               <Link 
                 href="/institute/tests" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
               >
                 <span>View All</span>
                 <RiArrowRightLine size={16} />
@@ -354,11 +354,11 @@ export default function ReportsPage() {
               ].map((report) => (
                 <div
                   key={report.id}
-                  className="flex flex-row items-center justify-between p-3 gap-8 rounded-[20px] transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
+                  className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
                 >
                   {/* Left: Avatar/Icon + Title & Batch details */}
                   <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                    <div className="flex w-16 h-16 items-center justify-center rounded-xl bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 dark:border-s-stroke2/20 shrink-0 text-t-secondary dark:text-t-tertiary font-bold text-lg">
+                    <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 dark:border-s-stroke2/20 shrink-0 text-t-secondary dark:text-t-tertiary font-bold text-lg">
                       {report.exam === "JEE" ? <RiRulerLine size={24} /> : <RiTestTubeLine size={24} />}
                     </div>
                     <div className="min-w-0 flex-1 flex flex-col">
@@ -409,7 +409,7 @@ export default function ReportsPage() {
       {activeTab === "Batch Performance" && (
         <>
           {/* Full-width Trend Chart */}
-          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-[32px] shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden w-full mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden w-full mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row justify-between items-start mb-6">
               <div className="flex flex-col gap-1">
@@ -417,7 +417,7 @@ export default function ReportsPage() {
                 <p className="text-xs text-[#7B7B7B] dark:text-t-tertiary">Longitudinal performance trend for the active coaching batches</p>
               </div>
               {/* Custom Legend */}
-              <div className="flex flex-row items-center gap-4 bg-[#F9F9F9] dark:bg-b-surface1/40 px-3 py-1.5 rounded-full border border-s-stroke2/10">
+              <div className="flex flex-row items-center gap-4 bg-[#F9F9F9] dark:bg-b-surface1/40 px-3 py-1.5 rounded-lg border border-s-stroke2/10">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#2A85FF]" />
                   <span className="text-[11px] font-sans font-semibold text-[#727272] dark:text-t-secondary">Physics</span>
@@ -467,7 +467,7 @@ export default function ReportsPage() {
           </div>
 
           {/* Batch Metrics Rows */}
-          <div className="group relative flex flex-col p-3 pb-6 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col p-3 pb-6 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
               <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -475,7 +475,7 @@ export default function ReportsPage() {
               </h4>
               <Link 
                 href="/institute/batches" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
               >
                 <span>View All</span>
                 <RiArrowRightLine size={16} />
@@ -494,10 +494,10 @@ export default function ReportsPage() {
                 return (
                   <div 
                     key={batch.id}
-                    className="flex flex-row items-center justify-between p-3 gap-8 rounded-[20px] transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
+                    className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
                   >
                     <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                      <div className={`flex w-16 h-16 items-center justify-center rounded-xl border shrink-0 text-t-secondary font-bold ${colors.bg}`}>
+                      <div className={`flex w-16 h-16 items-center justify-center rounded-lg border shrink-0 text-t-secondary font-bold ${colors.bg}`}>
                         <RiTeamLine size={24} />
                       </div>
                       <div className="min-w-0 flex-1 flex flex-col">
@@ -538,7 +538,7 @@ export default function ReportsPage() {
       {activeTab === "Student Performance" && (
         <>
           {/* Radar Chart */}
-          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-[32px] shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden w-full mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden w-full mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-col gap-1 mb-6">
               <h3 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Student Weakness & Strength Index</h3>
@@ -569,7 +569,7 @@ export default function ReportsPage() {
           </div>
 
           {/* Student list rows */}
-          <div className="group relative flex flex-col p-3 pb-6 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col p-3 pb-6 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
               <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -577,7 +577,7 @@ export default function ReportsPage() {
               </h4>
               <Link 
                 href="/institute/students" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
               >
                 <span>View Directory</span>
                 <RiArrowRightLine size={16} />
@@ -596,10 +596,10 @@ export default function ReportsPage() {
                 return (
                   <div 
                     key={student.id}
-                    className="flex flex-row items-center justify-between p-3 gap-8 rounded-[20px] transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
+                    className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
                   >
                     <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                      <div className="flex w-16 h-16 items-center justify-center rounded-xl bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
+                      <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
                         {initials}
                       </div>
                       <div className="min-w-0 flex-1 flex flex-col">

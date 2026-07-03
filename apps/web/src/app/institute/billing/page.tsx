@@ -35,7 +35,7 @@ export default function BillingPage() {
           {/* Navigation Items (Right Side) */}
           <div className="flex flex-row items-center gap-3">
             {/* Search Box */}
-            <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-full px-3 py-2 w-[315px] h-12 gap-2 shadow-xs">
+            <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-lg px-3 py-2 w-[315px] h-12 gap-2 shadow-xs">
               <RiSearchLine size={20} className="text-[#727272] dark:text-t-tertiary" />
               <input
                 type="text"
@@ -45,13 +45,13 @@ export default function BillingPage() {
             </div>
 
             {/* Bell Button */}
-            <button className="btn btn-outline w-12 h-12 !px-0 rounded-full flex items-center justify-center relative shrink-0 cursor-pointer">
+            <button className="btn btn-outline w-12 h-12 !px-0 rounded-lg flex items-center justify-center relative shrink-0 cursor-pointer">
               <RiNotification3Line size={20} />
               <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-[#FF6A55]" />
             </button>
 
             {/* Mail Button */}
-            <button className="btn btn-outline w-12 h-12 !px-0 rounded-full flex items-center justify-center shrink-0 cursor-pointer">
+            <button className="btn btn-outline w-12 h-12 !px-0 rounded-lg flex items-center justify-center shrink-0 cursor-pointer">
               <RiMailLine size={20} />
             </button>
 
@@ -65,7 +65,7 @@ export default function BillingPage() {
         </div>
 
         {/* Current Plan Card */}
-        <div className="group relative w-full rounded-[32px] overflow-hidden mt-4 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+        <div className="group relative w-full rounded-lg overflow-hidden mt-4 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
           <div className="box-hover" />
           <div className="relative z-10 flex flex-col md:flex-row justify-between items-center p-8 bg-gradient-to-br from-[#101010] to-[#2C2C2C] dark:from-b-surface2 dark:to-b-surface1 border border-transparent dark:border-s-stroke2/40">
             
@@ -84,7 +84,7 @@ export default function BillingPage() {
               </div>
               <p className="text-xs text-white/60 m-0">Renews on Jul 1, 2026</p>
               <button 
-                className="btn bg-white text-[#101010] hover:bg-[#F9F9F9] h-10 px-5 rounded-full text-sm font-semibold mt-2 border-none cursor-pointer"
+                className="btn bg-white text-[#101010] hover:bg-[#F9F9F9] h-10 px-5 rounded-lg text-sm font-semibold mt-2 border-none cursor-pointer"
                 onClick={() => setShowUpgradeModal(true)}
               >
                 Upgrade Plan
@@ -97,7 +97,7 @@ export default function BillingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-stretch">
           
           {/* Usage This Month */}
-          <div className="group relative flex flex-col justify-between p-6 md:p-8 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col justify-between p-6 md:p-8 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-col gap-1">
               <h3 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Usage This Month</h3>
@@ -128,14 +128,14 @@ export default function BillingPage() {
           </div>
 
           {/* Payment Method */}
-          <div className="group relative flex flex-col justify-between p-6 md:p-8 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col justify-between p-6 md:p-8 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-col gap-1">
               <h3 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Payment Method</h3>
               <p className="text-xs text-[#7B7B7B] dark:text-t-tertiary">Manage your default billing card</p>
             </div>
 
-            <div className="relative z-10 flex flex-row items-center gap-4 p-4 rounded-2xl bg-[#F9F9F9] dark:bg-b-surface1/40 border border-[#E2E2E2] dark:border-s-stroke2/40 mt-2">
+            <div className="relative z-10 flex flex-row items-center gap-4 p-4 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1/40 border border-[#E2E2E2] dark:border-s-stroke2/40 mt-2">
               <div className="w-14 h-10 flex items-center justify-center bg-white dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/40 rounded-lg shrink-0">
                 <span className="text-[10px] font-bold text-[#101010] dark:text-t-primary">VISA</span>
               </div>
@@ -154,7 +154,7 @@ export default function BillingPage() {
         </div>
 
         {/* Invoice History */}
-        <div className="group relative flex flex-col p-6 md:p-8 gap-6 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+        <div className="group relative flex flex-col p-6 md:p-8 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
           <div className="box-hover" />
           <div className="relative z-10 flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
             <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -162,7 +162,7 @@ export default function BillingPage() {
             </h4>
             <Link 
               href="/institute/billing" 
-              className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-[90px] bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+              className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
             >
               <span>View All</span>
               <RiArrowRightLine size={16} />
@@ -173,11 +173,11 @@ export default function BillingPage() {
             {mockInvoices.map((invoice, index) => (
               <div 
                 key={invoice.id}
-                className="flex flex-row items-center justify-between p-3 gap-8 rounded-[20px] transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
+                className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
               >
                 {/* Left: ID & Date */}
                 <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                  <div className="flex w-16 h-16 items-center justify-center rounded-xl bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 dark:border-s-stroke2/20 shrink-0 text-t-secondary dark:text-t-tertiary font-bold text-lg">
+                  <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 dark:border-s-stroke2/20 shrink-0 text-t-secondary dark:text-t-tertiary font-bold text-lg">
                     #{index + 1}
                   </div>
                   <div className="min-w-0 flex-1 flex flex-col">
@@ -211,7 +211,7 @@ export default function BillingPage() {
                   </div>
 
                   <div className="min-w-[50px] flex justify-end">
-                    <button className="btn btn-outline w-10 h-10 !px-0 rounded-full flex items-center justify-center cursor-pointer text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary">
+                    <button className="btn btn-outline w-10 h-10 !px-0 rounded-lg flex items-center justify-center cursor-pointer text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary">
                       <RiDownload2Line size={18} />
                     </button>
                   </div>
@@ -224,14 +224,14 @@ export default function BillingPage() {
         {/* Upgrade Modal */}
         {showUpgradeModal && (
           <div className="fixed inset-0 bg-[#080808]/40 dark:bg-[#000000]/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
-            <div className="group relative w-full max-w-[600px] rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_24px_48px_-12px_rgba(0,0,0,0.18)] border border-s-stroke2/40 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <div className="group relative w-full max-w-[600px] rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_24px_48px_-12px_rgba(0,0,0,0.18)] border border-s-stroke2/40 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
               <div className="box-hover" />
               <div className="relative z-10 flex flex-col p-8">
                 
                 <div className="flex justify-between items-center mb-6">
                   <h2 className="font-sans font-bold text-[24px] text-[#101010] dark:text-t-primary m-0">Upgrade Subscription</h2>
                   <button 
-                    className="btn btn-outline w-10 h-10 !px-0 rounded-full flex items-center justify-center cursor-pointer text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary" 
+                    className="btn btn-outline w-10 h-10 !px-0 rounded-lg flex items-center justify-center cursor-pointer text-[#727272] dark:text-t-secondary hover:text-[#101010] dark:hover:text-t-primary" 
                     onClick={() => setShowUpgradeModal(false)}
                   >
                     <RiCloseLine size={20} />
@@ -243,7 +243,7 @@ export default function BillingPage() {
                 </p>
                 
                 <div className="flex flex-col gap-4">
-                  <div className="flex flex-row justify-between items-center p-6 border-2 border-[#00A656]/20 bg-[#00A656]/5 rounded-2xl">
+                  <div className="flex flex-row justify-between items-center p-6 border-2 border-[#00A656]/20 bg-[#00A656]/5 rounded-lg">
                     <div className="flex flex-col">
                       <h3 className="font-sans font-bold text-[18px] text-[#101010] dark:text-t-primary">Enterprise Plan</h3>
                       <ul className="flex flex-col gap-1.5 mt-3 text-xs text-[#7B7B7B] dark:text-t-tertiary">
@@ -255,7 +255,7 @@ export default function BillingPage() {
                     <div className="flex flex-col items-end gap-3">
                       <div className="font-sans font-bold text-[24px] text-[#101010] dark:text-t-primary">Custom</div>
                       <button 
-                        className="btn btn-primary h-10 px-5 rounded-full text-xs font-semibold cursor-pointer" 
+                        className="btn btn-primary h-10 px-5 rounded-lg text-xs font-semibold cursor-pointer" 
                         onClick={() => setShowUpgradeModal(false)}
                       >
                         Contact Sales

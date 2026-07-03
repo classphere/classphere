@@ -38,7 +38,7 @@ export default function BatchesPage() {
         {/* Navigation Items (Right Side) */}
         <div className="flex flex-row items-center gap-3">
           {/* Search Box */}
-          <div className="flex flex-row items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/40 rounded-full px-3 py-2 w-72 h-12 gap-2 shadow-xs">
+          <div className="flex flex-row items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/40 rounded-lg px-3 py-2 w-72 h-12 gap-2 shadow-xs">
             <RiSearchLine size={20} className="text-[#727272] dark:text-t-tertiary" />
             <input
               type="text"
@@ -50,7 +50,7 @@ export default function BatchesPage() {
           </div>
 
           {/* Create Button (Gradient) */}
-          <button className="flex flex-row justify-center items-center px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-[#FDFDFD] dark:text-b-surface1 text-sm font-sans font-semibold rounded-full shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer">
+          <button className="flex flex-row justify-center items-center px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-[#FDFDFD] dark:text-b-surface1 text-sm font-sans font-semibold rounded-lg shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer">
             + Create Batch
           </button>
 
@@ -98,13 +98,13 @@ export default function BatchesPage() {
           return (
             <div
               key={batch.id}
-              className="group relative flex flex-row items-center justify-between p-3 gap-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-[20px] shadow-xs hover:scale-[1.005] hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 transition-all h-[88px] cursor-pointer"
+              className="group relative flex flex-row items-center justify-between p-3 gap-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-xs hover:scale-[1.005] hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 transition-all h-[88px] cursor-pointer"
             >
               <div className="box-hover" />
 
               {/* Left: Team Icon Box */}
               <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden relative z-10">
-                <div className={`flex w-16 h-16 items-center justify-center rounded-xl border shrink-0 ${colors.bg}`}>
+                <div className={`flex w-16 h-16 items-center justify-center rounded-lg border shrink-0 ${colors.bg}`}>
                   <RiTeamLine size={24} />
                 </div>
 
