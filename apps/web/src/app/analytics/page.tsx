@@ -24,10 +24,10 @@ export default function StudentAnalyticsPage() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
         
         {/* KPI Cards Row */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-8 select-none">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg mb-8 select-none">
           
           {/* Card 1: Overall Accuracy */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiCrosshair2Line size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -50,7 +50,7 @@ export default function StudentAnalyticsPage() {
           </div>
 
           {/* Card 2: Avg Time */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiTimeLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -73,7 +73,7 @@ export default function StudentAnalyticsPage() {
           </div>
 
           {/* Card 3: Batch Percentile */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiTrophyLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -96,7 +96,7 @@ export default function StudentAnalyticsPage() {
           </div>
 
           {/* Card 4: Tests Attempted */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiLineChartLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -124,12 +124,12 @@ export default function StudentAnalyticsPage() {
         <div className="mb-8 grid gap-6 xl:grid-cols-2">
           
           {/* Topic Wise Analysis */}
-          <div className="group relative flex flex-col p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+          <div className="group relative flex flex-col p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
             <div className="box-hover" />
             <h2 className="relative z-10 text-[20px] font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary mb-6">Topic-wise Strengths & Weaknesses</h2>
             
             {/* Nested container card wrapper */}
-            <div className="relative z-10 flex flex-col gap-4 p-2.5 bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[28px]">
+            <div className="relative z-10 flex flex-col gap-4 p-2.5 bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
               {topicPerformance.map((item, idx) => {
                 const isStrong = item.accuracy > 80;
                 const isGood = item.accuracy > 50;
@@ -137,7 +137,7 @@ export default function StudentAnalyticsPage() {
                 const badgeBorder = isStrong ? "border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] text-[#00A656]" : isGood ? "border-[rgba(239,157,14,0.15)] bg-[rgba(239,157,14,0.05)] text-[#EF9D0E]" : "border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] text-[#FF6A55]";
                 
                 return (
-                  <div key={idx} className="flex flex-col p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[20px] shadow-[0px_2px_8px_-4px_rgba(0,0,0,0.05),0px_3px_2px_-3px_rgba(8,8,8,0.03)]">
+                  <div key={idx} className="flex flex-col p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_2px_8px_-4px_rgba(0,0,0,0.05),0px_3px_2px_-3px_rgba(8,8,8,0.03)]">
                     <div className="mb-2.5 flex items-center justify-between gap-3">
                       <span className="font-sans font-semibold text-[14px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">{item.topic}</span>
                       <span className="text-[12px] font-sans text-[#7B7B7B] font-semibold">{item.accuracy}% Accuracy</span>
@@ -160,7 +160,7 @@ export default function StudentAnalyticsPage() {
           </div>
 
           {/* Time Management Analysis */}
-          <div className="group relative flex flex-col p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+          <div className="group relative flex flex-col p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
             <div className="box-hover" />
             <h2 className="relative z-10 text-[20px] font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary mb-2">Time Management (Physics)</h2>
             <p className="relative z-10 text-[13px] font-sans text-[#7B7B7B] mb-6 leading-relaxed">
@@ -168,9 +168,9 @@ export default function StudentAnalyticsPage() {
             </p>
             
             {/* Nested container card wrapper */}
-            <div className="relative z-10 flex flex-col gap-4 p-2.5 bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[28px]">
+            <div className="relative z-10 flex flex-col gap-4 p-2.5 bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
               
-              <div className="flex flex-col p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[20px] shadow-[0px_2px_8px_-4px_rgba(0,0,0,0.05),0px_3px_2px_-3px_rgba(8,8,8,0.03)]">
+              <div className="flex flex-col p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_2px_8px_-4px_rgba(0,0,0,0.05),0px_3px_2px_-3px_rgba(8,8,8,0.03)]">
                 <div className="mb-2.5 flex items-center justify-between gap-3">
                   <span className="font-sans font-semibold text-[14px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">Mechanics (Avg: 3m 12s)</span>
                   <span className="text-[12px] font-sans font-bold text-[#FF6A55]">Target: 2m 00s</span>
@@ -182,7 +182,7 @@ export default function StudentAnalyticsPage() {
                 </div>
               </div>
               
-              <div className="flex flex-col p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[20px] shadow-[0px_2px_8px_-4px_rgba(0,0,0,0.05),0px_3px_2px_-3px_rgba(8,8,8,0.03)]">
+              <div className="flex flex-col p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_2px_8px_-4px_rgba(0,0,0,0.05),0px_3px_2px_-3px_rgba(8,8,8,0.03)]">
                 <div className="mb-2.5 flex items-center justify-between gap-3">
                   <span className="font-sans font-semibold text-[14px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">Electrodynamics (Avg: 1m 45s)</span>
                   <span className="text-[12px] font-sans font-bold text-[#00A656]">Target: 2m 00s</span>
@@ -193,7 +193,7 @@ export default function StudentAnalyticsPage() {
                 </div>
               </div>
 
-              <div className="flex flex-col p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[20px] shadow-[0px_2px_8px_-4px_rgba(0,0,0,0.05),0px_3px_2px_-3px_rgba(8,8,8,0.03)]">
+              <div className="flex flex-col p-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_2px_8px_-4px_rgba(0,0,0,0.05),0px_3px_2px_-3px_rgba(8,8,8,0.03)]">
                 <div className="mb-2.5 flex items-center justify-between gap-3">
                   <span className="font-sans font-semibold text-[14px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">Modern Physics (Avg: 2m 10s)</span>
                   <span className="text-[12px] font-sans font-bold text-[#EF9D0E]">Target: 2m 00s</span>
@@ -208,7 +208,7 @@ export default function StudentAnalyticsPage() {
             
             {/* Enhanced Speed Booster Test Button */}
             <div className="relative z-10 mt-6 w-full">
-              <button className="flex flex-row justify-center items-center h-12 w-full bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[14px] font-sans font-semibold rounded-[90px] transition-all active:scale-98 shadow-widget cursor-pointer gap-2">
+              <button className="flex flex-row justify-center items-center h-12 w-full bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[14px] font-sans font-semibold rounded-lg transition-all active:scale-98 shadow-widget cursor-pointer gap-2">
                 <RiTimeLine size={18} />
                 <span>Generate Speed Booster Test</span>
               </button>

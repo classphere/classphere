@@ -38,7 +38,7 @@ function TestChainItem({ item, depth = 0 }: { item: HistoryItem; depth?: number 
       {!isBooster && <div className="absolute left-6 top-16 bottom-0 w-px bg-s-stroke2/40 md:left-7" />}
 
       <div 
-        className={`group relative overflow-hidden rounded-[28px] border p-6 transition-all hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.06)] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] ${bodyClass} select-none`}
+        className={`group relative overflow-hidden rounded-lg border p-6 transition-all hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.06)] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] ${bodyClass} select-none`}
       >
         <div className="box-hover" />
 
@@ -82,7 +82,7 @@ function TestChainItem({ item, depth = 0 }: { item: HistoryItem; depth?: number 
             </div>
             <Link 
               href={`/results/${item.id}`} 
-              className="flex flex-row justify-center items-center h-8 px-3.5 border border-[#E2E2E2] dark:border-s-stroke2 rounded-xl bg-transparent text-[#727272] hover:text-[#101010] dark:hover:text-t-primary text-[12px] font-sans font-semibold transition-all active:scale-95 cursor-pointer"
+              className="flex flex-row justify-center items-center h-8 px-3.5 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] hover:text-[#101010] dark:hover:text-t-primary text-[12px] font-sans font-semibold transition-all active:scale-95 cursor-pointer"
             >
               View Analysis
             </Link>
@@ -129,10 +129,10 @@ export default function HistoryPage() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
         
         {/* Stats Row Wrapper */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-[32px] mb-8 select-none">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg mb-8 select-none">
           
           {/* Metric 1: Attempts */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiPlayLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -155,7 +155,7 @@ export default function HistoryPage() {
           </div>
 
           {/* Metric 2: Boosters */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiGitMergeLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -178,7 +178,7 @@ export default function HistoryPage() {
           </div>
 
           {/* Metric 3: Mastered */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+          <div className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
               <span className="text-[#101010] dark:text-t-primary"><RiLineChartLine size={20} /></span>
               <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
@@ -203,7 +203,7 @@ export default function HistoryPage() {
         </div>
 
         {/* Legend bar */}
-        <div className="flex flex-wrap items-center gap-3 border border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 p-4 rounded-[20px] shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] select-none mb-8">
+        <div className="flex flex-wrap items-center gap-3 border border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 p-4 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] select-none mb-8">
           <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#7B7B7B] pl-1">
             Legend
           </span>
@@ -213,7 +213,7 @@ export default function HistoryPage() {
             { label: "Booster Test", color: "bg-[#EF9D0E]/20 border border-[#EF9D0E]/30" },
             { label: "Mastered", icon: <RiCheckboxCircleFill size={16} className="text-[#7B7B7B]" /> },
           ].map((l, idx) => (
-            <div key={idx} className="flex items-center gap-2 rounded-full border border-s-stroke2/20 px-3.5 py-1 text-xs font-sans font-semibold text-[#7B7B7B]">
+            <div key={idx} className="flex items-center gap-2 rounded-lg border border-s-stroke2/20 px-3.5 py-1 text-xs font-sans font-semibold text-[#7B7B7B]">
               {l.icon ? l.icon : <div className={`h-2.5 w-2.5 rounded-full ${l.color}`} />}
               <span>{l.label}</span>
             </div>

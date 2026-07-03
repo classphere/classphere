@@ -21,7 +21,7 @@ export default function LeaderboardPage() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
         
         {/* Your rank card */}
-        <div className="group relative flex flex-col md:flex-row items-start md:items-center p-6 md:p-8 rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8 hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.06)] transition-all duration-200 gap-6">
+        <div className="group relative flex flex-col md:flex-row items-start md:items-center p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8 hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.06)] transition-all duration-200 gap-6">
           <div className="box-hover" />
           
           <div className="flex size-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-[#101010] to-[#303030] dark:from-t-primary dark:to-t-primary/70 text-[#FDFDFD] dark:text-b-surface1 text-[18px] font-sans font-semibold relative z-10">
@@ -56,13 +56,13 @@ export default function LeaderboardPage() {
         </div>
 
         {/* Tabs Segment Controller */}
-        <div className="flex gap-1 rounded-[90px] border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 p-1 w-fit select-none mb-6">
+        <div className="flex gap-1 rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 p-1 w-fit select-none mb-6">
           {tabs.map((tab) => (
             <button
               key={tab}
               id={`tab-${tab.toLowerCase()}`}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2 text-xs font-sans font-semibold rounded-[90px] transition-all cursor-pointer ${
+              className={`px-6 py-2 text-xs font-sans font-semibold rounded-lg transition-all cursor-pointer ${
                 activeTab === tab
                   ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-widget"
                   : "bg-transparent text-[#7B7B7B] hover:text-[#101010]"
@@ -74,7 +74,7 @@ export default function LeaderboardPage() {
         </div>
 
         {/* Table Container */}
-        <div className="overflow-hidden rounded-[32px] bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+        <div className="overflow-hidden rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
           <div className="overflow-x-auto">
             <div className="min-w-[760px]">
               
