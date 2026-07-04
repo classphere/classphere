@@ -1,12 +1,18 @@
 import { Router } from "express";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
-import { uploadQuestions } from "./superadmin.controller";
+import { uploadQuestions, getPlatformStats } from "./superadmin.controller";
 
 const router = Router();
 
 // All superadmin routes require authentication + super_admin role
 router.use(authenticate, requireRole("super_admin"));
+
+/**
+ * GET /api/v1/superadmin/stats
+ * Real-time platform-wide stats for the superadmin dashboard.
+ */
+router.get("/stats", getPlatformStats);
 
 /**
  * POST /api/v1/superadmin/upload-questions
