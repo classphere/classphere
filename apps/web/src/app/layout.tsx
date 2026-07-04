@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import AppShell from "@/components/layout/AppShell";
+import { AuthProvider } from "@/lib/auth-context";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full`} data-theme="light">
       <body className="min-h-screen bg-b-surface1 text-t-primary antialiased">
-        <AppShell>{children}</AppShell>
+        <AuthProvider>
+          <AppShell>{children}</AppShell>
+        </AuthProvider>
       </body>
     </html>
   );
