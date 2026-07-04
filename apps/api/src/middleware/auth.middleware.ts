@@ -18,52 +18,57 @@ declare global {
  * Validates the Bearer JWT issued by Supabase Auth.
  * On success, attaches `req.user` with { id, email, role }.
  * On failure, returns 401.
+ *
+ * Two valid paths:
+ * 1. x-api-key header matching INTERNAL_API_KEY → superadmin access for internal tooling
+ * 2. Authorization: Bearer <supabase_jwt> → standard user auth
  */
-export const authenticate = (req: Request, res: Response, next: NextFunction): void => {
-  // ── API Key bypass (for superadmin tooling before real auth is wired up) ──
+export const authenticate = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  // ── Internal API Key bypass (super admin tooling & cron jobs) ────────────────
   const internalKey = process.env.INTERNAL_API_KEY;
   const providedKey = req.headers["x-api-key"];
   if (internalKey && providedKey === internalKey) {
-    req.user = { id: "superadmin", email: "admin@local", role: "super_admin" };
+    req.user = { id: "superadmin", email: "admin@examprep.in", role: "super_admin" };
     next();
     return;
   }
 
-  // ── Standard JWT auth (Supabase Bearer token) ──────────────────────────────
+  // ── Standard JWT auth (Supabase Bearer token) ─────────────────────────────
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    // Fallback to mock student for local development/mock login flow
-    req.user = { id: "mock-student-id", email: "student@local.com", role: "student" };
-    next();
+    res.status(401).json({ success: false, message: "Authentication required. Please log in." });
     return;
   }
 
   const token = authHeader.split(" ")[1];
-  if (token === "mock" || token === "undefined" || token === "") {
-    req.user = { id: "mock-student-id", email: "student@local.com", role: "student" };
-    next();
+  if (!token) {
+    res.status(401).json({ success: false, message: "Malformed authorization header." });
     return;
   }
 
   const jwtSecret = process.env.SUPABASE_JWT_SECRET;
-
   if (!jwtSecret) {
     res.status(500).json({ success: false, message: "Server misconfiguration: missing JWT secret" });
     return;
   }
 
   try {
-    const decoded = jwt.verify(token, jwtSecret) as jwt.JwtPayload;
+    const { supabaseAdmin } = require("../lib/supabase");
+    const { data: { user }, error } = await supabaseAdmin.auth.getUser(token);
+
+    if (error || !user) {
+      res.status(401).json({ success: false, message: "Invalid or expired token. Please log in again." });
+      return;
+    }
 
     req.user = {
-      id: decoded.sub as string,
-      email: decoded.email as string,
-      // Supabase stores app metadata (role) under app_metadata
-      role: (decoded.app_metadata?.role ?? decoded.role ?? "student") as string,
+      id: user.id,
+      email: user.email ?? "",
+      role: (user.app_metadata?.role ?? user.role ?? "student") as string,
     };
 
     next();
   } catch (err) {
-    res.status(401).json({ success: false, message: "Invalid or expired token" });
+    res.status(401).json({ success: false, message: "Invalid or expired token. Please log in again." });
   }
 };
