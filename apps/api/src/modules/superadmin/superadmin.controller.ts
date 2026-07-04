@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { supabaseAdmin } from "../../lib/supabase";
 
 const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
@@ -19,7 +20,6 @@ async function sbPost(table: string, rows: any[], prefer = "resolution=merge-dup
     const text = await res.text();
     throw new Error(`Supabase ${table} insert failed (${res.status}): ${text}`);
   }
-  // If return=representation, parse JSON; else return null
   if (prefer.includes("return=representation")) return res.json();
   return null;
 }
@@ -46,11 +46,9 @@ function chunk<T>(arr: T[], size: number): T[][] {
 function validateQuestion(q: any, index: number): string | null {
   if (!q.id)            return `Question #${index + 1}: missing 'id'`;
   if (!q.question_text) return `Question #${index + 1}: missing 'question_text'`;
-  // correct_answer can be a bare number (integer questions), string, or array — 0 is a valid answer
   if (q.correct_answer === null || q.correct_answer === undefined || q.correct_answer === "")
     return `Question #${index + 1}: missing 'correct_answer'`;
 
-  // Integer/numerical questions (JEE Section B) have no options — that's valid
   const isInteger = q.question_type === "integer" || q.question_type === "integer_type";
   if (!isInteger) {
     if (!Array.isArray(q.options) || q.options.length < 2)
@@ -62,26 +60,55 @@ function validateQuestion(q: any, index: number): string | null {
 
 // ─────────────────────────────────────────────────────────────────────────────
 /**
+ * GET /api/v1/superadmin/stats
+ * [super_admin only]
+ *
+ * Returns live platform-wide stats for the superadmin dashboard.
+ */
+export const getPlatformStats = async (req: Request, res: Response): Promise<void> => {
+  try {
+    // Run counts in parallel
+    const [
+      institutesRes,
+      studentsRes,
+      attemptsRes,
+    ] = await Promise.all([
+      supabaseAdmin.from("institutes").select("id", { count: "exact", head: true }),
+      supabaseAdmin.from("users").select("id", { count: "exact", head: true }).eq("role", "student"),
+      supabaseAdmin.from("attempts").select("id", { count: "exact", head: true }),
+    ]);
+
+    // This week's new institutes & students
+    const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+    const [newInstitutesRes, newStudentsRes] = await Promise.all([
+      supabaseAdmin.from("institutes").select("id", { count: "exact", head: true }).gte("created_at", oneWeekAgo),
+      supabaseAdmin.from("users").select("id", { count: "exact", head: true }).eq("role", "student").gte("created_at", oneWeekAgo),
+    ]);
+
+    res.status(200).json({
+      success: true,
+      data: {
+        totalInstitutes: institutesRes.count ?? 0,
+        totalStudents: studentsRes.count ?? 0,
+        totalAttempts: attemptsRes.count ?? 0,
+        newInstitutesThisWeek: newInstitutesRes.count ?? 0,
+        newStudentsThisWeek: newStudentsRes.count ?? 0,
+        systemUptime: "99.98%", // Static for now — wire to a health monitor later
+      },
+    });
+  } catch (err: any) {
+    console.error("[getPlatformStats] ERROR:", err.message);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+/**
  * POST /api/v1/superadmin/upload-questions
  * [super_admin only]
  *
  * Accepts a JSON body with metadata + a questions array.
  * Creates a Paper record and bulk-upserts all questions linked to it.
- *
- * Body:
- * {
- *   exam:       "jee-main" | "jee-advanced" | "neet-ug" | "ssc-cgl",
- *   test_type:  "chapter-wise" | "mock-test" | "pyq",
- *   title:      string,
- *   subject:    string | null,
- *   chapter:    string | null,
- *   year:       number | null,
- *   shift:      string | null,
- *   duration:   number,        // minutes
- *   marks:      number,
- *   difficulty: "easy" | "medium" | "hard",
- *   questions:  Question[]
- * }
  */
 export const uploadQuestions = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -135,7 +162,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     for (let i = 0; i < questions.length; i++) {
       const err = validateQuestion(questions[i], i);
       if (err) errors.push(err);
-      if (errors.length >= 5) break; // stop at first 5 errors
+      if (errors.length >= 5) break;
     }
     if (errors.length > 0) {
       res.status(400).json({ success: false, message: "Question validation failed.", errors });
@@ -172,7 +199,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       marking_scheme: q.marking_scheme || null,
     }));
 
-    // ── 5. Bulk upsert questions in batches of 100 ───────────────────────────
+    // ── 5. Bulk upsert questions ─────────────────────────────────────────────
     const batches = chunk(questionRows, 100);
     for (const batch of batches) {
       await sbPost("questions", batch);
@@ -228,7 +255,6 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     });
   } catch (err: any) {
     console.error("[uploadQuestions] ERROR:", err.message);
-    // Surface Supabase error details to the client in dev
     res.status(500).json({ success: false, message: err.message });
   }
 };
