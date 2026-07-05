@@ -172,7 +172,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
 
       if (selected) {
         const correctAnswersList = Array.isArray(q.correct_answer)
-          ? q.correct_answer.map(val => String(val).trim().toUpperCase())
+          ? q.correct_answer.map((val: any) => String(val).trim().toUpperCase())
           : [String(q.correct_answer).trim().toUpperCase()];
         
         const selectedNormalized = String(selected).trim().toUpperCase();
