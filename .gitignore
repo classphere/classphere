@@ -30,3 +30,14 @@ yarn-error.log*
 
 # Vercel
 .vercel
+
+# python and data
+venv/
+scripts/
+QUESTIONS/
+*syllabus*.json
+*syllabus*.txt
+syllabus.pdf
+debug_enmatch.txt
+fix_styles.js
+migrate-sprint1.js
