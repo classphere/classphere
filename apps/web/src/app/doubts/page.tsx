@@ -94,18 +94,18 @@ const initialMessages: Record<string, Message[]> = {
 
 const groupMembers: Record<string, { name: string; avatarBg: string; initial: string }[]> = {
   "jee-morning": [
-    { name: "Rahul Verma", avatarBg: "bg-[#FFD1D1] text-[#FF6A55]", initial: "R" },
-    { name: "Sneha Reddy", avatarBg: "bg-[#D1F2E5] text-[#00A656]", initial: "S" },
+    { name: "Rahul Verma", avatarBg: "bg-[#FFD1D1] text-primary-03", initial: "R" },
+    { name: "Sneha Reddy", avatarBg: "bg-[#D1F2E5] text-primary-02", initial: "S" },
     { name: "Aman Sir", avatarBg: "bg-[#FFEAD1] text-[#ECA20F]", initial: "A" },
     { name: "Vikram Singh", avatarBg: "bg-[#D1E0FF] text-[#3B82F6]", initial: "V" },
     { name: "Riya Sen", avatarBg: "bg-[#F3D1FF] text-[#A855F7]", initial: "R" },
-    { name: "Pranav Gupta", avatarBg: "bg-[#E2E2E2] text-[#727272]", initial: "P" }
+    { name: "Pranav Gupta", avatarBg: "bg-s-stroke2 text-t-secondary", initial: "P" }
   ],
   "aakash-foundation": [
     { name: "Riya Sen", avatarBg: "bg-[#F3D1FF] text-[#A855F7]", initial: "R" },
-    { name: "Pranav Gupta", avatarBg: "bg-[#E2E2E2] text-[#727272]", initial: "P" },
+    { name: "Pranav Gupta", avatarBg: "bg-s-stroke2 text-t-secondary", initial: "P" },
     { name: "Vikram Singh", avatarBg: "bg-[#D1E0FF] text-[#3B82F6]", initial: "V" },
-    { name: "Sneha Reddy", avatarBg: "bg-[#D1F2E5] text-[#00A656]", initial: "S" }
+    { name: "Sneha Reddy", avatarBg: "bg-[#D1F2E5] text-primary-02", initial: "S" }
   ]
 };
 
@@ -265,12 +265,12 @@ export default function StudentChatPage() {
   }, [activeMessages]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F9F9F9] dark:bg-b-surface1/60 pb-10">
+    <div className="flex flex-col min-h-screen bg-b-surface1 dark:bg-b-surface1/60 pb-10">
 
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed top-20 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-[#101010] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 text-xs font-sans font-semibold rounded-lg shadow-lg border border-s-stroke2/20 animate-slide-in">
-          <div className="size-2 rounded-full bg-[#00A656] animate-pulse" />
+        <div className="fixed top-20 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-shade-02 text-t-light dark:bg-t-primary dark:text-b-surface1 text-xs font-sans font-semibold rounded-lg shadow-lg border border-s-stroke2/20 animate-slide-in">
+          <div className="size-2 rounded-full bg-primary-02 animate-pulse" />
           <span>{toastMessage}</span>
         </div>
       )}
@@ -280,13 +280,13 @@ export default function StudentChatPage() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pt-12 md:px-6 flex justify-center bg-transparent select-none">
 
         {/* Main Figma Dashboard overview card container (Width: 1068px, Expanded Height: 780px to fit Stats + Chat Workspace) */}
-        <div className="w-[1068px] h-[780px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg p-3 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] flex flex-col gap-4 overflow-hidden relative">
+        <div className="w-[1068px] h-[780px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg p-3 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] flex flex-col gap-4 overflow-hidden relative">
 
           {/* Widget Header/dropdown */}
           <div className="flex flex-row justify-between items-center w-full h-12 relative px-2.5 shrink-0">
             {/* Header Title */}
             <div className="flex flex-row items-center gap-2">
-              <h6 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+              <h6 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
                 Doubts
               </h6>
             </div>
@@ -295,17 +295,17 @@ export default function StudentChatPage() {
             <div className="relative">
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
-                className="flex flex-row justify-between items-center px-5 py-3 h-12 w-[180px] border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-left cursor-pointer transition-all hover:bg-[#F9F9F9] dark:hover:bg-b-surface1"
+                className="flex flex-row justify-between items-center px-5 py-3 h-12 w-[180px] border-[1.5px] border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-left cursor-pointer transition-all hover:bg-b-surface1 dark:hover:bg-b-surface1"
               >
-                <span className="font-sans text-[14px] font-normal leading-[150%] tracking-[0.0025em] text-[#727272] dark:text-t-secondary truncate">
+                <span className="font-sans text-[14px] font-normal leading-[150%] tracking-[0.0025em] text-t-secondary dark:text-t-secondary truncate">
                   {activeGroup.name}
                 </span>
-                <RiArrowDownSLine size={20} className="text-[#727272] shrink-0" />
+                <RiArrowDownSLine size={20} className="text-t-secondary shrink-0" />
               </button>
 
               {/* Dropdown Options List */}
               {showDropdown && (
-                <div className="absolute right-0 top-14 w-[180px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-lg z-25 overflow-hidden">
+                <div className="absolute right-0 top-14 w-[180px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-lg z-25 overflow-hidden">
                   {groups.map(g => (
                     <div
                       key={g.id}
@@ -314,8 +314,8 @@ export default function StudentChatPage() {
                         setShowDropdown(false);
                       }}
                       className={`p-3 text-xs font-sans font-semibold cursor-pointer transition-colors ${g.id === activeGroupId
-                          ? "bg-[#F9F9F9] dark:bg-b-surface1/60 text-[#101010] dark:text-t-primary"
-                          : "hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 text-[#727272] dark:text-t-secondary"
+                          ? "bg-b-surface1 dark:bg-b-surface1/60 text-t-primary dark:text-t-primary"
+                          : "hover:bg-b-surface1 dark:hover:bg-b-surface1/30 text-t-secondary dark:text-t-secondary"
                         }`}
                     >
                       {g.name}
@@ -327,27 +327,27 @@ export default function StudentChatPage() {
           </div>
 
           {/* Stats Section */}
-          <div className="flex flex-row items-center p-2 gap-4 w-full h-[135px] bg-[#F9F9F9] dark:bg-b-surface1/20 border-[1.5px] border-[rgba(123,123,123,0.1)] rounded-lg shrink-0">
+          <div className="flex flex-row items-center p-2 gap-4 w-full h-[135px] bg-b-surface1 dark:bg-b-surface1/20 border-[1.5px] border-s-stroke2/40 rounded-lg shrink-0">
 
             {/* Active Doubts Stat Card */}
-            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-[#FDFDFD] dark:bg-b-surface2 border-[1.5px] border-[#FDFDFD] dark:border-s-stroke2/20 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-b-surface2 dark:bg-b-surface2 border-[1.5px] border-s-border dark:border-s-stroke2/20 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex flex-row items-center gap-2.5 w-full">
-                <RiQuestionAnswerLine size={20} className="text-[#101010] dark:text-t-primary" />
-                <span className="font-sans font-semibold text-[15px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                <RiQuestionAnswerLine size={20} className="text-t-primary dark:text-t-primary" />
+                <span className="font-sans font-semibold text-[15px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
                   Active Doubts
                 </span>
               </div>
               <div className="flex flex-row items-center gap-4 w-full mt-0.5">
-                <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-[#101010] dark:text-t-primary">
+                <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-t-primary dark:text-t-primary">
                   {activeGroup.activeDoubts}
                 </span>
                 <div className="flex flex-col items-start gap-0.5">
-                  <div className="flex flex-row justify-center items-center px-2 py-[2px] gap-1 h-5.5 bg-[rgba(255,106,85,0.05)] border-[1.5px] border-[rgba(255,106,85,0.15)] rounded-md">
-                    <span className="font-sans font-semibold text-[12px] leading-none text-[#FF6A55]">
+                  <div className="flex flex-row justify-center items-center px-2 py-[2px] gap-1 h-5.5 bg-[rgba(255,106,85,0.05)] border-[1.5px] border-s-stroke2/40 rounded-md">
+                    <span className="font-sans font-semibold text-[12px] leading-none text-primary-03">
                       {activeGroup.activeTrend}
                     </span>
                   </div>
-                  <span className="font-sans text-[12px] leading-[150%] tracking-[0.0025em] text-[#7B7B7B]">
+                  <span className="font-sans text-[12px] leading-[150%] tracking-[0.0025em] text-t-secondary">
                     from yesterday
                   </span>
                 </div>
@@ -357,22 +357,22 @@ export default function StudentChatPage() {
             {/* Resolved Doubts Stat Card */}
             <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] rounded-lg bg-transparent">
               <div className="flex flex-row items-center gap-2.5 w-full">
-                <RiCheckDoubleLine size={20} className="text-[#727272] dark:text-t-secondary" />
-                <span className="font-sans font-semibold text-[15px] leading-[150%] tracking-[0.0015em] text-[#727272] dark:text-t-secondary">
+                <RiCheckDoubleLine size={20} className="text-t-secondary dark:text-t-secondary" />
+                <span className="font-sans font-semibold text-[15px] leading-[150%] tracking-[0.0015em] text-t-secondary dark:text-t-secondary">
                   Resolved Doubts
                 </span>
               </div>
               <div className="flex flex-row items-center gap-4 w-full mt-0.5">
-                <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-[#101010] dark:text-t-primary">
+                <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-t-primary dark:text-t-primary">
                   {activeGroup.resolvedDoubts}
                 </span>
                 <div className="flex flex-col items-start gap-0.5">
-                  <div className="flex flex-row justify-center items-center px-2 py-[2px] gap-1 h-5.5 bg-[rgba(0,166,86,0.05)] border-[1.5px] border-[rgba(0,166,86,0.15)] rounded-md">
-                    <span className="font-sans font-semibold text-[12px] leading-none text-[#00A656]">
+                  <div className="flex flex-row justify-center items-center px-2 py-[2px] gap-1 h-5.5 bg-[rgba(0,166,86,0.05)] border-[1.5px] border-s-stroke2/40 rounded-md">
+                    <span className="font-sans font-semibold text-[12px] leading-none text-primary-02">
                       {activeGroup.resolvedTrend}
                     </span>
                   </div>
-                  <span className="font-sans text-[12px] leading-[150%] tracking-[0.0025em] text-[#7B7B7B]">
+                  <span className="font-sans text-[12px] leading-[150%] tracking-[0.0025em] text-t-secondary">
                     from last week
                   </span>
                 </div>
@@ -385,10 +385,10 @@ export default function StudentChatPage() {
           <div className="flex-grow flex flex-row border border-s-stroke2/20 rounded-lg overflow-hidden min-h-0">
 
             {/* Sidebar: Chat Groups List */}
-            <div className="w-[300px] border-r border-s-stroke2/10 bg-[#F9F9F9] dark:bg-b-surface1/20 flex flex-col shrink-0">
-              <div className="p-3 border-b border-s-stroke2/10 bg-[#FDFDFD] dark:bg-b-surface2">
+            <div className="w-[300px] border-r border-s-stroke2/10 bg-b-surface1 dark:bg-b-surface1/20 flex flex-col shrink-0">
+              <div className="p-3 border-b border-s-stroke2/10 bg-b-surface2 dark:bg-b-surface2">
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#7B7B7B]">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-t-secondary">
                     <RiSearchLine size={16} />
                   </span>
                   <input
@@ -396,7 +396,7 @@ export default function StudentChatPage() {
                     placeholder="Search groups..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-9 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-[#101010] dark:focus:border-t-primary transition-all font-semibold placeholder-[#7B7B7B]"
+                    className="w-full pl-9 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-t-primary dark:focus:border-t-primary transition-all font-semibold placeholder-t-secondary"
                   />
                 </div>
               </div>
@@ -409,21 +409,21 @@ export default function StudentChatPage() {
                       key={group.id}
                       onClick={() => setActiveGroupId(group.id)}
                       className={`p-3 flex gap-3 cursor-pointer rounded-lg transition-all border ${isActive
-                          ? "bg-[#FDFDFD] dark:bg-b-surface2 border-l-4 border-l-[#101010] dark:border-l-t-primary border-s-stroke2/20 shadow-xs"
-                          : "bg-transparent border-transparent hover:bg-[#FDFDFD]/50"
+                          ? "bg-b-surface2 dark:bg-b-surface2 border-l-4 border-l-t-primary dark:border-l-t-primary border-s-stroke2/20 shadow-xs"
+                          : "bg-transparent border-transparent hover:bg-b-surface2/50"
                         }`}
                     >
-                      <div className={`size-8 rounded-full flex items-center justify-center shrink-0 ${isActive ? "bg-[#101010] dark:bg-t-primary text-[#FDFDFD] dark:text-b-surface1" : "bg-[#FDFDFD] text-[#7B7B7B] border border-s-stroke2/20"
+                      <div className={`size-8 rounded-full flex items-center justify-center shrink-0 ${isActive ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1" : "bg-b-surface2 text-t-secondary border border-s-stroke2/20"
                         }`}>
                         <RiGroupLine size={16} />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex justify-between items-baseline mb-0.5">
-                          <span className="font-sans font-bold text-[13px] text-[#101010] dark:text-t-primary truncate">{group.name}</span>
-                          <span className="text-[10px] font-sans text-[#7B7B7B]">{group.lastMessageTime}</span>
+                          <span className="font-sans font-bold text-[13px] text-t-primary dark:text-t-primary truncate">{group.name}</span>
+                          <span className="text-[10px] font-sans text-t-secondary">{group.lastMessageTime}</span>
                         </div>
-                        <p className="text-[11px] font-sans text-[#7B7B7B] truncate">
-                          <span className="font-bold text-[#101010] dark:text-t-primary">{group.lastMessageSender}:</span> {group.lastMessageText}
+                        <p className="text-[11px] font-sans text-t-secondary truncate">
+                          <span className="font-bold text-t-primary dark:text-t-primary">{group.lastMessageSender}:</span> {group.lastMessageText}
                         </p>
                       </div>
                     </div>
@@ -433,15 +433,15 @@ export default function StudentChatPage() {
             </div>
 
             {/* Chat Pane */}
-            <div className="flex-1 flex flex-col bg-[#FDFDFD] dark:bg-b-surface2 min-w-0">
+            <div className="flex-1 flex flex-col bg-b-surface2 dark:bg-b-surface2 min-w-0">
 
               {/* Chat Header containing the Avatars Row from Figma specifications */}
               <div className="h-14 px-4 border-b border-s-stroke2/10 flex items-center justify-between shrink-0">
                 <div className="min-w-0 flex flex-col justify-center">
-                  <h2 className="font-sans font-bold text-[14px] text-[#101010] dark:text-t-primary truncate">
+                  <h2 className="font-sans font-bold text-[14px] text-t-primary dark:text-t-primary truncate">
                     {activeGroup.name} (Doubts)
                   </h2>
-                  <span className="text-[10.5px] font-sans text-[#7B7B7B] mt-0.5 leading-none">
+                  <span className="text-[10.5px] font-sans text-t-secondary mt-0.5 leading-none">
                     {activeGroup.membersCount} Active Members · {activeGroup.facultyCount} Faculty Online
                   </span>
                 </div>
@@ -452,7 +452,7 @@ export default function StudentChatPage() {
                     {activeMembersList.slice(0, 4).map((member, idx) => (
                       <div
                         key={idx}
-                        className={`size-7 rounded-full flex items-center justify-center text-[10px] font-sans font-bold border-2 border-[#FDFDFD] dark:border-b-surface2 shadow-xs ${member.avatarBg}`}
+                        className={`size-7 rounded-full flex items-center justify-center text-[10px] font-sans font-bold border-2 border-s-border dark:border-b-surface2 shadow-xs ${member.avatarBg}`}
                         title={member.name}
                       >
                         {member.initial}
@@ -460,7 +460,7 @@ export default function StudentChatPage() {
                     ))}
 
                     {/* View All / Extra Members Counter Badge */}
-                    <div className="size-7 bg-[#FDFDFD] border border-[#E2E2E2] rounded-full flex items-center justify-center text-[9px] font-sans font-bold text-[#727272] shadow-xs">
+                    <div className="size-7 bg-b-surface2 border border-s-stroke2 rounded-full flex items-center justify-center text-[9px] font-sans font-bold text-t-secondary shadow-xs">
                       +{activeGroup.membersCount - 4}
                     </div>
                   </div>
@@ -468,22 +468,22 @@ export default function StudentChatPage() {
               </div>
 
               {/* Chat Messages scroll pane */}
-              <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-4 bg-[#F9F9F9]/40 dark:bg-b-surface1/10 min-h-0">
+              <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-4 bg-b-surface1/40 dark:bg-b-surface1/10 min-h-0">
                 {activeMessages.map((msg, idx) => {
                   return (
                     <div 
                       key={msg.id} 
                       className={`p-4 flex gap-4 rounded-lg transition-all relative border ${
                         msg.isVerified
-                          ? "bg-[#00A656]/5 border-[#00A656]/20"
-                          : "bg-transparent border-transparent border-b border-s-stroke2/10 hover:bg-[#FDFDFD] dark:hover:bg-b-surface2 hover:shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:hover:shadow-[inset_0px_0px_0px_3px_#191919]"
+                          ? "bg-primary-02/5 border-primary-02/20"
+                          : "bg-transparent border-transparent border-b border-s-stroke2/10 hover:bg-b-surface2 dark:hover:bg-b-surface2 hover:shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:hover:shadow-[inset_0px_0px_0px_3px_#191919]"
                       }`}
                     >
                       {/* Avatar of size 44px x 44px (size-11) */}
                       <div className={`size-11 rounded-full flex items-center justify-center shrink-0 font-sans font-bold text-sm ${
                         msg.role === "teacher" 
-                          ? "bg-[#00A656]/10 text-[#00A656] border border-[#00A656]/20" 
-                          : "bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/20 text-[#101010] dark:text-t-primary shadow-xs"
+                          ? "bg-primary-02/10 text-primary-02 border border-primary-02/20" 
+                          : "bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/20 text-t-primary dark:text-t-primary shadow-xs"
                       }`}>
                         {msg.author === "Anonymous" ? "?" : msg.author[0]}
                       </div>
@@ -494,30 +494,30 @@ export default function StudentChatPage() {
                         {/* Name, Role & Timestamp Row */}
                         <div className="flex items-center justify-between gap-2 w-full">
                           <div className="flex items-center gap-2">
-                            <span className="font-sans font-semibold text-[15px] text-[#101010] dark:text-t-primary">
+                            <span className="font-sans font-semibold text-[15px] text-t-primary dark:text-t-primary">
                               {msg.author}
                             </span>
                             {msg.role === "teacher" && (
-                              <span className="px-2 py-0.5 rounded-md border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] text-[#00A656] text-[8px] font-sans font-bold uppercase tracking-wider">
+                              <span className="px-2 py-0.5 rounded-md border border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02 text-[8px] font-sans font-bold uppercase tracking-wider">
                                 FACULTY
                               </span>
                             )}
                           </div>
-                          <span className="text-[12px] font-sans text-[#7B7B7B]">
+                          <span className="text-[12px] font-sans text-t-secondary">
                             {msg.time}
                           </span>
                         </div>
 
                         {/* Tagged Doubt Badge if applicable */}
                         {msg.isDoubt && (
-                          <div className="flex items-center gap-1 px-2 py-0.5 w-fit rounded-md border border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] text-[#FF6A55] text-[9px] font-sans font-bold uppercase tracking-wider">
+                          <div className="flex items-center gap-1 px-2 py-0.5 w-fit rounded-md border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03 text-[9px] font-sans font-bold uppercase tracking-wider">
                             <RiQuestionLine size={10} />
                             <span>Tagged Doubt</span>
                           </div>
                         )}
 
                         {/* Message Body */}
-                        <p className="font-sans font-normal text-[15px] leading-[150%] text-[#101010] dark:text-t-primary">
+                        <p className="font-sans font-normal text-[15px] leading-[150%] text-t-primary dark:text-t-primary">
                           {msg.text}
                         </p>
 
@@ -531,7 +531,7 @@ export default function StudentChatPage() {
                         {/* Reactions and Action Badges */}
                         <div className="flex items-center justify-between gap-4 mt-1">
                           {msg.isVerified ? (
-                            <div className="flex items-center gap-1.5 text-[#00A656]">
+                            <div className="flex items-center gap-1.5 text-primary-02">
                               <RiCheckDoubleLine size={14} />
                               <span className="text-[11px] font-sans font-bold">Endorsed Answer</span>
                             </div>
@@ -543,8 +543,8 @@ export default function StudentChatPage() {
                             onClick={() => handleUpvote(msg.id)}
                             className={`flex items-center gap-1.5 px-3 py-1 rounded-lg border text-[11px] font-sans font-bold transition-all active:scale-95 cursor-pointer ${
                               msg.hasUpvoted
-                                ? "bg-[#101010] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 border-transparent"
-                                : "bg-[#F9F9F9] dark:bg-b-surface1 border-s-stroke2/20 text-[#7B7B7B] hover:text-[#101010]"
+                                ? "bg-shade-02 text-t-light dark:bg-t-primary dark:text-b-surface1 border-transparent"
+                                : "bg-b-surface1 dark:bg-b-surface1 border-s-stroke2/20 text-t-secondary hover:text-t-primary"
                             }`}
                           >
                             <RiThumbUpLine size={11} />
@@ -561,19 +561,19 @@ export default function StudentChatPage() {
 
               {/* Image attachment preview above input */}
               {attachedImagePreview && (
-                <div className="p-2 px-4 bg-[#FDFDFD] dark:bg-b-surface2 border-t border-s-stroke2/20 flex items-center justify-between gap-3 shrink-0">
+                <div className="p-2 px-4 bg-b-surface2 dark:bg-b-surface2 border-t border-s-stroke2/20 flex items-center justify-between gap-3 shrink-0">
                   <div className="flex items-center gap-2">
                     <div className="size-8 rounded overflow-hidden border border-s-stroke2/20">
                       <img src={attachedImagePreview} alt="Preview" className="w-full h-full object-cover" />
                     </div>
-                    <span className="font-sans font-bold text-[11px] text-[#101010] dark:text-t-primary truncate">{attachedImageName}</span>
+                    <span className="font-sans font-bold text-[11px] text-t-primary dark:text-t-primary truncate">{attachedImageName}</span>
                   </div>
                   <button
                     onClick={() => {
                       setAttachedImageName(null);
                       setAttachedImagePreview(null);
                     }}
-                    className="size-6 rounded-full border border-s-stroke2/20 bg-transparent flex items-center justify-center text-[#7B7B7B] hover:text-[#101010] cursor-pointer"
+                    className="size-6 rounded-full border border-s-stroke2/20 bg-transparent flex items-center justify-center text-t-secondary hover:text-t-primary cursor-pointer"
                   >
                     <RiCloseLine size={14} />
                   </button>
@@ -581,10 +581,10 @@ export default function StudentChatPage() {
               )}
 
               {/* Input Sticky Bar */}
-              <div className="p-3 bg-[#FDFDFD] dark:bg-b-surface2 border-t border-s-stroke2/20 flex gap-2.5 items-center shrink-0">
+              <div className="p-3 bg-b-surface2 dark:bg-b-surface2 border-t border-s-stroke2/20 flex gap-2.5 items-center shrink-0">
                 <button
                   onClick={triggerImageUpload}
-                  className="flex items-center justify-center size-9 rounded-full text-[#7B7B7B] hover:text-[#101010] hover:bg-[#F9F9F9] border border-s-stroke2/20 bg-[#FDFDFD] dark:bg-b-surface2 transition-all cursor-pointer shrink-0"
+                  className="flex items-center justify-center size-9 rounded-full text-t-secondary hover:text-t-primary hover:bg-b-surface1 border border-s-stroke2/20 bg-b-surface2 dark:bg-b-surface2 transition-all cursor-pointer shrink-0"
                 >
                   <RiImageAddLine size={18} />
                 </button>
@@ -595,15 +595,15 @@ export default function StudentChatPage() {
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleSend()}
                     placeholder="Type [Doubt] or type your message here..."
-                    className="w-full pl-4 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-[#101010] dark:focus:border-t-primary transition-all font-semibold placeholder-[#7B7B7B] text-[#101010] dark:text-t-primary"
+                    className="w-full pl-4 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-t-primary dark:focus:border-t-primary transition-all font-semibold placeholder-t-secondary text-t-primary dark:text-t-primary"
                   />
                 </div>
                 <button
                   onClick={handleSend}
                   disabled={!inputValue.trim() && !attachedImagePreview}
                   className={`size-9 rounded-full border-none flex items-center justify-center text-white cursor-pointer transition-all shrink-0 ${inputValue.trim() || attachedImagePreview
-                      ? "bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90"
-                      : "bg-[#EBEBEB] text-[#7B7B7B] dark:bg-b-surface1 dark:text-t-secondary cursor-not-allowed"
+                      ? "bg-shade-02 hover:bg-shade-04 text-t-light dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90"
+                      : "bg-s-stroke2 text-t-secondary dark:bg-b-surface1 dark:text-t-secondary cursor-not-allowed"
                     }`}
                 >
                   <RiSendPlaneFill size={16} />

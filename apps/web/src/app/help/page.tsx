@@ -55,11 +55,11 @@ function HelpContent() {
 
         {/* Search Bar */}
         <div className="relative w-full max-w-[600px] mx-auto mb-4">
-          <RiSearchLine size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#7B7B7B]" />
+          <RiSearchLine size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary" />
           <input 
             type="text" 
             placeholder="Search for articles, features, or guides..." 
-            className="w-full h-14 pl-12 pr-4 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg text-[15px] text-[#101010] dark:text-t-primary placeholder:text-[#7B7B7B] focus:border-[#101010] dark:focus:border-t-primary outline-none transition-colors shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
+            className="w-full h-14 pl-12 pr-4 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg text-[15px] text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -68,15 +68,15 @@ function HelpContent() {
         {/* Support Blocks */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          <div className="group relative card flex flex-col p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden cursor-pointer hover:border-[#101010] dark:hover:border-t-primary transition-colors">
+          <div className="group relative card flex flex-col p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden cursor-pointer hover:border-t-primary dark:hover:border-t-primary transition-colors">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-col items-center text-center gap-4">
               <div className="w-14 h-14 rounded-lg bg-[rgba(10,132,255,0.08)] flex items-center justify-center text-[#0A84FF]">
                 <RiBookOpenLine size={28} />
               </div>
               <div>
-                <h3 className="text-[18px] font-bold text-[#101010] dark:text-t-primary tracking-tight">Platform Documentation</h3>
-                <p className="text-[14px] text-[#7B7B7B] mt-2">Comprehensive guides for using the 9-stage analysis engine and platform tools.</p>
+                <h3 className="text-[18px] font-bold text-t-primary dark:text-t-primary tracking-tight">Platform Documentation</h3>
+                <p className="text-[14px] text-t-secondary mt-2">Comprehensive guides for using the 9-stage analysis engine and platform tools.</p>
               </div>
               <button className="mt-2 flex items-center gap-2 text-[#0A84FF] text-[14px] font-bold hover:underline">
                 Browse Docs <RiArrowRightUpLine size={16} />
@@ -84,27 +84,27 @@ function HelpContent() {
             </div>
           </div>
 
-          <div className="group relative card flex flex-col p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden cursor-pointer hover:border-[#101010] dark:hover:border-t-primary transition-colors">
+          <div className="group relative card flex flex-col p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden cursor-pointer hover:border-t-primary dark:hover:border-t-primary transition-colors">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-col items-center text-center gap-4">
-              <div className="w-14 h-14 rounded-lg bg-[rgba(0,166,86,0.08)] flex items-center justify-center text-[#00A656]">
+              <div className="w-14 h-14 rounded-lg bg-[rgba(0,166,86,0.08)] flex items-center justify-center text-primary-02">
                 {role === "student" ? <RiTeamLine size={28} /> : role === "super_admin" ? <RiServerLine size={28} /> : <RiCustomerService2Fill size={28} />}
               </div>
               <div>
-                <h3 className="text-[18px] font-bold text-[#101010] dark:text-t-primary tracking-tight">
+                <h3 className="text-[18px] font-bold text-t-primary dark:text-t-primary tracking-tight">
                   {role === "student" ? "Contact Batch Faculty" : 
                    role === "teacher" ? "Contact Institute Admin" : 
                    role === "institute_admin" ? "Contact Platform Support" : 
                    "Internal Engineering Ops"}
                 </h3>
-                <p className="text-[14px] text-[#7B7B7B] mt-2">
+                <p className="text-[14px] text-t-secondary mt-2">
                   {role === "student" ? "Escalate doubts directly to your assigned teacher." : 
                    role === "teacher" ? "Report scheduling or batch assignment issues." : 
                    role === "institute_admin" ? "Open an enterprise support ticket with the Super Admin." : 
                    "Access PagerDuty and internal infrastructure logs."}
                 </p>
               </div>
-              <button className="mt-2 flex items-center gap-2 text-[#00A656] text-[14px] font-bold hover:underline">
+              <button className="mt-2 flex items-center gap-2 text-primary-02 text-[14px] font-bold hover:underline">
                 {role === "super_admin" ? "Open Logs" : "Create Ticket"} <RiArrowRightUpLine size={16} />
               </button>
             </div>
@@ -114,26 +114,26 @@ function HelpContent() {
 
         {/* FAQs */}
         <div className="mt-4">
-          <h2 className="text-[20px] font-bold text-[#101010] dark:text-t-primary tracking-tight mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight mb-6">Frequently Asked Questions</h2>
           
           <div className="flex flex-col gap-4">
             {filteredFaqs.length > 0 ? (
               filteredFaqs.map((faq, i) => (
-                <div key={i} className="card flex flex-col p-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 shadow-sm transition-all hover:shadow-md">
+                <div key={i} className="card flex flex-col p-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 shadow-sm transition-all hover:shadow-md">
                   <div className="flex gap-4 items-start">
-                    <div className="mt-0.5 text-[#101010] dark:text-t-primary">
+                    <div className="mt-0.5 text-t-primary dark:text-t-primary">
                       <RiQuestionLine size={20} />
                     </div>
                     <div>
-                      <h4 className="text-[15px] font-bold text-[#101010] dark:text-t-primary mb-2">{faq.q}</h4>
-                      <p className="text-[14px] text-[#7B7B7B] leading-relaxed">{faq.a}</p>
+                      <h4 className="text-[15px] font-bold text-t-primary dark:text-t-primary mb-2">{faq.q}</h4>
+                      <p className="text-[14px] text-t-secondary leading-relaxed">{faq.a}</p>
                     </div>
                   </div>
                 </div>
               ))
             ) : (
-              <div className="text-center py-12 px-6 bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg">
-                <p className="text-[15px] font-medium text-[#7B7B7B]">No FAQs found matching "{searchQuery}"</p>
+              <div className="text-center py-12 px-6 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg">
+                <p className="text-[15px] font-medium text-t-secondary">No FAQs found matching "{searchQuery}"</p>
               </div>
             )}
           </div>
@@ -146,7 +146,7 @@ function HelpContent() {
 
 export default function HelpPage() {
   return (
-    <Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-[#7B7B7B]">Loading help...</div>}>
+    <Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-t-secondary">Loading help...</div>}>
       <HelpContent />
     </Suspense>
   );

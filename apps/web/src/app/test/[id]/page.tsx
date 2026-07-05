@@ -490,7 +490,7 @@ export default function TestPage() {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-b-surface1 px-6 text-center">
         <div className="text-5xl">⚠️</div>
-        <p className="text-body-1 font-semibold text-[#FF6A55]">{error}</p>
+        <p className="text-body-1 font-semibold text-primary-03">{error}</p>
         <button className="btn btn-outline" onClick={() => router.push("/pyqs")}>← Back to PYQs</button>
       </div>
     );
@@ -555,18 +555,18 @@ export default function TestPage() {
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <div className={`flex items-center gap-3 rounded-lg border px-4 py-2.5 shadow-widget ${timeWarning ? "border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)]" : "border-s-stroke2 bg-b-surface2"}`}>
-              <span className={`${timeWarning ? "text-[#FF6A55]" : "text-t-primary"}`}>
+            <div className={`flex items-center gap-3 rounded-lg border px-4 py-2.5 shadow-widget ${timeWarning ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)]" : "border-s-stroke2 bg-b-surface2"}`}>
+              <span className={`${timeWarning ? "text-primary-03" : "text-t-primary"}`}>
                 <RiTimerLine size={18} />
               </span>
-              <span className={`text-body-2 font-bold tabular-nums ${timeWarning ? "text-[#FF6A55]" : "text-t-primary"}`}>
+              <span className={`text-body-2 font-bold tabular-nums ${timeWarning ? "text-primary-03" : "text-t-primary"}`}>
                 {timeLeft !== null ? formatTime(timeLeft) : "--:--"}
               </span>
             </div>
 
             <button 
               id="submit-test-btn" 
-              className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-[#FDFDFD] transition-all active:scale-98 cursor-pointer relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]" 
+              className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 cursor-pointer relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]" 
               onClick={() => setShowSubmitModal(true)}
             >
               <span className="relative z-10">Submit Test</span>
@@ -591,14 +591,14 @@ export default function TestPage() {
         )}
 
         {/* ── Question Area ── */}
-        <section className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
+        <section className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
           <div className="box-hover" />
           
           <div className="relative z-10 mb-5 flex flex-wrap items-center gap-2">
             <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.subject}</span>
             <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.chapter}</span>
             {q.topic && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.topic}</span>}
-            <span className={`flex flex-row justify-center items-center px-2 py-0.5 border text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em] ${q.difficulty === "easy" ? "border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] text-[#00A656]" : q.difficulty === "hard" ? "border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] text-[#FF6A55]" : "border-[rgba(239,157,14,0.15)] bg-[rgba(239,157,14,0.05)] text-[#EF9D0E]"}`}>
+            <span className={`flex flex-row justify-center items-center px-2 py-0.5 border text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em] ${q.difficulty === "easy" ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : q.difficulty === "hard" ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03" : "border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05"}`}>
               {q.difficulty}
             </span>
           </div>
@@ -696,7 +696,7 @@ export default function TestPage() {
           {/* Nav buttons */}
           <div className="relative z-10 mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 border-t border-s-stroke2 pt-6">
             <button
-              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-[#FDFDFD] transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#00A656] to-[#008A47] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#00A656] to-[#008A47] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
               onClick={() => {
                 if (answers[q.id]) setStatus((s) => ({ ...s, [q.id]: "answered" }));
                 else setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
@@ -708,7 +708,7 @@ export default function TestPage() {
             </button>
 
             <button
-              className="flex flex-row justify-center items-center py-3 px-3 h-12 border border-[#E2E2E2] dark:border-s-stroke2 bg-transparent text-[#727272] dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] transition-all active:scale-98 uppercase w-full"
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 border border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] transition-all active:scale-98 uppercase w-full"
               onClick={() => {
                 setAnswers((a) => {
                   const newA = { ...a };
@@ -722,7 +722,7 @@ export default function TestPage() {
             </button>
 
             <button
-              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-[#FDFDFD] transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#EF9D0E] to-[#D98500] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#EF9D0E] to-[#D98500] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
               onClick={() => {
                 setStatus((s) => ({ ...s, [q.id]: "review" }));
                 if (current < questions.length - 1) navigateTo(current + 1);
@@ -733,7 +733,7 @@ export default function TestPage() {
             </button>
 
             <button
-              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-[#FDFDFD] transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2563EB] to-[#1D4ED8] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2563EB] to-[#1D4ED8] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
               onClick={() => {
                 setStatus((s) => ({ ...s, [q.id]: "review" }));
                 if (current < questions.length - 1) navigateTo(current + 1);
@@ -746,13 +746,13 @@ export default function TestPage() {
         </section>
 
         {/* ── Right Panel: Question Navigator ── */}
-        <aside className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
+        <aside className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
           <div className="box-hover" />
           
           <div className="relative z-10 mb-6 grid grid-cols-2 gap-y-3 gap-x-2 text-[13px] font-sans text-t-primary font-medium">
              {/* 1. Not Visited */}
              <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
-               <div className="w-8 h-8 flex items-center justify-center rounded-[4px] border border-[#B0B0B0] bg-gradient-to-br from-[#FFFFFF] to-[#E0E0E0] shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)] text-black font-semibold text-xs shrink-0">
+               <div className="w-8 h-8 flex items-center justify-center rounded-[4px] border border-t-secondary bg-gradient-to-br from-shade-10 to-[#E0E0E0] shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)] text-black font-semibold text-xs shrink-0">
                  {notVisitedCount}
                </div>
                <span className="leading-tight">Not Visited</span>
@@ -833,7 +833,7 @@ export default function TestPage() {
                         if (visited) {
                           btnClass += "bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm";
                         } else {
-                          btnClass += "rounded-[4px] border border-[#B0B0B0] bg-gradient-to-br from-[#FFFFFF] to-[#E0E0E0] text-black shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)]";
+                          btnClass += "rounded-[4px] border border-t-secondary bg-gradient-to-br from-shade-10 to-[#E0E0E0] text-black shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)]";
                         }
                       }
 
@@ -862,28 +862,28 @@ export default function TestPage() {
       {/* ── Submit Modal ── */}
       {showSubmitModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-4 py-6 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="card w-full max-w-lg p-6 text-center md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05),0_0_0_1.5px_rgba(229,229,229,0.04)_inset] border border-s-stroke2/40 animate-in zoom-in-95 duration-200">
+          <div className="card w-full max-w-lg p-6 text-center md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05),0_0_0_1.5px_rgba(229,229,229,0.04)_inset] border border-s-stroke2/40 animate-in zoom-in-95 duration-200">
             <div className="mb-5 flex justify-center text-t-primary">
-              <div className="flex size-20 items-center justify-center rounded-full bg-gradient-to-b from-[#E2E2E2] to-[#C2C2C2] dark:from-[#3A3A3A] dark:to-[#222]">
-                <RiFlag2Fill size={40} className="text-[#101010] dark:text-white" />
+              <div className="flex size-20 items-center justify-center rounded-full bg-gradient-to-b from-s-stroke2 to-[#C2C2C2] dark:from-[#3A3A3A] dark:to-[#222]">
+                <RiFlag2Fill size={40} className="text-t-primary dark:text-white" />
               </div>
             </div>
-            <h2 className="text-[24px] font-sans font-semibold tracking-[0.0015em] text-[#101010] dark:text-t-primary">Ready to Submit?</h2>
-            <p className="mt-4 text-[14px] font-sans text-[#727272] dark:text-t-secondary leading-[150%]">
-              You&apos;ve answered <strong className="text-[#101010] dark:text-t-primary">{answered}</strong> of{" "}
-              <strong className="text-[#101010] dark:text-t-primary">{questions.length}</strong> questions.
+            <h2 className="text-[24px] font-sans font-semibold tracking-[0.0015em] text-t-primary dark:text-t-primary">Ready to Submit?</h2>
+            <p className="mt-4 text-[14px] font-sans text-t-secondary dark:text-t-secondary leading-[150%]">
+              You&apos;ve answered <strong className="text-t-primary dark:text-t-primary">{answered}</strong> of{" "}
+              <strong className="text-t-primary dark:text-t-primary">{questions.length}</strong> questions.
               {unanswered > 0 && ` ${unanswered} questions are still unanswered.`}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <button 
-                className="flex flex-row justify-center items-center py-3 px-7 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans font-semibold transition-all hover:border-[#727272] active:scale-98 flex-1 h-12" 
+                className="flex flex-row justify-center items-center py-3 px-7 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 flex-1 h-12" 
                 onClick={() => setShowSubmitModal(false)}
               >
                 Keep Working
               </button>
               <button 
                 id="confirm-submit-btn" 
-                className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-[#FDFDFD] transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] flex-1" 
+                className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] flex-1" 
                 onClick={handleSubmit}
               >
                 <span className="relative z-10">Submit Test</span>

@@ -29,8 +29,8 @@ import {
 } from "@remixicon/react";
 
 function AccuracyBar({ accuracy }: { accuracy: number }) {
-  const color = accuracy >= 70 ? "bg-[#00A656]" : accuracy >= 40 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]";
-  const textClass = accuracy >= 70 ? "text-[#00A656]" : accuracy >= 40 ? "text-[#EF9D0E]" : "text-[#FF6A55]";
+  const color = accuracy >= 70 ? "bg-primary-02" : accuracy >= 40 ? "bg-primary-05" : "bg-primary-03";
+  const textClass = accuracy >= 70 ? "text-primary-02" : accuracy >= 40 ? "text-primary-05" : "text-primary-03";
   return (
     <div className="flex items-center gap-3">
       <div className="flex-1 h-2 bg-s-stroke2 rounded-full overflow-hidden">
@@ -132,7 +132,7 @@ export default function ResultsPage() {
       <>
         <Navbar title="Results & Analysis" />
         <div className="min-h-[70vh] px-4 py-10 md:px-6">
-          <div className="group relative card flex flex-col overflow-hidden p-8 md:p-10 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 mx-auto max-w-5xl gap-6">
+          <div className="group relative card flex flex-col overflow-hidden p-8 md:p-10 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 mx-auto max-w-5xl gap-6">
             <div className="box-hover" />
             <div className="relative z-10 h-3 w-36 rounded-full bg-b-surface2" />
             <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_14rem]">
@@ -160,9 +160,9 @@ export default function ResultsPage() {
   }
 
   const pct = Math.round(a.scoring.percentage);
-  const pctColorClass = pct >= 70 ? "text-[#00A656]" : pct >= 50 ? "text-[#EF9D0E]" : "text-[#FF6A55]";
-  const pctBorderColor = pct >= 70 ? "border-[#00A656]" : pct >= 50 ? "border-[#EF9D0E]" : "border-[#FF6A55]";
-  const pctBgClass = pct >= 70 ? "bg-[#00A656]/5" : pct >= 50 ? "bg-[#EF9D0E]/5" : "bg-[#FF6A55]/5";
+  const pctColorClass = pct >= 70 ? "text-primary-02" : pct >= 50 ? "text-primary-05" : "text-primary-03";
+  const pctBorderColor = pct >= 70 ? "border-primary-02" : pct >= 50 ? "border-primary-05" : "border-primary-03";
+  const pctBgClass = pct >= 70 ? "bg-primary-02/5" : pct >= 50 ? "bg-primary-05/5" : "bg-primary-03/5";
   const totalQuestions = a.scoring.correctCount + a.scoring.incorrectCount + a.scoring.skippedCount;
   const batchAvgScore = a.batchAvg?.score ?? 148; // realistic batch average marks
   const attemptedChapters = [...a.topicStats].filter((t: any) => t.attempted > 0);
@@ -179,86 +179,86 @@ export default function ResultsPage() {
             <RiArrowLeftLine size={16} /> Back to Dashboard
           </Link>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="flex flex-row justify-center items-center px-2 py-1 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">{totalQuestions} questions</span>
-            <span className="flex flex-row justify-center items-center px-2 py-1 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
+            <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">{totalQuestions} questions</span>
+            <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
               {attemptedChapters.filter((t: any) => t.isWeak).length} weak chapter{attemptedChapters.filter((t: any) => t.isWeak).length === 1 ? "" : "s"}
             </span>
-            <span className="flex flex-row justify-center items-center px-2 py-1 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
+            <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
               {unattemptedChapters.length} unattempted chapter{unattemptedChapters.length === 1 ? "" : "s"}
             </span>
             {a.narrative?.examCountdown && (
-              <span className="flex flex-row justify-center items-center px-2 py-1 border border-[rgba(239,157,14,0.15)] bg-[rgba(239,157,14,0.05)] text-[#EF9D0E] text-[12px] font-sans font-semibold tracking-[0.004em] rounded-lg">{a.narrative.examCountdown.urgencyLabel}</span>
+              <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05 text-[12px] font-sans font-semibold tracking-[0.004em] rounded-lg">{a.narrative.examCountdown.urgencyLabel}</span>
             )}
           </div>
         </div>
 
-        <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+        <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
           <div className="box-hover" />
           
           <div className="relative z-10 grid gap-6 xl:grid-cols-[minmax(0,1fr)_20rem]">
             <div className="space-y-5">
               <div>
-                <p className="text-[12px] font-sans font-bold uppercase tracking-[0.24em] text-[#7B7B7B]">Test Results</p>
-                <h1 className="mt-2 text-[28px] md:text-[32px] font-sans font-black tracking-tight text-[#101010] dark:text-t-primary leading-tight">Test Results & Analysis</h1>
-                <p className="mt-2 text-[14px] font-sans font-medium text-[#727272] dark:text-t-secondary">{a.topicStats[0]?.chapter ?? "Practice set"} · JEE · {totalQuestions} questions</p>
+                <p className="text-[12px] font-sans font-bold uppercase tracking-[0.24em] text-t-secondary">Test Results</p>
+                <h1 className="mt-2 text-[28px] md:text-[32px] font-sans font-black tracking-tight text-t-primary dark:text-t-primary leading-tight">Test Results & Analysis</h1>
+                <p className="mt-2 text-[14px] font-sans font-medium text-t-secondary dark:text-t-secondary">{a.topicStats[0]?.chapter ?? "Practice set"} · JEE · {totalQuestions} questions</p>
               </div>
 
               {a.narrative && (
-                <div className="rounded-lg border border-[#FDFDFD] dark:border-s-stroke2/30 bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] p-5 md:p-6">
+                <div className="rounded-lg border border-s-border dark:border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] p-5 md:p-6">
                   <div className="mb-4 flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-2 text-[16px] font-sans font-bold text-[#101010] dark:text-t-primary tracking-[0.0015em]">
-                      <RiLightbulbFlashLine size={20} className="text-[#EF9D0E]" /> Performance summary
+                    <div className="flex items-center gap-2 text-[16px] font-sans font-bold text-t-primary dark:text-t-primary tracking-[0.0015em]">
+                      <RiLightbulbFlashLine size={20} className="text-primary-05" /> Performance summary
                     </div>
-                    {a.narrative.examCountdown && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-b-surface1 text-[#727272] dark:text-t-secondary text-[10px] font-sans font-bold tracking-[0.004em]">{a.narrative.examCountdown.urgencyLabel}</span>}
+                    {a.narrative.examCountdown && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary dark:text-t-secondary text-[10px] font-sans font-bold tracking-[0.004em]">{a.narrative.examCountdown.urgencyLabel}</span>}
                   </div>
-                  <p className="text-[14px] font-sans font-semibold leading-[150%] text-[#101010] dark:text-t-primary">{a.narrative.headline}</p>
-                  <p className="mt-3 max-w-3xl text-[12px] font-sans leading-[160%] text-[#727272] dark:text-t-secondary">{a.narrative.overview}</p>
-                  <div className="mt-4 rounded-lg border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1/60 p-4">
-                    <div className="text-[10px] font-sans font-bold uppercase tracking-[0.24em] text-[#7B7B7B]">Best next move</div>
-                    <div className="mt-1 text-[14px] font-sans font-semibold text-[#101010] dark:text-t-primary">{a.narrative.biggestWin}</div>
+                  <p className="text-[14px] font-sans font-semibold leading-[150%] text-t-primary dark:text-t-primary">{a.narrative.headline}</p>
+                  <p className="mt-3 max-w-3xl text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">{a.narrative.overview}</p>
+                  <div className="mt-4 rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-4">
+                    <div className="text-[10px] font-sans font-bold uppercase tracking-[0.24em] text-t-secondary">Best next move</div>
+                    <div className="mt-1 text-[14px] font-sans font-semibold text-t-primary dark:text-t-primary">{a.narrative.biggestWin}</div>
                   </div>
                 </div>
               )}
             </div>
 
-            <div className="rounded-lg border border-[#FDFDFD] dark:border-s-stroke2/30 bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] p-5">
+            <div className="rounded-lg border border-s-border dark:border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] p-5">
               <div className={`flex items-center justify-between rounded-lg border border-opacity-30 ${pctBorderColor} ${pctBgClass} p-4`}>
                 <div>
-                  <div className={`text-[32px] font-sans font-black tracking-tight leading-none ${pctColorClass}`}>{a.scoring.score} <span className="text-[14px] font-medium text-[#727272] dark:text-t-secondary">/ {a.scoring.maxScore}</span></div>
-                  <div className="text-[12px] font-sans font-bold text-[#727272] dark:text-t-secondary mt-1">Marks Obtained</div>
+                  <div className={`text-[32px] font-sans font-black tracking-tight leading-none ${pctColorClass}`}>{a.scoring.score} <span className="text-[14px] font-medium text-t-secondary dark:text-t-secondary">/ {a.scoring.maxScore}</span></div>
+                  <div className="text-[12px] font-sans font-bold text-t-secondary dark:text-t-secondary mt-1">Marks Obtained</div>
                 </div>
                 {a.freeMarks?.projectedScore > a.scoring.score && (
                   <div className="text-right">
-                    <div className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-[#00A656]">Potential</div>
-                    <div className="text-[16px] font-sans font-black text-[#00A656]">{a.freeMarks.projectedScore} <span className="text-[10px] font-normal text-[#727272] dark:text-t-secondary">/ {a.scoring.maxScore}</span></div>
+                    <div className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-primary-02">Potential</div>
+                    <div className="text-[16px] font-sans font-black text-primary-02">{a.freeMarks.projectedScore} <span className="text-[10px] font-normal text-t-secondary dark:text-t-secondary">/ {a.scoring.maxScore}</span></div>
                   </div>
                 )}
               </div>
 
               <div className="mt-4 h-2.5 w-full rounded-full bg-s-stroke2 overflow-hidden shadow-[inset_0px_1px_2px_rgba(0,0,0,0.1)] dark:shadow-[inset_0px_1px_3px_rgba(0,0,0,0.2)]">
-                <div className={`h-full rounded-full transition-all ${pct >= 70 ? "bg-[#00A656]" : pct >= 50 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]"}`} style={{ width: `${Math.max(0, Math.min(100, pct))}%` }} />
+                <div className={`h-full rounded-full transition-all ${pct >= 70 ? "bg-primary-02" : pct >= 50 ? "bg-primary-05" : "bg-primary-03"}`} style={{ width: `${Math.max(0, Math.min(100, pct))}%` }} />
               </div>
 
               <div className="mt-4 grid grid-cols-3 gap-3">
                 {[
-                  { label: "Correct", value: a.scoring.correctCount, color: "text-[#00A656]" },
-                  { label: "Wrong", value: a.scoring.incorrectCount, color: "text-[#FF6A55]" },
-                  { label: "Skipped", value: a.scoring.skippedCount, color: "text-[#7B7B7B] dark:text-t-secondary" },
+                  { label: "Correct", value: a.scoring.correctCount, color: "text-primary-02" },
+                  { label: "Wrong", value: a.scoring.incorrectCount, color: "text-primary-03" },
+                  { label: "Skipped", value: a.scoring.skippedCount, color: "text-t-secondary dark:text-t-secondary" },
                 ].map((stat) => (
-                  <div key={stat.label} className="rounded-lg border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1/60 p-3 text-center flex flex-col justify-center items-center">
+                  <div key={stat.label} className="rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-3 text-center flex flex-col justify-center items-center">
                     <div className={`text-[20px] font-sans font-black leading-none ${stat.color}`}>{stat.value}</div>
-                    <div className="mt-1.5 text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-[#7B7B7B]">{stat.label}</div>
+                    <div className="mt-1.5 text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">{stat.label}</div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-4 rounded-lg border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1/60 p-4">
+              <div className="mt-4 rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-4">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <div className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-[#7B7B7B]">Batch average</div>
-                    <div className="mt-1 text-[16px] font-sans font-black text-[#101010] dark:text-t-primary leading-none">{batchAvgScore} <span className="text-[10px] font-normal text-[#727272] dark:text-t-secondary">/ {a.scoring.maxScore}</span></div>
+                    <div className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">Batch average</div>
+                    <div className="mt-1 text-[16px] font-sans font-black text-t-primary dark:text-t-primary leading-none">{batchAvgScore} <span className="text-[10px] font-normal text-t-secondary dark:text-t-secondary">/ {a.scoring.maxScore}</span></div>
                   </div>
-                  <div className={`flex flex-row justify-center items-center px-1.5 py-0.5 rounded-lg border text-[12px] font-sans font-semibold tracking-[0.004em] ${a.scoring.score >= batchAvgScore ? "border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] text-[#00A656]" : "border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] text-[#FF6A55]"}`}>
+                  <div className={`flex flex-row justify-center items-center px-1.5 py-0.5 rounded-lg border text-[12px] font-sans font-semibold tracking-[0.004em] ${a.scoring.score >= batchAvgScore ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03"}`}>
                     {a.scoring.score >= batchAvgScore ? `+${a.scoring.score - batchAvgScore} Marks` : `-${batchAvgScore - a.scoring.score} Marks`}
                   </div>
                 </div>
@@ -270,14 +270,14 @@ export default function ResultsPage() {
         <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
           <div className="space-y-6">
             {/* ── HIGH-FIDELITY DETAILED REPORT CARD ── */}
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
               <div className="box-hover" />
               <div className="relative z-10 mb-5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border-b border-s-stroke2 pb-5">
                 <div>
-                  <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">Detailed Performance Report</h2>
-                  <p className="mt-1 text-[12px] font-sans text-[#7B7B7B]">Deep-dive pedagogical analysis of your test attempts.</p>
+                  <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Detailed Performance Report</h2>
+                  <p className="mt-1 text-[12px] font-sans text-t-secondary">Deep-dive pedagogical analysis of your test attempts.</p>
                 </div>
-                <div className="flex items-center gap-1 p-1 rounded-full border border-[rgba(123,123,123,0.15)] dark:border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 w-fit max-w-full overflow-x-auto scrollbar-hide shadow-[inset_0_1px_3px_rgba(0,0,0,0.02)]">
+                <div className="flex items-center gap-1 p-1 rounded-full border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 w-fit max-w-full overflow-x-auto scrollbar-hide shadow-[inset_0_1px_3px_rgba(0,0,0,0.02)]">
                   {[
                     { id: "overview", label: "Overview" },
                     { id: "analysis", label: "Analysis" },
@@ -498,10 +498,10 @@ export default function ResultsPage() {
                           if (ans.selected_answer) {
                             if (ans.is_correct) {
                               ansLabel = "✓ Correct";
-                              ansColor = "text-[#00A656] font-bold";
+                              ansColor = "text-primary-02 font-bold";
                             } else {
                               ansLabel = "✗ Incorrect";
-                              ansColor = "text-[#FF6A55] font-bold";
+                              ansColor = "text-primary-03 font-bold";
                             }
                           }
 
@@ -512,12 +512,12 @@ export default function ResultsPage() {
                           const fallbackOverview = getOverviewLabel(ans);
                           const typeLabel = classification?.type ? classification.type.replace(/_/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) : fallbackOverview;
                           let typeColor = "text-t-tertiary";
-                          if (classification?.type === "correct" || classification?.type === "strategic_skip") typeColor = "text-[#00A656] font-bold";
-                          else if (classification?.type === "silly" || classification?.type === "wasted_time" || classification?.type === "ran_out_of_time") typeColor = "text-[#FF6A55] font-bold";
-                          else if (classification?.type) typeColor = "text-[#EF9D0E] font-bold";
-                          else if (fallbackOverview === "Perfect") typeColor = "text-[#00A656] font-bold";
-                          else if (fallbackOverview === "Wasted") typeColor = "text-[#FF6A55] font-bold";
-                          else if (fallbackOverview === "Confused") typeColor = "text-[#EF9D0E] font-bold";
+                          if (classification?.type === "correct" || classification?.type === "strategic_skip") typeColor = "text-primary-02 font-bold";
+                          else if (classification?.type === "silly" || classification?.type === "wasted_time" || classification?.type === "ran_out_of_time") typeColor = "text-primary-03 font-bold";
+                          else if (classification?.type) typeColor = "text-primary-05 font-bold";
+                          else if (fallbackOverview === "Perfect") typeColor = "text-primary-02 font-bold";
+                          else if (fallbackOverview === "Wasted") typeColor = "text-primary-03 font-bold";
+                          else if (fallbackOverview === "Confused") typeColor = "text-primary-05 font-bold";
 
                           return (
                             <React.Fragment key={ans.id}>
@@ -542,15 +542,15 @@ export default function ResultsPage() {
                               {isExpanded && classification?.detail && (
                                 <tr className="bg-[rgba(55,101,246,0.02)] border-b border-s-stroke2">
                                   <td colSpan={9} className="p-4">
-                                    <div className="flex flex-col gap-2 text-[12px] text-[#101010] dark:text-t-primary">
+                                    <div className="flex flex-col gap-2 text-[12px] text-t-primary dark:text-t-primary">
                                       <div className="flex items-start gap-2">
-                                        <RiSearchLine size={16} className="text-[#3765F6] mt-0.5 shrink-0" />
-                                        <p><strong className="text-[#3765F6]">Analysis:</strong> {classification.detail}</p>
+                                        <RiSearchLine size={16} className="text-primary-01 mt-0.5 shrink-0" />
+                                        <p><strong className="text-primary-01">Analysis:</strong> {classification.detail}</p>
                                       </div>
                                       {classification.tip && (
                                         <div className="flex items-start gap-2">
-                                          <RiLightbulbFlashLine size={16} className="text-[#EF9D0E] mt-0.5 shrink-0" />
-                                          <p><strong className="text-[#EF9D0E]">Actionable Tip:</strong> {classification.tip}</p>
+                                          <RiLightbulbFlashLine size={16} className="text-primary-05 mt-0.5 shrink-0" />
+                                          <p><strong className="text-primary-05">Actionable Tip:</strong> {classification.tip}</p>
                                         </div>
                                       )}
                                     </div>
@@ -569,18 +569,18 @@ export default function ResultsPage() {
             </section>
 
             {unattemptedChapters.length > 0 && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
                 <div className="box-hover" />
                 <div className="relative z-10 mb-4">
-                  <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">Syllabus Gaps (Unattempted)</h2>
-                  <p className="mt-1 text-[12px] font-sans text-[#7B7B7B]">Chapters with zero attempts in this mock test. Revise these to ensure full syllabus coverage.</p>
+                  <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Syllabus Gaps (Unattempted)</h2>
+                  <p className="mt-1 text-[12px] font-sans text-t-secondary">Chapters with zero attempts in this mock test. Revise these to ensure full syllabus coverage.</p>
                 </div>
                 <div className="relative z-10 flex flex-wrap gap-2.5">
                   {unattemptedChapters.map((chapter: any) => (
-                    <div key={chapter.topic} className="flex flex-row justify-center items-center px-4 py-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 text-[#727272] dark:text-t-secondary text-[12px] font-sans font-bold tracking-[0.004em] gap-2">
-                      <span className="h-2 w-2 rounded-full bg-[#727272] dark:bg-t-tertiary" />
+                    <div key={chapter.topic} className="flex flex-row justify-center items-center px-4 py-2 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface2 dark:bg-b-surface2 text-t-secondary dark:text-t-secondary text-[12px] font-sans font-bold tracking-[0.004em] gap-2">
+                      <span className="h-2 w-2 rounded-full bg-t-secondary dark:bg-t-tertiary" />
                       <span>{chapter.topic}</span>
-                      <span className="text-[10px] font-normal text-[#727272] dark:text-t-tertiary">({chapter.chapter})</span>
+                      <span className="text-[10px] font-normal text-t-secondary dark:text-t-tertiary">({chapter.chapter})</span>
                     </div>
                   ))}
                 </div>
@@ -588,62 +588,62 @@ export default function ResultsPage() {
             )}
 
             {a.attemptStrategy && a.attemptStrategy.pattern !== "mixed" && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
                 <div className="box-hover" />
                 <div className="relative z-10 mb-4 flex items-center justify-between gap-4">
                   <div>
-                    <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">Attempt Strategy</h2>
-                    <p className="mt-1 text-[12px] font-sans text-[#7B7B7B]">Use this to improve pacing and accuracy.</p>
+                    <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Attempt Strategy</h2>
+                    <p className="mt-1 text-[12px] font-sans text-t-secondary">Use this to improve pacing and accuracy.</p>
                   </div>
-                  <div className="flex flex-row justify-center items-center px-3 py-1 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-b-surface2 text-[#727272] dark:text-t-secondary text-[12px] font-sans font-bold tracking-[0.004em]">
+                  <div className="flex flex-row justify-center items-center px-3 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface2 text-t-secondary dark:text-t-secondary text-[12px] font-sans font-bold tracking-[0.004em]">
                     {a.attemptStrategy.strategyScore}/100
                   </div>
                 </div>
-                <div className="relative z-10 rounded-lg border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1/60 p-4">
+                <div className="relative z-10 rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-4">
                   <div className="grid gap-3 sm:grid-cols-3">
                     {strategySubjects.map((subject: string) => {
                       const deviation = a.attemptStrategy.timeDeviationPct?.[subject];
                       const budget = a.attemptStrategy.optimalTimeSec?.[subject];
                       const spent = a.attemptStrategy.timePerSubjectSec?.[subject];
                       return (
-                        <div key={subject} className="rounded-lg border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 p-4">
-                          <div className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-[#7B7B7B]">{subject}</div>
-                          <div className={`mt-2 text-[20px] font-sans font-black ${deviation >= 0 ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
+                        <div key={subject} className="rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-4">
+                          <div className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">{subject}</div>
+                          <div className={`mt-2 text-[20px] font-sans font-black ${deviation >= 0 ? "text-primary-02" : "text-primary-03"}`}>
                             {deviation != null ? `${deviation > 0 ? "+" : ""}${Math.round(deviation)}%` : "—"}
                           </div>
-                          <div className="mt-1 text-[12px] font-sans text-[#7B7B7B]">
+                          <div className="mt-1 text-[12px] font-sans text-t-secondary">
                             {spent != null && budget != null ? `${Math.round(spent)}s spent · ${Math.round(budget)}s ideal` : "Timing data unavailable"}
                           </div>
                         </div>
                       );
                     })}
                   </div>
-                  <p className="mt-4 text-[12px] font-sans leading-[160%] text-[#727272] dark:text-t-secondary">
-                    <strong className="text-[#101010] dark:text-t-primary">Recommendation:</strong> {a.attemptStrategy.recommendation}
+                  <p className="mt-4 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">
+                    <strong className="text-t-primary dark:text-t-primary">Recommendation:</strong> {a.attemptStrategy.recommendation}
                   </p>
                 </div>
               </section>
             )}
 
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
               <div className="box-hover" />
               <div className="relative z-10 mb-5 flex items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">Error Patterns</h2>
-                  <p className="mt-1 text-[12px] font-sans text-[#7B7B7B]">These are the mistakes that cost you the most.</p>
+                  <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Error Patterns</h2>
+                  <p className="mt-1 text-[12px] font-sans text-t-secondary">These are the mistakes that cost you the most.</p>
                 </div>
-                <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] text-[#FF6A55] text-[12px] font-sans font-bold tracking-[0.004em] rounded-lg">Watch closely</span>
+                <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03 text-[12px] font-sans font-bold tracking-[0.004em] rounded-lg">Watch closely</span>
               </div>
               <div className="relative z-10 grid gap-4 md:grid-cols-2">
                 {a.errorPatterns.map((ep: any) => (
-                  <div key={ep.id} className="rounded-lg border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 p-5 shadow-sm">
-                    <h3 className="text-[14px] font-sans font-bold text-[#FF6A55]">{ep.name}</h3>
+                  <div key={ep.id} className="rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-5 shadow-sm">
+                    <h3 className="text-[14px] font-sans font-bold text-primary-03">{ep.name}</h3>
                     <p className="mt-2 text-caption leading-relaxed text-t-secondary">{ep.description}</p>
                     <div className="mt-4">
                       <span className="label label-red font-bold">{ep.questionsAffected.length} questions affected</span>
                     </div>
                     <div className="mt-4 rounded-lg border border-s-stroke2 bg-b-surface2 p-3 text-caption font-semibold text-t-primary">
-                      <span className="text-[#3765F6]">Tip:</span> {ep.tip}
+                      <span className="text-primary-01">Tip:</span> {ep.tip}
                     </div>
                   </div>
                 ))}
@@ -652,19 +652,19 @@ export default function ResultsPage() {
 
             {/* ── PANIC CASCADE ALERT ── */}
             {a.panicCascade?.detected && (
-              <section className="flex flex-col p-6 md:p-7 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-[#FF6A55]/40 select-none">
+              <section className="flex flex-col p-6 md:p-7 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-primary-03/40 select-none">
                 <div className="flex items-start gap-4">
                   <div className="flex size-16 items-center justify-center rounded-full bg-gradient-to-b from-[#FFD1D1] to-[#FFA3A3] shrink-0">
-                    <RiErrorWarningFill size={24} className="text-[#101010]" />
+                    <RiErrorWarningFill size={24} className="text-t-primary" />
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-3">
-                      <h2 className="text-[16px] font-sans font-bold text-[#FF6A55]">⚡ Panic Cascade Detected</h2>
-                      <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] text-[#FF6A55] text-[12px] font-sans font-bold tracking-[0.004em] rounded-lg">Critical Pattern</span>
+                      <h2 className="text-[16px] font-sans font-bold text-primary-03">⚡ Panic Cascade Detected</h2>
+                      <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03 text-[12px] font-sans font-bold tracking-[0.004em] rounded-lg">Critical Pattern</span>
                     </div>
-                    <p className="mt-2 text-[12px] font-sans leading-[160%] text-[#727272] dark:text-t-secondary">{a.panicCascade.description}</p>
-                    <div className="mt-4 rounded-lg border border-[#FF6A55]/20 bg-[rgba(255,106,85,0.02)] p-3 text-[12px] font-sans font-semibold text-[#101010] dark:text-t-primary">
-                      <span className="text-[#FF6A55]">Action:</span> {a.panicCascade.tip}
+                    <p className="mt-2 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">{a.panicCascade.description}</p>
+                    <div className="mt-4 rounded-lg border border-primary-03/20 bg-[rgba(255,106,85,0.02)] p-3 text-[12px] font-sans font-semibold text-t-primary dark:text-t-primary">
+                      <span className="text-primary-03">Action:</span> {a.panicCascade.tip}
                     </div>
                   </div>
                 </div>
@@ -673,22 +673,22 @@ export default function ResultsPage() {
 
             {/* ── FATIGUE CURVE ── */}
             {a.timeIntervals && a.timeIntervals.length > 0 && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
                 <div className="box-hover" />
                 <div className="relative z-10 mb-5 flex items-center justify-between gap-4">
                   <div>
                     <div className="flex items-center gap-2">
-                      <RiPulseLine size={18} className="text-[#3765F6]" />
-                      <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">Attempts Over 3 Hours</h2>
+                      <RiPulseLine size={18} className="text-primary-01" />
+                      <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Attempts Over 3 Hours</h2>
                     </div>
-                    <p className="mt-1 text-[12px] font-sans text-[#7B7B7B]">How your performance changed across the exam duration.</p>
+                    <p className="mt-1 text-[12px] font-sans text-t-secondary">How your performance changed across the exam duration.</p>
                   </div>
                 </div>
 
                 {/* Fatigue summary narrative */}
                 {a.fatigueSummary && (
-                  <div className="relative z-10 mb-5 rounded-lg border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 p-4 text-[12px] font-sans leading-[160%] text-[#727272] dark:text-t-secondary shadow-sm">
-                    <span className="font-bold text-[#101010] dark:text-t-primary">Analysis: </span>{a.fatigueSummary}
+                  <div className="relative z-10 mb-5 rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-4 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary shadow-sm">
+                    <span className="font-bold text-t-primary dark:text-t-primary">Analysis: </span>{a.fatigueSummary}
                   </div>
                 )}
 
@@ -699,22 +699,22 @@ export default function ResultsPage() {
                       <tr>
                         <th>Interval</th>
                         <th className="text-center">Total</th>
-                        <th className="text-center text-[#00A656]">Correct</th>
-                        <th className="text-center text-[#FF6A55]">Wrong</th>
+                        <th className="text-center text-primary-02">Correct</th>
+                        <th className="text-center text-primary-03">Wrong</th>
                         <th className="text-center">Skipped</th>
                         <th className="text-right">Accuracy</th>
                       </tr>
                     </thead>
                     <tbody>
                       {a.timeIntervals.map((interval: any, i: number) => {
-                        const accColor = interval.accuracy >= 70 ? "text-[#00A656]" : interval.accuracy >= 40 ? "text-[#EF9D0E]" : "text-[#FF6A55]";
+                        const accColor = interval.accuracy >= 70 ? "text-primary-02" : interval.accuracy >= 40 ? "text-primary-05" : "text-primary-03";
                         const label = i === 0 ? "First 30 mins" : `${(i * 30) + 1}–${(i + 1) * 30} mins`;
                         return (
                           <tr key={i}>
                             <td className="font-semibold">{label}</td>
                             <td className="text-center">{interval.total}</td>
-                            <td className="text-center font-bold text-[#00A656]">{interval.correct}</td>
-                            <td className="text-center font-bold text-[#FF6A55]">{interval.incorrect}</td>
+                            <td className="text-center font-bold text-primary-02">{interval.correct}</td>
+                            <td className="text-center font-bold text-primary-03">{interval.incorrect}</td>
                             <td className="text-center">{interval.skipped}</td>
                             <td className="text-right font-black">
                               <span className={accColor}>{interval.accuracy}%</span>
@@ -730,14 +730,14 @@ export default function ResultsPage() {
                 <div className="relative z-10 space-y-2">
                   {a.timeIntervals.map((interval: any, i: number) => {
                     const label = i === 0 ? "First 30 mins" : `${(i * 30) + 1}–${(i + 1) * 30} mins`;
-                    const barColor = interval.accuracy >= 70 ? "bg-[#00A656]" : interval.accuracy >= 40 ? "bg-[#EF9D0E]" : "bg-[#FF6A55]";
+                    const barColor = interval.accuracy >= 70 ? "bg-primary-02" : interval.accuracy >= 40 ? "bg-primary-05" : "bg-primary-03";
                     return (
                       <div key={i} className="flex items-center gap-3">
-                        <span className="w-28 shrink-0 text-[10px] font-sans font-bold text-[#7B7B7B] uppercase tracking-[0.05em]">{label}</span>
+                        <span className="w-28 shrink-0 text-[10px] font-sans font-bold text-t-secondary uppercase tracking-[0.05em]">{label}</span>
                         <div className="flex-1 h-2.5 rounded-full bg-s-stroke2 overflow-hidden shadow-[inset_0px_1px_2px_rgba(0,0,0,0.1)] dark:shadow-[inset_0px_1px_3px_rgba(0,0,0,0.2)]">
                           <div className={`h-full rounded-full transition-all duration-500 ${barColor}`} style={{ width: `${interval.accuracy}%` }} />
                         </div>
-                        <span className="w-8 text-right text-[10px] font-sans font-bold text-[#727272] dark:text-t-secondary">{interval.accuracy}%</span>
+                        <span className="w-8 text-right text-[10px] font-sans font-bold text-t-secondary dark:text-t-secondary">{interval.accuracy}%</span>
                       </div>
                     );
                   })}
@@ -747,37 +747,37 @@ export default function ResultsPage() {
 
             {/* ── DIFFICULTY ANALYSIS ── */}
             {a.difficultyBreakdown && a.difficultyBreakdown.length > 0 && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
                 <div className="box-hover" />
                 <div className="relative z-10 mb-5 flex items-center gap-2">
-                  <RiBarChartBoxLine size={18} className="text-[#EF9D0E]" />
+                  <RiBarChartBoxLine size={18} className="text-primary-05" />
                   <div>
-                    <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">Difficulty Analysis</h2>
-                    <p className="mt-0.5 text-[12px] font-sans text-[#7B7B7B]">Performance breakdown by question difficulty, per subject.</p>
+                    <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Difficulty Analysis</h2>
+                    <p className="mt-0.5 text-[12px] font-sans text-t-secondary">Performance breakdown by question difficulty, per subject.</p>
                   </div>
                 </div>
                 <div className="relative z-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
                   {a.difficultyBreakdown.map((row: any) => (
-                    <div key={row.subject} className="rounded-lg border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1/60 p-5 shadow-sm">
+                    <div key={row.subject} className="rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
                       <div className="mb-4 flex items-center justify-between">
-                        <h3 className="text-[14px] font-sans font-bold text-[#101010] dark:text-t-primary">{row.subject}</h3>
+                        <h3 className="text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">{row.subject}</h3>
                       </div>
                       <div className="space-y-3">
                         {(["easy", "medium", "hard"] as const).map((diff) => {
                           const d = row[diff];
                           const attempted = d.correct + d.incorrect;
                           const acc = attempted > 0 ? Math.round((d.correct / attempted) * 100) : 0;
-                          const barColor = diff === "easy" ? "bg-[#00A656]" : diff === "medium" ? "bg-[#EF9D0E]" : "bg-[#FF6A55]";
-                          const labelColor = diff === "easy" ? "text-[#00A656]" : diff === "medium" ? "text-[#EF9D0E]" : "text-[#FF6A55]";
+                          const barColor = diff === "easy" ? "bg-primary-02" : diff === "medium" ? "bg-primary-05" : "bg-primary-03";
+                          const labelColor = diff === "easy" ? "text-primary-02" : diff === "medium" ? "text-primary-05" : "text-primary-03";
                           return (
                             <div key={diff}>
                               <div className="mb-1.5 flex items-center justify-between">
                                 <span className={`text-[10px] font-sans font-bold uppercase tracking-[0.2em] ${labelColor}`}>{diff}</span>
-                                <div className="flex items-center gap-3 text-[12px] font-sans text-[#727272] dark:text-t-secondary">
-                                  <span className="text-[#00A656] font-bold">{d.correct}✓</span>
-                                  <span className="text-[#FF6A55] font-bold">{d.incorrect}✗</span>
-                                  <span className="text-[#727272] dark:text-t-tertiary">{d.skipped} skip</span>
-                                  {attempted > 0 && <span className={`font-black ${acc >= 70 ? "text-[#00A656]" : acc >= 40 ? "text-[#EF9D0E]" : "text-[#FF6A55]"}`}>{acc}%</span>}
+                                <div className="flex items-center gap-3 text-[12px] font-sans text-t-secondary dark:text-t-secondary">
+                                  <span className="font-bold">{d.correct}✓</span>
+                                  <span className="font-bold">{d.incorrect}✗</span>
+                                  <span className="text-t-secondary dark:text-t-tertiary">{d.skipped} skip</span>
+                                  {attempted > 0 && <span className={`font-black ${acc >= 70 ? "text-primary-02" : acc >= 40 ? "text-primary-05" : "text-primary-03"}`}>{acc}%</span>}
                                 </div>
                               </div>
                               <div className="h-2 w-full rounded-full bg-s-stroke2 overflow-hidden shadow-[inset_0px_1px_2px_rgba(0,0,0,0.1)] dark:shadow-[inset_0px_1px_3px_rgba(0,0,0,0.2)]">
@@ -795,32 +795,32 @@ export default function ResultsPage() {
 
             {/* ── ATTEMPT CLASSIFICATION ── */}
             {a.attemptClassification && a.attemptClassification.length > 0 && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
                 <div className="box-hover" />
                 <div className="relative z-10 mb-5 flex items-center gap-2">
-                  <RiPieChartLine size={18} className="text-[#3765F6]" />
+                  <RiPieChartLine size={18} className="text-primary-01" />
                   <div>
-                    <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">Attempt Classification</h2>
-                    <p className="mt-0.5 text-[12px] font-sans text-[#7B7B7B]">Quality of every attempt: Perfect, Overtime, Wasted, or Confused.</p>
+                    <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Attempt Classification</h2>
+                    <p className="mt-0.5 text-[12px] font-sans text-t-secondary">Quality of every attempt: Perfect, Overtime, Wasted, or Confused.</p>
                   </div>
                 </div>
                 <div className="relative z-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
                   {a.attemptClassification.map((row: any) => {
                     const cats = [
-                      { label: "Perfect", value: row.perfect, color: "bg-[#00A656]", textColor: "text-[#00A656]", desc: "Correct & efficient" },
-                      { label: "Overtime", value: row.overtime, color: "bg-[#3765F6]", textColor: "text-[#3765F6]", desc: "Correct but too slow" },
-                      { label: "Wasted", value: row.wasted, color: "bg-[#FF6A55]", textColor: "text-[#FF6A55]", desc: "Wrong & over-invested" },
-                      { label: "Confused", value: row.confused, color: "bg-[#EF9D0E]", textColor: "text-[#EF9D0E]", desc: "Skipped after pondering" },
+                      { label: "Perfect", value: row.perfect, color: "bg-primary-02", textColor: "text-primary-02", desc: "Correct & efficient" },
+                      { label: "Overtime", value: row.overtime, color: "bg-primary-01", textColor: "text-primary-01", desc: "Correct but too slow" },
+                      { label: "Wasted", value: row.wasted, color: "bg-primary-03", textColor: "text-primary-03", desc: "Wrong & over-invested" },
+                      { label: "Confused", value: row.confused, color: "bg-primary-05", textColor: "text-primary-05", desc: "Skipped after pondering" },
                     ];
                     return (
-                      <div key={row.subject} className="rounded-lg border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1/60 p-5 shadow-sm">
-                        <h3 className="mb-4 text-[14px] font-sans font-bold text-[#101010] dark:text-t-primary">{row.subject} <span className="text-[#7B7B7B] font-normal">({row.total} attempts)</span></h3>
+                      <div key={row.subject} className="rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
+                        <h3 className="mb-4 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">{row.subject} <span className="text-t-secondary font-normal">({row.total} attempts)</span></h3>
                         <div className="grid grid-cols-2 gap-3">
                           {cats.map(cat => (
                             <div key={cat.label} className="rounded-lg border border-s-stroke2 bg-b-surface2 p-3">
                               <div className={`text-[20px] font-sans font-black ${cat.textColor}`}>{cat.value}</div>
-                              <div className="mt-0.5 text-[10px] font-sans font-bold uppercase tracking-[0.18em] text-[#7B7B7B]">{cat.label}</div>
-                              <div className="mt-1 text-[10px] font-sans text-[#727272] dark:text-t-secondary">{cat.desc}</div>
+                              <div className="mt-0.5 text-[10px] font-sans font-bold uppercase tracking-[0.18em] text-t-secondary">{cat.label}</div>
+                              <div className="mt-1 text-[10px] font-sans text-t-secondary dark:text-t-secondary">{cat.desc}</div>
                               {/* Mini donut bar */}
                               <div className="mt-2 h-1.5 w-full rounded-full bg-s-stroke2 overflow-hidden shadow-[inset_0px_1px_2px_rgba(0,0,0,0.1)] dark:shadow-[inset_0px_1px_3px_rgba(0,0,0,0.2)]">
                                 <div className={`h-full rounded-full ${cat.color}`} style={{ width: row.total > 0 ? `${Math.round((cat.value / row.total) * 100)}%` : "0%" }} />
@@ -837,22 +837,22 @@ export default function ResultsPage() {
 
             {/* ── SUBJECT MOVEMENT ── */}
             {a.subjectMovement && a.subjectMovement.length > 0 && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
                 <div className="box-hover" />
                 <div className="relative z-10 mb-5 flex items-center gap-2">
-                  <RiExchangeLine size={18} className="text-[#727272] dark:text-t-secondary" />
+                  <RiExchangeLine size={18} className="text-t-secondary dark:text-t-secondary" />
                   <div>
-                    <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">Subject Movement</h2>
-                    <p className="mt-0.5 text-[12px] font-sans text-[#7B7B7B]">How you navigated between subjects during the test.</p>
+                    <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Subject Movement</h2>
+                    <p className="mt-0.5 text-[12px] font-sans text-t-secondary">How you navigated between subjects during the test.</p>
                   </div>
                 </div>
                 <div className="relative z-10 flex flex-wrap items-center gap-2">
                   {a.subjectMovement.map((block: any, i: number) => {
                     const subjectColors: Record<string, string> = {
-                      Physics: "border-[#3765F6]/30 bg-[#3765F6]/5 text-[#3765F6]",
-                      Chemistry: "border-[#00A656]/30 bg-[#00A656]/5 text-[#00A656]",
-                      Mathematics: "border-[#EF9D0E]/30 bg-[#EF9D0E]/5 text-[#EF9D0E]",
-                      Biology: "border-[#8B5CF6]/30 bg-[#8B5CF6]/5 text-[#8B5CF6]",
+                      Physics: "border-primary-01/30 bg-primary-01/5 text-primary-01",
+                      Chemistry: "border-primary-02/30 bg-primary-02/5 text-primary-02",
+                      Mathematics: "border-primary-05/30 bg-primary-05/5 text-primary-05",
+                      Biology: "border-primary-04/30 bg-primary-04/5 text-primary-04",
                     };
                     const colorClass = subjectColors[block.subject] ?? "border-s-stroke2 bg-b-surface2 text-t-secondary";
                     const durationMin = Math.round(block.durationSec / 60);
@@ -863,7 +863,7 @@ export default function ResultsPage() {
                           <div className="text-[10px] font-sans text-current/60">{durationMin > 0 ? `${durationMin} min` : "<1 min"}</div>
                         </div>
                         {i < a.subjectMovement.length - 1 && (
-                          <span className="text-[#727272] dark:text-t-tertiary">
+                          <span className="text-t-secondary dark:text-t-tertiary">
                             <RiArrowRightLine size={14} />
                           </span>
                         )}
@@ -872,60 +872,60 @@ export default function ResultsPage() {
                   })}
                 </div>
                 {a.subjectMovement.length === 1 && (
-                  <p className="relative z-10 mt-4 text-[12px] font-sans text-[#727272] dark:text-t-secondary">You stayed in one subject the entire test — linear approach.</p>
+                  <p className="relative z-10 mt-4 text-[12px] font-sans text-t-secondary dark:text-t-secondary">You stayed in one subject the entire test — linear approach.</p>
                 )}
                 {a.subjectMovement.length > 4 && (
-                  <p className="relative z-10 mt-4 rounded-lg border border-[rgba(239,157,14,0.3)] bg-[rgba(239,157,14,0.05)] p-3 text-[12px] font-sans text-[#EF9D0E]">
+                  <p className="relative z-10 mt-4 rounded-lg border border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] p-3 text-[12px] font-sans text-primary-05">
                     ⚠️ You switched subjects {a.subjectMovement.length - 1} times — frequent switching can fragment your focus and waste 2–3 minutes per switch.
                   </p>
                 )}
               </section>
             )}
 
-            <section className="flex flex-col gap-4 rounded-lg border border-[rgba(55,101,246,0.2)] bg-[rgba(55,101,246,0.05)] p-6 md:flex-row md:items-center md:justify-between md:p-8 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)]">
+            <section className="flex flex-col gap-4 rounded-lg border border-s-stroke2/40 bg-[rgba(55,101,246,0.05)] p-6 md:flex-row md:items-center md:justify-between md:p-8 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)]">
               <div>
-                <h2 className="text-[16px] font-sans font-bold text-[#3765F6]">Stop repeating these mistakes</h2>
-                <p className="mt-1 text-[12px] font-sans text-[#727272] dark:text-t-secondary">Add these {a.errorPatterns.length * 2} errors to your mistake diary for revision.</p>
+                <h2 className="text-[16px] font-sans font-bold text-primary-01">Stop repeating these mistakes</h2>
+                <p className="mt-1 text-[12px] font-sans text-t-secondary dark:text-t-secondary">Add these {a.errorPatterns.length * 2} errors to your mistake diary for revision.</p>
               </div>
-              <Link href="/student/mistakes" className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-[#FDFDFD] transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] gap-2 self-start md:self-auto">
+              <Link href="/student/mistakes" className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] gap-2 self-start md:self-auto">
                 <span className="relative z-10 flex items-center gap-2"><RiBookmarkFill size={16} /> Open Mistake Diary</span>
               </Link>
             </section>
 
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
               <div className="box-hover" />
               <div className="relative z-10 mb-5 flex items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-[#101010] dark:text-t-primary">7-Day Study Plan</h2>
-                  <p className="mt-1 text-[12px] font-sans text-[#7B7B7B]">Small, daily work beats one long reset.</p>
+                  <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">7-Day Study Plan</h2>
+                  <p className="mt-1 text-[12px] font-sans text-t-secondary">Small, daily work beats one long reset.</p>
                 </div>
-                <span className="flex flex-row justify-center items-center px-2 py-1 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-b-surface1 text-[#727272] dark:text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">Next 7 days</span>
+                <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary dark:text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">Next 7 days</span>
               </div>
               <div className="relative z-10 space-y-3">
                 {a.studyPlan.map((day: any) => (
                   <button
                     key={day.day}
                     className={`w-full rounded-lg border p-4 text-left transition-colors ${
-                      expandedDay === day.day ? "border-[#3765F6]/40 bg-[rgba(55,101,246,0.05)] shadow-widget" : "border-s-stroke2 bg-b-surface1 hover:border-s-highlight shadow-sm"
+                      expandedDay === day.day ? "border-primary-01/40 bg-[rgba(55,101,246,0.05)] shadow-widget" : "border-s-stroke2 bg-b-surface1 hover:border-s-highlight shadow-sm"
                     }`}
                     onClick={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
                   >
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex items-center gap-4">
-                        <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-b-surface2 text-[14px] font-sans font-black text-[#3765F6] border border-s-stroke2">D{day.day}</div>
+                        <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-b-surface2 text-[14px] font-sans font-black text-primary-01 border border-s-stroke2">D{day.day}</div>
                         <div>
-                          <div className="text-[14px] font-sans font-bold text-[#101010] dark:text-t-primary">{day.topic}</div>
-                          <div className="mt-0.5 text-[12px] font-sans text-[#727272] dark:text-t-secondary">{day.durationMinutes} min</div>
+                          <div className="text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">{day.topic}</div>
+                          <div className="mt-0.5 text-[12px] font-sans text-t-secondary dark:text-t-secondary">{day.durationMinutes} min</div>
                         </div>
                       </div>
-                      <span className="text-[#727272] dark:text-t-secondary">
+                      <span className="text-t-secondary dark:text-t-secondary">
                         {expandedDay === day.day ? <RiArrowUpSLine size={20} /> : <RiArrowDownSLine size={20} />}
                       </span>
                     </div>
                     {expandedDay === day.day && (
-                      <div className="mt-4 border-t border-s-stroke2 pt-4 text-[12px] font-sans leading-[160%] text-[#727272] dark:text-t-secondary">
-                        <div><strong className="text-[#101010] dark:text-t-primary">Activity:</strong> {day.activity}</div>
-                        <div className="mt-2"><strong className="text-[#101010] dark:text-t-primary">Focus:</strong> Targeting {day.focusErrorType} errors.</div>
+                      <div className="mt-4 border-t border-s-stroke2 pt-4 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">
+                        <div><strong className="text-t-primary dark:text-t-primary">Activity:</strong> {day.activity}</div>
+                        <div className="mt-2"><strong className="text-t-primary dark:text-t-primary">Focus:</strong> Targeting {day.focusErrorType} errors.</div>
                       </div>
                     )}
                   </button>
@@ -935,27 +935,27 @@ export default function ResultsPage() {
           </div>
 
           <aside className="space-y-6 xl:sticky xl:top-6 xl:self-start">
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
               <div className="box-hover" />
-              <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-[#101010] dark:text-t-primary">
-                <RiTargetLine size={20} className="text-[#EF9D0E]" /> Recovery options
+              <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">
+                <RiTargetLine size={20} className="text-primary-05" /> Recovery options
               </div>
-              <p className="relative z-10 text-[12px] font-sans leading-[160%] text-[#727272] dark:text-t-secondary">Turn the weak areas into a short follow-up set or a full revision run.</p>
+              <p className="relative z-10 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">Turn the weak areas into a short follow-up set or a full revision run.</p>
 
               <div className="relative z-10 mt-5 space-y-3">
-                <button onClick={() => setShowBooster((v) => !v)} className="flex flex-row justify-between items-center py-3 px-6 w-full border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-[14px] font-sans font-semibold transition-all hover:border-[#727272] active:scale-98 h-12">
-                  <span className="flex items-center gap-2 text-[#101010] dark:text-t-primary"><RiFlashlightFill size={18} /> Micro Booster</span>
+                <button onClick={() => setShowBooster((v) => !v)} className="flex flex-row justify-between items-center py-3 px-6 w-full border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-[14px] font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 h-12">
+                  <span className="flex items-center gap-2 text-t-primary dark:text-t-primary"><RiFlashlightFill size={18} /> Micro Booster</span>
                   <span className="text-[12px] font-sans font-normal">15-30 Qs</span>
                 </button>
-                <button onClick={() => router.push("/pyqs")} className="flex flex-row justify-between items-center py-3 px-6 h-12 w-full rounded-lg text-[14px] font-sans font-semibold tracking-[0.0125em] text-[#FDFDFD] transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]">
+                <button onClick={() => router.push("/pyqs")} className="flex flex-row justify-between items-center py-3 px-6 h-12 w-full rounded-lg text-[14px] font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]">
                   <span className="relative z-10 flex items-center gap-2"><RiArrowRightLine size={18} /> Back to PYQs</span>
                   <span className="relative z-10 text-[12px] font-sans font-normal opacity-80">pick another paper</span>
                 </button>
               </div>
 
               {showBooster && (
-                <div className="relative z-10 mt-5 rounded-lg border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1/60 p-5 shadow-sm">
-                  <div className="mb-3 text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-[#7B7B7B]">Quick set</div>
+                <div className="relative z-10 mt-5 rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
+                  <div className="mb-3 text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">Quick set</div>
                   <div className="grid grid-cols-4 gap-2">
                     {[15, 20, 25, 30].map((n) => (
                       <button 
@@ -964,35 +964,35 @@ export default function ResultsPage() {
                         className={`py-2 px-1 text-center rounded-lg border text-[14px] font-sans font-bold transition-all ${
                           microCount === n 
                             ? "border-transparent bg-linear-to-b from-[#2C2C2C] to-[#282828] text-white shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] relative overflow-hidden" 
-                            : "border-s-stroke2 bg-b-surface2 text-[#727272] dark:text-t-secondary hover:border-s-highlight"
+                            : "border-s-stroke2 bg-b-surface2 text-t-secondary dark:text-t-secondary hover:border-s-highlight"
                         }`}
                       >
                         <span className="relative z-10">{n}</span>
                       </button>
                     ))}
                   </div>
-                  <div className="mt-4 text-[12px] font-sans text-[#727272] dark:text-t-secondary">The current pick is {microCount} questions.</div>
+                  <div className="mt-4 text-[12px] font-sans text-t-secondary dark:text-t-secondary">The current pick is {microCount} questions.</div>
                 </div>
               )}
             </section>
 
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
               <div className="box-hover" />
-              <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-[#101010] dark:text-t-primary">
-                <RiTimerLine size={20} className="text-[#3765F6]" /> Exam snapshot
+              <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">
+                <RiTimerLine size={20} className="text-primary-01" /> Exam snapshot
               </div>
-              <div className="relative z-10 space-y-3 text-[12px] font-sans text-[#727272] dark:text-t-secondary">
-                <div className="flex items-center justify-between rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 px-4 py-3">
+              <div className="relative z-10 space-y-3 text-[12px] font-sans text-t-secondary dark:text-t-secondary">
+                <div className="flex items-center justify-between rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
                   <span>Correct</span>
-                  <strong className="text-[#00A656] text-[16px] font-black">{a.scoring.correctCount}</strong>
+                  <strong className="text-primary-02 text-[16px] font-black">{a.scoring.correctCount}</strong>
                 </div>
-                <div className="flex items-center justify-between rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 px-4 py-3">
+                <div className="flex items-center justify-between rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
                   <span>Incorrect</span>
-                  <strong className="text-[#FF6A55] text-[16px] font-black">{a.scoring.incorrectCount}</strong>
+                  <strong className="text-primary-03 text-[16px] font-black">{a.scoring.incorrectCount}</strong>
                 </div>
-                <div className="flex items-center justify-between rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 px-4 py-3">
+                <div className="flex items-center justify-between rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
                   <span>Skipped</span>
-                  <strong className="text-[#101010] dark:text-t-primary text-[16px] font-black">{a.scoring.skippedCount}</strong>
+                  <strong className="text-t-primary dark:text-t-primary text-[16px] font-black">{a.scoring.skippedCount}</strong>
                 </div>
               </div>
             </section>
