@@ -149,11 +149,11 @@ export default function TeacherDoubtsPage() {
   }, [activeMessages]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F9F9F9] dark:bg-b-surface1/60 pb-10">
+    <div className="flex flex-col min-h-screen bg-b-surface1 dark:bg-b-surface1/60 pb-10">
 
       {toastMessage && (
-        <div className="fixed top-20 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-[#101010] text-[#FDFDFD] text-xs font-sans font-semibold rounded-lg shadow-lg border border-s-stroke2/20">
-          <div className="size-2 rounded-full bg-[#00A656] animate-pulse" />
+        <div className="fixed top-20 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-shade-02 text-t-light text-xs font-sans font-semibold rounded-lg shadow-lg border border-s-stroke2/20">
+          <div className="size-2 rounded-full bg-primary-02 animate-pulse" />
           <span>{toastMessage}</span>
         </div>
       )}
@@ -162,16 +162,16 @@ export default function TeacherDoubtsPage() {
 
       <main className="mx-auto w-full max-w-screen-2xl px-4 pt-12 md:px-6 flex justify-center bg-transparent select-none">
 
-        <div className="w-[1068px] h-[780px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg p-3 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] flex flex-col gap-4 overflow-hidden relative">
+        <div className="w-[1068px] h-[780px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg p-3 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] flex flex-col gap-4 overflow-hidden relative">
 
           {/* Header Row */}
           <div className="flex flex-row justify-between items-center w-full h-12 relative px-2.5 shrink-0">
             <div className="flex items-center gap-2">
-              <h6 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+              <h6 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
                 Doubts Moderation
               </h6>
               {pendingDoubts > 0 && (
-                <span className="px-2 py-0.5 rounded-lg bg-[#FF6A55]/10 border border-[#FF6A55]/20 text-[#FF6A55] text-[11px] font-bold">
+                <span className="px-2 py-0.5 rounded-lg bg-primary-03/10 border border-primary-03/20 text-primary-03 text-[11px] font-bold">
                   {pendingDoubts} pending
                 </span>
               )}
@@ -180,18 +180,18 @@ export default function TeacherDoubtsPage() {
             <div className="relative">
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
-                className="flex flex-row justify-between items-center px-5 py-3 h-12 w-[190px] border-[1.5px] border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-left cursor-pointer transition-all hover:bg-[#F9F9F9] dark:hover:bg-b-surface1"
+                className="flex flex-row justify-between items-center px-5 py-3 h-12 w-[190px] border-[1.5px] border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-left cursor-pointer transition-all hover:bg-b-surface1 dark:hover:bg-b-surface1"
               >
-                <span className="font-sans text-[14px] font-normal text-[#727272] dark:text-t-secondary truncate">{activeGroup.name}</span>
-                <RiArrowDownSLine size={20} className="text-[#727272] shrink-0" />
+                <span className="font-sans text-[14px] font-normal text-t-secondary dark:text-t-secondary truncate">{activeGroup.name}</span>
+                <RiArrowDownSLine size={20} className="text-t-secondary shrink-0" />
               </button>
               {showDropdown && (
-                <div className="absolute right-0 top-14 w-[190px] bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-lg z-25 overflow-hidden">
+                <div className="absolute right-0 top-14 w-[190px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-lg z-25 overflow-hidden">
                   {groups.map(g => (
                     <div
                       key={g.id}
                       onClick={() => { setActiveGroupId(g.id); setShowDropdown(false); }}
-                      className={`p-3 text-xs font-sans font-semibold cursor-pointer transition-colors ${g.id === activeGroupId ? "bg-[#F9F9F9] text-[#101010]" : "hover:bg-[#F9F9F9] text-[#727272]"}`}
+                      className={`p-3 text-xs font-sans font-semibold cursor-pointer transition-colors ${g.id === activeGroupId ? "bg-b-surface1 text-t-primary" : "hover:bg-b-surface1 text-t-secondary"}`}
                     >
                       {g.name}
                     </div>
@@ -202,36 +202,36 @@ export default function TeacherDoubtsPage() {
           </div>
 
           {/* Stats Row */}
-          <div className="flex flex-row items-center p-2 gap-4 w-full h-[135px] bg-[#F9F9F9] dark:bg-b-surface1/20 border-[1.5px] border-[rgba(123,123,123,0.1)] rounded-lg shrink-0">
+          <div className="flex flex-row items-center p-2 gap-4 w-full h-[135px] bg-b-surface1 dark:bg-b-surface1/20 border-[1.5px] border-s-stroke2/40 rounded-lg shrink-0">
 
-            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-[#FDFDFD] dark:bg-b-surface2 border-[1.5px] border-[#FDFDFD] dark:border-s-stroke2/20 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-b-surface2 dark:bg-b-surface2 border-[1.5px] border-s-border dark:border-s-stroke2/20 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex items-center gap-2.5">
-                <RiQuestionAnswerLine size={20} className="text-[#101010] dark:text-t-primary" />
-                <span className="font-sans font-semibold text-[15px] text-[#101010] dark:text-t-primary">Active Doubts</span>
+                <RiQuestionAnswerLine size={20} className="text-t-primary dark:text-t-primary" />
+                <span className="font-sans font-semibold text-[15px] text-t-primary dark:text-t-primary">Active Doubts</span>
               </div>
               <div className="flex items-center gap-4 mt-0.5">
-                <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-[#101010] dark:text-t-primary">{activeGroup.activeDoubts}</span>
+                <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-t-primary dark:text-t-primary">{activeGroup.activeDoubts}</span>
                 <div className="flex flex-col gap-0.5">
-                  <div className="flex items-center px-2 py-[2px] bg-[rgba(255,106,85,0.05)] border-[1.5px] border-[rgba(255,106,85,0.15)] rounded-md">
-                    <span className="font-sans font-semibold text-[12px] text-[#FF6A55]">{activeGroup.activeTrend}</span>
+                  <div className="flex items-center px-2 py-[2px] bg-[rgba(255,106,85,0.05)] border-[1.5px] border-s-stroke2/40 rounded-md">
+                    <span className="font-sans font-semibold text-[12px] text-primary-03">{activeGroup.activeTrend}</span>
                   </div>
-                  <span className="font-sans text-[12px] text-[#7B7B7B]">from yesterday</span>
+                  <span className="font-sans text-[12px] text-t-secondary">from yesterday</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-[#FDFDFD] dark:bg-b-surface2 border-[1.5px] border-[#FDFDFD] dark:border-s-stroke2/20 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-b-surface2 dark:bg-b-surface2 border-[1.5px] border-s-border dark:border-s-stroke2/20 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex items-center gap-2.5">
-                <RiCheckDoubleLine size={20} className="text-[#101010] dark:text-t-primary" />
-                <span className="font-sans font-semibold text-[15px] text-[#101010] dark:text-t-primary">Resolved Doubts</span>
+                <RiCheckDoubleLine size={20} className="text-t-primary dark:text-t-primary" />
+                <span className="font-sans font-semibold text-[15px] text-t-primary dark:text-t-primary">Resolved Doubts</span>
               </div>
               <div className="flex items-center gap-4 mt-0.5">
-                <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-[#101010] dark:text-t-primary">{activeGroup.resolvedDoubts}</span>
+                <span className="font-sans font-medium text-[42px] leading-none tracking-[-0.005em] text-t-primary dark:text-t-primary">{activeGroup.resolvedDoubts}</span>
                 <div className="flex flex-col gap-0.5">
-                  <div className="flex items-center px-2 py-[2px] bg-[rgba(0,166,86,0.05)] border-[1.5px] border-[rgba(0,166,86,0.15)] rounded-md">
-                    <span className="font-sans font-semibold text-[12px] text-[#00A656]">{activeGroup.resolvedTrend}</span>
+                  <div className="flex items-center px-2 py-[2px] bg-[rgba(0,166,86,0.05)] border-[1.5px] border-s-stroke2/40 rounded-md">
+                    <span className="font-sans font-semibold text-[12px] text-primary-02">{activeGroup.resolvedTrend}</span>
                   </div>
-                  <span className="font-sans text-[12px] text-[#7B7B7B]">from last week</span>
+                  <span className="font-sans text-[12px] text-t-secondary">from last week</span>
                 </div>
               </div>
             </div>
@@ -242,14 +242,14 @@ export default function TeacherDoubtsPage() {
           <div className="flex-grow flex flex-row border border-s-stroke2/20 rounded-lg overflow-hidden min-h-0">
 
             {/* Sidebar */}
-            <div className="w-[260px] border-r border-s-stroke2/10 bg-[#F9F9F9] dark:bg-b-surface1/20 flex flex-col shrink-0">
-              <div className="p-3 border-b border-s-stroke2/10 bg-[#FDFDFD] dark:bg-b-surface2">
+            <div className="w-[260px] border-r border-s-stroke2/10 bg-b-surface1 dark:bg-b-surface1/20 flex flex-col shrink-0">
+              <div className="p-3 border-b border-s-stroke2/10 bg-b-surface2 dark:bg-b-surface2">
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#7B7B7B]"><RiSearchLine size={16} /></span>
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-t-secondary"><RiSearchLine size={16} /></span>
                   <input
                     type="text"
                     placeholder="Search groups..."
-                    className="w-full pl-9 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-[#101010] transition-all font-semibold placeholder-[#7B7B7B]"
+                    className="w-full pl-9 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-t-primary transition-all font-semibold placeholder-t-secondary"
                   />
                 </div>
               </div>
@@ -261,20 +261,20 @@ export default function TeacherDoubtsPage() {
                     <div
                       key={group.id}
                       onClick={() => setActiveGroupId(group.id)}
-                      className={`p-3 flex gap-3 cursor-pointer rounded-lg transition-all border ${isActive ? "bg-[#FDFDFD] dark:bg-b-surface2 border-l-4 border-l-[#101010] border-s-stroke2/20 shadow-xs" : "bg-transparent border-transparent hover:bg-[#FDFDFD]/50"}`}
+                      className={`p-3 flex gap-3 cursor-pointer rounded-lg transition-all border ${isActive ? "bg-b-surface2 dark:bg-b-surface2 border-l-4 border-l-t-primary border-s-stroke2/20 shadow-xs" : "bg-transparent border-transparent hover:bg-b-surface2/50"}`}
                     >
-                      <div className={`size-8 rounded-full flex items-center justify-center shrink-0 ${isActive ? "bg-[#101010] text-[#FDFDFD]" : "bg-[#FDFDFD] text-[#7B7B7B] border border-s-stroke2/20"}`}>
+                      <div className={`size-8 rounded-full flex items-center justify-center shrink-0 ${isActive ? "bg-shade-02 text-t-light" : "bg-b-surface2 text-t-secondary border border-s-stroke2/20"}`}>
                         <RiGroupLine size={16} />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex justify-between items-center mb-0.5">
-                          <span className="font-sans font-bold text-[13px] text-[#101010] dark:text-t-primary truncate">{group.name}</span>
+                          <span className="font-sans font-bold text-[13px] text-t-primary dark:text-t-primary truncate">{group.name}</span>
                           {pending > 0 && (
-                            <span className="shrink-0 ml-1 size-4 rounded-full bg-[#FF6A55] text-white text-[9px] font-bold flex items-center justify-center">{pending}</span>
+                            <span className="shrink-0 ml-1 size-4 rounded-full bg-primary-03 text-white text-[9px] font-bold flex items-center justify-center">{pending}</span>
                           )}
                         </div>
-                        <p className="text-[11px] font-sans text-[#7B7B7B] truncate">
-                          <span className="font-bold text-[#101010] dark:text-t-primary">{group.lastMessageSender}:</span> {group.lastMessageText}
+                        <p className="text-[11px] font-sans text-t-secondary truncate">
+                          <span className="font-bold text-t-primary dark:text-t-primary">{group.lastMessageSender}:</span> {group.lastMessageText}
                         </p>
                       </div>
                     </div>
@@ -284,21 +284,21 @@ export default function TeacherDoubtsPage() {
             </div>
 
             {/* Chat Pane */}
-            <div className="flex-1 flex flex-col bg-[#FDFDFD] dark:bg-b-surface2 min-w-0">
+            <div className="flex-1 flex flex-col bg-b-surface2 dark:bg-b-surface2 min-w-0">
 
               {/* Chat Header with filter tabs */}
               <div className="h-14 px-4 border-b border-s-stroke2/10 flex items-center justify-between shrink-0">
                 <div>
-                  <h2 className="font-sans font-bold text-[14px] text-[#101010] dark:text-t-primary">{activeGroup.name}</h2>
-                  <span className="text-[10.5px] font-sans text-[#7B7B7B]">{activeGroup.membersCount} Members · {activeGroup.facultyCount} Faculty Online</span>
+                  <h2 className="font-sans font-bold text-[14px] text-t-primary dark:text-t-primary">{activeGroup.name}</h2>
+                  <span className="text-[10.5px] font-sans text-t-secondary">{activeGroup.membersCount} Members · {activeGroup.facultyCount} Faculty Online</span>
                 </div>
                 {/* Filter tabs */}
-                <div className="flex items-center gap-1 bg-[#F9F9F9] dark:bg-b-surface1/40 border border-s-stroke2/20 rounded-lg p-1">
+                <div className="flex items-center gap-1 bg-b-surface1 dark:bg-b-surface1/40 border border-s-stroke2/20 rounded-lg p-1">
                   {(["all", "doubts"] as FilterTab[]).map(tab => (
                     <button
                       key={tab}
                       onClick={() => setFilterTab(tab)}
-                      className={`px-3 h-7 rounded-lg text-[11px] font-sans font-semibold capitalize transition-all cursor-pointer border-0 ${filterTab === tab ? "bg-[#101010] text-[#FDFDFD] shadow-xs" : "bg-transparent text-[#7B7B7B] hover:text-[#101010]"}`}
+                      className={`px-3 h-7 rounded-lg text-[11px] font-sans font-semibold capitalize transition-all cursor-pointer border-0 ${filterTab === tab ? "bg-shade-02 text-t-light shadow-xs" : "bg-transparent text-t-secondary hover:text-t-primary"}`}
                     >
                       {tab === "doubts" ? `Doubts${pendingDoubts > 0 ? ` (${pendingDoubts})` : ""}` : "All Messages"}
                     </button>
@@ -307,7 +307,7 @@ export default function TeacherDoubtsPage() {
               </div>
 
               {/* Messages */}
-              <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-3 bg-[#F9F9F9]/40 dark:bg-b-surface1/10 min-h-0">
+              <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-3 bg-b-surface1/40 dark:bg-b-surface1/10 min-h-0">
                 {activeMessages.map(msg => {
                   const isRevealed = revealedStudents.has(msg.id);
                   const displayName = (msg.author === "Anonymous" && isRevealed && msg.studentName) ? msg.studentName : msg.author;
@@ -316,17 +316,17 @@ export default function TeacherDoubtsPage() {
                       key={msg.id}
                       className={`p-4 flex gap-4 rounded-lg transition-all relative border ${
                         msg.isDoubt && !msg.isVerified
-                          ? "bg-[#FF6A55]/5 border-[#FF6A55]/20"
+                          ? "bg-primary-03/5 border-primary-03/20"
                           : msg.isVerified
-                          ? "bg-[#00A656]/5 border-[#00A656]/20"
-                          : "bg-transparent border-transparent border-b border-s-stroke2/10 hover:bg-[#FDFDFD] hover:shadow-[inset_0px_0px_0px_3px_#FFFFFF]"
+                          ? "bg-primary-02/5 border-primary-02/20"
+                          : "bg-transparent border-transparent border-b border-s-stroke2/10 hover:bg-b-surface2 hover:shadow-[inset_0px_0px_0px_3px_#FFFFFF]"
                       }`}
                     >
                       {/* Avatar */}
                       <div className={`size-11 rounded-full flex items-center justify-center shrink-0 font-sans font-bold text-sm ${
                         msg.role === "teacher"
-                          ? "bg-[#00A656]/10 text-[#00A656] border border-[#00A656]/20"
-                          : "bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/20 text-[#101010]"
+                          ? "bg-primary-02/10 text-primary-02 border border-primary-02/20"
+                          : "bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/20 text-t-primary"
                       }`}>
                         {msg.author === "Anonymous" && !isRevealed ? "?" : displayName[0]}
                       </div>
@@ -335,12 +335,12 @@ export default function TeacherDoubtsPage() {
                       <div className="flex-grow min-w-0 flex flex-col gap-1.5">
                         <div className="flex items-center justify-between gap-2 w-full">
                           <div className="flex items-center gap-2 flex-wrap">
-                            <span className="font-sans font-semibold text-[15px] text-[#101010] dark:text-t-primary">{displayName}</span>
+                            <span className="font-sans font-semibold text-[15px] text-t-primary dark:text-t-primary">{displayName}</span>
                             {msg.role === "teacher" && (
-                              <span className="px-2 py-0.5 rounded-md border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] text-[#00A656] text-[8px] font-bold uppercase tracking-wider">FACULTY</span>
+                              <span className="px-2 py-0.5 rounded-md border border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02 text-[8px] font-bold uppercase tracking-wider">FACULTY</span>
                             )}
                             {msg.isDoubt && !msg.isVerified && (
-                              <span className="flex items-center gap-1 px-2 py-0.5 rounded-md border border-[rgba(255,106,85,0.15)] bg-[rgba(255,106,85,0.05)] text-[#FF6A55] text-[9px] font-bold uppercase tracking-wider">
+                              <span className="flex items-center gap-1 px-2 py-0.5 rounded-md border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03 text-[9px] font-bold uppercase tracking-wider">
                                 <RiQuestionLine size={10} /> Unresolved Doubt
                               </span>
                             )}
@@ -349,21 +349,21 @@ export default function TeacherDoubtsPage() {
                               <button
                                 onClick={() => handleRevealStudent(msg.id)}
                                 title="Reveal student identity"
-                                className="flex items-center gap-1 px-2 py-0.5 rounded-md border border-[rgba(42,133,255,0.2)] bg-[rgba(42,133,255,0.05)] text-[#2A85FF] text-[9px] font-bold uppercase tracking-wider cursor-pointer hover:bg-[rgba(42,133,255,0.1)] transition-all"
+                                className="flex items-center gap-1 px-2 py-0.5 rounded-md border border-s-stroke2/40 bg-[rgba(42,133,255,0.05)] text-primary-01 text-[9px] font-bold uppercase tracking-wider cursor-pointer hover:bg-[rgba(42,133,255,0.1)] transition-all"
                               >
                                 <RiUserLine size={9} /> Reveal
                               </button>
                             )}
                           </div>
-                          <span className="text-[12px] font-sans text-[#7B7B7B] shrink-0">{msg.time}</span>
+                          <span className="text-[12px] font-sans text-t-secondary shrink-0">{msg.time}</span>
                         </div>
 
-                        <p className="font-sans text-[15px] leading-[150%] text-[#101010] dark:text-t-primary">{msg.text}</p>
+                        <p className="font-sans text-[15px] leading-[150%] text-t-primary dark:text-t-primary">{msg.text}</p>
 
                         {/* Actions row */}
                         <div className="flex items-center justify-between gap-4 mt-0.5">
                           {msg.isVerified ? (
-                            <div className="flex items-center gap-1.5 text-[#00A656]">
+                            <div className="flex items-center gap-1.5 text-primary-02">
                               <RiCheckDoubleLine size={14} />
                               <span className="text-[11px] font-sans font-bold">Endorsed Answer</span>
                             </div>
@@ -372,13 +372,13 @@ export default function TeacherDoubtsPage() {
                             !msg.isOwn && msg.role === "student" ? (
                               <button
                                 onClick={() => handleEndorse(msg.id)}
-                                className="flex items-center gap-1.5 px-3 py-1 rounded-lg border border-[#00A656]/25 bg-[#00A656]/5 text-[#00A656] text-[11px] font-sans font-bold hover:bg-[#00A656]/10 transition-all active:scale-95 cursor-pointer"
+                                className="flex items-center gap-1.5 px-3 py-1 rounded-lg border border-primary-02/25 bg-primary-02/5 text-primary-02 text-[11px] font-sans font-bold hover:bg-primary-02/10 transition-all active:scale-95 cursor-pointer"
                               >
                                 <RiShieldCheckLine size={12} /> Endorse Answer
                               </button>
                             ) : <div />
                           )}
-                          <span className="text-[11px] font-sans text-[#7B7B7B]">{msg.upvotes} upvotes</span>
+                          <span className="text-[11px] font-sans text-t-secondary">{msg.upvotes} upvotes</span>
                         </div>
                       </div>
                     </div>
@@ -388,8 +388,8 @@ export default function TeacherDoubtsPage() {
               </div>
 
               {/* Input Bar */}
-              <div className="p-3 bg-[#FDFDFD] dark:bg-b-surface2 border-t border-s-stroke2/20 flex gap-2.5 items-center shrink-0">
-                <button className="flex items-center justify-center size-9 rounded-full text-[#7B7B7B] hover:text-[#101010] hover:bg-[#F9F9F9] border border-s-stroke2/20 bg-[#FDFDFD] transition-all cursor-pointer shrink-0">
+              <div className="p-3 bg-b-surface2 dark:bg-b-surface2 border-t border-s-stroke2/20 flex gap-2.5 items-center shrink-0">
+                <button className="flex items-center justify-center size-9 rounded-full text-t-secondary hover:text-t-primary hover:bg-b-surface1 border border-s-stroke2/20 bg-b-surface2 transition-all cursor-pointer shrink-0">
                   <RiImageAddLine size={18} />
                 </button>
                 <div className="flex-grow">
@@ -399,7 +399,7 @@ export default function TeacherDoubtsPage() {
                     onChange={e => setInputValue(e.target.value)}
                     onKeyDown={e => e.key === "Enter" && handleSend()}
                     placeholder="Post an official faculty response..."
-                    className="w-full pl-4 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-[#F9F9F9] dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-[#101010] transition-all font-semibold placeholder-[#7B7B7B] text-[#101010]"
+                    className="w-full pl-4 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-t-primary transition-all font-semibold placeholder-t-secondary text-t-primary"
                   />
                 </div>
                 <button
@@ -407,8 +407,8 @@ export default function TeacherDoubtsPage() {
                   disabled={!inputValue.trim()}
                   className={`size-9 rounded-full border-none flex items-center justify-center cursor-pointer transition-all shrink-0 ${
                     inputValue.trim()
-                      ? "bg-[#101010] hover:bg-[#202020] text-[#FDFDFD]"
-                      : "bg-[#EBEBEB] text-[#7B7B7B] cursor-not-allowed"
+                      ? "bg-shade-02 hover:bg-shade-04 text-t-light"
+                      : "bg-s-stroke2 text-t-secondary cursor-not-allowed"
                   }`}
                 >
                   <RiSendPlaneFill size={16} />

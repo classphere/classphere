@@ -11,12 +11,20 @@ import {
   RiAddLine,
 } from "@remixicon/react";
 import Navbar from "../../../../components/layout/Navbar";
-import { mockBatchAnalysis, mockBatches } from "../../../../lib/mock-data";
+const mockBatches: any[] = [];
+const mockBatchAnalysis: any = {
+  testTitle: "",
+  attemptedCount: 0,
+  totalStudents: 0,
+  classSummary: { avgScore: 0, topScore: 0, bottomScore: 0, belowAverageCount: 0 },
+  teachingRecs: [],
+  chapterHeatmap: []
+};
 
 export default function BatchAnalysisPage() {
   const params = useParams();
   const batchId = params.id as string;
-  const batch = mockBatches.find(b => b.id === batchId) || mockBatches[0];
+  const batch = mockBatches.find(b => b.id === batchId) || { name: "", exam: "" };
 
   return (
     <>
@@ -54,8 +62,8 @@ export default function BatchAnalysisPage() {
             <div className="flex gap-4 mb-6">
               {[
                 { label: "Average Score", value: `${mockBatchAnalysis.classSummary.avgScore}%`, textColor: "text-t-primary" },
-                { label: "Highest Score", value: `${mockBatchAnalysis.classSummary.topScore}%`,  textColor: "text-[#00A656]" },
-                { label: "Lowest Score",  value: `${mockBatchAnalysis.classSummary.bottomScore}%`, textColor: "text-[#FF6A55]" },
+                { label: "Highest Score", value: `${mockBatchAnalysis.classSummary.topScore}%`,  textColor: "text-primary-02" },
+                { label: "Lowest Score",  value: `${mockBatchAnalysis.classSummary.bottomScore}%`, textColor: "text-primary-03" },
               ].map(s => (
                 <div key={s.label} className="flex-1 p-4 bg-b-surface2 border border-s-stroke2 rounded-lg text-center">
                   <div className={`text-h5 font-bold mb-1 ${s.textColor}`}>{s.value}</div>
@@ -64,8 +72,8 @@ export default function BatchAnalysisPage() {
               ))}
             </div>
             
-            <div className="flex items-center gap-4 p-4 bg-[#EF9D0E]/5 border border-[#EF9D0E]/20 rounded-lg mt-auto">
-              <RiAlertLine size={22} className="text-[#EF9D0E] shrink-0" />
+            <div className="flex items-center gap-4 p-4 bg-primary-05/5 border border-primary-05/20 rounded-lg mt-auto">
+              <RiAlertLine size={22} className="text-primary-05 shrink-0" />
               <div>
                 <div className="text-body-2 font-bold text-t-primary">{mockBatchAnalysis.classSummary.belowAverageCount} Students Below Average</div>
                 <div className="text-caption text-t-secondary mt-0.5">Consider assigning a Booster DPP to this cohort.</div>
@@ -83,12 +91,12 @@ export default function BatchAnalysisPage() {
             </div>
             
             <div className="flex flex-col gap-4">
-              {mockBatchAnalysis.teachingRecs.map((rec, i) => (
+              {mockBatchAnalysis.teachingRecs.map((rec: any, i: number) => (
                 <div key={i} className="flex gap-4 p-4 bg-b-surface2 border border-s-stroke2 rounded-lg">
                   <div className={`size-8 rounded-full flex items-center justify-center shrink-0 ${
                     rec.priority === "high"
-                      ? "bg-[#FF6A55]/10 text-[#FF6A55]"
-                      : "bg-[#EF9D0E]/10 text-[#EF9D0E]"
+                      ? "bg-primary-03/10 text-primary-03"
+                      : "bg-primary-05/10 text-primary-05"
                   }`}>
                     <RiAlertLine size={16} />
                   </div>
@@ -118,7 +126,7 @@ export default function BatchAnalysisPage() {
                 </tr>
               </thead>
               <tbody>
-                {mockBatchAnalysis.chapterHeatmap.map((ch, idx) => (
+                {mockBatchAnalysis.chapterHeatmap.map((ch: any, idx: number) => (
                   <tr key={idx} className="border-b border-s-stroke2 last:border-b-0">
                     <td className="py-4 pr-4 text-body-2 font-bold text-t-primary">{ch.chapter}</td>
                     <td className="py-4 px-4">
@@ -127,10 +135,10 @@ export default function BatchAnalysisPage() {
                           <div
                             className={`h-full rounded-full ${
                               ch.flag === "good"
-                                ? "bg-[#00A656]"
+                                ? "bg-primary-02"
                                 : ch.flag === "warning"
-                                  ? "bg-[#EF9D0E]"
-                                  : "bg-[#FF6A55]"
+                                  ? "bg-primary-05"
+                                  : "bg-primary-03"
                             }`}
                             style={{ width: `${ch.avgAccuracy}%` }}
                           />

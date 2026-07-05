@@ -16,7 +16,9 @@ import {
   RiFileList3Line,
   RiCalendarEventLine
 } from "@remixicon/react";
-import { mockDPPs, mockBatches, type MockDPP } from "@/lib/mock-data";
+type MockDPP = any;
+const mockDPPs: MockDPP[] = [];
+const mockBatches: any[] = [];
 
 const SUBJECTS = ["Physics", "Chemistry", "Mathematics", "Biology"];
 const CHAPTERS: Record<string, string[]> = {
@@ -31,25 +33,25 @@ const statusMeta: Record<string, { label: string; badgeClass: string; icon: Reac
     label: "Completed", 
     badgeClass: "label-green", 
     icon: <RiCheckboxCircleFill size={20} />, 
-    iconContainerClass: "bg-[#00A656]/10 border border-[#00A656]/20 text-[#00A656]" 
+    iconContainerClass: "bg-primary-02/10 border border-primary-02/20 text-primary-02" 
   },
   upcoming:  { 
     label: "Upcoming",  
     badgeClass: "label-gray",  
     icon: <RiCalendarEventLine size={20} />, 
-    iconContainerClass: "bg-[rgba(123,123,123,0.1)] border border-[rgba(123,123,123,0.15)] text-[#7B7B7B]" 
+    iconContainerClass: "bg-[rgba(123,123,123,0.1)] border border-s-stroke2/40 text-t-secondary" 
   },
   late:      { 
     label: "Late",      
     badgeClass: "label-red",   
     icon: <RiAlertFill size={20} />, 
-    iconContainerClass: "bg-[#FF6A55]/10 border border-[#FF6A55]/20 text-[#FF6A55]" 
+    iconContainerClass: "bg-primary-03/10 border border-primary-03/20 text-primary-03" 
   },
   pending:   { 
     label: "Active",    
     badgeClass: "label-yellow", 
     icon: <RiFileList3Line size={20} />, 
-    iconContainerClass: "bg-[#EF9D0E]/10 border border-[#EF9D0E]/20 text-[#EF9D0E]" 
+    iconContainerClass: "bg-primary-05/10 border border-primary-05/20 text-primary-05" 
   },
 };
 
@@ -65,7 +67,7 @@ export default function TeacherDPPsPage() {
     title: "",
     subject: "Physics",
     chapter: "Laws of Motion",
-    batchId: mockBatches[0].id,
+    batchId: mockBatches[0]?.id || "",
     totalQuestions: 10,
     dueDate: "",
   });
@@ -101,7 +103,7 @@ export default function TeacherDPPsPage() {
       setDpps(prev => [newDPP, ...prev]);
       setShowModal(false);
       setCreating(false);
-      setForm({ title: "", subject: "Physics", chapter: "Laws of Motion", batchId: mockBatches[0].id, totalQuestions: 10, dueDate: "" });
+      setForm({ title: "", subject: "Physics", chapter: "Laws of Motion", batchId: mockBatches[0]?.id || "", totalQuestions: 10, dueDate: "" });
     }, 800);
   };
 
@@ -123,14 +125,14 @@ export default function TeacherDPPsPage() {
       
       <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
         {/* KPI Row (p-2 grey nested background container, matching top cards) */}
-        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg mb-8">
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg mb-8">
           {[
-            { label: "Total DPPs",  value: total,         icon: <RiFileListLine size={20} />, statusClass: "text-[#101010] dark:text-t-primary", bgClass: "bg-b-surface2 border border-s-stroke2 text-t-primary" },
-            { label: "Active",      value: active,        icon: <RiFileList3Line size={20} />,     statusClass: "text-[#EF9D0E]", bgClass: "bg-[#EF9D0E]/10 border border-[#EF9D0E]/20 text-[#EF9D0E]" },
-            { label: "Completed",   value: completed,     icon: <RiCheckboxCircleFill size={20} />,    statusClass: "text-[#00A656]", bgClass: "bg-[#00A656]/10 border border-[#00A656]/20 text-[#00A656]" },
-            { label: "Avg Completion", value: `${avgCompletion}%`, icon: <RiTeamLine size={20} />, statusClass: "text-[#2A85FF]", bgClass: "bg-[#2A85FF]/10 border border-[#2A85FF]/20 text-[#2A85FF]" },
+            { label: "Total DPPs",  value: total,         icon: <RiFileListLine size={20} />, statusClass: "text-t-primary dark:text-t-primary", bgClass: "bg-b-surface2 border border-s-stroke2 text-t-primary" },
+            { label: "Active",      value: active,        icon: <RiFileList3Line size={20} />,     statusClass: "text-primary-05", bgClass: "bg-primary-05/10 border border-primary-05/20 text-primary-05" },
+            { label: "Completed",   value: completed,     icon: <RiCheckboxCircleFill size={20} />,    statusClass: "text-primary-02", bgClass: "bg-primary-02/10 border border-primary-02/20 text-primary-02" },
+            { label: "Avg Completion", value: `${avgCompletion}%`, icon: <RiTeamLine size={20} />, statusClass: "text-primary-01", bgClass: "bg-primary-01/10 border border-primary-01/20 text-primary-01" },
           ].map(s => (
-            <div key={s.label} className="group relative flex items-center gap-4 p-5 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all overflow-hidden w-full">
+            <div key={s.label} className="group relative flex items-center gap-4 p-5 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all overflow-hidden w-full">
               <div className="box-hover" />
               <div className={`relative z-10 p-2.5 rounded-lg flex items-center justify-center shrink-0 ${s.bgClass}`}>
                 {s.icon}
@@ -165,19 +167,19 @@ export default function TeacherDPPsPage() {
           {/* Search & Create Section */}
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
             {/* Search Input (Figma Spec: rounded 90px pill) */}
-            <div className="relative w-full sm:w-[315px] h-12 flex items-center bg-[#FDFDFD] dark:bg-b-surface2 border border-[#E2E2E2] dark:border-s-stroke2/30 rounded-lg px-4 shadow-[0px_2px_4px_rgba(8,8,8,0.02)]">
+            <div className="relative w-full sm:w-[315px] h-12 flex items-center bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2 dark:border-s-stroke2/30 rounded-lg px-4 shadow-[0px_2px_4px_rgba(8,8,8,0.02)]">
               <input
                 type="text"
                 placeholder="Search DPPs..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full h-full bg-transparent border-none text-[14px] font-sans font-normal text-[#101010] dark:text-t-primary placeholder-[#727272] focus:outline-none"
+                className="w-full h-full bg-transparent border-none text-[14px] font-sans font-normal text-t-primary dark:text-t-primary placeholder-t-secondary focus:outline-none"
               />
             </div>
 
             {/* Create DPP Button (Figma Spec: gradient background, rounded 32px pill, inset shadow) */}
             <button 
-              className="flex flex-row justify-center items-center h-12 px-6 bg-gradient-to-b from-[#2C2C2C] to-[#282828] hover:from-[#3c3c3c] hover:to-[#383838] text-[#FDFDFD] dark:from-t-primary dark:to-t-primary/90 dark:text-b-surface1 text-[14px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] cursor-pointer"
+              className="flex flex-row justify-center items-center h-12 px-6 bg-gradient-to-b from-[#2C2C2C] to-[#282828] hover:from-[#3c3c3c] hover:to-[#383838] text-t-light dark:from-t-primary dark:to-t-primary/90 dark:text-b-surface1 text-[14px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] cursor-pointer"
               onClick={() => setShowModal(true)}
             >
               <RiAddLine size={18} className="mr-1" /> Create DPP
@@ -186,10 +188,10 @@ export default function TeacherDPPsPage() {
         </div>
 
         {/* DPP List (p-2 grey nested background container, matching dashboard style) */}
-        <div className="relative z-10 flex flex-col p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg">
+        <div className="relative z-10 flex flex-col p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg">
           {filtered.length === 0 && (
-            <div className="card text-center py-20 text-[#7B7B7B] border border-[#E2E2E2] bg-[#FDFDFD] dark:bg-b-surface2 rounded-lg">
-              <RiFileListLine size={48} className="mx-auto mb-4 text-[#7B7B7B]/50" />
+            <div className="card text-center py-20 text-t-secondary border border-s-stroke2 bg-b-surface2 dark:bg-b-surface2 rounded-lg">
+              <RiFileListLine size={48} className="mx-auto mb-4 text-t-secondary/50" />
               <p className="font-semibold text-body-2">No DPPs in this category yet.</p>
             </div>
           )}
@@ -200,7 +202,7 @@ export default function TeacherDPPsPage() {
             return (
               <div 
                 key={dpp.id} 
-                className="group relative card flex flex-col md:flex-row min-w-0 md:items-center justify-between gap-5 overflow-hidden bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 p-5 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
+                className="group relative card flex flex-col md:flex-row min-w-0 md:items-center justify-between gap-5 overflow-hidden bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 p-5 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.005]"
               >
                 <div className="box-hover" />
                 
@@ -211,12 +213,12 @@ export default function TeacherDPPsPage() {
 
                   <div className="relative z-10 flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-1">
-                      <span className="text-body-2 font-bold text-[#101010] dark:text-t-primary truncate">{dpp.title}</span>
+                      <span className="text-body-2 font-bold text-t-primary dark:text-t-primary truncate">{dpp.title}</span>
                       <span className={`label ${meta.badgeClass}`}>{meta.label}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-caption text-[#7B7B7B] flex-wrap mt-1">
+                    <div className="flex items-center gap-2 text-caption text-t-secondary flex-wrap mt-1">
                       <span className="flex items-center gap-1">
-                        <RiBookOpenLine size={14} className="text-[#7B7B7B] shrink-0" />
+                        <RiBookOpenLine size={14} className="text-t-secondary shrink-0" />
                         <span>{dpp.subject} · {dpp.chapter}</span>
                       </span>
                       <span>·</span>
@@ -231,21 +233,21 @@ export default function TeacherDPPsPage() {
 
                 <div className="relative z-10 flex items-center justify-between md:justify-end gap-6 shrink-0 mt-4 md:mt-0">
                   <div className="text-left md:text-right sm:w-40">
-                    <div className="text-caption font-bold text-[#101010] dark:text-t-primary mb-2">
+                    <div className="text-caption font-bold text-t-primary dark:text-t-primary mb-2">
                       {dpp.completedCount}/{dpp.totalStudents} submitted
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="flex-1 h-1.5 bg-s-stroke2 rounded-full overflow-hidden min-w-[80px]">
                         <div
-                          className={`h-full rounded-full ${dpp.status === "completed" ? "bg-[#00A656]" : "bg-gradient-to-r from-[#EF9D0E] to-[#F1C40F]"}`}
+                          className={`h-full rounded-full ${dpp.status === "completed" ? "bg-primary-02" : "bg-gradient-to-r from-[#EF9D0E] to-[#F1C40F]"}`}
                           style={{ width: `${pct}%` }}
                         />
                       </div>
-                      <span className="text-caption font-semibold text-[#7B7B7B]">{pct}%</span>
+                      <span className="text-caption font-semibold text-t-secondary">{pct}%</span>
                     </div>
                   </div>
 
-                  <button className="flex flex-row justify-center items-center h-8 px-4 bg-[#101010] hover:bg-[#202020] text-[#FDFDFD] dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget">
+                  <button className="flex flex-row justify-center items-center h-8 px-4 bg-shade-02 hover:bg-shade-04 text-t-light dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget">
                     {dpp.status === "completed" ? "Reports" : dpp.status === "upcoming" ? "Edit" : "Stats"}
                   </button>
                 </div>

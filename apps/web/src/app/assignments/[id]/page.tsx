@@ -14,7 +14,7 @@ import {
   RiCheckLine,
   RiAlertLine,
 } from "@remixicon/react";
-import { mockStudentDPPs, mockDPPQuestions } from "@/lib/mock-data";
+
 
 type AnswerMap = Record<string, string>;
 type StatusMap = Record<string, "unanswered" | "answered" | "review">;
@@ -23,6 +23,9 @@ export default function DPPSolvePage() {
   const router = useRouter();
   const params = useParams<{ id: string }>();
   const dppId = params.id;
+
+  const mockStudentDPPs: any[] = [];
+  const mockDPPQuestions: Record<string, any[]> = {};
 
   const dpp = mockStudentDPPs.find((d) => d.id === dppId);
   const questions = mockDPPQuestions[dppId] ?? [];
@@ -106,10 +109,10 @@ export default function DPPSolvePage() {
         <div className="card max-w-[560px] w-full p-8 text-center border border-s-stroke2 bg-b-surface1 shadow-depth">
           <div className={`size-20 rounded-full flex items-center justify-center mx-auto mb-6 text-h4 ${
             pct >= 70
-              ? "bg-[#00A656]/10 text-[#00A656]"
+              ? "bg-primary-02/10 text-primary-02"
               : pct >= 40
-                ? "bg-[#EF9D0E]/10 text-[#EF9D0E]"
-                : "bg-[#FF6A55]/10 text-[#FF6A55]"
+                ? "bg-primary-05/10 text-primary-05"
+                : "bg-primary-03/10 text-primary-03"
           }`}>
             {pct >= 70 ? "🎉" : pct >= 40 ? "📈" : "💪"}
           </div>
@@ -119,11 +122,11 @@ export default function DPPSolvePage() {
 
           <div className="grid grid-cols-3 gap-4 mb-8">
             <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-lg">
-              <div className="text-h4 font-bold text-[#00A656] mb-1">{score.correct}</div>
+              <div className="text-h4 font-bold text-primary-02 mb-1">{score.correct}</div>
               <div className="text-caption text-t-secondary">Correct</div>
             </div>
             <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-lg">
-              <div className="text-h4 font-bold text-[#FF6A55] mb-1">{score.total - score.correct}</div>
+              <div className="text-h4 font-bold text-primary-03 mb-1">{score.total - score.correct}</div>
               <div className="text-caption text-t-secondary">Wrong</div>
             </div>
             <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-lg">
@@ -145,11 +148,11 @@ export default function DPPSolvePage() {
                     key={q.id}
                     className={`p-4 rounded-lg border flex gap-3 text-left ${
                       isRight
-                        ? "bg-[#00A656]/5 border-[#00A656]/20 text-t-primary"
-                        : "bg-[#FF6A55]/5 border-[#FF6A55]/20 text-t-primary"
+                        ? "bg-primary-02/5 border-primary-02/20 text-t-primary"
+                        : "bg-primary-03/5 border-primary-03/20 text-t-primary"
                     }`}
                   >
-                    <div className={`shrink-0 mt-0.5 ${isRight ? "text-[#00A656]" : "text-[#FF6A55]"}`}>
+                    <div className={`shrink-0 mt-0.5 ${isRight ? "text-primary-02" : "text-primary-03"}`}>
                       {isRight ? <RiCheckLine size={18} /> : <RiAlertLine size={18} />}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -157,7 +160,7 @@ export default function DPPSolvePage() {
                         Q{i + 1}. {q.questionText.substring(0, 80)}{q.questionText.length > 80 ? "…" : ""}
                       </p>
                       <p className="text-caption text-t-secondary">
-                        Your answer: <strong className="text-t-primary">{yourAns ?? "Not attempted"}</strong> &nbsp;·&nbsp; Correct: <strong className="text-[#00A656]">{correct}</strong>
+                        Your answer: <strong className="text-t-primary">{yourAns ?? "Not attempted"}</strong> &nbsp;·&nbsp; Correct: <strong className="text-primary-02">{correct}</strong>
                       </p>
                     </div>
                   </div>
@@ -213,10 +216,10 @@ export default function DPPSolvePage() {
         {/* Timer */}
         <div className={`flex items-center gap-2 px-5 py-2 rounded-lg border transition-all font-bold text-caption font-mono ${
           timeWarning
-            ? "bg-[#FF6A55]/5 border-[#FF6A55]/20 text-[#FF6A55]"
+            ? "bg-primary-03/5 border-primary-03/20 text-primary-03"
             : "bg-b-surface2 border-s-stroke2 text-t-primary"
         }`}>
-          <RiTimerLine size={18} className={timeWarning ? "text-[#FF6A55]" : "text-t-secondary"} />
+          <RiTimerLine size={18} className={timeWarning ? "text-primary-03" : "text-t-secondary"} />
           <span className="tabular-nums">
             {formatTime(timeLeft)}
           </span>
@@ -257,21 +260,21 @@ export default function DPPSolvePage() {
 
             {/* Options */}
             <div className="flex flex-col gap-3">
-              {q.options.map((opt) => {
+              {q.options.map((opt: any) => {
                 const selected = answers[q.id] === opt.id;
                 return (
                   <button
                     key={opt.id}
                     className={`flex items-center gap-4 p-4 rounded-lg cursor-pointer text-left text-body-2 transition-all ${
                       selected
-                        ? "border-2 border-[#3765F6] bg-[#3765F6]/5 text-t-primary font-bold shadow-depth"
+                        ? "border-2 border-primary-01 bg-primary-01/5 text-t-primary font-bold shadow-depth"
                         : "border border-s-stroke2 bg-b-surface2 text-t-secondary hover:text-t-primary hover:border-s-highlight"
                     }`}
                     onClick={() => selectAnswer(q.id, opt.id)}
                   >
                     <div className={`size-8 rounded-full flex items-center justify-center shrink-0 text-caption font-bold transition-colors ${
                       selected
-                        ? "bg-[#3765F6] text-white"
+                        ? "bg-primary-01 text-white"
                         : "bg-b-surface1 border border-s-stroke2 text-t-primary"
                     }`}>
                       {opt.id}
@@ -295,7 +298,7 @@ export default function DPPSolvePage() {
               <button
                 className={`btn flex items-center gap-1.5 ${
                   status[q.id] === "review"
-                    ? "border border-[#EF9D0E] bg-[#EF9D0E]/10 text-[#EF9D0E]"
+                    ? "border border-primary-05 bg-primary-05/10 text-primary-05"
                     : "btn-outline"
                 }`}
                 onClick={() => toggleReview(q.id)}
@@ -331,8 +334,8 @@ export default function DPPSolvePage() {
         <div className="w-[280px] border-l border-s-stroke2 p-6 overflow-y-auto bg-b-surface1 flex flex-col">
           <div className="grid grid-cols-3 gap-2 p-4 bg-b-surface2 border border-s-stroke2 rounded-lg mb-6">
             {[
-              { label: "Done", value: answered, color: "text-[#00A656]" },
-              { label: "Review", value: marked, color: "text-[#EF9D0E]" },
+              { label: "Done", value: answered, color: "text-primary-02" },
+              { label: "Review", value: marked, color: "text-primary-05" },
               { label: "Left", value: unanswered, color: "text-t-secondary" },
             ].map((s) => (
               <div key={s.label} className="text-center">
@@ -351,12 +354,12 @@ export default function DPPSolvePage() {
               
               let btnClass = "bg-b-surface2 border border-s-stroke2 text-t-secondary hover:border-s-highlight";
               if (s === "answered") {
-                btnClass = "bg-[#00A656]/10 border border-[#00A656] text-[#00A656]";
+                btnClass = "bg-primary-02/10 border border-primary-02 text-primary-02";
               } else if (s === "review") {
-                btnClass = "bg-[#EF9D0E]/10 border border-[#EF9D0E] text-[#EF9D0E]";
+                btnClass = "bg-primary-05/10 border border-primary-05 text-primary-05";
               }
               if (isCurrent) {
-                btnClass = "bg-[#3765F6] text-white border-none shadow-depth";
+                btnClass = "bg-primary-01 text-white border-none shadow-depth";
               }
               
               return (
