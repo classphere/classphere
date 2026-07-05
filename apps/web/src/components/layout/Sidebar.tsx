@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import {
   RiDashboardLine,
@@ -29,22 +29,27 @@ import {
   RiMoonLine,
   RiMailLine,
   RiNotification3Line,
-  RiUploadCloud2Line
+  RiUploadCloud2Line,
+  RiLogoutBoxLine
 } from "@remixicon/react";
-import { mockUser } from "@/lib/mock-data";
+import { useAuth } from "@/lib/auth-context";
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const queryRole = searchParams.get("role");
+  const { user, signOut } = useAuth();
 
-  const isTeacher = pathname.startsWith("/teacher") || queryRole === "teacher";
-  const isInstitute = pathname.startsWith("/institute") || queryRole === "institute_admin" || queryRole === "institute";
-  const isSuperAdmin = pathname.startsWith("/superadmin") || queryRole === "super_admin" || queryRole === "superadmin";
+  const isTeacher = pathname.startsWith("/teacher") || user?.role === "teacher";
+  const isInstitute = pathname.startsWith("/institute") || user?.role === "institute_admin";
+  const isSuperAdmin = pathname.startsWith("/superadmin") || user?.role === "super_admin";
 
   // Theme Toggler Logic
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  // Defer user-dependent rendering until after hydration to avoid SSR mismatch
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark";
@@ -64,7 +69,6 @@ export default function Sidebar() {
   };
 
   // Navigations based on Role
-  const studentExam = mockUser.batch.includes("NEET") ? "neet" : mockUser.batch.includes("SSC") ? "ssc" : "jee";
   const studentNav = [
     { label: "Dashboard",    href: "/",                  icon: <RiDashboardLine size={18} />,      active: pathname === "/" },
     { label: "Tests Hub",    href: "/tests",             icon: <RiFileList3Line size={18} />,      active: pathname.startsWith("/tests") },
@@ -122,10 +126,10 @@ export default function Sidebar() {
         <div className="pl-1">
           <Link href="/" className="flex items-center gap-3.5 rounded-lg transition-colors">
             {/* Logo Container 48px x 48px */}
-            <div className="flex size-12 items-center justify-center rounded-lg bg-[#101010] text-[#FDFDFD] shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
+            <div className="flex size-12 items-center justify-center rounded-lg bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
               <RiFlashlightFill size={22} className="opacity-90" />
             </div>
-            <span className="font-sans text-[20px] font-bold text-[#101010] dark:text-t-primary tracking-tight">
+            <span className="font-sans text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight">
               ExamPrep
             </span>
           </Link>
@@ -157,7 +161,7 @@ export default function Sidebar() {
 
         {/* ── Others Menu ── */}
         <div className="flex flex-col gap-2 w-full">
-          <div className="text-[10px] font-bold tracking-wider text-[#727272] pl-3 uppercase">
+          <div className="text-[10px] font-bold tracking-wider text-t-secondary pl-3 uppercase">
             Others
           </div>
           <nav className="flex flex-col gap-1 w-full">
@@ -193,43 +197,40 @@ export default function Sidebar() {
           href="/profile" 
           className="flex items-center gap-3 w-full p-2.5 rounded-lg bg-transparent hover:bg-b-surface2 border border-transparent transition-all cursor-pointer select-none"
         >
-          <div className="size-11 rounded-full overflow-hidden shrink-0 shadow-widget">
-            <img
-              src={`https://ui-avatars.com/api/?name=${encodeURIComponent(mockUser.name)}&background=101010&color=fff&size=80`}
-              alt="Avatar"
-              className="w-full h-full object-cover"
-            />
+          <div className="size-11 rounded-full overflow-hidden shrink-0 shadow-widget bg-b-surface1">
+            {mounted && (
+              <img
+                src={`https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name ?? "User")}&background=101010&color=fff&size=80`}
+                alt="Avatar"
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
           <div className="flex-1 min-w-0">
             <div className="font-sans font-semibold text-[13px] text-t-primary truncate leading-tight">
-              {mockUser.name}
+              {mounted ? (user?.name ?? "—") : ""}
             </div>
             <div className="font-sans text-[11px] text-t-tertiary truncate mt-0.5 leading-none">
-              {mockUser.email}
+              {mounted ? (user?.email ?? "") : ""}
             </div>
           </div>
         </Link>
 
-        {/* Demo Role Switcher */}
-        <div className="w-full">
-          <select
-            className="h-12 w-full rounded-lg border border-s-stroke2 bg-b-surface2 px-4 py-2 text-button transition-all focus:border-s-highlight outline-none cursor-pointer"
-            value={isTeacher ? "/teacher" : isInstitute ? "/institute" : isSuperAdmin ? "/superadmin" : "/"}
-            onChange={(e) => router.push(e.target.value)}
-          >
-            <option value="/">Student Dashboard</option>
-            <option value="/teacher">Teacher Portal</option>
-            <option value="/institute">Institute Admin</option>
-            <option value="/superadmin">Super Admin</option>
-          </select>
-        </div>
+        {/* Sign Out */}
+        <button
+          onClick={() => signOut()}
+          className="flex items-center gap-3 w-full px-4 h-12 rounded-lg text-primary-03 hover:bg-[rgba(255,106,85,0.05)] border border-transparent hover:border-s-stroke2/40 transition-all text-[13px] font-sans font-semibold cursor-pointer"
+        >
+          <RiLogoutBoxLine size={18} />
+          Sign Out
+        </button>
 
         {/* Mode Container: Notification Bell + Mail Button + Theme Capsule */}
         <div className="flex flex-row items-center gap-3 w-full">
           {/* Notification Button */}
           <button className="relative flex size-12 items-center justify-center rounded-full bg-b-surface2 border border-s-stroke2 transition-all active:scale-95 shadow-widget hover:border-s-highlight cursor-pointer shrink-0 text-t-secondary hover:text-t-primary">
             <RiNotification3Line size={20} />
-            <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-[#FF6A55]" />
+            <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-primary-03" />
           </button>
 
           {/* Message Mail Button */}
