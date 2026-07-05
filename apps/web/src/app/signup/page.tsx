@@ -2,89 +2,209 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { RiFlashlightFill } from "@remixicon/react";
+import { RiFlashlightFill, RiEyeLine, RiEyeOffLine, RiAlertLine, RiCheckLine } from "@remixicon/react";
+import { supabase } from "@/lib/supabase";
+
+import { API_URL } from "@/lib/api.client";
 
 export default function SignupPage() {
-  const router = useRouter();
   const [form, setForm] = useState({ name: "", email: "", password: "" });
-  const [loading, setLoading] = useState(false);
   const [exam, setExam] = useState<"JEE" | "NEET" | "Both">("JEE");
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 900));
-    localStorage.setItem("ep_auth", "true");
-    router.push("/");
+    setError("");
+
+    if (form.password.length < 8) {
+      setError("Password must be at least 8 characters.");
+      setLoading(false);
+      return;
+    }
+
+    // 1. Create Supabase auth user
+    const { data: authData, error: authError } = await supabase.auth.signUp({
+      email: form.email.trim(),
+      password: form.password,
+      options: {
+        data: {
+          name: form.name.trim(),
+          exam_target: exam,
+        },
+      },
+    });
+
+    if (authError) {
+      if (authError.message.includes("already registered")) {
+        setError("This email is already registered. Try logging in instead.");
+      } else {
+        setError(authError.message);
+      }
+      setLoading(false);
+      return;
+    }
+
+    // 2. Call our backend to create the public.users row + initial profile
+    if (authData?.user) {
+      try {
+        await fetch(`${API_URL}/api/v1/auth/signup`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: authData.user.id,
+            name: form.name.trim(),
+            email: form.email.trim(),
+            exam_target: exam,
+          }),
+        });
+      } catch {
+        // Non-fatal — the user still exists in Supabase Auth, the backend row
+        // will be created on first getMe call if needed
+      }
+    }
+
+    setSuccess(true);
+    setLoading(false);
+    // AuthContext will pick up the SIGNED_IN event and redirect automatically
   };
 
-  return (
-    <main
-      style={{
-        minHeight: "100vh", display: "flex", alignItems: "center",
-        justifyContent: "center", background: "var(--bg-default)", padding: "var(--space-600)",
-      }}
-    >
-      <div style={{ width: "100%", maxWidth: 440 }}>
-        <div style={{ textAlign: "center", marginBottom: "var(--space-800)" }}>
-          <Link href="/" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}>
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--secondary-50)", display: "flex", alignItems: "center", justifyContent: "center", color: "white" }}><RiFlashlightFill size={18} /></div>
-            <span style={{ fontWeight: 800, fontSize: 20, color: "var(--fg-default)" }}>ExamPrep</span>
+  if (success) {
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-b-surface1 px-4">
+        <div className="w-full max-w-[420px] text-center">
+          <div className="flex size-16 items-center justify-center rounded-full bg-[rgba(0,166,86,0.1)] border border-s-stroke2/40 mx-auto mb-6">
+            <RiCheckLine size={28} className="text-primary-02" />
+          </div>
+          <h1 className="font-sans text-[24px] font-semibold text-t-primary dark:text-t-primary mb-2">
+            Account created!
+          </h1>
+          <p className="font-sans text-[14px] text-t-secondary mb-8">
+            Check your inbox to verify your email, then log in to start your prep.
+          </p>
+          <Link
+            href="/login"
+            className="inline-flex h-12 items-center justify-center px-8 rounded-lg bg-shade-02 text-t-light font-sans text-[14px] font-semibold transition-all hover:bg-shade-03 active:scale-[0.98]"
+          >
+            Go to Login
           </Link>
-          <h1 className="text-h2" style={{ marginTop: 16, marginBottom: 8 }}>
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="min-h-screen flex items-center justify-center bg-b-surface1 px-4 py-8">
+      <div className="w-full max-w-[440px]">
+
+        {/* Logo */}
+        <div className="text-center mb-10">
+          <Link href="/login" className="inline-flex items-center gap-2.5 no-underline mb-6">
+            <div className="flex size-10 items-center justify-center rounded-lg bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)]">
+              <RiFlashlightFill size={20} />
+            </div>
+            <span className="font-sans text-[22px] font-bold text-t-primary dark:text-t-primary tracking-tight">
+              ExamPrep
+            </span>
+          </Link>
+          <h1 className="font-sans text-[28px] font-semibold text-t-primary dark:text-t-primary tracking-tight mt-4 mb-2">
             Start your prep today
           </h1>
-          <p className="text-body-base" style={{ color: "var(--fg-muted)" }}>Free account — no credit card needed</p>
+          <p className="font-sans text-[14px] text-t-secondary">
+            Free account — no credit card needed
+          </p>
         </div>
 
-        <div className="rayum-card" style={{ padding: 40 }}>
-          <form onSubmit={handleSignup}>
-            {[
-              { id: "name", label: "Full Name", type: "text", placeholder: "Harsh Singh" },
-              { id: "email", label: "Email", type: "email", placeholder: "you@example.com" },
-              { id: "password", label: "Password", type: "password", placeholder: "Minimum 8 characters" },
-            ].map((field) => (
-              <div key={field.id} style={{ marginBottom: 20 }}>
-                <label className="text-body-small" style={{ display: "block", fontWeight: 600, color: "var(--fg-default)", marginBottom: 8 }}>
-                  {field.label}
-                </label>
-                <input
-                  id={`signup-${field.id}`}
-                  type={field.type}
-                  placeholder={field.placeholder}
-                  value={form[field.id as keyof typeof form]}
-                  onChange={(e) => setForm({ ...form, [field.id]: e.target.value })}
-                  required
-                  style={{
-                    width: "100%", padding: "12px 16px", borderRadius: "var(--radius-md)", border: "1px solid var(--border-default)",
-                    background: "var(--bg-default)", color: "var(--fg-default)", fontSize: 14, outline: "none",
-                    transition: "border-color 0.2s"
-                  }}
-                  onFocus={(e) => e.target.style.borderColor = "var(--primary-50)"}
-                  onBlur={(e) => e.target.style.borderColor = "var(--border-default)"}
-                />
-              </div>
-            ))}
+        {/* Card */}
+        <div className="bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] p-8">
 
-            {/* Exam selection */}
-            <div style={{ marginBottom: 32 }}>
-              <label className="text-body-small" style={{ display: "block", fontWeight: 600, color: "var(--fg-default)", marginBottom: 10 }}>
+          {error && (
+            <div className="flex items-start gap-3 mb-6 p-4 rounded-lg bg-[rgba(255,106,85,0.05)] border border-s-stroke2/40">
+              <RiAlertLine size={18} className="text-primary-03 shrink-0 mt-0.5" />
+              <span className="font-sans text-[13px] text-primary-03 leading-[150%]">{error}</span>
+            </div>
+          )}
+
+          <form onSubmit={handleSignup} className="flex flex-col gap-5">
+            {/* Name */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="signup-name" className="font-sans text-[13px] font-semibold text-t-primary dark:text-t-primary">
+                Full Name
+              </label>
+              <input
+                id="signup-name"
+                type="text"
+                placeholder="Harsh Singh"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                required
+                autoComplete="name"
+                className="h-12 w-full rounded-lg border border-s-stroke2 dark:border-s-stroke2 bg-b-surface1 dark:bg-b-surface3 px-4 font-sans text-[14px] text-t-primary dark:text-t-primary placeholder:text-t-secondary outline-none transition-all focus:border-t-primary dark:focus:border-t-secondary"
+              />
+            </div>
+
+            {/* Email */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="signup-email" className="font-sans text-[13px] font-semibold text-t-primary dark:text-t-primary">
+                Email
+              </label>
+              <input
+                id="signup-email"
+                type="email"
+                placeholder="you@example.com"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                required
+                autoComplete="email"
+                className="h-12 w-full rounded-lg border border-s-stroke2 dark:border-s-stroke2 bg-b-surface1 dark:bg-b-surface3 px-4 font-sans text-[14px] text-t-primary dark:text-t-primary placeholder:text-t-secondary outline-none transition-all focus:border-t-primary dark:focus:border-t-secondary"
+              />
+            </div>
+
+            {/* Password */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="signup-password" className="font-sans text-[13px] font-semibold text-t-primary dark:text-t-primary">
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  id="signup-password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Minimum 8 characters"
+                  value={form.password}
+                  onChange={(e) => setForm({ ...form, password: e.target.value })}
+                  required
+                  autoComplete="new-password"
+                  className="h-12 w-full rounded-lg border border-s-stroke2 dark:border-s-stroke2 bg-b-surface1 dark:bg-b-surface3 px-4 pr-12 font-sans text-[14px] text-t-primary dark:text-t-primary placeholder:text-t-secondary outline-none transition-all focus:border-t-primary dark:focus:border-t-secondary"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-t-secondary hover:text-t-primary transition-colors"
+                >
+                  {showPassword ? <RiEyeOffLine size={18} /> : <RiEyeLine size={18} />}
+                </button>
+              </div>
+            </div>
+
+            {/* Exam Selection */}
+            <div className="flex flex-col gap-2">
+              <label className="font-sans text-[13px] font-semibold text-t-primary dark:text-t-primary">
                 I am preparing for
               </label>
-              <div style={{ display: "flex", gap: 10 }}>
+              <div className="flex gap-2">
                 {(["JEE", "NEET", "Both"] as const).map((e) => (
                   <button
                     key={e}
                     type="button"
                     onClick={() => setExam(e)}
-                    style={{
-                      flex: 1, padding: "10px", borderRadius: "var(--radius-md)", cursor: "pointer", fontSize: 14, fontWeight: 600,
-                      background: exam === e ? "var(--primary-10)" : "var(--bg-default)",
-                      border: exam === e ? "1.5px solid var(--primary-50)" : "1.5px solid var(--border-default)",
-                      color: exam === e ? "var(--fg-default)" : "var(--fg-muted)",
-                      transition: "all 0.15s"
-                    }}
+                    className={`flex-1 h-12 rounded-lg font-sans text-[13px] font-semibold transition-all cursor-pointer border ${
+                      exam === e
+                        ? "bg-[rgba(16,16,16,0.04)] dark:bg-b-surface1 border-t-primary dark:border-t-primary text-t-primary dark:text-t-primary"
+                        : "bg-transparent border-s-stroke2 dark:border-s-stroke2 text-t-secondary hover:border-t-primary hover:text-t-primary"
+                    }`}
                   >
                     {e}
                   </button>
@@ -95,22 +215,28 @@ export default function SignupPage() {
             <button
               id="signup-submit"
               type="submit"
-              className="btn btn-primary"
-              style={{ width: "100%", padding: 14 }}
               disabled={loading}
+              className="mt-1 flex h-12 w-full items-center justify-center rounded-lg bg-shade-02 hover:bg-shade-03 dark:bg-t-primary dark:text-b-surface1 text-t-light font-sans text-[14px] font-semibold transition-all active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed shadow-widget cursor-pointer"
             >
-              {loading ? "Creating account..." : "Create Free Account"}
+              {loading ? (
+                <span className="flex items-center gap-2">
+                  <span className="size-4 border-2 border-s-border/30 border-t-[#FDFDFD] rounded-full animate-spin" />
+                  Creating account...
+                </span>
+              ) : "Create Free Account"}
             </button>
           </form>
 
-          <p style={{ fontSize: 12, color: "var(--fg-muted)", textAlign: "center", marginTop: 24 }}>
+          <p className="font-sans text-[11px] text-center text-t-secondary mt-6 leading-[160%]">
             By signing up you agree to our Terms of Service and Privacy Policy.
           </p>
         </div>
 
-        <p className="text-body-small" style={{ textAlign: "center", marginTop: 24, color: "var(--fg-muted)" }}>
+        <p className="font-sans text-[13px] text-center mt-6 text-t-secondary">
           Already have an account?{" "}
-          <Link href="/login" style={{ color: "var(--secondary-50)", fontWeight: 600, textDecoration: "none" }}>Log in</Link>
+          <Link href="/login" className="font-semibold text-t-primary dark:text-t-primary hover:underline">
+            Log in
+          </Link>
         </p>
       </div>
     </main>
