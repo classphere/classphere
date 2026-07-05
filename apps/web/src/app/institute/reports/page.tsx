@@ -34,7 +34,8 @@ import {
   Radar,
   Legend
 } from "recharts";
-import { mockBatches, mockInstituteStudents } from "@/lib/mock-data";
+const mockBatches: any[] = [];
+const mockInstituteStudents: any[] = [];
 
 // Mock Data for Analytics Trends
 const trendData = [
@@ -113,7 +114,7 @@ export default function ReportsPage() {
       {/* ── Top Navigation Row (Figma Style) ── */}
       <div className="flex flex-row justify-between items-center w-full h-12 gap-6">
         {/* Title */}
-        <h1 className="font-sans font-semibold text-[32px] leading-[145%] tracking-[0.0025em] text-[#101010] dark:text-t-primary">
+        <h1 className="font-sans font-semibold text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
           Reports & Analytics
         </h1>
 
@@ -121,11 +122,11 @@ export default function ReportsPage() {
         <div className="flex flex-row items-center gap-3">
           {/* Search Box */}
           <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-lg px-3 py-2 w-[315px] h-12 gap-2 shadow-xs">
-            <RiSearchLine size={20} className="text-[#727272] dark:text-t-tertiary" />
+            <RiSearchLine size={20} className="text-t-secondary dark:text-t-tertiary" />
             <input
               type="text"
               placeholder="Search"
-              className="bg-transparent border-none outline-none text-sm text-[#101010] dark:text-t-primary placeholder-[#727272] w-full"
+              className="bg-transparent border-none outline-none text-sm text-t-primary dark:text-t-primary placeholder-t-secondary w-full"
             />
           </div>
 
@@ -137,7 +138,7 @@ export default function ReportsPage() {
           {/* Bell Button */}
           <button className="btn btn-outline w-12 h-12 !px-0 rounded-lg flex items-center justify-center relative shrink-0">
             <RiNotification3Line size={20} />
-            <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-[#FF6A55]" />
+            <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-primary-03" />
           </button>
 
           {/* Mail Button */}
@@ -158,8 +159,8 @@ export default function ReportsPage() {
       {/* Main Content */}
       <div className="flex justify-between items-end mt-6">
         <div className="flex flex-col gap-2">
-          <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-[#101010] dark:text-t-primary">Performance Analytics</h2>
-          <p className="text-xs text-[#7B7B7B] dark:text-t-tertiary">Track general average test outcomes, monthly progress trends, and syllabus area coverage.</p>
+          <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-t-primary dark:text-t-primary">Performance Analytics</h2>
+          <p className="text-xs text-t-secondary dark:text-t-tertiary">Track general average test outcomes, monthly progress trends, and syllabus area coverage.</p>
         </div>
 
         {/* Filter Controls (Tabs) */}
@@ -181,7 +182,7 @@ export default function ReportsPage() {
             ))}
           </div>
 
-          <span className="text-[#D4D4D4] dark:text-s-stroke2/30 mx-2">|</span>
+          <span className="text-s-stroke2 dark:text-s-stroke2/30 mx-2">|</span>
 
           {/* Time Selector Dropdown */}
           <div className="relative">
@@ -203,31 +204,31 @@ export default function ReportsPage() {
       {activeTab === "Overview" && (
         <>
           {/* KPI Cards Row */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg mt-4">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg mt-4">
             {[
-              { label: "Average Test Score", value: "76.4%", desc: "+1.8%", descSuffix: "vs last month", icon: <RiBarChartBoxLine size={20} />, iconColor: "text-[#2A85FF]" },
-              { label: "Tests Conducted", value: "142", desc: "12 tests", descSuffix: "scheduled this week", icon: <RiLineChartLine size={20} />, iconColor: "text-[#00A656]" },
-              { label: "Active Students", value: "1,204", desc: "+34", descSuffix: "new enrollments", icon: <RiPieChart2Line size={20} />, iconColor: "text-[#EF9D0E]" },
+              { label: "Average Test Score", value: "76.4%", desc: "+1.8%", descSuffix: "vs last month", icon: <RiBarChartBoxLine size={20} />, iconColor: "text-primary-01" },
+              { label: "Tests Conducted", value: "142", desc: "12 tests", descSuffix: "scheduled this week", icon: <RiLineChartLine size={20} />, iconColor: "text-primary-02" },
+              { label: "Active Students", value: "1,204", desc: "+34", descSuffix: "new enrollments", icon: <RiPieChart2Line size={20} />, iconColor: "text-primary-05" },
             ].map((card, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-start p-6 gap-2 bg-[#FDFDFD] dark:bg-b-surface2 border border-[#FDFDFD] dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
+                className="flex flex-col items-start p-6 gap-2 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
               >
                 <div className="flex flex-row items-center gap-3 w-full mb-1">
                   <span className={card.iconColor}>{card.icon}</span>
-                  <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+                  <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
                     {card.label}
                   </span>
                 </div>
                 <div className="flex flex-row items-center gap-4 w-full mt-1">
-                  <div className="font-sans text-[54px] font-medium tracking-[-0.005em] text-[#101010] dark:text-t-primary leading-none">
+                  <div className="font-sans text-4xl font-medium tracking-[-0.005em] text-t-primary dark:text-t-primary leading-none">
                     {card.value}
                   </div>
                   <div className="flex flex-col items-start gap-0.5">
-                    <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-[rgba(0,166,86,0.15)] bg-[rgba(0,166,86,0.05)] rounded-lg">
-                      <span className="text-[#00A656] text-[12px] font-semibold leading-none">{card.desc}</span>
+                    <div className="label label-green h-6 px-1.5 gap-1">
+                      <span className="text-[12px] font-semibold leading-none">{card.desc}</span>
                     </div>
-                    <span className="text-[12px] font-sans text-[#7B7B7B] dark:text-t-tertiary">
+                    <span className="text-[12px] font-sans text-t-secondary dark:text-t-tertiary">
                       {card.descSuffix}
                     </span>
                   </div>
@@ -240,26 +241,26 @@ export default function ReportsPage() {
           {/* Visual Chart Row */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mt-4 items-stretch">
             {/* Batch Performance Area Chart Card (ColSpan 2) */}
-            <div className="group lg:col-span-2 relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+            <div className="group lg:col-span-2 relative flex flex-col justify-between p-6 md:p-8 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
               <div className="box-hover" />
               <div className="relative z-10 flex flex-row justify-between items-start mb-6 w-full">
                 <div className="flex flex-col gap-1">
-                  <h3 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Batch Performance Trend</h3>
-                  <p className="text-xs text-[#7B7B7B] dark:text-t-tertiary">Subject performance index over consecutive cycles</p>
+                  <h3 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary">Batch Performance Trend</h3>
+                  <p className="text-xs text-t-secondary dark:text-t-tertiary">Subject performance index over consecutive cycles</p>
                 </div>
                 {/* Custom Legend */}
-                <div className="flex flex-row items-center gap-4 bg-[#F9F9F9] dark:bg-b-surface1/40 px-3 py-1.5 rounded-lg border border-s-stroke2/10 shrink-0">
+                <div className="flex flex-row items-center gap-4 bg-b-surface1 dark:bg-b-surface1/40 px-3 py-1.5 rounded-lg border border-s-stroke2/10 shrink-0">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#2A85FF]" />
-                    <span className="text-[11px] font-sans font-semibold text-[#727272] dark:text-t-secondary">Physics</span>
+                    <span className="w-2 h-2 rounded-full bg-primary-01" />
+                    <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Physics</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#EF9D0E]" />
-                    <span className="text-[11px] font-sans font-semibold text-[#727272] dark:text-t-secondary">Chemistry</span>
+                    <span className="w-2 h-2 rounded-full bg-primary-05" />
+                    <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Chemistry</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#00A656]" />
-                    <span className="text-[11px] font-sans font-semibold text-[#727272] dark:text-t-secondary">Mathematics</span>
+                    <span className="w-2 h-2 rounded-full bg-primary-02" />
+                    <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Mathematics</span>
                   </div>
                 </div>
               </div>
@@ -292,17 +293,17 @@ export default function ReportsPage() {
                     </AreaChart>
                   </ResponsiveContainer>
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-xs text-[#7B7B7B]">Loading chart...</div>
+                  <div className="w-full h-full flex items-center justify-center text-xs text-t-secondary">Loading chart...</div>
                 )}
               </div>
             </div>
 
             {/* Subject Mastery Radar Chart Card (ColSpan 1) */}
-            <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+            <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
               <div className="box-hover" />
               <div className="relative z-10 flex flex-col gap-1 mb-6">
-                <h3 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Subject Mastery</h3>
-                <p className="text-xs text-[#7B7B7B] dark:text-t-tertiary">Overall core module accuracy index</p>
+                <h3 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary">Subject Mastery</h3>
+                <p className="text-xs text-t-secondary dark:text-t-tertiary">Overall core module accuracy index</p>
               </div>
 
               <div className="relative z-10 w-full h-[320px] flex items-center justify-center">
@@ -323,22 +324,22 @@ export default function ReportsPage() {
                     </RadarChart>
                   </ResponsiveContainer>
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-xs text-[#7B7B7B]">Loading radar chart...</div>
+                  <div className="w-full h-full flex items-center justify-center text-xs text-t-secondary">Loading radar chart...</div>
                 )}
               </div>
             </div>
           </div>
 
           {/* Recent Test Reports List */}
-          <div className="group relative flex flex-col p-6 md:p-8 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col p-6 md:p-8 gap-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
-              <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+              <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
                 Recent Test Reports
               </h4>
               <Link 
                 href="/institute/tests" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
               >
                 <span>View All</span>
                 <RiArrowRightLine size={16} />
@@ -354,7 +355,7 @@ export default function ReportsPage() {
               ].map((report) => (
                 <div
                   key={report.id}
-                  className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
+                  className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-b-surface1 dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
                 >
                   {/* Left: Avatar/Icon + Title & Batch details */}
                   <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
@@ -362,10 +363,10 @@ export default function ReportsPage() {
                       {report.exam === "JEE" ? <RiRulerLine size={24} /> : <RiTestTubeLine size={24} />}
                     </div>
                     <div className="min-w-0 flex-1 flex flex-col">
-                      <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary truncate">
+                      <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary truncate">
                         {report.title}
                       </span>
-                      <span className="text-xs text-[#7B7B7B] dark:text-t-tertiary mt-0.5">
+                      <span className="text-xs text-t-secondary dark:text-t-tertiary mt-0.5">
                         {report.batch} · {report.date}
                       </span>
                     </div>
@@ -374,19 +375,19 @@ export default function ReportsPage() {
                   {/* Right Info & Actions */}
                   <div className="flex flex-row items-center gap-8 shrink-0">
                     <div className="flex flex-col items-end justify-center min-w-[90px]">
-                      <span className="text-[10px] font-sans font-bold text-[#7B7B7B] dark:text-t-tertiary uppercase tracking-wider">
+                      <span className="text-[10px] font-sans font-bold text-t-secondary dark:text-t-tertiary uppercase tracking-wider">
                         Avg Accuracy
                       </span>
-                      <span className="text-[16px] font-sans font-bold text-[#00A656] mt-0.5">
+                      <span className="text-[16px] font-sans font-bold text-primary-02 mt-0.5">
                         {report.accuracy}%
                       </span>
                     </div>
 
                     <div className="flex flex-col items-end justify-center min-w-[90px]">
-                      <span className="text-[10px] font-sans font-bold text-[#7B7B7B] dark:text-t-tertiary uppercase tracking-wider">
+                      <span className="text-[10px] font-sans font-bold text-t-secondary dark:text-t-tertiary uppercase tracking-wider">
                         High Score
                       </span>
-                      <span className="text-[16px] font-sans font-bold text-[#101010] dark:text-t-primary mt-0.5">
+                      <span className="text-[16px] font-sans font-bold text-t-primary dark:text-t-primary mt-0.5">
                         {report.high}%
                       </span>
                     </div>
@@ -409,26 +410,26 @@ export default function ReportsPage() {
       {activeTab === "Batch Performance" && (
         <>
           {/* Full-width Trend Chart */}
-          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden w-full mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden w-full mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row justify-between items-start mb-6">
               <div className="flex flex-col gap-1">
-                <h3 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Cross-Batch Accuracy Over Time</h3>
-                <p className="text-xs text-[#7B7B7B] dark:text-t-tertiary">Longitudinal performance trend for the active coaching batches</p>
+                <h3 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary">Cross-Batch Accuracy Over Time</h3>
+                <p className="text-xs text-t-secondary dark:text-t-tertiary">Longitudinal performance trend for the active coaching batches</p>
               </div>
               {/* Custom Legend */}
-              <div className="flex flex-row items-center gap-4 bg-[#F9F9F9] dark:bg-b-surface1/40 px-3 py-1.5 rounded-lg border border-s-stroke2/10">
+              <div className="flex flex-row items-center gap-4 bg-b-surface1 dark:bg-b-surface1/40 px-3 py-1.5 rounded-lg border border-s-stroke2/10">
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#2A85FF]" />
-                  <span className="text-[11px] font-sans font-semibold text-[#727272] dark:text-t-secondary">Physics</span>
+                  <span className="w-2 h-2 rounded-full bg-primary-01" />
+                  <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Physics</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#EF9D0E]" />
-                  <span className="text-[11px] font-sans font-semibold text-[#727272] dark:text-t-secondary">Chemistry</span>
+                  <span className="w-2 h-2 rounded-full bg-primary-05" />
+                  <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Chemistry</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#00A656]" />
-                  <span className="text-[11px] font-sans font-semibold text-[#727272] dark:text-t-secondary">Mathematics</span>
+                  <span className="w-2 h-2 rounded-full bg-primary-02" />
+                  <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Mathematics</span>
                 </div>
               </div>
             </div>
@@ -461,21 +462,21 @@ export default function ReportsPage() {
                   </AreaChart>
                 </ResponsiveContainer>
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-xs text-[#7B7B7B]">Loading chart...</div>
+                <div className="w-full h-full flex items-center justify-center text-xs text-t-secondary">Loading chart...</div>
               )}
             </div>
           </div>
 
           {/* Batch Metrics Rows */}
-          <div className="group relative flex flex-col p-3 pb-6 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col p-3 pb-6 gap-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
-              <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+              <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
                 Cohort Batch Comparison
               </h4>
               <Link 
                 href="/institute/batches" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
               >
                 <span>View All</span>
                 <RiArrowRightLine size={16} />
@@ -485,26 +486,26 @@ export default function ReportsPage() {
             <div className="relative z-10 flex flex-col gap-2 w-full min-w-0">
               {mockBatches.map((batch: any, index: number) => {
                 const colors = [
-                  { bg: "bg-[#2A85FF]/10 text-[#2A85FF] border-[#2A85FF]/20" },
-                  { bg: "bg-[#00A656]/10 text-[#00A656] border-[#00A656]/20" },
-                  { bg: "bg-[#EF9D0E]/10 text-[#EF9D0E] border-[#EF9D0E]/20" },
-                  { bg: "bg-[#FF6A55]/10 text-[#FF6A55] border-[#FF6A55]/20" }
+                  { bg: "bg-primary-01/10 text-primary-01 border-primary-01/20" },
+                  { bg: "bg-primary-02/10 text-primary-02 border-primary-02/20" },
+                  { bg: "bg-primary-05/10 text-primary-05 border-primary-05/20" },
+                  { bg: "bg-primary-03/10 text-primary-03 border-primary-03/20" }
                 ][index % 4];
 
                 return (
                   <div 
                     key={batch.id}
-                    className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
+                    className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-b-surface1 dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
                   >
                     <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
                       <div className={`flex w-16 h-16 items-center justify-center rounded-lg border shrink-0 text-t-secondary font-bold ${colors.bg}`}>
                         <RiTeamLine size={24} />
                       </div>
                       <div className="min-w-0 flex-1 flex flex-col">
-                        <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary truncate">
+                        <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary truncate">
                           {batch.name}
                         </span>
-                        <span className="text-xs text-[#7B7B7B] mt-0.5">
+                        <span className="text-xs text-t-secondary mt-0.5">
                           {batch.exam} · {batch.studentsCount} Students enrolled
                         </span>
                       </div>
@@ -512,16 +513,16 @@ export default function ReportsPage() {
 
                     <div className="flex flex-row items-center gap-8 shrink-0">
                       <div className="flex flex-col items-end justify-center min-w-[80px]">
-                        <span className="text-[10px] font-sans font-bold text-[#7B7B7B] uppercase tracking-wider">
+                        <span className="text-[10px] font-sans font-bold text-t-secondary uppercase tracking-wider">
                           Avg Accuracy
                         </span>
-                        <span className="text-[16px] font-sans font-bold text-[#00A656] mt-0.5">
+                        <span className="text-[16px] font-sans font-bold text-primary-02 mt-0.5">
                           {batch.avgScore}%
                         </span>
                       </div>
 
                       <div className="min-w-[100px] flex justify-end">
-                        <span className="px-3 py-1.5 border rounded-lg text-[10px] font-bold uppercase tracking-wider bg-[rgba(0,166,86,0.05)] border-[rgba(0,166,86,0.15)] text-[#00A656]">
+                        <span className="px-3 py-1.5 border rounded-lg text-[10px] font-bold uppercase tracking-wider bg-[rgba(0,166,86,0.05)] border-s-stroke2/40 text-primary-02">
                           Active
                         </span>
                       </div>
@@ -538,11 +539,11 @@ export default function ReportsPage() {
       {activeTab === "Student Performance" && (
         <>
           {/* Radar Chart */}
-          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden w-full mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden w-full mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-col gap-1 mb-6">
-              <h3 className="font-sans font-bold text-[20px] text-[#101010] dark:text-t-primary">Student Weakness & Strength Index</h3>
-              <p className="text-xs text-[#7B7B7B] dark:text-t-tertiary">Comparative review of syllabus mastery averages</p>
+              <h3 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary">Student Weakness & Strength Index</h3>
+              <p className="text-xs text-t-secondary dark:text-t-tertiary">Comparative review of syllabus mastery averages</p>
             </div>
 
             <div className="relative z-10 w-full h-[360px] flex items-center justify-center">
@@ -563,21 +564,21 @@ export default function ReportsPage() {
                   </RadarChart>
                 </ResponsiveContainer>
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-xs text-[#7B7B7B]">Loading radar chart...</div>
+                <div className="w-full h-full flex items-center justify-center text-xs text-t-secondary">Loading radar chart...</div>
               )}
             </div>
           </div>
 
           {/* Student list rows */}
-          <div className="group relative flex flex-col p-3 pb-6 gap-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
+          <div className="group relative flex flex-col p-3 pb-6 gap-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
             <div className="box-hover" />
             <div className="relative z-10 flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
-              <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-[#101010] dark:text-t-primary">
+              <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
                 Top Performing Students List
               </h4>
               <Link 
                 href="/institute/students" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-[#E2E2E2] dark:border-s-stroke2 rounded-lg bg-transparent text-[#727272] dark:text-t-secondary text-sm font-sans transition-all hover:border-[#727272] active:scale-98 no-underline"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
               >
                 <span>View Directory</span>
                 <RiArrowRightLine size={16} />
@@ -587,26 +588,26 @@ export default function ReportsPage() {
             <div className="relative z-10 flex flex-col gap-2 w-full min-w-0">
               {mockInstituteStudents.map((student: any, index: number) => {
                 const initials = student.name.split(" ").map((n: string) => n[0]).join("");
-                const scoreColor = student.avgScore >= 85 ? "text-[#00A656]" : "text-[#EF9D0E]";
+                const scoreColor = student.avgScore >= 85 ? "text-primary-02" : "text-primary-05";
                 const performanceLevel = student.avgScore >= 90 ? "Elite" : "Excellent";
                 const performanceBadgeClass = student.avgScore >= 90
-                  ? "bg-[#00A656]/5 border-[#00A656]/15 text-[#00A656]"
-                  : "bg-[#EF9D0E]/5 border-[#EF9D0E]/15 text-[#EF9D0E]";
+                  ? "bg-primary-02/5 border-primary-02/15 text-primary-02"
+                  : "bg-primary-05/5 border-primary-05/15 text-primary-05";
 
                 return (
                   <div 
                     key={student.id}
-                    className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
+                    className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-b-surface1 dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
                   >
                     <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
                       <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
                         {initials}
                       </div>
                       <div className="min-w-0 flex-1 flex flex-col">
-                        <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-[#101010] dark:text-t-primary truncate">
+                        <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary truncate">
                           {student.name}
                         </span>
-                        <span className="text-xs text-[#7B7B7B] mt-0.5">
+                        <span className="text-xs text-t-secondary mt-0.5">
                           {student.batch} · Student ID: {student.id}
                         </span>
                       </div>
@@ -614,7 +615,7 @@ export default function ReportsPage() {
 
                     <div className="flex flex-row items-center gap-8 shrink-0">
                       <div className="flex flex-col items-end justify-center min-w-[80px]">
-                        <span className="text-[10px] font-sans font-bold text-[#7B7B7B] uppercase tracking-wider">
+                        <span className="text-[10px] font-sans font-bold text-t-secondary uppercase tracking-wider">
                           Avg Score
                         </span>
                         <span className={`text-[16px] font-sans font-bold mt-0.5 ${scoreColor}`}>
@@ -623,7 +624,7 @@ export default function ReportsPage() {
                       </div>
 
                       <div className="flex flex-col items-end justify-center min-w-[90px]">
-                        <span className="text-[10px] font-sans font-bold text-[#7B7B7B] uppercase tracking-wider flex items-center gap-0.5">
+                        <span className="text-[10px] font-sans font-bold text-t-secondary uppercase tracking-wider flex items-center gap-0.5">
                           <RiStarFill size={10} className="text-[#F4A109]" /> Standing
                         </span>
                         <span className={`px-2 py-0.5 border rounded-md text-[10px] font-bold mt-0.5 leading-none ${performanceBadgeClass}`}>
