@@ -158,7 +158,7 @@ function ProfileContent() {
                 </div>
                 <label className="relative inline-flex items-center cursor-pointer select-none">
                   <input type="checkbox" defaultChecked={!n.disabled} className="sr-only peer" />
-                  <div className="w-11 h-6 bg-b-surface2 rounded-full peer peer-focus:ring-2 peer-focus:ring-[#3765F6]/20 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#00A656]"></div>
+                  <div className="w-11 h-6 bg-b-surface2 rounded-full peer peer-focus:ring-2 peer-focus:ring-primary-01/20 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-02"></div>
                 </label>
               </div>
             ))}
