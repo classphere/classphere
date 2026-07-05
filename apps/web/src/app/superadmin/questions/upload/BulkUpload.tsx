@@ -62,8 +62,8 @@ function Pill({ active, onClick, children }: { active: boolean; onClick: () => v
       onClick={onClick}
       className={`px-5 h-10 rounded-lg border text-[13px] font-semibold transition-all cursor-pointer uppercase tracking-wider ${
         active
-          ? "border-[#101010] bg-[#101010] text-[#FDFDFD] dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
-          : "border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 text-[#7B7B7B] hover:border-[#101010] dark:hover:border-[#FDFDFD] hover:text-[#101010] dark:hover:text-t-primary"
+          ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
+          : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
       }`}
     >
       {children}
@@ -182,17 +182,17 @@ export default function BulkUpload() {
     <div className="flex flex-col gap-6 w-full">
 
       {/* Shared metadata */}
-      <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full">
+      <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full">
         <div className="box-hover" />
         
-        <p className="relative z-10 text-[13px] font-semibold uppercase tracking-[0.02em] text-[#7B7B7B] mb-6">
+        <p className="relative z-10 text-[13px] font-semibold uppercase tracking-[0.02em] text-t-secondary mb-6">
           Shared Metadata — applies to all files
         </p>
         
         <div className="relative z-10 flex flex-wrap gap-8">
           {/* Exam */}
           <div className="flex flex-col gap-2">
-            <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Exam *</label>
+            <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Exam *</label>
             <div className="flex flex-wrap gap-3">
               {EXAMS.map(e => (
                 <Pill key={e.code} active={meta.exam === e.code} onClick={() => setMetaField("exam", e.code)}>
@@ -204,7 +204,7 @@ export default function BulkUpload() {
           
           {/* Test Type */}
           <div className="flex flex-col gap-2">
-            <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Test Type *</label>
+            <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Test Type *</label>
             <div className="flex flex-wrap gap-3">
               {TEST_TYPES.map(t => (
                 <Pill key={t.code} active={meta.test_type === t.code} onClick={() => setMetaField("test_type", t.code)}>
@@ -216,7 +216,7 @@ export default function BulkUpload() {
           
           {/* Difficulty */}
           <div className="flex flex-col gap-2">
-            <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Difficulty</label>
+            <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Difficulty</label>
             <div className="flex flex-wrap gap-3">
               {DIFFICULTY.map(d => (
                 <Pill key={d} active={meta.difficulty === d} onClick={() => setMetaField("difficulty", d)}>
@@ -229,14 +229,14 @@ export default function BulkUpload() {
           {/* Duration & Marks */}
           <div className="flex gap-4">
             <div className="flex flex-col gap-2">
-              <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Duration (min)</label>
+              <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Duration (min)</label>
               <input type="number" value={meta.duration} onChange={e => setMetaField("duration", e.target.value)}
-                className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 text-[15px] font-sans text-[#101010] dark:text-t-primary focus:border-[#101010] dark:focus:border-t-primary outline-none transition-all shadow-inner" />
+                className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner" />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Marks</label>
+              <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Marks</label>
               <input type="number" value={meta.marks} onChange={e => setMetaField("marks", e.target.value)}
-                className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 text-[15px] font-sans text-[#101010] dark:text-t-primary focus:border-[#101010] dark:focus:border-t-primary outline-none transition-all shadow-inner" />
+                className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner" />
             </div>
           </div>
         </div>
@@ -247,16 +247,16 @@ export default function BulkUpload() {
         onDrop={onDrop}
         onDragOver={e => e.preventDefault()}
         onClick={() => fileInputRef.current?.click()}
-        className="flex flex-col items-center justify-center gap-3 p-12 border-2 border-dashed border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 rounded-lg cursor-pointer hover:border-[#101010] dark:hover:border-[#FDFDFD] hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/20 transition-all shadow-sm"
+        className="flex flex-col items-center justify-center gap-3 p-12 border-2 border-dashed border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 rounded-lg cursor-pointer hover:border-t-primary dark:hover:border-s-border hover:bg-s-stroke2 dark:hover:bg-s-stroke2/20 transition-all shadow-sm"
       >
         <input ref={fileInputRef} type="file" accept=".json" multiple className="hidden"
           onChange={e => e.target.files && handleFiles(e.target.files)} />
-        <div className="w-16 h-16 rounded-lg bg-[#EAEAEA] dark:bg-b-surface2 border border-s-stroke2/40 flex items-center justify-center shadow-sm">
-          <RiUploadCloud2Line size={32} className="text-[#7B7B7B]" />
+        <div className="w-16 h-16 rounded-lg bg-s-stroke2 dark:bg-b-surface2 border border-s-stroke2/40 flex items-center justify-center shadow-sm">
+          <RiUploadCloud2Line size={32} className="text-t-secondary" />
         </div>
         <div className="text-center">
-          <p className="font-sans font-semibold text-[#101010] dark:text-t-primary text-[15px]">Drop all JSON files here</p>
-          <p className="font-sans text-[13px] text-[#7B7B7B] mt-1 font-medium">
+          <p className="font-sans font-semibold text-t-primary dark:text-t-primary text-[15px]">Drop all JSON files here</p>
+          <p className="font-sans text-[13px] text-t-secondary mt-1 font-medium">
             Multiple files supported · Subject & Chapter auto-detected from filename
           </p>
         </div>
@@ -264,46 +264,46 @@ export default function BulkUpload() {
 
       {/* File Queue */}
       {files.length > 0 && (
-        <div className="group relative card flex flex-col overflow-hidden p-6 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/40 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] w-full">
+        <div className="group relative card flex flex-col overflow-hidden p-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] w-full">
           <div className="box-hover" />
           
           <div className="relative z-10 flex items-center justify-between mb-4 px-2">
             <div className="flex items-center gap-3">
-              <RiFileList3Line size={20} className="text-[#101010] dark:text-t-primary" />
-              <p className="font-sans font-semibold text-[16px] text-[#101010] dark:text-t-primary">
+              <RiFileList3Line size={20} className="text-t-primary dark:text-t-primary" />
+              <p className="font-sans font-semibold text-[16px] text-t-primary dark:text-t-primary">
                 {files.length} files queued
               </p>
             </div>
             <div className="flex items-center gap-4 text-[13px] font-semibold">
-              {doneCount > 0 && <span className="text-[#00A656]">✓ {doneCount} done</span>}
-              {errorCount > 0 && <span className="text-[#EF4444]">✗ {errorCount} failed</span>}
-              {pendingCount > 0 && <span className="text-[#7B7B7B]">{pendingCount} pending</span>}
+              {doneCount > 0 && <span className="text-primary-02">✓ {doneCount} done</span>}
+              {errorCount > 0 && <span className="text-primary-03">✗ {errorCount} failed</span>}
+              {pendingCount > 0 && <span className="text-t-secondary">{pendingCount} pending</span>}
             </div>
           </div>
 
           <div className="relative z-10 flex flex-col gap-3 max-h-[400px] overflow-y-auto pr-2 pb-2">
             {files.map(f => (
               <div key={f.name} className={`flex items-center gap-4 p-4 rounded-lg border transition-all shadow-sm ${
-                f.status === "done"     ? "border-[rgba(0,166,86,0.3)] bg-[rgba(0,166,86,0.05)]" :
-                f.status === "error" || f.parseError ? "border-[rgba(239,68,68,0.3)] bg-[rgba(239,68,68,0.05)]" :
-                f.status === "uploading" ? "border-[rgba(255,159,10,0.3)] bg-[rgba(255,159,10,0.05)]" :
-                "border-s-stroke2/40 bg-[#FDFDFD] dark:bg-b-surface2 hover:bg-[#F9F9F9] dark:hover:bg-b-surface1/60"
+                f.status === "done"     ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)]" :
+                f.status === "error" || f.parseError ? "border-s-stroke2/40 bg-[rgba(239,68,68,0.05)]" :
+                f.status === "uploading" ? "border-s-stroke2/40 bg-[rgba(255,159,10,0.05)]" :
+                "border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 hover:bg-b-surface1 dark:hover:bg-b-surface1/60"
               }`}>
                 {/* Status icon */}
-                <div className="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 border border-s-stroke2/20">
-                  {f.status === "done"      && <RiCheckLine size={16} className="text-[#00A656]" />}
-                  {(f.status === "error" || f.parseError) && <RiAlertLine size={16} className="text-[#EF4444]" />}
+                <div className="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/20">
+                  {f.status === "done"      && <RiCheckLine size={16} className="text-primary-02" />}
+                  {(f.status === "error" || f.parseError) && <RiAlertLine size={16} className="text-primary-03" />}
                   {f.status === "uploading" && <RiLoader4Line size={16} className="animate-spin text-[#FF9F0A]" />}
-                  {f.status === "pending" && !f.parseError && <RiFileList3Line size={16} className="text-[#7B7B7B]" />}
+                  {f.status === "pending" && !f.parseError && <RiFileList3Line size={16} className="text-t-secondary" />}
                 </div>
 
                 {/* File info + editable subject/chapter */}
                 <div className="flex-1 min-w-0">
-                  <p className="font-sans text-[14px] font-semibold text-[#101010] dark:text-t-primary truncate">{f.name}</p>
+                  <p className="font-sans text-[14px] font-semibold text-t-primary dark:text-t-primary truncate">{f.name}</p>
                   {f.parseError ? (
-                    <p className="font-sans text-[12px] font-medium text-[#EF4444] mt-0.5">{f.parseError}</p>
+                    <p className="font-sans text-[12px] font-medium text-primary-03 mt-0.5">{f.parseError}</p>
                   ) : f.status === "done" ? (
-                    <p className="font-sans text-[12px] font-medium text-[#00A656] mt-0.5">{f.message}</p>
+                    <p className="font-sans text-[12px] font-medium text-primary-02 mt-0.5">{f.message}</p>
                   ) : (
                     <div className="flex gap-2 mt-2">
                       <input
@@ -311,17 +311,17 @@ export default function BulkUpload() {
                         onChange={e => updateFile(f.name, { subject: e.target.value })}
                         placeholder="Subject"
                         disabled={f.status !== "pending"}
-                        className="w-32 h-8 px-3 border border-s-stroke2/40 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 text-[13px] font-sans text-[#101010] dark:text-t-primary focus:border-[#101010] dark:focus:border-[#FDFDFD] outline-none disabled:opacity-50 transition-colors"
+                        className="w-32 h-8 px-3 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[13px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-s-border outline-none disabled:opacity-50 transition-colors"
                       />
                       <input
                         value={f.chapter}
                         onChange={e => updateFile(f.name, { chapter: e.target.value })}
                         placeholder="Chapter"
                         disabled={f.status !== "pending"}
-                        className="flex-1 max-w-[200px] h-8 px-3 border border-s-stroke2/40 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 text-[13px] font-sans text-[#101010] dark:text-t-primary focus:border-[#101010] dark:focus:border-[#FDFDFD] outline-none disabled:opacity-50 transition-colors"
+                        className="flex-1 max-w-[200px] h-8 px-3 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[13px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-s-border outline-none disabled:opacity-50 transition-colors"
                       />
                       {f.questions && (
-                        <span className="font-sans text-[12px] font-semibold text-[#7B7B7B] self-center shrink-0 ml-2">{f.questions.length} questions</span>
+                        <span className="font-sans text-[12px] font-semibold text-t-secondary self-center shrink-0 ml-2">{f.questions.length} questions</span>
                       )}
                     </div>
                   )}
@@ -329,7 +329,7 @@ export default function BulkUpload() {
 
                 {/* Remove */}
                 {f.status === "pending" && (
-                  <button onClick={() => removeFile(f.name)} className="shrink-0 p-2 text-[#7B7B7B] hover:text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)] rounded-lg transition-colors cursor-pointer">
+                  <button onClick={() => removeFile(f.name)} className="shrink-0 p-2 text-t-secondary hover:text-primary-03 hover:bg-[rgba(239,68,68,0.1)] rounded-lg transition-colors cursor-pointer">
                     <RiCloseLine size={18} />
                   </button>
                 )}
@@ -344,7 +344,7 @@ export default function BulkUpload() {
         {files.length > 0 ? (
           <button
             onClick={() => setFiles([])}
-            className="font-sans text-[14px] font-semibold text-[#7B7B7B] hover:text-[#EF4444] transition-colors cursor-pointer"
+            className="font-sans text-[14px] font-semibold text-t-secondary hover:text-primary-03 transition-colors cursor-pointer"
           >
             Clear all files
           </button>
@@ -355,8 +355,8 @@ export default function BulkUpload() {
             disabled={uploading || pendingCount === 0 || !meta.exam}
             className={`flex items-center gap-2 h-12 px-8 rounded-lg text-[14px] font-semibold transition-all shadow-sm ${
               !uploading && pendingCount > 0 && meta.exam
-                ? "bg-[#101010] dark:bg-t-primary text-[#FDFDFD] dark:text-b-surface1 hover:bg-[#202020] cursor-pointer active:scale-[0.98]"
-                : "bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 text-[#7B7B7B] opacity-60 cursor-not-allowed"
+                ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 hover:bg-shade-04 cursor-pointer active:scale-[0.98]"
+                : "bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-t-secondary opacity-60 cursor-not-allowed"
             }`}
           >
             {uploading ? (

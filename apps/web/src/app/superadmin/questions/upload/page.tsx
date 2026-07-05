@@ -238,21 +238,21 @@ export default function UploadQuestionsPage() {
         {/* Back button */}
         <button
           onClick={() => router.back()}
-          className="flex items-center gap-2 text-[14px] font-sans font-semibold text-[#7B7B7B] hover:text-[#101010] dark:hover:text-t-primary transition-colors cursor-pointer"
+          className="flex items-center gap-2 text-[14px] font-sans font-semibold text-t-secondary hover:text-t-primary dark:hover:text-t-primary transition-colors cursor-pointer"
         >
           <RiArrowLeftLine size={18} /> Back
         </button>
 
         {/* Tab Switcher */}
-        <div className="flex items-center gap-2 p-1.5 bg-[#F9F9F9] dark:bg-b-surface1/60 border border-[rgba(123,123,123,0.1)] dark:border-s-stroke2/40 rounded-lg w-fit select-none">
+        <div className="flex items-center gap-2 p-1.5 bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg w-fit select-none">
           {(["single", "bulk"] as const).map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-6 py-2.5 rounded-lg text-[14px] font-sans font-semibold transition-all cursor-pointer capitalize ${
                 activeTab === tab
-                  ? "bg-[#FDFDFD] dark:bg-b-surface2 text-[#101010] dark:text-t-primary shadow-[0px_4px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/30"
-                  : "bg-transparent text-[#7B7B7B] hover:text-[#101010] dark:hover:text-t-primary"
+                  ? "bg-b-surface2 dark:bg-b-surface2 text-t-primary dark:text-t-primary shadow-[0px_4px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/30"
+                  : "bg-transparent text-t-secondary hover:text-t-primary dark:hover:text-t-primary"
               }`}
             >
               {tab === "single" ? "Single Upload" : "Bulk Upload"}
@@ -267,12 +267,12 @@ export default function UploadQuestionsPage() {
         <div className="flex flex-col gap-6 w-full">
 
           {/* ── Section 1: Exam Metadata ─────────────────────────────────── */}
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full">
+          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full">
             <div className="box-hover" />
             
             <div className="relative z-10 flex items-center gap-3 mb-6">
-              <span className="text-[#101010] dark:text-t-primary"><RiDatabase2Line size={24} /></span>
-              <h2 className="font-sans font-semibold text-[20px] text-[#101010] dark:text-t-primary m-0 tracking-[0.0015em]">
+              <span className="text-t-primary dark:text-t-primary"><RiDatabase2Line size={24} /></span>
+              <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
                 Paper Metadata
               </h2>
             </div>
@@ -281,7 +281,7 @@ export default function UploadQuestionsPage() {
 
               {/* Exam */}
               <div className="flex flex-col gap-2">
-                <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Exam *</label>
+                <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Exam *</label>
                 <div className="grid grid-cols-2 gap-3">
                   {EXAMS.map(e => (
                     <button
@@ -289,8 +289,8 @@ export default function UploadQuestionsPage() {
                       onClick={() => setField("exam", e.code)}
                       className={`h-11 rounded-lg border text-[14px] font-semibold transition-all cursor-pointer ${
                         form.exam === e.code
-                          ? "border-[#101010] bg-[#101010] text-[#FDFDFD] dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
-                          : "border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 text-[#7B7B7B] hover:border-[#101010] dark:hover:border-[#FDFDFD] hover:text-[#101010] dark:hover:text-t-primary"
+                          ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
+                          : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
                       }`}
                     >
                       {e.label}
@@ -301,7 +301,7 @@ export default function UploadQuestionsPage() {
 
               {/* Test Type */}
               <div className="flex flex-col gap-2">
-                <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Test Type *</label>
+                <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Test Type *</label>
                 <div className="flex flex-col gap-3">
                   {TEST_TYPES.map(t => (
                     <button
@@ -309,8 +309,8 @@ export default function UploadQuestionsPage() {
                       onClick={() => setField("test_type", t.code)}
                       className={`h-11 rounded-lg border text-[14px] font-semibold transition-all cursor-pointer ${
                         form.test_type === t.code
-                          ? "border-[#101010] bg-[#101010] text-[#FDFDFD] dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
-                          : "border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 text-[#7B7B7B] hover:border-[#101010] dark:hover:border-[#FDFDFD] hover:text-[#101010] dark:hover:text-t-primary"
+                          ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
+                          : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
                       }`}
                     >
                       {t.label}
@@ -321,20 +321,20 @@ export default function UploadQuestionsPage() {
 
               {/* Paper Title */}
               <div className="flex flex-col gap-2 sm:col-span-2">
-                <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Paper Title *</label>
+                <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Paper Title *</label>
                 <input
                   type="text"
                   value={form.title}
                   onChange={e => setField("title", e.target.value)}
                   placeholder='e.g., "JEE Main 2024 — 27 Jan Shift 1"'
-                  className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 text-[15px] font-sans text-[#101010] dark:text-t-primary placeholder:text-[#7B7B7B] focus:border-[#101010] dark:focus:border-t-primary outline-none transition-all shadow-inner"
+                  className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                 />
               </div>
 
               {/* Subject — shown for all types if exam is set */}
               {subjects.length > 0 && (
                 <div className="flex flex-col gap-2 sm:col-span-2">
-                  <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">
+                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
                     Subject {isChapterWise ? "*" : "(optional)"}
                   </label>
                   <div className="flex flex-wrap gap-3">
@@ -344,8 +344,8 @@ export default function UploadQuestionsPage() {
                         onClick={() => setField("subject", s)}
                         className={`px-5 h-10 rounded-lg border text-[13px] font-semibold transition-all cursor-pointer uppercase tracking-wider ${
                           form.subject === s
-                            ? "border-[#101010] bg-[#101010] text-[#FDFDFD] dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
-                            : "border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 text-[#7B7B7B] hover:border-[#101010] dark:hover:border-[#FDFDFD] hover:text-[#101010] dark:hover:text-t-primary"
+                            ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
+                            : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
                         }`}
                       >
                         {s}
@@ -358,13 +358,13 @@ export default function UploadQuestionsPage() {
               {/* Chapter — only for chapter-wise */}
               {isChapterWise && (
                 <div className="flex flex-col gap-2">
-                  <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Chapter</label>
+                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Chapter</label>
                   <input
                     type="text"
                     value={form.chapter}
                     onChange={e => setField("chapter", e.target.value)}
                     placeholder="e.g., Work, Energy and Power"
-                    className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 text-[15px] font-sans text-[#101010] dark:text-t-primary placeholder:text-[#7B7B7B] focus:border-[#101010] dark:focus:border-t-primary outline-none transition-all shadow-inner"
+                    className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                   />
                 </div>
               )}
@@ -373,23 +373,23 @@ export default function UploadQuestionsPage() {
               {isPYQ && (
                 <>
                   <div className="flex flex-col gap-2">
-                    <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Year</label>
+                    <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Year</label>
                     <input
                       type="number"
                       value={form.year}
                       onChange={e => setField("year", e.target.value)}
                       placeholder="e.g., 2024"
-                      className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 text-[15px] font-sans text-[#101010] dark:text-t-primary placeholder:text-[#7B7B7B] focus:border-[#101010] dark:focus:border-t-primary outline-none transition-all shadow-inner"
+                      className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Shift</label>
+                    <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Shift</label>
                     <input
                       type="text"
                       value={form.shift}
                       onChange={e => setField("shift", e.target.value)}
                       placeholder="e.g., 27 Jan – Shift 1"
-                      className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 text-[15px] font-sans text-[#101010] dark:text-t-primary placeholder:text-[#7B7B7B] focus:border-[#101010] dark:focus:border-t-primary outline-none transition-all shadow-inner"
+                      className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                     />
                   </div>
                 </>
@@ -397,29 +397,29 @@ export default function UploadQuestionsPage() {
 
               {/* Duration */}
               <div className="flex flex-col gap-2">
-                <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Duration (minutes) *</label>
+                <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Duration (minutes) *</label>
                 <input
                   type="number"
                   value={form.duration}
                   onChange={e => setField("duration", e.target.value)}
-                  className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 text-[15px] font-sans text-[#101010] dark:text-t-primary focus:border-[#101010] dark:focus:border-t-primary outline-none transition-all shadow-inner"
+                  className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                 />
               </div>
 
               {/* Total Marks */}
               <div className="flex flex-col gap-2">
-                <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Total Marks *</label>
+                <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Total Marks *</label>
                 <input
                   type="number"
                   value={form.marks}
                   onChange={e => setField("marks", e.target.value)}
-                  className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1 text-[15px] font-sans text-[#101010] dark:text-t-primary focus:border-[#101010] dark:focus:border-t-primary outline-none transition-all shadow-inner"
+                  className="w-full h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                 />
               </div>
 
               {/* Difficulty */}
               <div className="flex flex-col gap-2 sm:col-span-2">
-                <label className="text-[13px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em]">Difficulty *</label>
+                <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Difficulty *</label>
                 <div className="flex flex-row gap-3">
                   {DIFFICULTY.map(d => (
                     <button
@@ -427,8 +427,8 @@ export default function UploadQuestionsPage() {
                       onClick={() => setField("difficulty", d)}
                       className={`flex-1 h-11 rounded-lg border text-[14px] font-semibold capitalize transition-all cursor-pointer ${
                         form.difficulty === d
-                          ? "border-[#101010] bg-[#101010] text-[#FDFDFD] dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
-                          : "border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 text-[#7B7B7B] hover:border-[#101010] dark:hover:border-[#FDFDFD] hover:text-[#101010] dark:hover:text-t-primary"
+                          ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
+                          : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
                       }`}
                     >
                       {d}
@@ -441,12 +441,12 @@ export default function UploadQuestionsPage() {
           </div>
 
           {/* ── Section 2: JSON Upload ───────────────────────────────────── */}
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full">
+          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full">
             <div className="box-hover" />
             
             <div className="relative z-10 flex items-center gap-3 mb-6">
-              <span className="text-[#101010] dark:text-t-primary"><RiFileList3Line size={24} /></span>
-              <h2 className="font-sans font-semibold text-[20px] text-[#101010] dark:text-t-primary m-0 tracking-[0.0015em]">
+              <span className="text-t-primary dark:text-t-primary"><RiFileList3Line size={24} /></span>
+              <h2 className="font-sans font-semibold text-[20px] text-t-primary dark:text-t-primary m-0 tracking-[0.0015em]">
                 Question JSON File
               </h2>
             </div>
@@ -458,10 +458,10 @@ export default function UploadQuestionsPage() {
               onClick={() => fileInputRef.current?.click()}
               className={`relative z-10 flex flex-col items-center justify-center gap-3 p-10 border-2 border-dashed rounded-lg cursor-pointer transition-all ${
                 parseError
-                  ? "border-[rgba(239,68,68,0.4)] bg-[rgba(239,68,68,0.05)]"
+                  ? "border-s-stroke2/40 bg-[rgba(239,68,68,0.05)]"
                   : parsedQuestions
-                  ? "border-[rgba(0,166,86,0.4)] bg-[rgba(0,166,86,0.05)]"
-                  : "border-s-stroke2/40 bg-[#F9F9F9] dark:bg-b-surface1 hover:border-[#101010] dark:hover:border-t-primary hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/20"
+                  ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)]"
+                  : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 hover:border-t-primary dark:hover:border-t-primary hover:bg-s-stroke2 dark:hover:bg-s-stroke2/20"
               }`}
             >
               <input
@@ -475,17 +475,17 @@ export default function UploadQuestionsPage() {
               {parsedQuestions ? (
                 <>
                   <div className="w-16 h-16 rounded-lg bg-[rgba(0,166,86,0.1)] flex items-center justify-center mb-2">
-                    <RiCheckLine size={32} className="text-[#00A656]" />
+                    <RiCheckLine size={32} className="text-primary-02" />
                   </div>
                   <div className="text-center">
-                    <p className="font-sans font-semibold text-[#101010] dark:text-t-primary text-[15px]">{fileName}</p>
-                    <p className="font-sans text-[13px] text-[#00A656] mt-1 font-semibold">
+                    <p className="font-sans font-semibold text-t-primary dark:text-t-primary text-[15px]">{fileName}</p>
+                    <p className="font-sans text-[13px] text-primary-02 mt-1 font-semibold">
                       {parsedQuestions.length} questions parsed successfully
                     </p>
                   </div>
                   <button
                     onClick={e => { e.stopPropagation(); setParsedQuestions(null); setFileName(null); }}
-                    className="flex items-center gap-1.5 mt-4 px-4 py-2 rounded-lg bg-[#FDFDFD] dark:bg-b-surface2 border border-[rgba(239,68,68,0.2)] text-[13px] font-semibold text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)] transition-colors shadow-sm"
+                    className="flex items-center gap-1.5 mt-4 px-4 py-2 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 text-[13px] font-semibold text-primary-03 hover:bg-[rgba(239,68,68,0.1)] transition-colors shadow-sm"
                   >
                     <RiCloseLine size={16} /> Remove file
                   </button>
@@ -493,23 +493,23 @@ export default function UploadQuestionsPage() {
               ) : parseError ? (
                 <>
                   <div className="w-16 h-16 rounded-lg bg-[rgba(239,68,68,0.1)] flex items-center justify-center mb-2">
-                    <RiAlertLine size={32} className="text-[#EF4444]" />
+                    <RiAlertLine size={32} className="text-primary-03" />
                   </div>
                   <div className="text-center">
-                    <p className="font-sans font-semibold text-[#EF4444] text-[15px]">{parseError}</p>
-                    <p className="font-sans text-[13px] text-[#7B7B7B] mt-1 font-medium">Click to try another file</p>
+                    <p className="font-sans font-semibold text-primary-03 text-[15px]">{parseError}</p>
+                    <p className="font-sans text-[13px] text-t-secondary mt-1 font-medium">Click to try another file</p>
                   </div>
                 </>
               ) : (
                 <>
-                  <div className="w-16 h-16 rounded-lg bg-[#EAEAEA] dark:bg-b-surface2 border border-s-stroke2/40 flex items-center justify-center mb-2 shadow-sm">
-                    <RiUploadCloud2Line size={32} className="text-[#7B7B7B]" />
+                  <div className="w-16 h-16 rounded-lg bg-s-stroke2 dark:bg-b-surface2 border border-s-stroke2/40 flex items-center justify-center mb-2 shadow-sm">
+                    <RiUploadCloud2Line size={32} className="text-t-secondary" />
                   </div>
                   <div className="text-center">
-                    <p className="font-sans font-semibold text-[#101010] dark:text-t-primary text-[15px]">
+                    <p className="font-sans font-semibold text-t-primary dark:text-t-primary text-[15px]">
                       Drop your JSON file here
                     </p>
-                    <p className="font-sans text-[13px] text-[#7B7B7B] mt-1 font-medium">
+                    <p className="font-sans text-[13px] text-t-secondary mt-1 font-medium">
                       or click to browse · Must be an array of question objects
                     </p>
                   </div>
@@ -518,9 +518,9 @@ export default function UploadQuestionsPage() {
             </div>
 
             {/* JSON Schema hint */}
-            <div className="relative z-10 mt-6 p-5 rounded-lg bg-[#F9F9F9] dark:bg-b-surface1/60 border border-s-stroke2/20">
-              <p className="text-[12px] font-semibold text-[#7B7B7B] uppercase tracking-[0.02em] mb-3">Required JSON Schema</p>
-              <pre className="text-[13px] text-[#7B7B7B] font-mono leading-relaxed overflow-x-auto">{`[
+            <div className="relative z-10 mt-6 p-5 rounded-lg bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/20">
+              <p className="text-[12px] font-semibold text-t-secondary uppercase tracking-[0.02em] mb-3">Required JSON Schema</p>
+              <pre className="text-[13px] text-t-secondary font-mono leading-relaxed overflow-x-auto">{`[
   {
     "id": "uuid-string",          // required — unique ID
     "question_text": "...",       // required
@@ -544,8 +544,8 @@ export default function UploadQuestionsPage() {
           {resultMsg && (
             <div className={`p-4 rounded-lg border text-[14px] font-semibold flex items-center gap-2 shadow-sm ${
               status === "success"
-                ? "bg-[rgba(34,197,94,0.05)] border-[rgba(34,197,94,0.3)] text-[#22C55E]"
-                : "bg-[rgba(239,68,68,0.05)] border-[rgba(239,68,68,0.3)] text-[#EF4444]"
+                ? "bg-[rgba(34,197,94,0.05)] border-s-stroke2/40 text-[#22C55E]"
+                : "bg-[rgba(239,68,68,0.05)] border-s-stroke2/40 text-primary-03"
             }`}>
               {status === "success" ? <RiCheckLine size={18} /> : <RiAlertLine size={18} />}
               {resultMsg}
@@ -555,7 +555,7 @@ export default function UploadQuestionsPage() {
           <div className="flex justify-end gap-4 w-full mt-2">
             <button
               onClick={() => router.back()}
-              className="h-12 px-6 rounded-lg text-[14px] font-semibold text-[#7B7B7B] bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 hover:bg-[#EAEAEA] dark:hover:bg-s-stroke2/30 hover:text-[#101010] dark:hover:text-t-primary transition-colors cursor-pointer"
+              className="h-12 px-6 rounded-lg text-[14px] font-semibold text-t-secondary bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 hover:bg-s-stroke2 dark:hover:bg-s-stroke2/30 hover:text-t-primary dark:hover:text-t-primary transition-colors cursor-pointer"
             >
               Cancel
             </button>
@@ -564,8 +564,8 @@ export default function UploadQuestionsPage() {
               disabled={!canUpload || status === "loading"}
               className={`flex items-center gap-2 h-12 px-8 rounded-lg text-[14px] font-semibold transition-all shadow-sm ${
                 canUpload && status !== "loading"
-                  ? "bg-[#101010] dark:bg-t-primary text-[#FDFDFD] dark:text-b-surface1 hover:bg-[#202020] cursor-pointer active:scale-[0.98]"
-                  : "bg-[#F9F9F9] dark:bg-b-surface1 border border-s-stroke2/40 text-[#7B7B7B] opacity-60 cursor-not-allowed"
+                  ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 hover:bg-shade-04 cursor-pointer active:scale-[0.98]"
+                  : "bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-t-secondary opacity-60 cursor-not-allowed"
               }`}
             >
               {status === "loading" ? (
