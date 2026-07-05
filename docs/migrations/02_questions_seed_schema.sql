@@ -97,11 +97,13 @@ CREATE TABLE IF NOT EXISTS paper_questions (
 CREATE INDEX IF NOT EXISTS idx_pq_paper ON paper_questions(paper_id);
 
 -- ─── 5. Enable RLS (Supabase) ────────────────────────────────────────────────
-ALTER TABLE questions ENABLE ROW LEVEL SECURITY;
-ALTER TABLE papers ENABLE ROW LEVEL SECURITY;
+ALTER TABLE exams           ENABLE ROW LEVEL SECURITY;
+ALTER TABLE questions       ENABLE ROW LEVEL SECURITY;
+ALTER TABLE papers          ENABLE ROW LEVEL SECURITY;
 ALTER TABLE paper_questions ENABLE ROW LEVEL SECURITY;
 
 -- All authenticated users can read
+CREATE POLICY "exams_read"     ON exams          FOR SELECT TO authenticated USING (is_active = true);
 CREATE POLICY "questions_read" ON questions FOR SELECT TO authenticated USING (is_active = true);
 CREATE POLICY "papers_read"    ON papers    FOR SELECT TO authenticated USING (is_active = true);
 CREATE POLICY "pq_read"        ON paper_questions FOR SELECT TO authenticated USING (true);
