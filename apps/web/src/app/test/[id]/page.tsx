@@ -11,7 +11,7 @@ import {
   RiFlag2Fill,
   RiLoader4Line,
 } from "@remixicon/react";
-import Latex from "react-latex-next";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import "katex/dist/katex.min.css";
 import { API_V1_URL } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
@@ -612,7 +612,7 @@ export default function TestPage() {
                 Question {current + 1} of {questions.length}
               </div>
               <p className="mt-2 text-h6 leading-relaxed text-t-primary md:text-h5">
-                <Latex>{q.question_text}</Latex>
+                <MarkdownRenderer>{q.question_text}</MarkdownRenderer>
               </p>
             </div>
             <div className="hidden shrink-0 rounded-lg border border-s-stroke2 bg-b-surface2 px-4 py-2 text-right sm:block">
@@ -682,7 +682,7 @@ export default function TestPage() {
                         {opt.id}
                       </div>
                       <div className="min-w-0 flex-1 text-body-2 font-medium text-t-primary">
-                        {opt.text && <Latex>{opt.text}</Latex>}
+                        {opt.text && <MarkdownRenderer>{opt.text}</MarkdownRenderer>}
                         {opt.image_url && (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 size-36 object-contain rounded-lg bg-white p-2 border border-s-stroke2/50 shadow-sm" referrerPolicy="no-referrer" />
