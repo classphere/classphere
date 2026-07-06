@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 @plugin "tailwind-scrollbar";
 
@@ -210,6 +211,9 @@
 }
 
 @theme {
+  --font-urbanist: "Urbanist", sans-serif;
+  --font-manrope: "Manrope", sans-serif;
+  
   --breakpoint-*: initial;
   --breakpoint-sm: 480px;
   --breakpoint-md: 767px;
@@ -339,6 +343,9 @@
   --shadow-hover-light: var(--box-shadow-hover-light);
   --shadow-input-typing: var(--box-shadow-input-typing);
   --shadow-dropdown: var(--box-shadow-dropdown);
+  --shadow-velora-dark: 0px 6.8656px 6.8656px -2.33333px rgba(0, 0, 0, 0.16), 0px 13.6468px 13.6468px -2.91667px rgba(0, 0, 0, 0.16), 0px 30px 30px -3.5px rgba(0, 0, 0, 0.08), inset 0px 1px 0px rgba(255, 255, 255, 0.16), inset 0px -2px 0px #191919;
+  --shadow-velora-light: 0px 3px 3px rgba(0, 0, 0, 0.08), 0px 22px 16px rgba(0, 0, 0, 0.06), 0px 12px 10px rgba(0, 0, 0, 0.06), 0px 6px 5px rgba(0, 0, 0, 0.06), inset 0px 1px 0px rgba(255, 255, 255, 0.48), inset 0px -2px 0px #EDECEC;
+  --shadow-velora-submit: 0px 2px 2px rgba(0, 0, 0, 0.1), 0px 3px 3px rgba(0, 0, 0, 0.12), 0px 40px 32px rgba(0, 0, 0, 0.12), 0px 22px 16px rgba(0, 0, 0, 0.14), 0px 12px 10px rgba(0, 0, 0, 0.13), 0px 6px 5px rgba(0, 0, 0, 0.12), 0px 2px 3px rgba(0, 0, 0, 0.12), inset 0px 1px 0px rgba(255, 255, 255, 0.18), inset 0px -2px 0px #191919;
 }
 
 @layer base {
