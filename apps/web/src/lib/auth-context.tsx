@@ -77,9 +77,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const handleRouting = useCallback((appUser: AppUser | null, path: string) => {
     if (UI_BYPASS_MODE) return; // Never force-redirect during UI bypass mode
 
+    const isPublicPath = path === "/" || PUBLIC_ROUTES.some(r => path.startsWith(r));
+
     if (!appUser) {
       // Not logged in — send to login unless on a public route
-      if (!PUBLIC_ROUTES.some(r => path.startsWith(r))) {
+      if (!isPublicPath) {
         router.push("/login");
       }
       return;
@@ -93,16 +95,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     // Student/teacher on superadmin pages → deny
     if (appUser.role !== "super_admin" && path.startsWith("/superadmin")) {
-      router.push("/");
+      router.push("/dashboard");
       return;
     }
 
-    // Logged in user on login/signup → redirect to appropriate dashboard
-    if (PUBLIC_ROUTES.some(r => path.startsWith(r))) {
+    // Logged in user on login/signup/landing → redirect to appropriate dashboard
+    if (isPublicPath) {
       if (appUser.role === "super_admin") {
         router.push("/superadmin");
       } else {
-        router.push("/");
+        router.push("/dashboard");
       }
     }
   }, [router]);
@@ -127,7 +129,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
       } else {
         // Fall back to UI Bypass Mode only if not on an auth/public onboarding page
-        const isAuthPage = ["/login", "/signup", "/superadmin/login"].some(p => pathname?.startsWith(p));
+        const isAuthPage = pathname === "/" || ["/login", "/signup", "/superadmin/login"].some(p => pathname?.startsWith(p));
         if (UI_BYPASS_MODE && !isAuthPage) {
           console.log("[AuthContext] No session. Falling back to UI_BYPASS_MODE");
           const mockUser: AppUser = {

@@ -4,13 +4,16 @@ import { usePathname } from "next/navigation";
 import Sidebar from "@/components/layout/Sidebar";
 import { Suspense } from "react";
 
-// Routes that render without the sidebar shell (full-screen auth pages)
-const NO_SHELL_ROUTES = ["/login", "/signup", "/superadmin/login"];
+// Routes that render without the sidebar shell (full-screen auth pages and landing page)
+const NO_SHELL_ROUTES = ["/", "/login", "/signup", "/superadmin/login"];
 
 export default function AppShell({ children }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
   const isTestRoute = pathname?.startsWith("/test/");
-  const isAuthRoute = NO_SHELL_ROUTES.some((r) => pathname === r || pathname?.startsWith(r));
+  const isAuthRoute = NO_SHELL_ROUTES.some((r) => {
+    if (r === "/") return pathname === "/";
+    return pathname === r || pathname?.startsWith(r + "/");
+  });
 
   if (isTestRoute || isAuthRoute) {
     return (
