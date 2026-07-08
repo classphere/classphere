@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { supabaseAdmin } from "../../lib/supabase";
+import { listAllInstitutes, getInstituteCRMStats } from "../institutes/institutes.service";
 
 const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
@@ -67,22 +68,23 @@ function validateQuestion(q: any, index: number): string | null {
  */
 export const getPlatformStats = async (req: Request, res: Response): Promise<void> => {
   try {
-    // Run counts in parallel
+    // Run all counts in parallel
+    const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+
     const [
       institutesRes,
       studentsRes,
       attemptsRes,
+      newInstitutesRes,
+      newStudentsRes,
+      crmStats,
     ] = await Promise.all([
-      supabaseAdmin.from("institutes").select("id", { count: "exact", head: true }),
+      supabaseAdmin.from("institutes").select("id", { count: "exact", head: true }).eq("is_active", true),
       supabaseAdmin.from("users").select("id", { count: "exact", head: true }).eq("role", "student"),
       supabaseAdmin.from("attempts").select("id", { count: "exact", head: true }),
-    ]);
-
-    // This week's new institutes & students
-    const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
-    const [newInstitutesRes, newStudentsRes] = await Promise.all([
       supabaseAdmin.from("institutes").select("id", { count: "exact", head: true }).gte("created_at", oneWeekAgo),
       supabaseAdmin.from("users").select("id", { count: "exact", head: true }).eq("role", "student").gte("created_at", oneWeekAgo),
+      getInstituteCRMStats(),
     ]);
 
     res.status(200).json({
@@ -93,11 +95,31 @@ export const getPlatformStats = async (req: Request, res: Response): Promise<voi
         totalAttempts: attemptsRes.count ?? 0,
         newInstitutesThisWeek: newInstitutesRes.count ?? 0,
         newStudentsThisWeek: newStudentsRes.count ?? 0,
+        enterprisePlans: crmStats.enterprisePlans,
+        estimatedMRR: crmStats.estimatedMRR,
         systemUptime: "99.98%", // Static for now — wire to a health monitor later
       },
     });
   } catch (err: any) {
     console.error("[getPlatformStats] ERROR:", err.message);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+/**
+ * GET /api/v1/superadmin/institutes
+ * [super_admin only]
+ *
+ * Returns all institutes with owner info and student counts.
+ * Delegates to institutes.service.ts per ARCHITECTURE_V2 §4.1.
+ */
+export const listInstitutes = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const institutes = await listAllInstitutes();
+    res.status(200).json({ success: true, data: { institutes } });
+  } catch (err: any) {
+    console.error("[listInstitutes] ERROR:", err.message);
     res.status(500).json({ success: false, message: err.message });
   }
 };

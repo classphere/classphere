@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
-import { uploadQuestions, getPlatformStats } from "./superadmin.controller";
+import { uploadQuestions, getPlatformStats, listInstitutes } from "./superadmin.controller";
 
 const router = Router();
 
@@ -15,6 +15,12 @@ router.use(authenticate, requireRole("super_admin"));
 router.get("/stats", getPlatformStats);
 
 /**
+ * GET /api/v1/superadmin/institutes
+ * List all institutes with owner info and student counts.
+ */
+router.get("/institutes", listInstitutes);
+
+/**
  * POST /api/v1/superadmin/upload-questions
  * Upload a JSON question bank with full metadata tagging.
  * Body: { exam, test_type, title, subject, chapter, year, shift, duration, marks, difficulty, questions[] }
@@ -22,3 +28,4 @@ router.get("/stats", getPlatformStats);
 router.post("/upload-questions", uploadQuestions);
 
 export default router;
+
