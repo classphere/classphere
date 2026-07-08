@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import {
   RiDashboardLine,
@@ -36,11 +36,28 @@ import { useAuth } from "@/lib/auth-context";
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { user, signOut } = useAuth();
 
-  const isTeacher = pathname.startsWith("/teacher") || user?.role === "teacher";
-  const isInstitute = pathname.startsWith("/institute") || user?.role === "institute_admin";
-  const isSuperAdmin = pathname.startsWith("/superadmin") || user?.role === "super_admin";
+  const roleFromQuery = searchParams.get("role");
+  const roleFromPath = pathname.startsWith("/teacher")
+    ? "teacher"
+    : pathname.startsWith("/institute")
+      ? "institute_admin"
+      : pathname.startsWith("/superadmin")
+        ? "super_admin"
+        : "student";
+  const inferredRole = roleFromQuery === "teacher"
+    ? "teacher"
+    : roleFromQuery === "institute_admin"
+      ? "institute_admin"
+      : roleFromQuery === "super_admin"
+        ? "super_admin"
+        : roleFromPath || user?.role || "student";
+
+  const isTeacher = pathname.startsWith("/teacher") || inferredRole === "teacher";
+  const isInstitute = pathname.startsWith("/institute") || inferredRole === "institute_admin";
+  const isSuperAdmin = pathname.startsWith("/superadmin") || inferredRole === "super_admin";
 
   // Theme Toggler Logic
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -108,8 +125,15 @@ export default function Sidebar() {
     { label: "Support", href: "/superadmin/support", icon: <RiLifebuoyLine size={18} />, active: pathname.startsWith("/superadmin/support") },
   ];
 
-  const currentNav = isTeacher ? teacherNav : isInstitute ? instituteNav : isSuperAdmin ? superAdminNav : studentNav;
-  const roleQuery = isTeacher ? "?role=teacher" : isInstitute ? "?role=institute_admin" : isSuperAdmin ? "?role=super_admin" : "?role=student";
+  const currentNav = mounted 
+    ? (isTeacher ? teacherNav : isInstitute ? instituteNav : isSuperAdmin ? superAdminNav : studentNav)
+    : (pathname.startsWith("/teacher") ? teacherNav : pathname.startsWith("/institute") ? instituteNav : pathname.startsWith("/superadmin") ? superAdminNav : studentNav);
+
+  const activeTeacher = mounted ? isTeacher : pathname.startsWith("/teacher");
+  const activeInstitute = mounted ? isInstitute : pathname.startsWith("/institute");
+  const activeSuperAdmin = mounted ? isSuperAdmin : pathname.startsWith("/superadmin");
+
+  const roleQuery = activeTeacher ? "?role=teacher" : activeInstitute ? "?role=institute_admin" : activeSuperAdmin ? "?role=super_admin" : "?role=student";
 
   const othersNav = [
     { label: "Settings", path: "/settings", href: `/settings${roleQuery}`, icon: <RiSettings4Line size={18} /> },
