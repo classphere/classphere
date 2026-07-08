@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { RiFlashlightFill, RiEyeLine, RiEyeOffLine, RiAlertLine } from "@remixicon/react";
 import { supabase } from "@/lib/supabase";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -17,7 +19,7 @@ export default function LoginPage() {
     setLoading(true);
     setError("");
 
-    const { error: authError } = await supabase.auth.signInWithPassword({
+    const { data, error: authError } = await supabase.auth.signInWithPassword({
       email: email.trim(),
       password,
     });
@@ -32,8 +34,26 @@ export default function LoginPage() {
         setError(authError.message);
       }
       setLoading(false);
+      return;
     }
-    // On success, AuthContext's onAuthStateChange fires and handles the redirect
+
+    // ── Success: redirect based on role baked into app_metadata ─────────────
+    // app_metadata.role is set during institute provisioning (createUser step).
+    // Fallback to user_metadata.role, then default to student dashboard.
+    const role =
+      data.user?.app_metadata?.role ||
+      data.user?.user_metadata?.role ||
+      "student";
+
+    if (role === "super_admin") {
+      router.push("/superadmin");
+    } else if (role === "institute_admin") {
+      router.push("/institute");
+    } else {
+      router.push("/");
+    }
+    // Note: setLoading(false) is intentionally omitted here —
+    // keeping the spinner visible during navigation gives a smoother UX.
   };
 
   return (

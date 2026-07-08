@@ -110,34 +110,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     let mounted = true;
 
-    if (UI_BYPASS_MODE) {
-      const mockUser: AppUser = {
-        id: "bypass-user-id",
-        email: "ui-dev@examprep.com",
-        name: "UI Developer",
-        role: BYPASS_ROLE,
-        avatar_url: null,
-      };
-      
-      const mockSession = {
-        access_token: "mock-token",
-        user: { id: "bypass-user-id" }
-      } as Session;
+    console.log("[AuthContext] Setting up onAuthStateChange listener. Pathname =", pathname);
 
-      setSession(mockSession);
-      setUser(mockUser);
-      setLoading(false);
-      // Wait for next tick so router is ready
-      setTimeout(() => handleRouting(mockUser, window.location.pathname), 0);
-      return;
-    }
-    // ─────────────────────────────────────────────────────────────────────────────
-
-    const initialize = async () => {
-      const { data: { session: s } } = await supabase.auth.getSession();
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, s) => {
+      console.log("[AuthContext] onAuthStateChange event =", event, "session email =", s?.user?.email);
+      if (!mounted) return;
 
       if (s?.user && s?.access_token) {
         const profile = await fetchUserProfile(s.user, s.access_token);
+        console.log("[AuthContext] Real session active. Profile =", profile);
         if (mounted) {
           setSession(s);
           setUser(profile);
@@ -145,30 +126,38 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           handleRouting(profile, pathname);
         }
       } else {
-        if (mounted) {
-          setLoading(false);
-          handleRouting(null, pathname);
+        // Fall back to UI Bypass Mode only if not on an auth/public onboarding page
+        const isAuthPage = ["/login", "/signup", "/superadmin/login"].some(p => pathname?.startsWith(p));
+        if (UI_BYPASS_MODE && !isAuthPage) {
+          console.log("[AuthContext] No session. Falling back to UI_BYPASS_MODE");
+          const mockUser: AppUser = {
+            id: "bypass-user-id",
+            email: "ui-dev@examprep.com",
+            name: "UI Developer",
+            role: BYPASS_ROLE,
+            avatar_url: null,
+          };
+          
+          const mockSession = {
+            access_token: "mock-token",
+            user: { id: "bypass-user-id" }
+          } as Session;
+
+          if (mounted) {
+            setSession(mockSession);
+            setUser(mockUser);
+            setLoading(false);
+            handleRouting(mockUser, pathname);
+          }
+        } else {
+          console.log("[AuthContext] No session, bypass disabled. Clearing state.");
+          if (mounted) {
+            setSession(null);
+            setUser(null);
+            setLoading(false);
+            handleRouting(null, pathname);
+          }
         }
-      }
-    };
-
-    initialize();
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, s) => {
-      if (!mounted) return;
-
-      if (event === "SIGNED_OUT" || !s) {
-        setSession(null);
-        setUser(null);
-        handleRouting(null, window.location.pathname);
-        return;
-      }
-
-      if ((event === "SIGNED_IN" || event === "TOKEN_REFRESHED") && s?.user) {
-        const profile = await fetchUserProfile(s.user, s.access_token);
-        setSession(s);
-        setUser(profile);
-        handleRouting(profile, window.location.pathname);
       }
     });
 
@@ -176,7 +165,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       mounted = false;
       subscription.unsubscribe();
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [pathname, handleRouting, fetchUserProfile]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const signOut = useCallback(async () => {
     await supabase.auth.signOut();
