@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { supabaseAdmin } from "../../lib/supabase";
 import { listAllInstitutes, getInstituteCRMStats } from "../institutes/institutes.service";
+import { randomUUID } from "crypto";
 
 const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
@@ -43,18 +44,17 @@ function chunk<T>(arr: T[], size: number): T[][] {
   return chunks;
 }
 
+// ─── UUID helper ──────────────────────────────────────────────────────────────
+const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+function ensureUUID(id: any): string {
+  return typeof id === "string" && UUID_REGEX.test(id) ? id : randomUUID();
+}
+
 // ─── Validation ───────────────────────────────────────────────────────────────
 function validateQuestion(q: any, index: number): string | null {
-  if (!q.id)            return `Question #${index + 1}: missing 'id'`;
   if (!q.question_text) return `Question #${index + 1}: missing 'question_text'`;
   if (q.correct_answer === null || q.correct_answer === undefined || q.correct_answer === "")
     return `Question #${index + 1}: missing 'correct_answer'`;
-
-  const isInteger = q.question_type === "integer" || q.question_type === "integer_type";
-  if (!isInteger) {
-    if (!Array.isArray(q.options) || q.options.length < 2)
-      return `Question #${index + 1}: 'options' must be an array with at least 2 items`;
-  }
 
   return null;
 }
@@ -200,26 +200,30 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     const examId = exams[0].id;
 
     // ── 4. Map questions to DB schema ─────────────────────────────────────────
-    const questionRows = questions.map((q: any) => ({
-      id:             q.id,
-      exam_id:        examId,
-      test_type,
-      subject:        q.subject  || subject  || "General",
-      chapter:        q.chapter  || chapter  || "General",
-      topic:          q.topic    || null,
-      difficulty:     q.difficulty || difficulty,
-      year:           q.year     || year     || null,
-      source:         q.source   || title,
-      question_type:  q.question_type || "mcq_single",
-      question_text:  q.question_text,
-      image_url:      q.image_url || null,
-      options:        q.options ?? [],
-      correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
-      explanation:    q.explanation || null,
-      tags:           q.tags || [],
-      distractor_map: q.distractor_map || null,
-      marking_scheme: q.marking_scheme || null,
-    }));
+    const questionRows = questions.map((q: any) => {
+      const isNumerical = !q.options || q.options.length < 2;
+      const type = isNumerical ? "integer" : (q.question_type || "mcq_single");
+      return {
+        id:             ensureUUID(q.id),    // auto-generate UUID if missing/invalid
+        exam_id:        examId,
+        test_type,
+        subject:        q.subject  || subject  || "General",
+        chapter:        q.chapter  || chapter  || "General",
+        topic:          q.topic    || null,
+        difficulty:     q.difficulty || difficulty,
+        year:           q.year     || year     || null,
+        source:         q.source   || title,
+        question_type:  type,
+        question_text:  q.question_text,
+        image_url:      q.image_url || null,
+        options:        q.options ?? [],
+        correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
+        explanation:    q.explanation || null,
+        tags:           q.tags || [],
+        distractor_map: q.distractor_map || null,
+        marking_scheme: q.marking_scheme || null,
+      };
+    });
 
     // ── 5. Bulk upsert questions ─────────────────────────────────────────────
     const batches = chunk(questionRows, 100);

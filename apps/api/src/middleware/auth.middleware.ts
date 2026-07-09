@@ -61,10 +61,26 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
       return;
     }
 
+    // ── Role: prefer public.users (source of truth) over app_metadata ─────────
+    // app_metadata.role is only set when users are created via the admin API.
+    // Most users only have a role in the public.users table.
+    let role = (user.app_metadata?.role as string) ?? null;
+
+    if (!role || role === "authenticated") {
+      // Look up the actual role from the DB
+      const { data: dbUser } = await supabaseAdmin
+        .from("users")
+        .select("role")
+        .eq("id", user.id)
+        .single();
+
+      role = dbUser?.role ?? "student";
+    }
+
     req.user = {
       id: user.id,
       email: user.email ?? "",
-      role: (user.app_metadata?.role ?? user.role ?? "student") as string,
+      role,
     };
 
     next();
