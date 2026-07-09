@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { provisionInstitute } from "./institutes.service";
+import { supabaseAdmin } from "../../lib/supabase";
 
 // ─── Institute Handlers ─────────────────────────────────────────────────────
 
@@ -100,13 +101,51 @@ export const getInstituteStats = async (req: Request, res: Response): Promise<vo
  */
 export const createBatch = async (req: Request, res: Response): Promise<void> => {
   try {
-    // TODO: implement
-    // 1. Validate req.body: { name, exam_id, description?, start_date?, end_date? }
-    // 2. Fetch institute by owner_id = req.user!.id; verify max_batches not exceeded
-    // 3. INSERT INTO batches (institute_id, name, exam_id, description, start_date, end_date) RETURNING *
-    // 4. Return { success: true, data: { batch } } with 201
-    res.status(201).json({ success: true, message: "createBatch — TODO: implement" });
+    const userId = req.user?.id;
+    const { name, exam, max_students, max_teachers } = req.body;
+
+    if (!name || !exam) {
+      res.status(400).json({ success: false, message: "name and exam are required" });
+      return;
+    }
+
+    // ── 1. Find the institute owned by this admin ────────────────────────────
+    const { data: institute, error: instErr } = await supabaseAdmin
+      .from("institutes")
+      .select("id")
+      .eq("owner_id", userId)
+      .eq("is_active", true)
+      .single();
+
+    if (instErr || !institute) {
+      res.status(404).json({ success: false, message: "No active institute found for this admin" });
+      return;
+    }
+
+    // ── 2. Insert the batch ──────────────────────────────────────────────────
+    const { data: batch, error: batchErr } = await supabaseAdmin
+      .from("batches")
+      .insert({
+        institute_id: institute.id,
+        name: name.trim(),
+        exam: exam.trim(),
+        max_students: max_students ? Number(max_students) : null,
+        max_teachers: max_teachers ? Number(max_teachers) : null,
+        is_active: true,
+      })
+      .select()
+      .single();
+
+    if (batchErr || !batch) {
+      console.error("[createBatch] DB error:", batchErr);
+      res.status(500).json({ success: false, message: batchErr?.message ?? "Failed to create batch" });
+      return;
+    }
+
+    console.log(`[createBatch] Created batch "${batch.name}" (id=${batch.id}) for institute ${institute.id}`);
+    res.status(201).json({ success: true, data: { batch } });
   } catch (err: any) {
+    console.error("[createBatch error]", err);
     res.status(500).json({ success: false, message: err.message });
   }
 };
@@ -117,22 +156,59 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
  */
 export const listBatches = async (req: Request, res: Response): Promise<void> => {
   try {
-    // TODO: implement
-    // For institute_admin:
-    //   SELECT b.*, COUNT(bs.student_id) AS student_count
-    //     FROM batches b LEFT JOIN batch_students bs ON bs.batch_id = b.id
-    //   WHERE b.institute_id = (SELECT id FROM institutes WHERE owner_id = req.user!.id)
-    //     AND b.is_active = true
-    //   GROUP BY b.id ORDER BY b.created_at DESC
-    //
-    // For teacher:
-    //   SELECT b.* FROM batches b
-    //     JOIN batch_teachers bt ON bt.batch_id = b.id
-    //   WHERE bt.teacher_id = req.user!.id AND b.is_active = true
-    //
-    // Return { success: true, data: { batches } }
-    res.status(200).json({ success: true, message: "listBatches — TODO: implement" });
+    const userId = req.user?.id;
+    const role = req.user?.role;
+
+    if (role === "institute_admin") {
+      // ── Find institute owned by this admin ─────────────────────────────────
+      const { data: institute, error: instErr } = await supabaseAdmin
+        .from("institutes")
+        .select("id")
+        .eq("owner_id", userId)
+        .eq("is_active", true)
+        .single();
+
+      if (instErr || !institute) {
+        res.status(404).json({ success: false, message: "No active institute found for this admin" });
+        return;
+      }
+
+      const { data: batches, error: batchErr } = await supabaseAdmin
+        .from("batches")
+        .select("*")
+        .eq("institute_id", institute.id)
+        .eq("is_active", true)
+        .order("created_at", { ascending: false });
+
+      if (batchErr) {
+        res.status(500).json({ success: false, message: batchErr.message });
+        return;
+      }
+
+      res.status(200).json({ success: true, data: { batches: batches ?? [] } });
+      return;
+    }
+
+    // teacher: batches they are assigned to
+    if (role === "teacher") {
+      const { data: rows, error } = await supabaseAdmin
+        .from("batch_teachers")
+        .select("batch_id, batches(*)")
+        .eq("teacher_id", userId);
+
+      if (error) {
+        res.status(500).json({ success: false, message: error.message });
+        return;
+      }
+
+      const batches = (rows ?? []).map((r: any) => r.batches).filter(Boolean);
+      res.status(200).json({ success: true, data: { batches } });
+      return;
+    }
+
+    res.status(403).json({ success: false, message: "Access denied" });
   } catch (err: any) {
+    console.error("[listBatches error]", err);
     res.status(500).json({ success: false, message: err.message });
   }
 };
