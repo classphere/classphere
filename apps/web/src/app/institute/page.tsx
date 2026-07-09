@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { StatCard, StatCardGrid } from "@/components/shared/StatCard";
 import { Modal } from "@/components/shared/Modal";
@@ -15,51 +16,97 @@ import {
   RiArrowDownSLine,
   RiArrowRightLine,
   RiStarFill,
-  RiCloseLine
+  RiCloseLine,
+  RiLoaderLine,
+  RiCheckLine,
+  RiAlertLine,
 } from "@remixicon/react";
 import { useAuth } from "@/lib/auth-context";
+import { useBatches } from "@/lib/hooks/useBatches";
 
-// Exam mapping based on institute type
+// Exam options — codes match the `exams` table in Supabase
 const EXAM_OPTIONS = {
   "jee-neet": [
-    { id: "jee-main", label: "JEE Main" },
-    { id: "jee-adv", label: "JEE Advanced" },
-    { id: "neet", label: "NEET UG" },
+    { id: "jee-main",      label: "JEE Main" },
+    { id: "jee-advanced",  label: "JEE Advanced" },
+    { id: "neet-ug",       label: "NEET UG" },
   ],
   "ssc": [
-    { id: "ssc-cgl", label: "SSC CGL" },
+    { id: "ssc-cgl",  label: "SSC CGL" },
     { id: "ssc-chsl", label: "SSC CHSL" },
-    { id: "ssc-mts", label: "SSC MTS" },
+    { id: "ssc-mts",  label: "SSC MTS" },
   ],
   "hybrid": [
-    { id: "jee-main", label: "JEE Main" },
-    { id: "neet", label: "NEET UG" },
-    { id: "ssc-cgl", label: "SSC CGL" },
-    { id: "ssc-chsl", label: "SSC CHSL" },
+    { id: "jee-main",     label: "JEE Main" },
+    { id: "jee-advanced", label: "JEE Advanced" },
+    { id: "neet-ug",      label: "NEET UG" },
+    { id: "ssc-cgl",      label: "SSC CGL" },
   ],
 };
 
 export default function InstituteDashboardPage() {
+  const router = useRouter();
   const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
   const [isBatchModalOpen, setIsBatchModalOpen] = useState(false);
   const [newBatchData, setNewBatchData] = useState({
     name: "",
-    examCode: "",
+    exam: "",
+    max_students: "",
+    max_teachers: "",
   });
+  const [batchSubmitting, setBatchSubmitting] = useState(false);
+  const [batchFeedback, setBatchFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
 
   const { user } = useAuth();
+  const { batches, loading: batchesLoading, createBatch } = useBatches();
+
+  // Derived stats from real batch data
+  const activeBatchesCount = batches.length;
+  const totalStudentsCount = batches.reduce((sum, b) => sum + (b.max_students ?? 0), 0);
+
   const mockInstituteAdmin = {
     instituteName: "Institute",
     name: user?.name ?? "Admin",
     instituteType: "hybrid",
-    studentsCount: 0,
-    batchesCount: 0,
+    studentsCount: totalStudentsCount,
+    batchesCount: activeBatchesCount,
     plan: "Free",
   };
-  const mockBatches: any[] = [];
   const mockInstituteStudents: any[] = [];
 
-  const availableExams = EXAM_OPTIONS[mockInstituteAdmin.instituteType as keyof typeof EXAM_OPTIONS] || EXAM_OPTIONS["hybrid"];
+  const availableExams =
+    EXAM_OPTIONS[mockInstituteAdmin.instituteType as keyof typeof EXAM_OPTIONS] ||
+    EXAM_OPTIONS["hybrid"];
+
+  const handleOpenBatchModal = () => {
+    setNewBatchData({ name: "", exam: "", max_students: "", max_teachers: "" });
+    setBatchFeedback(null);
+    setIsBatchModalOpen(true);
+  };
+
+  const handleCreateBatch = async () => {
+    if (!newBatchData.name || !newBatchData.exam) return;
+    setBatchSubmitting(true);
+    setBatchFeedback(null);
+    const result = await createBatch({
+      name: newBatchData.name,
+      exam: newBatchData.exam,
+      max_students: newBatchData.max_students ? Number(newBatchData.max_students) : null,
+      max_teachers: newBatchData.max_teachers ? Number(newBatchData.max_teachers) : null,
+    });
+    setBatchSubmitting(false);
+    if (result.success) {
+      setBatchFeedback({ ok: true, msg: "Batch created!" });
+      setTimeout(() => {
+        setIsBatchModalOpen(false);
+        router.push("/institute/batches");
+      }, 800);
+    } else {
+      setBatchFeedback({ ok: false, msg: result.message });
+    }
+  };
+
+  const availableExamsForModal = availableExams;
 
   return (
     <>
@@ -69,7 +116,7 @@ export default function InstituteDashboardPage() {
         breadcrumbs="Dashboard"
       >
         {/* Create New Batch */}
-        <button onClick={() => setIsBatchModalOpen(true)} className="flex flex-row justify-center items-center px-6 h-12 border border-s-stroke2 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 text-t-secondary dark:text-t-secondary hover:text-t-primary dark:hover:text-t-primary text-sm font-sans font-semibold rounded-lg shadow-xs active:scale-95 transition-all cursor-pointer">
+        <button onClick={handleOpenBatchModal} className="flex flex-row justify-center items-center px-6 h-12 border border-s-stroke2 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 text-t-secondary dark:text-t-secondary hover:text-t-primary dark:hover:text-t-primary text-sm font-sans font-semibold rounded-lg shadow-xs active:scale-95 transition-all cursor-pointer">
           <RiAddLine size={18} className="mr-1.5" /> Create New Batch
         </button>
 
@@ -179,24 +226,30 @@ export default function InstituteDashboardPage() {
 
             {/* List Rows */}
             <div className="flex flex-col gap-2 w-full min-w-0">
-              {mockBatches.length === 0 ? (
+              {batchesLoading ? (
+                <div className="flex flex-col gap-2">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="h-[88px] rounded-lg bg-b-surface1 animate-pulse" />
+                  ))}
+                </div>
+              ) : batches.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-10 text-center">
                   <p className="text-[14px] font-sans text-t-secondary">No recent batches.</p>
                 </div>
               ) : (
-                mockBatches.map((batch, index) => {
-                  const isHoverItem = index === 1; // Highlight second item for premium design flavor
-                  
+                batches.slice(0, 5).map((batch, index) => {
+                  const isHoverItem = index === 1;
+
                   return (
-                    <div 
+                    <div
                       key={batch.id}
                       className={`flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden ${
-                        isHoverItem 
-                          ? "bg-b-surface1 dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20" 
+                        isHoverItem
+                          ? "bg-b-surface1 dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20"
                           : "bg-transparent hover:bg-b-surface1 dark:hover:bg-b-surface1/30"
                       }`}
                     >
-                      {/* Left: Avatar/Icon + Title */}
+                      {/* Left */}
                       <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
                         <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
                           <RiTeamLine size={24} className="text-t-secondary" />
@@ -205,22 +258,19 @@ export default function InstituteDashboardPage() {
                           <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary truncate">
                             {batch.name}
                           </span>
-                          <span className="text-xs text-t-secondary mt-0.5">
-                            {batch.exam} · {batch.studentsCount} Students
+                          <span className="text-xs text-t-secondary mt-0.5 uppercase tracking-wide">
+                            {batch.exam} · {batch.max_students ?? 0} Students
                           </span>
                         </div>
                       </div>
-  
-                      {/* Right: Metrics + Status */}
+
+                      {/* Right */}
                       <div className="flex flex-col justify-center items-end gap-1 shrink-0 min-w-[80px]">
-                        <div className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-primary-02 text-right w-full">
-                          {batch.avgScore}%
-                        </div>
                         <div className="label label-green h-6 px-2 text-[10px] tracking-[0.004em] uppercase">
                           Active
                         </div>
                       </div>
-  
+
                     </div>
                   );
                 })
@@ -315,17 +365,29 @@ export default function InstituteDashboardPage() {
         subtitle={`Institute Type: ${mockInstituteAdmin.instituteType.toUpperCase()}`}
       >
         <div className="flex flex-col gap-5">
+          {/* Batch Name */}
           <div>
             <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Batch Name</label>
-            <input type="text" className="input-field w-full" placeholder="e.g., Target 2026 Morning" value={newBatchData.name} onChange={(e) => setNewBatchData({ ...newBatchData, name: e.target.value })} />
+            <input
+              type="text"
+              className="input-field w-full"
+              placeholder="e.g., Target 2026 Morning"
+              value={newBatchData.name}
+              onChange={(e) => setNewBatchData({ ...newBatchData, name: e.target.value })}
+            />
           </div>
 
+          {/* Target Exam */}
           <div>
             <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Target Exam</label>
             <div className="relative">
-              <select className="input-field w-full appearance-none pr-10" value={newBatchData.examCode} onChange={(e) => setNewBatchData({ ...newBatchData, examCode: e.target.value })}>
+              <select
+                className="input-field w-full appearance-none pr-10"
+                value={newBatchData.exam}
+                onChange={(e) => setNewBatchData({ ...newBatchData, exam: e.target.value })}
+              >
                 <option value="" disabled>Select Exam...</option>
-                {availableExams.map(exam => (
+                {availableExamsForModal.map(exam => (
                   <option key={exam.id} value={exam.id}>{exam.label}</option>
                 ))}
               </select>
@@ -336,13 +398,62 @@ export default function InstituteDashboardPage() {
             </p>
           </div>
 
-          <div className="mt-4 flex items-center justify-end gap-3 pt-4 border-t border-s-stroke2/50">
-            <button onClick={() => setIsBatchModalOpen(false)} className="btn btn-ghost px-5">Cancel</button>
-            <button className="btn btn-primary px-6 shadow-md" onClick={() => {
-              console.log("Creating batch:", newBatchData);
-              setIsBatchModalOpen(false);
-            }} disabled={!newBatchData.name || !newBatchData.examCode}>
-              Create Batch
+          {/* Students + Faculty row */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Total Students</label>
+              <input
+                type="number"
+                min="1"
+                className="input-field w-full"
+                placeholder="e.g., 60"
+                value={newBatchData.max_students}
+                onChange={(e) => setNewBatchData({ ...newBatchData, max_students: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Total Faculty</label>
+              <input
+                type="number"
+                min="1"
+                className="input-field w-full"
+                placeholder="e.g., 4"
+                value={newBatchData.max_teachers}
+                onChange={(e) => setNewBatchData({ ...newBatchData, max_teachers: e.target.value })}
+              />
+            </div>
+          </div>
+
+          {/* Feedback */}
+          {batchFeedback && (
+            <div className={`flex items-center gap-2 text-sm px-3 py-2 rounded-lg border ${
+              batchFeedback.ok
+                ? "bg-primary-02/5 border-primary-02/20 text-primary-02"
+                : "bg-primary-03/5 border-primary-03/20 text-primary-03"
+            }`}>
+              {batchFeedback.ok
+                ? <RiCheckLine size={16} />
+                : <RiAlertLine size={16} />}
+              {batchFeedback.msg}
+            </div>
+          )}
+
+          {/* Actions */}
+          <div className="mt-2 flex items-center justify-end gap-3 pt-4 border-t border-s-stroke2/50">
+            <button
+              onClick={() => setIsBatchModalOpen(false)}
+              className="btn btn-ghost px-5"
+              disabled={batchSubmitting}
+            >
+              Cancel
+            </button>
+            <button
+              className="btn btn-primary px-6 shadow-md flex items-center gap-2"
+              onClick={handleCreateBatch}
+              disabled={!newBatchData.name || !newBatchData.exam || batchSubmitting}
+            >
+              {batchSubmitting && <RiLoaderLine size={16} className="animate-spin" />}
+              {batchSubmitting ? "Creating..." : "Create Batch"}
             </button>
           </div>
         </div>
