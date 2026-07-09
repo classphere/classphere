@@ -8,6 +8,9 @@
 export const API_URL =
   process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 
+/** Versioned base — use this for all /api/v1/... calls */
+export const API_V1_URL = `${API_URL}/api/v1`;
+
 type FetchOptions = Omit<RequestInit, "body"> & { body?: unknown };
 
 async function request<T = unknown>(

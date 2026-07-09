@@ -5,8 +5,9 @@ import {
   RiUploadCloud2Line, RiCheckLine, RiCloseLine,
   RiAlertLine, RiLoader4Line, RiFileList3Line,
 } from "@remixicon/react";
+import { API_V1_URL } from "@/lib/api.client";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api/v1";
+const API_BASE = API_V1_URL;
 
 // Auto-detect subject from filename e.g. "Physics_Work_Energy.json" → "Physics"
 function detectSubject(name: string): string {
@@ -60,11 +61,10 @@ function Pill({ active, onClick, children }: { active: boolean; onClick: () => v
   return (
     <button
       onClick={onClick}
-      className={`px-5 h-10 rounded-lg border text-[13px] font-semibold transition-all cursor-pointer uppercase tracking-wider ${
-        active
+      className={`px-5 h-10 rounded-lg border text-[13px] font-semibold transition-all cursor-pointer uppercase tracking-wider ${active
           ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
           : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
-      }`}
+        }`}
     >
       {children}
     </button>
@@ -184,11 +184,11 @@ export default function BulkUpload() {
       {/* Shared metadata */}
       <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full">
         <div className="box-hover" />
-        
+
         <p className="relative z-10 text-[13px] font-semibold uppercase tracking-[0.02em] text-t-secondary mb-6">
           Shared Metadata — applies to all files
         </p>
-        
+
         <div className="relative z-10 flex flex-wrap gap-8">
           {/* Exam */}
           <div className="flex flex-col gap-2">
@@ -201,7 +201,7 @@ export default function BulkUpload() {
               ))}
             </div>
           </div>
-          
+
           {/* Test Type */}
           <div className="flex flex-col gap-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Test Type *</label>
@@ -213,7 +213,7 @@ export default function BulkUpload() {
               ))}
             </div>
           </div>
-          
+
           {/* Difficulty */}
           <div className="flex flex-col gap-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Difficulty</label>
@@ -225,7 +225,7 @@ export default function BulkUpload() {
               ))}
             </div>
           </div>
-          
+
           {/* Duration & Marks */}
           <div className="flex gap-4">
             <div className="flex flex-col gap-2">
@@ -266,7 +266,7 @@ export default function BulkUpload() {
       {files.length > 0 && (
         <div className="group relative card flex flex-col overflow-hidden p-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] w-full">
           <div className="box-hover" />
-          
+
           <div className="relative z-10 flex items-center justify-between mb-4 px-2">
             <div className="flex items-center gap-3">
               <RiFileList3Line size={20} className="text-t-primary dark:text-t-primary" />
@@ -283,15 +283,14 @@ export default function BulkUpload() {
 
           <div className="relative z-10 flex flex-col gap-3 max-h-[400px] overflow-y-auto pr-2 pb-2">
             {files.map(f => (
-              <div key={f.name} className={`flex items-center gap-4 p-4 rounded-lg border transition-all shadow-sm ${
-                f.status === "done"     ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)]" :
-                f.status === "error" || f.parseError ? "border-s-stroke2/40 bg-[rgba(239,68,68,0.05)]" :
-                f.status === "uploading" ? "border-s-stroke2/40 bg-[rgba(255,159,10,0.05)]" :
-                "border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 hover:bg-b-surface1 dark:hover:bg-b-surface1/60"
-              }`}>
+              <div key={f.name} className={`flex items-center gap-4 p-4 rounded-lg border transition-all shadow-sm ${f.status === "done" ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)]" :
+                  f.status === "error" || f.parseError ? "border-s-stroke2/40 bg-[rgba(239,68,68,0.05)]" :
+                    f.status === "uploading" ? "border-s-stroke2/40 bg-[rgba(255,159,10,0.05)]" :
+                      "border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 hover:bg-b-surface1 dark:hover:bg-b-surface1/60"
+                }`}>
                 {/* Status icon */}
                 <div className="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/20">
-                  {f.status === "done"      && <RiCheckLine size={16} className="text-primary-02" />}
+                  {f.status === "done" && <RiCheckLine size={16} className="text-primary-02" />}
                   {(f.status === "error" || f.parseError) && <RiAlertLine size={16} className="text-primary-03" />}
                   {f.status === "uploading" && <RiLoader4Line size={16} className="animate-spin text-[#FF9F0A]" />}
                   {f.status === "pending" && !f.parseError && <RiFileList3Line size={16} className="text-t-secondary" />}
@@ -348,16 +347,15 @@ export default function BulkUpload() {
           >
             Clear all files
           </button>
-        ) : <div/>}
+        ) : <div />}
         <div className="flex gap-4 ml-auto">
           <button
             onClick={uploadAll}
             disabled={uploading || pendingCount === 0 || !meta.exam}
-            className={`flex items-center gap-2 h-12 px-8 rounded-lg text-[14px] font-semibold transition-all shadow-sm ${
-              !uploading && pendingCount > 0 && meta.exam
+            className={`flex items-center gap-2 h-12 px-8 rounded-lg text-[14px] font-semibold transition-all shadow-sm ${!uploading && pendingCount > 0 && meta.exam
                 ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 hover:bg-shade-04 cursor-pointer active:scale-[0.98]"
                 : "bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-t-secondary opacity-60 cursor-not-allowed"
-            }`}
+              }`}
           >
             {uploading ? (
               <><RiLoader4Line size={18} className="animate-spin" /> Uploading…</>

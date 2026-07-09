@@ -3,6 +3,8 @@
 import { useState, useMemo, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
+import { API_V1_URL } from "@/lib/api.client";
+import { useAuth } from "@/lib/auth-context";
 import {
   RiSearchLine,
   RiTimeLine,
@@ -29,19 +31,19 @@ interface Paper {
 }
 
 // ─── Config ───────────────────────────────────────────────────────────────────
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api/v1";
+const API_BASE = API_V1_URL;
 
 const EXAM_LABELS: Record<string, string> = {
-  "jee-main":     "JEE Main",
+  "jee-main": "JEE Main",
   "jee-advanced": "JEE Advanced",
-  "neet-ug":      "NEET-UG",
-  "ssc-cgl":      "SSC CGL",
+  "neet-ug": "NEET-UG",
+  "ssc-cgl": "SSC CGL",
 };
 
 const TYPES = [
   { id: "chapter-wise", label: "Chapter-wise" },
-  { id: "mock-test",    label: "Mock Tests" },
-  { id: "pyq",          label: "PYQs" },
+  { id: "mock-test", label: "Mock Tests" },
+  { id: "pyq", label: "PYQs" },
 ];
 
 // Derive exam code from user auth token later; using URL param for now
@@ -63,7 +65,8 @@ export default function TestsHubPage() {
 function TestsHubContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const role = searchParams.get("role") || "student";
+  const { session, user } = useAuth();
+  const role = user?.role ?? searchParams.get("role") ?? "student";
   const isAdmin = role === "super_admin" || role === "institute_admin";
 
   const [papers, setPapers] = useState<Paper[]>([]);
@@ -73,7 +76,7 @@ function TestsHubContent() {
     if (!confirmDelete) return;
 
     try {
-      const token = localStorage.getItem("auth_token") ?? "";
+      const token = session?.access_token ?? "";
       const apiKey = process.env.NEXT_PUBLIC_INTERNAL_API_KEY ?? "";
 
       const headers: Record<string, string> = {
@@ -102,20 +105,23 @@ function TestsHubContent() {
     }
   };
   const [loading, setLoading] = useState(true);
-  const [error, setError]     = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const [activeExam, setActiveExam]         = useState("jee-main");
+  const [activeExam, setActiveExam] = useState("jee-main");
   const EXAM_OPTIONS = ["jee-main", "jee-advanced", "neet-ug", "ssc-cgl"];
 
-  const [activeType, setActiveType]         = useState("chapter-wise");
+  const [activeType, setActiveType] = useState("chapter-wise");
   const [activeCategory, setActiveCategory] = useState("All");
-  const [search, setSearch]                 = useState("");
+  const [search, setSearch] = useState("");
 
   // Fetch papers from backend
   useEffect(() => {
     setLoading(true);
     setError(null);
-    fetch(`${API_BASE}/questions/tests?exam=${activeExam}&type=${activeType}`)
+    const token = session?.access_token ?? "";
+    fetch(`${API_BASE}/questions/tests?exam=${activeExam}&type=${activeType}`, {
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+    })
       .then(r => {
         if (!r.ok) throw new Error("API error");
         return r.json();
@@ -126,14 +132,14 @@ function TestsHubContent() {
       })
       .catch(err => setError(err.message))
       .finally(() => setLoading(false));
-  }, [activeType, activeExam]);
+  }, [activeType, activeExam, session]);
 
   // Derive categories from fetched papers (subject for chapter-wise, year for pyqs)
   const categories = useMemo(() => {
     const cats = new Set(papers.map(p =>
       activeType === "chapter-wise" ? (p.subject || "General") :
-      activeType === "pyq"          ? String(p.year || "All") :
-      "All"
+        activeType === "pyq" ? String(p.year || "All") :
+          "All"
     ));
     return ["All", ...Array.from(cats).filter(c => c !== "All")];
   }, [papers, activeType]);
@@ -147,7 +153,7 @@ function TestsHubContent() {
   const filtered = useMemo(() => {
     return papers.filter(p => {
       const cat = activeType === "chapter-wise" ? (p.subject || "General") :
-                  activeType === "pyq"          ? String(p.year || "") : "All";
+        activeType === "pyq" ? String(p.year || "") : "All";
       if (activeCategory !== "All" && cat !== activeCategory) return false;
       if (search) {
         const q = search.toLowerCase();
@@ -175,11 +181,10 @@ function TestsHubContent() {
               <button
                 key={type.id}
                 onClick={() => handleTypeChange(type.id)}
-                className={`px-5 py-2.5 rounded-lg text-sm font-sans font-semibold transition-all cursor-pointer ${
-                  isActive
+                className={`px-5 py-2.5 rounded-lg text-sm font-sans font-semibold transition-all cursor-pointer ${isActive
                     ? "bg-b-surface2 dark:bg-b-surface2 text-t-primary dark:text-t-primary shadow-[0px_4px_4px_-4px_rgba(8,8,8,0.05),0px_3px_1px_-4px_rgba(8,8,8,0.09)] border border-s-stroke2/30"
                     : "bg-transparent text-t-secondary dark:text-t-secondary hover:text-t-primary dark:hover:text-t-primary"
-                }`}
+                  }`}
               >
                 {type.label}
               </button>
@@ -282,11 +287,10 @@ function FilterGroup({
         <button
           key={opt}
           onClick={() => onChange(opt)}
-          className={`px-3.5 h-8 rounded-lg border text-[11px] font-sans font-semibold transition-all active:scale-95 cursor-pointer uppercase tracking-wider ${
-            active === opt
+          className={`px-3.5 h-8 rounded-lg border text-[11px] font-sans font-semibold transition-all active:scale-95 cursor-pointer uppercase tracking-wider ${active === opt
               ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1"
               : "border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary hover:border-t-secondary hover:text-t-primary"
-          }`}
+            }`}
         >
           {displayMap ? (displayMap[opt] ?? opt) : opt}
         </button>
@@ -309,8 +313,8 @@ function TestCard({
   const subtitle = paper.test_type === "pyq"
     ? `${paper.year}${paper.shift ? ` · ${paper.shift}` : ""}`
     : paper.subject
-    ? `${paper.subject}${paper.chapter ? ` · ${paper.chapter}` : ""}`
-    : paper.exams?.full_name || "";
+      ? `${paper.subject}${paper.chapter ? ` · ${paper.chapter}` : ""}`
+      : paper.exams?.full_name || "";
 
   return (
     <div className="flex min-h-[14rem] flex-col justify-between p-6 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] select-none hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.08)] transition-all duration-200">
@@ -336,11 +340,10 @@ function TestCard({
       </div>
 
       <div className="flex justify-between items-center mt-5 pt-4 border-t border-s-stroke2/30">
-        <span className={`px-2 py-0.5 rounded-lg border text-[10px] font-semibold uppercase tracking-wider ${
-          paper.difficulty === "hard"   ? "border-red-200 bg-red-50 text-red-600 dark:border-red-900/30 dark:bg-red-900/10 dark:text-red-400" :
-          paper.difficulty === "medium" ? "border-amber-200 bg-amber-50 text-amber-600 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-400" :
-          "border-green-200 bg-green-50 text-green-600 dark:border-green-900/30 dark:bg-green-900/10 dark:text-green-400"
-        }`}>
+        <span className={`px-2 py-0.5 rounded-lg border text-[10px] font-semibold uppercase tracking-wider ${paper.difficulty === "hard" ? "border-red-200 bg-red-50 text-red-600 dark:border-red-900/30 dark:bg-red-900/10 dark:text-red-400" :
+            paper.difficulty === "medium" ? "border-amber-200 bg-amber-50 text-amber-600 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-400" :
+              "border-green-200 bg-green-50 text-green-600 dark:border-green-900/30 dark:bg-green-900/10 dark:text-green-400"
+          }`}>
           {paper.difficulty}
         </span>
         <div className="flex items-center gap-2">

@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
+import { API_V1_URL } from "@/lib/api.client";
 import {
   RiSearchLine,
   RiBookmarkLine,
@@ -30,7 +31,7 @@ interface PYQPaper {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api/v1";
+const API_BASE = API_V1_URL;
 
 const EXAMS = ["All", "JEE Main", "JEE Advanced", "NEET-UG"];
 const YEARS = ["All", "2024", "2023", "2022", "2021", "2020"];
@@ -41,14 +42,14 @@ const DIFFICULTIES = ["All", "easy", "medium", "hard"];
 export default function PYQsPage() {
   const router = useRouter();
 
-  const [papers, setPapers]               = useState<PYQPaper[]>([]);
-  const [loading, setLoading]             = useState(true);
-  const [error, setError]                 = useState<string | null>(null);
-  const [search, setSearch]               = useState("");
-  const [activeExam, setActiveExam]       = useState("All");
-  const [activeYear, setActiveYear]       = useState("All");
-  const [activeDiff, setActiveDiff]       = useState("All");
-  const [bookmarks, setBookmarks]         = useState<Set<string>>(new Set());
+  const [papers, setPapers] = useState<PYQPaper[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [search, setSearch] = useState("");
+  const [activeExam, setActiveExam] = useState("All");
+  const [activeYear, setActiveYear] = useState("All");
+  const [activeDiff, setActiveDiff] = useState("All");
+  const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
   const [showBookmarked, setShowBookmarked] = useState(false);
 
   // Fetch paper list from backend
@@ -100,7 +101,7 @@ export default function PYQsPage() {
   }, [papers, activeExam, activeYear, activeDiff, showBookmarked, search, bookmarks]);
 
   const bookmarkedCount = bookmarks.size;
-  const attemptedCount  = 0; // will come from user attempt history later
+  const attemptedCount = 0; // will come from user attempt history later
 
   return (
     <>
@@ -114,7 +115,7 @@ export default function PYQsPage() {
 
         {/* Stats Row Wrapper */}
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg mb-8 select-none">
-          
+
           {/* Metric 1: Total Papers */}
           <div className="flex flex-col items-start p-6 gap-2 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
             <div className="flex flex-row items-center gap-3 w-full mb-1">
@@ -188,7 +189,7 @@ export default function PYQsPage() {
 
         {/* Filters Row */}
         <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-6 p-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
-          
+
           {/* Search Box */}
           <div className="relative flex-1 min-w-[240px]">
             <RiSearchLine size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary dark:text-t-secondary" />
@@ -203,19 +204,18 @@ export default function PYQsPage() {
           </div>
 
           <div className="flex flex-row flex-wrap items-center gap-6">
-            <FilterGroup label="Exam"       options={EXAMS}        active={activeExam} onChange={setActiveExam} />
-            <FilterGroup label="Year"       options={YEARS}        active={activeYear} onChange={setActiveYear} />
+            <FilterGroup label="Exam" options={EXAMS} active={activeExam} onChange={setActiveExam} />
+            <FilterGroup label="Year" options={YEARS} active={activeYear} onChange={setActiveYear} />
             <FilterGroup label="Difficulty" options={DIFFICULTIES} active={activeDiff} onChange={setActiveDiff} />
 
             {/* Saved Toggle Button */}
             <button
               id="pyq-bookmarks-toggle"
               onClick={() => setShowBookmarked((v) => !v)}
-              className={`flex flex-row items-center gap-1.5 px-4.5 h-11 rounded-lg border text-sm font-sans font-semibold transition-all active:scale-95 cursor-pointer ${
-                showBookmarked 
-                  ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1" 
+              className={`flex flex-row items-center gap-1.5 px-4.5 h-11 rounded-lg border text-sm font-sans font-semibold transition-all active:scale-95 cursor-pointer ${showBookmarked
+                  ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1"
                   : "border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary hover:border-t-secondary hover:text-t-primary"
-              }`}
+                }`}
             >
               {showBookmarked ? <RiBookmarkFill size={15} /> : <RiBookmarkLine size={15} />}
               <span>Saved Only</span>
@@ -288,11 +288,10 @@ function FilterGroup({
           <button
             key={opt}
             onClick={() => onChange(opt)}
-            className={`px-3.5 h-8 rounded-lg border text-[11px] font-sans font-semibold transition-all active:scale-95 cursor-pointer uppercase tracking-wider ${
-              active === opt 
-                ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1" 
+            className={`px-3.5 h-8 rounded-lg border text-[11px] font-sans font-semibold transition-all active:scale-95 cursor-pointer uppercase tracking-wider ${active === opt
+                ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1"
                 : "border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary hover:border-t-secondary hover:text-t-primary"
-            }`}
+              }`}
           >
             {opt === "All" ? "All" : opt}
           </button>
@@ -311,7 +310,7 @@ function PaperCard({
   onStart: () => void;
 }) {
   return (
-    <div 
+    <div
       className="flex min-h-[14rem] flex-col justify-between p-6 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] select-none hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.08)] transition-all duration-200"
     >
       <div>
@@ -328,9 +327,8 @@ function PaperCard({
           <button
             id={`bookmark-${paper.id}`}
             onClick={(e) => onBookmark(paper.id, e)}
-            className={`transition-colors cursor-pointer p-1 -mr-1 ${
-              isBookmarked ? "text-primary-03" : "text-t-secondary hover:text-primary-03"
-            }`}
+            className={`transition-colors cursor-pointer p-1 -mr-1 ${isBookmarked ? "text-primary-03" : "text-t-secondary hover:text-primary-03"
+              }`}
             title={isBookmarked ? "Remove bookmark" : "Bookmark"}
           >
             {isBookmarked ? <RiBookmarkFill size={18} /> : <RiBookmarkLine size={18} />}
@@ -340,8 +338,8 @@ function PaperCard({
         {/* Subjects list as simple gray badges */}
         <div className="flex flex-wrap gap-1.5 mt-3">
           {paper.subjects.map((s) => (
-            <span 
-              key={s} 
+            <span
+              key={s}
               className="text-[10px] font-sans font-semibold px-2 py-0.5 border border-s-stroke2/20 bg-b-surface1 dark:bg-b-surface1/60 text-t-secondary rounded-lg uppercase tracking-wider"
             >
               {s}
@@ -371,7 +369,7 @@ function PaperCard({
         <span className="px-2 py-0.5 rounded-lg border border-s-stroke2/20 bg-transparent text-t-secondary text-[10px] font-semibold uppercase tracking-wider">
           {paper.difficulty}
         </span>
-        <button 
+        <button
           onClick={onStart}
           className="flex flex-row justify-center items-center h-8 px-4 bg-shade-02 hover:bg-shade-04 text-t-light dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget cursor-pointer"
         >

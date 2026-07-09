@@ -13,6 +13,8 @@ import {
 } from "@remixicon/react";
 import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
+import { API_V1_URL } from "@/lib/api.client";
+import { useAuth } from "@/lib/auth-context";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -52,7 +54,7 @@ type StatusMap = Record<string, "unanswered" | "answered" | "review">;
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api/v1";
+const API_BASE = API_V1_URL;
 
 const DEMO_QUESTIONS: Question[] = [
   {
@@ -169,21 +171,22 @@ const DEMO_META: PYQMeta = {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function TestPage() {
-  const router  = useRouter();
-  const params  = useParams<{ id: string }>();
-  const testId  = params.id; // e.g. "pyq-jee-main-2024-jan-shift1"
+  const router = useRouter();
+  const params = useParams<{ id: string }>();
+  const testId = params.id; // e.g. "pyq-jee-main-2024-jan-shift1"
+  const { session } = useAuth();
 
-  const [questions, setQuestions]         = useState<Question[]>([]);
-  const [meta, setMeta]                   = useState<PYQMeta | null>(null);
-  const [loading, setLoading]             = useState(true);
-  const [error, setError]                 = useState<string | null>(null);
-  const [current, setCurrent]             = useState(0);
-  const [answers, setAnswers]             = useState<AnswerMap>({});
-  const [status, setStatus]               = useState<StatusMap>({});
-  const [visitedQs, setVisitedQs]         = useState<Record<string, boolean>>({});
-  const [timeLeft, setTimeLeft]           = useState<number | null>(null);
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [meta, setMeta] = useState<PYQMeta | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [current, setCurrent] = useState(0);
+  const [answers, setAnswers] = useState<AnswerMap>({});
+  const [status, setStatus] = useState<StatusMap>({});
+  const [visitedQs, setVisitedQs] = useState<Record<string, boolean>>({});
+  const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
-  const [isDemoMode, setIsDemoMode]       = useState(false);
+  const [isDemoMode, setIsDemoMode] = useState(false);
 
   // ── Timing tracking (Option B: start_timestamp) ─────────────────────────────
   /** Unix ms when the exam timer started (set once when questions load) */
@@ -192,7 +195,7 @@ export default function TestPage() {
   const questionOpenTimestamps = useRef<Record<string, number>>({});
   /** Maps question_id → cumulative milliseconds spent on it */
   const questionTimeSpentRef = useRef<Record<string, number>>({});
-  
+
   const currentQuestionEntryTime = useRef<number>(Date.now());
   const currentQuestionIdRef = useRef<string | null>(null);
 
@@ -226,7 +229,7 @@ export default function TestPage() {
 
     // ── Helper: fetch from the generic /tests/:id endpoint (Tests Hub papers) ──
     const loadFromTestsEndpoint = (paperId: string) => {
-      const token = typeof window !== "undefined" ? (localStorage.getItem("auth_token") ?? "") : "";
+      const token = session?.access_token ?? "";
       fetch(`${API_BASE}/tests/${paperId}`, {
         headers: token ? { "Authorization": `Bearer ${token}` } : {},
       })
@@ -389,8 +392,8 @@ export default function TestPage() {
   }, [questions, recordQuestionOpen]);
 
   const formatTime = (s: number) => {
-    const h   = Math.floor(s / 3600);
-    const m   = Math.floor((s % 3600) / 60);
+    const h = Math.floor(s / 3600);
+    const m = Math.floor((s % 3600) / 60);
     const sec = s % 60;
     return h > 0
       ? `${h}:${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`
@@ -400,10 +403,10 @@ export default function TestPage() {
   const isSectionBLimitReached = (q: any) => {
     if (q.question_type !== "integer") return false;
     if (answers[q.id] !== undefined && answers[q.id] !== "") return false;
-    const count = questions.filter((quest) => 
-      quest.subject === q.subject && 
-      quest.question_type === "integer" && 
-      answers[quest.id] !== undefined && 
+    const count = questions.filter((quest) =>
+      quest.subject === q.subject &&
+      quest.question_type === "integer" &&
+      answers[quest.id] !== undefined &&
       answers[quest.id] !== ""
     ).length;
     return count >= 5;
@@ -417,7 +420,7 @@ export default function TestPage() {
     }
     recordQuestionOpen(qId);
     setAnswers((a) => ({ ...a, [qId]: optId }));
-    setStatus((s)  => ({ ...s, [qId]: "answered" }));
+    setStatus((s) => ({ ...s, [qId]: "answered" }));
   };
 
 
@@ -504,7 +507,7 @@ export default function TestPage() {
     );
   }
 
-  const q          = questions[current];
+  const q = questions[current];
   let notVisitedCount = 0;
   let notAnsweredCount = 0;
   let answeredCount = 0;
@@ -515,7 +518,7 @@ export default function TestPage() {
     const s = status[_q.id];
     const hasAns = !!answers[_q.id];
     const visited = !!visitedQs[_q.id];
-    
+
     if (s === "answered") {
       answeredCount++;
     } else if (s === "review") {
@@ -527,7 +530,7 @@ export default function TestPage() {
     }
   });
 
-  const answered   = answeredCount + answeredMarkedCount;
+  const answered = answeredCount + answeredMarkedCount;
   const unanswered = questions.length - answered;
   const timeWarning = timeLeft !== null && timeLeft < 300;
 
@@ -564,9 +567,9 @@ export default function TestPage() {
               </span>
             </div>
 
-            <button 
-              id="submit-test-btn" 
-              className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 cursor-pointer relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]" 
+            <button
+              id="submit-test-btn"
+              className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 cursor-pointer relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]"
               onClick={() => setShowSubmitModal(true)}
             >
               <span className="relative z-10">Submit Test</span>
@@ -593,7 +596,7 @@ export default function TestPage() {
         {/* ── Question Area ── */}
         <section className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
           <div className="box-hover" />
-          
+
           <div className="relative z-10 mb-5 flex flex-wrap items-center gap-2">
             <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.subject}</span>
             <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.chapter}</span>
@@ -667,13 +670,12 @@ export default function TestPage() {
                       key={opt.id}
                       id={`option-${opt.id}`}
                       disabled={disabled}
-                      className={`group/opt flex items-center gap-4 rounded-lg border p-4 text-left transition-all relative overflow-hidden ${
-                        selected
+                      className={`group/opt flex items-center gap-4 rounded-lg border p-4 text-left transition-all relative overflow-hidden ${selected
                           ? "border-primary-01 bg-primary-01/5 shadow-widget"
                           : disabled
-                          ? "border-s-stroke2 bg-b-surface2/50 cursor-not-allowed opacity-50"
-                          : "border-s-stroke2 bg-b-surface2 hover:border-s-highlight shadow-sm"
-                      }`}
+                            ? "border-s-stroke2 bg-b-surface2/50 cursor-not-allowed opacity-50"
+                            : "border-s-stroke2 bg-b-surface2 hover:border-s-highlight shadow-sm"
+                        }`}
                       onClick={() => selectAnswer(q.id, opt.id)}
                     >
                       <div className={`flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold shadow-sm transition-colors ${selected ? "bg-primary-01 text-t-light" : "bg-b-surface1 text-t-primary border border-s-stroke2 group-hover/opt:border-s-highlight"}`}>
@@ -748,48 +750,48 @@ export default function TestPage() {
         {/* ── Right Panel: Question Navigator ── */}
         <aside className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
           <div className="box-hover" />
-          
+
           <div className="relative z-10 mb-6 grid grid-cols-2 gap-y-3 gap-x-2 text-[13px] font-sans text-t-primary font-medium">
-             {/* 1. Not Visited */}
-             <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
-               <div className="w-8 h-8 flex items-center justify-center rounded-[4px] border border-t-secondary bg-gradient-to-br from-shade-10 to-[#E0E0E0] shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)] text-black font-semibold text-xs shrink-0">
-                 {notVisitedCount}
-               </div>
-               <span className="leading-tight">Not Visited</span>
-             </div>
-             {/* 2. Not Answered */}
-             <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
-               <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white font-semibold text-xs [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm shrink-0">
-                 {notAnsweredCount}
-               </div>
-               <span className="leading-tight">Not Answered</span>
-             </div>
-             {/* 3. Answered */}
-             <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
-               <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white font-semibold text-xs [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm shrink-0">
-                 {answeredCount}
-               </div>
-               <span className="leading-tight">Answered</span>
-             </div>
-             {/* 4. Marked for Review */}
-             <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
-               <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] shrink-0">
-                 {markedCount}
-               </div>
-               <span className="leading-tight">Marked for Review</span>
-             </div>
-             {/* 5. Answered & Marked */}
-             <div className="flex items-center gap-2 col-span-2">
-               <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] relative shrink-0">
-                 {answeredMarkedCount}
-                 <div className="absolute -bottom-0.5 -right-0.5 size-[12px] bg-[#4CAF50] rounded-full border border-white flex items-center justify-center">
-                   <svg viewBox="0 0 10 10" className="w-2 h-2 text-white" fill="none">
-                     <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                   </svg>
-                 </div>
-               </div>
-               <span className="leading-tight text-[11px] xl:text-[12px]">Answered & Marked for Review (will be considered for evaluation)</span>
-             </div>
+            {/* 1. Not Visited */}
+            <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
+              <div className="w-8 h-8 flex items-center justify-center rounded-[4px] border border-t-secondary bg-gradient-to-br from-shade-10 to-[#E0E0E0] shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)] text-black font-semibold text-xs shrink-0">
+                {notVisitedCount}
+              </div>
+              <span className="leading-tight">Not Visited</span>
+            </div>
+            {/* 2. Not Answered */}
+            <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
+              <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white font-semibold text-xs [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm shrink-0">
+                {notAnsweredCount}
+              </div>
+              <span className="leading-tight">Not Answered</span>
+            </div>
+            {/* 3. Answered */}
+            <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
+              <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white font-semibold text-xs [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm shrink-0">
+                {answeredCount}
+              </div>
+              <span className="leading-tight">Answered</span>
+            </div>
+            {/* 4. Marked for Review */}
+            <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
+              <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] shrink-0">
+                {markedCount}
+              </div>
+              <span className="leading-tight">Marked for Review</span>
+            </div>
+            {/* 5. Answered & Marked */}
+            <div className="flex items-center gap-2 col-span-2">
+              <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] relative shrink-0">
+                {answeredMarkedCount}
+                <div className="absolute -bottom-0.5 -right-0.5 size-[12px] bg-[#4CAF50] rounded-full border border-white flex items-center justify-center">
+                  <svg viewBox="0 0 10 10" className="w-2 h-2 text-white" fill="none">
+                    <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+              </div>
+              <span className="leading-tight text-[11px] xl:text-[12px]">Answered & Marked for Review (will be considered for evaluation)</span>
+            </div>
           </div>
 
           <div className="relative z-10">
@@ -813,7 +815,7 @@ export default function TestPage() {
 
                       if (s === "answered") {
                         btnClass += "bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm";
-                      } else if (s === "review") { 
+                      } else if (s === "review") {
                         if (hasAns) {
                           btnClass += "rounded-full bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] relative";
                           content = (
@@ -821,7 +823,7 @@ export default function TestPage() {
                               {sq.question_number}
                               <div className="absolute -bottom-0.5 -right-0.5 size-[14px] bg-[#4CAF50] rounded-full border-[1.5px] border-white flex items-center justify-center">
                                 <svg viewBox="0 0 10 10" className="w-2 h-2 text-white" fill="none">
-                                  <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                  <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                               </div>
                             </>
@@ -875,15 +877,15 @@ export default function TestPage() {
               {unanswered > 0 && ` ${unanswered} questions are still unanswered.`}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <button 
-                className="flex flex-row justify-center items-center py-3 px-7 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 flex-1 h-12" 
+              <button
+                className="flex flex-row justify-center items-center py-3 px-7 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 flex-1 h-12"
                 onClick={() => setShowSubmitModal(false)}
               >
                 Keep Working
               </button>
-              <button 
-                id="confirm-submit-btn" 
-                className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] flex-1" 
+              <button
+                id="confirm-submit-btn"
+                className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] flex-1"
                 onClick={handleSubmit}
               >
                 <span className="relative z-10">Submit Test</span>
