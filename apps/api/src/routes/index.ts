@@ -7,6 +7,7 @@ import analysisRouter from "../modules/analysis-engine/analysis.routes";
 import rankingsRouter from "../modules/rankings/rankings.routes";
 import institutesRouter from "../modules/institutes/institutes.routes";
 import batchesRouter from "../modules/batches/batches.routes";
+import facultyRouter from "../modules/institutes/faculty/faculty.routes";
 import internalRouter from "../modules/internal/internal.routes";
 import pyqsRouter from "../modules/pyqs/pyqs.routes";
 import superadminRouter from "../modules/superadmin/superadmin.routes";
@@ -25,6 +26,7 @@ router.use("/analysis", analysisRouter);
 router.use("/rankings", rankingsRouter);
 router.use("/institutes", institutesRouter);
 router.use("/batches", batchesRouter);
+router.use("/faculty", facultyRouter);
 
 // ─── SuperAdmin (super_admin role required) ───────────────────────────────────
 router.use("/superadmin", superadminRouter);

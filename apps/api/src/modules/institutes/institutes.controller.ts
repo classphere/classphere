@@ -346,3 +346,5 @@ export const generateBatchInvite = async (req: Request, res: Response): Promise<
     res.status(500).json({ success: false, message: err.message });
   }
 };
+
+
