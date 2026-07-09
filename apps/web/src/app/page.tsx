@@ -370,7 +370,7 @@ export default function Dashboard() {
                                 {/* Tooltip Arrow */}
                                 <div className="w-2.5 h-1 bg-shade-03 clip-triangle -mt-0.5" style={{ clipPath: "polygon(50% 100%, 0 0, 100% 0)" }} />
                                 {/* Indicator Dot */}
-                                <div className="size-3 bg-b-surface2 border-[3px] border-primary-01 rounded-full mt-2" />
+                                <div className="size-3 bg-b-surface2 border-[3px] border-primary-02 rounded-full mt-2" />
                               </div>
                             )}
                           </div>
@@ -380,8 +380,8 @@ export default function Dashboard() {
                             style={{ height: `${bar.height}px` }}
                             className={`w-full rounded-lg transition-all ${
                               isSelected 
-                                ? "bg-gradient-to-t from-primary-04 to-primary-01 shadow-[0_0_12px_rgba(42,133,255,0.4)]" 
-                                : "bg-primary-01/10 dark:bg-white/5 group-hover/bar:bg-primary-01/20 dark:group-hover/bar:bg-white/10 border border-primary-01/10 dark:border-white/5"
+                                ? "bg-gradient-to-t from-primary-02 to-[#00d16c] shadow-[0_0_12px_rgba(0,166,86,0.35)]" 
+                                : "bg-primary-02/10 dark:bg-white/5 group-hover/bar:bg-primary-02/20 dark:group-hover/bar:bg-white/10 border border-primary-02/10 dark:border-white/5"
                             }`}
                           />
                         </div>
