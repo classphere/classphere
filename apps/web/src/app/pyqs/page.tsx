@@ -337,7 +337,7 @@ function PaperCard({
 
         {/* Subjects list as simple gray badges */}
         <div className="flex flex-wrap gap-1.5 mt-3">
-          {paper.subjects.map((s) => (
+          {paper.subjects?.map((s) => (
             <span
               key={s}
               className="text-[10px] font-sans font-semibold px-2 py-0.5 border border-s-stroke2/20 bg-b-surface1 dark:bg-b-surface1/60 text-t-secondary rounded-lg uppercase tracking-wider"
