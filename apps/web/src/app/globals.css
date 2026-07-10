@@ -28,10 +28,10 @@
   --secondary-04: #b5e4ca;
   --secondary-05: #ffd88d;
   
-  --backgrounds-surface1: #f4f7fb;
-  --backgrounds-surface2: #fbfcfe;
+  --backgrounds-surface1: #edecec;
+  --backgrounds-surface2: #fafafa;
   --backgrounds-surface2-overlay: #ffffff;
-  --backgrounds-surface3: rgba(244, 247, 251, 0.72);
+  --backgrounds-surface3: rgba(237, 236, 236, 0.72);
   --backgrounds-pop: #ffffff;
   --backgrounds-dark1: var(--shade-03);
   --backgrounds-dark2: var(--shade-01);
@@ -151,10 +151,10 @@
 }
 
 [data-theme="dark"] {
-  --backgrounds-surface1: var(--shade-02);
-  --backgrounds-surface2: var(--shade-03);
-  --backgrounds-surface2-overlay: var(--shade-02);
-  --backgrounds-surface3: rgba(16, 16, 16, 0.5);
+  --backgrounds-surface1: #090909;
+  --backgrounds-surface2: #161616;
+  --backgrounds-surface2-overlay: #161616;
+  --backgrounds-surface3: rgba(9, 9, 9, 0.5);
   --backgrounds-pop: var(--shade-04);
   --backgrounds-dark1: var(--shade-08);
   --backgrounds-dark2: var(--shade-10);
@@ -375,7 +375,7 @@
     background-image: linear-gradient(to bottom, var(--gradient-card));
   }
   .card, .rayum-card {
-    @apply mb-3 p-5 rounded-lg bg-b-surface2 shadow-widget last:mb-0 dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5),0px_6px_4px_-4px_rgba(8,8,8,0.05)];
+    @apply mb-3 p-5 rounded-xl border border-s-stroke2 bg-b-surface2 shadow-velora-light last:mb-0 dark:shadow-velora-dark;
   }
   .label, .badge {
     @apply inline-flex items-center h-7 px-2.5 rounded-lg text-button font-semibold;
@@ -410,10 +410,13 @@
   }
   
   .btn-primary, .btn-dark {
-    @apply relative bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20)] border-0 text-t-light fill-t-light !transition-all after:absolute after:inset-0 after:border-[1.5px] after:border-white/20 after:rounded-lg after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] hover:shadow-none dark:from-shade-10 dark:to-[#DEDEDE] dark:after:border-white/50 dark:after:shadow-[inset_2px_0px_8px_2px_rgba(24,24,24,0.25)] dark:after:transition-all dark:hover:text-shade-03 dark:hover:fill-shade-01 dark:hover:after:opacity-0;
+    @apply relative flex items-center justify-center overflow-hidden rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] font-medium text-white shadow-velora-dark transition-transform hover:scale-[1.02] active:scale-[0.98] fill-white hover:text-white hover:fill-white dark:hover:text-white dark:hover:fill-white before:absolute before:-right-3 before:top-0 before:z-0 before:h-3 before:w-28 before:rotate-[125deg] before:rounded-full before:bg-white/10 before:blur-[3px];
   }
   .btn-outline {
     @apply border-s-stroke2 bg-b-surface2 text-t-secondary fill-t-secondary hover:border-s-highlight hover:text-t-primary hover:fill-t-primary disabled:border-transparent;
+  }
+  .btn-secondary {
+    @apply relative flex items-center justify-center overflow-hidden rounded-[10px] bg-[#f9f9f9] border border-transparent font-medium text-[#525252] shadow-[0_4px_10px_rgba(0,0,0,.06),inset_0_1px_rgba(255,255,255,.48),inset_0_-2px_#edecec] transition-transform hover:scale-[1.02] active:scale-[0.98] before:absolute before:left-6 before:top-0 before:h-3 before:w-28 before:-rotate-[125deg] before:rounded-full before:bg-[#eaeaea]/60 before:blur-[3px] dark:bg-shade-03 dark:text-t-primary dark:shadow-[0_4px_10px_rgba(0,0,0,.15),inset_0_1px_rgba(255,255,255,.15),inset_0_-2px_#111111] dark:before:bg-[#ffffff]/10;
   }
   .btn-ghost {
     @apply relative bg-b-surface1 border-transparent text-t-secondary fill-t-secondary hover:text-t-primary hover:fill-t-primary hover:shadow-depth dark:bg-shade-04;
@@ -457,7 +460,7 @@
     @apply flex items-center justify-between px-5 py-3.5 rounded-full text-t-secondary fill-t-secondary transition-all text-button hover:bg-b-surface3 hover:text-t-primary hover:fill-t-primary;
   }
   .sidebar-link.active {
-    @apply bg-linear-to-b from-[#2C2C2C] to-[#282828] text-t-light fill-t-light font-bold shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20)] dark:from-shade-10 dark:to-[#DEDEDE] dark:text-shade-03 dark:fill-shade-01;
+    @apply relative flex items-center overflow-hidden rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] font-bold text-white shadow-velora-dark fill-white before:absolute before:-right-3 before:top-0 before:z-0 before:h-3 before:w-28 before:rotate-[125deg] before:rounded-full before:bg-white/10 before:blur-[3px];
   }
 }
 
