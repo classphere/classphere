@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ExamPrep — Dashboard",
-  description: "B2B Exam Preparation Dashboard",
+  title: "Classphere — Dashboard",
+  description: "Classphere B2B LMS",
 };
 
 export default function RootLayout({

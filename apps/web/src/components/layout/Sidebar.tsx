@@ -154,7 +154,7 @@ export default function Sidebar() {
               <RiFlashlightFill size={22} className="opacity-90" />
             </div>
             <span className="font-sans text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight">
-              ExamPrep
+              Classphere
             </span>
           </Link>
         </div>

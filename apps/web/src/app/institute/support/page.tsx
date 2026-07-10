@@ -65,7 +65,7 @@ export default function InstituteSupportPage() {
         {/* Header Description & Action */}
         <div className="flex flex-row justify-between items-center mt-2 w-full">
           <p className="text-sm text-t-secondary dark:text-t-tertiary max-w-[600px] leading-relaxed m-0">
-            Facing technical issues or need to discuss your billing plan? Open a ticket to communicate directly with the ExamPrep Super Admin team.
+            Facing technical issues or need to discuss your billing plan? Open a ticket to communicate directly with the Classphere Super Admin team.
           </p>
           <button 
             className="btn btn-primary h-12 px-6 rounded-lg text-sm font-semibold flex items-center gap-2 cursor-pointer shadow-[0px_4px_12px_rgba(42,133,255,0.25)]" 
