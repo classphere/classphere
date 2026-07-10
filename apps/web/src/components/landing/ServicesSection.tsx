@@ -8,7 +8,7 @@ export function ServicesSection() {
       <div className="mx-auto max-w-[1280px]">
         <SectionHeader 
           eyebrow="Our services"
-          title="Performance-Driven Video Solutions"
+          title="Performance-Driven Learning Solutions"
         />
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {services.map(([icon, title, description]) => (

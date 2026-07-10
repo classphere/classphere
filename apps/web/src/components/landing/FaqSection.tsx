@@ -2,12 +2,12 @@ import { Eyebrow } from "./ui/Eyebrow";
 
 export function FaqSection() {
   const faqs = [
-    "What types of videos do you edit?",
-    "How fast is your turnaround time?",
-    "Do you offer revisions?",
-    "What file formats will I receive?",
-    "Can you match our brand style?",
-    "Do you work with long-term clients?"
+    "What types of exams do you support?",
+    "How fast is test evaluation?",
+    "Do you offer custom analytics?",
+    "Is the platform white-labeled?",
+    "Can you integrate with our CRM?",
+    "Do you provide student support?"
   ];
 
   return (
@@ -25,7 +25,7 @@ export function FaqSection() {
               </summary>
               {i === 0 && (
                 <p className="mt-4 max-w-2xl leading-relaxed text-[#7d7d7d]">
-                  We edit commercials, social media videos, YouTube content, corporate films, podcasts, product videos, and more. No long-term contracts. Pause or cancel anytime.
+                  We support JEE, NEET, and standard curriculum mock tests. You get full access to our question bank. No long-term contracts. Pause or cancel anytime.
                 </p>
               )}
             </details>

@@ -3,9 +3,9 @@ import { Card } from "./ui/Card";
 
 export function HowItWorksSection() {
   const steps = [
-    ["Share your vision", "Tell us about your project, goals, style preferences, and references. Upload your footage and brand assets to get started."],
-    ["We edit & create", "Our expert editors craft your video with clean cuts, motion graphics, color grading, and sound design"],
-    ["Review & deliver", "Receive your first draft, request revisions, and get the final high-quality video ready to publish."]
+    ["Onboard Institute", "Register your institute, invite faculty, and structure your academic batches easily."],
+    ["Conduct & Analyze", "Schedule tests, automatically grade submissions, and view detailed AI performance insights."],
+    ["Improve with DPPs", "Assign targeted practice sets to bridge knowledge gaps and elevate scores."]
   ];
 
   return (
@@ -13,8 +13,8 @@ export function HowItWorksSection() {
       <div className="mx-auto max-w-[1280px]">
         <SectionHeader 
           eyebrow="How It Works"
-          title="From Vision to Visual Masterpiece"
-          description="A refined workflow that transforms your vision into cinematic content—fast, seamless, and uncompromising in quality."
+          title="From Onboarding to Excellence"
+          description="A refined workflow that transforms traditional education into a data-driven powerhouse."
         />
         <ol className="mt-14 grid gap-6 md:grid-cols-3">
           {steps.map(([title, text], index) => (

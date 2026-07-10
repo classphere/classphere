@@ -9,7 +9,7 @@ export function GalleryCard({ src, index }: { src: string; index: number }) {
 
   return (
     <div className="relative h-[300px] w-[250px] shrink-0 overflow-hidden rounded-xl bg-white sm:h-[420px] sm:w-[360px]">
-      <img src={src} alt={`VELORA project ${index + 1}`} className={`absolute max-w-none ${crops[index]}`} />
+      <img src={src} alt={`Classphere project ${index + 1}`} className={`absolute max-w-none ${crops[index]}`} />
     </div>
   );
 }

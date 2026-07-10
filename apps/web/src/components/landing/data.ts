@@ -10,10 +10,10 @@ export const projects = [
 ];
 
 export const services = [
-  ["✦", "Video editing", "Clean, engaging edits crafted to tell your story with precision and purpose."],
-  ["◒", "Color grading", "Cinematic color and balanced tones that enhance every frame."],
-  ["✺", "Motion graphics", "Custom animations, logo reveals, and dynamic visuals that elevate content."],
-  ["◉", "Sound design", "Professional audio mixing, sound effects, and dialogue enhancement."],
-  ["↗", "Social media content", "Professional editing that enhances narrative and visual impact."],
-  ["▱", "Corporate videos", "Professional videos that communicate your brand clearly and effectively."],
+  ["✦", "AI Score Analytics", "Deep insights into performance trends and topic-level accuracy."],
+  ["◒", "Automated DPPs", "Generate Daily Practice Problems instantly based on weak areas."],
+  ["✺", "Secure Test Engine", "A robust, scalable platform to conduct mock tests seamlessly."],
+  ["◉", "Batches & CRM", "Manage students, enrollments, and faculty efficiently."],
+  ["↗", "Leaderboards", "Encourage healthy competition with gamified ranking systems."],
+  ["▱", "Role-based Portals", "Dedicated interfaces for admins, institutes, teachers, and students."],
 ];

@@ -63,9 +63,9 @@ export function ContactSection() {
                 <div className="relative">
                   <select className="h-[54px] w-full appearance-none rounded-[12px] bg-[#EDECEC] px-4 text-[14px] font-medium text-[#939393] outline-none">
                     <option>Select...</option>
-                    <option>Video editing</option>
-                    <option>Brand film</option>
-                    <option>Social content</option>
+                    <option>LMS Integration</option>
+                    <option>Test Engine Setup</option>
+                    <option>AI Analytics</option>
                   </select>
                   <svg className="pointer-events-none absolute right-4 top-1/2 h-6 w-6 -translate-y-1/2 text-[#939393]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </div>

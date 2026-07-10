@@ -4,25 +4,25 @@ import { Card } from "./ui/Card";
 
 export function PricingSection() {
   const starterFeatures = [
-    "One active editing request",
-    "Smooth transitions & clean cuts",
-    "Brand-consistent editing style",
-    "Motion graphics & basic animations",
-    "24–72 hour average turnaround",
-    "Dedicated video editor",
-    "Daily project updates",
-    "Color correction & sound design"
+    "Up to 500 active students",
+    "Secure test engine & mock exams",
+    "Basic analytics & student tracking",
+    "Automated DPP generation",
+    "24/7 email support",
+    "Dedicated institute portal",
+    "White-labeled domain",
+    "Role-based access (Admins & Teachers)"
   ];
 
   const proFeatures = [
-    "One active editing request",
-    "Unlimited revisions",
-    "Color correction & sound design",
-    "Motion graphics & basic animations",
-    "24–72 hour average turnaround",
-    "Dedicated video editor",
-    "Visual consistency across videos",
-    "Platform-optimized formats (YouTube, Reels, TikTok)"
+    "Unlimited active students",
+    "Advanced AI score insights",
+    "Secure test engine & mock exams",
+    "Automated DPP generation",
+    "Dedicated success manager",
+    "Priority 24/7 support",
+    "White-labeled domain",
+    "Custom CRM integrations"
   ];
 
   const CheckIcon = () => (
@@ -52,7 +52,7 @@ export function PricingSection() {
               <span className="mb-[6px] text-[26px] font-medium leading-[34px] text-black">/month</span>
             </div>
             <p className="mt-[18px] max-w-[410px] text-[20px] font-medium leading-[24px] text-[#838383]">
-              Perfect for creators and small teams starting their video journey.
+              Perfect for growing institutes starting their digital journey.
             </p>
             <Button href="#contact" variant="primary" className="mt-[42px] h-[60px] w-full text-[20px] font-[550]">
               Get Started
@@ -83,7 +83,7 @@ export function PricingSection() {
               <span className="mb-[6px] text-[26px] font-medium leading-[34px] text-black">/month</span>
             </div>
             <p className="mt-[18px] max-w-[410px] text-[20px] font-medium leading-[24px] text-[#838383]">
-              Ideal for creators and small teams getting started with video.
+              Ideal for established coaching centers scaling their operations.
             </p>
             <Button href="#contact" variant="primary" className="mt-[42px] h-[60px] w-full text-[20px] font-[550]">
               Get Started
