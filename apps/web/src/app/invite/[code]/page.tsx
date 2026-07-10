@@ -21,7 +21,7 @@ export default function InviteLandingPage() {
           <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--secondary-50)", display: "flex", alignItems: "center", justifyContent: "center", color: "white" }}>
             <RiFlashlightFill size={18} />
           </div>
-          <span style={{ fontWeight: 800, fontSize: 22, color: "var(--fg-default)" }}>ExamPrep</span>
+          <span style={{ fontWeight: 800, fontSize: 22, color: "var(--fg-default)" }}>Classphere</span>
         </Link>
         <Link href="/login" className="btn btn-outline" style={{ padding: "8px 16px" }}>Login</Link>
       </header>
@@ -38,7 +38,7 @@ export default function InviteLandingPage() {
             You've been invited!
           </h1>
           <p className="text-body" style={{ marginBottom: 32 }}>
-            You have been invited to join a batch on ExamPrep.
+            You have been invited to join a batch on Classphere.
           </p>
 
           <div style={{ background: "var(--neutral-10)", borderRadius: 12, padding: 24, textAlign: "left", marginBottom: 32 }}>

@@ -67,7 +67,7 @@ export default function LoginPage() {
               <RiFlashlightFill size={20} />
             </div>
             <span className="t-title-page-s tracking-tight text-t-primary">
-              ExamPrep
+              Classphere
             </span>
           </Link>
           <h1 className="t-title-page-s tracking-tight mt-4 mb-2">

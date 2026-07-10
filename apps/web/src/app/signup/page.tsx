@@ -107,7 +107,7 @@ export default function SignupPage() {
               <RiFlashlightFill size={20} />
             </div>
             <span className="font-sans text-[22px] font-bold text-t-primary dark:text-t-primary tracking-tight">
-              ExamPrep
+              Classphere
             </span>
           </Link>
           <h1 className="font-sans text-[28px] font-semibold text-t-primary dark:text-t-primary tracking-tight mt-4 mb-2">

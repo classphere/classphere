@@ -132,7 +132,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           console.log("[AuthContext] No session. Falling back to UI_BYPASS_MODE");
           const mockUser: AppUser = {
             id: "bypass-user-id",
-            email: "ui-dev@examprep.com",
+            email: "ui-dev@classphere.com",
             name: "UI Developer",
             role: BYPASS_ROLE,
             avatar_url: null,

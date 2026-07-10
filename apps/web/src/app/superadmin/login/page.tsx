@@ -92,7 +92,7 @@ export default function SuperAdminLoginPage() {
               <RiFlashlightFill size={20} className="text-t-primary" />
             </div>
             <span className="t-title-page-s text-t-primary tracking-tight">
-              ExamPrep
+              Classphere
             </span>
           </div>
 
@@ -132,7 +132,7 @@ export default function SuperAdminLoginPage() {
                 <input
                   id="admin-email"
                   type="email"
-                  placeholder="admin@examprep.com"
+                  placeholder="admin@classphere.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required

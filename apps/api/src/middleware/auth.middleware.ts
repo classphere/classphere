@@ -28,7 +28,7 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
   const internalKey = process.env.INTERNAL_API_KEY;
   const providedKey = req.headers["x-api-key"];
   if (internalKey && providedKey === internalKey) {
-    req.user = { id: "superadmin", email: "admin@examprep.in", role: "super_admin" };
+    req.user = { id: "superadmin", email: "admin@classphere.com", role: "super_admin" };
     next();
     return;
   }

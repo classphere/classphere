@@ -19,7 +19,7 @@ app.use("/api/v1", apiRouter);
 
 // ─── Health Check ─────────────────────────────────────────────────────────────
 app.get("/", (req, res) => {
-  res.json({ status: "ok", message: "ExamPrep API is running", version: "v1" });
+  res.json({ status: "ok", message: "Classphere API is running", version: "v1" });
 });
 
 // ─── 404 Handler ──────────────────────────────────────────────────────────────
@@ -34,6 +34,6 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 });
 
 app.listen(port, () => {
-  console.log(`[API] ExamPrep API Server running on port ${port}`);
+  console.log(`[API] Classphere API Server running on port ${port}`);
   console.log(`[API] Routes mounted at /api/v1`);
 });

@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack",
+    "dev": "cross-env NODE_OPTIONS=--max-old-space-size=8192 next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1084.0",
     "@remixicon/react": "^4.9.0",
     "@supabase/supabase-js": "^2.110.0",
     "katex": "^0.17.0",
@@ -23,6 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config": "*",
     "eslint-config-next": "16.2.7",
