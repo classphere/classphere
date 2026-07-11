@@ -87,7 +87,7 @@ export default function SignupPage() {
           </p>
           <Link
             href="/login"
-            className="inline-flex h-12 items-center justify-center px-8 rounded-lg bg-shade-02 text-t-light font-sans text-[14px] font-semibold transition-all hover:bg-shade-03 active:scale-[0.98]"
+            className="relative inline-flex h-12 items-center justify-center overflow-hidden px-8 rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white font-sans text-[14px] font-semibold shadow-velora-dark transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
             Go to Login
           </Link>
@@ -103,7 +103,7 @@ export default function SignupPage() {
         {/* Logo */}
         <div className="text-center mb-10">
           <Link href="/login" className="inline-flex items-center gap-2.5 no-underline mb-6">
-            <div className="flex size-10 items-center justify-center rounded-lg bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)]">
+            <div className="flex size-10 items-center justify-center rounded-[10px] bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)]">
               <RiFlashlightFill size={20} />
             </div>
             <span className="font-sans text-[22px] font-bold text-t-primary dark:text-t-primary tracking-tight">
@@ -119,10 +119,10 @@ export default function SignupPage() {
         </div>
 
         {/* Card */}
-        <div className="bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] p-8">
+        <div className="card p-8">
 
           {error && (
-            <div className="flex items-start gap-3 mb-6 p-4 rounded-lg bg-[rgba(255,106,85,0.05)] border border-s-stroke2/40">
+            <div className="flex items-start gap-3 mb-6 p-4 rounded-[10px] bg-[rgba(255,106,85,0.05)] border border-s-stroke2/40">
               <RiAlertLine size={18} className="text-primary-03 shrink-0 mt-0.5" />
               <span className="font-sans text-[13px] text-primary-03 leading-[150%]">{error}</span>
             </div>
@@ -142,7 +142,7 @@ export default function SignupPage() {
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
                 autoComplete="name"
-                className="h-12 w-full rounded-lg border border-s-stroke2 dark:border-s-stroke2 bg-b-surface1 dark:bg-b-surface3 px-4 font-sans text-[14px] text-t-primary dark:text-t-primary placeholder:text-t-secondary outline-none transition-all focus:border-t-primary dark:focus:border-t-secondary"
+                className="h-12 w-full rounded-[10px] border border-s-stroke2 dark:border-s-stroke2 bg-b-surface1 dark:bg-b-surface3 px-4 font-sans text-[14px] text-t-primary dark:text-t-primary placeholder:text-t-secondary outline-none transition-all focus:border-t-primary dark:focus:border-t-secondary"
               />
             </div>
 
@@ -159,7 +159,7 @@ export default function SignupPage() {
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
                 autoComplete="email"
-                className="h-12 w-full rounded-lg border border-s-stroke2 dark:border-s-stroke2 bg-b-surface1 dark:bg-b-surface3 px-4 font-sans text-[14px] text-t-primary dark:text-t-primary placeholder:text-t-secondary outline-none transition-all focus:border-t-primary dark:focus:border-t-secondary"
+                className="h-12 w-full rounded-[10px] border border-s-stroke2 dark:border-s-stroke2 bg-b-surface1 dark:bg-b-surface3 px-4 font-sans text-[14px] text-t-primary dark:text-t-primary placeholder:text-t-secondary outline-none transition-all focus:border-t-primary dark:focus:border-t-secondary"
               />
             </div>
 
@@ -177,7 +177,7 @@ export default function SignupPage() {
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
                   required
                   autoComplete="new-password"
-                  className="h-12 w-full rounded-lg border border-s-stroke2 dark:border-s-stroke2 bg-b-surface1 dark:bg-b-surface3 px-4 pr-12 font-sans text-[14px] text-t-primary dark:text-t-primary placeholder:text-t-secondary outline-none transition-all focus:border-t-primary dark:focus:border-t-secondary"
+                  className="h-12 w-full rounded-[10px] border border-s-stroke2 dark:border-s-stroke2 bg-b-surface1 dark:bg-b-surface3 px-4 pr-12 font-sans text-[14px] text-t-primary dark:text-t-primary placeholder:text-t-secondary outline-none transition-all focus:border-t-primary dark:focus:border-t-secondary"
                 />
                 <button
                   type="button"
@@ -200,7 +200,7 @@ export default function SignupPage() {
                     key={e}
                     type="button"
                     onClick={() => setExam(e)}
-                    className={`flex-1 h-12 rounded-lg font-sans text-[13px] font-semibold transition-all cursor-pointer border ${
+                    className={`flex-1 h-12 rounded-[10px] font-sans text-[13px] font-semibold transition-all cursor-pointer border ${
                       exam === e
                         ? "bg-[rgba(16,16,16,0.04)] dark:bg-b-surface1 border-t-primary dark:border-t-primary text-t-primary dark:text-t-primary"
                         : "bg-transparent border-s-stroke2 dark:border-s-stroke2 text-t-secondary hover:border-t-primary hover:text-t-primary"
@@ -216,7 +216,7 @@ export default function SignupPage() {
               id="signup-submit"
               type="submit"
               disabled={loading}
-              className="mt-1 flex h-12 w-full items-center justify-center rounded-lg bg-shade-02 hover:bg-shade-03 dark:bg-t-primary dark:text-b-surface1 text-t-light font-sans text-[14px] font-semibold transition-all active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed shadow-widget cursor-pointer"
+              className="relative mt-1 flex h-12 w-full items-center justify-center overflow-hidden rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white font-sans text-[14px] font-semibold shadow-velora-dark transition-transform hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
             >
               {loading ? (
                 <span className="flex items-center gap-2">
