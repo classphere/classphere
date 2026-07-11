@@ -2,16 +2,24 @@
 
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
+import {
+  SectionCard,
+  MetricCard,
+  MetricGrid,
+  EmptyState,
+  PageWrapper,
+  Card,
+} from "@/components/ui";
 
 import {
   RiFileListLine,
   RiTimeLine,
   RiCheckLine,
   RiAlertLine,
-  RiArrowRightLine,
 } from "@remixicon/react";
 
 export default function AssignmentsPage() {
+  // In a real app, these would come from an API
   const pending: any[] = [];
   const late: any[] = [];
   const completed: any[] = [];
@@ -20,167 +28,102 @@ export default function AssignmentsPage() {
     <>
       <Navbar title="My DPPs" subtitle="Daily practice problems assigned by your teacher." breadcrumbs="My DPPs" />
       
-      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
-        {/* Stats Row Wrapper */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg mb-8 select-none">
-          
-          {/* Metric 1: Pending */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
-            <div className="flex flex-row items-center gap-3 w-full mb-1">
-              <span className="text-t-primary dark:text-t-primary"><RiTimeLine size={20} /></span>
-              <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
-                Pending DPPs
-              </span>
-            </div>
-            <div className="flex flex-row items-center gap-4 w-full mt-1">
-              <div className="font-sans text-4xl font-medium tracking-[-0.005em] text-t-primary dark:text-t-primary leading-none">
-                {pending.length}
-              </div>
-              <div className="flex flex-col items-start gap-0.5">
-                <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-s-stroke2/20 bg-transparent rounded-lg">
-                  <span className="text-t-secondary text-[12px] font-semibold leading-none">Active</span>
-                </div>
-                <span className="text-[12px] font-sans text-t-secondary">
-                  assigned
-                </span>
-              </div>
-            </div>
-          </div>
+      <PageWrapper>
+        {/* Stats Row */}
+        <MetricGrid cols={3}>
+          <MetricCard
+            icon={<RiTimeLine size={18} />}
+            label="Pending DPPs"
+            value={pending.length}
+            badge="Active"
+            badgeLabel="assigned"
+          />
+          <MetricCard
+            icon={<RiAlertLine size={18} />}
+            label="Overdue DPPs"
+            value={late.length}
+            badge="Late"
+            badgeLabel="needs action"
+          />
+          <MetricCard
+            icon={<RiCheckLine size={18} />}
+            label="Completed DPPs"
+            value={completed.length}
+            badge="Done"
+            badgeLabel="submitted"
+          />
+        </MetricGrid>
 
-          {/* Metric 2: Overdue */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
-            <div className="flex flex-row items-center gap-3 w-full mb-1">
-              <span className="text-t-primary dark:text-t-primary"><RiAlertLine size={20} /></span>
-              <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
-                Overdue DPPs
-              </span>
-            </div>
-            <div className="flex flex-row items-center gap-4 w-full mt-1">
-              <div className="font-sans text-4xl font-medium tracking-[-0.005em] text-t-primary dark:text-t-primary leading-none">
-                {late.length}
-              </div>
-              <div className="flex flex-col items-start gap-0.5">
-                <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-s-stroke2/20 bg-transparent rounded-lg">
-                  <span className="text-t-secondary text-[12px] font-semibold leading-none">Late</span>
-                </div>
-                <span className="text-[12px] font-sans text-t-secondary">
-                  needs action
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Metric 3: Completed */}
-          <div className="flex flex-col items-start p-6 gap-2 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
-            <div className="flex flex-row items-center gap-3 w-full mb-1">
-              <span className="text-t-primary dark:text-t-primary"><RiCheckLine size={20} /></span>
-              <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
-                Completed DPPs
-              </span>
-            </div>
-            <div className="flex flex-row items-center gap-4 w-full mt-1">
-              <div className="font-sans text-4xl font-medium tracking-[-0.005em] text-t-primary dark:text-t-primary leading-none">
-                {completed.length}
-              </div>
-              <div className="flex flex-col items-start gap-0.5">
-                <div className="flex flex-row justify-center items-center px-1.5 py-0.5 gap-1 border border-s-stroke2/20 bg-transparent rounded-lg">
-                  <span className="text-t-secondary text-[12px] font-semibold leading-none">Done</span>
-                </div>
-                <span className="text-[12px] font-sans text-t-secondary">
-                  submitted
-                </span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Overdue - show first, most urgent */}
+        {/* Overdue */}
         {late.length > 0 && (
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
-            <div className="box-hover" />
-            <div className="relative z-10 flex flex-row justify-between items-center w-full mb-6">
-              <div>
-                <h3 className="font-sans text-[20px] font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">
-                  Overdue DPPs
-                </h3>
-                <p className="text-[12px] font-sans text-t-secondary mt-0.5">
-                  These practice papers have passed their deadline
-                </p>
-              </div>
-              <span className="flex flex-row justify-center items-center px-2.5 py-1 rounded-lg border border-s-stroke2/20 bg-transparent text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em] shrink-0">
+          <SectionCard
+            title="Overdue DPPs"
+            subtitle="These practice papers have passed their deadline"
+            className="mb-6"
+            headerRight={
+              <span className="flex flex-row justify-center items-center px-2.5 py-1 rounded-[10px] border border-s-stroke2/20 bg-transparent text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
                 Requires Attention
               </span>
-            </div>
-            
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg">
-              {late.map(dpp => (
+            }
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {late.map((dpp) => (
                 <DPPCard key={dpp.id} dpp={dpp} />
               ))}
             </div>
-          </div>
+          </SectionCard>
         )}
 
         {/* Pending */}
         {pending.length > 0 && (
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
-            <div className="box-hover" />
-            <div className="relative z-10 flex flex-row justify-between items-center w-full mb-6">
-              <div>
-                <h3 className="font-sans text-[20px] font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">
-                  Pending DPPs
-                </h3>
-                <p className="text-[12px] font-sans text-t-secondary mt-0.5">
-                  Active practice assignments assigned to you
-                </p>
-              </div>
-              <span className="flex flex-row justify-center items-center px-2.5 py-1 rounded-lg border border-s-stroke2/20 bg-transparent text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em] shrink-0">
+          <SectionCard
+            title="Pending DPPs"
+            subtitle="Active practice assignments assigned to you"
+            className="mb-6"
+            headerRight={
+              <span className="flex flex-row justify-center items-center px-2.5 py-1 rounded-[10px] border border-s-stroke2/20 bg-transparent text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
                 In Progress
               </span>
-            </div>
-            
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg">
-              {pending.map(dpp => (
+            }
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {pending.map((dpp) => (
                 <DPPCard key={dpp.id} dpp={dpp} />
               ))}
             </div>
-          </div>
+          </SectionCard>
         )}
 
         {/* Completed */}
         {completed.length > 0 && (
-          <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-            <div className="box-hover" />
-            <div className="relative z-10 flex flex-row justify-between items-center w-full mb-6">
-              <div>
-                <h3 className="font-sans text-[20px] font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">
-                  Completed DPPs
-                </h3>
-                <p className="text-[12px] font-sans text-t-secondary mt-0.5">
-                  Successfully finished practice papers and reports
-                </p>
-              </div>
-              <span className="flex flex-row justify-center items-center px-2.5 py-1 rounded-lg border border-s-stroke2/20 bg-transparent text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em] shrink-0">
+          <SectionCard
+            title="Completed DPPs"
+            subtitle="Successfully finished practice papers and reports"
+            className="mb-6"
+            headerRight={
+              <span className="flex flex-row justify-center items-center px-2.5 py-1 rounded-[10px] border border-s-stroke2/20 bg-transparent text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
                 Completed
               </span>
-            </div>
-            
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg">
-              {completed.map(dpp => (
+            }
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {completed.map((dpp) => (
                 <DPPCard key={dpp.id} dpp={dpp} />
               ))}
             </div>
-          </div>
+          </SectionCard>
         )}
 
         {pending.length === 0 && late.length === 0 && completed.length === 0 && (
-          <div className="group relative card text-center py-20 text-t-secondary rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
-            <div className="box-hover" />
-            <RiFileListLine size={48} className="mx-auto mb-4 text-t-tertiary relative z-10" />
-            <p className="font-semibold text-body-2 relative z-10">No DPPs assigned yet.</p>
-          </div>
+          <SectionCard padding="none">
+            <EmptyState
+              icon={<RiFileListLine size={48} />}
+              title="No DPPs assigned yet."
+              description="Your teachers haven't assigned any daily practice problems at the moment. You're all caught up!"
+            />
+          </SectionCard>
         )}
-      </main>
+      </PageWrapper>
     </>
   );
 }
@@ -190,31 +133,33 @@ function DPPCard({ dpp }: { dpp: any }) {
   const isLate = dpp.status === "late";
 
   return (
-    <div 
-      className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2 dark:border-s-stroke2/30 rounded-lg shadow-[0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
+    <Card 
+      variant="default"
+      padding="default"
+      className="flex min-h-[10.5rem] flex-col justify-between hover:-translate-y-1 hover:shadow-depth transition-all duration-300"
     >
       <div className="min-w-0 flex-1">
         {/* Header Status Badge Row */}
         <div className="flex justify-between items-center mb-3">
-          <span className="text-[12px] font-sans font-semibold text-t-secondary uppercase tracking-wider">
+          <span className="text-[11px] font-sans font-bold text-t-secondary uppercase tracking-widest">
             {dpp.subject}
           </span>
           {isLate ? (
-            <div className="flex flex-row justify-center items-center px-1.5 py-0.5 border border-s-stroke2/20 bg-transparent rounded-lg">
-              <span className="text-t-secondary text-[10px] font-bold leading-none">Overdue</span>
+            <div className="flex flex-row justify-center items-center px-1.5 py-0.5 border border-red-500/20 bg-red-500/5 rounded-[6px]">
+              <span className="text-red-500 text-[10px] font-bold leading-none uppercase tracking-wider">Overdue</span>
             </div>
           ) : isCompleted ? (
-            <div className="flex flex-row justify-center items-center px-1.5 py-0.5 border border-s-stroke2/20 bg-transparent rounded-lg">
-              <span className="text-t-secondary text-[10px] font-bold leading-none">Completed</span>
+            <div className="flex flex-row justify-center items-center px-1.5 py-0.5 border border-green-500/20 bg-green-500/5 rounded-[6px]">
+              <span className="text-green-500 text-[10px] font-bold leading-none uppercase tracking-wider">Completed</span>
             </div>
           ) : (
-            <div className="flex flex-row justify-center items-center px-1.5 py-0.5 border border-s-stroke2/20 bg-transparent rounded-lg">
-              <span className="text-t-secondary text-[10px] font-bold leading-none">Pending</span>
+            <div className="flex flex-row justify-center items-center px-1.5 py-0.5 border border-black/5 dark:border-white/5 bg-b-surface1 dark:bg-b-surface1/40 rounded-[6px]">
+              <span className="text-t-secondary text-[10px] font-bold leading-none uppercase tracking-wider">Pending</span>
             </div>
           )}
         </div>
         
-        <div className="truncate font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
+        <div className="truncate font-sans font-semibold text-[15px] leading-snug text-t-primary">
           {dpp.title}
         </div>
         <div className="text-[12px] font-sans text-t-secondary mt-1">
@@ -222,24 +167,25 @@ function DPPCard({ dpp }: { dpp: any }) {
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-4 pt-3 border-t border-s-stroke2/30">
-        <span className="text-[12px] font-sans font-semibold text-t-secondary">
+      <div className="flex justify-between items-center mt-4 pt-3 border-t border-[#ebebeb] dark:border-[#282828]">
+        <span className="text-[12px] font-sans font-medium text-t-secondary">
           Due: {dpp.dueDate}
         </span>
         {isCompleted ? (
           <div className="flex flex-col items-end">
-            <span className="text-sm font-sans font-bold text-t-primary dark:text-t-primary">{dpp.score}/{dpp.maxScore} marks</span>
+            <span className="text-[13px] font-sans font-bold text-t-primary">{dpp.score}/{dpp.maxScore} marks</span>
             <span className="text-[10px] font-sans text-t-secondary">{dpp.timeTakenMin} mins</span>
           </div>
         ) : (
           <Link 
             href={`/assignments/${dpp.id}`} 
-            className="flex flex-row justify-center items-center h-8 px-5 bg-shade-02 hover:bg-shade-04 text-t-light dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget"
+            className="relative flex flex-row justify-center items-center h-8 px-4 overflow-hidden rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white text-[12px] font-sans font-semibold shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919] transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
-            {isLate ? "Submit Late" : "Start"}
+            <i className="absolute -right-3 top-0 h-3 w-16 rotate-[125deg] rounded-full bg-white/10 blur-[3px]" />
+            <span className="relative">{isLate ? "Submit Late" : "Start"}</span>
           </Link>
         )}
       </div>
-    </div>
+    </Card>
   );
 }
