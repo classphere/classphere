@@ -343,8 +343,8 @@
   --shadow-hover-light: var(--box-shadow-hover-light);
   --shadow-input-typing: var(--box-shadow-input-typing);
   --shadow-dropdown: var(--box-shadow-dropdown);
-  --shadow-velora-dark: 0px 6.8656px 6.8656px -2.33333px rgba(0, 0, 0, 0.16), 0px 13.6468px 13.6468px -2.91667px rgba(0, 0, 0, 0.16), 0px 30px 30px -3.5px rgba(0, 0, 0, 0.08), inset 0px 1px 0px rgba(255, 255, 255, 0.16), inset 0px -2px 0px #191919;
-  --shadow-velora-light: 0px 3px 3px rgba(0, 0, 0, 0.08), 0px 22px 16px rgba(0, 0, 0, 0.06), 0px 12px 10px rgba(0, 0, 0, 0.06), 0px 6px 5px rgba(0, 0, 0, 0.06), inset 0px 1px 0px rgba(255, 255, 255, 0.48), inset 0px -2px 0px #EDECEC;
+  --shadow-velora-dark: 0px 6.8656px 6.8656px -2.33333px rgba(0, 0, 0, 0.16), 0px 13.6468px 13.6468px -2.91667px rgba(0, 0, 0, 0.16), 0px 16px 16px -3.5px rgba(0, 0, 0, 0.08), inset 0px 1px 0px rgba(255, 255, 255, 0.16), inset 0px -2px 0px #191919;
+  --shadow-velora-light: 0px 3px 3px rgba(0, 0, 0, 0.08), 0px 22px 16px rgba(0, 0, 0, 0.06), 0px 12px 10px rgba(0, 0, 0, 0.06), 0px 6px 5px rgba(0, 0, 0, 0.06), inset 0px 1px 0px rgba(255, 255, 255, 0.8), inset 0px -2px 0px #e0e0e0;
   --shadow-velora-submit: 0px 2px 2px rgba(0, 0, 0, 0.1), 0px 3px 3px rgba(0, 0, 0, 0.12), 0px 40px 32px rgba(0, 0, 0, 0.12), 0px 22px 16px rgba(0, 0, 0, 0.14), 0px 12px 10px rgba(0, 0, 0, 0.13), 0px 6px 5px rgba(0, 0, 0, 0.12), 0px 2px 3px rgba(0, 0, 0, 0.12), inset 0px 1px 0px rgba(255, 255, 255, 0.18), inset 0px -2px 0px #191919;
 }
 
@@ -375,7 +375,7 @@
     background-image: linear-gradient(to bottom, var(--gradient-card));
   }
   .card, .rayum-card {
-    @apply mb-3 p-5 rounded-xl border border-s-stroke2 bg-b-surface2 shadow-velora-light last:mb-0 dark:shadow-velora-dark;
+    @apply mb-3 p-5 rounded-[24px] bg-b-surface2 dark:bg-[#161616] shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] border border-transparent last:mb-0 dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)];
   }
   .label, .badge {
     @apply inline-flex items-center h-7 px-2.5 rounded-lg text-button font-semibold;
@@ -393,20 +393,31 @@
     @apply border border-s-stroke2 bg-b-surface1 text-t-secondary;
   }
   .box-hover {
-    @apply absolute inset-0 rounded-lg bg-linear-to-b from-shade-09 to-[#ebebeb] before:absolute before:inset-[1.5px] before:bg-b-highlight before:rounded-[7px] before:border-[1.5px] before:border-b-surface2 invisible opacity-0 transition-all group-hover:visible group-hover:opacity-100 dark:from-shade-09/[0.075] dark:to-[#ebebeb]/[0.075];
+    @apply absolute inset-0 rounded-[24px] bg-linear-to-b from-shade-09 to-[#ebebeb] before:absolute before:inset-[1.5px] before:bg-b-highlight before:rounded-[22px] before:border-[1.5px] before:border-b-surface2 invisible opacity-0 transition-all group-hover:visible group-hover:opacity-100 dark:from-shade-09/[0.075] dark:to-[#ebebeb]/[0.075];
+  }
+  .card-glaze {
+    @apply relative overflow-hidden;
+  }
+  .card-glaze::before {
+    content: '';
+    @apply absolute right-[-78px] top-[-29px] z-0 h-3 w-[120px] rotate-[125deg] rounded-full bg-white/40 blur-[4px] pointer-events-none;
+  }
+  .card-glaze::after {
+    content: '';
+    @apply absolute right-[12px] top-[-29px] z-0 h-3 w-[120px] rotate-[125deg] rounded-full bg-white/40 blur-[4px] pointer-events-none;
   }
   
   .btn {
-    @apply inline-flex items-center justify-center h-11 px-6 rounded-lg text-button font-semibold transition-all cursor-pointer disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center h-11 px-6 rounded-[10px] text-button font-semibold transition-all cursor-pointer disabled:pointer-events-none;
   }
   .btn:active {
     transform: scale(0.96);
   }
   .btn-sm {
-    @apply h-8 px-4 text-caption rounded-lg;
+    @apply h-8 px-4 text-caption rounded-[10px];
   }
   .btn-md {
-    @apply h-10 px-5 text-button rounded-lg;
+    @apply h-10 px-5 text-button rounded-[10px];
   }
   
   .btn-primary, .btn-dark {
@@ -426,7 +437,7 @@
   }
 
   .input, .input-field {
-    @apply w-full h-11 px-4 border border-s-stroke2 rounded-lg text-body-2 text-t-primary outline-none transition-colors hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
+    @apply w-full h-11 px-4 border border-s-stroke2 rounded-[10px] text-body-2 text-t-primary outline-none transition-colors hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
   }
   .textarea {
     @apply w-full h-24 px-4.5 py-3 border border-s-stroke2 rounded-lg text-body-2 text-t-primary outline-none transition-colors resize-none hover:border-s-highlight focus:border-s-highlight placeholder:text-t-secondary/50 bg-b-surface2;
