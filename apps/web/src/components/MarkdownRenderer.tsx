@@ -14,15 +14,15 @@ interface MarkdownRendererProps {
 
 export function MarkdownRenderer({ children }: MarkdownRendererProps) {
   return (
-    <ReactMarkdown
-      remarkPlugins={[remarkGfm, remarkMath]}
-      rehypePlugins={[rehypeRaw, rehypeKatex]}
-      className="markdown-content"
-      components={{
+    <div className="markdown-content">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[rehypeRaw, rehypeKatex]}
+        components={{
         // Customize components if necessary (e.g. style tables)
         table: ({ node, ...props }) => (
           <div className="overflow-x-auto my-4">
-            <table className="min-w-full divide-y divide-s-stroke2 border border-s-stroke2 rounded-lg" {...props} />
+            <table className="min-w-full divide-y divide-s-stroke2 border border-s-stroke2 rounded-[10px]" {...props} />
           </div>
         ),
         thead: ({ node, ...props }) => (
@@ -47,5 +47,6 @@ export function MarkdownRenderer({ children }: MarkdownRendererProps) {
     >
       {children}
     </ReactMarkdown>
+    </div>
   );
 }
