@@ -43,7 +43,6 @@ function AccuracyBar({ accuracy }: { accuracy: number }) {
   );
 }
 
-
 function formatTimeSpent(seconds: number): string {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
@@ -132,21 +131,21 @@ export default function ResultsPage() {
       <>
         <Navbar title="Results & Analysis" />
         <div className="min-h-[70vh] px-4 py-10 md:px-6">
-          <div className="group relative card flex flex-col overflow-hidden p-8 md:p-10 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 mx-auto max-w-5xl gap-6">
-            <div className="box-hover" />
+          <div className="group relative card flex flex-col overflow-hidden p-8 md:p-10 card mx-auto max-w-5xl gap-6">
+            
             <div className="relative z-10 h-3 w-36 rounded-full bg-b-surface2" />
             <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_14rem]">
               <div className="space-y-3">
-                <div className="h-9 w-72 max-w-full rounded-lg bg-b-surface2" />
+                <div className="h-9 w-72 max-w-full rounded-[10px] bg-b-surface2" />
                 <div className="h-5 w-96 max-w-full rounded-full bg-b-surface2" />
               </div>
-              <div className="h-24 rounded-lg border border-s-stroke2 bg-b-surface2" />
+              <div className="h-24 rounded-[10px] border border-s-stroke2 bg-b-surface2" />
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="h-32 rounded-lg bg-b-surface2" />
-              <div className="h-32 rounded-lg bg-b-surface2" />
-              <div className="h-32 rounded-lg bg-b-surface2" />
+              <div className="h-32 rounded-[10px] bg-b-surface2" />
+              <div className="h-32 rounded-[10px] bg-b-surface2" />
+              <div className="h-32 rounded-[10px] bg-b-surface2" />
             </div>
 
             <div className="flex items-center gap-3 text-t-secondary">
@@ -173,28 +172,27 @@ export default function ResultsPage() {
     <>
       <Navbar title="Results & Analysis" />
 
-      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-4 md:px-6">
+      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8">
         <div className="mb-6 flex items-center justify-between gap-4">
-          <Link href="/" className="inline-flex items-center gap-2 rounded-lg border border-s-stroke2 bg-b-surface2 px-4 py-2 text-caption font-bold text-t-secondary transition-colors hover:text-t-primary">
+          <Link href="/" className="inline-flex items-center gap-2 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2 text-caption font-bold text-t-secondary transition-colors hover:text-t-primary">
             <RiArrowLeftLine size={16} /> Back to Dashboard
           </Link>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">{totalQuestions} questions</span>
-            <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
+            <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">{totalQuestions} questions</span>
+            <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
               {attemptedChapters.filter((t: any) => t.isWeak).length} weak chapter{attemptedChapters.filter((t: any) => t.isWeak).length === 1 ? "" : "s"}
             </span>
-            <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
+            <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">
               {unattemptedChapters.length} unattempted chapter{unattemptedChapters.length === 1 ? "" : "s"}
             </span>
             {a.narrative?.examCountdown && (
-              <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05 text-[12px] font-sans font-semibold tracking-[0.004em] rounded-lg">{a.narrative.examCountdown.urgencyLabel}</span>
+              <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05 text-[12px] font-sans font-semibold tracking-[0.004em] rounded-[10px]">{a.narrative.examCountdown.urgencyLabel}</span>
             )}
           </div>
         </div>
 
-        <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-          <div className="box-hover" />
-          
+        <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+
           <div className="relative z-10 grid gap-6 xl:grid-cols-[minmax(0,1fr)_20rem]">
             <div className="space-y-5">
               <div>
@@ -204,16 +202,16 @@ export default function ResultsPage() {
               </div>
 
               {a.narrative && (
-                <div className="rounded-lg border border-s-border dark:border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] p-5 md:p-6">
+                <div className="rounded-[10px] border border-s-border dark:border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] p-5 md:p-6">
                   <div className="mb-4 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-2 text-[16px] font-sans font-bold text-t-primary dark:text-t-primary tracking-[0.0015em]">
                       <RiLightbulbFlashLine size={20} className="text-primary-05" /> Performance summary
                     </div>
-                    {a.narrative.examCountdown && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary dark:text-t-secondary text-[10px] font-sans font-bold tracking-[0.004em]">{a.narrative.examCountdown.urgencyLabel}</span>}
+                    {a.narrative.examCountdown && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-b-surface1 text-t-secondary dark:text-t-secondary text-[10px] font-sans font-bold tracking-[0.004em]">{a.narrative.examCountdown.urgencyLabel}</span>}
                   </div>
                   <p className="text-[14px] font-sans font-semibold leading-[150%] text-t-primary dark:text-t-primary">{a.narrative.headline}</p>
                   <p className="mt-3 max-w-3xl text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">{a.narrative.overview}</p>
-                  <div className="mt-4 rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-4">
+                  <div className="mt-4 rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-4">
                     <div className="text-[10px] font-sans font-bold uppercase tracking-[0.24em] text-t-secondary">Best next move</div>
                     <div className="mt-1 text-[14px] font-sans font-semibold text-t-primary dark:text-t-primary">{a.narrative.biggestWin}</div>
                   </div>
@@ -221,8 +219,8 @@ export default function ResultsPage() {
               )}
             </div>
 
-            <div className="rounded-lg border border-s-border dark:border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] p-5">
-              <div className={`flex items-center justify-between rounded-lg border border-opacity-30 ${pctBorderColor} ${pctBgClass} p-4`}>
+            <div className="rounded-[10px] border border-s-border dark:border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] p-5">
+              <div className={`flex items-center justify-between rounded-[10px] border border-opacity-30 ${pctBorderColor} ${pctBgClass} p-4`}>
                 <div>
                   <div className={`text-[32px] font-sans font-black tracking-tight leading-none ${pctColorClass}`}>{a.scoring.score} <span className="text-[14px] font-medium text-t-secondary dark:text-t-secondary">/ {a.scoring.maxScore}</span></div>
                   <div className="text-[12px] font-sans font-bold text-t-secondary dark:text-t-secondary mt-1">Marks Obtained</div>
@@ -245,20 +243,20 @@ export default function ResultsPage() {
                   { label: "Wrong", value: a.scoring.incorrectCount, color: "text-primary-03" },
                   { label: "Skipped", value: a.scoring.skippedCount, color: "text-t-secondary dark:text-t-secondary" },
                 ].map((stat) => (
-                  <div key={stat.label} className="rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-3 text-center flex flex-col justify-center items-center">
+                  <div key={stat.label} className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-3 text-center flex flex-col justify-center items-center">
                     <div className={`text-[20px] font-sans font-black leading-none ${stat.color}`}>{stat.value}</div>
                     <div className="mt-1.5 text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">{stat.label}</div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-4 rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-4">
+              <div className="mt-4 rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-4">
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <div className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">Batch average</div>
                     <div className="mt-1 text-[16px] font-sans font-black text-t-primary dark:text-t-primary leading-none">{batchAvgScore} <span className="text-[10px] font-normal text-t-secondary dark:text-t-secondary">/ {a.scoring.maxScore}</span></div>
                   </div>
-                  <div className={`flex flex-row justify-center items-center px-1.5 py-0.5 rounded-lg border text-[12px] font-sans font-semibold tracking-[0.004em] ${a.scoring.score >= batchAvgScore ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03"}`}>
+                  <div className={`flex flex-row justify-center items-center px-1.5 py-0.5 rounded-[10px] border text-[12px] font-sans font-semibold tracking-[0.004em] ${a.scoring.score >= batchAvgScore ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03"}`}>
                     {a.scoring.score >= batchAvgScore ? `+${a.scoring.score - batchAvgScore} Marks` : `-${batchAvgScore - a.scoring.score} Marks`}
                   </div>
                 </div>
@@ -270,8 +268,8 @@ export default function ResultsPage() {
         <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
           <div className="space-y-6">
             {/* ── HIGH-FIDELITY DETAILED REPORT CARD ── */}
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-              <div className="box-hover" />
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+              
               <div className="relative z-10 mb-5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border-b border-s-stroke2 pb-5">
                 <div>
                   <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Detailed Performance Report</h2>
@@ -288,7 +286,7 @@ export default function ResultsPage() {
                     <button
                       key={t.id}
                       onClick={() => setActiveTab(t.id as any)}
-                      className={`px-4 py-2 rounded-lg text-[12px] font-sans font-semibold tracking-[0.004em] transition-all whitespace-nowrap shrink-0 ${
+                      className={`px-4 py-2 rounded-[10px] text-[12px] font-sans font-semibold tracking-[0.004em] transition-all whitespace-nowrap shrink-0 ${
                         activeTab === t.id 
                           ? "bg-linear-to-b from-[#2C2C2C] to-[#282828] text-white shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-full after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] relative overflow-hidden" 
                           : "bg-transparent text-t-secondary hover:text-t-primary"
@@ -312,7 +310,7 @@ export default function ResultsPage() {
                       { label: "Qs Attempted", value: `${a.scoring.correctCount + a.scoring.incorrectCount}/${totalQuestions}`, sub: "Out of Total Questions" },
                       { label: "Time Taken", value: `${Math.round(Object.values(a.attemptStrategy?.timePerSubjectSec || {}).reduce((sum: number, val: any) => sum + val, 0) / 60)}/180 min`, sub: "Total Spent Time" }
                     ].map((stat, i) => (
-                      <div key={i} className="rounded-lg border border-s-stroke2 bg-b-surface1 p-5 text-center">
+                      <div key={i} className="rounded-[10px] border border-s-stroke2 bg-b-surface1 p-5 text-center">
                         <div className="text-caption font-bold uppercase tracking-[0.22em] text-t-tertiary mb-2">{stat.label}</div>
                         <div className="text-h3 font-black tracking-tight text-t-primary">{stat.value}</div>
                         <div className="text-caption text-t-secondary mt-1">{stat.sub}</div>
@@ -330,7 +328,7 @@ export default function ResultsPage() {
                       This is a quick snapshot of your performance measured in terms of attempts that were correct, incorrect, unattempted and questions that were not visited at all. The individual subject-wise analysis will help you gauge your performance on a subject level.
                     </p>
                   </div>
-                  <div className="overflow-x-auto rounded-lg border border-s-stroke2">
+                  <div className="overflow-x-auto rounded-[10px] border border-s-stroke2">
                     <table className="rayum-table">
                       <thead>
                         <tr>
@@ -385,7 +383,7 @@ export default function ResultsPage() {
                       Time is the most important resource in any competitive exam. And one major element of any test analysis is to check the time spent on an individual subject. This section will not only give you insight on the time spent but also the percentage attempt and accuracy at the subject level.
                     </p>
                   </div>
-                  <div className="overflow-x-auto rounded-lg border border-s-stroke2">
+                  <div className="overflow-x-auto rounded-[10px] border border-s-stroke2">
                     <table className="rayum-table">
                       <thead>
                         <tr>
@@ -448,7 +446,7 @@ export default function ResultsPage() {
                         .map((ans: any) => ans.question.topic);
                       const uniqueMissed = Array.from(new Set(missed));
                       return (
-                        <div key={subj} className="rounded-lg border border-s-stroke2 bg-b-surface1 p-5">
+                        <div key={subj} className="rounded-[10px] border border-s-stroke2 bg-b-surface1 p-5">
                           <h3 className="text-body-2 font-bold text-t-primary mb-3 pb-2 border-b border-s-stroke2">{subj}</h3>
                           {uniqueMissed.length > 0 ? (
                             <ol className="list-decimal pl-5 space-y-2 text-caption text-t-secondary">
@@ -468,7 +466,7 @@ export default function ResultsPage() {
 
               {activeTab === "complete" && (
                 <div className="space-y-6 animate-fadeIn">
-                  <div className="overflow-x-auto rounded-lg border border-s-stroke2">
+                  <div className="overflow-x-auto rounded-[10px] border border-s-stroke2">
                     <table className="rayum-table">
                       <thead>
                         <tr>
@@ -569,15 +567,15 @@ export default function ResultsPage() {
             </section>
 
             {unattemptedChapters.length > 0 && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-                <div className="box-hover" />
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+                
                 <div className="relative z-10 mb-4">
                   <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Syllabus Gaps (Unattempted)</h2>
                   <p className="mt-1 text-[12px] font-sans text-t-secondary">Chapters with zero attempts in this mock test. Revise these to ensure full syllabus coverage.</p>
                 </div>
                 <div className="relative z-10 flex flex-wrap gap-2.5">
                   {unattemptedChapters.map((chapter: any) => (
-                    <div key={chapter.topic} className="flex flex-row justify-center items-center px-4 py-2 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface2 dark:bg-b-surface2 text-t-secondary dark:text-t-secondary text-[12px] font-sans font-bold tracking-[0.004em] gap-2">
+                    <div key={chapter.topic} className="flex flex-row justify-center items-center px-4 py-2 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-b-surface2 dark:bg-b-surface2 text-t-secondary dark:text-t-secondary text-[12px] font-sans font-bold tracking-[0.004em] gap-2">
                       <span className="h-2 w-2 rounded-full bg-t-secondary dark:bg-t-tertiary" />
                       <span>{chapter.topic}</span>
                       <span className="text-[10px] font-normal text-t-secondary dark:text-t-tertiary">({chapter.chapter})</span>
@@ -588,25 +586,25 @@ export default function ResultsPage() {
             )}
 
             {a.attemptStrategy && a.attemptStrategy.pattern !== "mixed" && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-                <div className="box-hover" />
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+                
                 <div className="relative z-10 mb-4 flex items-center justify-between gap-4">
                   <div>
                     <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Attempt Strategy</h2>
                     <p className="mt-1 text-[12px] font-sans text-t-secondary">Use this to improve pacing and accuracy.</p>
                   </div>
-                  <div className="flex flex-row justify-center items-center px-3 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface2 text-t-secondary dark:text-t-secondary text-[12px] font-sans font-bold tracking-[0.004em]">
+                  <div className="flex flex-row justify-center items-center px-3 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-b-surface2 text-t-secondary dark:text-t-secondary text-[12px] font-sans font-bold tracking-[0.004em]">
                     {a.attemptStrategy.strategyScore}/100
                   </div>
                 </div>
-                <div className="relative z-10 rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-4">
+                <div className="relative z-10 rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-4">
                   <div className="grid gap-3 sm:grid-cols-3">
                     {strategySubjects.map((subject: string) => {
                       const deviation = a.attemptStrategy.timeDeviationPct?.[subject];
                       const budget = a.attemptStrategy.optimalTimeSec?.[subject];
                       const spent = a.attemptStrategy.timePerSubjectSec?.[subject];
                       return (
-                        <div key={subject} className="rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-4">
+                        <div key={subject} className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-4">
                           <div className="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">{subject}</div>
                           <div className={`mt-2 text-[20px] font-sans font-black ${deviation >= 0 ? "text-primary-02" : "text-primary-03"}`}>
                             {deviation != null ? `${deviation > 0 ? "+" : ""}${Math.round(deviation)}%` : "—"}
@@ -625,24 +623,24 @@ export default function ResultsPage() {
               </section>
             )}
 
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-              <div className="box-hover" />
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+              
               <div className="relative z-10 mb-5 flex items-center justify-between gap-4">
                 <div>
                   <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">Error Patterns</h2>
                   <p className="mt-1 text-[12px] font-sans text-t-secondary">These are the mistakes that cost you the most.</p>
                 </div>
-                <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03 text-[12px] font-sans font-bold tracking-[0.004em] rounded-lg">Watch closely</span>
+                <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03 text-[12px] font-sans font-bold tracking-[0.004em] rounded-[10px]">Watch closely</span>
               </div>
               <div className="relative z-10 grid gap-4 md:grid-cols-2">
                 {a.errorPatterns.map((ep: any) => (
-                  <div key={ep.id} className="rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-5 shadow-sm">
+                  <div key={ep.id} className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-5 shadow-sm">
                     <h3 className="text-[14px] font-sans font-bold text-primary-03">{ep.name}</h3>
                     <p className="mt-2 text-caption leading-relaxed text-t-secondary">{ep.description}</p>
                     <div className="mt-4">
                       <span className="label label-red font-bold">{ep.questionsAffected.length} questions affected</span>
                     </div>
-                    <div className="mt-4 rounded-lg border border-s-stroke2 bg-b-surface2 p-3 text-caption font-semibold text-t-primary">
+                    <div className="mt-4 rounded-[10px] border border-s-stroke2 bg-b-surface2 p-3 text-caption font-semibold text-t-primary">
                       <span className="text-primary-01">Tip:</span> {ep.tip}
                     </div>
                   </div>
@@ -652,7 +650,7 @@ export default function ResultsPage() {
 
             {/* ── PANIC CASCADE ALERT ── */}
             {a.panicCascade?.detected && (
-              <section className="flex flex-col p-6 md:p-7 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-primary-03/40 select-none">
+              <section className="flex flex-col p-6 md:p-7  bg-b-surface2 dark:bg-b-surface2 card border border-primary-03/40 select-none">
                 <div className="flex items-start gap-4">
                   <div className="flex size-16 items-center justify-center rounded-full bg-gradient-to-b from-[#FFD1D1] to-[#FFA3A3] shrink-0">
                     <RiErrorWarningFill size={24} className="text-t-primary" />
@@ -660,10 +658,10 @@ export default function ResultsPage() {
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-3">
                       <h2 className="text-[16px] font-sans font-bold text-primary-03">⚡ Panic Cascade Detected</h2>
-                      <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03 text-[12px] font-sans font-bold tracking-[0.004em] rounded-lg">Critical Pattern</span>
+                      <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03 text-[12px] font-sans font-bold tracking-[0.004em] rounded-[10px]">Critical Pattern</span>
                     </div>
                     <p className="mt-2 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">{a.panicCascade.description}</p>
-                    <div className="mt-4 rounded-lg border border-primary-03/20 bg-[rgba(255,106,85,0.02)] p-3 text-[12px] font-sans font-semibold text-t-primary dark:text-t-primary">
+                    <div className="mt-4 rounded-[10px] border border-primary-03/20 bg-[rgba(255,106,85,0.02)] p-3 text-[12px] font-sans font-semibold text-t-primary dark:text-t-primary">
                       <span className="text-primary-03">Action:</span> {a.panicCascade.tip}
                     </div>
                   </div>
@@ -673,8 +671,8 @@ export default function ResultsPage() {
 
             {/* ── FATIGUE CURVE ── */}
             {a.timeIntervals && a.timeIntervals.length > 0 && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-                <div className="box-hover" />
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+                
                 <div className="relative z-10 mb-5 flex items-center justify-between gap-4">
                   <div>
                     <div className="flex items-center gap-2">
@@ -687,13 +685,13 @@ export default function ResultsPage() {
 
                 {/* Fatigue summary narrative */}
                 {a.fatigueSummary && (
-                  <div className="relative z-10 mb-5 rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-4 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary shadow-sm">
+                  <div className="relative z-10 mb-5 rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-4 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary shadow-sm">
                     <span className="font-bold text-t-primary dark:text-t-primary">Analysis: </span>{a.fatigueSummary}
                   </div>
                 )}
 
                 {/* Interval table */}
-                <div className="relative z-10 overflow-x-auto rounded-lg border border-s-stroke2 mb-5">
+                <div className="relative z-10 overflow-x-auto rounded-[10px] border border-s-stroke2 mb-5">
                   <table className="rayum-table">
                     <thead>
                       <tr>
@@ -747,8 +745,8 @@ export default function ResultsPage() {
 
             {/* ── DIFFICULTY ANALYSIS ── */}
             {a.difficultyBreakdown && a.difficultyBreakdown.length > 0 && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-                <div className="box-hover" />
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+                
                 <div className="relative z-10 mb-5 flex items-center gap-2">
                   <RiBarChartBoxLine size={18} className="text-primary-05" />
                   <div>
@@ -758,7 +756,7 @@ export default function ResultsPage() {
                 </div>
                 <div className="relative z-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
                   {a.difficultyBreakdown.map((row: any) => (
-                    <div key={row.subject} className="rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
+                    <div key={row.subject} className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
                       <div className="mb-4 flex items-center justify-between">
                         <h3 className="text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">{row.subject}</h3>
                       </div>
@@ -795,8 +793,8 @@ export default function ResultsPage() {
 
             {/* ── ATTEMPT CLASSIFICATION ── */}
             {a.attemptClassification && a.attemptClassification.length > 0 && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-                <div className="box-hover" />
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+                
                 <div className="relative z-10 mb-5 flex items-center gap-2">
                   <RiPieChartLine size={18} className="text-primary-01" />
                   <div>
@@ -813,11 +811,11 @@ export default function ResultsPage() {
                       { label: "Confused", value: row.confused, color: "bg-primary-05", textColor: "text-primary-05", desc: "Skipped after pondering" },
                     ];
                     return (
-                      <div key={row.subject} className="rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
+                      <div key={row.subject} className="rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
                         <h3 className="mb-4 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">{row.subject} <span className="text-t-secondary font-normal">({row.total} attempts)</span></h3>
                         <div className="grid grid-cols-2 gap-3">
                           {cats.map(cat => (
-                            <div key={cat.label} className="rounded-lg border border-s-stroke2 bg-b-surface2 p-3">
+                            <div key={cat.label} className="rounded-[10px] border border-s-stroke2 bg-b-surface2 p-3">
                               <div className={`text-[20px] font-sans font-black ${cat.textColor}`}>{cat.value}</div>
                               <div className="mt-0.5 text-[10px] font-sans font-bold uppercase tracking-[0.18em] text-t-secondary">{cat.label}</div>
                               <div className="mt-1 text-[10px] font-sans text-t-secondary dark:text-t-secondary">{cat.desc}</div>
@@ -837,8 +835,8 @@ export default function ResultsPage() {
 
             {/* ── SUBJECT MOVEMENT ── */}
             {a.subjectMovement && a.subjectMovement.length > 0 && (
-              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-                <div className="box-hover" />
+              <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+                
                 <div className="relative z-10 mb-5 flex items-center gap-2">
                   <RiExchangeLine size={18} className="text-t-secondary dark:text-t-secondary" />
                   <div>
@@ -858,7 +856,7 @@ export default function ResultsPage() {
                     const durationMin = Math.round(block.durationSec / 60);
                     return (
                       <div key={i} className="flex items-center gap-2">
-                        <div className={`rounded-lg border px-4 py-2.5 text-center ${colorClass}`}>
+                        <div className={`rounded-[10px] border px-4 py-2.5 text-center ${colorClass}`}>
                           <div className="text-[12px] font-sans font-bold">{block.subject}</div>
                           <div className="text-[10px] font-sans text-current/60">{durationMin > 0 ? `${durationMin} min` : "<1 min"}</div>
                         </div>
@@ -875,44 +873,44 @@ export default function ResultsPage() {
                   <p className="relative z-10 mt-4 text-[12px] font-sans text-t-secondary dark:text-t-secondary">You stayed in one subject the entire test — linear approach.</p>
                 )}
                 {a.subjectMovement.length > 4 && (
-                  <p className="relative z-10 mt-4 rounded-lg border border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] p-3 text-[12px] font-sans text-primary-05">
+                  <p className="relative z-10 mt-4 rounded-[10px] border border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] p-3 text-[12px] font-sans text-primary-05">
                     ⚠️ You switched subjects {a.subjectMovement.length - 1} times — frequent switching can fragment your focus and waste 2–3 minutes per switch.
                   </p>
                 )}
               </section>
             )}
 
-            <section className="flex flex-col gap-4 rounded-lg border border-s-stroke2/40 bg-[rgba(55,101,246,0.05)] p-6 md:flex-row md:items-center md:justify-between md:p-8 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)]">
+            <section className="flex flex-col gap-4  bg-[rgba(55,101,246,0.05)] p-6 md:flex-row md:items-center md:justify-between md:p-8 card">
               <div>
                 <h2 className="text-[16px] font-sans font-bold text-primary-01">Stop repeating these mistakes</h2>
                 <p className="mt-1 text-[12px] font-sans text-t-secondary dark:text-t-secondary">Add these {a.errorPatterns.length * 2} errors to your mistake diary for revision.</p>
               </div>
-              <Link href="/student/mistakes" className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] gap-2 self-start md:self-auto">
+              <Link href="/student/mistakes" className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-[10px] text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] gap-2 self-start md:self-auto">
                 <span className="relative z-10 flex items-center gap-2"><RiBookmarkFill size={16} /> Open Mistake Diary</span>
               </Link>
             </section>
 
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-              <div className="box-hover" />
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+              
               <div className="relative z-10 mb-5 flex items-center justify-between gap-4">
                 <div>
                   <h2 className="text-[20px] font-sans font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">7-Day Study Plan</h2>
                   <p className="mt-1 text-[12px] font-sans text-t-secondary">Small, daily work beats one long reset.</p>
                 </div>
-                <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-b-surface1 text-t-secondary dark:text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">Next 7 days</span>
+                <span className="flex flex-row justify-center items-center px-2 py-1 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-b-surface1 text-t-secondary dark:text-t-secondary text-[12px] font-sans font-semibold tracking-[0.004em]">Next 7 days</span>
               </div>
               <div className="relative z-10 space-y-3">
                 {a.studyPlan.map((day: any) => (
                   <button
                     key={day.day}
-                    className={`w-full rounded-lg border p-4 text-left transition-colors ${
+                    className={`w-full rounded-[10px] border p-4 text-left transition-colors ${
                       expandedDay === day.day ? "border-primary-01/40 bg-[rgba(55,101,246,0.05)] shadow-widget" : "border-s-stroke2 bg-b-surface1 hover:border-s-highlight shadow-sm"
                     }`}
                     onClick={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
                   >
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex items-center gap-4">
-                        <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-b-surface2 text-[14px] font-sans font-black text-primary-01 border border-s-stroke2">D{day.day}</div>
+                        <div className="flex size-11 shrink-0 items-center justify-center rounded-[10px] bg-b-surface2 text-[14px] font-sans font-black text-primary-01 border border-s-stroke2">D{day.day}</div>
                         <div>
                           <div className="text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">{day.topic}</div>
                           <div className="mt-0.5 text-[12px] font-sans text-t-secondary dark:text-t-secondary">{day.durationMinutes} min</div>
@@ -935,35 +933,35 @@ export default function ResultsPage() {
           </div>
 
           <aside className="space-y-6 xl:sticky xl:top-6 xl:self-start">
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-              <div className="box-hover" />
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+              
               <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">
                 <RiTargetLine size={20} className="text-primary-05" /> Recovery options
               </div>
               <p className="relative z-10 text-[12px] font-sans leading-[160%] text-t-secondary dark:text-t-secondary">Turn the weak areas into a short follow-up set or a full revision run.</p>
 
               <div className="relative z-10 mt-5 space-y-3">
-                <button onClick={() => setShowBooster((v) => !v)} className="flex flex-row justify-between items-center py-3 px-6 w-full border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-[14px] font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 h-12">
+                <button onClick={() => setShowBooster((v) => !v)} className="flex flex-row justify-between items-center py-3 px-6 w-full border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-[14px] font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 h-12">
                   <span className="flex items-center gap-2 text-t-primary dark:text-t-primary"><RiFlashlightFill size={18} /> Micro Booster</span>
                   <span className="text-[12px] font-sans font-normal">15-30 Qs</span>
                 </button>
-                <button onClick={() => router.push("/pyqs")} className="flex flex-row justify-between items-center py-3 px-6 h-12 w-full rounded-lg text-[14px] font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]">
+                <button onClick={() => router.push("/pyqs")} className="flex flex-row justify-between items-center py-3 px-6 h-12 w-full rounded-[10px] text-[14px] font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]">
                   <span className="relative z-10 flex items-center gap-2"><RiArrowRightLine size={18} /> Back to PYQs</span>
                   <span className="relative z-10 text-[12px] font-sans font-normal opacity-80">pick another paper</span>
                 </button>
               </div>
 
               {showBooster && (
-                <div className="relative z-10 mt-5 rounded-lg border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
+                <div className="relative z-10 mt-5 rounded-[10px] border border-s-stroke2/40 dark:border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1/60 p-5 shadow-sm">
                   <div className="mb-3 text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-t-secondary">Quick set</div>
                   <div className="grid grid-cols-4 gap-2">
                     {[15, 20, 25, 30].map((n) => (
                       <button 
                         key={n} 
                         onClick={() => setMicroCount(n)} 
-                        className={`py-2 px-1 text-center rounded-lg border text-[14px] font-sans font-bold transition-all ${
+                        className={`py-2 px-1 text-center rounded-[10px] border text-[14px] font-sans font-bold transition-all ${
                           microCount === n 
-                            ? "border-transparent bg-linear-to-b from-[#2C2C2C] to-[#282828] text-white shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] relative overflow-hidden" 
+                            ? "border-transparent bg-linear-to-b from-[#2C2C2C] to-[#282828] text-white shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] relative overflow-hidden" 
                             : "border-s-stroke2 bg-b-surface2 text-t-secondary dark:text-t-secondary hover:border-s-highlight"
                         }`}
                       >
@@ -976,21 +974,21 @@ export default function ResultsPage() {
               )}
             </section>
 
-            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-              <div className="box-hover" />
+            <section className="group relative card flex flex-col overflow-hidden p-6 md:p-8 card select-none">
+              
               <div className="relative z-10 mb-4 flex items-center gap-2 text-[14px] font-sans font-bold text-t-primary dark:text-t-primary">
                 <RiTimerLine size={20} className="text-primary-01" /> Exam snapshot
               </div>
               <div className="relative z-10 space-y-3 text-[12px] font-sans text-t-secondary dark:text-t-secondary">
-                <div className="flex items-center justify-between rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
+                <div className="flex items-center justify-between rounded-[10px] border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
                   <span>Correct</span>
                   <strong className="text-primary-02 text-[16px] font-black">{a.scoring.correctCount}</strong>
                 </div>
-                <div className="flex items-center justify-between rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
+                <div className="flex items-center justify-between rounded-[10px] border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
                   <span>Incorrect</span>
                   <strong className="text-primary-03 text-[16px] font-black">{a.scoring.incorrectCount}</strong>
                 </div>
-                <div className="flex items-center justify-between rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
+                <div className="flex items-center justify-between rounded-[10px] border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 px-4 py-3">
                   <span>Skipped</span>
                   <strong className="text-t-primary dark:text-t-primary text-[16px] font-black">{a.scoring.skippedCount}</strong>
                 </div>

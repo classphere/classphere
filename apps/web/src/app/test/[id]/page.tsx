@@ -221,7 +221,6 @@ export default function TestPage() {
     currentQuestionEntryTime.current = now;
   }, [current, questions]);
 
-
   // ── Load questions ──────────────────────────────────────────────────────────
   useEffect(() => {
     if (!testId) return;
@@ -301,7 +300,6 @@ export default function TestPage() {
     setLoading(false);
   }, [testId]);
 
-
   // ── Timer ──────────────────────────────────────────────────────────────────
   const handleSubmit = useCallback(async () => {
     // Guard: never submit if questions haven't loaded yet
@@ -375,8 +373,6 @@ export default function TestPage() {
     }
   }, [timeLeft, loading, questions.length, handleSubmit]);
 
-
-
   // ── Wrapper: navigate and record timestamp (must be BEFORE early returns) ───────
   const navigateTo = useCallback((idx: number) => {
     const qId = questions[idx]?.id;
@@ -423,7 +419,6 @@ export default function TestPage() {
     setStatus((s) => ({ ...s, [qId]: "answered" }));
   };
 
-
   const toggleReview = (qId: string) => {
     setStatus((s) => ({
       ...s,
@@ -440,43 +435,43 @@ export default function TestPage() {
           <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="space-y-2">
               <div className="h-5 w-28 rounded-full bg-b-surface2" />
-              <div className="h-8 w-72 max-w-full rounded-lg bg-b-surface2" />
+              <div className="h-8 w-72 max-w-full rounded-[10px] bg-b-surface2" />
             </div>
             <div className="flex items-center gap-3">
-              <div className="h-11 w-28 rounded-lg bg-b-surface2" />
-              <div className="h-11 w-36 rounded-lg bg-b-surface2" />
+              <div className="h-11 w-28 rounded-[10px] bg-b-surface2" />
+              <div className="h-11 w-36 rounded-[10px] bg-b-surface2" />
             </div>
           </div>
         </header>
         <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
           <section className="card min-w-0 p-5 md:p-7">
             <div className="mb-5 flex flex-wrap gap-2">
-              <div className="h-7 w-20 rounded-lg bg-b-surface2" />
-              <div className="h-7 w-28 rounded-lg bg-b-surface2" />
-              <div className="h-7 w-20 rounded-lg bg-b-surface2" />
+              <div className="h-7 w-20 rounded-[10px] bg-b-surface2" />
+              <div className="h-7 w-28 rounded-[10px] bg-b-surface2" />
+              <div className="h-7 w-20 rounded-[10px] bg-b-surface2" />
             </div>
             <div className="mb-6 h-6 w-40 rounded-full bg-b-surface2" />
             <div className="space-y-3">
-              <div className="h-20 rounded-lg bg-b-surface2" />
-              <div className="h-20 rounded-lg bg-b-surface2" />
-              <div className="h-20 rounded-lg bg-b-surface2" />
-              <div className="h-20 rounded-lg bg-b-surface2" />
+              <div className="h-20 rounded-[10px] bg-b-surface2" />
+              <div className="h-20 rounded-[10px] bg-b-surface2" />
+              <div className="h-20 rounded-[10px] bg-b-surface2" />
+              <div className="h-20 rounded-[10px] bg-b-surface2" />
             </div>
             <div className="mt-8 flex gap-3 border-t border-s-stroke2 pt-6">
-              <div className="h-11 flex-1 rounded-lg bg-b-surface2" />
-              <div className="h-11 flex-1 rounded-lg bg-b-surface2" />
-              <div className="h-11 flex-1 rounded-lg bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
+              <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
             </div>
           </section>
           <aside className="card min-w-0 p-5 md:p-6">
             <div className="mb-5 grid grid-cols-3 gap-3">
-              <div className="h-20 rounded-lg bg-b-surface2" />
-              <div className="h-20 rounded-lg bg-b-surface2" />
-              <div className="h-20 rounded-lg bg-b-surface2" />
+              <div className="h-20 rounded-[10px] bg-b-surface2" />
+              <div className="h-20 rounded-[10px] bg-b-surface2" />
+              <div className="h-20 rounded-[10px] bg-b-surface2" />
             </div>
             <div className="space-y-5">
-              <div className="h-28 rounded-lg bg-b-surface2" />
-              <div className="h-28 rounded-lg bg-b-surface2" />
+              <div className="h-28 rounded-[10px] bg-b-surface2" />
+              <div className="h-28 rounded-[10px] bg-b-surface2" />
             </div>
           </aside>
         </main>
@@ -534,8 +529,6 @@ export default function TestPage() {
   const unanswered = questions.length - answered;
   const timeWarning = timeLeft !== null && timeLeft < 300;
 
-
-
   const subjects = [...new Set(questions.map((q) => q.subject))];
 
   return (
@@ -558,7 +551,7 @@ export default function TestPage() {
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <div className={`flex items-center gap-3 rounded-lg border px-4 py-2.5 shadow-widget ${timeWarning ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)]" : "border-s-stroke2 bg-b-surface2"}`}>
+            <div className={`flex items-center gap-3 rounded-[10px] border px-4 py-2.5 shadow-widget ${timeWarning ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)]" : "border-s-stroke2 bg-b-surface2"}`}>
               <span className={`${timeWarning ? "text-primary-03" : "text-t-primary"}`}>
                 <RiTimerLine size={18} />
               </span>
@@ -569,7 +562,7 @@ export default function TestPage() {
 
             <button
               id="submit-test-btn"
-              className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 cursor-pointer relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]"
+              className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-[10px] text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 cursor-pointer relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)]"
               onClick={() => setShowSubmitModal(true)}
             >
               <span className="relative z-10">Submit Test</span>
@@ -581,7 +574,7 @@ export default function TestPage() {
       <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem] items-stretch">
         {isDemoMode && (
           <div className="xl:col-span-2">
-            <div className="flex flex-col gap-3 rounded-lg border border-amber-200/70 bg-amber-50/70 px-5 py-4 text-amber-950 shadow-sm backdrop-blur-sm md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-col gap-3 rounded-[10px] border border-amber-200/70 bg-amber-50/70 px-5 py-4 text-amber-950 shadow-sm backdrop-blur-sm md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="text-caption font-bold uppercase tracking-[0.24em] text-amber-700">Demo preview</p>
                 <p className="mt-1 text-body-2 font-medium text-amber-950/90">
@@ -594,14 +587,13 @@ export default function TestPage() {
         )}
 
         {/* ── Question Area ── */}
-        <section className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
-          <div className="box-hover" />
+        <section className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 card select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
 
           <div className="relative z-10 mb-5 flex flex-wrap items-center gap-2">
-            <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.subject}</span>
-            <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.chapter}</span>
-            {q.topic && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em]">{q.topic}</span>}
-            <span className={`flex flex-row justify-center items-center px-2 py-0.5 border text-[12px] font-sans font-semibold rounded-lg tracking-[0.004em] ${q.difficulty === "easy" ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : q.difficulty === "hard" ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03" : "border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05"}`}>
+            <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.subject}</span>
+            <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.chapter}</span>
+            {q.topic && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.topic}</span>}
+            <span className={`flex flex-row justify-center items-center px-2 py-0.5 border text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em] ${q.difficulty === "easy" ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : q.difficulty === "hard" ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03" : "border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05"}`}>
               {q.difficulty}
             </span>
           </div>
@@ -615,7 +607,7 @@ export default function TestPage() {
                 <MarkdownRenderer>{q.question_text}</MarkdownRenderer>
               </p>
             </div>
-            <div className="hidden shrink-0 rounded-lg border border-s-stroke2 bg-b-surface2 px-4 py-2 text-right sm:block">
+            <div className="hidden shrink-0 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2 text-right sm:block">
               <div className="text-caption text-t-secondary">Progress</div>
               <div className="text-body-2 font-bold text-t-primary">{answered + markedCount}/{questions.length}</div>
             </div>
@@ -626,7 +618,7 @@ export default function TestPage() {
             <div className="mb-6 flex flex-wrap gap-3">
               {q.question_images.map((url, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={i} src={url} alt={`Figure ${i + 1}`} className="max-w-full rounded-lg border border-s-stroke2" referrerPolicy="no-referrer" />
+                <img key={i} src={url} alt={`Figure ${i + 1}`} className="max-w-full rounded-[10px] border border-s-stroke2" referrerPolicy="no-referrer" />
               ))}
             </div>
           )}
@@ -634,7 +626,7 @@ export default function TestPage() {
           {/* Options or Text Input */}
           <div className="relative z-10 space-y-3">
             {isSectionBLimitReached(q) && (
-              <div className="rounded-lg border border-amber-200/50 bg-amber-50/50 p-4 text-amber-950">
+              <div className="rounded-[10px] border border-amber-200/50 bg-amber-50/50 p-4 text-amber-950">
                 <p className="text-caption font-bold uppercase tracking-wider text-amber-800">⚠️ Section B limit reached</p>
                 <p className="mt-1 text-caption font-semibold">
                   You have already answered 5 numerical questions in {q.subject}. To attempt this question, please clear your answer on another numerical question in this subject first.
@@ -649,7 +641,7 @@ export default function TestPage() {
                 </label>
                 <input
                   type="text"
-                  className="input h-12 rounded-lg px-4 text-body-1 font-semibold disabled:bg-b-surface2 disabled:cursor-not-allowed disabled:text-t-tertiary"
+                  className="input h-12 rounded-[10px] px-4 text-body-1 font-semibold disabled:bg-b-surface2 disabled:cursor-not-allowed disabled:text-t-tertiary"
                   placeholder={isSectionBLimitReached(q) ? "Section B limit of 5 reached" : "Type your answer..."}
                   disabled={isSectionBLimitReached(q)}
                   value={answers[q.id] || ""}
@@ -670,7 +662,7 @@ export default function TestPage() {
                       key={opt.id}
                       id={`option-${opt.id}`}
                       disabled={disabled}
-                      className={`group/opt flex items-center gap-4 rounded-lg border p-4 text-left transition-all relative overflow-hidden ${selected
+                      className={`group/opt flex items-center gap-4 rounded-[10px] border p-4 text-left transition-all relative overflow-hidden ${selected
                           ? "border-primary-01 bg-primary-01/5 shadow-widget"
                           : disabled
                             ? "border-s-stroke2 bg-b-surface2/50 cursor-not-allowed opacity-50"
@@ -685,7 +677,7 @@ export default function TestPage() {
                         {opt.text && <MarkdownRenderer>{opt.text}</MarkdownRenderer>}
                         {opt.image_url && (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 size-36 object-contain rounded-lg bg-white p-2 border border-s-stroke2/50 shadow-sm" referrerPolicy="no-referrer" />
+                          <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 size-36 object-contain rounded-[10px] bg-white p-2 border border-s-stroke2/50 shadow-sm" referrerPolicy="no-referrer" />
                         )}
                       </div>
                     </button>
@@ -698,7 +690,7 @@ export default function TestPage() {
           {/* Nav buttons */}
           <div className="relative z-10 mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 border-t border-s-stroke2 pt-6">
             <button
-              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#00A656] to-[#008A47] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-[10px] text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#00A656] to-[#008A47] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
               onClick={() => {
                 if (answers[q.id]) setStatus((s) => ({ ...s, [q.id]: "answered" }));
                 else setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
@@ -710,7 +702,7 @@ export default function TestPage() {
             </button>
 
             <button
-              className="flex flex-row justify-center items-center py-3 px-3 h-12 border border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] transition-all active:scale-98 uppercase w-full"
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 border border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary rounded-[10px] text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] transition-all active:scale-98 uppercase w-full"
               onClick={() => {
                 setAnswers((a) => {
                   const newA = { ...a };
@@ -724,7 +716,7 @@ export default function TestPage() {
             </button>
 
             <button
-              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#EF9D0E] to-[#D98500] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-[10px] text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#EF9D0E] to-[#D98500] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
               onClick={() => {
                 setStatus((s) => ({ ...s, [q.id]: "review" }));
                 if (current < questions.length - 1) navigateTo(current + 1);
@@ -735,7 +727,7 @@ export default function TestPage() {
             </button>
 
             <button
-              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-lg text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2563EB] to-[#1D4ED8] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+              className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-[10px] text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2563EB] to-[#1D4ED8] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
               onClick={() => {
                 setStatus((s) => ({ ...s, [q.id]: "review" }));
                 if (current < questions.length - 1) navigateTo(current + 1);
@@ -748,8 +740,7 @@ export default function TestPage() {
         </section>
 
         {/* ── Right Panel: Question Navigator ── */}
-        <aside className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
-          <div className="box-hover" />
+        <aside className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 card select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
 
           <div className="relative z-10 mb-6 grid grid-cols-2 gap-y-3 gap-x-2 text-[13px] font-sans text-t-primary font-medium">
             {/* 1. Not Visited */}
@@ -775,14 +766,14 @@ export default function TestPage() {
             </div>
             {/* 4. Marked for Review */}
             <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
-              <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] shrink-0">
+              <div className="w-8 h-8 flex items-center justify-center rounded-[10px] bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] shrink-0">
                 {markedCount}
               </div>
               <span className="leading-tight">Marked for Review</span>
             </div>
             {/* 5. Answered & Marked */}
             <div className="flex items-center gap-2 col-span-2">
-              <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] relative shrink-0">
+              <div className="w-8 h-8 flex items-center justify-center rounded-[10px] bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white font-semibold text-xs shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] relative shrink-0">
                 {answeredMarkedCount}
                 <div className="absolute -bottom-0.5 -right-0.5 size-[12px] bg-[#4CAF50] rounded-full border border-white flex items-center justify-center">
                   <svg viewBox="0 0 10 10" className="w-2 h-2 text-white" fill="none">
@@ -864,7 +855,7 @@ export default function TestPage() {
       {/* ── Submit Modal ── */}
       {showSubmitModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-4 py-6 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="card w-full max-w-lg p-6 text-center md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05),0_0_0_1.5px_rgba(229,229,229,0.04)_inset] border border-s-stroke2/40 animate-in zoom-in-95 duration-200">
+          <div className="card w-full max-w-lg p-6 text-center md:p-8 animate-in zoom-in-95 duration-200">
             <div className="mb-5 flex justify-center text-t-primary">
               <div className="flex size-20 items-center justify-center rounded-full bg-gradient-to-b from-s-stroke2 to-[#C2C2C2] dark:from-[#3A3A3A] dark:to-[#222]">
                 <RiFlag2Fill size={40} className="text-t-primary dark:text-white" />
@@ -878,14 +869,14 @@ export default function TestPage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <button
-                className="flex flex-row justify-center items-center py-3 px-7 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 flex-1 h-12"
+                className="flex flex-row justify-center items-center py-3 px-7 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans font-semibold transition-all hover:border-t-secondary active:scale-98 flex-1 h-12"
                 onClick={() => setShowSubmitModal(false)}
               >
                 Keep Working
               </button>
               <button
                 id="confirm-submit-btn"
-                className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-lg text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-lg after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] flex-1"
+                className="flex flex-row justify-center items-center py-3 px-7 h-12 rounded-[10px] text-sm font-sans font-semibold tracking-[0.0125em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2C2C2C] to-[#282828] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] flex-1"
                 onClick={handleSubmit}
               >
                 <span className="relative z-10">Submit Test</span>
