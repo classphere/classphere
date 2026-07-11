@@ -6,7 +6,7 @@ export function AboutSection() {
       <div className="mx-auto max-w-[1080px]">
         <Eyebrow>Explore CLASSPHERE</Eyebrow>
         <p className="mt-10 text-3xl font-medium leading-tight tracking-[-.04em] text-[#727272] sm:text-5xl">
-          At CLASSPHERE, we empower institutes with advanced analytics and an AI-driven learning management system to elevate student performance.
+          Classphere bridges the gap between traditional teaching and data-driven learning. We equip educational institutes with the technology to automate test evaluation, identify student weaknesses, and scale operations effortlessly.
         </p>
       </div>
     </section>

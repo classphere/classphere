@@ -38,7 +38,7 @@ export function PricingSection() {
       <div className="mx-auto max-w-[1280px]">
         <SectionHeader 
           eyebrow="Pricing Plans"
-          title="Professional Editing. Simple Pricing."
+          title="Powerful Tech. Simple Pricing."
           className="pb-14"
         />
         
@@ -54,7 +54,7 @@ export function PricingSection() {
             <p className="mt-[18px] max-w-[410px] text-[20px] font-medium leading-[24px] text-[#838383]">
               Perfect for growing institutes starting their digital journey.
             </p>
-            <Button href="#contact" variant="primary" className="mt-[42px] h-[60px] w-full text-[20px] font-[550]">
+            <Button href="#contact" variant="dark" className="mt-[42px] h-[60px] w-full text-[20px] font-[550]">
               Get Started
             </Button>
             
@@ -85,7 +85,7 @@ export function PricingSection() {
             <p className="mt-[18px] max-w-[410px] text-[20px] font-medium leading-[24px] text-[#838383]">
               Ideal for established coaching centers scaling their operations.
             </p>
-            <Button href="#contact" variant="primary" className="mt-[42px] h-[60px] w-full text-[20px] font-[550]">
+            <Button href="#contact" variant="dark" className="mt-[42px] h-[60px] w-full text-[20px] font-[550]">
               Get Started
             </Button>
             

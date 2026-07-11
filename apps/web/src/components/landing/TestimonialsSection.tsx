@@ -24,12 +24,12 @@ export function TestimonialsSection() {
             <div className="flex flex-col gap-[24px]">
               <StarRating rating={5} />
               <p className="text-[24px] font-medium leading-[32px] text-[#B3B3B3]">
-                "Our batch accuracy improved noticeably after using their AI insights. Fast automated evaluation and incredible analytics."
+                "Our batch accuracy improved noticeably after using their AI insights. Fast automated evaluation and incredible analytics. It completely transformed how we prepare students for JEE and NEET."
               </p>
             </div>
 
             <div className="flex flex-col gap-[24px]">
-              <AvatarBlock name="Sarah Jenkins" role="Institute Director" dark={true} />
+              <AvatarBlock name="Rajesh Sharma" role="Director of Academics" dark={true} />
               <div className="h-[1px] w-full bg-[#888888] opacity-30"></div>
               
               {/* Nav Arrows */}

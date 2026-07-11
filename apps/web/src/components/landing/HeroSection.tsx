@@ -1,4 +1,5 @@
 import { logoAsset, projects } from "./data";
+import { Button } from "@/components/landing/ui/Button";
 import { Arrow } from "./ui/Arrow";
 import { GalleryCard } from "./ui/GalleryCard";
 
@@ -9,17 +10,24 @@ export function HeroSection() {
         CLASSPHERE
       </span>
       <nav className="mx-auto flex max-w-[1280px] items-center justify-between gap-5">
-        <a href="#top" className="block h-12 w-[186px]"><img src={logoAsset} alt="CLASSPHERE" className="h-full w-full object-contain object-left" /></a>
-        <div className="hidden items-center gap-10 text-base font-medium text-[#515151] md:flex"><a href="#about">About Us</a><a href="#work">Works</a><a href="#services">Services</a><a href="#pricing">Pricing</a></div>
-        <a href="#contact" className="relative flex items-center justify-center overflow-hidden rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] px-6 py-3 text-[16px] font-medium leading-[24px] text-white shadow-velora-dark">
-          <i className="absolute -right-3 top-0 z-0 h-3 w-28 rotate-[125deg] rounded-full bg-white/10 blur-[3px]" />
-          <span className="relative z-10">Contact us</span>
-        </a>
+        <a href="#top" className="block text-2xl font-extrabold tracking-tight text-[#3a3a3a] flex items-center h-12">CLASSPHERE</a>
+        <div className="hidden items-center gap-10 text-base font-medium text-[#515151] md:flex"><a href="#about">About Us</a><a href="#work">Modules</a><a href="#services">Services</a><a href="#pricing">Pricing</a></div>
+        <Button href="#contact" variant="primary">
+          Contact us
+        </Button>
       </nav>
       <div id="top" className="mx-auto flex max-w-[1032px] flex-col items-center pt-24 text-center sm:pt-36">
-        <h1 className="max-w-5xl text-5xl font-semibold leading-[.98] tracking-[-.06em] text-[#3a3a3a] sm:text-7xl lg:text-[84px]">Advanced B2B Exam Preparation Platform</h1>
-        <p className="mt-7 max-w-2xl text-lg leading-relaxed tracking-tight text-[#5c5c5c] sm:text-xl">Classphere is an AI-powered LMS delivering impactful analytics, automated DPPs, and comprehensive test engines for institutes.</p>
-        <div className="mt-12 flex flex-wrap justify-center gap-6"><a href="#contact" className="relative flex items-center gap-3 overflow-hidden rounded-[10px] bg-[#272727] py-1.5 pl-1.5 pr-6 font-medium text-white shadow-[0_2px_2px_rgba(0,0,0,.1),0_3px_3px_rgba(0,0,0,.12),0_22px_16px_rgba(0,0,0,.14),inset_0_1px_rgba(255,255,255,.18),inset_0_-2px_#191919]"><i className="absolute -right-3 top-0 h-3 w-28 rotate-[125deg] rounded-full bg-white/10 blur-[3px]" /><Arrow /> <span className="relative z-10">Book a Meeting</span></a><a href="#pricing" className="relative overflow-hidden rounded-[10px] bg-[#f9f9f9] px-6 py-3 font-medium text-[#525252] shadow-[0_4px_10px_rgba(0,0,0,.06),inset_0_1px_rgba(255,255,255,.48),inset_0_-2px_#edecec]"><i className="absolute left-6 top-0 h-3 w-28 -rotate-[125deg] rounded-full bg-[#eaeaea]/60 blur-[3px]" /><span className="relative">View Pricing</span></a></div>
+        <div className="mb-6 rounded-full border border-black/10 px-4 py-1.5 text-sm font-medium text-[#5c5c5c] shadow-sm">
+          Introducing the ultimate EdTech OS for Institutes
+        </div>
+        <h1 className="max-w-5xl text-5xl font-bold leading-[1.05] tracking-[-.05em] text-[#1a1a1a] sm:text-7xl lg:text-[80px]">
+          Scale your institute with <br />
+          <span className="bg-gradient-to-r from-[#FF5936] to-[#ff8c73] bg-clip-text text-transparent">AI-powered</span> learning.
+        </h1>
+        <p className="mt-8 max-w-2xl text-lg leading-relaxed tracking-tight text-[#5c5c5c] sm:text-xl">
+          Launch your own white-labeled app. Automate mock tests, deliver personalized Daily Practice Problems, and track student performance with deep analytics.
+        </p>
+        <div className="mt-12 flex flex-wrap justify-center gap-6"><Button href="#contact" variant="dark" className="!py-[6px] !pl-[6px] !pr-[24px]"><div className="flex h-[36px] w-[36px] items-center justify-center rounded-[8px] bg-[#FF5936] shadow-[0px_1px_6px_rgba(0,0,0,0.25)]"><Arrow /></div><span>Book a Demo</span></Button><Button href="#pricing" variant="secondary">View Pricing</Button></div>
       </div>
       <div className="relative left-1/2 mt-24 flex w-[max-content] -translate-x-1/2 gap-6 lg:mt-32">
         {projects.map((src, index) => <GalleryCard key={src} src={src} index={index} />)}

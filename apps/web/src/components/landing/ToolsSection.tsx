@@ -8,12 +8,12 @@ export function ToolsSection() {
       <div className="mx-auto grid max-w-[1280px] items-center gap-12 lg:grid-cols-2">
         <div className="flex flex-col items-start text-left">
           <SectionHeader 
-            eyebrow="Tools"
-            title="We integrate with the best in EdTech"
-            description="Classphere combines advanced AI with a robust cloud infrastructure to deliver seamless, high-performing LMS solutions for institutes and educators."
+            eyebrow="Reliability & Scale"
+            title="Built for High-Performance"
+            description="Classphere combines cutting-edge AI for question generation with a robust, cloud-native infrastructure to deliver a seamless learning experience for thousands of concurrent students."
             align="left"
           />
-          <Button href="#contact" variant="primary" className="mt-8 h-[52px] w-[200px]">
+          <Button href="#contact" variant="dark" className="mt-8 h-[52px] w-[200px]">
             Get Started
           </Button>
         </div>

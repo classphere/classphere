@@ -3,9 +3,9 @@ import { Card } from "./ui/Card";
 
 export function HowItWorksSection() {
   const steps = [
-    ["Onboard Institute", "Register your institute, invite faculty, and structure your academic batches easily."],
-    ["Conduct & Analyze", "Schedule tests, automatically grade submissions, and view detailed AI performance insights."],
-    ["Improve with DPPs", "Assign targeted practice sets to bridge knowledge gaps and elevate scores."]
+    ["1. Onboard Institute", "Register your institute, customize your domain, and bulk-invite teachers and students with a single click."],
+    ["2. Conduct & Analyze", "Schedule secure online tests, auto-evaluate submissions, and get AI-powered insights on student weaknesses."],
+    ["3. Improve with DPPs", "Generate targeted Daily Practice Problems to bridge knowledge gaps and elevate batch performance."]
   ];
 
   return (

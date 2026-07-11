@@ -74,7 +74,7 @@ export function ContactSection() {
                 About your project
                 <textarea className="h-[120px] w-full resize-none rounded-[12px] bg-[#EDECEC] p-4 text-[14px] font-medium text-[#272727] outline-none" />
               </label>
-              <Button variant="primary" className="mt-2 h-[56px] w-full text-[18px]">
+              <Button variant="dark" className="mt-2 h-[56px] w-full text-[18px]">
                 Submit
               </Button>
             </form>
