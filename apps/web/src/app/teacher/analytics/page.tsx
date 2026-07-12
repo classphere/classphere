@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Link from "next/link";
+import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import {
   RiBarChartBoxLine,
   RiCheckDoubleLine,
@@ -76,7 +77,7 @@ export default function TeacherAnalyticsPage() {
               <button
                 key={b.batchName}
                 onClick={() => setSelectedBatch(i)}
-                className={`px-4 py-1.5 rounded-lg text-caption font-bold border transition-all cursor-pointer ${
+                className={`px-4 py-1.5 rounded-[10px] text-caption font-bold border transition-all cursor-pointer ${
                   selectedBatch === i
                     ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-black border-transparent"
                     : "bg-b-surface2 dark:bg-b-surface2 border-s-stroke2 text-t-secondary hover:text-t-primary"
@@ -88,50 +89,41 @@ export default function TeacherAnalyticsPage() {
           </div>
         </div>
 
-        {/* KPI Row (p-2 grey nested background container) */}
-        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg mb-8">
+        {/* KPI Row */}
+        <MetricGrid cols={4}>
           {[
             { label: "Batch Average",    value: `${stat.avg}%`,      icon: <RiBarChartBoxLine size={20} />, trend: stat.trend,    trendLabel: "vs last test",      bgClass: "bg-primary-01/10 border border-primary-01/20 text-primary-01", valColor: "text-primary-01" },
             { label: "Top Score",        value: `${stat.top}%`,       icon: <RiCheckDoubleLine size={20} />, trend: null,           trendLabel: "highest in batch",  bgClass: "bg-primary-02/10 border border-primary-02/20 text-primary-02", valColor: "text-primary-02" },
             { label: "Lowest Score",     value: `${stat.bottom}%`,    icon: <RiAlertLine size={20} />,       trend: null,           trendLabel: "needs intervention", bgClass: "bg-primary-03/10 border border-primary-03/20 text-primary-03", valColor: "text-primary-03" },
             { label: "Total Students",   value: stat.students,        icon: <RiTeamLine size={20} />,        trend: null,           trendLabel: stat.exam,            bgClass: "bg-primary-05/10 border border-primary-05/20 text-primary-05", valColor: "text-primary-05" },
-          ].map(k => (
-            <div key={k.label} className="group relative flex flex-col p-5 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all overflow-hidden w-full min-h-[140px] justify-between">
-              <div className="box-hover" />
-              <div className="relative z-10 flex justify-between items-start w-full">
-                <div className={`p-2.5 rounded-lg flex items-center justify-center shrink-0 ${k.bgClass}`}>{k.icon}</div>
-                {k.trend != null && (
-                  <span className={`text-caption font-bold flex items-center gap-0.5 px-2 py-0.5 rounded-lg ${k.trend > 0 ? "bg-primary-02/10 text-primary-02" : "bg-primary-03/10 text-primary-03"}`}>
-                    {k.trend > 0 ? <RiArrowRightUpLine size={14} /> : <RiArrowRightDownLine size={14} />}
-                    {k.trend > 0 ? "+" : ""}{k.trend}%
-                  </span>
-                )}
-              </div>
-              <div className="relative z-10 mt-3">
-                <div className={`text-h4 font-bold mb-0.5 tracking-tight ${k.valColor}`}>{k.value}</div>
-                <div className="text-caption text-t-secondary">{k.label} · {k.trendLabel}</div>
-              </div>
-            </div>
+          ].map((k, idx) => (
+            <MetricCard
+              key={idx}
+              icon={k.icon}
+              label={k.label}
+              value={<span className={k.valColor}>{k.value}</span>}
+              badge={k.trend != null ? `${k.trend > 0 ? "+" : ""}${k.trend}%` : undefined}
+              badgeLabel={k.trendLabel}
+            />
           ))}
-        </div>
+        </MetricGrid>
 
         {/* Subject Breakdown */}
-        <div className="group relative flex flex-col overflow-hidden rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none mb-8">
-          <div className="flex items-center gap-3.5 mb-6 z-10">
-            <div className="flex items-center justify-center size-10 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/30 text-t-secondary dark:text-t-secondary shadow-xs">
+        <SectionCard
+          title="Subject-wise Performance"
+          subtitle="Average accuracy and error distribution across subjects"
+          className="mb-8"
+          headerRight={
+            <div className="flex items-center justify-center size-10 rounded-[10px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/30 text-t-secondary dark:text-t-secondary shadow-xs">
               <RiBarChartBoxLine size={20} />
             </div>
-            <div>
-              <h2 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary">Subject-wise Performance</h2>
-              <p className="font-sans text-[12px] font-medium text-t-secondary tracking-[0.004em] mt-0.5">Average accuracy and error distribution across subjects</p>
-            </div>
-          </div>
-
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg">
+          }
+        >
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             {subjectBreakdown.map(s => (
               <div 
                 key={s.subject} 
-                className="flex flex-col p-5 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
+                className="flex flex-col p-[22px] bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] overflow-hidden transition-all hover:scale-[1.005]"
               >
                 <div className="flex justify-between items-center mb-3">
                   <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">{s.subject}</span>
@@ -160,37 +152,34 @@ export default function TeacherAnalyticsPage() {
               </div>
             ))}
           </div>
-        </div>
+        </SectionCard>
 
         {/* Weak Topics + Trap Questions */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
 
           {/* Weak Topics */}
-          <div className="group relative flex flex-col overflow-hidden rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
-            <div className="box-hover" />
-            <div className="relative z-10 flex flex-col sm:flex-row justify-between sm:items-center gap-3 px-3 pt-3">
-              <div>
-                <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-t-primary dark:text-t-primary">Critical Weaknesses</h2>
-                <p className="font-sans text-[12px] font-medium text-t-secondary tracking-[0.004em] mt-0.5">Topics where the majority of your batch failed.</p>
-              </div>
+          <SectionCard
+            title="Critical Weaknesses"
+            subtitle="Topics where the majority of your batch failed."
+            headerRight={
               <Link 
                 href="/teacher/dpps" 
-                className="h-9 px-4 rounded-lg text-xs font-semibold bg-shade-02 dark:bg-t-primary text-t-light dark:text-black hover:bg-shade-04 dark:hover:bg-t-secondary transition-all active:scale-95 shadow-xs shrink-0 flex items-center gap-1.5 cursor-pointer w-fit"
+                className="h-9 px-4 rounded-[10px] text-xs font-semibold bg-shade-02 dark:bg-t-primary text-t-light dark:text-black hover:bg-shade-04 dark:hover:bg-t-secondary transition-all active:scale-95 shadow-xs shrink-0 flex items-center gap-1.5 cursor-pointer w-fit"
               >
                 <RiAddLine size={16} /> Assign Booster DPP
               </Link>
-            </div>
-            
-            <div className="relative z-10 flex flex-col gap-1 w-full px-3">
+            }
+          >
+            <div className="relative z-10 flex flex-col gap-1 w-full mt-2">
               {weakTopics.map((t, i) => {
                 const badgeClass = priorityColor[t.priority];
                 return (
                   <div 
                     key={i} 
-                    className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-lg transition-all h-[88px]"
+                    className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[88px]"
                   >
                     <div className="flex flex-row items-center gap-5 flex-1 min-w-0">
-                      <div className="size-16 rounded-lg flex items-center justify-center bg-primary-03/10 border border-primary-03/20 text-primary-03 shrink-0">
+                      <div className="size-16 rounded-[10px] flex items-center justify-center bg-primary-03/10 border border-primary-03/20 text-primary-03 shrink-0">
                         <RiAlertLine size={24} />
                       </div>
                       <div className="flex flex-col justify-center min-w-0 flex-1">
@@ -207,7 +196,7 @@ export default function TeacherAnalyticsPage() {
                         <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary">
                           {t.failRate}%
                         </span>
-                        <span className={`px-2 py-[2px] border-[1.5px] rounded-lg text-[12px] font-normal tracking-[0.004em] leading-[160%] ${
+                        <span className={`px-2 py-[2px] border-[1.5px] rounded-[10px] text-[12px] font-normal tracking-[0.004em] leading-[160%] ${
                           t.priority === "Critical"
                             ? "bg-[rgba(255,106,85,0.05)] border-s-stroke2/40 text-primary-03"
                             : t.priority === "High"
@@ -226,29 +215,26 @@ export default function TeacherAnalyticsPage() {
             <div className="relative z-10 flex flex-col items-start px-3 w-full">
               <Link 
                 href="/teacher/analytics" 
-                className="w-full h-12 flex items-center justify-center border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 rounded-lg text-[14px] font-semibold text-t-secondary dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
+                className="w-full h-12 flex items-center justify-center border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 rounded-[10px] text-[14px] font-semibold text-t-secondary dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
               >
                 View Topic Performance Report
               </Link>
             </div>
-          </div>
+          </SectionCard>
 
           {/* Trap Questions */}
-          <div className="group relative flex flex-col overflow-hidden rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
-            <div className="box-hover" />
-            <div className="px-3 pt-3">
-              <h2 className="relative z-10 font-sans font-semibold text-[20px] leading-[145%] text-t-primary dark:text-t-primary">Common Traps</h2>
-              <p className="relative z-10 text-[12px] text-t-secondary mt-0.5">Questions where students select the same wrong answer.</p>
-            </div>
-            
-            <div className="relative z-10 flex flex-col gap-1 w-full px-3">
+          <SectionCard
+            title="Common Traps"
+            subtitle="Questions where students select the same wrong answer."
+          >
+            <div className="relative z-10 flex flex-col gap-1 w-full mt-2">
               {trapQuestions.map((t, i) => (
                 <div 
                   key={i} 
-                  className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-lg transition-all h-[88px]"
+                  className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[88px]"
                 >
                   <div className="flex flex-row items-center gap-5 flex-1 min-w-0">
-                    <div className="size-16 rounded-lg flex items-center justify-center bg-primary-03/10 border border-primary-03/20 text-primary-03 shrink-0">
+                    <div className="size-16 rounded-[10px] flex items-center justify-center bg-primary-03/10 border border-primary-03/20 text-primary-03 shrink-0">
                       <RiCloseCircleFill size={24} />
                     </div>
                     <div className="flex flex-col justify-center min-w-0 flex-1">
@@ -265,7 +251,7 @@ export default function TeacherAnalyticsPage() {
                       <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary">
                         {t.pct}%
                       </span>
-                      <span className="px-2 py-[2px] bg-[rgba(255,106,85,0.05)] border-[1.5px] border-s-stroke2/40 text-primary-03 rounded-lg text-[12px] font-normal tracking-[0.004em] leading-[160%] capitalize">
+                      <span className="px-2 py-[2px] bg-[rgba(255,106,85,0.05)] border-[1.5px] border-s-stroke2/40 text-primary-03 rounded-[10px] text-[12px] font-normal tracking-[0.004em] leading-[160%] capitalize">
                         {t.trap.replace(/_/g, " ")}
                       </span>
                     </div>
@@ -277,31 +263,29 @@ export default function TeacherAnalyticsPage() {
             <div className="relative z-10 flex flex-col items-start px-3 w-full">
               <Link 
                 href="/teacher/analytics" 
-                className="w-full h-12 flex items-center justify-center border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 rounded-lg text-[14px] font-semibold text-t-secondary dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
+                className="w-full h-12 flex items-center justify-center border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 rounded-[10px] text-[14px] font-semibold text-t-secondary dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
               >
                 View Detailed Trap Report
               </Link>
             </div>
-          </div>
+          </SectionCard>
         </div>
 
         {/* All Batches Summary */}
-        <div className="group relative flex flex-col overflow-hidden rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-3 pb-6 select-none gap-6">
-          <div className="box-hover" />
-          <div className="relative z-10 px-3 pt-3">
-            <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-t-primary dark:text-t-primary">All Batches — Quick Comparison</h2>
-            <p className="font-sans text-[12px] font-medium text-t-secondary tracking-[0.004em] mt-0.5">Average score, top performer, and trend across every batch.</p>
-          </div>
-
-          <div className="relative z-10 flex flex-col gap-1 w-full px-3">
+        <SectionCard
+          title="All Batches — Quick Comparison"
+          subtitle="Average score, top performer, and trend across every batch."
+          className="mb-8"
+        >
+          <div className="relative z-10 flex flex-col gap-1 w-full mt-2">
             {batchStats.map((b, i) => (
               <div
                 key={i}
-                className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-lg transition-all h-[88px]"
+                className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[88px]"
               >
                 {/* Left — icon + batch name + exam */}
                 <div className="flex flex-row items-center gap-5 flex-1 min-w-0">
-                  <div className="size-16 rounded-lg flex items-center justify-center bg-primary-01/10 border border-primary-01/20 text-primary-01 shrink-0">
+                  <div className="size-16 rounded-[10px] flex items-center justify-center bg-primary-01/10 border border-primary-01/20 text-primary-01 shrink-0">
                     <RiGroupLine size={24} />
                   </div>
                   <div className="flex flex-col justify-center min-w-0 flex-1">
@@ -336,7 +320,7 @@ export default function TeacherAnalyticsPage() {
                     <span className="font-sans text-[12px] text-t-secondary">top score</span>
                   </div>
                   {/* Trend badge */}
-                  <span className={`px-2 py-[2px] border-[1.5px] rounded-lg text-[12px] font-normal tracking-[0.004em] leading-[160%] ${
+                  <span className={`px-2 py-[2px] border-[1.5px] rounded-[10px] text-[12px] font-normal tracking-[0.004em] leading-[160%] ${
                     b.trend > 0
                       ? "bg-[rgba(0,166,86,0.05)] border-s-stroke2/40 text-primary-02"
                       : "bg-[rgba(255,106,85,0.05)] border-s-stroke2/40 text-primary-03"
@@ -346,7 +330,7 @@ export default function TeacherAnalyticsPage() {
                   {/* View Batch button */}
                   <Link
                     href={`/teacher/batch/${mockBatches[i]?.id || "batch-001"}`}
-                    className="h-9 px-4 rounded-lg text-xs font-semibold border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 text-t-secondary dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer w-fit shrink-0"
+                    className="h-9 px-4 rounded-[10px] text-xs font-semibold border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 text-t-secondary dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer w-fit shrink-0"
                   >
                     <RiFileListLine size={15} /> View Batch
                   </Link>
@@ -358,12 +342,12 @@ export default function TeacherAnalyticsPage() {
           <div className="relative z-10 flex flex-col items-start px-3 w-full">
             <Link
               href="/teacher/analytics"
-              className="w-full h-12 flex items-center justify-center border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 rounded-lg text-[14px] font-semibold text-t-secondary dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
+              className="w-full h-12 flex items-center justify-center border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 rounded-[10px] text-[14px] font-semibold text-t-secondary dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
             >
               View All Batch Reports
             </Link>
           </div>
-        </div>
+        </SectionCard>
 
       </main>
     </>

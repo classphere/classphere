@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
-import { StatCard, StatCardGrid } from "@/components/shared/StatCard";
+import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import {
   RiTeamLine,
   RiFileChartLine,
@@ -50,53 +50,51 @@ export default function TeacherDashboardPage() {
         breadcrumbs="Dashboard" 
       />
       
-      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
+      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8 overflow-x-hidden">
         
-        {/* Stats Section Wrapper (Row of 3 active highlighted boxes) */}
-        <StatCardGrid cols={3} className="relative z-10 mb-6">
-          <StatCard
+        {/* Stats Section Wrapper */}
+        <MetricGrid cols={3}>
+          <MetricCard
             icon={<RiTeamLine size={20} />}
-            title="Total Students"
-            value={0}
-            subtext="across 0 batches"
+            label="Total Students"
+            value="0"
+            badgeLabel="across 0 batches"
           />
-          <StatCard
+          <MetricCard
             icon={<RiFileChartLine size={20} />}
-            title="Avg Batch Score"
+            label="Avg Batch Score"
             value="0%"
             badge="0%"
-            subtext="vs last week"
+            badgeLabel="vs last week"
           />
-          <StatCard
+          <MetricCard
             icon={<RiCalendarEventLine size={20} />}
-            title="Upcoming Tests"
-            value={0}
-            subtext="this week"
+            label="Upcoming Tests"
+            value="0"
+            badgeLabel="this week"
           />
-        </StatCardGrid>
+        </MetricGrid>
 
         {/* Main Content Grid — Batches (left) + AI Flags (right) */}
         <div className="mb-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px]">
 
           {/* Batches Card */}
-          <div className="group relative flex min-w-0 flex-col overflow-hidden rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none h-full">
-            <div className="box-hover" />
-
-            {/* Header */}
-            <div className="relative z-10 flex justify-between items-center mb-6">
-              <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-t-primary dark:text-t-primary">Your Active Batches</h2>
+          <SectionCard
+            title="Your Active Batches"
+            className="h-full"
+            headerRight={
               <Link
                 href="/teacher/analytics"
-                className="h-9 px-4 rounded-lg text-xs font-semibold border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
+                className="flex items-center justify-center h-9 px-4 rounded-[10px] text-xs font-semibold border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
               >
                 View All
               </Link>
-            </div>
+            }
+          >
 
-            {/* Nested grey DPP-style grid of cards */}
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 p-2 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6 flex-1 w-full">
               {mockBatches.length === 0 ? (
-                <div className="flex flex-col items-center justify-center p-8 w-full text-center">
+                <div className="col-span-1 sm:col-span-2 flex flex-col items-center justify-center p-8 w-full text-center">
                   <p className="text-[14px] font-sans text-t-secondary">No batches assigned yet.</p>
                 </div>
               ) : (
@@ -110,15 +108,16 @@ export default function TeacherDashboardPage() {
                   return (
                     <div
                       key={batch.id}
-                      className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
+                      className="group/card relative flex min-h-[10.5rem] flex-col justify-between p-[22px] bg-white dark:bg-white/[0.02] rounded-[24px] overflow-hidden transition-all hover:scale-[1.005]"
                     >
-                      <div className="min-w-0 flex-1">
+                      
+                      <div className="min-w-0 flex-1 relative z-10">
                         {/* Header Status Badge Row */}
                         <div className="flex justify-between items-center mb-3">
                           <span className="text-[12px] font-sans font-semibold text-t-secondary uppercase tracking-wider">
                             {batch.exam}
                           </span>
-                          <div className={`size-8 rounded-lg flex items-center justify-center shrink-0 ${iconMeta.iconContainerClass}`}>
+                          <div className={`size-8 rounded-[10px] flex items-center justify-center shrink-0 ${iconMeta.iconContainerClass}`}>
                             <RiTeamLine size={16} />
                           </div>
                         </div>
@@ -139,13 +138,13 @@ export default function TeacherDashboardPage() {
                         </div>
                       </div>
   
-                      <div className="flex justify-between items-center mt-4 pt-3 border-t border-s-stroke2/30">
+                      <div className="flex justify-between items-center mt-4 pt-3 border-t border-s-stroke2/30 relative z-10">
                         <span className="text-[12px] font-sans font-semibold text-t-secondary">
                           Avg: {batch.avgScore}%
                         </span>
                         <Link
                           href={`/teacher/batch/${batch.id}`}
-                          className="flex flex-row justify-center items-center h-8 px-4 bg-shade-02 hover:bg-shade-04 text-t-light dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget cursor-pointer"
+                          className="btn btn-sm btn-dark w-fit"
                         >
                           Analysis
                         </Link>
@@ -155,23 +154,21 @@ export default function TeacherDashboardPage() {
                 })
               )}
             </div>
-          </div>
+          </SectionCard>
 
           {/* AI Attention Flags Card */}
-          <div className="flex w-full xl:w-[368px] xl:h-[624px] shrink-0 flex-col justify-between overflow-hidden rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8, 8, 8, 0.05)] border border-s-stroke2/40 p-3 pb-6 select-none box-sizing:border-box">
+          <SectionCard
+            title="AI Attention Flags"
+            className="w-full xl:w-[368px] xl:h-[624px] shrink-0 box-sizing:border-box"
+            headerRight={
+              <button className="flex items-center justify-center size-8 rounded-full text-t-secondary hover:text-t-primary dark:hover:text-t-primary hover:bg-b-surface1 dark:hover:bg-b-surface3 border border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 transition-all active:scale-95 shadow-xs cursor-pointer shrink-0">
+                <RiSettings4Line size={18} />
+              </button>
+            }
+          >
             
-            {/* Container (Header + Product List) */}
+            {/* Container (Product List) */}
             <div className="flex flex-col items-start p-0 gap-3 w-full">
-              
-              {/* Header */}
-              <div className="flex flex-row items-center justify-between p-2.5 px-3 gap-2 w-full h-12">
-                <h3 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
-                  AI Attention Flags
-                </h3>
-                <button className="flex items-center justify-center size-8 rounded-full text-t-secondary hover:text-t-primary dark:hover:text-t-primary hover:bg-b-surface1 dark:hover:bg-b-surface3 border border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 transition-all active:scale-95 shadow-xs cursor-pointer shrink-0">
-                  <RiSettings4Line size={18} />
-                </button>
-              </div>
 
               {/* Product List */}
               <div className="flex flex-col items-start p-0 gap-1 w-full">
@@ -183,7 +180,7 @@ export default function TeacherDashboardPage() {
                   flags.map((flag, idx) => (
                     <div 
                       key={idx} 
-                      className={`flex flex-row items-center p-3 gap-8 w-full h-[88px] rounded-lg transition-all ${
+                      className={`flex flex-row items-center p-3 gap-8 w-full h-[88px] rounded-[10px] transition-all ${
                         flag.highlighted 
                           ? "bg-b-surface1 dark:bg-b-surface1 shadow-[inset_0_0_0_3px_#FFFFFF] dark:shadow-[inset_0_0_0_3px_rgba(255,255,255,0.05)] border border-s-stroke2/20" 
                           : "bg-transparent border border-transparent"
@@ -195,7 +192,7 @@ export default function TeacherDashboardPage() {
                         <img 
                           src={flag.avatar} 
                           alt={flag.name}
-                          className="w-16 h-16 rounded-lg shrink-0 object-cover border border-s-stroke2/20"
+                          className="w-16 h-16 rounded-[10px] shrink-0 object-cover border border-s-stroke2/20"
                         />
   
                         {/* Title & Batch */}
@@ -239,39 +236,33 @@ export default function TeacherDashboardPage() {
 
             {/* Footer / All Products Button */}
             <div className="flex flex-col items-start p-0 px-3 gap-2 w-full mt-6">
-              <button className="flex flex-row justify-center items-center p-3.5 px-7 gap-2 w-full h-12 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary font-sans font-semibold text-[14px] leading-none tracking-[0.0125em] transition-all hover:border-t-secondary hover:text-t-primary dark:hover:text-t-primary active:scale-98 cursor-pointer">
+              <button className="flex flex-row justify-center items-center p-3.5 px-7 gap-2 w-full h-12 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary font-sans font-semibold text-[14px] leading-none tracking-[0.0125em] transition-all hover:border-t-secondary hover:text-t-primary dark:hover:text-t-primary active:scale-98 cursor-pointer">
                 View All Flags
               </button>
             </div>
 
-          </div>
+          </SectionCard>
 
         </div>
 
         {/* DPP Activity — full width row below the main grid */}
-        <div className="group relative card flex flex-col overflow-hidden rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 p-6 md:p-8 select-none">
-          <div className="flex justify-between items-center mb-6 z-10">
-            <div className="flex items-center gap-3.5">
-              <div className="flex items-center justify-center size-10 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/30 text-t-secondary dark:text-t-secondary shadow-xs">
-                <RiFileListLine size={20} />
-              </div>
-              <div>
-                <h2 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary">DPP Activity</h2>
-                <p className="font-sans text-[12px] font-medium text-t-secondary tracking-[0.004em] mt-0.5">{pendingDPPs.length} active · {completedDPPs.length} completed across all batches</p>
-              </div>
-            </div>
+        <SectionCard
+          title="DPP Activity"
+          subtitle={`${pendingDPPs.length} active · ${completedDPPs.length} completed across all batches`}
+          headerRight={
             <Link 
               href="/teacher/dpps" 
-              className="h-9 px-4 rounded-lg text-xs font-semibold bg-shade-02 dark:bg-t-primary text-t-light dark:text-black hover:bg-shade-04 dark:hover:bg-t-secondary transition-all active:scale-95 shadow-xs shrink-0 flex items-center gap-1.5 cursor-pointer"
+              className="h-9 px-4 rounded-[10px] text-xs font-semibold relative overflow-hidden border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white hover:scale-[1.02] shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919] transition-transform active:scale-[0.98] shrink-0 flex items-center gap-1.5 cursor-pointer"
             >
               <RiFileListLine size={16} /> Manage DPPs
             </Link>
-          </div>
+          }
+        >
 
-          {/* DPPs Grid Wrapper (p-2 grey nested background container, matching top cards) */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg">
+          {/* DPPs Grid Wrapper */}
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             {mockDPPs.length === 0 ? (
-              <div className="flex flex-col items-center justify-center p-8 w-full text-center md:col-span-3">
+              <div className="col-span-1 md:col-span-3 flex flex-col items-center justify-center p-8 w-full text-center">
                 <p className="text-[14px] font-sans text-t-secondary">No DPP activity yet.</p>
               </div>
             ) : (
@@ -283,9 +274,10 @@ export default function TeacherDashboardPage() {
                 return (
                   <div
                     key={dpp.id}
-                    className="flex min-h-[10.5rem] flex-col justify-between p-5 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] transition-all hover:scale-[1.01]"
+                    className="group/card relative flex min-h-[10.5rem] flex-col justify-between p-[22px] bg-white dark:bg-white/[0.02] rounded-[24px] overflow-hidden transition-all hover:scale-[1.005]"
                   >
-                    <div className="min-w-0 flex-1">
+                    
+                    <div className="min-w-0 flex-1 relative z-10">
                       {/* Header Status Badge Row */}
                       <div className="flex justify-between items-center mb-3">
                         <span className="text-[12px] font-sans font-semibold text-t-secondary uppercase tracking-wider">
@@ -318,11 +310,11 @@ export default function TeacherDashboardPage() {
                       </div>
                     </div>
   
-                    <div className="flex justify-between items-center mt-4 pt-3 border-t border-s-stroke2/30">
+                    <div className="flex justify-between items-center mt-4 pt-3 border-t border-s-stroke2/30 relative z-10">
                       <span className="text-[12px] font-sans font-semibold text-t-secondary">
                         Due: {dpp.dueDate}
                       </span>
-                      <button className="flex flex-row justify-center items-center h-8 px-5 bg-shade-02 hover:bg-shade-04 text-t-light dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 shadow-widget">
+                      <button className="btn btn-sm btn-dark w-fit">
                         {isComplete ? "Reports" : isUpcoming ? "Edit" : "Stats"}
                       </button>
                     </div>
@@ -331,7 +323,7 @@ export default function TeacherDashboardPage() {
               })
             )}
           </div>
-        </div>
+        </SectionCard>
 
       </main>
     </>
