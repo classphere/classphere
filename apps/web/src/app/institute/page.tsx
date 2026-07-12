@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
-import { StatCard, StatCardGrid } from "@/components/shared/StatCard";
+import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { Modal } from "@/components/shared/Modal";
 import {
   RiTeamLine,
@@ -116,14 +116,14 @@ export default function InstituteDashboardPage() {
         breadcrumbs="Dashboard"
       >
         {/* Create New Batch */}
-        <button onClick={handleOpenBatchModal} className="flex flex-row justify-center items-center px-6 h-12 border border-s-stroke2 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 text-t-secondary dark:text-t-secondary hover:text-t-primary dark:hover:text-t-primary text-sm font-sans font-semibold rounded-lg shadow-xs active:scale-95 transition-all cursor-pointer">
+        <button onClick={handleOpenBatchModal} className="flex flex-row justify-center items-center px-6 h-12 border border-s-stroke2 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 text-t-secondary dark:text-t-secondary hover:text-t-primary dark:hover:text-t-primary text-sm font-sans font-semibold rounded-[10px] shadow-xs active:scale-95 transition-all cursor-pointer">
           <RiAddLine size={18} className="mr-1.5" /> Create New Batch
         </button>
 
         {/* Schedule Batch Test (Gradient) */}
         <Link
           href="/institute/tests/create"
-          className="flex flex-row justify-center items-center px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-t-light dark:text-b-surface1 text-sm font-sans font-semibold rounded-lg shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer no-underline"
+          className="flex flex-row justify-center items-center px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-t-light dark:text-b-surface1 text-sm font-sans font-semibold rounded-[10px] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer no-underline"
         >
           <RiAddLine size={18} className="mr-1.5" /> Schedule Batch Test
         </Link>
@@ -132,20 +132,13 @@ export default function InstituteDashboardPage() {
       <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
 
         {/* ── Figma-Inspired Dashboard Overview Wrapper ── */}
-        <div className="group relative flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none">
-          <div className="box-hover" />
-          
-          {/* Header Row */}
-          <div className="relative z-10 flex flex-row justify-between items-center w-full mb-6">
-            <h3 className="font-sans text-[20px] font-semibold tracking-[0.0015em] leading-[145%] text-t-primary dark:text-t-primary">
-              Overview
-            </h3>
-            
-            {/* Custom Filter */}
+        <SectionCard
+          title="Overview"
+          headerRight={
             <div className="relative">
               <button 
                 onClick={() => setIsOverviewDropdownOpen(!isOverviewDropdownOpen)}
-                className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98"
+                className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98"
               >
                 <span>This Week</span>
                 <RiArrowDownSLine size={20} className="text-t-secondary dark:text-t-secondary" />
@@ -154,11 +147,11 @@ export default function InstituteDashboardPage() {
               {isOverviewDropdownOpen && (
                 <>
                   <div className="fixed inset-0 z-40" onClick={() => setIsOverviewDropdownOpen(false)} />
-                  <ul className="absolute right-0 top-13 z-50 w-full rounded-lg border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
+                  <ul className="absolute right-0 top-13 z-50 w-full rounded-[10px] border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
                     <li>
                       <button
                         onClick={() => setIsOverviewDropdownOpen(false)}
-                        className="w-full rounded-lg px-3.5 py-2 text-left text-sm font-semibold bg-b-surface1 text-t-primary"
+                        className="w-full rounded-[10px] px-3.5 py-2 text-left text-sm font-semibold bg-b-surface1 text-t-primary"
                       >
                         This Week
                       </button>
@@ -166,7 +159,7 @@ export default function InstituteDashboardPage() {
                     <li>
                       <button
                         onClick={() => setIsOverviewDropdownOpen(false)}
-                        className="w-full rounded-lg px-3.5 py-2 text-left text-sm font-semibold bg-transparent text-t-secondary hover:bg-b-surface3 hover:text-t-primary"
+                        className="w-full rounded-[10px] px-3.5 py-2 text-left text-sm font-semibold bg-transparent text-t-secondary hover:bg-b-surface3 hover:text-t-primary"
                       >
                         Last Week
                       </button>
@@ -175,61 +168,59 @@ export default function InstituteDashboardPage() {
                 </>
               )}
             </div>
-          </div>
-
+          }
+        >
           {/* Stats Section Wrapper (Row of 3 active highlighted boxes) */}
-          <StatCardGrid cols={3} className="relative z-10">
-            <StatCard
+          <MetricGrid cols={3} className="relative z-10">
+            <MetricCard
               icon={<RiGroupLine size={20} />}
-              title="Total Students"
+              label="Total Students"
               value={mockInstituteAdmin.studentsCount}
               badge="+12"
-              subtext="this month"
+              badgeLabel="this month"
             />
-            <StatCard
+            <MetricCard
               icon={<RiTeamLine size={20} />}
-              title="Active Batches"
+              label="Active Batches"
               value={mockInstituteAdmin.batchesCount}
               badge="+2"
-              subtext="completing soon"
+              badgeLabel="completing soon"
             />
-            <StatCard
+            <MetricCard
               icon={<RiBankCardLine size={20} />}
-              title="Subscription"
+              label="Subscription"
               value={mockInstituteAdmin.plan}
               badge="Active"
-              subtext="Renews Aug 15"
+              badgeLabel="Renews Aug 15"
             />
-          </StatCardGrid>
+          </MetricGrid>
 
-        </div>
+        </SectionCard>
 
         {/* ── Main Content Grid (Recent Batches + Top Students) ── */}
         <div className="grid gap-6 lg:grid-cols-2 items-start w-full">
 
           {/* Recent Batches Section */}
-          <div className="flex flex-col p-3 pb-6 gap-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-h-[580px] min-w-0 overflow-hidden select-none">
-            
-            {/* Header */}
-            <div className="flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
-              <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
-                Recent Batches
-              </h4>
+          <SectionCard
+            title="Recent Batches"
+            className="w-full min-h-[580px] min-w-0"
+            headerRight={
               <Link 
                 href="/institute/batches" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
               >
                 <span>View All</span>
                 <RiArrowRightLine size={16} />
               </Link>
-            </div>
+            }
+          >
 
             {/* List Rows */}
             <div className="flex flex-col gap-2 w-full min-w-0">
               {batchesLoading ? (
                 <div className="flex flex-col gap-2">
                   {[1, 2, 3].map((i) => (
-                    <div key={i} className="h-[88px] rounded-lg bg-b-surface1 animate-pulse" />
+                    <div key={i} className="h-[88px] rounded-[10px] bg-b-surface1 animate-pulse" />
                   ))}
                 </div>
               ) : batches.length === 0 ? (
@@ -243,15 +234,15 @@ export default function InstituteDashboardPage() {
                   return (
                     <div
                       key={batch.id}
-                      className={`flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden ${
+                      className={`group/item relative flex flex-row items-center justify-between p-3 gap-8 rounded-[16px] transition-all w-full h-[88px] min-w-0 overflow-hidden ${
                         isHoverItem
-                          ? "bg-b-surface1 dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20"
-                          : "bg-transparent hover:bg-b-surface1 dark:hover:bg-b-surface1/30"
+                          ? "bg-b-surface1 dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-[inset_0px_0px_0px_3px_rgba(255,255,255,0.05)] border border-s-stroke2/20"
+                          : "bg-transparent border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 hover:bg-b-surface1 dark:hover:bg-b-surface1/40"
                       }`}
                     >
                       {/* Left */}
                       <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                        <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
+                        <div className="flex w-16 h-16 items-center justify-center rounded-[10px] bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold">
                           <RiTeamLine size={24} className="text-t-secondary" />
                         </div>
                         <div className="min-w-0 flex-1 flex flex-col">
@@ -277,24 +268,22 @@ export default function InstituteDashboardPage() {
               )}
             </div>
 
-          </div>
+          </SectionCard>
 
           {/* Top Students Section */}
-          <div className="flex flex-col p-3 pb-6 gap-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-h-[580px] min-w-0 overflow-hidden select-none">
-            
-            {/* Header */}
-            <div className="flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
-              <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
-                Top Performing Students
-              </h4>
+          <SectionCard
+            title="Top Performing Students"
+            className="w-full min-h-[580px] min-w-0"
+            headerRight={
               <Link 
                 href="/institute/students" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
               >
                 <span>View Directory</span>
                 <RiArrowRightLine size={16} />
               </Link>
-            </div>
+            }
+          >
 
             {/* List Rows */}
             <div className="flex flex-col gap-2 w-full min-w-0">
@@ -314,15 +303,15 @@ export default function InstituteDashboardPage() {
                   return (
                     <div 
                       key={student.id}
-                      className={`flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden ${
+                      className={`group/item relative flex flex-row items-center justify-between p-3 gap-8 rounded-[16px] transition-all w-full h-[88px] min-w-0 overflow-hidden ${
                         isHoverItem 
-                          ? "bg-b-surface1 dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-none border border-s-stroke2/20" 
-                          : "bg-transparent hover:bg-b-surface1 dark:hover:bg-b-surface1/30"
+                          ? "bg-b-surface1 dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-[inset_0px_0px_0px_3px_rgba(255,255,255,0.05)] border border-s-stroke2/20" 
+                          : "bg-transparent border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 hover:bg-b-surface1 dark:hover:bg-b-surface1/40"
                       }`}
                     >
                       {/* Left: Rank box + Title */}
                       <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                        <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
+                        <div className="flex w-16 h-16 items-center justify-center rounded-[10px] bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
                           #{index + 1}
                         </div>
                         <div className="min-w-0 flex-1 flex flex-col">
@@ -351,7 +340,7 @@ export default function InstituteDashboardPage() {
               )}
             </div>
 
-          </div>
+          </SectionCard>
 
         </div>
 
@@ -426,7 +415,7 @@ export default function InstituteDashboardPage() {
 
           {/* Feedback */}
           {batchFeedback && (
-            <div className={`flex items-center gap-2 text-sm px-3 py-2 rounded-lg border ${
+            <div className={`flex items-center gap-2 text-sm px-3 py-2 rounded-[10px] border ${
               batchFeedback.ok
                 ? "bg-primary-02/5 border-primary-02/20 text-primary-02"
                 : "bg-primary-03/5 border-primary-03/20 text-primary-03"

@@ -84,7 +84,7 @@ export default function BatchesPage() {
 
         <div className="flex flex-row items-center gap-3">
           {/* Search */}
-          <div className="flex flex-row items-center bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2 dark:border-s-stroke2/40 rounded-lg px-3 py-2 w-72 h-12 gap-2 shadow-xs">
+          <div className="flex flex-row items-center bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2 dark:border-s-stroke2/40 rounded-[10px] px-3 py-2 w-72 h-12 gap-2 shadow-xs">
             <RiSearchLine size={20} className="text-t-secondary dark:text-t-tertiary" />
             <input
               type="text"
@@ -98,7 +98,7 @@ export default function BatchesPage() {
           {/* Create Button */}
           <button
             onClick={openModal}
-            className="flex flex-row justify-center items-center gap-1.5 px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-t-light dark:text-b-surface1 text-sm font-sans font-semibold rounded-lg shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer"
+            className="flex flex-row justify-center items-center gap-1.5 px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-t-light dark:text-b-surface1 text-sm font-sans font-semibold rounded-[10px] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer"
           >
             <RiAddLine size={18} />Create Batch
           </button>
@@ -124,7 +124,7 @@ export default function BatchesPage() {
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="h-[88px] rounded-lg bg-b-surface2 border border-s-stroke2/40 animate-pulse"
+                className="h-[96px] rounded-[24px] bg-white dark:bg-white/[0.02] border border-s-stroke2/40 animate-pulse"
               />
             ))}
           </div>
@@ -132,7 +132,7 @@ export default function BatchesPage() {
 
         {/* Error */}
         {!loading && error && (
-          <div className="flex items-center gap-3 px-5 py-4 rounded-lg bg-primary-03/5 border border-primary-03/20 text-primary-03 text-sm">
+          <div className="flex items-center gap-3 px-5 py-4 rounded-[10px] bg-primary-03/5 border border-primary-03/20 text-primary-03 text-sm">
             <RiAlertLine size={18} />
             <span>{error}</span>
             <button onClick={refetch} className="ml-auto underline text-xs">Retry</button>
@@ -149,7 +149,7 @@ export default function BatchesPage() {
             {!searchQuery && (
               <button
                 onClick={openModal}
-                className="mt-2 flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-b-surface2 border border-s-stroke2/50 text-sm font-semibold text-t-secondary hover:text-t-primary transition-all"
+                className="mt-2 flex items-center gap-1.5 px-5 py-2.5 rounded-[10px] bg-b-surface2 border border-s-stroke2/50 text-sm font-semibold text-t-secondary hover:text-t-primary transition-all"
               >
                 <RiAddLine size={16} /> Create Batch
               </button>
@@ -164,13 +164,12 @@ export default function BatchesPage() {
           return (
             <div
               key={batch.id}
-              className="group relative flex flex-row items-center justify-between p-3 gap-8 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-xs hover:scale-[1.005] hover:bg-b-surface1 dark:hover:bg-b-surface1/30 transition-all h-[88px] cursor-pointer"
+              className="group/item relative flex flex-row items-center justify-between p-4 gap-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all h-[96px] cursor-pointer"
             >
-              <div className="box-hover" />
 
               {/* Left */}
               <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden relative z-10">
-                <div className={`flex w-16 h-16 items-center justify-center rounded-lg border shrink-0 ${colorClass}`}>
+                <div className={`flex w-16 h-16 items-center justify-center rounded-[10px] border shrink-0 ${colorClass}`}>
                   <RiTeamLine size={24} />
                 </div>
                 <div className="min-w-0 flex-1 flex flex-col justify-center">
@@ -207,7 +206,7 @@ export default function BatchesPage() {
 
                 {/* Active badge */}
                 <div className="min-w-[100px] flex justify-end">
-                  <span className="px-3 py-1.5 border rounded-lg text-[10px] font-bold uppercase tracking-wider bg-primary-02/5 border-primary-02/15 text-primary-02">
+                  <span className="px-3 py-1.5 border rounded-[10px] text-[10px] font-bold uppercase tracking-wider bg-primary-02/5 border-primary-02/15 text-primary-02">
                     Active
                   </span>
                 </div>
@@ -288,7 +287,7 @@ export default function BatchesPage() {
 
           {/* Feedback */}
           {feedback && (
-            <div className={`flex items-center gap-2 text-sm px-3 py-2 rounded-lg border ${
+            <div className={`flex items-center gap-2 text-sm px-3 py-2 rounded-[10px] border ${
               feedback.ok
                 ? "bg-primary-02/5 border-primary-02/20 text-primary-02"
                 : "bg-primary-03/5 border-primary-03/20 text-primary-03"

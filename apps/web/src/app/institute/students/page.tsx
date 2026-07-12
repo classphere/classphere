@@ -42,7 +42,7 @@ export default function StudentsPage() {
         {/* Navigation Items (Right Side) */}
         <div className="flex flex-row items-center gap-3">
           {/* Search Box */}
-          <div className="flex flex-row items-center bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2 dark:border-s-stroke2/40 rounded-lg px-3 py-2 w-72 h-12 gap-2 shadow-xs">
+          <div className="flex flex-row items-center bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2 dark:border-s-stroke2/40 rounded-[10px] px-3 py-2 w-72 h-12 gap-2 shadow-xs">
             <RiSearchLine size={20} className="text-t-secondary dark:text-t-tertiary" />
             <input
               type="text"
@@ -54,7 +54,7 @@ export default function StudentsPage() {
           </div>
 
           {/* Add Student Button (Gradient) */}
-          <button className="flex flex-row justify-center items-center px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-t-light dark:text-b-surface1 text-sm font-sans font-semibold rounded-lg shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer">
+          <button className="flex flex-row justify-center items-center px-6 h-12 bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-t-light dark:text-b-surface1 text-sm font-sans font-semibold rounded-[10px] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer">
             + Add Student
           </button>
 
@@ -91,7 +91,7 @@ export default function StudentsPage() {
             <button
               key={status}
               onClick={() => setStatusFilter(status as any)}
-              className={`px-5 py-2.5 border rounded-lg text-xs font-semibold font-sans transition-all active:scale-95 shadow-xs cursor-pointer ${
+              className={`px-5 py-2.5 border rounded-[10px] text-xs font-semibold font-sans transition-all active:scale-95 shadow-xs cursor-pointer ${
                 statusFilter === status
                   ? "bg-shade-02 text-t-light border-t-primary dark:bg-t-primary dark:text-b-surface1 dark:border-t-primary"
                   : "border-s-stroke2 dark:border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 text-t-secondary dark:text-t-secondary hover:border-t-secondary"
@@ -136,13 +136,12 @@ export default function StudentsPage() {
           return (
             <div
               key={student.id}
-              className="group relative flex flex-row items-center justify-between p-3 gap-8 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-xs hover:scale-[1.005] hover:bg-b-surface1 dark:hover:bg-b-surface1/30 transition-all h-[88px] cursor-pointer"
+              className="group/item relative flex flex-row items-center justify-between p-4 gap-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all h-[96px] cursor-pointer"
             >
-              <div className="box-hover" />
 
               {/* Left: Avatar/Initials Box */}
               <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden relative z-10">
-                <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 border border-s-stroke2/40 shrink-0 font-sans font-bold text-lg text-t-primary dark:text-t-primary">
+                <div className="flex w-16 h-16 items-center justify-center rounded-[10px] bg-b-surface1 border border-s-stroke2/40 shrink-0 font-sans font-bold text-lg text-t-primary dark:text-t-primary">
                   {initials}
                 </div>
 
@@ -186,7 +185,7 @@ export default function StudentsPage() {
 
                 {/* Status tag */}
                 <div className="min-w-[90px] flex justify-end">
-                  <span className={`px-3 py-1.5 border rounded-lg text-[10px] font-bold uppercase tracking-wider ${statusClass}`}>
+                  <span className={`px-3 py-1.5 border rounded-[10px] text-[10px] font-bold uppercase tracking-wider ${statusClass}`}>
                     {student.status}
                   </span>
                 </div>
