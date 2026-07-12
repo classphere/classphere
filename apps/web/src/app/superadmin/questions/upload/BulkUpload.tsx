@@ -79,7 +79,7 @@ function Pill({ active, onClick, children }: { active: boolean; onClick: () => v
   return (
     <button
       onClick={onClick}
-      className={`px-5 h-10 rounded-lg border text-[13px] font-semibold transition-all cursor-pointer uppercase tracking-wider ${
+      className={`px-5 h-10 rounded-[10px] border text-[13px] font-semibold transition-all cursor-pointer uppercase tracking-wider ${
         active
           ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
           : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
@@ -229,8 +229,7 @@ export default function BulkUpload() {
     <div className="flex flex-col gap-6 w-full">
 
       {/* ── Shared Metadata ─────────────────────────────────────────────────── */}
-      <div className="group relative card flex flex-col overflow-hidden p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full">
-        <div className="box-hover" />
+      <div className="group relative flex flex-col p-6 md:p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] w-full">
 
         <p className="relative z-10 text-[13px] font-semibold uppercase tracking-[0.02em] text-t-secondary mb-6">
           Shared Metadata — applies to all files
@@ -278,12 +277,12 @@ export default function BulkUpload() {
             <div className="flex flex-col gap-2">
               <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Duration (min)</label>
               <input type="number" value={meta.duration} onChange={e => setMetaField("duration", e.target.value)}
-                className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner" />
+                className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner" />
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Marks</label>
               <input type="number" value={meta.marks} onChange={e => setMetaField("marks", e.target.value)}
-                className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner" />
+                className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner" />
             </div>
           </div>
         </div>
@@ -293,7 +292,7 @@ export default function BulkUpload() {
           <div className="relative z-10 mt-6 pt-6 border-t border-s-stroke2/30 flex flex-col gap-5">
 
             {/* Info callout */}
-            <div className="flex items-start gap-3 p-4 rounded-lg bg-[rgba(42,133,255,0.06)] border border-[rgba(42,133,255,0.2)]">
+            <div className="flex items-start gap-3 p-4 rounded-[10px] bg-[rgba(42,133,255,0.06)] border border-[rgba(42,133,255,0.2)]">
               <RiInformationLine size={18} className="text-[#2A85FF] shrink-0 mt-0.5" />
               <p className="text-[13px] font-sans font-medium text-[#2A85FF] leading-relaxed">
                 <strong>Chapter-wise batch upload:</strong> All JSON files you drop will share the same Subject and Chapter below.
@@ -333,7 +332,7 @@ export default function BulkUpload() {
                   value={meta.chapter}
                   onChange={e => setMetaField("chapter", e.target.value)}
                   placeholder="e.g., Work, Energy and Power"
-                  className="w-72 h-12 px-4 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
+                  className="w-72 h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                 />
               </div>
             </div>
@@ -346,11 +345,11 @@ export default function BulkUpload() {
         onDrop={onDrop}
         onDragOver={e => e.preventDefault()}
         onClick={() => fileInputRef.current?.click()}
-        className="flex flex-col items-center justify-center gap-3 p-12 border-2 border-dashed border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 rounded-lg cursor-pointer hover:border-t-primary dark:hover:border-s-border hover:bg-s-stroke2 dark:hover:bg-s-stroke2/20 transition-all shadow-sm"
+        className="flex flex-col items-center justify-center gap-3 p-12 border-2 border-dashed border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 rounded-[10px] cursor-pointer hover:border-t-primary dark:hover:border-s-border hover:bg-s-stroke2 dark:hover:bg-s-stroke2/20 transition-all shadow-sm"
       >
         <input ref={fileInputRef} type="file" accept=".json" multiple className="hidden"
           onChange={e => e.target.files && handleFiles(e.target.files)} />
-        <div className="w-16 h-16 rounded-lg bg-s-stroke2 dark:bg-b-surface2 border border-s-stroke2/40 flex items-center justify-center shadow-sm">
+        <div className="w-16 h-16 rounded-[10px] bg-s-stroke2 dark:bg-b-surface2 border border-s-stroke2/40 flex items-center justify-center shadow-sm">
           <RiUploadCloud2Line size={32} className="text-t-secondary" />
         </div>
         <div className="text-center">
@@ -363,8 +362,7 @@ export default function BulkUpload() {
 
       {/* ── File Queue ───────────────────────────────────────────────────────── */}
       {files.length > 0 && (
-        <div className="group relative card flex flex-col overflow-hidden p-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] w-full">
-          <div className="box-hover" />
+        <div className="group relative flex flex-col p-6 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] w-full">
 
           {/* Queue header */}
           <div className="relative z-10 flex items-center justify-between mb-4 px-2">
@@ -390,7 +388,7 @@ export default function BulkUpload() {
             {files.map(f => (
               <div
                 key={f.name}
-                className={`flex items-start gap-4 p-4 rounded-lg border transition-all shadow-sm ${
+                className={`flex items-start gap-4 p-4 rounded-[10px] border transition-all shadow-sm ${
                   f.status === "done"                      ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)]" :
                   f.status === "error" || f.parseError     ? "border-s-stroke2/40 bg-[rgba(239,68,68,0.05)]" :
                   f.status === "uploading"                 ? "border-s-stroke2/40 bg-[rgba(255,159,10,0.05)]" :
@@ -398,7 +396,7 @@ export default function BulkUpload() {
                 }`}
               >
                 {/* Status icon */}
-                <div className="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/20 mt-1">
+                <div className="shrink-0 flex items-center justify-center w-8 h-8 rounded-[10px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/20 mt-1">
                   {f.status === "done"                  && <RiCheckLine size={16} className="text-primary-02" />}
                   {(f.status === "error" || f.parseError) && <RiAlertLine size={16} className="text-primary-03" />}
                   {f.status === "uploading"              && <RiLoader4Line size={16} className="animate-spin text-[#FF9F0A]" />}
@@ -437,7 +435,7 @@ export default function BulkUpload() {
                           onChange={e => updateFile(f.name, { title: e.target.value })}
                           placeholder="Enter test name…"
                           disabled={f.status !== "pending"}
-                          className={`w-full h-10 px-3 rounded-lg border text-[14px] font-sans font-medium text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none disabled:opacity-50 transition-colors shadow-inner bg-b-surface1 dark:bg-b-surface1 ${
+                          className={`w-full h-10 px-3 rounded-[10px] border text-[14px] font-sans font-medium text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none disabled:opacity-50 transition-colors shadow-inner bg-b-surface1 dark:bg-b-surface1 ${
                             f.title.trim() === ""
                               ? "border-[rgba(255,159,10,0.6)]"
                               : "border-s-stroke2/40"
@@ -453,14 +451,14 @@ export default function BulkUpload() {
                             onChange={e => updateFile(f.name, { subject: e.target.value })}
                             placeholder="Subject"
                             disabled={f.status !== "pending"}
-                            className="w-32 h-8 px-3 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[13px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-s-border outline-none disabled:opacity-50 transition-colors"
+                            className="w-32 h-8 px-3 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[13px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-s-border outline-none disabled:opacity-50 transition-colors"
                           />
                           <input
                             value={f.chapter}
                             onChange={e => updateFile(f.name, { chapter: e.target.value })}
                             placeholder="Chapter"
                             disabled={f.status !== "pending"}
-                            className="flex-1 max-w-[200px] h-8 px-3 border border-s-stroke2/40 rounded-lg bg-b-surface1 dark:bg-b-surface1 text-[13px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-s-border outline-none disabled:opacity-50 transition-colors"
+                            className="flex-1 max-w-[200px] h-8 px-3 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[13px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-s-border outline-none disabled:opacity-50 transition-colors"
                           />
                         </div>
                       )}
@@ -472,7 +470,7 @@ export default function BulkUpload() {
                 {f.status === "pending" && (
                   <button
                     onClick={() => removeFile(f.name)}
-                    className="shrink-0 p-2 text-t-secondary hover:text-primary-03 hover:bg-[rgba(239,68,68,0.1)] rounded-lg transition-colors cursor-pointer mt-0.5"
+                    className="shrink-0 p-2 text-t-secondary hover:text-primary-03 hover:bg-[rgba(239,68,68,0.1)] rounded-[10px] transition-colors cursor-pointer mt-0.5"
                   >
                     <RiCloseLine size={18} />
                   </button>
@@ -483,7 +481,7 @@ export default function BulkUpload() {
 
           {/* Warning when not all titles are filled */}
           {pendingCount > 0 && !allTitlesFilled && (
-            <div className="relative z-10 mt-4 flex items-center gap-2 p-3 rounded-lg bg-[rgba(255,159,10,0.07)] border border-[rgba(255,159,10,0.25)]">
+            <div className="relative z-10 mt-4 flex items-center gap-2 p-3 rounded-[10px] bg-[rgba(255,159,10,0.07)] border border-[rgba(255,159,10,0.25)]">
               <RiAlertLine size={16} className="text-[#FF9F0A] shrink-0" />
               <p className="text-[13px] font-sans font-medium text-[#FF9F0A]">
                 Fill in test names for all files to enable upload —{" "}
@@ -494,7 +492,7 @@ export default function BulkUpload() {
 
           {/* Warning when chapter-wise requirements not met */}
           {isChapterWise && pendingCount > 0 && allTitlesFilled && !chapterWiseMet && (
-            <div className="relative z-10 mt-4 flex items-center gap-2 p-3 rounded-lg bg-[rgba(255,159,10,0.07)] border border-[rgba(255,159,10,0.25)]">
+            <div className="relative z-10 mt-4 flex items-center gap-2 p-3 rounded-[10px] bg-[rgba(255,159,10,0.07)] border border-[rgba(255,159,10,0.25)]">
               <RiAlertLine size={16} className="text-[#FF9F0A] shrink-0" />
               <p className="text-[13px] font-sans font-medium text-[#FF9F0A]">
                 Select a Subject and enter a Chapter name above to enable upload
@@ -531,7 +529,7 @@ export default function BulkUpload() {
           <button
             onClick={uploadAll}
             disabled={!canUpload}
-            className={`flex items-center gap-2 h-12 px-8 rounded-lg text-[14px] font-semibold transition-all shadow-sm ${
+            className={`flex items-center gap-2 h-12 px-8 rounded-[10px] text-[14px] font-semibold transition-all shadow-sm ${
               canUpload
                 ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 hover:bg-shade-04 cursor-pointer active:scale-[0.98]"
                 : "bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-t-secondary opacity-60 cursor-not-allowed"
