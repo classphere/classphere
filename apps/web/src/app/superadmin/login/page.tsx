@@ -88,7 +88,7 @@ export default function SuperAdminLoginPage() {
         {/* Header */}
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-2.5 mb-6">
-            <div className="flex size-10 items-center justify-center rounded-lg bg-b-pop text-t-light shadow-widget">
+            <div className="flex size-10 items-center justify-center rounded-[10px] bg-b-pop text-t-light shadow-widget">
               <RiFlashlightFill size={20} className="text-t-primary" />
             </div>
             <span className="t-title-page-s text-t-primary tracking-tight">
@@ -113,11 +113,10 @@ export default function SuperAdminLoginPage() {
 
         {/* Card */}
         <div className="card group relative">
-          <div className="box-hover" />
-          
+
           <div className="relative z-10">
             {error && (
-              <div className="flex items-start gap-3 mb-6 p-4 rounded-lg border border-primary-03/15 bg-primary-03/5">
+              <div className="flex items-start gap-3 mb-6 p-4 rounded-[10px] border border-primary-03/15 bg-primary-03/5">
                 <RiAlertLine size={18} className="text-primary-03 shrink-0 mt-0.5" />
                 <span className="t-body-base text-primary-03">{error}</span>
               </div>
