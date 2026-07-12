@@ -8,7 +8,7 @@ export default function GlobalError({ reset }: { reset: () => void }) {
           <p className="text-sm text-t-secondary">The application encountered a fatal error.</p>
           <button 
             onClick={reset}
-            className="px-6 py-2 bg-t-primary text-b-surface1 rounded-lg font-semibold"
+            className="px-6 py-2 bg-t-primary text-b-surface1 rounded-[10px] font-semibold"
           >
             Reload
           </button>
