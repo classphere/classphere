@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
+import { PageWrapper } from "@/components/ui";
 import { Modal } from "@/components/shared/Modal";
 import {
   RiTeamLine,
@@ -46,7 +47,6 @@ const EXAM_OPTIONS = {
 
 export default function InstituteDashboardPage() {
   const router = useRouter();
-  const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
   const [isBatchModalOpen, setIsBatchModalOpen] = useState(false);
   const [newBatchData, setNewBatchData] = useState({
     name: "",
@@ -129,73 +129,31 @@ export default function InstituteDashboardPage() {
         </Link>
       </Navbar>
       
-      <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
+      <PageWrapper>
 
-        {/* ── Figma-Inspired Dashboard Overview Wrapper ── */}
-        <SectionCard
-          title="Overview"
-          headerRight={
-            <div className="relative">
-              <button 
-                onClick={() => setIsOverviewDropdownOpen(!isOverviewDropdownOpen)}
-                className="flex flex-row justify-between items-center px-5 py-3 gap-2 w-[160px] max-w-[180px] h-12 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98"
-              >
-                <span>This Week</span>
-                <RiArrowDownSLine size={20} className="text-t-secondary dark:text-t-secondary" />
-              </button>
-              
-              {isOverviewDropdownOpen && (
-                <>
-                  <div className="fixed inset-0 z-40" onClick={() => setIsOverviewDropdownOpen(false)} />
-                  <ul className="absolute right-0 top-13 z-50 w-full rounded-[10px] border border-s-stroke2 bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
-                    <li>
-                      <button
-                        onClick={() => setIsOverviewDropdownOpen(false)}
-                        className="w-full rounded-[10px] px-3.5 py-2 text-left text-sm font-semibold bg-b-surface1 text-t-primary"
-                      >
-                        This Week
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => setIsOverviewDropdownOpen(false)}
-                        className="w-full rounded-[10px] px-3.5 py-2 text-left text-sm font-semibold bg-transparent text-t-secondary hover:bg-b-surface3 hover:text-t-primary"
-                      >
-                        Last Week
-                      </button>
-                    </li>
-                  </ul>
-                </>
-              )}
-            </div>
-          }
-        >
-          {/* Stats Section Wrapper (Row of 3 active highlighted boxes) */}
-          <MetricGrid cols={3} className="relative z-10">
-            <MetricCard
-              icon={<RiGroupLine size={20} />}
-              label="Total Students"
-              value={mockInstituteAdmin.studentsCount}
-              badge="+12"
-              badgeLabel="this month"
-            />
-            <MetricCard
-              icon={<RiTeamLine size={20} />}
-              label="Active Batches"
-              value={mockInstituteAdmin.batchesCount}
-              badge="+2"
-              badgeLabel="completing soon"
-            />
-            <MetricCard
-              icon={<RiBankCardLine size={20} />}
-              label="Subscription"
-              value={mockInstituteAdmin.plan}
-              badge="Active"
-              badgeLabel="Renews Aug 15"
-            />
-          </MetricGrid>
-
-        </SectionCard>
+        <MetricGrid cols={3}>
+          <MetricCard
+            icon={<RiGroupLine size={20} />}
+            label="Total Students"
+            value={mockInstituteAdmin.studentsCount}
+            badge="+12"
+            badgeLabel="this month"
+          />
+          <MetricCard
+            icon={<RiTeamLine size={20} />}
+            label="Active Batches"
+            value={mockInstituteAdmin.batchesCount}
+            badge="+2"
+            badgeLabel="completing soon"
+          />
+          <MetricCard
+            icon={<RiBankCardLine size={20} />}
+            label="Subscription"
+            value={mockInstituteAdmin.plan}
+            badge="Active"
+            badgeLabel="Renews Aug 15"
+          />
+        </MetricGrid>
 
         {/* ── Main Content Grid (Recent Batches + Top Students) ── */}
         <div className="grid gap-6 lg:grid-cols-2 items-start w-full">
@@ -344,7 +302,7 @@ export default function InstituteDashboardPage() {
 
         </div>
 
-      </main>
+      </PageWrapper>
 
       {/* Create Batch Modal */}
       <Modal
