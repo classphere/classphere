@@ -51,16 +51,15 @@ export default function ConfigurationPage() {
           <div className="lg:col-span-8 flex flex-col gap-8">
             
             {/* System Maintenance */}
-            <div className={`group relative card flex flex-col p-8 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border overflow-hidden transition-colors ${
+            <div className={`group relative flex flex-col p-8 rounded-[24px] border overflow-hidden transition-colors shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] ${
               maintenance 
-                ? 'bg-b-surface2 dark:bg-b-surface2 border-red-500/40' 
-                : 'bg-b-surface2 dark:bg-b-surface2 border-s-stroke2/40'
+                ? 'bg-white dark:bg-white/[0.02] border-red-500/40' 
+                : 'bg-white dark:bg-white/[0.02] border-s-stroke2/40'
             }`}>
-              <div className="box-hover" />
-              
+
               <div className="relative z-10 flex justify-between items-center w-full mb-4">
                 <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${maintenance ? 'bg-red-50 text-red-500' : 'bg-b-surface1 dark:bg-b-surface1 text-t-primary dark:text-t-primary'}`}>
+                  <div className={`w-10 h-10 rounded-[10px] flex items-center justify-center ${maintenance ? 'bg-red-50 text-red-500' : 'bg-b-surface1 dark:bg-b-surface1 text-t-primary dark:text-t-primary'}`}>
                     <RiSettings4Line size={20} />
                   </div>
                   <div>
@@ -75,7 +74,7 @@ export default function ConfigurationPage() {
               </p>
               
               {maintenance && (
-                <div className="relative z-10 ml-13 p-4 bg-[rgba(239,68,68,0.05)] border border-s-stroke2/40 rounded-lg flex items-start gap-3">
+                <div className="relative z-10 ml-13 p-4 bg-[rgba(239,68,68,0.05)] border border-s-stroke2/40 rounded-[10px] flex items-start gap-3">
                   <RiErrorWarningLine size={20} className="text-primary-03 shrink-0 mt-0.5" />
                   <span className="text-[14px] font-semibold text-primary-03">
                     The platform is currently in maintenance mode. Active scaling and background jobs are paused.
@@ -85,11 +84,10 @@ export default function ConfigurationPage() {
             </div>
 
             {/* Analysis Engine Config */}
-            <div className="group relative card flex flex-col p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden">
-              <div className="box-hover" />
-              
+            <div className="group relative flex flex-col p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden">
+
               <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
-                <div className="w-10 h-10 rounded-lg bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
+                <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
                   <RiCpuLine size={20} />
                 </div>
                 <div>
@@ -124,11 +122,10 @@ export default function ConfigurationPage() {
             </div>
 
             {/* B2B Settings */}
-            <div className="group relative card flex flex-col p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden">
-              <div className="box-hover" />
-              
+            <div className="group relative flex flex-col p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden">
+
               <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
-                <div className="w-10 h-10 rounded-lg bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
+                <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
                   <RiBuilding3Line size={20} />
                 </div>
                 <div>
@@ -169,11 +166,10 @@ export default function ConfigurationPage() {
 
           {/* Right Column: Infrastructure Limits */}
           <div className="lg:col-span-4 flex flex-col gap-6">
-            <div className="group relative card flex flex-col p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden sticky top-6">
-              <div className="box-hover" />
-              
+            <div className="group relative flex flex-col p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden sticky top-6">
+
               <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
-                <div className="w-10 h-10 rounded-lg bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
+                <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
                   <RiServerLine size={20} />
                 </div>
                 <div>
@@ -187,7 +183,7 @@ export default function ConfigurationPage() {
                   <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Max Concurrent Users</label>
                   <input 
                     type="number" 
-                    className="w-full h-11 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg text-[14px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
+                    className="w-full h-11 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[14px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
                     defaultValue={250000} 
                   />
                 </div>
@@ -196,7 +192,7 @@ export default function ConfigurationPage() {
                   <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">OMR Ingestion Rate (Req/Min)</label>
                   <input 
                     type="number" 
-                    className="w-full h-11 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg text-[14px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
+                    className="w-full h-11 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[14px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
                     defaultValue={1200} 
                   />
                 </div>
@@ -206,7 +202,7 @@ export default function ConfigurationPage() {
                   <div className="relative">
                     <input 
                       type="number" 
-                      className="w-full h-11 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg text-[14px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
+                      className="w-full h-11 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[14px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
                       defaultValue={500} 
                     />
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[13px] text-t-secondary font-medium pointer-events-none">
@@ -219,7 +215,7 @@ export default function ConfigurationPage() {
                   <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Session Timeout (Min)</label>
                   <input 
                     type="number" 
-                    className="w-full h-11 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg text-[14px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
+                    className="w-full h-11 px-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[14px] font-medium text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner" 
                     defaultValue={120} 
                   />
                 </div>
@@ -227,7 +223,7 @@ export default function ConfigurationPage() {
               
               <div className="relative z-10 w-full h-px bg-s-stroke2/30 my-6" />
               
-              <button className="relative z-10 flex items-center justify-center gap-2 w-full h-12 rounded-lg bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 text-[14px] font-bold hover:bg-shade-04 transition-all shadow-sm active:scale-[0.98] cursor-pointer">
+              <button className="relative z-10 flex items-center justify-center gap-2 w-full h-12 rounded-[10px] relative overflow-hidden border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white text-[14px] font-bold shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919] transition-transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer">
                 <RiSave3Line size={18} />
                 Save Changes
               </button>

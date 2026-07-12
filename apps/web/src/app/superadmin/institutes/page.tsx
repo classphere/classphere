@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
-import { StatCard, StatCardGrid } from "@/components/shared/StatCard";
+import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { Modal } from "@/components/shared/Modal";
 import { useInstitutes } from "@/lib/hooks/useInstitutes";
 import { useSuperadminStats } from "@/lib/hooks/useSuperadminStats";
@@ -15,6 +15,8 @@ import {
   RiCheckboxCircleLine,
   RiErrorWarningLine,
   RiLoader4Line,
+  RiMailLine,
+  RiUserStarLine
 } from "@remixicon/react";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -32,9 +34,9 @@ function formatMRR(n: number): string {
 
 function planBadgeClass(plan: string): string {
   switch (plan.toLowerCase()) {
-    case "enterprise": return "bg-[rgba(94,92,230,0.08)] text-[#5E5CE6]";
-    case "pro":        return "bg-[rgba(10,132,255,0.08)] text-[#0A84FF]";
-    default:           return "bg-b-surface1 dark:bg-b-surface1 text-t-secondary";
+    case "enterprise": return "bg-[rgba(94,92,230,0.08)] text-[#5E5CE6] border border-[#5E5CE6]/20";
+    case "pro":        return "bg-[rgba(10,132,255,0.08)] text-[#0A84FF] border border-[#0A84FF]/20";
+    default:           return "bg-b-surface1 dark:bg-b-surface1 text-t-secondary border border-s-stroke2/40";
   }
 }
 
@@ -44,7 +46,7 @@ function FeedbackBanner({ type, message }: { type: "success" | "error"; message:
   if (!message) return null;
   const isSuccess = type === "success";
   return (
-    <div className={`flex items-center gap-3 px-4 py-3 rounded-lg text-[13px] font-medium border ${
+    <div className={`flex items-center gap-3 px-4 py-3 rounded-[10px] text-[13px] font-medium border ${
       isSuccess
         ? "bg-[rgba(0,166,86,0.08)] border-[rgba(0,166,86,0.2)] text-primary-02"
         : "bg-[rgba(239,68,68,0.08)] border-[rgba(239,68,68,0.2)] text-primary-03"
@@ -168,188 +170,166 @@ export default function InstitutesPage() {
       <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6">
 
         {/* KPI Cards */}
-        <StatCardGrid cols={4} className="mb-8">
-          <StatCard
-            title="Total Institutes"
+        <MetricGrid cols={4} className="mb-8">
+          <MetricCard
+            label="Total Institutes"
             value={statsLoading ? "—" : (stats?.totalInstitutes ?? 0)}
             badge={statsLoading ? "" : `+${stats?.newInstitutesThisWeek ?? 0}`}
-            subtext="this week"
+            badgeLabel="this week"
           />
-          <StatCard
-            title="Active Students"
+          <MetricCard
+            label="Active Students"
             value={statsLoading ? "—" : formatStudentCount(stats?.totalStudents ?? 0)}
             badge={statsLoading ? "" : `+${stats?.newStudentsThisWeek ?? 0}`}
-            subtext="this week"
+            badgeLabel="this week"
           />
-          <StatCard
-            title="Enterprise Plans"
+          <MetricCard
+            label="Enterprise Plans"
             value={statsLoading ? "—" : (stats?.enterprisePlans ?? 0)}
             badge=""
-            subtext="active clients"
+            badgeLabel="active clients"
           />
-          <StatCard
-            title="Est. MRR"
+          <MetricCard
+            label="Est. MRR"
             value={statsLoading ? "—" : formatMRR(stats?.estimatedMRR ?? 0)}
             badge=""
-            subtext="price × institutes"
+            badgeLabel="price × institutes"
           />
-        </StatCardGrid>
+        </MetricGrid>
 
-        {/* Data Table */}
-        <div className="group relative card flex flex-col rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 overflow-hidden">
-          <div className="box-hover" />
-
-          {/* Table Header Controls */}
-          <div className="relative z-10 flex flex-col gap-4 p-6 md:flex-row md:items-center md:justify-between border-b border-s-stroke2/30">
-            <div className="relative w-full max-w-md flex items-center">
-              <RiSearchLine size={18} className="absolute left-4 text-t-secondary" />
-              <input
-                type="text"
-                placeholder="Search institutes..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full h-11 pl-11 pr-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-lg text-[14px] text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none transition-colors shadow-inner"
-              />
-            </div>
-
+        {/* Data List container */}
+        <SectionCard
+          title="Institute Partners"
+          headerRight={
             <div className="flex flex-wrap items-center gap-3">
-              <button className="flex items-center gap-2 h-11 px-5 rounded-lg bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-[14px] font-semibold text-t-primary dark:text-t-primary hover:bg-s-stroke2 dark:hover:bg-s-stroke2/30 transition-colors shadow-sm">
+              <div className="relative w-[300px]">
+                <RiSearchLine size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary" />
+                <input
+                  type="text"
+                  placeholder="Search institutes..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="w-full h-11 pl-11 pr-4 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-sm font-sans text-t-primary placeholder:text-t-secondary focus:border-t-primary outline-none transition-colors"
+                />
+              </div>
+
+              <button className="flex items-center gap-2 h-11 px-5 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-[14px] font-semibold text-t-primary dark:text-t-primary hover:bg-s-stroke2 dark:hover:bg-s-stroke2/30 transition-colors shadow-sm">
                 Filter by <RiFilter3Line size={16} className="text-t-secondary" />
-              </button>
-              <button className="flex items-center gap-2 h-11 px-5 rounded-lg bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 text-[14px] font-semibold text-t-primary dark:text-t-primary hover:bg-s-stroke2 dark:hover:bg-s-stroke2/30 transition-colors shadow-sm">
-                Sort by <RiArrowDownSLine size={16} className="text-t-secondary" />
               </button>
               <button
                 onClick={openModal}
-                className="flex items-center gap-2 h-11 px-6 rounded-lg bg-shade-02 dark:bg-t-primary text-t-light dark:text-b-surface1 text-[14px] font-semibold hover:bg-shade-04 transition-colors shadow-sm active:scale-[0.98]"
+                className="btn btn-primary h-11 px-6 rounded-[10px]"
               >
-                <RiBuilding4Line size={16} /> New
+                <RiBuilding4Line size={16} className="mr-1" /> New Institute
               </button>
             </div>
+          }
+        >
+          <div className="relative z-10 flex flex-col gap-3 mt-4">
+            
+            {/* Header row (hidden on mobile, visible md+) */}
+            <div className="hidden md:flex flex-row items-center justify-between px-6 py-2 text-xs font-semibold uppercase tracking-wider text-t-secondary">
+              <div className="w-[300px]">Institute</div>
+              <div className="w-[200px]">Admin Email</div>
+              <div className="w-[120px]">Students</div>
+              <div className="w-[120px]">Plan</div>
+              <div className="w-[100px] text-right">Status</div>
+              <div className="w-[60px] text-right">Actions</div>
+            </div>
+
+            {/* Loading state */}
+            {listLoading && (
+              <div className="flex flex-col items-center justify-center py-16 text-t-secondary gap-3">
+                <RiLoader4Line size={24} className="animate-spin text-t-secondary" />
+                <span className="text-sm">Loading institutes...</span>
+              </div>
+            )}
+
+            {/* Error state */}
+            {!listLoading && listError && (
+              <div className="flex flex-col items-center justify-center py-16 text-t-secondary gap-3">
+                <RiErrorWarningLine size={24} className="text-primary-03" />
+                <span className="text-sm">Failed to load institutes: {listError}</span>
+                <button onClick={refetch} className="text-sm font-semibold text-t-primary underline">Try again</button>
+              </div>
+            )}
+
+            {/* Empty state */}
+            {!listLoading && !listError && filteredInstitutes.length === 0 && (
+              <div className="flex flex-col items-center justify-center py-16 text-t-secondary gap-3">
+                <RiBuilding4Line size={28} className="text-t-secondary opacity-40" />
+                <p className="text-sm font-semibold text-t-primary">
+                  {search ? "No institutes match your search" : "No institutes yet"}
+                </p>
+                <p className="text-sm">
+                  {search ? "Try a different search term" : 'Click "New" to onboard your first institute partner'}
+                </p>
+              </div>
+            )}
+
+            {/* Data rows */}
+            {!listLoading && !listError && filteredInstitutes.map((institute) => (
+              <div
+                key={institute.id}
+                className="group/item relative flex flex-col md:flex-row md:items-center justify-between p-4 md:px-6 gap-4 md:gap-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer"
+              >
+                {/* Institute Name */}
+                <div className="w-full md:w-[300px] flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-[12px] bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center font-bold text-lg text-t-primary shadow-sm shrink-0">
+                    {institute.name.charAt(0).toUpperCase()}
+                  </div>
+                  <div className="min-w-0 flex flex-col">
+                    <span className="font-sans font-semibold text-base text-t-primary truncate">{institute.name}</span>
+                    <span className="text-xs text-t-secondary font-medium uppercase mt-0.5">{institute.plan}</span>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="w-full md:w-[200px] flex items-center gap-2 text-t-secondary">
+                  <RiMailLine size={16} className="text-t-tertiary hidden md:block" />
+                  <span className="text-sm truncate">{institute.owner_email ?? "—"}</span>
+                </div>
+
+                {/* Students */}
+                <div className="w-full md:w-[120px] flex items-center gap-2">
+                  <RiUserStarLine size={16} className="text-t-tertiary hidden md:block" />
+                  <span className="font-sans font-bold text-t-primary text-base">{institute.student_count.toLocaleString()}</span>
+                </div>
+
+                {/* Plan Badge */}
+                <div className="w-full md:w-[120px] flex items-center">
+                  <span className={`inline-flex items-center px-3 py-1 rounded-[10px] text-[11px] font-bold uppercase tracking-wider ${planBadgeClass(institute.plan)}`}>
+                    {institute.plan}
+                  </span>
+                </div>
+
+                {/* Status */}
+                <div className="w-full md:w-[100px] flex items-center md:justify-end">
+                  <span className={`inline-flex items-center px-3 py-1 rounded-[10px] text-[11px] font-bold uppercase tracking-wider border ${
+                    institute.is_active
+                      ? "bg-[rgba(0,166,86,0.08)] border-[rgba(0,166,86,0.2)] text-primary-02"
+                      : "bg-[rgba(239,68,68,0.08)] border-[rgba(239,68,68,0.2)] text-primary-03"
+                  }`}>
+                    {institute.is_active ? "Active" : "Inactive"}
+                  </span>
+                </div>
+
+                {/* Actions */}
+                <div className="w-full md:w-[60px] flex items-center md:justify-end shrink-0">
+                  <button className="p-2 rounded-[10px] text-t-secondary hover:bg-s-stroke2 hover:text-t-primary transition-colors opacity-100 md:opacity-0 md:group-hover/item:opacity-100 active:scale-95">
+                    <RiMore2Fill size={20} />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-
-          {/* Table */}
-          <div className="relative z-10 overflow-x-auto">
-            <table className="w-full text-left text-[14px] whitespace-nowrap">
-              <thead>
-                <tr className="border-b border-s-stroke2/30 text-t-secondary text-[12px] uppercase tracking-[0.05em]">
-                  <th className="px-6 py-4 font-semibold">Institute</th>
-                  <th className="px-6 py-4 font-semibold">Admin Email</th>
-                  <th className="px-6 py-4 font-semibold">Students</th>
-                  <th className="px-6 py-4 font-semibold">Plan</th>
-                  <th className="px-6 py-4 font-semibold">Status</th>
-                  <th className="px-6 py-4 font-semibold text-right">Actions</th>
-                </tr>
-              </thead>
-              <tbody className="text-t-primary dark:text-t-primary font-medium">
-                {/* Loading state */}
-                {listLoading && (
-                  <tr>
-                    <td colSpan={6} className="px-6 py-16 text-center text-t-secondary">
-                      <div className="flex flex-col items-center gap-3">
-                        <RiLoader4Line size={24} className="animate-spin text-t-secondary" />
-                        <span className="text-[13px]">Loading institutes...</span>
-                      </div>
-                    </td>
-                  </tr>
-                )}
-
-                {/* Error state */}
-                {!listLoading && listError && (
-                  <tr>
-                    <td colSpan={6} className="px-6 py-16 text-center">
-                      <div className="flex flex-col items-center gap-3">
-                        <RiErrorWarningLine size={24} className="text-primary-03" />
-                        <span className="text-[13px] text-t-secondary">
-                          Failed to load institutes: {listError}
-                        </span>
-                        <button
-                          onClick={refetch}
-                          className="text-[13px] font-semibold text-t-primary underline underline-offset-2"
-                        >
-                          Try again
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                )}
-
-                {/* Empty state */}
-                {!listLoading && !listError && filteredInstitutes.length === 0 && (
-                  <tr>
-                    <td colSpan={6} className="px-6 py-16 text-center">
-                      <div className="flex flex-col items-center gap-3">
-                        <RiBuilding4Line size={28} className="text-t-secondary opacity-40" />
-                        <p className="text-[14px] font-semibold text-t-primary">
-                          {search ? "No institutes match your search" : "No institutes yet"}
-                        </p>
-                        <p className="text-[13px] text-t-secondary">
-                          {search ? "Try a different search term" : 'Click "New" to onboard your first institute partner'}
-                        </p>
-                      </div>
-                    </td>
-                  </tr>
-                )}
-
-                {/* Data rows */}
-                {!listLoading && !listError && filteredInstitutes.map((institute) => (
-                  <tr
-                    key={institute.id}
-                    className="border-b border-s-stroke2/20 hover:bg-b-surface1 dark:hover:bg-b-surface1/60 transition-colors group/row"
-                  >
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/20 flex items-center justify-center font-bold text-[14px]">
-                          {institute.name.charAt(0).toUpperCase()}
-                        </div>
-                        <div className="min-w-0">
-                          <div className="font-bold text-[14px] truncate">{institute.name}</div>
-                          <div className="text-[12px] text-t-secondary font-medium uppercase">{institute.plan}</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-t-secondary text-[13px]">
-                      {institute.owner_email ?? "—"}
-                    </td>
-                    <td className="px-6 py-4 font-bold">
-                      {institute.student_count.toLocaleString()}
-                    </td>
-                    <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded-lg text-[12px] font-bold uppercase tracking-wider ${planBadgeClass(institute.plan)}`}>
-                        {institute.plan}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded-lg text-[12px] font-bold uppercase tracking-wider ${
-                        institute.is_active
-                          ? "bg-[rgba(0,166,86,0.08)] text-primary-02"
-                          : "bg-[rgba(239,68,68,0.08)] text-primary-03"
-                      }`}>
-                        {institute.is_active ? "Active" : "Inactive"}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                      <button className="p-2 rounded-lg text-t-secondary hover:bg-s-stroke2 dark:hover:bg-s-stroke2/40 hover:text-t-primary dark:hover:text-t-primary transition-colors cursor-pointer opacity-0 group-hover/row:opacity-100">
-                        <RiMore2Fill size={20} />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Table Footer */}
-          <div className="relative z-10 flex flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:justify-between bg-b-surface2 dark:bg-b-surface2 rounded-b-[32px]">
-            <div className="text-[13px] text-t-secondary font-medium">
-              <span className="font-bold text-t-primary dark:text-t-primary">
-                {filteredInstitutes.length}
-              </span>{" "}
-              {filteredInstitutes.length === 1 ? "institute" : "institutes"}
-              {search ? " found" : " total"}
+          
+          <div className="mt-4 pt-4 border-t border-s-stroke2/30 flex justify-between items-center text-sm font-medium text-t-secondary px-2">
+            <div>
+              <span className="font-bold text-t-primary">{filteredInstitutes.length}</span> {filteredInstitutes.length === 1 ? "institute" : "institutes"}{search ? " found" : " total"}
             </div>
           </div>
-        </div>
+        </SectionCard>
       </main>
 
       {/* New Institute Modal */}
@@ -475,7 +455,7 @@ export default function InstitutesPage() {
           <div className="flex flex-col gap-5">
 
             {/* Success header */}
-            <div className="flex items-start gap-3 px-4 py-3 rounded-lg bg-[rgba(0,166,86,0.07)] border border-[rgba(0,166,86,0.18)]">
+            <div className="flex items-start gap-3 px-4 py-3 rounded-[10px] bg-[rgba(0,166,86,0.07)] border border-[rgba(0,166,86,0.18)]">
               <div className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-primary-02 flex items-center justify-center">
                 <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </div>
@@ -496,7 +476,7 @@ export default function InstitutesPage() {
                 <label className="text-[11px] font-bold uppercase tracking-wider text-t-secondary">
                   Login Email
                 </label>
-                <div className="flex items-center gap-2 px-4 py-3 rounded-lg bg-b-surface1 border border-s-stroke2/40 font-mono text-[13px] text-t-primary select-all">
+                <div className="flex items-center gap-2 px-4 py-3 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 font-mono text-[13px] text-t-primary select-all">
                   {credentials.email}
                 </div>
               </div>
@@ -510,12 +490,12 @@ export default function InstitutesPage() {
                   </span>
                 </label>
                 <div className="flex items-center gap-2">
-                  <div className="flex-1 flex items-center px-4 py-3 rounded-lg bg-b-surface1 border border-s-stroke2/40 font-mono text-[14px] font-bold text-t-primary select-all tracking-widest">
+                  <div className="flex-1 flex items-center px-4 py-3 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 font-mono text-[14px] font-bold text-t-primary select-all tracking-widest">
                     {credentials.password}
                   </div>
                   <button
                     onClick={() => handleCopy(credentials.password)}
-                    className={`shrink-0 h-[46px] px-4 rounded-lg border transition-all text-[12px] font-semibold active:scale-95 ${
+                    className={`shrink-0 h-[46px] px-4 rounded-[10px] border transition-all text-[12px] font-semibold active:scale-95 ${
                       copied
                         ? "bg-[rgba(0,166,86,0.08)] border-[rgba(0,166,86,0.2)] text-primary-02"
                         : "bg-b-surface2 border-s-stroke2/40 text-t-secondary hover:text-t-primary hover:border-s-highlight"

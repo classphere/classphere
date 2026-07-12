@@ -3,7 +3,14 @@
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { 
-  RiBookmarkFill, 
+  PageWrapper, 
+  SectionCard, 
+  EmptyState, 
+  TabBar,
+  SecondaryButton 
+} from "@/components/ui";
+
+import { 
   RiCheckLine, 
   RiAlertFill, 
   RiLightbulbFlashLine, 
@@ -57,8 +64,10 @@ const MOCK_MISTAKES = [
 
 const SUBJECT_OPTIONS = ["All", "Physics", "Chemistry", "Mathematics"];
 
+type TabID = "unresolved" | "resolved";
+
 export default function MistakeDiary() {
-  const [activeTab, setActiveTab] = useState<"unresolved" | "resolved">("unresolved");
+  const [activeTab, setActiveTab] = useState<TabID>("unresolved");
   const [filterSubject, setFilterSubject] = useState<string>("All");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mistakes, setMistakes] = useState(MOCK_MISTAKES);
@@ -74,52 +83,33 @@ export default function MistakeDiary() {
     return true;
   });
 
+  const tabs = [
+    { id: "unresolved" as const, label: `Needs Review (${mistakes.filter(m => !m.resolved).length})` },
+    { id: "resolved" as const, label: `Resolved (${mistakes.filter(m => m.resolved).length})` }
+  ];
+
   return (
     <>
       <Navbar title="Mistake Diary" subtitle="Review your past errors so you never make them again." breadcrumbs="Dashboard > Mistake Diary" />
       
-      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
-        
+      <PageWrapper>
         {/* Filters/Tabs Row */}
-        <div className="flex flex-col md:flex-row flex-wrap items-stretch md:items-center justify-between gap-6 p-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
-          
-          {/* Custom Tab Segment Controller */}
-          <div className="flex gap-1 rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 p-1 select-none">
-            <button 
-              onClick={() => setActiveTab("unresolved")}
-              className={`px-6 py-2.5 text-xs font-sans font-semibold rounded-lg transition-all cursor-pointer ${
-                activeTab === "unresolved"
-                  ? "bg-b-surface2 dark:bg-b-surface2 text-t-primary dark:text-t-primary shadow-widget"
-                  : "bg-transparent text-t-secondary hover:text-t-primary"
-              }`}
-            >
-              Needs Review ({mistakes.filter(m => !m.resolved).length})
-            </button>
-            <button 
-              onClick={() => setActiveTab("resolved")}
-              className={`px-6 py-2.5 text-xs font-sans font-semibold rounded-lg transition-all cursor-pointer ${
-                activeTab === "resolved"
-                  ? "bg-b-surface2 dark:bg-b-surface2 text-t-primary dark:text-t-primary shadow-widget"
-                  : "bg-transparent text-t-secondary hover:text-t-primary"
-              }`}
-            >
-              Resolved ({mistakes.filter(m => m.resolved).length})
-            </button>
-          </div>
+        <div className="flex flex-col md:flex-row flex-wrap items-stretch md:items-center justify-between gap-6 mb-8 select-none">
+          <TabBar tabs={tabs} active={activeTab} onChange={setActiveTab} />
           
           {/* Custom Select Dropdown */}
-          <div className="relative min-w-[200px]">
+          <div className="relative min-w-[200px] z-20">
             <button 
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex h-11 w-full items-center justify-between rounded-lg border border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 px-5 text-sm font-sans font-semibold text-t-primary dark:text-t-primary shadow-widget cursor-pointer active:scale-98 transition-all"
+              className="flex h-[42px] w-full items-center justify-between rounded-[12px] border border-black/5 dark:border-white/5 bg-b-surface2 dark:bg-[#161616] px-5 text-[13px] font-sans font-semibold text-t-primary shadow-[0_2px_4px_rgba(0,0,0,0.02)] cursor-pointer hover:bg-b-surface1 dark:hover:bg-[#1C1C1C] transition-colors"
             >
               <span>{filterSubject === "All" ? "All Subjects" : filterSubject}</span>
-              <RiArrowDownSLine size={16} className={`text-t-secondary transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} />
+              <RiArrowDownSLine size={16} className={`text-t-secondary transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} />
             </button>
             {isDropdownOpen && (
               <>
                 <div className="fixed inset-0 z-40" onClick={() => setIsDropdownOpen(false)} />
-                <ul className="absolute right-0 top-13 z-50 rounded-lg border border-s-stroke2/40 bg-b-surface2 dark:bg-b-surface2 p-1.5 shadow-dropdown animate-in fade-in slide-in-from-top-1 duration-150">
+                <ul className="absolute right-0 top-12 z-50 w-full rounded-[12px] border border-black/5 dark:border-white/5 bg-b-surface2 dark:bg-[#161616] p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.12)] animate-in fade-in slide-in-from-top-1 duration-150">
                   {SUBJECT_OPTIONS.map((sub) => (
                     <li key={sub}>
                       <button
@@ -127,10 +117,10 @@ export default function MistakeDiary() {
                           setFilterSubject(sub);
                           setIsDropdownOpen(false);
                         }}
-                        className={`w-full rounded-lg px-4 py-2.5 text-left text-sm font-sans font-semibold transition-colors cursor-pointer ${
+                        className={`w-full rounded-[8px] px-4 py-2 text-left text-[13px] font-sans font-medium transition-colors cursor-pointer ${
                           filterSubject === sub
-                            ? "bg-b-surface1 dark:bg-b-surface1 text-t-primary dark:text-t-primary"
-                            : "bg-transparent text-t-secondary hover:bg-b-surface1 hover:text-t-primary dark:hover:bg-b-surface3"
+                            ? "bg-[#f5f5f5] dark:bg-[#222] text-t-primary font-semibold"
+                            : "bg-transparent text-t-secondary hover:bg-[#fafafa] dark:hover:bg-[#1C1C1C] hover:text-t-primary"
                         }`}
                       >
                         {sub === "All" ? "All Subjects" : sub}
@@ -145,88 +135,90 @@ export default function MistakeDiary() {
 
         {/* List of Mistakes */}
         {filteredMistakes.length === 0 ? (
-          <div className="group relative card text-center py-20 text-t-secondary rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40">
-            <div className="box-hover" />
-            <RiCheckLine size={48} className="mx-auto mb-4 text-t-secondary relative z-10" />
-            <h3 className="font-semibold text-body-2 text-t-primary mb-1 relative z-10">No mistakes found here!</h3>
-            <p className="text-caption text-t-secondary relative z-10">You have reviewed all your errors.</p>
-          </div>
+          <SectionCard padding="none">
+            <EmptyState
+              icon={<RiCheckLine size={48} />}
+              title={activeTab === "unresolved" ? "You're all caught up!" : "No resolved mistakes found"}
+              description={activeTab === "unresolved" ? "You have reviewed all your errors. Great job!" : "You haven't marked any mistakes as resolved yet."}
+            />
+          </SectionCard>
         ) : (
           <div className="flex flex-col gap-6">
             {filteredMistakes.map(m => (
-              <div key={m.id} className="group relative flex flex-col p-6 md:p-8 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.06)] transition-all duration-200">
-                <div className="box-hover" />
-                
+              <SectionCard key={m.id} padding="default" className="hover:-translate-y-0.5 hover:shadow-depth transition-all duration-200">
                 {/* Card Header */}
                 <div className="relative z-10 mb-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[10px] font-sans font-semibold px-2 py-0.5 border border-s-stroke2/20 bg-b-surface1 dark:bg-b-surface1/60 text-t-secondary rounded-lg uppercase tracking-wider">
+                    <span className="text-[10px] font-sans font-bold px-2 py-0.5 border border-black/5 dark:border-white/5 bg-b-surface1 dark:bg-b-surface1/40 text-t-secondary rounded-[6px] uppercase tracking-wider">
                       {m.subject}
                     </span>
-                    <span className="text-[10px] font-sans font-semibold px-2 py-0.5 border border-s-stroke2/20 bg-b-surface1 dark:bg-b-surface1/60 text-t-secondary rounded-lg uppercase tracking-wider">
+                    <span className="text-[10px] font-sans font-bold px-2 py-0.5 border border-black/5 dark:border-white/5 bg-b-surface1 dark:bg-b-surface1/40 text-t-secondary rounded-[6px] uppercase tracking-wider">
                       {m.chapter}
                     </span>
                   </div>
-                  <span className="text-[12px] font-sans text-t-secondary">{m.exam} · {m.date}</span>
+                  <span className="text-[12px] font-sans font-semibold text-t-secondary">{m.exam} · {m.date}</span>
                 </div>
 
                 {/* Question Text */}
                 <div className="relative z-10 mb-6">
-                  <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-t-secondary mb-1.5">Question</div>
-                  <div className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
+                  <div className="text-[11px] font-sans font-bold uppercase tracking-widest text-t-secondary mb-1.5">Question</div>
+                  <div className="font-sans font-semibold text-[17px] leading-snug tracking-[-0.02em] text-t-primary">
                     {m.question}
                   </div>
                 </div>
 
                 {/* Answers Grid */}
                 <div className="relative z-10 mb-6 grid gap-4 md:grid-cols-2">
-                  <div className="rounded-lg border border-primary-03/15 bg-[rgba(255,106,85,0.03)] p-5">
+                  <div className="rounded-[12px] border border-primary-03/20 bg-primary-03/5 p-5">
                     <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-primary-03 mb-1.5">Your Answer</div>
-                    <div className="font-sans font-bold text-[18px] text-primary-03">{m.studentAnswer}</div>
+                    <div className="font-sans font-semibold text-[18px] text-primary-03">{m.studentAnswer}</div>
                   </div>
-                  <div className="rounded-lg border border-primary-02/15 bg-[rgba(0,166,86,0.03)] p-5">
+                  <div className="rounded-[12px] border border-primary-02/20 bg-primary-02/5 p-5">
                     <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-primary-02 mb-1.5">Correct Answer</div>
-                    <div className="font-sans font-bold text-[18px] text-primary-02">{m.correctAnswer}</div>
+                    <div className="font-sans font-semibold text-[18px] text-primary-02">{m.correctAnswer}</div>
                   </div>
                 </div>
 
                 {/* Diagnostic & Actionable Tip Box */}
-                <div className="relative z-10 mb-6 rounded-lg bg-b-surface1 dark:bg-b-surface1/60 p-5 border border-s-stroke2/30 flex flex-col gap-4">
+                <div className="relative z-10 mb-6 rounded-[12px] bg-b-surface1 dark:bg-b-surface1/40 p-5 border border-black/5 dark:border-white/5 flex flex-col gap-4">
                   <div className="flex gap-3">
                     <RiAlertFill size={20} className="shrink-0 text-t-secondary" />
                     <div>
-                      <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-t-secondary mb-0.5">Diagnosis: {m.errorType.replace("_", " ")}</div>
-                      <div className="text-[13px] font-sans text-t-primary dark:text-t-primary leading-relaxed">{m.detail}</div>
+                      <div className="text-[11px] font-sans font-bold uppercase tracking-widest text-t-secondary mb-0.5">Diagnosis: {m.errorType.replace("_", " ")}</div>
+                      <div className="text-[13px] font-sans text-t-primary leading-relaxed">{m.detail}</div>
                     </div>
                   </div>
-                  <div className="flex gap-3 border-t border-s-stroke2/20 pt-4">
+                  <div className="flex gap-3 border-t border-[#ebebeb] dark:border-[#282828] pt-4">
                     <RiLightbulbFlashLine size={20} className="shrink-0 text-t-secondary" />
                     <div>
-                      <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-t-secondary mb-0.5">Actionable Tip</div>
-                      <div className="text-[13px] font-sans text-t-primary dark:text-t-primary leading-relaxed">{m.tip}</div>
+                      <div className="text-[11px] font-sans font-bold uppercase tracking-widest text-t-secondary mb-0.5">Actionable Tip</div>
+                      <div className="text-[13px] font-sans text-t-primary leading-relaxed">{m.tip}</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Toggle Button */}
                 <div className="relative z-10 flex justify-end">
-                  <button 
-                    onClick={() => toggleResolved(m.id)}
-                    className={`flex flex-row justify-center items-center h-8 px-4 text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 cursor-pointer ${
-                      m.resolved 
-                        ? "border border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary hover:text-t-primary dark:hover:text-t-primary" 
-                        : "bg-shade-02 hover:bg-shade-04 text-t-light dark:bg-t-primary dark:text-b-surface1 dark:hover:bg-t-primary/90 shadow-widget"
-                    }`}
-                  >
-                    {m.resolved ? "Mark as Needs Review" : <><RiCheckLine size={16} className="mr-1.5" /> Mark as Resolved</>}
-                  </button>
+                  {m.resolved ? (
+                    <SecondaryButton onClick={() => toggleResolved(m.id)}>
+                      Mark as Needs Review
+                    </SecondaryButton>
+                  ) : (
+                    <button 
+                      onClick={() => toggleResolved(m.id)}
+                      className="relative flex items-center gap-2 overflow-hidden rounded-[10px] bg-[#161616] px-5 py-2.5 font-medium text-[13px] text-white shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919] transition-transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                    >
+                      <i className="absolute -left-3 top-0 h-3 w-20 -rotate-[125deg] rounded-full bg-white/10 blur-[3px]" />
+                      <RiCheckLine size={16} />
+                      <span className="relative">Mark as Resolved</span>
+                    </button>
+                  )}
                 </div>
-
-              </div>
+              </SectionCard>
             ))}
           </div>
         )}
-      </main>
+      </PageWrapper>
     </>
   );
 }

@@ -46,7 +46,7 @@ function ProfileContent() {
             ].map(tab => (
               <button
                 key={tab.id}
-                className={`text-left px-4 py-2.5 rounded-lg text-caption font-semibold border-none cursor-pointer transition-all ${
+                className={`text-left px-4 py-2.5 rounded-[10px] text-caption font-semibold border-none cursor-pointer transition-all ${
                   tab.active
                     ? "bg-b-surface1 text-t-primary shadow-widget font-bold"
                     : "bg-transparent text-t-secondary hover:text-t-primary hover:bg-b-surface1/50"

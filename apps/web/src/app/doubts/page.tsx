@@ -269,7 +269,7 @@ export default function StudentChatPage() {
 
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed top-20 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-shade-02 text-t-light dark:bg-t-primary dark:text-b-surface1 text-xs font-sans font-semibold rounded-lg shadow-lg border border-s-stroke2/20 animate-slide-in">
+        <div className="fixed top-20 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-shade-02 text-t-light dark:bg-t-primary dark:text-b-surface1 text-xs font-sans font-semibold rounded-[10px] shadow-lg border border-s-stroke2/20 animate-slide-in">
           <div className="size-2 rounded-full bg-primary-02 animate-pulse" />
           <span>{toastMessage}</span>
         </div>
@@ -280,7 +280,7 @@ export default function StudentChatPage() {
       <main className="mx-auto w-full max-w-screen-2xl px-4 pt-12 md:px-6 flex justify-center bg-transparent select-none">
 
         {/* Main Figma Dashboard overview card container (Width: 1068px, Expanded Height: 780px to fit Stats + Chat Workspace) */}
-        <div className="w-[1068px] h-[780px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg p-3 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] flex flex-col gap-4 overflow-hidden relative">
+        <div className="w-[1068px] h-[780px] bg-b-surface2 dark:bg-b-surface2 p-3 card flex flex-col gap-4 overflow-hidden relative">
 
           {/* Widget Header/dropdown */}
           <div className="flex flex-row justify-between items-center w-full h-12 relative px-2.5 shrink-0">
@@ -295,7 +295,7 @@ export default function StudentChatPage() {
             <div className="relative">
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
-                className="flex flex-row justify-between items-center px-5 py-3 h-12 w-[180px] border-[1.5px] border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-left cursor-pointer transition-all hover:bg-b-surface1 dark:hover:bg-b-surface1"
+                className="flex flex-row justify-between items-center px-5 py-3 h-12 w-[180px] border-[1.5px] border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-left cursor-pointer transition-all hover:bg-b-surface1 dark:hover:bg-b-surface1"
               >
                 <span className="font-sans text-[14px] font-normal leading-[150%] tracking-[0.0025em] text-t-secondary dark:text-t-secondary truncate">
                   {activeGroup.name}
@@ -305,7 +305,7 @@ export default function StudentChatPage() {
 
               {/* Dropdown Options List */}
               {showDropdown && (
-                <div className="absolute right-0 top-14 w-[180px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-lg z-25 overflow-hidden">
+                <div className="absolute right-0 top-14 w-[180px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-[10px] shadow-lg z-25 overflow-hidden">
                   {groups.map(g => (
                     <div
                       key={g.id}
@@ -327,10 +327,10 @@ export default function StudentChatPage() {
           </div>
 
           {/* Stats Section */}
-          <div className="flex flex-row items-center p-2 gap-4 w-full h-[135px] bg-b-surface1 dark:bg-b-surface1/20 border-[1.5px] border-s-stroke2/40 rounded-lg shrink-0">
+          <div className="flex flex-row items-center p-2 gap-4 w-full h-[135px] bg-b-surface1 dark:bg-b-surface1/20 border-[1.5px] border-s-stroke2/40 rounded-[10px] shrink-0">
 
             {/* Active Doubts Stat Card */}
-            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-b-surface2 dark:bg-b-surface2 border-[1.5px] border-s-border dark:border-s-stroke2/20 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
+            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-b-surface2 dark:bg-b-surface2 border-[1.5px] border-s-border dark:border-s-stroke2/20 rounded-[10px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]">
               <div className="flex flex-row items-center gap-2.5 w-full">
                 <RiQuestionAnswerLine size={20} className="text-t-primary dark:text-t-primary" />
                 <span className="font-sans font-semibold text-[15px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
@@ -355,7 +355,7 @@ export default function StudentChatPage() {
             </div>
 
             {/* Resolved Doubts Stat Card */}
-            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] rounded-lg bg-transparent">
+            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] rounded-[10px] bg-transparent">
               <div className="flex flex-row items-center gap-2.5 w-full">
                 <RiCheckDoubleLine size={20} className="text-t-secondary dark:text-t-secondary" />
                 <span className="font-sans font-semibold text-[15px] leading-[150%] tracking-[0.0015em] text-t-secondary dark:text-t-secondary">
@@ -382,7 +382,7 @@ export default function StudentChatPage() {
           </div>
 
           {/* Unified Chat Workspace Section */}
-          <div className="flex-grow flex flex-row border border-s-stroke2/20 rounded-lg overflow-hidden min-h-0">
+          <div className="flex-grow flex flex-row border border-s-stroke2/20 rounded-[10px] overflow-hidden min-h-0">
 
             {/* Sidebar: Chat Groups List */}
             <div className="w-[300px] border-r border-s-stroke2/10 bg-b-surface1 dark:bg-b-surface1/20 flex flex-col shrink-0">
@@ -396,7 +396,7 @@ export default function StudentChatPage() {
                     placeholder="Search groups..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-9 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-t-primary dark:focus:border-t-primary transition-all font-semibold placeholder-t-secondary"
+                    className="w-full pl-9 pr-3 h-9 rounded-[10px] border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-t-primary dark:focus:border-t-primary transition-all font-semibold placeholder-t-secondary"
                   />
                 </div>
               </div>
@@ -408,7 +408,7 @@ export default function StudentChatPage() {
                     <div
                       key={group.id}
                       onClick={() => setActiveGroupId(group.id)}
-                      className={`p-3 flex gap-3 cursor-pointer rounded-lg transition-all border ${isActive
+                      className={`p-3 flex gap-3 cursor-pointer rounded-[10px] transition-all border ${isActive
                           ? "bg-b-surface2 dark:bg-b-surface2 border-l-4 border-l-t-primary dark:border-l-t-primary border-s-stroke2/20 shadow-xs"
                           : "bg-transparent border-transparent hover:bg-b-surface2/50"
                         }`}
@@ -473,7 +473,7 @@ export default function StudentChatPage() {
                   return (
                     <div 
                       key={msg.id} 
-                      className={`p-4 flex gap-4 rounded-lg transition-all relative border ${
+                      className={`p-4 flex gap-4 rounded-[10px] transition-all relative border ${
                         msg.isVerified
                           ? "bg-primary-02/5 border-primary-02/20"
                           : "bg-transparent border-transparent border-b border-s-stroke2/10 hover:bg-b-surface2 dark:hover:bg-b-surface2 hover:shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:hover:shadow-[inset_0px_0px_0px_3px_#191919]"
@@ -523,7 +523,7 @@ export default function StudentChatPage() {
 
                         {/* Attached Image preview */}
                         {msg.attachedImage && (
-                          <div className="mt-1 overflow-hidden rounded-lg border border-s-stroke2/20 max-w-xs">
+                          <div className="mt-1 overflow-hidden rounded-[10px] border border-s-stroke2/20 max-w-xs">
                             <img src={msg.attachedImage} alt="Attachment" className="w-full h-auto max-h-32 object-cover" />
                           </div>
                         )}
@@ -541,7 +541,7 @@ export default function StudentChatPage() {
 
                           <button
                             onClick={() => handleUpvote(msg.id)}
-                            className={`flex items-center gap-1.5 px-3 py-1 rounded-lg border text-[11px] font-sans font-bold transition-all active:scale-95 cursor-pointer ${
+                            className={`flex items-center gap-1.5 px-3 py-1 rounded-[10px] border text-[11px] font-sans font-bold transition-all active:scale-95 cursor-pointer ${
                               msg.hasUpvoted
                                 ? "bg-shade-02 text-t-light dark:bg-t-primary dark:text-b-surface1 border-transparent"
                                 : "bg-b-surface1 dark:bg-b-surface1 border-s-stroke2/20 text-t-secondary hover:text-t-primary"
@@ -595,7 +595,7 @@ export default function StudentChatPage() {
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleSend()}
                     placeholder="Type [Doubt] or type your message here..."
-                    className="w-full pl-4 pr-3 h-9 rounded-lg border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-t-primary dark:focus:border-t-primary transition-all font-semibold placeholder-t-secondary text-t-primary dark:text-t-primary"
+                    className="w-full pl-4 pr-3 h-9 rounded-[10px] border border-s-stroke2/30 bg-b-surface1 dark:bg-b-surface1/60 text-xs font-sans focus:outline-none focus:border-t-primary dark:focus:border-t-primary transition-all font-semibold placeholder-t-secondary text-t-primary dark:text-t-primary"
                   />
                 </div>
                 <button

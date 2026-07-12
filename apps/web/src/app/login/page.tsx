@@ -63,7 +63,7 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="text-center mb-10">
           <Link href="/login" className="inline-flex items-center gap-2.5 no-underline mb-6">
-            <div className="flex size-10 items-center justify-center rounded-lg bg-t-primary text-b-surface1 shadow-widget">
+            <div className="flex size-10 items-center justify-center rounded-[10px] bg-t-primary text-b-surface1 shadow-widget">
               <RiFlashlightFill size={20} />
             </div>
             <span className="t-title-page-s tracking-tight text-t-primary">
@@ -80,11 +80,10 @@ export default function LoginPage() {
 
         {/* Card */}
         <div className="card group relative">
-          <div className="box-hover" />
-          
+
           <div className="relative z-10">
             {error && (
-              <div className="flex items-start gap-3 mb-6 p-4 rounded-lg border border-primary-03/15 bg-primary-03/5">
+              <div className="flex items-start gap-3 mb-6 p-4 rounded-[10px] border border-primary-03/15 bg-primary-03/5">
                 <RiAlertLine size={18} className="text-primary-03 shrink-0 mt-0.5" />
                 <span className="t-body-base text-primary-03">{error}</span>
               </div>

@@ -28,7 +28,7 @@ const COL_CLASSES: Record<2 | 3 | 4, string> = {
 export function StatCardGrid({ cols = 4, children, className = "" }: StatCardGridProps) {
   return (
     <div
-      className={`grid ${COL_CLASSES[cols]} p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/30 dark:border-s-stroke2/40 rounded-xl ${className}`}
+      className={`grid ${COL_CLASSES[cols]} divide-x divide-[#ebebeb] dark:divide-[#222] w-full ${className}`}
     >
       {children}
     </div>

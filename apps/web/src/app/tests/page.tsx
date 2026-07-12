@@ -171,41 +171,43 @@ function TestsHubContent() {
         breadcrumbs="Dashboard > Tests Hub"
       />
 
-      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 pt-6 md:px-6 overflow-x-hidden">
+      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8 overflow-x-hidden">
 
-        {/* Top Type Tabs */}
-        <div className="flex flex-row items-center gap-2 mb-6 p-1 bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg w-fit select-none">
+        {/* Type Tabs */}
+        <div className="flex flex-row items-center gap-1.5 mb-5 p-1 bg-b-surface2 shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)] dark:bg-[#161616] border border-transparent rounded-[14px] w-fit select-none">
           {TYPES.map(type => {
             const isActive = activeType === type.id;
             return (
               <button
                 key={type.id}
                 onClick={() => handleTypeChange(type.id)}
-                className={`px-5 py-2.5 rounded-lg text-sm font-sans font-semibold transition-all cursor-pointer ${isActive
-                    ? "bg-b-surface2 dark:bg-b-surface2 text-t-primary dark:text-t-primary shadow-[0px_4px_4px_-4px_rgba(8,8,8,0.05),0px_3px_1px_-4px_rgba(8,8,8,0.09)] border border-s-stroke2/30"
-                    : "bg-transparent text-t-secondary dark:text-t-secondary hover:text-t-primary dark:hover:text-t-primary"
-                  }`}
+                className={`relative px-5 py-2.5 rounded-[10px] text-[13px] font-sans font-semibold transition-all overflow-hidden cursor-pointer ${
+                  isActive
+                    ? 'bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]'
+                    : 'bg-transparent text-t-secondary hover:text-t-primary'
+                }`}
               >
-                {type.label}
+                {isActive && <i className="absolute -right-3 top-0 h-3 w-20 rotate-[125deg] rounded-full bg-white/10 blur-[3px]" />}
+                <span className="relative">{type.label}</span>
               </button>
             );
           })}
         </div>
 
         {/* Filters Row */}
-        <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-6 p-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 select-none mb-8">
+        <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-4 mb-6 bg-white shadow-velora-light dark:bg-[#161616] p-5 rounded-[24px] select-none">
           <div className="relative flex-1 min-w-[240px]">
-            <RiSearchLine size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary" />
+            <RiSearchLine size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary" />
             <input
               type="text"
               placeholder={`Search in ${TYPES.find(t => t.id === activeType)?.label}...`}
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full h-11 pl-11 pr-4 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-sm font-sans text-t-primary dark:text-t-primary placeholder-t-secondary focus:border-t-secondary outline-none transition-all"
+              className="w-full h-10 pl-10 pr-4 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-b-surface1 dark:bg-b-surface1/60 text-[13px] font-sans text-t-primary placeholder-t-secondary focus:border-t-secondary outline-none transition-all"
             />
           </div>
 
-          <div className="flex flex-row flex-wrap items-center gap-6">
+          <div className="flex flex-row flex-wrap items-center gap-4">
             <FilterGroup
               label="Exam"
               options={EXAM_OPTIONS}
@@ -226,32 +228,32 @@ function TestsHubContent() {
         </div>
 
         {/* Results count */}
-        <div className="flex justify-between items-center mb-6 px-1 select-none">
-          <span className="text-xs font-sans text-t-secondary uppercase tracking-wider">
-            Showing <strong className="text-t-primary dark:text-t-primary">{filtered.length}</strong> tests
+        <div className="flex justify-between items-center mb-4 px-1 select-none">
+          <span className="text-[11px] font-sans text-t-secondary uppercase tracking-widest">
+            Showing <strong className="text-t-primary">{filtered.length}</strong> tests
           </span>
         </div>
 
         {/* States */}
         {loading ? (
-          <div className="text-center py-20 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40">
-            <RiLoader4Line size={40} className="animate-spin mx-auto mb-4 text-t-secondary" />
-            <p className="font-semibold text-sm text-t-secondary">Loading from database…</p>
+          <div className="card text-center py-20">
+            <RiLoader4Line size={36} className="animate-spin mx-auto mb-4 text-t-secondary" />
+            <p className="font-semibold text-[13px] text-t-secondary">Loading from database…</p>
           </div>
         ) : error ? (
-          <div className="text-center py-20 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40">
+          <div className="card text-center py-20">
             <div className="text-4xl mb-4">⚠️</div>
-            <p className="font-semibold text-sm text-primary-03">{error}</p>
-            <p className="text-xs text-t-secondary mt-2">Make sure the API server is running on port 3001.</p>
+            <p className="font-semibold text-[13px] text-primary-03">{error}</p>
+            <p className="text-[12px] text-t-secondary mt-2">Make sure the API server is running on port 3001.</p>
           </div>
         ) : filtered.length === 0 ? (
-          <div className="text-center py-20 rounded-lg bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40">
+          <div className="card text-center py-20">
             <div className="text-4xl mb-4">📋</div>
-            <h3 className="font-semibold text-sm text-t-primary dark:text-t-primary mb-1">No tests found</h3>
-            <p className="text-xs text-t-secondary">Seed the database first using the seed script.</p>
+            <h3 className="font-semibold text-[14px] text-t-primary mb-1">No tests found</h3>
+            <p className="text-[12px] text-t-secondary">Seed the database first using the seed script.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map(paper => (
               <TestCard
                 key={paper.id}
@@ -287,7 +289,7 @@ function FilterGroup({
         <button
           key={opt}
           onClick={() => onChange(opt)}
-          className={`px-3.5 h-8 rounded-lg border text-[11px] font-sans font-semibold transition-all active:scale-95 cursor-pointer uppercase tracking-wider ${active === opt
+          className={`px-3.5 h-8 rounded-[10px] border text-[11px] font-sans font-semibold transition-all active:scale-95 cursor-pointer uppercase tracking-wider ${active === opt
               ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1"
               : "border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary hover:border-t-secondary hover:text-t-primary"
             }`}
@@ -311,56 +313,53 @@ function TestCard({
   onStart: () => void;
 }) {
   const subtitle = paper.test_type === "pyq"
-    ? `${paper.year}${paper.shift ? ` · ${paper.shift}` : ""}`
+    ? `${paper.year || ""}${paper.shift ? ` · ${paper.shift}` : ""}`.trim() || paper.exams?.full_name || ""
     : paper.subject
       ? `${paper.subject}${paper.chapter ? ` · ${paper.chapter}` : ""}`
       : paper.exams?.full_name || "";
 
   return (
-    <div className="flex min-h-[14rem] flex-col justify-between p-6 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] select-none hover:-translate-y-0.5 hover:shadow-[0px_10px_20px_-8px_rgba(0,0,0,0.08)] transition-all duration-200">
-      <div>
-        <div className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary mb-1">
+    <div className="group relative flex flex-col justify-between bg-white shadow-velora-light dark:bg-[#161616] p-[22px] rounded-[24px] cursor-pointer hover:shadow-[0_8px_24px_rgba(0,0,0,0.08),inset_0_2px_rgba(255,255,255,.64)] transition-all duration-300 select-none overflow-hidden">
+      
+      {/* Premium Glass Hover Effect */}
+
+      <div className="relative z-10">
+        <h3 className="font-sans font-bold text-[17px] leading-[1.3] text-t-primary mb-1.5 tracking-[-0.01em]">
           {paper.title}
-        </div>
-        {subtitle && (
-          <div className="text-[12px] font-sans text-t-secondary">{subtitle}</div>
+        </h3>
+        {subtitle && subtitle !== "null" && (
+          <p className="text-[13px] font-sans font-medium text-t-secondary">{subtitle}</p>
         )}
 
-        <div className="flex flex-row flex-wrap items-center gap-4 mt-5 text-[12px] font-sans text-t-secondary">
+        <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-2 mt-5 mb-1 text-[12.5px] font-sans font-medium text-t-secondary">
           <span className="flex items-center gap-1.5">
-            <RiQuestionLine size={14} /><span>{paper.total_questions} Qs</span>
+            <RiQuestionLine size={14} className="opacity-70" /><span>{paper.total_questions} Qs</span>
           </span>
           <span className="flex items-center gap-1.5">
-            <RiTimeLine size={14} /><span>{paper.duration_min} Min</span>
+            <RiTimeLine size={14} className="opacity-70" /><span>{paper.duration_min} Min</span>
           </span>
           <span className="flex items-center gap-1.5">
-            <RiBarChartBoxLine size={14} /><span>{paper.total_marks} Marks</span>
+            <RiBarChartBoxLine size={14} className="opacity-70" /><span>{paper.total_marks} Marks</span>
           </span>
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-5 pt-4 border-t border-s-stroke2/30">
-        <span className={`px-2 py-0.5 rounded-lg border text-[10px] font-semibold uppercase tracking-wider ${paper.difficulty === "hard" ? "border-red-200 bg-red-50 text-red-600 dark:border-red-900/30 dark:bg-red-900/10 dark:text-red-400" :
-            paper.difficulty === "medium" ? "border-amber-200 bg-amber-50 text-amber-600 dark:border-amber-900/30 dark:bg-amber-900/10 dark:text-amber-400" :
-              "border-green-200 bg-green-50 text-green-600 dark:border-green-900/30 dark:bg-green-900/10 dark:text-green-400"
-          }`}>
-          {paper.difficulty}
-        </span>
+      <div className="relative z-10 flex justify-end items-center mt-5 pt-5 border-t border-s-stroke2">
         <div className="flex items-center gap-2">
           {isAdmin && onDelete && (
             <button
               onClick={onDelete}
-              className="flex justify-center items-center h-8 w-8 text-primary-03 hover:bg-red-50 dark:hover:bg-red-900/15 rounded-lg border border-red-200 dark:border-red-900/30 transition-all active:scale-95 cursor-pointer"
+              className="flex justify-center items-center h-8 w-8 text-primary-03 hover:bg-red-50 dark:hover:bg-red-900/15 rounded-[10px] border border-red-200 dark:border-red-900/30 transition-all active:scale-95"
               title="Delete Test"
             >
-              <RiDeleteBinLine size={16} />
+              <RiDeleteBinLine size={15} />
             </button>
           )}
           <button
             onClick={onStart}
-            className="flex flex-row justify-center items-center h-8 px-4 bg-shade-02 hover:bg-shade-04 text-t-light text-[12px] font-sans font-semibold rounded-lg transition-all active:scale-95 cursor-pointer"
+            className="btn btn-sm btn-dark"
           >
-            Start Test
+            Start
           </button>
         </div>
       </div>

@@ -61,22 +61,22 @@ export function StatCard({
 }: StatCardProps) {
   return (
     <div
-      className={`flex flex-col items-start p-5 gap-2 bg-b-surface2 border border-b-surface2 dark:border-s-stroke2/30 rounded-lg shadow-widget ${className}`}
+      className={`flex flex-col items-start px-6 py-5 gap-3 ${className}`}
     >
       {/* Header row: icon + title */}
-      <div className="flex flex-row items-center gap-2 w-full mb-1">
+      <div className="flex flex-row items-center gap-2">
         {icon && (
-          <span className="text-t-primary shrink-0">{icon}</span>
+          <span className="text-t-secondary shrink-0">{icon}</span>
         )}
-        <span className="t-sub-s text-t-primary">{title}</span>
+        <span className="text-[13px] font-sans font-semibold text-t-secondary tracking-wide">{title}</span>
       </div>
 
       {/* Value + badge row */}
-      <div className="flex flex-row items-center gap-3 w-full mt-1">
+      <div className="flex flex-row items-end gap-3 w-full">
         {/* Big number */}
-        <div className="font-sans text-4xl font-semibold tracking-tight text-t-primary leading-none">
+        <div className="font-sans text-[40px] font-semibold tracking-[-0.03em] text-t-primary leading-none">
           {loading ? (
-            <span className="inline-block w-16 h-8 bg-b-surface1 rounded-lg animate-pulse" />
+            <span className="inline-block w-20 h-9 bg-b-surface1 rounded-[10px] animate-pulse" />
           ) : (
             value
           )}
@@ -84,14 +84,14 @@ export function StatCard({
 
         {/* Badge + subtext column */}
         {(badge !== undefined || subtext) && (
-          <div className="flex flex-col gap-0.5 min-w-0">
+          <div className="flex flex-col gap-0.5 min-w-0 pb-1">
             {badge !== undefined && (
-              <span className={`${BADGE_CLASSES[badgeVariant]} h-6 px-1.5 text-[11px]`}>
+              <span className={`${BADGE_CLASSES[badgeVariant]} h-[22px] px-2 text-[11px] font-semibold`}>
                 {badge}
               </span>
             )}
             {subtext && (
-              <span className="text-caption text-t-tertiary truncate">{subtext}</span>
+              <span className="text-[11px] font-sans text-t-tertiary truncate mt-0.5">{subtext}</span>
             )}
           </div>
         )}

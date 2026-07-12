@@ -67,7 +67,7 @@ export function Modal({
       onClick={onClose}
     >
       <div
-        className={`w-full ${maxWidth} rounded-lg bg-b-surface2 p-8 shadow-depth animate-in zoom-in-95 duration-200 border border-s-stroke2/40`}
+        className={`w-full ${maxWidth} rounded-[10px] bg-b-surface2 p-8 shadow-depth animate-in zoom-in-95 duration-200 border border-s-stroke2/40`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -80,7 +80,7 @@ export function Modal({
           </div>
           <button
             onClick={onClose}
-            className="w-10 h-10 flex items-center justify-center shrink-0 rounded-lg bg-b-surface1 border border-s-stroke2/40 text-t-secondary hover:text-t-primary hover:border-s-highlight transition-colors cursor-pointer"
+            className="w-10 h-10 flex items-center justify-center shrink-0 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 text-t-secondary hover:text-t-primary hover:border-s-highlight transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <RiCloseLine size={20} />

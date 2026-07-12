@@ -25,7 +25,7 @@ export const BoosterOptions: React.FC<BoosterOptionsProps> = ({ weakTopics, exam
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md border border-gray-200">
+    <div className="p-6 max-w-lg mx-auto bg-white rounded-[10px] shadow-md border border-gray-200">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">🎯 Improvement Options Ready</h2>
       
       <div className="mb-6">
@@ -42,7 +42,7 @@ export const BoosterOptions: React.FC<BoosterOptionsProps> = ({ weakTopics, exam
         
         {/* Micro Booster Option */}
         <div 
-          className={`p-4 border rounded-lg cursor-pointer transition-colors ${selectedMode === 'micro' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:bg-gray-50'}`}
+          className={`p-4 border rounded-[10px] cursor-pointer transition-colors ${selectedMode === 'micro' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:bg-gray-50'}`}
           onClick={() => setSelectedMode('micro')}
         >
           <div className="flex items-center justify-between">
@@ -68,7 +68,7 @@ export const BoosterOptions: React.FC<BoosterOptionsProps> = ({ weakTopics, exam
 
         {/* Full Improvement Test Option */}
         <div 
-          className={`p-4 border rounded-lg cursor-pointer transition-colors ${selectedMode === 'full' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:bg-gray-50'}`}
+          className={`p-4 border rounded-[10px] cursor-pointer transition-colors ${selectedMode === 'full' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:bg-gray-50'}`}
           onClick={() => setSelectedMode('full')}
         >
           <div className="flex items-center justify-between">
@@ -96,13 +96,13 @@ export const BoosterOptions: React.FC<BoosterOptionsProps> = ({ weakTopics, exam
         <button 
           onClick={handleStart}
           disabled={!selectedMode}
-          className="flex-1 bg-blue-600 text-white py-2 rounded-lg font-semibold disabled:bg-blue-300 transition-colors"
+          className="flex-1 bg-blue-600 text-white py-2 rounded-[10px] font-semibold disabled:bg-blue-300 transition-colors"
         >
           Start Practice
         </button>
         <button 
           onClick={onSkip}
-          className="flex-1 bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+          className="flex-1 bg-gray-100 text-gray-700 py-2 rounded-[10px] font-semibold hover:bg-gray-200 transition-colors"
         >
           Skip for now
         </button>

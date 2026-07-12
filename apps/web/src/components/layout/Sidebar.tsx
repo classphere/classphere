@@ -142,15 +142,15 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="hidden md:flex sticky top-0 z-40 h-screen w-[340px] shrink-0 flex-col bg-b-surface1 px-6 pt-8 pb-12 select-none overflow-y-auto scrollbar-none"
+      className="hidden md:flex sticky top-0 z-40 h-screen w-[280px] xl:w-[300px] shrink-0 flex-col bg-[#edecec] dark:bg-[#0f0f0f] border-r border-transparent dark:border-[#1e1e1e] px-4 xl:px-5 pt-8 pb-12 select-none overflow-y-auto scrollbar-none"
     >
       {/* ── Top Menu Container ── */}
       <div className="flex flex-col gap-6 w-full">
         {/* Logo */}
         <div className="pl-1">
-          <Link href="/" className="flex items-center gap-3.5 rounded-lg transition-colors">
+          <Link href="/" className="flex items-center gap-3.5 rounded-[10px] transition-colors">
             {/* Logo Container 48px x 48px */}
-            <div className="flex size-12 items-center justify-center rounded-lg bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
+            <div className="flex size-12 items-center justify-center rounded-[10px] bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
               <RiFlashlightFill size={22} className="opacity-90" />
             </div>
             <span className="font-sans text-[20px] font-bold text-t-primary dark:text-t-primary tracking-tight">
@@ -166,18 +166,21 @@ export default function Sidebar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`group flex h-12 items-center gap-3 rounded-lg px-4 text-[13px] font-sans font-semibold transition-all ${
+                className={`group relative flex h-11 items-center gap-3 rounded-[10px] px-4 text-[13px] font-sans font-semibold transition-all overflow-hidden ${
                   item.active
-                    ? "bg-b-surface2 text-t-primary shadow-widget dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5),0px_6px_4px_-4px_rgba(8,8,8,0.05)]"
-                    : "text-t-secondary hover:text-t-primary hover:bg-b-surface2/50"
+                    ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),0px_13.6468px_13.6468px_-2.91667px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]"
+                    : "text-t-secondary hover:text-t-primary hover:bg-[rgba(0,0,0,0.04)] dark:hover:bg-white/5"
                 }`}
               >
-                <span className={`flex items-center transition-colors ${
-                  item.active ? "text-t-primary" : "text-t-secondary group-hover:text-t-primary"
+                {item.active && (
+                  <i className="absolute -right-3 top-0 h-3 w-28 rotate-[125deg] rounded-full bg-white/10 blur-[3px] pointer-events-none" />
+                )}
+                <span className={`relative z-10 flex items-center transition-colors ${
+                  item.active ? "text-white" : "text-t-secondary group-hover:text-t-primary"
                 }`}>
                   {item.icon}
                 </span>
-                <span>{item.label}</span>
+                <span className="relative z-10">{item.label}</span>
               </Link>
             ))}
           </nav>
@@ -195,18 +198,21 @@ export default function Sidebar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`group flex h-12 items-center gap-3 rounded-lg px-4 text-[13px] font-sans font-semibold transition-all ${
+                  className={`group relative flex h-11 items-center gap-3 rounded-[10px] px-4 text-[13px] font-sans font-semibold transition-all overflow-hidden ${
                     isActive
-                      ? "bg-b-surface2 text-t-primary shadow-widget dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5),0px_6px_4px_-4px_rgba(8,8,8,0.05)]"
-                      : "text-t-secondary hover:text-t-primary hover:bg-b-surface2/50"
+                      ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),0px_13.6468px_13.6468px_-2.91667px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]"
+                      : "text-t-secondary hover:text-t-primary hover:bg-[rgba(0,0,0,0.04)] dark:hover:bg-white/5"
                   }`}
                 >
-                  <span className={`flex items-center transition-colors ${
-                    isActive ? "text-t-primary" : "text-t-secondary group-hover:text-t-primary"
+                  {isActive && (
+                    <i className="absolute -right-3 top-0 h-3 w-28 rotate-[125deg] rounded-full bg-white/10 blur-[3px] pointer-events-none" />
+                  )}
+                  <span className={`relative z-10 flex items-center transition-colors ${
+                    isActive ? "text-white" : "text-t-secondary group-hover:text-t-primary"
                   }`}>
                     {item.icon}
                   </span>
-                  <span>{item.label}</span>
+                  <span className="relative z-10">{item.label}</span>
                 </Link>
               );
             })}
@@ -219,7 +225,7 @@ export default function Sidebar() {
         {/* Profile Card: Avatar + Info */}
         <Link 
           href="/profile" 
-          className="flex items-center gap-3 w-full p-2.5 rounded-lg bg-transparent hover:bg-b-surface2 border border-transparent transition-all cursor-pointer select-none"
+          className="flex items-center gap-3 w-full p-2.5 rounded-[10px] bg-transparent hover:bg-b-surface2 border border-transparent transition-all cursor-pointer select-none"
         >
           <div className="size-11 rounded-full overflow-hidden shrink-0 shadow-widget bg-b-surface1">
             {mounted && (
@@ -243,7 +249,7 @@ export default function Sidebar() {
         {/* Sign Out */}
         <button
           onClick={() => signOut()}
-          className="flex items-center gap-3 w-full px-4 h-12 rounded-lg text-primary-03 hover:bg-[rgba(255,106,85,0.05)] border border-transparent hover:border-s-stroke2/40 transition-all text-[13px] font-sans font-semibold cursor-pointer"
+          className="flex items-center gap-3 w-full px-4 h-12 rounded-[10px] text-primary-03 hover:bg-[rgba(255,106,85,0.05)] border border-transparent hover:border-s-stroke2/40 transition-all text-[13px] font-sans font-semibold cursor-pointer"
         >
           <RiLogoutBoxLine size={18} />
           Sign Out
@@ -266,10 +272,10 @@ export default function Sidebar() {
           </Link>
 
           {/* Theme Toggle Capsule: Horizontal pill, rounded-full, 48px height, icons only */}
-          <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-lg p-1 h-12 flex-1 relative select-none shadow-widget">
+          <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-[10px] p-1 h-12 flex-1 relative select-none shadow-widget">
             <button
               onClick={() => toggleTheme("light")}
-              className={`flex-1 flex items-center justify-center h-10 rounded-lg transition-all cursor-pointer text-t-secondary ${
+              className={`flex-1 flex items-center justify-center h-10 rounded-[10px] transition-all cursor-pointer text-t-secondary ${
                 theme === "light"
                   ? "bg-b-surface1 text-t-primary font-bold shadow-depth"
                   : "hover:text-t-primary"
@@ -280,7 +286,7 @@ export default function Sidebar() {
             </button>
             <button
               onClick={() => toggleTheme("dark")}
-              className={`flex-1 flex items-center justify-center h-10 rounded-lg transition-all cursor-pointer text-t-secondary ${
+              className={`flex-1 flex items-center justify-center h-10 rounded-[10px] transition-all cursor-pointer text-t-secondary ${
                 theme === "dark"
                   ? "bg-b-surface1 text-t-primary font-bold shadow-depth"
                   : "hover:text-t-primary"
