@@ -19,6 +19,7 @@ import {
   RiTestTubeLine,
   RiArrowRightLine
 } from "@remixicon/react";
+import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid } from "@/components/premium-ui";
 import {
   AreaChart,
   Area,
@@ -60,7 +61,7 @@ const masteryData = [
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-b-surface2 border border-s-subtle rounded-lg px-4 py-3.5 shadow-dropdown text-left z-50">
+      <div className="bg-b-surface2 border border-s-subtle rounded-[10px] px-4 py-3.5 shadow-dropdown text-left z-50">
         <p className="text-[10px] font-sans font-bold text-t-tertiary uppercase tracking-wider mb-2.5">{label}</p>
         <div className="flex flex-col gap-2 min-w-[120px]">
           {payload.map((entry: any, index: number) => (
@@ -84,7 +85,7 @@ const CustomRadarTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const entry = payload[0];
     return (
-      <div className="bg-b-surface2 border border-s-subtle rounded-lg px-4 py-2.5 shadow-dropdown text-left z-50">
+      <div className="bg-b-surface2 border border-s-subtle rounded-[10px] px-4 py-2.5 shadow-dropdown text-left z-50">
         <p className="text-[10px] font-sans font-bold text-t-tertiary uppercase tracking-wider mb-1.5">{entry.payload.subject}</p>
         <div className="flex items-center gap-4 justify-between min-w-[120px]">
           <div className="flex items-center gap-2">
@@ -121,7 +122,7 @@ export default function ReportsPage() {
         {/* Navigation Items (Right Side) */}
         <div className="flex flex-row items-center gap-3">
           {/* Search Box */}
-          <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-lg px-3 py-2 w-[315px] h-12 gap-2 shadow-xs">
+          <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-[10px] px-3 py-2 w-[315px] h-12 gap-2 shadow-xs">
             <RiSearchLine size={20} className="text-t-secondary dark:text-t-tertiary" />
             <input
               type="text"
@@ -131,18 +132,18 @@ export default function ReportsPage() {
           </div>
 
           {/* Export PDF Button (Gradient) */}
-          <button className="btn btn-primary w-[100px] h-12 rounded-lg cursor-pointer">
+          <button className="btn btn-primary w-[100px] h-12 rounded-[10px] cursor-pointer">
             Export
           </button>
 
           {/* Bell Button */}
-          <button className="btn btn-outline w-12 h-12 !px-0 rounded-lg flex items-center justify-center relative shrink-0">
+          <button className="btn btn-outline w-12 h-12 !px-0 rounded-[10px] flex items-center justify-center relative shrink-0">
             <RiNotification3Line size={20} />
             <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-primary-03" />
           </button>
 
           {/* Mail Button */}
-          <button className="btn btn-outline w-12 h-12 !px-0 rounded-lg flex items-center justify-center shrink-0">
+          <button className="btn btn-outline w-12 h-12 !px-0 rounded-[10px] flex items-center justify-center shrink-0">
             <RiMailLine size={20} />
           </button>
 
@@ -154,7 +155,6 @@ export default function ReportsPage() {
           </div>
         </div>
       </div>
-
 
       {/* Main Content */}
       <div className="flex justify-between items-end mt-6">
@@ -171,11 +171,10 @@ export default function ReportsPage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab as any)}
-                className={`btn h-10 px-5 rounded-lg text-xs font-semibold font-sans transition-all active:scale-95 shadow-xs cursor-pointer ${
-                  activeTab === tab
+                className={`btn h-10 px-5 rounded-[10px] text-xs font-semibold font-sans transition-all active:scale-95 shadow-xs cursor-pointer ${activeTab === tab
                     ? "btn-primary"
                     : "btn-outline"
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -189,7 +188,7 @@ export default function ReportsPage() {
             <select
               value={timeRange}
               onChange={(e) => setTimeRange(e.target.value)}
-              className="appearance-none pl-4.5 pr-10 h-10 border border-s-stroke2 rounded-lg bg-b-surface2 text-xs font-sans font-semibold text-t-secondary hover:border-s-highlight transition-all outline-none cursor-pointer"
+              className="appearance-none pl-4.5 pr-10 h-10 border border-s-stroke2 rounded-[10px] bg-b-surface2 text-xs font-sans font-semibold text-t-secondary hover:border-s-highlight transition-all outline-none cursor-pointer"
             >
               <option>Last 30 Days</option>
               <option>Last 3 Months</option>
@@ -204,52 +203,35 @@ export default function ReportsPage() {
       {activeTab === "Overview" && (
         <>
           {/* KPI Cards Row */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 p-2 gap-4 w-full bg-b-surface1 dark:bg-b-surface1/60 border border-s-stroke2/40 dark:border-s-stroke2/40 rounded-lg mt-4">
+          <MetricGrid cols={3} className="relative z-10 mt-4">
             {[
               { label: "Average Test Score", value: "76.4%", desc: "+1.8%", descSuffix: "vs last month", icon: <RiBarChartBoxLine size={20} />, iconColor: "text-primary-01" },
               { label: "Tests Conducted", value: "142", desc: "12 tests", descSuffix: "scheduled this week", icon: <RiLineChartLine size={20} />, iconColor: "text-primary-02" },
               { label: "Active Students", value: "1,204", desc: "+34", descSuffix: "new enrollments", icon: <RiPieChart2Line size={20} />, iconColor: "text-primary-05" },
             ].map((card, idx) => (
-              <div
+              <MetricCard
                 key={idx}
-                className="flex flex-col items-start p-6 gap-2 bg-b-surface2 dark:bg-b-surface2 border border-s-border dark:border-s-stroke2/30 rounded-lg shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)]"
-              >
-                <div className="flex flex-row items-center gap-3 w-full mb-1">
-                  <span className={card.iconColor}>{card.icon}</span>
-                  <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
-                    {card.label}
-                  </span>
-                </div>
-                <div className="flex flex-row items-center gap-4 w-full mt-1">
-                  <div className="font-sans text-4xl font-medium tracking-[-0.005em] text-t-primary dark:text-t-primary leading-none">
-                    {card.value}
-                  </div>
-                  <div className="flex flex-col items-start gap-0.5">
-                    <div className="label label-green h-6 px-1.5 gap-1">
-                      <span className="text-[12px] font-semibold leading-none">{card.desc}</span>
-                    </div>
-                    <span className="text-[12px] font-sans text-t-secondary dark:text-t-tertiary">
-                      {card.descSuffix}
-                    </span>
-                  </div>
-                </div>
-              </div>
+                label={card.label}
+                value={card.value}
+                badge={card.desc}
+                badgeLabel={card.descSuffix}
+                icon={<div className={card.iconColor}>{card.icon}</div>}
+              />
             ))}
-          </div>
-
+          </MetricGrid>
 
           {/* Visual Chart Row */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mt-4 items-stretch">
             {/* Batch Performance Area Chart Card (ColSpan 2) */}
-            <div className="group lg:col-span-2 relative flex flex-col justify-between p-6 md:p-8 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
-              <div className="box-hover" />
+            <div className="group lg:col-span-2 relative flex flex-col justify-between p-6 md:p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-velora-light overflow-hidden transition-all duration-300">
+
               <div className="relative z-10 flex flex-row justify-between items-start mb-6 w-full">
                 <div className="flex flex-col gap-1">
                   <h3 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary">Batch Performance Trend</h3>
                   <p className="text-xs text-t-secondary dark:text-t-tertiary">Subject performance index over consecutive cycles</p>
                 </div>
                 {/* Custom Legend */}
-                <div className="flex flex-row items-center gap-4 bg-b-surface1 dark:bg-b-surface1/40 px-3 py-1.5 rounded-lg border border-s-stroke2/10 shrink-0">
+                <div className="flex flex-row items-center gap-4 bg-b-surface1 dark:bg-b-surface1/40 px-3 py-1.5 rounded-[10px] border border-s-stroke2/10 shrink-0">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-primary-01" />
                     <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Physics</span>
@@ -271,21 +253,21 @@ export default function ReportsPage() {
                     <AreaChart data={trendData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                       <defs>
                         <linearGradient id="colorPhysics" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.25}/>
-                          <stop offset="95%" stopColor="#2A85FF" stopOpacity={0}/>
+                          <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.25} />
+                          <stop offset="95%" stopColor="#2A85FF" stopOpacity={0} />
                         </linearGradient>
                         <linearGradient id="colorChem" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#EF9D0E" stopOpacity={0.25}/>
-                          <stop offset="95%" stopColor="#EF9D0E" stopOpacity={0}/>
+                          <stop offset="5%" stopColor="#EF9D0E" stopOpacity={0.25} />
+                          <stop offset="95%" stopColor="#EF9D0E" stopOpacity={0} />
                         </linearGradient>
                         <linearGradient id="colorMath" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#00A656" stopOpacity={0.25}/>
-                          <stop offset="95%" stopColor="#00A656" stopOpacity={0}/>
+                          <stop offset="5%" stopColor="#00A656" stopOpacity={0.25} />
+                          <stop offset="95%" stopColor="#00A656" stopOpacity={0} />
                         </linearGradient>
                       </defs>
-                      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(123, 123, 123, 0.15)"/>
-                      <XAxis dataKey="month" tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dy={10}/>
-                      <YAxis domain={[40, 100]} tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dx={-10}/>
+                      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(123, 123, 123, 0.15)" />
+                      <XAxis dataKey="month" tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dy={10} />
+                      <YAxis domain={[40, 100]} tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dx={-10} />
                       <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(123,123,123,0.2)', strokeWidth: 1, strokeDasharray: '4 4' }} />
                       <Area type="monotone" dataKey="Physics" stroke="#2A85FF" strokeWidth={3} fillOpacity={1} fill="url(#colorPhysics)" activeDot={{ r: 6, strokeWidth: 0, fill: '#2A85FF' }} />
                       <Area type="monotone" dataKey="Chemistry" stroke="#EF9D0E" strokeWidth={3} fillOpacity={1} fill="url(#colorChem)" activeDot={{ r: 6, strokeWidth: 0, fill: '#EF9D0E' }} />
@@ -299,8 +281,8 @@ export default function ReportsPage() {
             </div>
 
             {/* Subject Mastery Radar Chart Card (ColSpan 1) */}
-            <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
-              <div className="box-hover" />
+            <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-velora-light overflow-hidden transition-all duration-300">
+
               <div className="relative z-10 flex flex-col gap-1 mb-6">
                 <h3 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary">Subject Mastery</h3>
                 <p className="text-xs text-t-secondary dark:text-t-tertiary">Overall core module accuracy index</p>
@@ -312,11 +294,11 @@ export default function ReportsPage() {
                     <RadarChart cx="50%" cy="50%" outerRadius="65%" data={masteryData}>
                       <defs>
                         <linearGradient id="colorRadar1" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.35}/>
-                          <stop offset="95%" stopColor="#2A85FF" stopOpacity={0.05}/>
+                          <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.35} />
+                          <stop offset="95%" stopColor="#2A85FF" stopOpacity={0.05} />
                         </linearGradient>
                       </defs>
-                      <PolarGrid stroke="rgba(123, 123, 123, 0.15)"/>
+                      <PolarGrid stroke="rgba(123, 123, 123, 0.15)" />
                       <PolarAngleAxis dataKey="subject" tick={{ fill: "#727272", fontSize: 10, fontWeight: 600, fontFamily: "var(--font-sans)" }} dy={4} />
                       <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                       <Radar name="Accuracy Index" dataKey="Score" stroke="#2A85FF" strokeWidth={2.5} fill="url(#colorRadar1)" fillOpacity={1} dot={{ r: 3, fill: '#2A85FF', strokeWidth: 0 }} activeDot={{ r: 5, fill: '#2A85FF', strokeWidth: 0 }} />
@@ -331,15 +313,15 @@ export default function ReportsPage() {
           </div>
 
           {/* Recent Test Reports List */}
-          <div className="group relative flex flex-col p-6 md:p-8 gap-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
-            <div className="box-hover" />
+          <div className="group relative flex flex-col p-6 md:p-8 gap-6 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-velora-light w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300">
+
             <div className="relative z-10 flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
               <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
                 Recent Test Reports
               </h4>
-              <Link 
-                href="/institute/tests" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
+              <Link
+                href="/institute/tests"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
               >
                 <span>View All</span>
                 <RiArrowRightLine size={16} />
@@ -355,11 +337,11 @@ export default function ReportsPage() {
               ].map((report) => (
                 <div
                   key={report.id}
-                  className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-b-surface1 dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
+                  className="group/item relative flex flex-row items-center justify-between p-4 gap-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all h-[96px] cursor-pointer"
                 >
                   {/* Left: Avatar/Icon + Title & Batch details */}
                   <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                    <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 dark:border-s-stroke2/20 shrink-0 text-t-secondary dark:text-t-tertiary font-bold text-lg">
+                    <div className="flex w-16 h-16 items-center justify-center rounded-[10px] bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 dark:border-s-stroke2/20 shrink-0 text-t-secondary dark:text-t-tertiary font-bold text-lg">
                       {report.exam === "JEE" ? <RiRulerLine size={24} /> : <RiTestTubeLine size={24} />}
                     </div>
                     <div className="min-w-0 flex-1 flex flex-col">
@@ -410,15 +392,15 @@ export default function ReportsPage() {
       {activeTab === "Batch Performance" && (
         <>
           {/* Full-width Trend Chart */}
-          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden w-full mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
-            <div className="box-hover" />
+          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-velora-light overflow-hidden w-full mt-4 transition-all duration-300">
+
             <div className="relative z-10 flex flex-row justify-between items-start mb-6">
               <div className="flex flex-col gap-1">
                 <h3 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary">Cross-Batch Accuracy Over Time</h3>
                 <p className="text-xs text-t-secondary dark:text-t-tertiary">Longitudinal performance trend for the active coaching batches</p>
               </div>
               {/* Custom Legend */}
-              <div className="flex flex-row items-center gap-4 bg-b-surface1 dark:bg-b-surface1/40 px-3 py-1.5 rounded-lg border border-s-stroke2/10">
+              <div className="flex flex-row items-center gap-4 bg-b-surface1 dark:bg-b-surface1/40 px-3 py-1.5 rounded-[10px] border border-s-stroke2/10">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-primary-01" />
                   <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Physics</span>
@@ -440,21 +422,21 @@ export default function ReportsPage() {
                   <AreaChart data={trendData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                     <defs>
                       <linearGradient id="colorPhysicsBatch" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.25}/>
-                        <stop offset="95%" stopColor="#2A85FF" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.25} />
+                        <stop offset="95%" stopColor="#2A85FF" stopOpacity={0} />
                       </linearGradient>
                       <linearGradient id="colorChemBatch" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#EF9D0E" stopOpacity={0.25}/>
-                        <stop offset="95%" stopColor="#EF9D0E" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="#EF9D0E" stopOpacity={0.25} />
+                        <stop offset="95%" stopColor="#EF9D0E" stopOpacity={0} />
                       </linearGradient>
                       <linearGradient id="colorMathBatch" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#00A656" stopOpacity={0.25}/>
-                        <stop offset="95%" stopColor="#00A656" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="#00A656" stopOpacity={0.25} />
+                        <stop offset="95%" stopColor="#00A656" stopOpacity={0} />
                       </linearGradient>
                     </defs>
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(123, 123, 123, 0.15)"/>
-                    <XAxis dataKey="month" tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dy={10}/>
-                    <YAxis domain={[40, 100]} tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dx={-10}/>
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(123, 123, 123, 0.15)" />
+                    <XAxis dataKey="month" tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dy={10} />
+                    <YAxis domain={[40, 100]} tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dx={-10} />
                     <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(123,123,123,0.2)', strokeWidth: 1, strokeDasharray: '4 4' }} />
                     <Area type="monotone" dataKey="Physics" stroke="#2A85FF" strokeWidth={3} fillOpacity={1} fill="url(#colorPhysicsBatch)" activeDot={{ r: 6, strokeWidth: 0, fill: '#2A85FF' }} />
                     <Area type="monotone" dataKey="Chemistry" stroke="#EF9D0E" strokeWidth={3} fillOpacity={1} fill="url(#colorChemBatch)" activeDot={{ r: 6, strokeWidth: 0, fill: '#EF9D0E' }} />
@@ -468,15 +450,15 @@ export default function ReportsPage() {
           </div>
 
           {/* Batch Metrics Rows */}
-          <div className="group relative flex flex-col p-3 pb-6 gap-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
-            <div className="box-hover" />
+          <div className="group relative flex flex-col p-3 pb-6 gap-6 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-velora-light w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300">
+
             <div className="relative z-10 flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
               <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
                 Cohort Batch Comparison
               </h4>
-              <Link 
-                href="/institute/batches" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
+              <Link
+                href="/institute/batches"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
               >
                 <span>View All</span>
                 <RiArrowRightLine size={16} />
@@ -493,12 +475,12 @@ export default function ReportsPage() {
                 ][index % 4];
 
                 return (
-                  <div 
+                  <div
                     key={batch.id}
-                    className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-b-surface1 dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
+                    className="group/item relative flex flex-row items-center justify-between p-4 gap-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all h-[96px] cursor-pointer"
                   >
                     <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                      <div className={`flex w-16 h-16 items-center justify-center rounded-lg border shrink-0 text-t-secondary font-bold ${colors.bg}`}>
+                      <div className={`flex w-16 h-16 items-center justify-center rounded-[10px] border shrink-0 text-t-secondary font-bold ${colors.bg}`}>
                         <RiTeamLine size={24} />
                       </div>
                       <div className="min-w-0 flex-1 flex flex-col">
@@ -522,7 +504,7 @@ export default function ReportsPage() {
                       </div>
 
                       <div className="min-w-[100px] flex justify-end">
-                        <span className="px-3 py-1.5 border rounded-lg text-[10px] font-bold uppercase tracking-wider bg-[rgba(0,166,86,0.05)] border-s-stroke2/40 text-primary-02">
+                        <span className="px-3 py-1.5 border rounded-[10px] text-[10px] font-bold uppercase tracking-wider bg-[rgba(0,166,86,0.05)] border-s-stroke2/40 text-primary-02">
                           Active
                         </span>
                       </div>
@@ -539,8 +521,8 @@ export default function ReportsPage() {
       {activeTab === "Student Performance" && (
         <>
           {/* Radar Chart */}
-          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-lg shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden w-full mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
-            <div className="box-hover" />
+          <div className="group relative flex flex-col justify-between p-6 md:p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-velora-light overflow-hidden w-full mt-4 transition-all duration-300">
+
             <div className="relative z-10 flex flex-col gap-1 mb-6">
               <h3 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary">Student Weakness & Strength Index</h3>
               <p className="text-xs text-t-secondary dark:text-t-tertiary">Comparative review of syllabus mastery averages</p>
@@ -552,11 +534,11 @@ export default function ReportsPage() {
                   <RadarChart cx="50%" cy="50%" outerRadius="65%" data={masteryData}>
                     <defs>
                       <linearGradient id="colorRadar2" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.35}/>
-                        <stop offset="95%" stopColor="#2A85FF" stopOpacity={0.05}/>
+                        <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.35} />
+                        <stop offset="95%" stopColor="#2A85FF" stopOpacity={0.05} />
                       </linearGradient>
                     </defs>
-                    <PolarGrid stroke="rgba(123, 123, 123, 0.15)"/>
+                    <PolarGrid stroke="rgba(123, 123, 123, 0.15)" />
                     <PolarAngleAxis dataKey="subject" tick={{ fill: "#727272", fontSize: 11, fontWeight: 600, fontFamily: "var(--font-sans)" }} dy={4} />
                     <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                     <Radar name="Accuracy Index" dataKey="Score" stroke="#2A85FF" strokeWidth={2.5} fill="url(#colorRadar2)" fillOpacity={1} dot={{ r: 3, fill: '#2A85FF', strokeWidth: 0 }} activeDot={{ r: 5, fill: '#2A85FF', strokeWidth: 0 }} />
@@ -570,15 +552,15 @@ export default function ReportsPage() {
           </div>
 
           {/* Student list rows */}
-          <div className="group relative flex flex-col p-3 pb-6 gap-6 rounded-lg bg-b-surface2 dark:bg-b-surface2 shadow-[0px_5px_1.5px_-4px_rgba(8,8,8,0.09),0px_6px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/40 w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300 hover:shadow-[0px_12px_24px_-8px_rgba(0,0,0,0.06),0px_6px_10px_-4px_rgba(8,8,8,0.04)] hover:-translate-y-0.5">
-            <div className="box-hover" />
+          <div className="group relative flex flex-col p-3 pb-6 gap-6 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-velora-light w-full min-w-0 overflow-hidden select-none mt-4 transition-all duration-300">
+
             <div className="relative z-10 flex flex-row items-center justify-between py-2.5 px-3 w-full h-12 gap-2">
               <h4 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
                 Top Performing Students List
               </h4>
-              <Link 
-                href="/institute/students" 
-                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-lg bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
+              <Link
+                href="/institute/students"
+                className="flex flex-row justify-center items-center px-4.5 py-2.5 gap-2 border border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-t-secondary dark:text-t-secondary text-sm font-sans transition-all hover:border-t-secondary active:scale-98 no-underline"
               >
                 <span>View Directory</span>
                 <RiArrowRightLine size={16} />
@@ -595,12 +577,12 @@ export default function ReportsPage() {
                   : "bg-primary-05/5 border-primary-05/15 text-primary-05";
 
                 return (
-                  <div 
+                  <div
                     key={student.id}
-                    className="flex flex-row items-center justify-between p-3 gap-8 rounded-lg transition-all w-full h-[88px] min-w-0 overflow-hidden bg-transparent hover:bg-b-surface1 dark:hover:bg-b-surface1/30 border border-transparent hover:border-s-stroke2/10"
+                    className="group/item relative flex flex-row items-center justify-between p-4 gap-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all h-[96px] cursor-pointer"
                   >
                     <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                      <div className="flex w-16 h-16 items-center justify-center rounded-lg bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
+                      <div className="flex w-16 h-16 items-center justify-center rounded-[10px] bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
                         {initials}
                       </div>
                       <div className="min-w-0 flex-1 flex flex-col">
