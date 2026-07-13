@@ -21,7 +21,6 @@ import {
   RiMoneyDollarCircleLine,
   RiToggleLine,
   RiLifebuoyLine,
-  RiQuestionAnswerLine,
   RiFileList3Line,
   RiBookmarkLine,
   RiFileListLine,
@@ -94,14 +93,12 @@ export default function Sidebar() {
     { label: "Mistake Diary",href: "/student/mistakes",  icon: <RiBookmarkLine size={18} />,       active: pathname.startsWith("/student/mistakes") },
     { label: "Analytics",   href: "/analytics",          icon: <RiLineChartLine size={18} />,      active: pathname.startsWith("/analytics") },
     { label: "Leaderboard", href: "/leaderboard",        icon: <RiTrophyLine size={18} />,         active: pathname.startsWith("/leaderboard") },
-    { label: "Ask a Doubt", href: "/doubts",             icon: <RiQuestionAnswerLine size={18} />, active: pathname.startsWith("/doubts") },
   ];
 
   const teacherNav = [
     { label: "Dashboard", href: "/teacher",          icon: <RiDashboardLine size={18} />,  active: pathname === "/teacher" },
     { label: "DPPs",      href: "/teacher/dpps",     icon: <RiFileListLine size={18} />,   active: pathname.startsWith("/teacher/dpps") },
     { label: "Analytics", href: "/teacher/analytics",icon: <RiBarChartBoxLine size={18} />,active: pathname.startsWith("/teacher/analytics") },
-    { label: "Doubts",    href: "/teacher/doubts",   icon: <RiQuestionAnswerLine size={18} />, active: pathname.startsWith("/teacher/doubts") },
   ];
 
   const instituteNav = [
@@ -264,12 +261,11 @@ export default function Sidebar() {
           </button>
 
           {/* Message Mail Button */}
-          <Link 
-            href="/doubts" 
+          <button
             className="relative flex size-12 items-center justify-center rounded-full bg-b-surface2 border border-s-stroke2 transition-all active:scale-95 shadow-widget hover:border-s-highlight cursor-pointer shrink-0 text-t-secondary hover:text-t-primary"
           >
             <RiMailLine size={20} />
-          </Link>
+          </button>
 
           {/* Theme Toggle Capsule: Horizontal pill, rounded-full, 48px height, icons only */}
           <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-[10px] p-1 h-12 flex-1 relative select-none shadow-widget">

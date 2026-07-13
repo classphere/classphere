@@ -6,11 +6,15 @@ import {
   getMyInstitute,
   updateInstitute,
   getInstituteStats,
+  getInstituteBySlug,
 } from "./institutes.controller";
 
 const router = Router();
 
 // All institute routes require authentication (applied per-route, not as blanket middleware)
+
+// ⚠️  Public route — no auth — must come FIRST before /:id wildcard
+router.get("/by-slug/:slug", getInstituteBySlug);
 
 // ⚠️  ORDER MATTERS: "/me" must come before "/:id"
 router.get("/me", authenticate, requireRole("institute_admin", "super_admin"), getMyInstitute);

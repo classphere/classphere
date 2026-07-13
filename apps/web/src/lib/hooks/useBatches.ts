@@ -44,11 +44,17 @@ async function apiFetch<T>(
   const token = await getToken();
   if (!token) throw new Error("Not authenticated — please sign in");
 
+  const sessionToken =
+    typeof window !== "undefined"
+      ? localStorage.getItem("classphere_session_token") ?? ""
+      : "";
+
   const res = await fetch(`${API_URL}${path}`, {
     ...options,
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
+      ...(sessionToken ? { "x-session-token": sessionToken } : {}),
       ...(options.headers ?? {}),
     },
   });

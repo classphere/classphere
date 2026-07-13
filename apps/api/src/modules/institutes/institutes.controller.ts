@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { provisionInstitute } from "./institutes.service";
-import { supabaseAdmin } from "../../lib/supabase";
+import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 
 // ─── Institute Handlers ─────────────────────────────────────────────────────
 
@@ -110,7 +110,7 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
     }
 
     // ── 1. Find the institute owned by this admin ────────────────────────────
-    const { data: institute, error: instErr } = await supabaseAdmin
+    const { data: institute, error: instErr } = await supabaseDB
       .from("institutes")
       .select("id")
       .eq("owner_id", userId)
@@ -123,7 +123,7 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
     }
 
     // ── 2. Insert the batch ──────────────────────────────────────────────────
-    const { data: batch, error: batchErr } = await supabaseAdmin
+    const { data: batch, error: batchErr } = await supabaseDB
       .from("batches")
       .insert({
         institute_id: institute.id,
@@ -161,7 +161,7 @@ export const listBatches = async (req: Request, res: Response): Promise<void> =>
 
     if (role === "institute_admin") {
       // ── Find institute owned by this admin ─────────────────────────────────
-      const { data: institute, error: instErr } = await supabaseAdmin
+      const { data: institute, error: instErr } = await supabaseDB
         .from("institutes")
         .select("id")
         .eq("owner_id", userId)
@@ -173,7 +173,7 @@ export const listBatches = async (req: Request, res: Response): Promise<void> =>
         return;
       }
 
-      const { data: batches, error: batchErr } = await supabaseAdmin
+      const { data: batches, error: batchErr } = await supabaseDB
         .from("batches")
         .select("*")
         .eq("institute_id", institute.id)
@@ -191,7 +191,7 @@ export const listBatches = async (req: Request, res: Response): Promise<void> =>
 
     // teacher: batches they are assigned to
     if (role === "teacher") {
-      const { data: rows, error } = await supabaseAdmin
+      const { data: rows, error } = await supabaseDB
         .from("batch_teachers")
         .select("batch_id, batches(*)")
         .eq("teacher_id", userId);
@@ -348,3 +348,36 @@ export const generateBatchInvite = async (req: Request, res: Response): Promise<
 };
 
 
+// ─────────────────────────────────────────────────────────────────────────────
+/**
+ * GET /api/v1/institutes/by-slug/:slug
+ * PUBLIC — no authentication required.
+ * Returns only public branding data for the given subdomain slug.
+ * Used by the frontend TenantContext on initial load.
+ */
+export const getInstituteBySlug = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { slug } = req.params;
+
+    if (!slug) {
+      res.status(400).json({ success: false, message: "slug is required" });
+      return;
+    }
+
+    const { data, error } = await supabaseDB
+      .from("institutes")
+      .select("id, name, logo_url, primary_color, subdomain_slug")
+      .eq("subdomain_slug", slug.toLowerCase().trim())
+      .eq("is_active", true)
+      .single();
+
+    if (error || !data) {
+      res.status(404).json({ success: false, message: "Institute not found" });
+      return;
+    }
+
+    res.status(200).json({ success: true, data });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
