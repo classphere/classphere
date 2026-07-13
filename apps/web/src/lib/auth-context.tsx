@@ -57,7 +57,7 @@ function homePath(role: string): string {
   switch (role) {
     case "super_admin":     return "/superadmin";
     case "institute_admin": return "/institute";
-    case "teacher":         return "/institute";
+    case "teacher":         return "/teacher";
     default:                return "/dashboard";  // student
   }
 }

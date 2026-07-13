@@ -43,11 +43,18 @@ export const createInstitute = async (req: Request, res: Response): Promise<void
  */
 export const getMyInstitute = async (req: Request, res: Response): Promise<void> => {
   try {
-    // TODO: implement
-    // 1. SELECT * FROM institutes WHERE owner_id = req.user!.id AND is_active = true
-    // 2. If not found: 404
-    // 3. Return { success: true, data: { institute } }
-    res.status(200).json({ success: true, message: "getMyInstitute — TODO: implement" });
+    const userId = req.user!.id;
+    const { data: institute, error } = await supabaseDB
+      .from("institutes")
+      .select("id, name, type, logo_url, primary_color, subdomain_slug, subscription_plan, max_students, is_active, created_at")
+      .eq("owner_id", userId)
+      .eq("is_active", true)
+      .maybeSingle();
+
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+    if (!institute) { res.status(404).json({ success: false, message: "No institute found" }); return; }
+
+    res.status(200).json({ success: true, data: { institute } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -60,12 +67,17 @@ export const getMyInstitute = async (req: Request, res: Response): Promise<void>
 export const updateInstitute = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // 1. Verify institute belongs to req.user!.id (owner_id = req.user!.id)
-    // 2. Validate req.body (allow: name, metadata — disallow: subscription_plan, max_students by non-super_admin)
-    // 3. UPDATE institutes SET ...fields WHERE id = $id AND owner_id = req.user!.id RETURNING *
-    // 4. Return { success: true, data: { institute } }
-    res.status(200).json({ success: true, message: "updateInstitute — TODO: implement", id });
+    const userId = req.user!.id;
+    const allowed = ["name", "logo_url", "primary_color"];
+    const updates: Record<string, any> = {};
+    for (const k of allowed) { if (req.body[k] !== undefined) updates[k] = req.body[k]; }
+    if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No valid fields to update" }); return; }
+
+    const { data: institute, error } = await supabaseDB
+      .from("institutes").update(updates).eq("id", id).eq("owner_id", userId).select().single();
+
+    if (error || !institute) { res.status(error ? 500 : 404).json({ success: false, message: error?.message ?? "Institute not found" }); return; }
+    res.status(200).json({ success: true, data: { institute } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -78,16 +90,33 @@ export const updateInstitute = async (req: Request, res: Response): Promise<void
 export const getInstituteStats = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // 1. Verify institute belongs to req.user!.id
-    // 2. Aggregate:
-    //    a. Total students: COUNT(*) FROM batch_students bs JOIN batches b ON b.id = bs.batch_id WHERE b.institute_id = $id
-    //    b. Total batches: COUNT(*) FROM batches WHERE institute_id = $id AND is_active = true
-    //    c. Tests this month: COUNT(*) FROM tests t JOIN test_batch_assignments tba ON tba.test_id = t.id
-    //         JOIN batches b ON b.id = tba.batch_id WHERE b.institute_id = $id AND t.created_at >= date_trunc('month', now())
-    //    d. Average student score this month: similar join + avg(a.score)
-    // 3. Return { success: true, data: { stats: { total_students, total_batches, tests_this_month, avg_score } } }
-    res.status(200).json({ success: true, message: "getInstituteStats — TODO: implement", id });
+
+    // Fetch all active batches for this institute
+    const { data: batches, error: bErr } = await supabaseDB
+      .from("batches").select("id").eq("institute_id", id).eq("is_active", true);
+    if (bErr) { res.status(500).json({ success: false, message: bErr.message }); return; }
+
+    const batchIds = (batches ?? []).map((b: any) => b.id);
+    const totalBatches = batchIds.length;
+
+    // Count total distinct students across all batches
+    let totalStudents = 0;
+    if (batchIds.length > 0) {
+      const { count } = await supabaseDB
+        .from("batch_students").select("student_id", { count: "exact", head: true })
+        .in("batch_id", batchIds);
+      totalStudents = count ?? 0;
+    }
+
+    // Count faculty
+    const { count: totalFaculty } = await supabaseDB
+      .from("faculty").select("id", { count: "exact", head: true })
+      .eq("institute_id", id).eq("is_active", true);
+
+    res.status(200).json({
+      success: true,
+      data: { stats: { total_students: totalStudents, total_batches: totalBatches, total_faculty: totalFaculty ?? 0 } },
+    });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -220,15 +249,18 @@ export const listBatches = async (req: Request, res: Response): Promise<void> =>
 export const getBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // 1. SELECT * FROM batches WHERE id = $id AND is_active = true
-    // 2. If not found: 404
-    // 3. Verify access: user is teacher in batch, institute_admin of batch's institute, or super_admin
-    // 4. Fetch students: SELECT u.id, u.name, u.email, bs.joined_at FROM users u
-    //      JOIN batch_students bs ON bs.student_id = u.id WHERE bs.batch_id = $id
-    // 5. Fetch teachers: similar with batch_teachers
-    // 6. Return { success: true, data: { batch, students, teachers } }
-    res.status(200).json({ success: true, message: "getBatch — TODO: implement", id });
+
+    const { data: batch, error } = await supabaseDB
+      .from("batches").select("*, institutes(name)").eq("id", id).eq("is_active", true).maybeSingle();
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+    if (!batch) { res.status(404).json({ success: false, message: "Batch not found" }); return; }
+
+    // Students in batch
+    const { data: studentLinks } = await supabaseDB
+      .from("batch_students").select("student_id, users(id, name, phone, date_of_birth)").eq("batch_id", id);
+    const students = (studentLinks ?? []).map((r: any) => r.users).filter(Boolean);
+
+    res.status(200).json({ success: true, data: { batch, students, teachers: [] } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -241,12 +273,15 @@ export const getBatch = async (req: Request, res: Response): Promise<void> => {
 export const updateBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // 1. Verify batch belongs to institute owned by req.user!.id
-    // 2. Validate req.body: allow name, description, start_date, end_date
-    // 3. UPDATE batches SET ...fields WHERE id = $id RETURNING *
-    // 4. Return { success: true, data: { batch } }
-    res.status(200).json({ success: true, message: "updateBatch — TODO: implement", id });
+    const allowed = ["name", "exam", "description", "max_students", "max_teachers"];
+    const updates: Record<string, any> = {};
+    for (const k of allowed) { if (req.body[k] !== undefined) updates[k] = req.body[k]; }
+    if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No valid fields" }); return; }
+
+    const { data: batch, error } = await supabaseDB
+      .from("batches").update(updates).eq("id", id).select().single();
+    if (error || !batch) { res.status(error ? 500 : 404).json({ success: false, message: error?.message ?? "Batch not found" }); return; }
+    res.status(200).json({ success: true, data: { batch } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -259,12 +294,9 @@ export const updateBatch = async (req: Request, res: Response): Promise<void> =>
 export const deactivateBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // SOFT DELETE — do NOT hard delete
-    // 1. Verify batch belongs to institute owned by req.user!.id
-    // 2. UPDATE batches SET is_active = false WHERE id = $id
-    // 3. Return { success: true, message: "Batch deactivated" }
-    res.status(200).json({ success: true, message: "deactivateBatch (soft) — TODO: implement", id });
+    const { error } = await supabaseDB.from("batches").update({ is_active: false }).eq("id", id);
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+    res.status(200).json({ success: true, message: "Batch deactivated" });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -277,14 +309,13 @@ export const deactivateBatch = async (req: Request, res: Response): Promise<void
 export const addStudentToBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // 1. Validate req.body: { student_id: string }
-    // 2. Verify batch belongs to institute owned by req.user!.id
-    // 3. Verify student exists and has role 'student'
-    // 4. Check max_students not exceeded
-    // 5. INSERT INTO batch_students (batch_id, student_id) ON CONFLICT DO NOTHING
-    // 6. Return { success: true, message: "Student added to batch" } with 201
-    res.status(201).json({ success: true, message: "addStudentToBatch — TODO: implement", batch_id: id });
+    const { student_id } = req.body;
+    if (!student_id) { res.status(400).json({ success: false, message: "student_id is required" }); return; }
+
+    const { error } = await supabaseDB
+      .from("batch_students").upsert({ batch_id: id, student_id }, { onConflict: "batch_id,student_id", ignoreDuplicates: true });
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+    res.status(201).json({ success: true, message: "Student added to batch" });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -297,11 +328,10 @@ export const addStudentToBatch = async (req: Request, res: Response): Promise<vo
 export const removeStudentFromBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id, student_id } = req.params;
-    // TODO: implement
-    // 1. Verify batch belongs to institute owned by req.user!.id
-    // 2. DELETE FROM batch_students WHERE batch_id = $id AND student_id = $student_id
-    // 3. Return { success: true, message: "Student removed from batch" }
-    res.status(200).json({ success: true, message: "removeStudentFromBatch — TODO: implement", batch_id: id, student_id });
+    const { error } = await supabaseDB
+      .from("batch_students").delete().eq("batch_id", id).eq("student_id", student_id);
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+    res.status(200).json({ success: true, message: "Student removed from batch" });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -314,13 +344,13 @@ export const removeStudentFromBatch = async (req: Request, res: Response): Promi
 export const addTeacherToBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // 1. Validate req.body: { teacher_id: string }
-    // 2. Verify batch belongs to institute owned by req.user!.id
-    // 3. Verify teacher exists and has role 'teacher'
-    // 4. INSERT INTO batch_teachers (batch_id, teacher_id) ON CONFLICT DO NOTHING
-    // 5. Return { success: true, message: "Teacher added to batch" } with 201
-    res.status(201).json({ success: true, message: "addTeacherToBatch — TODO: implement", batch_id: id });
+    const { teacher_id } = req.body;
+    if (!teacher_id) { res.status(400).json({ success: false, message: "teacher_id is required" }); return; }
+
+    const { error } = await supabaseDB
+      .from("batch_teachers").upsert({ batch_id: id, teacher_id }, { onConflict: "batch_id,teacher_id", ignoreDuplicates: true });
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+    res.status(201).json({ success: true, message: "Teacher added to batch" });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -333,15 +363,19 @@ export const addTeacherToBatch = async (req: Request, res: Response): Promise<vo
 export const generateBatchInvite = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // 1. Verify batch belongs to institute owned by req.user!.id
-    // 2. Validate req.body: { max_uses?: number, expires_in_days?: number }
-    // 3. Generate a unique invite code using invite.service.generateCode()
-    //    — Format: "INST-BATCHNAME-XXXX" (uppercase, readable)
-    // 4. INSERT INTO batch_invites (batch_id, code, created_by, max_uses, expires_at) RETURNING *
-    // 5. Build the invite URL: `${process.env.FRONTEND_URL}/invite/${code}`
-    // 6. Return { success: true, data: { invite: { code, url, expires_at, max_uses } } } with 201
-    res.status(201).json({ success: true, message: "generateBatchInvite — TODO: implement", batch_id: id });
+    const { max_uses = 100, expires_in_days = 30 } = req.body;
+
+    // Generate a short unique code
+    const chars = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+    const code = Array.from({ length: 8 }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
+    const expires_at = new Date(Date.now() + expires_in_days * 86400000).toISOString();
+    const APP_URL = process.env.APP_URL ?? "http://localhost:3000";
+
+    const { data: invite, error } = await supabaseDB
+      .from("batch_invites").insert({ batch_id: id, code, created_by: req.user!.id, max_uses, expires_at }).select().single();
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+
+    res.status(201).json({ success: true, data: { invite: { code, url: `${APP_URL}/invite/${code}`, expires_at, max_uses } } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

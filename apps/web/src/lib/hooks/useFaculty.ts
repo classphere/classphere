@@ -15,6 +15,8 @@ export interface Faculty {
   id: string;
   institute_id: string;
   name: string;
+  email: string | null;
+  phone: string | null;
   position: string;
   subject: string;
   batches_count: number;
@@ -25,10 +27,12 @@ export interface Faculty {
 
 export interface CreateFacultyPayload {
   name: string;
+  email: string;
+  phone?: string;
   position: string;
   subject: string;
-  batches_count: number;
-  rating: number;
+  batch_id: string;    // required — must belong to institute
+  rating?: number;
 }
 
 // ─── Helper ───────────────────────────────────────────────────────────────────

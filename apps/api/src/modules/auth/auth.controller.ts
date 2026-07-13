@@ -25,13 +25,49 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     let supabasePassword: string;
 
     if (login_type === "phone_dob") {
-      if (!phone || !dob || !institute_slug) {
-        res.status(400).json({ success: false, message: "phone, dob, and institute_slug are required for student login." });
+      if (!phone || !dob) {
+        res.status(400).json({ success: false, message: "phone and dob are required for student login." });
         return;
       }
+      
+      let resolvedSlug = String(institute_slug || "").toLowerCase().trim();
+      
+      if (!resolvedSlug) {
+        // Attempt to auto-resolve institute by phone
+        const { data: matchedUsers } = await supabaseDB
+          .from("users")
+          .select("institute_id")
+          .eq("phone", String(phone).trim())
+          .eq("role", "student");
+          
+        if (!matchedUsers || matchedUsers.length === 0) {
+          res.status(401).json({ success: false, message: "Invalid credentials. Please check and try again." });
+          return;
+        }
+        if (matchedUsers.length > 1) {
+          // More than one student found with this phone (possibly across institutes)
+          res.status(400).json({ success: false, message: "Your phone is registered in multiple institutes. Please use your institute's specific login URL (e.g. institute.classphere.com)." });
+          return;
+        }
+        
+        // Exactly one match
+        const { data: instData } = await supabaseDB
+          .from("institutes")
+          .select("subdomain_slug")
+          .eq("id", matchedUsers[0].institute_id)
+          .single();
+          
+        if (!instData) {
+          res.status(401).json({ success: false, message: "Invalid credentials. Please check and try again." });
+          return;
+        }
+        
+        resolvedSlug = instData.subdomain_slug || "unknown";
+        req.body.institute_slug = resolvedSlug; // For subsequent tenant isolation checks below
+      }
+
       // Shadow email: 9876543210_15082005@saksham.classphere.com
-      // This makes siblings with same phone but different DOB have unique accounts.
-      supabaseEmail = `${String(phone).trim()}_${String(dob).trim()}@${String(institute_slug).toLowerCase().trim()}.classphere.com`;
+      supabaseEmail = `${String(phone).trim()}_${String(dob).trim()}@${resolvedSlug}.classphere.com`;
       supabasePassword = String(dob).trim();
     } else if (login_type === "email_password") {
       if (!email || !password) {
