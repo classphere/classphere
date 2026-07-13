@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { supabaseAdmin } from "../../lib/supabase";
+import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { listAllInstitutes, getInstituteCRMStats } from "../institutes/institutes.service";
 import { randomUUID } from "crypto";
 
@@ -79,11 +79,11 @@ export const getPlatformStats = async (req: Request, res: Response): Promise<voi
       newStudentsRes,
       crmStats,
     ] = await Promise.all([
-      supabaseAdmin.from("institutes").select("id", { count: "exact", head: true }).eq("is_active", true),
-      supabaseAdmin.from("users").select("id", { count: "exact", head: true }).eq("role", "student"),
-      supabaseAdmin.from("attempts").select("id", { count: "exact", head: true }),
-      supabaseAdmin.from("institutes").select("id", { count: "exact", head: true }).gte("created_at", oneWeekAgo),
-      supabaseAdmin.from("users").select("id", { count: "exact", head: true }).eq("role", "student").gte("created_at", oneWeekAgo),
+      supabaseDB.from("institutes").select("id", { count: "exact", head: true }).eq("is_active", true),
+      supabaseDB.from("users").select("id", { count: "exact", head: true }).eq("role", "student"),
+      supabaseDB.from("attempts").select("id", { count: "exact", head: true }),
+      supabaseDB.from("institutes").select("id", { count: "exact", head: true }).gte("created_at", oneWeekAgo),
+      supabaseDB.from("users").select("id", { count: "exact", head: true }).eq("role", "student").gte("created_at", oneWeekAgo),
       getInstituteCRMStats(),
     ]);
 

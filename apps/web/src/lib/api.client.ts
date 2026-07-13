@@ -1,8 +1,12 @@
 /**
  * api.client.ts
  * Single source of truth for all API communication.
- * Import `apiClient` (for authenticated calls) or `API_URL` (for raw fetch) from here.
- * Never redefine `process.env.NEXT_PUBLIC_API_URL` in a page file.
+ * Automatically attaches:
+ *   - Authorization: Bearer <supabase_access_token>
+ *   - x-session-token: <one-device session token from localStorage>
+ *
+ * Handles SESSION_CONFLICT globally — redirects to /login?reason=device_conflict
+ * so the login page can show the user an appropriate message.
  */
 
 export const API_URL =
@@ -19,15 +23,43 @@ async function request<T = unknown>(
 ): Promise<T> {
   const { token, body, headers = {}, ...rest } = options;
 
+  // Attach session token from localStorage for one-device enforcement
+  const sessionToken =
+    typeof window !== "undefined"
+      ? localStorage.getItem("classphere_session_token") ?? ""
+      : "";
+
   const res = await fetch(`${API_URL}${path}`, {
     ...rest,
     headers: {
       "Content-Type": "application/json",
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...(sessionToken ? { "x-session-token": sessionToken } : {}),
       ...(headers as Record<string, string>),
     },
     body: body !== undefined ? JSON.stringify(body) : undefined,
   });
+
+  // Handle one-device session conflict globally
+  if (res.status === 401) {
+    const errBody = await res.json().catch(() => ({}));
+    if (typeof window !== "undefined") {
+      if (errBody.code === "SESSION_CONFLICT") {
+        // Another device took the session — warn the user
+        localStorage.removeItem("classphere_session_token");
+        window.location.href = "/login?reason=device_conflict";
+        return new Promise(() => {});
+      }
+      if (errBody.code === "NO_SESSION_TOKEN") {
+        // Session token missing — user needs to log in through our flow
+        localStorage.removeItem("classphere_session_token");
+        window.location.href = "/login";
+        return new Promise(() => {});
+      }
+    }
+    const text = JSON.stringify(errBody);
+    throw new Error(`API 401: ${text}`);
+  }
 
   if (!res.ok) {
     const text = await res.text().catch(() => res.statusText);

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import jwt from "jsonwebtoken";
+import { supabaseDB } from "../lib/supabase";
 
 // Extend Express Request to carry decoded user info
 declare global {
@@ -9,6 +9,7 @@ declare global {
         id: string;
         email: string;
         role: string;
+        institute_id: string | null;
       };
     }
   }
@@ -16,11 +17,11 @@ declare global {
 
 /**
  * Validates the Bearer JWT issued by Supabase Auth.
- * On success, attaches `req.user` with { id, email, role }.
- * On failure, returns 401.
+ * On success, attaches `req.user` with { id, email, role, institute_id }.
+ * Enforces one-device login for all non-super_admin roles via x-session-token header.
  *
- * Two valid paths:
- * 1. x-api-key header matching INTERNAL_API_KEY → superadmin access for internal tooling
+ * Valid paths:
+ * 1. x-api-key header matching INTERNAL_API_KEY → superadmin bypass for cron/internal tooling
  * 2. Authorization: Bearer <supabase_jwt> → standard user auth
  */
 export const authenticate = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
@@ -28,7 +29,7 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
   const internalKey = process.env.INTERNAL_API_KEY;
   const providedKey = req.headers["x-api-key"];
   if (internalKey && providedKey === internalKey) {
-    req.user = { id: "superadmin", email: "admin@classphere.com", role: "super_admin" };
+    req.user = { id: "superadmin", email: "admin@classphere.com", role: "super_admin", institute_id: null };
     next();
     return;
   }
@@ -46,12 +47,6 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
     return;
   }
 
-  const jwtSecret = process.env.SUPABASE_JWT_SECRET;
-  if (!jwtSecret) {
-    res.status(500).json({ success: false, message: "Server misconfiguration: missing JWT secret" });
-    return;
-  }
-
   try {
     const { supabaseAdmin } = require("../lib/supabase");
     const { data: { user }, error } = await supabaseAdmin.auth.getUser(token);
@@ -61,27 +56,45 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
       return;
     }
 
-    // ── Role: prefer public.users (source of truth) over app_metadata ─────────
-    // app_metadata.role is only set when users are created via the admin API.
-    // Most users only have a role in the public.users table.
-    let role = (user.app_metadata?.role as string) ?? null;
+    // ── Fetch role, institute_id, and active_session_token from DB ────────────
+    const { data: dbUser, error: dbError } = await supabaseDB
+      .from("users")
+      .select("role, institute_id, active_session_token")
+      .eq("id", user.id)
+      .single();
 
-    if (!role || role === "authenticated") {
-      // Look up the actual role from the DB
-      const { data: dbUser } = await supabaseAdmin
-        .from("users")
-        .select("role")
-        .eq("id", user.id)
-        .single();
-
-      role = dbUser?.role ?? "student";
+    if (dbError || !dbUser) {
+      res.status(401).json({ success: false, message: "User profile not found. Please contact support." });
+      return;
     }
 
-    req.user = {
-      id: user.id,
-      email: user.email ?? "",
-      role,
-    };
+    const role: string = (user.app_metadata?.role as string) || dbUser.role || "student";
+    const institute_id: string | null = dbUser.institute_id ?? null;
+
+    req.user = { id: user.id, email: user.email ?? "", role, institute_id };
+
+    // ── One-device enforcement: skip for super_admin ───────────────────────────
+    if (role !== "super_admin") {
+      const sessionToken = req.headers["x-session-token"] as string | undefined;
+
+      if (!sessionToken) {
+        res.status(401).json({
+          success: false,
+          code: "NO_SESSION_TOKEN",
+          message: "Session token missing. Please log in again.",
+        });
+        return;
+      }
+
+      if (dbUser.active_session_token && dbUser.active_session_token !== sessionToken) {
+        res.status(401).json({
+          success: false,
+          code: "SESSION_CONFLICT",
+          message: "Your account was opened on another device. Please log in again.",
+        });
+        return;
+      }
+    }
 
     next();
   } catch (err) {

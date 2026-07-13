@@ -1,16 +1,25 @@
 import { Router } from "express";
 import { authenticate } from "../../middleware/auth.middleware";
-import { signup, login, joinBatch, getMe, updateMe } from "./auth.controller";
+import { requireRole } from "../../middleware/rbac.middleware";
+import { signup, login, joinBatch, getMe, updateMe, createStudent } from "./auth.controller";
 
 const router = Router();
 
-// Public routes — no authentication required
-router.post("/signup", signup);
+// ── Public routes — no authentication required ────────────────────────────────
 router.post("/login", login);
+router.post("/signup", signup);
 
-// Authenticated routes
-router.post("/join-batch", authenticate, joinBatch);
+// ── Authenticated routes ──────────────────────────────────────────────────────
 router.get("/me", authenticate, getMe);
 router.patch("/me", authenticate, updateMe);
+router.post("/join-batch", authenticate, joinBatch);
+
+// ── Admin-only: create a student account with phone+DOB shadow email ──────────
+router.post(
+  "/create-student",
+  authenticate,
+  requireRole("institute_admin", "super_admin"),
+  createStudent
+);
 
 export default router;

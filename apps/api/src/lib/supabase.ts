@@ -8,11 +8,31 @@ if (!supabaseUrl || !supabaseServiceKey) {
 }
 
 /**
- * Server-side Supabase admin client.
- * Uses the service_role key — bypasses RLS.
- * Only use this on the API server, never expose to the browser.
+ * supabaseAdmin — used ONLY for admin-level auth operations:
+ *   - supabaseAdmin.auth.signInWithPassword(...)
+ *   - supabaseAdmin.auth.admin.createUser(...)
+ *   - supabaseAdmin.auth.admin.getUserById(...)
+ *   - supabaseAdmin.auth.admin.listUsers()
+ *
+ * ⚠️  NEVER use this for .from("table") DB queries after calling signInWithPassword.
+ *     signInWithPassword mutates this client's internal session, causing all subsequent
+ *     .from() calls to run as the authenticated user (with RLS) instead of service role.
+ *     Use supabaseDB for all database queries.
  */
 export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
+  auth: {
+    autoRefreshToken: false,
+    persistSession: false,
+  },
+});
+
+/**
+ * supabaseDB — a completely separate client using the same service_role key.
+ * Used for ALL .from("table") database queries.
+ * This client is NEVER used for signInWithPassword, so its session is never
+ * contaminated — it always queries as service_role, bypassing RLS.
+ */
+export const supabaseDB = createClient(supabaseUrl, supabaseServiceKey, {
   auth: {
     autoRefreshToken: false,
     persistSession: false,

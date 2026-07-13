@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { RiFlashlightFill, RiEyeLine, RiEyeOffLine, RiAlertLine, RiShieldCheckLine } from "@remixicon/react";
 import { supabase } from "@/lib/supabase";
-
+import { storeSessionToken } from "@/lib/auth-context";
 import { API_URL } from "@/lib/api.client";
 
 export default function SuperAdminLoginPage() {
@@ -18,57 +18,47 @@ export default function SuperAdminLoginPage() {
     setLoading(true);
     setError("");
 
-    // 1. Sign in with Supabase
-    const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
-      email: email.trim(),
-      password,
-    });
-
-    if (authError) {
-      if (authError.message.includes("Invalid login credentials")) {
-        setError("Incorrect email or password.");
-      } else {
-        setError(authError.message);
-      }
-      setLoading(false);
-      return;
-    }
-
-    // 2. Verify super_admin role from our backend
     try {
-      const res = await fetch(`${API_URL}/api/v1/auth/me`, {
-        headers: {
-          Authorization: `Bearer ${authData.session?.access_token}`,
-          "x-user-id": authData.user?.id ?? "",
-        },
+      // Call our backend login endpoint — no institute_slug = super admin path
+      const res = await fetch(`${API_URL}/api/v1/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          login_type: "email_password",
+          email: email.trim(),
+          password,
+        }),
       });
-      const data = await res.json();
-      
-      if (!res.ok || !data.success) {
-        await supabase.auth.signOut();
-        setError(`API Error: ${data.message || 'Unknown error'}`);
-        setLoading(false);
-        return;
-      }
-      
-      const role = data.data?.user?.role;
 
-      if (role !== "super_admin") {
-        // Sign them out immediately — they're not a super admin
-        await supabase.auth.signOut();
-        setError(`Access denied. Found role: ${role || 'undefined'}`);
+      const json = await res.json();
+
+      if (!res.ok) {
+        setError(json.message ?? "Incorrect email or password.");
         setLoading(false);
         return;
       }
+
+      // Verify the user is actually a super_admin
+      if (json.data.user.role !== "super_admin") {
+        setError(`Access denied. Found role: ${json.data.user.role || "undefined"}`);
+        setLoading(false);
+        return;
+      }
+
+      // Store session token
+      storeSessionToken(json.data.session_token);
+
+      // Set Supabase session — AuthContext's onAuthStateChange fires and redirects to /superadmin
+      await supabase.auth.setSession({
+        access_token: json.data.access_token,
+        refresh_token: json.data.refresh_token,
+      });
+
+      // Keep spinner going — AuthContext handles redirect
     } catch (err: any) {
       setError(`Network error: ${err.message}`);
-      await supabase.auth.signOut();
       setLoading(false);
-      return;
     }
-
-    // 3. Auth context picks up SIGNED_IN event and routes to /superadmin
-    // (no manual redirect needed — AuthContext handles it)
   };
 
   return (
