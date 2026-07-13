@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
-import { API_V1_URL } from "@/lib/api.client";
+import { API_V1_URL, apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
 import {
   RiSearchLine,
@@ -119,13 +119,7 @@ function TestsHubContent() {
     setLoading(true);
     setError(null);
     const token = session?.access_token ?? "";
-    fetch(`${API_BASE}/questions/tests?exam=${activeExam}&type=${activeType}`, {
-      headers: token ? { Authorization: `Bearer ${token}` } : {},
-    })
-      .then(r => {
-        if (!r.ok) throw new Error("API error");
-        return r.json();
-      })
+    apiClient.get(`/api/v1/questions/tests?exam=${activeExam}&type=${activeType}`, token)
       .then(res => {
         if (res.success) setPapers(res.data.papers);
         else throw new Error(res.message || "Failed to load tests");

@@ -13,7 +13,7 @@ import {
 } from "@remixicon/react";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import "katex/dist/katex.min.css";
-import { API_V1_URL } from "@/lib/api.client";
+import { API_V1_URL, apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -226,79 +226,32 @@ export default function TestPage() {
     if (!testId) return;
     setLoading(true);
 
-    // ── Helper: fetch from the generic /tests/:id endpoint (Tests Hub papers) ──
-    const loadFromTestsEndpoint = (paperId: string) => {
-      const token = session?.access_token ?? "";
-      fetch(`${API_BASE}/tests/${paperId}`, {
-        headers: token ? { "Authorization": `Bearer ${token}` } : {},
-      })
-        .then((r) => {
-          if (!r.ok) throw new Error("API error");
-          const ct = r.headers.get("content-type");
-          if (!ct || !ct.includes("application/json")) throw new Error("Invalid response format");
-          return r.json();
-        })
-        .then((res) => {
-          if (res.success) {
-            setQuestions(res.data.questions);
-            setMeta(res.data.paper);
-            setTimeLeft(res.data.paper.duration * 60);
-            setIsDemoMode(false);
-            examStartMsRef.current = Date.now();
-          } else {
-            setError(res.message ?? "Failed to load questions.");
-          }
-        })
-        .catch((err) => {
-          setError(err.message || "Failed to load test.");
-        })
-        .finally(() => setLoading(false));
-    };
-
-    // PYQ papers routed from /pyqs page: id is "pyq-{paperId}"
-    if (testId.startsWith("pyq-")) {
-      const paperId = testId.replace(/^pyq-/, "");
-      fetch(`${API_BASE}/pyqs/${paperId}/questions`)
-        .then((r) => {
-          if (!r.ok) throw new Error("API error");
-          const contentType = r.headers.get("content-type");
-          if (!contentType || !contentType.includes("application/json")) throw new Error("Invalid response format");
-          return r.json();
-        })
-        .then((res) => {
-          if (res.success) {
-            setQuestions(res.data.questions);
-            setMeta(res.data.paper);
-            setTimeLeft(res.data.paper.duration * 60);
-            setIsDemoMode(false);
-            examStartMsRef.current = Date.now(); // ← start the clock
-          } else {
-            setError(res.message ?? "Failed to load questions.");
-          }
-        })
-        .catch(() => {
-          setQuestions(DEMO_QUESTIONS);
-          setMeta(DEMO_META);
-          setTimeLeft(DEMO_META.duration * 60);
-          setIsDemoMode(true);
-          examStartMsRef.current = Date.now(); // ← start the clock (demo mode)
-        })
-        .finally(() => setLoading(false));
-      return;
-    }
-
     // Tests Hub papers: id is a raw UUID from the papers table
-    // Matches the UUIDs returned by GET /api/v1/questions/tests
     const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-    if (uuidRegex.test(testId)) {
-      loadFromTestsEndpoint(testId);
+    if (!uuidRegex.test(testId)) {
+      setError(`Unknown test format: "${testId}".`);
+      setLoading(false);
       return;
     }
 
-    // Unknown format
-    setError(`Unknown test format: "${testId}".`);
-    setLoading(false);
-  }, [testId]);
+    const token = session?.access_token ?? "";
+    apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/tests/${testId}`, token)
+      .then((res) => {
+        if (res.success) {
+          setQuestions(res.data.questions);
+          setMeta(res.data.paper);
+          setTimeLeft(res.data.paper.duration * 60);
+          setIsDemoMode(false);
+          examStartMsRef.current = Date.now();
+        } else {
+          setError(res.message ?? "Failed to load questions.");
+        }
+      })
+      .catch((err) => {
+        setError(err.message || "Failed to load test.");
+      })
+      .finally(() => setLoading(false));
+  }, [testId, session?.access_token]);
 
   // ── Timer ──────────────────────────────────────────────────────────────────
   const handleSubmit = useCallback(async () => {
@@ -333,21 +286,13 @@ export default function TestPage() {
         }, {} as Record<string, any>),
       };
 
-      const res = await fetch(`/api/v1/attempts/${testId}/submit`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const token = session?.access_token ?? "";
+      const data = await apiClient.post<{ success: boolean; data: any; message?: string }>(
+        `/api/v1/attempts/${testId}/submit`,
+        payload,
+        token
+      );
 
-      if (!res.ok) {
-        const errBody = await res.text().catch(() => "(no body)");
-        console.error(`Submit failed: HTTP ${res.status}`, errBody);
-        throw new Error(`Submit API failed (${res.status}): ${errBody.slice(0, 200)}`);
-      }
-      const contentType = res.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) throw new Error("Invalid response format");
-
-      const data = await res.json();
       if (data.success) {
         router.push(`/results/${data.data.attempt_id}`);
       } else {
@@ -489,7 +434,6 @@ export default function TestPage() {
       <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-b-surface1 px-6 text-center">
         <div className="text-5xl">⚠️</div>
         <p className="text-body-1 font-semibold text-primary-03">{error}</p>
-        <button className="btn btn-outline" onClick={() => router.push("/pyqs")}>← Back to PYQs</button>
       </div>
     );
   }
@@ -572,20 +516,6 @@ export default function TestPage() {
       </header>
 
       <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem] items-stretch">
-        {isDemoMode && (
-          <div className="xl:col-span-2">
-            <div className="flex flex-col gap-3 rounded-[10px] border border-amber-200/70 bg-amber-50/70 px-5 py-4 text-amber-950 shadow-sm backdrop-blur-sm md:flex-row md:items-center md:justify-between">
-              <div>
-                <p className="text-caption font-bold uppercase tracking-[0.24em] text-amber-700">Demo preview</p>
-                <p className="mt-1 text-body-2 font-medium text-amber-950/90">
-                  The API is unavailable in this session, so the exam shell is rendering against a local paper sample.
-                </p>
-              </div>
-              <button className="btn btn-outline border-amber-300 bg-white/70 text-amber-950" onClick={() => router.push("/pyqs")}>Open PYQs</button>
-            </div>
-          </div>
-        )}
-
         {/* ── Question Area ── */}
         <section className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 card select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
 

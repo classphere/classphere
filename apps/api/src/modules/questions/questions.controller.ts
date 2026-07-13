@@ -1,44 +1,58 @@
 import { Request, Response } from "express";
+import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 
-const SUPABASE_URL = process.env.SUPABASE_URL!;
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
-
-// ─── Supabase REST helper ─────────────────────────────────────────────────────
-async function sbFetch(path: string, options: RequestInit = {}) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
-    ...options,
-    headers: {
-      "Content-Type":  "application/json",
-      "apikey":        SUPABASE_SERVICE_KEY,
-      "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
-      ...(options.headers ?? {}),
-    },
-  });
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Supabase error (${res.status}): ${text}`);
-  }
-  return res.json();
-}
+// ─────────────────────────────────────────────────────────────────────────────
 
 /**
  * GET /api/v1/questions
  * Authenticated — List questions with optional filters.
- * Query params: exam, subject, chapter, difficulty, type, page, limit
+ * Query params: exam (code), subject, chapter, difficulty, type, page, limit
+ * NOTE: correct_answer is stripped unless super_admin.
  */
 export const listQuestions = async (req: Request, res: Response): Promise<void> => {
   try {
-    // TODO: implement
-    // 1. Parse query params: exam (exam code), subject, chapter, difficulty, type, page=1, limit=20
-    // 2. Build query: SELECT q.* FROM questions q
-    //      JOIN exams e ON q.exam_id = e.id
-    //    WHERE q.is_active = true
-    //      AND (exam filter) AND (subject filter) AND (chapter filter) AND (difficulty filter) AND (type filter)
-    //    ORDER BY q.created_at DESC
-    //    LIMIT $limit OFFSET ($page - 1) * $limit
-    // 3. Return { success: true, data: { questions, total, page, limit } }
-    // NOTE: correct_answer must NOT be returned for non-super_admin users
-    res.status(200).json({ success: true, message: "listQuestions — TODO: implement" });
+    const { exam, subject, chapter, difficulty, type, page = "1", limit = "20" } = req.query as Record<string, string>;
+    const pageNum = Math.max(1, parseInt(page));
+    const limitNum = Math.min(100, Math.max(1, parseInt(limit)));
+    const offset = (pageNum - 1) * limitNum;
+
+    const isSuperAdmin = req.user?.role === "super_admin";
+    const selectCols = isSuperAdmin
+      ? "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, correct_answer, options, created_at"
+      : "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, options, created_at";
+
+    let query = supabaseDB
+      .from("questions")
+      .select(selectCols, { count: "exact" })
+      .eq("is_active", true)
+      .order("created_at", { ascending: false })
+      .range(offset, offset + limitNum - 1);
+
+    if (subject) query = query.eq("subject", subject);
+    if (chapter) query = query.eq("chapter", chapter);
+    if (difficulty) query = query.eq("difficulty", difficulty);
+    if (type) query = query.eq("question_type", type);
+
+    // exam filter: join via exams table — filter by exam code
+    if (exam) {
+      // First resolve exam_id from code
+      const { data: examRow } = await supabaseDB.from("exams").select("id").eq("code", exam).maybeSingle();
+      if (examRow) {
+        query = (query as any).eq("exam_id", examRow.id);
+      }
+    }
+
+    const { data: questions, count, error } = await query;
+
+    if (error) {
+      res.status(500).json({ success: false, message: error.message });
+      return;
+    }
+
+    res.status(200).json({
+      success: true,
+      data: { questions: questions ?? [], total: count ?? 0, page: pageNum, limit: limitNum },
+    });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -47,18 +61,49 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
 /**
  * GET /api/v1/questions/meta/exams
  * Authenticated — Return all active exams with their subjects and chapters.
- * Used by the test creation UI to populate dropdowns.
  */
 export const getExamsMeta = async (req: Request, res: Response): Promise<void> => {
   try {
-    // TODO: implement
-    // 1. SELECT DISTINCT e.id, e.code, e.full_name, q.subject, q.chapter
-    //      FROM exams e JOIN questions q ON q.exam_id = e.id
-    //    WHERE e.is_active = true AND q.is_active = true
-    //    ORDER BY e.code, q.subject, q.chapter
-    // 2. Group into structure: [{ exam_id, code, full_name, subjects: [{ name, chapters: [...] }] }]
-    // 3. Return { success: true, data: { exams } }
-    res.status(200).json({ success: true, message: "getExamsMeta — TODO: implement" });
+    const { data: exams } = await supabaseDB
+      .from("exams")
+      .select("id, code, full_name")
+      .eq("is_active", true)
+      .order("code");
+
+    if (!exams || exams.length === 0) {
+      res.status(200).json({ success: true, data: { exams: [] } });
+      return;
+    }
+
+    // For each exam, get distinct subjects and chapters
+    const result = await Promise.all(
+      exams.map(async (exam: any) => {
+        const { data: qData } = await supabaseDB
+          .from("questions")
+          .select("subject, chapter, topic")
+          .eq("exam_id", exam.id)
+          .eq("is_active", true);
+
+        // Group subjects → chapters → topics
+        const subjectMap: Record<string, Set<string>> = {};
+        for (const q of qData ?? []) {
+          if (!subjectMap[q.subject]) subjectMap[q.subject] = new Set();
+          if (q.chapter) subjectMap[q.subject].add(q.chapter);
+        }
+
+        return {
+          exam_id: exam.id,
+          code: exam.code,
+          full_name: exam.full_name,
+          subjects: Object.entries(subjectMap).map(([name, chapters]) => ({
+            name,
+            chapters: Array.from(chapters).sort(),
+          })),
+        };
+      })
+    );
+
+    res.status(200).json({ success: true, data: { exams: result } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -67,16 +112,33 @@ export const getExamsMeta = async (req: Request, res: Response): Promise<void> =
 /**
  * GET /api/v1/questions/:id
  * Authenticated — Return a single question by ID.
+ * correct_answer stripped unless super_admin.
  */
 export const getQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // 1. SELECT * FROM questions WHERE id = $id AND is_active = true
-    // 2. If not found: return 404
-    // 3. Strip correct_answer unless req.user.role === 'super_admin'
-    // 4. Return { success: true, data: { question } }
-    res.status(200).json({ success: true, message: "getQuestion — TODO: implement", id });
+    const isSuperAdmin = req.user?.role === "super_admin";
+
+    const selectCols = isSuperAdmin ? "*" : "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, options, explanation, explanation_images, distractor_map, marking_scheme, tags";
+
+    const { data: question, error } = await supabaseDB
+      .from("questions")
+      .select(selectCols)
+      .eq("id", id)
+      .eq("is_active", true)
+      .maybeSingle();
+
+    if (error) {
+      res.status(500).json({ success: false, message: error.message });
+      return;
+    }
+
+    if (!question) {
+      res.status(404).json({ success: false, message: "Question not found" });
+      return;
+    }
+
+    res.status(200).json({ success: true, data: { question } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -88,13 +150,44 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
  */
 export const createQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
-    // TODO: implement
-    // 1. Validate req.body against question schema (exam_id, subject, chapter, topic, difficulty,
-    //    type, question_text, options, correct_answer, explanation, image_url, source, year, tags)
-    // 2. INSERT INTO questions (...) VALUES (...) RETURNING *
-    //    — set created_by = req.user!.id
-    // 3. Return { success: true, data: { question } } with status 201
-    res.status(201).json({ success: true, message: "createQuestion — TODO: implement" });
+    const { exam_id, subject, chapter, topic, difficulty, question_type, question_text, options, correct_answer, explanation, distractor_map, marking_scheme, source, year, tags, question_images, explanation_images } = req.body;
+
+    if (!exam_id || !subject || !chapter || !difficulty || !question_type || !question_text || !correct_answer) {
+      res.status(400).json({ success: false, message: "Missing required fields: exam_id, subject, chapter, difficulty, question_type, question_text, correct_answer" });
+      return;
+    }
+
+    const { data: question, error } = await supabaseAdmin
+      .from("questions")
+      .insert({
+        exam_id,
+        subject,
+        chapter,
+        topic: topic ?? null,
+        difficulty,
+        question_type,
+        question_text,
+        question_images: question_images ?? [],
+        options: options ?? null,
+        correct_answer: Array.isArray(correct_answer) ? correct_answer : [correct_answer],
+        explanation: explanation ?? null,
+        explanation_images: explanation_images ?? [],
+        distractor_map: distractor_map ?? null,
+        marking_scheme: marking_scheme ?? { correct: 4, incorrect: -1, unattempted: 0, partial: false },
+        source: source ?? null,
+        year: year ?? null,
+        tags: tags ?? [],
+        is_active: true,
+      })
+      .select()
+      .single();
+
+    if (error) {
+      res.status(500).json({ success: false, message: error.message });
+      return;
+    }
+
+    res.status(201).json({ success: true, data: { question } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -107,12 +200,30 @@ export const createQuestion = async (req: Request, res: Response): Promise<void>
 export const updateQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // 1. Verify question exists and is_active = true
-    // 2. Validate req.body (partial question fields)
-    // 3. UPDATE questions SET ...fields, updated_at = now() WHERE id = $id RETURNING *
-    // 4. Return { success: true, data: { question } }
-    res.status(200).json({ success: true, message: "updateQuestion — TODO: implement", id });
+    const allowed = ["subject", "chapter", "topic", "difficulty", "question_type", "question_text", "question_images", "options", "correct_answer", "explanation", "explanation_images", "distractor_map", "marking_scheme", "source", "year", "tags"];
+    const updates: Record<string, any> = {};
+    for (const key of allowed) {
+      if (req.body[key] !== undefined) updates[key] = req.body[key];
+    }
+    if (Object.keys(updates).length === 0) {
+      res.status(400).json({ success: false, message: "No valid fields to update" });
+      return;
+    }
+
+    const { data: question, error } = await supabaseAdmin
+      .from("questions")
+      .update({ ...updates, updated_at: new Date().toISOString() })
+      .eq("id", id)
+      .eq("is_active", true)
+      .select()
+      .single();
+
+    if (error || !question) {
+      res.status(error ? 500 : 404).json({ success: false, message: error?.message ?? "Question not found" });
+      return;
+    }
+
+    res.status(200).json({ success: true, data: { question } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -120,17 +231,23 @@ export const updateQuestion = async (req: Request, res: Response): Promise<void>
 
 /**
  * DELETE /api/v1/questions/:id
- * [super_admin only] — Soft delete a question (sets is_active = false).
+ * [super_admin only] — Soft delete (sets is_active = false).
  */
 export const deleteQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    // TODO: implement
-    // SOFT DELETE — do not hard delete
-    // 1. Verify question exists
-    // 2. UPDATE questions SET is_active = false, updated_at = now() WHERE id = $id
-    // 3. Return { success: true, message: "Question deactivated" }
-    res.status(200).json({ success: true, message: "deleteQuestion (soft) — TODO: implement", id });
+
+    const { error } = await supabaseAdmin
+      .from("questions")
+      .update({ is_active: false })
+      .eq("id", id);
+
+    if (error) {
+      res.status(500).json({ success: false, message: error.message });
+      return;
+    }
+
+    res.status(200).json({ success: true, message: "Question deactivated" });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -139,7 +256,6 @@ export const deleteQuestion = async (req: Request, res: Response): Promise<void>
 /**
  * POST /api/v1/questions/bulk
  * [super_admin / service_role only] — Upsert an array of questions in one shot.
- * Used by the seed script. Max 500 per call.
  */
 export const bulkUpsertQuestions = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -154,11 +270,14 @@ export const bulkUpsertQuestions = async (req: Request, res: Response): Promise<
       return;
     }
 
-    await sbFetch(`questions`, {
-      method: "POST",
-      headers: { "Prefer": "resolution=merge-duplicates,return=minimal" },
-      body: JSON.stringify(questions),
-    });
+    const { error } = await supabaseAdmin
+      .from("questions")
+      .upsert(questions, { onConflict: "id" });
+
+    if (error) {
+      res.status(500).json({ success: false, message: error.message });
+      return;
+    }
 
     res.status(201).json({ success: true, message: `Upserted ${questions.length} questions.` });
   } catch (err: any) {
@@ -169,24 +288,30 @@ export const bulkUpsertQuestions = async (req: Request, res: Response): Promise<
 /**
  * GET /api/v1/questions/tests
  * Authenticated — Returns available test papers grouped by test_type.
- * Used by the Tests Hub frontend to list tests dynamically.
  * Query params: exam (jee-main|neet-ug|ssc-cgl), type (chapter-wise|mock-test|pyq)
  */
 export const listTests = async (req: Request, res: Response): Promise<void> => {
   try {
     const { exam, type } = req.query;
 
-    let query = `papers?is_active=eq.true&select=id,title,test_type,subject,chapter,year,shift,total_questions,total_marks,duration_min,difficulty,exams(code,full_name)&order=created_at.desc`;
+    let query = supabaseDB
+      .from("papers")
+      .select("id, title, test_type, subject, chapter, year, shift, total_questions, total_marks, duration_min, difficulty, exams(code, full_name)")
+      .eq("is_active", true)
+      .order("created_at", { ascending: false });
 
-    if (type) query += `&test_type=eq.${type}`;
+    if (type) query = query.eq("test_type", type as string);
 
-    // Filter by exam code using the exams foreign key
-    const data = await sbFetch(query);
+    const { data, error } = await query;
 
-    // If exam filter provided, filter in memory (Supabase REST join filtering has limitations)
+    if (error) {
+      res.status(500).json({ success: false, message: error.message });
+      return;
+    }
+
     const filtered = exam
-      ? data.filter((p: any) => p.exams?.code === exam)
-      : data;
+      ? (data ?? []).filter((p: any) => p.exams?.code === exam)
+      : (data ?? []);
 
     res.json({ success: true, data: { papers: filtered, total: filtered.length } });
   } catch (err: any) {

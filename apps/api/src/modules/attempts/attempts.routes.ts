@@ -11,11 +11,12 @@ import {
 const router = Router();
 
 // ⚠️  ORDER MATTERS: static "/my" must be declared BEFORE "/:id"
-router.get("/my", getMyAttempts);
+router.get("/my", authenticate, getMyAttempts);
 
-router.post("/", startAttempt);
-router.get("/:id", getAttempt);
-router.patch("/:id", saveAttempt);        // auto-save
-router.post("/:id/submit", submitAttempt);
+router.post("/", authenticate, startAttempt);
+router.get("/:id", authenticate, getAttempt);
+router.patch("/:id", authenticate, saveAttempt);        // auto-save
+router.post("/:id/submit", authenticate, submitAttempt);
+
 
 export default router;
