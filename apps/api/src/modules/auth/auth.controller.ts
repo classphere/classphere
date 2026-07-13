@@ -228,6 +228,8 @@ export const login = async (req: Request, res: Response): Promise<void> => {
           role: userRecord.role,
           avatar_url: userRecord.avatar_url,
           institute_id: userRecord.institute_id,
+          exam_target: (userRecord as any).exam_target ?? null,
+          phone: (userRecord as any).phone ?? null,
         },
       },
     });
@@ -405,7 +407,7 @@ export const getMe = async (req: Request, res: Response): Promise<void> => {
 
     const { data: user, error: userError } = await supabaseDB
       .from("users")
-      .select("id, name, email, role, avatar_url, institute_id, phone, created_at")
+      .select("id, name, email, role, avatar_url, institute_id, phone, exam_target, created_at")
       .eq("id", userId)
       .single();
 
@@ -428,7 +430,7 @@ export const getMe = async (req: Request, res: Response): Promise<void> => {
 
         const { data: newUser } = await supabaseDB
           .from("users")
-          .select("id, name, email, role, avatar_url, institute_id, phone, created_at")
+          .select("id, name, email, role, avatar_url, institute_id, phone, exam_target, created_at")
           .eq("id", userId)
           .single();
 

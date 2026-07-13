@@ -12,6 +12,9 @@ import studentsRouter from "../modules/institutes/students/students.routes";
 import internalRouter from "../modules/internal/internal.routes";
 import pyqsRouter from "../modules/pyqs/pyqs.routes";
 import superadminRouter from "../modules/superadmin/superadmin.routes";
+import dashboardRouter from "../modules/dashboard/dashboard.routes";
+import dppsRouter from "../modules/dpps/dpps.routes";
+import supportRouter from "../modules/support/support.routes";
 
 const router = Router();
 
@@ -29,6 +32,9 @@ router.use("/institutes", institutesRouter);
 router.use("/batches", batchesRouter);
 router.use("/faculty", facultyRouter);
 router.use("/students", studentsRouter);
+router.use("/dashboard", dashboardRouter);
+router.use("/dpps", dppsRouter);
+router.use("/support", supportRouter);
 
 // ─── SuperAdmin (super_admin role required) ───────────────────────────────────
 router.use("/superadmin", superadminRouter);

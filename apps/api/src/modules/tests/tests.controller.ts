@@ -47,7 +47,7 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
     if (questionIds.length > 0) {
       const { data: rawQs, error: qErr } = await supabaseDB
         .from("questions")
-        .select("id, question_text, question_images, explanation_images, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, distractor_map, marking_scheme, source, year, tags")
+        .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, distractor_map, marking_scheme, source, year, tags")
         .in("id", questionIds)
         .eq("is_active", true);
 
@@ -154,8 +154,15 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
     }));
     await supabaseAdmin.from("paper_questions").insert(pqRows);
 
-    // 4. Assign to batches (using test_batch_assignments if it exists, else skip)
-    // batch_ids are stored so we can track assignment — create placeholder
+    // 4. Assign to batches (using test_batch_assignments)
+    if (batch_ids && batch_ids.length > 0) {
+      const tbRows = batch_ids.map((b_id: string) => ({
+        test_id: paper.id,
+        batch_id: b_id,
+      }));
+      await supabaseAdmin.from("test_batch_assignments").insert(tbRows);
+    }
+    
     console.log(`[createTest] Created paper ${paper.id} with ${shuffled.length} questions, assigned to ${batch_ids.length} batches`);
 
     res.status(201).json({ success: true, data: { test: { id: paper.id, title, question_count: shuffled.length, batch_ids } } });
@@ -215,9 +222,28 @@ export const getAssignedTests = async (req: Request, res: Response): Promise<voi
       return;
     }
 
-    // Since test_batch_assignments may not exist yet, return empty for now
-    // TODO: wire to test_batch_assignments once that table is created
-    res.status(200).json({ success: true, data: { tests: [], message: "No institute tests assigned yet" } });
+    // Fetch tests assigned to these batches
+    const { data: assignments, error: assignErr } = await supabaseDB
+      .from("test_batch_assignments")
+      .select("assigned_at, batch_id, papers(id, title, test_type, total_questions, duration_min, is_active, created_at)")
+      .in("batch_id", batchIds);
+
+    if (assignErr) {
+      res.status(500).json({ success: false, message: assignErr.message });
+      return;
+    }
+
+    // Deduplicate in case multiple batches have the same test
+    const testsMap = new Map();
+    for (const a of (assignments ?? [])) {
+      const p: any = Array.isArray(a.papers) ? a.papers[0] : a.papers;
+      if (p && p.is_active) {
+        testsMap.set(p.id, p);
+      }
+    }
+
+    const assignedTests = Array.from(testsMap.values());
+    res.status(200).json({ success: true, data: { tests: assignedTests } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

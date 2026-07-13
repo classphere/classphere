@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
@@ -24,6 +24,7 @@ import {
 } from "@remixicon/react";
 import { useAuth } from "@/lib/auth-context";
 import { useBatches } from "@/lib/hooks/useBatches";
+import { apiClient } from "@/lib/api.client";
 
 // Exam options — codes match the `exams` table in Supabase
 const EXAM_OPTIONS = {
@@ -57,25 +58,43 @@ export default function InstituteDashboardPage() {
   const [batchSubmitting, setBatchSubmitting] = useState(false);
   const [batchFeedback, setBatchFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
 
-  const { user } = useAuth();
+  const { user, session } = useAuth();
   const { batches, loading: batchesLoading, createBatch } = useBatches();
+
+  // ── Real institute data ──────────────────────────────────────────────────
+  const [institute, setInstitute] = useState<any>(null);
+  const [recentStudents, setRecentStudents] = useState<any[]>([]);
+  const [realStudentCount, setRealStudentCount] = useState(0);
+
+  useEffect(() => {
+    if (!session?.access_token) return;
+    const fetchInstitute = async () => {
+      try {
+        const res = await apiClient.get("/api/v1/institutes/me", session.access_token);
+        if (res.success) {
+           setInstitute(res.data.institute);
+           setRecentStudents(res.data.recentStudents || []);
+        }
+      } catch (e) { console.error("[Institute]", e); }
+    };
+    fetchInstitute();
+  }, [session?.access_token]);
 
   // Derived stats from real batch data
   const activeBatchesCount = batches.length;
-  const totalStudentsCount = batches.reduce((sum, b) => sum + (b.max_students ?? 0), 0);
+  const totalStudentsCount = realStudentCount || batches.reduce((sum, b) => sum + (b.max_students ?? 0), 0);
 
-  const mockInstituteAdmin = {
-    instituteName: "Institute",
+  const instituteOverview = {
+    instituteName: institute?.name ?? user?.name ?? "Institute",
     name: user?.name ?? "Admin",
-    instituteType: "hybrid",
+    instituteType: institute?.type ?? "hybrid",
     studentsCount: totalStudentsCount,
     batchesCount: activeBatchesCount,
-    plan: "Free",
+    plan: institute?.subscription_plan ?? "Free",
   };
-  const mockInstituteStudents: any[] = [];
 
   const availableExams =
-    EXAM_OPTIONS[mockInstituteAdmin.instituteType as keyof typeof EXAM_OPTIONS] ||
+    EXAM_OPTIONS[instituteOverview.instituteType as keyof typeof EXAM_OPTIONS] ||
     EXAM_OPTIONS["hybrid"];
 
   const handleOpenBatchModal = () => {
@@ -111,8 +130,8 @@ export default function InstituteDashboardPage() {
   return (
     <>
       <Navbar
-        title={`${mockInstituteAdmin.instituteName} Dashboard`}
-        subtitle={`Welcome back, ${mockInstituteAdmin.name}. Here is your institute overview.`}
+        title={`${instituteOverview.instituteName} Dashboard`}
+        subtitle={`Welcome back, ${instituteOverview.name}. Here is your institute overview.`}
         breadcrumbs="Dashboard"
       >
         {/* Create New Batch */}
@@ -135,21 +154,21 @@ export default function InstituteDashboardPage() {
           <MetricCard
             icon={<RiGroupLine size={20} />}
             label="Total Students"
-            value={mockInstituteAdmin.studentsCount}
+            value={instituteOverview.studentsCount}
             badge="+12"
             badgeLabel="this month"
           />
           <MetricCard
             icon={<RiTeamLine size={20} />}
             label="Active Batches"
-            value={mockInstituteAdmin.batchesCount}
+            value={instituteOverview.batchesCount}
             badge="+2"
             badgeLabel="completing soon"
           />
           <MetricCard
             icon={<RiBankCardLine size={20} />}
             label="Subscription"
-            value={mockInstituteAdmin.plan}
+            value={instituteOverview.plan}
             badge="Active"
             badgeLabel="Renews Aug 15"
           />
@@ -245,53 +264,37 @@ export default function InstituteDashboardPage() {
 
             {/* List Rows */}
             <div className="flex flex-col gap-2 w-full min-w-0">
-              {mockInstituteStudents.length === 0 ? (
-                <div className="flex flex-col items-center justify-center py-10 text-center">
-                  <p className="text-[14px] font-sans text-t-secondary">No students yet.</p>
+              {recentStudents.length === 0 ? (
+                <div className="flex flex-col items-center justify-center h-[120px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-[16px]">
+                  <RiTeamLine size={24} className="text-t-secondary mb-2" />
+                  <span className="text-sm text-t-secondary">No students added yet.</span>
                 </div>
               ) : (
-                mockInstituteStudents.slice(0, 5).map((student, index) => {
-                  const isHoverItem = index === 0; // Highlight first item for premium flavor
-                  const scoreColor = student.avgScore >= 85 ? "text-primary-02" : "text-primary-05";
-                  const performanceLevel = student.avgScore >= 90 ? "Elite" : "Excellent";
-                  const performanceBadgeClass = student.avgScore >= 90
-                    ? "label-green"
-                    : "label-yellow";
-  
+                recentStudents.slice(0, 5).map((student: any, index: number) => {
                   return (
-                    <div 
+                    <div
                       key={student.id}
-                      className={`group/item relative flex flex-row items-center justify-between p-3 gap-8 rounded-[16px] transition-all w-full h-[88px] min-w-0 overflow-hidden ${
-                        isHoverItem 
-                          ? "bg-b-surface1 dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-[inset_0px_0px_0px_3px_rgba(255,255,255,0.05)] border border-s-stroke2/20" 
-                          : "bg-transparent border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 hover:bg-b-surface1 dark:hover:bg-b-surface1/40"
-                      }`}
+                      className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[88px]"
                     >
-                      {/* Left: Rank box + Title */}
-                      <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
-                        <div className="flex w-16 h-16 items-center justify-center rounded-[10px] bg-b-surface1 border border-s-stroke2/40 shrink-0 text-t-secondary font-bold text-lg">
-                          #{index + 1}
+                      <div className="flex flex-row items-center gap-5 flex-1 min-w-0">
+                        <div className="size-16 rounded-[10px] flex items-center justify-center bg-primary-01/10 border border-primary-01/20 text-primary-01 shrink-0">
+                          <RiTeamLine size={24} />
                         </div>
-                        <div className="min-w-0 flex-1 flex flex-col">
-                          <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary truncate">
+                        <div className="flex flex-col justify-center min-w-0 flex-1">
+                          <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary truncate">
                             {student.name}
                           </span>
-                          <span className="text-xs text-t-secondary mt-0.5">
-                            {student.batch}
-                          </span>
+                          <div className="flex items-center gap-2 mt-0.5">
+                            <span className="font-sans text-[12px] font-normal text-t-secondary truncate">{student.email}</span>
+                          </div>
                         </div>
                       </div>
-  
-                      {/* Right: Metrics + Performance tag */}
-                      <div className="flex flex-col justify-center items-end gap-1 shrink-0 min-w-[80px]">
-                        <div className={`font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] ${scoreColor} text-right w-full`}>
-                          {student.avgScore}%
-                        </div>
-                        <div className={`label h-6 px-2 text-[10px] tracking-[0.004em] uppercase ${performanceBadgeClass}`}>
-                          {performanceLevel}
-                        </div>
+
+                      <div className="flex flex-row items-center gap-6 shrink-0">
+                        <span className="px-2 py-[2px] bg-[rgba(123,123,123,0.05)] border-[1.5px] border-s-stroke2/40 text-t-secondary rounded-[10px] text-[12px] font-normal tracking-[0.004em] leading-[160%]">
+                          Added {new Date(student.created_at).toLocaleDateString()}
+                        </span>
                       </div>
-  
                     </div>
                   );
                 })
@@ -309,7 +312,7 @@ export default function InstituteDashboardPage() {
         open={isBatchModalOpen}
         onClose={() => setIsBatchModalOpen(false)}
         title="Create New Batch"
-        subtitle={`Institute Type: ${mockInstituteAdmin.instituteType.toUpperCase()}`}
+        subtitle={`Institute Type: ${instituteOverview.instituteType.toUpperCase()}`}
       >
         <div className="flex flex-col gap-5">
           {/* Batch Name */}
@@ -341,7 +344,7 @@ export default function InstituteDashboardPage() {
               <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
             </div>
             <p className="text-xs text-t-secondary mt-2">
-              Showing exams based on your institute type ({mockInstituteAdmin.instituteType}).
+              Showing exams based on your institute type ({instituteOverview.instituteType}).
             </p>
           </div>
 

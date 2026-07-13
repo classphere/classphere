@@ -11,19 +11,19 @@ import {
   RiArrowDownSLine,
   RiCheckLine,
   RiCloseLine,
+  RiLoader4Line,
   RiSearchLine,
   RiNotification3Line,
-  RiMailLine
+  RiMailLine,
 } from "@remixicon/react";
+import { useBatches } from "@/lib/hooks/useBatches";
+import { useAuth } from "@/lib/auth-context";
 
-const AVAILABLE_BATCHES = [
-  { id: "batch-001", name: "JEE 2026 Morning" },
-  { id: "batch-002", name: "JEE 2026 Evening" },
-  { id: "batch-003", name: "NEET 2026 Droppers" },
-  { id: "batch-004", name: "JEE 2025 Crash Course" },
-];
 
 export default function ScheduleTestPage() {
+  const { batches, loading: batchesLoading } = useBatches();
+  const AVAILABLE_BATCHES = batches.map(b => ({ id: b.id, name: b.name }));
+
   const [selectedBatches, setSelectedBatches] = useState<string[]>([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -162,35 +162,48 @@ export default function ScheduleTestPage() {
                   {/* Dropdown Menu */}
                   {isDropdownOpen && (
                     <div className="absolute top-[calc(100%+4px)] left-0 w-full bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-[10px] shadow-dropdown z-50 max-h-[200px] overflow-y-auto p-1">
-                      <div 
+                      <div
                         className="px-3 py-2 text-xs font-semibold text-primary-02 cursor-pointer border-b border-s-stroke2/40 hover:bg-b-surface1 dark:hover:bg-b-surface1/30"
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedBatches(AVAILABLE_BATCHES.map(b => b.id));
                         }}
                       >
-                        Select All Batches
+                        {batchesLoading ? "Loading batches…" : `Select All (${AVAILABLE_BATCHES.length})`}
                       </div>
-                      {AVAILABLE_BATCHES.map(batch => {
-                        const isSelected = selectedBatches.includes(batch.id);
-                        return (
-                          <div 
-                            key={batch.id}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              toggleBatch(batch.id);
-                            }}
-                            className={`flex items-center gap-3 px-3 py-2 mt-1 cursor-pointer rounded-md transition-colors ${isSelected ? 'bg-b-surface1 dark:bg-b-surface1/30' : 'hover:bg-b-surface1 dark:hover:bg-b-surface1/30'}`}
-                          >
-                            <div className={`w-4 h-4 rounded-[4px] border-[1.5px] flex items-center justify-center transition-colors ${isSelected ? "border-primary-01 bg-primary-01" : "border-s-stroke2"}`}>
-                              {isSelected && <RiCheckLine size={12} color="#fff" />}
-                            </div>
-                            <span className={`text-sm ${isSelected ? "text-t-primary font-semibold" : "text-t-secondary"}`}>
-                              {batch.name}
-                            </span>
-                          </div>
-                        );
-                      })}
+                      {batchesLoading ? (
+                        <div className="flex items-center justify-center py-4 gap-2 text-t-secondary">
+                          <RiLoader4Line size={16} className="animate-spin" />
+                          <span className="text-xs font-sans">Loading your batches...</span>
+                        </div>
+                      ) : AVAILABLE_BATCHES.length === 0 ? (
+                        <div className="px-3 py-3 text-xs text-t-secondary text-center">
+                          No batches found. Create a batch first.
+                        </div>
+                      ) : (
+                        <>
+                          {AVAILABLE_BATCHES.map(batch => {
+                            const isSelected = selectedBatches.includes(batch.id);
+                            return (
+                              <div
+                                key={batch.id}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  toggleBatch(batch.id);
+                                }}
+                                className={`flex items-center gap-3 px-3 py-2 mt-1 cursor-pointer rounded-md transition-colors ${isSelected ? 'bg-b-surface1 dark:bg-b-surface1/30' : 'hover:bg-b-surface1 dark:hover:bg-b-surface1/30'}`}
+                              >
+                                <div className={`w-4 h-4 rounded-[4px] border-[1.5px] flex items-center justify-center transition-colors ${isSelected ? "border-primary-01 bg-primary-01" : "border-s-stroke2"}`}>
+                                  {isSelected && <RiCheckLine size={12} color="#fff" />}
+                                </div>
+                                <span className={`text-sm ${isSelected ? "text-t-primary font-semibold" : "text-t-secondary"}`}>
+                                  {batch.name}
+                                </span>
+                              </div>
+                            );
+                          })}
+                        </>
+                      )}
                     </div>
                   )}
                 </div>

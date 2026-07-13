@@ -56,7 +56,7 @@ function LoginForm() {
           dob: loginType === "phone_dob" ? secondField.trim() : undefined,
           email: loginType === "email_password" ? credential.trim() : undefined,
           password: loginType === "email_password" ? secondField : undefined,
-          institute_slug: tenant.slug,
+          institute_slug: tenant.domain,
         }),
       });
 

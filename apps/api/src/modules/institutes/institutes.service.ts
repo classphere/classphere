@@ -263,8 +263,21 @@ export async function getInstituteCRMStats(): Promise<{
     .eq("plan", "enterprise")
     .eq("is_active", true);
 
-  // MRR: price_per_student column not yet in schema — returns 0 until billing table is added.
-  const estimatedMRR = 0;
+  // Calculate MRR from institute_invoices (this month)
+  // Fallback to 0 if table does not exist or has no rows
+  let estimatedMRR = 0;
+  const startOfMonth = new Date();
+  startOfMonth.setDate(1);
+  startOfMonth.setHours(0, 0, 0, 0);
+
+  const { data: invoices, error } = await supabaseDB
+    .from("institute_invoices")
+    .select("amount_paid")
+    .gte("created_at", startOfMonth.toISOString());
+  
+  if (!error && invoices) {
+    estimatedMRR = invoices.reduce((sum: number, inv: any) => sum + (Number(inv.amount_paid) || 0), 0);
+  }
 
   return {
     enterprisePlans: enterprisePlans ?? 0,

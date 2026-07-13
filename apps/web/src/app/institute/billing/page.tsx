@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useAuth } from "@/lib/auth-context";
+import { apiClient } from "@/lib/api.client";
 import { 
   RiCheckFill, 
   RiDownload2Line, 
@@ -9,17 +11,27 @@ import {
   RiSearchLine, 
   RiNotification3Line, 
   RiMailLine,
-  RiArrowRightLine
+  RiArrowRightLine,
+  RiTimeLine
 } from "@remixicon/react";
 
-const mockInvoices = [
-  { id: "INV-2023-001", date: "01 Jun 2026", amount: "$299.00", status: "Paid" },
-  { id: "INV-2023-002", date: "01 May 2026", amount: "$299.00", status: "Paid" },
-  { id: "INV-2023-003", date: "01 Apr 2026", amount: "$299.00", status: "Paid" },
-];
-
 export default function BillingPage() {
+  const { session } = useAuth();
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  const [subscription, setSubscription] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!session?.access_token) return;
+    const fetchSub = async () => {
+      try {
+        const res = await apiClient.get("/api/v1/institutes/me/subscription", session.access_token);
+        if (res.success) setSubscription(res.data);
+      } catch (e) { console.error(e); }
+      finally { setLoading(false); }
+    };
+    fetchSub();
+  }, [session?.access_token]);
 
   return (
     <>
@@ -64,35 +76,38 @@ export default function BillingPage() {
           </div>
         </div>
 
-        {/* Current Plan Card */}
-        <div className="group relative w-full bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] overflow-hidden mt-4 transition-all duration-300">
-          
-          <div className="relative z-10 flex flex-col md:flex-row justify-between items-center p-8 bg-gradient-to-br from-t-primary to-[#2C2C2C] dark:from-b-surface2 dark:to-b-surface1 border border-transparent dark:border-s-stroke2/40">
-            
-            <div className="flex flex-col gap-2">
-              <div className="w-max px-3 py-1 rounded-[10px] text-[10px] font-bold uppercase tracking-wider bg-white/10 text-white/90 border border-white/10 mb-2">
-                Pro Plan
+        {/* Current Plan Card (Trial Mode) */}
+        {!loading && subscription ? (
+          <div className="group relative w-full bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] overflow-hidden mt-4 transition-all duration-300">
+            <div className="relative z-10 flex flex-col md:flex-row justify-between items-center p-8 bg-gradient-to-br from-[#4F46E5] to-[#312E81] border border-transparent">
+              
+              <div className="flex flex-col gap-2 text-white">
+                <div className="w-max px-3 py-1 rounded-[10px] text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white/90 border border-white/20 mb-2 flex items-center gap-1">
+                  <RiTimeLine size={14} /> Trial Active
+                </div>
+                <h2 className="font-sans font-semibold text-[28px] m-0 capitalize">{subscription.plan_tier} Plan</h2>
+                <p className="text-sm text-white/80 m-0">You are currently enjoying full access during your trial period.</p>
               </div>
-              <h2 className="font-sans font-semibold text-[28px] text-white m-0">Institute Pro</h2>
-              <p className="text-sm text-white/70 m-0">Unlimited students, advanced analytics, custom branding.</p>
-            </div>
 
-            <div className="flex flex-col items-end gap-3 mt-6 md:mt-0">
-              <div className="flex items-baseline gap-1">
-                <span className="font-sans font-bold text-[36px] text-white leading-none">$299</span>
-                <span className="text-white/70 text-sm">/mo</span>
+              <div className="flex flex-col items-end gap-3 mt-6 md:mt-0">
+                <div className="flex items-baseline gap-1">
+                  <span className="font-sans font-bold text-[36px] text-white leading-none">₹0</span>
+                  <span className="text-white/70 text-sm">/mo</span>
+                </div>
+                <p className="text-xs text-white/80 m-0">Trial ends on {new Date(subscription.current_period_end).toLocaleDateString()}</p>
+                <button 
+                  className="btn bg-white text-[#4F46E5] hover:bg-white/90 h-10 px-5 rounded-[10px] text-sm font-semibold mt-2 border-none cursor-pointer shadow-md"
+                  onClick={() => setShowUpgradeModal(true)}
+                >
+                  Upgrade Plan
+                </button>
               </div>
-              <p className="text-xs text-white/60 m-0">Renews on Jul 1, 2026</p>
-              <button 
-                className="btn bg-white text-t-primary hover:bg-b-surface1 h-10 px-5 rounded-[10px] text-sm font-semibold mt-2 border-none cursor-pointer"
-                onClick={() => setShowUpgradeModal(true)}
-              >
-                Upgrade Plan
-              </button>
+              
             </div>
-            
           </div>
-        </div>
+        ) : loading ? (
+          <div className="w-full h-[200px] animate-pulse bg-s-stroke2/50 rounded-[24px] mt-4"></div>
+        ) : null}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-stretch">
           
@@ -170,7 +185,7 @@ export default function BillingPage() {
           </div>
 
           <div className="relative z-10 flex flex-col gap-2 w-full min-w-0">
-            {mockInvoices.map((invoice, index) => (
+            {([] as any[]).map((invoice, index) => (
               <div 
                 key={invoice.id}
                 className="group/item relative flex flex-row items-center justify-between p-4 gap-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all h-[96px] cursor-pointer"
@@ -223,47 +238,35 @@ export default function BillingPage() {
 
         {/* Upgrade Modal */}
         {showUpgradeModal && (
-          <div className="fixed inset-0 bg-shade-01/40 dark:bg-shade-01/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
-            <div className="group relative w-full max-w-[600px] rounded-[10px] bg-b-surface2 dark:bg-b-surface2 shadow-[0px_24px_48px_-12px_rgba(0,0,0,0.18)] border border-s-stroke2/40 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+            <div className="bg-b-surface1 dark:bg-[#1a1a1a] rounded-[24px] max-w-md w-full p-8 relative border border-s-stroke2/50 shadow-2xl">
+              <button 
+                className="absolute top-4 right-4 p-2 text-t-secondary hover:text-t-primary rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer"
+                onClick={() => setShowUpgradeModal(false)}
+              >
+                <RiCloseLine size={24} />
+              </button>
               
-              <div className="relative z-10 flex flex-col p-8">
-                
-                <div className="flex justify-between items-center mb-6">
-                  <h2 className="font-sans font-bold text-[24px] text-t-primary dark:text-t-primary m-0">Upgrade Subscription</h2>
-                  <button 
-                    className="btn btn-outline w-10 h-10 !px-0 rounded-[10px] flex items-center justify-center cursor-pointer text-t-secondary dark:text-t-secondary hover:text-t-primary dark:hover:text-t-primary" 
-                    onClick={() => setShowUpgradeModal(false)}
-                  >
-                    <RiCloseLine size={20} />
-                  </button>
+              <div className="flex flex-col items-center text-center mt-2">
+                <div className="w-16 h-16 bg-primary-05/10 rounded-full flex items-center justify-center mb-6">
+                  <RiNotification3Line size={32} className="text-primary-05" />
                 </div>
                 
-                <p className="text-sm text-t-secondary dark:text-t-tertiary mb-6">
-                  You are currently on the <strong className="text-t-primary dark:text-t-primary font-semibold">Pro Plan</strong>. Select a tier below to request an upgrade from the Super Admin.
+                <h3 className="font-sans font-bold text-2xl text-t-primary mb-3">
+                  Payment Integration Coming Soon
+                </h3>
+                
+                <p className="text-t-secondary text-[15px] leading-relaxed mb-8 px-2">
+                  We are currently setting up our GST and billing infrastructure. 
+                  Enjoy your 2-month free trial in the meantime! We will notify you when you can upgrade to a paid tier.
                 </p>
-                
-                <div className="flex flex-col gap-4">
-                  <div className="flex flex-row justify-between items-center p-6 border-2 border-primary-02/20 bg-primary-02/5 rounded-[10px]">
-                    <div className="flex flex-col">
-                      <h3 className="font-sans font-bold text-[18px] text-t-primary dark:text-t-primary">Enterprise Plan</h3>
-                      <ul className="flex flex-col gap-1.5 mt-3 text-xs text-t-secondary dark:text-t-tertiary">
-                        <li className="flex items-center gap-2"><RiCheckFill size={14} className="text-primary-02" /> Unlimited Students</li>
-                        <li className="flex items-center gap-2"><RiCheckFill size={14} className="text-primary-02" /> Custom App Branding (White-label)</li>
-                        <li className="flex items-center gap-2"><RiCheckFill size={14} className="text-primary-02" /> 24/7 Dedicated Support</li>
-                      </ul>
-                    </div>
-                    <div className="flex flex-col items-end gap-3">
-                      <div className="font-sans font-bold text-[24px] text-t-primary dark:text-t-primary">Custom</div>
-                      <button 
-                        className="btn btn-primary h-10 px-5 rounded-[10px] text-xs font-semibold cursor-pointer" 
-                        onClick={() => setShowUpgradeModal(false)}
-                      >
-                        Contact Sales
-                      </button>
-                    </div>
-                  </div>
-                </div>
 
+                <button 
+                  className="btn btn-primary w-full h-12 rounded-[12px] text-[15px] font-semibold"
+                  onClick={() => setShowUpgradeModal(false)}
+                >
+                  Continue Free Trial
+                </button>
               </div>
             </div>
           </div>

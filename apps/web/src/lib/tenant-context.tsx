@@ -5,7 +5,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 export interface TenantConfig {
-  slug: string | null;           // 'saksham', 'vidyamandir', null = super admin
+  domain: string | null;           // 'allen' (subdomain) or 'learn.allen.ac.in' (custom), null = super admin
   instituteId: string | null;
   instituteName: string | null;
   logoUrl: string | null;
@@ -14,7 +14,7 @@ export interface TenantConfig {
 }
 
 const defaultConfig: TenantConfig = {
-  slug: null,
+  domain: null,
   instituteId: null,
   instituteName: null,
   logoUrl: null,
@@ -27,28 +27,31 @@ const TenantContext = createContext<TenantConfig>(defaultConfig);
 // ─── Slug Detection ───────────────────────────────────────────────────────────
 
 /**
- * Detects the institute slug from the URL.
- *
- * Production:  saksham.classphere.com     → 'saksham'
- *              admin.classphere.com       → null (super admin)
- * Local dev:   localhost:3000?tenant=saksham → 'saksham'
- *              localhost:3000             → null (super admin)
+ * Detects the institute domain or subdomain from the URL.
  */
-function detectSlug(): string | null {
+function detectDomain(): string | null {
   if (typeof window === "undefined") return null;
 
   const hostname = window.location.hostname;
 
-  // Production: extract from subdomain
+  // Local dev fallback: ?tenant= query param
+  const params = new URLSearchParams(window.location.search);
+  const localTenant = params.get("tenant");
+  if (localTenant) return localTenant;
+
+  // Production: Check if it's a subdomain of classphere.com
   if (hostname.endsWith(".classphere.com")) {
     const sub = hostname.replace(".classphere.com", "");
-    if (sub === "admin" || sub === "www") return null; // super admin domains
+    if (sub === "admin" || sub === "www" || sub === "") return null; // super admin domains
     return sub;
   }
 
-  // Local dev fallback: ?tenant= query param
-  const params = new URLSearchParams(window.location.search);
-  return params.get("tenant") ?? null;
+  // Not localhost and not classphere.com -> Must be a Custom Domain
+  if (hostname !== "localhost" && hostname !== "127.0.0.1") {
+    return hostname;
+  }
+
+  return null;
 }
 
 // ─── Provider ─────────────────────────────────────────────────────────────────
@@ -59,12 +62,12 @@ export function TenantProvider({ children }: { children: React.ReactNode }) {
   const [config, setConfig] = useState<TenantConfig>(defaultConfig);
 
   useEffect(() => {
-    const slug = detectSlug();
+    const domain = detectDomain();
 
-    if (!slug) {
+    if (!domain) {
       // Super admin domain — no institute branding, stop loading immediately
       setConfig({
-        slug: null,
+        domain: null,
         instituteId: null,
         instituteName: null,
         logoUrl: null,
@@ -75,28 +78,28 @@ export function TenantProvider({ children }: { children: React.ReactNode }) {
     }
 
     // Fetch institute branding from the public endpoint
-    fetch(`${API_URL}/api/v1/institutes/by-slug/${encodeURIComponent(slug)}`)
+    fetch(`${API_URL}/api/v1/institutes/public/${encodeURIComponent(domain)}`)
       .then((r) => r.json())
       .then(({ data }) => {
         if (data) {
           // Inject CSS variable so all components using var(--primary) pick up institute color
-          document.documentElement.style.setProperty("--primary-institute", data.primary_color ?? "#6366f1");
+          document.documentElement.style.setProperty("--primary-institute", data.theme_primary_color ?? "#6366f1");
           setConfig({
-            slug,
-            instituteId: data.id,
-            instituteName: data.name,
-            logoUrl: data.logo_url,
-            primaryColor: data.primary_color ?? "#6366f1",
+            domain,
+            instituteId: data.institutes?.id || data.institute_id,
+            instituteName: data.institutes?.name || "Institute",
+            logoUrl: data.theme_logo_url,
+            primaryColor: data.theme_primary_color ?? "#6366f1",
             isLoading: false,
           });
         } else {
-          // Slug not found — fall through with no branding but don't crash
-          setConfig({ slug, instituteId: null, instituteName: null, logoUrl: null, primaryColor: "#6366f1", isLoading: false });
+          // Domain not found — fall through with no branding but don't crash
+          setConfig({ domain, instituteId: null, instituteName: null, logoUrl: null, primaryColor: "#6366f1", isLoading: false });
         }
       })
       .catch(() => {
         // API unreachable — still render app, just without branding
-        setConfig({ slug, instituteId: null, instituteName: null, logoUrl: null, primaryColor: "#6366f1", isLoading: false });
+        setConfig({ domain, instituteId: null, instituteName: null, logoUrl: null, primaryColor: "#6366f1", isLoading: false });
       });
   }, []);
 

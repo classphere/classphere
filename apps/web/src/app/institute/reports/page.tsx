@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import {
   RiSearchLine,
@@ -20,6 +20,9 @@ import {
   RiArrowRightLine
 } from "@remixicon/react";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid } from "@/components/premium-ui";
+import { useBatches } from "@/lib/hooks/useBatches";
+import { useAuth } from "@/lib/auth-context";
+import { apiClient } from "@/lib/api.client";
 import {
   AreaChart,
   Area,
@@ -35,29 +38,6 @@ import {
   Radar,
   Legend
 } from "recharts";
-const mockBatches: any[] = [];
-const mockInstituteStudents: any[] = [];
-
-// Mock Data for Analytics Trends
-const trendData = [
-  { month: "Jan", Physics: 65, Chemistry: 70, Mathematics: 60 },
-  { month: "Feb", Physics: 70, Chemistry: 75, Mathematics: 62 },
-  { month: "Mar", Physics: 72, Chemistry: 74, Mathematics: 68 },
-  { month: "Apr", Physics: 78, Chemistry: 80, Mathematics: 75 },
-  { month: "May", Physics: 82, Chemistry: 83, Mathematics: 80 },
-  { month: "Jun", Physics: 85, Chemistry: 82, Mathematics: 84 },
-];
-
-const masteryData = [
-  { subject: "Mechanics", Score: 85 },
-  { subject: "Electrodynamics", Score: 78 },
-  { subject: "Organic Chem", Score: 90 },
-  { subject: "Physical Chem", Score: 82 },
-  { subject: "Algebra", Score: 72 },
-  { subject: "Calculus", Score: 88 },
-];
-
-// Custom Premium Tooltip for Area Charts
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
@@ -101,13 +81,76 @@ const CustomRadarTooltip = ({ active, payload }: any) => {
 };
 
 export default function ReportsPage() {
+  const { session } = useAuth();
+  const { batches, loading: batchesLoading } = useBatches();
   const [mounted, setMounted] = useState(false);
   const [timeRange, setTimeRange] = useState("Last 30 Days");
   const [activeTab, setActiveTab] = useState<"Overview" | "Batch Performance" | "Student Performance">("Overview");
 
+  const [realStats, setRealStats] = useState<{
+    avgScore: string;
+    testsCount: number;
+    activeStudents: number;
+    trendData: any[];
+    masteryData: any[];
+    topStudents: any[];
+    batchLeaderboard: any[];
+  } | null>(null);
+  const [statsLoading, setStatsLoading] = useState(true);
+
+  const fetchStats = useCallback(async () => {
+    if (!session?.access_token) return;
+    setStatsLoading(true);
+    try {
+      // Fetch teacher dashboard data reused for institute-level aggregate
+      const res = await apiClient.get("/api/v1/dashboard/teacher", session.access_token);
+      let avgScore = "—";
+      let totalStudents = 0;
+      if (res.success) {
+        const m = res.data.metrics;
+        avgScore = m.avgBatchScore ? `${m.avgBatchScore}%` : "—";
+        totalStudents = m.totalStudents ?? 0;
+      }
+      
+      // Fetch institute reports data
+      const idRes = await apiClient.get("/api/v1/institutes/me", session.access_token);
+      let trendData: any[] = [];
+      let masteryData: any[] = [];
+      let topStudents: any[] = [];
+      let batchLeaderboard: any[] = [];
+      
+      if (idRes.success && idRes.data?.institute?.id) {
+        const instId = idRes.data.institute.id;
+        const repRes = await apiClient.get(`/api/v1/institutes/${instId}/reports`, session.access_token);
+        if (repRes.success) {
+          trendData = repRes.data.trendData || [];
+          masteryData = repRes.data.masteryData || [];
+          topStudents = repRes.data.topStudents || [];
+          batchLeaderboard = repRes.data.batchLeaderboard || [];
+        }
+      }
+
+      setRealStats({
+        avgScore,
+        testsCount: 0, // future: from attempts aggregate
+        activeStudents: totalStudents,
+        trendData,
+        masteryData,
+        topStudents,
+        batchLeaderboard,
+      });
+
+    } catch (e) {
+      console.error("[Reports] stats error", e);
+    } finally {
+      setStatsLoading(false);
+    }
+  }, [session?.access_token]);
+
   useEffect(() => {
     setMounted(true);
-  }, []);
+    fetchStats();
+  }, [fetchStats]);
 
   return (
     <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
@@ -205,9 +248,9 @@ export default function ReportsPage() {
           {/* KPI Cards Row */}
           <MetricGrid cols={3} className="relative z-10 mt-4">
             {[
-              { label: "Average Test Score", value: "76.4%", desc: "+1.8%", descSuffix: "vs last month", icon: <RiBarChartBoxLine size={20} />, iconColor: "text-primary-01" },
-              { label: "Tests Conducted", value: "142", desc: "12 tests", descSuffix: "scheduled this week", icon: <RiLineChartLine size={20} />, iconColor: "text-primary-02" },
-              { label: "Active Students", value: "1,204", desc: "+34", descSuffix: "new enrollments", icon: <RiPieChart2Line size={20} />, iconColor: "text-primary-05" },
+              { label: "Average Test Score", value: statsLoading ? "..." : (realStats?.avgScore ?? "—"), desc: "+1.8%", descSuffix: "vs last month", icon: <RiBarChartBoxLine size={20} />, iconColor: "text-primary-01" },
+              { label: "Tests Conducted", value: statsLoading ? "..." : (realStats?.testsCount ?? "—"), desc: "12 tests", descSuffix: "scheduled this week", icon: <RiLineChartLine size={20} />, iconColor: "text-primary-02" },
+              { label: "Active Students", value: statsLoading ? "..." : (realStats?.activeStudents ?? "—"), desc: "+34", descSuffix: "new enrollments", icon: <RiPieChart2Line size={20} />, iconColor: "text-primary-05" },
             ].map((card, idx) => (
               <MetricCard
                 key={idx}
@@ -234,15 +277,7 @@ export default function ReportsPage() {
                 <div className="flex flex-row items-center gap-4 bg-b-surface1 dark:bg-b-surface1/40 px-3 py-1.5 rounded-[10px] border border-s-stroke2/10 shrink-0">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-primary-01" />
-                    <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Physics</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-primary-05" />
-                    <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Chemistry</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-primary-02" />
-                    <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Mathematics</span>
+                    <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Aggregate</span>
                   </div>
                 </div>
               </div>
@@ -250,28 +285,18 @@ export default function ReportsPage() {
               <div className="relative z-10 w-full h-[320px]">
                 {mounted ? (
                   <ResponsiveContainer width="100%" height="100%">
-                    <AreaChart data={trendData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                    <AreaChart data={realStats?.trendData || []} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                       <defs>
-                        <linearGradient id="colorPhysics" x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.25} />
                           <stop offset="95%" stopColor="#2A85FF" stopOpacity={0} />
-                        </linearGradient>
-                        <linearGradient id="colorChem" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#EF9D0E" stopOpacity={0.25} />
-                          <stop offset="95%" stopColor="#EF9D0E" stopOpacity={0} />
-                        </linearGradient>
-                        <linearGradient id="colorMath" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#00A656" stopOpacity={0.25} />
-                          <stop offset="95%" stopColor="#00A656" stopOpacity={0} />
                         </linearGradient>
                       </defs>
                       <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(123, 123, 123, 0.15)" />
                       <XAxis dataKey="month" tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dy={10} />
                       <YAxis domain={[40, 100]} tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dx={-10} />
                       <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(123,123,123,0.2)', strokeWidth: 1, strokeDasharray: '4 4' }} />
-                      <Area type="monotone" dataKey="Physics" stroke="#2A85FF" strokeWidth={3} fillOpacity={1} fill="url(#colorPhysics)" activeDot={{ r: 6, strokeWidth: 0, fill: '#2A85FF' }} />
-                      <Area type="monotone" dataKey="Chemistry" stroke="#EF9D0E" strokeWidth={3} fillOpacity={1} fill="url(#colorChem)" activeDot={{ r: 6, strokeWidth: 0, fill: '#EF9D0E' }} />
-                      <Area type="monotone" dataKey="Mathematics" stroke="#00A656" strokeWidth={3} fillOpacity={1} fill="url(#colorMath)" activeDot={{ r: 6, strokeWidth: 0, fill: '#00A656' }} />
+                      <Area type="monotone" dataKey="Score" stroke="#2A85FF" strokeWidth={3} fillOpacity={1} fill="url(#colorScore)" activeDot={{ r: 6, strokeWidth: 0, fill: '#2A85FF' }} />
                     </AreaChart>
                   </ResponsiveContainer>
                 ) : (
@@ -291,7 +316,7 @@ export default function ReportsPage() {
               <div className="relative z-10 w-full h-[320px] flex items-center justify-center">
                 {mounted ? (
                   <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart cx="50%" cy="50%" outerRadius="65%" data={masteryData}>
+                    <RadarChart cx="50%" cy="50%" outerRadius="65%" data={realStats?.masteryData || []}>
                       <defs>
                         <linearGradient id="colorRadar1" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.35} />
@@ -403,15 +428,7 @@ export default function ReportsPage() {
               <div className="flex flex-row items-center gap-4 bg-b-surface1 dark:bg-b-surface1/40 px-3 py-1.5 rounded-[10px] border border-s-stroke2/10">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-primary-01" />
-                  <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Physics</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-primary-05" />
-                  <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Chemistry</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-primary-02" />
-                  <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Mathematics</span>
+                  <span className="text-[11px] font-sans font-semibold text-t-secondary dark:text-t-secondary">Aggregate</span>
                 </div>
               </div>
             </div>
@@ -419,28 +436,18 @@ export default function ReportsPage() {
             <div className="relative z-10 w-full h-[360px]">
               {mounted ? (
                 <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={trendData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                  <AreaChart data={realStats?.trendData || []} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                     <defs>
-                      <linearGradient id="colorPhysicsBatch" x1="0" y1="0" x2="0" y2="1">
+                      <linearGradient id="colorScoreBatch" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.25} />
                         <stop offset="95%" stopColor="#2A85FF" stopOpacity={0} />
-                      </linearGradient>
-                      <linearGradient id="colorChemBatch" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#EF9D0E" stopOpacity={0.25} />
-                        <stop offset="95%" stopColor="#EF9D0E" stopOpacity={0} />
-                      </linearGradient>
-                      <linearGradient id="colorMathBatch" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#00A656" stopOpacity={0.25} />
-                        <stop offset="95%" stopColor="#00A656" stopOpacity={0} />
                       </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(123, 123, 123, 0.15)" />
                     <XAxis dataKey="month" tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dy={10} />
                     <YAxis domain={[40, 100]} tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: "#7B7B7B", fontWeight: 500, fontFamily: "var(--font-sans)" }} dx={-10} />
                     <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(123,123,123,0.2)', strokeWidth: 1, strokeDasharray: '4 4' }} />
-                    <Area type="monotone" dataKey="Physics" stroke="#2A85FF" strokeWidth={3} fillOpacity={1} fill="url(#colorPhysicsBatch)" activeDot={{ r: 6, strokeWidth: 0, fill: '#2A85FF' }} />
-                    <Area type="monotone" dataKey="Chemistry" stroke="#EF9D0E" strokeWidth={3} fillOpacity={1} fill="url(#colorChemBatch)" activeDot={{ r: 6, strokeWidth: 0, fill: '#EF9D0E' }} />
-                    <Area type="monotone" dataKey="Mathematics" stroke="#00A656" strokeWidth={3} fillOpacity={1} fill="url(#colorMathBatch)" activeDot={{ r: 6, strokeWidth: 0, fill: '#00A656' }} />
+                    <Area type="monotone" dataKey="Score" stroke="#2A85FF" strokeWidth={3} fillOpacity={1} fill="url(#colorScoreBatch)" activeDot={{ r: 6, strokeWidth: 0, fill: '#2A85FF' }} />
                   </AreaChart>
                 </ResponsiveContainer>
               ) : (
@@ -466,7 +473,7 @@ export default function ReportsPage() {
             </div>
 
             <div className="relative z-10 flex flex-col gap-2 w-full min-w-0">
-              {mockBatches.map((batch: any, index: number) => {
+              {(realStats?.batchLeaderboard || []).map((batch: any, index: number) => {
                 const colors = [
                   { bg: "bg-primary-01/10 text-primary-01 border-primary-01/20" },
                   { bg: "bg-primary-02/10 text-primary-02 border-primary-02/20" },
@@ -485,10 +492,10 @@ export default function ReportsPage() {
                       </div>
                       <div className="min-w-0 flex-1 flex flex-col">
                         <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary truncate">
-                          {batch.name}
+                          #{index + 1} {batch.name}
                         </span>
                         <span className="text-xs text-t-secondary mt-0.5">
-                          {batch.exam} · {batch.studentsCount} Students enrolled
+                          {batch.exam} · {batch.testsCount} tests submitted
                         </span>
                       </div>
                     </div>
@@ -499,7 +506,7 @@ export default function ReportsPage() {
                           Avg Accuracy
                         </span>
                         <span className="text-[16px] font-sans font-bold text-primary-02 mt-0.5">
-                          {batch.avgScore}%
+                          {batch.avgScore ?? 0}%
                         </span>
                       </div>
 
@@ -531,7 +538,7 @@ export default function ReportsPage() {
             <div className="relative z-10 w-full h-[360px] flex items-center justify-center">
               {mounted ? (
                 <ResponsiveContainer width="100%" height="100%">
-                  <RadarChart cx="50%" cy="50%" outerRadius="65%" data={masteryData}>
+                  <RadarChart cx="50%" cy="50%" outerRadius="65%" data={realStats?.masteryData || []}>
                     <defs>
                       <linearGradient id="colorRadar2" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="5%" stopColor="#2A85FF" stopOpacity={0.35} />
@@ -568,17 +575,17 @@ export default function ReportsPage() {
             </div>
 
             <div className="relative z-10 flex flex-col gap-2 w-full min-w-0">
-              {mockInstituteStudents.map((student: any, index: number) => {
-                const initials = student.name.split(" ").map((n: string) => n[0]).join("");
-                const scoreColor = student.avgScore >= 85 ? "text-primary-02" : "text-primary-05";
-                const performanceLevel = student.avgScore >= 90 ? "Elite" : "Excellent";
-                const performanceBadgeClass = student.avgScore >= 90
+              {(realStats?.topStudents || []).map((student: any, index: number) => {
+                const initials = student.name ? student.name.split(" ").map((n: string) => n[0]).join("") : "?";
+                const scoreColor = student.accuracy >= 85 ? "text-primary-02" : "text-primary-05";
+                const performanceLevel = student.accuracy >= 90 ? "Elite" : "Excellent";
+                const performanceBadgeClass = student.accuracy >= 90
                   ? "bg-primary-02/5 border-primary-02/15 text-primary-02"
                   : "bg-primary-05/5 border-primary-05/15 text-primary-05";
 
                 return (
                   <div
-                    key={student.id}
+                    key={index}
                     className="group/item relative flex flex-row items-center justify-between p-4 gap-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all h-[96px] cursor-pointer"
                   >
                     <div className="flex flex-row items-center gap-5 flex-1 min-w-0 overflow-hidden">
@@ -587,10 +594,10 @@ export default function ReportsPage() {
                       </div>
                       <div className="min-w-0 flex-1 flex flex-col">
                         <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary truncate">
-                          {student.name}
+                          {student.name || "Student"}
                         </span>
                         <span className="text-xs text-t-secondary mt-0.5">
-                          {student.batch} · Student ID: {student.id}
+                          {student.tests} tests taken
                         </span>
                       </div>
                     </div>
@@ -601,7 +608,7 @@ export default function ReportsPage() {
                           Avg Score
                         </span>
                         <span className={`text-[16px] font-sans font-bold mt-0.5 ${scoreColor}`}>
-                          {student.avgScore}%
+                          {student.accuracy}%
                         </span>
                       </div>
 

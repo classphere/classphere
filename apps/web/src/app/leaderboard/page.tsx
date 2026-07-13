@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import {
@@ -32,10 +32,75 @@ type LeaderboardEntry = {
 
 export default function LeaderboardPage() {
   const [activeTab, setActiveTab] = useState<Tab>("Global");
-  const { user } = useAuth();
+  const { user, session } = useAuth();
   const firstName = (user?.name ?? "User").split(" ")[0];
   
-  const leaderboardData: LeaderboardEntry[] = [];
+  const [leaderboardData, setLeaderboardData] = useState<LeaderboardEntry[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Derive parameters based on activeTab
+  let scope = "global";
+  let queryParams = "";
+  if (activeTab === "Institute") {
+    scope = "institute";
+    queryParams = `&institute_id=${user?.institute_id ?? ""}`;
+  } else if (activeTab === "Batch") {
+    scope = "batch";
+    // For MVP, we just query if we have a batch. The user obj in context doesn't have batch_id directly.
+    // Ideally we fetch the batch_id, but for now we'll just pass a placeholder or try to fetch it.
+    // If we don't have batch_id, the API will return 400, which we catch.
+  }
+
+  useEffect(() => {
+    if (!session?.access_token) return;
+
+    const fetchLeaderboard = async () => {
+      setLoading(true);
+      try {
+        let finalQuery = `?scope=${scope}`;
+        
+        if (scope === "institute") {
+          if (!user?.institute_id) { setLeaderboardData([]); return; }
+          finalQuery += `&institute_id=${user.institute_id}`;
+        } else if (scope === "batch") {
+          // Fetch user's batch first
+          const batchRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"}/api/v1/rankings/me`, {
+            headers: { Authorization: `Bearer ${session.access_token}` }
+          }).then(r => r.json());
+          
+          const batchId = batchRes?.data?.batch_ranks?.[0]?.batch_id;
+          if (!batchId) { setLeaderboardData([]); return; }
+          finalQuery += `&batch_id=${batchId}`;
+        }
+
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"}/api/v1/rankings/leaderboard${finalQuery}`, {
+          headers: { Authorization: `Bearer ${session.access_token}` }
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          const mapped = (data.data.entries || []).map((e: any) => ({
+            rank: e.rank,
+            name: e.name,
+            avgScore: e.avgScore,
+            totalTests: e.totalTests,
+            streak: e.streak,
+            isCurrentUser: e.student_id === user?.id,
+          }));
+          setLeaderboardData(mapped);
+        } else {
+          setLeaderboardData([]);
+        }
+      } catch (err) {
+        console.error(err);
+        setLeaderboardData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLeaderboard();
+  }, [activeTab, session?.access_token, user?.id, user?.institute_id]);
 
   const tabOptions = tabs.map(t => ({ id: t, label: t }));
 
@@ -119,6 +184,16 @@ export default function LeaderboardPage() {
     }
   ];
 
+  useEffect(() => {
+    import("lucide-react");
+  }, []);
+
+  const currentUserEntry = leaderboardData.find(e => e.isCurrentUser);
+  const currentRank = currentUserEntry ? `#${currentUserEntry.rank}` : "#--";
+  const currentPercentile = currentUserEntry && leaderboardData.length > 1
+    ? Math.round(((leaderboardData.length - currentUserEntry.rank) / (leaderboardData.length - 1)) * 100)
+    : (currentUserEntry ? 100 : "--");
+
   return (
     <>
       <Navbar title="Leaderboard" subtitle="See how you rank against students globally, in your institute, and in your batch." breadcrumbs="Dashboard > Leaderboard" />
@@ -143,23 +218,17 @@ export default function LeaderboardPage() {
             </h3>
             <div className="flex flex-wrap gap-2 text-[12px] font-sans text-t-secondary">
               <span className="px-2 py-0.5 rounded-[6px] border border-black/5 dark:border-white/5 bg-b-surface1 dark:bg-b-surface1/40 text-t-primary font-semibold tracking-wide">
-                Global: #--
-              </span>
-              <span className="px-2 py-0.5 rounded-[6px] border border-black/5 dark:border-white/5 bg-b-surface1 dark:bg-b-surface1/40 text-t-primary font-semibold tracking-wide">
-                Institute: #--
-              </span>
-              <span className="px-2 py-0.5 rounded-[6px] border border-black/5 dark:border-white/5 bg-b-surface1 dark:bg-b-surface1/40 text-t-primary font-semibold tracking-wide">
-                Batch: #--
+                {activeTab} Rank: {currentRank}
               </span>
             </div>
           </div>
           
           <div className="text-left md:text-right shrink-0 relative z-10">
             <div className="font-sans text-[38px] font-semibold tracking-[-0.04em] text-t-primary leading-none">
-              --%ile
+              {currentPercentile}%ile
             </div>
             <div className="text-[12px] font-sans font-semibold text-t-secondary mt-1 tracking-wide">
-              Global Percentile
+              {activeTab} Percentile
             </div>
           </div>
         </Card>
@@ -170,7 +239,12 @@ export default function LeaderboardPage() {
         </div>
 
         {/* Table Container */}
-        <SectionCard padding="none">
+        <SectionCard padding="none" className="relative min-h-[300px]">
+          {loading && (
+            <div className="absolute inset-0 flex items-center justify-center bg-b-surface1/50 z-10">
+              <div className="w-8 h-8 border-4 border-primary-01/30 border-t-primary-01 rounded-full animate-spin" />
+            </div>
+          )}
           <DataTable 
             columns={columns} 
             data={leaderboardData} 

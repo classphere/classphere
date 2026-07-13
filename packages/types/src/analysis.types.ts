@@ -42,11 +42,11 @@ export interface Question {
   id: string;
   question_number: number;
   question_text: string;
-  question_images: string[];
+  image_url: string | null;
   options: QuestionOption[] | null;
   correct_answer: string[];
   explanation: string;
-  explanation_images: string[];
+  explanation_image_url: string | null;
   question_type: "mcq_single" | "mcq_multi" | "integer";
   subject: string;
   chapter: string;

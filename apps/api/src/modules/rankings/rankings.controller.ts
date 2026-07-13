@@ -106,70 +106,50 @@ export const getMyRanks = async (req: Request, res: Response): Promise<void> => 
  */
 export const getLeaderboard = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { batch_id, page = "1", limit = "50" } = req.query as Record<string, string>;
+    const { scope = "global", batch_id, institute_id, page = "1", limit = "50" } = req.query as Record<string, string>;
     const pageNum = Math.max(1, parseInt(page));
     const limitNum = Math.min(100, Math.max(1, parseInt(limit)));
-
-    if (!batch_id) {
-      res.status(400).json({ success: false, message: "batch_id is required" });
-      return;
-    }
-
-    // Get all students in the batch
-    const { data: members } = await supabaseDB
-      .from("batch_students")
-      .select("student_id, users(id, name)")
-      .eq("batch_id", batch_id);
-
-    const memberIds = (members ?? []).map((m: any) => m.student_id);
-    const userMap: Record<string, string> = {};
-    for (const m of members ?? []) {
-      if (m.users) userMap[m.student_id] = (m.users as any).name ?? "Student";
-    }
-
-    if (memberIds.length === 0) {
-      res.status(200).json({ success: true, data: { entries: [], total: 0, page: pageNum, limit: limitNum } });
-      return;
-    }
-
-    // Get all submitted attempts for batch members
-    const { data: attempts } = await supabaseDB
-      .from("attempts")
-      .select("student_id, score, max_score, submitted_at")
-      .eq("status", "submitted")
-      .in("student_id", memberIds);
-
-    // Aggregate: best score, attempt count, avg score per student
-    const statsMap: Record<string, { best: number; total: number; count: number; lastAttempt: string }> = {};
-    for (const a of attempts ?? []) {
-      if (!statsMap[a.student_id]) {
-        statsMap[a.student_id] = { best: 0, total: 0, count: 0, lastAttempt: "" };
-      }
-      const s = statsMap[a.student_id];
-      if (a.score > s.best) s.best = a.score;
-      s.total += a.score;
-      s.count++;
-      if (!s.lastAttempt || a.submitted_at > s.lastAttempt) s.lastAttempt = a.submitted_at;
-    }
-
-    // Build sorted leaderboard (by best score descending)
-    const allEntries = memberIds.map((id: string) => ({
-      student_id: id,
-      name: userMap[id] ?? "Student",
-      best_score: statsMap[id]?.best ?? 0,
-      avg_score: statsMap[id]?.count ? Math.round(statsMap[id].total / statsMap[id].count) : 0,
-      total_tests: statsMap[id]?.count ?? 0,
-      last_attempt: statsMap[id]?.lastAttempt ?? null,
-    })).sort((a, b) => b.best_score - a.best_score);
-
-    const total = allEntries.length;
     const offset = (pageNum - 1) * limitNum;
-    const paged = allEntries.slice(offset, offset + limitNum).map((e, idx) => ({
-      ...e,
+
+    let memberIds: string[] = [];
+
+    if (scope === "batch") {
+      if (!batch_id) { res.status(400).json({ success: false, message: "batch_id is required for batch scope" }); return; }
+      const { data: members } = await supabaseDB.from("batch_students").select("student_id").eq("batch_id", batch_id);
+      memberIds = (members ?? []).map((m: any) => m.student_id);
+      if (memberIds.length === 0) { res.status(200).json({ success: true, data: { entries: [], total: 0, page: pageNum, limit: limitNum } }); return; }
+    } else if (scope === "institute") {
+      if (!institute_id) { res.status(400).json({ success: false, message: "institute_id is required for institute scope" }); return; }
+      const { data: members } = await supabaseDB.from("users").select("id").eq("institute_id", institute_id).eq("role", "student");
+      memberIds = (members ?? []).map((m: any) => m.id);
+      if (memberIds.length === 0) { res.status(200).json({ success: true, data: { entries: [], total: 0, page: pageNum, limit: limitNum } }); return; }
+    }
+
+    // Query student_stats
+    let query = supabaseDB
+      .from("student_stats")
+      .select("student_id, total_tests, accuracy_pct, rank_score, streak_days, users!inner(name)", { count: "exact" });
+      
+    if (scope !== "global") {
+      query = query.in("student_id", memberIds);
+    }
+    
+    query = query.order("rank_score", { ascending: false }).range(offset, offset + limitNum - 1);
+
+    const { data: stats, count, error } = await query;
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+
+    const entries = (stats ?? []).map((s: any, idx) => ({
+      student_id: s.student_id,
+      name: s.users?.name ?? "Student",
       rank: offset + idx + 1,
+      avgScore: s.accuracy_pct ?? 0,
+      totalTests: s.total_tests ?? 0,
+      streak: s.streak_days ?? 0,
+      rankScore: s.rank_score ?? 0,
     }));
 
-    res.status(200).json({ success: true, data: { entries: paged, total, page: pageNum, limit: limitNum } });
+    res.status(200).json({ success: true, data: { entries, total: count ?? 0, page: pageNum, limit: limitNum } });
   } catch (err: any) {
     console.error("[getLeaderboard error]", err);
     res.status(500).json({ success: false, message: err.message });

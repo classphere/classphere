@@ -17,7 +17,7 @@ async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; 
   if (paper) {
     const filePath = path.join(ROOT, paper.fileName);
     const questions = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    return { questions, examCode: paper.exam ?? "jee-main" };
+    return { questions, examCode: (paper as any).exam ?? "jee-main" };
   }
 
   // 2. Fallback: fetch from Supabase
@@ -42,7 +42,7 @@ async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; 
 
   const { data: rawQs } = await supabaseDB
     .from("questions")
-    .select("id, question_text, question_images, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, distractor_map, marking_scheme, source, year, tags")
+    .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, distractor_map, marking_scheme, source, year, tags")
     .in("id", questionIds)
     .eq("is_active", true);
 
@@ -314,7 +314,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
     // ── Determine if this is a real attempt ID or a paper ID ──────────────────
     // Real attempt IDs are UUIDs. Paper IDs are also UUIDs but stored in paper registry.
     // Check if it's an existing in_progress attempt first.
-    let attemptId: string;
+    let attemptId: string = "";
     let existingAttempt: any = null;
 
     if (!isLegacyPyq) {
@@ -409,7 +409,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
         question: {
           ...q,
           question_number: i + 1,
-          question_images: q.question_images ?? [],
+          image_url: q.image_url || null,
           explanation_images: q.explanation_images ?? [],
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
           tags: q.tags ?? [],
@@ -442,6 +442,36 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
 
     if (updateErr) {
       console.error("[submitAttempt] attempt update failed:", updateErr.message);
+    }
+
+    // ── Update student_stats ──────────────────────────────────────────────────
+    try {
+      const { data: currentStats } = await supabaseDB
+        .from("student_stats")
+        .select("total_tests, total_score, total_max_score")
+        .eq("student_id", studentId)
+        .maybeSingle();
+
+      const newTotalTests = (currentStats?.total_tests ?? 0) + 1;
+      const newTotalScore = (currentStats?.total_score ?? 0) + totalScore;
+      const newTotalMax = (currentStats?.total_max_score ?? 0) + maxScore;
+      const newAccuracy = newTotalMax > 0 ? Math.round((newTotalScore / newTotalMax) * 100) : 0;
+      // Using a basic rank score formula for MVP: (Total Score) * (Accuracy) / 100
+      const newRankScore = Math.round((newTotalScore * newAccuracy) / 100);
+
+      await supabaseDB.from("student_stats").upsert({
+        student_id: studentId,
+        exam_code: examCode,
+        total_tests: newTotalTests,
+        total_score: newTotalScore,
+        total_max_score: newTotalMax,
+        accuracy_pct: newAccuracy,
+        rank_score: newRankScore,
+        last_test_date: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      }, { onConflict: "student_id" });
+    } catch (statsErr: any) {
+      console.error("[submitAttempt] student_stats update failed (non-fatal):", statsErr.message);
     }
 
     // ── Run analysis (synchronous — fast enough for immediate feedback) ────────

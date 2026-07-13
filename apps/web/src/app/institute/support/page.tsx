@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   RiAddLine, 
   RiTicketLine, 
@@ -8,16 +8,77 @@ import {
   RiSearchLine, 
   RiNotification3Line, 
   RiMailLine,
-  RiCloseLine
+  RiCloseLine,
+  RiLoader4Line
 } from "@remixicon/react";
-
-const mockTickets = [
-  { id: "TCK-4829", subject: "API Integration Failing for New Batch", priority: "High", status: "Open", time: "2 hours ago" },
-  { id: "TCK-4712", subject: "Requesting additional 500 student capacity", priority: "Medium", status: "Resolved", time: "1 week ago" }
-];
+import { apiClient } from "@/lib/api.client";
+import { useAuth } from "@/lib/auth-context";
 
 export default function InstituteSupportPage() {
+  const { session } = useAuth();
   const [showNewTicket, setShowNewTicket] = useState(false);
+  
+  const [tickets, setTickets] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
+
+  // Form State
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [issueType, setIssueType] = useState("Technical Support");
+  
+  // Computed Priority based on issue type for simple logic
+  const getPriority = (type: string) => {
+    if (type === "Technical Support" || type === "Billing & Upgrades") return "High";
+    return "Medium";
+  };
+
+  const fetchTickets = async () => {
+    if (!session?.access_token) return;
+    try {
+      const res = await apiClient.get("/api/v1/support/tickets", session.access_token);
+      if (res.success) {
+        setTickets(res.data);
+      }
+    } catch (err) {
+      console.error("Failed to fetch tickets:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchTickets();
+  }, [session?.access_token]);
+
+  const handleSubmitTicket = async () => {
+    if (!subject.trim() || !message.trim()) return;
+    if (!session?.access_token) return;
+    
+    setSubmitting(true);
+    try {
+      const res = await apiClient.post("/api/v1/support/tickets", {
+        subject: `[${issueType}] ${subject}`,
+        message,
+        priority: getPriority(issueType)
+      }, session.access_token);
+      
+      if (res.success) {
+        setShowNewTicket(false);
+        setSubject("");
+        setMessage("");
+        setIssueType("Technical Support");
+        await fetchTickets();
+      } else {
+        alert("Failed to submit ticket.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error submitting ticket.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -93,11 +154,15 @@ export default function InstituteSupportPage() {
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-semibold text-t-primary dark:text-t-primary">Issue Type</label>
-                  <select className="bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 rounded-[10px] h-12 px-4 text-sm text-t-primary dark:text-t-primary outline-none focus:border-primary-01 focus:ring-1 focus:ring-[#2A85FF] max-w-[300px] cursor-pointer appearance-none">
-                    <option>Technical Support</option>
-                    <option>Billing & Upgrades</option>
-                    <option>Feature Request</option>
-                    <option>Other</option>
+                  <select 
+                    className="bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 rounded-[10px] h-12 px-4 text-sm text-t-primary dark:text-t-primary outline-none focus:border-primary-01 focus:ring-1 focus:ring-[#2A85FF] max-w-[300px] cursor-pointer appearance-none"
+                    value={issueType}
+                    onChange={(e) => setIssueType(e.target.value)}
+                  >
+                    <option value="Technical Support">Technical Support</option>
+                    <option value="Billing & Upgrades">Billing & Upgrades</option>
+                    <option value="Feature Request">Feature Request</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
                 
@@ -107,6 +172,8 @@ export default function InstituteSupportPage() {
                     type="text" 
                     className="bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 rounded-[10px] h-12 px-4 text-sm text-t-primary dark:text-t-primary outline-none focus:border-primary-01 focus:ring-1 focus:ring-[#2A85FF] w-full placeholder:text-t-secondary" 
                     placeholder="Brief summary of the issue..." 
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
                   />
                 </div>
                 
@@ -115,14 +182,18 @@ export default function InstituteSupportPage() {
                   <textarea 
                     className="bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 rounded-[10px] py-3 px-4 text-sm text-t-primary dark:text-t-primary outline-none focus:border-primary-01 focus:ring-1 focus:ring-[#2A85FF] w-full min-h-[120px] resize-y placeholder:text-t-secondary" 
                     placeholder="Please provide as much detail as possible..." 
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
                 
                 <div className="flex justify-end mt-2">
                   <button 
-                    className="btn btn-primary h-10 px-6 rounded-[10px] text-sm font-semibold cursor-pointer" 
-                    onClick={() => setShowNewTicket(false)}
+                    className="btn btn-primary h-10 px-6 rounded-[10px] text-sm font-semibold cursor-pointer disabled:opacity-50 flex items-center gap-2" 
+                    onClick={handleSubmitTicket}
+                    disabled={submitting || !subject.trim() || !message.trim()}
                   >
+                    {submitting && <RiLoader4Line size={16} className="animate-spin" />}
                     Submit Ticket
                   </button>
                 </div>
@@ -139,13 +210,27 @@ export default function InstituteSupportPage() {
           </div>
 
           <div className="relative z-10 flex flex-col gap-2 w-full min-w-0">
-            {mockTickets.map((ticket, index) => {
-              const isOpen = ticket.status === "Open";
+            {loading ? (
+              <div className="flex items-center justify-center py-10 text-t-secondary gap-2">
+                <RiLoader4Line size={24} className="animate-spin text-primary-01" />
+                <span className="font-sans text-sm font-medium">Loading tickets...</span>
+              </div>
+            ) : tickets.length === 0 ? (
+              <div className="flex flex-col items-center justify-center py-10 text-center">
+                <RiTicketLine size={48} className="text-s-stroke2 mb-4" />
+                <span className="font-sans text-[15px] font-semibold text-t-primary">No Tickets Open</span>
+                <span className="font-sans text-sm text-t-secondary mt-1">If you need help, feel free to create a new ticket above.</span>
+              </div>
+            ) : tickets.map((ticket) => {
+              // Map DB status 'open' or 'Open' appropriately
+              const isOpen = ticket.status?.toLowerCase() === "open" || ticket.status?.toLowerCase() === "in progress";
+              const statusDisplay = ticket.status ? (ticket.status.charAt(0).toUpperCase() + ticket.status.slice(1)) : "Open";
+              
               const iconBgClass = isOpen ? "bg-primary-01/10 text-primary-01" : "bg-primary-02/10 text-primary-02";
               const statusBadgeClass = isOpen 
                 ? "bg-primary-01/5 border-primary-01/15 text-primary-01" 
                 : "bg-primary-02/5 border-primary-02/15 text-primary-02";
-              const priorityBadgeClass = ticket.priority === "High"
+              const priorityBadgeClass = ticket.priority?.toLowerCase() === "high"
                 ? "bg-primary-03/5 border-primary-03/15 text-primary-03"
                 : "bg-t-secondary/10 border-t-secondary/20 text-t-secondary";
 
@@ -166,17 +251,17 @@ export default function InstituteSupportPage() {
                           {ticket.subject}
                         </span>
                         <span className={`px-2 py-0.5 border rounded-md text-[10px] font-bold leading-none ${statusBadgeClass}`}>
-                          {ticket.status}
+                          {statusDisplay}
                         </span>
                       </div>
                       
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-xs font-semibold text-t-primary dark:text-t-primary">
-                          {ticket.id}
+                        <span className="text-xs font-semibold text-t-primary dark:text-t-primary truncate max-w-[120px]">
+                          {ticket.id.split('-')[0]}
                         </span>
                         <span className="text-xs text-s-stroke2 dark:text-s-stroke2">•</span>
                         <span className="text-xs text-t-secondary dark:text-t-tertiary flex items-center gap-1">
-                          <RiTimeLine size={12} /> Updated {ticket.time}
+                          <RiTimeLine size={12} /> {new Date(ticket.created_at).toLocaleDateString()}
                         </span>
                       </div>
                     </div>
@@ -185,7 +270,7 @@ export default function InstituteSupportPage() {
                   {/* Right: Priority */}
                   <div className="flex flex-row items-center justify-end shrink-0 min-w-[100px]">
                     <span className={`px-2 py-1 border rounded-md text-[10px] font-bold uppercase tracking-wider ${priorityBadgeClass}`}>
-                      {ticket.priority} Priority
+                      {ticket.priority || "Medium"} Priority
                     </span>
                   </div>
 
