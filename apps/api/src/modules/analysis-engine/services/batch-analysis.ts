@@ -1,26 +1,18 @@
-import { globalDbStore } from "./db.mock";
+import { supabaseDB } from "../../../lib/supabase";
 import { BatchAnalysisResult, AnalysisResult } from "../../../../../../packages/types/src/analysis.types";
 
 export const generateBatchAnalysis = async (testId: string, batchId: string): Promise<BatchAnalysisResult> => {
-  // 1. Fetch all AnalysisResults for this batch & test.
-  // Since we are mocking the DB, we grab from globalDbStore.
-  // Wait, the globalDbStore stores by attemptId. 
-  // We need to look at the attempts map to filter by testId and batchId.
-  const relevantAttemptIds: string[] = [];
-  for (const [attemptId, data] of globalDbStore.attempts.entries()) {
-    if (data.attempt.batch_id === batchId && data.attempt.exam_id === testId) {
-      relevantAttemptIds.push(attemptId);
-    }
-  }
+  // 1. Fetch all submitted attempts for this batch + test (paper)
+  const { data: attempts } = await supabaseDB
+    .from("attempts")
+    .select("id, student_id, score, max_score")
+    .eq("paper_id", testId)
+    .eq("batch_id", batchId)
+    .eq("status", "submitted");
 
-  const results: AnalysisResult[] = [];
-  for (const id of relevantAttemptIds) {
-    const analysis = globalDbStore.analysisResults.get(id);
-    if (analysis) results.push(analysis);
-  }
+  const relevantAttemptIds = (attempts ?? []).map((a: any) => a.id);
 
-  // If no students have submitted, return empty state
-  if (results.length === 0) {
+  if (relevantAttemptIds.length === 0) {
     return {
       testId,
       batchId,
@@ -33,17 +25,38 @@ export const generateBatchAnalysis = async (testId: string, batchId: string): Pr
     };
   }
 
+  // 2. Fetch analysis results for those attempts from Supabase
+  const { data: analysisRows } = await supabaseDB
+    .from("analysis_results")
+    .select("result")
+    .in("attempt_id", relevantAttemptIds);
+
+  const results: AnalysisResult[] = (analysisRows ?? [])
+    .map((r: any) => r.result)
+    .filter(Boolean);
+
+  // If analysis hasn't run yet (might happen right after submit)
+  if (results.length === 0) {
+    const totalStudents = attempts?.length ?? 0;
+    const avgScore = totalStudents > 0
+      ? (attempts ?? []).reduce((s: number, a: any) => s + (a.score ?? 0), 0) / totalStudents
+      : 0;
+    const avgPercentage = totalStudents > 0
+      ? (attempts ?? []).reduce((s: number, a: any) => s + (a.max_score > 0 ? (a.score / a.max_score) * 100 : 0), 0) / totalStudents
+      : 0;
+
+    return { testId, batchId, totalStudents, avgScore, avgPercentage, topicPerformance: [], commonMistakes: [], bottleneckChapters: [] };
+  }
+
   const totalStudents = results.length;
   const avgScore = results.reduce((acc, r) => acc + r.scoring.score, 0) / totalStudents;
   const avgPercentage = results.reduce((acc, r) => acc + r.scoring.percentage, 0) / totalStudents;
 
-  // 2. Aggregate Topic Performance
-  const topicMap = new Map<string, { chapter: string, accuracies: number[] }>();
+  // 3. Aggregate topic performance
+  const topicMap = new Map<string, { chapter: string; accuracies: number[] }>();
   for (const r of results) {
     for (const ts of r.topicStats) {
-      if (!topicMap.has(ts.topic)) {
-        topicMap.set(ts.topic, { chapter: ts.chapter, accuracies: [] });
-      }
+      if (!topicMap.has(ts.topic)) topicMap.set(ts.topic, { chapter: ts.chapter, accuracies: [] });
       topicMap.get(ts.topic)!.accuracies.push(ts.accuracy);
     }
   }
@@ -51,20 +64,12 @@ export const generateBatchAnalysis = async (testId: string, batchId: string): Pr
   const topicPerformance = [];
   for (const [topic, data] of topicMap.entries()) {
     const avgAccuracy = data.accuracies.reduce((a, b) => a + b, 0) / data.accuracies.length;
-    // Mock bottom quartile (25th percentile)
     const sorted = [...data.accuracies].sort((a, b) => a - b);
     const p25Index = Math.max(0, Math.floor(sorted.length * 0.25) - 1);
-    const bottomQuartileAccuracy = sorted[p25Index] || 0;
-
-    topicPerformance.push({
-      topic,
-      chapter: data.chapter,
-      avgAccuracy,
-      bottomQuartileAccuracy,
-    });
+    topicPerformance.push({ topic, chapter: data.chapter, avgAccuracy, bottomQuartileAccuracy: sorted[p25Index] || 0 });
   }
 
-  // Find bottleneck chapters (bottom 3 chapters by avg accuracy)
+  // 4. Bottleneck chapters
   const chapterAccuracies = new Map<string, number[]>();
   for (const tp of topicPerformance) {
     if (!chapterAccuracies.has(tp.chapter)) chapterAccuracies.set(tp.chapter, []);
@@ -76,10 +81,8 @@ export const generateBatchAnalysis = async (testId: string, batchId: string): Pr
     .slice(0, 3)
     .map((c) => c.chapter);
 
-  // 3. Aggregate Common Mistakes (Trap Questions)
-  // Look at classified array for all students
-  const questionMistakes = new Map<string, { qNum: number, trapOptions: Record<string, { count: number, type: string }> }>();
-  
+  // 5. Common mistake traps
+  const questionMistakes = new Map<string, { qNum: number; trapOptions: Record<string, { count: number; type: string }> }>();
   for (const r of results) {
     for (const ca of r.classified) {
       if (!ca.is_correct && ca.selected_answer) {
@@ -87,9 +90,7 @@ export const generateBatchAnalysis = async (testId: string, batchId: string): Pr
           questionMistakes.set(ca.question_id, { qNum: ca.question.question_number, trapOptions: {} });
         }
         const traps = questionMistakes.get(ca.question_id)!.trapOptions;
-        if (!traps[ca.selected_answer]) {
-          traps[ca.selected_answer] = { count: 0, type: ca.classification.type };
-        }
+        if (!traps[ca.selected_answer]) traps[ca.selected_answer] = { count: 0, type: ca.classification.type };
         traps[ca.selected_answer].count += 1;
       }
     }
@@ -99,31 +100,12 @@ export const generateBatchAnalysis = async (testId: string, batchId: string): Pr
   for (const [qId, data] of questionMistakes.entries()) {
     for (const [opt, stats] of Object.entries(data.trapOptions)) {
       const percentageFallen = (stats.count / totalStudents) * 100;
-      // If more than 30% fell for the exact same wrong option, it's a trap
-      if (percentageFallen > 30 || stats.count > 1) { // lowered threshold for demo
-        commonMistakes.push({
-          questionId: qId,
-          questionNumber: data.qNum,
-          trapOption: opt,
-          studentsFallen: stats.count,
-          percentageFallen,
-          errorType: stats.type,
-        });
+      if (percentageFallen > 30 || stats.count > 1) {
+        commonMistakes.push({ questionId: qId, questionNumber: data.qNum, trapOption: opt, studentsFallen: stats.count, percentageFallen, errorType: stats.type });
       }
     }
   }
-
-  // Sort common mistakes by percentage fallen (desc)
   commonMistakes.sort((a, b) => b.percentageFallen - a.percentageFallen);
 
-  return {
-    testId,
-    batchId,
-    totalStudents,
-    avgScore,
-    avgPercentage,
-    topicPerformance,
-    commonMistakes: commonMistakes.slice(0, 5), // top 5 traps
-    bottleneckChapters,
-  };
+  return { testId, batchId, totalStudents, avgScore, avgPercentage, topicPerformance, commonMistakes: commonMistakes.slice(0, 5), bottleneckChapters };
 };

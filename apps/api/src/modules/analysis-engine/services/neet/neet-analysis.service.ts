@@ -3,7 +3,7 @@ import { scoreAttempt } from "./neet-scoring.service";
 import { classifyMistake } from "./neet-mistake-classifier";
 import { computeTopicAccuracy } from "./neet-topic-accuracy";
 import { calculateFreeMarks } from "./neet-free-marks";
-import { mockDb as db } from "../db.mock";
+import { db } from "../db.service";
 import { detectAllPatterns } from "./neet-error-patterns";
 import { analyzeSkips } from "./neet-skip-analysis";
 import { generateStudyPlan } from "./neet-study-plan";
@@ -23,9 +23,9 @@ export async function analyzeNeetAttempt(attemptId: string, hasTimingData = true
   }));
 
   const [batchAvgs, historicalProfile, seenQIds] = await Promise.all([
-    db.getBatchAvgsByTopic(attempt.batch_id),
-    db.getStudentErrorProfile(attempt.student_id, attempt.exam_id),
-    db.getSeenQuestionIds(attempt.student_id, attempt.exam_id),
+    db.getBatchAvgsByTopic(attempt.batch_id ?? ""),
+    db.getStudentErrorProfile(attempt.student_id, attempt.exam_code ?? "neet"),
+    db.getSeenQuestionIds(attempt.student_id, attempt.exam_code ?? "neet"),
   ]);
 
   const topicStats    = computeTopicAccuracy(classified, batchAvgs);
@@ -54,21 +54,9 @@ export async function analyzeNeetAttempt(attemptId: string, hasTimingData = true
   const currentProfileEntries = buildCurrentTopicHistoryEntries(attemptId, topicStats);
 
   await Promise.all([
-    db.upsertAnalysis(attemptId, {
-      weak_topics: topicStats.filter((t) => t.isWeak),
-      error_patterns: errorPatterns,
-      free_marks: freeMarks,
-      skip_analysis: skipAnalysis,
-      attempt_strategy: attemptStrategy,
-      longitudinal_flags: longitudinalFlags,
-      study_plan: studyPlan,
-      next_test_config: boosterConfig,
-      model_used: "neet-pipeline-v1",
-      tokens_used: 0,
-      processing_ms: processingMs,
-    }),
+    db.upsertAnalysis(attemptId, attempt.student_id, attempt.exam_code ?? "neet", result),
     db.saveAnswerClassifications(attemptId, classified),
-    db.persistStudentErrorProfile(attempt.student_id, attempt.exam_id, currentProfileEntries),
+    db.persistStudentErrorProfile(attempt.student_id, attempt.exam_code ?? "neet", currentProfileEntries),
   ]);
 
   return result;

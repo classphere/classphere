@@ -1,23 +1,47 @@
 import { Request, Response } from "express";
-
-import { globalDbStore } from "./services/db.mock";
+import { supabaseDB } from "../../lib/supabase";
+import { generateBatchAnalysis } from "./services/batch-analysis";
 
 /**
  * GET /api/v1/analysis/:attempt_id
  * Authenticated — Return the AI analysis for a completed attempt.
- * Client should poll this endpoint until analysis is ready (~3–8 seconds after submit).
+ * Analysis is computed synchronously during submit, then stored in analysis_results.
  */
 export const getAnalysis = async (req: Request, res: Response): Promise<void> => {
   try {
     const { attempt_id } = req.params;
 
-    const analysis = globalDbStore.analysisResults.get(attempt_id);
+    // Security: verify the attempt belongs to this user (or super_admin can view any)
+    const { data: attempt } = await supabaseDB
+      .from("attempts")
+      .select("student_id")
+      .eq("id", attempt_id)
+      .maybeSingle();
+
+    if (attempt && req.user?.role !== "super_admin" && attempt.student_id !== req.user?.id) {
+      res.status(403).json({ success: false, message: "Access denied" });
+      return;
+    }
+
+    // Read analysis from Supabase
+    const { data: analysis, error } = await supabaseDB
+      .from("analysis_results")
+      .select("result, processing_ms, created_at")
+      .eq("attempt_id", attempt_id)
+      .maybeSingle();
+
+    if (error) {
+      res.status(500).json({ success: false, message: error.message });
+      return;
+    }
+
     if (!analysis) {
+      // Analysis may still be processing or attempt doesn't exist
       res.status(202).json({ success: true, data: { status: "pending" } });
       return;
     }
 
-    res.status(200).json({ success: true, data: { status: "ready", analysis } });
+    res.status(200).json({ success: true, data: { status: "ready", analysis: analysis.result } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -25,25 +49,42 @@ export const getAnalysis = async (req: Request, res: Response): Promise<void> =>
 
 /**
  * POST /api/v1/analysis/:attempt_id/regenerate
- * [super_admin only] — Regenerate analysis with a different AI model.
+ * [super_admin only] — Regenerate analysis for a completed attempt.
  */
 export const regenerateAnalysis = async (req: Request, res: Response): Promise<void> => {
   try {
     const { attempt_id } = req.params;
-    // TODO: implement
-    // 1. Validate req.body: { model: string } — must be a key in the ai-models registry
-    // 2. Verify attempt exists
-    // 3. Delete existing ai_analyses row for this attempt (to allow re-insert)
-    // 4. Enqueue re-generation with the specified model override
-    //    ai.service.generateAnalysis(attempt_id, { model_override: req.body.model })
-    // 5. Return { success: true, message: "Regeneration queued", attempt_id, model: req.body.model }
-    res.status(202).json({ success: true, message: "regenerateAnalysis — TODO: implement", attempt_id });
+
+    // Verify attempt exists
+    const { data: attempt } = await supabaseDB
+      .from("attempts")
+      .select("id, student_id, paper_id, status, exam_code")
+      .eq("id", attempt_id)
+      .maybeSingle();
+
+    if (!attempt) {
+      res.status(404).json({ success: false, message: "Attempt not found" });
+      return;
+    }
+
+    if (attempt.status !== "submitted") {
+      res.status(400).json({ success: false, message: "Attempt is not yet submitted" });
+      return;
+    }
+
+    // Re-run analysis
+    const { analyzeAttempt } = await import("./services/analysis.service");
+    const result = await analyzeAttempt(attempt_id);
+
+    // Upsert new result
+    const { db } = await import("./services/db.service");
+    await db.upsertAnalysis(attempt_id, attempt.student_id, attempt.exam_code ?? "jee-main", result);
+
+    res.status(200).json({ success: true, message: "Analysis regenerated successfully", attempt_id });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
 };
-
-import { generateBatchAnalysis } from "./services/batch-analysis";
 
 /**
  * GET /api/v1/analysis/batch/:test_id/:batch_id
@@ -52,14 +93,8 @@ import { generateBatchAnalysis } from "./services/batch-analysis";
 export const getBatchAnalysis = async (req: Request, res: Response): Promise<void> => {
   try {
     const { test_id, batch_id } = req.params;
-    
-    // Call the batch analysis service
     const analysis = await generateBatchAnalysis(test_id, batch_id);
-
-    res.status(200).json({
-      success: true,
-      data: { analysis },
-    });
+    res.status(200).json({ success: true, data: { analysis } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

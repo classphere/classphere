@@ -18,7 +18,7 @@ import {
   computeCrossSectionFatigue,
 } from "./ssc-behavioral-analysis";
 import { generateSscNarrative } from "./ssc-narrative-summary";
-import { mockDb as db } from "../db.mock";
+import { db } from "../db.service";
 
 /**
  * SSC CGL Tier 1 Analysis Entry Point
@@ -50,9 +50,9 @@ export async function analyzeSscAttempt(
 
   // ── Stage 3: Parallel DB lookups ──────────────────────────────────────────
   const [batchAvgs, historicalProfile, seenQIds] = await Promise.all([
-    db.getBatchAvgsByTopic(attempt.batch_id),
-    db.getStudentErrorProfile(attempt.student_id, attempt.exam_id),
-    db.getSeenQuestionIds(attempt.student_id, attempt.exam_id),
+    db.getBatchAvgsByTopic(attempt.batch_id ?? ""),
+    db.getStudentErrorProfile(attempt.student_id, attempt.exam_code ?? "ssc-cgl"),
+    db.getSeenQuestionIds(attempt.student_id, attempt.exam_code ?? "ssc-cgl"),
   ]);
 
   // ── Stage 4: Topic / Theme accuracy (lower gate: 2 attempts for SSC) ──────
@@ -163,21 +163,9 @@ export async function analyzeSscAttempt(
   // ── Persist ───────────────────────────────────────────────────────────────
   const currentProfileEntries = buildCurrentTopicHistoryEntries(attemptId, topicStats);
   await Promise.all([
-    db.upsertAnalysis(attemptId, {
-      weak_topics:        topicStats.filter(t => t.isWeak),
-      error_patterns:     errorPatterns,
-      free_marks:         freeMarks,
-      skip_analysis:      skipAnalysis,
-      attempt_strategy:   result.attemptStrategy,
-      longitudinal_flags: longitudinalFlags,
-      study_plan:         studyPlan,
-      next_test_config:   boosterConfig,
-      model_used:         "ssc-rule-engine-v1",
-      tokens_used:        0,
-      processing_ms:      processingMs,
-    }),
+    db.upsertAnalysis(attemptId, attempt.student_id, attempt.exam_code ?? "ssc-cgl", result),
     db.saveAnswerClassifications(attemptId, classified),
-    db.persistStudentErrorProfile(attempt.student_id, attempt.exam_id, currentProfileEntries),
+    db.persistStudentErrorProfile(attempt.student_id, attempt.exam_code ?? "ssc-cgl", currentProfileEntries),
   ]);
 
   return result;
