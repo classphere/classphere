@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -13,19 +13,17 @@
     "@remixicon/react": "^4.9.0",
     "@supabase/supabase-js": "^2.110.0",
     "katex": "^0.17.0",
+    "marked": "^18.0.6",
     "next": "16.2.7",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-latex-next": "^3.0.0",
-    "react-markdown": "^10.1.0",
-    "recharts": "^3.8.1",
-    "rehype-katex": "^7.0.1",
-    "rehype-raw": "^7.0.0",
-    "remark-gfm": "^4.0.1",
-    "remark-math": "^6.0.0"
+    "recharts": "^3.8.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/katex": "^0.16.8",
+    "@types/marked": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
