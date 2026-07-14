@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
-import { uploadQuestions, getPlatformStats, listInstitutes } from "./superadmin.controller";
+import { uploadQuestions, getPlatformStats, listInstitutes, listTransactions } from "./superadmin.controller";
+import { listAllTickets } from "../support/support.controller";
 
 const router = Router();
 
@@ -26,6 +27,18 @@ router.get("/institutes", listInstitutes);
  * Body: { exam, test_type, title, subject, chapter, year, shift, duration, marks, difficulty, questions[] }
  */
 router.post("/upload-questions", uploadQuestions);
+
+/**
+ * GET /api/v1/superadmin/tickets
+ * List all support tickets globally.
+ */
+router.get("/tickets", listAllTickets);
+
+/**
+ * GET /api/v1/superadmin/transactions
+ * List all institute invoices.
+ */
+router.get("/transactions", listTransactions);
 
 export default router;
 

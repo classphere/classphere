@@ -19,6 +19,7 @@ import { PendingDPPsWidget } from "@/components/dashboard/PendingDPPsWidget";
 import { RecentTestsWidget } from "@/components/dashboard/RecentTestsWidget";
 import { AIRiskAlertWidget } from "@/components/dashboard/AIRiskAlertWidget";
 import { ActionRequiredWidget } from "@/components/dashboard/ActionRequiredWidget";
+import { LeaderboardWidget } from "@/components/dashboard/LeaderboardWidget";
 
 const performanceDataJEE = [
   { name: "M1", Physics: 45, Chemistry: 55, Mathematics: 65, Overall: 165 },
@@ -115,6 +116,7 @@ export default function Dashboard() {
           <div className="grid gap-6 min-w-0 overflow-x-hidden">
             <RecentTestsWidget />
             <AIRiskAlertWidget />
+            <LeaderboardWidget />
             <ActionRequiredWidget />
           </div>
 

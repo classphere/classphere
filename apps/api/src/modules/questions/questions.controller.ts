@@ -18,8 +18,8 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
 
     const isSuperAdmin = req.user?.role === "super_admin";
     const selectCols = isSuperAdmin
-      ? "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, correct_answer, options, created_at"
-      : "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, options, created_at";
+      ? "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, correct_answer, options, created_at"
+      : "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, created_at";
 
     let query = supabaseDB
       .from("questions")
@@ -119,7 +119,7 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
     const { id } = req.params;
     const isSuperAdmin = req.user?.role === "super_admin";
 
-    const selectCols = isSuperAdmin ? "*" : "id, question_text, question_images, subject, chapter, topic, difficulty, question_type, source, year, options, explanation, explanation_images, distractor_map, marking_scheme, tags";
+    const selectCols = isSuperAdmin ? "*" : "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, explanation, distractor_map, marking_scheme, tags";
 
     const { data: question, error } = await supabaseDB
       .from("questions")
@@ -150,7 +150,7 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
  */
 export const createQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { exam_id, subject, chapter, topic, difficulty, question_type, question_text, options, correct_answer, explanation, distractor_map, marking_scheme, source, year, tags, question_images, explanation_images } = req.body;
+    const { exam_id, subject, chapter, topic, difficulty, question_type, question_text, options, correct_answer, explanation, distractor_map, marking_scheme, source, year, tags, image_url } = req.body;
 
     if (!exam_id || !subject || !chapter || !difficulty || !question_type || !question_text || !correct_answer) {
       res.status(400).json({ success: false, message: "Missing required fields: exam_id, subject, chapter, difficulty, question_type, question_text, correct_answer" });
@@ -167,11 +167,10 @@ export const createQuestion = async (req: Request, res: Response): Promise<void>
         difficulty,
         question_type,
         question_text,
-        question_images: question_images ?? [],
+        image_url: image_url || null,
         options: options ?? null,
         correct_answer: Array.isArray(correct_answer) ? correct_answer : [correct_answer],
         explanation: explanation ?? null,
-        explanation_images: explanation_images ?? [],
         distractor_map: distractor_map ?? null,
         marking_scheme: marking_scheme ?? { correct: 4, incorrect: -1, unattempted: 0, partial: false },
         source: source ?? null,
@@ -200,7 +199,7 @@ export const createQuestion = async (req: Request, res: Response): Promise<void>
 export const updateQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const allowed = ["subject", "chapter", "topic", "difficulty", "question_type", "question_text", "question_images", "options", "correct_answer", "explanation", "explanation_images", "distractor_map", "marking_scheme", "source", "year", "tags"];
+    const allowed = ["subject", "chapter", "topic", "difficulty", "question_type", "question_text", "image_url", "options", "correct_answer", "explanation", "distractor_map", "marking_scheme", "source", "year", "tags"];
     const updates: Record<string, any> = {};
     for (const key of allowed) {
       if (req.body[key] !== undefined) updates[key] = req.body[key];

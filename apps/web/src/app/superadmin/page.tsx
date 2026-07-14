@@ -24,6 +24,7 @@ interface PlatformStats {
   totalAttempts: number;
   newInstitutesThisWeek: number;
   newStudentsThisWeek: number;
+  activeTrials: number;
   systemUptime: string;
 }
 
@@ -43,13 +44,12 @@ const systemResources = [
   { label: "CDN", fullName: "CDN Edge", score: 45, load: "Normal", trend: "+0.5%" },
 ];
 
-const mockTickets: any[] = [];
-
 export default function SuperAdminDashboardPage() {
   const { user, session } = useAuth();
   const [stats, setStats] = useState<PlatformStats | null>(null);
   const [statsLoading, setStatsLoading] = useState(true);
   const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
+  const [tickets, setTickets] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -60,6 +60,13 @@ export default function SuperAdminDashboardPage() {
         });
         const data = await res.json();
         if (data.success) setStats(data.data);
+
+        // Fetch tickets for the widget
+        const tRes = await fetch(`${API_URL}/api/v1/superadmin/tickets`, {
+          headers: { Authorization: `Bearer ${session.access_token}` },
+        });
+        const tData = await tRes.json();
+        if (tData.success) setTickets(tData.data.slice(0, 4)); // Only top 4
       } catch {
         // non-fatal
       } finally {
@@ -123,13 +130,13 @@ export default function SuperAdminDashboardPage() {
                 badgeLabel="all time"
               />
 
-              {/* Metric 4: System Uptime */}
+              {/* Metric 4: Active Trials */}
               <MetricCard
-                icon={<RiShieldCheckLine size={20} className="text-primary-02" />}
-                label="System Uptime"
-                value={stats?.systemUptime ?? "99.98%"}
-                badge="Stable"
-                badgeLabel="all clear"
+                icon={<RiTimeLine size={20} className="text-primary-02" />}
+                label="Active Trials"
+                value={stats?.activeTrials ?? 0}
+                badge="Phase 3"
+                badgeLabel="trial accounts"
               />
 
             </MetricGrid>
@@ -176,25 +183,25 @@ export default function SuperAdminDashboardPage() {
             {/* Right Column (Support Tickets) */}
             <SectionCard title="Recent Tickets" className="w-full xl:w-[420px] shrink-0">
               <div className="flex flex-col gap-2 w-full flex-1 mt-2">
-                {mockTickets.length === 0 ? (
+                {tickets.length === 0 ? (
                   <div className="flex flex-col items-center justify-center flex-1 py-10 text-center">
                     <span className="text-sm font-sans text-t-secondary">No recent tickets found.</span>
                   </div>
-                ) : mockTickets.map((ticket, index) => (
+                ) : tickets.map((ticket, index) => (
                   <div key={ticket.id} className="group/item relative flex flex-row p-4 gap-4 w-full bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer">
                     <div className="w-10 h-10 bg-primary-01/10 text-primary-01 rounded-full shrink-0 flex items-center justify-center font-bold">
-                      {ticket.name.charAt(0)}
+                      {(ticket.author?.name || "U").charAt(0).toUpperCase()}
                     </div>
                     <div className="flex flex-col gap-2 flex-1 min-w-0 mt-0.5">
                       <div className="flex flex-col gap-0.5">
                         <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="font-sans font-semibold text-sm text-t-primary">{ticket.name}</span>
-                          <span className="text-[13px] text-t-tertiary">on</span>
-                          <span className="font-sans font-semibold text-sm text-t-primary truncate max-w-[120px]">{ticket.project}</span>
+                          <span className="font-sans font-semibold text-sm text-t-primary">{ticket.author?.name || "Unknown"}</span>
+                          <span className="text-[13px] text-t-tertiary">from</span>
+                          <span className="font-sans font-semibold text-sm text-t-primary truncate max-w-[120px]">{ticket.institute?.name || "Global"}</span>
                         </div>
-                        <span className="text-[12px] text-t-tertiary">{ticket.time}</span>
+                        <span className="text-[12px] text-t-tertiary">{new Date(ticket.created_at).toLocaleDateString()}</span>
                       </div>
-                      <span className="text-sm text-t-primary line-clamp-2">"{ticket.text}"</span>
+                      <span className="text-sm text-t-primary line-clamp-2">"{ticket.subject}"</span>
                     </div>
                   </div>
                 ))}

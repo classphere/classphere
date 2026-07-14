@@ -77,6 +77,7 @@ export const getPlatformStats = async (req: Request, res: Response): Promise<voi
       attemptsRes,
       newInstitutesRes,
       newStudentsRes,
+      activeTrialsRes,
       crmStats,
     ] = await Promise.all([
       supabaseDB.from("institutes").select("id", { count: "exact", head: true }).eq("is_active", true),
@@ -84,6 +85,7 @@ export const getPlatformStats = async (req: Request, res: Response): Promise<voi
       supabaseDB.from("attempts").select("id", { count: "exact", head: true }),
       supabaseDB.from("institutes").select("id", { count: "exact", head: true }).gte("created_at", oneWeekAgo),
       supabaseDB.from("users").select("id", { count: "exact", head: true }).eq("role", "student").gte("created_at", oneWeekAgo),
+      supabaseDB.from("institute_subscriptions").select("id", { count: "exact", head: true }).eq("status", "trialing"),
       getInstituteCRMStats(),
     ]);
 
@@ -95,6 +97,7 @@ export const getPlatformStats = async (req: Request, res: Response): Promise<voi
         totalAttempts: attemptsRes.count ?? 0,
         newInstitutesThisWeek: newInstitutesRes.count ?? 0,
         newStudentsThisWeek: newStudentsRes.count ?? 0,
+        activeTrials: activeTrialsRes.count ?? 0,
         enterprisePlans: crmStats.enterprisePlans,
         estimatedMRR: crmStats.estimatedMRR,
         systemUptime: "99.98%", // Static for now — wire to a health monitor later
@@ -281,6 +284,39 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     });
   } catch (err: any) {
     console.error("[uploadQuestions] ERROR:", err.message);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+/**
+ * GET /api/v1/superadmin/transactions
+ * [super_admin only]
+ *
+ * Returns recent institute invoices.
+ */
+export const listTransactions = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { data, error } = await supabaseDB
+      .from("institute_invoices")
+      .select(`
+        *,
+        institute:institutes(name, plan)
+      `)
+      .order("created_at", { ascending: false })
+      .limit(50);
+
+    if (error) {
+      if (error.code === '42P01') {
+        res.status(200).json({ success: true, data: [] });
+        return;
+      }
+      throw error;
+    }
+
+    res.status(200).json({ success: true, data });
+  } catch (err: any) {
+    console.error("[listTransactions] ERROR:", err.message);
     res.status(500).json({ success: false, message: err.message });
   }
 };

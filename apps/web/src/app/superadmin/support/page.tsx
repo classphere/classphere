@@ -11,14 +11,32 @@ import {
   RiArrowRightUpLine
 } from "@remixicon/react";
 
-const mockTickets = [
-  { id: "TCK-4829", institute: "Vibrant Academy", subject: "API Integration Failing for New Batch", priority: "High", status: "Open", time: "2 hours ago" },
-  { id: "TCK-4828", institute: "Allen Career Institute", subject: "Missing Chemistry Questions in Bank", priority: "Medium", status: "In Progress", time: "5 hours ago" },
-  { id: "TCK-4827", institute: "Future Point Classes", subject: "Billing issue: Double charged for June", priority: "High", status: "Open", time: "1 day ago" },
-  { id: "TCK-4826", institute: "Narayana Group", subject: "Leaderboard not syncing correctly", priority: "Low", status: "Resolved", time: "2 days ago" },
-];
+import { useEffect, useState } from "react";
+import { apiClient } from "@/lib/api.client";
+import { useAuth } from "@/lib/auth-context";
 
 export default function SupportPage() {
+  const { session } = useAuth();
+  const [tickets, setTickets] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchTickets() {
+      if (!session?.access_token) return;
+      try {
+        const res = await apiClient.get("/api/v1/superadmin/tickets", session.access_token);
+        if (res.success) {
+          setTickets(res.data);
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchTickets();
+  }, [session?.access_token]);
+
   return (
     <>
       <Navbar title="Support & Escalations" subtitle="Manage B2B tickets, API issues, and platform escalations." />
@@ -99,20 +117,25 @@ export default function SupportPage() {
             </div>
 
             {/* Data rows */}
-            {mockTickets.map((ticket) => (
+            {tickets.length === 0 && !loading && (
+              <div className="py-10 text-center text-t-secondary font-sans text-sm">
+                No support tickets found.
+              </div>
+            )}
+            {tickets.map((ticket) => (
               <div
                 key={ticket.id}
                 className="group/item relative flex flex-col md:flex-row md:items-center w-full p-4 md:px-6 gap-4 md:gap-0 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer"
               >
                 
                 {/* ID */}
-                <div className="w-full md:w-[100px] font-sans text-[15px] font-bold text-t-primary group-hover/item:text-[#0A84FF] transition-colors">
-                  {ticket.id}
+                <div className="w-full md:w-[100px] font-sans text-[15px] font-bold text-t-primary group-hover/item:text-[#0A84FF] transition-colors truncate">
+                  {ticket.id.split('-')[0]}
                 </div>
                 
                 {/* Institute */}
-                <div className="w-full md:w-[200px] font-sans text-[15px] font-bold text-t-primary">
-                  {ticket.institute}
+                <div className="w-full md:w-[200px] font-sans text-[15px] font-bold text-t-primary truncate">
+                  {ticket.institute?.name || "Global"}
                 </div>
                 
                 {/* Subject */}
@@ -147,8 +170,8 @@ export default function SupportPage() {
                 </div>
                 
                 {/* Time */}
-                <div className="w-full md:w-[120px] text-right flex md:justify-end font-sans text-[14px] text-t-secondary">
-                  {ticket.time}
+                <div className="w-full md:w-[120px] text-right flex md:justify-end font-sans text-[14px] text-t-secondary truncate">
+                  {new Date(ticket.created_at).toLocaleDateString()}
                 </div>
 
               </div>
@@ -158,7 +181,7 @@ export default function SupportPage() {
           {/* Pagination */}
           <div className="mt-4 pt-4 border-t border-s-stroke2/30 flex justify-between items-center text-sm font-medium text-t-secondary px-2">
             <div>
-              Showing <span className="font-bold text-t-primary">1</span> to <span className="font-bold text-t-primary">4</span> of 42 tickets
+              Showing <span className="font-bold text-t-primary">{tickets.length > 0 ? 1 : 0}</span> to <span className="font-bold text-t-primary">{tickets.length}</span> of {tickets.length} tickets
             </div>
             
             <div className="flex items-center gap-2">
