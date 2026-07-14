@@ -65,15 +65,15 @@ export const db = {
     if (questionIds.length > 0) {
       const { data: questions } = await supabaseDB
         .from("questions")
-        .select("id, question_text, question_images, options, correct_answer, explanation, explanation_images, question_type, subject, chapter, topic, difficulty, distractor_map, marking_scheme, source, year, tags")
+        .select("id, question_text, image_url, options, correct_answer, explanation, explanation_image_url, question_type, subject, chapter, topic, difficulty, distractor_map, marking_scheme, source, year, tags")
         .in("id", questionIds);
 
       for (const q of questions ?? []) {
         questionMap[q.id] = {
           ...q,
           question_number: 0, // will be set below
-          question_images: q.question_images ?? [],
-          explanation_images: q.explanation_images ?? [],
+          image_url: q.image_url || null,
+          explanation_image_url: q.explanation_image_url || null,
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
           tags: q.tags ?? [],
         } as Question;
@@ -105,10 +105,29 @@ export const db = {
   },
 
   // ── Batch averages per topic (for comparison) ──────────────────────────────
-  getBatchAvgsByTopic: async (_batchId: string): Promise<Map<string, number>> => {
-    // TODO: implement when analysis_results table is populated with enough data
-    // For now returns empty map — topic comparison will show N/A
-    return new Map<string, number>();
+  getBatchAvgsByTopic: async (batchId: string): Promise<Map<string, number>> => {
+    try {
+      const { data, error } = await supabaseDB.rpc("calculate_batch_topic_averages", {
+        p_batch_id: batchId,
+      });
+
+      if (error) {
+        console.error(`[db.service] getBatchAvgsByTopic RPC error:`, error.message);
+        return new Map<string, number>();
+      }
+
+      // data is a JSON object like { "Kinematics": 45.5, "Thermodynamics": 80.2 }
+      const map = new Map<string, number>();
+      if (data && typeof data === "object") {
+        for (const [topic, avg] of Object.entries(data)) {
+          map.set(topic, Number(avg));
+        }
+      }
+      return map;
+    } catch (e: any) {
+      console.error(`[db.service] getBatchAvgsByTopic exception:`, e.message);
+      return new Map<string, number>();
+    }
   },
 
   // ── Seen question IDs (for booster config de-duplication) ─────────────────

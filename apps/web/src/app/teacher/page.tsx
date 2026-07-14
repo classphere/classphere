@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
@@ -14,16 +14,39 @@ import {
   RiArrowDownSLine
 } from "@remixicon/react";
 import { useAuth } from "@/lib/auth-context";
+import { apiClient } from "@/lib/api.client";
 
 export default function TeacherDashboardPage() {
-  const pendingDPPs: any[] = [];
-  const completedDPPs: any[] = [];
-  const mockBatches: any[] = [];
-  const mockDPPs: any[] = [];
-  const { user } = useAuth();
+  const { user, session } = useAuth();
   const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
 
-  const flags: any[] = [];
+  // ── Real dashboard data ──────────────────────────────────────────────────
+  const [metrics, setMetrics] = useState<any>(null);
+  const [batches, setBatches] = useState<any[]>([]);
+  const [recentDPPs, setRecentDPPs] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!session?.access_token) return;
+    const fetch = async () => {
+      setLoading(true);
+      try {
+        const res = await apiClient.get("/api/v1/dashboard/teacher", session.access_token);
+        if (res.success) {
+          setMetrics(res.data.metrics);
+          setBatches(res.data.batches ?? []);
+          setRecentDPPs(res.data.recentDPPs ?? []);
+        }
+      } catch (e) { console.error("[TeacherDashboard]", e); }
+      finally { setLoading(false); }
+    };
+    fetch();
+  }, [session?.access_token]);
+
+  const pendingDPPs = recentDPPs.filter((d) => d.pendingCount > 0);
+  const completedDPPs = recentDPPs.filter((d) => d.pendingCount === 0 && d.submittedCount > 0);
+
+  const flags: any[] = []; // AI flags — future feature
 
   // Time-based greeting title
   const getGreeting = () => {
@@ -57,21 +80,21 @@ export default function TeacherDashboardPage() {
           <MetricCard
             icon={<RiTeamLine size={20} />}
             label="Total Students"
-            value="0"
-            badgeLabel="across 0 batches"
+            value={loading ? "—" : String(metrics?.totalStudents ?? 0)}
+            badgeLabel={`across ${metrics?.batchCount ?? 0} batches`}
           />
           <MetricCard
             icon={<RiFileChartLine size={20} />}
             label="Avg Batch Score"
-            value="0%"
-            badge="0%"
-            badgeLabel="vs last week"
+            value={loading ? "—" : `${metrics?.avgBatchScore ?? 0}%`}
+            badge={metrics?.avgBatchScore ? (metrics.avgBatchScore >= 60 ? "Good" : "Needs Work") : "—"}
+            badgeLabel="batch average"
           />
           <MetricCard
             icon={<RiCalendarEventLine size={20} />}
-            label="Upcoming Tests"
-            value="0"
-            badgeLabel="this week"
+            label="Active DPPs"
+            value={loading ? "—" : String(pendingDPPs.length)}
+            badgeLabel={`${completedDPPs.length} completed`}
           />
         </MetricGrid>
 
@@ -261,13 +284,13 @@ export default function TeacherDashboardPage() {
 
           {/* DPPs Grid Wrapper */}
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-            {mockDPPs.length === 0 ? (
+            {recentDPPs.length === 0 ? (
               <div className="col-span-1 md:col-span-3 flex flex-col items-center justify-center p-8 w-full text-center">
                 <p className="text-[14px] font-sans text-t-secondary">No DPP activity yet.</p>
               </div>
             ) : (
-              mockDPPs.map(dpp => {
-                const completion = Math.round((dpp.completedCount / dpp.totalStudents) * 100);
+              recentDPPs.map(dpp => {
+                const completion = dpp.totalStudents ? Math.round((dpp.submittedCount / dpp.totalStudents) * 100) : 0;
                 const isComplete = dpp.status === "completed";
                 const isUpcoming = dpp.status === "upcoming";
                 
@@ -292,7 +315,7 @@ export default function TeacherDashboardPage() {
                         {dpp.title}
                       </div>
                       <div className="text-[12px] font-sans text-t-secondary mt-1">
-                        {dpp.batchName} · {dpp.completedCount}/{dpp.totalStudents} Submitted ({completion}%)
+                        {dpp.batchName} · {dpp.submittedCount}/{dpp.totalStudents} Submitted ({completion}%)
                       </div>
   
                       {/* Progress Bar in between */}

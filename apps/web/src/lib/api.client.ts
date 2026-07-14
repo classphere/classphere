@@ -17,7 +17,7 @@ export const API_V1_URL = `${API_URL}/api/v1`;
 
 type FetchOptions = Omit<RequestInit, "body"> & { body?: unknown };
 
-async function request<T = unknown>(
+async function request<T = any>(
   path: string,
   options: FetchOptions & { token?: string } = {}
 ): Promise<T> {
@@ -70,18 +70,18 @@ async function request<T = unknown>(
 }
 
 export const apiClient = {
-  get: <T = unknown>(path: string, token?: string) =>
+  get: <T = any>(path: string, token?: string) =>
     request<T>(path, { method: "GET", token }),
 
-  post: <T = unknown>(path: string, body: unknown, token?: string) =>
+  post: <T = any>(path: string, body: unknown, token?: string) =>
     request<T>(path, { method: "POST", body, token }),
 
-  put: <T = unknown>(path: string, body: unknown, token?: string) =>
+  put: <T = any>(path: string, body: unknown, token?: string) =>
     request<T>(path, { method: "PUT", body, token }),
 
-  patch: <T = unknown>(path: string, body: unknown, token?: string) =>
+  patch: <T = any>(path: string, body: unknown, token?: string) =>
     request<T>(path, { method: "PATCH", body, token }),
 
-  delete: <T = unknown>(path: string, token?: string) =>
+  delete: <T = any>(path: string, token?: string) =>
     request<T>(path, { method: "DELETE", token }),
 };

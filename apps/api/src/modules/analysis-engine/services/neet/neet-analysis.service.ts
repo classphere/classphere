@@ -16,7 +16,8 @@ import { computeTimeIntervals, computeSubjectMovement, computeDifficultyBreakdow
 export async function analyzeNeetAttempt(attemptId: string, hasTimingData = true): Promise<AnalysisResult> {
   const start = Date.now();
   const { attempt, answers } = await db.getAttemptWithAnswers(attemptId);
-  const scoring = scoreAttempt(answers, attempt.marking_scheme);
+  const scheme = attempt.marking_scheme || { correct: 4, incorrect: -1, unattempted: 0 };
+  const scoring = scoreAttempt(answers, { correct: scheme.correct, incorrect: scheme.incorrect, unattempted: scheme.unattempted });
   const classified: ClassifiedAnswer[] = answers.map((a) => ({
     ...a,
     classification: classifyMistake(a, hasTimingData),
@@ -30,7 +31,7 @@ export async function analyzeNeetAttempt(attemptId: string, hasTimingData = true
 
   const topicStats    = computeTopicAccuracy(classified, batchAvgs);
   const errorPatterns = detectAllPatterns(classified);
-  const freeMarks     = calculateFreeMarks(classified, scoring, attempt.marking_scheme);
+  const freeMarks     = calculateFreeMarks(classified, scoring, { correct: scheme.correct, incorrect: scheme.incorrect, unattempted: scheme.unattempted });
   const skipAnalysis  = analyzeSkips(classified);
   const attemptStrategy = analyzeAttemptStrategy(classified, attempt.exam_code ?? "neet", attempt.total_duration_sec ?? 10800, hasTimingData);
   const longitudinalFlags = detectLongitudinalPatterns(topicStats, historicalProfile);

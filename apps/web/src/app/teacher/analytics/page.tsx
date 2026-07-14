@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Link from "next/link";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
@@ -18,37 +18,14 @@ import {
   RiQuestionLine,
   RiFileList3Line,
   RiBookOpenLine,
-  RiGroupLine
+  RiGroupLine,
+  RiLoader4Line
 } from "@remixicon/react";
-const mockBatches: any[] = [];
+import { useAuth } from "@/lib/auth-context";
+import { apiClient } from "@/lib/api.client";
 
 // ── Mock Analytics Data ──────────────────────────────────────────
-const batchStats = [
-  { batchName: "JEE 2026 Morning",   exam: "JEE", avg: 67.4, top: 94, bottom: 21, students: 142, trend: +2.1 },
-  { batchName: "NEET 2026 Droppers", exam: "NEET", avg: 59.8, top: 88, bottom: 18, students: 185, trend: -1.4 },
-  { batchName: "JEE Foundation",     exam: "JEE", avg: 72.1, top: 97, bottom: 34, students: 138, trend: +5.6 },
-];
-
-const weakTopics = [
-  { topic: "Carnot Cycle Efficiency",    subject: "Physics",   failRate: 73, students: 134, priority: "Critical" },
-  { topic: "Pulley + Sign Conventions",  subject: "Physics",   failRate: 68, students: 124, priority: "Critical" },
-  { topic: "Organic Name Reactions",     subject: "Chemistry", failRate: 61, students: 112, priority: "High"     },
-  { topic: "Integration by Parts",       subject: "Maths",     failRate: 54, students: 99,  priority: "High"     },
-  { topic: "Genetic Inheritance Ratios", subject: "Biology",   failRate: 48, students: 88,  priority: "Medium"   },
-];
-
-const trapQuestions = [
-  { q: "Q14", option: "B", trap: "sign_error",      pct: 54.2, desc: "Confused direction of friction with surface normal" },
-  { q: "Q27", option: "C", trap: "partial_solve",   pct: 48.7, desc: "Stopped after finding velocity, ignored angular momentum" },
-  { q: "Q33", option: "D", trap: "unit_error",      pct: 41.3, desc: "Mixed up kJ/mol with J/mol in Hess's Law" },
-  { q: "Q41", option: "A", trap: "common_mistake",  pct: 39.1, desc: "Confused dominant with codominant inheritance" },
-];
-
-const subjectBreakdown = [
-  { subject: "Physics",   avg: 63, correct: 12.6, wrong: 7.2, unattempted: 10.2 },
-  { subject: "Chemistry", avg: 71, correct: 14.2, wrong: 5.4, unattempted: 10.4 },
-  { subject: "Maths",     avg: 58, correct: 11.6, wrong: 8.8, unattempted: 9.6  },
-];
+// Replaced with real analytics from /api/v1/dashboard/teacher/batch/:batchId/analytics
 
 const priorityColor: Record<string, string> = {
   Critical: "label-red",
@@ -57,8 +34,49 @@ const priorityColor: Record<string, string> = {
 };
 
 export default function TeacherAnalyticsPage() {
-  const [selectedBatch, setSelectedBatch] = useState(0);
-  const stat = batchStats[selectedBatch];
+  const { session } = useAuth();
+  
+  // Real data states
+  const [batches, setBatches] = useState<any[]>([]);
+  const [selectedBatchIdx, setSelectedBatchIdx] = useState(0);
+  const [batchAnalytics, setBatchAnalytics] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch batches initially
+  useEffect(() => {
+    if (!session?.access_token) return;
+    apiClient.get("/api/v1/dashboard/teacher", session.access_token).then((res: any) => {
+      if (res.success && res.data.batches) {
+        setBatches(res.data.batches);
+      }
+    });
+  }, [session?.access_token]);
+
+  // Fetch analytics for selected batch
+  useEffect(() => {
+    if (!session?.access_token || batches.length === 0) return;
+    const batchId = batches[selectedBatchIdx]?.id;
+    if (!batchId) return;
+
+    setLoading(true);
+    apiClient.get(`/api/v1/dashboard/teacher/batch/${batchId}/analytics`, session.access_token)
+      .then((res: any) => {
+        if (res.success) setBatchAnalytics(res.data);
+      })
+      .finally(() => setLoading(false));
+  }, [session?.access_token, batches, selectedBatchIdx]);
+
+  const stat = {
+    avg: batchAnalytics?.overall?.batchAvgScore ?? 0,
+    top: batchAnalytics?.overall?.topStudentAccuracy ?? 0,
+    bottom: batchAnalytics?.overall?.bottomStudentAccuracy ?? 0,
+    students: batchAnalytics?.overall?.totalStudents ?? 0,
+    exam: batches[selectedBatchIdx]?.name ?? "Unknown",
+    trend: 0
+  };
+  const realWeakTopics = batchAnalytics?.overall?.weakTopics ?? [];
+  const subjectBreakdown = batchAnalytics?.overall?.subjectBreakdown ?? [];
+  const recentTests = batchAnalytics?.recentTests ?? [];
 
   return (
     <>
@@ -72,18 +90,19 @@ export default function TeacherAnalyticsPage() {
         {/* Batch Selector */}
         <div className="flex items-center gap-4 mb-8 mt-6">
           <span className="text-body-2 font-bold text-t-secondary">Viewing batch:</span>
-          <div className="flex gap-2">
-            {batchStats.map((b, i) => (
+          <div className="flex gap-2 flex-wrap">
+            {batches.length === 0 && <span className="text-t-secondary text-sm">Loading batches...</span>}
+            {batches.map((b, i) => (
               <button
-                key={b.batchName}
-                onClick={() => setSelectedBatch(i)}
+                key={b.id}
+                onClick={() => setSelectedBatchIdx(i)}
                 className={`px-4 py-1.5 rounded-[10px] text-caption font-bold border transition-all cursor-pointer ${
-                  selectedBatch === i
+                  selectedBatchIdx === i
                     ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-black border-transparent"
                     : "bg-b-surface2 dark:bg-b-surface2 border-s-stroke2 text-t-secondary hover:text-t-primary"
                 }`}
               >
-                {b.batchName}
+                {b.name}
               </button>
             ))}
           </div>
@@ -108,6 +127,80 @@ export default function TeacherAnalyticsPage() {
           ))}
         </MetricGrid>
 
+        {/* RECENT TESTS & TRAPS (MICRO LEVEL) */}
+        <div className="mb-8">
+          <h2 className="text-[20px] font-sans font-bold text-t-primary mb-1">Recent Tests & Traps</h2>
+          <p className="text-body-2 text-t-secondary mb-4">Immediate feedback from the most recent tests in this batch.</p>
+          
+          <div className="flex flex-col gap-6">
+            {loading ? (
+              <div className="flex items-center justify-center py-8 text-t-secondary gap-2 border border-s-stroke2/40 rounded-[24px]">
+                <RiLoader4Line className="animate-spin" /> Loading recent tests...
+              </div>
+            ) : recentTests.length === 0 ? (
+              <div className="flex items-center justify-center py-8 text-t-secondary text-sm border border-s-stroke2/40 rounded-[24px]">
+                No recent tests found for this batch.
+              </div>
+            ) : recentTests.map((rt: any) => (
+              <SectionCard
+                key={rt.testId}
+                title={rt.testName}
+                subtitle={`Average Score: ${rt.avgScore}%`}
+                className="w-full"
+                headerRight={
+                  <Link 
+                    href="/teacher/analytics" 
+                    className="h-9 px-4 rounded-[10px] text-xs font-semibold border border-s-stroke2/50 text-t-secondary hover:text-t-primary hover:bg-b-surface1 transition-all active:scale-95 shrink-0 flex items-center gap-1.5"
+                  >
+                    View Full Report
+                  </Link>
+                }
+              >
+                <div className="px-1 mt-2">
+                  <h4 className="text-sm font-semibold text-t-primary mb-3">Common Traps</h4>
+                  {rt.trapQuestions.length === 0 ? (
+                    <div className="text-sm text-t-secondary py-2">No significant traps detected.</div>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {rt.trapQuestions.map((t: any, i: number) => (
+                        <div 
+                          key={i} 
+                          className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all"
+                        >
+                          <div className="flex flex-row items-center gap-4 flex-1 min-w-0">
+                            <div className="size-12 rounded-[10px] flex items-center justify-center bg-primary-03/10 border border-primary-03/20 text-primary-03 shrink-0">
+                              <RiCloseCircleFill size={20} />
+                            </div>
+                            <div className="flex flex-col justify-center min-w-0 flex-1">
+                              <span className="font-sans font-semibold text-[14px] leading-[150%] text-t-primary dark:text-t-primary truncate">
+                                {t.q}
+                              </span>
+                              <span className="font-sans text-[12px] font-normal text-t-secondary truncate mt-0.5">
+                                {t.desc}
+                              </span>
+                            </div>
+                          </div>
+                          <div className="flex flex-row justify-center items-center gap-4 shrink-0 pl-2">
+                            <div className="flex flex-col justify-center items-end gap-1">
+                              <span className="font-sans font-semibold text-[14px] leading-[150%] text-t-primary dark:text-t-primary">
+                                {t.pct}% Option {t.option}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </SectionCard>
+            ))}
+          </div>
+        </div>
+
+        {/* OVERALL TRENDS (MACRO LEVEL) */}
+        <h2 className="text-[20px] font-sans font-bold text-t-primary mt-12 mb-1">Overall Trends</h2>
+        <p className="text-body-2 text-t-secondary mb-4">Macro performance calculated from the last 100 test attempts.</p>
+
         {/* Subject Breakdown */}
         <SectionCard
           title="Subject-wise Performance"
@@ -119,8 +212,16 @@ export default function TeacherAnalyticsPage() {
             </div>
           }
         >
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-            {subjectBreakdown.map(s => (
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-2">
+            {loading ? (
+              <div className="col-span-full flex items-center justify-center py-8 text-t-secondary gap-2">
+                <RiLoader4Line className="animate-spin" /> Loading subjects...
+              </div>
+            ) : subjectBreakdown.length === 0 ? (
+              <div className="col-span-full flex items-center justify-center py-8 text-t-secondary text-sm">
+                No subject data available.
+              </div>
+            ) : subjectBreakdown.map((s: any) => (
               <div 
                 key={s.subject} 
                 className="flex flex-col p-[22px] bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] overflow-hidden transition-all hover:scale-[1.005]"
@@ -171,8 +272,16 @@ export default function TeacherAnalyticsPage() {
             }
           >
             <div className="relative z-10 flex flex-col gap-1 w-full mt-2">
-              {weakTopics.map((t, i) => {
-                const badgeClass = priorityColor[t.priority];
+              {loading ? (
+                <div className="flex items-center justify-center py-8 text-t-secondary gap-2">
+                  <RiLoader4Line className="animate-spin" /> Loading weak topics...
+                </div>
+              ) : realWeakTopics.length === 0 ? (
+                <div className="flex items-center justify-center py-8 text-t-secondary text-sm">
+                  No weak topics detected for this batch yet.
+                </div>
+              ) : realWeakTopics.map((t: any, i: number) => {
+                const badgeClass = priorityColor[t.priority] ?? "label-gray";
                 return (
                   <div 
                     key={i} 
@@ -194,7 +303,7 @@ export default function TeacherAnalyticsPage() {
                     <div className="flex flex-row justify-center items-center gap-8 shrink-0">
                       <div className="flex flex-col justify-center items-end gap-1">
                         <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary">
-                          {t.failRate}%
+                          {t.affectedStudents} students
                         </span>
                         <span className={`px-2 py-[2px] border-[1.5px] rounded-[10px] text-[12px] font-normal tracking-[0.004em] leading-[160%] ${
                           t.priority === "Critical"
@@ -221,55 +330,9 @@ export default function TeacherAnalyticsPage() {
               </Link>
             </div>
           </SectionCard>
-
-          {/* Trap Questions */}
-          <SectionCard
-            title="Common Traps"
-            subtitle="Questions where students select the same wrong answer."
-          >
-            <div className="relative z-10 flex flex-col gap-1 w-full mt-2">
-              {trapQuestions.map((t, i) => (
-                <div 
-                  key={i} 
-                  className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[88px]"
-                >
-                  <div className="flex flex-row items-center gap-5 flex-1 min-w-0">
-                    <div className="size-16 rounded-[10px] flex items-center justify-center bg-primary-03/10 border border-primary-03/20 text-primary-03 shrink-0">
-                      <RiCloseCircleFill size={24} />
-                    </div>
-                    <div className="flex flex-col justify-center min-w-0 flex-1">
-                      <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary truncate">
-                        {t.q} · Option {t.option}
-                      </span>
-                      <span className="font-sans text-[12px] font-normal text-t-secondary truncate mt-0.5">
-                        {t.desc}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex flex-row justify-center items-center gap-8 shrink-0">
-                    <div className="flex flex-col justify-center items-end gap-1">
-                      <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary">
-                        {t.pct}%
-                      </span>
-                      <span className="px-2 py-[2px] bg-[rgba(255,106,85,0.05)] border-[1.5px] border-s-stroke2/40 text-primary-03 rounded-[10px] text-[12px] font-normal tracking-[0.004em] leading-[160%] capitalize">
-                        {t.trap.replace(/_/g, " ")}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="relative z-10 flex flex-col items-start px-3 w-full">
-              <Link 
-                href="/teacher/analytics" 
-                className="w-full h-12 flex items-center justify-center border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 rounded-[10px] text-[14px] font-semibold text-t-secondary dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 cursor-pointer"
-              >
-                View Detailed Trap Report
-              </Link>
-            </div>
-          </SectionCard>
         </div>
+
+
 
         {/* All Batches Summary */}
         <SectionCard
@@ -278,9 +341,9 @@ export default function TeacherAnalyticsPage() {
           className="mb-8"
         >
           <div className="relative z-10 flex flex-col gap-1 w-full mt-2">
-            {batchStats.map((b, i) => (
+            {batches.map((b, i) => (
               <div
-                key={i}
+                key={b.id}
                 className="group/item relative flex flex-row items-center justify-between p-3 hover:bg-b-surface1 dark:hover:bg-b-surface1/40 border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 rounded-[16px] transition-all h-[88px]"
               >
                 {/* Left — icon + batch name + exam */}
@@ -290,12 +353,12 @@ export default function TeacherAnalyticsPage() {
                   </div>
                   <div className="flex flex-col justify-center min-w-0 flex-1">
                     <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary truncate">
-                      {b.batchName}
+                      {b.name}
                     </span>
                     <div className="flex items-center gap-2 mt-0.5">
-                      <span className="font-sans text-[12px] font-normal text-t-secondary">{b.exam}</span>
+                      <span className="font-sans text-[12px] font-normal text-t-secondary">Batch</span>
                       <span className="text-s-stroke2">·</span>
-                      <span className="font-sans text-[12px] font-normal text-t-secondary">{b.students} students</span>
+                      <span className="font-sans text-[12px] font-normal text-t-secondary">{b.studentCount ?? 0} students</span>
                     </div>
                   </div>
                 </div>
@@ -305,18 +368,19 @@ export default function TeacherAnalyticsPage() {
                   {/* Avg score with progress bar */}
                   <div className="hidden sm:flex flex-col items-end gap-1.5">
                     <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary">
-                      {b.avg}%
+                      {/* Note: real global per-batch avg not in list endpoint yet, using placeholder */}
+                      - %
                     </span>
                     <div className="w-[80px] h-1.5 bg-shade-09 dark:bg-b-surface1 rounded-full overflow-hidden">
                       <div
                         className="h-full rounded-full bg-primary-01"
-                        style={{ width: `${b.avg}%` }}
+                        style={{ width: `0%` }}
                       />
                     </div>
                   </div>
                   {/* Top score */}
                   <div className="hidden md:flex flex-col items-end gap-1">
-                    <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary">{b.top}%</span>
+                    <span className="font-sans font-semibold text-[16px] leading-[150%] text-t-primary dark:text-t-primary">- %</span>
                     <span className="font-sans text-[12px] text-t-secondary">top score</span>
                   </div>
                   {/* Trend badge */}
@@ -329,7 +393,7 @@ export default function TeacherAnalyticsPage() {
                   </span>
                   {/* View Batch button */}
                   <Link
-                    href={`/teacher/batch/${mockBatches[i]?.id || "batch-001"}`}
+                    href={`/teacher/batch/${b.id}`}
                     className="h-9 px-4 rounded-[10px] text-xs font-semibold border-[1.5px] border-s-stroke2 dark:border-s-stroke2/50 text-t-secondary dark:text-t-secondary hover:text-t-primary hover:border-t-secondary transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer w-fit shrink-0"
                   >
                     <RiFileListLine size={15} /> View Batch

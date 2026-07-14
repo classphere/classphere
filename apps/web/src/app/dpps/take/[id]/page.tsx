@@ -235,12 +235,12 @@ export default function TestPage() {
     }
 
     const token = session?.access_token ?? "";
-    apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/tests/${testId}`, token)
+    apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/dpps/${testId}/questions`, token)
       .then((res) => {
         if (res.success) {
           setQuestions(res.data.questions);
-          setMeta(res.data.paper);
-          setTimeLeft(res.data.paper.duration * 60);
+          setMeta(res.data.dpp);
+          setTimeLeft(res.data.dpp?.duration ? res.data.dpp.duration * 60 : 3600); // default 60m if not set
           setIsDemoMode(false);
           examStartMsRef.current = Date.now();
         } else {
@@ -271,30 +271,23 @@ export default function TestPage() {
     try {
       const payload = {
         answers: questions.reduce((acc, q) => {
-          const qId = q.id;
-          const rawMs = questionTimeSpentRef.current[qId] || 0;
-          const actualSec = Math.floor(rawMs / 1000);
-          const finalSec = (actualSec === 0 && answers[qId]) ? 2 : actualSec;
-
-          acc[qId] = {
-            selected_answer: answers[qId] || null,
-            time_taken_sec: finalSec,
-            start_timestamp: questionOpenTimestamps.current[qId] ?? -1,
-            marked_review: status[qId] === "review",
-          };
+          if (answers[q.id]) {
+            acc[q.id] = answers[q.id];
+          }
           return acc;
-        }, {} as Record<string, any>),
+        }, {} as Record<string, string>),
+        timeTaken: Math.floor((now - (examStartMsRef.current ?? now)) / 1000)
       };
 
       const token = session?.access_token ?? "";
       const data = await apiClient.post<{ success: boolean; data: any; message?: string }>(
-        `/api/v1/attempts/${testId}/submit`,
+        `/api/v1/dpps/${testId}/submit`,
         payload,
         token
       );
 
       if (data.success) {
-        router.push(`/results/${data.data.attempt_id}`);
+        router.push(`/dashboard`);
       } else {
         alert("Failed to submit: " + data.message);
         setLoading(false);

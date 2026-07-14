@@ -13,6 +13,7 @@
     "@remixicon/react": "^4.9.0",
     "@supabase/supabase-js": "^2.110.0",
     "katex": "^0.17.0",
+    "lucide-react": "^1.24.0",
     "marked": "^18.0.6",
     "next": "16.2.7",
     "react": "19.2.4",

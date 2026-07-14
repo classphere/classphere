@@ -3,11 +3,13 @@
 import Navbar from "@/components/layout/Navbar";
 import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useAuth } from "@/lib/auth-context";
 import { RiCheckFill, RiCloseLine } from "@remixicon/react";
 
 function ProfileContent() {
   const searchParams = useSearchParams();
   const role = searchParams.get("role") || "student";
+  const { user } = useAuth();
 
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -21,13 +23,13 @@ function ProfileContent() {
     }, 800);
   };
 
-  // Data
+  // Data from authenticated user (not hardcoded)
   const data = {
-    name: "Harsh Singh",
-    email: "harshsingh15dec@gmail.com",
-    exam: "JEE Main",
-    phone: "+91 9876543210",
-    bio: "JEE 2026 Aspirant focusing on Physics and Maths.",
+    name: user?.name ?? "",
+    email: user?.email ?? "",
+    exam: user?.exam_target ?? user?.batch ?? "",
+    phone: user?.phone ?? "",
+    bio: "",
   };
 
   return (

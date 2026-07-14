@@ -13,7 +13,10 @@ import {
   RiBookOpenLine,
   RiCheckLine,
   RiAlertLine,
+  RiLoader4Line
 } from "@remixicon/react";
+import { useAuth } from "@/lib/auth-context";
+import { apiClient } from "@/lib/api.client";
 
 type AnswerMap = Record<string, string>;
 type StatusMap = Record<string, "unanswered" | "answered" | "review">;
@@ -21,33 +24,79 @@ type StatusMap = Record<string, "unanswered" | "answered" | "review">;
 export default function DPPSolvePage() {
   const router = useRouter();
   const params = useParams<{ id: string }>();
-  const dppId = params.id;
+  const dppId = params.id as string;
+  const { session } = useAuth();
 
-  const mockStudentDPPs: any[] = [];
-  const mockDPPQuestions: Record<string, any[]> = {};
-
-  const dpp = mockStudentDPPs.find((d) => d.id === dppId);
-  const questions = mockDPPQuestions[dppId] ?? [];
+  const [dpp, setDpp] = useState<any>(null);
+  const [questions, setQuestions] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [status, setStatus] = useState<StatusMap>({});
-  const [timeLeft, setTimeLeft] = useState((dpp?.totalQuestions ?? 10) * 90); // 90s per question
+  const [timeLeft, setTimeLeft] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [score, setScore] = useState<{ correct: number; total: number; marks: number } | null>(null);
 
-  const handleSubmit = useCallback(() => {
-    // Score calculation
+  useEffect(() => {
+    if (!session?.access_token || !dppId) return;
+    setLoading(true);
+    apiClient.get(`/api/v1/dpps/${dppId}/questions`, session.access_token)
+      .then((res: any) => {
+        if (res.success) {
+           setDpp(res.data.dpp);
+           // Map DB shape to UI shape
+           const mappedQs = res.data.questions.map((q: any) => {
+             // Convert options object to array if needed
+             let optionsArray = q.options;
+             if (q.options && !Array.isArray(q.options)) {
+                optionsArray = Object.entries(q.options).map(([k, v]) => ({ id: k, text: String(v) }));
+             }
+             return {
+               ...q,
+               options: optionsArray || []
+             };
+           });
+           setQuestions(mappedQs);
+           setTimeLeft((res.data.dpp?.total_questions ?? 10) * 90);
+        }
+      })
+      .finally(() => setLoading(false));
+  }, [session?.access_token, dppId]);
+
+  const handleSubmit = useCallback(async () => {
+    // Submit to real API endpoint here
     let correct = 0;
-    questions.forEach((q) => {
-      if (answers[q.id] === q.correctAnswer) correct++;
+    const answerUpserts = questions.map((q) => {
+      const isCorrect = answers[q.id] === q.correct_answer;
+      if (isCorrect) correct++;
+      return {
+        questionId: q.id,
+        selectedAnswer: answers[q.id] ?? null,
+        isCorrect,
+        timeTakenSec: 0, // Placeholder for real time tracking
+        markedReview: status[q.id] === "review"
+      };
     });
+
     const marks = correct * 4 - (Object.keys(answers).length - correct) * 1;
+    
+    // In a real app we'd await this, but for UX let's set local state immediately
+    if (session?.access_token) {
+      apiClient.post(`/api/v1/attempts`, {
+        examCode: `dpp-${dppId}`,
+        status: "submitted",
+        score: marks,
+        maxScore: questions.length * 4,
+        answers: answerUpserts
+      }, session.access_token);
+    }
+
     setScore({ correct, total: questions.length, marks });
     setSubmitted(true);
     setShowSubmitModal(false);
-  }, [answers, questions]);
+  }, [answers, questions, session?.access_token, dppId, status]);
 
   // Timer
   useEffect(() => {
@@ -79,11 +128,21 @@ export default function DPPSolvePage() {
   };
 
   // ── Not found ──────────────────────────────────────────────────────────────
+  // ── Not found / Loading ──────────────────────────────────────────────────────────────
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-b-surface2 flex flex-col items-center justify-center gap-4">
+        <RiLoader4Line size={48} className="text-t-tertiary animate-spin" />
+        <p className="text-body-1 font-bold text-t-secondary">Loading your assignment...</p>
+      </div>
+    );
+  }
+
   if (!dpp) {
     return (
       <div className="min-h-screen bg-b-surface2 flex flex-col items-center justify-center gap-4">
         <div className="text-h3">📭</div>
-        <p className="text-body-1 font-bold text-t-secondary">DPP not found.</p>
+        <p className="text-body-1 font-bold text-t-secondary">DPP not found or you don't have access.</p>
         <Link href="/" className="btn btn-outline">← Back to Dashboard</Link>
       </div>
     );
@@ -140,8 +199,8 @@ export default function DPPSolvePage() {
             <div className="flex flex-col gap-3">
               {questions.map((q, i) => {
                 const yourAns = answers[q.id];
-                const correct = q.correctAnswer;
-                const isRight = yourAns === correct;
+                const correctAns = q.correct_answer;
+                const isRight = yourAns === correctAns;
                 return (
                   <div
                     key={q.id}
@@ -156,10 +215,10 @@ export default function DPPSolvePage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-body-2 font-bold text-t-primary mb-1">
-                        Q{i + 1}. {q.questionText.substring(0, 80)}{q.questionText.length > 80 ? "…" : ""}
+                        Q{i + 1}. {(q.question_text || "").substring(0, 80)}{(q.question_text || "").length > 80 ? "…" : ""}
                       </p>
                       <p className="text-caption text-t-secondary">
-                        Your answer: <strong className="text-t-primary">{yourAns ?? "Not attempted"}</strong> &nbsp;·&nbsp; Correct: <strong className="text-primary-02">{correct}</strong>
+                        Your answer: <strong className="text-t-primary">{yourAns ?? "Not attempted"}</strong> &nbsp;·&nbsp; Correct: <strong className="text-primary-02">{correctAns}</strong>
                       </p>
                     </div>
                   </div>
@@ -253,7 +312,7 @@ export default function DPPSolvePage() {
                 QUESTION {current + 1} OF {questions.length}
               </div>
               <p className="text-body-1 font-bold text-t-primary leading-relaxed">
-                {q.questionText}
+                {q.question_text}
               </p>
             </div>
 

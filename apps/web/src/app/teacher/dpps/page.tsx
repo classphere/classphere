@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import {
   RiAddLine,
@@ -17,9 +17,9 @@ import {
   RiCalendarEventLine
 } from "@remixicon/react";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
+import { useAuth } from "@/lib/auth-context";
+import { apiClient } from "@/lib/api.client";
 type MockDPP = any;
-const mockDPPs: MockDPP[] = [];
-const mockBatches: any[] = [];
 
 const SUBJECTS = ["Physics", "Chemistry", "Mathematics", "Biology"];
 const CHAPTERS: Record<string, string[]> = {
@@ -59,7 +59,10 @@ const statusMeta: Record<string, { label: string; badgeClass: string; icon: Reac
 type FilterStatus = "all" | "pending" | "completed" | "upcoming";
 
 export default function TeacherDPPsPage() {
-  const [dpps, setDpps] = useState<MockDPP[]>(mockDPPs);
+  const { session } = useAuth();
+  const [dpps, setDpps] = useState<MockDPP[]>([]);
+  const [batches, setBatches] = useState<any[]>([]);
+  const [loadingDPPs, setLoadingDPPs] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [filter, setFilter] = useState<FilterStatus>("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -68,10 +71,28 @@ export default function TeacherDPPsPage() {
     title: "",
     subject: "Physics",
     chapter: "Laws of Motion",
-    batchId: mockBatches[0]?.id || "",
+    batchId: "",
     totalQuestions: 10,
     dueDate: "",
   });
+
+  // ── Fetch real DPPs and batches ──────────────────────────────────────────────
+  useEffect(() => {
+    if (!session?.access_token) return;
+    const load = async () => {
+      setLoadingDPPs(true);
+      try {
+        const [dppsRes, dashRes] = await Promise.all([
+          apiClient.get("/api/v1/dpps/teacher", session.access_token),
+          apiClient.get("/api/v1/dashboard/teacher", session.access_token),
+        ]);
+        if (dppsRes.success) setDpps(dppsRes.data.dpps ?? []);
+        if (dashRes.success) setBatches(dashRes.data.batches ?? []);
+      } catch (e) { console.error("[TeacherDPPs]", e); }
+      finally { setLoadingDPPs(false); }
+    };
+    load();
+  }, [session?.access_token]);
 
   const filtered = dpps.filter(d => {
     const matchesStatus = filter === "all" ? true : d.status === filter;
@@ -81,31 +102,51 @@ export default function TeacherDPPsPage() {
     return matchesStatus && matchesSearch;
   });
 
-  const handleCreate = () => {
-    if (!form.title || !form.dueDate) return;
+  const handleCreate = async () => {
+    if (!form.title || !form.batchId) {
+      alert("Please fill in title and select a batch.");
+      return;
+    }
+    if (!session?.access_token) return;
     setCreating(true);
-    const batch = mockBatches.find(b => b.id === form.batchId) || mockBatches[0];
-    setTimeout(() => {
-      const newDPP: MockDPP = {
-        id: `dpp-${Date.now()}`,
+    try {
+      // NOTE: question_ids[] required. For now we pick random questions from the DB
+      // This is a placeholder — the full question picker UI will be built next.
+      const questionsRes = await apiClient.get(
+        `/api/v1/questions?subject=${encodeURIComponent(form.subject)}&chapter=${encodeURIComponent(form.chapter)}&limit=${form.totalQuestions}`,
+        session.access_token
+      );
+      const questionIds = (questionsRes?.data?.questions ?? []).slice(0, form.totalQuestions).map((q: any) => q.id);
+
+      if (questionIds.length === 0) {
+        alert(`No questions found for ${form.subject} — ${form.chapter}. Try different filters.`);
+        setCreating(false);
+        return;
+      }
+
+      const res = await apiClient.post("/api/v1/dpps", {
         title: form.title,
-        batchId: form.batchId,
-        batchName: batch.name,
+        batch_id: form.batchId,
         subject: form.subject,
         chapter: form.chapter,
-        totalQuestions: form.totalQuestions,
-        dueDate: form.dueDate,
-        createdAt: new Date().toISOString().split("T")[0],
-        createdBy: "Dr. Vikram Seth",
-        status: "pending",
-        completedCount: 0,
-        totalStudents: batch.studentsCount,
-      };
-      setDpps(prev => [newDPP, ...prev]);
-      setShowModal(false);
+        question_ids: questionIds,
+        due_date: form.dueDate || null,
+      }, session.access_token);
+
+      if (res.success) {
+        // Refresh DPP list
+        const freshDPPs = await apiClient.get("/api/v1/dpps/teacher", session.access_token);
+        if (freshDPPs.success) setDpps(freshDPPs.data.dpps ?? []);
+        setShowModal(false);
+        setForm({ title: "", subject: "Physics", chapter: "Laws of Motion", batchId: batches[0]?.id || "", totalQuestions: 10, dueDate: "" });
+      } else {
+        alert(res.message ?? "Failed to create DPP");
+      }
+    } catch (e: any) {
+      alert(e.message ?? "Network error");
+    } finally {
       setCreating(false);
-      setForm({ title: "", subject: "Physics", chapter: "Laws of Motion", batchId: mockBatches[0]?.id || "", totalQuestions: 10, dueDate: "" });
-    }, 800);
+    }
   };
 
   // Stats
@@ -113,7 +154,7 @@ export default function TeacherDPPsPage() {
   const active    = dpps.filter(d => d.status === "pending").length;
   const completed = dpps.filter(d => d.status === "completed").length;
   const avgCompletion = dpps.length
-    ? Math.round(dpps.reduce((s, d) => s + (d.completedCount / d.totalStudents) * 100, 0) / dpps.length)
+    ? Math.round(dpps.reduce((s, d) => s + (d.submittedCount / (d.totalAssigned || 1)) * 100, 0) / dpps.length)
     : 0;
 
   return (
@@ -195,10 +236,11 @@ export default function TeacherDPPsPage() {
           
           {filtered.map(dpp => {
             const meta = statusMeta[dpp.status];
-            const pct = Math.round((dpp.completedCount / dpp.totalStudents) * 100);
+            const pct = Math.round((dpp.submittedCount / (dpp.totalAssigned || 1)) * 100);
             return (
               <div 
                 key={dpp.id} 
+                onClick={() => window.location.href = `/teacher/dpps/${dpp.id}`}
                 className="group relative flex flex-col md:flex-row min-w-0 md:items-center justify-between gap-5 overflow-hidden bg-white dark:bg-white/[0.02] border border-s-stroke2/40 p-[22px] rounded-[24px] transition-all hover:scale-[1.005] cursor-pointer"
               >
 
@@ -230,7 +272,7 @@ export default function TeacherDPPsPage() {
                 <div className="relative z-10 flex items-center justify-between md:justify-end gap-6 shrink-0 mt-4 md:mt-0">
                   <div className="text-left md:text-right sm:w-40">
                     <div className="text-caption font-bold text-t-primary dark:text-t-primary mb-2">
-                      {dpp.completedCount}/{dpp.totalStudents} submitted
+                      {dpp.submittedCount}/{dpp.totalAssigned} submitted
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="flex-1 h-1.5 bg-s-stroke2 rounded-full overflow-hidden min-w-[80px]">
@@ -287,7 +329,9 @@ export default function TeacherDPPsPage() {
                   value={form.batchId}
                   onChange={e => setForm(f => ({ ...f, batchId: e.target.value }))}
                 >
-                  {mockBatches.map(b => (
+                  {batches.length === 0 ? (
+                    <option value="">No batches assigned</option>
+                  ) : batches.map(b => (
                     <option key={b.id} value={b.id}>
                       {b.name} ({b.exam})
                     </option>
