@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import AppShell from "@/components/layout/AppShell";
 import { AuthProvider } from "@/lib/auth-context";
-import { TenantProvider } from "@/lib/tenant-context";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,11 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full`} data-theme="light">
       <body className="min-h-screen bg-[#edecec] dark:bg-[#090909] text-t-primary antialiased">
-        <TenantProvider>
-          <AuthProvider>
-            <AppShell>{children}</AppShell>
-          </AuthProvider>
-        </TenantProvider>
+        <AuthProvider>
+          <AppShell>{children}</AppShell>
+        </AuthProvider>
       </body>
     </html>
   );

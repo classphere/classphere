@@ -375,7 +375,7 @@
     background-image: linear-gradient(to bottom, var(--gradient-card));
   }
   .card, .rayum-card {
-    @apply mb-3 p-5 rounded-[24px] bg-b-surface2 dark:bg-[#161616] shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] border border-transparent last:mb-0 dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)];
+    @apply mb-3 p-5 rounded-[24px] bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 last:mb-0;
   }
   .label, .badge {
     @apply inline-flex items-center h-7 px-2.5 rounded-lg text-button font-semibold;
@@ -601,6 +601,14 @@
 }
 ::-webkit-scrollbar-thumb {
   @apply bg-t-tertiary/20 rounded-full hover:bg-t-tertiary/40;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 :focus-visible {

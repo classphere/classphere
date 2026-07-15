@@ -20,7 +20,7 @@ export default function Navbar({
 
   return (
     <header className={`w-full mx-auto px-4 md:px-6 pt-8 pb-2 bg-transparent select-none ${className || "max-w-screen-2xl"}`}>
-      <div className="w-full flex flex-row justify-between items-start gap-4">
+      <div className="w-full flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-4">
         <div className="flex flex-col justify-start">
           {breadcrumbs && (
             <div className="mb-2 flex items-center gap-1.5 text-[11px] font-bold text-t-secondary font-sans uppercase tracking-widest">
@@ -29,7 +29,7 @@ export default function Navbar({
               <span className="text-t-secondary">{breadcrumbs.split(" > ").slice(1).join(" › ")}</span>
             </div>
           )}
-          <h1 className="font-sans font-semibold text-[36px] leading-[1.1] tracking-[-0.03em] text-t-primary dark:text-t-primary">
+          <h1 className="font-sans font-semibold text-[26px] md:text-[36px] leading-[1.1] tracking-[-0.03em] text-t-primary dark:text-t-primary">
             {title || `Good morning, ${firstName}`}
           </h1>
           {subtitle && (
@@ -39,7 +39,7 @@ export default function Navbar({
           )}
         </div>
         {children && (
-          <div className="flex items-center gap-3 shrink-0 mt-2">
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 shrink-0 mt-4 md:mt-2 w-full md:w-auto">
             {children}
           </div>
         )}

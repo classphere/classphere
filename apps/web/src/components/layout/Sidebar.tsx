@@ -38,7 +38,7 @@ export default function Sidebar() {
   const searchParams = useSearchParams();
   const { user, signOut } = useAuth();
 
-  const roleFromQuery = searchParams.get("role");
+  const roleFromQuery = process.env.NODE_ENV !== "production" ? searchParams.get("role") : null;
   const roleFromPath = pathname.startsWith("/teacher")
     ? "teacher"
     : pathname.startsWith("/institute")
