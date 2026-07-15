@@ -1,6 +1,9 @@
-# Analysis Engine v2 — Unified Blueprint
+﻿> [!WARNING]
+> **DEPRECATED**: This document describes the legacy v2 engine. The current implemented standard is v3. Please refer to `analysis-engine-v3.md` for the current architecture.
 
-> Zero AI. Pure logic. <50ms. ₹0/month.
+# Analysis Engine v2 â€” Unified Blueprint
+
+> Zero AI. Pure logic. <50ms. â‚¹0/month.
 
 ## Pipeline Architecture
 
@@ -25,7 +28,7 @@ flowchart TD
 ## Stage 1: Scoring
 
 ```typescript
-// services/scoring.service.ts — unchanged from v1
+// services/scoring.service.ts â€” unchanged from v1
 function scoreAttempt(answers: AttemptAnswer[], scheme: MarkingScheme): ScoringResult {
   let score = 0, correct = 0, incorrect = 0, skipped = 0;
   for (const ans of answers) {
@@ -41,9 +44,9 @@ function scoreAttempt(answers: AttemptAnswer[], scheme: MarkingScheme): ScoringR
 
 ---
 
-## Stage 2: Mistake Classifier ⭐ (NEW — the core differentiator)
+## Stage 2: Mistake Classifier â­ (NEW â€” the core differentiator)
 
-Two layers: **distractor map** (high confidence) → **heuristic fallback** (medium confidence).
+Two layers: **distractor map** (high confidence) â†’ **heuristic fallback** (medium confidence).
 
 ### Types
 
@@ -92,19 +95,19 @@ function classifyByHeuristics(ans: AnswerWithQuestion): MistakeClassification {
   const t = ans.time_taken_sec;
   const avgT = getAvgTimeForDifficulty(ans.difficulty);
 
-  // Rule 1: Very fast + wrong → misread/silly
+  // Rule 1: Very fast + wrong â†’ misread/silly
   if (t < avgT * 0.3)
     return { type: "silly", detail: "Answered unusually fast", tip: "Read fully before answering.", confidence: "medium" };
 
-  // Rule 2: Very slow + wrong → conceptual gap
+  // Rule 2: Very slow + wrong â†’ conceptual gap
   if (t > avgT * 2)
     return { type: "conceptual", detail: "Spent 2x+ avg time", tip: "Revise this topic from basics.", confidence: "medium" };
 
-  // Rule 3: Marked for review + wrong → uncertain = conceptual
+  // Rule 3: Marked for review + wrong â†’ uncertain = conceptual
   if (ans.marked_review)
-    return { type: "conceptual", detail: "Flagged for review — low confidence", tip: "You weren't sure of the approach.", confidence: "medium" };
+    return { type: "conceptual", detail: "Flagged for review â€” low confidence", tip: "You weren't sure of the approach.", confidence: "medium" };
 
-  // Rule 4: Easy Q + normal time + wrong → likely calculation
+  // Rule 4: Easy Q + normal time + wrong â†’ likely calculation
   if (ans.difficulty === "easy" && t > avgT * 0.5)
     return { type: "calculation", detail: "Easy Q wrong at normal pace", tip: "Double-check arithmetic.", confidence: "low" };
 
@@ -184,15 +187,15 @@ function computeTopicAccuracy(
 // services/analysis/error-patterns.ts
 
 // Original 5 detectors (unchanged)
-// 1. detectCarelessErrors      — wrong on easy, right on hard (same chapter)
-// 2. detectTimePressure        — accuracy drops >25% in last quartile
-// 3. detectBlindSpot           — 0% accuracy on topic with 3+ Qs
-// 4. detectExcessiveSkipping   — >30% questions skipped
-// 5. detectSlowSolver          — high accuracy but >3 min/question avg
+// 1. detectCarelessErrors      â€” wrong on easy, right on hard (same chapter)
+// 2. detectTimePressure        â€” accuracy drops >25% in last quartile
+// 3. detectBlindSpot           â€” 0% accuracy on topic with 3+ Qs
+// 4. detectExcessiveSkipping   â€” >30% questions skipped
+// 5. detectSlowSolver          â€” high accuracy but >3 min/question avg
 
 // NEW 3 detectors from mistake classification research:
 
-// 6. Subject Avoidance — disproportionately skips one subject
+// 6. Subject Avoidance â€” disproportionately skips one subject
 const detectSubjectAvoidance: PatternDetector = (answers) => {
   const bySubject = groupBy(answers, "subject");
   for (const [subject, group] of Object.entries(bySubject)) {
@@ -210,7 +213,7 @@ const detectSubjectAvoidance: PatternDetector = (answers) => {
   return null;
 };
 
-// 7. Distractor Trap Victim — repeatedly falls for same trap type
+// 7. Distractor Trap Victim â€” repeatedly falls for same trap type
 const detectDistractorPattern: PatternDetector = (classifiedAnswers) => {
   const trapCounts: Record<string, number> = {};
   for (const a of classifiedAnswers) {
@@ -236,7 +239,7 @@ const detectDistractorPattern: PatternDetector = (classifiedAnswers) => {
   };
 };
 
-// 8. Free Marks Leak — easy/medium Qs lost to silly/calc errors
+// 8. Free Marks Leak â€” easy/medium Qs lost to silly/calc errors
 const detectFreeMarksLeak: PatternDetector = (classifiedAnswers) => {
   const leaks = classifiedAnswers.filter(a =>
     (a.difficulty === "easy" || a.difficulty === "medium") &&
@@ -255,7 +258,7 @@ const detectFreeMarksLeak: PatternDetector = (classifiedAnswers) => {
 
 ---
 
-## Stage 5: Free Marks Calculator ⭐ (NEW)
+## Stage 5: Free Marks Calculator â­ (NEW)
 
 ```typescript
 // services/analysis/free-marks.ts
@@ -289,14 +292,14 @@ function calculateFreeMarks(
     calculationCount: calc.length,
     projectedScore: projected,
     projectedPercentage: (projected / scoring.maxScore) * 100,
-    message: `Fix ${fixable} silly+calc errors → score jumps from ${scoring.score} to ${projected}`,
+    message: `Fix ${fixable} silly+calc errors â†’ score jumps from ${scoring.score} to ${projected}`,
   };
 }
 ```
 
 ---
 
-## Stage 6: Skip Analysis ⭐ (NEW)
+## Stage 6: Skip Analysis â­ (NEW)
 
 ```typescript
 // services/analysis/skip-analysis.ts
@@ -341,7 +344,7 @@ function analyzeSkips(classifiedAnswers: ClassifiedAnswer[]): SkipAnalysis {
 
 ---
 
-## Stage 7: Study Plan (enhanced — now error-type-aware)
+## Stage 7: Study Plan (enhanced â€” now error-type-aware)
 
 ```typescript
 // services/analysis/study-plan.ts
@@ -382,7 +385,7 @@ function getDominantErrorType(b: TopicStat["errorBreakdown"]): string {
 ## Stage 8: Booster Config (unchanged from v1)
 
 ```typescript
-// services/analysis/booster.ts — same as before
+// services/analysis/booster.ts â€” same as before
 function generateBoosterConfig(topicStats: TopicStat[]): BoosterConfig {
   const weak = topicStats.filter(t => t.isWeak).slice(0, 3);
   const diffMix = weak[0]?.accuracy < 25
@@ -401,10 +404,10 @@ function generateBoosterConfig(topicStats: TopicStat[]): BoosterConfig {
 
 ## Stage 9: Batch Analysis (enhanced with error-type insights for teachers)
 
-Now includes: "73% of errors in Laws of Motion are **conceptual** — re-teach fundamentals" vs "mostly **calculation** errors — assign drills."
+Now includes: "73% of errors in Laws of Motion are **conceptual** â€” re-teach fundamentals" vs "mostly **calculation** errors â€” assign drills."
 
 ```typescript
-// services/analysis/batch-analysis.ts — enhanced with error-type breakdown per chapter
+// services/analysis/batch-analysis.ts â€” enhanced with error-type breakdown per chapter
 function analyzeBatch(allAttempts: AttemptWithClassifiedAnswers[]): BatchAnalysis {
   // ... (same scoring aggregation as v1) ...
 
@@ -525,30 +528,30 @@ CREATE TABLE student_error_profile (
 
 ```
 apps/api/src/services/
-├── analysis.service.ts              ← Master orchestrator
-├── scoring.service.ts               ← Stage 1
-└── analysis/
-    ├── mistake-classifier.ts        ← Stage 2 (NEW — core differentiator)
-    ├── topic-accuracy.ts            ← Stage 3 (enhanced with error breakdown)
-    ├── error-patterns.ts            ← Stage 4 (8 detectors, up from 5)
-    ├── free-marks.ts                ← Stage 5 (NEW)
-    ├── skip-analysis.ts             ← Stage 6 (NEW)
-    ├── study-plan.ts                ← Stage 7 (enhanced — error-type-aware)
-    ├── booster.ts                   ← Stage 8
-    └── batch-analysis.ts            ← Stage 9 (enhanced with error-type recs)
+â”œâ”€â”€ analysis.service.ts              â† Master orchestrator
+â”œâ”€â”€ scoring.service.ts               â† Stage 1
+â””â”€â”€ analysis/
+    â”œâ”€â”€ mistake-classifier.ts        â† Stage 2 (NEW â€” core differentiator)
+    â”œâ”€â”€ topic-accuracy.ts            â† Stage 3 (enhanced with error breakdown)
+    â”œâ”€â”€ error-patterns.ts            â† Stage 4 (8 detectors, up from 5)
+    â”œâ”€â”€ free-marks.ts                â† Stage 5 (NEW)
+    â”œâ”€â”€ skip-analysis.ts             â† Stage 6 (NEW)
+    â”œâ”€â”€ study-plan.ts                â† Stage 7 (enhanced â€” error-type-aware)
+    â”œâ”€â”€ booster.ts                   â† Stage 8
+    â””â”€â”€ batch-analysis.ts            â† Stage 9 (enhanced with error-type recs)
 ```
 
 ---
 
-## What Changed: v1 → v2
+## What Changed: v1 â†’ v2
 
 | Area | v1 | v2 |
 |---|---|---|
-| Mistake classification | None — just right/wrong | 7 wrong-answer types + 3 skip types |
-| Detection method | — | Distractor map (90%) + heuristic fallback (70%) |
+| Mistake classification | None â€” just right/wrong | 7 wrong-answer types + 3 skip types |
+| Detection method | â€” | Distractor map (90%) + heuristic fallback (70%) |
 | Error patterns | 5 detectors | 8 detectors (+subject avoidance, distractor trap, free marks leak) |
 | Topic stats | accuracy only | accuracy + per-topic error-type breakdown |
-| Free marks calc | — | Shows exact recoverable score with projected improvement |
+| Free marks calc | â€” | Shows exact recoverable score with projected improvement |
 | Skip analysis | "skipped count" | 3-type classification with subject breakdown |
 | Study plan | Based on accuracy | Based on accuracy + dominant error type |
 | Batch analysis | Chapter accuracy only | Chapter accuracy + error-type distribution for teachers |
@@ -560,17 +563,17 @@ apps/api/src/services/
 
 | Priority | Module | Effort | Impact |
 |---|---|---|---|
-| 🔴 P0 | Scoring service | 0.5 day | Foundation |
-| 🔴 P0 | Mistake classifier (heuristics only) | 1 day | Works immediately, zero data needed |
-| 🔴 P0 | Topic accuracy + error breakdown | 1 day | Core weak-topic identification |
-| 🔴 P0 | Free marks calculator | 0.5 day | Killer differentiator |
-| 🟡 P1 | Error pattern detection (8 detectors) | 1.5 days | Cross-question insights |
-| 🟡 P1 | Skip analysis | 0.5 day | Time management insights |
-| 🟡 P1 | Study plan (error-aware) | 1 day | Actionable output |
-| 🟡 P1 | Booster config | 0.5 day | Auto-generates next test |
-| 🟡 P1 | `distractor_map` in teacher question UI | 2 days | Upgrades classifier to 90%+ |
-| 🟢 P2 | Batch analysis (enhanced) | 1 day | Teacher/institute value |
-| 🟢 P2 | Student error profile (rolling) | 1 day | Cross-test trend tracking |
-| 🟢 P2 | Cross-test pattern detection | 1.5 days | Needs 5+ test history |
+| ðŸ”´ P0 | Scoring service | 0.5 day | Foundation |
+| ðŸ”´ P0 | Mistake classifier (heuristics only) | 1 day | Works immediately, zero data needed |
+| ðŸ”´ P0 | Topic accuracy + error breakdown | 1 day | Core weak-topic identification |
+| ðŸ”´ P0 | Free marks calculator | 0.5 day | Killer differentiator |
+| ðŸŸ¡ P1 | Error pattern detection (8 detectors) | 1.5 days | Cross-question insights |
+| ðŸŸ¡ P1 | Skip analysis | 0.5 day | Time management insights |
+| ðŸŸ¡ P1 | Study plan (error-aware) | 1 day | Actionable output |
+| ðŸŸ¡ P1 | Booster config | 0.5 day | Auto-generates next test |
+| ðŸŸ¡ P1 | `distractor_map` in teacher question UI | 2 days | Upgrades classifier to 90%+ |
+| ðŸŸ¢ P2 | Batch analysis (enhanced) | 1 day | Teacher/institute value |
+| ðŸŸ¢ P2 | Student error profile (rolling) | 1 day | Cross-test trend tracking |
+| ðŸŸ¢ P2 | Cross-test pattern detection | 1.5 days | Needs 5+ test history |
 
 **Total: ~12 days for the full engine. P0 alone: ~3 days.**
