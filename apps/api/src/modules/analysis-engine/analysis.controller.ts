@@ -72,13 +72,9 @@ export const regenerateAnalysis = async (req: Request, res: Response): Promise<v
       return;
     }
 
-    // Re-run analysis
+    // Re-run analysis (upserts internally)
     const { analyzeAttempt } = await import("./services/analysis.service");
-    const result = await analyzeAttempt(attempt_id);
-
-    // Upsert new result
-    const { db } = await import("./services/db.service");
-    await db.upsertAnalysis(attempt_id, attempt.student_id, attempt.exam_code ?? "jee-main", result);
+    await analyzeAttempt(attempt_id);
 
     res.status(200).json({ success: true, message: "Analysis regenerated successfully", attempt_id });
   } catch (err: any) {

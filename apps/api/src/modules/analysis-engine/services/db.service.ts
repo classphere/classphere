@@ -80,18 +80,26 @@ export const db = {
       }
     }
 
-    const answers: AttemptAnswer[] = (rawAnswers ?? []).map((a: any, idx: number) => ({
-      id: a.id,
-      attempt_id: a.attempt_id,
-      question_id: a.question_id,
-      selected_answer: a.selected_answer ?? null,
-      is_correct: a.is_correct ?? false,
-      marks_awarded: a.marks_awarded ?? 0,
-      time_taken_sec: a.time_taken_sec ?? 0,
-      start_timestamp: a.start_timestamp ?? -1,
-      marked_review: a.marked_review ?? false,
-      question: questionMap[a.question_id] ? { ...questionMap[a.question_id], question_number: idx + 1 } : ({} as Question),
-    }));
+    const answers: AttemptAnswer[] = (rawAnswers ?? [])
+      .filter((a: any) => {
+        if (!questionMap[a.question_id]) {
+          console.warn(`[Analysis Engine] Warning: Question ID ${a.question_id} not found in database for attempt ${attemptId}. Filtering out.`);
+          return false;
+        }
+        return true;
+      })
+      .map((a: any, idx: number) => ({
+        id: a.id,
+        attempt_id: a.attempt_id,
+        question_id: a.question_id,
+        selected_answer: a.selected_answer ?? null,
+        is_correct: a.is_correct ?? false,
+        marks_awarded: a.marks_awarded ?? 0,
+        time_taken_sec: a.time_taken_sec ?? 0,
+        start_timestamp: a.start_timestamp ?? -1,
+        marked_review: a.marked_review ?? false,
+        question: { ...questionMap[a.question_id], question_number: idx + 1 },
+      }));
 
     return {
       attempt: {

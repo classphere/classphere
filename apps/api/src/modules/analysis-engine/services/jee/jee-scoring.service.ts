@@ -42,8 +42,7 @@ export function scoreAttempt(
       integerAnsweredCountPerSubject[subj] = (integerAnsweredCountPerSubject[subj] || 0) + 1;
       if (integerAnsweredCountPerSubject[subj] > 5) {
         isAttemptAllowed = false;
-        // Strip out the extra answered question (treat as unattempted)
-        ans.selected_answer = null;
+        // Zero out marks without removing the answer (so classifier knows they attempted it)
         ans.is_correct = false;
         ans.marks_awarded = 0;
       }

@@ -94,6 +94,7 @@ function detectBlindSpot(answers: ClassifiedAnswer[]): ErrorPattern | null {
 
 // 4. Excessive Skipping: >30% of questions skipped
 function detectExcessiveSkipping(answers: ClassifiedAnswer[]): ErrorPattern | null {
+  if (answers.length === 0) return null;
   const skipped = answers.filter(a => !a.selected_answer).length;
   const rate = (skipped / answers.length) * 100;
   if (rate > 30) {
