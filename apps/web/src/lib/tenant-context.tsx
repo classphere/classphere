@@ -58,10 +58,17 @@ function detectDomain(): string | null {
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 
-export function TenantProvider({ children }: { children: React.ReactNode }) {
-  const [config, setConfig] = useState<TenantConfig>(defaultConfig);
+export function TenantProvider({ children, initialConfig }: { children: React.ReactNode, initialConfig?: TenantConfig }) {
+  const [config, setConfig] = useState<TenantConfig>(initialConfig || defaultConfig);
 
   useEffect(() => {
+    // If initialConfig was provided by the server layout, we don't need to fetch on the client.
+    if (initialConfig && initialConfig.domain) {
+      if (typeof document !== "undefined") {
+        document.documentElement.style.setProperty("--primary-institute", initialConfig.primaryColor ?? "#6366f1");
+      }
+      return;
+    }
     const domain = detectDomain();
 
     if (!domain) {

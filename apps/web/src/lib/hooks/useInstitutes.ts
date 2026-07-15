@@ -19,7 +19,7 @@ export interface Institute {
   owner_id: string;
   owner_email: string | null;
   owner_name: string | null;
-  plan: string;           // 'free' | 'trial' | 'pro' | 'enterprise'
+  plan: string;           // 'free' | 'trial' | 'active' | 'enterprise'
   logo_url: string | null;
   is_active: boolean;
   created_at: string;
@@ -33,6 +33,9 @@ export interface CreateInstitutePayload {
   adminUsername: string;
   type: string;
   price: number;
+  isFreeTrial?: boolean;
+  trialMonths?: number;
+  logoUrl?: string;
 }
 
 // ─── Shared fetch helper with internal API key ────────────────────────────────
@@ -100,5 +103,23 @@ export function useInstitutes() {
     [fetchInstitutes]
   );
 
-  return { institutes, loading, error, refetch: fetchInstitutes, createInstitute };
+  const uploadImage = useCallback(async (file: File): Promise<string> => {
+    const formData = new FormData();
+    formData.append("image", file);
+
+    const res = await fetch(`${API_URL}/api/v1/superadmin/upload`, {
+      method: "POST",
+      headers: {
+        "x-api-key": INTERNAL_KEY,
+      },
+      body: formData,
+    });
+    const data = await res.json();
+    if (!res.ok || !data.success) {
+      throw new Error(data.message ?? "Upload failed");
+    }
+    return data.url;
+  }, []);
+
+  return { institutes, loading, error, refetch: fetchInstitutes, createInstitute, uploadImage };
 }

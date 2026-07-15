@@ -7,10 +7,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { apiClient } from "@/lib/api.client";
-import { AnalysisResult } from "../../../../packages/types/src/analysis.types";
-
 interface UseAnalysisResult {
-  analysis: AnalysisResult | null;
+  analysis: any | null;
   status: "idle" | "pending" | "ready" | "error";
   error: string | null;
 }
@@ -26,7 +24,7 @@ export function useAnalysis(
   token: string | null,
   enabled = true
 ): UseAnalysisResult {
-  const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
+  const [analysis, setAnalysis] = useState<any | null>(null);
   const [status, setStatus] = useState<"idle" | "pending" | "ready" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
