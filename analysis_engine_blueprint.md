@@ -1,3 +1,6 @@
+> [!WARNING]
+> **DEPRECATED**: This document describes the legacy v2 engine. The current implemented standard is v3. Please refer to `analysis-engine-v3.md` for the current architecture.
+
 # Analysis Engine v2 — Unified Blueprint
 
 > Zero AI. Pure logic. <50ms. ₹0/month.

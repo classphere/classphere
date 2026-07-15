@@ -39,8 +39,14 @@ When an Institute Admin uploads a Test (PDF + Answer Key), the system creates th
 ### 2.2. Phase 2: Shuffling & Attempt Tracking (Student State)
 When a student starts the test, the backend generates a randomized mapping for that specific `attempt_id`.
 
-1.  **Fetching & Shuffling:** The backend fetches all `question_id`s for the test and shuffles the array.
-2.  **Display Mapping:** This shuffled array is sent to the frontend. The frontend simply maps index `0` to `Q1`, index `1` to `Q2`, etc., strictly for visual rendering.
+**CRITICAL: Section-Aware Shuffling (The Subject Grouping Edge Case)**
+Exams like JEE and NEET are strictly divided by sections (e.g., Physics, then Chemistry, then Mathematics). A completely random shuffle across the whole test would ruin this structure. Furthermore, relying on rigid index boundaries (e.g., "Qs 1-30 are Physics") breaks if a PYQ is missing questions due to syllabus reductions.
+
+Therefore, shuffling must be **subject-aware** using the question's JSON schema:
+1.  **Fetching & Grouping:** The backend fetches all `question_id`s with their `subject` metadata and groups them into subject buckets (e.g., Physics, Chemistry).
+2.  **Shuffling Within Buckets:** The backend randomly shuffles the arrays *inside* each subject bucket independently.
+3.  **Reassembly:** The shuffled buckets are concatenated back together in the standard exam order (Physics -> Chemistry -> Mathematics).
+4.  **Display Mapping:** This safely-shuffled array is sent to the frontend. The frontend maps index `0` to `Q1`, index `1` to `Q2`, etc., strictly for visual rendering.
 
 **Student A's Screen:**
 *   **Question 1** -> renders image for `uuid-7c1e`

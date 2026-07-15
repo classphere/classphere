@@ -1,4 +1,4 @@
-# Analysis Engine v3 — Implementation Plan
+# Analysis Engine v3 — Architecture & Features
 ## Research-Backed Upgrade to Human-Grade Analysis
 
 > Based on research across Reddit (r/JEEPreparation, r/NEET), Quora, IIT-K study guides,
@@ -465,33 +465,3 @@ export interface AnalysisResult {
 | `packages/types/analysis.types.ts` | Add new interfaces | All |
 
 ---
-
-## Implementation Order (Sequential — each builds on previous)
-
-```
-Step 1: types first        → Add new interfaces to analysis.types.ts (30 min)
-Step 2: classifier fix     → Upgrade heuristics, add correct_guessed (1 hr)
-Step 3: confidence-score   → New file, simple math (45 min)
-Step 4: attempt-strategy   → New file, reconstruct attempt order (1.5 hr)
-Step 5: longitudinal       → New file, cross-test memory (1 hr)
-Step 6: error-patterns     → Add 2 new detectors (45 min)
-Step 7: study-plan rewrite → Priority scoring + exam date awareness (1.5 hr)
-Step 8: narrative          → NL summary generator (1 hr)
-Step 9: orchestrator       → Wire all new stages into analysis.service.ts (30 min)
-Step 10: test              → Run against real PYQ submissions, validate output (1 hr)
-
-Total estimated time: ~9.5 hours
-```
-
----
-
-## Open Questions for Approval
-
-> [!IMPORTANT]
-> **Q1: Exam date input** — Does the system know a student's target exam date? The study plan v2 urgency modes need this. If not stored, we can add it to user profile at signup.
-
-> [!IMPORTANT]
-> **Q2: Longitudinal data availability** — The `db.getStudentErrorProfile()` call exists in the mock but the real data store doesn't persist across attempts yet. This upgrade requires the auth + DB wiring to be done first, OR we can build the logic now and have it gracefully skip if no history exists.
-
-> [!NOTE]
-> **Q3: "Correct but guessed" UX** — Should these be shown as warnings on the results page? They might feel discouraging to a student who's happy with their score. Recommendation: show them as a "hidden risk zone" section, not as "errors."
