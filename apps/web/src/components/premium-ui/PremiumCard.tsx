@@ -22,8 +22,8 @@ export function PremiumCard({ variant = 'light', padding = 'default', className 
   
   const paddings = {
     none: "",
-    default: "p-6",
-    large: "p-8 md:p-[42px]",
+    default: "p-4 md:p-6",
+    large: "p-5 md:p-8 lg:p-[42px]",
   };
 
   return (

@@ -62,14 +62,14 @@ export function MarkdownRenderer({ children }: MarkdownRendererProps) {
         marked.setOptions({ gfm: true, breaks: true });
         
         // Custom renderer to inject Tailwind classes (replacing react-markdown components)
-        const renderer = new marked.Renderer();
-        renderer.table = (header, body) => {
+        const renderer: any = new marked.Renderer();
+        renderer.table = (header: any, body: any) => {
           return `<div class="overflow-x-auto my-4"><table class="min-w-full divide-y divide-s-stroke2 border border-s-stroke2 rounded-[10px]">\n<thead>\n${header}</thead>\n<tbody>\n${body}</tbody>\n</table></div>\n`;
         };
-        renderer.tablerow = (content) => {
+        renderer.tablerow = (content: any) => {
           return `<tr>\n${content}</tr>\n`;
         };
-        renderer.tablecell = (content, flags) => {
+        renderer.tablecell = (content: any, flags: any) => {
           const type = flags.header ? 'th' : 'td';
           const className = flags.header 
             ? 'px-4 py-3 text-left text-[13px] font-bold text-t-primary uppercase tracking-wider bg-b-surface2/50' 
@@ -77,8 +77,8 @@ export function MarkdownRenderer({ children }: MarkdownRendererProps) {
           const align = flags.align ? ` align="${flags.align}"` : '';
           return `<${type} class="${className}"${align}>\n${content}</${type}>\n`;
         };
-        renderer.paragraph = (text) => `<p class="my-2 leading-relaxed">${text}</p>\n`;
-        renderer.list = (body, ordered, start) => {
+        renderer.paragraph = (text: any) => `<p class="my-2 leading-relaxed">${text}</p>\n`;
+        renderer.list = (body: any, ordered: any, start: any) => {
           const type = ordered ? 'ol' : 'ul';
           const className = ordered ? 'list-decimal list-inside my-2' : 'list-disc list-inside my-2';
           return `<${type} class="${className}">\n${body}</${type}>\n`;

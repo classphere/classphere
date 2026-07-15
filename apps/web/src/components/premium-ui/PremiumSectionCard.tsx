@@ -21,7 +21,7 @@ export function PremiumSectionCard({
   return (
     <PremiumCard padding={padding} className={`group relative flex flex-col overflow-hidden w-full ${className}`}>
       {(title || headerRight) && (
-        <div className="relative z-10 flex items-start justify-between gap-4 mb-6">
+        <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
           {title && (
             <div>
               <h3 className="font-sans text-[20px] font-semibold tracking-[-0.02em] text-t-primary leading-snug">

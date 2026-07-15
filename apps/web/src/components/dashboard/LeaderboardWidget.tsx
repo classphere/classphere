@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { RiTrophyLine, RiMedalLine, RiArrowUpLine, RiArrowDownLine } from "@remixicon/react";
 import { apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
+import { PremiumCard } from "@/components/premium-ui";
 
 export function LeaderboardWidget() {
   const { session, user } = useAuth();
@@ -48,28 +49,28 @@ export function LeaderboardWidget() {
 
   if (loading) {
     return (
-      <div className="flex flex-col gap-4 p-6 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-velora-light w-full h-[400px] animate-pulse">
+      <PremiumCard padding="default" className="flex flex-col gap-4 w-full h-[400px] animate-pulse">
         <div className="h-6 w-48 bg-b-surface2 rounded" />
         <div className="flex-1 flex flex-col gap-3 mt-4">
           {[1, 2, 3, 4, 5].map(i => (
             <div key={i} className="h-12 w-full bg-b-surface2 rounded-xl" />
           ))}
         </div>
-      </div>
+      </PremiumCard>
     );
   }
 
   if (!leaderboard.length) {
     return (
-      <div className="flex flex-col p-6 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-velora-light w-full">
+      <PremiumCard padding="default" className="flex flex-col w-full">
         <h3 className="font-sans font-semibold text-[18px] text-t-primary mb-1">Batch Leaderboard</h3>
         <p className="text-sm text-t-secondary mb-4">You are not in any active batches with rankings yet.</p>
-      </div>
+      </PremiumCard>
     );
   }
 
   return (
-    <div className="flex flex-col p-6 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-velora-light w-full min-w-0 h-full">
+    <PremiumCard padding="default" className="flex flex-col w-full min-w-0 h-[400px]">
       <div className="flex items-center justify-between mb-5">
         <div>
           <h3 className="font-sans font-semibold text-[18px] text-t-primary tracking-[-0.01em] flex items-center gap-2">
@@ -126,6 +127,6 @@ export function LeaderboardWidget() {
           );
         })}
       </div>
-    </div>
+    </PremiumCard>
   );
 }
