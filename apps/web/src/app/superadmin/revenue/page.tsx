@@ -99,46 +99,46 @@ export default function RevenuePage() {
               </div>
             )}
             {transactions.map((txn, i) => (
-              <div key={txn.id} className="group/item relative flex flex-col md:flex-row md:items-center w-full p-4 md:px-6 gap-4 md:gap-0 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer">
+              <div key={txn.id} className="group/item relative flex flex-row items-center w-full p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[80px] sm:h-[88px]">
                 
-                {/* ID */}
-                <div className="w-full md:w-[120px] font-sans text-[15px] text-t-secondary truncate">
-                  {txn.razorpay_invoice_id || txn.id.split('-')[0]}
+                {/* ID & Institute */}
+                <div className="flex flex-col justify-center flex-1 min-w-0 md:flex-row md:items-center md:gap-4 md:flex-none md:w-[370px]">
+                  <div className="font-sans text-[12px] sm:text-[15px] text-t-secondary truncate md:w-[120px]">
+                    {txn.razorpay_invoice_id || txn.id.split('-')[0]}
+                  </div>
+                  <div className="font-sans text-[14px] sm:text-[15px] font-semibold text-t-primary truncate md:w-[250px]">
+                    {txn.institute?.name || "Unknown"}
+                  </div>
                 </div>
                 
-                {/* Institute */}
-                <div className="w-full md:w-[250px] font-sans text-[15px] font-semibold text-t-primary truncate">
-                  {txn.institute?.name || "Unknown"}
-                </div>
-                
-                {/* Plan */}
-                <div className="w-full md:w-[120px]">
-                  <div className={`inline-flex items-center px-3 py-1 rounded-[10px] border ${
-                    txn.institute?.plan === "enterprise" ? "bg-[rgba(143,91,255,0.05)] border-s-stroke2/40 text-[#8F5BFF]" :
-                    txn.institute?.plan === "pro" ? "bg-[rgba(42,133,255,0.05)] border-s-stroke2/40 text-primary-01" :
-                    "bg-b-surface1 border-s-stroke2/40 text-t-secondary"
+                {/* Plan (Hidden on mobile) */}
+                <div className="hidden md:block md:w-[120px]">
+                  <span className={`inline-flex items-center px-3 py-1 rounded-[10px] text-[11px] font-bold uppercase tracking-wider border ${
+                    txn.institute?.plan === "enterprise" ? "bg-[rgba(94,92,230,0.05)] border-[#5E5CE6]/20 text-[#5E5CE6]" :
+                    txn.institute?.plan === "active" ? "bg-[rgba(42,133,255,0.05)] border-s-stroke2/40 text-primary-01" :
+                    "bg-[rgba(0,166,86,0.05)] border-[rgba(0,166,86,0.2)] text-primary-02"
                   }`}>
                     <span className="font-sans text-xs font-semibold uppercase tracking-wider">{txn.institute?.plan || "free"}</span>
+                  </span>
+                </div>
+
+                {/* Amount & Date */}
+                <div className="flex flex-col md:flex-row md:items-center justify-center gap-0.5 md:gap-4 md:w-[270px]">
+                  <div className="font-sans text-[14px] sm:text-[15px] font-bold text-t-primary md:w-[120px] text-right md:text-left">
+                    {fmtMoney(txn.amount_paid)}
+                  </div>
+                  <div className="font-sans text-[11px] sm:text-[14px] text-t-secondary truncate md:w-[150px] text-right md:text-left">
+                    {new Date(txn.created_at).toLocaleDateString()}
                   </div>
                 </div>
 
-                {/* Amount */}
-                <div className="w-full md:w-[120px] font-sans text-[15px] font-bold text-t-primary">
-                  {fmtMoney(txn.amount_paid)}
-                </div>
-
-                {/* Date */}
-                <div className="w-full md:w-[150px] font-sans text-[14px] text-t-secondary truncate">
-                  {new Date(txn.created_at).toLocaleDateString()}
-                </div>
-
                 {/* Status */}
-                <div className="w-full md:w-[100px] text-right flex md:justify-end">
-                  <div className={`inline-flex items-center px-3 py-1 rounded-[10px] border ${
+                <div className="w-[60px] md:w-[100px] text-right flex justify-end shrink-0">
+                  <div className={`inline-flex items-center px-2 py-1 sm:px-3 rounded-[10px] border ${
                     txn.status === "paid" ? "bg-[rgba(0,166,86,0.05)] border-s-stroke2/40 text-primary-02" :
                     "bg-[rgba(239,68,68,0.05)] border-s-stroke2/40 text-primary-03"
                   }`}>
-                    <span className="font-sans text-xs font-semibold uppercase tracking-wider">{txn.status}</span>
+                    <span className="font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-wider">{txn.status}</span>
                   </div>
                 </div>
                 

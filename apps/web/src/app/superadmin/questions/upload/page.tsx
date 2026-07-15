@@ -257,7 +257,7 @@ export default function UploadQuestionsPage() {
           <div className="flex flex-col gap-6 w-full">
 
             {/* ── Section 1: Exam Metadata ─────────────────────────────────── */}
-            <div className="group relative flex flex-col p-6 md:p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] w-full">
+            <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
 
               <div className="relative z-10 flex items-center gap-3 mb-6">
                 <span className="text-t-primary dark:text-t-primary"><RiDatabase2Line size={24} /></span>
@@ -426,7 +426,7 @@ export default function UploadQuestionsPage() {
             </div>
 
             {/* ── Section 2: JSON Upload ───────────────────────────────────── */}
-            <div className="group relative flex flex-col p-6 md:p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] w-full">
+            <div className="group relative flex flex-col p-6 md:p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] w-full">
 
               <div className="relative z-10 flex items-center gap-3 mb-6">
                 <span className="text-t-primary dark:text-t-primary"><RiFileList3Line size={24} /></span>

@@ -149,13 +149,13 @@ export default function SuperAdminDashboardPage() {
             <SectionCard title="System Resources" className="flex-1 min-w-0">
               <div className="relative z-10 flex flex-col gap-2 w-full mt-2">
                 {systemResources.map((bar, idx) => (
-                  <div key={idx} className="group/item relative flex flex-row items-center justify-between p-4 gap-4 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all h-[72px] cursor-pointer">
-                    <div className="w-[140px] md:w-[160px] flex flex-col shrink-0">
-                      <span className="font-sans font-semibold text-sm text-t-primary truncate">{bar.fullName}</span>
-                      <span className="text-xs text-t-tertiary">{bar.load} Load</span>
+                  <div key={idx} className="group/item relative flex flex-row items-center justify-between p-3 sm:p-4 gap-3 sm:gap-4 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[72px] sm:h-[80px] cursor-pointer overflow-hidden">
+                    <div className="w-1/3 sm:w-[140px] md:w-[160px] flex flex-col justify-center shrink-0 min-w-0">
+                      <span className="font-sans font-semibold text-[13px] sm:text-sm text-t-primary truncate">{bar.fullName}</span>
+                      <span className="text-[10px] sm:text-xs text-t-tertiary truncate">{bar.load}</span>
                     </div>
                     
-                    <div className="flex-1 h-2 mx-4 bg-b-surface1 border border-s-stroke2/40 rounded-full overflow-hidden">
+                    <div className="flex-1 h-2 mx-2 sm:mx-4 bg-b-surface1 border border-s-stroke2/40 rounded-full overflow-hidden shrink min-w-0">
                       <div 
                         className={`h-full rounded-full transition-all duration-1000 bg-linear-to-r ${
                           bar.score >= 85 ? 'from-[#FF6A55] to-[#FF453A]' :
@@ -166,11 +166,11 @@ export default function SuperAdminDashboardPage() {
                       />
                     </div>
                     
-                    <div className="w-[120px] flex flex-row items-center justify-end gap-3 shrink-0">
-                      <span className="text-base font-bold text-t-primary w-[44px] text-right">
+                    <div className="flex flex-col items-end justify-center gap-1 shrink-0">
+                      <span className="text-[13px] sm:text-base font-bold text-t-primary text-right">
                         {bar.score}%
                       </span>
-                      <span className={`label h-6 text-[11px] px-1.5 ${bar.trend.startsWith('+') ? (bar.score >= 85 ? 'label-red' : 'label-green') : 'label-green'}`}>
+                      <span className={`label h-[22px] sm:h-6 text-[9px] sm:text-[11px] px-1.5 ${bar.trend.startsWith('+') ? (bar.score >= 85 ? 'label-red' : 'label-green') : 'label-green'}`}>
                         <RiArrowRightUpLine size={12} className={`mr-0.5 ${bar.trend.startsWith('-') ? 'rotate-[90deg]' : ''}`} />
                         {bar.trend}
                       </span>
@@ -188,20 +188,20 @@ export default function SuperAdminDashboardPage() {
                     <span className="text-sm font-sans text-t-secondary">No recent tickets found.</span>
                   </div>
                 ) : tickets.map((ticket, index) => (
-                  <div key={ticket.id} className="group/item relative flex flex-row p-4 gap-4 w-full bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer">
-                    <div className="w-10 h-10 bg-primary-01/10 text-primary-01 rounded-full shrink-0 flex items-center justify-center font-bold">
+                  <div key={ticket.id} className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-4 w-full bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[72px] sm:h-[80px] cursor-pointer overflow-hidden">
+                    <div className="size-10 bg-primary-01/10 text-primary-01 rounded-full shrink-0 flex items-center justify-center font-bold">
                       {(ticket.author?.name || "U").charAt(0).toUpperCase()}
                     </div>
-                    <div className="flex flex-col gap-2 flex-1 min-w-0 mt-0.5">
-                      <div className="flex flex-col gap-0.5">
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="font-sans font-semibold text-sm text-t-primary">{ticket.author?.name || "Unknown"}</span>
-                          <span className="text-[13px] text-t-tertiary">from</span>
-                          <span className="font-sans font-semibold text-sm text-t-primary truncate max-w-[120px]">{ticket.institute?.name || "Global"}</span>
-                        </div>
-                        <span className="text-[12px] text-t-tertiary">{new Date(ticket.created_at).toLocaleDateString()}</span>
+                    <div className="flex flex-col justify-center flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5 truncate w-full">
+                        <span className="font-sans font-semibold text-[13px] sm:text-sm text-t-primary truncate shrink">{ticket.author?.name || "Unknown"}</span>
+                        <span className="text-[11px] sm:text-[13px] text-t-tertiary shrink-0">from</span>
+                        <span className="font-sans font-semibold text-[12px] sm:text-sm text-t-primary truncate shrink-0 max-w-[80px] sm:max-w-[120px]">{ticket.institute?.name || "Global"}</span>
                       </div>
-                      <span className="text-sm text-t-primary line-clamp-2">"{ticket.subject}"</span>
+                      <span className="text-[12px] sm:text-sm text-t-primary truncate w-full">"{ticket.subject}"</span>
+                    </div>
+                    <div className="shrink-0 flex items-center justify-end">
+                      <span className="text-[10px] sm:text-[12px] text-t-tertiary">{new Date(ticket.created_at).toLocaleDateString()}</span>
                     </div>
                   </div>
                 ))}
@@ -224,23 +224,23 @@ export default function SuperAdminDashboardPage() {
                                   'bg-primary-01/10 text-primary-01 border-primary-01/20';
                 
                 return (
-                  <div key={log.id} className="group/item relative flex flex-row items-center p-4 gap-6 w-full bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer">
+                  <div key={log.id} className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 w-full bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[72px] sm:h-[80px] cursor-pointer overflow-hidden">
                     
-                    <div className="flex flex-row items-center gap-4 flex-1 min-w-0">
+                    <div className="flex flex-row items-center gap-3 sm:gap-4 flex-1 min-w-0 h-full">
                       <div className={`flex items-center justify-center size-10 rounded-[10px] shrink-0 border ${statusClass}`}>
                         {log.type === 'success' ? <RiCheckFill size={18} /> : log.type === 'error' ? <RiAlertLine size={18} /> : <RiTimeLine size={18} />}
                       </div>
-                      <div className="flex flex-col gap-0.5 min-w-0 w-[400px]">
-                        <span className="font-sans font-semibold text-sm text-t-primary truncate">{log.action}</span>
-                        <span className="text-[13px] text-t-secondary truncate">{log.detail}</span>
+                      <div className="flex flex-col justify-center min-w-0 flex-1 md:flex-none md:w-[400px]">
+                        <span className="font-sans font-semibold text-[13px] sm:text-sm text-t-primary truncate">{log.action}</span>
+                        <span className="text-[11px] sm:text-[13px] text-t-secondary truncate">{log.detail}</span>
                       </div>
                     </div>
 
-                    <div className="flex flex-row justify-end items-center gap-6 shrink-0 min-w-[160px]">
-                      <span className="text-[13px] font-medium text-t-tertiary">
+                    <div className="flex flex-col sm:flex-row justify-center items-end sm:items-center gap-1 sm:gap-6 shrink-0 h-full">
+                      <span className="text-[11px] sm:text-[13px] font-medium text-t-tertiary">
                         {log.time}
                       </span>
-                      <span className={`label w-20 justify-center ${log.type === 'success' ? 'label-green' : log.type === 'error' ? 'label-red' : 'label-gray'}`}>
+                      <span className={`label sm:w-20 justify-center h-[22px] sm:h-6 text-[9px] sm:text-[11px] px-2 ${log.type === 'success' ? 'label-green' : log.type === 'error' ? 'label-red' : 'label-gray'}`}>
                         {log.type === 'success' ? 'Resolved' : log.type === 'error' ? 'Failed' : 'Info'}
                       </span>
                     </div>

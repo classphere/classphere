@@ -67,15 +67,15 @@ export default function GlobalAnalyticsPage() {
             <div className="flex flex-col items-start w-full gap-5 mt-4">
               <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Distribution across all 845K tests conducted</span>
               {examBreakdown.map((exam, i) => (
-                <div key={i} className="group/item relative flex flex-col w-full p-4 md:px-6 gap-3 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer">
+                <div key={i} className="group/item relative flex flex-col w-full p-3 sm:p-4 gap-2 sm:gap-3 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[72px] sm:h-[88px] justify-center">
                   <div className="flex flex-row justify-between items-center w-full">
-                    <span className="font-sans text-base font-semibold text-t-primary">{exam.exam}</span>
-                    <span className="font-sans text-sm font-medium text-t-secondary">
+                    <span className="font-sans text-[14px] sm:text-base font-semibold text-t-primary">{exam.exam}</span>
+                    <span className="font-sans text-[12px] sm:text-sm font-medium text-t-secondary">
                       {exam.tests.toLocaleString()} <span className="font-semibold text-t-primary ml-1">({exam.pct}%)</span>
                     </span>
                   </div>
                   
-                  <div className="w-full h-2.5 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-full relative overflow-hidden">
+                  <div className="w-full h-2 sm:h-2.5 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-full relative overflow-hidden">
                     <div 
                       className={`h-full rounded-full transition-all duration-1000 ease-out bg-gradient-to-r ${exam.color} ${exam.shadow}`}
                       style={{ width: `${exam.pct}%` }}
@@ -99,15 +99,17 @@ export default function GlobalAnalyticsPage() {
               </div>
 
               {topInstitutes.map((inst, i) => (
-                <div key={i} className="group/item relative flex flex-row items-center w-full p-4 md:px-6 gap-4 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer">
-                  <div className="flex-1 flex flex-row items-center gap-4">
-                    <div className="w-10 h-10 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center font-sans font-bold text-sm text-t-primary shrink-0 shadow-sm">
+                <div key={i} className="group/item relative flex flex-row items-center w-full p-3 sm:p-4 gap-3 sm:gap-4 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[72px] sm:h-[80px]">
+                  <div className="flex-1 flex flex-row items-center gap-3 sm:gap-4 min-w-0">
+                    <div className="size-8 sm:w-10 sm:h-10 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center font-sans font-bold text-xs sm:text-sm text-t-primary shrink-0 shadow-sm">
                       {i + 1}
                     </div>
-                    <span className="font-sans font-semibold text-[15px] text-t-primary truncate">{inst.name}</span>
+                    <span className="font-sans font-semibold text-[13px] sm:text-[15px] text-t-primary truncate">{inst.name}</span>
                   </div>
-                  <span className="w-24 font-sans font-medium text-[15px] text-t-secondary text-right">{inst.tests.toLocaleString()}</span>
-                  <span className="w-24 font-sans font-semibold text-[15px] text-t-primary text-right">{inst.tokens}</span>
+                  <div className="flex flex-col sm:flex-row items-end sm:items-center justify-center shrink-0">
+                    <span className="sm:w-24 font-sans font-medium text-[11px] sm:text-[15px] text-t-secondary text-right">{inst.tests.toLocaleString()} tests</span>
+                    <span className="sm:w-24 font-sans font-semibold text-[13px] sm:text-[15px] text-t-primary text-right">{inst.tokens} tok</span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -130,16 +132,16 @@ export default function GlobalAnalyticsPage() {
               {aiBreakdown.map((item, i) => {
                 const pct = Math.round((item.value / item.total) * 100);
                 return (
-                  <div key={i} className="group/item relative flex flex-col w-full p-5 gap-3 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer">
-                    <div className="flex flex-row justify-between items-center w-full">
-                      <span className="font-sans text-base font-semibold text-t-primary">{item.label}</span>
-                      <div className="flex flex-row items-center gap-4">
-                        <span className="font-sans text-base font-semibold text-t-primary">{item.value}M tokens</span>
-                        <span className="font-sans text-sm font-bold text-t-secondary w-12 text-right">{pct}%</span>
+                  <div key={i} className="group/item relative flex flex-col w-full p-4 sm:p-5 gap-2 sm:gap-3 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[76px] sm:h-[88px] justify-center">
+                    <div className="flex flex-row justify-between items-center w-full min-w-0">
+                      <span className="font-sans text-[13px] sm:text-base font-semibold text-t-primary truncate pr-2">{item.label}</span>
+                      <div className="flex flex-row items-center gap-2 sm:gap-4 shrink-0">
+                        <span className="font-sans text-[12px] sm:text-base font-semibold text-t-primary">{item.value}M <span className="hidden sm:inline">tokens</span></span>
+                        <span className="font-sans text-[12px] sm:text-sm font-bold text-t-secondary w-8 sm:w-12 text-right">{pct}%</span>
                       </div>
                     </div>
                     
-                    <div className="w-full h-3 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-full relative overflow-hidden">
+                    <div className="w-full h-2 sm:h-3 bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 rounded-full relative overflow-hidden">
                       <div 
                         className={`h-full rounded-full transition-all duration-1000 ease-out bg-gradient-to-r ${item.color} ${item.shadow}`}
                         style={{ width: `${pct}%` }}

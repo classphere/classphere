@@ -136,7 +136,7 @@ export default function QuestionBankPage() {
             ) : questions.map((question) => (
               <div
                 key={question.id}
-                className="group/item relative flex flex-col md:flex-row md:items-center w-full p-4 md:px-6 gap-4 md:gap-0 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer"
+                className="group/item relative flex flex-col md:flex-row md:items-center w-full p-4 md:px-6 gap-4 md:gap-0 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer"
               >
                 <div className="w-full md:w-[260px] font-sans text-[13px] font-medium text-t-secondary group-hover/item:text-[#0A84FF] transition-colors truncate" title={question.id}>
                   {question.id.slice(0, 20)}…

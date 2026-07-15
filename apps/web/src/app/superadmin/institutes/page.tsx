@@ -35,7 +35,7 @@ function formatMRR(n: number): string {
 function planBadgeClass(plan: string): string {
   switch (plan.toLowerCase()) {
     case "enterprise": return "bg-[rgba(94,92,230,0.08)] text-[#5E5CE6] border border-[#5E5CE6]/20";
-    case "pro":        return "bg-[rgba(10,132,255,0.08)] text-[#0A84FF] border border-[#0A84FF]/20";
+    case "active":     return "bg-[rgba(10,132,255,0.08)] text-[#0A84FF] border border-[#0A84FF]/20";
     default:           return "bg-b-surface1 dark:bg-b-surface1 text-t-secondary border border-s-stroke2/40";
   }
 }
@@ -63,7 +63,7 @@ function FeedbackBanner({ type, message }: { type: "success" | "error"; message:
 
 export default function InstitutesPage() {
   // Real data hooks
-  const { institutes, loading: listLoading, error: listError, createInstitute, refetch } = useInstitutes();
+  const { institutes, loading: listLoading, error: listError, createInstitute, uploadImage, refetch } = useInstitutes();
   const { stats, loading: statsLoading, refetch: refetchStats } = useSuperadminStats();
 
   // Modal state
@@ -74,9 +74,30 @@ export default function InstitutesPage() {
     adminUsername: "",
     type: "jee",
     price: 500,
+    isFreeTrial: true,
+    trialMonths: 2,
+    logoUrl: "",
   });
   const [isCreating, setIsCreating] = useState(false);
+  const [uploadingLogo, setUploadingLogo] = useState(false);
   const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+  const handleLogoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingLogo(true);
+    setFeedback(null);
+    try {
+      const url = await uploadImage(file);
+      setNewInstituteData((prev) => ({ ...prev, logoUrl: url }));
+      setFeedback({ type: "success", message: "Logo uploaded successfully to Cloudflare R2!" });
+    } catch (err: any) {
+      setFeedback({ type: "error", message: err.message ?? "Logo upload failed" });
+    } finally {
+      setUploadingLogo(false);
+    }
+  };
 
   // Credentials modal (shown once after successful provisioning)
   const [credentials, setCredentials] = useState<{ email: string; password: string; instituteName: string } | null>(null);
@@ -138,7 +159,7 @@ export default function InstitutesPage() {
 
     if (result.success) {
       setIsCreateModalOpen(false);
-      setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", type: "jee", price: 500 });
+      setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", type: "jee", price: 500, isFreeTrial: true, trialMonths: 2, logoUrl: "" });
       setFeedback(null);
       refetchStats();
       // Show the one-time credentials modal
@@ -158,7 +179,7 @@ export default function InstitutesPage() {
 
   const openModal = () => {
     setFeedback(null);
-    setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", type: "jee", price: 500 });
+    setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", type: "jee", price: 500, isFreeTrial: true, trialMonths: 2, logoUrl: "" });
     setIsCreateModalOpen(true);
   };
 
@@ -271,41 +292,34 @@ export default function InstitutesPage() {
             {!listLoading && !listError && filteredInstitutes.map((institute) => (
               <div
                 key={institute.id}
-                className="group/item relative flex flex-col md:flex-row md:items-center justify-between p-4 md:px-6 gap-4 md:gap-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer"
+                className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[80px] sm:h-[88px]"
               >
-                {/* Institute Name */}
-                <div className="w-full md:w-[300px] flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-[12px] bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center font-bold text-lg text-t-primary shadow-sm shrink-0">
+                {/* Institute Name & Email */}
+                <div className="flex flex-row items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                  <div className="size-10 sm:w-12 sm:h-12 rounded-[12px] bg-b-surface1 dark:bg-b-surface1 border border-s-stroke2/40 flex items-center justify-center font-bold text-base sm:text-lg text-t-primary shadow-sm shrink-0">
                     {institute.name.charAt(0).toUpperCase()}
                   </div>
-                  <div className="min-w-0 flex flex-col">
-                    <span className="font-sans font-semibold text-base text-t-primary truncate">{institute.name}</span>
-                    <span className="text-xs text-t-secondary font-medium uppercase mt-0.5">{institute.plan}</span>
+                  <div className="min-w-0 flex flex-col justify-center w-full md:w-[280px]">
+                    <span className="font-sans font-semibold text-[14px] sm:text-base text-t-primary truncate">{institute.name}</span>
+                    <span className="text-[11px] sm:text-[13px] text-t-secondary font-medium mt-0.5 truncate flex items-center gap-1">
+                      <RiMailLine size={12} className="hidden sm:inline" />
+                      {institute.owner_email ?? "—"}
+                    </span>
                   </div>
-                </div>
-
-                {/* Email */}
-                <div className="w-full md:w-[200px] flex items-center gap-2 text-t-secondary">
-                  <RiMailLine size={16} className="text-t-tertiary hidden md:block" />
-                  <span className="text-sm truncate">{institute.owner_email ?? "—"}</span>
                 </div>
 
                 {/* Students */}
-                <div className="w-full md:w-[120px] flex items-center gap-2">
-                  <RiUserStarLine size={16} className="text-t-tertiary hidden md:block" />
+                <div className="hidden md:flex flex-row items-center gap-2 w-[120px] shrink-0">
+                  <RiUserStarLine size={16} className="text-t-tertiary" />
                   <span className="font-sans font-bold text-t-primary text-base">{institute.student_count.toLocaleString()}</span>
                 </div>
 
-                {/* Plan Badge */}
-                <div className="w-full md:w-[120px] flex items-center">
-                  <span className={`inline-flex items-center px-3 py-1 rounded-[10px] text-[11px] font-bold uppercase tracking-wider ${planBadgeClass(institute.plan)}`}>
+                {/* Badges (Stacked on mobile, side-by-side on desktop) */}
+                <div className="flex flex-col md:flex-row items-end md:items-center justify-center gap-1 md:gap-4 shrink-0 md:w-[220px]">
+                  <span className={`inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-[10px] text-[9px] sm:text-[11px] font-bold uppercase tracking-wider ${planBadgeClass(institute.plan)}`}>
                     {institute.plan}
                   </span>
-                </div>
-
-                {/* Status */}
-                <div className="w-full md:w-[100px] flex items-center md:justify-end">
-                  <span className={`inline-flex items-center px-3 py-1 rounded-[10px] text-[11px] font-bold uppercase tracking-wider border ${
+                  <span className={`inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-[10px] text-[9px] sm:text-[11px] font-bold uppercase tracking-wider border ${
                     institute.is_active
                       ? "bg-[rgba(0,166,86,0.08)] border-[rgba(0,166,86,0.2)] text-primary-02"
                       : "bg-[rgba(239,68,68,0.08)] border-[rgba(239,68,68,0.2)] text-primary-03"
@@ -315,7 +329,7 @@ export default function InstitutesPage() {
                 </div>
 
                 {/* Actions */}
-                <div className="w-full md:w-[60px] flex items-center md:justify-end shrink-0">
+                <div className="flex items-center justify-end shrink-0 pl-1 sm:pl-2">
                   <button className="p-2 rounded-[10px] text-t-secondary hover:bg-s-stroke2 hover:text-t-primary transition-colors opacity-100 md:opacity-0 md:group-hover/item:opacity-100 active:scale-95">
                     <RiMore2Fill size={20} />
                   </button>
@@ -389,6 +403,44 @@ export default function InstitutesPage() {
             </p>
           </div>
 
+          <div className="flex flex-col gap-2">
+            <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
+              Institute Logo
+            </label>
+            <div className="flex items-center gap-3">
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleLogoUpload}
+                disabled={uploadingLogo}
+                className="hidden"
+                id="logo-file-input"
+              />
+              <label
+                htmlFor="logo-file-input"
+                className="flex items-center justify-center h-11 px-5 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 text-[13px] font-semibold text-t-primary hover:bg-s-stroke2/20 transition-all cursor-pointer select-none active:scale-[0.98] disabled:opacity-50"
+              >
+                {uploadingLogo ? (
+                  <span className="flex items-center gap-2">
+                    <RiLoader4Line size={16} className="animate-spin text-t-secondary" />
+                    Uploading to R2...
+                  </span>
+                ) : (
+                  "Select Image File"
+                )}
+              </label>
+              {newInstituteData.logoUrl && (
+                <div className="flex items-center gap-2 max-w-[200px] overflow-hidden truncate bg-[rgba(0,166,86,0.07)] text-primary-02 border border-[rgba(0,166,86,0.18)] px-3 py-1.5 rounded-[8px] text-[12px] font-semibold">
+                  <RiCheckboxCircleLine size={14} className="shrink-0" />
+                  Uploaded
+                </div>
+              )}
+            </div>
+            <p className="text-[12px] text-t-secondary">
+              Select an image from your terminal to automatically upload to Cloudflare R2 storage.
+            </p>
+          </div>
+
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
               <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
@@ -422,6 +474,34 @@ export default function InstitutesPage() {
                 onChange={(e) => setNewInstituteData({ ...newInstituteData, price: Number(e.target.value) })}
               />
             </div>
+          </div>
+
+          <div className="flex flex-col gap-3 p-4 bg-b-surface2/50 rounded-[10px] border border-s-stroke2/50">
+            <label className="flex items-center gap-3 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                className="w-5 h-5 rounded border-s-stroke2 text-primary-01 focus:ring-primary-01 bg-white"
+                checked={newInstituteData.isFreeTrial}
+                onChange={(e) => setNewInstituteData({ ...newInstituteData, isFreeTrial: e.target.checked })}
+              />
+              <span className="text-[14px] font-semibold text-t-primary">Offer Free Trial</span>
+            </label>
+
+            {newInstituteData.isFreeTrial && (
+              <div className="flex flex-col gap-2 mt-2">
+                <label className="text-[13px] font-medium text-t-secondary uppercase tracking-[0.02em]">
+                  Trial Duration (Months)
+                </label>
+                <input
+                  type="number"
+                  className="input-field w-full"
+                  placeholder="2"
+                  min="1"
+                  value={newInstituteData.trialMonths}
+                  onChange={(e) => setNewInstituteData({ ...newInstituteData, trialMonths: Number(e.target.value) })}
+                />
+              </div>
+            )}
           </div>
 
           <div className="flex items-center justify-end gap-3 pt-6 border-t border-s-stroke2/30">

@@ -125,27 +125,27 @@ export default function SupportPage() {
             {tickets.map((ticket) => (
               <div
                 key={ticket.id}
-                className="group/item relative flex flex-col md:flex-row md:items-center w-full p-4 md:px-6 gap-4 md:gap-0 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] hover:scale-[1.005] transition-all cursor-pointer"
+                className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 w-full bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[76px] sm:h-[88px]"
               >
                 
-                {/* ID */}
-                <div className="w-full md:w-[100px] font-sans text-[15px] font-bold text-t-primary group-hover/item:text-[#0A84FF] transition-colors truncate">
-                  {ticket.id.split('-')[0]}
-                </div>
-                
-                {/* Institute */}
-                <div className="w-full md:w-[200px] font-sans text-[15px] font-bold text-t-primary truncate">
-                  {ticket.institute?.name || "Global"}
+                {/* ID & Institute */}
+                <div className="flex flex-col justify-center shrink-0 w-[100px] sm:w-[150px]">
+                  <div className="font-sans text-[12px] sm:text-[14px] font-bold text-t-primary group-hover/item:text-[#0A84FF] transition-colors truncate">
+                    {ticket.id.split('-')[0]}
+                  </div>
+                  <div className="font-sans text-[11px] sm:text-[13px] text-t-secondary truncate">
+                    {ticket.institute?.name || "Global"}
+                  </div>
                 </div>
                 
                 {/* Subject */}
-                <div className="flex-1 font-sans text-[14px] font-medium text-t-secondary truncate">
+                <div className="flex-1 min-w-0 font-sans text-[13px] sm:text-[14px] font-medium text-t-primary truncate pr-1 sm:pr-2">
                   {ticket.subject}
                 </div>
                 
-                {/* Priority */}
-                <div className="w-full md:w-[120px]">
-                  <span className={`inline-flex items-center px-3 py-1 rounded-[10px] text-[11px] font-bold uppercase tracking-wider border ${
+                {/* Priority & Status */}
+                <div className="flex flex-col md:flex-row items-end md:items-center justify-center gap-1 md:gap-4 shrink-0 md:w-[240px]">
+                  <span className={`inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-[10px] text-[9px] sm:text-[11px] font-bold uppercase tracking-wider border ${
                     ticket.priority === "High" 
                       ? "bg-[rgba(239,68,68,0.08)] border-[rgba(239,68,68,0.2)] text-primary-03" 
                       : ticket.priority === "Medium"
@@ -154,11 +154,7 @@ export default function SupportPage() {
                   }`}>
                     {ticket.priority}
                   </span>
-                </div>
-                
-                {/* Status */}
-                <div className="w-full md:w-[120px]">
-                  <span className={`inline-flex items-center px-3 py-1 rounded-[10px] text-[11px] font-bold uppercase tracking-wider border ${
+                  <span className={`inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-[10px] text-[9px] sm:text-[11px] font-bold uppercase tracking-wider border ${
                     ticket.status === "Open" 
                       ? "bg-[rgba(10,132,255,0.08)] border-[rgba(10,132,255,0.2)] text-[#0A84FF]" 
                       : ticket.status === "In Progress"
@@ -170,7 +166,7 @@ export default function SupportPage() {
                 </div>
                 
                 {/* Time */}
-                <div className="w-full md:w-[120px] text-right flex md:justify-end font-sans text-[14px] text-t-secondary truncate">
+                <div className="hidden md:flex md:w-[100px] text-right justify-end font-sans text-[13px] text-t-secondary truncate shrink-0 pl-2">
                   {new Date(ticket.created_at).toLocaleDateString()}
                 </div>
 

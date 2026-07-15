@@ -51,7 +51,7 @@ export default function ConfigurationPage() {
           <div className="lg:col-span-8 flex flex-col gap-8">
             
             {/* System Maintenance */}
-            <div className={`group relative flex flex-col p-8 rounded-[24px] border overflow-hidden transition-colors shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] ${
+            <div className={`group relative flex flex-col p-8 rounded-[24px] border overflow-hidden transition-colors ${
               maintenance 
                 ? 'bg-white dark:bg-white/[0.02] border-red-500/40' 
                 : 'bg-white dark:bg-white/[0.02] border-s-stroke2/40'
@@ -84,7 +84,7 @@ export default function ConfigurationPage() {
             </div>
 
             {/* Analysis Engine Config */}
-            <div className="group relative flex flex-col p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden">
+            <div className="group relative flex flex-col p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden">
 
               <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
                 <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
@@ -122,7 +122,7 @@ export default function ConfigurationPage() {
             </div>
 
             {/* B2B Settings */}
-            <div className="group relative flex flex-col p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden">
+            <div className="group relative flex flex-col p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden">
 
               <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
                 <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
@@ -166,7 +166,7 @@ export default function ConfigurationPage() {
 
           {/* Right Column: Infrastructure Limits */}
           <div className="lg:col-span-4 flex flex-col gap-6">
-            <div className="group relative flex flex-col p-8 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[24px] shadow-[0px_0px_36px_-8px_rgba(0,0,0,0.05),0px_6px_4px_-4px_rgba(8,8,8,0.05)] overflow-hidden sticky top-6">
+            <div className="group relative flex flex-col p-8 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden sticky top-6">
 
               <div className="relative z-10 flex items-center gap-3 mb-6 pb-6 border-b border-s-stroke2/30">
                 <div className="w-10 h-10 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 flex items-center justify-center text-t-primary dark:text-t-primary border border-s-stroke2/30">
