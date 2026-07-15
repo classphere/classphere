@@ -11,7 +11,7 @@ import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
  */
 export const listQuestions = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { exam, subject, chapter, difficulty, type, page = "1", limit = "20" } = req.query as Record<string, string>;
+    const { exam, subject, chapter, difficulty, type, page = "1", limit = "20", topics } = req.query as Record<string, string>;
     const pageNum = Math.max(1, parseInt(page));
     const limitNum = Math.min(100, Math.max(1, parseInt(limit)));
     const offset = (pageNum - 1) * limitNum;
@@ -32,6 +32,13 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
     if (chapter) query = query.eq("chapter", chapter);
     if (difficulty) query = query.eq("difficulty", difficulty);
     if (type) query = query.eq("question_type", type);
+
+    if (topics) {
+      const topicsArray = topics.split(",").map(t => t.trim()).filter(Boolean);
+      if (topicsArray.length > 0) {
+        query = query.in("topic", topicsArray);
+      }
+    }
 
     // exam filter: join via exams table — filter by exam code
     if (exam) {
@@ -85,10 +92,13 @@ export const getExamsMeta = async (req: Request, res: Response): Promise<void> =
           .eq("is_active", true);
 
         // Group subjects → chapters → topics
-        const subjectMap: Record<string, Set<string>> = {};
+        const subjectMap: Record<string, Record<string, Set<string>>> = {};
         for (const q of qData ?? []) {
-          if (!subjectMap[q.subject]) subjectMap[q.subject] = new Set();
-          if (q.chapter) subjectMap[q.subject].add(q.chapter);
+          if (!subjectMap[q.subject]) subjectMap[q.subject] = {};
+          if (q.chapter) {
+            if (!subjectMap[q.subject][q.chapter]) subjectMap[q.subject][q.chapter] = new Set();
+            if (q.topic) subjectMap[q.subject][q.chapter].add(q.topic);
+          }
         }
 
         return {
@@ -97,8 +107,11 @@ export const getExamsMeta = async (req: Request, res: Response): Promise<void> =
           full_name: exam.full_name,
           subjects: Object.entries(subjectMap).map(([name, chapters]) => ({
             name,
-            chapters: Array.from(chapters).sort(),
-          })),
+            chapters: Object.entries(chapters).map(([chapterName, topicsSet]) => ({
+              name: chapterName,
+              topics: Array.from(topicsSet).sort(),
+            })).sort((a, b) => a.name.localeCompare(b.name)),
+          })).sort((a, b) => a.name.localeCompare(b.name)),
         };
       })
     );

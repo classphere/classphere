@@ -32,6 +32,9 @@ export interface CreateInstituteInput {
   adminUsername: string;
   type: string;
   price: number;
+  isFreeTrial?: boolean;
+  trialMonths?: number;
+  logoUrl?: string;
 }
 
 // ─── Queries ──────────────────────────────────────────────────────────────────
@@ -135,7 +138,7 @@ function generateTempPassword(): string {
 export async function provisionInstitute(
   input: CreateInstituteInput
 ): Promise<InstituteRow & { tempPassword: string }> {
-  const { name, adminEmail, adminUsername, type, price } = input;
+  const { name, adminEmail, adminUsername, type, price, isFreeTrial, trialMonths = 2, logoUrl } = input;
   console.log(`[provisionInstitute] START — name="${name}", email="${adminEmail}", username="${adminUsername}"`);
 
   // ── 1. Duplicate guard ───────────────────────────────────────────────────
@@ -211,9 +214,11 @@ export async function provisionInstitute(
   // ── 5. Insert institute row ──────────────────────────────────────────────
   // Real schema: id, name, slug, owner_id, plan, logo_url, is_active, created_at, updated_at
   console.log(`[provisionInstitute] Step 5: Inserting into public.institutes...`);
+  const subdomain_slug = name.toLowerCase().replace(/[^a-z0-9]/g, "");
+
   const { data: newInst, error: insertErr } = await supabaseDB
     .from("institutes")
-    .insert([{ name, owner_id: newUserId, plan: "free", is_active: true }])
+    .insert([{ name, owner_id: newUserId, plan: "active", is_active: true, subdomain_slug, logo_url: logoUrl || null }])
     .select()
     .single();
 
@@ -225,6 +230,38 @@ export async function provisionInstitute(
   }
 
   console.log(`[provisionInstitute] Step 5: institute created — id=${newInst.id}`);
+
+  // ── 5a. Insert institute_settings ────────────────────────────────────────
+  console.log(`[provisionInstitute] Step 5a: Inserting into public.institute_settings...`);
+  const { error: settingsErr } = await supabaseDB
+    .from("institute_settings")
+    .insert([{ institute_id: newInst.id, subdomain: subdomain_slug, theme_logo_url: logoUrl || null }]);
+  
+  if (settingsErr) {
+    console.warn(`[provisionInstitute] Step 5a warning (non-fatal): ${settingsErr.message}`);
+  }
+
+  // ── 5b. Insert institute_subscriptions (Free Trial) ──────────────────────
+  if (isFreeTrial) {
+    console.log(`[provisionInstitute] Step 5b: Creating free trial subscription for ${trialMonths} months...`);
+    const start = new Date();
+    const end = new Date();
+    end.setMonth(end.getMonth() + trialMonths);
+
+    const { error: subErr } = await supabaseDB
+      .from("institute_subscriptions")
+      .insert([{
+        institute_id: newInst.id,
+        plan_tier: "active",
+        status: "trialing",
+        current_period_start: start.toISOString(),
+        current_period_end: end.toISOString()
+      }]);
+    
+    if (subErr) {
+      console.warn(`[provisionInstitute] Step 5b warning (non-fatal): ${subErr.message}`);
+    }
+  }
 
   // ── 6. Back-fill institute_id on the user row ────────────────────────────
   console.log(`[provisionInstitute] Step 6: Setting institute_id on user record...`);

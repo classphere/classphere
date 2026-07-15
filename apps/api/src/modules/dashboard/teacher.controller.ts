@@ -87,7 +87,6 @@ export const getTeacherDashboard = async (req: Request, res: Response): Promise<
 
       recentDPPs = dpps ?? [];
 
-      // Count submissions across teacher's DPPs
       if (recentDPPs.length > 0) {
         const dppIds = recentDPPs.map((d) => d.id);
         const { data: submissions } = await supabaseDB
@@ -102,20 +101,39 @@ export const getTeacherDashboard = async (req: Request, res: Response): Promise<
           else subMap[s.dpp_id].pending++;
         }
 
+        // Count upcoming tests assigned to the teacher's batches
+        if (batchIds.length > 0) {
+          const { count } = await supabaseDB
+            .from("test_batch_assignments")
+            .select("test_id", { count: "exact", head: true })
+            .in("batch_id", batchIds);
+          upcomingTestsCount = count ?? 0;
+        }
+
         // Enrich DPPs with completion stats + batch name
         const batchNameMap: Record<string, string> = {};
         for (const b of batches) batchNameMap[b.id] = b.name;
 
-        recentDPPs = recentDPPs.map((d) => ({
-          ...d,
-          batchName: batchNameMap[d.batch_id] ?? "Unknown Batch",
-          submittedCount: subMap[d.id]?.submitted ?? 0,
-          pendingCount: subMap[d.id]?.pending ?? 0,
-          totalAssigned: batchStudentCounts[d.batch_id] ?? 0,
-        }));
+        recentDPPs = recentDPPs.map((d) => {
+          const stats = subMap[d.id] ?? { submitted: 0, pending: 0 };
+          const total = stats.submitted + stats.pending;
+          if (total > 0 && stats.submitted >= total) {
+            completedDPPsCount++;
+          } else {
+            pendingDPPsCount++;
+          }
+
+          return {
+            ...d,
+            batchName: batchNameMap[d.batch_id] ?? "Unknown Batch",
+            submittedCount: stats.submitted,
+            pendingCount: stats.pending,
+            totalAssigned: total,
+          };
+        });
       }
-    } catch {
-      // DPP tables may not exist yet
+    } catch (e: any) {
+      console.error("[Teacher Dashboard] Error fetching DPP metrics:", e.message);
     }
 
     // ── Enrich batches with student counts ─────────────────────────────────────
@@ -257,8 +275,9 @@ export const getBatchAnalytics = async (req: Request, res: Response): Promise<vo
       ? Math.round(allAttempts.filter(a => a.max_score > 0).reduce((sum, a) => sum + ((a.score / a.max_score) * 100), 0) / allAttempts.filter(a => a.max_score > 0).length)
       : 0;
 
-    const topStudent = studentList.sort((a, b) => b.accuracy - a.accuracy)[0];
-    const bottomStudent = studentList.sort((a, b) => a.accuracy - b.accuracy)[0];
+    const sortedDesc = [...studentList].sort((a, b) => b.accuracy - a.accuracy);
+    const topStudent = sortedDesc[0];
+    const bottomStudent = sortedDesc[sortedDesc.length - 1];
 
     // ── DEEP ANALYTICS: Subject Breakdown & Recent Tests (Trap Questions) ──
     const recent100Attempts = allAttempts.slice(0, 100);
@@ -279,7 +298,7 @@ export const getBatchAnalytics = async (req: Request, res: Response): Promise<vo
       // Chunking if too many questions, but Supabase handles up to a few thousand easily
       const { data: qs } = await supabaseDB
         .from("questions")
-        .select("id, text, subject, chapter")
+        .select("id, question_text, subject, chapter")
         .in("id", uniqueQuestionIds);
       
       for (const q of qs ?? []) {
@@ -367,7 +386,7 @@ export const getBatchAnalytics = async (req: Request, res: Response): Promise<vo
             if (maxOpt && (maxVal / stats.wrongCount) >= 0.4) { // > 40% of the wrong answers were this exact option
                const q = questionsMap[qId];
                if (q) {
-                 const rawText = (q.text || "Question text not found").replace(/<[^>]+>/g, "").trim();
+                 const rawText = (q.question_text || "Question text not found").replace(/<[^>]+>/g, "").trim();
                  trapQuestions.push({
                    q: rawText.substring(0, 40) + (rawText.length > 40 ? "..." : ""),
                    option: maxOpt,

@@ -256,17 +256,29 @@ export const getAssignedTests = async (req: Request, res: Response): Promise<voi
 export const publishTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
+    const isSuperAdmin = req.user?.role === "super_admin";
 
-    const { data: paper, error } = await supabaseAdmin
+    let query = supabaseAdmin
       .from("papers")
       .update({ is_published: true })
       .eq("id", id)
-      .eq("is_active", true)
-      .select("id, title, is_published")
-      .single();
+      .eq("is_active", true);
 
-    if (error || !paper) {
-      res.status(error ? 500 : 404).json({ success: false, message: error?.message ?? "Test not found" });
+    if (!isSuperAdmin) {
+      query = query.eq("created_by", req.user!.id);
+    }
+
+    const { data: paper, error } = await query
+      .select("id, title, is_published")
+      .maybeSingle();
+
+    if (error) {
+      res.status(500).json({ success: false, message: error.message });
+      return;
+    }
+
+    if (!paper) {
+      res.status(404).json({ success: false, message: "Test not found or access denied." });
       return;
     }
 
@@ -283,14 +295,28 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
 export const deleteTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
+    const isSuperAdmin = req.user?.role === "super_admin";
 
-    const { error } = await supabaseAdmin
+    let query = supabaseAdmin
       .from("papers")
       .update({ is_active: false })
       .eq("id", id);
 
+    if (!isSuperAdmin) {
+      query = query.eq("created_by", req.user!.id);
+    }
+
+    const { data: paper, error } = await query
+      .select("id")
+      .maybeSingle();
+
     if (error) {
       res.status(500).json({ success: false, message: error.message });
+      return;
+    }
+
+    if (!paper) {
+      res.status(404).json({ success: false, message: "Test not found or access denied." });
       return;
     }
 

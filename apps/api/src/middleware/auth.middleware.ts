@@ -15,6 +15,8 @@ declare global {
   }
 }
 
+import crypto from "crypto";
+
 /**
  * Validates the Bearer JWT issued by Supabase Auth.
  * On success, attaches `req.user` with { id, email, role, institute_id }.
@@ -28,10 +30,14 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
   // ── Internal API Key bypass (super admin tooling & cron jobs) ────────────────
   const internalKey = process.env.INTERNAL_API_KEY;
   const providedKey = req.headers["x-api-key"];
-  if (internalKey && providedKey === internalKey) {
-    req.user = { id: "superadmin", email: "admin@classphere.com", role: "super_admin", institute_id: null };
-    next();
-    return;
+  if (internalKey && typeof providedKey === "string") {
+    const providedBuffer = Buffer.from(providedKey);
+    const expectedBuffer = Buffer.from(internalKey);
+    if (providedBuffer.length === expectedBuffer.length && crypto.timingSafeEqual(providedBuffer, expectedBuffer)) {
+      req.user = { id: "superadmin", email: "admin@classphere.com", role: "super_admin", institute_id: null };
+      next();
+      return;
+    }
   }
 
   // ── Standard JWT auth (Supabase Bearer token) ─────────────────────────────

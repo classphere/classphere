@@ -2,6 +2,16 @@ import { Request, Response } from "express";
 import { provisionInstitute } from "./institutes.service";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 
+const checkBatchTenant = async (batchId: string, reqUser: any): Promise<boolean> => {
+  if (reqUser.role === "super_admin") return true;
+  const { data } = await supabaseDB
+    .from("batches")
+    .select("institute_id")
+    .eq("id", batchId)
+    .maybeSingle();
+  return !!data && data.institute_id === reqUser.institute_id;
+};
+
 // ─── Institute Handlers ─────────────────────────────────────────────────────
 
 /**
@@ -11,7 +21,7 @@ import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
  */
 export const createInstitute = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { name, adminEmail, adminUsername, type, price } = req.body;
+    const { name, adminEmail, adminUsername, type, price, isFreeTrial, trialMonths, logoUrl } = req.body;
 
     if (!name || !adminEmail || !adminUsername || !type || price === undefined) {
       res.status(400).json({
@@ -21,7 +31,7 @@ export const createInstitute = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    const result = await provisionInstitute({ name, adminEmail, adminUsername, type, price });
+    const result = await provisionInstitute({ name, adminEmail, adminUsername, type, price, isFreeTrial, trialMonths, logoUrl });
     const { tempPassword, ...institute } = result;
 
     res.status(201).json({
@@ -108,6 +118,11 @@ export const getInstituteStats = async (req: Request, res: Response): Promise<vo
   try {
     const { id } = req.params;
 
+    if (req.user!.role !== "super_admin" && id !== req.user!.institute_id) {
+      res.status(403).json({ success: false, message: "Access denied. You can only view statistics for your own institute." });
+      return;
+    }
+
     // Fetch all active batches for this institute
     const { data: batches, error: bErr } = await supabaseDB
       .from("batches").select("id").eq("institute_id", id).eq("is_active", true);
@@ -146,6 +161,11 @@ export const getInstituteStats = async (req: Request, res: Response): Promise<vo
 export const getInstituteReports = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
+
+    if (req.user!.role !== "super_admin" && id !== req.user!.institute_id) {
+      res.status(403).json({ success: false, message: "Access denied. You can only view reports for your own institute." });
+      return;
+    }
 
     // Fetch all active batches for this institute
     const { data: batches } = await supabaseDB
@@ -413,6 +433,11 @@ export const getBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
 
+    if (!(await checkBatchTenant(id, req.user))) {
+      res.status(403).json({ success: false, message: "Access denied. Batch does not belong to your institute." });
+      return;
+    }
+
     const { data: batch, error } = await supabaseDB
       .from("batches").select("*, institutes(name)").eq("id", id).eq("is_active", true).maybeSingle();
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
@@ -436,6 +461,12 @@ export const getBatch = async (req: Request, res: Response): Promise<void> => {
 export const updateBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
+
+    if (!(await checkBatchTenant(id, req.user))) {
+      res.status(403).json({ success: false, message: "Access denied. Batch does not belong to your institute." });
+      return;
+    }
+
     const allowed = ["name", "exam", "description", "max_students", "max_teachers"];
     const updates: Record<string, any> = {};
     for (const k of allowed) { if (req.body[k] !== undefined) updates[k] = req.body[k]; }
@@ -457,6 +488,12 @@ export const updateBatch = async (req: Request, res: Response): Promise<void> =>
 export const deactivateBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
+
+    if (!(await checkBatchTenant(id, req.user))) {
+      res.status(403).json({ success: false, message: "Access denied. Batch does not belong to your institute." });
+      return;
+    }
+
     const { error } = await supabaseDB.from("batches").update({ is_active: false }).eq("id", id);
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
     res.status(200).json({ success: true, message: "Batch deactivated" });
@@ -472,6 +509,12 @@ export const deactivateBatch = async (req: Request, res: Response): Promise<void
 export const addStudentToBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
+
+    if (!(await checkBatchTenant(id, req.user))) {
+      res.status(403).json({ success: false, message: "Access denied. Batch does not belong to your institute." });
+      return;
+    }
+
     const { student_id } = req.body;
     if (!student_id) { res.status(400).json({ success: false, message: "student_id is required" }); return; }
 
@@ -491,6 +534,12 @@ export const addStudentToBatch = async (req: Request, res: Response): Promise<vo
 export const removeStudentFromBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id, student_id } = req.params;
+
+    if (!(await checkBatchTenant(id, req.user))) {
+      res.status(403).json({ success: false, message: "Access denied. Batch does not belong to your institute." });
+      return;
+    }
+
     const { error } = await supabaseDB
       .from("batch_students").delete().eq("batch_id", id).eq("student_id", student_id);
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
@@ -507,6 +556,12 @@ export const removeStudentFromBatch = async (req: Request, res: Response): Promi
 export const addTeacherToBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
+
+    if (!(await checkBatchTenant(id, req.user))) {
+      res.status(403).json({ success: false, message: "Access denied. Batch does not belong to your institute." });
+      return;
+    }
+
     const { teacher_id } = req.body;
     if (!teacher_id) { res.status(400).json({ success: false, message: "teacher_id is required" }); return; }
 
@@ -526,6 +581,12 @@ export const addTeacherToBatch = async (req: Request, res: Response): Promise<vo
 export const generateBatchInvite = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
+
+    if (!(await checkBatchTenant(id, req.user))) {
+      res.status(403).json({ success: false, message: "Access denied. Batch does not belong to your institute." });
+      return;
+    }
+
     const { max_uses = 100, expires_in_days = 30 } = req.body;
 
     // Generate a short unique code

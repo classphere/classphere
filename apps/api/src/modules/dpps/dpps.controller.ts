@@ -302,11 +302,29 @@ export const getDPPQuestions = async (req: Request, res: Response): Promise<void
     for (const q of questions ?? []) byId[q.id] = q;
 
     const orderedQuestions = dppQs
-      .map((dq: any, idx: number) => ({
-        ...byId[dq.question_id],
-        question_number: idx + 1,
-      }))
-      .filter((q: any) => q.id);
+      .map((dq: any, idx: number) => {
+        const q = byId[dq.question_id];
+        if (!q) return null;
+        const mapped: any = {
+          id: q.id,
+          question_text: q.question_text,
+          image_url: q.image_url,
+          options: q.options,
+          question_type: q.question_type,
+          subject: q.subject,
+          chapter: q.chapter,
+          topic: q.topic,
+          difficulty: q.difficulty,
+          marking_scheme: q.marking_scheme,
+          question_number: idx + 1,
+        };
+        if (role !== "student") {
+          mapped.correct_answer = q.correct_answer;
+          mapped.explanation = q.explanation;
+        }
+        return mapped;
+      })
+      .filter((q: any) => q);
 
     // Fetch DPP meta
     const { data: dpp } = await supabaseDB
@@ -414,7 +432,7 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
     });
 
     // Update student_dpps
-    const { error: updateErr } = await supabaseDB
+    const { data: updatedRows, error: updateErr } = await supabaseDB
       .from("student_dpps")
       .update({
         status: "submitted",
@@ -423,10 +441,17 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
         attempt_answers: answerRecords,
         submitted_at: new Date().toISOString(),
       })
-      .eq("id", assignment.id);
+      .eq("id", assignment.id)
+      .eq("status", "pending")
+      .select("id");
 
     if (updateErr) {
       res.status(500).json({ success: false, message: updateErr.message });
+      return;
+    }
+
+    if (!updatedRows || updatedRows.length === 0) {
+      res.status(400).json({ success: false, message: "DPP already submitted or not found." });
       return;
     }
 

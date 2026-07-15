@@ -23,6 +23,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     // ── Build Supabase credentials ───────────────────────────────────────────
     let supabaseEmail: string;
     let supabasePassword: string;
+    console.log("[LOGIN API] Received institute_slug:", institute_slug);
 
     if (login_type === "phone_dob") {
       if (!phone || !dob) {
@@ -156,12 +157,22 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     }
 
     // ── Tenant isolation check ─────────────────────────────────────────────────
-    // If an institute_slug is provided, verify the user actually belongs to that institute.
+    // If user belongs to an institute, require institute_slug (except for super_admin)
+    if (userRecord.institute_id && userRecord.role !== "super_admin" && !institute_slug) {
+      res.status(400).json({ success: false, message: "Institute slug is required for this account. Please log in using your institute's portal." });
+      return;
+    }
+
     if (institute_slug) {
+      let sanitizedSlug = String(institute_slug).toLowerCase().trim();
+      if (sanitizedSlug.includes("localhost")) {
+        sanitizedSlug = sanitizedSlug.split(".")[0];
+      }
+
       const { data: institute } = await supabaseDB
         .from("institutes")
         .select("id, subdomain_slug")
-        .eq("subdomain_slug", String(institute_slug).toLowerCase().trim())
+        .eq("subdomain_slug", sanitizedSlug)
         .eq("is_active", true)
         .single();
 
@@ -258,16 +269,13 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
 
     const { error } = await supabaseDB
       .from("users")
-      .upsert(
-        {
-          id,
-          name: name.trim(),
-          email: email.toLowerCase().trim(),
-          role: "student",
-          exam_target: exam_target ?? "JEE",
-        },
-        { onConflict: "id" }
-      );
+      .insert({
+        id,
+        name: name.trim(),
+        email: email.toLowerCase().trim(),
+        role: "student",
+        exam_target: exam_target ?? "JEE",
+      });
 
     if (error) {
       console.error("[signup] DB error:", error.message);
@@ -324,10 +332,15 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
     }
 
     // Resolve institute_id from slug
+    let sanitizedSlug = String(institute_slug).toLowerCase().trim();
+    if (sanitizedSlug.includes("localhost")) {
+      sanitizedSlug = sanitizedSlug.split(".")[0];
+    }
+
     const { data: institute } = await supabaseDB
       .from("institutes")
       .select("id")
-      .eq("subdomain_slug", institute_slug.toLowerCase().trim())
+      .eq("subdomain_slug", sanitizedSlug)
       .single();
 
     if (!institute) {

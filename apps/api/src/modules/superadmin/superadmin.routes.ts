@@ -3,11 +3,44 @@ import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
 import { uploadQuestions, getPlatformStats, listInstitutes, listTransactions } from "./superadmin.controller";
 import { listAllTickets } from "../support/support.controller";
+import multer from "multer";
+import { uploadToR2 } from "../../lib/r2";
 
 const router = Router();
 
+// Configure multer storage
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 5 * 1024 * 1024 },
+  fileFilter: (_req, file, cb) => {
+    const allowed = ["image/jpeg", "image/png", "image/gif", "image/webp", "image/svg+xml"];
+    if (allowed.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error("Only images (PNG, JPG, GIF, WEBP, SVG) are allowed"));
+    }
+  },
+});
+
 // All superadmin routes require authentication + super_admin role
 router.use(authenticate, requireRole("super_admin"));
+
+/**
+ * POST /api/v1/superadmin/upload
+ * Upload an image to Cloudflare R2 and retrieve the public access URL.
+ */
+router.post("/upload", upload.single("image") as any, async (req: any, res: any) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ success: false, message: "No file uploaded" });
+    }
+    const url = await uploadToR2(req.file.buffer, req.file.originalname, req.file.mimetype);
+    return res.status(200).json({ success: true, url });
+  } catch (err: any) {
+    console.error("[superadmin/upload error]", err);
+    return res.status(500).json({ success: false, message: err.message });
+  }
+});
 
 /**
  * GET /api/v1/superadmin/stats

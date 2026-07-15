@@ -6,6 +6,8 @@ import { PYQ_REGISTRY, ROOT } from "../pyqs/pyqs.service";
 import { analyzeAttempt } from "../analysis-engine/services/analysis.service";
 import { db } from "../analysis-engine/services/db.service";
 import { AttemptAnswer } from "../../../../../packages/types/src/analysis.types";
+import { analysisQueue } from "../../lib/queue/analysis.queue";
+import { connection as redis } from "../../lib/queue/redis";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -110,6 +112,28 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
       return;
     }
 
+    // Resolve batch_id for the test if it's assigned to a batch the student belongs to
+    let resolvedBatchId = req.body.batch_id ?? null;
+    if (!resolvedBatchId) {
+      const { data: assignments } = await supabaseDB
+        .from("test_batch_assignments")
+        .select("batch_id")
+        .eq("test_id", paper_id);
+      
+      const assignedBatchIds = (assignments ?? []).map((a: any) => a.batch_id);
+      if (assignedBatchIds.length > 0) {
+        const { data: studentBatches } = await supabaseDB
+          .from("batch_students")
+          .select("batch_id")
+          .eq("student_id", studentId);
+        
+        const matched = (studentBatches ?? []).find((sb: any) => assignedBatchIds.includes(sb.batch_id));
+        if (matched) {
+          resolvedBatchId = matched.batch_id;
+        }
+      }
+    }
+
     // Create new attempt
     const { data: attempt, error } = await supabaseDB
       .from("attempts")
@@ -118,7 +142,7 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
         paper_id,
         exam_code: examCode,
         status: "in_progress",
-        batch_id: req.user?.institute_id ? null : null, // set if institute test
+        batch_id: resolvedBatchId,
         marking_scheme: { correct: 4, incorrect: -1, unattempted: 0, partial: false },
         total_duration_sec: 10800,
       })
@@ -212,12 +236,20 @@ export const getAttempt = async (req: Request, res: Response): Promise<void> => 
 
     let savedAnswers: any[] = [];
     if (attempt.status === "in_progress") {
-      // Fetch saved answers for resume
-      const { data: aa } = await supabaseDB
-        .from("attempt_answers")
-        .select("question_id, selected_answer, marked_review, time_taken_sec")
-        .eq("attempt_id", id);
-      savedAnswers = aa ?? [];
+      // Fetch saved answers from Redis
+      const redisKey = `attempt:${id}:answers`;
+      const redisAnswers = await redis.hgetall(redisKey);
+      
+      savedAnswers = Object.entries(redisAnswers).map(([question_id, val]) => {
+        const parsed = JSON.parse(val);
+        return {
+          question_id,
+          selected_answer: parsed.selected_answer,
+          marked_review: parsed.marked_review,
+          time_taken_sec: parsed.time_taken_sec,
+          start_timestamp: parsed.start_timestamp
+        };
+      });
     }
 
     res.status(200).json({ success: true, data: { attempt, saved_answers: savedAnswers } });
@@ -263,31 +295,25 @@ export const saveAttempt = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
-    // Build upsert rows
-    const rows = Object.entries(answers).map(([question_id, ans]: [string, any]) => ({
-      attempt_id: id,
-      question_id,
-      selected_answer: ans.selected_answer ?? null,
-      marked_review: ans.marked_review ?? false,
-      time_taken_sec: ans.time_taken_sec ?? 0,
-      start_timestamp: ans.start_timestamp ?? -1,
-      is_correct: false, // will be corrected on submit
-      marks_awarded: 0,
-    }));
-
-    if (rows.length > 0) {
-      const { error } = await supabaseDB
-        .from("attempt_answers")
-        .upsert(rows, { onConflict: "attempt_id,question_id" });
-
-      if (error) {
-        console.error("[saveAttempt] upsert error:", error.message);
-        res.status(500).json({ success: false, message: error.message });
-        return;
-      }
+    // Build redis multi-set args
+    const redisKey = `attempt:${id}:answers`;
+    const msetArgs: string[] = [];
+    for (const [qId, ans] of Object.entries(answers as Record<string, any>)) {
+      msetArgs.push(qId, JSON.stringify({
+        selected_answer: ans.selected_answer ?? null,
+        marked_review: ans.marked_review ?? false,
+        time_taken_sec: ans.time_taken_sec ?? 0,
+        start_timestamp: ans.start_timestamp ?? -1
+      }));
     }
 
-    res.status(200).json({ success: true, message: `${rows.length} answers saved` });
+    if (msetArgs.length > 0) {
+      // We pass the array of key-value pairs to hmset
+      await redis.hmset(redisKey, ...msetArgs);
+      await redis.expire(redisKey, 4 * 60 * 60); // Expire in 4 hours
+    }
+
+    res.status(200).json({ success: true, message: `${msetArgs.length / 2} answers saved to Redis` });
   } catch (err: any) {
     console.error("[saveAttempt error]", err);
     res.status(500).json({ success: false, message: err.message });
@@ -305,7 +331,8 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
   try {
     const studentId = req.user?.id ?? "anonymous";
     let { id: rawId } = req.params;
-    const { answers } = req.body;
+    let { answers: requestAnswers } = req.body;
+    requestAnswers = requestAnswers || {};
 
     // Normalize pyq- prefix (legacy standalone submission without startAttempt)
     const isLegacyPyq = rawId.startsWith("pyq-");
@@ -366,6 +393,19 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       existingAttempt = newAttempt;
     }
 
+    // ── Fetch answers from Redis and merge ────────────────────────────────────
+    const redisKey = `attempt:${attemptId}:answers`;
+    const redisData = await redis.hgetall(redisKey);
+    const finalAnswers: Record<string, any> = {};
+
+    for (const [qId, val] of Object.entries(redisData)) {
+      finalAnswers[qId] = JSON.parse(val);
+    }
+    // Merge any last-minute answers sent in the submit body
+    for (const [qId, ans] of Object.entries(requestAnswers)) {
+      finalAnswers[qId] = { ...(finalAnswers[qId] || {}), ...(ans as object) };
+    }
+
     // ── Score all answers ─────────────────────────────────────────────────────
     const markingScheme = existingAttempt.marking_scheme ?? { correct: 4, incorrect: -1, unattempted: 0 };
     let totalScore = 0;
@@ -376,7 +416,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
 
     for (let i = 0; i < questions.length; i++) {
       const q = questions[i];
-      const studentAns = answers?.[q.id] ?? {};
+      const studentAns = finalAnswers[q.id] ?? {};
       const selected = studentAns.selected_answer ?? null;
       const { isCorrect, marks } = scoreAnswer(q, selected);
       const marksAwarded = selected ? marks : (markingScheme.unattempted ?? 0);
@@ -429,7 +469,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
     }
 
     // ── Update attempt row to submitted ───────────────────────────────────────
-    const { error: updateErr } = await supabaseDB
+    const { data: updatedRows, error: updateErr } = await supabaseDB
       .from("attempts")
       .update({
         status: "submitted",
@@ -438,10 +478,19 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
         submitted_at: new Date().toISOString(),
         exam_code: examCode,
       })
-      .eq("id", attemptId!);
+      .eq("id", attemptId!)
+      .eq("status", "in_progress")
+      .select("id");
 
     if (updateErr) {
       console.error("[submitAttempt] attempt update failed:", updateErr.message);
+      res.status(500).json({ success: false, message: updateErr.message });
+      return;
+    }
+
+    if (!updatedRows || updatedRows.length === 0) {
+      res.status(400).json({ success: false, message: "Attempt already submitted or not found." });
+      return;
     }
 
     // ── Update student_stats ──────────────────────────────────────────────────
@@ -474,16 +523,17 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       console.error("[submitAttempt] student_stats update failed (non-fatal):", statsErr.message);
     }
 
-    // ── Run analysis (synchronous — fast enough for immediate feedback) ────────
-    let analysisResult: any = null;
+    // ── Enqueue analysis job (asynchronous) ──────────────────────────────────
     try {
-      analysisResult = await analyzeAttempt(attemptId!);
-      await db.upsertAnalysis(attemptId!, studentId, examCode, analysisResult);
-    } catch (analysisErr: any) {
-      console.error("[submitAttempt] Analysis failed (non-fatal):", analysisErr.message);
+      await analysisQueue.add('analyze', { 
+        attemptId: attemptId!, 
+        studentId, 
+        examCode 
+      });
+      console.log(`[submitAttempt] Queued analysis for attempt=${attemptId}`);
+    } catch (queueErr: any) {
+      console.error("[submitAttempt] Failed to queue analysis:", queueErr.message);
     }
-
-    console.log(`[submitAttempt] DONE attempt=${attemptId} score=${totalScore}/${maxScore} exam=${examCode}`);
 
     res.status(200).json({
       success: true,
@@ -492,6 +542,8 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
         score: totalScore,
         max_score: maxScore,
         percentage: maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 0,
+        status: "processing",
+        message: "Thank you for the test, the result will be displayed soon.",
       },
     });
   } catch (err: any) {

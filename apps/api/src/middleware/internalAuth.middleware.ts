@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import crypto from "crypto";
 
 /**
  * Validates the `x-internal-api-key` header for internal cron routes.
@@ -14,10 +15,14 @@ export const requireInternalApiKey = (req: Request, res: Response, next: NextFun
     return;
   }
 
-  if (!apiKey || apiKey !== expectedKey) {
-    res.status(401).json({ success: false, message: "Invalid or missing internal API key" });
-    return;
+  if (typeof apiKey === "string") {
+    const providedBuffer = Buffer.from(apiKey);
+    const expectedBuffer = Buffer.from(expectedKey);
+    if (providedBuffer.length === expectedBuffer.length && crypto.timingSafeEqual(providedBuffer, expectedBuffer)) {
+      next();
+      return;
+    }
   }
 
-  next();
+  res.status(401).json({ success: false, message: "Invalid or missing internal API key" });
 };
