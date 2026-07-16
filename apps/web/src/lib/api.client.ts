@@ -48,13 +48,13 @@ async function request<T = any>(
         // Another device took the session — warn the user
         localStorage.removeItem("classphere_session_token");
         window.location.href = "/login?reason=device_conflict";
-        return new Promise(() => {});
+        throw new Error("SESSION_CONFLICT");
       }
       if (errBody.code === "NO_SESSION_TOKEN") {
         // Session token missing — user needs to log in through our flow
         localStorage.removeItem("classphere_session_token");
         window.location.href = "/login";
-        return new Promise(() => {});
+        throw new Error("NO_SESSION_TOKEN");
       }
     }
     const text = JSON.stringify(errBody);

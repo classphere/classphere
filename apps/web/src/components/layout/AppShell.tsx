@@ -4,19 +4,39 @@ import { usePathname } from "next/navigation";
 import Sidebar from "@/components/layout/Sidebar";
 import MobileNav from "@/components/layout/MobileNav";
 import { Suspense } from "react";
+import { useTenant } from "@/lib/tenant-context";
 
-// Routes that render without the sidebar shell (full-screen auth pages and landing page)
-const NO_SHELL_ROUTES = ["/", "/login", "/signup", "/superadmin/login"];
+// Paths that render full-screen with no sidebar shell (auth pages, test-taking)
+const NO_SHELL_PATHS = ["/login", "/signup", "/invite"];
 
 export default function AppShell({ children }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
-  const isTestRoute = pathname?.startsWith("/test/");
-  const isAuthRoute = NO_SHELL_ROUTES.some((r) => {
-    if (r === "/") return pathname === "/";
-    return pathname === r || pathname?.startsWith(r + "/");
-  });
+  const tenant = useTenant();
 
-  if (isTestRoute || isAuthRoute) {
+  const domainPrefix = tenant.domain ? `/${tenant.domain}` : "";
+
+  // Strip domain prefix to get the clean path for route checks
+  const cleanPath = domainPrefix
+    ? pathname.replace(new RegExp(`^${domainPrefix}`), "") || "/"
+    : pathname;
+
+  // Full-screen routes: login/signup/invite, the live test page, and the root
+  const isTestRoute = cleanPath.startsWith("/test/") || cleanPath.startsWith("/institute/tests/view/");
+  const isAuthRoute =
+    cleanPath === "/" ||
+    NO_SHELL_PATHS.some((r) => cleanPath === r || cleanPath.startsWith(r + "/"));
+
+  // Superadmin routes have their own layout (with Sidebar) — don't double-wrap them.
+  // This covers two cases:
+  // 1. Direct path access: /superadmin/* (when accessed without subdomain)
+  // 2. Admin subdomain: admin.localhost or admin.classphere.com — middleware rewrites internally
+  //    but usePathname() still returns the browser URL, so we detect via hostname instead.
+  const isSuperAdminRoute = cleanPath.startsWith("/superadmin");
+  const isAdminSubdomain =
+    typeof window !== "undefined" &&
+    (/^admin\./.test(window.location.hostname) || window.location.hostname === "admin.localhost");
+
+  if (isTestRoute || isAuthRoute || isSuperAdminRoute || isAdminSubdomain) {
     return (
       <div className="min-h-screen w-full overflow-x-clip bg-[#edecec] dark:bg-[#090909] text-t-primary">
         {children}
@@ -26,7 +46,11 @@ export default function AppShell({ children }: Readonly<{ children: React.ReactN
 
   return (
     <div className="relative isolate flex min-h-screen w-full overflow-x-clip bg-[#edecec] dark:bg-[#090909] text-t-primary flex-col md:flex-row">
-      <Suspense fallback={<div className="hidden md:flex h-screen w-[280px] xl:w-[300px] shrink-0 bg-[#edecec] dark:bg-[#0f0f0f] border-r border-transparent dark:border-[#1e1e1e]" />}>
+      <Suspense
+        fallback={
+          <div className="hidden md:flex h-screen w-[280px] xl:w-[300px] shrink-0 bg-[#edecec] dark:bg-[#0f0f0f] border-r border-transparent dark:border-[#1e1e1e]" />
+        }
+      >
         <Sidebar />
         <MobileNav />
       </Suspense>

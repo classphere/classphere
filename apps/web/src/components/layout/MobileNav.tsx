@@ -34,11 +34,13 @@ import {
   RiLogoutBoxLine
 } from "@remixicon/react";
 import { useAuth } from "@/lib/auth-context";
+import { useTenant } from "@/lib/tenant-context";
 
 export default function MobileNav() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const { user, signOut } = useAuth();
+  const tenant = useTenant();
   const [isOpen, setIsOpen] = useState(false);
 
   // Close the drawer when the route changes
@@ -56,14 +58,21 @@ export default function MobileNav() {
     return () => { document.body.style.overflow = "unset"; };
   }, [isOpen]);
 
+  // ── Domain-aware path helpers ──────────────────────────────────────────────
+  const domainPrefix = tenant.domain ? `/${tenant.domain}` : "";
+  const cleanPath = domainPrefix && pathname.startsWith(domainPrefix)
+    ? pathname.slice(domainPrefix.length) || "/"
+    : pathname;
+
   const roleFromQuery = process.env.NODE_ENV !== "production" ? searchParams.get("role") : null;
-  const roleFromPath = pathname.startsWith("/teacher")
+  const roleFromPath = cleanPath.startsWith("/teacher")
     ? "teacher"
-    : pathname.startsWith("/institute")
+    : cleanPath.startsWith("/institute")
       ? "institute_admin"
-      : pathname.startsWith("/superadmin")
+      : cleanPath.startsWith("/superadmin")
         ? "super_admin"
         : "student";
+        
   const inferredRole = roleFromQuery === "teacher"
     ? "teacher"
     : roleFromQuery === "institute_admin"
@@ -72,9 +81,9 @@ export default function MobileNav() {
         ? "super_admin"
         : roleFromPath || user?.role || "student";
 
-  const isTeacher = pathname.startsWith("/teacher") || inferredRole === "teacher";
-  const isInstitute = pathname.startsWith("/institute") || inferredRole === "institute_admin";
-  const isSuperAdmin = pathname.startsWith("/superadmin") || inferredRole === "super_admin";
+  const isTeacher = cleanPath.startsWith("/teacher") || inferredRole === "teacher";
+  const isInstitute = cleanPath.startsWith("/institute") || inferredRole === "institute_admin";
+  const isSuperAdmin = cleanPath.startsWith("/superadmin") || inferredRole === "super_admin";
 
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [mounted, setMounted] = useState(false);
@@ -97,67 +106,77 @@ export default function MobileNav() {
   };
 
   const studentNav = [
-    { label: "Dashboard",    href: "/",                  icon: <RiDashboardLine size={18} />,      active: pathname === "/" },
-    { label: "Tests Hub",    href: "/tests",             icon: <RiFileList3Line size={18} />,      active: pathname.startsWith("/tests") },
-    { label: "My DPPs",      href: "/assignments",        icon: <RiFileListLine size={18} />,       active: pathname.startsWith("/assignments") },
-    { label: "Test History", href: "/history",           icon: <RiBookOpenLine size={18} />,       active: pathname.startsWith("/history") },
-    { label: "Mistake Diary",href: "/student/mistakes",  icon: <RiBookmarkLine size={18} />,       active: pathname.startsWith("/student/mistakes") },
-    { label: "Analytics",   href: "/analytics",          icon: <RiLineChartLine size={18} />,      active: pathname.startsWith("/analytics") },
-    { label: "Leaderboard", href: "/leaderboard",        icon: <RiTrophyLine size={18} />,         active: pathname.startsWith("/leaderboard") },
+    { label: "Dashboard",    href: "/student/dashboard",       icon: <RiDashboardLine size={18} />,  active: cleanPath.startsWith("/student/dashboard") || cleanPath === "/student" },
+    { label: "Tests Hub",    href: "/student/tests",           icon: <RiFileList3Line size={18} />,  active: cleanPath.startsWith("/student/tests") },
+    { label: "My DPPs",      href: "/student/assignments",     icon: <RiFileListLine size={18} />,   active: cleanPath.startsWith("/student/assignments") },
+    { label: "Test History", href: "/student/history",         icon: <RiBookOpenLine size={18} />,   active: cleanPath.startsWith("/student/history") },
+    { label: "Mistake Diary",href: "/student/mistakes",        icon: <RiBookmarkLine size={18} />,   active: cleanPath.startsWith("/student/mistakes") },
+    { label: "Analytics",   href: "/student/analytics",       icon: <RiLineChartLine size={18} />,  active: cleanPath.startsWith("/student/analytics") },
+    { label: "Leaderboard", href: "/student/leaderboard",     icon: <RiTrophyLine size={18} />,     active: cleanPath.startsWith("/student/leaderboard") },
   ];
 
   const teacherNav = [
-    { label: "Dashboard", href: "/teacher",          icon: <RiDashboardLine size={18} />,  active: pathname === "/teacher" },
-    { label: "DPPs",      href: "/teacher/dpps",     icon: <RiFileListLine size={18} />,   active: pathname.startsWith("/teacher/dpps") },
-    { label: "Analytics", href: "/teacher/analytics",icon: <RiBarChartBoxLine size={18} />,active: pathname.startsWith("/teacher/analytics") },
+    { label: "Dashboard", href: "/teacher",          icon: <RiDashboardLine size={18} />,  active: cleanPath === "/teacher" },
+    { label: "DPPs",      href: "/teacher/dpps",     icon: <RiFileListLine size={18} />,   active: cleanPath.startsWith("/teacher/dpps") },
+    { label: "Analytics", href: "/teacher/analytics",icon: <RiBarChartBoxLine size={18} />,active: cleanPath.startsWith("/teacher/analytics") },
   ];
 
   const instituteNav = [
-    { label: "Dashboard", href: "/institute", icon: <RiDashboardLine size={18} />, active: pathname === "/institute" },
-    { label: "Batches", href: "/institute/batches", icon: <RiTeamLine size={18} />, active: pathname.startsWith("/institute/batches") },
-    { label: "Faculty", href: "/institute/faculty", icon: <RiUserStarLine size={18} />, active: pathname.startsWith("/institute/faculty") },
-    { label: "Students", href: "/institute/students", icon: <RiUser3Line size={18} />, active: pathname.startsWith("/institute/students") },
-    { label: "Reports", href: "/institute/reports", icon: <RiBarChartBoxLine size={18} />, active: pathname.startsWith("/institute/reports") },
-    { label: "Billing", href: "/institute/billing", icon: <RiBankCardLine size={18} />, active: pathname.startsWith("/institute/billing") },
-    { label: "Support", href: "/institute/support", icon: <RiLifebuoyLine size={18} />, active: pathname.startsWith("/institute/support") },
+    { label: "Dashboard", href: "/institute", icon: <RiDashboardLine size={18} />, active: cleanPath === "/institute" },
+    { label: "Batches", href: "/institute/batches", icon: <RiTeamLine size={18} />, active: cleanPath.startsWith("/institute/batches") },
+    { label: "Faculty", href: "/institute/faculty", icon: <RiUserStarLine size={18} />, active: cleanPath.startsWith("/institute/faculty") },
+    { label: "Students", href: "/institute/students", icon: <RiUser3Line size={18} />, active: cleanPath.startsWith("/institute/students") },
+    { label: "Reports", href: "/institute/reports", icon: <RiBarChartBoxLine size={18} />, active: cleanPath.startsWith("/institute/reports") },
+    { label: "Billing", href: "/institute/billing", icon: <RiBankCardLine size={18} />, active: cleanPath.startsWith("/institute/billing") },
+    { label: "Support", href: "/institute/support", icon: <RiLifebuoyLine size={18} />, active: cleanPath.startsWith("/institute/support") },
   ];
 
   const superAdminNav = [
-    { label: "Platform Health", href: "/superadmin", icon: <RiDashboardLine size={18} />, active: pathname === "/superadmin" },
-    { label: "Global Analytics", href: "/superadmin/analytics", icon: <RiLineChartLine size={18} />, active: pathname.startsWith("/superadmin/analytics") },
-    { label: "Revenue", href: "/superadmin/revenue", icon: <RiMoneyDollarCircleLine size={18} />, active: pathname.startsWith("/superadmin/revenue") },
-    { label: "Questions", href: "/superadmin/questions", icon: <RiDatabase2Line size={18} />, active: pathname === "/superadmin/questions" },
-    { label: "Upload", href: "/superadmin/questions/upload", icon: <RiUploadCloud2Line size={18} />, active: pathname.startsWith("/superadmin/questions/upload") },
-    { label: "Institutes", href: "/superadmin/institutes", icon: <RiBuilding4Line size={18} />, active: pathname.startsWith("/superadmin/institutes") },
-    { label: "Configuration", href: "/superadmin/configuration", icon: <RiToggleLine size={18} />, active: pathname.startsWith("/superadmin/configuration") },
-    { label: "Support", href: "/superadmin/support", icon: <RiLifebuoyLine size={18} />, active: pathname.startsWith("/superadmin/support") },
+    { label: "Platform Health", href: "/superadmin", icon: <RiDashboardLine size={18} />, active: cleanPath === "/superadmin" },
+    { label: "Global Analytics", href: "/superadmin/analytics", icon: <RiLineChartLine size={18} />, active: cleanPath.startsWith("/superadmin/analytics") },
+    { label: "Revenue", href: "/superadmin/revenue", icon: <RiMoneyDollarCircleLine size={18} />, active: cleanPath.startsWith("/superadmin/revenue") },
+    { label: "Questions", href: "/superadmin/questions", icon: <RiDatabase2Line size={18} />, active: cleanPath === "/superadmin/questions" },
+    { label: "Upload", href: "/superadmin/questions/upload", icon: <RiUploadCloud2Line size={18} />, active: cleanPath.startsWith("/superadmin/questions/upload") },
+    { label: "Institutes", href: "/superadmin/institutes", icon: <RiBuilding4Line size={18} />, active: cleanPath.startsWith("/superadmin/institutes") },
+    { label: "Configuration", href: "/superadmin/configuration", icon: <RiToggleLine size={18} />, active: cleanPath.startsWith("/superadmin/configuration") },
+    { label: "Support", href: "/superadmin/support", icon: <RiLifebuoyLine size={18} />, active: cleanPath.startsWith("/superadmin/support") },
   ];
 
   const currentNav = mounted 
     ? (isTeacher ? teacherNav : isInstitute ? instituteNav : isSuperAdmin ? superAdminNav : studentNav)
-    : (pathname.startsWith("/teacher") ? teacherNav : pathname.startsWith("/institute") ? instituteNav : pathname.startsWith("/superadmin") ? superAdminNav : studentNav);
+    : (cleanPath.startsWith("/teacher") ? teacherNav : cleanPath.startsWith("/institute") ? instituteNav : cleanPath.startsWith("/superadmin") ? superAdminNav : studentNav);
 
-  const activeTeacher = mounted ? isTeacher : pathname.startsWith("/teacher");
-  const activeInstitute = mounted ? isInstitute : pathname.startsWith("/institute");
-  const activeSuperAdmin = mounted ? isSuperAdmin : pathname.startsWith("/superadmin");
+  const activeTeacher = mounted ? isTeacher : cleanPath.startsWith("/teacher");
+  const activeInstitute = mounted ? isInstitute : cleanPath.startsWith("/institute");
+  const activeSuperAdmin = mounted ? isSuperAdmin : cleanPath.startsWith("/superadmin");
 
   const roleQuery = activeTeacher ? "?role=teacher" : activeInstitute ? "?role=institute_admin" : activeSuperAdmin ? "?role=super_admin" : "?role=student";
 
   const othersNav = [
-    { label: "Settings", path: "/settings", href: `/settings${roleQuery}`, icon: <RiSettings4Line size={18} /> },
-    { label: "Help Me", path: "/help", href: `/help${roleQuery}`, icon: <RiInformationLine size={18} /> },
+    { label: "Settings", path: "/settings", href: "/settings", icon: <RiSettings4Line size={18} /> },
+    { label: "Help Me", path: "/help", href: "/help", icon: <RiInformationLine size={18} /> },
   ];
+
+  const displayName = tenant.instituteName ?? "Classphere";
 
   return (
     <>
       {/* ── Mobile Top Bar ── */}
       <div className="md:hidden sticky top-0 z-40 flex items-center justify-between w-full h-16 px-4 bg-[#edecec] dark:bg-[#090909] border-b border-s-stroke2/40 shadow-sm backdrop-blur-md bg-opacity-90 dark:bg-opacity-90 shrink-0">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex size-9 items-center justify-center rounded-[8px] bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
-            <RiFlashlightFill size={18} className="opacity-90" />
-          </div>
+        <Link href={isSuperAdmin ? "/superadmin" : (isTeacher ? "/teacher" : (isInstitute ? "/institute" : "/student/dashboard"))} className="flex items-center gap-3">
+          {tenant.logoUrl ? (
+            <img
+              src={tenant.logoUrl}
+              alt={displayName}
+              className="size-9 rounded-[8px] object-contain bg-shade-02 shadow-sm"
+            />
+          ) : (
+            <div className="flex size-9 items-center justify-center rounded-[8px] bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
+              <RiFlashlightFill size={18} className="opacity-90" />
+            </div>
+          )}
           <span className="font-sans text-[18px] font-bold text-t-primary tracking-tight">
-            Classphere
+            {displayName}
           </span>
         </Link>
         <button
@@ -169,8 +188,6 @@ export default function MobileNav() {
       </div>
 
       {/* ── Mobile Drawer (Slide in from right) ── */}
-      
-      {/* Overlay */}
       {isOpen && (
         <div 
           className="md:hidden fixed inset-0 z-50 bg-black/40 backdrop-blur-[2px] transition-opacity"
@@ -178,7 +195,6 @@ export default function MobileNav() {
         />
       )}
 
-      {/* Drawer */}
       <div 
         className={`md:hidden fixed top-0 right-0 z-50 h-[100dvh] w-[85vw] max-w-[320px] bg-[#edecec] dark:bg-[#0f0f0f] border-l border-s-stroke2/20 flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-2xl ${
           isOpen ? "translate-x-0" : "translate-x-full"
@@ -197,10 +213,8 @@ export default function MobileNav() {
           </button>
         </div>
 
-        {/* Drawer Content - Scrollable */}
+        {/* Drawer Content */}
         <div className="flex-1 overflow-y-auto px-4 py-6 scrollbar-none flex flex-col gap-6">
-          
-          {/* Main Menu */}
           <div className="flex flex-col gap-2 w-full">
             <nav className="flex flex-col gap-1 w-full">
               {currentNav.map((item) => (
@@ -222,14 +236,13 @@ export default function MobileNav() {
             </nav>
           </div>
 
-          {/* Others Menu */}
           <div className="flex flex-col gap-2 w-full">
             <div className="text-[11px] font-bold tracking-wider text-t-secondary pl-3 uppercase">
               Others
             </div>
             <nav className="flex flex-col gap-1 w-full">
               {othersNav.map((item) => {
-                const isActive = pathname.startsWith(item.path);
+                const isActive = cleanPath.startsWith(item.path);
                 return (
                   <Link
                     key={item.href}
@@ -249,14 +262,11 @@ export default function MobileNav() {
               })}
             </nav>
           </div>
-
         </div>
 
-        {/* ── Drawer Footer (Profile, Theme, Logout) ── */}
+        {/* Drawer Footer */}
         <div className="mt-auto flex flex-col gap-4 w-full px-4 pt-4 pb-6 border-t border-s-stroke2/20 bg-b-surface1 dark:bg-[#0f0f0f] shrink-0">
-          
           <div className="flex flex-row items-center gap-3 w-full">
-            {/* Theme Toggle */}
             <div className="flex flex-row items-center bg-b-surface2 border border-s-stroke2 rounded-[12px] p-1 h-12 flex-1 relative shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]">
               <button
                 onClick={() => toggleTheme("light")}
@@ -276,7 +286,6 @@ export default function MobileNav() {
               </button>
             </div>
             
-            {/* Notifications */}
             <button className="relative flex size-12 items-center justify-center rounded-[12px] bg-b-surface2 border border-s-stroke2 transition-all shadow-[0_1px_3px_rgba(0,0,0,0.05)] shrink-0 text-t-secondary">
               <RiNotification3Line size={20} />
               <div className="absolute top-3 right-3 size-2 rounded-full bg-primary-03 border-2 border-b-surface2" />
@@ -301,8 +310,8 @@ export default function MobileNav() {
                 <div className="font-sans font-semibold text-[14px] text-t-primary truncate">
                   {mounted ? (user?.name ?? "—") : ""}
                 </div>
-                <div className="font-sans text-[12px] text-t-tertiary truncate leading-none">
-                  {mounted ? (user?.email ?? "") : ""}
+                <div className="font-sans text-[12px] text-t-tertiary truncate leading-none capitalize">
+                  {mounted ? (user?.role?.replace("_", " ") ?? "") : ""}
                 </div>
               </div>
             </Link>
@@ -315,7 +324,6 @@ export default function MobileNav() {
             </button>
           </div>
         </div>
-
       </div>
     </>
   );

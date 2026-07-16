@@ -37,7 +37,8 @@ function detectDomain(): string | null {
   // Local dev fallback: ?tenant= query param
   const params = new URLSearchParams(window.location.search);
   const localTenant = params.get("tenant");
-  if (localTenant) return localTenant;
+  if (localTenant && localTenant !== "admin") return localTenant;
+  if (localTenant === "admin") return null; // admin tenant = super admin
 
   // Production: Check if it's a subdomain of classphere.com
   if (hostname.endsWith(".classphere.com")) {
@@ -46,12 +47,27 @@ function detectDomain(): string | null {
     return sub;
   }
 
-  // Not localhost and not classphere.com -> Must be a Custom Domain
-  if (hostname !== "localhost" && hostname !== "127.0.0.1") {
-    return hostname;
+  // Local dev: *.localhost subdomains (e.g. admin.localhost, test.localhost)
+  if (hostname.endsWith(".localhost")) {
+    const sub = hostname.replace(".localhost", "");
+    if (sub === "admin" || sub === "www" || sub === "") return null; // super admin
+    return sub; // institute subdomain for local dev
   }
 
-  return null;
+  // *.127.0.0.1 subdomains (rare but possible)
+  if (hostname.endsWith(".127.0.0.1")) {
+    const sub = hostname.replace(".127.0.0.1", "");
+    if (sub === "admin") return null;
+    return sub;
+  }
+
+  // Plain localhost / 127.0.0.1 = no subdomain
+  if (hostname === "localhost" || hostname === "127.0.0.1") {
+    return null;
+  }
+
+  // Anything else (non-classphere.com, non-localhost) → custom domain
+  return hostname;
 }
 
 // ─── Provider ─────────────────────────────────────────────────────────────────

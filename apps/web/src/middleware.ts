@@ -39,15 +39,34 @@ export default function middleware(req: NextRequest) {
     subdomain = url.searchParams.get("tenant");
   }
 
-  // Super admin / marketing domains shouldn't be rewritten to /[domain]
-  const reservedSubdomains = ["admin", "www", "api", "app"];
+  // "admin" subdomain → rewrite to /superadmin (accessible as admin.classphere.com or admin.localhost:3000)
+  // Guard: if path already starts with /superadmin (e.g. internal Link navigation), don't double-prefix.
+  if (subdomain === "admin") {
+    const alreadyPrefixed = url.pathname.startsWith("/superadmin");
+    const superadminPath = alreadyPrefixed
+      ? url.pathname
+      : url.pathname === "/"
+        ? "/superadmin"
+        : `/superadmin${url.pathname}`;
+    return NextResponse.rewrite(new URL(`${superadminPath}${url.search}`, req.url));
+  }
+
+  // Other reserved subdomains (www, api, app) pass through unchanged
+  const reservedSubdomains = ["www", "api", "app"];
   if (subdomain && reservedSubdomains.includes(subdomain)) {
     subdomain = null;
   }
 
   // If we have a valid institute subdomain, rewrite to /[domain]/path
   if (subdomain) {
-    return NextResponse.rewrite(new URL(`/${subdomain}${url.pathname}${url.search}`, req.url));
+    // Guard: if path already starts with /subdomain (e.g. internal Link navigation), don't double-prefix (FE-1)
+    const alreadyPrefixed = url.pathname.startsWith(`/${subdomain}`);
+    const domainPath = alreadyPrefixed
+      ? url.pathname
+      : url.pathname === "/"
+        ? `/${subdomain}`
+        : `/${subdomain}${url.pathname}`;
+    return NextResponse.rewrite(new URL(`${domainPath}${url.search}`, req.url));
   }
 
   return NextResponse.next();
