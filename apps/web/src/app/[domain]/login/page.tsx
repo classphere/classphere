@@ -16,7 +16,7 @@ import { supabase } from "@/lib/supabase";
 import { useTenant } from "@/lib/tenant-context";
 import { storeSessionToken } from "@/lib/auth-context";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+import { API_URL } from "@/lib/api.client";
 
 // ── Helper: detect if a string looks like a phone number ─────────────────────
 function isPhoneNumber(value: string): boolean {

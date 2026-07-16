@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import BulkUpload from "./BulkUpload";
+import AIExtractor from "./AIExtractor";
 import { API_V1_URL } from "@/lib/api.client";
 import {
   RiUploadCloud2Line,
@@ -61,7 +62,7 @@ interface FormState {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function UploadQuestionsPage() {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<"single" | "bulk">("single");
+  const [activeTab, setActiveTab] = useState<"single" | "bulk" | "ai">("single");
 
   const [form, setForm] = useState<FormState>({
     exam: "",
@@ -236,23 +237,34 @@ export default function UploadQuestionsPage() {
 
         {/* Tab Switcher */}
         <div className="flex items-center gap-2 p-1.5 bg-b-surface2 shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)] dark:bg-[#161616] border border-transparent rounded-[14px] w-fit select-none">
-          {(["single", "bulk"] as const).map(tab => (
+          {([
+            { id: "single", label: "Single Upload" },
+            { id: "bulk", label: "Bulk Upload" },
+            { id: "ai", label: "AI PDF Extractor" }
+          ] as const).map(tab => (
             <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2.5 rounded-[10px] text-[14px] font-sans font-semibold transition-all cursor-pointer capitalize ${activeTab === tab
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-6 py-2.5 rounded-[10px] text-[14px] font-sans font-semibold transition-all cursor-pointer capitalize flex items-center gap-2 ${activeTab === tab.id
                   ? "bg-b-surface2 dark:bg-b-surface2 text-t-primary dark:text-t-primary shadow-[0px_4px_4px_-4px_rgba(8,8,8,0.05)] border border-s-stroke2/30"
                   : "bg-transparent text-t-secondary hover:text-t-primary dark:hover:text-t-primary"
                 }`}
             >
-              {tab === "single" ? "Single Upload" : "Bulk Upload"}
+              <span>{tab.label}</span>
+              {tab.id === "ai" && (
+                <span className="px-1.5 py-0.5 text-[9px] font-black uppercase bg-[#2A85FF]/10 text-[#2A85FF] border border-[#2A85FF]/20 rounded-md tracking-wider">
+                  New
+                </span>
+              )}
             </button>
           ))}
         </div>
 
-        {/* Bulk mode */}
+        {/* Main tabs view */}
         {activeTab === "bulk" ? (
           <BulkUpload />
+        ) : activeTab === "ai" ? (
+          <AIExtractor />
         ) : (
           <div className="flex flex-col gap-6 w-full">
 

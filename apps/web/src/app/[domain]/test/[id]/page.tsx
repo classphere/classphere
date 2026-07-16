@@ -4,14 +4,11 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter, useParams } from "next/navigation";
 import {
   RiTimerLine,
-  RiStarFill,
-  RiStarLine,
   RiArrowLeftLine,
   RiArrowRightLine,
   RiFlag2Fill,
   RiLoader4Line,
 } from "@remixicon/react";
-import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { Question, Option, TestMeta, AnswerMap, StatusMap } from "@/components/test/TestTypes";
 import { TestHeader } from "@/components/test/TestHeader";
 import { QuestionContent } from "@/components/test/QuestionContent";
@@ -26,118 +23,6 @@ import { useAuth } from "@/lib/auth-context";
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const API_BASE = API_V1_URL;
-
-const DEMO_QUESTIONS: Question[] = [
-  {
-    id: "demo-q1",
-    question_number: 1,
-    question_text: "Position of an ant moving in the Y-Z plane is given by $\vec{s}=2t^2\hat{j}+5\hat{k}$. The magnitude and direction of velocity at $t=1\,s$ will be:",
-    image_url: null,
-    options: [
-      { id: "A", text: "$16\,m/s$ in $y$-direction", image_url: null },
-      { id: "B", text: "$4\,m/s$ in $x$-direction", image_url: null },
-      { id: "C", text: "$9\,m/s$ in $z$-direction", image_url: null },
-      { id: "D", text: "$4\,m/s$ in y-direction", image_url: null },
-    ],
-    correct_answer: ["D"],
-    explanation: "",
-    question_type: "mcq_single",
-    subject: "Physics",
-    chapter: "Kinematics",
-    topic: "speed and velocity",
-    difficulty: "medium",
-    marking_scheme: { correct: 4, incorrect: -1, unattempted: 0 },
-  },
-  {
-    id: "demo-q2",
-    question_number: 2,
-    question_text: "The number of significant figures in 0.004560 is:",
-    image_url: null,
-    options: [
-      { id: "A", text: "2", image_url: null },
-      { id: "B", text: "3", image_url: null },
-      { id: "C", text: "4", image_url: null },
-      { id: "D", text: "5", image_url: null },
-    ],
-    correct_answer: ["C"],
-    explanation: "",
-    question_type: "mcq_single",
-    subject: "Chemistry",
-    chapter: "Some Basic Concepts",
-    topic: "significant figures",
-    difficulty: "easy",
-    marking_scheme: { correct: 4, incorrect: -1, unattempted: 0 },
-  },
-  {
-    id: "demo-q3",
-    question_number: 3,
-    question_text: "If $\int x\,dx = \frac{x^n}{n}+C$, then the value of $n$ is:",
-    image_url: null,
-    options: [
-      { id: "A", text: "1", image_url: null },
-      { id: "B", text: "2", image_url: null },
-      { id: "C", text: "0", image_url: null },
-      { id: "D", text: "3", image_url: null },
-    ],
-    correct_answer: ["B"],
-    explanation: "",
-    question_type: "mcq_single",
-    subject: "Mathematics",
-    chapter: "Differentiation and Integration",
-    topic: "indefinite integration",
-    difficulty: "medium",
-    marking_scheme: { correct: 4, incorrect: -1, unattempted: 0 },
-  },
-  {
-    id: "demo-q4",
-    question_number: 4,
-    question_text: "In a diploid cell, the chromosome number after mitosis remains:",
-    image_url: null,
-    options: [
-      { id: "A", text: "Haploid", image_url: null },
-      { id: "B", text: "Diploid", image_url: null },
-      { id: "C", text: "Triploid", image_url: null },
-      { id: "D", text: "Tetraploid", image_url: null },
-    ],
-    correct_answer: ["B"],
-    explanation: "",
-    question_type: "mcq_single",
-    subject: "Biology",
-    chapter: "Cell Division",
-    topic: "mitosis",
-    difficulty: "easy",
-    marking_scheme: { correct: 4, incorrect: -1, unattempted: 0 },
-  },
-  {
-    id: "demo-q5",
-    question_number: 5,
-    question_text: "For a first-order reaction, the unit of rate constant is:",
-    image_url: null,
-    options: [
-      { id: "A", text: "$s^{-1}$", image_url: null },
-      { id: "B", text: "$mol\,L^{-1}\,s^{-1}$", image_url: null },
-      { id: "C", text: "$L\,mol^{-1}\,s^{-1}$", image_url: null },
-      { id: "D", text: "$mol\,s^{-1}$", image_url: null },
-    ],
-    correct_answer: ["A"],
-    explanation: "",
-    question_type: "mcq_single",
-    subject: "Chemistry",
-    chapter: "Chemical Kinetics",
-    topic: "rate constant",
-    difficulty: "medium",
-    marking_scheme: { correct: 4, incorrect: -1, unattempted: 0 },
-  },
-];
-
-const DEMO_META: TestMeta = {
-  id: "demo-pyq-jee-main-2024-jan-shift1",
-  exam: "JEE Main",
-  year: 2024,
-  shift: "27 Jan Shift 1",
-  questions: DEMO_QUESTIONS.length,
-  duration: 180,
-};
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 

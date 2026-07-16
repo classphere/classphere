@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { apiClient } from "@/lib/api.client";
@@ -53,20 +53,7 @@ export default function CreateDPPPage() {
   const currentChapter = availableChapters.find((c: any) => c.name === form.chapter);
   const availableTopics = currentChapter?.topics ?? [];
 
-  // Reset downstream selections when upstream changes
-  useEffect(() => {
-    setForm(f => ({ ...f, subject: "", chapter: "" }));
-    setSelectedTopics(new Set());
-  }, [form.batchId]);
-
-  useEffect(() => {
-    setForm(f => ({ ...f, chapter: "" }));
-    setSelectedTopics(new Set());
-  }, [form.subject]);
-
-  useEffect(() => {
-    setSelectedTopics(new Set());
-  }, [form.chapter]);
+  // Downstream resets are handled explicitly in the select onChange event handlers below to avoid cascading render passes.
 
   const toggleTopic = (topic: string) => {
     const newSet = new Set(selectedTopics);
@@ -163,7 +150,10 @@ export default function CreateDPPPage() {
               <select
                 className="input"
                 value={form.batchId}
-                onChange={e => setForm(f => ({ ...f, batchId: e.target.value }))}
+                onChange={e => {
+                  setForm(f => ({ ...f, batchId: e.target.value, subject: "", chapter: "" }));
+                  setSelectedTopics(new Set());
+                }}
               >
                 <option value="">Select a batch...</option>
                 {batches.map(b => (
@@ -197,7 +187,10 @@ export default function CreateDPPPage() {
                   <select
                     className="input"
                     value={form.subject}
-                    onChange={e => setForm(f => ({ ...f, subject: e.target.value }))}
+                    onChange={e => {
+                      setForm(f => ({ ...f, subject: e.target.value, chapter: "" }));
+                      setSelectedTopics(new Set());
+                    }}
                   >
                     <option value="">Select subject...</option>
                     {availableSubjects.map((s: any) => <option key={s.name} value={s.name}>{s.name}</option>)}
@@ -210,7 +203,10 @@ export default function CreateDPPPage() {
                     <select
                       className="input"
                       value={form.chapter}
-                      onChange={e => setForm(f => ({ ...f, chapter: e.target.value }))}
+                      onChange={e => {
+                        setForm(f => ({ ...f, chapter: e.target.value }));
+                        setSelectedTopics(new Set());
+                      }}
                     >
                       <option value="">Select chapter...</option>
                       {availableChapters.map((c: any) => <option key={c.name} value={c.name}>{c.name}</option>)}

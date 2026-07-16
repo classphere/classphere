@@ -149,7 +149,7 @@ export default function TeacherDashboardPage() {
                           {batch.name}
                         </div>
                         <div className="text-[12px] font-sans text-t-secondary mt-1">
-                          {batch.studentsCount} students · 3 active DPPs
+                          {batch.studentCount ?? 0} students · 3 active DPPs
                         </div>
   
                         {/* Progress Bar representing Avg Score */}
