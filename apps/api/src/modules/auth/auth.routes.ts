@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
-import { signup, login, joinBatch, getMe, updateMe, createStudent } from "./auth.controller";
+import { signup, login, getMe, updateMe, createStudent } from "./auth.controller";
 
 const router = Router();
 
@@ -12,7 +12,6 @@ router.post("/signup", signup);
 // ── Authenticated routes ──────────────────────────────────────────────────────
 router.get("/me", authenticate, getMe);
 router.patch("/me", authenticate, updateMe);
-router.post("/join-batch", authenticate, joinBatch);
 
 // ── Admin-only: create a student account with phone+DOB shadow email ──────────
 router.post(

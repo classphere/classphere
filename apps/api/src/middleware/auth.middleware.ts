@@ -15,30 +15,12 @@ declare global {
   }
 }
 
-import crypto from "crypto";
-
 /**
  * Validates the Bearer JWT issued by Supabase Auth.
  * On success, attaches `req.user` with { id, email, role, institute_id }.
  * Enforces one-device login for all non-super_admin roles via x-session-token header.
- *
- * Valid paths:
- * 1. x-api-key header matching INTERNAL_API_KEY → superadmin bypass for cron/internal tooling
- * 2. Authorization: Bearer <supabase_jwt> → standard user auth
  */
 export const authenticate = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-  // ── Internal API Key bypass (super admin tooling & cron jobs) ────────────────
-  const internalKey = process.env.INTERNAL_API_KEY;
-  const providedKey = req.headers["x-api-key"];
-  if (internalKey && typeof providedKey === "string") {
-    const providedBuffer = Buffer.from(providedKey);
-    const expectedBuffer = Buffer.from(internalKey);
-    if (providedBuffer.length === expectedBuffer.length && crypto.timingSafeEqual(providedBuffer, expectedBuffer)) {
-      req.user = { id: "superadmin", email: "admin@classphere.com", role: "super_admin", institute_id: null };
-      next();
-      return;
-    }
-  }
 
   // ── Standard JWT auth (Supabase Bearer token) ─────────────────────────────
   const authHeader = req.headers.authorization;
@@ -47,7 +29,7 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
     return;
   }
 
-  const token = authHeader.split(" ")[1];
+  const token = authHeader.replace(/^Bearer\s+/i, "");
   if (!token) {
     res.status(401).json({ success: false, message: "Malformed authorization header." });
     return;
@@ -74,7 +56,7 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
       return;
     }
 
-    const role: string = (user.app_metadata?.role as string) || dbUser.role || "student";
+    const role: string = dbUser.role || (user.app_metadata?.role as string) || "student";
     const institute_id: string | null = dbUser.institute_id ?? null;
 
     req.user = { id: user.id, email: user.email ?? "", role, institute_id };
@@ -92,7 +74,13 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
         return;
       }
 
-      if (dbUser.active_session_token && dbUser.active_session_token !== sessionToken) {
+      if (!dbUser.active_session_token) {
+        // Auto-lock to the first device token used (e.g., right after admin creation or signup)
+        await supabaseDB
+          .from("users")
+          .update({ active_session_token: sessionToken })
+          .eq("id", user.id);
+      } else if (dbUser.active_session_token !== sessionToken) {
         res.status(401).json({
           success: false,
           code: "SESSION_CONFLICT",

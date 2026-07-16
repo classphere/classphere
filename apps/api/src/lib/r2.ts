@@ -13,6 +13,7 @@ if (R2_ACCESS_KEY_ID && R2_SECRET_ACCESS_KEY && R2_ENDPOINT) {
   r2Client = new S3Client({
     region: "auto",
     endpoint: R2_ENDPOINT,
+    forcePathStyle: true, // Required for Cloudflare R2 — avoids virtual-hosted subdomain style URLs
     credentials: {
       accessKeyId: R2_ACCESS_KEY_ID,
       secretAccessKey: R2_SECRET_ACCESS_KEY,
@@ -47,8 +48,8 @@ export async function uploadToR2(
   await r2Client.send(command);
 
   // Return the public URL for accessing the uploaded asset
-  const baseUrl = R2_PUBLIC_URL || R2_ENDPOINT;
-  const formattedBaseUrl = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+  const baseUrl = R2_PUBLIC_URL || R2_ENDPOINT || "";
+  const formattedBaseUrl = baseUrl ? (baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`) : "";
   
   // If using public URL custom domain, use that; else fallback to endpoint path style
   if (R2_PUBLIC_URL) {

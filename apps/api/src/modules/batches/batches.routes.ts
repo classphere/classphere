@@ -10,7 +10,6 @@ import {
   addStudentToBatch,
   removeStudentFromBatch,
   addTeacherToBatch,
-  generateBatchInvite,
 } from "../institutes/institutes.controller";
 
 const router = Router();
@@ -28,6 +27,5 @@ router.delete("/:id", authenticate, requireRole("institute_admin", "super_admin"
 router.post("/:id/students", authenticate, requireRole("institute_admin", "super_admin"), addStudentToBatch);
 router.delete("/:id/students/:student_id", authenticate, requireRole("institute_admin", "super_admin"), removeStudentFromBatch);
 router.post("/:id/teachers", authenticate, requireRole("institute_admin", "super_admin"), addTeacherToBatch);
-router.post("/:id/invite", authenticate, requireRole("institute_admin", "super_admin"), generateBatchInvite);
 
 export default router;

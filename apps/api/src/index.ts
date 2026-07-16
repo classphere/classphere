@@ -39,9 +39,14 @@ const corsOptions = {
     if (!origin) {
       return callback(null, true);
     }
-    
-    // Check if origin is exactly in the allowed list or is a subdomain of classphere.com
-    if (allowedOrigins.includes(origin) || /^https:\/\/[a-z0-9-]+\.classphere\.com$/.test(origin)) {
+
+    // Production: *.classphere.com subdomains
+    const isProdSubdomain = /^https:\/\/[a-z0-9-]+\.classphere\.com$/.test(origin);
+
+    // Local dev: *.localhost:PORT (e.g. test.localhost:3000, allen.localhost:3000)
+    const isLocalSubdomain = /^http:\/\/[a-z0-9-]+\.localhost(:\d+)?$/.test(origin);
+
+    if (allowedOrigins.includes(origin) || isProdSubdomain || isLocalSubdomain) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
@@ -64,7 +69,12 @@ app.use(globalLimiter as any);
 app.use(express.json({ limit: "10mb" }));
 
 // ─── Background Workers ───────────────────────────────────────────────────────
-import "./workers/analysis.worker";
+if (process.env.START_WORKERS === "true") {
+  console.log("[API] Initializing background analysis workers inside this process...");
+  require("./workers/analysis.worker");
+} else {
+  console.log("[API] Background analysis workers disabled in this process (scaling separately).");
+}
 
 // ─── API Routes ───────────────────────────────────────────────────────────────
 import apiRouter from "./routes/index";

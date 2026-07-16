@@ -32,6 +32,9 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       }
       
       let resolvedSlug = String(institute_slug || "").toLowerCase().trim();
+      if (resolvedSlug.includes("localhost")) {
+        resolvedSlug = resolvedSlug.split(".")[0];
+      }
       
       if (!resolvedSlug) {
         // Attempt to auto-resolve institute by phone
@@ -260,10 +263,33 @@ export const login = async (req: Request, res: Response): Promise<void> => {
  */
 export const signup = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { id, name, email, exam_target } = req.body;
+    const { name, email, exam_target } = req.body;
 
-    if (!id || !name || !email) {
-      res.status(400).json({ success: false, message: "Missing required fields: id, name, email" });
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      res.status(401).json({ success: false, message: "Authentication token required." });
+      return;
+    }
+
+    const token = authHeader.replace(/^Bearer\s+/i, "");
+    if (!token) {
+      res.status(401).json({ success: false, message: "Malformed authorization header." });
+      return;
+    }
+
+    const { supabaseAdmin: sbAdmin } = require("../../lib/supabase");
+    const { data: { user }, error: authError } = await sbAdmin.auth.getUser(token);
+
+    if (authError || !user) {
+      res.status(401).json({ success: false, message: "Invalid or expired token." });
+      return;
+    }
+
+    const id = user.id;
+    const verifiedEmail = user.email || email;
+
+    if (!name || !verifiedEmail) {
+      res.status(400).json({ success: false, message: "Missing required fields: name, email" });
       return;
     }
 
@@ -272,7 +298,7 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
       .insert({
         id,
         name: name.trim(),
-        email: email.toLowerCase().trim(),
+        email: verifiedEmail.toLowerCase().trim(),
         role: "student",
         exam_target: exam_target ?? "JEE",
       });
@@ -349,7 +375,7 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
     }
 
     // Build shadow email
-    const shadowEmail = `${String(phone).trim()}_${String(date_of_birth).trim()}@${String(institute_slug).toLowerCase().trim()}.classphere.com`;
+    const shadowEmail = `${String(phone).trim()}_${String(date_of_birth).trim()}@${sanitizedSlug}.classphere.com`;
 
     // Create Supabase Auth user (email already confirmed — no verification email)
     const { data: authUser, error: createError } = await supabaseAdmin.auth.admin.createUser({
@@ -507,76 +533,4 @@ export const updateMe = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
-/**
- * POST /api/v1/auth/join-batch
- * Authenticated — Join a batch using an invite code.
- */
-export const joinBatch = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const studentId = req.user?.id;
-    if (!studentId) {
-      res.status(401).json({ success: false, message: "Not authenticated" });
-      return;
-    }
 
-    const { invite_code } = req.body;
-    if (!invite_code) {
-      res.status(400).json({ success: false, message: "Missing invite_code" });
-      return;
-    }
-
-    const { data: invite, error: inviteError } = await supabaseDB
-      .from("batch_invites")
-      .select("id, batch_id, is_active, expires_at, used_count, max_uses, batches(id, name)")
-      .eq("code", invite_code.trim().toUpperCase())
-      .single();
-
-    if (inviteError || !invite) {
-      res.status(404).json({ success: false, message: "Invalid invite code" });
-      return;
-    }
-
-    if (!invite.is_active) {
-      res.status(400).json({ success: false, message: "This invite link has been deactivated" });
-      return;
-    }
-
-    if (invite.expires_at && new Date(invite.expires_at) < new Date()) {
-      res.status(400).json({ success: false, message: "This invite link has expired" });
-      return;
-    }
-
-    if (invite.max_uses !== null && invite.used_count >= invite.max_uses) {
-      res.status(400).json({ success: false, message: "This invite link has reached its maximum usage" });
-      return;
-    }
-
-    const { error: joinError } = await supabaseDB
-      .from("batch_students")
-      .insert({ batch_id: invite.batch_id, student_id: studentId });
-
-    if (joinError) {
-      if (joinError.code === "23505") {
-        res.status(409).json({ success: false, message: "You are already a member of this batch" });
-        return;
-      }
-      throw joinError;
-    }
-
-    await supabaseDB
-      .from("batch_invites")
-      .update({ used_count: invite.used_count + 1 })
-      .eq("id", invite.id);
-
-    const batch = (invite as any).batches;
-    res.status(200).json({
-      success: true,
-      message: `Successfully joined batch: ${batch?.name ?? invite.batch_id}`,
-      data: { batch_id: invite.batch_id, batch_name: batch?.name ?? null },
-    });
-  } catch (err: any) {
-    console.error("[joinBatch] ERROR:", err.message);
-    res.status(500).json({ success: false, message: err.message });
-  }
-};

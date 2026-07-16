@@ -1,4 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
+import { Agent, setGlobalDispatcher } from "undici";
+
+// Configure global connection pooling dispatcher for Node native fetch (prevents port exhaustion under load)
+const globalAgent = new Agent({
+  keepAliveTimeout: 15000, // Keep idle sockets open for 15s
+  connections: 200,        // Pool up to 200 concurrent sockets per origin (1 lakh scale optimization)
+  pipelining: 1,
+});
+setGlobalDispatcher(globalAgent);
 
 const supabaseUrl = process.env.SUPABASE_URL!;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY!;
