@@ -1,0 +1,5602 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "title": "standard public schema",
+    "version": "14.5"
+  },
+  "host": "iivucvizjmesjrkofahr.supabase.co:443",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json",
+    "application/vnd.pgrst.object+json;nulls=stripped",
+    "application/vnd.pgrst.object+json",
+    "text/csv"
+  ],
+  "produces": [
+    "application/json",
+    "application/vnd.pgrst.object+json;nulls=stripped",
+    "application/vnd.pgrst.object+json",
+    "text/csv"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "produces": [
+          "application/openapi+json",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "OpenAPI description (this document)",
+        "tags": [
+          "Introspection"
+        ]
+      }
+    },
+    "/batch_teachers": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.teacher_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/batch_teachers"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "batch_teachers"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.batch_teachers"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "batch_teachers"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.teacher_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "batch_teachers"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.teacher_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_teachers.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.batch_teachers"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "batch_teachers"
+        ]
+      }
+    },
+    "/attempt_answers": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.attempt_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.question_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.selected_answer"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.is_correct"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.time_spent_sec"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.error_classification"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.marks_awarded"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.time_taken_sec"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.marked_review"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.start_timestamp"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/attempt_answers"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "attempt_answers"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.attempt_answers"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "attempt_answers"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.attempt_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.question_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.selected_answer"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.is_correct"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.time_spent_sec"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.error_classification"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.marks_awarded"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.time_taken_sec"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.marked_review"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.start_timestamp"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "attempt_answers"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.attempt_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.question_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.selected_answer"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.is_correct"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.time_spent_sec"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.error_classification"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.marks_awarded"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.time_taken_sec"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.marked_review"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempt_answers.start_timestamp"
+          },
+          {
+            "$ref": "#/parameters/body.attempt_answers"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "attempt_answers"
+        ]
+      }
+    },
+    "/papers": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.papers.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.exam_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.test_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.chapter"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.year"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.shift"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.total_questions"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.total_marks"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.duration_min"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.difficulty"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/papers"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "papers"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.papers"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "papers"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.papers.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.exam_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.test_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.chapter"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.year"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.shift"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.total_questions"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.total_marks"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.duration_min"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.difficulty"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "papers"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.papers.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.exam_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.test_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.chapter"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.year"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.shift"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.total_questions"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.total_marks"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.duration_min"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.difficulty"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.papers.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.papers"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "papers"
+        ]
+      }
+    },
+    "/batches": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batches.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.exam"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.max_students"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.max_teachers"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/batches"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "batches"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.batches"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "batches"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batches.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.exam"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.max_students"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.max_teachers"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "batches"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batches.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.exam"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.max_students"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batches.max_teachers"
+          },
+          {
+            "$ref": "#/parameters/body.batches"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "batches"
+        ]
+      }
+    },
+    "/paper_questions": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.paper_questions.paper_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.paper_questions.question_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.paper_questions.position"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/paper_questions"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "paper_questions"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.paper_questions"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "paper_questions"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.paper_questions.paper_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.paper_questions.question_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.paper_questions.position"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "paper_questions"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.paper_questions.paper_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.paper_questions.question_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.paper_questions.position"
+          },
+          {
+            "$ref": "#/parameters/body.paper_questions"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "paper_questions"
+        ]
+      }
+    },
+    "/attempts": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.attempts.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.paper_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.score"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.max_score"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.accuracy"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.time_taken_min"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.submitted_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.exam_code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.marking_scheme"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.total_duration_sec"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/attempts"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "attempts"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.attempts"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "attempts"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.attempts.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.paper_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.score"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.max_score"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.accuracy"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.time_taken_min"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.submitted_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.exam_code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.marking_scheme"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.total_duration_sec"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "attempts"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.attempts.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.paper_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.score"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.max_score"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.accuracy"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.time_taken_min"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.submitted_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.exam_code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.marking_scheme"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.attempts.total_duration_sec"
+          },
+          {
+            "$ref": "#/parameters/body.attempts"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "attempts"
+        ]
+      }
+    },
+    "/questions": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.questions.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.exam_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.test_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.chapter"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.topic"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.difficulty"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.year"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.source"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.question_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.question_text"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.image_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.options"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.correct_answer"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.explanation"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.tags"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.distractor_map"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.marking_scheme"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.updated_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/questions"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "questions"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.questions"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "questions"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.questions.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.exam_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.test_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.chapter"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.topic"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.difficulty"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.year"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.source"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.question_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.question_text"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.image_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.options"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.correct_answer"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.explanation"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.tags"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.distractor_map"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.marking_scheme"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.updated_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "questions"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.questions.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.exam_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.test_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.chapter"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.topic"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.difficulty"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.year"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.source"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.question_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.question_text"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.image_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.options"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.correct_answer"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.explanation"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.tags"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.distractor_map"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.marking_scheme"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.questions.updated_at"
+          },
+          {
+            "$ref": "#/parameters/body.questions"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "questions"
+        ]
+      }
+    },
+    "/institutes": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.institutes.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.slug"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.owner_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.plan"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.logo_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.updated_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.subdomain_slug"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.primary_color"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/institutes"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "institutes"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.institutes"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "institutes"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.institutes.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.slug"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.owner_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.plan"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.logo_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.updated_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.subdomain_slug"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.primary_color"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "institutes"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.institutes.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.slug"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.owner_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.plan"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.logo_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.updated_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.subdomain_slug"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.institutes.primary_color"
+          },
+          {
+            "$ref": "#/parameters/body.institutes"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "institutes"
+        ]
+      }
+    },
+    "/ingestion_jobs": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.pdf_storage_path"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.pdf_hash"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.total_pages"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.pages_processed"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.error_message"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.metadata"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.updated_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ingestion_jobs"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "ingestion_jobs"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.ingestion_jobs"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "ingestion_jobs"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.pdf_storage_path"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.pdf_hash"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.total_pages"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.pages_processed"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.error_message"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.metadata"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.updated_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "ingestion_jobs"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.pdf_storage_path"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.pdf_hash"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.total_pages"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.pages_processed"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.error_message"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.metadata"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_jobs.updated_at"
+          },
+          {
+            "$ref": "#/parameters/body.ingestion_jobs"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "ingestion_jobs"
+        ]
+      }
+    },
+    "/analysis_results": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.attempt_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.exam_code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.result"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.processing_ms"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.updated_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/analysis_results"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "analysis_results"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.analysis_results"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "analysis_results"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.attempt_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.exam_code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.result"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.processing_ms"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.updated_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "analysis_results"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.attempt_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.exam_code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.result"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.processing_ms"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.analysis_results.updated_at"
+          },
+          {
+            "$ref": "#/parameters/body.analysis_results"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "analysis_results"
+        ]
+      }
+    },
+    "/faculty": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.faculty.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.position"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.batches_count"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.rating"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.phone"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/faculty"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "faculty"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.faculty"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "faculty"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.faculty.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.position"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.batches_count"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.rating"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.phone"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "faculty"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.faculty.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.position"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.batches_count"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.rating"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.faculty.phone"
+          },
+          {
+            "$ref": "#/parameters/body.faculty"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "faculty"
+        ]
+      }
+    },
+    "/ingestion_pages": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.ingestion_job_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.page_number"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.storage_path"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.page_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.llm_raw_response"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.processed_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ingestion_pages"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "ingestion_pages"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.ingestion_pages"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "ingestion_pages"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.ingestion_job_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.page_number"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.storage_path"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.page_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.llm_raw_response"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.processed_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "ingestion_pages"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.ingestion_job_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.page_number"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.storage_path"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.page_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.llm_raw_response"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.ingestion_pages.processed_at"
+          },
+          {
+            "$ref": "#/parameters/body.ingestion_pages"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "ingestion_pages"
+        ]
+      }
+    },
+    "/staging_questions": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.ingestion_job_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.question_number"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.extracted_data"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.review_status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.reviewer_notes"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.approved_question_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/staging_questions"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "staging_questions"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.staging_questions"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "staging_questions"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.ingestion_job_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.question_number"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.extracted_data"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.review_status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.reviewer_notes"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.approved_question_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "staging_questions"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.ingestion_job_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.question_number"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.extracted_data"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.review_status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.reviewer_notes"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.approved_question_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.staging_questions.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.staging_questions"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "staging_questions"
+        ]
+      }
+    },
+    "/exams": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.exams.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.full_name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/exams"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "exams"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.exams"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "exams"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.exams.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.full_name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "exams"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.exams.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.full_name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.exams.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.exams"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "exams"
+        ]
+      }
+    },
+    "/users": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.users.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.role"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.avatar_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.exam_target"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.updated_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.phone"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.date_of_birth"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.active_session_token"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.last_login_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.last_login_device"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/users"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.users"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.users.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.role"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.avatar_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.exam_target"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.updated_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.phone"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.date_of_birth"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.active_session_token"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.last_login_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.last_login_device"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.users.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.role"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.avatar_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.exam_target"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.updated_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.phone"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.date_of_birth"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.institute_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.active_session_token"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.last_login_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.users.last_login_device"
+          },
+          {
+            "$ref": "#/parameters/body.users"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      }
+    },
+    "/batch_invites": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.max_uses"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.used_count"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.expires_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/batch_invites"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "batch_invites"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.batch_invites"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "batch_invites"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.max_uses"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.used_count"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.expires_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "batch_invites"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.is_active"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.max_uses"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.used_count"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.expires_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_invites.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.batch_invites"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "batch_invites"
+        ]
+      }
+    },
+    "/batch_students": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batch_students.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_students.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_students.joined_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/batch_students"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "batch_students"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.batch_students"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "batch_students"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batch_students.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_students.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_students.joined_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "batch_students"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.batch_students.batch_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_students.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.batch_students.joined_at"
+          },
+          {
+            "$ref": "#/parameters/body.batch_students"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "batch_students"
+        ]
+      }
+    },
+    "/student_error_profiles": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.exam_code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.topic_history"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.last_updated"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/student_error_profiles"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "student_error_profiles"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.student_error_profiles"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "student_error_profiles"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.exam_code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.topic_history"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.last_updated"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "student_error_profiles"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.student_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.exam_code"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.topic_history"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.student_error_profiles.last_updated"
+          },
+          {
+            "$ref": "#/parameters/body.student_error_profiles"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "student_error_profiles"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "batch_teachers": {
+      "required": [
+        "id",
+        "batch_id",
+        "teacher_id"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "batch_id": {
+          "description": "Note:\nThis is a Foreign Key to `batches.id`.<fk table='batches' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "teacher_id": {
+          "description": "Note:\nThis is a Foreign Key to `users.id`.<fk table='users' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "attempt_answers": {
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "attempt_id": {
+          "description": "Note:\nThis is a Foreign Key to `attempts.id`.<fk table='attempts' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "question_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "selected_answer": {
+          "format": "jsonb"
+        },
+        "is_correct": {
+          "format": "boolean",
+          "type": "boolean"
+        },
+        "time_spent_sec": {
+          "format": "integer",
+          "type": "integer"
+        },
+        "error_classification": {
+          "format": "jsonb"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "marks_awarded": {
+          "default": 0,
+          "format": "numeric",
+          "type": "number"
+        },
+        "time_taken_sec": {
+          "default": 0,
+          "format": "integer",
+          "type": "integer"
+        },
+        "marked_review": {
+          "default": false,
+          "format": "boolean",
+          "type": "boolean"
+        },
+        "start_timestamp": {
+          "format": "integer",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "papers": {
+      "required": [
+        "id",
+        "exam_id",
+        "test_type",
+        "title",
+        "total_questions",
+        "total_marks",
+        "duration_min"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "exam_id": {
+          "description": "Note:\nThis is a Foreign Key to `exams.id`.<fk table='exams' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "test_type": {
+          "format": "text",
+          "type": "string"
+        },
+        "title": {
+          "format": "text",
+          "type": "string"
+        },
+        "subject": {
+          "format": "text",
+          "type": "string"
+        },
+        "chapter": {
+          "format": "text",
+          "type": "string"
+        },
+        "year": {
+          "format": "integer",
+          "type": "integer"
+        },
+        "shift": {
+          "format": "text",
+          "type": "string"
+        },
+        "total_questions": {
+          "default": 0,
+          "format": "integer",
+          "type": "integer"
+        },
+        "total_marks": {
+          "default": 0,
+          "format": "integer",
+          "type": "integer"
+        },
+        "duration_min": {
+          "default": 180,
+          "format": "integer",
+          "type": "integer"
+        },
+        "difficulty": {
+          "format": "text",
+          "type": "string"
+        },
+        "is_active": {
+          "default": true,
+          "format": "boolean",
+          "type": "boolean"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "batches": {
+      "required": [
+        "id",
+        "name",
+        "exam"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "institute_id": {
+          "description": "Note:\nThis is a Foreign Key to `institutes.id`.<fk table='institutes' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "format": "text",
+          "type": "string"
+        },
+        "exam": {
+          "format": "text",
+          "type": "string"
+        },
+        "description": {
+          "format": "text",
+          "type": "string"
+        },
+        "is_active": {
+          "default": true,
+          "format": "boolean",
+          "type": "boolean"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "max_students": {
+          "format": "integer",
+          "type": "integer"
+        },
+        "max_teachers": {
+          "format": "integer",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "paper_questions": {
+      "required": [
+        "paper_id",
+        "question_id",
+        "position"
+      ],
+      "properties": {
+        "paper_id": {
+          "description": "Note:\nThis is a Primary Key.<pk/>\nThis is a Foreign Key to `papers.id`.<fk table='papers' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "question_id": {
+          "description": "Note:\nThis is a Primary Key.<pk/>\nThis is a Foreign Key to `questions.id`.<fk table='questions' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "position": {
+          "format": "integer",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "attempts": {
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "student_id": {
+          "description": "Note:\nThis is a Foreign Key to `users.id`.<fk table='users' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "paper_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "batch_id": {
+          "description": "Note:\nThis is a Foreign Key to `batches.id`.<fk table='batches' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "score": {
+          "default": 0,
+          "format": "integer",
+          "type": "integer"
+        },
+        "max_score": {
+          "default": 0,
+          "format": "integer",
+          "type": "integer"
+        },
+        "accuracy": {
+          "format": "numeric",
+          "type": "number"
+        },
+        "time_taken_min": {
+          "format": "integer",
+          "type": "integer"
+        },
+        "status": {
+          "default": "completed",
+          "format": "text",
+          "type": "string"
+        },
+        "submitted_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "exam_code": {
+          "default": "jee-main",
+          "format": "text",
+          "type": "string"
+        },
+        "marking_scheme": {
+          "format": "jsonb"
+        },
+        "total_duration_sec": {
+          "default": 10800,
+          "format": "integer",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "questions": {
+      "required": [
+        "id",
+        "exam_id",
+        "test_type",
+        "subject",
+        "chapter",
+        "question_type",
+        "question_text",
+        "options",
+        "correct_answer"
+      ],
+      "properties": {
+        "id": {
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "exam_id": {
+          "description": "Note:\nThis is a Foreign Key to `exams.id`.<fk table='exams' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "test_type": {
+          "format": "text",
+          "type": "string"
+        },
+        "subject": {
+          "format": "text",
+          "type": "string"
+        },
+        "chapter": {
+          "format": "text",
+          "type": "string"
+        },
+        "topic": {
+          "format": "text",
+          "type": "string"
+        },
+        "difficulty": {
+          "format": "text",
+          "type": "string"
+        },
+        "year": {
+          "format": "integer",
+          "type": "integer"
+        },
+        "source": {
+          "format": "text",
+          "type": "string"
+        },
+        "question_type": {
+          "default": "mcq_single",
+          "format": "text",
+          "type": "string"
+        },
+        "question_text": {
+          "format": "text",
+          "type": "string"
+        },
+        "image_url": {
+          "format": "text",
+          "type": "string"
+        },
+        "options": {
+          "format": "jsonb"
+        },
+        "correct_answer": {
+          "format": "jsonb"
+        },
+        "explanation": {
+          "format": "text",
+          "type": "string"
+        },
+        "tags": {
+          "format": "jsonb"
+        },
+        "distractor_map": {
+          "format": "jsonb"
+        },
+        "marking_scheme": {
+          "format": "jsonb"
+        },
+        "is_active": {
+          "default": true,
+          "format": "boolean",
+          "type": "boolean"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "updated_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "institutes": {
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "format": "text",
+          "type": "string"
+        },
+        "slug": {
+          "format": "text",
+          "type": "string"
+        },
+        "owner_id": {
+          "description": "Note:\nThis is a Foreign Key to `users.id`.<fk table='users' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "plan": {
+          "default": "free",
+          "format": "text",
+          "type": "string"
+        },
+        "logo_url": {
+          "format": "text",
+          "type": "string"
+        },
+        "is_active": {
+          "default": true,
+          "format": "boolean",
+          "type": "boolean"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "updated_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "subdomain_slug": {
+          "format": "text",
+          "type": "string"
+        },
+        "primary_color": {
+          "default": "#6366f1",
+          "format": "text",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ingestion_jobs": {
+      "required": [
+        "id",
+        "institute_id",
+        "created_by",
+        "status",
+        "pdf_storage_path"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "institute_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_by": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "status": {
+          "default": "queued",
+          "format": "text",
+          "type": "string"
+        },
+        "pdf_storage_path": {
+          "format": "text",
+          "type": "string"
+        },
+        "pdf_hash": {
+          "format": "text",
+          "type": "string"
+        },
+        "total_pages": {
+          "format": "integer",
+          "type": "integer"
+        },
+        "pages_processed": {
+          "default": 0,
+          "format": "integer",
+          "type": "integer"
+        },
+        "error_message": {
+          "format": "text",
+          "type": "string"
+        },
+        "metadata": {
+          "format": "jsonb"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "updated_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "analysis_results": {
+      "required": [
+        "id",
+        "attempt_id",
+        "student_id",
+        "exam_code",
+        "result"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "attempt_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "student_id": {
+          "description": "Note:\nThis is a Foreign Key to `users.id`.<fk table='users' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "exam_code": {
+          "format": "text",
+          "type": "string"
+        },
+        "result": {
+          "format": "jsonb"
+        },
+        "processing_ms": {
+          "format": "integer",
+          "type": "integer"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "updated_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faculty": {
+      "required": [
+        "id",
+        "institute_id",
+        "name",
+        "position",
+        "subject"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "institute_id": {
+          "description": "Note:\nThis is a Foreign Key to `institutes.id`.<fk table='institutes' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "format": "text",
+          "type": "string"
+        },
+        "position": {
+          "format": "text",
+          "type": "string"
+        },
+        "subject": {
+          "format": "text",
+          "type": "string"
+        },
+        "batches_count": {
+          "default": 0,
+          "format": "integer",
+          "type": "integer"
+        },
+        "rating": {
+          "default": 0,
+          "format": "numeric",
+          "type": "number"
+        },
+        "is_active": {
+          "default": true,
+          "format": "boolean",
+          "type": "boolean"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "email": {
+          "format": "text",
+          "type": "string"
+        },
+        "phone": {
+          "format": "text",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ingestion_pages": {
+      "required": [
+        "id",
+        "ingestion_job_id",
+        "page_number",
+        "storage_path"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "ingestion_job_id": {
+          "description": "Note:\nThis is a Foreign Key to `ingestion_jobs.id`.<fk table='ingestion_jobs' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "page_number": {
+          "format": "integer",
+          "type": "integer"
+        },
+        "storage_path": {
+          "format": "text",
+          "type": "string"
+        },
+        "page_type": {
+          "format": "text",
+          "type": "string"
+        },
+        "llm_raw_response": {
+          "format": "jsonb"
+        },
+        "status": {
+          "default": "pending",
+          "format": "text",
+          "type": "string"
+        },
+        "processed_at": {
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "staging_questions": {
+      "required": [
+        "id",
+        "ingestion_job_id",
+        "question_number",
+        "extracted_data"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "ingestion_job_id": {
+          "description": "Note:\nThis is a Foreign Key to `ingestion_jobs.id`.<fk table='ingestion_jobs' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "question_number": {
+          "format": "integer",
+          "type": "integer"
+        },
+        "extracted_data": {
+          "format": "jsonb"
+        },
+        "review_status": {
+          "default": "pending",
+          "format": "text",
+          "type": "string"
+        },
+        "reviewer_notes": {
+          "format": "text",
+          "type": "string"
+        },
+        "approved_question_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "exams": {
+      "required": [
+        "id",
+        "code",
+        "full_name"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "code": {
+          "format": "text",
+          "type": "string"
+        },
+        "full_name": {
+          "format": "text",
+          "type": "string"
+        },
+        "is_active": {
+          "default": true,
+          "format": "boolean",
+          "type": "boolean"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "users": {
+      "required": [
+        "id",
+        "name",
+        "email",
+        "role"
+      ],
+      "properties": {
+        "id": {
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "format": "text",
+          "type": "string"
+        },
+        "email": {
+          "format": "text",
+          "type": "string"
+        },
+        "role": {
+          "default": "student",
+          "format": "text",
+          "type": "string"
+        },
+        "avatar_url": {
+          "format": "text",
+          "type": "string"
+        },
+        "exam_target": {
+          "default": "JEE",
+          "format": "text",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "updated_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "phone": {
+          "format": "text",
+          "type": "string"
+        },
+        "date_of_birth": {
+          "format": "text",
+          "type": "string"
+        },
+        "institute_id": {
+          "description": "Note:\nThis is a Foreign Key to `institutes.id`.<fk table='institutes' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "active_session_token": {
+          "format": "text",
+          "type": "string"
+        },
+        "last_login_at": {
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "last_login_device": {
+          "format": "text",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "batch_invites": {
+      "required": [
+        "id",
+        "code"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "batch_id": {
+          "description": "Note:\nThis is a Foreign Key to `batches.id`.<fk table='batches' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "code": {
+          "format": "text",
+          "type": "string"
+        },
+        "is_active": {
+          "default": true,
+          "format": "boolean",
+          "type": "boolean"
+        },
+        "max_uses": {
+          "format": "integer",
+          "type": "integer"
+        },
+        "used_count": {
+          "default": 0,
+          "format": "integer",
+          "type": "integer"
+        },
+        "expires_at": {
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "created_by": {
+          "description": "Note:\nThis is a Foreign Key to `users.id`.<fk table='users' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "batch_students": {
+      "required": [
+        "batch_id",
+        "student_id"
+      ],
+      "properties": {
+        "batch_id": {
+          "description": "Note:\nThis is a Primary Key.<pk/>\nThis is a Foreign Key to `batches.id`.<fk table='batches' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "student_id": {
+          "description": "Note:\nThis is a Primary Key.<pk/>\nThis is a Foreign Key to `users.id`.<fk table='users' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "joined_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "student_error_profiles": {
+      "required": [
+        "id",
+        "student_id",
+        "exam_code"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "student_id": {
+          "description": "Note:\nThis is a Foreign Key to `users.id`.<fk table='users' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "exam_code": {
+          "format": "text",
+          "type": "string"
+        },
+        "topic_history": {
+          "format": "jsonb"
+        },
+        "last_updated": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "parameters": {
+    "preferParams": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "in": "header",
+      "type": "string"
+    },
+    "preferReturn": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "enum": [
+        "return=representation",
+        "return=minimal",
+        "return=none"
+      ],
+      "in": "header",
+      "type": "string"
+    },
+    "preferCount": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "enum": [
+        "count=none"
+      ],
+      "in": "header",
+      "type": "string"
+    },
+    "preferPost": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "enum": [
+        "return=representation",
+        "return=minimal",
+        "return=none",
+        "resolution=ignore-duplicates",
+        "resolution=merge-duplicates"
+      ],
+      "in": "header",
+      "type": "string"
+    },
+    "select": {
+      "name": "select",
+      "description": "Filtering Columns",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "on_conflict": {
+      "name": "on_conflict",
+      "description": "On Conflict",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "order": {
+      "name": "order",
+      "description": "Ordering",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "range": {
+      "name": "Range",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "in": "header",
+      "type": "string"
+    },
+    "rangeUnit": {
+      "name": "Range-Unit",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "default": "items",
+      "in": "header",
+      "type": "string"
+    },
+    "offset": {
+      "name": "offset",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "limit": {
+      "name": "limit",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.batch_teachers": {
+      "name": "batch_teachers",
+      "description": "batch_teachers",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/batch_teachers"
+      }
+    },
+    "rowFilter.batch_teachers.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_teachers.batch_id": {
+      "name": "batch_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_teachers.teacher_id": {
+      "name": "teacher_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_teachers.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.attempt_answers": {
+      "name": "attempt_answers",
+      "description": "attempt_answers",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/attempt_answers"
+      }
+    },
+    "rowFilter.attempt_answers.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.attempt_id": {
+      "name": "attempt_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.question_id": {
+      "name": "question_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.selected_answer": {
+      "name": "selected_answer",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.is_correct": {
+      "name": "is_correct",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.time_spent_sec": {
+      "name": "time_spent_sec",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.error_classification": {
+      "name": "error_classification",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.marks_awarded": {
+      "name": "marks_awarded",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.time_taken_sec": {
+      "name": "time_taken_sec",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.marked_review": {
+      "name": "marked_review",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempt_answers.start_timestamp": {
+      "name": "start_timestamp",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.papers": {
+      "name": "papers",
+      "description": "papers",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/papers"
+      }
+    },
+    "rowFilter.papers.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.exam_id": {
+      "name": "exam_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.test_type": {
+      "name": "test_type",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.title": {
+      "name": "title",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.subject": {
+      "name": "subject",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.chapter": {
+      "name": "chapter",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.year": {
+      "name": "year",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.shift": {
+      "name": "shift",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.total_questions": {
+      "name": "total_questions",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.total_marks": {
+      "name": "total_marks",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.duration_min": {
+      "name": "duration_min",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.difficulty": {
+      "name": "difficulty",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.is_active": {
+      "name": "is_active",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.papers.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.batches": {
+      "name": "batches",
+      "description": "batches",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/batches"
+      }
+    },
+    "rowFilter.batches.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batches.institute_id": {
+      "name": "institute_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batches.name": {
+      "name": "name",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batches.exam": {
+      "name": "exam",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batches.description": {
+      "name": "description",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batches.is_active": {
+      "name": "is_active",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batches.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batches.max_students": {
+      "name": "max_students",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batches.max_teachers": {
+      "name": "max_teachers",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.paper_questions": {
+      "name": "paper_questions",
+      "description": "paper_questions",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/paper_questions"
+      }
+    },
+    "rowFilter.paper_questions.paper_id": {
+      "name": "paper_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.paper_questions.question_id": {
+      "name": "question_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.paper_questions.position": {
+      "name": "position",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.attempts": {
+      "name": "attempts",
+      "description": "attempts",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/attempts"
+      }
+    },
+    "rowFilter.attempts.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.student_id": {
+      "name": "student_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.paper_id": {
+      "name": "paper_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.batch_id": {
+      "name": "batch_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.score": {
+      "name": "score",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.max_score": {
+      "name": "max_score",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.accuracy": {
+      "name": "accuracy",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.time_taken_min": {
+      "name": "time_taken_min",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.status": {
+      "name": "status",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.submitted_at": {
+      "name": "submitted_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.exam_code": {
+      "name": "exam_code",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.marking_scheme": {
+      "name": "marking_scheme",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.attempts.total_duration_sec": {
+      "name": "total_duration_sec",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.questions": {
+      "name": "questions",
+      "description": "questions",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/questions"
+      }
+    },
+    "rowFilter.questions.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.exam_id": {
+      "name": "exam_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.test_type": {
+      "name": "test_type",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.subject": {
+      "name": "subject",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.chapter": {
+      "name": "chapter",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.topic": {
+      "name": "topic",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.difficulty": {
+      "name": "difficulty",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.year": {
+      "name": "year",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.source": {
+      "name": "source",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.question_type": {
+      "name": "question_type",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.question_text": {
+      "name": "question_text",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.image_url": {
+      "name": "image_url",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.options": {
+      "name": "options",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.correct_answer": {
+      "name": "correct_answer",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.explanation": {
+      "name": "explanation",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.tags": {
+      "name": "tags",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.distractor_map": {
+      "name": "distractor_map",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.marking_scheme": {
+      "name": "marking_scheme",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.is_active": {
+      "name": "is_active",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.questions.updated_at": {
+      "name": "updated_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.institutes": {
+      "name": "institutes",
+      "description": "institutes",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/institutes"
+      }
+    },
+    "rowFilter.institutes.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.institutes.name": {
+      "name": "name",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.institutes.slug": {
+      "name": "slug",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.institutes.owner_id": {
+      "name": "owner_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.institutes.plan": {
+      "name": "plan",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.institutes.logo_url": {
+      "name": "logo_url",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.institutes.is_active": {
+      "name": "is_active",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.institutes.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.institutes.updated_at": {
+      "name": "updated_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.institutes.subdomain_slug": {
+      "name": "subdomain_slug",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.institutes.primary_color": {
+      "name": "primary_color",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.ingestion_jobs": {
+      "name": "ingestion_jobs",
+      "description": "ingestion_jobs",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/ingestion_jobs"
+      }
+    },
+    "rowFilter.ingestion_jobs.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.institute_id": {
+      "name": "institute_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.created_by": {
+      "name": "created_by",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.status": {
+      "name": "status",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.pdf_storage_path": {
+      "name": "pdf_storage_path",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.pdf_hash": {
+      "name": "pdf_hash",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.total_pages": {
+      "name": "total_pages",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.pages_processed": {
+      "name": "pages_processed",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.error_message": {
+      "name": "error_message",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.metadata": {
+      "name": "metadata",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_jobs.updated_at": {
+      "name": "updated_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.analysis_results": {
+      "name": "analysis_results",
+      "description": "analysis_results",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/analysis_results"
+      }
+    },
+    "rowFilter.analysis_results.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.analysis_results.attempt_id": {
+      "name": "attempt_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.analysis_results.student_id": {
+      "name": "student_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.analysis_results.exam_code": {
+      "name": "exam_code",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.analysis_results.result": {
+      "name": "result",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.analysis_results.processing_ms": {
+      "name": "processing_ms",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.analysis_results.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.analysis_results.updated_at": {
+      "name": "updated_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.faculty": {
+      "name": "faculty",
+      "description": "faculty",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/faculty"
+      }
+    },
+    "rowFilter.faculty.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.faculty.institute_id": {
+      "name": "institute_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.faculty.name": {
+      "name": "name",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.faculty.position": {
+      "name": "position",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.faculty.subject": {
+      "name": "subject",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.faculty.batches_count": {
+      "name": "batches_count",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.faculty.rating": {
+      "name": "rating",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.faculty.is_active": {
+      "name": "is_active",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.faculty.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.faculty.email": {
+      "name": "email",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.faculty.phone": {
+      "name": "phone",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.ingestion_pages": {
+      "name": "ingestion_pages",
+      "description": "ingestion_pages",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/ingestion_pages"
+      }
+    },
+    "rowFilter.ingestion_pages.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_pages.ingestion_job_id": {
+      "name": "ingestion_job_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_pages.page_number": {
+      "name": "page_number",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_pages.storage_path": {
+      "name": "storage_path",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_pages.page_type": {
+      "name": "page_type",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_pages.llm_raw_response": {
+      "name": "llm_raw_response",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_pages.status": {
+      "name": "status",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.ingestion_pages.processed_at": {
+      "name": "processed_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.staging_questions": {
+      "name": "staging_questions",
+      "description": "staging_questions",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/staging_questions"
+      }
+    },
+    "rowFilter.staging_questions.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.staging_questions.ingestion_job_id": {
+      "name": "ingestion_job_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.staging_questions.question_number": {
+      "name": "question_number",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.staging_questions.extracted_data": {
+      "name": "extracted_data",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.staging_questions.review_status": {
+      "name": "review_status",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.staging_questions.reviewer_notes": {
+      "name": "reviewer_notes",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.staging_questions.approved_question_id": {
+      "name": "approved_question_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.staging_questions.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.exams": {
+      "name": "exams",
+      "description": "exams",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/exams"
+      }
+    },
+    "rowFilter.exams.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.exams.code": {
+      "name": "code",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.exams.full_name": {
+      "name": "full_name",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.exams.is_active": {
+      "name": "is_active",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.exams.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.users": {
+      "name": "users",
+      "description": "users",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/users"
+      }
+    },
+    "rowFilter.users.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.name": {
+      "name": "name",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.email": {
+      "name": "email",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.role": {
+      "name": "role",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.avatar_url": {
+      "name": "avatar_url",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.exam_target": {
+      "name": "exam_target",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.updated_at": {
+      "name": "updated_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.phone": {
+      "name": "phone",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.date_of_birth": {
+      "name": "date_of_birth",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.institute_id": {
+      "name": "institute_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.active_session_token": {
+      "name": "active_session_token",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.last_login_at": {
+      "name": "last_login_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.users.last_login_device": {
+      "name": "last_login_device",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.batch_invites": {
+      "name": "batch_invites",
+      "description": "batch_invites",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/batch_invites"
+      }
+    },
+    "rowFilter.batch_invites.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_invites.batch_id": {
+      "name": "batch_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_invites.code": {
+      "name": "code",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_invites.is_active": {
+      "name": "is_active",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_invites.max_uses": {
+      "name": "max_uses",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_invites.used_count": {
+      "name": "used_count",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_invites.expires_at": {
+      "name": "expires_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_invites.created_by": {
+      "name": "created_by",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_invites.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.batch_students": {
+      "name": "batch_students",
+      "description": "batch_students",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/batch_students"
+      }
+    },
+    "rowFilter.batch_students.batch_id": {
+      "name": "batch_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_students.student_id": {
+      "name": "student_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.batch_students.joined_at": {
+      "name": "joined_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.student_error_profiles": {
+      "name": "student_error_profiles",
+      "description": "student_error_profiles",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/student_error_profiles"
+      }
+    },
+    "rowFilter.student_error_profiles.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.student_error_profiles.student_id": {
+      "name": "student_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.student_error_profiles.exam_code": {
+      "name": "exam_code",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.student_error_profiles.topic_history": {
+      "name": "topic_history",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.student_error_profiles.last_updated": {
+      "name": "last_updated",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    }
+  },
+  "externalDocs": {
+    "description": "PostgREST Documentation",
+    "url": "https://postgrest.org/en/v14/references/api.html"
+  }
+}
