@@ -65,7 +65,7 @@ export const db = {
     if (questionIds.length > 0) {
       const { data: questions } = await supabaseDB
         .from("questions")
-        .select("id, question_text, image_url, options, correct_answer, explanation, explanation_image_url, question_type, subject, chapter, topic, difficulty, distractor_map, marking_scheme, source, year, tags")
+        .select("id, question_text, image_url, options, correct_answer, explanation, explanation_image_url, question_type, subject, chapter, topic, difficulty, source, year, tags")
         .in("id", questionIds);
 
       for (const q of questions ?? []) {
@@ -78,6 +78,17 @@ export const db = {
           tags: q.tags ?? [],
         } as Question;
       }
+    }
+
+    // Fetch paper question ordering positions (REL-3)
+    const { data: paperQs } = await supabaseDB
+      .from("paper_questions")
+      .select("question_id, position")
+      .eq("paper_id", attempt.paper_id);
+
+    const positionMap: Record<string, number> = {};
+    for (const pq of paperQs ?? []) {
+      positionMap[pq.question_id] = pq.position;
     }
 
     const answers: AttemptAnswer[] = (rawAnswers ?? [])
@@ -98,8 +109,9 @@ export const db = {
         time_taken_sec: a.time_taken_sec ?? 0,
         start_timestamp: a.start_timestamp ?? -1,
         marked_review: a.marked_review ?? false,
-        question: { ...questionMap[a.question_id], question_number: idx + 1 },
-      }));
+        question: { ...questionMap[a.question_id], question_number: positionMap[a.question_id] || (idx + 1) },
+      }))
+      .sort((a, b) => a.question.question_number - b.question.question_number);
 
     return {
       attempt: {
@@ -200,37 +212,102 @@ export const db = {
     examCode: string,
     newEntries: Record<string, TopicErrorHistoryEntry>
   ): Promise<void> => {
-    // Read existing
-    const { data: existing } = await supabaseDB
-      .from("student_error_profiles")
-      .select("topic_history")
-      .eq("student_id", studentId)
-      .eq("exam_code", examCode)
-      .maybeSingle();
+    const MAX_RETRIES = 5;
+    let retries = 0;
+    let success = false;
 
-    const topicHistory: Record<string, TopicErrorHistoryEntry[]> = existing?.topic_history ?? {};
+    while (!success && retries < MAX_RETRIES) {
+      retries++;
+      // Read existing with last_updated to do OCC check (M20)
+      const { data: existing } = await supabaseDB
+        .from("student_error_profiles")
+        .select("topic_history, last_updated")
+        .eq("student_id", studentId)
+        .eq("exam_code", examCode)
+        .maybeSingle();
 
-    // Merge new entries
-    for (const [topicKey, entry] of Object.entries(newEntries)) {
-      if (!topicHistory[topicKey]) topicHistory[topicKey] = [];
-      topicHistory[topicKey].push(entry);
-      // Sliding window — keep last 10
-      if (topicHistory[topicKey].length > 10) {
-        topicHistory[topicKey] = topicHistory[topicKey].slice(-10);
+      const topicHistory: Record<string, TopicErrorHistoryEntry[]> = existing?.topic_history ?? {};
+      const errorTopics: Record<string, any> = (existing as any)?.error_topics ?? {};
+
+      // Merge new entries
+      for (const [topicKey, entry] of Object.entries(newEntries)) {
+        if (!topicHistory[topicKey]) topicHistory[topicKey] = [];
+        topicHistory[topicKey].push(entry);
+        // Sliding window — keep last 10
+        if (topicHistory[topicKey].length > 10) {
+          topicHistory[topicKey] = topicHistory[topicKey].slice(-10);
+        }
+
+        // If the topic was weak in this attempt, update/insert into error_topics (mistake diary)
+        if (entry.wasWeak) {
+          const parts = topicKey.split("::");
+          const chapterName = entry.chapter || parts[0] || "General";
+          const topicName = parts[1] || "General";
+          
+          if (!errorTopics[topicName]) {
+            errorTopics[topicName] = {
+              count: 1,
+              lastSeen: new Date(entry.attemptDate).toISOString(),
+              errorType: entry.dominantErrorType || "unknown",
+              resolved: false,
+              subject: entry.subject || "",
+              chapter: chapterName,
+              tip: null,
+            };
+          } else {
+            errorTopics[topicName].count = (errorTopics[topicName].count ?? 0) + 1;
+            errorTopics[topicName].lastSeen = new Date(entry.attemptDate).toISOString();
+            errorTopics[topicName].errorType = entry.dominantErrorType || "unknown";
+            errorTopics[topicName].resolved = false; // Reset resolved if they made a mistake again
+          }
+        }
+      }
+
+      const nextUpdated = new Date().toISOString();
+
+      if (existing) {
+        // Update with OCC guard
+        const { data: updatedRows, error: updateErr } = await supabaseDB
+          .from("student_error_profiles")
+          .update({
+            topic_history: topicHistory as any,
+            error_topics: errorTopics as any,
+            last_updated: nextUpdated,
+          })
+          .eq("student_id", studentId)
+          .eq("exam_code", examCode)
+          .eq("last_updated", existing.last_updated) // OCC check
+          .select("student_id");
+
+        if (!updateErr && updatedRows && updatedRows.length > 0) {
+          success = true;
+        } else {
+          // Conflict, backoff and retry
+          await new Promise((r) => setTimeout(r, 50 * retries));
+        }
+      } else {
+        // First insert
+        const { error: insertErr } = await supabaseDB
+          .from("student_error_profiles")
+          .insert({
+            student_id: studentId,
+            exam_code: examCode,
+            topic_history: topicHistory as any,
+            error_topics: errorTopics as any,
+            last_updated: nextUpdated,
+          });
+
+        if (!insertErr) {
+          success = true;
+        } else {
+          // Conflict (e.g. unique constraint if insert raced), backoff and retry
+          await new Promise((r) => setTimeout(r, 50 * retries));
+        }
       }
     }
 
-    const { error } = await supabaseDB
-      .from("student_error_profiles")
-      .upsert({
-        student_id: studentId,
-        exam_code: examCode,
-        topic_history: topicHistory as any,
-        last_updated: new Date().toISOString(),
-      }, { onConflict: "student_id,exam_code" });
-
-    if (error) {
-      console.error("[db.service] persistStudentErrorProfile failed:", error.message);
+    if (!success) {
+      console.error(`[db.service] persistStudentErrorProfile failed after ${MAX_RETRIES} retries for student ${studentId}`);
     } else {
       console.log(`[db.service] Error profile updated for student ${studentId}, ${Object.keys(newEntries).length} topics`);
     }

@@ -11,9 +11,18 @@ import { AttemptAnswer, ScoringResult } from "../../../../../../../packages/type
  * - No Section B, no "5 integer question" cap
  */
 export function scoreAttempt(
-  answers: AttemptAnswer[],
+  rawAnswers: AttemptAnswer[],
   scheme: { correct: number; incorrect: number; unattempted: number }
 ): ScoringResult {
+  // Deep copy answer objects so we don't mutate input data (ENGINE-2)
+  const answers = rawAnswers.map(a => ({
+    ...a,
+    question: { ...a.question }
+  }));
+
+  // Enforce negative sign for incorrect penalty (H13)
+  const incorrectPenalty = -Math.abs(scheme.incorrect);
+
   let score = 0;
   let correct = 0;
   let incorrect = 0;
@@ -43,8 +52,8 @@ export function scoreAttempt(
       correct++;
       s.correct++;
     } else {
-      score += scheme.incorrect;
-      s.score += scheme.incorrect;
+      score += incorrectPenalty;
+      s.score += incorrectPenalty;
       incorrect++;
       s.incorrect++;
     }
@@ -66,5 +75,6 @@ export function scoreAttempt(
     incorrectCount: incorrect,
     skippedCount: skipped,
     subjectBreakdown,
+    answers,
   };
 }

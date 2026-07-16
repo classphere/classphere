@@ -1,9 +1,18 @@
 import { AttemptAnswer, ScoringResult } from "../../../../../../../packages/types/src/analysis.types";
 
 export function scoreAttempt(
-  answers: AttemptAnswer[],
+  rawAnswers: AttemptAnswer[],
   scheme: { correct: number; incorrect: number; unattempted: number }
 ): ScoringResult {
+  // Deep copy answer objects so we don't mutate input data (ENGINE-2)
+  const answers = rawAnswers.map(a => ({
+    ...a,
+    question: { ...a.question }
+  }));
+
+  // Enforce negative sign for incorrect penalty (H13)
+  const incorrectPenalty = -Math.abs(scheme.incorrect);
+
   let score = 0;
   let correct = 0;
   let incorrect = 0;
@@ -48,19 +57,22 @@ export function scoreAttempt(
       }
     }
 
-    if (!ans.selected_answer || !isAttemptAllowed) {
+    if (!ans.selected_answer) {
       score += scheme.unattempted;
       s.score += scheme.unattempted;
       skipped++;
       s.skipped++;
+    } else if (!isAttemptAllowed) {
+      // Disallowed extra numerical answers get 0 marks, and do not increment correct/incorrect/skipped counts
+      ans.marks_awarded = 0;
     } else if (ans.is_correct) {
       score += scheme.correct;
       s.score += scheme.correct;
       correct++;
       s.correct++;
     } else {
-      score += scheme.incorrect;
-      s.score += scheme.incorrect;
+      score += incorrectPenalty;
+      s.score += incorrectPenalty;
       incorrect++;
       s.incorrect++;
     }
@@ -83,5 +95,6 @@ export function scoreAttempt(
     incorrectCount: incorrect,
     skippedCount: skipped,
     subjectBreakdown,
+    answers,
   };
 }

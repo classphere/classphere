@@ -12,8 +12,7 @@ export const analysisWorker = new Worker(
     console.log(`[Worker] Starting analysis for attempt: ${attemptId}`);
     
     try {
-      const analysisResult = await analyzeAttempt(attemptId);
-      await db.upsertAnalysis(attemptId, studentId, examCode, analysisResult);
+      await analyzeAttempt(attemptId);
       
       console.log(`[Worker] Successfully analyzed attempt: ${attemptId}`);
       return { success: true };
@@ -24,7 +23,7 @@ export const analysisWorker = new Worker(
   },
   {
     connection: connection as any,
-    concurrency: 5, // Process up to 5 jobs simultaneously
+    concurrency: 20, // Increased to 20 to handle high concurrency backlog (1 lakh scale)
   }
 );
 

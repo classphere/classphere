@@ -55,7 +55,8 @@ export function analyzeAttemptStrategy(
     const subj = ans.question.subject;
     timeBySubject[subj] = (timeBySubject[subj] ?? 0) + ans.time_taken_sec;
     countBySubject[subj] = (countBySubject[subj] ?? 0) + 1;
-    subjectAttemptOrder.push({ subject: subj, questionNumber: ans.question.question_number });
+    // Use start_timestamp for true chronological ordering (REL-5)
+    subjectAttemptOrder.push({ subject: subj, questionNumber: ans.start_timestamp >= 0 ? ans.start_timestamp : ans.question.question_number });
   }
 
   // Total time actually recorded

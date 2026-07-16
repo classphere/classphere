@@ -87,13 +87,6 @@ export function classifySscMistake(ans: AttemptAnswer, hasTimingData = true): Mi
   }
 
   // ── INCORRECT ───────────────────────────────────────────────────────────────
-
-  // Distractor map first (if available)
-  if (ans.question.distractor_map && ans.question.distractor_map[ans.selected_answer!]) {
-    const d = ans.question.distractor_map[ans.selected_answer!];
-    return { type: d.error_type, detail: d.trap_description, tip: d.common_mistake, confidence: "high", source: "distractor_map" };
-  }
-
   if (!hasTimingData) {
     return {
       type: ans.question.difficulty === "easy" ? "calculation" : "conceptual",

@@ -40,19 +40,7 @@ export function classifyMistake(ans: AttemptAnswer, hasTimingData = true): Mista
     return classifySkip(ans, hasTimingData);
   }
 
-  // LAYER 1: Distractor map
-  if (ans.question.distractor_map && ans.question.distractor_map[ans.selected_answer]) {
-    const distractor = ans.question.distractor_map[ans.selected_answer];
-    return {
-      type: distractor.error_type,
-      detail: distractor.trap_description,
-      tip: distractor.common_mistake,
-      confidence: "high",
-      source: "distractor_map",
-    };
-  }
-
-  // LAYER 2: Heuristic fallback
+  // Heuristic fallback
   return classifyByHeuristics(ans, hasTimingData);
 }
 

@@ -44,8 +44,8 @@ export function computeSscTopicAccuracy(
     const isWeak = attempted >= 2 && (accuracy < 50 || accuracy < batchAvg - 15);
 
     stats.push({
-      chapter:    group[0].question.subject,   // Subject used as subtitle
-      topic:      chapter,                      // Chapter = displayed theme
+      chapter:    chapter,
+      topic:      group[0].question.topic || "",
       subject:    group[0].question.subject,
       attempted,
       correct,

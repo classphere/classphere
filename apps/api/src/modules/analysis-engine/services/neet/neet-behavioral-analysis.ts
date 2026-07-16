@@ -239,24 +239,26 @@ export function classifyAttempts(classified: ClassifiedAnswer[]): AttemptClassif
 
     const avg = avgBySubject[subj] ?? globalAvg;
     const t   = a.time_taken_sec;
+    const hasTimingData = t > 0; // OMR attempts have t=0 — skip timing-based buckets (NEET-3)
 
     for (const row of [acc[subj], overallRow]) {
       row.total++;
       if (a.is_correct) {
-        if (t >= avg * 2.0) {
+        if (hasTimingData && t >= avg * 2.0) {
           row.overtime++;
         } else {
+          // Perfect: correct AND within timing threshold (or OMR where timing is unavailable)
           row.perfect++;
         }
       } else if (a.selected_answer) {
-        // Answered but wrong
-        if (t >= avg * 1.5) {
+        // Answered but wrong — only classify as wasted if spent significant time
+        if (hasTimingData && t >= avg * 1.5) {
           row.wasted++;
         }
         // If quick wrong: already classified as silly in mistake-classifier, skip here
       } else {
-        // Skipped
-        if (t >= 15 && t < avg * 2.0) {
+        // Skipped — confused if spent non-trivial time but not excessively long
+        if (hasTimingData && t >= 15 && t < avg * 2.0) {
           row.confused++;
         }
       }

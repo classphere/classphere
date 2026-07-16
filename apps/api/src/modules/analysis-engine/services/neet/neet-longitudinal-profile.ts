@@ -28,6 +28,8 @@ export function buildCurrentTopicHistoryEntries(
       wasWeak: stat.isWeak,
       dominantErrorType: dominantError,
       questionsAttempted: stat.attempted,
+      subject: stat.subject,
+      chapter: stat.chapter,
     };
   }
 

@@ -34,8 +34,8 @@ export function computeTopicAccuracy(
     const isWeak = attempted >= 3 && (accuracy < 50 || accuracy < batchAvg - 15);
 
     stats.push({
-      chapter: group[0].question.subject, // Display Subject (e.g. Physics) as secondary subtitle
-      topic: chapter,                     // Display Chapter name (e.g. Kinematics) as main title
+      chapter: chapter,
+      topic: group[0].question.topic || "",
       subject: group[0].question.subject,
       attempted,
       correct,

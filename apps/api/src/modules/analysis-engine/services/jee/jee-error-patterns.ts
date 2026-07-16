@@ -131,7 +131,7 @@ function detectSlowSolver(answers: ClassifiedAnswer[]): ErrorPattern | null {
 function detectSubjectAvoidance(answers: ClassifiedAnswer[]): ErrorPattern | null {
   const bySubject = groupBy(answers, a => a.question.subject);
   for (const [subject, group] of Object.entries(bySubject)) {
-    const skipRate = group.filter(a => !a.selected_answer).length / group.length;
+    const skipRate = group.length > 0 ? group.filter(a => !a.selected_answer).length / group.length : 0;
     if (skipRate > 0.5 && group.length >= 5) {
       return {
         id: "subject_avoidance", name: `Avoiding ${subject}`,

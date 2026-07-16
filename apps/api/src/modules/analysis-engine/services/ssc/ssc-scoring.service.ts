@@ -86,5 +86,6 @@ export function scoreSscAttempt(answers: AttemptAnswer[]): ScoringResult {
     incorrectCount: incorrect,
     skippedCount: skipped,
     subjectBreakdown,
+    answers,
   };
 }

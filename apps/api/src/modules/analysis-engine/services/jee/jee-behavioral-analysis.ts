@@ -246,16 +246,17 @@ export function classifyAttempts(classified: ClassifiedAnswer[]): AttemptClassif
         if (t >= avg * 2.0) {
           row.overtime++;
         } else {
+          // Perfect: correct AND within 2x avg time (which includes ≤1.5x as well)
           row.perfect++;
         }
       } else if (a.selected_answer) {
-        // Answered but wrong
+        // Answered but wrong — only classify as wasted if spent significant time
         if (t >= avg * 1.5) {
           row.wasted++;
         }
         // If quick wrong: already classified as silly in mistake-classifier, skip here
       } else {
-        // Skipped
+        // Skipped — confused if spent non-trivial time but not excessively long
         if (t >= 15 && t < avg * 2.0) {
           row.confused++;
         }

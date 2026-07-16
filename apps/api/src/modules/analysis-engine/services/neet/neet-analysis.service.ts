@@ -18,7 +18,7 @@ export async function analyzeNeetAttempt(attemptId: string, hasTimingData = true
   const { attempt, answers } = await db.getAttemptWithAnswers(attemptId);
   const scheme = attempt.marking_scheme || { correct: 4, incorrect: -1, unattempted: 0 };
   const scoring = scoreAttempt(answers, { correct: scheme.correct, incorrect: scheme.incorrect, unattempted: scheme.unattempted });
-  const classified: ClassifiedAnswer[] = answers.map((a) => ({
+  const classified: ClassifiedAnswer[] = scoring.answers.map((a) => ({
     ...a,
     classification: classifyMistake(a, hasTimingData),
   }));
