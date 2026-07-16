@@ -12,8 +12,8 @@ import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 export const listQuestions = async (req: Request, res: Response): Promise<void> => {
   try {
     const { exam, subject, chapter, difficulty, type, page = "1", limit = "20", topics } = req.query as Record<string, string>;
-    const pageNum = Math.max(1, parseInt(page));
-    const limitNum = Math.min(100, Math.max(1, parseInt(limit)));
+    const pageNum = Math.max(1, isNaN(parseInt(page)) ? 1 : parseInt(page));
+    const limitNum = Math.min(100, Math.max(1, isNaN(parseInt(limit)) ? 20 : parseInt(limit)));
     const offset = (pageNum - 1) * limitNum;
 
     const isSuperAdmin = req.user?.role === "super_admin";
@@ -34,7 +34,9 @@ export const listQuestions = async (req: Request, res: Response): Promise<void> 
     if (type) query = query.eq("question_type", type);
 
     if (topics) {
-      const topicsArray = topics.split(",").map(t => t.trim()).filter(Boolean);
+      const topicsArray = typeof topics === "string"
+        ? topics.split(",").map(t => t.trim()).filter(Boolean)
+        : Array.isArray(topics) ? (topics as string[]).map(t => String(t).trim()).filter(Boolean) : [];
       if (topicsArray.length > 0) {
         query = query.in("topic", topicsArray);
       }
@@ -132,7 +134,13 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
     const { id } = req.params;
     const isSuperAdmin = req.user?.role === "super_admin";
 
-    const selectCols = isSuperAdmin ? "*" : "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, explanation, distractor_map, marking_scheme, tags";
+    // Strip explanation from non-super_admin lookups (SEC-3)
+    const isTeacherOrAdmin = ["super_admin", "institute_admin", "teacher"].includes(req.user?.role ?? "");
+    const selectCols = isSuperAdmin
+      ? "*"
+      : isTeacherOrAdmin
+        ? "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, correct_answer, explanation, tags"
+        : "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, tags";
 
     const { data: question, error } = await supabaseDB
       .from("questions")
@@ -163,7 +171,7 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
  */
 export const createQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { exam_id, subject, chapter, topic, difficulty, question_type, question_text, options, correct_answer, explanation, distractor_map, marking_scheme, source, year, tags, image_url } = req.body;
+    const { exam_id, subject, chapter, topic, difficulty, question_type, question_text, options, correct_answer, explanation, source, year, tags, image_url } = req.body;
 
     if (!exam_id || !subject || !chapter || !difficulty || !question_type || !question_text || !correct_answer) {
       res.status(400).json({ success: false, message: "Missing required fields: exam_id, subject, chapter, difficulty, question_type, question_text, correct_answer" });
@@ -184,8 +192,6 @@ export const createQuestion = async (req: Request, res: Response): Promise<void>
         options: options ?? null,
         correct_answer: Array.isArray(correct_answer) ? correct_answer : [correct_answer],
         explanation: explanation ?? null,
-        distractor_map: distractor_map ?? null,
-        marking_scheme: marking_scheme ?? { correct: 4, incorrect: -1, unattempted: 0, partial: false },
         source: source ?? null,
         year: year ?? null,
         tags: tags ?? [],
@@ -212,7 +218,7 @@ export const createQuestion = async (req: Request, res: Response): Promise<void>
 export const updateQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const allowed = ["subject", "chapter", "topic", "difficulty", "question_type", "question_text", "image_url", "options", "correct_answer", "explanation", "distractor_map", "marking_scheme", "source", "year", "tags"];
+    const allowed = ["subject", "chapter", "topic", "difficulty", "question_type", "question_text", "image_url", "options", "correct_answer", "explanation", "source", "year", "tags"];
     const updates: Record<string, any> = {};
     for (const key of allowed) {
       if (req.body[key] !== undefined) updates[key] = req.body[key];

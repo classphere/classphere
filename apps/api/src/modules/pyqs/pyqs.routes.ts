@@ -1,7 +1,11 @@
 import { Router } from "express";
+import { authenticate } from "../../middleware/auth.middleware";
 import { getPYQList, getPYQQuestions } from "./pyqs.controller";
 
 const router = Router();
+
+// Require authentication for all PYQ routes
+router.use(authenticate);
 
 // GET /api/v1/pyqs          — list all available PYQ papers (metadata only)
 router.get("/", getPYQList);

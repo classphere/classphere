@@ -1,25 +1,5 @@
 import { Request, Response } from "express";
-
-const SUPABASE_URL = process.env.SUPABASE_URL!;
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
-
-// ─── Supabase REST helper ─────────────────────────────────────────────────────
-async function sbFetch(path: string, options: RequestInit = {}) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
-    ...options,
-    headers: {
-      "Content-Type":  "application/json",
-      "apikey":        SUPABASE_SERVICE_KEY,
-      "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
-      ...(options.headers ?? {}),
-    },
-  });
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Supabase error (${res.status}): ${text}`);
-  }
-  return res.json();
-}
+import { supabaseDB } from "../../lib/supabase";
 
 // ─── Controllers ──────────────────────────────────────────────────────────────
 
@@ -32,14 +12,37 @@ export const getPYQList = async (req: Request, res: Response): Promise<void> => 
   try {
     const { exam, year } = req.query;
 
-    let query = `papers?test_type=eq.pyq&is_active=eq.true&select=id,title,year,shift,total_questions,total_marks,duration_min,difficulty,exams(code,full_name)&order=year.desc`;
+    let query = supabaseDB
+      .from("papers")
+      .select(`
+        id,
+        title,
+        year,
+        shift,
+        total_questions,
+        total_marks,
+        duration_min,
+        difficulty,
+        exams!inner(code, full_name)
+      `)
+      .eq("test_type", "pyq")
+      .eq("is_active", true);
 
-    if (exam) query += `&exams.code=eq.${exam}`;
-    if (year) query += `&year=eq.${year}`;
+    if (exam) {
+      query = query.eq("exams.code", String(exam).trim());
+    }
+    if (year) {
+      const yearNum = parseInt(String(year), 10);
+      if (!isNaN(yearNum)) {
+        query = query.eq("year", yearNum);
+      }
+    }
 
-    const papers = await sbFetch(query);
+    const { data: papers, error } = await query.order("year", { ascending: false });
 
-    res.json({ success: true, data: { papers, total: papers.length } });
+    if (error) throw error;
+
+    res.json({ success: true, data: { papers: papers ?? [], total: papers?.length ?? 0 } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -54,31 +57,71 @@ export const getPYQQuestions = async (req: Request, res: Response): Promise<void
     const { id } = req.params;
 
     // 1. Fetch paper metadata
-    const papers = await sbFetch(`papers?id=eq.${id}&is_active=eq.true&select=*,exams(code,full_name)`);
-    if (!papers.length) {
+    const { data: paperData, error: paperError } = await supabaseDB
+      .from("papers")
+      .select("*, exams(code, full_name)")
+      .eq("id", id)
+      .eq("is_active", true)
+      .maybeSingle();
+
+    if (paperError || !paperData) {
       res.status(404).json({ success: false, message: `PYQ paper '${id}' not found.` });
       return;
     }
-    const paper = papers[0];
 
     // 2. Fetch questions via join table
-    const pqs = await sbFetch(
-      `paper_questions?paper_id=eq.${id}&order=position.asc&select=question_id`
-    );
-    const questionIds = pqs.map((r: any) => r.question_id);
+    const { data: pqs, error: pqsError } = await supabaseDB
+      .from("paper_questions")
+      .select("question_id")
+      .eq("paper_id", id)
+      .order("position", { ascending: true });
+
+    if (pqsError) throw pqsError;
+
+    const questionIds = (pqs ?? []).map((r: any) => r.question_id);
 
     let questions: any[] = [];
     if (questionIds.length > 0) {
       // Fetch questions by IDs in one shot using `in` filter
-      const ids = questionIds.join(",");
-      questions = await sbFetch(
-        `questions?id=in.(${ids})&is_active=eq.true&select=id,question_text,image_url,options,correct_answer,explanation,question_type,subject,chapter,topic,difficulty,distractor_map,marking_scheme`
-      );
+      const { data: rawQs, error: qsError } = await supabaseDB
+        .from("questions")
+        .select(`
+          id,
+          question_text,
+          image_url,
+          options,
+          correct_answer,
+          explanation,
+          question_type,
+          subject,
+          chapter,
+          topic,
+          difficulty
+        `)
+        .in("id", questionIds)
+        .eq("is_active", true);
+
+      if (qsError) throw qsError;
+
+      // Preserve the position order from paper_questions
+      const byId: Record<string, any> = {};
+      for (const q of rawQs ?? []) {
+        if (req.user?.role === "student") {
+          const { correct_answer, explanation, ...rest } = q;
+          byId[q.id] = rest;
+        } else {
+          byId[q.id] = q;
+        }
+      }
+
+      questions = questionIds
+        .map((qid) => byId[qid] ?? null)
+        .filter(Boolean);
     }
 
     res.json({
       success: true,
-      data: { paper, questions, total: questions.length },
+      data: { paper: paperData, questions, total: questions.length },
     });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });

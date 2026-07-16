@@ -6,7 +6,7 @@ import { PYQ_REGISTRY, ROOT } from "../pyqs/pyqs.service";
 import { analyzeAttempt } from "../analysis-engine/services/analysis.service";
 import { db } from "../analysis-engine/services/db.service";
 import { AttemptAnswer } from "../../../../../packages/types/src/analysis.types";
-import { analysisQueue } from "../../lib/queue/analysis.queue";
+import { enqueueAnalysis } from "../../lib/queue/analysis.queue";
 import { connection as redis } from "../../lib/queue/redis";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -44,7 +44,7 @@ async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; 
 
   const { data: rawQs } = await supabaseDB
     .from("questions")
-    .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, distractor_map, marking_scheme, source, year, tags")
+    .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags")
     .in("id", questionIds)
     .eq("is_active", true);
 
@@ -352,6 +352,10 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
         .maybeSingle();
 
       if (att) {
+        if (att.student_id !== studentId) {
+          res.status(403).json({ success: false, message: "Access denied. You cannot submit someone else's attempt." });
+          return;
+        }
         existingAttempt = att;
         attemptId = att.id;
         if (att.status === "submitted") {
@@ -495,41 +499,81 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
 
     // ── Update student_stats ──────────────────────────────────────────────────
     try {
-      const { data: currentStats } = await supabaseDB
-        .from("student_stats")
-        .select("total_tests, total_score, total_max_score")
-        .eq("student_id", studentId)
-        .maybeSingle();
+      let statsUpdated = false;
+      let retries = 0;
+      const MAX_RETRIES = 5;
 
-      const newTotalTests = (currentStats?.total_tests ?? 0) + 1;
-      const newTotalScore = (currentStats?.total_score ?? 0) + totalScore;
-      const newTotalMax = (currentStats?.total_max_score ?? 0) + maxScore;
-      const newAccuracy = newTotalMax > 0 ? Math.round((newTotalScore / newTotalMax) * 100) : 0;
-      // Using a basic rank score formula for MVP: (Total Score) * (Accuracy) / 100
-      const newRankScore = Math.round((newTotalScore * newAccuracy) / 100);
+      while (!statsUpdated && retries < MAX_RETRIES) {
+        retries++;
+        const { data: currentStats } = await supabaseDB
+          .from("student_stats")
+          .select("total_tests, total_score, total_max_score")
+          .eq("student_id", studentId)
+          .maybeSingle();
 
-      await supabaseDB.from("student_stats").upsert({
-        student_id: studentId,
-        exam_code: examCode,
-        total_tests: newTotalTests,
-        total_score: newTotalScore,
-        total_max_score: newTotalMax,
-        accuracy_pct: newAccuracy,
-        rank_score: newRankScore,
-        last_test_date: new Date().toISOString(),
-        updated_at: new Date().toISOString()
-      }, { onConflict: "student_id" });
+        const newTotalTests = (currentStats?.total_tests ?? 0) + 1;
+        const newTotalScore = (currentStats?.total_score ?? 0) + totalScore;
+        const newTotalMax = (currentStats?.total_max_score ?? 0) + maxScore;
+        const newAccuracy = newTotalMax > 0 ? Math.round((newTotalScore / newTotalMax) * 100) : 0;
+        const newRankScore = Math.round((newTotalScore * newAccuracy) / 100);
+
+        if (currentStats) {
+          const { data: updatedRows } = await supabaseDB
+            .from("student_stats")
+            .update({
+              total_tests: newTotalTests,
+              total_score: newTotalScore,
+              total_max_score: newTotalMax,
+              accuracy_pct: newAccuracy,
+              rank_score: newRankScore,
+              last_test_date: new Date().toISOString(),
+              updated_at: new Date().toISOString()
+            })
+            .eq("student_id", studentId)
+            .eq("total_tests", currentStats.total_tests ?? 0) // Optimistic check
+            .select();
+
+          if (updatedRows && updatedRows.length > 0) {
+            statsUpdated = true;
+          } else {
+            await new Promise(r => setTimeout(r, 50 * retries));
+          }
+        } else {
+          const { error: insertErr } = await supabaseDB
+            .from("student_stats")
+            .insert({
+              student_id: studentId,
+              exam_code: examCode,
+              total_tests: 1,
+              total_score: totalScore,
+              total_max_score: maxScore,
+              accuracy_pct: newAccuracy,
+              rank_score: newRankScore,
+              last_test_date: new Date().toISOString(),
+              updated_at: new Date().toISOString()
+            });
+
+          if (!insertErr) {
+            statsUpdated = true;
+          } else {
+            if (insertErr.code === "23505") {
+              await new Promise(r => setTimeout(r, 50 * retries));
+            } else {
+              throw insertErr;
+            }
+          }
+        }
+      }
+      if (!statsUpdated) {
+        console.warn(`[submitAttempt] Failed to update student stats after ${MAX_RETRIES} retries for student ${studentId}.`);
+      }
     } catch (statsErr: any) {
       console.error("[submitAttempt] student_stats update failed (non-fatal):", statsErr.message);
     }
 
     // ── Enqueue analysis job (asynchronous) ──────────────────────────────────
     try {
-      await analysisQueue.add('analyze', { 
-        attemptId: attemptId!, 
-        studentId, 
-        examCode 
-      });
+      await enqueueAnalysis(attemptId!, studentId, examCode);
       console.log(`[submitAttempt] Queued analysis for attempt=${attemptId}`);
     } catch (queueErr: any) {
       console.error("[submitAttempt] Failed to queue analysis:", queueErr.message);

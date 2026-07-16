@@ -30,14 +30,6 @@ export interface QuestionOption {
   image_url: string | null;
 }
 
-export interface DistractorMapEntry {
-  error_type: ErrorType;
-  trap_description: string;
-  common_mistake: string;
-}
-
-export type DistractorMap = Record<string, DistractorMapEntry>;
-
 export interface Question {
   id: string;
   question_number: number;
@@ -55,13 +47,6 @@ export interface Question {
   source: string;
   year: number | null;
   tags: string[];
-  distractor_map: DistractorMap | null;
-  marking_scheme: {
-    correct: number;
-    incorrect: number;
-    unattempted: number;
-    partial: boolean;
-  };
 }
 
 export interface AttemptAnswer {
@@ -98,6 +83,7 @@ export interface ScoringResult {
   subjectBreakdown: Record<string, {
     score: number; maxScore: number; correct: number; incorrect: number; skipped: number;
   }>;
+  answers: AttemptAnswer[];
 }
 
 export interface TopicStat {
@@ -251,6 +237,8 @@ export interface TopicErrorHistoryEntry {
   wasWeak: boolean;       // accuracy < 50 OR below batch avg
   dominantErrorType: string;
   questionsAttempted: number;
+  subject?: string;
+  chapter?: string;
 }
 
 export interface StudentErrorProfile {
