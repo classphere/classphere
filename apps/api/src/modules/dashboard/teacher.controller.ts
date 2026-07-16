@@ -244,17 +244,22 @@ export const getBatchAnalytics = async (req: Request, res: Response): Promise<vo
     // Aggregate weak topics from error profiles
     const { data: errorProfiles } = await supabaseDB
       .from("student_error_profiles")
-      .select("error_topics")
+      .select("topic_history")
       .in("student_id", studentIds);
 
     const topicAggregation: Record<string, { count: number; subject: string; chapter: string }> = {};
     for (const ep of errorProfiles ?? []) {
-      const topics = ep.error_topics ?? {};
-      for (const [topic, data] of Object.entries(topics) as [string, any][]) {
-        if (!topicAggregation[topic]) {
-          topicAggregation[topic] = { count: 0, subject: data.subject ?? "", chapter: data.chapter ?? "" };
+      const history = ep.topic_history ?? {};
+      for (const [topic, entries] of Object.entries(history) as [string, any[]][]) {
+        if (!entries || entries.length === 0) continue;
+        // Check recent accuracy (last entry in the history list)
+        const recentEntry = entries[entries.length - 1];
+        if (recentEntry && recentEntry.accuracy < 60) {
+          if (!topicAggregation[topic]) {
+            topicAggregation[topic] = { count: 0, subject: recentEntry.subject ?? "", chapter: recentEntry.chapter ?? "" };
+          }
+          topicAggregation[topic].count += 1;
         }
-        topicAggregation[topic].count += data.count ?? 1;
       }
     }
 
@@ -271,8 +276,9 @@ export const getBatchAnalytics = async (req: Request, res: Response): Promise<vo
 
     // Overall batch metrics
     const allAttempts = attempts ?? [];
-    const batchAvgScore = allAttempts.length > 0
-      ? Math.round(allAttempts.filter(a => a.max_score > 0).reduce((sum, a) => sum + ((a.score / a.max_score) * 100), 0) / allAttempts.filter(a => a.max_score > 0).length)
+    const validAttempts = allAttempts.filter(a => a.max_score > 0);
+    const batchAvgScore = validAttempts.length > 0
+      ? Math.round(validAttempts.reduce((sum, a) => sum + ((a.score / a.max_score) * 100), 0) / validAttempts.length)
       : 0;
 
     const sortedDesc = [...studentList].sort((a, b) => b.accuracy - a.accuracy);

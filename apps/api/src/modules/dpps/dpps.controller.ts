@@ -258,23 +258,21 @@ export const getDPPQuestions = async (req: Request, res: Response): Promise<void
     const studentId = req.user!.id;
     const role = req.user?.role;
 
+    let assignment: any = null;
     // For students: verify they're assigned this DPP
     if (role === "student") {
-      const { data: assignment } = await supabaseDB
+      const { data } = await supabaseDB
         .from("student_dpps")
         .select("id, status")
         .eq("student_id", studentId)
         .eq("dpp_id", dppId)
         .maybeSingle();
 
-      if (!assignment) {
+      if (!data) {
         res.status(403).json({ success: false, message: "You are not assigned this DPP." });
         return;
       }
-      if (assignment.status === "submitted") {
-        res.status(400).json({ success: false, message: "You have already submitted this DPP." });
-        return;
-      }
+      assignment = data;
     }
 
     // Fetch ordered question IDs
@@ -318,7 +316,9 @@ export const getDPPQuestions = async (req: Request, res: Response): Promise<void
           marking_scheme: q.marking_scheme,
           question_number: idx + 1,
         };
-        if (role !== "student") {
+        // Expose correct answer and explanation to student ONLY after submission (SEC-3)
+        const isSubmitted = assignment?.status === "submitted";
+        if (role !== "student" || isSubmitted) {
           mapped.correct_answer = q.correct_answer;
           mapped.explanation = q.explanation;
         }
@@ -394,7 +394,7 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
 
     const { data: questions } = await supabaseDB
       .from("questions")
-      .select("id, correct_answer, marking_scheme")
+      .select("id, correct_answer, marking_scheme, question_type")
       .in("id", questionIds);
 
     // Score answers
@@ -404,14 +404,43 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
 
     for (const q of questions ?? []) {
       const scheme = q.marking_scheme ?? { correct: 4, incorrect: -1, unattempted: 0 };
+      const incorrectPenalty = -Math.abs(scheme.incorrect ?? -1); // Enforce negative sign penalty (H7)
+
       const correctList = Array.isArray(q.correct_answer)
         ? q.correct_answer.map((v: any) => String(v).trim().toUpperCase())
         : [String(q.correct_answer).trim().toUpperCase()];
 
-      const selected = answers[q.id] ? String(answers[q.id]).trim().toUpperCase() : null;
-      const isCorrect = selected ? correctList.includes(selected) : false;
-      const marks = selected
-        ? (isCorrect ? (scheme.correct ?? 4) : (scheme.incorrect ?? -1))
+      let isCorrect = false;
+      const selectedRaw = answers[q.id];
+      const isAttempted = selectedRaw !== null && selectedRaw !== undefined && selectedRaw !== "" && (!Array.isArray(selectedRaw) || selectedRaw.length > 0);
+
+      if (isAttempted) {
+        if (q.question_type === "mcq_multi") {
+          const selectedList = Array.isArray(selectedRaw)
+            ? selectedRaw.map(v => String(v).trim().toUpperCase())
+            : typeof selectedRaw === "string"
+              ? selectedRaw.split(",").map(v => v.trim().toUpperCase())
+              : [];
+          isCorrect = selectedList.length === correctList.length &&
+            selectedList.every(v => correctList.includes(v));
+        } else if (q.question_type === "integer") {
+          const selectedVal = String(selectedRaw).trim();
+          const correctVal = correctList[0] || "";
+          const selNum = parseFloat(selectedVal);
+          const corNum = parseFloat(correctVal);
+          if (!isNaN(selNum) && !isNaN(corNum)) {
+            isCorrect = selNum === corNum;
+          } else {
+            isCorrect = selectedVal === correctVal;
+          }
+        } else {
+          const selectedVal = String(selectedRaw).trim().toUpperCase();
+          isCorrect = correctList.includes(selectedVal);
+        }
+      }
+
+      const marks = isAttempted
+        ? (isCorrect ? (scheme.correct ?? 4) : incorrectPenalty)
         : (scheme.unattempted ?? 0);
 
       maxScore += scheme.correct ?? 4;
@@ -419,7 +448,7 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
 
       answerRecords.push({
         question_id: q.id,
-        selected_answer: selected,
+        selected_answer: isAttempted ? (Array.isArray(selectedRaw) ? selectedRaw.join(",") : String(selectedRaw)) : null,
         is_correct: isCorrect,
         marks_awarded: marks,
       });
@@ -461,25 +490,60 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
     let xpGained = correctCount * 4; // 4 XP per correct answer
     // Gamification: Update student_stats and leaderboards
     try {
-      const { data: stats } = await supabaseDB
-        .from("student_stats")
-        .select("xp, total_score, total_tests")
-        .eq("student_id", studentId)
-        .maybeSingle();
+      let statsUpdated = false;
+      let newXp = xpGained;
+      let currentXp = 0;
+      const MAX_XP_RETRIES = 5; // Prevent infinite spin under high concurrency (DATA-3)
+      let xpRetries = 0;
+      
+      while (!statsUpdated && xpRetries < MAX_XP_RETRIES) {
+        xpRetries++;
+        const { data: stats } = await supabaseDB
+          .from("student_stats")
+          .select("xp, total_score, total_tests")
+          .eq("student_id", studentId)
+          .maybeSingle();
 
-      if (stats) {
-        await supabaseDB.from("student_stats").update({
-          xp: (stats.xp ?? 0) + xpGained,
-          total_score: (stats.total_score ?? 0) + totalScore,
-          total_tests: (stats.total_tests ?? 0) + 1,
-        }).eq("student_id", studentId);
-      } else {
-        await supabaseDB.from("student_stats").insert({
-          student_id: studentId,
-          xp: xpGained,
-          total_score: totalScore,
-          total_tests: 1,
-        });
+        if (stats) {
+          newXp = (stats.xp ?? 0) + xpGained;
+          currentXp = stats.xp ?? 0;
+          const { data: updatedRows } = await supabaseDB
+            .from("student_stats")
+            .update({
+              xp: newXp,
+              total_score: (stats.total_score ?? 0) + totalScore,
+              total_tests: (stats.total_tests ?? 0) + 1,
+            })
+            .eq("student_id", studentId)
+            .eq("xp", currentXp) // CAS guard: only update if xp hasn't changed
+            .select();
+
+          if (updatedRows && updatedRows.length > 0) {
+            statsUpdated = true;
+          } else {
+            // Another concurrent update beat us — backoff and retry
+            await new Promise(r => setTimeout(r, 50 * xpRetries));
+          }
+        } else {
+          const { error: insertErr } = await supabaseDB
+            .from("student_stats")
+            .insert({
+              student_id: studentId,
+              xp: xpGained,
+              total_score: totalScore,
+              total_tests: 1,
+            });
+
+          if (!insertErr) {
+            statsUpdated = true;
+          } else {
+            await new Promise(r => setTimeout(r, 50 * xpRetries));
+          }
+        }
+      }
+
+      if (!statsUpdated) {
+        console.warn(`[submitDPP] XP update failed after ${MAX_XP_RETRIES} retries for student ${studentId}. Skipping gamification.`);
       }
       
       // Update leaderboard
@@ -490,7 +554,7 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
         
       if (batchLinks && batchLinks.length > 0) {
         const batchIds = batchLinks.map(b => b.batch_id);
-        const newXp = (stats?.xp ?? 0) + xpGained;
+         // Use the newXp calculated during the atomic stats update loop
         
         // Upsert into leaderboard for each batch
         for (const bId of batchIds) {

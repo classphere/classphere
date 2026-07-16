@@ -438,6 +438,21 @@ export const getBatch = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
+    // Enforce student batch membership check (SEC-1 / Privacy)
+    if (req.user?.role === "student") {
+      const { data: enrollment } = await supabaseDB
+        .from("batch_students")
+        .select("student_id")
+        .eq("batch_id", id)
+        .eq("student_id", req.user.id)
+        .maybeSingle();
+
+      if (!enrollment) {
+        res.status(403).json({ success: false, message: "Access denied. You are not enrolled in this batch." });
+        return;
+      }
+    }
+
     const { data: batch, error } = await supabaseDB
       .from("batches").select("*, institutes(name)").eq("id", id).eq("is_active", true).maybeSingle();
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
@@ -518,6 +533,18 @@ export const addStudentToBatch = async (req: Request, res: Response): Promise<vo
     const { student_id } = req.body;
     if (!student_id) { res.status(400).json({ success: false, message: "student_id is required" }); return; }
 
+    // Verify student belongs to caller's institute (SEC-1)
+    const { data: studentUser, error: studentError } = await supabaseDB
+      .from("users")
+      .select("institute_id")
+      .eq("id", student_id)
+      .maybeSingle();
+
+    if (studentError || !studentUser || studentUser.institute_id !== req.user!.institute_id) {
+      res.status(403).json({ success: false, message: "Access denied. Student does not belong to your institute." });
+      return;
+    }
+
     const { error } = await supabaseDB
       .from("batch_students").upsert({ batch_id: id, student_id }, { onConflict: "batch_id,student_id", ignoreDuplicates: true });
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
@@ -565,6 +592,18 @@ export const addTeacherToBatch = async (req: Request, res: Response): Promise<vo
     const { teacher_id } = req.body;
     if (!teacher_id) { res.status(400).json({ success: false, message: "teacher_id is required" }); return; }
 
+    // Verify teacher belongs to caller's institute (SEC-1)
+    const { data: teacherUser, error: teacherError } = await supabaseDB
+      .from("users")
+      .select("institute_id")
+      .eq("id", teacher_id)
+      .maybeSingle();
+
+    if (teacherError || !teacherUser || teacherUser.institute_id !== req.user!.institute_id) {
+      res.status(403).json({ success: false, message: "Access denied. Teacher does not belong to your institute." });
+      return;
+    }
+
     const { error } = await supabaseDB
       .from("batch_teachers").upsert({ batch_id: id, teacher_id }, { onConflict: "batch_id,teacher_id", ignoreDuplicates: true });
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
@@ -574,38 +613,7 @@ export const addTeacherToBatch = async (req: Request, res: Response): Promise<vo
   }
 };
 
-/**
- * POST /api/v1/batches/:id/invite
- * [institute_admin] — Generate a new invite code/link for a batch.
- */
-export const generateBatchInvite = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const { id } = req.params;
-
-    if (!(await checkBatchTenant(id, req.user))) {
-      res.status(403).json({ success: false, message: "Access denied. Batch does not belong to your institute." });
-      return;
-    }
-
-    const { max_uses = 100, expires_in_days = 30 } = req.body;
-
-    // Generate a short unique code
-    const chars = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
-    const code = Array.from({ length: 8 }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
-    const expires_at = new Date(Date.now() + expires_in_days * 86400000).toISOString();
-    const APP_URL = process.env.APP_URL ?? "http://localhost:3000";
-
-    const { data: invite, error } = await supabaseDB
-      .from("batch_invites").insert({ batch_id: id, code, created_by: req.user!.id, max_uses, expires_at }).select().single();
-    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
-
-    res.status(201).json({ success: true, data: { invite: { code, url: `${APP_URL}/invite/${code}`, expires_at, max_uses } } });
-  } catch (err: any) {
-    res.status(500).json({ success: false, message: err.message });
-  }
-};
-
-
+// invite-based joins are fully decommissioned
 // ─────────────────────────────────────────────────────────────────────────────
 /**
  * GET /api/v1/institutes/by-slug/:slug

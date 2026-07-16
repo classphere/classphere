@@ -207,7 +207,7 @@ export const getStudentMistakes = async (req: Request, res: Response): Promise<v
 
     const { data: profile } = await supabaseDB
       .from("student_error_profiles")
-      .select("error_topics, created_at, updated_at")
+      .select("error_topics, last_updated")
       .eq("student_id", studentId)
       .maybeSingle();
 

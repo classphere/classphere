@@ -35,53 +35,64 @@ export const getMyRanks = async (req: Request, res: Response): Promise<void> => 
       ? Math.round((attempts ?? []).reduce((s: number, a: any) => s + (a.score ?? 0), 0) / totalTests)
       : 0;
 
-    // For each batch: compute rank within batch
-    const batchRanks = await Promise.all(
-      filteredBatches.map(async (batch: any) => {
-        // Get all students in this batch
-        const { data: members } = await supabaseDB
-          .from("batch_students")
-          .select("student_id")
-          .eq("batch_id", batch.id);
+    // Get all batch members and attempts in batch query aggregates to prevent N+1 query loops (REL-2)
+    const batchIds = filteredBatches.map((b: any) => b.id);
+    const { data: allMembers } = batchIds.length > 0 ? await supabaseDB
+      .from("batch_students")
+      .select("batch_id, student_id")
+      .in("batch_id", batchIds) : { data: [] };
 
-        const memberIds = (members ?? []).map((m: any) => m.student_id);
-        if (!memberIds.includes(studentId)) return null;
+    const studentsByBatch: Record<string, string[]> = {};
+    const allStudentIds: string[] = [];
+    for (const m of allMembers ?? []) {
+      if (!studentsByBatch[m.batch_id]) studentsByBatch[m.batch_id] = [];
+      studentsByBatch[m.batch_id].push(m.student_id);
+      allStudentIds.push(m.student_id);
+    }
+    const uniqueStudentIds = Array.from(new Set(allStudentIds));
 
-        // Get best score per student in this batch
-        const { data: batchAttempts } = await supabaseDB
-          .from("attempts")
-          .select("student_id, score")
-          .eq("status", "submitted")
-          .in("student_id", memberIds)
-          .order("score", { ascending: false });
+    const { data: allBatchAttempts } = uniqueStudentIds.length > 0 ? await supabaseDB
+      .from("attempts")
+      .select("student_id, score")
+      .eq("status", "submitted")
+      .in("student_id", uniqueStudentIds) : { data: [] };
 
-        // Best score per student
-        const bestScoreByStudent: Record<string, number> = {};
-        for (const a of batchAttempts ?? []) {
-          if (!bestScoreByStudent[a.student_id] || a.score > bestScoreByStudent[a.student_id]) {
-            bestScoreByStudent[a.student_id] = a.score;
-          }
-        }
+    const attemptsByStudent: Record<string, Array<{ score: number }>> = {};
+    for (const a of allBatchAttempts ?? []) {
+      if (!attemptsByStudent[a.student_id]) attemptsByStudent[a.student_id] = [];
+      attemptsByStudent[a.student_id].push(a);
+    }
 
-        // Sort descending, find my rank
-        const sorted = Object.entries(bestScoreByStudent).sort(([, a], [, b]) => b - a);
-        const myIdx = sorted.findIndex(([id]) => id === studentId);
-        const myRank = myIdx >= 0 ? myIdx + 1 : null;
-        const myScore = bestScoreByStudent[studentId] ?? 0;
-        const percentile = myRank && sorted.length > 1
-          ? Math.round(((sorted.length - myRank) / (sorted.length - 1)) * 100)
-          : 100;
+    const batchRanks = filteredBatches.map((batch: any) => {
+      const memberIds = studentsByBatch[batch.id] ?? [];
+      if (!memberIds.includes(studentId)) return null;
 
-        return {
-          batch_id: batch.id,
-          batch_name: batch.name,
-          rank: myRank,
-          total_students: sorted.length,
-          best_score: myScore,
-          percentile,
-        };
-      })
-    );
+      const bestScoreByStudent: Record<string, number> = {};
+      for (const mId of memberIds) {
+        const studentAttempts = attemptsByStudent[mId] ?? [];
+        const maxScore = studentAttempts.length > 0
+          ? Math.max(...studentAttempts.map(a => a.score ?? 0))
+          : 0;
+        bestScoreByStudent[mId] = maxScore;
+      }
+
+      const sorted = Object.entries(bestScoreByStudent).sort(([, a], [, b]) => b - a);
+      const myIdx = sorted.findIndex(([id]) => id === studentId);
+      const myRank = myIdx >= 0 ? myIdx + 1 : null;
+      const myScore = bestScoreByStudent[studentId] ?? 0;
+      const percentile = myRank && sorted.length > 1
+        ? Math.round(((sorted.length - myRank) / (sorted.length - 1)) * 100)
+        : 100;
+
+      return {
+        batch_id: batch.id,
+        batch_name: batch.name,
+        rank: myRank,
+        total_students: sorted.length,
+        best_score: myScore,
+        percentile,
+      };
+    }).filter(Boolean);
 
     res.status(200).json({
       success: true,
@@ -170,21 +181,29 @@ export const getRankCard = async (req: Request, res: Response): Promise<void> =>
       .eq("id", studentId)
       .maybeSingle();
 
-    const { data: attempts } = await supabaseDB
+    // Fetch total count and best score via lightweight aggregates (REL-2)
+    const { count: totalTests } = await supabaseDB
       .from("attempts")
-      .select("score, max_score, exam_code")
+      .select("id", { count: "exact", head: true })
       .eq("student_id", studentId)
       .eq("status", "submitted");
 
-    const totalTests = (attempts ?? []).length;
-    const bestScore = Math.max(0, ...(attempts ?? []).map((a: any) => a.score ?? 0));
+    const { data: bestAttempt } = await supabaseDB
+      .from("attempts")
+      .select("score")
+      .eq("student_id", studentId)
+      .eq("status", "submitted")
+      .order("score", { ascending: false })
+      .limit(1);
+
+    const bestScore = bestAttempt?.[0]?.score ?? 0;
 
     res.status(200).json({
       success: true,
       data: {
         student_name: user?.name ?? "Student",
         avatar_url: user?.avatar_url ?? null,
-        total_tests: totalTests,
+        total_tests: totalTests ?? 0,
         best_score: bestScore,
         computed_at: new Date().toISOString(),
       },
