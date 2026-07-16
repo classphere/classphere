@@ -1,14 +1,14 @@
 import { Router } from "express";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
-import { uploadQuestions, getPlatformStats, listInstitutes, listTransactions } from "./superadmin.controller";
+import { uploadQuestions, getPlatformStats, listInstitutes, listTransactions, extractPDFController } from "./superadmin.controller";
 import { listAllTickets } from "../support/support.controller";
 import multer from "multer";
 import { uploadToR2 } from "../../lib/r2";
 
 const router = Router();
 
-// Configure multer storage
+// Configure multer storage for images
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 5 * 1024 * 1024 },
@@ -18,6 +18,19 @@ const upload = multer({
       cb(null, true);
     } else {
       cb(new Error("Only images (PNG, JPG, GIF, WEBP, SVG) are allowed"));
+    }
+  },
+});
+
+// Configure multer storage for PDFs (larger limit)
+const uploadPDF = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 50 * 1024 * 1024 }, // 50MB max
+  fileFilter: (_req, file, cb) => {
+    if (file.mimetype === "application/pdf" || file.originalname.toLowerCase().endsWith(".pdf")) {
+      cb(null, true);
+    } else {
+      cb(new Error("Only PDF files are allowed"));
     }
   },
 });
@@ -60,6 +73,13 @@ router.get("/institutes", listInstitutes);
  * Body: { exam, test_type, title, subject, chapter, year, shift, duration, marks, difficulty, questions[] }
  */
 router.post("/upload-questions", uploadQuestions);
+
+/**
+ * POST /api/v1/superadmin/extract-pdf
+ * Extract questions dynamically from a PDF using AI OCR.
+ * Body: pdf file, pages string
+ */
+router.post("/extract-pdf", uploadPDF.single("pdf") as any, extractPDFController);
 
 /**
  * GET /api/v1/superadmin/tickets

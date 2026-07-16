@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
+import multer from "multer";
 import {
   createTest,
   getMyTests,
@@ -8,15 +9,35 @@ import {
   getTest,
   publishTest,
   deleteTest,
+  uploadTestController,
 } from "./tests.controller";
 
 const router = Router();
 
-// ⚠️  ORDER MATTERS: static paths ("/my", "/assigned") must be declared BEFORE "/:id"
+// Multer storage configuration for parsing test files
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 50 * 1024 * 1024 }, // 50MB max file size
+});
+
+const uploadFields = upload.fields([
+  { name: "pdf", maxCount: 1 },
+  { name: "answer_key", maxCount: 1 },
+]);
+
+// ⚠️  ORDER MATTERS: static paths ("/my", "/assigned", "/upload-test") must be declared BEFORE "/:id"
 router.get("/my", authenticate, getMyTests);
 router.get("/assigned", authenticate, getAssignedTests);
 
-router.post("/", authenticate, createTest);
+router.post(
+  "/upload-test",
+  authenticate,
+  requireRole("teacher", "institute_admin", "super_admin"),
+  uploadFields as any,
+  uploadTestController
+);
+
+router.post("/", authenticate, requireRole("teacher", "institute_admin", "super_admin"), createTest);
 router.get("/:id", authenticate, getTest);
 router.delete("/:id", authenticate, requireRole("super_admin", "institute_admin"), deleteTest);
 
@@ -24,3 +45,4 @@ router.delete("/:id", authenticate, requireRole("super_admin", "institute_admin"
 router.post("/:id/publish", authenticate, requireRole("teacher", "institute_admin", "super_admin"), publishTest);
 
 export default router;
+
