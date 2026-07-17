@@ -3,105 +3,107 @@
 import React, { useEffect, useRef } from "react";
 
 interface MarkdownRendererProps {
-  children: string;
+  children: string | any;
 }
 
 /**
- * Lightweight markdown + LaTeX renderer using:
- *  - marked  (CJS, Turbopack-safe) for Markdown → HTML
- *  - KaTeX   (CJS, Turbopack-safe) for math rendering
- *
- * Replaces the react-markdown / remark / rehype stack which is pure-ESM
- * and breaks with Next.js 16 Turbopack from a monorepo node_modules.
+ * Lightweight markdown + LaTeX renderer.
+ * 
+ * Supports:
+ *  - $$...$$ → display math
+ *  - \[...\] → display math (alternative notation)
+ *  - $...$ → inline math
+ *  - \(...\) → inline math (alternative notation)
+ * 
+ * Uses marked.parse() with DEFAULT renderer to avoid marked v5 API breakage
+ * where custom renderer callbacks receive token objects instead of strings.
  */
 export function MarkdownRenderer({ children }: MarkdownRendererProps) {
   const ref = useRef<HTMLDivElement>(null);
 
+  // Coerce to string defensively
+  const safeChildren: string =
+    children == null
+      ? ""
+      : typeof children === "string"
+        ? children
+        : typeof children === "object"
+          ? JSON.stringify(children)
+          : String(children);
+
   useEffect(() => {
-    if (!ref.current) return;
+    if (!ref.current) {
+      return;
+    }
+
+    if (!safeChildren.trim()) {
+      ref.current.innerHTML = "";
+      return;
+    }
 
     (async () => {
       try {
-        // Dynamically import so they never run on the server
-        const { marked } = await import("marked");
         const katex = (await import("katex")).default;
-        await import("katex/dist/katex.min.css" as any);
 
-        // 1. Pre-process: protect LaTeX blocks before marked touches them
-        //    $$ ... $$ → display math,   $ ... $ → inline math
         const mathBlocks: string[] = [];
-        let src = children;
 
-        // Display math ($$...$$) — replace with placeholder
-        src = src.replace(/\$\$([\s\S]+?)\$\$/g, (_match, expr) => {
+        const renderMath = (expr: string, displayMode: boolean): string => {
           const idx = mathBlocks.length;
           try {
             mathBlocks.push(
-              katex.renderToString(expr.trim(), { displayMode: true, throwOnError: false })
+              katex.renderToString(expr.trim(), {
+                displayMode,
+                throwOnError: false,
+                trust: true,
+                strict: false,
+              })
             );
           } catch {
-            mathBlocks.push(`<span class="katex-error">$$${expr}$$</span>`);
-          }
-          return `MATHBLOCK_${idx}_END`;
-        });
-
-        // Inline math ($...$) — replace with placeholder
-        src = src.replace(/\$([^$\n]+?)\$/g, (_match, expr) => {
-          const idx = mathBlocks.length;
-          try {
             mathBlocks.push(
-              katex.renderToString(expr.trim(), { displayMode: false, throwOnError: false })
+              `<span class="text-red-500 text-xs">${displayMode ? "$$" : "$"}${expr}${displayMode ? "$$" : "$"}</span>`
             );
-          } catch {
-            mathBlocks.push(`<span class="katex-error">$${expr}$</span>`);
           }
-          return `MATHBLOCK_${idx}_END`;
-        });
-
-        // 2. Run marked on the math-free source
-        marked.setOptions({ gfm: true, breaks: true });
-        
-        // Custom renderer to inject Tailwind classes (replacing react-markdown components)
-        const renderer: any = new marked.Renderer();
-        renderer.table = (header: any, body: any) => {
-          return `<div class="overflow-x-auto my-4"><table class="min-w-full divide-y divide-s-stroke2 border border-s-stroke2 rounded-[10px]">\n<thead>\n${header}</thead>\n<tbody>\n${body}</tbody>\n</table></div>\n`;
-        };
-        renderer.tablerow = (content: any) => {
-          return `<tr>\n${content}</tr>\n`;
-        };
-        renderer.tablecell = (content: any, flags: any) => {
-          const type = flags.header ? 'th' : 'td';
-          const className = flags.header 
-            ? 'px-4 py-3 text-left text-[13px] font-bold text-t-primary uppercase tracking-wider bg-b-surface2/50' 
-            : 'px-4 py-3 text-[14px] text-t-primary border-t border-s-stroke2';
-          const align = flags.align ? ` align="${flags.align}"` : '';
-          return `<${type} class="${className}"${align}>\n${content}</${type}>\n`;
-        };
-        renderer.paragraph = (text: any) => `<p class="my-2 leading-relaxed">${text}</p>\n`;
-        renderer.list = (body: any, ordered: any, start: any) => {
-          const type = ordered ? 'ol' : 'ul';
-          const className = ordered ? 'list-decimal list-inside my-2' : 'list-disc list-inside my-2';
-          return `<${type} class="${className}">\n${body}</${type}>\n`;
+          return `%%MATH_${idx}%%`;
         };
 
-        marked.use({ renderer });
-        let html = await marked(src);
+        let src = safeChildren;
 
-        // 3. Restore math blocks
-        html = html.replace(/MATHBLOCK_(\d+)_END/g, (_m, i) => mathBlocks[+i] ?? "");
+        // ── Display math: $$...$$ (highest priority, check before inline)
+        src = src.replace(/\$\$([\s\S]+?)\$\$/g, (_m, e) => renderMath(e, true));
+
+        // ── Display math: \[...\]
+        src = src.replace(/\\\[([\s\S]+?)\\\]/g, (_m, e) => renderMath(e, true));
+
+        // ── Inline math: \(...\)
+        src = src.replace(/\\\(([\s\S]+?)\\\)/g, (_m, e) => renderMath(e, false));
+
+        // ── Inline math: $...$ (only when not preceded/followed by another $)
+        src = src.replace(/(?<!\$)\$(?!\$)([^$\n]+?)(?<!\$)\$(?!\$)/g, (_m, e) => renderMath(e, false));
+
+        // ── Run marked with DEFAULT renderer ────────────────────────────────
+        let html: string;
+        try {
+          const { marked } = await import("marked");
+          html = await marked.parse(src, { gfm: true, breaks: true });
+        } catch {
+          // Fallback: treat newlines as breaks
+          html = `<p>${src.replace(/\n\n+/g, "</p><p>").replace(/\n/g, "<br>")}</p>`;
+        }
+
+        // ── Restore math blocks ─────────────────────────────────────────────
+        html = html.replace(/%%MATH_(\d+)%%/g, (_m, i) => mathBlocks[+i] ?? "");
 
         if (ref.current) ref.current.innerHTML = html;
       } catch (err) {
-        // Fallback: plain text
-        if (ref.current) ref.current.innerText = children;
+        if (ref.current) ref.current.innerText = safeChildren;
       }
     })();
-  }, [children]);
+  }, [safeChildren]);
 
   return (
     <div
       ref={ref}
-      className="markdown-content prose prose-sm max-w-none"
+      className="markdown-content"
     />
   );
 }

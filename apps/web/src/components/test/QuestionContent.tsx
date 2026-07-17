@@ -47,7 +47,7 @@ export function QuestionContent({
           <div className="text-overline font-bold uppercase tracking-wider text-t-tertiary">
             Question {current + 1} of {questionsLength}
           </div>
-          <div className="mt-2 text-h6 leading-relaxed text-t-primary md:text-h5">
+          <div className="mt-2 text-sub-title-1 leading-relaxed text-t-primary">
             <MarkdownRenderer>{q.question_text}</MarkdownRenderer>
           </div>
         </div>
@@ -99,27 +99,60 @@ export function QuestionContent({
             {q.options.map((opt) => {
               const selected = answers[q.id] === opt.id;
               const disabled = isSectionBLimitReached(q) && !selected;
+              const hasText = opt.text && opt.text.trim().length > 0;
+              const hasImage = !!opt.image_url;
+              const isEmpty = !hasText && !hasImage;
+
               return (
                 <button
                   key={opt.id}
                   id={`option-${opt.id}`}
-                  disabled={disabled}
-                  className={`group/opt flex items-center gap-4 rounded-[10px] border p-4 text-left transition-all relative overflow-hidden ${selected
-                      ? "border-primary-01 bg-primary-01/5 shadow-widget"
-                      : disabled
-                        ? "border-s-stroke2 bg-b-surface2/50 cursor-not-allowed opacity-50"
-                        : "border-s-stroke2 bg-b-surface2 hover:border-s-highlight shadow-sm"
-                    }`}
-                  onClick={() => selectAnswer(q.id, opt.id)}
+                  disabled={disabled || isEmpty}
+                  className={`group/opt flex items-center gap-4 rounded-[10px] border p-4 text-left transition-all relative overflow-hidden ${
+                    isEmpty
+                      ? "border-dashed border-s-stroke2 bg-b-surface2/30 opacity-50 cursor-not-allowed"
+                      : selected
+                        ? "border-primary-01 bg-primary-01/5 shadow-widget"
+                        : disabled
+                          ? "border-s-stroke2 bg-b-surface2/50 cursor-not-allowed opacity-50"
+                          : "border-s-stroke2 bg-b-surface2 hover:border-s-highlight shadow-sm"
+                  }`}
+                  onClick={() => !isEmpty && selectAnswer(q.id, opt.id)}
                 >
-                  <div className={`flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold shadow-sm transition-colors ${selected ? "bg-primary-01 text-t-light" : "bg-b-surface1 text-t-primary border border-s-stroke2 group-hover/opt:border-s-highlight"}`}>
+                  <div className={`flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold shadow-sm transition-colors ${
+                    selected
+                      ? "bg-primary-01 text-t-light"
+                      : "bg-b-surface1 text-t-primary border border-s-stroke2 group-hover/opt:border-s-highlight"
+                  }`}>
                     {opt.id}
                   </div>
                   <div className="min-w-0 flex-1 text-body-2 font-medium text-t-primary">
-                    {opt.text && <MarkdownRenderer>{opt.text}</MarkdownRenderer>}
-                    {opt.image_url && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={opt.image_url} alt={`Option ${opt.id}`} className="mt-2 size-36 object-contain rounded-[10px] bg-white p-2 border border-s-stroke2/50 shadow-sm" referrerPolicy="no-referrer" />
+                    {isEmpty ? (
+                      <span className="text-caption text-t-tertiary italic">Option not available</span>
+                    ) : (
+                      <>
+                        {hasText && <MarkdownRenderer>{opt.text}</MarkdownRenderer>}
+                        {hasImage && (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={opt.image_url!}
+                            alt={`Option ${opt.id}`}
+                            className="mt-2 max-h-36 max-w-full object-contain rounded-[10px] bg-white p-2 border border-s-stroke2/50 shadow-sm"
+                            referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              const target = e.currentTarget;
+                              target.style.display = "none";
+                              const parent = target.parentElement;
+                              if (parent && !parent.querySelector(".img-error")) {
+                                const err = document.createElement("span");
+                                err.className = "img-error text-caption text-t-tertiary italic";
+                                err.textContent = "⚠ Image unavailable";
+                                parent.appendChild(err);
+                              }
+                            }}
+                          />
+                        )}
+                      </>
                     )}
                   </div>
                 </button>

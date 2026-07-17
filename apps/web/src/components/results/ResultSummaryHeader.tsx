@@ -21,7 +21,7 @@ export function ResultSummaryHeader({ analysis: a, totalQuestions, batchAvgScore
           <div>
             <p className="text-[12px] font-sans font-bold uppercase tracking-[0.24em] text-t-secondary">Test Results</p>
             <h1 className="mt-2 text-[28px] md:text-[32px] font-sans font-black tracking-tight text-t-primary dark:text-t-primary leading-tight">Test Results & Analysis</h1>
-            <p className="mt-2 text-[14px] font-sans font-medium text-t-secondary dark:text-t-secondary">{a.topicStats[0]?.chapter ?? "Practice set"} · JEE · {totalQuestions} questions</p>
+            <p className="mt-2 text-[14px] font-sans font-medium text-t-secondary dark:text-t-secondary">{a.topicStats[0]?.subject ?? "Practice set"} · JEE · {totalQuestions} questions</p>
           </div>
 
           {a.narrative && (
