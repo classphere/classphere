@@ -40,16 +40,24 @@ const corsOptions = {
       return callback(null, true);
     }
 
+    // In development mode, allow all localhost and 127.0.0.1 subdomains/ports
+    if (process.env.NODE_ENV !== "production") {
+      if (/^https?:\/\/([a-zA-Z0-9-_\.]+\.)?localhost(:\d+)?$/.test(origin) || /^https?:\/\/127\.0\.0\.1(:\d+)?$/.test(origin)) {
+        return callback(null, true);
+      }
+    }
+
     // Production: *.classphere.com subdomains
     const isProdSubdomain = /^https:\/\/[a-z0-9-]+\.classphere\.com$/.test(origin);
 
     // Local dev: *.localhost:PORT (e.g. test.localhost:3000, allen.localhost:3000)
-    const isLocalSubdomain = /^http:\/\/[a-z0-9-]+\.localhost(:\d+)?$/.test(origin);
+    const isLocalSubdomain = /^http:\/\/[a-z0-9-_\.]+\.localhost(:\d+)?$/.test(origin);
 
     if (allowedOrigins.includes(origin) || isProdSubdomain || isLocalSubdomain) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      console.warn(`[CORS Blocked] Origin: ${origin}`);
+      callback(new Error(`Not allowed by CORS: ${origin}`));
     }
   },
   credentials: true,
