@@ -54,7 +54,7 @@ export function useInstitutes() {
     setLoading(true);
     setError(null);
     try {
-      const res = await apiClient.get<{ success: boolean; data: { institutes: Institute[] } }>(
+      const res = await apiClient.get<{ success: boolean; data: { institutes: Institute[] }; message?: string }>(
         "/api/v1/superadmin/institutes",
         token
       );

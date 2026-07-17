@@ -39,7 +39,7 @@ export function useSuperadminStats() {
     setLoading(true);
     setError(null);
     try {
-      const res = await apiClient.get<{ success: boolean; data: SuperadminStats }>(
+      const res = await apiClient.get<{ success: boolean; data: SuperadminStats; message?: string }>(
         "/api/v1/superadmin/stats",
         token
       );
