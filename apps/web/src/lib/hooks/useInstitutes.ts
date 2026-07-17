@@ -2,13 +2,11 @@
  * useInstitutes.ts
  * React hook for institute CRUD operations — superadmin CRM.
  * Lives in lib/hooks/ per ARCHITECTURE_V2.md §4.2.
- *
- * Auth: Uses x-api-key header for UI_BYPASS_MODE compatibility.
- * When real auth is wired: swap to apiClient.get(path, session.access_token).
  */
 
 import { useState, useEffect, useCallback } from "react";
-import { API_URL } from "@/lib/api.client";
+import { API_URL, apiClient } from "@/lib/api.client";
+import { useAuth } from "@/lib/auth-context";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -38,49 +36,39 @@ export interface CreateInstitutePayload {
   logoUrl?: string;
 }
 
-// ─── Shared fetch helper with internal API key ────────────────────────────────
-// Uses INTERNAL_API_KEY so it works even when UI_BYPASS_MODE = true
-// (The mock token "mock-token" would fail JWT validation on the real API)
-
-const INTERNAL_KEY = process.env.NEXT_PUBLIC_INTERNAL_API_KEY ?? "dev-superadmin-key-2024";
-
-async function superadminFetch<T>(path: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_URL}${path}`, {
-    ...options,
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": INTERNAL_KEY,
-      ...(options?.headers ?? {}),
-    },
-  });
-  const data = await res.json();
-  if (!res.ok || !data.success) {
-    throw new Error(data.message ?? `API error ${res.status}`);
-  }
-  return data as T;
-}
-
 // ─── Hook ─────────────────────────────────────────────────────────────────────
 
 export function useInstitutes() {
+  const { session } = useAuth();
+  const token = session?.access_token;
+
   const [institutes, setInstitutes] = useState<Institute[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const fetchInstitutes = useCallback(async () => {
+    if (!token) {
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     setError(null);
     try {
-      const data = await superadminFetch<{ success: boolean; data: { institutes: Institute[] } }>(
-        "/api/v1/superadmin/institutes"
+      const res = await apiClient.get<{ success: boolean; data: { institutes: Institute[] } }>(
+        "/api/v1/superadmin/institutes",
+        token
       );
-      setInstitutes(data.data.institutes);
+      if (res.success) {
+        setInstitutes(res.data.institutes);
+      } else {
+        setError(res.message ?? "Failed to fetch institutes");
+      }
     } catch (err: any) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     fetchInstitutes();
@@ -88,10 +76,14 @@ export function useInstitutes() {
 
   const createInstitute = useCallback(
     async (payload: CreateInstitutePayload): Promise<{ success: boolean; message: string; tempPassword?: string }> => {
+      if (!token) {
+        return { success: false, message: "Authentication required" };
+      }
       try {
-        const res = await superadminFetch<{ success: boolean; message: string; data: { institute: Institute; tempPassword: string } }>(
+        const res = await apiClient.post<{ success: boolean; message: string; data: { institute: Institute; tempPassword: string } }>(
           "/api/v1/institutes",
-          { method: "POST", body: JSON.stringify(payload) }
+          payload,
+          token
         );
         // Refresh the list after a successful create
         await fetchInstitutes();
@@ -100,17 +92,20 @@ export function useInstitutes() {
         return { success: false, message: err.message };
       }
     },
-    [fetchInstitutes]
+    [token, fetchInstitutes]
   );
 
   const uploadImage = useCallback(async (file: File): Promise<string> => {
+    if (!token) {
+      throw new Error("Authentication required");
+    }
     const formData = new FormData();
     formData.append("image", file);
 
     const res = await fetch(`${API_URL}/api/v1/superadmin/upload`, {
       method: "POST",
       headers: {
-        "x-api-key": INTERNAL_KEY,
+        Authorization: `Bearer ${token}`,
       },
       body: formData,
     });
@@ -119,7 +114,7 @@ export function useInstitutes() {
       throw new Error(data.message ?? "Upload failed");
     }
     return data.url;
-  }, []);
+  }, [token]);
 
   return { institutes, loading, error, refetch: fetchInstitutes, createInstitute, uploadImage };
 }

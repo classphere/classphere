@@ -5,7 +5,8 @@
  */
 
 import { useState, useEffect, useCallback } from "react";
-import { API_URL } from "@/lib/api.client";
+import { apiClient } from "@/lib/api.client";
+import { useAuth } from "@/lib/auth-context";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -20,44 +21,39 @@ export interface SuperadminStats {
   systemUptime: string;
 }
 
-// ─── Shared internal fetch ─────────────────────────────────────────────────────
-
-const INTERNAL_KEY = process.env.NEXT_PUBLIC_INTERNAL_API_KEY ?? "dev-superadmin-key-2024";
-
-async function superadminFetch<T>(path: string): Promise<T> {
-  const res = await fetch(`${API_URL}${path}`, {
-    headers: {
-      "x-api-key": INTERNAL_KEY,
-    },
-  });
-  const data = await res.json();
-  if (!res.ok || !data.success) {
-    throw new Error(data.message ?? `API error ${res.status}`);
-  }
-  return data as T;
-}
-
 // ─── Hook ─────────────────────────────────────────────────────────────────────
 
 export function useSuperadminStats() {
+  const { session } = useAuth();
+  const token = session?.access_token;
+
   const [stats, setStats] = useState<SuperadminStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const fetchStats = useCallback(async () => {
+    if (!token) {
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     setError(null);
     try {
-      const data = await superadminFetch<{ success: boolean; data: SuperadminStats }>(
-        "/api/v1/superadmin/stats"
+      const res = await apiClient.get<{ success: boolean; data: SuperadminStats }>(
+        "/api/v1/superadmin/stats",
+        token
       );
-      setStats(data.data);
+      if (res.success) {
+        setStats(res.data);
+      } else {
+        setError(res.message ?? "Failed to fetch stats");
+      }
     } catch (err: any) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     fetchStats();
