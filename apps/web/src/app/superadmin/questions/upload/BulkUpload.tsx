@@ -14,14 +14,14 @@ const API_BASE = API_V1_URL;
 const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-main":     ["Physics", "Chemistry", "Mathematics"],
   "jee-advanced": ["Physics", "Chemistry", "Mathematics"],
-  "neet-ug":      ["Physics", "Chemistry", "Biology"],
+  "neet-ug":      ["Physics", "Chemistry", "Biology", "Botany", "Zoology"],
   "ssc-cgl":      ["General Intelligence & Reasoning", "General Awareness", "Quantitative Aptitude", "English Language"],
 };
 
 // Auto-detect subject from filename e.g. "Physics_Work_Energy.json" → "Physics"
 function detectSubject(name: string): string {
   const parts = name.split("_");
-  const known = ["Physics", "Chemistry", "Biology", "Mathematics",
+  const known = ["Physics", "Chemistry", "Biology", "Botany", "Zoology", "Mathematics",
     "Quantitative", "General", "English"];
   return known.find(s => parts[0].startsWith(s)) ?? parts[0];
 }
@@ -70,8 +70,9 @@ const TEST_TYPES = [
   { code: "chapter-wise", label: "Chapter-wise" },
   { code: "mock-test",    label: "Mock Test" },
   { code: "pyq",          label: "PYQ" },
+  { code: "ncert",        label: "Ncert Questions" },
 ];
-const DIFFICULTY = ["easy", "medium", "hard"];
+
 
 // ─── Pill button ─────────────────────────────────────────────────────────────
 
@@ -103,8 +104,18 @@ export default function BulkUpload() {
     difficulty: "medium", subject: "", chapter: "",
   });
 
-  const setMetaField = (k: keyof SharedMeta, v: string) =>
-    setMeta(prev => ({ ...prev, [k]: v }));
+  const setMetaField = (k: keyof SharedMeta, v: string) => {
+    setMeta(prev => {
+      const next = { ...prev, [k]: v };
+      if (k === "exam") {
+        next.subject = "";
+        if (v === "ssc-cgl" && next.test_type === "ncert") {
+          next.test_type = "chapter-wise";
+        }
+      }
+      return next;
+    });
+  };
 
   // ── File parsing ─────────────────────────────────────────────────────────────
 
@@ -184,7 +195,7 @@ export default function BulkUpload() {
           Authorization: `Bearer ${session.access_token}`,
         };
 
-        const isChapterWise = meta.test_type === "chapter-wise";
+        const isChapterWise = meta.test_type === "chapter-wise" || meta.test_type === "ncert";
 
         const res = await fetch(`${API_BASE}/superadmin/upload-questions`, {
           method: "POST",
@@ -215,7 +226,7 @@ export default function BulkUpload() {
 
   // ── Derived state ─────────────────────────────────────────────────────────────
 
-  const isChapterWise    = meta.test_type === "chapter-wise";
+  const isChapterWise    = meta.test_type === "chapter-wise" || meta.test_type === "ncert";
   const subjectOptions   = EXAM_SUBJECTS[meta.exam] ?? [];
 
   const pendingFiles     = files.filter(f => f.status === "pending" && f.questions);
@@ -225,7 +236,7 @@ export default function BulkUpload() {
 
   const titlesFilledCount = pendingFiles.filter(f => f.title.trim() !== "").length;
   const allTitlesFilled   = pendingCount > 0 && titlesFilledCount === pendingCount;
-  const chapterWiseMet    = !isChapterWise || (meta.subject !== "" && meta.chapter.trim() !== "");
+  const chapterWiseMet    = !isChapterWise || (meta.subject !== "");
   const canUpload         = !uploading && pendingCount > 0 && meta.exam !== "" && allTitlesFilled && chapterWiseMet;
 
   // ─────────────────────────────────────────────────────────────────────────────
@@ -257,7 +268,7 @@ export default function BulkUpload() {
           <div className="flex flex-col gap-2">
             <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Test Type *</label>
             <div className="flex flex-wrap gap-3">
-              {TEST_TYPES.map(t => (
+              {TEST_TYPES.filter(t => !(meta.exam === "ssc-cgl" && t.code === "ncert")).map(t => (
                 <Pill key={t.code} active={meta.test_type === t.code} onClick={() => setMetaField("test_type", t.code)}>
                   {t.label}
                 </Pill>
@@ -265,17 +276,7 @@ export default function BulkUpload() {
             </div>
           </div>
 
-          {/* Difficulty */}
-          <div className="flex flex-col gap-2">
-            <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Difficulty</label>
-            <div className="flex flex-wrap gap-3">
-              {DIFFICULTY.map(d => (
-                <Pill key={d} active={meta.difficulty === d} onClick={() => setMetaField("difficulty", d)}>
-                  {d}
-                </Pill>
-              ))}
-            </div>
-          </div>
+
 
           {/* Duration & Marks */}
           <div className="flex gap-4">
@@ -331,7 +332,7 @@ export default function BulkUpload() {
 
               {/* Chapter name input */}
               <div className="flex flex-col gap-2">
-                <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Chapter Name *</label>
+                <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Chapter Name (optional)</label>
                 <input
                   type="text"
                   value={meta.chapter}
@@ -500,7 +501,7 @@ export default function BulkUpload() {
             <div className="relative z-10 mt-4 flex items-center gap-2 p-3 rounded-[10px] bg-[rgba(255,159,10,0.07)] border border-[rgba(255,159,10,0.25)]">
               <RiAlertLine size={16} className="text-[#FF9F0A] shrink-0" />
               <p className="text-[13px] font-sans font-medium text-[#FF9F0A]">
-                Select a Subject and enter a Chapter name above to enable upload
+                Select a Subject above to enable upload
               </p>
             </div>
           )}

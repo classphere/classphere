@@ -16,7 +16,7 @@ type HistoryItem = {
 function TestHistoryCard({ item }: { item: HistoryItem }) {
   const pct = item.percentage;
   const pctColor = pct >= 70 ? "text-primary-02" : pct >= 50 ? "text-primary-05" : "text-primary-03";
-  const testTypeLabel = item.test_type === "pyq" ? "PYQ" : item.test_type === "mock-test" ? "Mock Test" : "Chapter-wise";
+  const testTypeLabel = item.test_type === "pyq" ? "PYQ" : item.test_type === "mock-test" ? "Mock Test" : item.test_type === "ncert" ? "Ncert Questions" : "Chapter-wise";
 
   return (
     <Card variant="default" padding="default" className="group relative overflow-hidden hover:-translate-y-1 hover:shadow-depth transition-all duration-300 select-none">

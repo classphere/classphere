@@ -23,7 +23,7 @@ import {
 interface Test {
   id: string;
   title: string;
-  test_type: "chapter-wise" | "mock-test" | "pyq";
+  test_type: "chapter-wise" | "mock-test" | "pyq" | "ncert";
   total_questions: number;
   total_marks: number;
   duration_min: number;
@@ -43,6 +43,7 @@ const TYPE_LABELS: Record<string, string> = {
   "chapter-wise": "Chapter-wise",
   "mock-test": "Mock Test",
   "pyq": "PYQ",
+  "ncert": "Ncert Questions",
 };
 
 function formatDate(iso: string) {

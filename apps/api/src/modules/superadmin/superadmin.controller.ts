@@ -224,7 +224,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    const validTypes = ["chapter-wise", "mock-test", "pyq"];
+    const validTypes = ["chapter-wise", "mock-test", "pyq", "ncert"];
     if (!validTypes.includes(test_type)) {
       res.status(400).json({ success: false, message: `Invalid test_type. Must be one of: ${validTypes.join(", ")}` });
       return;
