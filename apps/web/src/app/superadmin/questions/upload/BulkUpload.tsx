@@ -167,17 +167,22 @@ export default function BulkUpload() {
   const uploadAll = async () => {
     const ready = files.filter(f => f.questions && !f.parseError && f.status === "pending");
     if (!ready.length || !meta.exam || !meta.test_type) return;
-    setUploading(true);
 
-    const token = session?.access_token ?? "";
-    const apiKey = process.env.NEXT_PUBLIC_INTERNAL_API_KEY || "dev-superadmin-key-2024";
+    if (!session?.access_token) {
+      for (const file of ready) {
+        updateFile(file.name, { status: "error", message: "Your session has expired. Please sign in again." });
+      }
+      return;
+    }
+    setUploading(true);
 
     for (const f of ready) {
       updateFile(f.name, { status: "uploading" });
       try {
-        const headers: Record<string, string> = { "Content-Type": "application/json" };
-        if (token) headers["Authorization"] = `Bearer ${token}`;
-        else if (apiKey) headers["x-api-key"] = apiKey;
+        const headers: Record<string, string> = {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${session.access_token}`,
+        };
 
         const isChapterWise = meta.test_type === "chapter-wise";
 

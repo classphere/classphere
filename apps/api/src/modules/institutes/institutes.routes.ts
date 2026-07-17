@@ -5,6 +5,7 @@ import {
   createInstitute,
   getMyInstitute,
   updateInstitute,
+  deleteInstitute,
   getInstituteStats,
   getInstituteReports,
   getInstituteBySlug,
@@ -30,6 +31,7 @@ router.get("/me/subscription", authenticate, requireRole("institute_admin", "sup
 
 router.post("/", authenticate, requireRole("super_admin"), createInstitute);
 router.patch("/:id", authenticate, requireRole("institute_admin", "super_admin"), updateInstitute);
+router.delete("/:id", authenticate, requireRole("super_admin"), deleteInstitute);
 router.get("/:id/stats", authenticate, requireRole("institute_admin", "super_admin"), getInstituteStats);
 router.get("/:id/reports", authenticate, requireRole("institute_admin", "super_admin"), getInstituteReports);
 

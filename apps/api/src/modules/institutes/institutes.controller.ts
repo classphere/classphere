@@ -95,16 +95,51 @@ export const updateInstitute = async (req: Request, res: Response): Promise<void
   try {
     const { id } = req.params;
     const userId = req.user!.id;
-    const allowed = ["name", "logo_url", "primary_color"];
+    const isSuperAdmin = req.user!.role === "super_admin";
+
+    const allowed = isSuperAdmin
+      ? ["name", "logo_url", "primary_color", "plan", "is_active"]
+      : ["name", "logo_url", "primary_color"];
+
     const updates: Record<string, any> = {};
     for (const k of allowed) { if (req.body[k] !== undefined) updates[k] = req.body[k]; }
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No valid fields to update" }); return; }
 
-    const { data: institute, error } = await supabaseDB
-      .from("institutes").update(updates).eq("id", id).eq("owner_id", userId).select().single();
+    let query = supabaseDB.from("institutes").update(updates).eq("id", id);
+    if (!isSuperAdmin) {
+      query = query.eq("owner_id", userId);
+    }
+
+    const { data: institute, error } = await query.select().single();
 
     if (error || !institute) { res.status(error ? 500 : 404).json({ success: false, message: error?.message ?? "Institute not found" }); return; }
     res.status(200).json({ success: true, data: { institute } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * DELETE /api/v1/institutes/:id
+ * [super_admin only] — Suspend/Delete an institute.
+ */
+export const deleteInstitute = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+
+    const { data: institute, error } = await supabaseDB
+      .from("institutes")
+      .update({ is_active: false, updated_at: new Date().toISOString() })
+      .eq("id", id)
+      .select()
+      .single();
+
+    if (error || !institute) {
+      res.status(error ? 500 : 404).json({ success: false, message: error?.message ?? "Institute not found" });
+      return;
+    }
+
+    res.status(200).json({ success: true, message: "Institute suspended successfully" });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

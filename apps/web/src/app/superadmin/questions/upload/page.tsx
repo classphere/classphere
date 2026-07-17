@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import BulkUpload from "./BulkUpload";
 import AIExtractor from "./AIExtractor";
 import { API_V1_URL } from "@/lib/api.client";
+import { useAuth } from "@/lib/auth-context";
 import {
   RiUploadCloud2Line,
   RiFileList3Line,
@@ -62,6 +63,7 @@ interface FormState {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function UploadQuestionsPage() {
   const router = useRouter();
+  const { session } = useAuth();
   const [activeTab, setActiveTab] = useState<"single" | "bulk" | "ai">("single");
 
   const [form, setForm] = useState<FormState>({
@@ -145,23 +147,20 @@ export default function UploadQuestionsPage() {
   const handleUpload = async () => {
     if (!parsedQuestions || !form.exam || !form.test_type || !form.title) return;
 
+    if (!session?.access_token) {
+      setStatus("error");
+      setResultMsg("Your session has expired. Please sign in again.");
+      return;
+    }
+
     setStatus("loading");
     setResultMsg("");
 
     try {
-      const token = localStorage.getItem("auth_token") ?? "";
-      const apiKey = process.env.NEXT_PUBLIC_INTERNAL_API_KEY || "dev-superadmin-key-2024";
-
       const headers: Record<string, string> = {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${session.access_token}`,
       };
-      // Use API key bypass when no real JWT is available (before Supabase auth is wired up)
-      if (token) {
-        headers["Authorization"] = `Bearer ${token}`;
-      }
-      if (apiKey) {
-        headers["x-api-key"] = apiKey;
-      }
 
       const body = {
         exam: form.exam,

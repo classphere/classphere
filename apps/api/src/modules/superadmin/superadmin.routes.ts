@@ -1,7 +1,21 @@
 import { Router } from "express";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
-import { uploadQuestions, getPlatformStats, listInstitutes, listTransactions, extractPDFController } from "./superadmin.controller";
+import { 
+  uploadQuestions, 
+  getPlatformStats, 
+  listInstitutes, 
+  listTransactions, 
+  extractPDFController,
+  getPlatformTelemetry,
+  getPlatformConfig,
+  updatePlatformConfig,
+  listAuditLogs,
+  updateTicketStatus,
+  replyToTicket,
+  listTicketReplies,
+  getPlatformAnalytics
+} from "./superadmin.controller";
 import { listAllTickets } from "../support/support.controller";
 import multer from "multer";
 import { uploadToR2 } from "../../lib/r2";
@@ -60,6 +74,7 @@ router.post("/upload", upload.single("image") as any, async (req: any, res: any)
  * Real-time platform-wide stats for the superadmin dashboard.
  */
 router.get("/stats", getPlatformStats);
+router.get("/analytics", getPlatformAnalytics);
 
 /**
  * GET /api/v1/superadmin/institutes
@@ -88,10 +103,52 @@ router.post("/extract-pdf", uploadPDF.single("pdf") as any, extractPDFController
 router.get("/tickets", listAllTickets);
 
 /**
+ * PATCH /api/v1/superadmin/tickets/:id
+ * Update a B2B support ticket status or priority.
+ */
+router.patch("/tickets/:id", updateTicketStatus);
+
+/**
+ * POST /api/v1/superadmin/tickets/:id/replies
+ * Post a reply on a support ticket.
+ */
+router.post("/tickets/:id/replies", replyToTicket);
+
+/**
+ * GET /api/v1/superadmin/tickets/:id/replies
+ * Get all replies for a support ticket.
+ */
+router.get("/tickets/:id/replies", listTicketReplies);
+
+/**
  * GET /api/v1/superadmin/transactions
  * List all institute invoices.
  */
 router.get("/transactions", listTransactions);
+
+/**
+ * GET /api/v1/superadmin/telemetry
+ * Live telemetry / health diagnostics of API, DB, Cache, Workers, CDN.
+ */
+router.get("/telemetry", getPlatformTelemetry);
+
+/**
+ * GET /api/v1/superadmin/config
+ * Fetch platform system configuration flags.
+ */
+router.get("/config", getPlatformConfig);
+
+/**
+ * PATCH /api/v1/superadmin/config
+ * Save platform system configuration flags.
+ */
+router.patch("/config", updatePlatformConfig);
+
+/**
+ * GET /api/v1/superadmin/audit-logs
+ * List admin audit logs.
+ */
+router.get("/audit-logs", listAuditLogs);
 
 export default router;
 

@@ -3,9 +3,19 @@
 import { useState, useEffect, useCallback } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
+import { Modal } from "@/components/shared/Modal";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
-import { RiSearchLine, RiFilter3Line, RiAddLine, RiDeleteBinLine, RiEditLine, RiMore2Fill, RiLoader4Line } from "@remixicon/react";
+import { 
+  RiSearchLine, 
+  RiFilter3Line, 
+  RiAddLine, 
+  RiDeleteBinLine, 
+  RiEditLine, 
+  RiMore2Fill, 
+  RiLoader4Line,
+  RiArrowDownSLine
+} from "@remixicon/react";
 
 const DIFFICULTY_CLASS: Record<string, string> = {
   Hard: "bg-[rgba(239,68,68,0.08)] border-[rgba(239,68,68,0.2)] text-primary-03",
@@ -15,6 +25,8 @@ const DIFFICULTY_CLASS: Record<string, string> = {
 
 export default function QuestionBankPage() {
   const { session } = useAuth();
+  const token = session?.access_token;
+
   const [questions, setQuestions] = useState<any[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -24,15 +36,25 @@ export default function QuestionBankPage() {
   const [search, setSearch] = useState("");
   const LIMIT = 20;
 
+  // Edit states
+  const [editingQuestion, setEditingQuestion] = useState<any | null>(null);
+  const [editForm, setEditForm] = useState({
+    subject: "",
+    chapter: "",
+    topic: "",
+    difficulty: "Medium",
+  });
+  const [saving, setSaving] = useState(false);
+
   const fetchQuestions = useCallback(async () => {
-    if (!session?.access_token) return;
+    if (!token) return;
     setLoading(true);
     try {
       const qs = new URLSearchParams({ page: String(page), limit: String(LIMIT) });
       if (subject) qs.set("subject", subject);
       if (difficulty) qs.set("difficulty", difficulty);
 
-      const res = await apiClient.get(`/api/v1/questions?${qs}`, session.access_token);
+      const res = await apiClient.get(`/api/v1/questions?${qs}`, token);
       if (res.success) {
         let qs2 = res.data.questions ?? [];
         if (search) {
@@ -52,40 +74,81 @@ export default function QuestionBankPage() {
     } finally {
       setLoading(false);
     }
-  }, [session?.access_token, page, subject, difficulty]);
+  }, [token, page, subject, difficulty]);
 
   useEffect(() => { fetchQuestions(); }, [fetchQuestions]);
+
+  const handleDelete = async (id: string) => {
+    if (!confirm("Are you sure you want to permanently delete this question?")) return;
+    if (!token) return;
+    try {
+      const res = await apiClient.delete<{ success: boolean }>(`/api/v1/questions/${id}`, token);
+      if (res.success) {
+        await fetchQuestions();
+      } else {
+        alert("Failed to delete question.");
+      }
+    } catch (err: any) {
+      alert(err.message ?? "Error deleting question.");
+    }
+  };
+
+  const handleEditClick = (q: any) => {
+    setEditingQuestion(q);
+    setEditForm({
+      subject: q.subject ?? "",
+      chapter: q.chapter ?? "",
+      topic: q.topic ?? "",
+      difficulty: q.difficulty ?? "Medium",
+    });
+  };
+
+  const handleSaveEdit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingQuestion || !token) return;
+    setSaving(true);
+    try {
+      const res = await apiClient.patch<{ success: boolean }>(
+        `/api/v1/questions/${editingQuestion.id}`,
+        editForm,
+        token
+      );
+      if (res.success) {
+        setEditingQuestion(null);
+        await fetchQuestions();
+      } else {
+        alert("Failed to save changes.");
+      }
+    } catch (err: any) {
+      alert(err.message ?? "Error saving question details.");
+    } finally {
+      setSaving(false);
+    }
+  };
 
   const totalPages = Math.ceil(total / LIMIT);
 
   return (
     <>
-      <Navbar title="Question Bank" subtitle="Central repository for all examination content." />
-      <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-6 px-6 bg-transparent">
-
-        <SectionCard
-          title={`Manage Questions ${total > 0 ? `(${total.toLocaleString()} total)` : ""}`}
+      <Navbar title="Global Question Bank" subtitle="Manage JEE, NEET, and SSC question databases." />
+      
+      <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6">
+        
+        <SectionCard 
+          title="Questions Inventory"
           headerRight={
-            <button className="flex items-center gap-2 px-5 py-2.5 rounded-[10px] relative overflow-hidden border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white font-sans text-[14px] font-semibold shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919] transition-transform hover:scale-[1.01] active:scale-[0.99]">
-              <RiAddLine size={18} />
-              <span>Add New Question</span>
-            </button>
-          }
-        >
-          {/* Filters & Search */}
-          <div className="flex flex-col md:flex-row justify-between items-center w-full gap-4 mt-4">
-            <div className="relative flex-1 w-full max-w-[500px]">
-              <RiSearchLine size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-t-secondary" />
-              <input
-                type="text"
-                placeholder="Search by ID, subject, chapter, or topic..."
-                className="w-full h-11 pl-10 pr-4 bg-b-surface1 border border-s-stroke2/40 rounded-[10px] font-sans text-[14px] text-t-primary outline-none focus:border-t-primary transition-colors placeholder:text-t-secondary"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="relative w-[300px]">
+                <RiSearchLine size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary" />
+                <input 
+                  type="text" 
+                  placeholder="Search questions..." 
+                  className="w-full h-11 pl-11 pr-4 bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[14px] text-t-primary placeholder:text-t-secondary focus:border-t-primary outline-none transition-colors"
+                  value={search}
+                  onChange={(e) => { setSearch(e.target.value); setPage(1); }}
+                />
+              </div>
 
-            <div className="flex flex-row flex-wrap items-center gap-3 w-full md:w-auto">
               <select
                 className="h-11 px-4 bg-b-surface1 border border-s-stroke2/40 rounded-[10px] font-sans text-[14px] font-medium text-t-primary outline-none focus:border-t-primary transition-colors cursor-pointer appearance-none min-w-[140px]"
                 value={subject}
@@ -95,8 +158,7 @@ export default function QuestionBankPage() {
                 <option value="Physics">Physics</option>
                 <option value="Chemistry">Chemistry</option>
                 <option value="Mathematics">Mathematics</option>
-                <option value="Botany">Botany</option>
-                <option value="Zoology">Zoology</option>
+                <option value="Biology">Biology</option>
               </select>
 
               <select
@@ -110,8 +172,8 @@ export default function QuestionBankPage() {
                 <option value="Hard">Hard</option>
               </select>
             </div>
-          </div>
-
+          }
+        >
           {/* Table */}
           <div className="flex flex-col gap-3 mt-6">
             <div className="hidden md:flex flex-row items-center w-full px-6 py-2 text-xs font-semibold uppercase tracking-wider text-t-secondary">
@@ -158,9 +220,21 @@ export default function QuestionBankPage() {
                   </span>
                 </div>
                 <div className="w-full md:w-[120px] text-right flex md:justify-end items-center gap-1 opacity-100 md:opacity-0 md:group-hover/item:opacity-100 transition-opacity">
-                  <button className="p-2 rounded-[10px] hover:bg-b-surface1 text-t-secondary hover:text-t-primary transition-colors"><RiEditLine size={18} /></button>
-                  <button className="p-2 rounded-[10px] hover:bg-[rgba(239,68,68,0.1)] text-t-secondary hover:text-primary-03 transition-colors"><RiDeleteBinLine size={18} /></button>
-                  <button className="p-2 rounded-[10px] hover:bg-b-surface1 text-t-secondary hover:text-t-primary transition-colors"><RiMore2Fill size={18} /></button>
+                  <button 
+                    onClick={() => handleEditClick(question)}
+                    className="p-2 rounded-[10px] hover:bg-b-surface1 text-t-secondary hover:text-t-primary transition-colors"
+                  >
+                    <RiEditLine size={18} />
+                  </button>
+                  <button 
+                    onClick={() => handleDelete(question.id)}
+                    className="p-2 rounded-[10px] hover:bg-[rgba(239,68,68,0.1)] text-t-secondary hover:text-primary-03 transition-colors"
+                  >
+                    <RiDeleteBinLine size={18} />
+                  </button>
+                  <button className="p-2 rounded-[10px] hover:bg-b-surface1 text-t-secondary hover:text-t-primary transition-colors">
+                    <RiMore2Fill size={18} />
+                  </button>
                 </div>
               </div>
             ))}
@@ -194,6 +268,77 @@ export default function QuestionBankPage() {
 
         </SectionCard>
       </main>
+
+      {/* Edit Question Modal */}
+      {editingQuestion && (
+        <Modal
+          open={!!editingQuestion}
+          onClose={() => setEditingQuestion(null)}
+          title={`Edit Question details: #${editingQuestion.id.slice(0, 10)}`}
+          maxWidth="max-w-[500px]"
+        >
+          <form onSubmit={handleSaveEdit} className="flex flex-col gap-6">
+            <div className="flex flex-col gap-2">
+              <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Subject</label>
+              <select
+                className="h-11 px-4 bg-b-surface1 border border-s-stroke2/40 rounded-[10px] font-sans text-[14px] text-t-primary outline-none focus:border-t-primary transition-colors cursor-pointer"
+                value={editForm.subject}
+                onChange={(e) => setEditForm({ ...editForm, subject: e.target.value })}
+              >
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Biology">Biology</option>
+              </select>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Chapter</label>
+              <input
+                type="text"
+                className="w-full h-11 px-4 bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[14px] font-medium text-t-primary focus:border-t-primary outline-none transition-colors"
+                value={editForm.chapter}
+                onChange={(e) => setEditForm({ ...editForm, chapter: e.target.value })}
+              />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Topic</label>
+              <input
+                type="text"
+                className="w-full h-11 px-4 bg-b-surface1 border border-s-stroke2/40 rounded-[10px] text-[14px] font-medium text-t-primary focus:border-t-primary outline-none transition-colors"
+                value={editForm.topic}
+                onChange={(e) => setEditForm({ ...editForm, topic: e.target.value })}
+              />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Difficulty</label>
+              <select
+                className="h-11 px-4 bg-b-surface1 border border-s-stroke2/40 rounded-[10px] font-sans text-[14px] text-t-primary outline-none focus:border-t-primary transition-colors cursor-pointer"
+                value={editForm.difficulty}
+                onChange={(e) => setEditForm({ ...editForm, difficulty: e.target.value })}
+              >
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </div>
+
+            <button
+              type="submit"
+              disabled={saving}
+              className="flex items-center justify-center gap-2 w-full h-12 rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white text-[14px] font-bold shadow-[0px_4px_4px_-1px_rgba(0,0,0,0.16)] cursor-pointer disabled:opacity-50 transition-transform active:scale-[0.99] mt-2"
+            >
+              {saving ? (
+                <RiLoader4Line size={18} className="animate-spin" />
+              ) : (
+                "Save Changes"
+              )}
+            </button>
+          </form>
+        </Modal>
+      )}
     </>
   );
 }

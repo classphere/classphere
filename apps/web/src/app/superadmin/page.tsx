@@ -51,6 +51,9 @@ export default function SuperAdminDashboardPage() {
   const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
   const [tickets, setTickets] = useState<any[]>([]);
 
+  const [liveResources, setLiveResources] = useState<any[]>(systemResources);
+  const [liveAuditLogs, setLiveAuditLogs] = useState<any[]>(auditLogs);
+
   useEffect(() => {
     const fetchStats = async () => {
       if (!session?.access_token) return;
@@ -74,6 +77,58 @@ export default function SuperAdminDashboardPage() {
       }
     };
     fetchStats();
+  }, [session?.access_token]);
+
+  useEffect(() => {
+    if (!session?.access_token) return;
+    
+    // Fetch real audit logs
+    fetch(`${API_URL}/api/v1/superadmin/audit-logs?limit=4`, {
+      headers: { Authorization: `Bearer ${session.access_token}` },
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success && data.data && data.data.length > 0) {
+          const mappedLogs = data.data.map((log: any) => ({
+            id: log.id,
+            action: log.action,
+            detail: log.detail,
+            time: new Date(log.created_at).toLocaleTimeString() + " (" + new Date(log.created_at).toLocaleDateString() + ")",
+            type: log.type
+          }));
+          setLiveAuditLogs(mappedLogs);
+        }
+      })
+      .catch(() => {});
+  }, [session?.access_token]);
+
+  useEffect(() => {
+    if (!session?.access_token) return;
+    
+    const fetchTelemetry = () => {
+      fetch(`${API_URL}/api/v1/superadmin/telemetry`, {
+        headers: { Authorization: `Bearer ${session.access_token}` },
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            const mappedResources = [
+              { label: "API", fullName: "API Server", score: data.data.api.score, load: data.data.api.load, trend: data.data.api.trend },
+              { label: "DB", fullName: "Database", score: data.data.db.score, load: data.data.db.load, trend: data.data.db.trend },
+              { label: "Storage", fullName: "Storage Array", score: data.data.storage.score, load: data.data.storage.load, trend: data.data.storage.trend },
+              { label: "Cache", fullName: "Redis Cache", score: data.data.cache.score, load: data.data.cache.load, trend: data.data.cache.trend },
+              { label: "Workers", fullName: "Background Workers", score: data.data.workers.score, load: data.data.workers.load, trend: data.data.workers.trend },
+              { label: "CDN", fullName: "CDN Edge", score: data.data.cdn.score, load: data.data.cdn.load, trend: data.data.cdn.trend },
+            ];
+            setLiveResources(mappedResources);
+          }
+        })
+        .catch(() => {});
+    };
+    
+    fetchTelemetry();
+    const interval = setInterval(fetchTelemetry, 10000);
+    return () => clearInterval(interval);
   }, [session?.access_token]);
 
   const fmt = (n: number) => n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n);
@@ -148,7 +203,7 @@ export default function SuperAdminDashboardPage() {
             {/* Left Column (System Resources) */}
             <SectionCard title="System Resources" className="flex-1 min-w-0">
               <div className="relative z-10 flex flex-col gap-2 w-full mt-2">
-                {systemResources.map((bar, idx) => (
+                {liveResources.map((bar, idx) => (
                   <div key={idx} className="group/item relative flex flex-row items-center justify-between p-3 sm:p-4 gap-3 sm:gap-4 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[72px] sm:h-[80px] cursor-pointer overflow-hidden">
                     <div className="w-1/3 sm:w-[140px] md:w-[160px] flex flex-col justify-center shrink-0 min-w-0">
                       <span className="font-sans font-semibold text-[13px] sm:text-sm text-t-primary truncate">{bar.fullName}</span>
@@ -218,7 +273,7 @@ export default function SuperAdminDashboardPage() {
           {/* Bottom Row: Audit Logs */}
           <SectionCard title="Audit Log" className="w-full">
             <div className="flex flex-col gap-2 w-full mt-2">
-              {auditLogs.slice(0,4).map((log) => {
+              {liveAuditLogs.map((log) => {
                 const statusClass = log.type === 'success' ? 'bg-primary-02/10 text-primary-02 border-primary-02/20' : 
                                   log.type === 'error' ? 'bg-primary-03/10 text-primary-03 border-primary-03/20' :
                                   'bg-primary-01/10 text-primary-01 border-primary-01/20';

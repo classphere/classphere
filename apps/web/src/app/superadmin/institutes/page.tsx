@@ -63,8 +63,19 @@ function FeedbackBanner({ type, message }: { type: "success" | "error"; message:
 
 export default function InstitutesPage() {
   // Real data hooks
-  const { institutes, loading: listLoading, error: listError, createInstitute, uploadImage, refetch } = useInstitutes();
+  const { 
+    institutes, 
+    loading: listLoading, 
+    error: listError, 
+    createInstitute, 
+    uploadImage, 
+    refetch,
+    updateInstitute,
+    deleteInstitute
+  } = useInstitutes();
   const { stats, loading: statsLoading, refetch: refetchStats } = useSuperadminStats();
+
+  const [activeDropdownId, setActiveDropdownId] = useState<string | null>(null);
 
   // Modal state
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
@@ -102,6 +113,37 @@ export default function InstitutesPage() {
   // Credentials modal (shown once after successful provisioning)
   const [credentials, setCredentials] = useState<{ email: string; password: string; instituteName: string } | null>(null);
   const [copied, setCopied] = useState(false);
+
+  const handleToggleActive = async (id: string, currentActive: boolean) => {
+    setActiveDropdownId(null);
+    const res = await updateInstitute(id, { is_active: !currentActive });
+    if (res.success) {
+      refetchStats(); // reload stats card
+    } else {
+      alert(res.message);
+    }
+  };
+
+  const handleChangePlan = async (id: string, newPlan: string) => {
+    setActiveDropdownId(null);
+    const res = await updateInstitute(id, { plan: newPlan });
+    if (res.success) {
+      refetchStats();
+    } else {
+      alert(res.message);
+    }
+  };
+
+  const handleDeleteInstitute = async (id: string, name: string) => {
+    setActiveDropdownId(null);
+    if (!confirm(`Are you sure you want to permanently delete/suspend "${name}"? This action is irreversible.`)) return;
+    const res = await deleteInstitute(id);
+    if (res.success) {
+      refetchStats();
+    } else {
+      alert(res.message);
+    }
+  };
 
   const handleCopy = (text: string) => {
     if (navigator.clipboard && window.isSecureContext) {
@@ -329,10 +371,51 @@ export default function InstitutesPage() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex items-center justify-end shrink-0 pl-1 sm:pl-2">
-                  <button className="p-2 rounded-[10px] text-t-secondary hover:bg-s-stroke2 hover:text-t-primary transition-colors opacity-100 md:opacity-0 md:group-hover/item:opacity-100 active:scale-95">
+                <div className="relative flex items-center justify-end shrink-0 pl-1 sm:pl-2">
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveDropdownId(activeDropdownId === institute.id ? null : institute.id);
+                    }}
+                    className="p-2 rounded-[10px] text-t-secondary hover:bg-s-stroke2 hover:text-t-primary transition-colors opacity-100 md:opacity-0 md:group-hover/item:opacity-100 active:scale-95"
+                  >
                     <RiMore2Fill size={20} />
                   </button>
+                  
+                  {activeDropdownId === institute.id && (
+                    <div className="absolute right-0 top-11 z-50 w-48 bg-b-surface1 dark:bg-[#1a1a1a] border border-s-stroke2/60 rounded-[12px] shadow-lg py-2 text-left">
+                      <button 
+                        onClick={() => handleToggleActive(institute.id, institute.is_active)}
+                        className="w-full px-4 py-2 text-xs font-semibold text-t-primary hover:bg-s-stroke2/30 transition-colors text-left"
+                      >
+                        {institute.is_active ? "Deactivate Partner" : "Activate Partner"}
+                      </button>
+                      
+                      <div className="h-px bg-s-stroke2/30 my-1" />
+                      
+                      <div className="px-4 py-1 text-[10px] uppercase font-bold text-t-secondary">Change Subscription Tier</div>
+                      {["free", "trial", "active", "enterprise"].map((plan) => (
+                        <button
+                          key={plan}
+                          onClick={() => handleChangePlan(institute.id, plan)}
+                          className={`w-full px-4 py-1.5 text-xs text-t-primary hover:bg-s-stroke2/30 transition-colors capitalize text-left block ${
+                            institute.plan.toLowerCase() === plan ? 'font-bold text-[#0A84FF]' : ''
+                          }`}
+                        >
+                          {plan}
+                        </button>
+                      ))}
+
+                      <div className="h-px bg-s-stroke2/30 my-1" />
+
+                      <button 
+                        onClick={() => handleDeleteInstitute(institute.id, institute.name)}
+                        className="w-full px-4 py-2 text-xs font-semibold text-primary-03 hover:bg-[rgba(239,68,68,0.1)] transition-colors text-left"
+                      >
+                        Delete Partner
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

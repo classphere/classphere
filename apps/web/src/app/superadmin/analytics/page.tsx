@@ -2,30 +2,50 @@
 
 import Navbar from "@/components/layout/Navbar";
 import { PremiumMetricCard as MetricCard, PremiumMetricGrid as MetricGrid, PremiumSectionCard as SectionCard } from "@/components/premium-ui";
-import { RiBrainLine, RiGlobalLine, RiBookOpenLine, RiRobot2Line, RiArrowRightUpLine, RiArrowRightLine } from "@remixicon/react";
-
-const examBreakdown = [
-  { exam: "JEE Main", tests: 412000, pct: 49, color: "from-[#00A656] to-[#00E576]", shadow: "shadow-[0px_2px_12px_rgba(0,181,18,0.4)]" },
-  { exam: "JEE Advanced", tests: 186000, pct: 22, color: "from-[#2A85FF] to-[#60A5FA]", shadow: "shadow-[0px_2px_12px_rgba(42,133,255,0.4)]" },
-  { exam: "NEET", tests: 198000, pct: 23, color: "from-[#FFD60A] to-[#FF9F0A]", shadow: "shadow-[0px_2px_12px_rgba(255,214,10,0.4)]" },
-  { exam: "SSC / Other", tests: 49000, pct: 6, color: "from-[#8F5BFF] to-[#A78BFA]", shadow: "shadow-[0px_2px_12px_rgba(143,91,255,0.4)]" },
-];
-
-const topInstitutes = [
-  { name: "Aakash Institute", tests: 58400, tokens: "24.2M" },
-  { name: "Allen Career Institute", tests: 47200, tokens: "19.6M" },
-  { name: "Resonance Eduventures", tests: 31800, tokens: "13.2M" },
-  { name: "Vibrant Academy", tests: 18200, tokens: "7.5M" },
-  { name: "FIITJEE Delhi", tests: 11400, tokens: "4.7M" },
-];
-
-const aiBreakdown = [
-  { label: "Student AI Analysis", value: 85.2, total: 142.8, color: "from-[#2A85FF] to-[#60A5FA]", shadow: "shadow-[0px_2px_12px_rgba(42,133,255,0.4)]" },
-  { label: "Booster Test Generation", value: 42.6, total: 142.8, color: "from-[#FFD60A] to-[#FF9F0A]", shadow: "shadow-[0px_2px_12px_rgba(255,214,10,0.4)]" },
-  { label: "System Optimization", value: 15.0, total: 142.8, color: "from-[#FF6A55] to-[#FF453A]", shadow: "shadow-[0px_2px_12px_rgba(255,106,85,0.4)]" },
-];
+import { RiBrainLine, RiGlobalLine, RiBookOpenLine, RiRobot2Line, RiLoader4Line } from "@remixicon/react";
+import { useEffect, useState } from "react";
+import { useAuth } from "@/lib/auth-context";
+import { apiClient } from "@/lib/api.client";
 
 export default function GlobalAnalyticsPage() {
+  const { session } = useAuth();
+  const token = session?.access_token;
+
+  const [loading, setLoading] = useState(true);
+  const [analyticsData, setAnalyticsData] = useState<{
+    totalTests: number;
+    examBreakdown: any[];
+    topInstitutes: any[];
+    aiBreakdown: any[];
+  } | null>(null);
+
+  useEffect(() => {
+    if (!token) return;
+    setLoading(true);
+    apiClient.get<any>("/api/v1/superadmin/analytics", token)
+      .then(res => {
+        if (res.success && res.data) {
+          setAnalyticsData(res.data);
+        }
+      })
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, [token]);
+
+  if (loading || !analyticsData) {
+    return (
+      <>
+        <Navbar title="Global Analytics & AI Usage" subtitle="Platform-wide engagement and AI consumption metrics." />
+        <main className="mx-auto w-full max-w-[1560px] flex items-center justify-center py-32 text-t-secondary">
+          <RiLoader4Line size={24} className="animate-spin text-primary-01" />
+          <span className="font-sans font-semibold text-[15px] ml-2">Loading platform analytics...</span>
+        </main>
+      </>
+    );
+  }
+
+  const { totalTests, examBreakdown, topInstitutes, aiBreakdown } = analyticsData;
+
   return (
     <>
       <Navbar title="Global Analytics & AI Usage" subtitle="Platform-wide engagement and AI consumption metrics." />
@@ -41,7 +61,7 @@ export default function GlobalAnalyticsPage() {
           
           <MetricGrid cols={4} className="mt-2">
             {[
-              { label: "Total Tests Conducted", value: "845,210", sub: "+45K", subLabel: "this week", icon: <RiGlobalLine size={20} /> },
+              { label: "Total Tests Conducted", value: totalTests.toLocaleString(), sub: "+45K", subLabel: "this week", icon: <RiGlobalLine size={20} /> },
               { label: "Avg Completion Rate", value: "92.4%", sub: "+1.2%", subLabel: "this month", icon: <RiBookOpenLine size={20} /> },
               { label: "AI Tokens (Monthly)", value: "142.8M", sub: "84%", subLabel: "of limit", icon: <RiBrainLine size={20} /> },
               { label: "Booster Tests Generated", value: "12,450", sub: "+12%", subLabel: "growth", icon: <RiRobot2Line size={20} /> },
@@ -65,7 +85,7 @@ export default function GlobalAnalyticsPage() {
           {/* Tests by Exam Type */}
           <SectionCard title="Tests by Exam Type" className="flex-1 min-w-0 h-full">
             <div className="flex flex-col items-start w-full gap-5 mt-4">
-              <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Distribution across all 845K tests conducted</span>
+              <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Distribution across all {totalTests >= 1000 ? `${(totalTests / 1000).toFixed(0)}K` : totalTests} tests conducted</span>
               {examBreakdown.map((exam, i) => (
                 <div key={i} className="group/item relative flex flex-col w-full p-3 sm:p-4 gap-2 sm:gap-3 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[72px] sm:h-[88px] justify-center">
                   <div className="flex flex-row justify-between items-center w-full">
@@ -89,7 +109,7 @@ export default function GlobalAnalyticsPage() {
           {/* Top Institutes by Activity */}
           <SectionCard title="Top Institutes" className="w-full xl:w-[600px] shrink-0 h-full min-h-[354px]">
             <div className="flex flex-col items-start gap-3 w-full mt-4">
-              <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Ranked by tests conducted this month</span>
+              <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Ranked by active student scale and tokens consumed</span>
 
               {/* Table Header */}
               <div className="hidden md:flex flex-row items-center w-full px-6 py-2 text-xs font-semibold uppercase tracking-wider text-t-secondary">

@@ -214,7 +214,16 @@ export async function provisionInstitute(
   // ── 5. Insert institute row ──────────────────────────────────────────────
   // Real schema: id, name, slug, owner_id, plan, logo_url, is_active, created_at, updated_at
   console.log(`[provisionInstitute] Step 5: Inserting into public.institutes...`);
-  const subdomain_slug = name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const slugBase = name.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 48) || "institute";
+  let subdomain_slug = slugBase;
+  const { data: existingSlug } = await supabaseDB
+    .from("institutes")
+    .select("id")
+    .eq("subdomain_slug", subdomain_slug)
+    .maybeSingle();
+  if (existingSlug) {
+    subdomain_slug = `${slugBase}-${Math.random().toString(36).slice(2, 8)}`;
+  }
 
   const { data: newInst, error: insertErr } = await supabaseDB
     .from("institutes")

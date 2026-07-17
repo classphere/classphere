@@ -116,5 +116,49 @@ export function useInstitutes() {
     return data.url;
   }, [token]);
 
-  return { institutes, loading, error, refetch: fetchInstitutes, createInstitute, uploadImage };
+  const updateInstitute = useCallback(
+    async (id: string, payload: Partial<Institute>): Promise<{ success: boolean; message: string }> => {
+      if (!token) return { success: false, message: "Authentication required" };
+      try {
+        const res = await apiClient.patch<{ success: boolean; message: string }>(
+          `/api/v1/institutes/${id}`,
+          payload,
+          token
+        );
+        await fetchInstitutes();
+        return { success: true, message: res.message || "Institute updated successfully" };
+      } catch (err: any) {
+        return { success: false, message: err.message };
+      }
+    },
+    [token, fetchInstitutes]
+  );
+
+  const deleteInstitute = useCallback(
+    async (id: string): Promise<{ success: boolean; message: string }> => {
+      if (!token) return { success: false, message: "Authentication required" };
+      try {
+        const res = await apiClient.delete<{ success: boolean; message: string }>(
+          `/api/v1/institutes/${id}`,
+          token
+        );
+        await fetchInstitutes();
+        return { success: true, message: res.message || "Institute deleted successfully" };
+      } catch (err: any) {
+        return { success: false, message: err.message };
+      }
+    },
+    [token, fetchInstitutes]
+  );
+
+  return { 
+    institutes, 
+    loading, 
+    error, 
+    refetch: fetchInstitutes, 
+    createInstitute, 
+    uploadImage,
+    updateInstitute,
+    deleteInstitute
+  };
 }
