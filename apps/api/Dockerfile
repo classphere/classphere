@@ -23,6 +23,10 @@ FROM node:20-alpine AS runner
 
 WORKDIR /app
 
+# The PDF pipeline invokes the bundled Python extractors at runtime.
+RUN apk add --no-cache python3 py3-pip \
+  && python3 -m pip install --no-cache-dir --break-system-packages requests PyMuPDF Pillow
+
 # Set node env to production
 ENV NODE_ENV production
 
@@ -34,6 +38,9 @@ COPY --from=builder /app/packages ./packages
 COPY --from=builder /app/apps/api/package.json ./apps/api/
 COPY --from=builder /app/apps/api/dist ./apps/api/dist
 COPY --from=builder /app/apps/api/node_modules ./apps/api/node_modules
+# tsup only emits TypeScript output; Python extractor scripts must be copied
+# explicitly so production containers can execute the extraction pipeline.
+COPY --from=builder /app/apps/api/src/services/extractor ./apps/api/dist/services/extractor
 
 # Expose port
 EXPOSE 8080

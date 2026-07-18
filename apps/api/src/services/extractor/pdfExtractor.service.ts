@@ -1,4 +1,5 @@
-import { execSync } from "child_process";
+import { execFile } from "child_process";
+import { promisify } from "util";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -6,6 +7,34 @@ export interface ExtractionResult {
   success: boolean;
   message: string;
   questions: any[];
+}
+
+const execFileAsync = promisify(execFile);
+const PAGE_RANGE = /^\d+(?:\s*-\s*\d+)?(?:\s*,\s*\d+(?:\s*-\s*\d+)?)*$/;
+
+function validatePageRange(pages?: string): string | undefined {
+  if (!pages?.trim()) return undefined;
+  const normalized = pages.trim();
+  if (!PAGE_RANGE.test(normalized)) {
+    throw new Error("Invalid page range. Use values such as '1-3,5'.");
+  }
+  return normalized;
+}
+
+async function runPython(scriptPath: string, args: string[], timeout: number): Promise<string> {
+  const { stdout, stderr } = await execFileAsync("python", [scriptPath, ...args], {
+    timeout,
+    maxBuffer: 10 * 1024 * 1024,
+  });
+  if (stderr) console.warn(`[pdfExtractor] ${stderr}`);
+  return stdout;
+}
+
+function safeImagePath(imagesDir: string, filename: string): string | null {
+  if (!filename || path.isAbsolute(filename) || filename.includes("\0")) return null;
+  const root = path.resolve(imagesDir);
+  const candidate = path.resolve(root, filename);
+  return candidate.startsWith(`${root}${path.sep}`) ? candidate : null;
 }
 
 /**
@@ -33,8 +62,8 @@ function embedImagesInText(text: string, imagesDir: string): string {
   return text.replace(placeholderRegex, (match, mdName, brName) => {
     const filename = (mdName || brName || "").trim();
     if (!filename || filename.startsWith("data:")) return match;
-    const filePath = path.join(imagesDir, filename);
-    if (fs.existsSync(filePath)) {
+    const filePath = safeImagePath(imagesDir, filename);
+    if (filePath && fs.existsSync(filePath)) {
       const base64Url = fileToBase64(filePath);
       return `![image](${base64Url})`;
     }
@@ -45,36 +74,29 @@ function embedImagesInText(text: string, imagesDir: string): string {
 /** Run Datalab Marker (force_ocr) into outDir, producing pipeline-format
  *  marker_raw.json. Throws on failure; exit code 2 (no DATALAB_API_KEY) is
  *  surfaced as a throw so callers can treat Marker as an optional no-op. */
-function runMarker(scriptDir: string, pdfPath: string, outDir: string): void {
-  const cmd = `python "${path.join(scriptDir, "marker_extractor.py")}" "${pdfPath}" ` +
-              `--out "${outDir}" --force-ocr true`;
-  execSync(cmd, { stdio: "inherit", timeout: 600000 });
+async function runMarker(scriptDir: string, pdfPath: string, outDir: string): Promise<void> {
+  await runPython(path.join(scriptDir, "marker_extractor.py"), [pdfPath, "--out", outDir, "--force-ocr", "true"], 600000);
 }
 
 /** Run Cerebras extraction + normalization over a source dir's marker_raw.json.
  *  `source` ("pymupdf" | "marker") tells the normalizer whether escalation is
  *  even applicable (a Marker result is never re-escalated). */
-function runCerebrasAndNormalize(
+async function runCerebrasAndNormalize(
   scriptDir: string, dir: string, jsonPath: string, imagesDir: string,
-  pagesArg: string, source: string
-): void {
+  pagesArg: string | undefined, source: string
+): Promise<void> {
   console.log(`[pdfExtractor] Cerebras extraction (${source})...`);
-  execSync(`python "${path.join(scriptDir, "cerebras_from_marker.py")}" "${dir}"${pagesArg}`,
-           { stdio: "inherit", timeout: 600000 });
+  await runPython(path.join(scriptDir, "cerebras_from_marker.py"), [dir, ...(pagesArg ? ["--pages", pagesArg] : [])], 600000);
   console.log(`[pdfExtractor] Normalizing (${source})...`);
-  execSync(`python "${path.join(scriptDir, "normalize_json.py")}" "${jsonPath}" ` +
-           `--images-dir "${imagesDir}" --source ${source}`,
-           { stdio: "inherit", timeout: 600000 });
+  await runPython(path.join(scriptDir, "normalize_json.py"), [jsonPath, "--images-dir", imagesDir, "--source", source], 600000);
 }
 
 /** Normalize an already-extracted JSON (no Cerebras) — used on the merged set. */
-function runCerebrasNormalizeOnly(
+async function runCerebrasNormalizeOnly(
   scriptDir: string, jsonPath: string, imagesDir: string, source: string
-): void {
+): Promise<void> {
   console.log(`[pdfExtractor] Normalizing merged set (${source})...`);
-  execSync(`python "${path.join(scriptDir, "normalize_json.py")}" "${jsonPath}" ` +
-           `--images-dir "${imagesDir}" --source ${source}`,
-           { stdio: "inherit", timeout: 300000 });
+  await runPython(path.join(scriptDir, "normalize_json.py"), [jsonPath, "--images-dir", imagesDir, "--source", source], 300000);
 }
 
 function readReport(jsonPath: string): any {
@@ -116,18 +138,17 @@ export async function extractPDF(
   try {
     // ── 1. Run PyMuPDF Extractor ─────────────────────────────────────────────
     console.log(`[pdfExtractor] Running PyMuPDF Extractor on: ${pdfPath}`);
-    const pyMuPDFCmd = `python "${path.join(scriptDir, "pymupdf_extractor.py")}" "${pdfPath}" "${outputDir}"`;
     let stdOut = "";
     try {
       // v3 extractor also renders vector-diagram regions — allow more time
-      stdOut = execSync(pyMuPDFCmd, { stdio: "pipe", timeout: 180000 }).toString();
+      stdOut = await runPython(path.join(scriptDir, "pymupdf_extractor.py"), [pdfPath, outputDir], 180000);
       console.log("[pdfExtractor] PyMuPDF Output:\n", stdOut);
     } catch (pyMuErr: any) {
       stdOut = pyMuErr.stdout?.toString() || pyMuErr.message;
       console.error("[pdfExtractor] PyMuPDF Execution Error:", stdOut);
     }
 
-    const pagesArg = pagesRange ? ` --pages "${pagesRange}"` : "";
+    const pagesArg = validatePageRange(pagesRange);
     let scanned = stdOut.includes("Scanned PDF detected");
     const hasDatalabKey = !!(process.env.DATALAB_API_KEY || "").trim();
 
@@ -144,12 +165,12 @@ export async function extractPDF(
         };
       }
       console.log("[pdfExtractor] Scanned PDF — running Datalab Marker (force_ocr)...");
-      runMarker(scriptDir, pdfPath, outputDir);
+      await runMarker(scriptDir, pdfPath, outputDir);
       source = "marker";
     }
 
     // ── 3+4. Cerebras extraction + normalization on the primary source ────────
-    runCerebrasAndNormalize(scriptDir, outputDir, finalJsonPath, markerImagesDir,
+    await runCerebrasAndNormalize(scriptDir, outputDir, finalJsonPath, markerImagesDir,
                             pagesArg, source);
 
     // ── 4b. Vector-math ESCALATION ────────────────────────────────────────────
@@ -175,8 +196,8 @@ export async function extractPDF(
         const mergedJsonPath = path.join(mergedDir, "all_extracted_data.json");
         try {
           fs.mkdirSync(escDir, { recursive: true });
-          runMarker(scriptDir, pdfPath, escDir);
-          runCerebrasAndNormalize(scriptDir, escDir, escJsonPath, escImagesDir,
+          await runMarker(scriptDir, pdfPath, escDir);
+          await runCerebrasAndNormalize(scriptDir, escDir, escJsonPath, escImagesDir,
                                   pagesArg, "marker");
           const escQ = readQuestions(escJsonPath);
           if (escQ.length > 0) {
@@ -184,11 +205,10 @@ export async function extractPDF(
             // pick per-question (fewer errors wins, tie → Marker). This keeps
             // Marker's recovered math AND PyMuPDF's questions where Marker drifts.
             console.log(`[pdfExtractor] Escalation extracted ${escQ.length} questions — merging best-of-both...`);
-            execSync(`python "${path.join(scriptDir, "merge_extractions.py")}" ` +
-                     `--pymupdf "${outputDir}" --marker "${escDir}" --out "${mergedDir}"`,
-                     { stdio: "inherit", timeout: 120000 });
+            await runPython(path.join(scriptDir, "merge_extractions.py"),
+                            ["--pymupdf", outputDir, "--marker", escDir, "--out", mergedDir], 120000);
             // Re-normalize the merged set (source=marker → no further escalation)
-            runCerebrasNormalizeOnly(scriptDir, mergedJsonPath, mergedImagesDir, "marker");
+            await runCerebrasNormalizeOnly(scriptDir, mergedJsonPath, mergedImagesDir, "marker");
             if (readQuestions(mergedJsonPath).length > 0) {
               resultDir = mergedDir;
               resultImagesDir = mergedImagesDir;
