@@ -328,8 +328,16 @@ export const listTests = async (req: Request, res: Response): Promise<void> => {
     }
 
     const filtered = exam
-      ? (data ?? []).filter((p: any) => p.exams?.code === exam)
-      : (data ?? []);
+      ? (data ?? []).filter((p: any) => {
+          if (!p.exams) return false;
+          const codes = Array.isArray(p.exams) ? p.exams.map(e => e.code) : [p.exams.code];
+          return codes.some(c => c && c.toLowerCase() === (exam as string).toLowerCase());
+        })
+      : (data ?? []).filter((p: any) => {
+          if (!p.exams) return false;
+          if (Array.isArray(p.exams) && p.exams.length === 0) return false;
+          return true;
+        });
 
     res.json({ success: true, data: { papers: filtered, total: filtered.length } });
   } catch (err: any) {
