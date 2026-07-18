@@ -696,11 +696,25 @@ export const getPublicConfigByDomain = async (req: Request, res: Response): Prom
       return;
     }
 
-    const { data: settings, error } = await supabaseDB
+    const normalizedDomain = String(domain).trim().toLowerCase();
+    if (!/^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)*[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(normalizedDomain)) {
+      res.status(400).json({ success: false, message: "Invalid domain" });
+      return;
+    }
+
+    let { data: settings, error } = await supabaseDB
       .from("institute_settings")
       .select("*, institutes(name, is_active)")
-      .or(`subdomain.eq.${domain},custom_domain.eq.${domain}`)
-      .single();
+      .eq("subdomain", normalizedDomain)
+      .maybeSingle();
+
+    if (!settings && !error) {
+      ({ data: settings, error } = await supabaseDB
+        .from("institute_settings")
+        .select("*, institutes(name, is_active)")
+        .eq("custom_domain", normalizedDomain)
+        .maybeSingle());
+    }
 
     if (error || !settings) {
       res.status(404).json({ success: false, message: "Institute not found for this domain" });

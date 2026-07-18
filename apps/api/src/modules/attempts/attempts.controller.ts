@@ -56,16 +56,21 @@ async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; 
 }
 
 /** Score a single question answer */
-function scoreAnswer(question: any, selectedAnswer: string | null): { isCorrect: boolean; marks: number } {
-  if (!selectedAnswer) return { isCorrect: false, marks: 0 };
+function normalizeAnswerSet(answer: unknown): string[] {
+  const values = Array.isArray(answer) ? answer : answer == null ? [] : [answer];
+  return [...new Set(values.map((value) => String(value).trim().toUpperCase()).filter(Boolean))].sort();
+}
+
+function scoreAnswer(question: any, selectedAnswer: unknown): { isCorrect: boolean; marks: number } {
+  const selectedAnswers = normalizeAnswerSet(selectedAnswer);
+  if (selectedAnswers.length === 0) return { isCorrect: false, marks: 0 };
 
   const scheme = question.marking_scheme ?? { correct: 4, incorrect: -1, unattempted: 0 };
-  const correctAnswersList = Array.isArray(question.correct_answer)
-    ? question.correct_answer.map((v: any) => String(v).trim().toUpperCase())
-    : [String(question.correct_answer).trim().toUpperCase()];
-
-  const selected = String(selectedAnswer).trim().toUpperCase();
-  const isCorrect = correctAnswersList.includes(selected);
+  const correctAnswersList = normalizeAnswerSet(question.correct_answer);
+  // Multiple-correct questions require the complete correct set. Awarding full
+  // marks for selecting just one correct option is an exam-scoring defect.
+  const isCorrect = selectedAnswers.length === correctAnswersList.length &&
+    selectedAnswers.every((answer, index) => answer === correctAnswersList[index]);
   const marks = isCorrect ? (scheme.correct ?? 4) : (scheme.incorrect ?? -1);
 
   return { isCorrect, marks };
@@ -112,27 +117,26 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
       return;
     }
 
-    // Resolve batch_id for the test if it's assigned to a batch the student belongs to
-    let resolvedBatchId = req.body.batch_id ?? null;
-    if (!resolvedBatchId) {
-      const { data: assignments } = await supabaseDB
-        .from("test_batch_assignments")
-        .select("batch_id")
-        .eq("test_id", paper_id);
-      
-      const assignedBatchIds = (assignments ?? []).map((a: any) => a.batch_id);
-      if (assignedBatchIds.length > 0) {
-        const { data: studentBatches } = await supabaseDB
-          .from("batch_students")
-          .select("batch_id")
-          .eq("student_id", studentId);
-        
-        const matched = (studentBatches ?? []).find((sb: any) => assignedBatchIds.includes(sb.batch_id));
-        if (matched) {
-          resolvedBatchId = matched.batch_id;
-        }
-      }
+    // An attempt is valid only for a paper assigned to one of this student's
+    // batches. Never trust a caller-supplied batch_id.
+    const [{ data: assignments }, { data: studentBatches }] = await Promise.all([
+      supabaseDB.from("test_batch_assignments").select("batch_id").eq("test_id", paper_id),
+      supabaseDB.from("batch_students").select("batch_id").eq("student_id", studentId),
+    ]);
+    const assignedBatchIds = new Set((assignments ?? []).map((assignment: any) => assignment.batch_id));
+    const eligibleBatchIds = (studentBatches ?? [])
+      .map((membership: any) => membership.batch_id)
+      .filter((batchId: string) => assignedBatchIds.has(batchId));
+    if (eligibleBatchIds.length === 0) {
+      res.status(403).json({ success: false, message: "This test is not assigned to one of your batches." });
+      return;
     }
+    const requestedBatchId = req.body.batch_id as string | undefined;
+    if (requestedBatchId && !eligibleBatchIds.includes(requestedBatchId)) {
+      res.status(403).json({ success: false, message: "The requested batch is not authorised for this attempt." });
+      return;
+    }
+    const resolvedBatchId = requestedBatchId ?? eligibleBatchIds[0];
 
     // Create new attempt
     const { data: attempt, error } = await supabaseDB
@@ -233,6 +237,17 @@ export const getAttempt = async (req: Request, res: Response): Promise<void> => 
       res.status(403).json({ success: false, message: "Access denied" });
       return;
     }
+    if (req.user?.role === "teacher" && attempt.student_id !== studentId) {
+      const { data: student } = await supabaseDB
+        .from("users")
+        .select("institute_id")
+        .eq("id", attempt.student_id)
+        .maybeSingle();
+      if (!student || !req.user.institute_id || student.institute_id !== req.user.institute_id) {
+        res.status(403).json({ success: false, message: "Access denied" });
+        return;
+      }
+    }
 
     let savedAnswers: any[] = [];
     if (attempt.status === "in_progress") {
@@ -328,6 +343,8 @@ export const saveAttempt = async (req: Request, res: Response): Promise<void> =>
  * Also supports legacy path where :id starts with "pyq-" (standalone PYQ submission).
  */
 export const submitAttempt = async (req: Request, res: Response): Promise<void> => {
+  let claimedAttemptId: string | null = null;
+  let claimedStudentId: string | null = null;
   try {
     const studentId = req.user?.id ?? "anonymous";
     let { id: rawId } = req.params;
@@ -397,6 +414,26 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       existingAttempt = newAttempt;
     }
 
+    // Claim the attempt before persisting answers. Only one concurrent submit
+    // request can move in_progress -> submitting; all others fail harmlessly.
+    const { data: claimRows, error: claimError } = await supabaseDB
+      .from("attempts")
+      .update({ status: "submitting" })
+      .eq("id", attemptId)
+      .eq("student_id", studentId)
+      .eq("status", "in_progress")
+      .select("id");
+    if (claimError) {
+      res.status(500).json({ success: false, message: claimError.message });
+      return;
+    }
+    if (!claimRows?.length) {
+      res.status(409).json({ success: false, message: "Attempt submission is already in progress or completed." });
+      return;
+    }
+    claimedAttemptId = attemptId;
+    claimedStudentId = studentId;
+
     // ── Fetch answers from Redis and merge ────────────────────────────────────
     const redisKey = `attempt:${attemptId}:answers`;
     const redisData = await redis.hgetall(redisKey);
@@ -423,7 +460,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       const studentAns = finalAnswers[q.id] ?? {};
       const selected = studentAns.selected_answer ?? null;
       const { isCorrect, marks } = scoreAnswer(q, selected);
-      const marksAwarded = selected ? marks : (markingScheme.unattempted ?? 0);
+      const marksAwarded = normalizeAnswerSet(selected).length > 0 ? marks : (markingScheme.unattempted ?? 0);
 
       const qCorrect = q.marking_scheme?.correct ?? markingScheme.correct ?? 4;
       maxScore += qCorrect;
@@ -469,6 +506,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
 
       if (aaErr) {
         console.error("[submitAttempt] attempt_answers upsert failed:", aaErr.message);
+        throw aaErr;
       }
     }
 
@@ -483,19 +521,20 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
         exam_code: examCode,
       })
       .eq("id", attemptId!)
-      .eq("status", "in_progress")
+      .eq("status", "submitting")
       .select("id");
 
     if (updateErr) {
       console.error("[submitAttempt] attempt update failed:", updateErr.message);
-      res.status(500).json({ success: false, message: updateErr.message });
-      return;
+      throw updateErr;
     }
 
     if (!updatedRows || updatedRows.length === 0) {
-      res.status(400).json({ success: false, message: "Attempt already submitted or not found." });
-      return;
+      throw new Error("Attempt submission state changed before finalisation.");
     }
+
+    claimedAttemptId = null;
+    claimedStudentId = null;
 
     // ── Update student_stats ──────────────────────────────────────────────────
     try {
@@ -591,6 +630,16 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       },
     });
   } catch (err: any) {
+    // Make a failed finalisation retryable, while never reopening an attempt
+    // already completed by the winning submission.
+    if (claimedAttemptId && claimedStudentId) {
+      await supabaseDB
+        .from("attempts")
+        .update({ status: "in_progress" })
+        .eq("id", claimedAttemptId)
+        .eq("student_id", claimedStudentId)
+        .eq("status", "submitting");
+    }
     console.error("[submitAttempt error]", err);
     res.status(500).json({ success: false, message: err.message });
   }
