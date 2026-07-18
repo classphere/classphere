@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { Agent, setGlobalDispatcher } from "undici";
+import "../config/env";
 
 // Configure global connection pooling dispatcher for Node native fetch (prevents port exhaustion under load)
 const globalAgent = new Agent({
@@ -34,6 +35,13 @@ export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
     persistSession: false,
   },
 });
+
+/** Creates an isolated client for a single login or token-validation request. */
+export function createRequestAuthClient() {
+  return createClient(supabaseUrl, supabaseServiceKey, {
+    auth: { autoRefreshToken: false, persistSession: false },
+  });
+}
 
 /**
  * supabaseDB — a completely separate client using the same service_role key.

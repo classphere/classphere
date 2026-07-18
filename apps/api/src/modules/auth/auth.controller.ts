@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { randomUUID } from "crypto";
-import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
+import { createRequestAuthClient, supabaseAdmin, supabaseDB } from "../../lib/supabase";
 
 // ─────────────────────────────────────────────────────────────────────────────
 /**
@@ -86,7 +86,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     }
 
     // ── Authenticate via Supabase ─────────────────────────────────────────────
-    const { data: authData, error: authError } = await supabaseAdmin.auth.signInWithPassword({
+    const { data: authData, error: authError } = await createRequestAuthClient().auth.signInWithPassword({
       email: supabaseEmail,
       password: supabasePassword,
     });
@@ -277,8 +277,7 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    const { supabaseAdmin: sbAdmin } = require("../../lib/supabase");
-    const { data: { user }, error: authError } = await sbAdmin.auth.getUser(token);
+    const { data: { user }, error: authError } = await createRequestAuthClient().auth.getUser(token);
 
     if (authError || !user) {
       res.status(401).json({ success: false, message: "Invalid or expired token." });

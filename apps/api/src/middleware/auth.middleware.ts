@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { supabaseDB } from "../lib/supabase";
+import { createRequestAuthClient, supabaseDB } from "../lib/supabase";
 
 // Extend Express Request to carry decoded user info
 declare global {
@@ -36,8 +36,7 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
   }
 
   try {
-    const { supabaseAdmin } = require("../lib/supabase");
-    const { data: { user }, error } = await supabaseAdmin.auth.getUser(token);
+    const { data: { user }, error } = await createRequestAuthClient().auth.getUser(token);
 
     if (error || !user) {
       res.status(401).json({ success: false, message: "Invalid or expired token. Please log in again." });
@@ -60,6 +59,19 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
     const institute_id: string | null = dbUser.institute_id ?? null;
 
     req.user = { id: user.id, email: user.email ?? "", role, institute_id };
+
+    // Service-role queries bypass RLS, so this must be enforced centrally.
+    if (role !== "super_admin" && institute_id) {
+      const { data: institute, error: instituteError } = await supabaseDB
+        .from("institutes")
+        .select("is_active")
+        .eq("id", institute_id)
+        .maybeSingle();
+      if (instituteError || !institute || institute.is_active === false) {
+        res.status(403).json({ success: false, code: "INSTITUTE_SUSPENDED", message: "This institute is suspended." });
+        return;
+      }
+    }
 
     // ── One-device enforcement: skip for super_admin ───────────────────────────
     if (role !== "super_admin") {
