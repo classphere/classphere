@@ -1,12 +1,10 @@
+import "./config/env";
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import * as Sentry from "@sentry/node";
 import "@sentry/profiling-node"; // Profiling
-
-dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3001;

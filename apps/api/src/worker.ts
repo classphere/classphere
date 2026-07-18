@@ -1,5 +1,4 @@
-import dotenv from "dotenv";
-dotenv.config();
+import "./config/env";
 
 console.log("[Worker] Starting standalone Classphere Background Worker process...");
 
