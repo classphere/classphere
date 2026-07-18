@@ -121,16 +121,36 @@ export const getLeaderboard = async (req: Request, res: Response): Promise<void>
     const pageNum = Math.max(1, parseInt(page));
     const limitNum = Math.min(100, Math.max(1, parseInt(limit)));
     const offset = (pageNum - 1) * limitNum;
+    const actor = req.user!;
+
+    // Global rankings are an administrative view only. Tenant users may see
+    // their own institute or a batch to which they belong/work.
+    if (scope === "global" && actor.role !== "super_admin") {
+      res.status(403).json({ success: false, message: "Global leaderboard access is restricted." });
+      return;
+    }
 
     let memberIds: string[] = [];
 
     if (scope === "batch") {
       if (!batch_id) { res.status(400).json({ success: false, message: "batch_id is required for batch scope" }); return; }
+      const { data: batch } = await supabaseDB.from("batches").select("institute_id").eq("id", batch_id).maybeSingle();
+      if (!batch || (actor.role !== "super_admin" && batch.institute_id !== actor.institute_id)) {
+        res.status(403).json({ success: false, message: "Batch is outside your institute." }); return;
+      }
+      if (actor.role === "student") {
+        const { data: membership } = await supabaseDB.from("batch_students")
+          .select("batch_id").eq("batch_id", batch_id).eq("student_id", actor.id).maybeSingle();
+        if (!membership) { res.status(403).json({ success: false, message: "You are not a member of this batch." }); return; }
+      }
       const { data: members } = await supabaseDB.from("batch_students").select("student_id").eq("batch_id", batch_id);
       memberIds = (members ?? []).map((m: any) => m.student_id);
       if (memberIds.length === 0) { res.status(200).json({ success: true, data: { entries: [], total: 0, page: pageNum, limit: limitNum } }); return; }
     } else if (scope === "institute") {
       if (!institute_id) { res.status(400).json({ success: false, message: "institute_id is required for institute scope" }); return; }
+      if (actor.role !== "super_admin" && institute_id !== actor.institute_id) {
+        res.status(403).json({ success: false, message: "Institute is outside your access scope." }); return;
+      }
       const { data: members } = await supabaseDB.from("users").select("id").eq("institute_id", institute_id).eq("role", "student");
       memberIds = (members ?? []).map((m: any) => m.id);
       if (memberIds.length === 0) { res.status(200).json({ success: true, data: { entries: [], total: 0, page: pageNum, limit: limitNum } }); return; }

@@ -33,9 +33,14 @@ export async function uploadToR2(
   const cleanFileName = `${Date.now()}-${fileName.replace(/[^a-zA-Z0-9.-]/g, "_")}`;
 
   if (!r2Client || !R2_BUCKET_NAME) {
-    console.warn("[Cloudflare R2] Credentials not configured. Falling back to data URL for development.");
-    const base64 = fileBuffer.toString("base64");
-    return `data:${contentType};base64,${base64}`;
+    if (process.env.NODE_ENV === "production") {
+      throw new Error("Object storage is not configured. Configure Cloudflare R2 before uploading files.");
+    }
+    if (fileBuffer.byteLength > 2 * 1024 * 1024) {
+      throw new Error("Object storage is not configured and this development upload exceeds 2 MB.");
+    }
+    console.warn("[Cloudflare R2] Using bounded development data URL fallback.");
+    return `data:${contentType};base64,${fileBuffer.toString("base64")}`;
   }
 
   const command = new PutObjectCommand({
