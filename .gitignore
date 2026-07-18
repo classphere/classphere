@@ -32,10 +32,10 @@ yarn-error.log*
 .vercel
 
 # python and data
-venv/
-scripts/
-QUESTIONS/
-output/
+/venv/
+/scripts/
+/QUESTIONS/
+/output/
 *syllabus*.json
 *syllabus*.txt
 syllabus.pdf
