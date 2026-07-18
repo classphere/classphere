@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import "katex/dist/katex.min.css";
 
 interface MarkdownRendererProps {
   children: string | any;
