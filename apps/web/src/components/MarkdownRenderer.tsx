@@ -6,6 +6,30 @@ interface MarkdownRendererProps {
   children: string | any;
 }
 
+/** Keep Markdown usable while removing executable/raw-HTML attack surfaces. */
+function sanitizeHtml(html: string): string {
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  const blocked = new Set(["script", "style", "iframe", "object", "embed", "form", "input", "button", "meta", "link"]);
+  doc.body.querySelectorAll("*").forEach((element) => {
+    if (blocked.has(element.tagName.toLowerCase())) {
+      element.remove();
+      return;
+    }
+    for (const attribute of [...element.attributes]) {
+      const name = attribute.name.toLowerCase();
+      const value = attribute.value.trim().toLowerCase();
+      if (name.startsWith("on") || name === "style" ||
+          ((name === "href" || name === "src") && !/^(https?:|mailto:|#|\/|data:image\/)/.test(value))) {
+        element.removeAttribute(attribute.name);
+      }
+    }
+    if (element.tagName.toLowerCase() === "a") {
+      element.setAttribute("rel", "noopener noreferrer");
+    }
+  });
+  return doc.body.innerHTML;
+}
+
 /**
  * Lightweight markdown + LaTeX renderer.
  * 
@@ -54,7 +78,9 @@ export function MarkdownRenderer({ children }: MarkdownRendererProps) {
               katex.renderToString(expr.trim(), {
                 displayMode,
                 throwOnError: false,
-                trust: true,
+                // TeX remains fully supported, but KaTeX must not emit raw HTML,
+                // JavaScript URLs, or HTML attributes from untrusted question text.
+                trust: false,
                 strict: false,
               })
             );
@@ -92,6 +118,7 @@ export function MarkdownRenderer({ children }: MarkdownRendererProps) {
 
         // ── Restore math blocks ─────────────────────────────────────────────
         html = html.replace(/%%MATH_(\d+)%%/g, (_m, i) => mathBlocks[+i] ?? "");
+        html = sanitizeHtml(html);
 
         if (ref.current) ref.current.innerHTML = html;
       } catch (err) {

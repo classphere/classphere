@@ -208,7 +208,7 @@ export default function UploadQuestionsPage() {
         // Redirect to /tests after 3 seconds
         if (redirectTimeoutRef.current) clearTimeout(redirectTimeoutRef.current);
         redirectTimeoutRef.current = setTimeout(() => {
-          router.push("/tests");
+          router.push("/superadmin/questions");
         }, 5000);
       } else {
         setStatus("error");
