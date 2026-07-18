@@ -30,14 +30,20 @@ export function TestHeader({ meta, questionsLength, timeLeft, timeWarning, setSh
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <div className={`flex items-center gap-3 rounded-[10px] border px-4 py-2.5 shadow-widget ${timeWarning ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)]" : "border-s-stroke2 bg-b-surface2"}`}>
-            <span className={`${timeWarning ? "text-primary-03" : "text-t-primary"}`}>
-              <RiTimerLine size={18} />
-            </span>
-            <span className={`text-body-2 font-bold tabular-nums ${timeWarning ? "text-primary-03" : "text-t-primary"}`}>
-              {timeLeft !== null ? formatTime(timeLeft) : "--:--"}
-            </span>
-          </div>
+          {meta?.test_type !== "ncert" ? (
+            <div className={`flex items-center gap-3 rounded-[10px] border px-4 py-2.5 shadow-widget ${timeWarning ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)]" : "border-s-stroke2 bg-b-surface2"}`}>
+              <span className={`${timeWarning ? "text-primary-03" : "text-t-primary"}`}>
+                <RiTimerLine size={18} />
+              </span>
+              <span className={`text-body-2 font-bold tabular-nums ${timeWarning ? "text-primary-03" : "text-t-primary"}`}>
+                {timeLeft !== null ? formatTime(timeLeft) : "--:--"}
+              </span>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2.5 shadow-widget">
+              <span className="text-t-primary font-bold text-sm tracking-wide">PRACTICE MODE</span>
+            </div>
+          )}
 
           <button
             id="submit-test-btn"

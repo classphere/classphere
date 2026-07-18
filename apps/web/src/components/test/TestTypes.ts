@@ -26,6 +26,7 @@ export interface TestMeta {
   year?: number;
   shift?: string;
   title?: string;
+  test_type?: string;
   questions: number;
   duration: number;
 }

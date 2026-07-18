@@ -206,8 +206,8 @@ export default function BulkUpload() {
             title:      f.title,                              // user-entered name
             subject:    isChapterWise ? meta.subject : f.subject, // shared vs per-file
             chapter:    isChapterWise ? meta.chapter : f.chapter,
-            duration:   parseInt(meta.duration),
-            marks:      parseInt(meta.marks),
+            duration:   meta.test_type === "ncert" ? 0 : parseInt(meta.duration),
+            marks:      meta.test_type === "ncert" ? 0 : parseInt(meta.marks),
             difficulty: meta.difficulty,
             questions:  f.questions,
           }),
@@ -279,18 +279,20 @@ export default function BulkUpload() {
 
 
           {/* Duration & Marks */}
-          <div className="flex gap-4">
-            <div className="flex flex-col gap-2">
-              <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Duration (min)</label>
-              <input type="number" value={meta.duration} onChange={e => setMetaField("duration", e.target.value)}
-                className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner" />
+          {meta.test_type !== "ncert" && (
+            <div className="flex gap-4">
+              <div className="flex flex-col gap-2">
+                <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Duration (min)</label>
+                <input type="number" value={meta.duration} onChange={e => setMetaField("duration", e.target.value)}
+                  className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Marks</label>
+                <input type="number" value={meta.marks} onChange={e => setMetaField("marks", e.target.value)}
+                  className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner" />
+              </div>
             </div>
-            <div className="flex flex-col gap-2">
-              <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Marks</label>
-              <input type="number" value={meta.marks} onChange={e => setMetaField("marks", e.target.value)}
-                className="w-28 h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner" />
-            </div>
-          </div>
+          )}
         </div>
 
         {/* Chapter-wise: Subject pill selector + Chapter input + Info note */}

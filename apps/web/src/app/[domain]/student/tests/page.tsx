@@ -370,8 +370,9 @@ function TestCard({ paper, isAdmin, onDelete, onStart }: { paper: Paper; isAdmin
         {subtitle && subtitle !== "null" && <p className="text-[13px] font-sans font-medium text-t-secondary">{subtitle}</p>}
         <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-2 mt-5 mb-1 text-[12.5px] font-sans font-medium text-t-secondary">
           <span className="flex items-center gap-1.5"><RiQuestionLine size={14} className="opacity-70" />{paper.total_questions} Qs</span>
-          <span className="flex items-center gap-1.5"><RiTimeLine size={14} className="opacity-70" />{paper.duration_min} Min</span>
-          <span className="flex items-center gap-1.5"><RiBarChartBoxLine size={14} className="opacity-70" />{paper.total_marks} Marks</span>
+          {paper.test_type !== "ncert" && <span className="flex items-center gap-1.5"><RiTimeLine size={14} className="opacity-70" />{paper.duration_min} Min</span>}
+          {paper.test_type !== "ncert" && <span className="flex items-center gap-1.5"><RiBarChartBoxLine size={14} className="opacity-70" />{paper.total_marks} Marks</span>}
+          {paper.test_type === "ncert" && <span className="flex items-center gap-1.5"><RiTimeLine size={14} className="opacity-70" />Practice Mode</span>}
         </div>
       </div>
       <div className="relative z-10 flex justify-end items-center mt-5 pt-5 border-t border-s-stroke2">
