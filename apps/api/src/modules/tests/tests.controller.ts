@@ -35,13 +35,15 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    // Enforce student batch assignment and publication check (SEC-3)
-    if (req.user?.role === "student" && paper.test_type !== "pyq") {
-      if (!paper.is_published) {
-        res.status(403).json({ success: false, message: "Access denied. This test is not published yet." });
-        return;
-      }
+    // Enforce publication check for all non-superadmin students
+    if (!paper.is_published) {
+      res.status(403).json({ success: false, message: "Access denied. This test is not published yet." });
+      return;
+    }
 
+    // For tests that are explicitly assigned to batches (not public hub tests), enforce batch membership
+    const publicTestTypes = ["chapter-wise", "ncert", "mock-test", "pyq"];
+    if (!publicTestTypes.includes(paper.test_type)) {
       const { data: studentBatches } = await supabaseDB
         .from("batch_students")
         .select("batch_id")
@@ -79,19 +81,25 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
     let questions: any[] = [];
 
     if (questionIds.length > 0) {
-      const { data: rawQs, error: qErr } = await supabaseDB
-        .from("questions")
-        .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags")
-        .in("id", questionIds)
-        .eq("is_active", true);
+      // Fetch in batches of 50 to avoid connection drops on large payloads
+      const BATCH_SIZE = 50;
+      const rawQs: any[] = [];
+      for (let i = 0; i < questionIds.length; i += BATCH_SIZE) {
+        const batchIds = questionIds.slice(i, i + BATCH_SIZE);
+        const { data: batchData, error: qErr } = await supabaseDB
+          .from("questions")
+          .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags")
+          .in("id", batchIds);
 
-      if (qErr) {
-        res.status(500).json({ success: false, message: qErr.message });
-        return;
+        if (qErr) {
+          res.status(500).json({ success: false, message: qErr.message });
+          return;
+        }
+        rawQs.push(...(batchData ?? []));
       }
 
       const byId: Record<string, any> = {};
-      for (const q of rawQs ?? []) {
+      for (const q of rawQs) {
         // Normalize: ensure text fields are always plain strings (guards against JSONB type bleed)
         const normalizeText = (v: any): string =>
           v == null ? "" : typeof v === "string" ? v : typeof v === "object" ? JSON.stringify(v) : String(v);
