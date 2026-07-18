@@ -30,7 +30,7 @@ export default function TestPage() {
   const router = useRouter();
   const params = useParams<{ id: string }>();
   const testId = params.id; // e.g. "pyq-jee-main-2024-jan-shift1"
-  const { session } = useAuth();
+  const { session, loading: authLoading } = useAuth();
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [meta, setMeta] = useState<TestMeta | null>(null);
@@ -79,8 +79,14 @@ export default function TestPage() {
 
   // ── Load questions ──────────────────────────────────────────────────────────
   useEffect(() => {
-    if (!testId) return;
-    setLoading(true);
+    // Wait for auth to finish loading before sending a request — avoids premature
+    // empty-token requests that trigger NO_SESSION_TOKEN 401 and redirect to /login.
+    if (authLoading) return;
+    if (!session?.access_token) {
+      setError("Please log in to access this test.");
+      setLoading(false);
+      return;
+    }
 
     // Tests Hub papers: id is a raw UUID from the papers table
     const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -91,12 +97,13 @@ export default function TestPage() {
     }
 
     const token = session?.access_token ?? "";
+    setLoading(true);
     apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/tests/${testId}`, token)
       .then((res) => {
         if (res.success) {
           setQuestions(res.data.questions);
           setMeta(res.data.paper);
-          setTimeLeft(res.data.paper.duration * 60);
+          setTimeLeft(res.data.paper.duration > 0 ? res.data.paper.duration * 60 : null);
           setIsDemoMode(false);
           examStartMsRef.current = Date.now();
         } else {
@@ -107,7 +114,7 @@ export default function TestPage() {
         setError(err.message || "Failed to load test.");
       })
       .finally(() => setLoading(false));
-  }, [testId, session?.access_token]);
+  }, [testId, session?.access_token, authLoading]);
 
   // ── Timer ──────────────────────────────────────────────────────────────────
   const handleSubmit = useCallback(async () => {
