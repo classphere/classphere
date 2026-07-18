@@ -316,6 +316,7 @@ export const listTests = async (req: Request, res: Response): Promise<void> => {
       .from("papers")
       .select("id, title, test_type, subject, chapter, year, shift, total_questions, total_marks, duration_min, difficulty, exams(code, full_name)")
       .eq("is_active", true)
+      .eq("is_published", true)
       .order("created_at", { ascending: false });
 
     if (type) query = query.eq("test_type", type as string);

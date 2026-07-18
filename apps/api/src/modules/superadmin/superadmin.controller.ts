@@ -204,8 +204,8 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     if (!exam)      missing.push("exam");
     if (!test_type) missing.push("test_type");
     if (!title)     missing.push("title");
-    if (!duration)  missing.push("duration");
-    if (!marks)     missing.push("marks");
+    if (duration === undefined || duration === null)  missing.push("duration");
+    if (marks === undefined || marks === null)     missing.push("marks");
     if (!difficulty) missing.push("difficulty");
 
     if (missing.length > 0) {
@@ -313,6 +313,8 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       total_marks:     marks,
       duration_min:    duration,
       difficulty,
+      is_published:    true,
+      is_active:       true,
     }];
 
     const createdPapers = await sbPost(
