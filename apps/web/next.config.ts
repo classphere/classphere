@@ -14,10 +14,14 @@ const nextConfig: NextConfig = {
     ],
   },
   async rewrites() {
+    let backendUrl = process.env.BACKEND_URL ?? process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+    if (backendUrl && !backendUrl.startsWith("http://") && !backendUrl.startsWith("https://") && !backendUrl.startsWith("/")) {
+      backendUrl = `https://${backendUrl}`;
+    }
     return [
       {
         source: "/api/:path*",
-        destination: `${process.env.BACKEND_URL ?? process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001"}/api/:path*`,
+        destination: `${backendUrl}/api/:path*`,
       },
     ];
   },
