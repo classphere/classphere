@@ -4,6 +4,7 @@ import React, { createContext, useContext, useEffect, useState, useCallback } fr
 import { useRouter, usePathname } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import type { Session, User } from "@supabase/supabase-js";
+import { API_URL } from "@/lib/api.client";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -29,14 +30,10 @@ interface AuthContextValue {
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
-
 // Routes that never require auth
 // Note: on the admin subdomain, /login is rewritten to /superadmin/login by middleware,
 // so both forms must be public.
 const PUBLIC_ROUTES = ["/login", "/signup", "/superadmin/login"];
-
-// ─── Session Token Helpers ────────────────────────────────────────────────────
 
 const SESSION_TOKEN_KEY = "classphere_session_token";
 

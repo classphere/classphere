@@ -9,8 +9,11 @@
  * so the login page can show the user an appropriate message.
  */
 
-export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+let resolvedApiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+if (resolvedApiUrl.endsWith("/")) {
+  resolvedApiUrl = resolvedApiUrl.slice(0, -1);
+}
+export const API_URL = resolvedApiUrl;
 
 /** Versioned base — use this for all /api/v1/... calls */
 export const API_V1_URL = `${API_URL}/api/v1`;

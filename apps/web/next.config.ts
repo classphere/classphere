@@ -18,6 +18,9 @@ const nextConfig: NextConfig = {
     if (backendUrl && !backendUrl.startsWith("http://") && !backendUrl.startsWith("https://") && !backendUrl.startsWith("/")) {
       backendUrl = `https://${backendUrl}`;
     }
+    if (backendUrl && backendUrl.endsWith("/")) {
+      backendUrl = backendUrl.slice(0, -1);
+    }
     return [
       {
         source: "/api/:path*",
