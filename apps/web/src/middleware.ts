@@ -42,7 +42,7 @@ export default function middleware(req: NextRequest) {
   // "admin" subdomain → rewrite to /superadmin (accessible as admin.classphere.com or admin.localhost:3000)
   // Guard: if path already starts with /superadmin (e.g. internal Link navigation), don't double-prefix.
   if (subdomain === "admin") {
-    const alreadyPrefixed = url.pathname.startsWith("/superadmin");
+    const alreadyPrefixed = url.pathname === "/superadmin" || url.pathname.startsWith("/superadmin/");
     const superadminPath = alreadyPrefixed
       ? url.pathname
       : url.pathname === "/"
@@ -59,8 +59,14 @@ export default function middleware(req: NextRequest) {
 
   // If we have a valid institute subdomain, rewrite to /[domain]/path
   if (subdomain) {
-    // Guard: if path already starts with /subdomain (e.g. internal Link navigation), don't double-prefix (FE-1)
-    const alreadyPrefixed = url.pathname.startsWith(`/${subdomain}`);
+    // Guard: only skip rewrite if path is already double-prefixed (e.g. /test/test/...).
+    // A simple startsWith check is NOT sufficient — it causes false positives when the subdomain
+    // name matches a real route segment (e.g. subdomain='test', path='/test/uuid' is a real page).
+    const doublePrefix = `/${subdomain}/${subdomain}`;
+    const alreadyPrefixed =
+      url.pathname === `/${subdomain}` ||
+      url.pathname.startsWith(doublePrefix + "/") ||
+      url.pathname === doublePrefix;
     const domainPath = alreadyPrefixed
       ? url.pathname
       : url.pathname === "/"
