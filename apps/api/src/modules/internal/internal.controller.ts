@@ -7,6 +7,8 @@ import { Request, Response } from "express";
  */
 export const computeRankings = async (req: Request, res: Response): Promise<void> => {
   try {
+    res.status(501).json({ success: false, message: "Ranking computation is not implemented; no work was performed." });
+    return;
     // TODO: implement (see also: jobs/ranking.job.ts)
     // 1. Call ranking.service.computeAllRankings()
     //    a. For each active exam:
@@ -31,6 +33,8 @@ export const computeRankings = async (req: Request, res: Response): Promise<void
  */
 export const resetStreaks = async (req: Request, res: Response): Promise<void> => {
   try {
+    res.status(501).json({ success: false, message: "Streak maintenance is not implemented; no work was performed." });
+    return;
     // TODO: implement (see also: jobs/streak.job.ts)
     // 1. Get today's date in IST (UTC+5:30): yesterday = now() - 1 day (in IST)
     // 2. UPDATE student_stats SET streak_days = 0
@@ -50,6 +54,8 @@ export const resetStreaks = async (req: Request, res: Response): Promise<void> =
  */
 export const sendWeeklyReports = async (req: Request, res: Response): Promise<void> => {
   try {
+    res.status(501).json({ success: false, message: "Weekly report delivery is not implemented; no work was performed." });
+    return;
     // TODO: implement (see also: jobs/reports.job.ts)
     // 1. Fetch all active institutes
     // 2. For each institute: call report.service.generateWeeklyReport(institute_id)
