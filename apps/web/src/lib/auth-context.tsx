@@ -34,7 +34,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 // Routes that never require auth
 // Note: on the admin subdomain, /login is rewritten to /superadmin/login by middleware,
 // so both forms must be public.
-const PUBLIC_ROUTES = ["/login", "/signup", "/superadmin/login", "/invite"];
+const PUBLIC_ROUTES = ["/login", "/signup", "/superadmin/login"];
 
 // ─── Session Token Helpers ────────────────────────────────────────────────────
 

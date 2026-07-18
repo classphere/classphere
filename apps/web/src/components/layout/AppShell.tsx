@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import { useTenant } from "@/lib/tenant-context";
 
 // Paths that render full-screen with no sidebar shell (auth pages, test-taking)
-const NO_SHELL_PATHS = ["/login", "/signup", "/invite"];
+const NO_SHELL_PATHS = ["/login", "/signup"];
 
 export default function AppShell({ children }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
