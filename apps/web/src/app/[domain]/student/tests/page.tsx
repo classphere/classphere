@@ -20,7 +20,7 @@ import {
 interface Paper {
   id: string;
   title: string;
-  test_type: "chapter-wise" | "mock-test" | "pyq";
+  test_type: "chapter-wise" | "mock-test" | "pyq" | "ncert";
   subject?: string;
   chapter?: string;
   year?: number;
@@ -57,6 +57,7 @@ const TYPES = [
   { id: "chapter-wise", label: "Chapter-wise" },
   { id: "mock-test", label: "Mock Tests" },
   { id: "pyq", label: "PYQs" },
+  { id: "ncert", label: "Ncert Questions" },
 ];
 
 export default function TestsHubPage() {

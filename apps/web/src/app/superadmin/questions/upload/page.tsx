@@ -32,15 +32,16 @@ const TEST_TYPES = [
   { code: "chapter-wise", label: "Chapter-wise Test" },
   { code: "mock-test", label: "Mock Test" },
   { code: "pyq", label: "Previous Year Questions (PYQ)" },
+  { code: "ncert", label: "Ncert Questions" },
 ];
 
-const DIFFICULTY = ["easy", "medium", "hard"];
+
 
 // Subject options per exam
 const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-main": ["Physics", "Chemistry", "Mathematics"],
   "jee-advanced": ["Physics", "Chemistry", "Mathematics"],
-  "neet-ug": ["Physics", "Chemistry", "Biology"],
+  "neet-ug": ["Physics", "Chemistry", "Biology", "Botany", "Zoology"],
   "ssc-cgl": ["Quantitative Aptitude", "General Intelligence & Reasoning", "English Language", "General Awareness"],
 };
 
@@ -100,7 +101,12 @@ export default function UploadQuestionsPage() {
     setForm(prev => {
       const next = { ...prev, [key]: value };
       // Reset subject when exam changes
-      if (key === "exam") next.subject = "";
+      if (key === "exam") {
+        next.subject = "";
+        if (value === "ssc-cgl" && next.test_type === "ncert") {
+          next.test_type = "chapter-wise";
+        }
+      }
       return next;
     });
   };
@@ -220,7 +226,7 @@ export default function UploadQuestionsPage() {
     }
   };
 
-  const isChapterWise = form.test_type === "chapter-wise";
+  const isChapterWise = form.test_type === "chapter-wise" || form.test_type === "ncert";
   const isPYQ = form.test_type === "pyq";
   const canUpload = parsedQuestions && form.exam && form.test_type && form.title && !parseError;
   const subjects = form.exam ? EXAM_SUBJECTS[form.exam] ?? [] : [];
@@ -302,7 +308,7 @@ export default function UploadQuestionsPage() {
                 <div className="flex flex-col gap-2">
                   <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Test Type *</label>
                   <div className="flex flex-col gap-3">
-                    {TEST_TYPES.map(t => (
+                    {TEST_TYPES.filter(t => !(form.exam === "ssc-cgl" && t.code === "ncert")).map(t => (
                       <button
                         key={t.code}
                         onClick={() => setField("test_type", t.code)}
@@ -414,24 +420,7 @@ export default function UploadQuestionsPage() {
                   />
                 </div>
 
-                {/* Difficulty */}
-                <div className="flex flex-col gap-2 sm:col-span-2">
-                  <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">Difficulty *</label>
-                  <div className="flex flex-row gap-3">
-                    {DIFFICULTY.map(d => (
-                      <button
-                        key={d}
-                        onClick={() => setField("difficulty", d)}
-                        className={`flex-1 h-11 rounded-[10px] border text-[14px] font-semibold capitalize transition-all cursor-pointer ${form.difficulty === d
-                            ? "border-t-primary bg-shade-02 text-t-light dark:border-t-primary dark:bg-t-primary dark:text-b-surface1 shadow-sm"
-                            : "border-s-stroke2/40 bg-b-surface1 dark:bg-b-surface1 text-t-secondary hover:border-t-primary dark:hover:border-s-border hover:text-t-primary dark:hover:text-t-primary"
-                          }`}
-                      >
-                        {d}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+
 
               </div>
             </div>
