@@ -57,7 +57,7 @@ export default function DPPAnalyticsPage() {
         breadcrumbs={`Dashboard > DPPs > ${dpp.title}`}
       />
       
-      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
+      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 sm:px-6 md:px-8">
         <MetricGrid cols={4}>
           <MetricCard
             icon={<RiTeamLine size={20} />}

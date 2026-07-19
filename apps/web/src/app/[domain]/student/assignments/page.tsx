@@ -95,7 +95,7 @@ function DPPCard({ dpp }: { dpp: StudentDPP }) {
         <div className="flex gap-2 mt-1">
           {dpp.status !== "submitted" ? (
             <Link
-              href={`/test/dpp-${dpp.dppId}`}
+              href={`/student/dpps/take/${dpp.dppId}`}
               className="flex items-center gap-2 px-4 py-2 rounded-[10px] text-[13px] font-sans font-semibold bg-[#161616] text-white hover:bg-[#333] transition-colors border border-[#333]"
             >
               Attempt DPP

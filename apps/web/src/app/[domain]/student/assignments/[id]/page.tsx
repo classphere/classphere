@@ -178,7 +178,7 @@ export default function DPPSolvePage() {
           <h1 className="text-h5 font-bold text-t-primary mb-1">{dpp.title}</h1>
           <p className="text-caption text-t-secondary mb-8">{dpp.chapter} · {dpp.subject}</p>
 
-          <div className="grid grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-2 gap-3 mb-8 sm:grid-cols-3 sm:gap-4">
             <div className="p-5 bg-b-surface2 border border-s-stroke2 rounded-[10px]">
               <div className="text-h4 font-bold text-primary-02 mb-1">{score.correct}</div>
               <div className="text-caption text-t-secondary">Correct</div>
@@ -256,16 +256,16 @@ export default function DPPSolvePage() {
   return (
     <div className="min-h-screen bg-b-surface2 flex flex-col">
       {/* ── Top Bar ── */}
-      <header className="h-16 flex items-center justify-between px-8 bg-b-surface1 border-b border-s-stroke2 sticky top-0 z-50 shadow-widget">
-        <div className="flex items-center gap-4">
+      <header className="flex min-h-16 items-center justify-between gap-3 bg-b-surface1 px-4 py-2 border-b border-s-stroke2 sticky top-0 z-50 shadow-widget sm:px-8">
+        <div className="flex min-w-0 items-center gap-3 sm:gap-4">
           <Link href="/student/dashboard" className="flex text-t-secondary hover:text-t-primary transition-colors">
             <RiArrowLeftLine size={20} />
           </Link>
-          <div>
-            <div className="text-body-2 font-bold text-t-primary">
+          <div className="min-w-0">
+            <div className="truncate text-body-2 font-bold text-t-primary">
               📝 DPP &nbsp;·&nbsp; {dpp.title}
             </div>
-            <div className="text-caption text-t-secondary mt-0.5">
+            <div className="truncate text-caption text-t-secondary mt-0.5">
               {dpp.subject} · {dpp.chapter}
             </div>
           </div>
@@ -283,13 +283,13 @@ export default function DPPSolvePage() {
           </span>
         </div>
 
-        <button className="btn btn-sm btn-primary" onClick={() => setShowSubmitModal(true)}>Submit DPP</button>
+        <button className="btn btn-sm btn-primary shrink-0" onClick={() => setShowSubmitModal(true)}>Submit</button>
       </header>
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden lg:flex-row">
         {/* ── Question Area ── */}
-        <div className="flex-1 p-8 overflow-y-auto">
-          <div className="card max-w-[860px] mx-auto p-8 border border-s-stroke2 bg-b-surface1">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-8">
+          <div className="card mx-auto max-w-[860px] border border-s-stroke2 bg-b-surface1 p-4 sm:p-8">
             {/* Tags */}
             <div className="flex gap-2 mb-6 flex-wrap">
               <span className="label label-gray">{q.subject}</span>
@@ -344,7 +344,7 @@ export default function DPPSolvePage() {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex gap-4 mt-8 pt-6 border-t border-s-stroke2">
+            <div className="mt-8 flex flex-wrap gap-3 border-t border-s-stroke2 pt-6 sm:gap-4">
               <button
                 className="btn btn-outline flex items-center gap-1"
                 onClick={() => setCurrent((c) => Math.max(0, c - 1))}
@@ -389,7 +389,7 @@ export default function DPPSolvePage() {
         </div>
 
         {/* ── Right Navigator Sidebar ── */}
-        <div className="w-[280px] border-l border-s-stroke2 p-6 overflow-y-auto bg-b-surface1 flex flex-col">
+        <div className="flex w-full flex-col border-t border-s-stroke2 bg-b-surface1 p-4 lg:w-[280px] lg:border-t-0 lg:border-l lg:p-6">
           <div className="grid grid-cols-3 gap-2 p-4 bg-b-surface2 border border-s-stroke2 rounded-[10px] mb-6">
             {[
               { label: "Done", value: answered, color: "text-primary-02" },

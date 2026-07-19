@@ -106,7 +106,7 @@ export default function TeacherDPPsPage() {
         breadcrumbs="Dashboard > DPPs"
       />
       
-      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
+      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 sm:px-6 md:px-8">
         {/* KPI Row */}
         <MetricGrid cols={4}>
           {[

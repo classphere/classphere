@@ -1,6 +1,15 @@
 import { Request, Response } from "express";
 import { supabaseDB } from "../../lib/supabase";
 
+async function canManageDpp(req: Request, dppId: string): Promise<boolean> {
+  const { data: dpp } = await supabaseDB.from("dpps").select("teacher_id, batch_id, batches(institute_id)").eq("id", dppId).maybeSingle();
+  const instituteId = (dpp as any)?.batches?.institute_id;
+  if (!dpp || !instituteId) return false;
+  if (req.user?.role === "super_admin") return true;
+  if (instituteId !== req.user?.institute_id) return false;
+  return req.user?.role === "institute_admin" || dpp.teacher_id === req.user?.id;
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 /**
  * POST /api/v1/dpps
@@ -25,6 +34,16 @@ export const createDPP = async (req: Request, res: Response): Promise<void> => {
     if (question_ids.length > 50) {
       res.status(400).json({ success: false, message: "A DPP can have at most 50 questions." });
       return;
+    }
+    const { data: batch } = await supabaseDB.from("batches").select("id, institute_id").eq("id", batch_id).maybeSingle();
+    if (!batch || batch.institute_id !== req.user?.institute_id) {
+      res.status(403).json({ success: false, message: "Target batch is outside your institute." });
+      return;
+    }
+    if (req.user?.role === "teacher") {
+      const { data: teachingLink } = await supabaseDB.from("batch_teachers").select("teacher_id")
+        .eq("batch_id", batch_id).eq("teacher_id", teacherId).maybeSingle();
+      if (!teachingLink) { res.status(403).json({ success: false, message: "You are not assigned to this batch." }); return; }
     }
 
     // Create DPP record
@@ -257,6 +276,11 @@ export const getDPPQuestions = async (req: Request, res: Response): Promise<void
     const { id: dppId } = req.params;
     const studentId = req.user!.id;
     const role = req.user?.role;
+
+    if (role !== "student" && !(await canManageDpp(req, dppId))) {
+      res.status(403).json({ success: false, message: "Access denied" });
+      return;
+    }
 
     let assignment: any = null;
     // For students: verify they're assigned this DPP
@@ -547,24 +571,14 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
       }
       
       // Update leaderboard
-      const { data: batchLinks } = await supabaseDB
-        .from("batch_students")
-        .select("batch_id")
-        .eq("student_id", studentId);
-        
-      if (batchLinks && batchLinks.length > 0) {
-        const batchIds = batchLinks.map(b => b.batch_id);
-         // Use the newXp calculated during the atomic stats update loop
-        
-        // Upsert into leaderboard for each batch
-        for (const bId of batchIds) {
-          await supabaseDB.from("leaderboards").upsert({
-            batch_id: bId,
-            student_id: studentId,
-            xp: newXp,
-            updated_at: new Date().toISOString()
-          }, { onConflict: "batch_id,student_id" });
-        }
+      const { data: dppBatch } = await supabaseDB.from("dpps").select("batch_id").eq("id", dppId).maybeSingle();
+      if (dppBatch?.batch_id) {
+        await supabaseDB.from("leaderboards").upsert({
+          batch_id: dppBatch.batch_id,
+          student_id: studentId,
+          xp: newXp,
+          updated_at: new Date().toISOString(),
+        }, { onConflict: "batch_id,student_id" });
       }
     } catch (gamificationErr) {
       console.error("[submitDPP gamification error]", gamificationErr);
@@ -596,13 +610,8 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
 export const deleteDPP = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id: dppId } = req.params;
-    const teacherId = req.user!.id;
-    const isAdmin = req.user?.role === "institute_admin" || req.user?.role === "super_admin";
-
-    let query = supabaseDB.from("dpps").update({ is_active: false }).eq("id", dppId);
-    if (!isAdmin) query = query.eq("teacher_id", teacherId);
-
-    const { error } = await query;
+    if (!(await canManageDpp(req, dppId))) { res.status(403).json({ success: false, message: "Access denied" }); return; }
+    const { error } = await supabaseDB.from("dpps").update({ is_active: false }).eq("id", dppId);
     if (error) {
       res.status(500).json({ success: false, message: error.message });
       return;
@@ -622,6 +631,7 @@ export const deleteDPP = async (req: Request, res: Response): Promise<void> => {
 export const getDPPAnalytics = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id: dppId } = req.params;
+    if (!(await canManageDpp(req, dppId))) { res.status(403).json({ success: false, message: "Access denied" }); return; }
 
     // Fetch DPP metadata
     const { data: dpp } = await supabaseDB
