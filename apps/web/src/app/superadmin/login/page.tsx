@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { RiFlashlightFill, RiEyeLine, RiEyeOffLine, RiAlertLine, RiShieldCheckLine } from "@remixicon/react";
+import Image from "next/image";
+import { RiEyeLine, RiEyeOffLine, RiAlertLine, RiShieldCheckLine } from "@remixicon/react";
 import { supabase } from "@/lib/supabase";
 import { storeSessionToken } from "@/lib/auth-context";
 import { API_URL } from "@/lib/api.client";
@@ -13,13 +14,12 @@ export default function SuperAdminLoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleLogin = async (event: React.FormEvent) => {
+    event.preventDefault();
     setLoading(true);
     setError("");
 
     try {
-      // Call our backend login endpoint — no institute_slug = super admin path
       const res = await fetch(`${API_URL}/api/v1/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -29,7 +29,6 @@ export default function SuperAdminLoginPage() {
           password,
         }),
       });
-
       const json = await res.json();
 
       if (!res.ok) {
@@ -37,24 +36,17 @@ export default function SuperAdminLoginPage() {
         setLoading(false);
         return;
       }
-
-      // Verify the user is actually a super_admin
       if (json.data.user.role !== "super_admin") {
-        setError(`Access denied. Found role: ${json.data.user.role || "undefined"}`);
+        setError("This account does not have platform administrator access.");
         setLoading(false);
         return;
       }
 
-      // Store session token
       storeSessionToken(json.data.session_token);
-
-      // Set Supabase session — AuthContext's onAuthStateChange fires and redirects to /superadmin
       await supabase.auth.setSession({
         access_token: json.data.access_token,
         refresh_token: json.data.refresh_token,
       });
-
-      // Keep spinner going — AuthContext handles redirect
     } catch (err: any) {
       setError(`Network error: ${err.message}`);
       setLoading(false);
@@ -62,123 +54,91 @@ export default function SuperAdminLoginPage() {
   };
 
   return (
-    <main data-theme="dark" className="min-h-screen flex items-center justify-center bg-b-surface1 px-4 dark">
-
-      {/* Subtle grid background */}
-      <div
-        className="pointer-events-none fixed inset-0 opacity-10"
-        style={{
-          backgroundImage: "linear-gradient(var(--stroke-subtle) 1px, transparent 1px), linear-gradient(90deg, var(--stroke-subtle) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      <div className="relative w-full max-w-[400px]">
-
-        {/* Header */}
-        <div className="text-center mb-10">
-          <div className="flex items-center justify-center gap-2.5 mb-6">
-            <div className="flex size-10 items-center justify-center rounded-[10px] bg-b-pop text-t-light shadow-widget">
-              <RiFlashlightFill size={20} className="text-t-primary" />
+    <main className="min-h-screen flex items-center justify-center bg-b-surface1 px-4 py-8 font-manrope">
+      <div className="w-full max-w-[860px] flex flex-col md:flex-row gap-4 overflow-hidden rounded-[24px] border border-s-stroke2 bg-b-surface2 p-2">
+        <section className="relative hidden aspect-[4/5] shrink-0 overflow-hidden rounded-[18px] bg-[#151515] md:flex md:w-[45%]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,157,61,0.24),transparent_38%),linear-gradient(145deg,#1e1e1e,#090909)]" />
+          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
+          <div className="absolute left-7 top-7 flex items-center gap-3">
+            <Image src="/logo.png" alt="Classphere" width={44} height={44} className="size-11 rounded-[10px] object-contain bg-white/10" />
+            <span className="text-lg font-bold tracking-tight text-white">Classphere</span>
+          </div>
+          <div className="absolute bottom-8 left-7 right-7">
+            <div className="mb-3 flex items-center gap-2 text-[11px] font-bold tracking-[0.14em] text-orange-200">
+              <RiShieldCheckLine size={15} /> PLATFORM CONTROL
             </div>
-            <span className="t-title-page-s text-t-primary tracking-tight">
-              Classphere
-            </span>
+            <h1 className="font-urbanist text-[27px] font-bold leading-snug text-white">Operate every institute with confidence.</h1>
+            <p className="mt-3 text-sm leading-relaxed text-white/65">Secure access to Classphere’s platform administration.</p>
           </div>
+        </section>
 
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <RiShieldCheckLine size={16} className="text-primary-02" />
-            <span className="t-label text-primary-02">
-              SUPER ADMIN PORTAL
-            </span>
-          </div>
-          
-          <h1 className="t-title-page-s text-t-primary tracking-tight mb-2">
-            Admin Sign In
-          </h1>
-          <p className="t-body-base text-t-secondary">
-            Restricted access — authorised personnel only
-          </p>
-        </div>
+        <section className="flex flex-1 flex-col justify-center px-4 py-8 md:px-8">
+          <div className="flex flex-col gap-6">
+            <div>
+              <div className="mb-3 flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] text-primary-01">
+                <RiShieldCheckLine size={15} /> SUPER ADMIN PORTAL
+              </div>
+              <h1 className="font-urbanist text-[26px] font-bold leading-tight tracking-tight text-t-primary">Welcome back</h1>
+              <p className="mt-1 text-[14px] text-t-secondary">Sign in to manage the Classphere platform.</p>
+            </div>
 
-        {/* Card */}
-        <div className="card group relative">
-
-          <div className="relative z-10">
             {error && (
-              <div className="flex items-start gap-3 mb-6 p-4 rounded-[10px] border border-primary-03/15 bg-primary-03/5">
-                <RiAlertLine size={18} className="text-primary-03 shrink-0 mt-0.5" />
-                <span className="t-body-base text-primary-03">{error}</span>
+              <div className="flex items-start gap-3 rounded-[10px] border border-primary-03/15 bg-primary-03/5 p-4">
+                <RiAlertLine size={18} className="mt-0.5 shrink-0 text-primary-03" />
+                <span className="text-[13px] font-medium leading-relaxed text-primary-03">{error}</span>
               </div>
             )}
 
             <form onSubmit={handleLogin} className="flex flex-col gap-5">
-              {/* Email */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="admin-email" className="t-label text-t-secondary">
-                  EMAIL
-                </label>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="admin-email" className="text-[12px] font-bold uppercase tracking-wide text-t-primary">Email</label>
                 <input
                   id="admin-email"
                   type="email"
                   placeholder="admin@classphere.com"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(event) => setEmail(event.target.value)}
                   required
                   autoComplete="email"
                   className="input"
                 />
               </div>
 
-              {/* Password */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="admin-password" className="t-label text-t-secondary">
-                  PASSWORD
-                </label>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="admin-password" className="text-[12px] font-bold uppercase tracking-wide text-t-primary">Password</label>
                 <div className="relative">
                   <input
                     id="admin-password"
                     type={showPassword ? "text" : "password"}
                     placeholder="••••••••"
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(event) => setPassword(event.target.value)}
                     required
                     autoComplete="current-password"
                     className="input pr-12"
                   />
                   <button
                     type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-t-tertiary hover:text-t-primary transition-colors"
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    onClick={() => setShowPassword((visible) => !visible)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-t-secondary transition-colors hover:text-t-primary"
                   >
                     {showPassword ? <RiEyeOffLine size={18} /> : <RiEyeLine size={18} />}
                   </button>
                 </div>
               </div>
 
-              <button
-                id="admin-login-submit"
-                type="submit"
-                disabled={loading}
-                className="btn btn-primary w-full mt-2"
-              >
+              <button id="admin-login-submit" type="submit" disabled={loading} className="btn btn-primary mt-2 w-full">
                 {loading ? (
                   <span className="flex items-center gap-2">
-                    <span className="size-4 border-2 border-current/30 border-t-current rounded-full animate-spin" />
+                    <span className="size-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
                     Verifying access...
                   </span>
                 ) : "Sign In to Admin"}
               </button>
             </form>
           </div>
-        </div>
-
-        <p className="t-body-base text-center mt-6 text-t-tertiary">
-          ← Back to{" "}
-          <a href="/login" className="text-t-secondary hover:text-t-primary transition-colors hover:underline">
-            student login
-          </a>
-        </p>
+        </section>
       </div>
     </main>
   );
