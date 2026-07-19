@@ -32,7 +32,7 @@ export function QuestionContent({
   isSectionBLimitReached,
 }: QuestionContentProps) {
   return (
-    <section className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 card select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
+    <section className="group relative card flex flex-col overflow-hidden min-w-0 p-4 sm:p-6 md:p-8 card select-none lg:sticky lg:top-[7.5rem] lg:h-[calc(100dvh-9rem)] lg:overflow-y-auto">
       <div className="relative z-10 mb-5 flex flex-wrap items-center gap-2">
         <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.subject}</span>
         <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.chapter}</span>
@@ -61,7 +61,7 @@ export function QuestionContent({
       {q.image_url && (
         <div className="mb-6">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={q.image_url} alt="Figure" className="max-w-full rounded-[10px] border border-s-stroke2" referrerPolicy="no-referrer" />
+          <img src={q.image_url} alt="Figure" className="max-h-[420px] max-w-full rounded-[10px] border border-s-stroke2 object-contain" referrerPolicy="no-referrer" />
         </div>
       )}
 
@@ -95,7 +95,7 @@ export function QuestionContent({
             />
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {q.options.map((opt) => {
               const selected = answers[q.id] === opt.id;
               const disabled = isSectionBLimitReached(q) && !selected;
@@ -165,7 +165,7 @@ export function QuestionContent({
       {/* Nav buttons */}
       <div className="relative z-10 mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 border-t border-s-stroke2 pt-6">
         <button
-          className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-[10px] text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#00A656] to-[#008A47] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+          className="flex min-h-12 flex-row items-center justify-center px-2 py-2 rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#00A656] to-[#008A47] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
           onClick={() => {
             if (answers[q.id]) setStatus((s) => ({ ...s, [q.id]: "answered" }));
             else setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
@@ -177,7 +177,7 @@ export function QuestionContent({
         </button>
 
         <button
-          className="flex flex-row justify-center items-center py-3 px-3 h-12 border border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary rounded-[10px] text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] transition-all active:scale-98 uppercase w-full"
+          className="flex min-h-12 flex-row items-center justify-center px-2 py-2 border border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] transition-all active:scale-98 uppercase w-full"
           onClick={() => {
             setAnswers((a) => {
               const newA = { ...a };
@@ -191,7 +191,7 @@ export function QuestionContent({
         </button>
 
         <button
-          className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-[10px] text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#EF9D0E] to-[#D98500] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+          className="flex min-h-12 flex-row items-center justify-center px-2 py-2 rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#EF9D0E] to-[#D98500] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
           onClick={() => {
             setStatus((s) => ({ ...s, [q.id]: "review" }));
             if (current < questionsLength - 1) navigateTo(current + 1);
@@ -202,14 +202,14 @@ export function QuestionContent({
         </button>
 
         <button
-          className="flex flex-row justify-center items-center py-3 px-3 h-12 rounded-[10px] text-[11px] xl:text-xs font-sans font-bold tracking-[0.05em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2563EB] to-[#1D4ED8] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+          className="flex min-h-12 flex-row items-center justify-center px-2 py-2 rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2563EB] to-[#1D4ED8] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
           onClick={() => {
             setStatus((s) => ({ ...s, [q.id]: "review" }));
             if (current < questionsLength - 1) navigateTo(current + 1);
             else setShowSubmitModal(true);
           }}
         >
-          <span className="relative z-10 text-center text-[10px] xl:text-[11px]">Mark for Review & Next</span>
+          <span className="relative z-10 text-center">Mark for Review & Next</span>
         </button>
       </div>
     </section>

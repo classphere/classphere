@@ -7,11 +7,12 @@ interface TestHeaderProps {
   questionsLength: number;
   timeLeft: number | null;
   timeWarning: boolean;
+  isTimed: boolean;
   setShowSubmitModal: (show: boolean) => void;
   formatTime: (secs: number) => string;
 }
 
-export function TestHeader({ meta, questionsLength, timeLeft, timeWarning, setShowSubmitModal, formatTime }: TestHeaderProps) {
+export function TestHeader({ meta, questionsLength, timeLeft, timeWarning, isTimed, setShowSubmitModal, formatTime }: TestHeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-s-stroke2/70 bg-b-surface1/95 backdrop-blur-0">
       <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
@@ -30,7 +31,7 @@ export function TestHeader({ meta, questionsLength, timeLeft, timeWarning, setSh
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          {meta?.test_type !== "ncert" ? (
+          {isTimed ? (
             <div className={`flex items-center gap-3 rounded-[10px] border px-4 py-2.5 shadow-widget ${timeWarning ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)]" : "border-s-stroke2 bg-b-surface2"}`}>
               <span className={`${timeWarning ? "text-primary-03" : "text-t-primary"}`}>
                 <RiTimerLine size={18} />
@@ -41,7 +42,7 @@ export function TestHeader({ meta, questionsLength, timeLeft, timeWarning, setSh
             </div>
           ) : (
             <div className="flex items-center gap-3 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2.5 shadow-widget">
-              <span className="text-t-primary font-bold text-sm tracking-wide">PRACTICE MODE</span>
+                <span className="text-t-primary font-bold text-sm tracking-wide">PRACTICE MODE</span>
             </div>
           )}
 

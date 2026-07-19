@@ -1,13 +1,15 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter, useParams, useSearchParams } from "next/navigation";
 import {
   RiTimerLine,
   RiArrowLeftLine,
   RiArrowRightLine,
   RiFlag2Fill,
   RiLoader4Line,
+  RiLayoutGridLine,
+  RiCloseLine,
 } from "@remixicon/react";
 import { Question, Option, TestMeta, AnswerMap, StatusMap } from "@/components/test/TestTypes";
 import { TestHeader } from "@/components/test/TestHeader";
@@ -15,21 +17,21 @@ import { QuestionContent } from "@/components/test/QuestionContent";
 import { QuestionNavigator } from "@/components/test/QuestionNavigator";
 import { SubmitModal } from "@/components/test/SubmitModal";
 import "katex/dist/katex.min.css";
-import { API_V1_URL, apiClient } from "@/lib/api.client";
+import { apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
 
 
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const API_BASE = API_V1_URL;
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function TestPage() {
   const router = useRouter();
   const params = useParams<{ id: string }>();
+  const searchParams = useSearchParams();
   const testId = params.id; // e.g. "pyq-jee-main-2024-jan-shift1"
+  const requestedTestMode = searchParams.get("mode") === "practice" ? "practice" : "attempt";
   const { session, loading: authLoading } = useAuth();
 
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -42,7 +44,10 @@ export default function TestPage() {
   const [visitedQs, setVisitedQs] = useState<Record<string, boolean>>({});
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
+  const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
   const [isDemoMode, setIsDemoMode] = useState(false);
+  const [attemptId, setAttemptId] = useState<string | null>(null);
+  const [saveState, setSaveState] = useState<"saved" | "saving" | "offline">("saved");
 
   // ── Timing tracking (Option B: start_timestamp) ─────────────────────────────
   /** Unix ms when the exam timer started (set once when questions load) */
@@ -54,6 +59,13 @@ export default function TestPage() {
 
   const currentQuestionEntryTime = useRef<number>(Date.now());
   const currentQuestionIdRef = useRef<string | null>(null);
+  const answersRef = useRef<AnswerMap>({});
+  const statusRef = useRef<StatusMap>({});
+
+  useEffect(() => {
+    answersRef.current = answers;
+    statusRef.current = status;
+  }, [answers, status]);
 
   /** Called whenever the student navigates to a question */
   const recordQuestionOpen = useCallback((qId: string) => {
@@ -96,30 +108,118 @@ export default function TestPage() {
       return;
     }
 
-    const token = session?.access_token ?? "";
-    setLoading(true);
-    apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/tests/${testId}`, token)
-      .then((res) => {
-        if (res.success) {
-          setQuestions(res.data.questions);
-          setMeta(res.data.paper);
-          setTimeLeft(res.data.paper.duration > 0 ? res.data.paper.duration * 60 : null);
-          setIsDemoMode(false);
-          examStartMsRef.current = Date.now();
-        } else {
-          setError(res.message ?? "Failed to load questions.");
+    const token = session.access_token;
+    let cancelled = false;
+
+    const loadTestAndAttempt = async () => {
+      setLoading(true);
+      try {
+        const testResponse = await apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/tests/${testId}`, token);
+        if (!testResponse.success) throw new Error(testResponse.message ?? "Failed to load questions.");
+
+        const startResponse = await apiClient.post<{ success: boolean; data: { attempt: { id: string } }; message?: string }>(
+          "/api/v1/attempts",
+          { paper_id: testId, test_mode: requestedTestMode },
+          token
+        );
+        if (!startResponse.success) throw new Error(startResponse.message ?? "Failed to start your test attempt.");
+
+        const startedAttemptId = startResponse.data.attempt.id;
+        const attemptResponse = await apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/attempts/${startedAttemptId}`, token);
+        if (!attemptResponse.success) throw new Error(attemptResponse.message ?? "Failed to restore your test attempt.");
+        if (cancelled) return;
+
+        const restoredAnswers: AnswerMap = {};
+        const restoredStatus: StatusMap = {};
+        const restoredVisited: Record<string, boolean> = {};
+        for (const saved of attemptResponse.data.saved_answers ?? []) {
+          const hasProgress = Boolean(saved.selected_answer) || Boolean(saved.marked_review) || (saved.start_timestamp ?? -1) >= 0 || (saved.time_taken_sec ?? 0) > 0;
+          if (!hasProgress) continue;
+          if (saved.selected_answer) restoredAnswers[saved.question_id] = saved.selected_answer;
+          restoredStatus[saved.question_id] = saved.marked_review ? "review" : saved.selected_answer ? "answered" : "unanswered";
+          restoredVisited[saved.question_id] = true;
+          questionOpenTimestamps.current[saved.question_id] = saved.start_timestamp ?? -1;
+          questionTimeSpentRef.current[saved.question_id] = (saved.time_taken_sec ?? 0) * 1000;
         }
-      })
-      .catch((err) => {
-        setError(err.message || "Failed to load test.");
-      })
-      .finally(() => setLoading(false));
-  }, [testId, session?.access_token, authLoading]);
+
+        const attempt = attemptResponse.data.attempt;
+        const configuredDuration = Number(attempt.total_duration_sec ?? testResponse.data.paper.duration * 60);
+        const elapsedSeconds = attempt.created_at ? Math.max(0, Math.floor((Date.now() - new Date(attempt.created_at).getTime()) / 1000)) : 0;
+
+        setQuestions(testResponse.data.questions);
+        setMeta(testResponse.data.paper);
+        setAttemptId(startedAttemptId);
+        setAnswers(restoredAnswers);
+        setStatus(restoredStatus);
+        setVisitedQs(restoredVisited);
+        setTimeLeft(configuredDuration > 0 ? Math.max(0, configuredDuration - elapsedSeconds) : null);
+        setIsDemoMode(false);
+        examStartMsRef.current = Date.now() - elapsedSeconds * 1000;
+      } catch (err) {
+        if (!cancelled) setError(err instanceof Error ? err.message : "Failed to load test.");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    };
+
+    void loadTestAndAttempt();
+    return () => { cancelled = true; };
+  }, [testId, requestedTestMode, session?.access_token, authLoading]);
+
+  const buildAttemptAnswers = useCallback(() => questions.reduce((acc, q) => {
+    const qId = q.id;
+    const liveTime = currentQuestionIdRef.current === qId ? Date.now() - currentQuestionEntryTime.current : 0;
+    const actualSec = Math.floor(((questionTimeSpentRef.current[qId] || 0) + liveTime) / 1000);
+    acc[qId] = {
+      selected_answer: answersRef.current[qId] || null,
+      time_taken_sec: actualSec,
+      start_timestamp: questionOpenTimestamps.current[qId] ?? -1,
+      marked_review: statusRef.current[qId] === "review",
+    };
+    return acc;
+  }, {} as Record<string, any>), [questions]);
+
+  const persistAttempt = useCallback(async () => {
+    if (!attemptId || !session?.access_token || questions.length === 0) return;
+    const payload = { answers: buildAttemptAnswers() };
+    const localKey = `classphere-attempt-${attemptId}`;
+    setSaveState("saving");
+    try {
+      await apiClient.patch(`/api/v1/attempts/${attemptId}`, payload, session.access_token);
+      localStorage.removeItem(localKey);
+      setSaveState("saved");
+    } catch {
+      localStorage.setItem(localKey, JSON.stringify(payload));
+      setSaveState("offline");
+    }
+  }, [attemptId, buildAttemptAnswers, questions.length, session?.access_token]);
+
+  useEffect(() => {
+    if (!attemptId || questions.length === 0) return;
+    const timer = window.setTimeout(() => { void persistAttempt(); }, 1200);
+    return () => window.clearTimeout(timer);
+  }, [answers, status, attemptId, persistAttempt, questions.length]);
+
+  useEffect(() => {
+    if (!attemptId) return;
+    const interval = window.setInterval(() => { void persistAttempt(); }, 15000);
+    const onOnline = () => { void persistAttempt(); };
+    const onPageHide = () => {
+      localStorage.setItem(`classphere-attempt-${attemptId}`, JSON.stringify({ answers: buildAttemptAnswers() }));
+    };
+    window.addEventListener("online", onOnline);
+    window.addEventListener("pagehide", onPageHide);
+    return () => {
+      window.clearInterval(interval);
+      window.removeEventListener("online", onOnline);
+      window.removeEventListener("pagehide", onPageHide);
+    };
+  }, [attemptId, buildAttemptAnswers, persistAttempt]);
 
   // ── Timer ──────────────────────────────────────────────────────────────────
   const handleSubmit = useCallback(async () => {
     // Guard: never submit if questions haven't loaded yet
-    if (questions.length === 0) return;
+    if (questions.length === 0 || !attemptId) return;
 
     // Flush the time for the currently active question
     const now = Date.now();
@@ -132,31 +232,17 @@ export default function TestPage() {
 
     setLoading(true);
     try {
-      const payload = {
-        answers: questions.reduce((acc, q) => {
-          const qId = q.id;
-          const rawMs = questionTimeSpentRef.current[qId] || 0;
-          const actualSec = Math.floor(rawMs / 1000);
-          const finalSec = (actualSec === 0 && answers[qId]) ? 2 : actualSec;
-
-          acc[qId] = {
-            selected_answer: answers[qId] || null,
-            time_taken_sec: finalSec,
-            start_timestamp: questionOpenTimestamps.current[qId] ?? -1,
-            marked_review: status[qId] === "review",
-          };
-          return acc;
-        }, {} as Record<string, any>),
-      };
+      const payload = { answers: buildAttemptAnswers() };
 
       const token = session?.access_token ?? "";
       const data = await apiClient.post<{ success: boolean; data: any; message?: string }>(
-        `/api/v1/attempts/${testId}/submit`,
+        `/api/v1/attempts/${attemptId}/submit`,
         payload,
         token
       );
 
       if (data.success) {
+        localStorage.removeItem(`classphere-attempt-${attemptId}`);
         router.push(`/results/${data.data.attempt_id}`);
       } else {
         alert("Failed to submit: " + data.message);
@@ -167,7 +253,7 @@ export default function TestPage() {
       alert("Submission error: " + (err instanceof Error ? err.message : String(err)));
       setLoading(false);
     }
-  }, [answers, status, testId, router, questions.length]);
+  }, [attemptId, buildAttemptAnswers, questions.length, router, session?.access_token]);
 
   useEffect(() => {
     if (timeLeft === null || timeLeft <= 0 || loading) return;
@@ -285,7 +371,7 @@ export default function TestPage() {
         </main>
         <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-center gap-3 px-4 pb-6 text-t-secondary">
           <RiLoader4Line size={18} className="animate-spin text-primary-01" />
-          <p className="text-body-2 font-semibold">Loading questions from backend…</p>
+          <p className="text-body-2 font-semibold">Preparing your test…</p>
         </div>
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
@@ -344,12 +430,26 @@ export default function TestPage() {
         meta={meta}
         questionsLength={questions.length}
         timeLeft={timeLeft}
+        isTimed={timeLeft !== null}
         timeWarning={timeWarning}
         setShowSubmitModal={setShowSubmitModal}
         formatTime={formatTime}
       />
 
-      <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem] items-stretch">
+      <main className="mx-auto grid w-full max-w-screen-2xl gap-4 px-4 py-4 sm:gap-6 sm:py-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:px-6 items-stretch">
+        <div className="lg:hidden">
+          <button
+            type="button"
+            aria-label="Open question palette"
+            aria-expanded={isNavigatorOpen}
+            aria-controls="test-question-palette"
+            onClick={() => setIsNavigatorOpen(true)}
+            className="flex h-12 w-full items-center justify-between rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 text-sm font-semibold text-t-primary shadow-sm active:scale-[0.99]"
+          >
+            <span className="flex items-center gap-2"><RiLayoutGridLine size={18} /> Question palette</span>
+            <span className="text-xs text-t-secondary">{answered}/{questions.length} answered</span>
+          </button>
+        </div>
         <QuestionContent
           question={q}
           current={current}
@@ -379,6 +479,54 @@ export default function TestPage() {
           answeredMarkedCount={answeredMarkedCount}
         />
       </main>
+
+      {isNavigatorOpen && (
+        <div className="lg:hidden fixed inset-0 z-[90] bg-black/40 backdrop-blur-sm">
+          <button
+            type="button"
+            aria-label="Close question palette"
+            onClick={() => setIsNavigatorOpen(false)}
+            className="absolute inset-0 h-full w-full cursor-default"
+          />
+          <section
+            id="test-question-palette"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Question palette"
+            className="absolute inset-y-0 right-0 flex w-full max-w-[440px] flex-col bg-b-surface1 shadow-2xl"
+          >
+            <div className="flex h-16 shrink-0 items-center justify-between border-b border-s-stroke2 px-4">
+              <div>
+                <p className="text-sm font-bold text-t-primary">Question palette</p>
+                <p className="text-xs text-t-secondary">Choose a question to continue</p>
+              </div>
+              <button
+                type="button"
+                aria-label="Close question palette"
+                onClick={() => setIsNavigatorOpen(false)}
+                className="flex size-11 items-center justify-center rounded-[10px] border border-s-stroke2 bg-b-surface2 text-t-primary"
+              >
+                <RiCloseLine size={20} />
+              </button>
+            </div>
+            <QuestionNavigator
+              questions={questions}
+              current={current}
+              status={status}
+              answers={answers}
+              visitedQs={visitedQs}
+              navigateTo={navigateTo}
+              notVisitedCount={notVisitedCount}
+              notAnsweredCount={notAnsweredCount}
+              answeredCount={answeredCount}
+              markedCount={markedCount}
+              answeredMarkedCount={answeredMarkedCount}
+              variant="drawer"
+              onNavigate={() => setIsNavigatorOpen(false)}
+            />
+          </section>
+        </div>
+      )}
 
       <SubmitModal
         show={showSubmitModal}

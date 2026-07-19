@@ -37,7 +37,7 @@ export default function ScheduleTestPage() {
 
   // Form & File upload states
   const [testName, setTestName] = useState("");
-  const [testDate, setTestDate] = useState("");
+  const [testStart, setTestStart] = useState("");
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [answerKeyFile, setAnswerKeyFile] = useState<File | null>(null);
   const [status, setStatus] = useState<"idle" | "uploading" | "processing" | "success" | "error">("idle");
@@ -79,8 +79,8 @@ export default function ScheduleTestPage() {
       setErrorMsg("Please enter a test name.");
       return;
     }
-    if (!testDate) {
-      setErrorMsg("Please select a test date.");
+    if (!testStart) {
+      setErrorMsg("Please select when students can start the test.");
       return;
     }
     if (selectedBatches.length === 0) {
@@ -107,7 +107,7 @@ export default function ScheduleTestPage() {
         formData.append("answer_key", answerKeyFile);
       }
       formData.append("title", testName.trim());
-      formData.append("date", testDate);
+      formData.append("date", new Date(testStart).toISOString());
       formData.append("batch_ids", JSON.stringify(selectedBatches));
 
       const res = await fetch(`${API_URL}/api/v1/tests/upload-test`, {
@@ -329,13 +329,13 @@ export default function ScheduleTestPage() {
               </div>
               
               <div className="flex-1 flex flex-col gap-2">
-                <label className="text-sm font-semibold text-t-primary dark:text-t-primary">Date</label>
+                <label className="text-sm font-semibold text-t-primary dark:text-t-primary">Test opens at</label>
                 <div className="bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 rounded-[10px] h-12 px-4 flex items-center gap-3 focus-within:border-primary-01 focus-within:ring-1 focus-within:ring-[#2A85FF]">
                   <RiCalendarEventLine size={18} className="text-t-secondary" />
                   <input 
-                    type="date" 
-                    value={testDate}
-                    onChange={(e) => setTestDate(e.target.value)}
+                    type="datetime-local"
+                    value={testStart}
+                    onChange={(e) => setTestStart(e.target.value)}
                     className="border-none bg-transparent outline-none w-full text-sm text-t-primary" 
                   />
                 </div>

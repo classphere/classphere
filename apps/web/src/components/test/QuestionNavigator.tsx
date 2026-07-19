@@ -13,6 +13,8 @@ interface QuestionNavigatorProps {
   answeredCount: number;
   markedCount: number;
   answeredMarkedCount: number;
+  variant?: "desktop" | "drawer";
+  onNavigate?: () => void;
 }
 
 export function QuestionNavigator({
@@ -27,14 +29,20 @@ export function QuestionNavigator({
   answeredCount,
   markedCount,
   answeredMarkedCount,
+  variant = "desktop",
+  onNavigate,
 }: QuestionNavigatorProps) {
   const subjects = [...new Set(questions.map((q) => q.subject))];
 
   return (
-    <aside className="group relative card flex flex-col overflow-hidden min-w-0 p-6 md:p-8 card select-none xl:sticky xl:top-[7.5rem] xl:h-[calc(100vh-9rem)] xl:overflow-y-auto">
+    <aside className={`group relative card min-w-0 select-none ${
+      variant === "desktop"
+        ? "hidden lg:flex lg:flex-col lg:h-[calc(100dvh-9rem)] lg:sticky lg:top-[7.5rem] lg:overflow-y-auto p-5 xl:p-6"
+        : "flex h-full flex-col overflow-y-auto p-5 sm:p-6"
+    }`}>
       <div className="relative z-10 mb-6 grid grid-cols-2 gap-y-3 gap-x-2 text-[13px] font-sans text-t-primary font-medium">
         {/* 1. Not Visited */}
-        <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
+          <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
           <div className="w-8 h-8 flex items-center justify-center rounded-[4px] border border-t-secondary bg-gradient-to-br from-shade-10 to-[#E0E0E0] shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)] text-black font-semibold text-xs shrink-0">
             {notVisitedCount}
           </div>
@@ -83,7 +91,7 @@ export function QuestionNavigator({
               <div className="mb-4 text-overline font-bold uppercase tracking-[0.05em] text-t-tertiary">
                 {subj}
               </div>
-              <div className="grid grid-cols-5 gap-2 sm:grid-cols-6 lg:grid-cols-5">
+              <div className="grid grid-cols-5 gap-2 min-[390px]:grid-cols-6 lg:grid-cols-5 xl:grid-cols-6">
                 {subjQs.map((sq) => {
                   const globalIdx = questions.findIndex((gq) => gq.id === sq.id);
                   const s = status[sq.id];
@@ -127,7 +135,10 @@ export function QuestionNavigator({
                       <button
                         id={`nav-q-${sq.question_number}`}
                         className={btnClass}
-                        onClick={() => navigateTo(globalIdx)}
+                          onClick={() => {
+                            navigateTo(globalIdx);
+                            onNavigate?.();
+                          }}
                       >
                         {content}
                       </button>

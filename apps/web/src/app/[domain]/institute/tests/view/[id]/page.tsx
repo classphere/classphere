@@ -334,6 +334,7 @@ export default function InstituteTestViewPage() {
         meta={meta}
         questionsLength={questions.length}
         timeLeft={timeLeft}
+        isTimed={timeLeft !== null}
         timeWarning={timeWarning}
         setShowSubmitModal={setShowSubmitModal}
         formatTime={formatTime}

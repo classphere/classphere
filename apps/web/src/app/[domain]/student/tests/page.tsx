@@ -159,12 +159,12 @@ function TestsHubContent() {
       <Navbar title="Tests Hub" subtitle="All your chapter-wise tests, mock tests, and PYQs in one place." breadcrumbs="Student > Tests Hub" />
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8 overflow-x-hidden">
         {/* Type Tabs */}
-        <div className="flex flex-row items-center gap-1.5 mb-5 p-1 bg-b-surface2 shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)] dark:bg-[#161616] border border-transparent rounded-[14px] w-fit select-none">
+        <div className="no-scrollbar mb-5 flex max-w-full items-center gap-1.5 overflow-x-auto rounded-[14px] border border-transparent bg-b-surface2 p-1 shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] select-none dark:bg-[#161616] dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)]">
           {TYPES.map(type => {
             const isActive = activeType === type.id;
             return (
               <button key={type.id} onClick={() => { setActiveType(type.id); setActiveCategory("All"); setSearch(""); }}
-                className={`relative px-5 py-2.5 rounded-[10px] text-[13px] font-sans font-semibold transition-all overflow-hidden cursor-pointer ${isActive ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]" : "bg-transparent text-t-secondary hover:text-t-primary"}`}>
+                className={`relative shrink-0 px-5 py-2.5 rounded-[10px] text-[13px] font-sans font-semibold transition-all overflow-hidden cursor-pointer ${isActive ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]" : "bg-transparent text-t-secondary hover:text-t-primary"}`}>
                 {isActive && <i className="absolute -right-3 top-0 h-3 w-20 rotate-[125deg] rounded-full bg-white/10 blur-[3px]" />}
                 <span className="relative">{type.label}</span>
               </button>
@@ -174,13 +174,13 @@ function TestsHubContent() {
 
         {/* Filters — only for non-assigned tabs */}
         {activeType !== "assigned" && (
-          <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-4 mb-6 bg-white dark:bg-[#161616] p-5 rounded-[24px] select-none">
-            <div className="relative flex-1 min-w-[240px]">
+          <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-4 mb-6 bg-white dark:bg-[#161616] p-4 sm:p-5 rounded-[24px] select-none">
+            <div className="relative flex-1 min-w-0 sm:min-w-[240px]">
               <RiSearchLine size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary" />
               <input type="text" placeholder={`Search...`} value={search} onChange={e => setSearch(e.target.value)}
                 className="w-full h-10 pl-10 pr-4 border border-s-stroke2 rounded-[10px] bg-b-surface1 text-[13px] font-sans text-t-primary placeholder-t-secondary focus:border-t-secondary outline-none transition-all" />
             </div>
-            <div className="flex flex-row flex-wrap items-center gap-4">
+            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <FilterGroup label="Exam" options={EXAM_OPTIONS} active={activeExam} onChange={setActiveExam} displayMap={EXAM_LABELS} />
               {categories.length > 1 && <FilterGroup label={activeType === "pyq" ? "Year" : "Subject"} options={categories} active={activeCategory} onChange={setActiveCategory} />}
             </div>
@@ -242,11 +242,11 @@ function TestsHubContent() {
             ) : filtered.length === 0 ? (
               <div className="card text-center py-20"><div className="text-4xl mb-4">📋</div><h3 className="font-semibold text-[14px] text-t-primary mb-1">No tests found</h3></div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
                 {filtered.map(paper => (
                   <TestCard key={paper.id} paper={paper} isAdmin={isAdmin}
                     onDelete={() => handleDelete(paper.id, paper.title)}
-                    onStart={() => { window.location.href = `/test/${paper.id}`; }} />
+                    onStart={(mode) => { window.location.href = `/test/${paper.id}?mode=${mode}`; }} />
                 ))}
               </div>
             )}
@@ -259,11 +259,13 @@ function TestsHubContent() {
 
 function formatDate(iso: string | null) {
   if (!iso) return "No date set";
-  return new Date(iso).toLocaleDateString("en-IN", {
+  return new Date(iso).toLocaleString("en-IN", {
     weekday: "short",
     day: "numeric",
     month: "short",
     year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
   });
 }
 
@@ -358,31 +360,33 @@ function FilterGroup({ label, options, active, onChange, displayMap }: { label: 
   );
 }
 
-function TestCard({ paper, isAdmin, onDelete, onStart }: { paper: Paper; isAdmin?: boolean; onDelete?: () => void; onStart: () => void }) {
+function TestCard({ paper, isAdmin, onDelete, onStart }: { paper: Paper; isAdmin?: boolean; onDelete?: () => void; onStart: (mode: "practice" | "attempt") => void }) {
   const subtitle = paper.test_type === "pyq"
     ? `${paper.year || ""}${paper.shift ? ` · ${paper.shift}` : ""}`.trim() || paper.exams?.full_name || ""
     : paper.subject ? `${paper.subject}${paper.chapter ? ` · ${paper.chapter}` : ""}` : paper.exams?.full_name || "";
 
   return (
-    <div className="group relative flex flex-col justify-between bg-white dark:bg-[#161616] p-[22px] rounded-[24px] cursor-pointer transition-all duration-300 select-none overflow-hidden">
+    <div className="group relative flex w-full flex-col justify-between overflow-hidden rounded-[24px] bg-white p-5 transition-all duration-300 select-none dark:bg-[#161616] sm:p-[22px]">
       <div className="relative z-10">
         <h3 className="font-sans font-bold text-[17px] leading-[1.3] text-t-primary mb-1.5 tracking-[-0.01em]">{paper.title}</h3>
         {subtitle && subtitle !== "null" && <p className="text-[13px] font-sans font-medium text-t-secondary">{subtitle}</p>}
         <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-2 mt-5 mb-1 text-[12.5px] font-sans font-medium text-t-secondary">
           <span className="flex items-center gap-1.5"><RiQuestionLine size={14} className="opacity-70" />{paper.total_questions} Qs</span>
-          {paper.test_type !== "ncert" && <span className="flex items-center gap-1.5"><RiTimeLine size={14} className="opacity-70" />{paper.duration_min} Min</span>}
-          {paper.test_type !== "ncert" && <span className="flex items-center gap-1.5"><RiBarChartBoxLine size={14} className="opacity-70" />{paper.total_marks} Marks</span>}
-          {paper.test_type === "ncert" && <span className="flex items-center gap-1.5"><RiTimeLine size={14} className="opacity-70" />Practice Mode</span>}
+          {paper.duration_min > 0 && <span className="flex items-center gap-1.5"><RiTimeLine size={14} className="opacity-70" />{paper.duration_min} Min</span>}
+          <span className="flex items-center gap-1.5"><RiBarChartBoxLine size={14} className="opacity-70" />{paper.total_marks} Marks</span>
         </div>
       </div>
-      <div className="relative z-10 flex justify-end items-center mt-5 pt-5 border-t border-s-stroke2">
-        <div className="flex items-center gap-2">
+      <div className="relative z-10 mt-5 flex w-full items-center">
+        <div className="flex w-full flex-col gap-2">
           {isAdmin && onDelete && (
-            <button onClick={onDelete} className="flex justify-center items-center h-8 w-8 text-primary-03 hover:bg-red-50 rounded-[10px] border border-red-200 transition-all active:scale-95" title="Delete">
+            <button onClick={onDelete} className="flex h-10 w-full items-center justify-center rounded-[10px] border border-red-200 text-primary-03 transition-all active:scale-95 hover:bg-red-50 sm:w-10" title="Delete">
               <RiDeleteBinLine size={15} />
             </button>
           )}
-          <button onClick={onStart} className="btn btn-sm btn-dark">Start</button>
+          <div className="flex w-full flex-col gap-2">
+            <button onClick={() => onStart("practice")} className="flex h-[72px] w-full items-center justify-center rounded-[8px] border border-s-stroke2 bg-b-surface2 px-4 text-[14px] font-semibold text-t-primary transition-colors active:scale-[0.98] hover:bg-white dark:hover:bg-[#202020] sm:flex-1">Practice Questions</button>
+            <button onClick={() => onStart("attempt")} className="flex h-[72px] w-full items-center justify-center rounded-[8px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] px-4 text-[14px] font-semibold text-white transition-transform active:scale-[0.98] sm:flex-1">Attempt Test</button>
+          </div>
         </div>
       </div>
     </div>

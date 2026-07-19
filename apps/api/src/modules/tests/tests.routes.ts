@@ -9,6 +9,9 @@ import {
   getTest,
   publishTest,
   deleteTest,
+  updateGlobalTest,
+  bulkUpdateGlobalTests,
+  bulkDeleteGlobalTests,
   uploadTestController,
 } from "./tests.controller";
 
@@ -38,6 +41,9 @@ router.post(
 );
 
 router.post("/", authenticate, requireRole("teacher", "institute_admin", "super_admin"), createTest);
+router.patch("/bulk/global", authenticate, requireRole("super_admin"), bulkUpdateGlobalTests);
+router.delete("/bulk/global", authenticate, requireRole("super_admin"), bulkDeleteGlobalTests);
+router.patch("/:id/global", authenticate, requireRole("super_admin"), updateGlobalTest);
 router.get("/:id", authenticate, getTest);
 router.delete("/:id", authenticate, requireRole("super_admin", "institute_admin"), deleteTest);
 

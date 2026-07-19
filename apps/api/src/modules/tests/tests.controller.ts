@@ -6,6 +6,8 @@ import * as path from "path";
 import { execSync } from "child_process";
 import { uploadToR2 } from "../../lib/r2";
 import { extractPDF } from "../../services/extractor/pdfExtractor.service";
+import { getStudentTestAccess } from "./test-access.service";
+import { logAdminAction } from "../../lib/admin-audit";
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -35,34 +37,15 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    // Enforce publication check for all non-superadmin students
-    if (!paper.is_published) {
-      res.status(403).json({ success: false, message: "Access denied. This test is not published yet." });
-      return;
-    }
-
-    // For tests that are explicitly assigned to batches (not public hub tests), enforce batch membership
-    const publicTestTypes = ["chapter-wise", "ncert", "mock-test", "pyq"];
-    if (!publicTestTypes.includes(paper.test_type)) {
-      const { data: studentBatches } = await supabaseDB
-        .from("batch_students")
-        .select("batch_id")
-        .eq("student_id", req.user.id);
-      
-      const batchIds = (studentBatches ?? []).map(b => b.batch_id);
-      
-      const { data: assignment } = await supabaseDB
-        .from("test_batch_assignments")
-        .select("test_id")
-        .eq("test_id", id)
-        .in("batch_id", batchIds)
-        .limit(1)
-        .maybeSingle();
-
-      if (!assignment) {
-        res.status(403).json({ success: false, message: "Access denied. This test is not assigned to your batches." });
+    if (req.user?.role === "student") {
+      const access = await getStudentTestAccess(req.user.id, paper);
+      if (!access.allowed) {
+        res.status(access.status).json({ success: false, message: access.message });
         return;
       }
+    } else if (!paper.is_published && req.user?.role !== "super_admin" && paper.created_by !== req.user?.id) {
+      res.status(403).json({ success: false, message: "Access denied. This test is not published yet." });
+      return;
     }
 
     // 2. Fetch ordered question IDs from join table
@@ -170,6 +153,18 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       res.status(400).json({ success: false, message: "exam_id and batch_ids[] are required" });
       return;
     }
+    if (scheduled_start && Number.isNaN(new Date(scheduled_start).getTime())) {
+      res.status(400).json({ success: false, message: "scheduled_start must be a valid date-time." });
+      return;
+    }
+    if (scheduled_end && Number.isNaN(new Date(scheduled_end).getTime())) {
+      res.status(400).json({ success: false, message: "scheduled_end must be a valid date-time." });
+      return;
+    }
+    if (scheduled_start && scheduled_end && new Date(scheduled_end) <= new Date(scheduled_start)) {
+      res.status(400).json({ success: false, message: "scheduled_end must be after scheduled_start." });
+      return;
+    }
 
     // Verify that all batch_ids belong to the creator's institute (SEC-3)
     const { count: matchingBatchesCount, error: countErr } = await supabaseDB
@@ -180,6 +175,11 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
 
     if (countErr || matchingBatchesCount !== batch_ids.length) {
       res.status(403).json({ success: false, message: "Access denied. One or more batches do not belong to your institute." });
+      return;
+    }
+    const { data: targetBatches } = await supabaseDB.from("batches").select("exam").in("id", batch_ids);
+    if (new Set((targetBatches ?? []).map((batch: any) => String(batch.exam).toLowerCase())).size !== 1) {
+      res.status(400).json({ success: false, message: "All target batches must have the same exam." });
       return;
     }
 
@@ -196,6 +196,10 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
     const { data: allQs } = await questionQuery;
     if (!allQs || allQs.length === 0) {
       res.status(400).json({ success: false, message: "No questions found matching the given config" });
+      return;
+    }
+    if (allQs.length < question_count) {
+      res.status(400).json({ success: false, message: `Only ${allQs.length} eligible questions are available; ${question_count} were requested.` });
       return;
     }
 
@@ -215,6 +219,9 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
         created_by: userId,
         is_active: true,
         is_published: false,
+        delivery_mode: "assigned_scheduled",
+        available_from: scheduled_start ?? null,
+        available_until: scheduled_end ?? null,
       })
       .select("id")
       .single();
@@ -237,6 +244,7 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       const tbRows = batch_ids.map((b_id: string) => ({
         test_id: paper.id,
         batch_id: b_id,
+        scheduled_at: scheduled_start ?? new Date().toISOString(),
       }));
       await supabaseDB.from("test_batch_assignments").insert(tbRows);
     }
@@ -303,7 +311,7 @@ export const getAssignedTests = async (req: Request, res: Response): Promise<voi
     // Fetch tests assigned to these batches
     const { data: assignments, error: assignErr } = await supabaseDB
       .from("test_batch_assignments")
-      .select("assigned_at, scheduled_at, batch_id, papers(id, title, test_type, total_questions, total_marks, duration_min, is_active, is_published, created_at)")
+      .select("assigned_at, scheduled_at, batch_id, papers(id, title, test_type, total_questions, total_marks, duration_min, is_active, is_published, delivery_mode, available_from, available_until, created_at)")
       .in("batch_id", batchIds)
       .order("scheduled_at", { ascending: true });
 
@@ -316,7 +324,7 @@ export const getAssignedTests = async (req: Request, res: Response): Promise<voi
     const testsMap = new Map();
     for (const a of (assignments ?? [])) {
       const p: any = Array.isArray(a.papers) ? a.papers[0] : a.papers;
-      if (p && p.is_active) {
+      if (p && p.is_active && p.is_published && p.delivery_mode === "assigned_scheduled") {
         if (!testsMap.has(p.id)) {
           testsMap.set(p.id, { ...p, scheduled_at: a.scheduled_at, assigned_at: a.assigned_at });
         }
@@ -401,7 +409,111 @@ export const deleteTest = async (req: Request, res: Response): Promise<void> => 
       return;
     }
 
+    if (isSuperAdmin) {
+      await logAdminAction(req.user?.id, "Global paper deactivated", `Deactivated global paper ${id}.`, "question_bank", "success");
+    }
     res.status(200).json({ success: true, message: "Test successfully deactivated." });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/** Super-admin metadata editor for global papers. */
+export const updateGlobalTest = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const allowed = ["title", "subject", "chapter", "year", "shift", "difficulty", "duration_min", "total_marks"];
+    const updates: Record<string, unknown> = {};
+    for (const key of allowed) if (req.body[key] !== undefined) updates[key] = req.body[key];
+    if (Object.keys(updates).length === 0) {
+      res.status(400).json({ success: false, message: "No supported paper fields supplied." });
+      return;
+    }
+
+    const { data, error } = await supabaseDB
+      .from("papers")
+      .update(updates)
+      .eq("id", req.params.id)
+      .eq("delivery_mode", "public_practice")
+      .eq("is_active", true)
+      .select("id, title, subject, chapter, year, shift, difficulty")
+      .maybeSingle();
+    if (error) throw error;
+    if (!data) {
+      res.status(404).json({ success: false, message: "Global paper not found." });
+      return;
+    }
+    await logAdminAction(req.user?.id, "Global paper updated", `Updated metadata for \"${data.title}\".`, "question_bank", "success");
+    res.status(200).json({ success: true, data: { test: data } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/** Performs a single database update for selected global papers. */
+export const bulkUpdateGlobalTests = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { ids, updates } = req.body as { ids?: string[]; updates?: Record<string, unknown> };
+    const allowed = ["subject", "chapter", "difficulty"];
+    const safeUpdates: Record<string, unknown> = {};
+    for (const key of allowed) if (updates?.[key] !== undefined) safeUpdates[key] = updates[key];
+    if (!Array.isArray(ids) || ids.length === 0 || ids.length > 100 || Object.keys(safeUpdates).length === 0) {
+      res.status(400).json({ success: false, message: "Supply 1-100 paper ids and supported updates." });
+      return;
+    }
+    const { count: eligibleCount, error: eligibilityError } = await supabaseDB
+      .from("papers")
+      .select("id", { count: "exact", head: true })
+      .in("id", ids)
+      .eq("delivery_mode", "public_practice")
+      .eq("is_active", true);
+    if (eligibilityError) throw eligibilityError;
+    if (eligibleCount !== ids.length) {
+      res.status(409).json({ success: false, message: "One or more selected papers are not active global papers; no change was made." });
+      return;
+    }
+    const { data, error } = await supabaseDB
+      .from("papers")
+      .update(safeUpdates)
+      .in("id", ids)
+      .eq("delivery_mode", "public_practice")
+      .eq("is_active", true)
+      .select("id");
+    if (error) throw error;
+    await logAdminAction(req.user?.id, "Global papers bulk updated", `Updated ${ids.length} global papers.`, "question_bank", "success");
+    res.status(200).json({ success: true, data: { count: data?.length ?? 0 } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+export const bulkDeleteGlobalTests = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { ids } = req.body as { ids?: string[] };
+    if (!Array.isArray(ids) || ids.length === 0 || ids.length > 100) {
+      res.status(400).json({ success: false, message: "Supply 1-100 paper ids." });
+      return;
+    }
+    const { count: eligibleCount, error: eligibilityError } = await supabaseDB
+      .from("papers")
+      .select("id", { count: "exact", head: true })
+      .in("id", ids)
+      .eq("delivery_mode", "public_practice")
+      .eq("is_active", true);
+    if (eligibilityError) throw eligibilityError;
+    if (eligibleCount !== ids.length) {
+      res.status(409).json({ success: false, message: "One or more selected papers are not active global papers; no change was made." });
+      return;
+    }
+    const { data, error } = await supabaseDB
+      .from("papers")
+      .update({ is_active: false })
+      .in("id", ids)
+      .eq("delivery_mode", "public_practice")
+      .eq("is_active", true)
+      .select("id");
+    if (error) throw error;
+    await logAdminAction(req.user?.id, "Global papers bulk deactivated", `Deactivated ${ids.length} global papers.`, "question_bank", "success");
+    res.status(200).json({ success: true, data: { count: data?.length ?? 0 } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -489,6 +601,8 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       difficulty = "medium",
     } = req.body;
 
+    const scheduledAt = new Date(date);
+
     const files = req.files as { [fieldname: string]: Express.Multer.File[] };
     const pdfFile = files?.pdf?.[0];
     const answerKeyFile = files?.answer_key?.[0];
@@ -500,6 +614,10 @@ export const uploadTestController = async (req: Request, res: Response): Promise
 
     if (!title || !date || !batch_ids) {
       sendError("'title', 'date', and 'batch_ids' are required.");
+      return;
+    }
+    if (Number.isNaN(scheduledAt.getTime())) {
+      sendError("'date' must be a valid date-time.");
       return;
     }
 
@@ -533,16 +651,20 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     sendProgress("resolving_exam", "Resolving target exam syllabus target...");
 
     // 2. Resolve exam_id from the first batch
-    const { data: firstBatch, error: fbErr } = await supabaseDB
+    const { data: targetBatches, error: fbErr } = await supabaseDB
       .from("batches")
-      .select("exam")
-      .eq("id", batchIds[0])
-      .single();
+      .select("id, exam")
+      .in("id", batchIds);
 
-    if (fbErr || !firstBatch) {
+    if (fbErr || !targetBatches?.length) {
       sendError("Failed to resolve exam type from target batch.");
       return;
     }
+    if (new Set(targetBatches.map((batch: any) => String(batch.exam).toLowerCase())).size !== 1) {
+      sendError("All target batches must have the same exam.");
+      return;
+    }
+    const firstBatch = targetBatches[0];
 
     const examCode = firstBatch.exam.toLowerCase().includes("neet") ? "neet-ug" : "jee-main";
     const { data: examObj, error: examErr } = await supabaseDB
@@ -670,7 +792,9 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         const type = isNumerical ? "integer" : (q.question_type || "mcq_single");
 
         const csvAns = csvAnswers[idx + 1];
-        const correctAnswers = csvAns || (Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer || "A"]);
+        const extractedAnswers = Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [];
+        const correctAnswers = csvAns || extractedAnswers;
+        if (!correctAnswers.length) throw new Error(`Question ${idx + 1} has no validated answer. Upload a complete answer key before publishing.`);
 
         return {
           id:             randomUUID(),
@@ -708,6 +832,8 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         created_by: userId,
         is_active: true,
         is_published: true,
+        delivery_mode: "assigned_scheduled",
+        available_from: scheduledAt.toISOString(),
       })
       .select("id")
       .single();
@@ -740,7 +866,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     const tbRows = batchIds.map((b_id: string) => ({
       test_id: paper.id,
       batch_id: b_id,
-      scheduled_at: new Date(date).toISOString(),
+      scheduled_at: scheduledAt.toISOString(),
     }));
     const { error: tbErr } = await supabaseDB.from("test_batch_assignments").insert(tbRows);
     if (tbErr) {
