@@ -12,11 +12,11 @@ export interface PremiumCardProps extends React.HTMLAttributes<HTMLDivElement> {
  * No harsh shadows, blends perfectly with surface backgrounds.
  */
 export function PremiumCard({ variant = 'light', padding = 'default', className = '', children, ...props }: PremiumCardProps) {
-  const base = "rounded-[24px] overflow-hidden";
+  const base = "rounded-[24px] overflow-hidden border border-s-stroke2/40 dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04)]";
   
   const variants = {
-    light: "bg-[#FAFAFA] dark:bg-[#161616]",
-    dark: "bg-[#090909] dark:bg-black",
+    light: "bg-b-surface2",
+    dark: "bg-b-surface1",
     transparent: "bg-transparent"
   };
   

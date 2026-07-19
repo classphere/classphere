@@ -209,17 +209,11 @@ export default function MobileNav() {
       {/* ── Mobile Top Bar ── */}
       <div className="lg:hidden sticky top-0 z-40 flex items-center justify-between w-full h-16 px-4 bg-[#edecec] dark:bg-[#090909] bg-opacity-90 dark:bg-opacity-90 shrink-0">
         <Link href={isSuperAdmin ? "/superadmin" : (isTeacher ? "/teacher" : (isInstitute ? "/institute" : "/student/dashboard"))} className="flex items-center gap-3">
-          {tenant.logoUrl ? (
-            <img
-              src={tenant.logoUrl}
-              alt={displayName}
-              className="size-9 rounded-[8px] object-contain bg-shade-02 shadow-sm"
-            />
-          ) : (
-            <div className="flex size-9 items-center justify-center rounded-[8px] bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
-              <RiFlashlightFill size={18} className="opacity-90" />
-            </div>
-          )}
+          <img
+            src={tenant.logoUrl ?? "/logo.png"}
+            alt={displayName}
+            className="size-9 rounded-[8px] object-contain bg-b-surface2 border border-s-stroke2/50 shadow-sm"
+          />
           <span className="font-sans text-[18px] font-bold text-t-primary tracking-tight">
             {displayName}
           </span>

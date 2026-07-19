@@ -13,7 +13,7 @@ interface PrimaryButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
  */
 export const PrimaryButton = React.forwardRef<HTMLButtonElement, PrimaryButtonProps>(
   ({ href, className = "", children, ...props }, ref) => {
-    const baseClasses = `group relative flex items-center justify-center overflow-hidden rounded-[14px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] px-6 py-3.5 text-[14px] font-semibold text-white shadow-velora-dark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-depth active:scale-95 cursor-pointer select-none ${className}`;
+    const baseClasses = `group relative flex items-center justify-center overflow-hidden rounded-[14px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] px-6 py-3.5 text-[14px] font-semibold text-white shadow-velora-dark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-depth active:scale-95 dark:border-[#3e3e3b] dark:bg-linear-to-b dark:from-[#343432] dark:to-[#252523] dark:shadow-[inset_0_1px_0_rgba(255,255,255,.14),0_4px_12px_rgba(0,0,0,.2)] cursor-pointer select-none ${className}`;
 
     const innerGlare = (
       <i className="absolute -right-3 top-0 h-3 w-32 rotate-[125deg] rounded-full bg-white/10 blur-[4px] transition-transform duration-700 ease-out group-hover:translate-x-[-120px]" />

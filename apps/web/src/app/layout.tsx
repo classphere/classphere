@@ -22,7 +22,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full`} data-theme="light">
-      <body className="min-h-screen bg-[#edecec] dark:bg-[#090909] text-t-primary antialiased">
+      <body className="min-h-screen bg-b-surface1 text-t-primary antialiased">
         <TenantProvider>
           <AuthProvider>
             <AppShell>{children}</AppShell>

@@ -29,16 +29,17 @@
   --secondary-05: #ffd88d;
   
   --backgrounds-surface1: #edecec;
-  --backgrounds-surface2: #fafafa;
-  --backgrounds-surface2-overlay: #ffffff;
-  --backgrounds-surface3: rgba(237, 236, 236, 0.72);
+  /* Keep raised panels legible without the stark white glare of #fafafa. */
+  --backgrounds-surface2: #f4f4f2;
+  --backgrounds-surface2-overlay: #f8f8f6;
+  --backgrounds-surface3: rgba(237, 236, 236, 0.64);
   --backgrounds-pop: #ffffff;
   --backgrounds-dark1: var(--shade-03);
   --backgrounds-dark2: var(--shade-01);
   --backgrounds-primary: var(--primary-01);
-  --backgrounds-highlight: #fcfdff;
-  --backgrounds-depth: #eef3f9;
-  --backgrounds-depth2: #f5f8fc;
+  --backgrounds-highlight: #f7f7f5;
+  --backgrounds-depth: #efefed;
+  --backgrounds-depth2: #f3f3f1;
   
   --text-primary: var(--shade-02);
   --text-secondary: var(--shade-06);
@@ -151,36 +152,37 @@
 }
 
 [data-theme="dark"] {
-  --backgrounds-surface1: #090909;
-  --backgrounds-surface2: #161616;
-  --backgrounds-surface2-overlay: #161616;
-  --backgrounds-surface3: rgba(9, 9, 9, 0.5);
-  --backgrounds-pop: var(--shade-04);
+  /* A layered charcoal scale keeps surfaces distinct without turning the app into a black void. */
+  --backgrounds-surface1: #131313;
+  --backgrounds-surface2: #181818;
+  --backgrounds-surface2-overlay: #1d1d1d;
+  --backgrounds-surface3: rgba(255, 255, 255, 0.045);
+  --backgrounds-pop: #1f1f1f;
   --backgrounds-dark1: var(--shade-08);
   --backgrounds-dark2: var(--shade-10);
   --backgrounds-primary: var(--primary-01);
-  --backgrounds-highlight: var(--shade-04);
-  --backgrounds-depth: #1d1d1d;
-  --backgrounds-depth2: rgba(16, 16, 16, 0.5);
+  --backgrounds-highlight: #202020;
+  --backgrounds-depth: #1e1e1e;
+  --backgrounds-depth2: rgba(255, 255, 255, 0.055);
   
-  --text-primary: var(--shade-09);
-  --text-secondary: var(--shade-07);
-  --text-tertiary: var(--shade-06);
-  --text-light: var(--shade-01);
+  --text-primary: #f4f3ef;
+  --text-secondary: #c0beb8;
+  --text-tertiary: #999791;
+  --text-light: #161616;
   --text-blue: var(--primary-01);
   
-  --stroke-border: #272727;
-  --stroke-subtle: #1e1e1e;
+  --stroke-border: #2f2f2d;
+  --stroke-subtle: rgba(255, 255, 255, 0.055);
   --stroke-focus: var(--primary-01);
-  --stroke-highlight: rgba(114, 114, 114, 0.5);
-  --stroke-stroke2: #282828;
+  --stroke-highlight: rgba(255, 255, 255, 0.16);
+  --stroke-stroke2: #32322f;
   
   --accent: #f52495;
   --mask-1-stop50: rgba(40, 40, 40, 0);
   --mask-1-stop100: var(--shade-03);
   --mask-2-stop1: var(--shade-02);
   --mask-2-stop2: rgba(27, 27, 27, 0);
-  --chart-min: var(--shade-04);
+  --chart-min: #373735;
   
   --gradient-menu: rgba(226, 226, 226, 0.025), rgba(226, 226, 226, 0.05);
   --gradient-card: rgba(241, 241, 241, 0.075), rgba(235, 235, 235, 0.075);
@@ -385,7 +387,7 @@
     background-image: linear-gradient(to bottom, var(--gradient-card));
   }
   .card, .rayum-card {
-    @apply mb-3 p-5 rounded-[24px] bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 last:mb-0;
+    @apply mb-3 p-5 rounded-[24px] bg-b-surface2 border border-s-stroke2/40 shadow-widget dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5),0px_6px_4px_-4px_rgba(8,8,8,0.05)] last:mb-0;
   }
   .label, .badge {
     @apply inline-flex items-center h-7 px-2.5 rounded-lg text-button font-semibold;
@@ -431,16 +433,16 @@
   }
   
   .btn-primary, .btn-dark {
-    @apply relative flex items-center justify-center overflow-hidden rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] font-medium text-white shadow-velora-dark transition-transform hover:scale-[1.02] active:scale-[0.98] fill-white hover:text-white hover:fill-white dark:hover:text-white dark:hover:fill-white before:absolute before:-right-3 before:top-0 before:z-0 before:h-3 before:w-28 before:rotate-[125deg] before:rounded-full before:bg-white/10 before:blur-[3px];
+    @apply relative flex items-center justify-center overflow-hidden rounded-[10px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] font-medium text-white shadow-velora-dark transition-transform hover:scale-[1.02] active:scale-[0.98] fill-white hover:text-white hover:fill-white dark:border-[#3e3e3b] dark:bg-linear-to-b dark:from-[#343432] dark:to-[#252523] dark:shadow-[inset_0_1px_0_rgba(255,255,255,.14),0_4px_12px_rgba(0,0,0,.2)] dark:hover:text-white dark:hover:fill-white before:absolute before:-right-3 before:top-0 before:z-0 before:h-3 before:w-28 before:rotate-[125deg] before:rounded-full before:bg-white/10 before:blur-[3px];
   }
   .btn-outline {
     @apply border-s-stroke2 bg-b-surface2 text-t-secondary fill-t-secondary hover:border-s-highlight hover:text-t-primary hover:fill-t-primary disabled:border-transparent;
   }
   .btn-secondary {
-    @apply relative flex items-center justify-center overflow-hidden rounded-[10px] bg-[#f9f9f9] border border-transparent font-medium text-[#525252] shadow-[0_2px_4px_rgba(0,0,0,.04),inset_0_1px_rgba(255,255,255,.48),inset_0_-2px_#edecec] transition-transform hover:scale-[1.02] active:scale-[0.98] before:absolute before:left-6 before:top-0 before:h-3 before:w-28 before:-rotate-[125deg] before:rounded-full before:bg-[#eaeaea]/60 before:blur-[3px] dark:bg-shade-03 dark:text-t-primary dark:shadow-[0_2px_4px_rgba(0,0,0,.1),inset_0_1px_rgba(255,255,255,.15),inset_0_-2px_#111111] dark:before:bg-[#ffffff]/10;
+    @apply relative flex items-center justify-center overflow-hidden rounded-[10px] bg-[#f9f9f9] border border-transparent font-medium text-[#525252] shadow-[0_2px_4px_rgba(0,0,0,.04),inset_0_1px_rgba(255,255,255,.48),inset_0_-2px_#edecec] transition-transform hover:scale-[1.02] active:scale-[0.98] before:absolute before:left-6 before:top-0 before:h-3 before:w-28 before:-rotate-[125deg] before:rounded-full before:bg-[#eaeaea]/60 before:blur-[3px] dark:border dark:border-s-stroke2/60 dark:bg-b-surface2 dark:text-t-primary dark:shadow-[inset_0_1px_0_rgba(255,255,255,.1),0_2px_8px_rgba(0,0,0,.12)] dark:before:bg-[#ffffff]/10;
   }
   .btn-ghost {
-    @apply relative bg-b-surface1 border-transparent text-t-secondary fill-t-secondary hover:text-t-primary hover:fill-t-primary hover:shadow-depth dark:bg-shade-04;
+    @apply relative bg-b-surface1 border-transparent text-t-secondary fill-t-secondary hover:text-t-primary hover:fill-t-primary hover:shadow-depth dark:bg-b-surface2;
   }
   .btn-danger {
     @apply border border-[#FF6A55]/15 bg-[#FF6A55]/5 text-[#FF6A55] hover:bg-[#FF6A55]/10;

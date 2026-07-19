@@ -41,7 +41,7 @@ export function MetricCard({ icon, label, value, badge, badgeLabel, className = 
         {(badge || badgeLabel) && (
           <div className="flex items-center gap-2 mt-1">
             {badge && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-[8px] bg-[#f0f0f0] dark:bg-[#222] text-[12px] font-sans font-bold text-t-secondary shadow-sm">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-[8px] bg-b-surface1 text-[12px] font-sans font-bold text-t-secondary shadow-sm">
                 {badge}
               </span>
             )}

@@ -150,32 +150,29 @@ export default function Sidebar() {
   ];
 
   const displayName = tenant.instituteName ?? "Classphere";
+  const displayDomain = tenant.domain
+    ? (tenant.domain.includes(".") ? tenant.domain : `${tenant.domain}.classphere.com`)
+    : null;
 
   return (
-    <aside className="hidden lg:flex sticky top-0 z-40 h-screen w-[280px] xl:w-[300px] shrink-0 flex-col bg-[#edecec] dark:bg-[#0f0f0f] border-r border-transparent dark:border-[#1e1e1e] px-4 xl:px-5 pt-8 pb-12 select-none overflow-y-auto scrollbar-none">
+    <aside className="hidden lg:flex sticky top-0 z-40 h-screen w-[280px] xl:w-[300px] shrink-0 flex-col bg-b-surface1 border-r border-transparent px-4 xl:px-5 pt-8 pb-12 select-none overflow-y-auto scrollbar-none">
 
       {/* ── Top: Logo ── */}
       <div className="flex flex-col gap-6 w-full">
         <div className="pl-1">
           <Link href={isSuperAdmin ? "/" : isInstitute ? "/institute" : isTeacher ? "/teacher" : "/student/dashboard"} className="flex items-center gap-3.5 rounded-[10px] transition-colors">
-            {tenant.logoUrl ? (
-              <img
-                src={tenant.logoUrl}
-                alt={displayName}
-                className="size-12 rounded-[10px] object-contain bg-shade-02 shadow-widget"
-              />
-            ) : (
-              <div className="flex size-12 items-center justify-center rounded-[10px] bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)] shrink-0">
-                <RiFlashlightFill size={22} className="opacity-90" />
-              </div>
-            )}
+            <img
+              src={tenant.logoUrl ?? "/logo.png"}
+              alt={displayName}
+              className="size-12 rounded-[10px] object-contain bg-b-surface2 border border-s-stroke2/50 shadow-widget"
+            />
             <div className="flex flex-col min-w-0">
               <span className="font-sans text-[16px] font-bold text-t-primary dark:text-t-primary tracking-tight leading-tight truncate">
                 {displayName}
               </span>
-              {tenant.domain && (
+              {displayDomain && (
                 <span className="text-[11px] text-t-tertiary font-medium truncate">
-                  {tenant.domain}.classphere.com
+                  {displayDomain}
                 </span>
               )}
             </div>
@@ -191,14 +188,14 @@ export default function Sidebar() {
                 href={item.href}
                 className={`group relative flex h-11 items-center gap-3 rounded-[10px] px-4 text-[13px] font-sans font-semibold transition-all overflow-hidden ${
                   item.active
-                    ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_2px_3px_-2px_rgba(0,0,0,0.18),0px_5px_8px_-6px_rgba(0,0,0,0.2),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]"
-                    : "text-t-secondary hover:text-t-primary hover:bg-[rgba(0,0,0,0.04)] dark:hover:bg-white/5"
+                    ? "bg-b-surface2 text-t-primary border border-s-stroke2/60 shadow-widget"
+                    : "text-t-secondary hover:text-t-primary hover:bg-[rgba(0,0,0,0.04)] dark:hover:bg-b-surface2"
                 }`}
               >
                 {item.active && (
-                  <i className="absolute -right-3 top-0 h-3 w-28 rotate-[125deg] rounded-full bg-white/10 blur-[3px] pointer-events-none" />
+                  <i className="absolute -right-3 top-0 h-3 w-28 rotate-[125deg] rounded-full bg-white/10 blur-[3px] pointer-events-none dark:hidden" />
                 )}
-                <span className={`relative z-10 flex items-center transition-colors ${item.active ? "text-white" : "text-t-secondary group-hover:text-t-primary"}`}>
+                <span className={`relative z-10 flex items-center transition-colors ${item.active ? "text-t-primary" : "text-t-secondary group-hover:text-t-primary"}`}>
                   {item.icon}
                 </span>
                 <span className="relative z-10">{item.label}</span>
@@ -219,14 +216,14 @@ export default function Sidebar() {
                   href={item.href}
                   className={`group relative flex h-11 items-center gap-3 rounded-[10px] px-4 text-[13px] font-sans font-semibold transition-all overflow-hidden ${
                     isActive
-                      ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_2px_3px_-2px_rgba(0,0,0,0.18),0px_5px_8px_-6px_rgba(0,0,0,0.2),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]"
-                      : "text-t-secondary hover:text-t-primary hover:bg-[rgba(0,0,0,0.04)] dark:hover:bg-white/5"
+                      ? "bg-b-surface2 text-t-primary border border-s-stroke2/60 shadow-widget"
+                      : "text-t-secondary hover:text-t-primary hover:bg-[rgba(0,0,0,0.04)] dark:hover:bg-b-surface2"
                   }`}
                 >
                   {isActive && (
-                    <i className="absolute -right-3 top-0 h-3 w-28 rotate-[125deg] rounded-full bg-white/10 blur-[3px] pointer-events-none" />
+                    <i className="absolute -right-3 top-0 h-3 w-28 rotate-[125deg] rounded-full bg-white/10 blur-[3px] pointer-events-none dark:hidden" />
                   )}
-                  <span className={`relative z-10 flex items-center transition-colors ${isActive ? "text-white" : "text-t-secondary group-hover:text-t-primary"}`}>
+                  <span className={`relative z-10 flex items-center transition-colors ${isActive ? "text-t-primary" : "text-t-secondary group-hover:text-t-primary"}`}>
                     {item.icon}
                   </span>
                   <span className="relative z-10">{item.label}</span>
@@ -243,7 +240,7 @@ export default function Sidebar() {
           href="/profile"
           className="flex items-center gap-3 w-full p-2.5 rounded-[10px] bg-transparent hover:bg-b-surface2 border border-transparent transition-all cursor-pointer select-none"
         >
-          <div className="size-11 rounded-full overflow-hidden shrink-0 shadow-widget bg-b-surface1">
+          <div className="size-11 rounded-full overflow-hidden shrink-0 shadow-widget bg-b-surface2 border border-s-stroke2/50">
             {mounted && (
               <img
                 src={`https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name ?? "User")}&background=101010&color=fff&size=80`}

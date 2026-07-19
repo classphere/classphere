@@ -43,7 +43,7 @@ export function QuestionNavigator({
       <div className="relative z-10 mb-6 grid grid-cols-2 gap-y-3 gap-x-2 text-[13px] font-sans text-t-primary font-medium">
         {/* 1. Not Visited */}
           <div className="flex items-center gap-2 col-span-2 xl:col-span-1">
-          <div className="w-8 h-8 flex items-center justify-center rounded-[4px] border border-t-secondary bg-gradient-to-br from-shade-10 to-[#E0E0E0] shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)] text-black font-semibold text-xs shrink-0">
+          <div className="w-8 h-8 flex items-center justify-center rounded-[4px] border border-s-stroke2 bg-b-pop text-t-primary font-semibold text-xs shrink-0 shadow-xs dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,.04)]">
             {notVisitedCount}
           </div>
           <span className="leading-tight">Not Visited</span>
@@ -124,7 +124,7 @@ export function QuestionNavigator({
                     if (visited) {
                       btnClass += "bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm";
                     } else {
-                      btnClass += "rounded-[4px] border border-t-secondary bg-gradient-to-br from-shade-10 to-[#E0E0E0] text-black shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.1)]";
+                      btnClass += "rounded-[4px] border border-s-stroke2 bg-b-pop text-t-primary shadow-xs dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,.04)]";
                     }
                   }
 

@@ -21,11 +21,11 @@ export function Card({
   children,
   ...props
 }: CardProps) {
-  const base = "rounded-[24px] border border-transparent shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)] transition-all duration-200";
+  const base = "rounded-[24px] border border-s-stroke2/40 shadow-widget dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5)] transition-all duration-200";
   
   const variants = {
-    default: "bg-b-surface2 dark:bg-[#161616]", // Main theme background
-    light: "bg-[#FAFAFA] dark:bg-black", 
+    default: "bg-b-surface2", // Main theme background
+    light: "bg-b-pop", 
     transparent: "bg-transparent shadow-none border-transparent",
   };
 

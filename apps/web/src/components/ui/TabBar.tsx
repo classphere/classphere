@@ -26,7 +26,7 @@ export function TabBar<T extends string>({
 }: TabBarProps<T>) {
   return (
     <div
-      className={`flex items-center gap-2 p-1.5 bg-[#FAFAFA] dark:bg-[#161616] shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)] border border-transparent rounded-[24px] w-fit select-none ${className}`}
+      className={`flex items-center gap-2 p-1.5 bg-b-surface2 shadow-widget dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5)] border border-s-stroke2/40 rounded-[24px] w-fit select-none ${className}`}
     >
       {tabs.map((tab) => {
         const isActive = active === tab.id;
@@ -37,8 +37,8 @@ export function TabBar<T extends string>({
             onClick={() => onChange(tab.id)}
             className={`relative px-6 py-3 rounded-[16px] text-[14px] font-sans font-[550] transition-all overflow-hidden cursor-pointer ${
               isActive
-                ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white shadow-velora-dark border border-[#161616]"
-                : "bg-transparent text-[#838383] hover:text-t-primary"
+                ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white shadow-velora-dark border border-[#161616] dark:border-[#3e3e3b] dark:bg-linear-to-b dark:from-[#343432] dark:to-[#252523]"
+                : "bg-transparent text-t-secondary hover:text-t-primary"
             }`}
           >
             {isActive && (

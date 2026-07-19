@@ -15,7 +15,7 @@ interface ScorePerformanceWidgetProps {
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-[#FAFAFA] dark:bg-[#161616] border border-s-stroke2/40 p-4 rounded-[16px] shadow-dropdown animate-in fade-in slide-in-from-bottom-2 duration-150">
+      <div className="bg-b-surface2 border border-s-stroke2/40 p-4 rounded-[16px] shadow-dropdown animate-in fade-in slide-in-from-bottom-2 duration-150">
         <p className="font-sans font-bold text-[14px] text-t-primary mb-3 uppercase tracking-widest border-b border-s-stroke2/40 pb-2">{label}</p>
 
         <div className="flex flex-col gap-2">

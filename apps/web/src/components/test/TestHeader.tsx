@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { RiTimerLine } from "@remixicon/react";
 import { TestMeta } from "./TestTypes";
+import { useTenant } from "@/lib/tenant-context";
 
 interface TestHeaderProps {
   meta: TestMeta | null;
@@ -13,13 +16,16 @@ interface TestHeaderProps {
 }
 
 export function TestHeader({ meta, questionsLength, timeLeft, timeWarning, isTimed, setShowSubmitModal, formatTime }: TestHeaderProps) {
+  const tenant = useTenant();
+  const displayName = tenant.instituteName ?? "Classphere";
+
   return (
     <header className="sticky top-0 z-50 border-b border-s-stroke2/70 bg-b-surface1/95 backdrop-blur-0">
       <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="min-w-0">
-          <div className="flex items-center gap-3 text-h6 font-bold tracking-tight text-t-primary">
-            <span>Exam</span>
-            <span className="text-primary-01">Prep</span>
+          <div className="flex min-w-0 items-center gap-3 text-h6 font-bold tracking-tight text-t-primary">
+            <img src={tenant.logoUrl ?? "/logo.png"} alt={displayName} className="size-9 shrink-0 rounded-[8px] bg-b-surface2 object-contain" />
+            <span className="truncate">{displayName}</span>
           </div>
           {meta && (
             <div className="mt-1 flex flex-wrap items-center gap-2 text-caption text-t-secondary">
