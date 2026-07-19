@@ -5,14 +5,14 @@ import { RiArrowRightLine } from "@remixicon/react";
 import Link from "next/link";
 
 export function PendingDPPsWidget({ dpps = [] }: { dpps?: any[] }) {
-  const pending = dpps.slice(0, 3);
+  const pending = dpps.filter((dpp) => dpp.status !== "submitted").slice(0, 3);
 
   return (
     <SectionCard
       title="Pending DPPs"
       subtitle={pending.length > 0 ? "Daily Practice Problems" : "No assignments yet"}
       headerRight={
-        <Button variant="secondary" href="/dpps" className="!h-9 !px-4 text-[12px]">
+        <Button variant="secondary" href="/student/assignments" className="!h-9 !px-4 text-[12px] !shadow-[0_2px_4px_rgba(0,0,0,0.04),inset_0_1px_rgba(255,255,255,0.48),inset_0_-2px_#EDECEC]">
           View All
           <RiArrowRightLine size={14} className="relative ml-1" />
         </Button>
@@ -26,7 +26,7 @@ export function PendingDPPsWidget({ dpps = [] }: { dpps?: any[] }) {
       ) : (
         <div className="flex flex-col gap-3">
           {pending.map((dpp, idx) => (
-            <Link key={dpp.dppId || idx} href={`/dpps/take/${dpp.dppId}`} className="group relative flex flex-row items-center justify-between p-3.5 gap-4 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.01] transition-all cursor-pointer">
+            <Link key={dpp.dppId || idx} href={`/student/dpps/take/${dpp.dppId}`} className="group relative flex flex-row items-center justify-between p-3.5 gap-4 bg-white dark:bg-white/[0.02] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.01] transition-all cursor-pointer">
               <div className="flex flex-col min-w-0">
                 <div className="flex items-center gap-2">
                   <span className="font-sans font-semibold text-[14px] text-t-primary truncate">{dpp.title}</span>

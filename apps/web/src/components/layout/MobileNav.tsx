@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   RiMenu3Line,
   RiCloseLine,
@@ -42,6 +42,8 @@ export default function MobileNav() {
   const { user, signOut } = useAuth();
   const tenant = useTenant();
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
   // Close the drawer when the route changes
   useEffect(() => {
@@ -52,11 +54,51 @@ export default function MobileNav() {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      const focusTimer = window.setTimeout(() => {
+        drawerRef.current?.querySelector<HTMLElement>("[data-drawer-close]")?.focus();
+      }, 0);
+      return () => {
+        window.clearTimeout(focusTimer);
+        document.body.style.overflow = "unset";
+      };
     } else {
       document.body.style.overflow = "unset";
     }
     return () => { document.body.style.overflow = "unset"; };
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+        return;
+      }
+      if (event.key !== "Tab" || !drawerRef.current) return;
+      const focusable = Array.from(drawerRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      ));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [isOpen]);
+
+  const closeDrawer = () => {
+    setIsOpen(false);
+    window.setTimeout(() => menuButtonRef.current?.focus(), 0);
+  };
 
   // ── Domain-aware path helpers ──────────────────────────────────────────────
   const domainPrefix = tenant.domain ? `/${tenant.domain}` : "";
@@ -71,7 +113,7 @@ export default function MobileNav() {
       ? "institute_admin"
       : cleanPath.startsWith("/superadmin")
         ? "super_admin"
-        : "student";
+        : null;
         
   const inferredRole = roleFromQuery === "teacher"
     ? "teacher"
@@ -79,7 +121,7 @@ export default function MobileNav() {
       ? "institute_admin"
       : roleFromQuery === "super_admin"
         ? "super_admin"
-        : roleFromPath || user?.role || "student";
+    : roleFromPath ?? user?.role ?? "student";
 
   const isTeacher = cleanPath.startsWith("/teacher") || inferredRole === "teacher";
   const isInstitute = cleanPath.startsWith("/institute") || inferredRole === "institute_admin";
@@ -117,8 +159,10 @@ export default function MobileNav() {
 
   const teacherNav = [
     { label: "Dashboard", href: "/teacher",          icon: <RiDashboardLine size={18} />,  active: cleanPath === "/teacher" },
+    { label: "My Batches", href: "/teacher/batch",   icon: <RiTeamLine size={18} />,       active: cleanPath.startsWith("/teacher/batch") },
     { label: "DPPs",      href: "/teacher/dpps",     icon: <RiFileListLine size={18} />,   active: cleanPath.startsWith("/teacher/dpps") },
     { label: "Analytics", href: "/teacher/analytics",icon: <RiBarChartBoxLine size={18} />,active: cleanPath.startsWith("/teacher/analytics") },
+    { label: "Doubts",    href: "/teacher/doubts",   icon: <RiInformationLine size={18} />,active: cleanPath.startsWith("/teacher/doubts") },
   ];
 
   const instituteNav = [
@@ -127,6 +171,7 @@ export default function MobileNav() {
     { label: "Faculty", href: "/institute/faculty", icon: <RiUserStarLine size={18} />, active: cleanPath.startsWith("/institute/faculty") },
     { label: "Students", href: "/institute/students", icon: <RiUser3Line size={18} />, active: cleanPath.startsWith("/institute/students") },
     { label: "Reports", href: "/institute/reports", icon: <RiBarChartBoxLine size={18} />, active: cleanPath.startsWith("/institute/reports") },
+    { label: "Tests", href: "/institute/tests", icon: <RiFileList3Line size={18} />, active: cleanPath.startsWith("/institute/tests") },
     { label: "Billing", href: "/institute/billing", icon: <RiBankCardLine size={18} />, active: cleanPath.startsWith("/institute/billing") },
     { label: "Support", href: "/institute/support", icon: <RiLifebuoyLine size={18} />, active: cleanPath.startsWith("/institute/support") },
   ];
@@ -162,7 +207,7 @@ export default function MobileNav() {
   return (
     <>
       {/* ── Mobile Top Bar ── */}
-      <div className="md:hidden sticky top-0 z-40 flex items-center justify-between w-full h-16 px-4 bg-[#edecec] dark:bg-[#090909] border-b border-s-stroke2/40 shadow-sm backdrop-blur-md bg-opacity-90 dark:bg-opacity-90 shrink-0">
+      <div className="lg:hidden sticky top-0 z-40 flex items-center justify-between w-full h-16 px-4 bg-[#edecec] dark:bg-[#090909] bg-opacity-90 dark:bg-opacity-90 shrink-0">
         <Link href={isSuperAdmin ? "/superadmin" : (isTeacher ? "/teacher" : (isInstitute ? "/institute" : "/student/dashboard"))} className="flex items-center gap-3">
           {tenant.logoUrl ? (
             <img
@@ -180,6 +225,11 @@ export default function MobileNav() {
           </span>
         </Link>
         <button
+          ref={menuButtonRef}
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation-drawer"
           onClick={() => setIsOpen(true)}
           className="flex items-center justify-center size-10 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 text-t-primary shadow-[0_2px_4px_-1px_rgba(0,0,0,0.05)] active:scale-95 transition-all"
         >
@@ -189,16 +239,21 @@ export default function MobileNav() {
 
       {/* ── Mobile Drawer (Slide in from right) ── */}
       {isOpen && (
-        <div 
-          className="md:hidden fixed inset-0 z-50 bg-black/40 backdrop-blur-[2px] transition-opacity"
-          onClick={() => setIsOpen(false)}
+        <button
+          type="button"
+          aria-label="Close navigation menu"
+          className="lg:hidden fixed inset-0 z-50 cursor-default bg-black/40 backdrop-blur-[2px] transition-opacity"
+          onClick={closeDrawer}
         />
       )}
 
-      <div 
-        className={`md:hidden fixed top-0 right-0 z-50 h-[100dvh] w-[85vw] max-w-[320px] bg-[#edecec] dark:bg-[#0f0f0f] border-l border-s-stroke2/20 flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-2xl ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+      {isOpen && <div
+        id="mobile-navigation-drawer"
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
+        className="lg:hidden fixed top-0 right-0 z-50 h-[100dvh] w-[85vw] max-w-[320px] bg-[#edecec] dark:bg-[#0f0f0f] border-l border-s-stroke2/20 flex flex-col shadow-2xl animate-in slide-in-from-right duration-200"
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-5 h-16 border-b border-s-stroke2/20 shrink-0">
@@ -206,7 +261,10 @@ export default function MobileNav() {
             Menu
           </span>
           <button
-            onClick={() => setIsOpen(false)}
+            type="button"
+            data-drawer-close
+            aria-label="Close navigation menu"
+            onClick={closeDrawer}
             className="flex items-center justify-center size-8 rounded-full bg-b-surface1 border border-s-stroke2/40 text-t-secondary hover:text-t-primary transition-colors active:scale-95"
           >
             <RiCloseLine size={22} />
@@ -324,7 +382,7 @@ export default function MobileNav() {
             </button>
           </div>
         </div>
-      </div>
+      </div>}
     </>
   );
 }

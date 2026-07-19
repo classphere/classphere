@@ -31,7 +31,7 @@ export function Card({
 
   const paddings = {
     none: "",
-    default: "p-6",
+    default: "p-4 sm:p-6",
     large: "p-8 md:p-[42px]",
   };
 

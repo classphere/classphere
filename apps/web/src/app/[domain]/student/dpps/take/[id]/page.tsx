@@ -10,6 +10,8 @@ import {
   RiArrowRightLine,
   RiFlag2Fill,
   RiLoader4Line,
+  RiLayoutGridLine,
+  RiCloseLine,
 } from "@remixicon/react";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { Question, Option, TestMeta, AnswerMap, StatusMap } from "@/components/test/TestTypes";
@@ -45,6 +47,7 @@ export default function TestPage() {
   const [visitedQs, setVisitedQs] = useState<Record<string, boolean>>({});
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
+  const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
   const [isDemoMode, setIsDemoMode] = useState(false);
 
   // ── Timing tracking (Option B: start_timestamp) ─────────────────────────────
@@ -274,7 +277,7 @@ export default function TestPage() {
         </main>
         <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-center gap-3 px-4 pb-6 text-t-secondary">
           <RiLoader4Line size={18} className="animate-spin text-primary-01" />
-          <p className="text-body-2 font-semibold">Loading questions from backend…</p>
+          <p className="text-body-2 font-semibold">Preparing your assignment…</p>
         </div>
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
@@ -333,12 +336,26 @@ export default function TestPage() {
         meta={meta}
         questionsLength={questions.length}
         timeLeft={timeLeft}
+        isTimed={timeLeft !== null}
         timeWarning={timeWarning}
         setShowSubmitModal={setShowSubmitModal}
         formatTime={formatTime}
       />
 
-      <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem] items-stretch">
+      <main className="mx-auto grid w-full max-w-screen-2xl gap-4 px-4 py-4 sm:gap-6 sm:py-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:px-6 items-stretch">
+        <div className="lg:hidden">
+          <button
+            type="button"
+            aria-label="Open question palette"
+            aria-expanded={isNavigatorOpen}
+            aria-controls="dpp-question-palette"
+            onClick={() => setIsNavigatorOpen(true)}
+            className="flex h-12 w-full items-center justify-between rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 text-sm font-semibold text-t-primary shadow-sm active:scale-[0.99]"
+          >
+            <span className="flex items-center gap-2"><RiLayoutGridLine size={18} /> Question palette</span>
+            <span className="text-xs text-t-secondary">{answered}/{questions.length} answered</span>
+          </button>
+        </div>
         <QuestionContent
           question={q}
           current={current}
@@ -368,6 +385,36 @@ export default function TestPage() {
           answeredMarkedCount={answeredMarkedCount}
         />
       </main>
+
+      {isNavigatorOpen && (
+        <div className="lg:hidden fixed inset-0 z-[90] bg-black/40 backdrop-blur-sm">
+          <button type="button" aria-label="Close question palette" onClick={() => setIsNavigatorOpen(false)} className="absolute inset-0 h-full w-full cursor-default" />
+          <section id="dpp-question-palette" role="dialog" aria-modal="true" aria-label="Question palette" className="absolute inset-y-0 right-0 flex w-full max-w-[440px] flex-col bg-b-surface1 shadow-2xl">
+            <div className="flex h-16 shrink-0 items-center justify-between border-b border-s-stroke2 px-4">
+              <div>
+                <p className="text-sm font-bold text-t-primary">Question palette</p>
+                <p className="text-xs text-t-secondary">Choose a question to continue</p>
+              </div>
+              <button type="button" aria-label="Close question palette" onClick={() => setIsNavigatorOpen(false)} className="flex size-11 items-center justify-center rounded-[10px] border border-s-stroke2 bg-b-surface2 text-t-primary"><RiCloseLine size={20} /></button>
+            </div>
+            <QuestionNavigator
+              questions={questions}
+              current={current}
+              status={status}
+              answers={answers}
+              visitedQs={visitedQs}
+              navigateTo={navigateTo}
+              notVisitedCount={notVisitedCount}
+              notAnsweredCount={notAnsweredCount}
+              answeredCount={answeredCount}
+              markedCount={markedCount}
+              answeredMarkedCount={answeredMarkedCount}
+              variant="drawer"
+              onNavigate={() => setIsNavigatorOpen(false)}
+            />
+          </section>
+        </div>
+      )}
 
       <SubmitModal
         show={showSubmitModal}

@@ -1,77 +1,85 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { PageWrapper, SectionCard, MetricGrid, MetricCard } from "@/components/ui";
-import { RiLineChartLine, RiTimeLine, RiCrosshair2Line, RiTrophyLine } from "@remixicon/react";
+import { RiLineChartLine, RiTimeLine, RiCrosshair2Line, RiBookOpenLine, RiLoader4Line } from "@remixicon/react";
+import { useAuth } from "@/lib/auth-context";
+import { apiClient } from "@/lib/api.client";
 
-const topicPerformance = [
-  { topic: "Kinematics", accuracy: 92, status: "Strong" },
-  { topic: "Thermodynamics", accuracy: 85, status: "Good" },
-  { topic: "Electromagnetism", accuracy: 45, status: "Weak" },
-  { topic: "Rotational Mechanics", accuracy: 30, status: "Critical" },
-  { topic: "Optics", accuracy: 78, status: "Good" },
-];
+type Chapter = {
+  subject: string;
+  chapter: string;
+  attempted: number;
+  accuracy: number;
+  avgTimeSec: number;
+  status: "Not started" | "Learning" | "Needs revision" | "Improving" | "Reliable";
+};
+
+type Subject = { subject: string; attempted: number; accuracy: number; avgTimeSec: number };
+
+const statusClass: Record<Chapter["status"], string> = {
+  "Not started": "bg-s-stroke2 text-t-secondary",
+  Learning: "bg-primary-01/10 text-primary-01",
+  "Needs revision": "bg-primary-03/10 text-primary-03",
+  Improving: "bg-primary-05/10 text-primary-05",
+  Reliable: "bg-primary-02/10 text-primary-02",
+};
 
 export default function StudentAnalyticsPage() {
+  const { session } = useAuth();
+  const [data, setData] = useState<{ metrics: any; chapters: Chapter[]; subjects: Subject[]; syllabus?: { label: string; version: string; sourceUrl: string; sourcePageLimit?: number } } | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!session?.access_token) return;
+    apiClient.get<{ success: boolean; data: any }>("/api/v1/dashboard/student/analytics", session.access_token)
+      .then((response) => { if (response.success) setData(response.data); })
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, [session?.access_token]);
+
+  if (loading) {
+    return <><Navbar title="My Performance Analytics" /><PageWrapper><div className="flex min-h-64 items-center justify-center text-t-secondary"><RiLoader4Line className="animate-spin" size={28} /></div></PageWrapper></>;
+  }
+
+  const metrics = data?.metrics ?? { totalTests: 0, accuracyPct: 0, avgTimeSec: 0, chaptersCovered: 0, chaptersInSyllabus: 0 };
+  const formatSeconds = (seconds: number) => seconds >= 60 ? `${Math.floor(seconds / 60)}m ${seconds % 60}s` : `${seconds}s`;
+
   return (
     <>
-      <Navbar title="My Performance Analytics" subtitle="Track your strengths, weaknesses, and key metrics over time." breadcrumbs="Student > Analytics" />
+      <Navbar title="My Performance Analytics" subtitle="Your test data, measured against the official syllabus." breadcrumbs="Student > Analytics" />
       <PageWrapper>
         <MetricGrid cols={4}>
-          <MetricCard icon={<RiCrosshair2Line size={18} />} label="Overall Accuracy" value="76.4%" badge="+4.2%" badgeLabel="from last month" />
-          <MetricCard icon={<RiTimeLine size={18} />} label="Avg Time / Q" value="1m 45s" badge="+15s" badgeLabel="slower than target" />
-          <MetricCard icon={<RiTrophyLine size={18} />} label="Batch Percentile" value="88th" badge="Top 12%" badgeLabel="of Aakash Target Batch" />
-          <MetricCard icon={<RiLineChartLine size={18} />} label="Tests Attempted" value="42" badge="Active" badgeLabel="this academic year" />
+          <MetricCard icon={<RiCrosshair2Line size={18} />} label="Overall Accuracy" value={`${metrics.accuracyPct}%`} />
+          <MetricCard icon={<RiTimeLine size={18} />} label="Average Time / Q" value={formatSeconds(metrics.avgTimeSec)} />
+          <MetricCard icon={<RiBookOpenLine size={18} />} label="Chapters Practised" value={`${metrics.chaptersCovered}/${metrics.chaptersInSyllabus}`} />
+          <MetricCard icon={<RiLineChartLine size={18} />} label="Tests Attempted" value={metrics.totalTests} />
         </MetricGrid>
-        <div className="grid gap-6 xl:grid-cols-2">
-          <SectionCard title="Topic-wise Strengths & Weaknesses">
-            <div className="flex flex-col gap-4 p-2.5 bg-black/[0.02] dark:bg-white/[0.02] rounded-[16px]">
-              {topicPerformance.map((item, idx) => {
-                const isStrong = item.accuracy > 80;
-                const isGood = item.accuracy > 50;
-                const progressColor = isStrong ? "bg-primary-02" : isGood ? "bg-primary-05" : "bg-primary-03";
-                const badgeBorder = isStrong ? "border-[#ebebeb] dark:border-[#282828] bg-primary-02/10 text-primary-02" : isGood ? "border-[#ebebeb] dark:border-[#282828] bg-primary-05/10 text-primary-05" : "border-[#ebebeb] dark:border-[#282828] bg-primary-03/10 text-primary-03";
-                return (
-                  <div key={idx} className="flex flex-col p-4 bg-b-surface2 dark:bg-[#161616] rounded-[12px] hover:-translate-y-0.5 transition-transform duration-200 cursor-default">
-                    <div className="mb-2.5 flex items-center justify-between gap-3">
-                      <span className="font-sans font-semibold text-[15px] leading-snug tracking-[-0.02em] text-t-primary">{item.topic}</span>
-                      <span className="text-[12px] font-sans text-t-secondary font-bold uppercase tracking-widest">{item.accuracy}% Accuracy</span>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-black/5 dark:bg-white/5">
-                        <div style={{ width: `${item.accuracy}%` }} className={`h-full rounded-full ${progressColor}`} />
-                      </div>
-                      <span className={`px-2 py-0.5 rounded-[6px] border text-[10px] font-bold uppercase tracking-wider shrink-0 ${badgeBorder}`}>{item.status}</span>
-                    </div>
+
+        {data?.chapters.length ? <div className="grid gap-6 xl:grid-cols-2">
+          <SectionCard title="Chapter Readiness" subtitle={`${data.syllabus?.label ?? "Official syllabus"} ${data.syllabus?.version ?? ""} · unattempted chapters are shown as not started.`}>
+            <div className="space-y-3">
+              {data.chapters.slice(0, 12).map((chapter) => (
+                <div key={`${chapter.subject}-${chapter.chapter}`} className="rounded-[12px] border border-s-stroke2 bg-b-surface2 p-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0"><p className="text-[14px] font-bold text-t-primary">{chapter.chapter}</p><p className="mt-1 text-[11px] text-t-secondary">{chapter.subject} · {chapter.attempted} attempted · {formatSeconds(chapter.avgTimeSec)}/Q</p></div>
+                    <span className={`shrink-0 rounded-md px-2 py-1 text-[10px] font-bold uppercase tracking-wide ${statusClass[chapter.status]}`}>{chapter.status}</span>
                   </div>
-                );
-              })}
-            </div>
-          </SectionCard>
-          <SectionCard title="Time Management (Physics)" subtitle="You are spending too much time on mechanics questions.">
-            <div className="flex flex-col gap-4 p-2.5 bg-black/[0.02] dark:bg-white/[0.02] rounded-[16px]">
-              {[{ label: "Mechanics (Avg: 3m 12s)", target: "Target: 2m 00s", pct: 80, color: "bg-primary-03", textColor: "text-primary-03" }, { label: "Electrodynamics (Avg: 1m 45s)", target: "Target: 2m 00s", pct: 40, color: "bg-primary-02", textColor: "text-primary-02" }, { label: "Modern Physics (Avg: 2m 10s)", target: "Target: 2m 00s", pct: 55, color: "bg-primary-05", textColor: "text-primary-05" }].map((t, i) => (
-                <div key={i} className="flex flex-col p-4 bg-b-surface2 dark:bg-[#161616] rounded-[12px]">
-                  <div className="mb-2.5 flex items-center justify-between gap-3">
-                    <span className="font-sans font-semibold text-[15px] leading-snug tracking-[-0.02em] text-t-primary">{t.label}</span>
-                    <span className={`text-[11px] font-sans font-bold uppercase tracking-widest ${t.textColor}`}>{t.target}</span>
-                  </div>
-                  <div className="relative h-2.5 rounded-full bg-black/5 dark:bg-white/5 overflow-hidden">
-                    <div className={`h-full w-[${t.pct}%] ${t.color} rounded-full`} style={{ width: `${t.pct}%` }} />
-                    <div className="absolute left-1/2 top-0 bottom-0 z-10 w-0.5 bg-shade-02 dark:bg-t-primary" />
-                  </div>
+                  <div className="mt-3 flex items-center gap-3"><div className="h-2 flex-1 overflow-hidden rounded-full bg-s-stroke2"><div className={chapter.accuracy >= 75 ? "h-full bg-primary-02" : chapter.accuracy >= 50 ? "h-full bg-primary-05" : "h-full bg-primary-03"} style={{ width: `${chapter.accuracy}%` }} /></div><span className="w-9 text-right text-[12px] font-bold text-t-primary">{chapter.accuracy}%</span></div>
                 </div>
               ))}
             </div>
-            <div className="relative z-10 mt-6 w-full">
-              <button className="flex flex-row justify-center items-center h-[46px] w-full relative overflow-hidden rounded-[10px] bg-[#161616] font-medium text-[14px] text-white shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919] transition-transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer gap-2">
-                <i className="absolute -left-4 top-0 h-4 w-32 -rotate-[125deg] rounded-full bg-white/10 blur-[4px]" />
-                <RiTimeLine size={18} />
-                <span className="relative font-sans font-semibold">Generate Speed Booster Test</span>
-              </button>
+          </SectionCard>
+          <SectionCard title="Subject Pacing" subtitle="Where accuracy and speed need attention.">
+            <div className="space-y-3">
+              {data.subjects.map((subject) => (
+                <div key={subject.subject} className="rounded-[12px] border border-s-stroke2 bg-b-surface2 p-4"><div className="flex items-center justify-between"><div><p className="text-[14px] font-bold text-t-primary">{subject.subject}</p><p className="mt-1 text-[11px] text-t-secondary">{subject.attempted} attempted · {formatSeconds(subject.avgTimeSec)}/Q</p></div><span className={subject.accuracy >= 75 ? "text-primary-02 font-black" : subject.accuracy >= 50 ? "text-primary-05 font-black" : "text-primary-03 font-black"}>{subject.accuracy}%</span></div></div>
+              ))}
             </div>
           </SectionCard>
-        </div>
+        </div> : null}
+        {data?.syllabus && <p className="mt-4 text-xs text-t-secondary">Catalog source: <a className="font-semibold text-primary-01 underline underline-offset-2" href={data.syllabus.sourceUrl} target="_blank" rel="noreferrer">official {data.syllabus.label} syllabus</a>{data.syllabus.sourcePageLimit ? ` (catalog scope: pages 1–${data.syllabus.sourcePageLimit})` : ""}.</p>}
       </PageWrapper>
     </>
   );

@@ -36,11 +36,11 @@ function ProfileContent() {
     <>
       <Navbar title="My Profile" subtitle="Manage your profile, account security, and notification preferences" breadcrumbs="Dashboard > My Profile" />
       
-      <main className="w-full max-w-[1200px] mx-auto px-8 pb-12 flex gap-8 items-start">
+      <main className="mx-auto flex w-full max-w-[1200px] flex-col items-start gap-5 px-4 pb-12 sm:px-6 lg:flex-row lg:gap-8 lg:px-8">
         
         {/* Left Nav Menu */}
-        <div className="w-[220px] shrink-0 sticky top-24">
-          <div className="flex flex-col gap-1">
+        <div className="w-full shrink-0 lg:sticky lg:top-24 lg:w-[220px]">
+          <div className="flex gap-1 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible">
             {[
               { id: "profile", label: "Profile information", active: true },
               { id: "account", label: "Account", active: false },
@@ -48,7 +48,7 @@ function ProfileContent() {
             ].map(tab => (
               <button
                 key={tab.id}
-                className={`text-left px-4 py-2.5 rounded-[10px] text-caption font-semibold border-none cursor-pointer transition-all ${
+                className={`shrink-0 text-left px-4 py-2.5 rounded-[10px] text-caption font-semibold border-none cursor-pointer transition-all ${
                   tab.active
                     ? "bg-b-surface1 text-t-primary shadow-widget font-bold"
                     : "bg-transparent text-t-secondary hover:text-t-primary hover:bg-b-surface1/50"
@@ -61,7 +61,7 @@ function ProfileContent() {
         </div>
 
         {/* Right Content Form Card */}
-        <div className="card flex-1 p-8 border border-s-stroke2 bg-b-surface1">
+        <div className="card w-full flex-1 p-4 sm:p-6 lg:p-8 border border-s-stroke2 bg-b-surface1">
           
           <h2 className="text-sub-title-1 font-bold text-t-primary mb-6">Profile information</h2>
           
@@ -79,7 +79,7 @@ function ProfileContent() {
           </div>
 
           <div className="flex flex-col gap-5">
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
               <div>
                 <label className="block text-caption font-bold text-t-secondary mb-2">First name</label>
                 <input type="text" className="input" defaultValue={data.name.split(" ")[0]} />
@@ -100,7 +100,7 @@ function ProfileContent() {
               <input type="text" className="input" defaultValue={data.exam} />
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
               <div>
                 <label className="block text-caption font-bold text-t-secondary mb-2">Role</label>
                 <input type="text" className="input bg-b-surface2 text-t-secondary font-bold" defaultValue={role.toUpperCase()} readOnly />
@@ -130,7 +130,7 @@ function ProfileContent() {
               <label className="block text-caption font-bold text-t-secondary mb-2">Current password</label>
               <input type="password" className="input" defaultValue="password123456" />
             </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
               <div>
                 <label className="block text-caption font-bold text-t-secondary mb-2">New password</label>
                 <input type="password" className="input" placeholder="Please enter your password" />
@@ -153,7 +153,7 @@ function ProfileContent() {
               { title: "Doubt Resolution", desc: "Get alerts when a teacher answers your doubt" },
               { title: "System Messages", desc: "Important updates about system status or maintenance", disabled: true },
             ].map((n, idx) => (
-              <div key={idx} className="flex justify-between items-center py-4 border-b border-s-stroke2 last:border-0 last:pb-0">
+              <div key={idx} className="flex items-center justify-between gap-4 py-4 border-b border-s-stroke2 last:border-0 last:pb-0">
                 <div className="pr-4">
                   <div className="text-body-2 font-bold text-t-primary">{n.title}</div>
                   <div className="text-caption text-t-secondary mt-0.5">{n.desc}</div>
@@ -167,9 +167,9 @@ function ProfileContent() {
           </div>
 
           {/* Action Footer */}
-          <div className="flex justify-end gap-3 mt-8 pt-6 border-t border-s-stroke2">
-            <button className="btn btn-outline">Discard Changes</button>
-            <button className="btn btn-primary min-w-[140px]" onClick={handleSave} disabled={saving}>
+          <div className="mt-8 flex flex-col-reverse justify-end gap-3 border-t border-s-stroke2 pt-6 sm:flex-row">
+            <button className="btn btn-outline w-full sm:w-auto">Discard Changes</button>
+            <button className="btn btn-primary w-full sm:min-w-[140px] sm:w-auto" onClick={handleSave} disabled={saving}>
               {saving ? "Saving..." : saved ? "Saved!" : "Save Changes"}
             </button>
           </div>

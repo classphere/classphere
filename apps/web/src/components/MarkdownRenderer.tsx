@@ -7,6 +7,12 @@ interface MarkdownRendererProps {
   children: string | any;
 }
 
+function escapeHtml(value: string): string {
+  return value.replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  }[character]!));
+}
+
 /** Keep Markdown usable while removing executable/raw-HTML attack surfaces. */
 function sanitizeHtml(html: string): string {
   const doc = new DOMParser().parseFromString(html, "text/html");
@@ -87,7 +93,7 @@ export function MarkdownRenderer({ children }: MarkdownRendererProps) {
             );
           } catch {
             mathBlocks.push(
-              `<span class="text-red-500 text-xs">${displayMode ? "$$" : "$"}${expr}${displayMode ? "$$" : "$"}</span>`
+              `<span class="text-red-500 text-xs">${displayMode ? "$$" : "$"}${escapeHtml(expr)}${displayMode ? "$$" : "$"}</span>`
             );
           }
           return `%%MATH_${idx}%%`;
@@ -118,8 +124,10 @@ export function MarkdownRenderer({ children }: MarkdownRendererProps) {
         }
 
         // ── Restore math blocks ─────────────────────────────────────────────
-        html = html.replace(/%%MATH_(\d+)%%/g, (_m, i) => mathBlocks[+i] ?? "");
+        // Sanitize only untrusted Markdown output. KaTeX is generated locally
+        // and needs its inline positioning styles for fractions and subscripts.
         html = sanitizeHtml(html);
+        html = html.replace(/%%MATH_(\d+)%%/g, (_m, i) => mathBlocks[+i] ?? "");
 
         if (ref.current) ref.current.innerHTML = html;
       } catch (err) {

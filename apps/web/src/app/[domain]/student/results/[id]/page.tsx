@@ -53,6 +53,9 @@ export default function ResultsPage() {
 
   const [showBooster, setShowBooster] = useState(false);
   const [microCount, setMicroCount] = useState(15);
+  const [startingBooster, setStartingBooster] = useState(false);
+  const [analysisDelayed, setAnalysisDelayed] = useState(false);
+  const [retryKey, setRetryKey] = useState(0);
 
   const [a, setAnalysis] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -69,11 +72,12 @@ export default function ResultsPage() {
         const data = await apiClient.get(`/api/v1/analysis/${attemptId}`, session.access_token);
         if (data.success && data.data.status === "ready") {
           setAnalysis(data.data.analysis);
-          setLoading(false);
+            setLoading(false);
         } else {
           retries++;
           if (retries >= maxRetries) {
             console.error("Analysis polling timed out after 60 seconds.");
+            setAnalysisDelayed(true);
             setLoading(false);
           } else {
             timerId = setTimeout(fetchAnalysis, 2000);
@@ -81,6 +85,7 @@ export default function ResultsPage() {
         }
       } catch (err) {
         console.error(err);
+        setAnalysisDelayed(true);
         setLoading(false);
       }
     };
@@ -90,7 +95,39 @@ export default function ResultsPage() {
     return () => {
       if (timerId) clearTimeout(timerId);
     };
-  }, [attemptId, session?.access_token]);
+  }, [attemptId, session?.access_token, retryKey]);
+
+  const retryAnalysis = async () => {
+    if (!session?.access_token) return;
+    try {
+      setLoading(true);
+      setAnalysisDelayed(false);
+      await apiClient.post(`/api/v1/analysis/${attemptId}/retry`, {}, session.access_token);
+      setRetryKey((value) => value + 1);
+    } catch (error) {
+      console.error("[Results] retry analysis", error);
+      setAnalysisDelayed(true);
+      setLoading(false);
+    }
+  };
+
+  const startBooster = async () => {
+    if (!session?.access_token || startingBooster) return;
+    try {
+      setStartingBooster(true);
+      const response = await apiClient.post<{ success: boolean; data: { paper_id: string }; message?: string }>(
+        `/api/v1/analysis/${attemptId}/booster`,
+        { question_count: microCount },
+        session.access_token
+      );
+      if (!response.success) throw new Error(response.message ?? "Could not create your booster.");
+      router.push(`/test/${response.data.paper_id}?mode=practice`);
+    } catch (error) {
+      console.error("[Results] start booster", error);
+      alert(error instanceof Error ? error.message : "Could not create your booster.");
+      setStartingBooster(false);
+    }
+  };
 
   if (loading || !a) {
     return (
@@ -105,12 +142,18 @@ export default function ResultsPage() {
               Thank you for the test
             </h1>
             <p className="text-[14px] text-t-secondary mb-8">
-              Your test has been successfully submitted. We are crunching the numbers and running your personalized AI analysis. The result will be displayed soon.
+              {analysisDelayed
+                ? "Your result is taking longer than expected. You can safely retry the analysis; your submitted test will not be affected."
+                : "Your test has been successfully submitted. We are crunching the numbers and preparing your personalized analysis."}
             </p>
-            <div className="flex items-center justify-center gap-2 text-t-secondary font-medium text-[13px]">
+            {analysisDelayed ? (
+              <button onClick={retryAnalysis} className="mx-auto flex h-11 items-center justify-center rounded-[10px] bg-shade-02 px-5 text-[13px] font-semibold text-white active:scale-[0.98]">
+                Retry analysis
+              </button>
+            ) : <div className="flex items-center justify-center gap-2 text-t-secondary font-medium text-[13px]">
               <RiLoader4Line className="animate-spin text-primary-02" size={18} />
               Processing results...
-            </div>
+            </div>}
           </div>
         </div>
       </>
@@ -217,6 +260,13 @@ export default function ResultsPage() {
                     ))}
                   </div>
                   <div className="mt-4 text-[12px] font-sans text-t-secondary dark:text-t-secondary">The current pick is {microCount} questions.</div>
+                  <button
+                    onClick={startBooster}
+                    disabled={startingBooster}
+                    className="mt-4 flex h-11 w-full items-center justify-center rounded-[10px] bg-shade-02 px-4 text-[13px] font-bold text-white transition active:scale-[0.98] disabled:cursor-wait disabled:opacity-60"
+                  >
+                    {startingBooster ? "Preparing your booster..." : `Start ${microCount}-question booster`}
+                  </button>
                 </div>
               )}
             </section>

@@ -1,12 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
+import { RiArrowRightLine } from "@remixicon/react";
 import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from "recharts";
 
 interface ScorePerformanceWidgetProps {
   data: any[];
   isNEET: boolean;
+  latestAttempt?: { id: string; title?: string; score?: number; max_score?: number };
 }
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -35,6 +38,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 export function ScorePerformanceWidget({
   data,
   isNEET,
+  latestAttempt,
 }: ScorePerformanceWidgetProps) {
   // Using custom colors for subjects
   const colors = {
@@ -129,6 +133,13 @@ export function ScorePerformanceWidget({
             </LineChart>
           </ResponsiveContainer>
         </div>
+
+        {latestAttempt && (
+          <Link href={`/student/results/${latestAttempt.id}`} className="flex items-center justify-between rounded-[12px] border border-s-stroke2 bg-b-surface1 px-4 py-3 transition-colors hover:bg-b-surface2">
+            <span className="min-w-0"><span className="block text-[11px] font-bold uppercase tracking-wide text-t-secondary">Latest test</span><span className="mt-0.5 block truncate text-[13px] font-semibold text-t-primary">{latestAttempt.title ?? "Test"} · {latestAttempt.score ?? 0}/{latestAttempt.max_score ?? 0}</span></span>
+            <RiArrowRightLine size={18} className="shrink-0 text-t-secondary" />
+          </Link>
+        )}
 
       </div>
     </SectionCard>

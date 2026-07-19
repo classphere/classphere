@@ -152,7 +152,7 @@ export default function Sidebar() {
   const displayName = tenant.instituteName ?? "Classphere";
 
   return (
-    <aside className="hidden md:flex sticky top-0 z-40 h-screen w-[280px] xl:w-[300px] shrink-0 flex-col bg-[#edecec] dark:bg-[#0f0f0f] border-r border-transparent dark:border-[#1e1e1e] px-4 xl:px-5 pt-8 pb-12 select-none overflow-y-auto scrollbar-none">
+    <aside className="hidden lg:flex sticky top-0 z-40 h-screen w-[280px] xl:w-[300px] shrink-0 flex-col bg-[#edecec] dark:bg-[#0f0f0f] border-r border-transparent dark:border-[#1e1e1e] px-4 xl:px-5 pt-8 pb-12 select-none overflow-y-auto scrollbar-none">
 
       {/* ── Top: Logo ── */}
       <div className="flex flex-col gap-6 w-full">
@@ -191,7 +191,7 @@ export default function Sidebar() {
                 href={item.href}
                 className={`group relative flex h-11 items-center gap-3 rounded-[10px] px-4 text-[13px] font-sans font-semibold transition-all overflow-hidden ${
                   item.active
-                    ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),0px_13.6468px_13.6468px_-2.91667px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]"
+                    ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_2px_3px_-2px_rgba(0,0,0,0.18),0px_5px_8px_-6px_rgba(0,0,0,0.2),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]"
                     : "text-t-secondary hover:text-t-primary hover:bg-[rgba(0,0,0,0.04)] dark:hover:bg-white/5"
                 }`}
               >
@@ -219,7 +219,7 @@ export default function Sidebar() {
                   href={item.href}
                   className={`group relative flex h-11 items-center gap-3 rounded-[10px] px-4 text-[13px] font-sans font-semibold transition-all overflow-hidden ${
                     isActive
-                      ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_6.8656px_6.8656px_-2.33333px_rgba(0,0,0,0.16),0px_13.6468px_13.6468px_-2.91667px_rgba(0,0,0,0.16),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]"
+                      ? "bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] text-white border border-[#161616] shadow-[0px_2px_3px_-2px_rgba(0,0,0,0.18),0px_5px_8px_-6px_rgba(0,0,0,0.2),inset_0px_1px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_#191919]"
                       : "text-t-secondary hover:text-t-primary hover:bg-[rgba(0,0,0,0.04)] dark:hover:bg-white/5"
                   }`}
                 >

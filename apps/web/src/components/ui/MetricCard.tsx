@@ -18,22 +18,22 @@ export function MetricCard({ icon, label, value, badge, badgeLabel, className = 
   return (
     <Card 
       padding="default"
-      className={`group relative flex flex-col overflow-hidden transition-all duration-300 select-none ${className}`}
+      className={`group relative flex min-w-0 flex-col overflow-hidden transition-all duration-300 select-none ${className}`}
     >
       
-      <div className="relative z-10 flex flex-col gap-4">
+      <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
         {/* Label Row */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex min-w-0 items-center gap-2">
           {icon && (
             <span className="text-t-secondary">{icon}</span>
           )}
-          <span className="text-[13px] font-sans font-[600] text-t-secondary tracking-[0.03em] uppercase">
+          <span className="min-w-0 text-[11px] leading-tight font-sans font-[600] text-t-secondary tracking-[0.03em] uppercase sm:text-[13px]">
             {label}
           </span>
         </div>
 
         {/* Value */}
-        <div className="font-sans text-[42px] font-semibold tracking-[-0.04em] text-t-primary leading-none my-1">
+        <div className="my-1 font-sans text-[32px] font-semibold leading-none tracking-[-0.04em] text-t-primary sm:text-[42px]">
           {value}
         </div>
 
@@ -46,7 +46,7 @@ export function MetricCard({ icon, label, value, badge, badgeLabel, className = 
               </span>
             )}
             {badgeLabel && (
-              <span className="text-[12px] font-sans font-medium text-t-secondary">{badgeLabel}</span>
+            <span className="text-[11px] font-sans font-medium text-t-secondary sm:text-[12px]">{badgeLabel}</span>
             )}
           </div>
         )}
@@ -66,13 +66,13 @@ interface MetricGridProps {
  */
 export function MetricGrid({ children, cols = 4, className = "" }: MetricGridProps) {
   const colClass = {
-    2: "grid-cols-1 sm:grid-cols-2",
-    3: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
-    4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4",
+    2: "grid-cols-2",
+    3: "grid-cols-2 lg:grid-cols-3",
+    4: "grid-cols-2 lg:grid-cols-4",
   }[cols];
 
   return (
-    <div className={`grid ${colClass} gap-6 mb-8 ${className}`}>
+    <div className={`grid ${colClass} gap-3 sm:gap-6 mb-6 sm:mb-8 ${className}`}>
       {children}
     </div>
   );
