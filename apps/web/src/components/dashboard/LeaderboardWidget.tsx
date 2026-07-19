@@ -1,132 +1,39 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { RiTrophyLine, RiMedalLine, RiArrowUpLine, RiArrowDownLine } from "@remixicon/react";
+import { useEffect, useState } from "react";
+import { RiMedalLine, RiTrophyLine } from "@remixicon/react";
 import { apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
 import { PremiumCard } from "@/components/premium-ui";
+import Link from "next/link";
 
 export function LeaderboardWidget() {
   const { session, user } = useAuth();
-  const [loading, setLoading] = useState(true);
-  const [leaderboard, setLeaderboard] = useState<any[]>([]);
-  const [myRank, setMyRank] = useState<any>(null);
-  const [batchName, setBatchName] = useState<string>("");
+  const [entries, setEntries] = useState<any[]>([]);
+  const [paperTitle, setPaperTitle] = useState("");
+  const [mine, setMine] = useState<any>(null);
 
   useEffect(() => {
     if (!session?.access_token) return;
-
-    const fetchLeaderboard = async () => {
-      setLoading(true);
+    const load = async () => {
       try {
-        // 1. Get my ranks to find my primary batch
-        const meRes = await apiClient.get("/api/v1/rankings/me", session.access_token);
-        let targetBatchId = null;
-        
-        if (meRes.success && meRes.data.batch_ranks?.length > 0) {
-          const primaryBatch = meRes.data.batch_ranks[0];
-          targetBatchId = primaryBatch.batch_id;
-          setBatchName(primaryBatch.batch_name);
-          setMyRank(primaryBatch);
+        const batches = await apiClient.get<any>("/api/v1/rankings/batches", session.access_token);
+        const batchId = batches.data?.batches?.[0]?.id;
+        if (!batchId) return;
+        const papers = await apiClient.get<any>(`/api/v1/rankings/papers?batch_id=${batchId}`, session.access_token);
+        const paper = papers.data?.papers?.[0];
+        if (!paper) return;
+        setPaperTitle(paper.title);
+        const leaderboard = await apiClient.get<any>(`/api/v1/rankings/paper?batch_id=${batchId}&paper_id=${paper.id}`, session.access_token);
+        if (leaderboard.success) {
+          setEntries(leaderboard.data.entries?.slice(0, 5) ?? []);
+          setMine(leaderboard.data.entries?.find((entry: any) => entry.student_id === user?.id) ?? null);
         }
-
-        // 2. Fetch the actual leaderboard for that batch
-        if (targetBatchId) {
-          const lbRes = await apiClient.get(`/api/v1/rankings/leaderboard?scope=batch&batch_id=${targetBatchId}&limit=10`, session.access_token);
-          if (lbRes.success) {
-            setLeaderboard(lbRes.data.entries || []);
-          }
-        }
-      } catch (err) {
-        console.error("Failed to fetch leaderboard", err);
-      } finally {
-        setLoading(false);
-      }
+      } catch (error) { console.error("Failed to load paper ranking", error); }
     };
+    void load();
+  }, [session?.access_token, user?.id]);
 
-    fetchLeaderboard();
-  }, [session?.access_token]);
-
-  if (loading) {
-    return (
-      <PremiumCard padding="default" className="flex flex-col gap-4 w-full h-[400px] animate-pulse">
-        <div className="h-6 w-48 bg-b-surface2 rounded" />
-        <div className="flex-1 flex flex-col gap-3 mt-4">
-          {[1, 2, 3, 4, 5].map(i => (
-            <div key={i} className="h-12 w-full bg-b-surface2 rounded-xl" />
-          ))}
-        </div>
-      </PremiumCard>
-    );
-  }
-
-  if (!leaderboard.length) {
-    return (
-      <PremiumCard padding="default" className="flex flex-col w-full">
-        <h3 className="font-sans font-semibold text-[18px] text-t-primary mb-1">Batch Leaderboard</h3>
-        <p className="text-sm text-t-secondary mb-4">You are not in any active batches with rankings yet.</p>
-      </PremiumCard>
-    );
-  }
-
-  return (
-    <PremiumCard padding="default" className="flex flex-col w-full min-w-0 h-[400px]">
-      <div className="flex items-center justify-between mb-5">
-        <div>
-          <h3 className="font-sans font-semibold text-[18px] text-t-primary tracking-[-0.01em] flex items-center gap-2">
-            <RiTrophyLine size={20} className="text-primary-02" />
-            Top Performers
-          </h3>
-          <p className="text-[13px] text-t-secondary mt-1">{batchName}</p>
-        </div>
-        
-        {myRank && (
-          <div className="flex flex-col items-end">
-            <span className="text-[11px] font-sans font-bold uppercase tracking-wider text-t-tertiary">Your Rank</span>
-            <span className="text-[20px] font-mono font-bold text-primary-02">#{myRank.rank}</span>
-          </div>
-        )}
-      </div>
-
-      <div className="flex flex-col gap-2 relative flex-1 overflow-y-auto pr-2 custom-scrollbar">
-        {leaderboard.map((entry, idx) => {
-          const isMe = entry.student_id === user?.id;
-          let RankIcon = null;
-          if (idx === 0) RankIcon = <RiMedalLine size={18} className="text-yellow-500" />;
-          else if (idx === 1) RankIcon = <RiMedalLine size={18} className="text-gray-400" />;
-          else if (idx === 2) RankIcon = <RiMedalLine size={18} className="text-amber-600" />;
-
-          return (
-            <div 
-              key={entry.student_id}
-              className={`flex items-center justify-between p-3 rounded-[12px] transition-all shrink-0 ${
-                isMe 
-                  ? "bg-primary-02/10 border border-primary-02/30 shadow-[0_0_12px_rgba(42,133,255,0.15)]" 
-                  : "bg-b-surface1 dark:bg-b-surface1/50 border border-transparent hover:border-s-stroke2/40"
-              }`}
-            >
-              <div className="flex items-center gap-4">
-                <div className={`w-8 flex justify-center font-mono font-bold ${idx < 3 ? 'text-t-primary' : 'text-t-tertiary'}`}>
-                  {RankIcon ? RankIcon : `#${idx + 1}`}
-                </div>
-                <div className="flex flex-col">
-                  <span className={`text-[14px] font-sans font-semibold ${isMe ? 'text-primary-02' : 'text-t-primary'}`}>
-                    {entry.name} {isMe && "(You)"}
-                  </span>
-                  <span className="text-[11px] text-t-tertiary">
-                    {entry.streak} day streak
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex flex-col items-end text-right">
-                <span className="text-[14px] font-mono font-bold text-t-primary">{entry.rankScore}</span>
-                <span className="text-[11px] text-t-tertiary">Rank Score</span>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </PremiumCard>
-  );
+  if (!entries.length) return <PremiumCard padding="default"><h3 className="text-[18px] font-semibold text-t-primary">Batch Performance</h3><p className="mt-1 text-sm text-t-secondary">Complete a batch test to compare yourself on the same paper.</p><Link href="/student/leaderboard" className="mt-4 inline-flex text-[12px] font-bold text-primary-01">Open leaderboard</Link></PremiumCard>;
+  return <PremiumCard padding="default" className="min-w-0"><div className="mb-4 flex items-start justify-between gap-3"><div><h3 className="flex items-center gap-2 text-[18px] font-semibold text-t-primary"><RiTrophyLine size={20} className="text-primary-02" /> Batch Performance</h3><p className="mt-1 line-clamp-1 text-[12px] text-t-secondary">{paperTitle}</p></div>{mine && <div className="text-right"><p className="text-[10px] font-bold uppercase text-t-tertiary">Your rank</p><p className="text-[20px] font-bold text-primary-02">#{mine.rank}</p></div>}</div><div className="flex flex-col gap-2">{entries.slice(0, 3).map((entry, index) => <div key={entry.student_id} className={`flex items-center justify-between rounded-[12px] border p-3 ${entry.student_id === user?.id ? "border-primary-02/30 bg-primary-02/10" : "border-transparent bg-b-surface1"}`}><div className="flex items-center gap-3"><span className="w-6 text-center text-sm font-bold text-t-secondary">{index < 3 ? <RiMedalLine size={17} className="inline text-primary-05" /> : `#${entry.rank}`}</span><span className="text-sm font-semibold text-t-primary">{entry.name}{entry.student_id === user?.id ? " (You)" : ""}</span></div><span className="text-sm font-bold text-primary-02">{entry.percentage}%</span></div>)}</div><Link href="/student/leaderboard" className="mt-4 flex h-10 items-center justify-center rounded-[10px] border border-s-stroke2 text-[12px] font-bold text-t-secondary transition hover:text-t-primary">View full leaderboard</Link></PremiumCard>;
 }
