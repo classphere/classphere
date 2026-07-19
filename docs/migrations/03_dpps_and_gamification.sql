@@ -113,3 +113,15 @@ CREATE POLICY "dpp_questions_select" ON public.dpp_questions FOR SELECT TO authe
 CREATE POLICY "student_dpps_select" ON public.student_dpps FOR SELECT TO authenticated USING (student_id = auth.uid());
 CREATE POLICY "student_stats_select" ON public.student_stats FOR SELECT TO authenticated USING (true);
 CREATE POLICY "leaderboards_select" ON public.leaderboards FOR SELECT TO authenticated USING (true);
+
+-- API operations are performed through the service-role client after the
+-- controller has verified tenant and ownership access. Explicit grants are
+-- required in addition to the RLS policies above.
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.dpps TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.dpp_questions TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.student_dpps TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.test_batch_assignments TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.student_stats TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.leaderboards TO service_role;
+GRANT SELECT ON TABLE public.dpps, public.dpp_questions, public.student_dpps,
+  public.test_batch_assignments, public.student_stats, public.leaderboards TO authenticated;
