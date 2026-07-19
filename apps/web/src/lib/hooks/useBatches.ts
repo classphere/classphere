@@ -26,8 +26,6 @@ export interface Batch {
 export interface CreateBatchPayload {
   name: string;
   exam: string;
-  max_students?: number | null;
-  max_teachers?: number | null;
 }
 
 // ─── Helper ───────────────────────────────────────────────────────────────────
@@ -95,14 +93,14 @@ export function useBatches() {
   const createBatch = useCallback(
     async (
       payload: CreateBatchPayload
-    ): Promise<{ success: boolean; message: string }> => {
+    ): Promise<{ success: boolean; message: string; batch?: Batch }> => {
       try {
-        await apiFetch("/api/v1/batches", {
+        const response = await apiFetch<{ success: boolean; data: { batch: Batch } }>("/api/v1/batches", {
           method: "POST",
           body: JSON.stringify(payload),
         });
         await fetchBatches(); // refresh list
-        return { success: true, message: "Batch created successfully" };
+        return { success: true, message: "Batch created successfully", batch: response.data.batch };
       } catch (err: any) {
         return { success: false, message: err.message };
       }

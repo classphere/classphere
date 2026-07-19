@@ -22,7 +22,7 @@ const checkBatchTenant = async (batchId: string, reqUser: any): Promise<boolean>
  */
 export const createInstitute = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { name, adminEmail, adminUsername, trialMonths, logoUrl } = req.body;
+    const { name, adminEmail, adminUsername, trialMonths, logoUrl, enabledExamCodes } = req.body;
 
     if (!name || !adminEmail || !adminUsername) {
       res.status(400).json({
@@ -32,7 +32,7 @@ export const createInstitute = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    const result = await provisionInstitute({ name, adminEmail, adminUsername, trialMonths, logoUrl });
+    const result = await provisionInstitute({ name, adminEmail, adminUsername, trialMonths, logoUrl, enabledExamCodes });
     const { tempPassword, ...institute } = result;
 
     await logAdminAction(req.user?.id, "Institute provisioned", `Provisioned ${institute.name} with a trial entitlement.`, "institutes", "success");
@@ -57,24 +57,106 @@ export const createInstitute = async (req: Request, res: Response): Promise<void
 export const getMyInstitute = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user!.id;
-    const { data: institute, error } = await supabaseDB
+    let instituteQuery = supabaseDB
       .from("institutes")
-      .select("id, name, plan, logo_url, primary_color, subdomain_slug, is_active, created_at")
-      .eq("owner_id", userId)
-      .eq("is_active", true)
-      .maybeSingle();
+      .select("id, name, plan, logo_url, primary_color, subdomain_slug, enabled_exam_codes, is_active, created_at")
+      .eq("is_active", true);
+    instituteQuery = req.user!.institute_id
+      ? instituteQuery.eq("id", req.user!.institute_id)
+      : instituteQuery.eq("owner_id", userId);
+    const { data: institute, error } = await instituteQuery.maybeSingle();
 
     if (error) { res.status(500).json({ success: false, message: error.message }); return; }
     if (!institute) { res.status(404).json({ success: false, message: "No institute found" }); return; }
 
-    // Fetch recent students for this institute
-    const { data: recentStudents } = await supabaseDB
+    // A performer must have enough evidence to be compared fairly. We use
+    // submitted batch attempts only and require at least three tests.
+    const { data: instituteStudents } = await supabaseDB
       .from("users")
       .select("id, name, email, phone, role, created_at")
       .eq("institute_id", institute.id)
-      .eq("role", "student")
-      .order("created_at", { ascending: false })
-      .limit(5);
+      .eq("role", "student");
+
+    const { data: instituteBatches } = await supabaseDB
+      .from("batches")
+      .select("id")
+      .eq("institute_id", institute.id)
+      .eq("is_active", true);
+
+    const batchIds = (instituteBatches ?? []).map((batch: any) => batch.id);
+    const studentById = new Map((instituteStudents ?? []).map((student: any) => [student.id, student]));
+    const studentIds = [...studentById.keys()];
+    const { data: submittedAttempts } = batchIds.length > 0 && studentIds.length > 0
+      ? await supabaseDB
+        .from("attempts")
+        .select("student_id, paper_id, score, max_score, submitted_at")
+        .eq("status", "submitted")
+        .in("batch_id", batchIds)
+        .in("student_id", studentIds)
+        .not("max_score", "is", null)
+      : { data: [] };
+
+    const attemptsByPaper = new Map<string, number[]>();
+    const attemptsByStudent = new Map<string, Array<{ paper_id: string; percentage: number; submitted_at: string | null }>>();
+    for (const attempt of submittedAttempts ?? []) {
+      const maxScore = Number((attempt as any).max_score);
+      if (!Number.isFinite(maxScore) || maxScore <= 0) continue;
+      const percentage = Math.max(0, Math.min(100, (Number((attempt as any).score ?? 0) / maxScore) * 100));
+      const paperId = String((attempt as any).paper_id ?? "");
+      if (!paperId) continue;
+      attemptsByPaper.set(paperId, [...(attemptsByPaper.get(paperId) ?? []), percentage]);
+      const studentId = String((attempt as any).student_id);
+      attemptsByStudent.set(studentId, [...(attemptsByStudent.get(studentId) ?? []), {
+        paper_id: paperId,
+        percentage,
+        submitted_at: (attempt as any).submitted_at ?? null,
+      }]);
+    }
+
+    const topPerformers = [...attemptsByStudent.entries()]
+      .filter(([, attempts]) => attempts.length >= 3)
+      .map(([studentId, attempts]) => {
+        const ordered = [...attempts].sort((a, b) =>
+          new Date(b.submitted_at ?? 0).getTime() - new Date(a.submitted_at ?? 0).getTime()
+        ).slice(0, 8);
+        const weighted = ordered.reduce((sum, attempt, index) => {
+          const weight = 1 + ((ordered.length - index - 1) * 0.12);
+          const peerScores = [...(attemptsByPaper.get(attempt.paper_id) ?? [])].sort((a, b) => b - a);
+          const higherOrEqual = peerScores.filter((score) => score >= attempt.percentage).length;
+          const percentile = peerScores.length > 1
+            ? ((peerScores.length - higherOrEqual) / (peerScores.length - 1)) * 100
+            : attempt.percentage;
+          return {
+            weight: sum.weight + weight,
+            percentage: sum.percentage + (attempt.percentage * weight),
+            percentile: sum.percentile + (percentile * weight),
+          };
+        }, { weight: 0, percentage: 0, percentile: 0 });
+        const averagePercentage = weighted.percentage / weighted.weight;
+        const averagePercentile = weighted.percentile / weighted.weight;
+        const variance = ordered.reduce((sum, attempt) => sum + Math.pow(attempt.percentage - averagePercentage, 2), 0) / ordered.length;
+        const consistency = Math.max(0, Math.min(100, 100 - Math.sqrt(variance) * 2));
+        const recentAverage = ordered.slice(0, Math.min(3, ordered.length)).reduce((sum, attempt) => sum + attempt.percentage, 0) / Math.min(3, ordered.length);
+        const previous = ordered.slice(3);
+        const previousAverage = previous.length
+          ? previous.reduce((sum, attempt) => sum + attempt.percentage, 0) / previous.length
+          : recentAverage;
+        const trend = Math.max(-15, Math.min(15, recentAverage - previousAverage));
+        const performanceScore = (averagePercentile * 0.60) + (averagePercentage * 0.22) + (consistency * 0.12) + ((trend + 15) / 30 * 100 * 0.06);
+        const student = studentById.get(studentId);
+        return {
+          id: studentId,
+          name: student?.name ?? "Student",
+          email: student?.email ?? null,
+          tests_taken: attempts.length,
+          average_percentage: Math.round(averagePercentage),
+          consistency: Math.round(consistency),
+          trend: Math.round(trend),
+          performance_score: Math.round(performanceScore),
+        };
+      })
+      .sort((a, b) => b.performance_score - a.performance_score || b.tests_taken - a.tests_taken)
+      .slice(0, 5);
 
     // Map DB schema to UI expectations
     const mappedInstitute = {
@@ -84,7 +166,7 @@ export const getMyInstitute = async (req: Request, res: Response): Promise<void>
       max_students: 1000 // default dummy since no column exists
     };
 
-    res.status(200).json({ success: true, data: { institute: mappedInstitute, recentStudents: recentStudents || [] } });
+    res.status(200).json({ success: true, data: { institute: mappedInstitute, topPerformers } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -100,8 +182,17 @@ export const updateInstitute = async (req: Request, res: Response): Promise<void
     const userId = req.user!.id;
     const isSuperAdmin = req.user!.role === "super_admin";
 
+    if (isSuperAdmin && req.body.enabled_exam_codes !== undefined) {
+      const codes = req.body.enabled_exam_codes;
+      const validCodes = ["jee-main", "jee-advanced", "neet-ug"];
+      if (!Array.isArray(codes) || codes.length === 0 || codes.some((code) => !validCodes.includes(code))) {
+        res.status(400).json({ success: false, message: "enabled_exam_codes must contain one or more supported exam codes." });
+        return;
+      }
+    }
+
     const allowed = isSuperAdmin
-      ? ["name", "logo_url", "primary_color", "plan", "is_active"]
+      ? ["name", "logo_url", "primary_color", "plan", "is_active", "enabled_exam_codes"]
       : ["name", "logo_url", "primary_color"];
 
     const updates: Record<string, any> = {};
@@ -356,7 +447,7 @@ export const getInstituteReports = async (req: Request, res: Response): Promise<
 export const createBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user?.id;
-    const { name, exam, max_students, max_teachers } = req.body;
+    const { name, exam } = req.body;
 
     if (!name || !exam) {
       res.status(400).json({ success: false, message: "name and exam are required" });
@@ -364,15 +455,28 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
     }
 
     // ── 1. Find the institute owned by this admin ────────────────────────────
-    const { data: institute, error: instErr } = await supabaseDB
+    let instituteQuery = supabaseDB
       .from("institutes")
-      .select("id")
-      .eq("owner_id", userId)
-      .eq("is_active", true)
-      .single();
+      .select("id, enabled_exam_codes")
+      .eq("is_active", true);
+    instituteQuery = req.user?.institute_id
+      ? instituteQuery.eq("id", req.user.institute_id)
+      : instituteQuery.eq("owner_id", userId);
+    const { data: institute, error: instErr } = await instituteQuery.maybeSingle();
 
-    if (instErr || !institute) {
+    if (instErr) {
+      console.error("[createBatch] Institute lookup failed:", instErr);
+      res.status(500).json({ success: false, message: "Unable to load your institute configuration. Please contact support." });
+      return;
+    }
+    if (!institute) {
       res.status(404).json({ success: false, message: "No active institute found for this admin" });
+      return;
+    }
+
+    const enabledExamCodes = institute.enabled_exam_codes ?? ["jee-main", "jee-advanced", "neet-ug"];
+    if (!enabledExamCodes.includes(exam.trim())) {
+      res.status(403).json({ success: false, message: "This examination is not enabled for your institute." });
       return;
     }
 
@@ -383,8 +487,6 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
         institute_id: institute.id,
         name: name.trim(),
         exam: exam.trim(),
-        max_students: max_students ? Number(max_students) : null,
-        max_teachers: max_teachers ? Number(max_teachers) : null,
         is_active: true,
       })
       .select()

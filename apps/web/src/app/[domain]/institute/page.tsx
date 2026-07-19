@@ -26,24 +26,10 @@ import { useAuth } from "@/lib/auth-context";
 import { useBatches } from "@/lib/hooks/useBatches";
 import { apiClient } from "@/lib/api.client";
 
-// Exam options — codes match the `exams` table in Supabase
-const EXAM_OPTIONS = {
-  "jee-neet": [
-    { id: "jee-main",      label: "JEE Main" },
-    { id: "jee-advanced",  label: "JEE Advanced" },
-    { id: "neet-ug",       label: "NEET UG" },
-  ],
-  "ssc": [
-    { id: "ssc-cgl",  label: "SSC CGL" },
-    { id: "ssc-chsl", label: "SSC CHSL" },
-    { id: "ssc-mts",  label: "SSC MTS" },
-  ],
-  "hybrid": [
-    { id: "jee-main",     label: "JEE Main" },
-    { id: "jee-advanced", label: "JEE Advanced" },
-    { id: "neet-ug",      label: "NEET UG" },
-    { id: "ssc-cgl",      label: "SSC CGL" },
-  ],
+const EXAM_LABELS: Record<string, string> = {
+  "jee-main": "JEE Main",
+  "jee-advanced": "JEE Advanced",
+  "neet-ug": "NEET UG",
 };
 
 export default function InstituteDashboardPage() {
@@ -52,8 +38,6 @@ export default function InstituteDashboardPage() {
   const [newBatchData, setNewBatchData] = useState({
     name: "",
     exam: "",
-    max_students: "",
-    max_teachers: "",
   });
   const [batchSubmitting, setBatchSubmitting] = useState(false);
   const [batchFeedback, setBatchFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
@@ -63,7 +47,7 @@ export default function InstituteDashboardPage() {
 
   // ── Real institute data ──────────────────────────────────────────────────
   const [institute, setInstitute] = useState<any>(null);
-  const [recentStudents, setRecentStudents] = useState<any[]>([]);
+  const [topPerformers, setTopPerformers] = useState<any[]>([]);
   const [subscription, setSubscription] = useState<{ status?: string; current_period_end?: string | null } | null>(null);
   const [subscriptionLoading, setSubscriptionLoading] = useState(true);
   const [realStudentCount, setRealStudentCount] = useState(0);
@@ -78,7 +62,7 @@ export default function InstituteDashboardPage() {
         ]);
         if (instituteResponse.status === "fulfilled" && instituteResponse.value.success) {
            setInstitute(instituteResponse.value.data.institute);
-           setRecentStudents(instituteResponse.value.data.recentStudents || []);
+           setTopPerformers(instituteResponse.value.data.topPerformers || []);
         }
         if (subscriptionResponse.status === "fulfilled" && subscriptionResponse.value.success) {
           setSubscription(subscriptionResponse.value.data);
@@ -96,7 +80,7 @@ export default function InstituteDashboardPage() {
   const instituteOverview = {
     instituteName: institute?.name ?? user?.name ?? "Institute",
     name: user?.name ?? "Admin",
-    instituteType: institute?.type ?? "hybrid",
+    instituteType: institute?.type ?? "exam preparation",
     studentsCount: totalStudentsCount,
     batchesCount: activeBatchesCount,
   };
@@ -108,12 +92,12 @@ export default function InstituteDashboardPage() {
     ? `Ends ${new Date(subscription.current_period_end).toLocaleDateString()}`
     : undefined;
 
-  const availableExams =
-    EXAM_OPTIONS[instituteOverview.instituteType as keyof typeof EXAM_OPTIONS] ||
-    EXAM_OPTIONS["hybrid"];
+  const availableExams: { id: string; label: string }[] = (institute?.enabled_exam_codes ?? ["jee-main", "jee-advanced", "neet-ug"])
+    .map((id: string) => ({ id, label: EXAM_LABELS[id] }))
+    .filter((exam: { id: string; label?: string }): exam is { id: string; label: string } => Boolean(exam.label));
 
   const handleOpenBatchModal = () => {
-    setNewBatchData({ name: "", exam: "", max_students: "", max_teachers: "" });
+    setNewBatchData({ name: "", exam: "" });
     setBatchFeedback(null);
     setIsBatchModalOpen(true);
   };
@@ -125,15 +109,13 @@ export default function InstituteDashboardPage() {
     const result = await createBatch({
       name: newBatchData.name,
       exam: newBatchData.exam,
-      max_students: newBatchData.max_students ? Number(newBatchData.max_students) : null,
-      max_teachers: newBatchData.max_teachers ? Number(newBatchData.max_teachers) : null,
     });
     setBatchSubmitting(false);
     if (result.success) {
       setBatchFeedback({ ok: true, msg: "Batch created!" });
       setTimeout(() => {
         setIsBatchModalOpen(false);
-        router.push("/institute/batches");
+        router.push(`/institute/students?batch=${result.batch?.id}`);
       }, 800);
     } else {
       setBatchFeedback({ ok: false, msg: result.message });
@@ -199,7 +181,7 @@ export default function InstituteDashboardPage() {
 
           {/* Recent Batches Section */}
           <SectionCard
-            title="Recent Batches"
+            title="Batches"
             className="w-full min-h-[580px] min-w-0"
             headerRight={
               <Link 
@@ -225,17 +207,11 @@ export default function InstituteDashboardPage() {
                   <p className="text-[14px] font-sans text-t-secondary">No recent batches.</p>
                 </div>
               ) : (
-                batches.slice(0, 5).map((batch, index) => {
-                  const isHoverItem = index === 1;
-
+                batches.slice(0, 5).map((batch) => {
                   return (
                     <div
                       key={batch.id}
-                      className={`group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 rounded-[16px] transition-all w-full h-[76px] sm:h-[88px] overflow-hidden ${
-                        isHoverItem
-                          ? "bg-b-surface1 dark:bg-b-surface1/40 shadow-[inset_0px_0px_0px_3px_#FFFFFF] dark:shadow-[inset_0px_0px_0px_3px_rgba(255,255,255,0.05)] border border-s-stroke2/20"
-                          : "bg-transparent border border-transparent hover:border-s-stroke2 dark:hover:border-s-stroke2/30 hover:bg-b-surface1 dark:hover:bg-b-surface1/40"
-                      }`}
+                      className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 rounded-[16px] border border-transparent transition-all w-full h-[76px] sm:h-[88px] overflow-hidden hover:border-s-stroke2/50 hover:bg-b-surface2/70"
                     >
                       {/* Left */}
                       <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
@@ -285,13 +261,13 @@ export default function InstituteDashboardPage() {
 
             {/* List Rows */}
             <div className="flex flex-col gap-2 w-full min-w-0">
-              {recentStudents.length === 0 ? (
+              {topPerformers.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-[120px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-[16px]">
                   <RiTeamLine size={24} className="text-t-secondary mb-2" />
-                  <span className="text-sm text-t-secondary">No students added yet.</span>
+                  <span className="text-sm text-t-secondary">Top performers appear after students complete at least 3 tests.</span>
                 </div>
               ) : (
-                recentStudents.slice(0, 5).map((student: any, index: number) => {
+                topPerformers.map((student: any) => {
                   return (
                     <div
                       key={student.id}
@@ -306,17 +282,19 @@ export default function InstituteDashboardPage() {
                             {student.name}
                           </span>
                           <div className="flex items-center gap-2 mt-0.5 truncate">
-                            <span className="font-sans text-[11px] sm:text-[12px] font-normal text-t-secondary truncate">{student.email}</span>
+                            <span className="font-sans text-[11px] sm:text-[12px] font-normal text-t-secondary truncate">
+                              {student.average_percentage}% average · {student.tests_taken} tests · {student.consistency}% consistency
+                            </span>
                           </div>
                         </div>
                       </div>
 
                       <div className="flex flex-row items-center gap-2 sm:gap-3 shrink-0">
                         <span className="hidden sm:inline px-2 py-0.5 sm:px-3 sm:py-[2px] bg-[rgba(123,123,123,0.05)] border-[1.5px] border-s-stroke2/40 text-t-secondary rounded-[10px] text-[10px] sm:text-[12px] font-normal tracking-[0.004em] leading-[160%]">
-                          Added {new Date(student.created_at).toLocaleDateString()}
+                          {student.trend > 2 ? `↑ ${student.trend}% improving` : student.trend < -2 ? `↓ ${Math.abs(student.trend)}% recent dip` : "Stable performance"}
                         </span>
                         <span className="sm:hidden text-t-secondary text-[11px]">
-                          {new Date(student.created_at).toLocaleDateString(undefined, {month: 'short', day: 'numeric'})}
+                          {student.average_percentage}%
                         </span>
                       </div>
                     </div>
@@ -336,7 +314,7 @@ export default function InstituteDashboardPage() {
         open={isBatchModalOpen}
         onClose={() => setIsBatchModalOpen(false)}
         title="Create New Batch"
-        subtitle={`Institute Type: ${instituteOverview.instituteType.toUpperCase()}`}
+        subtitle="Create a batch, then add students and assign faculty when ready."
       >
         <div className="flex flex-col gap-5">
           {/* Batch Name */}
@@ -368,34 +346,8 @@ export default function InstituteDashboardPage() {
               <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
             </div>
             <p className="text-xs text-t-secondary mt-2">
-              Showing exams based on your institute type ({instituteOverview.instituteType}).
+              Only examinations enabled by your superadmin are available.
             </p>
-          </div>
-
-          {/* Students + Faculty row */}
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Total Students</label>
-              <input
-                type="number"
-                min="1"
-                className="input-field w-full"
-                placeholder="e.g., 60"
-                value={newBatchData.max_students}
-                onChange={(e) => setNewBatchData({ ...newBatchData, max_students: e.target.value })}
-              />
-            </div>
-            <div>
-              <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Total Faculty</label>
-              <input
-                type="number"
-                min="1"
-                className="input-field w-full"
-                placeholder="e.g., 4"
-                value={newBatchData.max_teachers}
-                onChange={(e) => setNewBatchData({ ...newBatchData, max_teachers: e.target.value })}
-              />
-            </div>
           </div>
 
           {/* Feedback */}

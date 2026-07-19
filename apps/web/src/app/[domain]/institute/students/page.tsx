@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   RiSearchLine,
   RiNotification3Line,
@@ -36,6 +37,7 @@ function formatDob(dob: string | null): string {
 }
 
 export default function StudentsPage() {
+  const searchParams = useSearchParams();
   const { students, total, loading, error, refetch, importStudents } = useStudents();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBatchFilter, setSelectedBatchFilter] = useState("all");
@@ -44,12 +46,15 @@ export default function StudentsPage() {
   const [isImportOpen, setIsImportOpen] = useState(false);
   const [dragOver, setDragOver] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [importBatchId, setImportBatchId] = useState("");
   const [importing, setImporting] = useState(false);
   const [importResult, setImportResult] = useState<{ success: boolean; message: string; result?: ImportResult } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Add Student modal state
   const { batches } = useBatches();
+  const onboardingBatchId = searchParams.get("batch") ?? "";
+  const onboardingBatch = batches.find((batch) => batch.id === onboardingBatchId);
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [adding, setAdding] = useState(false);
   const [addForm, setAddForm] = useState({ name: "", phone: "", dob: "", batch_id: "" });
@@ -69,6 +74,7 @@ export default function StudentsPage() {
   const openImportModal = () => {
     setSelectedFile(null);
     setImportResult(null);
+    setImportBatchId(onboardingBatchId);
     setIsImportOpen(true);
   };
 
@@ -88,9 +94,13 @@ export default function StudentsPage() {
 
   const handleImport = async () => {
     if (!selectedFile) return;
+    if (!importBatchId) {
+      setImportResult({ success: false, message: "Choose the batch that should receive these students." });
+      return;
+    }
     setImporting(true);
     setImportResult(null);
-    const result = await importStudents(selectedFile);
+    const result = await importStudents(selectedFile, importBatchId);
     setImportResult(result);
     setImporting(false);
     if (result.success) {
@@ -143,13 +153,13 @@ export default function StudentsPage() {
             Add Student
           </button>
 
-          {/* Import CSV Button */}
+          {/* Bulk student onboarding */}
           <button
             onClick={openImportModal}
             className="flex flex-row justify-center items-center gap-2 px-6 h-12 w-full sm:w-auto bg-gradient-to-b from-[#2C2C2C] to-[#282828] dark:from-t-primary dark:to-t-primary/90 text-t-light dark:text-b-surface1 text-sm font-sans font-semibold rounded-[10px] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0"
           >
             <RiUploadCloud2Line size={17} />
-            Import CSV
+            Add Students from File
           </button>
 
 
@@ -162,6 +172,13 @@ export default function StudentsPage() {
           </button>
         </div>
       </div>
+
+      {onboardingBatch && (
+        <div className="flex items-center gap-3 rounded-[12px] border border-primary-01/20 bg-primary-01/5 px-4 py-3 text-sm text-t-secondary">
+          <RiCheckLine size={18} className="text-primary-01 shrink-0" />
+          <span>Adding students to <strong className="text-t-primary">{onboardingBatch.name}</strong>. Upload a sheet with <strong className="text-t-primary">Name, Phone, and DOB</strong>; the batch is selected for you.</span>
+        </div>
+      )}
 
       {/* Section Header + Stats */}
       <div className="flex flex-row items-center justify-between mt-2 flex-wrap gap-4">
@@ -235,14 +252,14 @@ export default function StudentsPage() {
                 ? "No students match your search."
                 : selectedBatchFilter !== "all"
                 ? `No students found in ${selectedBatchFilter}.`
-                : "No students yet. Import a CSV to get started!"}
+                : "No students yet. Add students from a file to get started!"}
             </p>
             {!searchQuery && selectedBatchFilter === "all" && (
               <button
                 onClick={openImportModal}
                 className="mt-2 flex items-center gap-1.5 px-5 py-2.5 rounded-[10px] bg-b-surface2 border border-s-stroke2/50 text-sm font-semibold text-t-secondary hover:text-t-primary transition-all"
               >
-                <RiUploadCloud2Line size={16} /> Import CSV
+                <RiUploadCloud2Line size={16} /> Add Students from File
               </button>
             )}
             {!searchQuery && selectedBatchFilter !== "all" && (
@@ -277,7 +294,7 @@ export default function StudentsPage() {
               return (
                 <div
                   key={s.id}
-                  className="group/item relative flex flex-row items-center p-3 sm:p-4 lg:px-6 gap-3 sm:gap-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+                  className="group/item relative flex flex-row items-center p-3 sm:p-4 lg:px-6 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
                 >
                   {/* Name */}
                   <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">
@@ -338,10 +355,35 @@ export default function StudentsPage() {
       <Modal
         open={isImportOpen}
         onClose={() => setIsImportOpen(false)}
-        title="Import Students via CSV"
-        subtitle="Upload a CSV or Excel file with student data"
+        title="Import Students"
+        subtitle="Choose the target batch, then upload the student list."
       >
         <div className="flex flex-col gap-5">
+          <div>
+            <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Add students to</label>
+            <div className="relative">
+              <select
+                className="input-field w-full appearance-none pr-10"
+                value={importBatchId}
+                onChange={(event) => {
+                  setImportBatchId(event.target.value);
+                  setImportResult(null);
+                }}
+                disabled={Boolean(onboardingBatch)}
+              >
+                <option value="" disabled>{batches.length ? "Choose a batch..." : "Create a batch first"}</option>
+                {batches.map((batch) => (
+                  <option key={batch.id} value={batch.id}>{batch.name}</option>
+                ))}
+              </select>
+              <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-t-secondary" />
+            </div>
+            {onboardingBatch ? (
+              <p className="mt-2 text-xs text-primary-01">This batch was selected when you created it.</p>
+            ) : (
+              <p className="mt-2 text-xs text-t-secondary">Every student in this file will be enrolled in the selected batch.</p>
+            )}
+          </div>
 
           {/* Format guide */}
           <div className="rounded-[10px] bg-b-surface1 border border-s-stroke2/50 p-4">
@@ -351,7 +393,6 @@ export default function StudentsPage() {
                 { col: "Name", desc: "Full student name" },
                 { col: "Phone", desc: "10-digit mobile number" },
                 { col: "DOB", desc: "Format: DDMMYYYY" },
-                { col: "Batch", desc: "Must match an existing batch name" },
               ].map(({ col, desc }) => (
                 <div key={col} className="flex items-center gap-2">
                   <span className="px-2 py-0.5 rounded-[6px] bg-primary-01/8 border border-primary-01/15 text-[11px] font-bold text-primary-01">{col}</span>
@@ -456,7 +497,7 @@ export default function StudentsPage() {
             <button
               className="btn btn-primary px-6 shadow-md flex items-center gap-2"
               onClick={handleImport}
-              disabled={!selectedFile || importing}
+              disabled={!selectedFile || !importBatchId || importing}
             >
               {importing && <RiLoaderLine size={16} className="animate-spin" />}
               {importing ? "Importing..." : "Import Students"}

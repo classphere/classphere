@@ -23,6 +23,7 @@ export interface Institute {
   created_at: string;
   updated_at: string;
   student_count: number;
+  enabled_exam_codes?: string[] | null;
 }
 
 export interface CreateInstitutePayload {
@@ -31,6 +32,7 @@ export interface CreateInstitutePayload {
   adminUsername: string;
   trialMonths?: number;
   logoUrl?: string;
+  enabledExamCodes: string[];
 }
 
 // ─── Hook ─────────────────────────────────────────────────────────────────────

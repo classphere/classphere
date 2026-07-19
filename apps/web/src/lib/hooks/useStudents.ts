@@ -78,7 +78,7 @@ export function useStudents() {
   }, [fetchStudents]);
 
   const importStudents = useCallback(
-    async (file: File): Promise<{ success: boolean; message: string; result?: ImportResult }> => {
+    async (file: File, batchId?: string): Promise<{ success: boolean; message: string; result?: ImportResult }> => {
       try {
         const token = await getToken();
         if (!token) throw new Error("Not authenticated");
@@ -86,6 +86,7 @@ export function useStudents() {
         const sessionToken = getSessionToken();
         const formData = new FormData();
         formData.append("file", file);
+        if (batchId) formData.append("batch_id", batchId);
 
         const res = await fetch(`${API_URL}/api/v1/students/import`, {
           method: "POST",

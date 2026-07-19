@@ -233,7 +233,7 @@ export default function InstituteSupportPage() {
               return (
                 <div 
                   key={ticket.id}
-                  className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+                  className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
                 >
                   {/* Left: Icon & Details */}
                   <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">

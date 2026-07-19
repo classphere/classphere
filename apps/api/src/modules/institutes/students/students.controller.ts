@@ -110,7 +110,9 @@ export const listStudents = async (req: Request, res: Response): Promise<void> =
  * POST /api/v1/students/import
  * [institute_admin] — Upload a CSV or XLSX file with student data.
  *
- * Expected columns (case-insensitive): Name, Phone, DOB, Batch
+ * Expected columns (case-insensitive): Name, Phone, DOB, Batch.
+ * When batch_id is included in multipart data, Batch is optional and every
+ * row is enrolled in that selected batch.
  * DOB format: DDMMYYYY (or DD/MM/YYYY — normalised automatically)
  *
  * Duplicate handling:
@@ -163,6 +165,12 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
       batchByName[b.name.toLowerCase().trim()] = b.id;
     }
 
+    const requestedBatchId = typeof req.body?.batch_id === "string" ? req.body.batch_id.trim() : "";
+    if (requestedBatchId && !(batches ?? []).some((batch) => batch.id === requestedBatchId)) {
+      res.status(400).json({ success: false, message: "The selected batch does not belong to your institute." });
+      return;
+    }
+
     // Fetch institute slug for shadow email
     const { data: institute } = await supabaseDB.from("institutes").select("subdomain_slug").eq("id", instituteId).single();
     const slug = institute?.subdomain_slug || "unknown";
@@ -179,12 +187,12 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
       const dob = normaliseDob(row.dob);
       const batchKey = row.batch_name?.trim().toLowerCase();
 
-      if (!name || !phone || !dob || !batchKey) {
+      if (!name || !phone || !dob || (!requestedBatchId && !batchKey)) {
         result.errors.push(`${rowLabel}: Missing required field(s). Got: name="${row.name}" phone="${row.phone}" dob="${row.dob}" batch="${row.batch_name}"`);
         continue;
       }
 
-      const batchId = batchByName[batchKey];
+      const batchId = requestedBatchId || batchByName[batchKey];
       if (!batchId) {
         result.errors.push(`${rowLabel}: Batch "${row.batch_name}" not found in your institute. Create it first.`);
         continue;
@@ -238,7 +246,7 @@ export const importStudents = async (req: Request, res: Response): Promise<void>
 
       if (createError) {
         if (createError.message.includes("already been registered")) {
-           result.errors.push(`${rowLabel}: A student with this phone and DOB already exists.`);
+           result.skipped++;
         } else {
            result.errors.push(`${rowLabel}: Failed to create auth user for "${name}": ${createError.message}`);
         }

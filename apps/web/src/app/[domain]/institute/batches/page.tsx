@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   RiSearchLine,
   RiTeamLine,
@@ -16,15 +17,14 @@ import {
 } from "@remixicon/react";
 import { useBatches } from "@/lib/hooks/useBatches";
 import { Modal } from "@/components/shared/Modal";
+import { useAuth } from "@/lib/auth-context";
+import { apiClient } from "@/lib/api.client";
 
 // Exam codes must match the `exams` table in Supabase
 const EXAM_OPTIONS = [
   { id: "jee-main",     label: "JEE Main" },
   { id: "jee-advanced", label: "JEE Advanced" },
   { id: "neet-ug",      label: "NEET UG" },
-  { id: "ssc-cgl",      label: "SSC CGL" },
-  { id: "ssc-chsl",     label: "SSC CHSL" },
-  { id: "ssc-mts",      label: "SSC MTS" },
 ];
 
 const COLORS = [
@@ -35,21 +35,35 @@ const COLORS = [
 ];
 
 export default function BatchesPage() {
+  const router = useRouter();
+  const { session } = useAuth();
   const { batches, loading, error, createBatch, refetch } = useBatches();
   const [searchQuery, setSearchQuery] = useState("");
+  const [enabledExamCodes, setEnabledExamCodes] = useState<string[]>([]);
 
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [form, setForm] = useState({ name: "", exam: "", max_students: "", max_teachers: "" });
+  const [form, setForm] = useState({ name: "", exam: "" });
   const [submitting, setSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
 
   const filtered = batches.filter((b) =>
     b.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  const availableExams = EXAM_OPTIONS.filter((exam) => enabledExamCodes.includes(exam.id));
+
+  useEffect(() => {
+    if (!session?.access_token) return;
+    apiClient.get<{ success: boolean; data: { institute: { enabled_exam_codes?: string[] } } }>(
+      "/api/v1/institutes/me",
+      session.access_token,
+    ).then((response) => {
+      if (response.success) setEnabledExamCodes(response.data.institute.enabled_exam_codes ?? []);
+    }).catch(() => setEnabledExamCodes([]));
+  }, [session?.access_token]);
 
   const openModal = () => {
-    setForm({ name: "", exam: "", max_students: "", max_teachers: "" });
+    setForm({ name: "", exam: "" });
     setFeedback(null);
     setIsModalOpen(true);
   };
@@ -61,13 +75,10 @@ export default function BatchesPage() {
     const result = await createBatch({
       name: form.name,
       exam: form.exam,
-      max_students: form.max_students ? Number(form.max_students) : null,
-      max_teachers: form.max_teachers ? Number(form.max_teachers) : null,
     });
     setSubmitting(false);
     if (result.success) {
-      setFeedback({ ok: true, msg: "Batch created successfully!" });
-      setTimeout(() => setIsModalOpen(false), 900);
+      router.push(`/institute/students?batch=${result.batch?.id}`);
     } else {
       setFeedback({ ok: false, msg: result.message });
     }
@@ -110,8 +121,8 @@ export default function BatchesPage() {
         <h2 className="font-sans font-semibold text-[20px] leading-[145%] text-t-primary dark:text-t-primary">
           All Batches
         </h2>
-        <p className="text-xs text-t-secondary dark:text-t-tertiary">
-          Configure class cohorts, monitor student enrollment sizes, and assign lecturing faculty.
+          <p className="text-xs text-t-secondary dark:text-t-tertiary">
+          Create cohorts, add students from Excel, and assign faculty when you are ready.
         </p>
       </div>
 
@@ -164,7 +175,7 @@ export default function BatchesPage() {
           return (
             <div
               key={batch.id}
-              className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+              className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
             >
 
               {/* Left */}
@@ -267,7 +278,7 @@ export default function BatchesPage() {
                 onChange={(e) => setForm({ ...form, exam: e.target.value })}
               >
                 <option value="" disabled>Select Exam...</option>
-                {EXAM_OPTIONS.map((e) => (
+                {availableExams.map((e) => (
                   <option key={e.id} value={e.id}>{e.label}</option>
                 ))}
               </select>
@@ -275,31 +286,9 @@ export default function BatchesPage() {
             </div>
           </div>
 
-          {/* Students + Faculty */}
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Total Students</label>
-              <input
-                type="number"
-                min="1"
-                className="input-field w-full"
-                placeholder="e.g., 60"
-                value={form.max_students}
-                onChange={(e) => setForm({ ...form, max_students: e.target.value })}
-              />
-            </div>
-            <div>
-              <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Total Faculty</label>
-              <input
-                type="number"
-                min="1"
-                className="input-field w-full"
-                placeholder="e.g., 4"
-                value={form.max_teachers}
-                onChange={(e) => setForm({ ...form, max_teachers: e.target.value })}
-              />
-            </div>
-          </div>
+          <p className="rounded-[10px] border border-s-stroke2/50 bg-b-surface2/60 px-3 py-2.5 text-xs text-t-secondary">
+            After creating the batch, you will add students from an Excel or CSV file. Faculty can be assigned later.
+          </p>
 
           {/* Feedback */}
           {feedback && (

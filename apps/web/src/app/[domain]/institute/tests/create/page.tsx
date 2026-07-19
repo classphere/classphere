@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { 
   RiArrowLeftLine,
+  RiArrowLeftSLine,
+  RiArrowRightSLine,
   RiCalendarEventLine,
   RiTeamLine,
   RiFileList3Line,
@@ -34,6 +36,12 @@ export default function ScheduleTestPage() {
   const [selectedBatches, setSelectedBatches] = useState<string[]>([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isDateTimeOpen, setIsDateTimeOpen] = useState(false);
+  const [calendarMonth, setCalendarMonth] = useState(() => {
+    const today = new Date();
+    return new Date(today.getFullYear(), today.getMonth(), 1);
+  });
+  const dateTimeRef = useRef<HTMLDivElement>(null);
 
   // Form & File upload states
   const [testName, setTestName] = useState("");
@@ -49,9 +57,8 @@ export default function ScheduleTestPage() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
-      }
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) setIsDropdownOpen(false);
+      if (dateTimeRef.current && !dateTimeRef.current.contains(event.target as Node)) setIsDateTimeOpen(false);
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -68,6 +75,38 @@ export default function ScheduleTestPage() {
   const removeBatch = (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
     setSelectedBatches(selectedBatches.filter(bId => bId !== id));
+  };
+
+  const toLocalDateTime = (date: Date) => {
+    const pad = (value: number) => String(value).padStart(2, "0");
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+  };
+
+  const selectedStart = testStart ? new Date(testStart) : null;
+  const calendarDays = Array.from({ length: 42 }, (_, index) => {
+    const firstDay = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth(), 1).getDay();
+    return new Date(calendarMonth.getFullYear(), calendarMonth.getMonth(), index - firstDay + 1);
+  });
+  const monthLabel = calendarMonth.toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+  const dateLabel = selectedStart
+    ? selectedStart.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })
+    : "Choose date";
+  const timeLabel = selectedStart
+    ? selectedStart.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", hour12: true })
+    : "Choose time";
+
+  const chooseDate = (date: Date) => {
+    const current = selectedStart ?? new Date();
+    const next = new Date(date.getFullYear(), date.getMonth(), date.getDate(), current.getHours(), current.getMinutes());
+    setTestStart(toLocalDateTime(next));
+  };
+
+  const updateTime = (part: "hours" | "minutes", value: string) => {
+    const current = selectedStart ?? new Date();
+    const next = new Date(current);
+    if (part === "hours") next.setHours(Number(value));
+    else next.setMinutes(Number(value));
+    setTestStart(toLocalDateTime(next));
   };
 
   const handleSubmit = async () => {
@@ -169,7 +208,7 @@ export default function ScheduleTestPage() {
   };
 
   return (
-    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
+    <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-6 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
       
       {/* ── Top Navigation Row (Figma Style) ── */}
       <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-6">
@@ -222,7 +261,7 @@ export default function ScheduleTestPage() {
       <div className="flex flex-col gap-6 w-full max-w-[900px] mt-4">
         
         {/* Basic Details */}
-        <PremiumCard padding="large" className="w-full flex flex-col gap-6">
+        <PremiumCard padding="large" className="relative z-20 !overflow-visible w-full flex flex-col gap-6">
           <h2 className="font-sans font-bold text-[20px] text-t-primary dark:text-t-primary flex items-center gap-2 m-0">
             <RiFileList3Line size={20} className="text-primary-02" /> Basic Details
           </h2>
@@ -254,9 +293,19 @@ export default function ScheduleTestPage() {
                 </div>
                 
                 {/* Custom Multi-Select Trigger */}
-                <div 
-                  className="bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 rounded-[10px] min-h-[48px] px-4 py-2 flex items-center relative cursor-pointer focus-within:border-primary-01 focus-within:ring-1 focus-within:ring-[#2A85FF]"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                <div
+                  role="button"
+                  tabIndex={0}
+                  aria-haspopup="listbox"
+                  aria-expanded={isDropdownOpen}
+                  className="w-full bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 rounded-[10px] min-h-[48px] px-4 py-2 flex items-center relative cursor-pointer text-left transition-colors hover:border-s-stroke2 focus:border-primary-01 focus:ring-1 focus:ring-[#2A85FF]"
+                  onClick={() => setIsDropdownOpen((open) => !open)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      setIsDropdownOpen((open) => !open);
+                    }
+                  }}
                 >
                   <RiTeamLine size={18} className="text-t-secondary shrink-0 mr-2" />
                   
@@ -267,10 +316,10 @@ export default function ScheduleTestPage() {
                       selectedBatches.map(id => {
                         const batch = AVAILABLE_BATCHES.find(b => b.id === id);
                         return (
-                          <div key={id} className="flex items-center gap-1.5 bg-primary-01/10 text-primary-01 px-2.5 py-1 rounded-[10px] text-xs font-bold border border-primary-01/20">
+                          <span key={id} className="flex items-center gap-1.5 bg-primary-01/10 text-primary-01 px-2.5 py-1 rounded-[8px] text-xs font-bold border border-primary-01/20">
                             {batch?.name}
-                            <RiCloseLine size={14} className="cursor-pointer hover:text-primary-01/80" onClick={(e) => removeBatch(e, id)} />
-                          </div>
+                            <span role="button" tabIndex={0} aria-label={`Remove ${batch?.name ?? "batch"}`} className="cursor-pointer hover:text-primary-01/80" onClick={(e) => removeBatch(e, id)}><RiCloseLine size={14} /></span>
+                          </span>
                         );
                       })
                     )}
@@ -280,9 +329,9 @@ export default function ScheduleTestPage() {
                   
                   {/* Dropdown Menu */}
                   {isDropdownOpen && (
-                    <div className="absolute top-[calc(100%+4px)] left-0 w-full bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-[10px] shadow-dropdown z-50 max-h-[200px] overflow-y-auto p-1">
+                    <div role="listbox" className="absolute top-[calc(100%+8px)] left-0 w-full bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-[14px] shadow-[0_18px_40px_rgba(0,0,0,0.14)] z-[60] max-h-[240px] overflow-y-auto p-2">
                       <div
-                        className="px-3 py-2 text-xs font-semibold text-primary-02 cursor-pointer border-b border-s-stroke2/40 hover:bg-b-surface1 dark:hover:bg-b-surface1/30"
+                        className="mb-1 rounded-[8px] px-3 py-2.5 text-xs font-semibold text-primary-02 cursor-pointer border-b border-s-stroke2/40 hover:bg-b-surface1 dark:hover:bg-b-surface1/30"
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedBatches(AVAILABLE_BATCHES.map(b => b.id));
@@ -310,7 +359,7 @@ export default function ScheduleTestPage() {
                                   e.stopPropagation();
                                   toggleBatch(batch.id);
                                 }}
-                                className={`flex items-center gap-3 px-3 py-2 mt-1 cursor-pointer rounded-md transition-colors ${isSelected ? 'bg-b-surface1 dark:bg-b-surface1/30' : 'hover:bg-b-surface1 dark:hover:bg-b-surface1/30'}`}
+                                className={`flex min-h-11 items-center gap-3 px-3 cursor-pointer rounded-[8px] transition-colors ${isSelected ? 'bg-primary-01/8 text-t-primary' : 'hover:bg-b-surface1 dark:hover:bg-b-surface1/30'}`}
                               >
                                 <div className={`w-4 h-4 rounded-[4px] border-[1.5px] flex items-center justify-center transition-colors ${isSelected ? "border-primary-01 bg-primary-01" : "border-s-stroke2"}`}>
                                   {isSelected && <RiCheckLine size={12} color="#fff" />}
@@ -330,14 +379,74 @@ export default function ScheduleTestPage() {
               
               <div className="flex-1 flex flex-col gap-2">
                 <label className="text-sm font-semibold text-t-primary dark:text-t-primary">Test opens at</label>
-                <div className="bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 rounded-[10px] h-12 px-4 flex items-center gap-3 focus-within:border-primary-01 focus-within:ring-1 focus-within:ring-[#2A85FF]">
-                  <RiCalendarEventLine size={18} className="text-t-secondary" />
-                  <input 
-                    type="datetime-local"
-                    value={testStart}
-                    onChange={(e) => setTestStart(e.target.value)}
-                    className="border-none bg-transparent outline-none w-full text-sm text-t-primary" 
-                  />
+                <div className="relative" ref={dateTimeRef}>
+                  <button
+                    type="button"
+                    onClick={() => setIsDateTimeOpen((open) => !open)}
+                    aria-haspopup="dialog"
+                    aria-expanded={isDateTimeOpen}
+                    className="w-full bg-b-surface1 dark:bg-b-surface1/50 border border-s-stroke2/40 rounded-[10px] h-12 px-4 flex items-center gap-3 text-left transition-colors hover:border-s-stroke2 focus:border-primary-01 focus:ring-1 focus:ring-[#2A85FF]"
+                  >
+                    <RiCalendarEventLine size={18} className="text-primary-02 shrink-0" />
+                    <span className={`min-w-0 flex-1 truncate text-sm font-medium ${selectedStart ? "text-t-primary" : "text-t-secondary"}`}>
+                      {selectedStart ? `${dateLabel} · ${timeLabel}` : "Select date and time"}
+                    </span>
+                    <RiArrowDownSLine size={18} className="text-t-secondary shrink-0" />
+                  </button>
+
+                  {isDateTimeOpen && (
+                    <div role="dialog" aria-label="Select test opening date and time" className="absolute top-[calc(100%+8px)] right-0 z-[60] w-full min-w-[320px] rounded-[16px] border border-s-stroke2/50 bg-b-surface2 p-3 shadow-[0_20px_48px_rgba(0,0,0,0.18)] dark:bg-b-surface2">
+                      <div className="flex items-center justify-between px-1 pb-3">
+                        <button type="button" aria-label="Previous month" onClick={() => setCalendarMonth((month) => new Date(month.getFullYear(), month.getMonth() - 1, 1))} className="flex size-8 items-center justify-center rounded-[8px] text-t-secondary hover:bg-b-surface1 hover:text-t-primary">
+                          <RiArrowLeftSLine size={18} />
+                        </button>
+                        <span className="text-sm font-bold text-t-primary">{monthLabel}</span>
+                        <button type="button" aria-label="Next month" onClick={() => setCalendarMonth((month) => new Date(month.getFullYear(), month.getMonth() + 1, 1))} className="flex size-8 items-center justify-center rounded-[8px] text-t-secondary hover:bg-b-surface1 hover:text-t-primary">
+                          <RiArrowRightSLine size={18} />
+                        </button>
+                      </div>
+
+                      <div className="grid grid-cols-7 gap-1 text-center text-[11px] font-semibold text-t-secondary">
+                        {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => <span key={day} className="py-1">{day}</span>)}
+                      </div>
+                      <div className="grid grid-cols-7 gap-1">
+                        {calendarDays.map((date) => {
+                          const isCurrentMonth = date.getMonth() === calendarMonth.getMonth();
+                          const isSelected = selectedStart?.toDateString() === date.toDateString();
+                          const isToday = new Date().toDateString() === date.toDateString();
+                          return (
+                            <button
+                              key={date.toISOString()}
+                              type="button"
+                              onClick={() => chooseDate(date)}
+                              className={`flex h-9 items-center justify-center rounded-[8px] text-xs font-semibold transition-colors ${isSelected ? "bg-primary-01 text-white" : isToday ? "bg-primary-01/10 text-primary-01" : isCurrentMonth ? "text-t-primary hover:bg-b-surface1" : "text-t-tertiary hover:bg-b-surface1/60"}`}
+                            >
+                              {date.getDate()}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      <div className="mt-3 border-t border-s-stroke2/40 pt-3">
+                        <p className="mb-2 text-xs font-semibold text-t-secondary">Opening time</p>
+                        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+                          <select value={selectedStart ? String(selectedStart.getHours()) : ""} onChange={(event) => updateTime("hours", event.target.value)} className="h-10 rounded-[8px] border border-s-stroke2/50 bg-b-surface1 px-3 text-sm font-semibold text-t-primary outline-none focus:border-primary-01">
+                            <option value="" disabled>Hour</option>
+                            {Array.from({ length: 24 }, (_, hour) => <option key={hour} value={hour}>{String(hour).padStart(2, "0")}</option>)}
+                          </select>
+                          <span className="text-sm font-bold text-t-secondary">:</span>
+                          <select value={selectedStart ? String(selectedStart.getMinutes()) : ""} onChange={(event) => updateTime("minutes", event.target.value)} className="h-10 rounded-[8px] border border-s-stroke2/50 bg-b-surface1 px-3 text-sm font-semibold text-t-primary outline-none focus:border-primary-01">
+                            <option value="" disabled>Minute</option>
+                            {Array.from({ length: 60 }, (_, minute) => <option key={minute} value={minute}>{String(minute).padStart(2, "0")}</option>)}
+                          </select>
+                        </div>
+                        <div className="mt-3 flex items-center justify-between gap-2">
+                          <button type="button" onClick={() => { const now = new Date(); setCalendarMonth(new Date(now.getFullYear(), now.getMonth(), 1)); setTestStart(toLocalDateTime(now)); }} className="h-9 rounded-[8px] px-3 text-xs font-semibold text-primary-02 hover:bg-primary-01/10">Set to now</button>
+                          <button type="button" onClick={() => setIsDateTimeOpen(false)} className="h-9 rounded-[8px] bg-shade-02 px-4 text-xs font-semibold text-white hover:opacity-90">Done</button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

@@ -199,7 +199,7 @@ function TestCard({
   onView: () => void;
 }) {
   return (
-    <div className="group relative flex flex-col justify-between bg-white dark:bg-[#161616] p-5 rounded-[20px] border border-s-stroke2 hover:border-t-secondary/30 transition-all duration-300 overflow-hidden">
+    <div className="group relative flex flex-col justify-between bg-b-surface2 p-5 rounded-[20px] border border-s-stroke2 hover:border-t-secondary/30 transition-all duration-300 overflow-hidden">
       {/* Subtle glow on hover */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-indigo-500/[0.03] to-purple-500/[0.03] rounded-[20px]" />
 
@@ -249,24 +249,25 @@ function TestCard({
       </div>
 
       {/* Actions */}
-      <div className="relative z-10 flex items-center justify-end gap-2 mt-5 pt-4 border-t border-s-stroke2">
+      <div className="relative z-10 flex items-center gap-2 mt-5">
+        <button
+          onClick={onView}
+          className="flex-1 flex items-center justify-center gap-1.5 h-11 px-4 rounded-[10px] bg-shade-02 text-white text-[13px] font-sans font-semibold hover:opacity-90 transition-all active:scale-[0.98]"
+        >
+          View Test
+        </button>
         <button
           onClick={onDelete}
           disabled={deleting}
-          className="flex items-center justify-center h-8 w-8 rounded-[8px] border border-red-200 text-red-400 hover:bg-red-50 dark:border-red-800 dark:hover:bg-red-900/30 transition-all active:scale-95 disabled:opacity-50"
+          className="flex shrink-0 items-center justify-center h-11 w-11 rounded-[10px] border border-red-200 text-red-500 hover:bg-red-50 dark:border-red-800 dark:hover:bg-red-900/30 transition-all active:scale-95 disabled:opacity-50"
           title="Delete test"
+          aria-label={`Delete ${test.title}`}
         >
           {deleting ? (
-            <RiLoader4Line size={14} className="animate-spin" />
+            <RiLoader4Line size={16} className="animate-spin" />
           ) : (
-            <RiDeleteBin6Line size={14} />
+            <RiDeleteBin6Line size={16} />
           )}
-        </button>
-        <button
-          onClick={onView}
-          className="flex items-center gap-1.5 h-8 px-3.5 rounded-[8px] bg-shade-02 text-white text-[12px] font-sans font-semibold hover:opacity-90 transition-all active:scale-95"
-        >
-          View Test
         </button>
       </div>
     </div>

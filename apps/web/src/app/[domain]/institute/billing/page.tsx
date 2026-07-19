@@ -79,7 +79,7 @@ export default function BillingPage() {
 
         {/* Current Plan Card (Trial Mode) */}
         {!loading && subscription ? (
-          <div className="group relative w-full bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden mt-4 transition-all duration-300">
+          <div className="group relative w-full bg-b-surface2 border border-s-stroke2/40 rounded-[16px] overflow-hidden mt-4 transition-all duration-300">
             <div className="relative z-10 flex flex-col md:flex-row justify-between items-center p-8 bg-gradient-to-br from-[#4F46E5] to-[#312E81] border border-transparent">
               
               <div className="flex flex-col gap-2 text-white">
@@ -183,7 +183,7 @@ export default function BillingPage() {
             {([] as any[]).map((invoice, index) => (
               <div 
                 key={invoice.id}
-                className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
+                className="group/item relative flex flex-row items-center p-3 sm:p-4 gap-3 sm:gap-6 bg-b-surface2 border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[76px] sm:h-[88px] cursor-pointer w-full overflow-hidden"
               >
                 {/* Left: ID & Date */}
                 <div className="flex flex-row items-center gap-3 sm:gap-5 flex-1 min-w-0">

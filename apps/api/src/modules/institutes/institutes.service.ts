@@ -20,6 +20,7 @@ export interface InstituteRow {
   is_active: boolean;
   created_at: string;
   updated_at: string;
+  enabled_exam_codes?: string[] | null;
   // Joined fields (populated by listAllInstitutes)
   owner_email?: string;
   owner_name?: string;
@@ -32,6 +33,7 @@ export interface CreateInstituteInput {
   adminUsername: string;
   trialMonths?: number;
   logoUrl?: string;
+  enabledExamCodes?: string[];
 }
 
 // ─── Queries ──────────────────────────────────────────────────────────────────
@@ -135,7 +137,14 @@ function generateTempPassword(): string {
 export async function provisionInstitute(
   input: CreateInstituteInput
 ): Promise<InstituteRow & { tempPassword: string }> {
-  const { name, adminEmail, adminUsername, trialMonths = 2, logoUrl } = input;
+  const { name, adminEmail, adminUsername, trialMonths = 2, logoUrl, enabledExamCodes } = input;
+  const supportedExamCodes = [...new Set((enabledExamCodes ?? ["jee-main", "jee-advanced", "neet-ug"])
+    .filter((exam) => ["jee-main", "jee-advanced", "neet-ug"].includes(exam)))];
+  if (supportedExamCodes.length === 0) {
+    const err = new Error("Select at least one supported examination.");
+    (err as any).statusCode = 400;
+    throw err;
+  }
   if (!Number.isInteger(trialMonths) || trialMonths < 1 || trialMonths > 24) {
     const err = new Error("Trial duration must be a whole number between 1 and 24 months.");
     (err as any).statusCode = 400;
@@ -229,7 +238,15 @@ export async function provisionInstitute(
 
   const { data: newInst, error: insertErr } = await supabaseDB
     .from("institutes")
-    .insert([{ name, owner_id: newUserId, plan: "trial", is_active: true, subdomain_slug, logo_url: logoUrl || null }])
+    .insert([{
+      name,
+      owner_id: newUserId,
+      plan: "trial",
+      is_active: true,
+      subdomain_slug,
+      logo_url: logoUrl || null,
+      enabled_exam_codes: supportedExamCodes,
+    }])
     .select()
     .single();
 

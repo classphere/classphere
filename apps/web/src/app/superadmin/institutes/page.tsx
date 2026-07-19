@@ -85,6 +85,7 @@ export default function InstitutesPage() {
     adminUsername: "",
     trialMonths: 2,
     logoUrl: "",
+    enabledExamCodes: ["jee-main", "jee-advanced", "neet-ug"],
   });
   const [isCreating, setIsCreating] = useState(false);
   const [uploadingLogo, setUploadingLogo] = useState(false);
@@ -186,8 +187,8 @@ export default function InstitutesPage() {
   // ─── Handlers ──────────────────────────────────────────────────────────────
 
   const handleCreateInstitute = async () => {
-    if (!newInstituteData.name || !newInstituteData.adminEmail || !newInstituteData.adminUsername) {
-      setFeedback({ type: "error", message: "Please provide Institute Name, Admin Email, and Admin Username." });
+    if (!newInstituteData.name || !newInstituteData.adminEmail || !newInstituteData.adminUsername || newInstituteData.enabledExamCodes.length === 0) {
+      setFeedback({ type: "error", message: "Provide the institute details and select at least one examination." });
       return;
     }
 
@@ -198,7 +199,7 @@ export default function InstitutesPage() {
 
     if (result.success) {
       setIsCreateModalOpen(false);
-      setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", trialMonths: 2, logoUrl: "" });
+      setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", trialMonths: 2, logoUrl: "", enabledExamCodes: ["jee-main", "jee-advanced", "neet-ug"] });
       setFeedback(null);
       refetchStats();
       // Show the one-time credentials modal
@@ -218,7 +219,7 @@ export default function InstitutesPage() {
 
   const openModal = () => {
     setFeedback(null);
-    setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", trialMonths: 2, logoUrl: "" });
+    setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", trialMonths: 2, logoUrl: "", enabledExamCodes: ["jee-main", "jee-advanced", "neet-ug"] });
     setIsCreateModalOpen(true);
   };
 
@@ -549,6 +550,37 @@ export default function InstitutesPage() {
                 value=""
                 readOnly
               />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
+              Enabled examinations
+            </label>
+            <p className="text-[12px] text-t-secondary">The institute admin can create batches only for these examinations.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              {[
+                { id: "jee-main", label: "JEE Main" },
+                { id: "jee-advanced", label: "JEE Advanced" },
+                { id: "neet-ug", label: "NEET UG" },
+              ].map((exam) => {
+                const checked = newInstituteData.enabledExamCodes.includes(exam.id);
+                return (
+                  <label key={exam.id} className="flex items-center gap-2 rounded-[10px] border border-s-stroke2/50 bg-b-surface2/60 px-3 py-2.5 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      onChange={() => setNewInstituteData((current) => ({
+                        ...current,
+                        enabledExamCodes: checked
+                          ? current.enabledExamCodes.filter((code) => code !== exam.id)
+                          : [...current.enabledExamCodes, exam.id],
+                      }))}
+                    />
+                    <span className="text-sm font-semibold text-t-primary">{exam.label}</span>
+                  </label>
+                );
+              })}
             </div>
           </div>
 
