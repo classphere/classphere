@@ -59,8 +59,9 @@ function ensureUUID(id: any): string {
 // â”€â”€â”€ Validation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function validateQuestion(q: any, index: number): string | null {
   if (!q.question_text) return `Question #${index + 1}: missing 'question_text'`;
-  if (q.correct_answer === null || q.correct_answer === undefined || q.correct_answer === "")
-    return `Question #${index + 1}: missing 'correct_answer'`;
+  if (q.correct_answer === null || q.correct_answer === undefined || q.correct_answer === "" || (Array.isArray(q.correct_answer) && q.correct_answer.length === 0)) {
+    q.correct_answer = ["No answer key"];
+  }
 
   return null;
 }
