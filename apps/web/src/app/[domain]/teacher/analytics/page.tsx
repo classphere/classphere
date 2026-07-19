@@ -98,8 +98,8 @@ export default function TeacherAnalyticsPage() {
                 onClick={() => setSelectedBatchIdx(i)}
                 className={`px-4 py-1.5 rounded-[10px] text-caption font-bold border transition-all cursor-pointer ${
                   selectedBatchIdx === i
-                    ? "bg-shade-02 dark:bg-t-primary text-t-light dark:text-black border-transparent"
-                    : "bg-b-surface2 dark:bg-b-surface2 border-s-stroke2 text-t-secondary hover:text-t-primary"
+                    ? "bg-shade-02 text-t-light border-transparent dark:border-[#3e3e3b] dark:bg-linear-to-b dark:from-[#343432] dark:to-[#252523] dark:text-white"
+                    : "bg-b-surface2 border-s-stroke2 text-t-secondary hover:text-t-primary"
                 }`}
               >
                 {b.name}
@@ -224,7 +224,7 @@ export default function TeacherAnalyticsPage() {
             ) : subjectBreakdown.map((s: any) => (
               <div 
                 key={s.subject} 
-                className="flex flex-col p-[22px] bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] overflow-hidden transition-all hover:scale-[1.005]"
+                className="flex flex-col p-[22px] bg-b-surface2 border border-s-stroke2/40 rounded-[16px] overflow-hidden transition-all hover:scale-[1.005]"
               >
                 <div className="flex justify-between items-center mb-3">
                   <span className="font-sans font-semibold text-[16px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">{s.subject}</span>
@@ -265,7 +265,7 @@ export default function TeacherAnalyticsPage() {
             headerRight={
               <Link 
                 href="/teacher/dpps" 
-                className="h-9 px-4 rounded-[10px] text-xs font-semibold bg-shade-02 dark:bg-t-primary text-t-light dark:text-black hover:bg-shade-04 dark:hover:bg-t-secondary transition-all active:scale-95 shadow-xs shrink-0 flex items-center gap-1.5 cursor-pointer w-fit"
+                className="h-9 px-4 rounded-[10px] text-xs font-semibold bg-shade-02 text-t-light hover:bg-shade-04 dark:border dark:border-[#3e3e3b] dark:bg-linear-to-b dark:from-[#343432] dark:to-[#252523] dark:text-white dark:hover:brightness-110 transition-all active:scale-95 shadow-xs shrink-0 flex items-center gap-1.5 cursor-pointer w-fit"
               >
                 <RiAddLine size={16} /> Assign Booster DPP
               </Link>

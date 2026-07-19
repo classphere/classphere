@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { RiFlashlightFill, RiEyeLine, RiEyeOffLine, RiAlertLine, RiCheckLine } from "@remixicon/react";
+import { RiEyeLine, RiEyeOffLine, RiAlertLine, RiCheckLine } from "@remixicon/react";
 import { supabase } from "@/lib/supabase";
 
 import { API_URL } from "@/lib/api.client";
@@ -103,9 +103,7 @@ export default function SignupPage() {
         {/* Logo */}
         <div className="text-center mb-10">
           <Link href="/login" className="inline-flex items-center gap-2.5 no-underline mb-6">
-            <div className="flex size-10 items-center justify-center rounded-[10px] bg-shade-02 text-t-light shadow-[inset_0px_1px_1px_rgba(214,214,214,0.25),inset_0px_-1px_2px_rgba(0,0,0,0.53)]">
-              <RiFlashlightFill size={20} />
-            </div>
+            <img src="/logo.png" alt="Classphere" className="size-10 rounded-[10px] object-contain bg-b-surface2 border border-s-stroke2/50" />
             <span className="font-sans text-[22px] font-bold text-t-primary dark:text-t-primary tracking-tight">
               Classphere
             </span>

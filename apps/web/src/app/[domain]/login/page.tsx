@@ -97,18 +97,14 @@ function LoginForm() {
   const displayName = tenant.instituteName ?? "Classphere";
 
   // Left Panel Logo Overlay
-  const leftPanelLogo = tenant.logoUrl ? (
+  const leftPanelLogo = (
     <Image
-      src={tenant.logoUrl}
+      src={tenant.logoUrl ?? "/logo.png"}
       alt={displayName}
       width={44}
       height={44}
       className="max-h-11 w-auto object-contain rounded-[8px]"
     />
-  ) : (
-    <div className="flex size-11 items-center justify-center rounded-[8px] bg-white/10 text-white backdrop-blur-md">
-      <RiFlashlightFill size={22} />
-    </div>
   );
 
   return (

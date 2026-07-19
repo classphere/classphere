@@ -159,7 +159,7 @@ function TestsHubContent() {
       <Navbar title="Tests Hub" subtitle="All your chapter-wise tests, mock tests, and PYQs in one place." breadcrumbs="Student > Tests Hub" />
       <main className="mx-auto w-full max-w-screen-2xl px-4 pb-12 pt-4 md:px-8 overflow-x-hidden">
         {/* Type Tabs */}
-        <div className="no-scrollbar mb-5 flex max-w-full items-center gap-1.5 overflow-x-auto rounded-[14px] border border-transparent bg-b-surface2 p-1 shadow-[0_2px_0_rgba(223,222,222,.64),inset_0_2px_rgba(255,255,255,.64)] select-none dark:bg-[#161616] dark:shadow-[0_2px_0_rgba(0,0,0,.5),inset_0_2px_rgba(255,255,255,.05)]">
+        <div className="no-scrollbar mb-5 flex max-w-full items-center gap-1.5 overflow-x-auto rounded-[14px] border border-s-stroke2/40 bg-b-surface2 p-1 shadow-widget select-none dark:shadow-[inset_0_0_0_1.5px_rgba(229,229,229,0.04),0px_5px_1.5px_-4px_rgba(8,8,8,0.5)]">
           {TYPES.map(type => {
             const isActive = activeType === type.id;
             return (
@@ -174,7 +174,7 @@ function TestsHubContent() {
 
         {/* Filters — only for non-assigned tabs */}
         {activeType !== "assigned" && (
-          <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-4 mb-6 bg-white dark:bg-[#161616] p-4 sm:p-5 rounded-[24px] select-none">
+          <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-4 mb-6 bg-b-surface2 border border-s-stroke2/40 p-4 sm:p-5 rounded-[24px] select-none">
             <div className="relative flex-1 min-w-0 sm:min-w-[240px]">
               <RiSearchLine size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary" />
               <input type="text" placeholder={`Search...`} value={search} onChange={e => setSearch(e.target.value)}
@@ -276,7 +276,7 @@ function AssignedTestCard({ test, onStart }: { test: AssignedTest; onStart: () =
   const isLive = scheduledDate ? scheduledDate <= now : true;
 
   return (
-    <div className="group relative flex flex-col justify-between bg-white dark:bg-[#161616] p-5 rounded-[20px] border border-s-stroke2 hover:border-t-secondary/30 transition-all duration-300 overflow-hidden">
+    <div className="group relative flex flex-col justify-between bg-b-surface2 p-5 rounded-[20px] border border-s-stroke2 hover:border-t-secondary/30 transition-all duration-300 overflow-hidden">
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-violet-500/[0.03] to-blue-500/[0.03] rounded-[20px]" />
 
       <div className="relative z-10">
@@ -366,7 +366,7 @@ function TestCard({ paper, isAdmin, onDelete, onStart }: { paper: Paper; isAdmin
     : paper.subject ? `${paper.subject}${paper.chapter ? ` · ${paper.chapter}` : ""}` : paper.exams?.full_name || "";
 
   return (
-    <div className="group relative flex w-full flex-col justify-between overflow-hidden rounded-[24px] bg-white p-5 transition-all duration-300 select-none dark:bg-[#161616] sm:p-[22px]">
+    <div className="group relative flex w-full flex-col justify-between overflow-hidden rounded-[24px] border border-s-stroke2/40 bg-b-surface2 p-5 transition-all duration-300 select-none sm:p-[22px]">
       <div className="relative z-10">
         <h3 className="font-sans font-bold text-[17px] leading-[1.3] text-t-primary mb-1.5 tracking-[-0.01em]">{paper.title}</h3>
         {subtitle && subtitle !== "null" && <p className="text-[13px] font-sans font-medium text-t-secondary">{subtitle}</p>}

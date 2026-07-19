@@ -159,7 +159,7 @@ export default function TeacherDPPsPage() {
             {/* Create DPP Button (Figma Spec: gradient background, rounded 32px pill, inset shadow) */}
             <Link 
               href="/teacher/dpps/create"
-              className="flex flex-row justify-center items-center h-12 px-6 bg-gradient-to-b from-[#2C2C2C] to-[#282828] hover:from-[#3c3c3c] hover:to-[#383838] text-t-light dark:from-t-primary dark:to-t-primary/90 dark:text-b-surface1 text-[14px] font-sans font-semibold rounded-[10px] transition-all active:scale-95 shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.2)] cursor-pointer no-underline"
+              className="flex flex-row justify-center items-center h-12 px-6 border border-[#161616] bg-gradient-to-b from-[#2C2C2C] to-[#282828] hover:from-[#3c3c3c] hover:to-[#383838] text-white dark:border-[#3e3e3b] dark:from-[#343432] dark:to-[#252523] dark:hover:brightness-110 text-[14px] font-sans font-semibold rounded-[10px] transition-all active:scale-95 shadow-[inset_0_1px_0_rgba(255,255,255,.14),0_4px_12px_rgba(0,0,0,.2)] cursor-pointer no-underline"
             >
               <RiAddLine size={18} className="mr-1" /> Create DPP
             </Link>
@@ -169,7 +169,7 @@ export default function TeacherDPPsPage() {
         {/* DPP List */}
         <div className="relative z-10 flex flex-col gap-6 w-full mb-8">
           {filtered.length === 0 && (
-            <div className="bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] text-center py-20 text-t-secondary">
+            <div className="bg-b-surface2 border border-s-stroke2/40 rounded-[16px] text-center py-20 text-t-secondary">
               <RiFileListLine size={48} className="mx-auto mb-4 text-t-secondary/50" />
               <p className="font-semibold text-body-2">No DPPs in this category yet.</p>
             </div>
