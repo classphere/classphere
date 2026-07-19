@@ -25,24 +25,8 @@ interface PlatformStats {
   newInstitutesThisWeek: number;
   newStudentsThisWeek: number;
   activeTrials: number;
-  systemUptime: string;
+  systemUptime: string | null;
 }
-
-const auditLogs = [
-  { id: 1, action: "Question Bank Sync", detail: "NEET 2025 questions added", time: "1h ago", type: "info" },
-  { id: 2, action: "Super Admin Login", detail: "harsh@examphere.com", time: "2h ago", type: "success" },
-  { id: 3, action: "Question Bank Sync", detail: "JEE Main 2024 questions added", time: "3h ago", type: "info" },
-  { id: 4, action: "System Started", detail: "API server & workers online", time: "5h ago", type: "success" },
-];
-
-const systemResources = [
-  { label: "API", fullName: "API Server", score: 85, load: "Normal", trend: "+2.4%" },
-  { label: "DB", fullName: "Database", score: 65, load: "Normal", trend: "-1.2%" },
-  { label: "Storage", fullName: "Storage Array", score: 92, load: "High", trend: "+14.5%" },
-  { label: "Cache", fullName: "Redis Cache", score: 35, load: "Low", trend: "-5.0%" },
-  { label: "Workers", fullName: "Background Workers", score: 78, load: "Normal", trend: "+8.1%" },
-  { label: "CDN", fullName: "CDN Edge", score: 45, load: "Normal", trend: "+0.5%" },
-];
 
 export default function SuperAdminDashboardPage() {
   const { user, session } = useAuth();
@@ -51,8 +35,8 @@ export default function SuperAdminDashboardPage() {
   const [isOverviewDropdownOpen, setIsOverviewDropdownOpen] = useState(false);
   const [tickets, setTickets] = useState<any[]>([]);
 
-  const [liveResources, setLiveResources] = useState<any[]>(systemResources);
-  const [liveAuditLogs, setLiveAuditLogs] = useState<any[]>(auditLogs);
+  const [liveResources, setLiveResources] = useState<any[]>([]);
+  const [liveAuditLogs, setLiveAuditLogs] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -123,7 +107,7 @@ export default function SuperAdminDashboardPage() {
             setLiveResources(mappedResources);
           }
         })
-        .catch(() => {});
+        .catch(() => setLiveResources([]));
     };
     
     fetchTelemetry();
@@ -203,7 +187,9 @@ export default function SuperAdminDashboardPage() {
             {/* Left Column (System Resources) */}
             <SectionCard title="System Resources" className="flex-1 min-w-0">
               <div className="relative z-10 flex flex-col gap-2 w-full mt-2">
-                {liveResources.map((bar, idx) => (
+                {liveResources.length === 0 ? (
+                  <div className="py-10 text-center font-sans text-sm text-t-secondary">Live resource telemetry is unavailable. The API is not substituting estimated health values.</div>
+                ) : liveResources.map((bar, idx) => (
                   <div key={idx} className="group/item relative flex flex-row items-center justify-between p-3 sm:p-4 gap-3 sm:gap-4 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all h-[72px] sm:h-[80px] cursor-pointer overflow-hidden">
                     <div className="w-1/3 sm:w-[140px] md:w-[160px] flex flex-col justify-center shrink-0 min-w-0">
                       <span className="font-sans font-semibold text-[13px] sm:text-sm text-t-primary truncate">{bar.fullName}</span>

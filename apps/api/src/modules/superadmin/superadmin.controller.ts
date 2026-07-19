@@ -5,6 +5,7 @@ import { randomUUID } from "crypto";
 import { uploadToR2 } from "../../lib/r2";
 import { extractPDF } from "../../services/extractor/pdfExtractor.service";
 import { connection as redisConnection } from "../../lib/queue/redis";
+import { logAdminAction as writeAdminAudit } from "../../lib/admin-audit";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -110,7 +111,7 @@ export const getPlatformStats = async (req: Request, res: Response): Promise<voi
         activeTrials: activeTrials ?? 0,
         enterprisePlans: crmStats.enterprisePlans,
         estimatedMRR: crmStats.estimatedMRR,
-        systemUptime: "99.98%", // Static for now â€” wire to a health monitor later
+        systemUptime: null, // Uptime requires retained synthetic-monitor history.
       },
     });
   } catch (err: any) {
@@ -213,8 +214,14 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    if (!Array.isArray(questions) || questions.length === 0) {
-      res.status(400).json({ success: false, message: "Body must include a non-empty 'questions' array." });
+    if (!Array.isArray(questions) || questions.length === 0 || questions.length > 500) {
+      res.status(400).json({ success: false, message: "Body must include between 1 and 500 questions." });
+      return;
+    }
+
+    if (!Number.isInteger(Number(duration)) || Number(duration) <= 0 ||
+        !Number.isInteger(Number(marks)) || Number(marks) < 0) {
+      res.status(400).json({ success: false, message: "duration must be positive and marks must be a non-negative integer." });
       return;
     }
 
@@ -295,6 +302,40 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     );
 
     // â”€â”€ 5. Bulk upsert questions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    const { data: paperId, error: uploadError } = await supabaseDB.rpc(
+      "create_global_paper_with_questions",
+      {
+        p_exam_id: examId,
+        p_test_type: test_type,
+        p_title: title.trim(),
+        p_subject: subject ?? "",
+        p_chapter: chapter ?? "",
+        p_year: year ? Number(year) : null,
+        p_shift: shift ?? "",
+        p_duration_min: Number(duration),
+        p_total_marks: Number(marks),
+        p_difficulty: difficulty,
+        p_created_by: req.user?.id ?? null,
+        p_questions: questionRows,
+      }
+    );
+    if (uploadError || !paperId) throw uploadError ?? new Error("Global paper upload did not return an id.");
+
+    await writeAdminAudit(
+      req.user?.id,
+      "Global question bank upload",
+      `Created global paper \"${title.trim()}\" with ${questionRows.length} questions.`,
+      "question_bank",
+      "success"
+    );
+
+    res.status(201).json({
+      success: true,
+      message: `Successfully uploaded ${questionRows.length} questions as "${title}".`,
+      data: { paper_id: paperId, title, exam, test_type, total_questions: questionRows.length },
+    });
+    return;
+
     const batches = chunk(questionRows, 100);
     for (const batch of batches) {
       await sbPost("questions", batch);
@@ -543,6 +584,12 @@ export const updatePlatformConfig = async (req: Request, res: Response): Promise
       return;
     }
 
+    res.status(409).json({
+      success: false,
+      message: "Runtime configuration controls are not enabled. No settings were changed.",
+    });
+    return;
+
     const allowedKeys = new Set([
       "maintenance_mode",
       "deterministic_engine",
@@ -591,6 +638,7 @@ export const listAuditLogs = async (req: Request, res: Response): Promise<void> 
     let page = parseInt(req.query.page as string, 10);
     if (isNaN(limit) || limit < 1) limit = 20;
     if (isNaN(page) || page < 1) page = 1;
+    limit = Math.min(limit, 100);
 
     const from = (page - 1) * limit;
     const to = from + limit - 1;
@@ -762,7 +810,7 @@ export const getPlatformAnalytics = async (req: Request, res: Response): Promise
       supabaseDB.from("exams").select("id, code, full_name").eq("is_active", true),
     ]);
 
-    const totalTests = attemptsCount.count ?? 0;
+    const totalAttempts = attemptsCount.count ?? 0;
     if (papersResult.error) throw papersResult.error;
     if (examsResult.error) throw examsResult.error;
 
@@ -789,12 +837,13 @@ export const getPlatformAnalytics = async (req: Request, res: Response): Promise
       { exam: "SSC / Other", tests: sscCount, pct: percent(sscCount), color: "from-[#8F5BFF] to-[#A78BFA]", shadow: "shadow-[0px_2px_12px_rgba(143,91,255,0.4)]" },
     ];
 
-    const topInstitutes = (institutesList ?? [])
+    const topInstitutes = [...(institutesList ?? [])]
+      .sort((a: any, b: any) => (b.student_count ?? 0) - (a.student_count ?? 0))
       .slice(0, 5)
       .map(inst => {
         return {
           name: inst.name,
-          tests: 0,
+          studentCount: inst.student_count ?? 0,
           tokens: "â€”",
         };
       });
@@ -802,11 +851,12 @@ export const getPlatformAnalytics = async (req: Request, res: Response): Promise
     res.status(200).json({
       success: true,
       data: {
-        totalTests,
+        totalAttempts,
+        activePapers: activePaperCount,
         examBreakdown,
         topInstitutes,
         // Token metering is not persisted yet, so do not invent consumption data.
-        aiBreakdown: [],
+        aiUsageAvailable: false,
       }
     });
   } catch (err: any) {

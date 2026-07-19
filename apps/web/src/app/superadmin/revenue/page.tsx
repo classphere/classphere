@@ -39,7 +39,7 @@ export default function RevenuePage() {
 
   return (
     <>
-      <Navbar title="Revenue & Subscriptions" subtitle="Platform monetization, active plans, and billing history." />
+      <Navbar title="Trials & Future Billing" subtitle="Billing is intentionally disabled while the platform operates on free trials." />
       <main className="mx-auto w-full max-w-[1560px] flex flex-col items-center pb-12 pt-6 gap-6 px-6 bg-transparent">
         
         {/* ── KPI Cards (Full Width) ── */}
@@ -52,10 +52,10 @@ export default function RevenuePage() {
           
           <MetricGrid cols={4} className="mt-2">
             {[
-              { label: "Monthly Recurring Rev", value: fmtMoney(stats?.estimatedMRR || 0), sub: "+0%", subLabel: "vs last month", icon: <RiMoneyDollarCircleLine size={20} /> },
-              { label: "ARPU", value: fmtMoney(stats?.totalInstitutes > 0 ? (stats?.estimatedMRR || 0) / stats.totalInstitutes : 0), sub: "INR", subLabel: "per active institute", icon: <RiBarChartBoxLine size={20} /> },
-              { label: "Churn Rate", value: "0.0%", sub: "-0.0%", subLabel: "vs last month", icon: <RiFileList3Line size={20} /> },
-              { label: "Net Revenue (YTD)", value: fmtMoney(stats?.estimatedMRR || 0), sub: "On Track", subLabel: "Jan 1 - Present", icon: <RiMoneyDollarCircleLine size={20} /> },
+              { label: "Active Trials", value: String(stats?.activeTrials ?? 0), sub: "Live", subLabel: "currently entitled", icon: <RiFileList3Line size={20} /> },
+              { label: "Billing", value: "Disabled", sub: "Planned", subLabel: "no charges or invoices", icon: <RiMoneyDollarCircleLine size={20} /> },
+              { label: "Revenue Reporting", value: "Unavailable", sub: "Planned", subLabel: "requires payment integration", icon: <RiBarChartBoxLine size={20} /> },
+              { label: "Trial Access", value: "Enforced", sub: "Live", subLabel: "expired tenants are blocked", icon: <RiMoneyDollarCircleLine size={20} /> },
             ].map((kpi, i) => (
               <MetricCard
                 key={i}
@@ -72,9 +72,9 @@ export default function RevenuePage() {
 
         {/* ── Recent Transactions ── */}
         <SectionCard 
-          title="Recent Transactions"
+          title="Billing Activity"
           headerRight={
-            <button className="flex flex-row items-center gap-2 h-10 px-4 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 hover:bg-s-stroke2/30 transition-colors active:scale-95">
+            <button disabled className="flex flex-row items-center gap-2 h-10 px-4 rounded-[10px] bg-b-surface1 border border-s-stroke2/40 opacity-50 cursor-not-allowed">
               <RiDownloadCloud2Line size={18} className="text-t-secondary" />
               <span className="font-sans text-[14px] font-semibold text-t-primary">Export CSV</span>
             </button>
@@ -95,7 +95,7 @@ export default function RevenuePage() {
             {/* Rows */}
             {transactions.length === 0 && !loading && (
               <div className="py-10 text-center text-t-secondary font-sans text-sm">
-                No recent transactions found.
+              Billing is disabled. Transactions and CSV export will become available after the payment integration is enabled.
               </div>
             )}
             {transactions.map((txn, i) => (

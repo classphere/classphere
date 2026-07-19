@@ -58,37 +58,7 @@ export default function ConfigurationPage() {
   }, [token]);
 
   const handleSave = async () => {
-    if (!token) return;
-    setSaving(true);
-    setMessage(null);
-    try {
-      const payload = {
-        settings: {
-          maintenance_mode: maintenance,
-          deterministic_engine: deterministicEngine,
-          ssc_pacing: sscPacing,
-          custom_domains_enabled: customDomain,
-          forum_moderation_enabled: forumModeration,
-          max_concurrent_users: maxConcurrentUsers,
-          omr_ingestion_rate: omrIngestionRate,
-          max_bulk_upload_size: maxBulkUploadSize,
-          session_timeout: sessionTimeout
-        }
-      };
-      
-      const res = await apiClient.patch("/api/v1/superadmin/config", payload, token);
-      if (res.success) {
-        setMessage("Configuration saved successfully!");
-        // Clear message after 4 seconds
-        setTimeout(() => setMessage(null), 4000);
-      } else {
-        setMessage(res.message ?? "Failed to save configuration.");
-      }
-    } catch (err: any) {
-      setMessage(err.message ?? "Error saving configuration.");
-    } finally {
-      setSaving(false);
-    }
+    setMessage("These controls are disabled until each setting has a real runtime implementation. No configuration was saved.");
   };
 
   // Toggle Component Helper
@@ -109,7 +79,7 @@ export default function ConfigurationPage() {
 
   return (
     <>
-      <Navbar title="Platform Configuration" subtitle="Manage system behaviors, feature flags, and infrastructure limits." />
+  <Navbar title="Platform Configuration" subtitle="Runtime controls are unavailable until a managed configuration plane is connected." />
       
       <main className="mx-auto w-full max-w-[1200px] px-6 pb-16 pt-6">
         
@@ -151,14 +121,14 @@ export default function ConfigurationPage() {
                 </div>
                 
                 <p className="relative z-10 text-[14px] text-t-secondary leading-relaxed mb-5 pl-13">
-                  Enabling maintenance mode will force log out all active users and display a maintenance screen. Only Super Admins will be able to log in to bypass this block.
+                  Maintenance mode is not connected yet. This control is intentionally non-operative and does not change user access.
                 </p>
                 
                 {maintenance && (
                   <div className="relative z-10 ml-13 p-4 bg-[rgba(239,68,68,0.05)] border border-s-stroke2/40 rounded-[10px] flex items-start gap-3">
                     <RiErrorWarningLine size={20} className="text-primary-03 shrink-0 mt-0.5" />
                     <span className="text-[14px] font-semibold text-primary-03">
-                      The platform is currently in maintenance mode. Active scaling and background jobs are paused.
+                      This is only a draft value. It is not applied to the running platform.
                     </span>
                   </div>
                 )}

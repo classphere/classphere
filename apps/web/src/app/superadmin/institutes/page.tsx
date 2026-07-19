@@ -83,9 +83,6 @@ export default function InstitutesPage() {
     name: "",
     adminEmail: "",
     adminUsername: "",
-    type: "jee",
-    price: 500,
-    isFreeTrial: true,
     trialMonths: 2,
     logoUrl: "",
   });
@@ -201,7 +198,7 @@ export default function InstitutesPage() {
 
     if (result.success) {
       setIsCreateModalOpen(false);
-      setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", type: "jee", price: 500, isFreeTrial: true, trialMonths: 2, logoUrl: "" });
+      setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", trialMonths: 2, logoUrl: "" });
       setFeedback(null);
       refetchStats();
       // Show the one-time credentials modal
@@ -221,7 +218,7 @@ export default function InstitutesPage() {
 
   const openModal = () => {
     setFeedback(null);
-    setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", type: "jee", price: 500, isFreeTrial: true, trialMonths: 2, logoUrl: "" });
+    setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", trialMonths: 2, logoUrl: "" });
     setIsCreateModalOpen(true);
   };
 
@@ -532,13 +529,10 @@ export default function InstitutesPage() {
               <div className="relative">
                 <select
                   className="input-field w-full appearance-none pr-10"
-                  value={newInstituteData.type}
-                  onChange={(e) => setNewInstituteData({ ...newInstituteData, type: e.target.value })}
+                  value="trial"
+                  disabled
                 >
-                  <option value="jee">JEE</option>
-                  <option value="neet">NEET</option>
-                  <option value="both">JEE + NEET</option>
-                  <option value="ssc">SSC</option>
+                  <option value="trial">Trial access only</option>
                 </select>
                 <RiArrowDownSLine size={18} className="absolute right-4 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
               </div>
@@ -549,12 +543,11 @@ export default function InstitutesPage() {
                 Price / Student (₹)
               </label>
               <input
-                type="number"
+                type="text"
                 className="input-field w-full"
-                placeholder="500"
-                min="0"
-                value={newInstituteData.price}
-                onChange={(e) => setNewInstituteData({ ...newInstituteData, price: Number(e.target.value) })}
+                placeholder="Billing not enabled"
+                value=""
+                readOnly
               />
             </div>
           </div>
@@ -564,13 +557,13 @@ export default function InstitutesPage() {
               <input
                 type="checkbox"
                 className="w-5 h-5 rounded border-s-stroke2 text-primary-01 focus:ring-primary-01 bg-white"
-                checked={newInstituteData.isFreeTrial}
-                onChange={(e) => setNewInstituteData({ ...newInstituteData, isFreeTrial: e.target.checked })}
+                checked
+                readOnly
               />
               <span className="text-[14px] font-semibold text-t-primary">Offer Free Trial</span>
             </label>
 
-            {newInstituteData.isFreeTrial && (
+            {true && (
               <div className="flex flex-col gap-2 mt-2">
                 <label className="text-[13px] font-medium text-t-secondary uppercase tracking-[0.02em]">
                   Trial Duration (Months)
@@ -580,6 +573,7 @@ export default function InstitutesPage() {
                   className="input-field w-full"
                   placeholder="2"
                   min="1"
+                  max="24"
                   value={newInstituteData.trialMonths}
                   onChange={(e) => setNewInstituteData({ ...newInstituteData, trialMonths: Number(e.target.value) })}
                 />

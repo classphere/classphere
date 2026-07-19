@@ -13,10 +13,11 @@ export default function GlobalAnalyticsPage() {
 
   const [loading, setLoading] = useState(true);
   const [analyticsData, setAnalyticsData] = useState<{
-    totalTests: number;
+    totalAttempts: number;
+    activePapers: number;
     examBreakdown: any[];
     topInstitutes: any[];
-    aiBreakdown: any[];
+    aiUsageAvailable: boolean;
   } | null>(null);
 
   useEffect(() => {
@@ -44,7 +45,7 @@ export default function GlobalAnalyticsPage() {
     );
   }
 
-  const { totalTests, examBreakdown, topInstitutes, aiBreakdown } = analyticsData;
+  const { totalAttempts, activePapers, examBreakdown, topInstitutes } = analyticsData;
 
   return (
     <>
@@ -61,10 +62,10 @@ export default function GlobalAnalyticsPage() {
           
           <MetricGrid cols={4} className="mt-2">
             {[
-              { label: "Total Tests Conducted", value: totalTests.toLocaleString(), sub: "+45K", subLabel: "this week", icon: <RiGlobalLine size={20} /> },
-              { label: "Avg Completion Rate", value: "92.4%", sub: "+1.2%", subLabel: "this month", icon: <RiBookOpenLine size={20} /> },
-              { label: "AI Tokens (Monthly)", value: "142.8M", sub: "84%", subLabel: "of limit", icon: <RiBrainLine size={20} /> },
-              { label: "Booster Tests Generated", value: "12,450", sub: "+12%", subLabel: "growth", icon: <RiRobot2Line size={20} /> },
+              { label: "Test Attempts", value: totalAttempts.toLocaleString(), sub: "Live", subLabel: "all time", icon: <RiGlobalLine size={20} /> },
+              { label: "Active Question Papers", value: activePapers.toLocaleString(), sub: "Live", subLabel: "catalog", icon: <RiBookOpenLine size={20} /> },
+              { label: "AI Usage", value: "Not enabled", sub: "-", subLabel: "metering required", icon: <RiBrainLine size={20} /> },
+              { label: "Completion Rate", value: "Not measured", sub: "-", subLabel: "event data required", icon: <RiRobot2Line size={20} /> },
             ].map((kpi, i) => (
               <MetricCard
                 key={i}
@@ -85,7 +86,7 @@ export default function GlobalAnalyticsPage() {
           {/* Tests by Exam Type */}
           <SectionCard title="Tests by Exam Type" className="flex-1 min-w-0 h-full">
             <div className="flex flex-col items-start w-full gap-5 mt-4">
-              <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Distribution across all {totalTests >= 1000 ? `${(totalTests / 1000).toFixed(0)}K` : totalTests} tests conducted</span>
+              <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Distribution across {activePapers >= 1000 ? `${(activePapers / 1000).toFixed(0)}K` : activePapers} active catalog papers</span>
               {examBreakdown.map((exam, i) => (
                 <div key={i} className="group/item relative flex flex-col w-full p-3 sm:p-4 gap-2 sm:gap-3 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[72px] sm:h-[88px] justify-center">
                   <div className="flex flex-row justify-between items-center w-full">
@@ -109,13 +110,12 @@ export default function GlobalAnalyticsPage() {
           {/* Top Institutes by Activity */}
           <SectionCard title="Top Institutes" className="w-full xl:w-[600px] shrink-0 h-full min-h-[354px]">
             <div className="flex flex-col items-start gap-3 w-full mt-4">
-              <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Ranked by active student scale and tokens consumed</span>
+              <span className="font-sans text-sm text-t-secondary mb-2 -mt-6">Ranked by students enrolled in active batches</span>
 
               {/* Table Header */}
               <div className="hidden md:flex flex-row items-center w-full px-6 py-2 text-xs font-semibold uppercase tracking-wider text-t-secondary">
                 <span className="flex-1">Institute</span>
-                <span className="w-24 text-right">Tests</span>
-                <span className="w-24 text-right">AI Tokens</span>
+                <span className="w-28 text-right">Students</span>
               </div>
 
               {topInstitutes.map((inst, i) => (
@@ -127,8 +127,7 @@ export default function GlobalAnalyticsPage() {
                     <span className="font-sans font-semibold text-[13px] sm:text-[15px] text-t-primary truncate">{inst.name}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row items-end sm:items-center justify-center shrink-0">
-                    <span className="sm:w-24 font-sans font-medium text-[11px] sm:text-[15px] text-t-secondary text-right">{inst.tests.toLocaleString()} tests</span>
-                    <span className="sm:w-24 font-sans font-semibold text-[13px] sm:text-[15px] text-t-primary text-right">{inst.tokens} tok</span>
+                    <span className="sm:w-28 font-sans font-medium text-[11px] sm:text-[15px] text-t-secondary text-right">{inst.studentCount.toLocaleString()} students</span>
                   </div>
                 </div>
               ))}
@@ -138,18 +137,18 @@ export default function GlobalAnalyticsPage() {
         </div>
 
         {/* ── Bottom Row: AI Token Consumption ── */}
-        <SectionCard title="AI Token Consumption" className="w-full">
+        <SectionCard title="AI Usage" className="w-full">
           <div className="flex flex-col items-start gap-4 w-full mt-4">
             
             <div className="flex flex-row justify-between items-center w-full mb-2 -mt-6">
-              <span className="font-sans text-sm text-t-secondary">142.8M tokens used this month across all generative workflows</span>
+              <span className="font-sans text-sm text-t-secondary">Usage metering is not enabled. No estimated token total is displayed.</span>
               <div className="flex flex-row justify-center items-center px-4 py-2 gap-2 border border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] rounded-[10px]">
-                <span className="text-sm font-semibold text-primary-03 leading-none">84% of monthly budget</span>
+                <span className="text-sm font-semibold text-primary-03 leading-none">Awaiting metering</span>
               </div>
             </div>
 
             <div className="flex flex-col items-start w-full gap-4 mt-2">
-              {aiBreakdown.map((item, i) => {
+              {[].map((item: any, i) => {
                 const pct = Math.round((item.value / item.total) * 100);
                 return (
                   <div key={i} className="group/item relative flex flex-col w-full p-4 sm:p-5 gap-2 sm:gap-3 bg-b-surface2 dark:bg-[#161616] border border-s-stroke2/40 rounded-[16px] hover:scale-[1.005] transition-all cursor-pointer overflow-hidden h-[76px] sm:h-[88px] justify-center">

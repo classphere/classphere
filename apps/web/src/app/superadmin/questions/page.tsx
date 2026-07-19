@@ -126,9 +126,11 @@ export default function QuestionBankPage() {
     if (!token) return;
     setLoading(true);
     try {
-      for (const id of Array.from(selectedIds)) {
-        await apiClient.delete<{ success: boolean }>(`/api/v1/tests/${id}`, token);
-      }
+      await apiClient.deleteWithBody<{ success: boolean }>(
+        "/api/v1/tests/bulk/global",
+        { ids: Array.from(selectedIds) },
+        token
+      );
       setSelectedIds(new Set());
       await fetchQuestions();
     } catch (err: any) {
@@ -144,20 +146,18 @@ export default function QuestionBankPage() {
     setSaving(true);
     try {
       const isBulk = editingQuestion.id === "bulk";
-      const idsToEdit = isBulk ? Array.from(selectedIds) : [editingQuestion.id];
-      
-      for (const id of idsToEdit) {
-        const payload = isBulk 
-          ? Object.fromEntries(Object.entries(editForm).filter(([_, v]) => v !== ""))
-          : editForm;
+      const payload = isBulk
+        ? Object.fromEntries(Object.entries(editForm).filter(([_, v]) => v !== ""))
+        : editForm;
+      if (isBulk && Object.keys(payload).length === 0) return;
 
-        if (isBulk && Object.keys(payload).length === 0) continue;
-
-        await apiClient.patch<{ success: boolean }>(
-          `/api/v1/questions/${id}`,
-          payload,
-          token
-        );
+      if (isBulk) {
+        await apiClient.patch<{ success: boolean }>("/api/v1/tests/bulk/global", {
+          ids: Array.from(selectedIds),
+          updates: payload,
+        }, token);
+      } else {
+        await apiClient.patch<{ success: boolean }>(`/api/v1/tests/${editingQuestion.id}/global`, payload, token);
       }
       
       setEditingQuestion(null);

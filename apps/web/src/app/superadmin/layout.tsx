@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import Sidebar from "@/components/layout/Sidebar";
+import MobileNav from "@/components/layout/MobileNav";
 
 export default function SuperAdminLayout({
   children,
@@ -42,9 +43,10 @@ export default function SuperAdminLayout({
   }
 
   return (
-    <div className="flex min-h-screen bg-b-surface1 font-manrope">
+    <div className="flex min-h-screen flex-col bg-b-surface1 font-manrope lg:flex-row">
       <Sidebar />
-      <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
+      <MobileNav />
+      <div className="flex h-[calc(100dvh-64px)] min-w-0 flex-1 flex-col overflow-hidden lg:h-screen">
         {children}
       </div>
     </div>
