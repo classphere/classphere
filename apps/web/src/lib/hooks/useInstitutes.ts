@@ -29,9 +29,6 @@ export interface CreateInstitutePayload {
   name: string;
   adminEmail: string;
   adminUsername: string;
-  type: string;
-  price: number;
-  isFreeTrial?: boolean;
   trialMonths?: number;
   logoUrl?: string;
 }

@@ -160,9 +160,9 @@ export default function TeacherDoubtsPage() {
 
       <Navbar title="Batch Doubts" subtitle="Monitor, endorse, and respond to student doubts across all batches." breadcrumbs="Dashboard › Doubts" className="max-w-[1068px]" />
 
-      <main className="mx-auto w-full max-w-screen-2xl px-4 pt-12 md:px-6 flex justify-center bg-transparent select-none">
+      <main className="mx-auto flex w-full max-w-screen-2xl justify-center bg-transparent px-4 pt-4 select-none md:px-6 md:pt-12">
 
-        <div className="w-[1068px] h-[780px] bg-b-surface2 dark:bg-b-surface2 p-3 card flex flex-col gap-4 overflow-hidden relative">
+        <div className="relative flex h-[calc(100dvh-6rem)] min-h-[640px] w-full max-w-[1068px] flex-col gap-4 overflow-hidden bg-b-surface2 p-3 card dark:bg-b-surface2 md:h-[780px]">
 
           {/* Header Row */}
           <div className="flex flex-row justify-between items-center w-full h-12 relative px-2.5 shrink-0">
@@ -239,10 +239,10 @@ export default function TeacherDoubtsPage() {
           </div>
 
           {/* Workspace */}
-          <div className="flex-grow flex flex-row border border-s-stroke2/20 rounded-[10px] overflow-hidden min-h-0">
+          <div className="flex min-h-0 flex-grow flex-col overflow-hidden rounded-[10px] border border-s-stroke2/20 sm:flex-row">
 
             {/* Sidebar */}
-            <div className="w-[260px] border-r border-s-stroke2/10 bg-b-surface1 dark:bg-b-surface1/20 flex flex-col shrink-0">
+            <div className="flex h-[11.5rem] w-full shrink-0 flex-col border-b border-s-stroke2/10 bg-b-surface1 dark:bg-b-surface1/20 sm:h-auto sm:w-[260px] sm:border-r sm:border-b-0">
               <div className="p-3 border-b border-s-stroke2/10 bg-b-surface2 dark:bg-b-surface2">
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-t-secondary"><RiSearchLine size={16} /></span>
@@ -307,7 +307,7 @@ export default function TeacherDoubtsPage() {
               </div>
 
               {/* Messages */}
-              <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-3 bg-b-surface1/40 dark:bg-b-surface1/10 min-h-0">
+              <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto bg-b-surface1/40 px-4 py-4 dark:bg-b-surface1/10 sm:px-6">
                 {activeMessages.map(msg => {
                   const isRevealed = revealedStudents.has(msg.id);
                   const displayName = (msg.author === "Anonymous" && isRevealed && msg.studentName) ? msg.studentName : msg.author;

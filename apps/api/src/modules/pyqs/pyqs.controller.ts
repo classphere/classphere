@@ -27,6 +27,7 @@ export const getPYQList = async (req: Request, res: Response): Promise<void> => 
       `)
       .eq("test_type", "pyq")
       .eq("is_active", true);
+    query = query.eq("is_published", true).eq("delivery_mode", "public_practice");
 
     if (exam) {
       query = query.eq("exams.code", String(exam).trim());
@@ -61,7 +62,10 @@ export const getPYQQuestions = async (req: Request, res: Response): Promise<void
       .from("papers")
       .select("*, exams(code, full_name)")
       .eq("id", id)
+      .eq("test_type", "pyq")
       .eq("is_active", true)
+      .eq("is_published", true)
+      .eq("delivery_mode", "public_practice")
       .maybeSingle();
 
     if (paperError || !paperData) {

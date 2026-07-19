@@ -86,7 +86,7 @@ export default function TeacherAnalyticsPage() {
         breadcrumbs="Dashboard > Analytics"
       />
       
-      <main className="mx-auto w-full max-w-screen-2xl px-6 pb-10 md:px-8">
+      <main className="mx-auto w-full max-w-screen-2xl px-4 pb-10 sm:px-6 md:px-8">
         {/* Batch Selector */}
         <div className="flex items-center gap-4 mb-8 mt-6">
           <span className="text-body-2 font-bold text-t-secondary">Viewing batch:</span>

@@ -180,7 +180,10 @@ export const createFaculty = async (req: Request, res: Response): Promise<void> 
     if (facErr) {
       console.error("[createFaculty] faculty insert failed:", facErr);
       // Non-fatal — user is created, just metadata missing
-      console.warn("[createFaculty] Continuing despite faculty table error");
+      await supabaseDB.from("users").delete().eq("id", newUserId);
+      await supabaseAdmin.auth.admin.deleteUser(newUserId).catch(() => {});
+      res.status(500).json({ success: false, message: "Failed to create faculty profile." });
+      return;
     }
 
     // ── 7. Link to batch ─────────────────────────────────────────────────────
@@ -190,7 +193,11 @@ export const createFaculty = async (req: Request, res: Response): Promise<void> 
     });
 
     if (linkErr) {
-      console.warn("[createFaculty] batch_teachers link failed (non-fatal):", linkErr.message);
+      await supabaseDB.from("faculty").delete().eq("id", newUserId);
+      await supabaseDB.from("users").delete().eq("id", newUserId);
+      await supabaseAdmin.auth.admin.deleteUser(newUserId).catch(() => {});
+      res.status(500).json({ success: false, message: "Failed to assign faculty to the selected batch." });
+      return;
     } else {
       console.log(`[createFaculty] Linked teacher ${newUserId} to batch ${batch_id}`);
     }

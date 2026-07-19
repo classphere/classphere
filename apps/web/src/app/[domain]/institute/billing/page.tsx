@@ -36,7 +36,7 @@ export default function BillingPage() {
 
   return (
     <>
-      <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
+      <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-6 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
         
         {/* ── Top Navigation Row (Figma Style) ── */}
         <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-6">

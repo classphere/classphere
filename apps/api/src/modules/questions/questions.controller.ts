@@ -134,13 +134,12 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
     const { id } = req.params;
     const isSuperAdmin = req.user?.role === "super_admin";
 
-    // Strip explanation from non-super_admin lookups (SEC-3)
-    const isTeacherOrAdmin = ["super_admin", "institute_admin", "teacher"].includes(req.user?.role ?? "");
+    // Answer keys and explanations are platform-controlled material. They are
+    // never returned by this generic lookup; delivery endpoints release them
+    // only after an authorised submission or scheduled result release.
     const selectCols = isSuperAdmin
       ? "*"
-      : isTeacherOrAdmin
-        ? "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, correct_answer, explanation, tags"
-        : "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, tags";
+      : "id, question_text, image_url, subject, chapter, topic, difficulty, question_type, source, year, options, tags";
 
     const { data: question, error } = await supabaseDB
       .from("questions")
@@ -317,6 +316,7 @@ export const listTests = async (req: Request, res: Response): Promise<void> => {
       .select("id, title, test_type, subject, chapter, year, shift, total_questions, total_marks, duration_min, difficulty, exams(code, full_name)")
       .eq("is_active", true)
       .eq("is_published", true)
+      .eq("delivery_mode", "public_practice")
       .order("created_at", { ascending: false });
 
     if (type) query = query.eq("test_type", type as string);

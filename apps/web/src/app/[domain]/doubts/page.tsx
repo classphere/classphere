@@ -277,13 +277,13 @@ export default function StudentChatPage() {
 
       <Navbar title="Ask a Doubt" subtitle="Discuss test questions, clear doubts, and collaborate with classmates." breadcrumbs="Dashboard > Doubts" className="max-w-[1068px]" />
 
-      <main className="mx-auto w-full max-w-screen-2xl px-4 pt-12 md:px-6 flex justify-center bg-transparent select-none">
+      <main className="mx-auto flex w-full max-w-screen-2xl justify-center bg-transparent px-4 pt-4 sm:pt-8 md:px-6 md:pt-12 select-none">
 
         {/* Main Figma Dashboard overview card container (Width: 1068px, Expanded Height: 780px to fit Stats + Chat Workspace) */}
-        <div className="w-[1068px] h-[780px] bg-b-surface2 dark:bg-b-surface2 p-3 card flex flex-col gap-4 overflow-hidden relative">
+        <div className="relative flex h-[calc(100dvh-136px)] min-h-[620px] w-full max-w-[1068px] flex-col gap-3 overflow-hidden bg-b-surface2 p-2 card sm:h-[780px] sm:gap-4 sm:p-3 dark:bg-b-surface2">
 
           {/* Widget Header/dropdown */}
-          <div className="flex flex-row justify-between items-center w-full h-12 relative px-2.5 shrink-0">
+          <div className="relative flex h-auto w-full flex-col items-stretch justify-between gap-2 px-1.5 sm:h-12 sm:flex-row sm:items-center sm:px-2.5 shrink-0">
             {/* Header Title */}
             <div className="flex flex-row items-center gap-2">
               <h6 className="font-sans font-semibold text-[20px] leading-[145%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
@@ -295,7 +295,7 @@ export default function StudentChatPage() {
             <div className="relative">
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
-                className="flex flex-row justify-between items-center px-5 py-3 h-12 w-[180px] border-[1.5px] border-s-stroke2 dark:border-s-stroke2 rounded-[10px] bg-transparent text-left cursor-pointer transition-all hover:bg-b-surface1 dark:hover:bg-b-surface1"
+                className="flex h-11 w-full items-center justify-between rounded-[10px] border-[1.5px] border-s-stroke2 bg-transparent px-4 py-2 text-left transition-all hover:bg-b-surface1 sm:h-12 sm:w-[180px] sm:px-5 sm:py-3 dark:border-s-stroke2 dark:hover:bg-b-surface1"
               >
                 <span className="font-sans text-[14px] font-normal leading-[150%] tracking-[0.0025em] text-t-secondary dark:text-t-secondary truncate">
                   {activeGroup.name}
@@ -305,7 +305,7 @@ export default function StudentChatPage() {
 
               {/* Dropdown Options List */}
               {showDropdown && (
-                <div className="absolute right-0 top-14 w-[180px] bg-b-surface2 dark:bg-b-surface2 border border-s-stroke2/40 rounded-[10px] shadow-lg z-25 overflow-hidden">
+                <div className="absolute right-0 top-12 z-25 w-full overflow-hidden rounded-[10px] border border-s-stroke2/40 bg-b-surface2 shadow-lg sm:top-14 sm:w-[180px] dark:bg-b-surface2">
                   {groups.map(g => (
                     <div
                       key={g.id}
@@ -327,10 +327,10 @@ export default function StudentChatPage() {
           </div>
 
           {/* Stats Section */}
-          <div className="flex flex-row items-center p-2 gap-4 w-full h-[135px] bg-b-surface1 dark:bg-b-surface1/20 border-[1.5px] border-s-stroke2/40 rounded-[10px] shrink-0">
+          <div className="flex w-full flex-col items-stretch gap-2 rounded-[10px] border-[1.5px] border-s-stroke2/40 bg-b-surface1 p-2 sm:h-[135px] sm:flex-row sm:items-center sm:gap-4 dark:bg-b-surface1/20 shrink-0">
 
             {/* Active Doubts Stat Card */}
-            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] bg-b-surface2 dark:bg-b-surface2 border-[1.5px] border-s-border dark:border-s-stroke2/20 rounded-[10px]">
+            <div className="flex min-h-[96px] flex-grow flex-col items-start gap-1 rounded-[10px] border-[1.5px] border-s-border bg-b-surface2 px-4 py-3 sm:h-[119px] sm:px-8 dark:border-s-stroke2/20 dark:bg-b-surface2">
               <div className="flex flex-row items-center gap-2.5 w-full">
                 <RiQuestionAnswerLine size={20} className="text-t-primary dark:text-t-primary" />
                 <span className="font-sans font-semibold text-[15px] leading-[150%] tracking-[0.0015em] text-t-primary dark:text-t-primary">
@@ -355,7 +355,7 @@ export default function StudentChatPage() {
             </div>
 
             {/* Resolved Doubts Stat Card */}
-            <div className="flex flex-col items-start py-3 px-8 gap-1 flex-grow h-[119px] rounded-[10px] bg-transparent">
+            <div className="flex min-h-[96px] flex-grow flex-col items-start gap-1 rounded-[10px] bg-transparent px-4 py-3 sm:h-[119px] sm:px-8">
               <div className="flex flex-row items-center gap-2.5 w-full">
                 <RiCheckDoubleLine size={20} className="text-t-secondary dark:text-t-secondary" />
                 <span className="font-sans font-semibold text-[15px] leading-[150%] tracking-[0.0015em] text-t-secondary dark:text-t-secondary">
@@ -382,10 +382,10 @@ export default function StudentChatPage() {
           </div>
 
           {/* Unified Chat Workspace Section */}
-          <div className="flex-grow flex flex-row border border-s-stroke2/20 rounded-[10px] overflow-hidden min-h-0">
+          <div className="flex min-h-0 flex-grow flex-col overflow-hidden rounded-[10px] border border-s-stroke2/20 sm:flex-row">
 
             {/* Sidebar: Chat Groups List */}
-            <div className="w-[300px] border-r border-s-stroke2/10 bg-b-surface1 dark:bg-b-surface1/20 flex flex-col shrink-0">
+            <div className="flex h-[155px] w-full shrink-0 flex-col border-b border-s-stroke2/10 bg-b-surface1 sm:h-auto sm:w-[300px] sm:border-r sm:border-b-0 dark:bg-b-surface1/20">
               <div className="p-3 border-b border-s-stroke2/10 bg-b-surface2 dark:bg-b-surface2">
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-t-secondary">
@@ -401,14 +401,14 @@ export default function StudentChatPage() {
                 </div>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-2 flex flex-col gap-1.5">
+              <div className="flex flex-1 gap-1.5 overflow-x-auto overflow-y-hidden p-2 sm:flex-col sm:overflow-x-hidden sm:overflow-y-auto">
                 {filteredGroups.map(group => {
                   const isActive = group.id === activeGroupId;
                   return (
                     <div
                       key={group.id}
                       onClick={() => setActiveGroupId(group.id)}
-                      className={`p-3 flex gap-3 cursor-pointer rounded-[10px] transition-all border ${isActive
+                      className={`flex min-w-[220px] gap-3 rounded-[10px] border p-3 transition-all sm:min-w-0 ${isActive
                           ? "bg-b-surface2 dark:bg-b-surface2 border-l-4 border-l-t-primary dark:border-l-t-primary border-s-stroke2/20 shadow-xs"
                           : "bg-transparent border-transparent hover:bg-b-surface2/50"
                         }`}
@@ -468,7 +468,7 @@ export default function StudentChatPage() {
               </div>
 
               {/* Chat Messages scroll pane */}
-              <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-4 bg-b-surface1/40 dark:bg-b-surface1/10 min-h-0">
+              <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto bg-b-surface1/40 px-3 py-4 sm:px-6 dark:bg-b-surface1/10">
                 {activeMessages.map((msg, idx) => {
                   return (
                     <div 

@@ -64,18 +64,27 @@ export default function InstituteDashboardPage() {
   // ── Real institute data ──────────────────────────────────────────────────
   const [institute, setInstitute] = useState<any>(null);
   const [recentStudents, setRecentStudents] = useState<any[]>([]);
+  const [subscription, setSubscription] = useState<{ status?: string; current_period_end?: string | null } | null>(null);
+  const [subscriptionLoading, setSubscriptionLoading] = useState(true);
   const [realStudentCount, setRealStudentCount] = useState(0);
 
   useEffect(() => {
     if (!session?.access_token) return;
     const fetchInstitute = async () => {
       try {
-        const res = await apiClient.get("/api/v1/institutes/me", session.access_token);
-        if (res.success) {
-           setInstitute(res.data.institute);
-           setRecentStudents(res.data.recentStudents || []);
+        const [instituteResponse, subscriptionResponse] = await Promise.allSettled([
+          apiClient.get("/api/v1/institutes/me", session.access_token),
+          apiClient.get<{ success: boolean; data: { status?: string; current_period_end?: string | null } }>("/api/v1/institutes/me/subscription", session.access_token),
+        ]);
+        if (instituteResponse.status === "fulfilled" && instituteResponse.value.success) {
+           setInstitute(instituteResponse.value.data.institute);
+           setRecentStudents(instituteResponse.value.data.recentStudents || []);
+        }
+        if (subscriptionResponse.status === "fulfilled" && subscriptionResponse.value.success) {
+          setSubscription(subscriptionResponse.value.data);
         }
       } catch (e) { console.error("[Institute]", e); }
+      finally { setSubscriptionLoading(false); }
     };
     fetchInstitute();
   }, [session?.access_token]);
@@ -90,8 +99,14 @@ export default function InstituteDashboardPage() {
     instituteType: institute?.type ?? "hybrid",
     studentsCount: totalStudentsCount,
     batchesCount: activeBatchesCount,
-    plan: institute?.subscription_plan ?? "Free",
   };
+
+  const isActiveTrial = subscription?.status === "trialing" &&
+    (!subscription.current_period_end || new Date(subscription.current_period_end).getTime() > Date.now());
+  const accountStatus = subscriptionLoading ? "—" : isActiveTrial ? "Trial" : subscription?.status === "active" ? "Active" : "—";
+  const trialEndsLabel = isActiveTrial && subscription?.current_period_end
+    ? `Ends ${new Date(subscription.current_period_end).toLocaleDateString()}`
+    : undefined;
 
   const availableExams =
     EXAM_OPTIONS[instituteOverview.instituteType as keyof typeof EXAM_OPTIONS] ||
@@ -172,10 +187,9 @@ export default function InstituteDashboardPage() {
           />
           <MetricCard
             icon={<RiBankCardLine size={20} />}
-            label="Subscription"
-            value={instituteOverview.plan}
-            badge="Active"
-            badgeLabel="Renews Aug 15"
+            label="Account status"
+            value={accountStatus}
+            badgeLabel={trialEndsLabel}
             className="col-span-2 lg:col-span-1"
           />
         </div>

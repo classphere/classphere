@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { provisionInstitute } from "./institutes.service";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
+import { logAdminAction } from "../../lib/admin-audit";
 
 const checkBatchTenant = async (batchId: string, reqUser: any): Promise<boolean> => {
   if (reqUser.role === "super_admin") return true;
@@ -21,18 +22,20 @@ const checkBatchTenant = async (batchId: string, reqUser: any): Promise<boolean>
  */
 export const createInstitute = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { name, adminEmail, adminUsername, type, price, isFreeTrial, trialMonths, logoUrl } = req.body;
+    const { name, adminEmail, adminUsername, trialMonths, logoUrl } = req.body;
 
-    if (!name || !adminEmail || !adminUsername || !type || price === undefined) {
+    if (!name || !adminEmail || !adminUsername) {
       res.status(400).json({
         success: false,
-        message: "Missing required fields: name, adminEmail, adminUsername, type, price",
+        message: "Missing required fields: name, adminEmail, adminUsername",
       });
       return;
     }
 
-    const result = await provisionInstitute({ name, adminEmail, adminUsername, type, price, isFreeTrial, trialMonths, logoUrl });
+    const result = await provisionInstitute({ name, adminEmail, adminUsername, trialMonths, logoUrl });
     const { tempPassword, ...institute } = result;
+
+    await logAdminAction(req.user?.id, "Institute provisioned", `Provisioned ${institute.name} with a trial entitlement.`, "institutes", "success");
 
     res.status(201).json({
       success: true,
@@ -113,6 +116,9 @@ export const updateInstitute = async (req: Request, res: Response): Promise<void
     const { data: institute, error } = await query.select().single();
 
     if (error || !institute) { res.status(error ? 500 : 404).json({ success: false, message: error?.message ?? "Institute not found" }); return; }
+    if (isSuperAdmin) {
+      await logAdminAction(req.user?.id, "Institute updated", `Updated ${institute.name}.`, "institutes", "success");
+    }
     res.status(200).json({ success: true, data: { institute } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
@@ -139,6 +145,7 @@ export const deleteInstitute = async (req: Request, res: Response): Promise<void
       return;
     }
 
+    await logAdminAction(req.user?.id, "Institute suspended", `Suspended ${institute.name}.`, "institutes", "success");
     res.status(200).json({ success: true, message: "Institute suspended successfully" });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
@@ -811,23 +818,8 @@ export const getInstituteSubscription = async (req: Request, res: Response): Pro
     
     // Auto-create trial if not exists
     if (!sub && error?.code === 'PGRST116') {
-      const start = new Date();
-      const end = new Date();
-      end.setMonth(end.getMonth() + 2); // 2 months trial
-      
-      const { data: newSub, error: insertErr } = await supabaseDB
-        .from("institute_subscriptions")
-        .insert({ 
-          institute_id: user.institute_id,
-          plan_tier: "trial",
-          status: "trialing",
-          current_period_start: start.toISOString(),
-          current_period_end: end.toISOString()
-        })
-        .select()
-        .single();
-      if (insertErr) { res.status(500).json({ success: false, message: insertErr.message }); return; }
-      sub = newSub;
+      res.status(404).json({ success: false, message: "No subscription entitlement exists for this institute." });
+      return;
     } else if (error) {
       res.status(500).json({ success: false, message: error.message }); return;
     }

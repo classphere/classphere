@@ -102,7 +102,7 @@ export default function ReportsPage() {
   }, [fetchStats]);
 
   return (
-    <main className="mx-auto w-full max-w-[1560px] px-6 pb-12 pt-6 flex flex-col gap-6 select-none bg-transparent">
+    <main className="mx-auto flex w-full max-w-[1560px] flex-col gap-6 bg-transparent px-4 pb-12 pt-4 select-none sm:px-6 sm:pt-6">
 
       {/* ── Top Navigation Row (Figma Style) ── */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center w-full gap-4 lg:gap-6 mb-2">

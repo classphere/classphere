@@ -382,6 +382,7 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
         .single();
 
       if (userErr || !newUser) {
+        await supabaseAdmin.auth.admin.deleteUser(newId).catch(() => {});
         res.status(500).json({ success: false, message: `Failed to create student: ${userErr?.message}` });
         return;
       }
@@ -403,6 +404,10 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
       });
 
       if (linkErr) {
+        if (!existing?.id) {
+          await supabaseDB.from("users").delete().eq("id", studentId);
+          await supabaseAdmin.auth.admin.deleteUser(studentId).catch(() => {});
+        }
         res.status(500).json({ success: false, message: `Student created but failed to link batch: ${linkErr.message}` });
         return;
       }

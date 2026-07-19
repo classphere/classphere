@@ -30,9 +30,6 @@ export interface CreateInstituteInput {
   name: string;
   adminEmail: string;
   adminUsername: string;
-  type: string;
-  price: number;
-  isFreeTrial?: boolean;
   trialMonths?: number;
   logoUrl?: string;
 }
@@ -138,7 +135,12 @@ function generateTempPassword(): string {
 export async function provisionInstitute(
   input: CreateInstituteInput
 ): Promise<InstituteRow & { tempPassword: string }> {
-  const { name, adminEmail, adminUsername, type, price, isFreeTrial, trialMonths = 2, logoUrl } = input;
+  const { name, adminEmail, adminUsername, trialMonths = 2, logoUrl } = input;
+  if (!Number.isInteger(trialMonths) || trialMonths < 1 || trialMonths > 24) {
+    const err = new Error("Trial duration must be a whole number between 1 and 24 months.");
+    (err as any).statusCode = 400;
+    throw err;
+  }
   console.log(`[provisionInstitute] START — name="${name}", email="${adminEmail}", username="${adminUsername}"`);
 
   // ── 1. Duplicate guard ───────────────────────────────────────────────────
@@ -227,7 +229,7 @@ export async function provisionInstitute(
 
   const { data: newInst, error: insertErr } = await supabaseDB
     .from("institutes")
-    .insert([{ name, owner_id: newUserId, plan: "active", is_active: true, subdomain_slug, logo_url: logoUrl || null }])
+    .insert([{ name, owner_id: newUserId, plan: "trial", is_active: true, subdomain_slug, logo_url: logoUrl || null }])
     .select()
     .single();
 
@@ -251,7 +253,7 @@ export async function provisionInstitute(
   }
 
   // ── 5b. Insert institute_subscriptions (Free Trial) ──────────────────────
-  if (isFreeTrial) {
+  {
     console.log(`[provisionInstitute] Step 5b: Creating free trial subscription for ${trialMonths} months...`);
     const start = new Date();
     const end = new Date();
@@ -261,7 +263,7 @@ export async function provisionInstitute(
       .from("institute_subscriptions")
       .insert([{
         institute_id: newInst.id,
-        plan_tier: "active",
+        plan_tier: "trial",
         status: "trialing",
         current_period_start: start.toISOString(),
         current_period_end: end.toISOString()
@@ -280,10 +282,14 @@ export async function provisionInstitute(
     .eq("id", newUserId);
 
   if (linkErr) {
-    console.warn(`[provisionInstitute] Step 6 warning (non-fatal): ${linkErr.message}`);
-  } else {
-    console.log(`[provisionInstitute] Step 6: institute_id set on user`);
+    await supabaseDB.from("institute_subscriptions").delete().eq("institute_id", newInst.id);
+    await supabaseDB.from("institute_settings").delete().eq("institute_id", newInst.id);
+    await supabaseDB.from("institutes").delete().eq("id", newInst.id);
+    await supabaseDB.from("users").delete().eq("id", newUserId);
+    await supabaseAdmin.auth.admin.deleteUser(newUserId);
+    throw new Error(`Failed to link institute administrator: ${linkErr.message}`);
   }
+  console.log(`[provisionInstitute] Step 6: institute_id set on user`);
 
   console.log(`[provisionInstitute] COMPLETE ✓`);
 
