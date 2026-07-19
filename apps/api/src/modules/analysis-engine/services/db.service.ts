@@ -309,6 +309,38 @@ export const db = {
     if (!success) {
       console.error(`[db.service] persistStudentErrorProfile failed after ${MAX_RETRIES} retries for student ${studentId}`);
     } else {
+      const revisionTasks = Object.entries(newEntries)
+        .filter(([, entry]) => entry.wasWeak)
+        .slice(0, 3)
+        .map(([topicKey, entry]) => {
+          const [fallbackChapter, topic] = topicKey.split("::");
+          const chapter = entry.chapter || fallbackChapter || "General";
+          const subject = entry.subject || "";
+          return {
+            student_id: studentId,
+            exam_code: examCode,
+            subject,
+            chapter,
+            topic: topic || "General",
+            task_type: "mistake_review",
+            title: `Review ${topic || "this topic"}`,
+            description: `Revisit the concept in ${chapter}, then solve a short set without looking at the solution.`,
+            duration_minutes: 20,
+            source_attempt_id: entry.attemptId,
+            status: "pending",
+            due_at: new Date().toISOString(),
+            completed_at: null,
+            metadata: { errorType: entry.dominantErrorType, questionsAttempted: entry.questionsAttempted },
+            updated_at: new Date().toISOString(),
+          };
+        });
+
+      if (revisionTasks.length > 0) {
+        const { error: taskError } = await supabaseDB
+          .from("student_revision_tasks")
+          .upsert(revisionTasks, { onConflict: "student_id,exam_code,subject,chapter,topic,task_type" });
+        if (taskError) console.error(`[db.service] revision queue update failed: ${taskError.message}`);
+      }
       console.log(`[db.service] Error profile updated for student ${studentId}, ${Object.keys(newEntries).length} topics`);
     }
   },

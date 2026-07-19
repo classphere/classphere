@@ -74,8 +74,12 @@ export function useAttempts(
 /**
  * startAttempt — creates an attempt record and returns the attempt ID.
  */
-export async function startAttempt(paperId: string, token: string): Promise<{ attempt_id: string; resumed?: boolean }> {
-  const res = await apiClient.post("/api/v1/attempts", { paper_id: paperId }, token);
+export async function startAttempt(
+  paperId: string,
+  token: string,
+  testMode: "practice" | "attempt" = "attempt",
+): Promise<{ attempt_id: string; resumed?: boolean }> {
+  const res = await apiClient.post("/api/v1/attempts", { paper_id: paperId, test_mode: testMode }, token);
   if (!res.success) throw new Error(res.message ?? "Failed to start attempt");
   const attempt = res.data.attempt;
   return { attempt_id: attempt.id, resumed: res.data.resumed };

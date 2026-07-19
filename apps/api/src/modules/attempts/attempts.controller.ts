@@ -8,6 +8,7 @@ import { db } from "../analysis-engine/services/db.service";
 import { AttemptAnswer } from "../../../../../packages/types/src/analysis.types";
 import { enqueueAnalysis } from "../../lib/queue/analysis.queue";
 import { connection as redis } from "../../lib/queue/redis";
+import { getStudentTestAccess } from "../tests/test-access.service";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -85,7 +86,7 @@ function scoreAnswer(question: any, selectedAnswer: unknown): { isCorrect: boole
 export const startAttempt = async (req: Request, res: Response): Promise<void> => {
   try {
     const studentId = req.user!.id;
-    let { paper_id } = req.body;
+    let { paper_id, test_mode } = req.body;
 
     if (!paper_id) {
       res.status(400).json({ success: false, message: "paper_id is required" });
@@ -97,6 +98,32 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
 
     // Load paper to get exam_code
     const { examCode } = await loadPaperQuestions(paper_id);
+
+    const { data: paper } = await supabaseDB
+      .from("papers")
+      .select("id, test_type, created_by, duration_min, is_active, is_published, delivery_mode, available_from, available_until")
+      .eq("id", paper_id)
+      .maybeSingle();
+
+    if (!paper) {
+      res.status(404).json({ success: false, message: "Test is unavailable." });
+      return;
+    }
+
+    const access = await getStudentTestAccess(studentId, paper);
+    if (!access.allowed) {
+      res.status(access.status).json({ success: false, message: access.message });
+      return;
+    }
+
+    const requestedMode = test_mode === "practice" ? "practice" : "attempt";
+    if (access.deliveryMode === "assigned_scheduled" && requestedMode === "practice") {
+      res.status(400).json({
+        success: false,
+        message: "Institute-assigned tests must be started in timed attempt mode.",
+      });
+      return;
+    }
 
     // Check for an existing in-progress attempt (prevent duplicates)
     const { data: existing } = await supabaseDB
@@ -117,26 +144,7 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
       return;
     }
 
-    // An attempt is valid only for a paper assigned to one of this student's
-    // batches. Never trust a caller-supplied batch_id.
-    const [{ data: assignments }, { data: studentBatches }] = await Promise.all([
-      supabaseDB.from("test_batch_assignments").select("batch_id").eq("test_id", paper_id),
-      supabaseDB.from("batch_students").select("batch_id").eq("student_id", studentId),
-    ]);
-    const assignedBatchIds = new Set((assignments ?? []).map((assignment: any) => assignment.batch_id));
-    const eligibleBatchIds = (studentBatches ?? [])
-      .map((membership: any) => membership.batch_id)
-      .filter((batchId: string) => assignedBatchIds.has(batchId));
-    if (eligibleBatchIds.length === 0) {
-      res.status(403).json({ success: false, message: "This test is not assigned to one of your batches." });
-      return;
-    }
-    const requestedBatchId = req.body.batch_id as string | undefined;
-    if (requestedBatchId && !eligibleBatchIds.includes(requestedBatchId)) {
-      res.status(403).json({ success: false, message: "The requested batch is not authorised for this attempt." });
-      return;
-    }
-    const resolvedBatchId = requestedBatchId ?? eligibleBatchIds[0];
+    const resolvedBatchId = access.batchId;
 
     // Create new attempt
     const { data: attempt, error } = await supabaseDB
@@ -148,7 +156,11 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
         status: "in_progress",
         batch_id: resolvedBatchId,
         marking_scheme: { correct: 4, incorrect: -1, unattempted: 0, partial: false },
-        total_duration_sec: 10800,
+        // Public papers can be started as untimed practice. Assigned tests are
+        // always timed and are enforced above rather than trusted to the client.
+        total_duration_sec: requestedMode === "practice"
+          ? 0
+          : Math.max(60, Number(paper.duration_min ?? 0) > 0 ? Number(paper.duration_min) * 60 : 180 * 60),
       })
       .select("id, student_id, paper_id, exam_code, status, created_at")
       .single();
@@ -158,8 +170,8 @@ export const startAttempt = async (req: Request, res: Response): Promise<void> =
       return;
     }
 
-    console.log(`[startAttempt] Created attempt ${attempt.id} for student ${studentId} on paper ${paper_id}`);
-    res.status(201).json({ success: true, data: { attempt } });
+    console.log(`[startAttempt] Created ${requestedMode} attempt ${attempt.id} for student ${studentId} on paper ${paper_id}`);
+    res.status(201).json({ success: true, data: { attempt, mode: requestedMode } });
   } catch (err: any) {
     console.error("[startAttempt error]", err);
     res.status(500).json({ success: false, message: err.message });
@@ -247,6 +259,10 @@ export const getAttempt = async (req: Request, res: Response): Promise<void> => 
         res.status(403).json({ success: false, message: "Access denied" });
         return;
       }
+      if (attempt.status === "in_progress" || attempt.status === "submitting") {
+        res.status(403).json({ success: false, message: "Live student answers are not available to staff." });
+        return;
+      }
     }
 
     let savedAnswers: any[] = [];
@@ -293,7 +309,7 @@ export const saveAttempt = async (req: Request, res: Response): Promise<void> =>
     // Verify attempt belongs to this user and is in_progress
     const { data: attempt } = await supabaseDB
       .from("attempts")
-      .select("id, student_id, status")
+      .select("id, student_id, status, created_at, total_duration_sec, paper_id")
       .eq("id", id)
       .maybeSingle();
 
@@ -309,23 +325,34 @@ export const saveAttempt = async (req: Request, res: Response): Promise<void> =>
       res.status(400).json({ success: false, message: "Attempt is already submitted" });
       return;
     }
+    const duration = Number(attempt.total_duration_sec ?? 0);
+    if (duration > 0 && Date.now() >= new Date(attempt.created_at).getTime() + duration * 1000) {
+      res.status(409).json({ success: false, message: "The test time has ended. Submit your saved answers now." });
+      return;
+    }
+    const { data: paperQuestions } = await supabaseDB
+      .from("paper_questions")
+      .select("question_id")
+      .eq("paper_id", attempt.paper_id);
+    const allowedQuestionIds = new Set((paperQuestions ?? []).map((row: any) => row.question_id));
 
     // Build redis multi-set args
     const redisKey = `attempt:${id}:answers`;
     const msetArgs: string[] = [];
     for (const [qId, ans] of Object.entries(answers as Record<string, any>)) {
+      if (!allowedQuestionIds.has(qId)) continue;
       msetArgs.push(qId, JSON.stringify({
         selected_answer: ans.selected_answer ?? null,
         marked_review: ans.marked_review ?? false,
-        time_taken_sec: ans.time_taken_sec ?? 0,
-        start_timestamp: ans.start_timestamp ?? -1
+        time_taken_sec: Math.max(0, Math.min(Number(ans.time_taken_sec ?? 0), duration)),
+        start_timestamp: Math.max(-1, Math.min(Number(ans.start_timestamp ?? -1), duration))
       }));
     }
 
     if (msetArgs.length > 0) {
       // We pass the array of key-value pairs to hmset
       await redis.hmset(redisKey, ...msetArgs);
-      await redis.expire(redisKey, 4 * 60 * 60); // Expire in 4 hours
+      await redis.expire(redisKey, Math.max(3600, duration + 3600));
     }
 
     res.status(200).json({ success: true, message: `${msetArgs.length / 2} answers saved to Redis` });
@@ -352,8 +379,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
     requestAnswers = requestAnswers || {};
 
     // Normalize pyq- prefix (legacy standalone submission without startAttempt)
-    const isLegacyPyq = rawId.startsWith("pyq-");
-    const paperId = rawId.startsWith("pyq-") ? rawId.replace("pyq-", "") : rawId;
+    const isLegacyPyq = false;
 
     // ── Determine if this is a real attempt ID or a paper ID ──────────────────
     // Real attempt IDs are UUIDs. Paper IDs are also UUIDs but stored in paper registry.
@@ -364,7 +390,7 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
     if (!isLegacyPyq) {
       const { data: att } = await supabaseDB
         .from("attempts")
-        .select("id, student_id, paper_id, exam_code, status, marking_scheme")
+        .select("id, student_id, paper_id, exam_code, status, marking_scheme, created_at, total_duration_sec")
         .eq("id", rawId)
         .maybeSingle();
 
@@ -383,7 +409,11 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
     }
 
     // ── Load questions ────────────────────────────────────────────────────────
-    const targetPaperId = existingAttempt ? existingAttempt.paper_id : paperId;
+    if (!existingAttempt) {
+      res.status(404).json({ success: false, message: "Attempt not found. Start the test before submitting." });
+      return;
+    }
+    const targetPaperId = existingAttempt.paper_id;
     const { questions, examCode } = await loadPaperQuestions(targetPaperId);
 
     if (!questions || questions.length === 0) {
@@ -443,7 +473,9 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       finalAnswers[qId] = JSON.parse(val);
     }
     // Merge any last-minute answers sent in the submit body
-    for (const [qId, ans] of Object.entries(requestAnswers)) {
+    const submitDuration = Number(existingAttempt.total_duration_sec ?? 0);
+    const submissionIsLate = submitDuration > 0 && Date.now() >= new Date(existingAttempt.created_at).getTime() + submitDuration * 1000;
+    if (!submissionIsLate) for (const [qId, ans] of Object.entries(requestAnswers)) {
       finalAnswers[qId] = { ...(finalAnswers[qId] || {}), ...(ans as object) };
     }
 
