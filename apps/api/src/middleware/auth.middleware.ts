@@ -71,6 +71,32 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
         res.status(403).json({ success: false, code: "INSTITUTE_SUSPENDED", message: "This institute is suspended." });
         return;
       }
+
+      const { data: subscriptions, error: subscriptionError } = await supabaseDB
+        .from("institute_subscriptions")
+        .select("status, plan_tier, current_period_end")
+        .eq("institute_id", institute_id)
+        .in("status", ["trialing", "active"])
+        .order("current_period_end", { ascending: false, nullsFirst: false })
+        .limit(5);
+
+      if (subscriptionError) {
+        res.status(503).json({ success: false, code: "ENTITLEMENT_UNAVAILABLE", message: "Institute access could not be verified. Please contact support." });
+        return;
+      }
+
+      const now = Date.now();
+      const entitled = (subscriptions ?? []).some((subscription: any) => {
+        const endsAt = subscription.current_period_end ? Date.parse(subscription.current_period_end) : NaN;
+        if (subscription.status === "trialing") return Number.isFinite(endsAt) && endsAt > now;
+        return subscription.status === "active" && subscription.plan_tier !== "free" &&
+          (!Number.isFinite(endsAt) || endsAt > now);
+      });
+
+      if (!entitled) {
+        res.status(403).json({ success: false, code: "SUBSCRIPTION_REQUIRED", message: "This institute does not have an active trial or subscription." });
+        return;
+      }
     }
 
     // ── One-device enforcement: skip for super_admin ───────────────────────────

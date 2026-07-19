@@ -15,12 +15,14 @@ import superadminRouter from "../modules/superadmin/superadmin.routes";
 import dashboardRouter from "../modules/dashboard/dashboard.routes";
 import dppsRouter from "../modules/dpps/dpps.routes";
 import supportRouter from "../modules/support/support.routes";
+import syllabusRouter from "../modules/syllabus/syllabus.routes";
 
 const router = Router();
 
 // ─── Public ──────────────────────────────────────────────────────────────────
 router.use("/auth", authRouter);
 router.use("/pyqs", pyqsRouter);
+router.use("/syllabus", syllabusRouter);
 
 // ─── Authenticated ───────────────────────────────────────────────────────────
 router.use("/questions", questionsRouter);

@@ -87,4 +87,7 @@ export const apiClient = {
 
   delete: <T = any>(path: string, token?: string) =>
     request<T>(path, { method: "DELETE", token }),
+
+  deleteWithBody: <T = any>(path: string, body: unknown, token?: string) =>
+    request<T>(path, { method: "DELETE", body, token }),
 };
