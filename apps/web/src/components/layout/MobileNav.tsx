@@ -32,9 +32,11 @@ import {
   RiNotification3Line,
   RiUploadCloud2Line,
   RiLogoutBoxLine
+  ,RiShieldCheckLine
 } from "@remixicon/react";
 import { useAuth } from "@/lib/auth-context";
 import { useTenant } from "@/lib/tenant-context";
+import { NotificationBell } from "@/components/notifications/NotificationBell";
 
 export default function MobileNav() {
   const pathname = usePathname();
@@ -109,23 +111,28 @@ export default function MobileNav() {
   const roleFromQuery = process.env.NODE_ENV !== "production" ? searchParams.get("role") : null;
   const roleFromPath = cleanPath.startsWith("/teacher")
     ? "teacher"
+    : cleanPath.startsWith("/test-department")
+    ? "test_department"
     : cleanPath.startsWith("/institute")
       ? "institute_admin"
       : cleanPath.startsWith("/superadmin")
         ? "super_admin"
         : null;
         
-  const inferredRole = roleFromQuery === "teacher"
+  const inferredRole = user?.role ?? (roleFromQuery === "teacher"
     ? "teacher"
+    : roleFromQuery === "test_department_head" || roleFromQuery === "test_department_member"
+      ? roleFromQuery
     : roleFromQuery === "institute_admin"
       ? "institute_admin"
       : roleFromQuery === "super_admin"
         ? "super_admin"
-    : roleFromPath ?? user?.role ?? "student";
+    : roleFromPath ?? "student");
 
-  const isTeacher = cleanPath.startsWith("/teacher") || inferredRole === "teacher";
-  const isInstitute = cleanPath.startsWith("/institute") || inferredRole === "institute_admin";
-  const isSuperAdmin = cleanPath.startsWith("/superadmin") || inferredRole === "super_admin";
+  const isTeacher = inferredRole === "teacher";
+  const isInstitute = inferredRole === "institute_admin";
+  const isSuperAdmin = inferredRole === "super_admin";
+  const isTestDepartment = inferredRole === "test_department_head" || inferredRole === "test_department_member";
 
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [mounted, setMounted] = useState(false);
@@ -172,8 +179,14 @@ export default function MobileNav() {
     { label: "Students", href: "/institute/students", icon: <RiUser3Line size={18} />, active: cleanPath.startsWith("/institute/students") },
     { label: "Reports", href: "/institute/reports", icon: <RiBarChartBoxLine size={18} />, active: cleanPath.startsWith("/institute/reports") },
     { label: "Tests", href: "/institute/tests", icon: <RiFileList3Line size={18} />, active: cleanPath.startsWith("/institute/tests") },
+    { label: "Test Department", href: "/test-department/team", icon: <RiShieldCheckLine size={18} />, active: cleanPath.startsWith("/test-department") },
     { label: "Billing", href: "/institute/billing", icon: <RiBankCardLine size={18} />, active: cleanPath.startsWith("/institute/billing") },
     { label: "Support", href: "/institute/support", icon: <RiLifebuoyLine size={18} />, active: cleanPath.startsWith("/institute/support") },
+  ];
+  const testDepartmentNav = [
+    { label: "Test Workspace", href: "/test-department", icon: <RiDashboardLine size={18} />, active: cleanPath === "/test-department" },
+    { label: "Review Queue", href: "/test-department?status=needs_review", icon: <RiShieldCheckLine size={18} />, active: cleanPath === "/test-department" },
+    { label: "Study Material", href: "/test-department/resources", icon: <RiBookOpenLine size={18} />, active: cleanPath.startsWith("/test-department/resources") },
   ];
 
   const superAdminNav = [
@@ -188,14 +201,14 @@ export default function MobileNav() {
   ];
 
   const currentNav = mounted 
-    ? (isTeacher ? teacherNav : isInstitute ? instituteNav : isSuperAdmin ? superAdminNav : studentNav)
-    : (cleanPath.startsWith("/teacher") ? teacherNav : cleanPath.startsWith("/institute") ? instituteNav : cleanPath.startsWith("/superadmin") ? superAdminNav : studentNav);
+    ? (isTeacher ? teacherNav : isTestDepartment ? testDepartmentNav : isInstitute ? instituteNav : isSuperAdmin ? superAdminNav : studentNav)
+    : (cleanPath.startsWith("/teacher") ? teacherNav : cleanPath.startsWith("/test-department") ? testDepartmentNav : cleanPath.startsWith("/institute") ? instituteNav : cleanPath.startsWith("/superadmin") ? superAdminNav : studentNav);
 
   const activeTeacher = mounted ? isTeacher : cleanPath.startsWith("/teacher");
   const activeInstitute = mounted ? isInstitute : cleanPath.startsWith("/institute");
   const activeSuperAdmin = mounted ? isSuperAdmin : cleanPath.startsWith("/superadmin");
 
-  const roleQuery = activeTeacher ? "?role=teacher" : activeInstitute ? "?role=institute_admin" : activeSuperAdmin ? "?role=super_admin" : "?role=student";
+  const roleQuery = activeTeacher ? "?role=teacher" : isTestDepartment ? "?role=test_department_head" : activeInstitute ? "?role=institute_admin" : activeSuperAdmin ? "?role=super_admin" : "?role=student";
 
   const othersNav = [
     { label: "Settings", path: "/settings", href: "/settings", icon: <RiSettings4Line size={18} /> },
@@ -208,7 +221,7 @@ export default function MobileNav() {
     <>
       {/* ── Mobile Top Bar ── */}
       <div className="lg:hidden sticky top-0 z-40 flex items-center justify-between w-full h-16 px-4 bg-[#edecec] dark:bg-[#090909] bg-opacity-90 dark:bg-opacity-90 shrink-0">
-        <Link href={isSuperAdmin ? "/superadmin" : (isTeacher ? "/teacher" : (isInstitute ? "/institute" : "/student/dashboard"))} className="flex items-center gap-3">
+        <Link href={isSuperAdmin ? "/superadmin" : (isTestDepartment ? "/test-department" : (isTeacher ? "/teacher" : (isInstitute ? "/institute" : "/student/dashboard")))} className="flex items-center gap-3">
           <img
             src={tenant.logoUrl ?? "/logo.png"}
             alt={displayName}
@@ -338,10 +351,7 @@ export default function MobileNav() {
               </button>
             </div>
             
-            <button className="relative flex size-12 items-center justify-center rounded-[12px] bg-b-surface2 border border-s-stroke2 transition-all shadow-[0_1px_3px_rgba(0,0,0,0.05)] shrink-0 text-t-secondary">
-              <RiNotification3Line size={20} />
-              <div className="absolute top-3 right-3 size-2 rounded-full bg-primary-03 border-2 border-b-surface2" />
-            </button>
+            <NotificationBell />
           </div>
 
           <div className="flex items-center justify-between w-full mt-2">

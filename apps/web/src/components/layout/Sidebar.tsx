@@ -29,9 +29,11 @@ import {
   RiBrainLine,
   RiMoneyDollarCircleLine,
   RiUploadCloud2Line,
+  RiShieldCheckLine,
 } from "@remixicon/react";
 import { useAuth } from "@/lib/auth-context";
 import { useTenant } from "@/lib/tenant-context";
+import { NotificationBell } from "@/components/notifications/NotificationBell";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -59,15 +61,22 @@ export default function Sidebar() {
   // For active-link highlighting, also check the path (works when there's no subdomain)
   const roleFromPath = cleanPath.startsWith("/teacher")
     ? "teacher"
+    : cleanPath.startsWith("/test-department")
+    ? "test_department"
     : cleanPath.startsWith("/institute")
     ? "institute_admin"
     : cleanPath.startsWith("/superadmin")
     ? "super_admin"
     : null;
 
-  const isSuperAdmin = userRole === "super_admin" || roleFromPath === "super_admin";
-  const isTeacher    = userRole === "teacher"     || roleFromPath === "teacher";
-  const isInstitute  = userRole === "institute_admin" || roleFromPath === "institute_admin";
+  // Path fallback exists only during the short unauthenticated hydration
+  // window. Once a user role is known, the typed URL must not change the nav.
+  const isSuperAdmin = userRole ? userRole === "super_admin" : roleFromPath === "super_admin";
+  const isTeacher    = userRole ? userRole === "teacher" : roleFromPath === "teacher";
+  const isInstitute  = userRole ? userRole === "institute_admin" : roleFromPath === "institute_admin";
+  const isTestDepartment = userRole
+    ? userRole === "test_department_head" || userRole === "test_department_member"
+    : roleFromPath === "test_department";
 
   // ── Theme ─────────────────────────────────────────────────────────────────
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -123,8 +132,15 @@ export default function Sidebar() {
     { label: "Students",  href: "/institute/students", icon: <RiUser3Line size={18} />,        active: cleanPath.startsWith("/institute/students") },
     { label: "Reports",   href: "/institute/reports",  icon: <RiBarChartBoxLine size={18} />,  active: cleanPath.startsWith("/institute/reports") },
     { label: "Tests",     href: "/institute/tests",    icon: <RiFileList3Line size={18} />,    active: cleanPath.startsWith("/institute/tests") },
+    { label: "Test Department", href: "/test-department/team", icon: <RiShieldCheckLine size={18} />, active: cleanPath.startsWith("/test-department") },
     { label: "Billing",   href: "/institute/billing",  icon: <RiBankCardLine size={18} />,     active: cleanPath.startsWith("/institute/billing") },
     { label: "Support",   href: "/institute/support",  icon: <RiLifebuoyLine size={18} />,     active: cleanPath.startsWith("/institute/support") },
+  ];
+
+  const testDepartmentNav = [
+    { label: "Test Workspace", href: "/test-department", icon: <RiDashboardLine size={18} />, active: cleanPath === "/test-department" },
+    { label: "Review Queue", href: "/test-department?status=needs_review", icon: <RiShieldCheckLine size={18} />, active: cleanPath === "/test-department" },
+    { label: "Study Material", href: "/test-department/resources", icon: <RiBookOpenLine size={18} />, active: cleanPath.startsWith("/test-department/resources") },
   ];
 
   const superadminNav = [
@@ -141,6 +157,7 @@ export default function Sidebar() {
   // Always use the role flags (which already incorporate both user.role and path fallback)
   const currentNav = isSuperAdmin ? superadminNav
     : isTeacher ? teacherNav
+    : isTestDepartment ? testDepartmentNav
     : isInstitute ? instituteNav
     : studentNav;
 
@@ -160,7 +177,7 @@ export default function Sidebar() {
       {/* ── Top: Logo ── */}
       <div className="flex flex-col gap-6 w-full">
         <div className="pl-1">
-          <Link href={isSuperAdmin ? "/" : isInstitute ? "/institute" : isTeacher ? "/teacher" : "/student/dashboard"} className="flex items-center gap-3.5 rounded-[10px] transition-colors">
+          <Link href={isSuperAdmin ? "/" : isTestDepartment ? "/test-department" : isInstitute ? "/institute" : isTeacher ? "/teacher" : "/student/dashboard"} className="flex items-center gap-3.5 rounded-[10px] transition-colors">
             <img
               src={tenant.logoUrl ?? "/logo.png"}
               alt={displayName}
@@ -269,10 +286,7 @@ export default function Sidebar() {
 
         {/* Theme + Notification row */}
         <div className="flex flex-row items-center gap-3 w-full">
-          <button className="relative flex size-12 items-center justify-center rounded-full bg-b-surface2 border border-s-stroke2 transition-all active:scale-95 shadow-widget hover:border-s-highlight cursor-pointer shrink-0 text-t-secondary hover:text-t-primary">
-            <RiNotification3Line size={20} />
-            <div className="absolute top-3.5 right-3.5 size-1.5 rounded-full bg-primary-03" />
-          </button>
+          <NotificationBell />
 
           <button className="relative flex size-12 items-center justify-center rounded-full bg-b-surface2 border border-s-stroke2 transition-all active:scale-95 shadow-widget hover:border-s-highlight cursor-pointer shrink-0 text-t-secondary hover:text-t-primary">
             <RiMailLine size={20} />

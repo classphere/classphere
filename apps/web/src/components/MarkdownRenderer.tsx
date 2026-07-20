@@ -38,6 +38,68 @@ function sanitizeHtml(html: string): string {
 }
 
 /**
+ * OCR table extraction commonly emits a leading empty cell for every row.
+ * Those cells add visual noise without carrying question data. Remove only
+ * genuinely empty cells/rows; real tables, values, maths and images remain.
+ */
+function removeEmptyExtractedTableCells(html: string): string {
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  doc.body.querySelectorAll("table").forEach((table) => {
+    table.querySelectorAll("tr").forEach((row) => {
+      row.querySelectorAll("th, td").forEach((cell) => {
+        const hasMeaningfulText = (cell.textContent ?? "").replace(/\u00a0/g, " ").trim().length > 0;
+        const hasMedia = Boolean(cell.querySelector("img, svg, math"));
+        if (!hasMeaningfulText && !hasMedia) cell.remove();
+      });
+      if (!row.querySelector("th, td")) row.remove();
+    });
+    if (!table.querySelector("tr")) table.remove();
+  });
+  return doc.body.innerHTML;
+}
+
+function recoverOcrCodeBlocks(html: string): string {
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  doc.body.querySelectorAll("pre > code").forEach((code) => {
+    const text = code.textContent ?? "";
+    const isLikelyProgram = /[{};]|\b(?:const|let|function|class|return|import|def)\b/.test(text);
+    // Matching tables extracted from a PDF are often emitted as a multi-line
+    // code block. Keep genuine programming questions intact.
+    if (text.includes("\n") && !isLikelyProgram) {
+      const replacement = doc.createElement("div");
+      replacement.className = "ocr-text-recovery";
+      // OCR often inserts several whitespace-only lines between each table
+      // value. They are not meaningful paragraph spacing and make matching
+      // questions look like a broken, metres-tall list.
+      replacement.textContent = text.replace(/\n[ \t]*\n+/g, "\n").trim();
+      code.parentElement?.replaceWith(replacement);
+    }
+  });
+  return doc.body.innerHTML;
+}
+
+/**
+ * PDF/OCR extraction frequently indents every line of a question. Markdown
+ * treats four spaces as a code block, which turns normal Biology tables into
+ * narrow monospace grey strips. Remove the common indentation only outside
+ * explicit fenced code blocks.
+ */
+function removeAccidentalOcrIndentation(text: string): string {
+  const lines = text.replace(/\r\n/g, "\n").split("\n");
+  const nonEmpty = lines.filter((line) => line.trim() && !line.trimStart().startsWith("```"));
+  if (!nonEmpty.length) return text;
+  const indents = nonEmpty.map((line) => (line.match(/^ +/)?.[0].length ?? 0));
+  const commonIndent = Math.min(...indents);
+  if (commonIndent < 4) return text;
+
+  let inFence = false;
+  return lines.map((line) => {
+    if (line.trimStart().startsWith("```")) { inFence = !inFence; return line; }
+    return inFence ? line : line.slice(0, commonIndent) === " ".repeat(commonIndent) ? line.slice(commonIndent) : line;
+  }).join("\n");
+}
+
+/**
  * Lightweight markdown + LaTeX renderer.
  * 
  * Supports:
@@ -99,7 +161,7 @@ export function MarkdownRenderer({ children }: MarkdownRendererProps) {
           return `%%MATH_${idx}%%`;
         };
 
-        let src = safeChildren;
+        let src = removeAccidentalOcrIndentation(safeChildren);
 
         // ── Display math: $$...$$ (highest priority, check before inline)
         src = src.replace(/\$\$([\s\S]+?)\$\$/g, (_m, e) => renderMath(e, true));
@@ -126,7 +188,7 @@ export function MarkdownRenderer({ children }: MarkdownRendererProps) {
         // ── Restore math blocks ─────────────────────────────────────────────
         // Sanitize only untrusted Markdown output. KaTeX is generated locally
         // and needs its inline positioning styles for fractions and subscripts.
-        html = sanitizeHtml(html);
+        html = recoverOcrCodeBlocks(removeEmptyExtractedTableCells(sanitizeHtml(html)));
         html = html.replace(/%%MATH_(\d+)%%/g, (_m, i) => mathBlocks[+i] ?? "");
 
         if (ref.current) ref.current.innerHTML = html;

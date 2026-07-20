@@ -1,17 +1,21 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Sidebar from "@/components/layout/Sidebar";
 import MobileNav from "@/components/layout/MobileNav";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { useTenant } from "@/lib/tenant-context";
+import { useAuth } from "@/lib/auth-context";
+import { NotificationRealtimeBridge } from "@/components/notifications/NotificationRealtimeBridge";
 
 // Paths that render full-screen with no sidebar shell (auth pages, test-taking)
 const NO_SHELL_PATHS = ["/login", "/signup"];
 
 export default function AppShell({ children }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
+  const router = useRouter();
   const tenant = useTenant();
+  const { user, loading } = useAuth();
 
   const domainPrefix = tenant.domain ? `/${tenant.domain}` : "";
 
@@ -40,6 +44,36 @@ export default function AppShell({ children }: Readonly<{ children: React.ReactN
     typeof window !== "undefined" &&
     (/^admin\./.test(window.location.hostname) || window.location.hostname === "admin.localhost");
 
+  const isTestDepartment = user?.role === "test_department_head" || user?.role === "test_department_member";
+  const deniedRoleRoute = Boolean(user) && (
+    cleanPath.startsWith("/institute/resources") ||
+    (cleanPath.startsWith("/institute") && user?.role !== "institute_admin") ||
+    (cleanPath.startsWith("/teacher") && user?.role !== "teacher") ||
+    (cleanPath.startsWith("/student") && user?.role !== "student") ||
+    (cleanPath.startsWith("/test-department") && !isTestDepartment && !(user?.role === "institute_admin" && cleanPath.startsWith("/test-department/team")))
+  );
+
+  const homeForRole = () => {
+    if (user?.role === "institute_admin") return "/institute";
+    if (user?.role === "teacher") return "/teacher";
+    if (isTestDepartment) return "/test-department";
+    return "/student/dashboard";
+  };
+
+  // Do not let protected route content flash before AuthProvider completes its
+  // redirect. This is intentionally duplicated with AuthProvider's navigation
+  // rule: this component controls whether a page may render at all.
+  const protectedRoleRoute = cleanPath.startsWith("/institute") || cleanPath.startsWith("/teacher") || cleanPath.startsWith("/student") || cleanPath.startsWith("/test-department");
+  useEffect(() => {
+    if (!protectedRoleRoute || loading) return;
+    if (!user) router.replace("/login");
+    else if (deniedRoleRoute) router.replace(homeForRole());
+  }, [protectedRoleRoute, loading, user, deniedRoleRoute, router]);
+
+  if (protectedRoleRoute && (loading || !user || deniedRoleRoute)) {
+    return <div className="min-h-screen w-full bg-b-surface1" aria-busy="true" />;
+  }
+
   if (isTestRoute || isAuthRoute || isSuperAdminRoute || isAdminSubdomain) {
     return (
       <div className="min-h-screen w-full overflow-x-clip bg-b-surface1 text-t-primary">
@@ -50,6 +84,7 @@ export default function AppShell({ children }: Readonly<{ children: React.ReactN
 
   return (
     <div className="relative isolate flex min-h-screen w-full overflow-x-clip bg-b-surface1 text-t-primary flex-col lg:flex-row">
+      <NotificationRealtimeBridge />
       <Suspense
         fallback={
           <div className="hidden lg:flex h-screen w-[280px] xl:w-[300px] shrink-0 bg-b-surface1 border-r border-transparent" />

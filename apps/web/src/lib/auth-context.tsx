@@ -12,7 +12,7 @@ export interface AppUser {
   id: string;
   email: string;
   name: string;
-  role: "student" | "teacher" | "institute_admin" | "super_admin";
+  role: "student" | "teacher" | "institute_admin" | "super_admin" | "test_department_head" | "test_department_member";
   avatar_url: string | null;
   institute_id: string | null;
   batch?: string | null;
@@ -57,6 +57,8 @@ function homePath(role: string): string {
     case "super_admin":     return "/"; // middleware rewrites / → /superadmin on admin subdomain
     case "institute_admin": return "/institute";
     case "teacher":         return "/teacher";
+    case "test_department_head":
+    case "test_department_member": return "/test-department";
     default:                return "/student/dashboard"; // student
   }
 }
@@ -144,6 +146,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return;
     }
 
+    // A URL must never elevate the UI role. This guard runs for every route
+    // change and prevents a signed-in student from rendering staff shells just
+    // by typing /institute, /teacher, or /test-department in the address bar.
+    const isTestDepartment = appUser.role === "test_department_head" || appUser.role === "test_department_member";
+    const routeDenied =
+      cleanPath.startsWith("/institute/resources") ||
+      (cleanPath.startsWith("/institute") && appUser.role !== "institute_admin") ||
+      (cleanPath.startsWith("/teacher") && appUser.role !== "teacher") ||
+      (cleanPath.startsWith("/superadmin") && appUser.role !== "super_admin") ||
+      (cleanPath.startsWith("/test-department") && !isTestDepartment && !(appUser.role === "institute_admin" && cleanPath.startsWith("/test-department/team"))) ||
+      (cleanPath.startsWith("/student") && appUser.role !== "student");
+    if (routeDenied) {
+      router.replace(homePath(appUser.role));
+      return;
+    }
+
     if (appUser.role === "super_admin") {
       if (!isAdminSubdomain && !cleanPath.startsWith("/superadmin") && !isPublicPath) {
         router.push("/superadmin");
@@ -166,6 +184,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       router.push(homePath(appUser.role));
     }
   }, [router, isAdminSubdomain, isInstituteSubdomain, instituteSlug]);
+
+  // Auth state alone does not change when someone manually types a protected
+  // URL. Re-apply the role gate whenever the pathname changes.
+  useEffect(() => {
+    if (!loading) handleRouting(user, pathname);
+  }, [loading, user, pathname, handleRouting]);
 
   useEffect(() => {
     let mounted = true;

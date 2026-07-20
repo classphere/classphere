@@ -685,7 +685,7 @@
   display: block;
   max-width: 100%;
   overflow-x: auto;
-  width: max-content;
+  width: 100%;
 }
 .markdown-content th,
 .markdown-content td {
@@ -727,6 +727,12 @@
   margin: 0.6em 0;
   overflow-x: auto;
   max-width: 100%;
+}
+
+.markdown-content .ocr-text-recovery {
+  white-space: pre-line;
+  font: inherit;
+  line-height: inherit;
 }
 
 /* KaTeX inline keeps vertical rhythm */
