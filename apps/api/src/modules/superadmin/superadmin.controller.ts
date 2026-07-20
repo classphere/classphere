@@ -8,6 +8,7 @@ import { connection as redisConnection } from "../../lib/queue/redis";
 import { logAdminAction as writeAdminAudit } from "../../lib/admin-audit";
 import * as fs from "fs";
 import * as path from "path";
+import { normalizeQuestionMedia } from "../../lib/question-media";
 
 const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
@@ -59,9 +60,10 @@ function ensureUUID(id: any): string {
 // â”€â”€â”€ Validation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function validateQuestion(q: any, index: number): string | null {
   if (!q.question_text) return `Question #${index + 1}: missing 'question_text'`;
-  if (q.correct_answer === null || q.correct_answer === undefined || q.correct_answer === "" || (Array.isArray(q.correct_answer) && q.correct_answer.length === 0)) {
-    q.correct_answer = ["No answer key"];
-  }
+  // Drafts are intentionally allowed to have missing keys or damaged matching
+  // options. The review editor surfaces these defects; publication validates
+  // them before a learner can access the paper.
+  if (q.correct_answer === null || q.correct_answer === undefined || q.correct_answer === "") q.correct_answer = [];
 
   return null;
 }
@@ -281,6 +283,12 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           })
         );
 
+        const normalizedMedia = normalizeQuestionMedia({
+          question_text: processedText,
+          image_url: processedImageUrl,
+          options: processedOptions,
+        });
+
         return {
           id:             ensureUUID(q.id),    // auto-generate UUID if missing/invalid
           exam_id:        examId,
@@ -292,19 +300,22 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           year:           q.year     || year     || null,
           source:         q.source   || title,
           question_type:  type,
-          question_text:  processedText,
-          image_url:      processedImageUrl,
-          options:        processedOptions,
-          correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : [q.correct_answer],
+          question_text:  normalizedMedia.question_text,
+          image_url:      normalizedMedia.image_url,
+          options:        normalizedMedia.options,
+          correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [],
           explanation:    processedExplanation,
           tags:           q.tags || [],
+          content_scope:  "global",
+          review_status:  "draft",
+          created_by:     req.user?.id ?? null,
         };
       })
     );
 
     // â”€â”€ 5. Bulk upsert questions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const { data: paperId, error: uploadError } = await supabaseDB.rpc(
-      "create_global_paper_with_questions",
+      "create_global_review_draft_with_questions",
       {
         p_exam_id: examId,
         p_test_type: test_type,
@@ -332,7 +343,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
 
     res.status(201).json({
       success: true,
-      message: `Successfully uploaded ${questionRows.length} questions as "${title}".`,
+      message: `Draft created with ${questionRows.length} questions. Review and publish it from the question bank.`,
       data: { paper_id: paperId, title, exam, test_type, total_questions: questionRows.length },
     });
     return;
@@ -355,7 +366,8 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       total_marks:     marks,
       duration_min:    duration,
       difficulty,
-      is_published:    true,
+      is_published:    false,
+      workflow_status: "draft",
       is_active:       true,
     }];
 
@@ -383,7 +395,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     // â”€â”€ 8. Respond â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     res.status(201).json({
       success: true,
-      message: `Successfully uploaded ${questionRows.length} questions as "${title}".`,
+      message: `Draft created with ${questionRows.length} questions. Review and publish it from the question bank.`,
       data: {
         paper_id:       paper?.id ?? null,
         title,

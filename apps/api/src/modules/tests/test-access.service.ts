@@ -21,9 +21,9 @@ export type StudentTestAccess = {
 export async function getStudentTestAccess(studentId: string, paper: PaperWindow): Promise<StudentTestAccess> {
   // Personal boosters are generated from a student's own analysis. They are
   // intentionally unpublished and must never become visible to another student.
-  if (paper.test_type === "booster") {
+  if (paper.test_type === "booster" || paper.test_type === "topic-practice") {
     if (!paper.is_active || paper.created_by !== studentId) {
-      return { allowed: false, status: 404, message: "This personal booster is unavailable." };
+      return { allowed: false, status: 404, message: "This personal practice set is unavailable." };
     }
     return { allowed: true, batchId: null, deliveryMode: "public_practice" };
   }

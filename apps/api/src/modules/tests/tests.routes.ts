@@ -35,12 +35,12 @@ router.get("/assigned", authenticate, getAssignedTests);
 router.post(
   "/upload-test",
   authenticate,
-  requireRole("teacher", "institute_admin", "super_admin"),
+  requireRole("teacher", "institute_admin", "super_admin", "test_department_head"),
   uploadFields as any,
   uploadTestController
 );
 
-router.post("/", authenticate, requireRole("teacher", "institute_admin", "super_admin"), createTest);
+router.post("/", authenticate, requireRole("teacher", "institute_admin", "super_admin", "test_department_head"), createTest);
 router.patch("/bulk/global", authenticate, requireRole("super_admin"), bulkUpdateGlobalTests);
 router.delete("/bulk/global", authenticate, requireRole("super_admin"), bulkDeleteGlobalTests);
 router.patch("/:id/global", authenticate, requireRole("super_admin"), updateGlobalTest);

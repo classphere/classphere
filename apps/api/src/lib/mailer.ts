@@ -10,6 +10,10 @@ export interface FacultyInviteParams {
   tempPassword: string;
 }
 
+export interface StaffInviteParams extends FacultyInviteParams {
+  roleLabel: string;
+}
+
 function escapeHtml(value: string): string {
   return value.replace(/[&<>"']/g, (character) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -18,21 +22,27 @@ function escapeHtml(value: string): string {
 
 /** Sends credentials only through the configured delivery provider. */
 export async function sendFacultyInviteEmail(params: FacultyInviteParams): Promise<void> {
+  return sendStaffInviteEmail({ ...params, roleLabel: "Faculty" });
+}
+
+/** Sends credentials only through the configured delivery provider. */
+export async function sendStaffInviteEmail(params: StaffInviteParams): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY?.trim();
   if (!apiKey) {
     // A console fallback leaked temporary passwords into application logs.
-    throw new Error("Faculty email delivery is not configured. Set RESEND_API_KEY before creating faculty accounts.");
+    throw new Error("Staff email delivery is not configured. Set RESEND_API_KEY before creating staff accounts.");
   }
 
   const recipient = escapeHtml(params.to);
   const name = escapeHtml(params.name);
   const institute = escapeHtml(params.instituteName);
   const password = escapeHtml(params.tempPassword);
-  const html = `<p>Welcome, ${name}.</p><p>You have been added as faculty at ${institute}.</p><p>Email: ${recipient}<br>Temporary password: <code>${password}</code></p><p><a href="${appUrl}/login">Log in</a></p>`;
+  const roleLabel = escapeHtml(params.roleLabel);
+  const html = `<p>Welcome, ${name}.</p><p>You have been added as ${roleLabel} at ${institute}.</p><p>Email: ${recipient}<br>Temporary password: <code>${password}</code></p><p><a href="${appUrl}/login">Log in</a></p>`;
   const { error } = await new Resend(apiKey).emails.send({
     from: fromEmail,
     to: params.to,
-    subject: `Faculty access for ${params.instituteName}`,
+    subject: `${params.roleLabel} access for ${params.instituteName}`,
     html,
   });
   if (error) throw new Error(`Email send failed: ${error.message}`);

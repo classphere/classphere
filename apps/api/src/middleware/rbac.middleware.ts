@@ -1,6 +1,12 @@
 import { Request, Response, NextFunction } from "express";
 
-export type Role = "student" | "teacher" | "institute_admin" | "super_admin";
+export type Role =
+  | "student"
+  | "teacher"
+  | "institute_admin"
+  | "super_admin"
+  | "test_department_head"
+  | "test_department_member";
 
 /**
  * Factory: returns middleware that allows only the specified roles.

@@ -10,6 +10,7 @@ import {
   deleteQuestion,
   bulkUpsertQuestions,
   listTests,
+  createTopicPractice,
 } from "./questions.controller";
 
 const router = Router();
@@ -18,6 +19,7 @@ const router = Router();
 
 // Tests Hub — list papers from DB (chapter-wise / mock-test / pyq)
 router.get("/tests", authenticate, listTests);
+router.post("/topic-practice", authenticate, requireRole("student"), createTopicPractice);
 
 // Exam meta for dropdowns (subject/chapter lists)
 router.get("/meta/exams", authenticate, getExamsMeta);

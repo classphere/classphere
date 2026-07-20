@@ -125,6 +125,77 @@ export const getExamsMeta = async (req: Request, res: Response): Promise<void> =
 };
 
 /**
+ * POST /api/v1/questions/topic-practice
+ * Creates a private, immutable paper for one student's topic practice. The
+ * paper links existing vetted questions; it never copies answer keys or makes
+ * a student-selected set visible to other students.
+ */
+export const createTopicPractice = async (req: Request, res: Response): Promise<void> => {
+  try {
+    if (req.user?.role !== "student") {
+      res.status(403).json({ success: false, message: "Topic practice is available to students only." });
+      return;
+    }
+    const { exam, subject, chapter, topic, difficulty, question_count = 20 } = req.body ?? {};
+    const count = Math.max(5, Math.min(50, Number(question_count) || 20));
+    if (![exam, subject, chapter, topic].every((value) => typeof value === "string" && value.trim())) {
+      res.status(400).json({ success: false, message: "exam, subject, chapter, and topic are required." });
+      return;
+    }
+
+    const { data: examRow } = await supabaseDB.from("exams").select("id, code").eq("code", exam.trim()).eq("is_active", true).maybeSingle();
+    if (!examRow) {
+      res.status(404).json({ success: false, message: "The selected exam is unavailable." });
+      return;
+    }
+    let questionQuery = supabaseDB
+      .from("questions")
+      .select("id")
+      .eq("exam_id", examRow.id)
+      .eq("subject", subject.trim())
+      .eq("chapter", chapter.trim())
+      .eq("topic", topic.trim())
+      .eq("is_active", true)
+      .limit(count);
+    if (difficulty && ["easy", "medium", "hard"].includes(difficulty)) questionQuery = questionQuery.eq("difficulty", difficulty);
+    const { data: matches, error: questionError } = await questionQuery;
+    if (questionError) throw questionError;
+    if (!matches?.length) {
+      res.status(404).json({ success: false, message: "No active questions are available for this topic yet." });
+      return;
+    }
+
+    const { data: paper, error: paperError } = await supabaseDB.from("papers").insert({
+      exam_id: examRow.id,
+      test_type: "topic-practice",
+      title: `${topic.trim()} Practice`,
+      subject: subject.trim(),
+      chapter: chapter.trim(),
+      total_questions: matches.length,
+      total_marks: matches.length * 4,
+      duration_min: Math.max(15, matches.length * 2),
+      difficulty: difficulty || null,
+      is_active: true,
+      is_published: false,
+      delivery_mode: "public_practice",
+      created_by: req.user.id,
+    }).select("id").single();
+    if (paperError || !paper) throw paperError ?? new Error("Could not create practice set.");
+
+    const { error: linkError } = await supabaseDB.from("paper_questions").insert(
+      matches.map((question: any, index: number) => ({ paper_id: paper.id, question_id: question.id, position: index + 1 }))
+    );
+    if (linkError) {
+      await supabaseDB.from("papers").delete().eq("id", paper.id).eq("created_by", req.user.id);
+      throw linkError;
+    }
+    res.status(201).json({ success: true, data: { paper_id: paper.id, question_count: matches.length } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message ?? "Could not create topic practice." });
+  }
+};
+
+/**
  * GET /api/v1/questions/:id
  * Authenticated — Return a single question by ID.
  * correct_answer stripped unless super_admin.

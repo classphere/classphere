@@ -16,6 +16,9 @@ import dashboardRouter from "../modules/dashboard/dashboard.routes";
 import dppsRouter from "../modules/dpps/dpps.routes";
 import supportRouter from "../modules/support/support.routes";
 import syllabusRouter from "../modules/syllabus/syllabus.routes";
+import resourcesRouter from "../modules/resources/resources.routes";
+import testDepartmentRouter from "../modules/test-department/test-department.routes";
+import notificationsRouter from "../modules/notifications/notifications.routes";
 
 const router = Router();
 
@@ -37,6 +40,9 @@ router.use("/students", studentsRouter);
 router.use("/dashboard", dashboardRouter);
 router.use("/dpps", dppsRouter);
 router.use("/support", supportRouter);
+router.use("/resources", resourcesRouter);
+router.use("/test-department", testDepartmentRouter);
+router.use("/notifications", notificationsRouter);
 
 // ─── SuperAdmin (super_admin role required) ───────────────────────────────────
 router.use("/superadmin", superadminRouter);

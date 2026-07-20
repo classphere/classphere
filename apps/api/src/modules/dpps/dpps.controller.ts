@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { supabaseDB } from "../../lib/supabase";
+import { notifyStudents } from "../notifications/notifications.service";
 
 async function canManageDpp(req: Request, dppId: string): Promise<boolean> {
   const { data: dpp } = await supabaseDB.from("dpps").select("teacher_id, batch_id, batches(institute_id)").eq("id", dppId).maybeSingle();
@@ -101,6 +102,20 @@ export const createDPP = async (req: Request, res: Response): Promise<void> => {
 
       if (sdErr) {
         console.warn("[createDPP] student_dpps provision warning:", sdErr.message);
+      }
+      try {
+        await notifyStudents({
+          instituteId: batch.institute_id,
+          userIds: batchStudents.map((student: any) => student.student_id),
+          type: "dpp_assigned",
+          title: "New DPP assigned",
+          body: `${title}${due_date ? ` · Due ${new Date(due_date).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}` : ""}`,
+          href: `/student/dpps/take/${dpp.id}`,
+          eventKey: `dpp_assigned:${dpp.id}`,
+          metadata: { dpp_id: dpp.id, batch_id, due_date: due_date ?? null },
+        });
+      } catch (notificationError: any) {
+        console.error("[createDPP] notification delivery failed:", notificationError.message);
       }
     }
 

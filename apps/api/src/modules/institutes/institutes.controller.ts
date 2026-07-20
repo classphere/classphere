@@ -515,14 +515,16 @@ export const listBatches = async (req: Request, res: Response): Promise<void> =>
     const userId = req.user?.id;
     const role = req.user?.role;
 
-    if (role === "institute_admin") {
+    if (role === "institute_admin" || role === "test_department_head") {
       // ── Find institute owned by this admin ─────────────────────────────────
-      const { data: institute, error: instErr } = await supabaseDB
+      let instituteQuery = supabaseDB
         .from("institutes")
         .select("id")
-        .eq("owner_id", userId)
-        .eq("is_active", true)
-        .single();
+        .eq("is_active", true);
+      instituteQuery = req.user?.institute_id
+        ? instituteQuery.eq("id", req.user.institute_id)
+        : instituteQuery.eq("owner_id", userId);
+      const { data: institute, error: instErr } = await instituteQuery.maybeSingle();
 
       if (instErr || !institute) {
         res.status(404).json({ success: false, message: "No active institute found for this admin" });

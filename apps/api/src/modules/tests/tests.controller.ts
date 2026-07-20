@@ -8,6 +8,7 @@ import { uploadToR2 } from "../../lib/r2";
 import { extractPDF } from "../../services/extractor/pdfExtractor.service";
 import { getStudentTestAccess } from "./test-access.service";
 import { logAdminAction } from "../../lib/admin-audit";
+import { normalizeQuestionMedia } from "../../lib/question-media";
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -34,6 +35,13 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
     }
     if (!paper) {
       res.status(404).json({ success: false, message: `Test '${id}' not found.` });
+      return;
+    }
+
+    // Service-role database access bypasses RLS, so tenant ownership needs an
+    // explicit guard before a staff account can read an institute paper.
+    if (paper.institute_id && req.user?.role !== "super_admin" && paper.institute_id !== req.user?.institute_id) {
+      res.status(403).json({ success: false, message: "Access denied. This test belongs to another institute." });
       return;
     }
 
@@ -71,7 +79,7 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
         const batchIds = questionIds.slice(i, i + BATCH_SIZE);
         const { data: batchData, error: qErr } = await supabaseDB
           .from("questions")
-          .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags")
+          .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, marking_scheme, content_version")
           .in("id", batchIds);
 
         if (qErr) {
@@ -87,7 +95,7 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
         const normalizeText = (v: any): string =>
           v == null ? "" : typeof v === "string" ? v : typeof v === "object" ? JSON.stringify(v) : String(v);
 
-        const normalized = {
+        const normalized = normalizeQuestionMedia({
           ...q,
           question_text: normalizeText(q.question_text),
           explanation: normalizeText(q.explanation),
@@ -98,7 +106,7 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
                 image_url: opt?.image_url ?? null,
               }))
             : [],
-        };
+        });
 
         if (req.user?.role === "student") {
           const { correct_answer, explanation, ...rest } = normalized;
@@ -217,8 +225,10 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
         total_marks: shuffled.length * 4,
         duration_min: duration_minutes,
         created_by: userId,
+        institute_id: req.user!.institute_id,
         is_active: true,
         is_published: false,
+        workflow_status: "draft",
         delivery_mode: "assigned_scheduled",
         available_from: scheduled_start ?? null,
         available_until: scheduled_end ?? null,
@@ -347,9 +357,30 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
     const { id } = req.params;
     const isSuperAdmin = req.user?.role === "super_admin";
 
+    if (!isSuperAdmin) {
+      res.status(403).json({ success: false, message: "Institute tests must be approved and published by the Test Admin." });
+      return;
+    }
+
+    const { data: publishRows, error: publishRowsError } = await supabaseDB
+      .from("paper_questions")
+      .select("questions(question_text, question_type, options, correct_answer)")
+      .eq("paper_id", id);
+    if (publishRowsError) throw publishRowsError;
+    const invalidQuestion = (publishRows ?? []).map((row: any) => Array.isArray(row.questions) ? row.questions[0] : row.questions).find((question: any) => {
+      const answers = Array.isArray(question?.correct_answer) ? question.correct_answer : [];
+      const options = Array.isArray(question?.options) ? question.options : [];
+      const choiceQuestion = ["mcq_single", "mcq_multiple", "assertion_reason", "matching"].includes(question?.question_type);
+      return !String(question?.question_text ?? "").trim() || answers.length === 0 || (choiceQuestion && options.length < 2);
+    });
+    if (invalidQuestion) {
+      res.status(400).json({ success: false, message: "Cannot publish: one or more questions are incomplete. Review the paper first." });
+      return;
+    }
+
     let query = supabaseDB
       .from("papers")
-      .update({ is_published: true })
+      .update({ is_published: true, workflow_status: "published", published_at: new Date().toISOString(), published_by: req.user!.id })
       .eq("id", id)
       .eq("is_active", true);
 
@@ -694,6 +725,14 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       return;
     }
 
+    // Matching questions are especially vulnerable to OCR table loss. Keep the
+    // extracted draft so a reviewer can repair it; it must never reach a
+    // learner until the Test Admin explicitly publishes it.
+    const malformedMatching = extractionResult.questions
+      .map((question: any, index: number) => ({ question, index }))
+      .filter(({ question }: any) => String(question.question_type ?? "").toLowerCase().includes("matching"))
+      .filter(({ question }: any) => !Array.isArray(question.options) || question.options.filter((option: any) => String(option?.text ?? "").trim() || String(option?.image_url ?? "").trim()).length < 2);
+
     // 4. Parse Answer Key (could be CSV or separate PDF), or fallback to extracting from Master PDF
     sendProgress("extracting_answers", "Parsing correct answers and mapping solutions...");
     const csvAnswers: Record<number, string[]> = {};
@@ -769,31 +808,21 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           })
         );
 
-        let finalOptions = processedOptions || [];
+        const finalOptions = processedOptions || [];
         const isMcq = q.question_type === "MCQ" || q.question_type === "mcq_single" || q.question_type === "Assertion-Reason" || q.question_type === "Matching";
         
-        if (isMcq && finalOptions.length < 4) {
-          const existingIds = new Set(finalOptions.map((o: any) => o.id));
-          const optionLetters = ["A", "B", "C", "D"];
-          for (const letter of optionLetters) {
-            if (!existingIds.has(letter)) {
-              finalOptions.push({
-                id: letter,
-                text: "",
-                image_url: null,
-              });
-            }
-          }
-          const order: Record<string, number> = { A: 0, B: 1, C: 2, D: 3 };
-          finalOptions.sort((a: any, b: any) => (order[a.id] ?? 99) - (order[b.id] ?? 99));
-        }
-
         const isNumerical = !isMcq && (!finalOptions || finalOptions.length < 2);
         const type = isNumerical ? "integer" : (q.question_type || "mcq_single");
 
         const csvAns = csvAnswers[idx + 1];
         const extractedAnswers = Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [];
-        const correctAnswers = (csvAns && csvAns.length) ? csvAns : (extractedAnswers && extractedAnswers.length) ? extractedAnswers : ["No answer key"];
+        const correctAnswers = (csvAns && csvAns.length) ? csvAns : extractedAnswers;
+
+        const normalizedMedia = normalizeQuestionMedia({
+          question_text: processedText,
+          image_url: processedImageUrl,
+          options: finalOptions,
+        });
 
         return {
           id:             randomUUID(),
@@ -806,18 +835,26 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           year:           new Date(date).getFullYear() || null,
           source:         title,
           question_type:  type,
-          question_text:  processedText,
-          image_url:      processedImageUrl,
-          options:        finalOptions,
+          question_text:  normalizedMedia.question_text,
+          image_url:      normalizedMedia.image_url,
+          options:        normalizedMedia.options,
           correct_answer: correctAnswers,
           explanation:    processedExplanation,
           tags:           q.tags || [],
+          institute_id:   req.user!.institute_id,
+          content_scope:  "institute_private",
+          review_status:  malformedMatching.some(({ index }: any) => index === idx) || correctAnswers.length === 0 ? "changes_requested" : "draft",
+          created_by:     userId,
+          source_reference: { extracted_question_number: idx + 1, extraction_flags: [
+            ...(malformedMatching.some(({ index }: any) => index === idx) ? ["matching_options_missing"] : []),
+            ...(correctAnswers.length === 0 ? ["answer_key_missing"] : []),
+          ] },
           is_active:      true,
         };
       })
     );
 
-    sendProgress("saving_db", "Saving generated questions & linking scheduled test...");
+    sendProgress("saving_db", "Saving extracted draft for Test Department review...");
     // 6. Insert the Paper
     const { data: paper, error: pErr } = await supabaseDB
       .from("papers")
@@ -830,11 +867,13 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         duration_min: Number(duration_min) || 180,
         created_by: userId,
         is_active: true,
-        is_published: true,
+        institute_id: req.user!.institute_id,
+        workflow_status: "draft",
+        is_published: false,
         delivery_mode: "assigned_scheduled",
         available_from: scheduledAt.toISOString(),
       })
-      .select("id")
+      .select("id, workflow_status")
       .single();
 
     if (pErr || !paper) {
@@ -879,10 +918,11 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       console.warn(`[uploadTestController] Cleanup failed: ${cleanupErr.message}`);
     }
 
-    sendProgress("success", "Test scheduled and published successfully!", {
+    sendProgress("success", `Draft created. ${malformedMatching.length ? `${malformedMatching.length} matching question(s) require attention. ` : ""}Review and publish it from the Test Department workspace.`, {
       paper_id: paper.id,
       title,
       total_questions: questionRows.length,
+      workflow_status: paper.workflow_status,
     });
     res.end();
 
