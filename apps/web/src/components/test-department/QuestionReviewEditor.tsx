@@ -38,7 +38,6 @@ export function QuestionReviewEditor({ question, canEdit, onSave }: { question: 
         chapter: draft.chapter,
         topic: draft.topic ?? null,
         difficulty: draft.difficulty ?? null,
-        marking_scheme: draft.marking_scheme ?? null,
       });
     } catch (saveError: any) { setError(saveError?.message ?? "Could not save this question."); }
     finally { setSaving(false); }

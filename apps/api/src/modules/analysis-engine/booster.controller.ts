@@ -67,7 +67,7 @@ export const createBooster = async (req: Request, res: Response): Promise<void> 
       return;
     }
 
-    const selectFields = "id, marking_scheme";
+    const selectFields = "id";
     const candidates = new Map<string, any>();
     if (topics.length > 0) {
       const { data, error } = await supabaseDB
@@ -101,7 +101,7 @@ export const createBooster = async (req: Request, res: Response): Promise<void> 
       return;
     }
 
-    const totalMarks = selectedQuestions.reduce((sum, question) => sum + Number(question.marking_scheme?.correct ?? 4), 0);
+    const totalMarks = selectedQuestions.length * 4;
     const { data: boosterPaper, error: paperError } = await supabaseDB
       .from("papers")
       .insert({

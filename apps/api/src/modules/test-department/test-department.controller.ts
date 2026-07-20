@@ -12,7 +12,7 @@ const departmentRoles = new Set([TEST_ADMIN_ROLE]);
 const allowedQuestionFields = new Set([
   "subject", "chapter", "topic", "difficulty", "year", "source", "question_type",
   "question_text", "image_url", "options", "correct_answer", "explanation", "tags",
-  "marking_scheme", "source_reference",
+  "source_reference",
 ]);
 
 function isDepartmentUser(req: Request) {

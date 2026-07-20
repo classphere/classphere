@@ -79,7 +79,7 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
         const batchIds = questionIds.slice(i, i + BATCH_SIZE);
         const { data: batchData, error: qErr } = await supabaseDB
           .from("questions")
-          .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, marking_scheme, content_version")
+          .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, content_version")
           .in("id", batchIds);
 
         if (qErr) {

@@ -17,7 +17,6 @@ export interface Question {
   chapter: string;
   topic: string;
   difficulty: "easy" | "medium" | "hard";
-  marking_scheme?: { correct: number; incorrect: number; unattempted: number };
 }
 
 export interface TestMeta {

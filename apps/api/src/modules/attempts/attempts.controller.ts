@@ -62,11 +62,10 @@ function normalizeAnswerSet(answer: unknown): string[] {
   return [...new Set(values.map((value) => String(value).trim().toUpperCase()).filter(Boolean))].sort();
 }
 
-function scoreAnswer(question: any, selectedAnswer: unknown): { isCorrect: boolean; marks: number } {
+function scoreAnswer(question: any, selectedAnswer: unknown, scheme: { correct?: number; incorrect?: number }): { isCorrect: boolean; marks: number } {
   const selectedAnswers = normalizeAnswerSet(selectedAnswer);
   if (selectedAnswers.length === 0) return { isCorrect: false, marks: 0 };
 
-  const scheme = question.marking_scheme ?? { correct: 4, incorrect: -1, unattempted: 0 };
   const correctAnswersList = normalizeAnswerSet(question.correct_answer);
   // Multiple-correct questions require the complete correct set. Awarding full
   // marks for selecting just one correct option is an exam-scoring defect.
@@ -491,10 +490,10 @@ export const submitAttempt = async (req: Request, res: Response): Promise<void> 
       const q = questions[i];
       const studentAns = finalAnswers[q.id] ?? {};
       const selected = studentAns.selected_answer ?? null;
-      const { isCorrect, marks } = scoreAnswer(q, selected);
+      const { isCorrect, marks } = scoreAnswer(q, selected, markingScheme);
       const marksAwarded = normalizeAnswerSet(selected).length > 0 ? marks : (markingScheme.unattempted ?? 0);
 
-      const qCorrect = q.marking_scheme?.correct ?? markingScheme.correct ?? 4;
+      const qCorrect = markingScheme.correct ?? 4;
       maxScore += qCorrect;
       totalScore += marksAwarded;
 

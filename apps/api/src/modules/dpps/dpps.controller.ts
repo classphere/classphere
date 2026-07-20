@@ -330,7 +330,7 @@ export const getDPPQuestions = async (req: Request, res: Response): Promise<void
 
     const { data: questions } = await supabaseDB
       .from("questions")
-      .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, marking_scheme")
+      .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty")
       .in("id", questionIds)
       .eq("is_active", true);
 
@@ -352,7 +352,6 @@ export const getDPPQuestions = async (req: Request, res: Response): Promise<void
           chapter: q.chapter,
           topic: q.topic,
           difficulty: q.difficulty,
-          marking_scheme: q.marking_scheme,
           question_number: idx + 1,
         };
         // Expose correct answer and explanation to student ONLY after submission (SEC-3)
@@ -433,7 +432,7 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
 
     const { data: questions } = await supabaseDB
       .from("questions")
-      .select("id, correct_answer, marking_scheme, question_type")
+      .select("id, correct_answer, question_type")
       .in("id", questionIds);
 
     // Score answers
@@ -442,7 +441,7 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
     const answerRecords: any[] = [];
 
     for (const q of questions ?? []) {
-      const scheme = q.marking_scheme ?? { correct: 4, incorrect: -1, unattempted: 0 };
+      const scheme = { correct: 4, incorrect: -1, unattempted: 0 };
       const incorrectPenalty = -Math.abs(scheme.incorrect ?? -1); // Enforce negative sign penalty (H7)
 
       const correctList = Array.isArray(q.correct_answer)

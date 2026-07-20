@@ -517,7 +517,6 @@ export default function UploadQuestionsPage() {
     "subject": "Physics",         // optional (overrides form)
     "chapter": "Kinematics",      // optional (overrides form)
     "distractor_map": { ... },    // optional
-    "marking_scheme": { ... }     // optional
   }
 ]`}</pre>
               </div>
