@@ -8,6 +8,7 @@ import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { RiPaletteLine, RiGlobalLine, RiMailSendLine, RiSaveLine } from "@remixicon/react";
 
 export default function InstituteSettingsPage() {
+  const baseDomain = process.env.NEXT_PUBLIC_BASE_DOMAIN || "classphere.com";
   const { session } = useAuth();
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -119,7 +120,7 @@ export default function InstituteSettingsPage() {
                     className="input w-full h-11 rounded-r-none border-r-0"
                   />
                   <div className="h-11 px-4 bg-b-surface2 border border-l-0 border-s-stroke2 flex items-center text-t-secondary text-sm rounded-r-[10px]">
-                    .classphere.com
+                    .{baseDomain}
                   </div>
                 </div>
               </div>

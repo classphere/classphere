@@ -740,6 +740,12 @@
   font-size: 1em;
 }
 
+/* KaTeX deliberately uses smaller glyph metrics than surrounding UI text.
+   In a question stem that makes variables such as x and T look undersized. */
+.question-stem .katex {
+  font-size: 1.5em !important;
+}
+
 /* Horizontal rule (Assertion-Reason separator) */
 .markdown-content hr {
   border: none;

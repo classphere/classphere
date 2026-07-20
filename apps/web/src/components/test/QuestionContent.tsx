@@ -38,7 +38,7 @@ export function QuestionContent({
   // questions while avoiding a duplicate figure for legacy records.
   const hasInlineQuestionImage = Boolean(q.image_url && q.question_text?.includes(`](${q.image_url})`));
   return (
-    <section className="group relative card flex flex-col overflow-hidden min-w-0 p-4 sm:p-6 md:p-8 card select-none lg:sticky lg:top-[7.5rem] lg:h-[calc(100dvh-9rem)] lg:overflow-y-auto">
+    <section className="group relative card flex min-w-0 flex-col overflow-hidden p-4 sm:p-6 md:p-8 select-none lg:h-[calc(100dvh-9.5rem)] lg:overflow-y-auto">
       <div className="relative z-10 mb-5 flex flex-wrap items-center gap-2">
         <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.subject}</span>
         <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.chapter}</span>
@@ -53,7 +53,7 @@ export function QuestionContent({
           <div className="text-overline font-bold uppercase tracking-wider text-t-tertiary">
             Question {current + 1} of {questionsLength}
           </div>
-          <div className="mt-2 text-sub-title-1 leading-relaxed text-t-primary">
+          <div className="question-stem mt-2 text-sub-title-1 leading-relaxed text-t-primary">
             <MarkdownRenderer>{q.question_text}</MarkdownRenderer>
           </div>
         </div>
@@ -115,7 +115,7 @@ export function QuestionContent({
                   key={opt.id}
                   id={`option-${opt.id}`}
                   disabled={disabled || isEmpty}
-                  className={`group/opt flex items-center gap-4 rounded-[10px] border p-4 text-left transition-all relative overflow-hidden ${
+                  className={`group/opt flex h-[72px] items-center gap-3 rounded-[10px] border p-3 text-left transition-all relative overflow-hidden ${
                     isEmpty
                       ? "border-dashed border-s-stroke2 bg-b-surface2/30 opacity-50 cursor-not-allowed"
                       : selected
@@ -133,7 +133,7 @@ export function QuestionContent({
                   }`}>
                     {opt.id}
                   </div>
-                  <div className="min-w-0 flex-1 text-body-2 font-medium text-t-primary">
+                  <div className="min-w-0 flex-1 text-[22px] font-medium leading-8 text-t-primary [&_.katex]:text-[1.3em]">
                     {isEmpty ? (
                       <span className="text-caption text-t-tertiary italic">Option not available</span>
                     ) : (
@@ -170,9 +170,9 @@ export function QuestionContent({
       </div>
 
       {/* Nav buttons */}
-      <div className="relative z-10 mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 border-t border-s-stroke2 pt-6">
+      <div className="relative z-10 mt-8 grid grid-cols-2 gap-3 border-t border-s-stroke2 pt-5 lg:grid-cols-4">
         <button
-          className="flex min-h-12 flex-row items-center justify-center px-2 py-2 rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#00A656] to-[#008A47] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#008b49] bg-primary-02 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#008e49] active:scale-[0.98] sm:text-[11px] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
             if (answers[q.id]) setStatus((s) => ({ ...s, [q.id]: "answered" }));
@@ -181,11 +181,11 @@ export function QuestionContent({
             else setShowSubmitModal(true);
           }}
         >
-          <span className="relative z-10 text-center">{current < questionsLength - 1 ? "Save & Next" : "Save & Submit"}</span>
+          <span className="text-center">{current < questionsLength - 1 ? "Save & Next" : "Save & Submit"}</span>
         </button>
 
         <button
-          className="flex min-h-12 flex-row items-center justify-center px-2 py-2 border border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] transition-all active:scale-98 uppercase w-full"
+          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-s-stroke2 bg-b-surface1 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-t-secondary transition-colors hover:bg-b-pop hover:text-t-primary active:scale-[0.98] sm:text-[11px] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
             setAnswers((a) => {
@@ -196,11 +196,11 @@ export function QuestionContent({
             setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
           }}
         >
-          Clear
+          Clear response
         </button>
 
         <button
-          className="flex min-h-12 flex-row items-center justify-center px-2 py-2 rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#EF9D0E] to-[#D98500] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#d98700] bg-primary-05 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#e58d00] active:scale-[0.98] sm:text-[11px] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
             setStatus((s) => ({ ...s, [q.id]: "review" }));
@@ -208,11 +208,11 @@ export function QuestionContent({
             else setShowSubmitModal(true);
           }}
         >
-          <span className="relative z-10 text-center">Save & Mark for Review</span>
+          <span className="text-center">Save & Mark for Review</span>
         </button>
 
         <button
-          className="flex min-h-12 flex-row items-center justify-center px-2 py-2 rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2563EB] to-[#1D4ED8] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
+          className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#245bd2] bg-primary-01 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#1478e9] active:scale-[0.98] sm:text-[11px] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
             setStatus((s) => ({ ...s, [q.id]: "review" }));
@@ -220,7 +220,7 @@ export function QuestionContent({
             else setShowSubmitModal(true);
           }}
         >
-          <span className="relative z-10 text-center">Mark for Review & Next</span>
+          <span className="text-center">Mark for Review & Next</span>
         </button>
       </div>
     </section>

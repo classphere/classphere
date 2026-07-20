@@ -295,10 +295,7 @@ function TestsHubContent() {
             </div>
 
             {loading ? (
-              <div className="flex flex-col items-center py-24 gap-4">
-                <RiLoader4Line size={36} className="animate-spin text-t-secondary" />
-                <p className="text-[13px] font-sans text-t-secondary">Loading your tests...</p>
-              </div>
+              <TestCardsSkeleton />
             ) : error ? (
               <div className="card text-center py-20"><div className="text-4xl mb-4">⚠️</div><p className="font-semibold text-[13px] text-primary-03">{error}</p></div>
             ) : filteredAssigned.length === 0 ? (
@@ -333,7 +330,7 @@ function TestsHubContent() {
             </div>
 
             {loading ? (
-              <div className="card text-center py-20"><RiLoader4Line size={36} className="animate-spin mx-auto mb-4 text-t-secondary" /><p className="font-semibold text-[13px] text-t-secondary">Loading...</p></div>
+              <TestCardsSkeleton />
             ) : error ? (
               <div className="card text-center py-20"><div className="text-4xl mb-4">⚠️</div><p className="font-semibold text-[13px] text-primary-03">{error}</p></div>
             ) : filtered.length === 0 ? (
@@ -489,12 +486,32 @@ function TestCard({ paper, isAdmin, onDelete, onStart }: { paper: Paper; isAdmin
               <RiDeleteBinLine size={15} />
             </button>
           )}
-          <div className="flex w-full flex-col gap-2">
-            <button onClick={() => onStart("practice")} className="flex h-[72px] w-full items-center justify-center rounded-[8px] border border-s-stroke2 bg-b-surface2 px-4 text-[14px] font-semibold text-t-primary transition-colors active:scale-[0.98] hover:bg-white dark:hover:bg-[#202020] sm:flex-1">Practice Questions</button>
-            <button onClick={() => onStart("attempt")} className="flex h-[72px] w-full items-center justify-center rounded-[8px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] px-4 text-[14px] font-semibold text-white transition-transform active:scale-[0.98] sm:flex-1">Attempt Test</button>
+          <div className="flex w-full flex-col gap-2 sm:flex-row">
+            <button onClick={() => onStart("practice")} className="flex h-11 w-full items-center justify-center rounded-[8px] border border-s-stroke2 bg-b-surface2 px-3 text-[13px] font-semibold text-t-primary transition-colors active:scale-[0.98] hover:bg-white dark:hover:bg-[#202020] sm:flex-1">Practice Questions</button>
+            <button onClick={() => onStart("attempt")} className="flex h-11 w-full items-center justify-center rounded-[8px] border border-[#161616] bg-[linear-gradient(342.29deg,#070707_12.1%,#2F2E31_87.9%)] px-3 text-[13px] font-semibold text-white transition-transform active:scale-[0.98] sm:flex-1">Attempt Test</button>
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function TestCardsSkeleton() {
+  return (
+    <div aria-label="Loading tests" aria-busy="true" className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+      {Array.from({ length: 6 }).map((_, index) => (
+        <div key={index} className="flex min-h-[236px] flex-col justify-between rounded-[24px] border border-s-stroke2/40 bg-b-surface2 p-5 sm:p-[22px]">
+          <div className="animate-pulse">
+            <div className="h-5 w-2/3 rounded-md bg-b-surface1" />
+            <div className="mt-3 h-3 w-1/3 rounded-md bg-b-surface1" />
+            <div className="mt-7 flex gap-4"><div className="h-3 w-14 rounded bg-b-surface1" /><div className="h-3 w-14 rounded bg-b-surface1" /><div className="h-3 w-16 rounded bg-b-surface1" /></div>
+          </div>
+          <div className="mt-5 flex gap-2">
+            <div className="h-11 flex-1 rounded-[8px] bg-b-surface1" />
+            <div className="h-11 flex-1 rounded-[8px] bg-b-surface1" />
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

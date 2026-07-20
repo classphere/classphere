@@ -32,7 +32,7 @@ export default function TestPage() {
   const searchParams = useSearchParams();
   const testId = params.id; // e.g. "pyq-jee-main-2024-jan-shift1"
   const requestedTestMode = searchParams.get("mode") === "practice" ? "practice" : "attempt";
-  const { session, loading: authLoading } = useAuth();
+  const { session, user, loading: authLoading } = useAuth();
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [meta, setMeta] = useState<TestMeta | null>(null);
@@ -461,6 +461,7 @@ export default function TestPage() {
         timeLeft={timeLeft}
         isTimed={timeLeft !== null}
         timeWarning={timeWarning}
+        candidateName={user?.name}
         setShowSubmitModal={setShowSubmitModal}
         formatTime={formatTime}
       />

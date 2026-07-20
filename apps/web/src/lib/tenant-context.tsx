@@ -33,6 +33,7 @@ function detectDomain(): string | null {
   if (typeof window === "undefined") return null;
 
   const hostname = window.location.hostname;
+  const baseDomain = (process.env.NEXT_PUBLIC_BASE_DOMAIN || "classphere.com").toLowerCase();
 
   // Local dev fallback: ?tenant= query param
   const params = new URLSearchParams(window.location.search);
@@ -40,9 +41,9 @@ function detectDomain(): string | null {
   if (localTenant && localTenant !== "admin") return localTenant;
   if (localTenant === "admin") return null; // admin tenant = super admin
 
-  // Production: Check if it's a subdomain of classphere.com
-  if (hostname.endsWith(".classphere.com")) {
-    const sub = hostname.replace(".classphere.com", "");
+  // Production: Check if it's a subdomain of the configured Classphere domain.
+  if (hostname.endsWith(`.${baseDomain}`)) {
+    const sub = hostname.slice(0, -(baseDomain.length + 1));
     if (sub === "admin" || sub === "www" || sub === "") return null; // super admin domains
     return sub;
   }
@@ -62,7 +63,7 @@ function detectDomain(): string | null {
   }
 
   // Plain localhost / 127.0.0.1 = no subdomain
-  if (hostname === "localhost" || hostname === "127.0.0.1") {
+  if (hostname === baseDomain || hostname === `www.${baseDomain}` || hostname === "localhost" || hostname === "127.0.0.1") {
     return null;
   }
 

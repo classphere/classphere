@@ -7,6 +7,7 @@ import { Suspense, useEffect } from "react";
 import { useTenant } from "@/lib/tenant-context";
 import { useAuth } from "@/lib/auth-context";
 import { NotificationRealtimeBridge } from "@/components/notifications/NotificationRealtimeBridge";
+import { NativePushRegistration } from "@/components/notifications/NativePushRegistration";
 
 // Paths that render full-screen with no sidebar shell (auth pages, test-taking)
 const NO_SHELL_PATHS = ["/login", "/signup"];
@@ -85,6 +86,7 @@ export default function AppShell({ children }: Readonly<{ children: React.ReactN
   return (
     <div className="relative isolate flex min-h-screen w-full overflow-x-clip bg-b-surface1 text-t-primary flex-col lg:flex-row">
       <NotificationRealtimeBridge />
+      <NativePushRegistration />
       <Suspense
         fallback={
           <div className="hidden lg:flex h-screen w-[280px] xl:w-[300px] shrink-0 bg-b-surface1 border-r border-transparent" />

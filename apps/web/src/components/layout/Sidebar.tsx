@@ -167,8 +167,9 @@ export default function Sidebar() {
   ];
 
   const displayName = tenant.instituteName ?? "Classphere";
+  const baseDomain = process.env.NEXT_PUBLIC_BASE_DOMAIN || "classphere.com";
   const displayDomain = tenant.domain
-    ? (tenant.domain.includes(".") ? tenant.domain : `${tenant.domain}.classphere.com`)
+    ? (tenant.domain.includes(".") ? tenant.domain : `${tenant.domain}.${baseDomain}`)
     : null;
 
   return (
