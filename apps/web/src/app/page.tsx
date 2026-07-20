@@ -1,6 +1,5 @@
 import { HeroSection } from "@/components/landing/HeroSection";
 import { AboutSection } from "@/components/landing/AboutSection";
-import { ServicesSection } from "@/components/landing/ServicesSection";
 import { WorksSection } from "@/components/landing/WorksSection";
 import { ToolsSection } from "@/components/landing/ToolsSection";
 import { HowItWorksSection } from "@/components/landing/HowItWorksSection";
@@ -15,7 +14,6 @@ export default function Home() {
     <main className="overflow-hidden font-urbanist">
       <HeroSection />
       <AboutSection />
-      <ServicesSection />
       <WorksSection />
       <ToolsSection />
       <HowItWorksSection />

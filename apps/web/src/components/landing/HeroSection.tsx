@@ -1,39 +1,62 @@
-import { logoAsset, projects } from "./data";
+import Image from "next/image";
+import { RiArrowRightLine, RiCalendarScheduleLine, RiShieldCheckLine } from "@remixicon/react";
 import { Button } from "@/components/landing/ui/Button";
-import { Arrow } from "./ui/Arrow";
-import { GalleryCard } from "./ui/GalleryCard";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[900px] bg-[#edecec] px-5 pb-14 pt-8 sm:px-10 lg:min-h-[1096px] lg:px-20">
-      <span className="pointer-events-none absolute left-1/2 top-1/2 -mt-[199px] -translate-x-1/2 -translate-y-1/2 select-none text-[280px] font-bold leading-none tracking-tight text-black/[0.02] sm:text-[300px]">
-        CLASSPHERE
-      </span>
+    <section id="top" className="overflow-hidden bg-[#edecec] px-5 pb-16 pt-8 sm:px-10 lg:px-20 lg:pb-24">
       <nav className="mx-auto flex max-w-[1280px] items-center justify-between gap-5">
-        <a href="#top" className="block text-2xl font-extrabold tracking-tight text-[#3a3a3a] flex items-center h-12">CLASSPHERE</a>
-        <div className="hidden items-center gap-10 text-base font-medium text-[#515151] md:flex"><a href="#about">About Us</a><a href="#work">Modules</a><a href="#services">Services</a><a href="#pricing">Pricing</a></div>
-        <Button href="#contact" variant="primary">
-          Contact us
-        </Button>
-      </nav>
-      <div id="top" className="mx-auto flex max-w-[1032px] flex-col items-center pt-24 text-center sm:pt-36">
-        <div className="mb-6 rounded-full border border-black/10 px-4 py-1.5 text-sm font-medium text-[#5c5c5c] shadow-sm">
-          Introducing the ultimate EdTech OS for Institutes
+        <a href="#top" className="flex items-center gap-3 text-xl font-extrabold tracking-tight text-[#1d1d1d]">
+          <Image src="/logo.png" alt="" width={40} height={40} className="rounded-xl" priority />
+          Classphere
+        </a>
+        <div className="hidden items-center gap-8 text-sm font-semibold text-[#5b5b5b] md:flex">
+          <a href="#modules">Platform</a>
+          <a href="#workflow">How it works</a>
+          <a href="#pricing">Pricing</a>
         </div>
-        <h1 className="max-w-5xl text-5xl font-bold leading-[1.05] tracking-[-.05em] text-[#1a1a1a] sm:text-7xl lg:text-[80px]">
-          Scale your institute with <br />
-          <span className="bg-gradient-to-r from-[#FF5936] to-[#ff8c73] bg-clip-text text-transparent">AI-powered</span> learning.
-        </h1>
-        <p className="mt-8 max-w-2xl text-lg leading-relaxed tracking-tight text-[#5c5c5c] sm:text-xl">
-          Launch your own white-labeled app. Automate mock tests, deliver personalized Daily Practice Problems, and track student performance with deep analytics.
-        </p>
-        <div className="mt-12 flex flex-wrap justify-center gap-6"><Button href="#contact" variant="dark" className="!py-[6px] !pl-[6px] !pr-[24px]"><div className="flex h-[36px] w-[36px] items-center justify-center rounded-[8px] bg-[#FF5936] shadow-[0px_1px_6px_rgba(0,0,0,0.25)]"><Arrow /></div><span>Book a Demo</span></Button><Button href="#pricing" variant="secondary">View Pricing</Button></div>
+        <Button href="#contact" variant="primary">Talk to us</Button>
+      </nav>
+
+      <div className="mx-auto grid max-w-[1280px] items-center gap-12 pb-4 pt-16 lg:grid-cols-[1fr_0.88fr] lg:pt-24">
+        <div className="max-w-[680px]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#ff5936]/20 bg-white/60 px-4 py-2 text-sm font-semibold text-[#714234]">
+            <RiShieldCheckLine size={16} className="text-[#ff5936]" />
+            Built for serious exam preparation
+          </div>
+          <h1 className="mt-7 text-5xl font-bold leading-[1.02] tracking-[-.055em] text-[#171717] sm:text-6xl lg:text-[76px]">
+            Make every test lead to a <span className="text-[#ff5936]">better next attempt.</span>
+          </h1>
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[#5c5c5c] sm:text-xl">
+            Classphere gives coaching institutes a branded test platform and gives students a clearer path from practice to improvement.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Button href="#contact" variant="dark" className="!h-[54px] !gap-3 !px-5">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#ff5936] text-white">
+                <RiCalendarScheduleLine size={19} />
+              </span>
+              Book a demo
+            </Button>
+            <Button href="#pricing" variant="secondary" className="!h-[54px] !text-base">See pricing <RiArrowRightLine size={18} /></Button>
+          </div>
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-[#626262]">
+            <span>JEE and NEET ready</span>
+            <span>White-label friendly</span>
+            <span>Practice and timed attempts</span>
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-[500px]">
+          <div className="absolute -inset-6 rounded-[34px] bg-[#ff5936]/10 blur-3xl" />
+          <div className="relative overflow-hidden rounded-[28px] border border-white/80 bg-[#ddd8d4] p-3 shadow-[0_24px_70px_rgba(53,38,27,0.16)]">
+            <Image src="/landing-student-test.png" alt="Student preparing for an online practice test" width={1024} height={1536} className="aspect-[4/5] w-full rounded-[20px] object-cover" priority />
+            <div className="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/70 bg-white/90 p-4 shadow-lg backdrop-blur">
+              <p className="text-sm font-bold text-[#202020]">Practice with intent</p>
+              <p className="mt-1 text-sm leading-5 text-[#666]">Timed tests, targeted revision, and a clearer next step after every paper.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="relative left-1/2 mt-24 flex w-[max-content] -translate-x-1/2 gap-6 lg:mt-32">
-        {projects.map((src, index) => <GalleryCard key={src} src={src} index={index} />)}
-      </div>
-      <div className="pointer-events-none absolute bottom-14 left-0 z-10 h-[300px] w-[120px] bg-gradient-to-r from-[#edecec] to-transparent sm:h-[420px]" />
-      <div className="pointer-events-none absolute bottom-14 right-0 z-10 h-[300px] w-[120px] bg-gradient-to-l from-[#edecec] to-transparent sm:h-[420px]" />
     </section>
   );
 }

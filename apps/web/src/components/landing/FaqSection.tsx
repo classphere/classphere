@@ -4,27 +4,27 @@ export function FaqSection() {
   const faqs = [
     {
       q: "What types of exams do you support?",
-      a: "We support competitive exams like JEE, NEET, and standard curriculums. You get full access to our question bank to curate mock tests instantly."
+      a: "Classphere is built for competitive-exam preparation. An institute can enable the exam catalogues it needs, including JEE Main, JEE Advanced, and NEET-UG."
     },
     {
       q: "How fast is test evaluation?",
-      a: "Test evaluation is fully automated and instantaneous. As soon as a student submits their test, they receive their score and detailed AI insights."
+      a: "Objective questions are evaluated when a student submits. The result experience then highlights scores, accuracy, and areas that need revision."
     },
     {
       q: "Do you offer custom analytics?",
-      a: "Yes, our platform provides deep, topic-level insights for students, and aggregate batch-level analytics for teachers and institute administrators."
+      a: "Yes. Students receive their own test analysis and revision tasks, while teachers and institutes can follow performance at the relevant batch level."
     },
     {
       q: "Is the platform white-labeled?",
-      a: "Absolutely. You can run Classphere on your custom domain, featuring your institute's branding, logo, and color scheme."
+      a: "Yes. Your institute identity, logo, and enabled exam catalogue can be configured so the student experience feels like your own platform."
     },
     {
-      q: "Can you integrate with our existing CRM?",
-      a: "Yes, we provide APIs and custom integration services to seamlessly connect with your existing student databases and CRM systems."
+      q: "Can students practise without a timer?",
+      a: "Yes. A student can use practice mode for a question set or choose a timed attempt when they want exam-like conditions."
     },
     {
-      q: "Do you provide technical support?",
-      a: "We offer 24/7 dedicated email and chat support. Pro plan users also receive a dedicated success manager for priority assistance."
+      q: "How does onboarding work?",
+      a: "We begin with your institute structure and target exams, then help you set up batches, import students, and publish your first practice material."
     }
   ];
 

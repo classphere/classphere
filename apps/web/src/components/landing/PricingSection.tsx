@@ -1,105 +1,53 @@
+import { RiCheckLine, RiInformationLine, RiSchoolLine } from "@remixicon/react";
 import { SectionHeader } from "./ui/SectionHeader";
 import { Button } from "./ui/Button";
-import { Card } from "./ui/Card";
+
+const planFeatures = [
+  "Branded institute, student, and faculty portals",
+  "NTA-style test engine with practice and timed attempts",
+  "Tests, DPPs, batches, student import, and faculty workflows",
+  "Test analysis, mistake diary, revision tasks, and private batch comparison",
+  "White-label setup and institute-specific exam catalogue",
+];
 
 export function PricingSection() {
-  const starterFeatures = [
-    "Up to 500 active students",
-    "Secure test engine & mock exams",
-    "Basic analytics & student tracking",
-    "Automated DPP generation",
-    "24/7 email support",
-    "Dedicated institute portal",
-    "White-labeled domain",
-    "Role-based access (Admins & Teachers)"
-  ];
-
-  const proFeatures = [
-    "Unlimited active students",
-    "Advanced AI score insights",
-    "Secure test engine & mock exams",
-    "Automated DPP generation",
-    "Dedicated success manager",
-    "Priority 24/7 support",
-    "White-labeled domain",
-    "Custom CRM integrations"
-  ];
-
-  const CheckIcon = () => (
-    <div className="relative flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-[1.5px] border-[#838383]">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#838383" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M5 13l4 4L19 7" />
-      </svg>
-    </div>
-  );
-
   return (
     <section id="pricing" className="bg-[#edecec] px-5 py-24 sm:px-10 lg:px-20 lg:py-32">
-      <div className="mx-auto max-w-[1280px]">
-        <SectionHeader 
-          eyebrow="Pricing Plans"
-          title="Powerful Tech. Simple Pricing."
-          className="pb-14"
-        />
-        
-        <div className="mx-auto flex flex-col gap-6 lg:flex-row lg:justify-center">
-          
-          {/* Starter Plan */}
-          <Card variant="light" className="relative w-full max-w-[628px] p-[42px]">
-            <h3 className="text-[32px] font-[550] leading-[34px] text-black">Starter</h3>
-            <div className="mt-[42px] flex items-end gap-2">
-              <span className="text-[48px] font-semibold leading-[54px] text-black">$399</span>
-              <span className="mb-[6px] text-[26px] font-medium leading-[34px] text-black">/month</span>
+      <div className="mx-auto max-w-[1120px]">
+        <SectionHeader eyebrow="Simple institute pricing" title="One platform. Clear per-student pricing." className="pb-12" />
+        <article className="overflow-hidden rounded-[28px] border border-white/80 bg-[#f7f6f5] shadow-[0_18px_50px_rgba(67,52,39,0.07)]">
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
+            <div className="bg-[#1b1b1b] p-8 text-white sm:p-10">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#ff5936]">
+                <RiSchoolLine size={25} />
+              </span>
+              <p className="mt-12 text-sm font-semibold uppercase tracking-[0.14em] text-[#ff9a85]">Classphere institute plan</p>
+              <div className="mt-4 flex items-end gap-2">
+                <span className="text-5xl font-semibold tracking-tight">₹500</span>
+                <span className="pb-1 text-base text-white/65">per student / year</span>
+              </div>
+              <p className="mt-5 max-w-sm text-base leading-7 text-white/65">
+                Start with a guided trial, then grow on one clear annual price as more students join.
+              </p>
+              <Button href="#contact" variant="secondary" className="mt-9 !h-[54px] !bg-white !text-[#202020]">Book a pricing call</Button>
             </div>
-            <p className="mt-[18px] max-w-[410px] text-[20px] font-medium leading-[24px] text-[#838383]">
-              Perfect for growing institutes starting their digital journey.
-            </p>
-            <Button href="#contact" variant="dark" className="mt-[42px] h-[60px] w-full text-[20px] font-[550]">
-              Get Started
-            </Button>
-            
-            <ul className="mt-[42px] flex flex-col gap-[18px]">
-              {starterFeatures.map(feat => (
-                <li key={feat} className="flex items-center gap-4 text-[20px] font-medium leading-[24px] text-[#838383]">
-                  <CheckIcon />
-                  {feat}
-                </li>
-              ))}
-            </ul>
-          </Card>
-
-          {/* Pro Plan */}
-          <Card variant="light" className="relative w-full max-w-[628px] p-[42px]">
-            {/* Badge */}
-            <div className="absolute right-8 top-8 hidden overflow-hidden rounded-[10px] bg-[#E5E5E5] px-[24px] py-[12px] sm:block">
-              <i className="absolute right-[-78px] top-[-29px] z-0 h-3 w-[120px] rotate-[125deg] rounded-full bg-white/24 blur-[3px]" />
-              <i className="absolute right-[12px] top-[-29px] z-0 h-3 w-[120px] rotate-[125deg] rounded-full bg-white/24 blur-[3px]" />
-              <span className="relative z-10 text-[18px] font-[550] leading-[24px] text-[#827F7F]">Most Popular</span>
+            <div className="p-8 sm:p-10">
+              <h3 className="text-2xl font-semibold tracking-tight text-[#1d1d1d]">Everything your learners need to prepare better.</h3>
+              <ul className="mt-7 grid gap-4">
+                {planFeatures.map((feature) => (
+                  <li key={feature} className="flex gap-3 text-base leading-6 text-[#5f5f5f]">
+                    <RiCheckLine size={20} className="mt-0.5 shrink-0 text-[#e44828]" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex items-start gap-2 rounded-xl bg-[#ece9e6] p-4 text-sm leading-5 text-[#686868]">
+                <RiInformationLine size={18} className="mt-0.5 shrink-0 text-[#9e4b38]" />
+                Final onboarding scope and any custom work are agreed before activation.
+              </div>
             </div>
-
-            <h3 className="text-[32px] font-[550] leading-[34px] text-black">Pro</h3>
-            <div className="mt-[42px] flex items-end gap-2">
-              <span className="text-[48px] font-semibold leading-[54px] text-black">$999</span>
-              <span className="mb-[6px] text-[26px] font-medium leading-[34px] text-black">/month</span>
-            </div>
-            <p className="mt-[18px] max-w-[410px] text-[20px] font-medium leading-[24px] text-[#838383]">
-              Ideal for established coaching centers scaling their operations.
-            </p>
-            <Button href="#contact" variant="dark" className="mt-[42px] h-[60px] w-full text-[20px] font-[550]">
-              Get Started
-            </Button>
-            
-            <ul className="mt-[42px] flex flex-col gap-[18px]">
-              {proFeatures.map(feat => (
-                <li key={feat} className="flex items-center gap-4 text-[20px] font-medium leading-[24px] text-[#838383]">
-                  <CheckIcon />
-                  {feat}
-                </li>
-              ))}
-            </ul>
-          </Card>
-
-        </div>
+          </div>
+        </article>
       </div>
     </section>
   );

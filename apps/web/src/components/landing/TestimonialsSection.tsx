@@ -1,59 +1,46 @@
-import { projects } from "./data";
+import { RiCheckboxCircleLine, RiLightbulbFlashLine, RiTimeLine } from "@remixicon/react";
 import { SectionHeader } from "./ui/SectionHeader";
-import { StarRating } from "./ui/StarRating";
-import { AvatarBlock } from "./ui/AvatarBlock";
-import { Button } from "./ui/Button";
+
+const reasons = [
+  {
+    icon: RiTimeLine,
+    title: "A familiar test day",
+    body: "Students can switch between practice and timed attempts without learning a new exam pattern.",
+  },
+  {
+    icon: RiLightbulbFlashLine,
+    title: "A useful next step",
+    body: "Every test can lead into revision tasks, mistakes, and the chapters that need more work.",
+  },
+  {
+    icon: RiCheckboxCircleLine,
+    title: "Less admin overhead",
+    body: "Institute teams can organise batches, students, tests, and DPPs from the same place.",
+  },
+];
+
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="bg-[#090909] px-5 py-24 sm:px-10 lg:px-[80px] lg:py-[48px]">
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col justify-between gap-16 lg:flex-row lg:items-start">
-        
-        {/* Left Side: Testimonial Text */}
-        <div className="flex w-full max-w-[518px] flex-col">
-          {/* Eyebrow & Headline */}
-          <SectionHeader 
-            eyebrow="Testimonial"
-            title="What Our Clients Says"
-            dark={true}
-            align="left"
-            className="gap-0"
-          />
-
-          {/* Testimonial Content */}
-          <div className="mt-[80px] flex flex-col gap-[42px]">
-            <div className="flex flex-col gap-[24px]">
-              <StarRating rating={5} />
-              <p className="text-[24px] font-medium leading-[32px] text-[#B3B3B3]">
-                "Our batch accuracy improved noticeably after using their AI insights. Fast automated evaluation and incredible analytics. It completely transformed how we prepare students for JEE and NEET."
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-[24px]">
-              <AvatarBlock name="Rajesh Sharma" role="Director of Academics" dark={true} />
-              <div className="h-[1px] w-full bg-[#888888] opacity-30"></div>
-              
-              {/* Nav Arrows */}
-              <div className="flex gap-[16px]">
-                <Button variant="nav">
-                  <svg className="h-6 w-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </Button>
-                <Button variant="nav">
-                  <svg className="h-6 w-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </Button>
+    <section id="why-classphere" className="bg-[#171717] px-5 py-24 text-white sm:px-10 lg:px-20 lg:py-32">
+      <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <SectionHeader
+          eyebrow="Why Classphere"
+          title="Built around the learning loop, not a long feature checklist."
+          description="The platform stays focused on the decisions that help a student prepare better and an institute run with confidence."
+          dark
+          align="left"
+        />
+        <div className="grid gap-3">
+          {reasons.map(({ icon: Icon, title, body }) => (
+            <article key={title} className="grid gap-5 rounded-[20px] border border-white/10 bg-white/[0.045] p-6 sm:grid-cols-[52px_1fr]">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#ff5936]/15 text-[#ff8268]"><Icon size={24} /></span>
+              <div>
+                <h3 className="text-xl font-semibold">{title}</h3>
+                <p className="mt-2 max-w-xl text-base leading-6 text-white/60">{body}</p>
               </div>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
-
-        {/* Right Side: Image */}
-        <div className="h-auto w-full max-w-[528px] overflow-hidden rounded-[24px] bg-[#DBD0D0] lg:h-[528px]">
-          <img src={projects[0]} alt="Testimonial author" className="h-full w-full object-cover" />
-        </div>
-
       </div>
     </section>
   );
