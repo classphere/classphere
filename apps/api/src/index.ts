@@ -8,6 +8,14 @@ import "@sentry/profiling-node"; // Profiling
 
 const app = express();
 const port = process.env.PORT || 3001;
+const appBaseDomain = (process.env.APP_BASE_DOMAIN || "classphere.com").toLowerCase();
+const escapedBaseDomain = appBaseDomain.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const allowedCustomWebOrigins = new Set(
+  (process.env.ALLOWED_WEB_ORIGINS || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean),
+);
 
 // ─── Sentry Initialization ─────────────────────────────────────────────────────
 Sentry.init({
@@ -29,7 +37,8 @@ app.use(helmet());
 // 2. Strict CORS
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://classphere.com"
+  `https://${appBaseDomain}`,
+  `https://www.${appBaseDomain}`,
 ];
 const corsOptions = {
   origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
@@ -45,13 +54,13 @@ const corsOptions = {
       }
     }
 
-    // Production: *.classphere.com subdomains
-    const isProdSubdomain = /^https:\/\/[a-z0-9-]+\.classphere\.com$/.test(origin);
+    // Production: direct Classphere institute subdomains.
+    const isProdSubdomain = new RegExp(`^https:\/\/[a-z0-9-]+\\.${escapedBaseDomain}$`).test(origin);
 
     // Local dev: *.localhost:PORT (e.g. test.localhost:3000, allen.localhost:3000)
     const isLocalSubdomain = /^http:\/\/[a-z0-9-_\.]+\.localhost(:\d+)?$/.test(origin);
 
-    if (allowedOrigins.includes(origin) || isProdSubdomain || isLocalSubdomain) {
+    if (allowedOrigins.includes(origin) || allowedCustomWebOrigins.has(origin) || isProdSubdomain || isLocalSubdomain) {
       callback(null, true);
     } else {
       console.warn(`[CORS Blocked] Origin: ${origin}`);
