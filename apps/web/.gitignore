@@ -39,3 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Firebase client configuration is project-specific and must never be committed.
+android/app/google-services.json
