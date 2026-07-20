@@ -90,6 +90,7 @@ export default function SuperAdminDashboardPage() {
     if (!session?.access_token) return;
     
     const fetchTelemetry = () => {
+      if (document.visibilityState !== "visible") return;
       fetch(`${API_URL}/api/v1/superadmin/telemetry`, {
         headers: { Authorization: `Bearer ${session.access_token}` },
       })
@@ -111,8 +112,15 @@ export default function SuperAdminDashboardPage() {
     };
     
     fetchTelemetry();
-    const interval = setInterval(fetchTelemetry, 10000);
-    return () => clearInterval(interval);
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") fetchTelemetry();
+    };
+    const interval = setInterval(fetchTelemetry, 60000);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
   }, [session?.access_token]);
 
   const fmt = (n: number) => n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n);

@@ -348,6 +348,7 @@ export default function InstituteTestViewPage() {
           answers={answers}
           setAnswers={setAnswers}
           setStatus={setStatus}
+          onAttemptChanged={() => undefined}
           selectAnswer={selectAnswer}
           navigateTo={navigateTo}
           setShowSubmitModal={setShowSubmitModal}

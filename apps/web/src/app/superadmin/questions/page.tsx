@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { PremiumSectionCard as SectionCard } from "@/components/premium-ui";
 import { Modal } from "@/components/shared/Modal";
@@ -342,6 +343,13 @@ export default function QuestionBankPage() {
                   >
                     <RiEditLine size={18} />
                   </button>
+                  <Link
+                    href={`/superadmin/questions/${question.id}`}
+                    onClick={(event) => event.stopPropagation()}
+                    className="rounded-[10px] px-3 py-2 text-xs font-semibold text-t-primary hover:bg-b-surface1"
+                  >
+                    Review
+                  </Link>
                   <button 
                     onClick={() => handleDelete(question.id)}
                     className="p-2 rounded-[10px] hover:bg-[rgba(239,68,68,0.1)] text-t-secondary hover:text-primary-03 transition-colors"
