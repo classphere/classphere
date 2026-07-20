@@ -25,6 +25,13 @@ export default function Dashboard() {
   const [stats, setStats] = useState<any>(null);
   const [history, setHistory] = useState<any[]>([]);
   const [dpps, setDpps] = useState<any[]>([]);
+  const [notificationVersion, setNotificationVersion] = useState(0);
+
+  useEffect(() => {
+    const refresh = () => setNotificationVersion((version) => version + 1);
+    window.addEventListener("classphere:notification", refresh);
+    return () => window.removeEventListener("classphere:notification", refresh);
+  }, []);
 
   useEffect(() => {
     if (!session?.access_token) return;
@@ -41,7 +48,7 @@ export default function Dashboard() {
       })
       .catch(console.error)
       .finally(() => setLoading(false));
-  }, [session?.access_token]);
+  }, [session?.access_token, notificationVersion]);
 
   const getGreeting = () => {
     const hours = new Date().getHours();

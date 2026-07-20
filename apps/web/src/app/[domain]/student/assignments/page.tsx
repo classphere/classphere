@@ -117,6 +117,13 @@ export default function AssignmentsPage() {
   const { session } = useAuth();
   const [dpps, setDpps] = useState<StudentDPP[]>([]);
   const [loading, setLoading] = useState(true);
+  const [notificationVersion, setNotificationVersion] = useState(0);
+
+  useEffect(() => {
+    const refresh = () => setNotificationVersion((version) => version + 1);
+    window.addEventListener("classphere:notification", refresh);
+    return () => window.removeEventListener("classphere:notification", refresh);
+  }, []);
 
   useEffect(() => {
     if (!session?.access_token) return;
@@ -134,7 +141,7 @@ export default function AssignmentsPage() {
     };
 
     fetchDPPs();
-  }, [session?.access_token]);
+  }, [session?.access_token, notificationVersion]);
 
   const late = dpps.filter((d) => d.status === "late");
   const pending = dpps.filter((d) => d.status === "pending");

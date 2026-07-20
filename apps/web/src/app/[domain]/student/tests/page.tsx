@@ -45,6 +45,18 @@ interface AssignedTest {
   assigned_at: string;
 }
 
+interface Resource {
+  id: string;
+  title: string;
+  description?: string | null;
+  content?: string | null;
+  resource_type: "pdf" | "link" | "video" | "note";
+  resource_url?: string | null;
+  subject?: string | null;
+  chapter?: string | null;
+  topic?: string | null;
+}
+
 const API_BASE = API_V1_URL;
 const EXAM_LABELS: Record<string, string> = {
   "jee-main": "JEE Main",
@@ -54,11 +66,15 @@ const EXAM_LABELS: Record<string, string> = {
 };
 const TYPES = [
   { id: "assigned", label: "Assigned Tests" },
+  { id: "topic-wise", label: "Topic-wise" },
+  { id: "resources", label: "Study Material" },
   { id: "chapter-wise", label: "Chapter-wise" },
   { id: "mock-test", label: "Mock Tests" },
   { id: "pyq", label: "PYQs" },
   { id: "ncert", label: "Ncert Questions" },
 ];
+
+type ExamMeta = { code: string; full_name: string; subjects: { name: string; chapters: { name: string; topics: string[] }[] }[] };
 
 export default function TestsHubPage() {
   return (
@@ -77,13 +93,27 @@ function TestsHubContent() {
 
   const [papers, setPapers] = useState<Paper[]>([]);
   const [assignedTests, setAssignedTests] = useState<AssignedTest[]>([]);
+  const [resources, setResources] = useState<Resource[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [activeExam, setActiveExam] = useState("jee-main");
   const EXAM_OPTIONS = ["jee-main", "jee-advanced", "neet-ug", "ssc-cgl"];
-  const [activeType, setActiveType] = useState("assigned");
+  const [activeType, setActiveType] = useState(() => searchParams.get("tab") === "resources" ? "resources" : "assigned");
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
+  const [examMeta, setExamMeta] = useState<ExamMeta[]>([]);
+  const [topicSubject, setTopicSubject] = useState("");
+  const [topicChapter, setTopicChapter] = useState("");
+  const [topic, setTopic] = useState("");
+  const [topicDifficulty, setTopicDifficulty] = useState("");
+  const [creatingTopicPractice, setCreatingTopicPractice] = useState(false);
+  const [notificationVersion, setNotificationVersion] = useState(0);
+
+  useEffect(() => {
+    const refresh = () => setNotificationVersion((version) => version + 1);
+    window.addEventListener("classphere:notification", refresh);
+    return () => window.removeEventListener("classphere:notification", refresh);
+  }, []);
 
   const handleDelete = async (paperId: string, title: string) => {
     if (!window.confirm(`Delete "${title}"?`)) return;
@@ -111,11 +141,21 @@ function TestsHubContent() {
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
-  }, [activeType, session]);
+  }, [activeType, session, notificationVersion]);
+
+  useEffect(() => {
+    if (!session?.access_token || activeType !== "resources") return;
+    setLoading(true);
+    setError(null);
+    apiClient.get("/api/v1/resources/student", session.access_token)
+      .then((res) => setResources(res.data?.resources ?? []))
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
+  }, [activeType, session, notificationVersion]);
 
   // Load PYQ / chapter-wise / mock tests from superadmin question bank
   useEffect(() => {
-    if (!session?.access_token || activeType === "assigned") return;
+    if (!session?.access_token || activeType === "assigned" || activeType === "topic-wise" || activeType === "resources") return;
     setLoading(true);
     setError(null);
     apiClient.get(`/api/v1/questions/tests?exam=${activeExam}&type=${activeType}`, session.access_token)
@@ -126,6 +166,38 @@ function TestsHubContent() {
       .catch(err => setError(err.message))
       .finally(() => setLoading(false));
   }, [activeType, activeExam, session]);
+
+  useEffect(() => {
+    if (!session?.access_token || activeType !== "topic-wise") return;
+    apiClient.get("/api/v1/questions/meta/exams", session.access_token)
+      .then((res) => {
+        const exams = res.data?.exams ?? [];
+        setExamMeta(exams);
+        const chosen = exams.find((entry: ExamMeta) => entry.code === activeExam) ?? exams[0];
+        if (chosen && chosen.code !== activeExam) setActiveExam(chosen.code);
+      })
+      .catch((err) => setError(err.message));
+  }, [activeType, session, activeExam]);
+
+  const selectedExamMeta = examMeta.find((entry) => entry.code === activeExam);
+  const selectedSubjectMeta = selectedExamMeta?.subjects.find((entry) => entry.name === topicSubject);
+  const selectedChapterMeta = selectedSubjectMeta?.chapters.find((entry) => entry.name === topicChapter);
+
+  const startTopicPractice = async () => {
+    if (!session?.access_token || !topicSubject || !topicChapter || !topic) return;
+    setCreatingTopicPractice(true);
+    setError(null);
+    try {
+      const response = await apiClient.post("/api/v1/questions/topic-practice", {
+        exam: activeExam, subject: topicSubject, chapter: topicChapter, topic, difficulty: topicDifficulty || undefined,
+      }, session.access_token);
+      window.location.href = `/test/${response.data.paper_id}?mode=practice`;
+    } catch (err: any) {
+      setError(err.message ?? "Could not start topic practice.");
+    } finally {
+      setCreatingTopicPractice(false);
+    }
+  };
 
   const categories = useMemo(() => {
     const cats = new Set(papers.map(p =>
@@ -173,7 +245,7 @@ function TestsHubContent() {
         </div>
 
         {/* Filters — only for non-assigned tabs */}
-        {activeType !== "assigned" && (
+        {activeType !== "assigned" && activeType !== "topic-wise" && activeType !== "resources" && (
           <div className="flex flex-col lg:flex-row flex-wrap items-stretch lg:items-center gap-4 mb-6 bg-b-surface2 border border-s-stroke2/40 p-4 sm:p-5 rounded-[24px] select-none">
             <div className="relative flex-1 min-w-0 sm:min-w-[240px]">
               <RiSearchLine size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-t-secondary" />
@@ -185,6 +257,31 @@ function TestsHubContent() {
               {categories.length > 1 && <FilterGroup label={activeType === "pyq" ? "Year" : "Subject"} options={categories} active={activeCategory} onChange={setActiveCategory} />}
             </div>
           </div>
+        )}
+
+        {activeType === "topic-wise" && (
+          <section className="card mx-auto max-w-3xl p-5 sm:p-8">
+            <div className="mb-6"><h2 className="text-lg font-bold text-t-primary">Practice a topic</h2><p className="mt-1 text-sm text-t-secondary">Build a private practice set from one topic. It will not affect your institute tests.</p></div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <SelectField label="Exam" value={activeExam} onChange={(value) => { setActiveExam(value); setTopicSubject(""); setTopicChapter(""); setTopic(""); }} options={examMeta.map((entry) => ({ value: entry.code, label: entry.full_name }))} />
+              <SelectField label="Subject" value={topicSubject} onChange={(value) => { setTopicSubject(value); setTopicChapter(""); setTopic(""); }} options={(selectedExamMeta?.subjects ?? []).map((entry) => ({ value: entry.name, label: entry.name }))} />
+              <SelectField label="Chapter" value={topicChapter} onChange={(value) => { setTopicChapter(value); setTopic(""); }} options={(selectedSubjectMeta?.chapters ?? []).map((entry) => ({ value: entry.name, label: entry.name }))} />
+              <SelectField label="Topic" value={topic} onChange={setTopic} options={(selectedChapterMeta?.topics ?? []).map((entry) => ({ value: entry, label: entry }))} />
+              <SelectField label="Difficulty (optional)" value={topicDifficulty} onChange={setTopicDifficulty} options={[{ value: "", label: "Mixed difficulty" }, { value: "easy", label: "Easy" }, { value: "medium", label: "Medium" }, { value: "hard", label: "Hard" }]} />
+            </div>
+            {error && <p className="mt-4 text-sm text-primary-03">{error}</p>}
+            <button disabled={!topic || creatingTopicPractice} onClick={startTopicPractice} className="mt-7 flex h-11 items-center justify-center rounded-[10px] bg-shade-02 px-5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50">{creatingTopicPractice ? "Creating practice set…" : "Practice Questions"}</button>
+          </section>
+        )}
+
+        {activeType === "resources" && (
+          <section>
+            <div className="mb-5"><h2 className="text-lg font-bold text-t-primary">Study Material</h2><p className="mt-1 text-sm text-t-secondary">Notes and resources shared with your batch by your institute.</p></div>
+            {loading ? <div className="card py-16 text-center"><RiLoader4Line size={30} className="mx-auto animate-spin text-t-secondary" /></div>
+              : error ? <div className="card py-12 text-center text-sm text-primary-03">{error}</div>
+              : resources.length === 0 ? <div className="card py-16 text-center text-sm text-t-secondary">Your institute has not shared study material with this batch yet.</div>
+              : <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{resources.map((resource) => <ResourceCard key={resource.id} resource={resource} />)}</div>}
+          </section>
         )}
 
         {/* Assigned Tests Tab */}
@@ -229,7 +326,7 @@ function TestsHubContent() {
         )}
 
         {/* PYQ / Chapter-wise / Mock Tests Tab */}
-        {activeType !== "assigned" && (
+        {activeType !== "assigned" && activeType !== "topic-wise" && activeType !== "resources" && (
           <>
             <div className="flex justify-between items-center mb-4 px-1 select-none">
               <span className="text-[11px] font-sans text-t-secondary uppercase tracking-widest">Showing <strong className="text-t-primary">{filtered.length}</strong> tests</span>
@@ -255,6 +352,15 @@ function TestsHubContent() {
       </main>
     </>
   );
+}
+
+function SelectField({ label, value, onChange, options }: { label: string; value: string; onChange: (value: string) => void; options: { value: string; label: string }[] }) {
+  return <label className="block text-sm font-semibold text-t-secondary">{label}<select value={value} onChange={(event) => onChange(event.target.value)} className="mt-2 h-11 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3 text-sm font-medium text-t-primary"><option value="">Select {label.toLowerCase()}</option>{options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</select></label>;
+}
+
+function ResourceCard({ resource }: { resource: Resource }) {
+  const body = <><div className="text-[11px] font-bold uppercase tracking-wider text-primary-01">{resource.resource_type}</div><h3 className="mt-2 text-base font-bold text-t-primary">{resource.title}</h3>{(resource.description || resource.content) && <p className="mt-2 line-clamp-3 text-sm text-t-secondary">{resource.description || resource.content}</p>}<p className="mt-4 text-xs font-semibold text-t-secondary">{[resource.subject, resource.chapter, resource.topic].filter(Boolean).join(" · ") || "General material"}</p></>;
+  return resource.resource_url ? <a href={resource.resource_url} target="_blank" rel="noreferrer" className="card block p-5 transition-colors hover:bg-b-surface2">{body}</a> : <article className="card p-5">{body}</article>;
 }
 
 function formatDate(iso: string | null) {

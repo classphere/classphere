@@ -9,6 +9,7 @@ interface QuestionContentProps {
   answers: AnswerMap;
   setAnswers: React.Dispatch<React.SetStateAction<AnswerMap>>;
   setStatus: React.Dispatch<React.SetStateAction<StatusMap>>;
+  onAttemptChanged: () => void;
   selectAnswer: (qId: string, optId: string) => void;
   navigateTo: (idx: number) => void;
   setShowSubmitModal: (show: boolean) => void;
@@ -24,6 +25,7 @@ export function QuestionContent({
   answers,
   setAnswers,
   setStatus,
+  onAttemptChanged,
   selectAnswer,
   navigateTo,
   setShowSubmitModal,
@@ -31,6 +33,10 @@ export function QuestionContent({
   markedCount,
   isSectionBLimitReached,
 }: QuestionContentProps) {
+  // Imports made before media normalisation may carry the same diagram both
+  // inline in markdown and in image_url. Preserve distinct multi-figure
+  // questions while avoiding a duplicate figure for legacy records.
+  const hasInlineQuestionImage = Boolean(q.image_url && q.question_text?.includes(`](${q.image_url})`));
   return (
     <section className="group relative card flex flex-col overflow-hidden min-w-0 p-4 sm:p-6 md:p-8 card select-none lg:sticky lg:top-[7.5rem] lg:h-[calc(100dvh-9rem)] lg:overflow-y-auto">
       <div className="relative z-10 mb-5 flex flex-wrap items-center gap-2">
@@ -58,7 +64,7 @@ export function QuestionContent({
       </div>
 
       {/* Question images */}
-      {q.image_url && (
+      {q.image_url && !hasInlineQuestionImage && (
         <div className="mb-6">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={q.image_url} alt="Figure" className="max-h-[420px] max-w-full rounded-[10px] border border-s-stroke2 object-contain" referrerPolicy="no-referrer" />
@@ -89,6 +95,7 @@ export function QuestionContent({
               value={answers[q.id] || ""}
               onChange={(e) => {
                 const val = e.target.value;
+                onAttemptChanged();
                 setAnswers((a) => ({ ...a, [q.id]: val }));
                 setStatus((s) => ({ ...s, [q.id]: val ? "answered" : "unanswered" }));
               }}
@@ -100,7 +107,7 @@ export function QuestionContent({
               const selected = answers[q.id] === opt.id;
               const disabled = isSectionBLimitReached(q) && !selected;
               const hasText = opt.text && opt.text.trim().length > 0;
-              const hasImage = !!opt.image_url;
+              const hasImage = !!opt.image_url && !opt.text?.includes(`](${opt.image_url})`);
               const isEmpty = !hasText && !hasImage;
 
               return (
@@ -167,6 +174,7 @@ export function QuestionContent({
         <button
           className="flex min-h-12 flex-row items-center justify-center px-2 py-2 rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#00A656] to-[#008A47] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
           onClick={() => {
+            onAttemptChanged();
             if (answers[q.id]) setStatus((s) => ({ ...s, [q.id]: "answered" }));
             else setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
             if (current < questionsLength - 1) navigateTo(current + 1);
@@ -179,6 +187,7 @@ export function QuestionContent({
         <button
           className="flex min-h-12 flex-row items-center justify-center px-2 py-2 border border-s-stroke2 dark:border-s-stroke2 bg-transparent text-t-secondary dark:text-t-secondary hover:bg-b-surface1/60 hover:text-t-primary rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] transition-all active:scale-98 uppercase w-full"
           onClick={() => {
+            onAttemptChanged();
             setAnswers((a) => {
               const newA = { ...a };
               delete newA[q.id];
@@ -193,6 +202,7 @@ export function QuestionContent({
         <button
           className="flex min-h-12 flex-row items-center justify-center px-2 py-2 rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#EF9D0E] to-[#D98500] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
           onClick={() => {
+            onAttemptChanged();
             setStatus((s) => ({ ...s, [q.id]: "review" }));
             if (current < questionsLength - 1) navigateTo(current + 1);
             else setShowSubmitModal(true);
@@ -204,6 +214,7 @@ export function QuestionContent({
         <button
           className="flex min-h-12 flex-row items-center justify-center px-2 py-2 rounded-[10px] text-[10px] sm:text-[11px] xl:text-xs font-sans font-bold tracking-[0.025em] text-t-light transition-all active:scale-98 relative overflow-hidden bg-linear-to-b from-[#2563EB] to-[#1D4ED8] shadow-[inset_2px_0px_8px_2px_rgba(248,248,248,0.20),0px_5px_1.5px_-4px_rgba(8,8,8,0.09)] after:absolute after:inset-0 after:rounded-[10px] after:border-[1.5px] after:border-white/20 after:[mask-image:linear-gradient(to_top,transparent_0,black_100%)] uppercase w-full"
           onClick={() => {
+            onAttemptChanged();
             setStatus((s) => ({ ...s, [q.id]: "review" }));
             if (current < questionsLength - 1) navigateTo(current + 1);
             else setShowSubmitModal(true);

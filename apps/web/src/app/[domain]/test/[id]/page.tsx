@@ -61,6 +61,11 @@ export default function TestPage() {
   const currentQuestionIdRef = useRef<string | null>(null);
   const answersRef = useRef<AnswerMap>({});
   const statusRef = useRef<StatusMap>({});
+  // Redis is a durability layer, not a heartbeat. Persist only when the
+  // attempt changed, while preserving changes made during an in-flight save.
+  const saveVersionRef = useRef(0);
+  const savedVersionRef = useRef(0);
+  const saveInFlightRef = useRef(false);
 
   useEffect(() => {
     answersRef.current = answers;
@@ -179,18 +184,29 @@ export default function TestPage() {
     return acc;
   }, {} as Record<string, any>), [questions]);
 
+  const markAttemptDirty = useCallback(() => {
+    saveVersionRef.current += 1;
+  }, []);
+
   const persistAttempt = useCallback(async () => {
     if (!attemptId || !session?.access_token || questions.length === 0) return;
+    if (saveInFlightRef.current || saveVersionRef.current === savedVersionRef.current) return;
+
+    const versionBeingSaved = saveVersionRef.current;
+    saveInFlightRef.current = true;
     const payload = { answers: buildAttemptAnswers() };
     const localKey = `classphere-attempt-${attemptId}`;
     setSaveState("saving");
     try {
       await apiClient.patch(`/api/v1/attempts/${attemptId}`, payload, session.access_token);
       localStorage.removeItem(localKey);
-      setSaveState("saved");
+      savedVersionRef.current = versionBeingSaved;
+      if (saveVersionRef.current === savedVersionRef.current) setSaveState("saved");
     } catch {
       localStorage.setItem(localKey, JSON.stringify(payload));
       setSaveState("offline");
+    } finally {
+      saveInFlightRef.current = false;
     }
   }, [attemptId, buildAttemptAnswers, questions.length, session?.access_token]);
 
@@ -202,7 +218,7 @@ export default function TestPage() {
 
   useEffect(() => {
     if (!attemptId) return;
-    const interval = window.setInterval(() => { void persistAttempt(); }, 15000);
+    const interval = window.setInterval(() => { void persistAttempt(); }, 30000);
     const onOnline = () => { void persistAttempt(); };
     const onPageHide = () => {
       localStorage.setItem(`classphere-attempt-${attemptId}`, JSON.stringify({ answers: buildAttemptAnswers() }));
@@ -309,11 +325,13 @@ export default function TestPage() {
       return;
     }
     recordQuestionOpen(qId);
+    markAttemptDirty();
     setAnswers((a) => ({ ...a, [qId]: optId }));
     setStatus((s) => ({ ...s, [qId]: "answered" }));
   };
 
   const toggleReview = (qId: string) => {
+    markAttemptDirty();
     setStatus((s) => ({
       ...s,
       [qId]: s[qId] === "review" ? (answers[qId] ? "answered" : "unanswered") : "review",
@@ -324,7 +342,7 @@ export default function TestPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-b-surface1 text-t-primary">
+      <div className="flex min-h-dvh flex-col bg-b-surface1 text-t-primary">
         <header className="border-b border-s-stroke2/70 bg-b-surface1/95">
           <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="space-y-2">
@@ -337,8 +355,8 @@ export default function TestPage() {
             </div>
           </div>
         </header>
-        <main className="mx-auto grid w-full max-w-screen-2xl gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
-          <section className="card min-w-0 p-5 md:p-7">
+        <main className="relative mx-auto grid w-full max-w-screen-2xl flex-1 min-h-0 gap-6 px-4 py-6 lg:px-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
+          <section className="card h-full min-h-[420px] min-w-0 p-5 md:p-7">
             <div className="mb-5 flex flex-wrap gap-2">
               <div className="h-7 w-20 rounded-[10px] bg-b-surface2" />
               <div className="h-7 w-28 rounded-[10px] bg-b-surface2" />
@@ -357,7 +375,7 @@ export default function TestPage() {
               <div className="h-11 flex-1 rounded-[10px] bg-b-surface2" />
             </div>
           </section>
-          <aside className="card min-w-0 p-5 md:p-6">
+          <aside className="card h-full min-h-[420px] min-w-0 p-5 md:p-6">
             <div className="mb-5 grid grid-cols-3 gap-3">
               <div className="h-20 rounded-[10px] bg-b-surface2" />
               <div className="h-20 rounded-[10px] bg-b-surface2" />
@@ -368,8 +386,19 @@ export default function TestPage() {
               <div className="h-28 rounded-[10px] bg-b-surface2" />
             </div>
           </aside>
+          <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-6">
+            <div className="flex items-center gap-3">
+              <div className="flex size-8 items-center justify-center">
+                <RiLoader4Line size={19} className="animate-spin text-primary-01" />
+              </div>
+              <div>
+                <p className="text-body-2 font-semibold text-t-primary">Preparing your test</p>
+                <p className="mt-0.5 text-caption text-t-secondary">Setting up your question paper…</p>
+              </div>
+            </div>
+          </div>
         </main>
-        <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-center gap-3 px-4 pb-6 text-t-secondary">
+        <div className="hidden">
           <RiLoader4Line size={18} className="animate-spin text-primary-01" />
           <p className="text-body-2 font-semibold">Preparing your test…</p>
         </div>
@@ -457,6 +486,7 @@ export default function TestPage() {
           answers={answers}
           setAnswers={setAnswers}
           setStatus={setStatus}
+          onAttemptChanged={markAttemptDirty}
           selectAnswer={selectAnswer}
           navigateTo={navigateTo}
           setShowSubmitModal={setShowSubmitModal}

@@ -27,6 +27,10 @@ export default function DomainRootPage() {
       case "teacher":
         router.replace("/teacher");
         break;
+      case "test_department_head":
+      case "test_department_member":
+        router.replace("/test-department");
+        break;
       default:
         router.replace("/student/dashboard");
         break;

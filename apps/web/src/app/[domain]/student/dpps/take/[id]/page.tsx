@@ -363,6 +363,7 @@ export default function TestPage() {
           answers={answers}
           setAnswers={setAnswers}
           setStatus={setStatus}
+          onAttemptChanged={() => undefined}
           selectAnswer={selectAnswer}
           navigateTo={navigateTo}
           setShowSubmitModal={setShowSubmitModal}
