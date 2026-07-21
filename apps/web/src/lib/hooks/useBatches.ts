@@ -20,12 +20,22 @@ export interface Batch {
   max_students: number | null;
   max_teachers: number | null;
   is_active: boolean;
+  starts_at: string | null;
+  ends_at: string | null;
   created_at: string;
 }
 
 export interface CreateBatchPayload {
   name: string;
   exam: string;
+  starts_at?: string;
+  ends_at?: string;
+}
+
+export interface UpdateBatchPayload {
+  name?: string;
+  starts_at?: string | null;
+  ends_at?: string | null;
 }
 
 // ─── Helper ───────────────────────────────────────────────────────────────────
@@ -108,5 +118,21 @@ export function useBatches() {
     [fetchBatches]
   );
 
-  return { batches, loading, error, refetch: fetchBatches, createBatch };
+  const updateBatch = useCallback(async (id: string, payload: UpdateBatchPayload) => {
+    try {
+      await apiFetch(`/api/v1/batches/${id}`, { method: "PATCH", body: JSON.stringify(payload) });
+      await fetchBatches();
+      return { success: true, message: "Batch updated." };
+    } catch (err: any) { return { success: false, message: err.message }; }
+  }, [fetchBatches]);
+
+  const deactivateBatch = useCallback(async (id: string) => {
+    try {
+      await apiFetch(`/api/v1/batches/${id}`, { method: "DELETE" });
+      await fetchBatches();
+      return { success: true, message: "Batch deactivated." };
+    } catch (err: any) { return { success: false, message: err.message }; }
+  }, [fetchBatches]);
+
+  return { batches, loading, error, refetch: fetchBatches, createBatch, updateBatch, deactivateBatch };
 }

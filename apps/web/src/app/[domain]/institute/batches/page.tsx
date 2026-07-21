@@ -37,15 +37,18 @@ const COLORS = [
 export default function BatchesPage() {
   const router = useRouter();
   const { session } = useAuth();
-  const { batches, loading, error, createBatch, refetch } = useBatches();
+  const { batches, loading, error, createBatch, updateBatch, deactivateBatch, refetch } = useBatches();
   const [searchQuery, setSearchQuery] = useState("");
   const [enabledExamCodes, setEnabledExamCodes] = useState<string[]>([]);
 
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [form, setForm] = useState({ name: "", exam: "" });
+  const [form, setForm] = useState({ name: "", exam: "", starts_at: "", ends_at: "" });
   const [submitting, setSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
+  const [editingBatch, setEditingBatch] = useState<any | null>(null);
+  const [expiryValue, setExpiryValue] = useState("");
+  const [savingExpiry, setSavingExpiry] = useState(false);
 
   const filtered = batches.filter((b) =>
     b.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -63,7 +66,7 @@ export default function BatchesPage() {
   }, [session?.access_token]);
 
   const openModal = () => {
-    setForm({ name: "", exam: "" });
+    setForm({ name: "", exam: "", starts_at: "", ends_at: "" });
     setFeedback(null);
     setIsModalOpen(true);
   };
@@ -75,6 +78,8 @@ export default function BatchesPage() {
     const result = await createBatch({
       name: form.name,
       exam: form.exam,
+      starts_at: form.starts_at ? new Date(form.starts_at).toISOString() : undefined,
+      ends_at: form.ends_at ? new Date(form.ends_at).toISOString() : undefined,
     });
     setSubmitting(false);
     if (result.success) {
@@ -82,6 +87,25 @@ export default function BatchesPage() {
     } else {
       setFeedback({ ok: false, msg: result.message });
     }
+  };
+
+  const openExpiryEditor = (batch: any) => {
+    setEditingBatch(batch);
+    setExpiryValue(batch.ends_at ? new Date(batch.ends_at).toISOString().slice(0, 16) : "");
+  };
+
+  const saveExpiry = async () => {
+    if (!editingBatch) return;
+    setSavingExpiry(true);
+    const result = await updateBatch(editingBatch.id, { ends_at: expiryValue ? new Date(expiryValue).toISOString() : null });
+    setSavingExpiry(false);
+    if (result.success) setEditingBatch(null); else window.alert(result.message);
+  };
+
+  const retireBatch = async (batch: any) => {
+    if (!window.confirm(`Deactivate ${batch.name}? Students can keep their historical records, but it will no longer accept new work.`)) return;
+    const result = await deactivateBatch(batch.id);
+    if (!result.success) window.alert(result.message);
   };
 
   return (
@@ -171,6 +195,10 @@ export default function BatchesPage() {
         {/* Batch rows */}
         {!loading && !error && filtered.map((batch, idx) => {
           const colorClass = COLORS[idx % COLORS.length];
+          const now = Date.now();
+          const expired = Boolean(batch.ends_at && Date.parse(batch.ends_at) <= now);
+          const upcoming = Boolean(batch.starts_at && Date.parse(batch.starts_at) > now);
+          const lifecycleLabel = !batch.is_active ? "Retired" : expired ? "Expired" : upcoming ? "Upcoming" : "Active";
 
           return (
             <div
@@ -231,14 +259,14 @@ export default function BatchesPage() {
 
                 {/* Active badge */}
                 <div className="shrink-0 flex justify-end">
-                  <span className="px-2 py-0.5 sm:px-3 sm:py-1.5 border rounded-[10px] text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-primary-02/5 border-primary-02/15 text-primary-02">
-                    Active
+                  <span className={`px-2 py-0.5 sm:px-3 sm:py-1.5 border rounded-[10px] text-[9px] sm:text-[10px] font-bold uppercase tracking-wider ${lifecycleLabel === "Active" ? "bg-primary-02/5 border-primary-02/15 text-primary-02" : "bg-primary-03/5 border-primary-03/20 text-primary-03"}`}>
+                    {lifecycleLabel}
                   </span>
                 </div>
 
                 {/* More */}
                 <div className="shrink-0 pl-1 sm:pl-0">
-                  <button className="flex items-center justify-center size-8 rounded-full text-t-secondary hover:text-t-primary dark:hover:text-t-primary hover:bg-b-surface1 dark:hover:bg-b-surface3 border border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 transition-all active:scale-95 shadow-xs shrink-0">
+                  <button onClick={(event) => { event.stopPropagation(); openExpiryEditor(batch); }} title="Manage batch lifecycle" className="flex items-center justify-center size-8 rounded-full text-t-secondary hover:text-t-primary dark:hover:text-t-primary hover:bg-b-surface1 dark:hover:bg-b-surface3 border border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 transition-all active:scale-95 shadow-xs shrink-0">
                     <RiMore2Fill size={18} />
                   </button>
                 </div>
@@ -268,6 +296,11 @@ export default function BatchesPage() {
             />
           </div>
 
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Starts on</label><input type="datetime-local" className="input-field w-full" value={form.starts_at} onChange={(e) => setForm({ ...form, starts_at: e.target.value })} /></div>
+            <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Expires on</label><input type="datetime-local" className="input-field w-full" value={form.ends_at} onChange={(e) => setForm({ ...form, ends_at: e.target.value })} /></div>
+          </div>
+
           {/* Exam */}
           <div>
             <label className="mb-1.5 block text-sm font-semibold text-t-secondary">Target Exam</label>
@@ -287,7 +320,7 @@ export default function BatchesPage() {
           </div>
 
           <p className="rounded-[10px] border border-s-stroke2/50 bg-b-surface2/60 px-3 py-2.5 text-xs text-t-secondary">
-            After creating the batch, you will add students from an Excel or CSV file. Faculty can be assigned later.
+            After creating the batch, you will add students from an Excel or CSV file. Expired batches cannot receive new learning activity, but their records remain available.
           </p>
 
           {/* Feedback */}
@@ -320,6 +353,13 @@ export default function BatchesPage() {
               {submitting ? "Creating..." : "Create Batch"}
             </button>
           </div>
+        </div>
+      </Modal>
+
+      <Modal open={Boolean(editingBatch)} onClose={() => setEditingBatch(null)} title="Manage batch" subtitle={editingBatch?.name ?? ""}>
+        <div className="flex flex-col gap-5">
+          <div><label className="mb-1.5 block text-sm font-semibold text-t-secondary">Expires on</label><input type="datetime-local" className="input-field w-full" value={expiryValue} onChange={(event) => setExpiryValue(event.target.value)} /><p className="mt-2 text-xs text-t-secondary">Leave empty only for a batch that is intentionally ongoing. Expired batches cannot receive new tests, DPPs, or study material.</p></div>
+          <div className="flex items-center justify-between gap-3 border-t border-s-stroke2/50 pt-4"><button onClick={() => retireBatch(editingBatch)} className="btn btn-ghost px-4 text-primary-03" disabled={!editingBatch?.is_active || savingExpiry}>Deactivate batch</button><div className="flex gap-3"><button onClick={() => setEditingBatch(null)} className="btn btn-ghost px-4" disabled={savingExpiry}>Cancel</button><button onClick={saveExpiry} className="btn btn-primary px-5" disabled={savingExpiry}>{savingExpiry ? "Saving…" : "Save"}</button></div></div>
         </div>
       </Modal>
 
