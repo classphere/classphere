@@ -4,11 +4,10 @@ import { sendStaffInviteEmail } from "../../lib/mailer";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { notifyStudents } from "../notifications/notifications.service";
 
-// An institute has a single operational owner for test preparation, review,
-// publishing and material.  The database role retains its original name for
-// compatibility with the first rollout, but is presented as "Test Admin".
 const TEST_ADMIN_ROLE = "test_department_head";
-const departmentRoles = new Set([TEST_ADMIN_ROLE]);
+const TEST_EDITOR_ROLE = "test_department_member";
+const appBaseDomain = (process.env.APP_BASE_DOMAIN ?? "classphere.com").toLowerCase();
+const departmentRoles = new Set([TEST_ADMIN_ROLE, TEST_EDITOR_ROLE]);
 const allowedQuestionFields = new Set([
   "subject", "chapter", "topic", "difficulty", "year", "source", "question_type",
   "question_text", "image_url", "options", "correct_answer", "explanation", "tags",
@@ -65,9 +64,9 @@ export async function listDepartmentMembers(req: Request, res: Response): Promis
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
     const { data, error } = await supabaseDB.from("test_department_members")
-      .select("user_id, title, is_active, created_at, users!test_department_members_user_id_fkey!inner(id, name, email, role)")
-      .eq("institute_id", instituteId).eq("is_active", true).eq("users.role", TEST_ADMIN_ROLE)
-      .order("created_at", { ascending: true }).limit(1);
+      .select("user_id, title, access_level, is_active, created_at, users!test_department_members_user_id_fkey!inner(id, name, email, role)")
+      .eq("institute_id", instituteId).eq("is_active", true)
+      .order("access_level", { ascending: true }).order("created_at", { ascending: true });
     if (error) throw error;
     res.json({ success: true, data: { members: data ?? [] } });
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
@@ -76,25 +75,29 @@ export async function listDepartmentMembers(req: Request, res: Response): Promis
 export async function createDepartmentMember(req: Request, res: Response): Promise<void> {
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
-    if (req.user?.role !== "institute_admin") {
-      res.status(403).json({ success: false, message: "Only the Institute Admin can appoint the Test Admin." }); return;
+    const { name, email, title, access_level } = req.body ?? {};
+    const requestedLevel = access_level === "head" ? "head" : "editor";
+    if (req.user?.role === "institute_admin" && requestedLevel !== "head") {
+      res.status(403).json({ success: false, message: "The Institute Admin appoints the Test Department Head. The Head manages Test Editors." }); return;
     }
-    const { name, email, title } = req.body ?? {};
+    if (req.user?.role === TEST_ADMIN_ROLE && requestedLevel !== "editor") {
+      res.status(403).json({ success: false, message: "A Test Department Head can add Test Editors only." }); return;
+    }
     if (!name || !email) {
       res.status(400).json({ success: false, message: "Name and email are required." }); return;
     }
     if (!process.env.RESEND_API_KEY?.trim()) {
-      res.status(503).json({ success: false, message: "Test Admin email delivery is not configured. Configure RESEND_API_KEY before creating the account." }); return;
+      res.status(503).json({ success: false, message: "Staff email delivery is not configured. Configure RESEND_API_KEY before creating the account." }); return;
     }
     const { data: currentAdmin, error: currentAdminError } = await supabaseDB
       .from("test_department_members")
       .select("user_id, users!test_department_members_user_id_fkey!inner(role)")
-      .eq("institute_id", instituteId).eq("is_active", true).eq("users.role", TEST_ADMIN_ROLE).limit(1);
+      .eq("institute_id", instituteId).eq("is_active", true).eq("access_level", "head").limit(1);
     if (currentAdminError) throw currentAdminError;
-    if (currentAdmin?.length) {
-      res.status(409).json({ success: false, message: "This institute already has a Test Admin. Keep one owner for the Test Department." }); return;
+    if (requestedLevel === "head" && currentAdmin?.length) {
+      res.status(409).json({ success: false, message: "This institute already has an active Test Department Head." }); return;
     }
-    const role = TEST_ADMIN_ROLE;
+    const role = requestedLevel === "head" ? TEST_ADMIN_ROLE : TEST_EDITOR_ROLE;
     const normalizedEmail = String(email).trim().toLowerCase();
     const { data: existing } = await supabaseDB.from("users").select("id").eq("email", normalizedEmail).maybeSingle();
     if (existing) { res.status(409).json({ success: false, message: "An account with this email already exists." }); return; }
@@ -107,21 +110,51 @@ export async function createDepartmentMember(req: Request, res: Response): Promi
     const userId = authData.user.id;
     const { error: userError } = await supabaseDB.from("users").insert({ id: userId, name: String(name).trim(), email: normalizedEmail, role, institute_id: instituteId });
     if (userError) { await supabaseAdmin.auth.admin.deleteUser(userId); throw userError; }
-    const { error: memberError } = await supabaseDB.from("test_department_members").insert({ user_id: userId, institute_id: instituteId, title: title?.trim() || null, created_by: req.user!.id });
+    const { error: memberError } = await supabaseDB.from("test_department_members").insert({ user_id: userId, institute_id: instituteId, title: title?.trim() || null, access_level: requestedLevel, created_by: req.user!.id });
     if (memberError) { await supabaseDB.from("users").delete().eq("id", userId); await supabaseAdmin.auth.admin.deleteUser(userId); throw memberError; }
-    const { data: institute } = await supabaseDB.from("institutes").select("name").eq("id", instituteId).maybeSingle();
+    const { data: institute } = await supabaseDB.from("institutes").select("name, subdomain_slug").eq("id", instituteId).maybeSingle();
     try {
-      await sendStaffInviteEmail({ to: normalizedEmail, name: String(name).trim(), instituteName: institute?.name ?? "Your Institute", tempPassword, roleLabel: "Test Admin" });
+      const loginUrl = institute?.subdomain_slug
+        ? `https://${institute.subdomain_slug}.${appBaseDomain}/login`
+        : undefined;
+      await sendStaffInviteEmail({ to: normalizedEmail, name: String(name).trim(), instituteName: institute?.name ?? "Your Institute", tempPassword, roleLabel: requestedLevel === "head" ? "Test Department Head" : "Test Editor", loginUrl });
     } catch (mailError: any) {
       // Never leave a sign-in account behind when the sole credential delivery
       // mechanism failed. The password is intentionally never returned or logged.
       await supabaseDB.from("test_department_members").delete().eq("user_id", userId);
       await supabaseDB.from("users").delete().eq("id", userId);
       await supabaseAdmin.auth.admin.deleteUser(userId);
-      throw new Error(`Could not deliver the Test Admin sign-in email: ${mailError.message}`);
+      throw new Error(`Could not deliver the staff sign-in email: ${mailError.message}`);
     }
     await audit({ instituteId, actorId: req.user!.id, action: "member_created", after: { user_id: userId, role, title: title?.trim() || null } });
     res.status(201).json({ success: true, data: { member: { id: userId, name, email: normalizedEmail, role, title: title?.trim() || null } } });
+  } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
+}
+
+/** Deactivate a team account without deleting its review trail or paper history. */
+export async function deactivateDepartmentMember(req: Request, res: Response): Promise<void> {
+  try {
+    const instituteId = hasInstitute(req, res); if (!instituteId) return;
+    const memberId = req.params.userId;
+    const { data: member, error } = await supabaseDB.from("test_department_members")
+      .select("user_id, access_level, users!test_department_members_user_id_fkey!inner(role)")
+      .eq("user_id", memberId).eq("institute_id", instituteId).maybeSingle();
+    if (error) throw error;
+    if (!member) { res.status(404).json({ success: false, message: "Test Department member not found." }); return; }
+    const level = (member as any).access_level ?? ((member as any).users?.role === TEST_ADMIN_ROLE ? "head" : "editor");
+    if (req.user?.role === TEST_ADMIN_ROLE && level !== "editor") {
+      res.status(403).json({ success: false, message: "The Test Department Head cannot deactivate the Head account." }); return;
+    }
+    if (req.user?.role !== "institute_admin" && req.user?.role !== TEST_ADMIN_ROLE) {
+      res.status(403).json({ success: false, message: "Access denied." }); return;
+    }
+    const { error: deactivateError } = await supabaseDB.from("test_department_members")
+      .update({ is_active: false, updated_at: new Date().toISOString() }).eq("user_id", memberId);
+    if (deactivateError) throw deactivateError;
+    await supabaseDB.from("users").update({ active_session_token: null }).eq("id", memberId);
+    await supabaseAdmin.auth.admin.updateUserById(memberId, { ban_duration: "876000h" });
+    await audit({ instituteId, actorId: req.user!.id, action: "member_deactivated", after: { user_id: memberId, access_level: level } });
+    res.json({ success: true, message: "Test Department account removed and access disabled." });
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
 
@@ -198,7 +231,7 @@ export async function transitionReviewPaper(req: Request, res: Response): Promis
       submit: ["draft", "changes_requested"], request_changes: ["needs_review", "approved"], approve: ["needs_review"], publish: ["approved", "scheduled"], archive: ["draft", "changes_requested", "approved", "scheduled", "published"],
     };
     if (!transitions[action]?.includes(paper.workflow_status)) { res.status(409).json({ success: false, message: "This workflow action is not available for the current paper status." }); return; }
-    if (["request_changes", "approve", "publish", "archive"].includes(action) && !isHead(req)) { res.status(403).json({ success: false, message: "Only the Test Admin can approve, publish, archive, or request changes." }); return; }
+    if (["publish", "archive"].includes(action) && !isHead(req)) { res.status(403).json({ success: false, message: "Only the Test Department Head can publish or archive a paper." }); return; }
     if (!isDepartmentUser(req) && role !== "institute_admin") { res.status(403).json({ success: false, message: "Access denied." }); return; }
     let workflow_status: string = paper.workflow_status;
     const updates: Record<string, unknown> = { review_version: paper.review_version + 1 };
