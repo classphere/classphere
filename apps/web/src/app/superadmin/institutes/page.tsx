@@ -83,6 +83,7 @@ export default function InstitutesPage() {
     name: "",
     adminEmail: "",
     adminUsername: "",
+    preferredSubdomain: "",
     trialMonths: 2,
     logoUrl: "",
     enabledExamCodes: ["jee-main", "jee-advanced", "neet-ug"],
@@ -199,7 +200,7 @@ export default function InstitutesPage() {
 
     if (result.success) {
       setIsCreateModalOpen(false);
-      setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", trialMonths: 2, logoUrl: "", enabledExamCodes: ["jee-main", "jee-advanced", "neet-ug"] });
+      setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", preferredSubdomain: "", trialMonths: 2, logoUrl: "", enabledExamCodes: ["jee-main", "jee-advanced", "neet-ug"] });
       setFeedback(null);
       refetchStats();
       // Show the one-time credentials modal
@@ -219,7 +220,7 @@ export default function InstitutesPage() {
 
   const openModal = () => {
     setFeedback(null);
-    setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", trialMonths: 2, logoUrl: "", enabledExamCodes: ["jee-main", "jee-advanced", "neet-ug"] });
+    setNewInstituteData({ name: "", adminEmail: "", adminUsername: "", preferredSubdomain: "", trialMonths: 2, logoUrl: "", enabledExamCodes: ["jee-main", "jee-advanced", "neet-ug"] });
     setIsCreateModalOpen(true);
   };
 
@@ -450,6 +451,30 @@ export default function InstitutesPage() {
               value={newInstituteData.name}
               onChange={(e) => setNewInstituteData({ ...newInstituteData, name: e.target.value })}
             />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
+              Preferred subdomain <span className="normal-case font-medium">(optional)</span>
+            </label>
+            <div className="flex overflow-hidden rounded-[10px] border border-s-stroke2/60 bg-b-surface1 focus-within:ring-2 focus-within:ring-primary-01/20">
+              <input
+                type="text"
+                className="min-w-0 flex-1 border-0 bg-transparent px-4 py-3 text-[14px] text-t-primary outline-none"
+                placeholder="allen"
+                value={newInstituteData.preferredSubdomain}
+                onChange={(e) => setNewInstituteData({
+                  ...newInstituteData,
+                  preferredSubdomain: e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, ""),
+                })}
+              />
+              <span className="flex shrink-0 items-center border-l border-s-stroke2/60 px-3 text-[13px] text-t-secondary">
+                .classphere.com
+              </span>
+            </div>
+            <p className="text-[12px] text-t-secondary">
+              Lowercase letters, numbers, and hyphens only. Leave blank to generate one from the institute name.
+            </p>
           </div>
 
           <div className="flex flex-col gap-2">

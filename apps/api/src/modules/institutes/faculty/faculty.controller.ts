@@ -226,3 +226,26 @@ export const createFaculty = async (req: Request, res: Response): Promise<void> 
     res.status(500).json({ success: false, message: err.message });
   }
 };
+
+/** Disable a faculty account while retaining academic history and audit data. */
+export const deactivateFaculty = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const instituteId = await resolveInstituteId(req.user!.id, req.user!.institute_id ?? null);
+    if (!instituteId) { res.status(404).json({ success: false, message: "No active institute found for this admin" }); return; }
+    const facultyId = req.params.id;
+    const { data: faculty, error } = await supabaseDB.from("faculty")
+      .select("id, is_active").eq("id", facultyId).eq("institute_id", instituteId).maybeSingle();
+    if (error) throw error;
+    if (!faculty) { res.status(404).json({ success: false, message: "Faculty member not found." }); return; }
+    if (!faculty.is_active) { res.json({ success: true, message: "Faculty member is already inactive." }); return; }
+
+    const { error: updateError } = await supabaseDB.from("faculty").update({ is_active: false }).eq("id", facultyId);
+    if (updateError) throw updateError;
+    await supabaseDB.from("batch_teachers").delete().eq("teacher_id", facultyId);
+    await supabaseDB.from("users").update({ active_session_token: null }).eq("id", facultyId);
+    await supabaseAdmin.auth.admin.updateUserById(facultyId, { ban_duration: "876000h" });
+    res.json({ success: true, message: "Faculty member removed and their access has been disabled." });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};

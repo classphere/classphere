@@ -31,6 +31,7 @@ export interface CreateInstituteInput {
   name: string;
   adminEmail: string;
   adminUsername: string;
+  preferredSubdomain?: string;
   trialMonths?: number;
   logoUrl?: string;
   enabledExamCodes?: string[];
@@ -119,6 +120,41 @@ function generateTempPassword(): string {
   return pw;
 }
 
+const RESERVED_SUBDOMAINS = new Set(["admin", "api", "app", "localhost", "superadmin", "www"]);
+
+function provisioningError(message: string, statusCode = 400): Error {
+  const error = new Error(message);
+  (error as any).statusCode = statusCode;
+  return error;
+}
+
+function normalizePreferredSubdomain(value?: string): string | null {
+  const subdomain = value?.trim().toLowerCase();
+  if (!subdomain) return null;
+
+  if (!/^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(subdomain)) {
+    throw provisioningError("Subdomain must use lowercase letters, numbers, and hyphens only, and cannot start or end with a hyphen.");
+  }
+  if (RESERVED_SUBDOMAINS.has(subdomain)) {
+    throw provisioningError(`The subdomain \"${subdomain}\" is reserved by Classphere.`);
+  }
+  return subdomain;
+}
+
+async function assertSubdomainAvailable(subdomain: string): Promise<void> {
+  const [instituteResult, settingsResult] = await Promise.all([
+    supabaseDB.from("institutes").select("id").eq("subdomain_slug", subdomain).maybeSingle(),
+    supabaseDB.from("institute_settings").select("institute_id").eq("subdomain", subdomain).maybeSingle(),
+  ]);
+
+  if (instituteResult.error || settingsResult.error) {
+    throw new Error(`Failed to check subdomain availability: ${(instituteResult.error ?? settingsResult.error)?.message}`);
+  }
+  if (instituteResult.data || settingsResult.data) {
+    throw provisioningError(`The subdomain \"${subdomain}\" is already in use. Choose another one.`, 409);
+  }
+}
+
 // ─── Commands ─────────────────────────────────────────────────────────────────
 
 /**
@@ -137,7 +173,7 @@ function generateTempPassword(): string {
 export async function provisionInstitute(
   input: CreateInstituteInput
 ): Promise<InstituteRow & { tempPassword: string }> {
-  const { name, adminEmail, adminUsername, trialMonths = 2, logoUrl, enabledExamCodes } = input;
+  const { name, adminEmail, adminUsername, preferredSubdomain, trialMonths = 2, logoUrl, enabledExamCodes } = input;
   const supportedExamCodes = [...new Set((enabledExamCodes ?? ["jee-main", "jee-advanced", "neet-ug"])
     .filter((exam) => ["jee-main", "jee-advanced", "neet-ug"].includes(exam)))];
   if (supportedExamCodes.length === 0) {
@@ -149,6 +185,23 @@ export async function provisionInstitute(
     const err = new Error("Trial duration must be a whole number between 1 and 24 months.");
     (err as any).statusCode = 400;
     throw err;
+  }
+
+  const requestedSubdomain = normalizePreferredSubdomain(preferredSubdomain);
+  const generatedCandidate = name.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 48) || "institute";
+  const generatedSubdomain = RESERVED_SUBDOMAINS.has(generatedCandidate) ? "institute" : generatedCandidate;
+  let subdomain_slug = requestedSubdomain ?? generatedSubdomain;
+
+  // Explicit choices must either be available or fail. The legacy automatic
+  // path still produces a unique address without ever changing a chosen one.
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    try {
+      await assertSubdomainAvailable(subdomain_slug);
+      break;
+    } catch (error: any) {
+      if (requestedSubdomain || error.statusCode !== 409 || attempt === 4) throw error;
+      subdomain_slug = `${generatedSubdomain.slice(0, 54)}-${Math.random().toString(36).slice(2, 8)}`;
+    }
   }
   console.log(`[provisionInstitute] START — name="${name}", email="${adminEmail}", username="${adminUsername}"`);
 
@@ -225,17 +278,6 @@ export async function provisionInstitute(
   // ── 5. Insert institute row ──────────────────────────────────────────────
   // Real schema: id, name, slug, owner_id, plan, logo_url, is_active, created_at, updated_at
   console.log(`[provisionInstitute] Step 5: Inserting into public.institutes...`);
-  const slugBase = name.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 48) || "institute";
-  let subdomain_slug = slugBase;
-  const { data: existingSlug } = await supabaseDB
-    .from("institutes")
-    .select("id")
-    .eq("subdomain_slug", subdomain_slug)
-    .maybeSingle();
-  if (existingSlug) {
-    subdomain_slug = `${slugBase}-${Math.random().toString(36).slice(2, 8)}`;
-  }
-
   const { data: newInst, error: insertErr } = await supabaseDB
     .from("institutes")
     .insert([{
@@ -266,7 +308,11 @@ export async function provisionInstitute(
     .insert([{ institute_id: newInst.id, subdomain: subdomain_slug, theme_logo_url: logoUrl || null }]);
   
   if (settingsErr) {
-    console.warn(`[provisionInstitute] Step 5a warning (non-fatal): ${settingsErr.message}`);
+    console.error(`[provisionInstitute] Step 5a FAILED: ${settingsErr.message}`);
+    await supabaseDB.from("institutes").delete().eq("id", newInst.id);
+    await supabaseDB.from("users").delete().eq("id", newUserId);
+    try { await supabaseAdmin.auth.admin.deleteUser(newUserId); } catch (_) {}
+    throw new Error(`Failed to configure institute domain: ${settingsErr.message}`);
   }
 
   // ── 5b. Insert institute_subscriptions (Free Trial) ──────────────────────

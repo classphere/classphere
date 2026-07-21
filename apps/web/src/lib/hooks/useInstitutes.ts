@@ -30,6 +30,7 @@ export interface CreateInstitutePayload {
   name: string;
   adminEmail: string;
   adminUsername: string;
+  preferredSubdomain?: string;
   trialMonths?: number;
   logoUrl?: string;
   enabledExamCodes: string[];

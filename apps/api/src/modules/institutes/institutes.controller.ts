@@ -22,7 +22,7 @@ const checkBatchTenant = async (batchId: string, reqUser: any): Promise<boolean>
  */
 export const createInstitute = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { name, adminEmail, adminUsername, trialMonths, logoUrl, enabledExamCodes } = req.body;
+    const { name, adminEmail, adminUsername, preferredSubdomain, trialMonths, logoUrl, enabledExamCodes } = req.body;
 
     if (!name || !adminEmail || !adminUsername) {
       res.status(400).json({
@@ -32,7 +32,7 @@ export const createInstitute = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    const result = await provisionInstitute({ name, adminEmail, adminUsername, trialMonths, logoUrl, enabledExamCodes });
+    const result = await provisionInstitute({ name, adminEmail, adminUsername, preferredSubdomain, trialMonths, logoUrl, enabledExamCodes });
     const { tempPassword, ...institute } = result;
 
     await logAdminAction(req.user?.id, "Institute provisioned", `Provisioned ${institute.name} with a trial entitlement.`, "institutes", "success");
@@ -447,7 +447,7 @@ export const getInstituteReports = async (req: Request, res: Response): Promise<
 export const createBatch = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user?.id;
-    const { name, exam } = req.body;
+    const { name, exam, starts_at, ends_at } = req.body;
 
     if (!name || !exam) {
       res.status(400).json({ success: false, message: "name and exam are required" });
@@ -480,6 +480,11 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
+    if (starts_at && ends_at && new Date(ends_at).getTime() <= new Date(starts_at).getTime()) {
+      res.status(400).json({ success: false, message: "Batch expiry must be after its start date." });
+      return;
+    }
+
     // ── 2. Insert the batch ──────────────────────────────────────────────────
     const { data: batch, error: batchErr } = await supabaseDB
       .from("batches")
@@ -487,6 +492,8 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
         institute_id: institute.id,
         name: name.trim(),
         exam: exam.trim(),
+        starts_at: starts_at || null,
+        ends_at: ends_at || null,
         is_active: true,
       })
       .select()
@@ -628,10 +635,14 @@ export const updateBatch = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
-    const allowed = ["name", "exam", "description", "max_students", "max_teachers"];
+    const allowed = ["name", "exam", "description", "max_students", "max_teachers", "starts_at", "ends_at"];
     const updates: Record<string, any> = {};
     for (const k of allowed) { if (req.body[k] !== undefined) updates[k] = req.body[k]; }
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No valid fields" }); return; }
+
+    if (updates.starts_at && updates.ends_at && new Date(updates.ends_at).getTime() <= new Date(updates.starts_at).getTime()) {
+      res.status(400).json({ success: false, message: "Batch expiry must be after its start date." }); return;
+    }
 
     const { data: batch, error } = await supabaseDB
       .from("batches").update(updates).eq("id", id).select().single();
@@ -757,6 +768,19 @@ export const addTeacherToBatch = async (req: Request, res: Response): Promise<vo
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
+};
+
+/** Remove an assignment without deleting the teacher account or past data. */
+export const removeTeacherFromBatch = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id, teacher_id } = req.params;
+    if (!(await checkBatchTenant(id, req.user))) {
+      res.status(403).json({ success: false, message: "Access denied. Batch does not belong to your institute." }); return;
+    }
+    const { error } = await supabaseDB.from("batch_teachers").delete().eq("batch_id", id).eq("teacher_id", teacher_id);
+    if (error) throw error;
+    res.status(200).json({ success: true, message: "Teacher removed from batch" });
+  } catch (err: any) { res.status(500).json({ success: false, message: err.message }); }
 };
 
 // invite-based joins are fully decommissioned
