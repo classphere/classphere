@@ -16,7 +16,9 @@ function safeHttpsUrl(value: unknown): string | null {
 async function ownedBatches(instituteId: string, batchIds: string[]) {
   const unique = [...new Set(batchIds)];
   if (!unique.length) return [];
-  const { data, error } = await supabaseDB.from("batches").select("id").eq("institute_id", instituteId).eq("is_active", true).in("id", unique);
+  const now = new Date().toISOString();
+  const { data, error } = await supabaseDB.from("batches").select("id").eq("institute_id", instituteId).eq("is_active", true).in("id", unique)
+    .or(`starts_at.is.null,starts_at.lte.${now}`).or(`ends_at.is.null,ends_at.gt.${now}`);
   if (error) throw error;
   return data ?? [];
 }
@@ -67,7 +69,14 @@ export async function getStudentResources(req: Request, res: Response): Promise<
     if (!instituteId) { res.status(403).json({ success: false, message: "An institute account is required." }); return; }
     const { data: memberships, error: membershipError } = await supabaseDB.from("batch_students").select("batch_id").eq("student_id", req.user!.id);
     if (membershipError) throw membershipError;
-    const batchIds = (memberships ?? []).map((row: any) => row.batch_id);
+    const membershipBatchIds = (memberships ?? []).map((row: any) => row.batch_id);
+    const now = new Date().toISOString();
+    const { data: activeBatches, error: batchError } = membershipBatchIds.length
+      ? await supabaseDB.from("batches").select("id").eq("institute_id", instituteId).eq("is_active", true).in("id", membershipBatchIds)
+        .or(`starts_at.is.null,starts_at.lte.${now}`).or(`ends_at.is.null,ends_at.gt.${now}`)
+      : { data: [], error: null };
+    if (batchError) throw batchError;
+    const batchIds = (activeBatches ?? []).map((batch: any) => batch.id);
     if (!batchIds.length) { res.json({ success: true, data: { resources: [] } }); return; }
     const { data: links, error: linksError } = await supabaseDB.from("institute_resource_batches").select("resource_id").in("batch_id", batchIds);
     if (linksError) throw linksError;

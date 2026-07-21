@@ -11,6 +11,21 @@ async function canManageDpp(req: Request, dppId: string): Promise<boolean> {
   return req.user?.role === "institute_admin" || dpp.teacher_id === req.user?.id;
 }
 
+/** Historical records remain visible after expiry, but an ended batch cannot accept work. */
+async function isDppBatchAvailable(dppId: string): Promise<boolean> {
+  const { data: dpp, error } = await supabaseDB
+    .from("dpps")
+    .select("batch_id, batches(is_active, starts_at, ends_at)")
+    .eq("id", dppId)
+    .maybeSingle();
+  if (error || !dpp || !(dpp as any).batches) return false;
+  const batch = (dpp as any).batches;
+  const now = Date.now();
+  return batch.is_active === true
+    && (!batch.starts_at || Date.parse(batch.starts_at) <= now)
+    && (!batch.ends_at || Date.parse(batch.ends_at) > now);
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 /**
  * POST /api/v1/dpps
@@ -36,10 +51,14 @@ export const createDPP = async (req: Request, res: Response): Promise<void> => {
       res.status(400).json({ success: false, message: "A DPP can have at most 50 questions." });
       return;
     }
-    const { data: batch } = await supabaseDB.from("batches").select("id, institute_id").eq("id", batch_id).maybeSingle();
+    const { data: batch } = await supabaseDB.from("batches").select("id, institute_id, is_active, starts_at, ends_at").eq("id", batch_id).maybeSingle();
     if (!batch || batch.institute_id !== req.user?.institute_id) {
       res.status(403).json({ success: false, message: "Target batch is outside your institute." });
       return;
+    }
+    const now = Date.now();
+    if (!batch.is_active || (batch.starts_at && Date.parse(batch.starts_at) > now) || (batch.ends_at && Date.parse(batch.ends_at) <= now)) {
+      res.status(409).json({ success: false, message: "DPPs cannot be assigned to an inactive or expired batch." }); return;
     }
     if (req.user?.role === "teacher") {
       const { data: teachingLink } = await supabaseDB.from("batch_teachers").select("teacher_id")
@@ -241,10 +260,16 @@ export const getStudentDPPs = async (req: Request, res: Response): Promise<void>
       .select("id, title, subject, chapter, batch_id, total_questions, due_date")
       .in("id", dppIds);
 
+    const batchIds = [...new Set((dpps ?? []).map((d: any) => d.batch_id).filter(Boolean))];
+    const { data: batches } = batchIds.length ? await supabaseDB.from("batches").select("id, is_active, starts_at, ends_at").in("id", batchIds) : { data: [] };
+    const accessibleBatchIds = new Set((batches ?? []).filter((batch: any) => {
+      const now = Date.now();
+      return batch.is_active && (!batch.starts_at || Date.parse(batch.starts_at) <= now) && (!batch.ends_at || Date.parse(batch.ends_at) > now);
+    }).map((batch: any) => batch.id));
     const dppMap: Record<string, any> = {};
     for (const d of dpps ?? []) dppMap[d.id] = d;
 
-    const enriched = studentDpps.map((sd) => {
+    const enriched = studentDpps.filter((sd) => accessibleBatchIds.has(dppMap[sd.dpp_id]?.batch_id)).map((sd) => {
       const dpp = dppMap[sd.dpp_id] ?? {};
       const now = new Date();
       const due = dpp.due_date ? new Date(dpp.due_date) : null;
@@ -312,6 +337,10 @@ export const getDPPQuestions = async (req: Request, res: Response): Promise<void
         return;
       }
       assignment = data;
+      if (!(await isDppBatchAvailable(dppId))) {
+        res.status(410).json({ success: false, message: "This DPP is no longer available because its batch has ended." });
+        return;
+      }
     }
 
     // Fetch ordered question IDs
@@ -418,6 +447,10 @@ export const submitDPP = async (req: Request, res: Response): Promise<void> => {
     }
     if (assignment.status === "submitted") {
       res.status(400).json({ success: false, message: "DPP already submitted." });
+      return;
+    }
+    if (!(await isDppBatchAvailable(dppId))) {
+      res.status(410).json({ success: false, message: "This DPP can no longer be submitted because its batch has ended." });
       return;
     }
 
