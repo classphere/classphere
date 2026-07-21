@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { API_URL } from "@/lib/api.client";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -62,8 +63,15 @@ function detectDomain(): string | null {
     return sub;
   }
 
-  // Plain localhost / 127.0.0.1 = no subdomain
-  if (hostname === baseDomain || hostname === `www.${baseDomain}` || hostname === "localhost" || hostname === "127.0.0.1") {
+  // Plain localhost / 127.0.0.1 / Vercel preview domains / www = no institute subdomain
+  if (
+    hostname === baseDomain ||
+    hostname === `www.${baseDomain}` ||
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname.endsWith(".vercel.app") ||
+    hostname.startsWith("www.")
+  ) {
     return null;
   }
 
@@ -72,8 +80,6 @@ function detectDomain(): string | null {
 }
 
 // ─── Provider ─────────────────────────────────────────────────────────────────
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 
 export function TenantProvider({ children, initialConfig }: { children: React.ReactNode, initialConfig?: TenantConfig }) {
   const [config, setConfig] = useState<TenantConfig>(initialConfig || defaultConfig);

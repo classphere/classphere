@@ -1,6 +1,5 @@
 import { TenantProvider, TenantConfig } from "@/lib/tenant-context";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+import { API_URL } from "@/lib/api.client";
 
 export default async function DomainLayout({
   children,
@@ -21,16 +20,26 @@ export default async function DomainLayout({
     isLoading: false,
   };
 
-  try {
-    const res = await fetch(`${API_URL}/api/v1/institutes/public/${encodeURIComponent(domain)}`, {
-      next: { revalidate: 60 * 5 }, // Cache for 5 minutes
-    });
-    const { data } = await res.json();
-    if (data) {
+  // Skip public institute fetch for non-tenant domains (Vercel previews, www, admin)
+  const isNonTenantDomain =
+    !domain ||
+    domain === "www" ||
+    domain === "admin" ||
+    domain.startsWith("www.") ||
+    domain.endsWith(".vercel.app");
+
+  if (!isNonTenantDomain) {
+    try {
+      const res = await fetch(`${API_URL}/api/v1/institutes/public/${encodeURIComponent(domain)}`, {
+        next: { revalidate: 60 * 5 }, // Cache for 5 minutes
+      });
+      const { data } = await res.json();
+      if (data) {
         const colorPattern = /^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/;
-        const validatedColor = data.theme_primary_color && colorPattern.test(data.theme_primary_color)
-          ? data.theme_primary_color
-          : "#6366f1";
+        const validatedColor =
+          data.theme_primary_color && colorPattern.test(data.theme_primary_color)
+            ? data.theme_primary_color
+            : "#6366f1";
 
         tenantConfig = {
           domain,
@@ -40,9 +49,10 @@ export default async function DomainLayout({
           primaryColor: validatedColor,
           isLoading: false,
         };
+      }
+    } catch (err) {
+      console.error("[DomainLayout] Failed to fetch tenant config", err);
     }
-  } catch (err) {
-    console.error("[DomainLayout] Failed to fetch tenant config", err);
   }
 
   return (

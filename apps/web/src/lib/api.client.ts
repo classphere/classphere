@@ -9,7 +9,8 @@
  * so the login page can show the user an appropriate message.
  */
 
-let resolvedApiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+const envUrl = process.env.NEXT_PUBLIC_API_URL?.trim();
+let resolvedApiUrl = envUrl && envUrl.length > 0 ? envUrl : "http://localhost:3001";
 if (resolvedApiUrl.endsWith("/")) {
   resolvedApiUrl = resolvedApiUrl.slice(0, -1);
 }
