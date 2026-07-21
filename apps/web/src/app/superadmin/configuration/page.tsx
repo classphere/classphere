@@ -11,7 +11,10 @@ import {
   RiCpuLine,
   RiBuilding3Line,
   RiServerLine,
-  RiLoader4Line
+  RiLoader4Line,
+  RiCalendarEventLine,
+  RiPencilLine,
+  RiCheckLine,
 } from "@remixicon/react";
 
 export default function ConfigurationPage() {
@@ -34,6 +37,41 @@ export default function ConfigurationPage() {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
+  // Exam Calendar
+  type CalRow = { exam_code: string; exam_label: string; suggested_ends_at: string; notes: string | null };
+  const [calendar, setCalendar] = useState<CalRow[]>([]);
+  const [calEdits, setCalEdits] = useState<Record<string, { suggested_ends_at: string; notes: string }>>({});
+  const [calSaving, setCalSaving] = useState<Record<string, boolean>>({});
+  const [calMsg, setCalMsg] = useState<Record<string, string>>({});
+
+  const loadCalendar = () => {
+    apiClient.get<{ success: boolean; data: { calendar: CalRow[] } }>("/api/v1/batches/exam-calendar")
+      .then((res) => {
+        if (res.success) {
+          setCalendar(res.data.calendar);
+          const edits: Record<string, { suggested_ends_at: string; notes: string }> = {};
+          res.data.calendar.forEach((row) => { edits[row.exam_code] = { suggested_ends_at: row.suggested_ends_at, notes: row.notes ?? "" }; });
+          setCalEdits(edits);
+        }
+      }).catch(() => {});
+  };
+
+  const saveCalRow = async (examCode: string) => {
+    if (!token) return;
+    setCalSaving((s) => ({ ...s, [examCode]: true }));
+    setCalMsg((m) => ({ ...m, [examCode]: "" }));
+    try {
+      const edit = calEdits[examCode];
+      const res: any = await apiClient.patch(`/api/v1/batches/exam-calendar/${examCode}`, { suggested_ends_at: edit.suggested_ends_at, notes: edit.notes || null }, token);
+      if (res.success) {
+        setCalMsg((m) => ({ ...m, [examCode]: "✓ Saved" }));
+        setTimeout(() => setCalMsg((m) => ({ ...m, [examCode]: "" })), 2000);
+        loadCalendar();
+      } else setCalMsg((m) => ({ ...m, [examCode]: res.message }));
+    } catch (e: any) { setCalMsg((m) => ({ ...m, [examCode]: e.message })); }
+    finally { setCalSaving((s) => ({ ...s, [examCode]: false })); }
+  };
+
   // Load config on mount
   useEffect(() => {
     if (!token) return;
@@ -54,7 +92,10 @@ export default function ConfigurationPage() {
         }
       })
       .catch(console.error)
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+        loadCalendar();
+      });
   }, [token]);
 
   const handleSave = async () => {
@@ -295,6 +336,79 @@ export default function ConfigurationPage() {
 
           </div>
         )}
+
+        {/* ── Exam Calendar ── */}
+        <div className="relative z-10 overflow-hidden rounded-[20px] border border-s-stroke2/40 bg-b-surface2/60 dark:bg-b-surface2/40 p-6 shadow-widget backdrop-blur-sm mt-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="flex size-9 items-center justify-center rounded-[10px] bg-primary-05/10 border border-primary-05/20">
+              <RiCalendarEventLine size={18} className="text-primary-05" />
+            </div>
+            <div>
+              <h2 className="text-[15px] font-bold text-t-primary">Exam Calendar</h2>
+              <p className="text-[12px] text-t-secondary mt-0.5">Suggested batch expiry dates. Institutes auto-fill from these when creating batches. Update when exams get postponed.</p>
+            </div>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-s-stroke2/40">
+                  <th className="text-left py-2 px-3 text-[11px] font-bold uppercase tracking-wider text-t-secondary">Exam</th>
+                  <th className="text-left py-2 px-3 text-[11px] font-bold uppercase tracking-wider text-t-secondary">Suggested Expiry</th>
+                  <th className="text-left py-2 px-3 text-[11px] font-bold uppercase tracking-wider text-t-secondary hidden md:table-cell">Notes</th>
+                  <th className="py-2 px-3"></th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-s-stroke2/30">
+                {calendar.map((row) => {
+                  const edit = calEdits[row.exam_code] ?? { suggested_ends_at: row.suggested_ends_at, notes: row.notes ?? "" };
+                  const isSaving = calSaving[row.exam_code];
+                  const msg = calMsg[row.exam_code];
+                  return (
+                    <tr key={row.exam_code} className="group hover:bg-b-surface1/50 transition-colors">
+                      <td className="py-3 px-3">
+                        <p className="font-semibold text-t-primary text-[13px]">{row.exam_label}</p>
+                        <p className="text-[11px] text-t-secondary font-mono mt-0.5">{row.exam_code}</p>
+                      </td>
+                      <td className="py-3 px-3">
+                        <input
+                          type="date"
+                          value={edit.suggested_ends_at}
+                          onChange={(e) => setCalEdits((prev) => ({ ...prev, [row.exam_code]: { ...edit, suggested_ends_at: e.target.value } }))}
+                          className="h-9 w-40 rounded-[8px] border border-s-stroke2/60 bg-b-surface1 px-3 text-[13px] font-medium text-t-primary focus:border-primary-01 outline-none transition-colors"
+                        />
+                      </td>
+                      <td className="py-3 px-3 hidden md:table-cell">
+                        <input
+                          type="text"
+                          placeholder="Optional note…"
+                          value={edit.notes}
+                          onChange={(e) => setCalEdits((prev) => ({ ...prev, [row.exam_code]: { ...edit, notes: e.target.value } }))}
+                          className="h-9 w-full min-w-[180px] rounded-[8px] border border-s-stroke2/60 bg-b-surface1 px-3 text-[13px] text-t-primary focus:border-primary-01 outline-none transition-colors"
+                        />
+                      </td>
+                      <td className="py-3 px-3">
+                        <div className="flex items-center gap-2">
+                          {msg && <span className={`text-[11px] font-semibold ${msg.startsWith("✓") ? "text-primary-02" : "text-primary-03"}`}>{msg}</span>}
+                          <button
+                            onClick={() => saveCalRow(row.exam_code)}
+                            disabled={isSaving}
+                            className="flex items-center gap-1.5 h-8 px-3 rounded-[8px] bg-b-surface1 border border-s-stroke2/50 text-[12px] font-semibold text-t-secondary hover:text-t-primary transition-colors disabled:opacity-50"
+                          >
+                            {isSaving ? <RiLoader4Line size={13} className="animate-spin" /> : <RiCheckLine size={13} />}
+                            Save
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+                {calendar.length === 0 && (
+                  <tr><td colSpan={4} className="py-8 text-center text-[13px] text-t-secondary">No exam calendar data. Run migration 28 in Supabase SQL Editor.</td></tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
 
       </main>
     </>

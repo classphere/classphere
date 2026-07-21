@@ -228,7 +228,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    const validExams = ["jee-main", "jee-advanced", "neet-ug", "ssc-cgl"];
+    const validExams = ["jee-main", "jee-advanced", "jee-main-advanced", "neet-ug"];
     if (!validExams.includes(exam)) {
       res.status(400).json({ success: false, message: `Invalid exam. Must be one of: ${validExams.join(", ")}` });
       return;

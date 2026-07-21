@@ -85,10 +85,12 @@ app.use(express.json({ limit: "10mb" }));
 
 // ─── Background Workers ───────────────────────────────────────────────────────
 if (process.env.START_WORKERS === "true") {
-  console.log("[API] Initializing background analysis workers inside this process...");
+  console.log("[API] Initializing background workers (analysis & lifecycle) inside this process...");
   require("./workers/analysis.worker");
+  const { setupLifecycleCron } = require("./workers/lifecycle.worker");
+  setupLifecycleCron().catch((err: any) => console.error("[API] Lifecycle cron setup failed:", err));
 } else {
-  console.log("[API] Background analysis workers disabled in this process (scaling separately).");
+  console.log("[API] Background workers disabled in this process (scaling separately).");
 }
 
 // ─── API Routes ───────────────────────────────────────────────────────────────

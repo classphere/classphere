@@ -585,9 +585,10 @@ export default function InstitutesPage() {
             <p className="text-[12px] text-t-secondary">The institute admin can create batches only for these examinations.</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               {[
-                { id: "jee-main", label: "JEE Main" },
-                { id: "jee-advanced", label: "JEE Advanced" },
-                { id: "neet-ug", label: "NEET UG" },
+                { id: "jee-main",          label: "JEE Main" },
+                { id: "jee-advanced",      label: "JEE Advanced" },
+                { id: "jee-main-advanced", label: "JEE Main + Advanced" },
+                { id: "neet-ug",           label: "NEET UG" },
               ].map((exam) => {
                 const checked = newInstituteData.enabledExamCodes.includes(exam.id);
                 return (
