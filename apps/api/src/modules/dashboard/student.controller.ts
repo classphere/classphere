@@ -116,11 +116,36 @@ export const getStudentDashboard = async (req: Request, res: Response): Promise<
       // student_stats may not exist yet
     }
 
+    // ── Fetch user's batch details ─────────────────────────────────────────────
+    let batch: any = null;
+    try {
+      const { data: bStudent } = await supabaseDB
+        .from("batch_students")
+        .select("batch_id, batches(id, name, exam, ends_at, is_active)")
+        .eq("student_id", studentId)
+        .order("joined_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      if (bStudent && (bStudent as any).batches) {
+        batch = {
+          id: (bStudent as any).batches.id,
+          name: (bStudent as any).batches.name,
+          exam: (bStudent as any).batches.exam,
+          ends_at: (bStudent as any).batches.ends_at,
+          is_active: (bStudent as any).batches.is_active,
+        };
+      }
+    } catch (e) {
+      console.error("[getStudentDashboard batch fetch error]", e);
+    }
+
     // ── Response ──────────────────────────────────────────────────────────────
     res.status(200).json({
       success: true,
       data: {
         examTarget,
+        batch,
         metrics: {
           totalTests,
           accuracyPct,

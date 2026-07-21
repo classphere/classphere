@@ -17,6 +17,7 @@ import { ScorePerformanceWidget } from "@/components/dashboard/ScorePerformanceW
 import { PendingDPPsWidget } from "@/components/dashboard/PendingDPPsWidget";
 import { ActionRequiredWidget } from "@/components/dashboard/ActionRequiredWidget";
 import { LeaderboardWidget } from "@/components/dashboard/LeaderboardWidget";
+import { StudentBatchWidget } from "@/components/dashboard/StudentBatchWidget";
 import { apiClient } from "@/lib/api.client";
 
 export default function Dashboard() {
@@ -71,7 +72,7 @@ export default function Dashboard() {
     );
   }
 
-  const { metrics, chartData, examTarget } = stats || {};
+  const { metrics, chartData, examTarget, batch } = stats || {};
   const isNEET = examTarget === "neet";
 
   return (
@@ -92,6 +93,7 @@ export default function Dashboard() {
             <PendingDPPsWidget dpps={dpps} />
           </div>
           <div className="grid gap-6 min-w-0 overflow-x-hidden">
+            <StudentBatchWidget batch={batch} />
             <LeaderboardWidget />
             <ActionRequiredWidget />
           </div>
