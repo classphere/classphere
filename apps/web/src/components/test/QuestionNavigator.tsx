@@ -106,28 +106,24 @@ export function QuestionNavigator({
 
                   if (s === "answered") {
                     btnClass += "bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm";
-                  } else if (s === "review") {
-                    if (hasAns) {
-                      btnClass += "rounded-full bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] relative";
-                      content = (
-                        <>
-                          {sq.question_number}
-                          <div className="absolute -bottom-0.5 -right-0.5 size-[14px] bg-[#4CAF50] rounded-full border-[1.5px] border-white flex items-center justify-center">
-                            <svg viewBox="0 0 10 10" className="w-2 h-2 text-white" fill="none">
-                              <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                          </div>
-                        </>
-                      );
-                    } else {
-                      btnClass += "rounded-full bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)]";
-                    }
+                  } else if (s === "answered_and_marked_for_review" || (s === "review" && hasAns)) {
+                    btnClass += "rounded-full bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)] relative";
+                    content = (
+                      <>
+                        {sq.question_number}
+                        <div className="absolute -bottom-0.5 -right-0.5 size-[14px] bg-[#4CAF50] rounded-full border-[1.5px] border-white flex items-center justify-center">
+                          <svg viewBox="0 0 10 10" className="w-2 h-2 text-white" fill="none">
+                            <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      </>
+                    );
+                  } else if (s === "marked_for_review" || (s === "review" && !hasAns)) {
+                    btnClass += "rounded-full bg-gradient-to-br from-[#6A1B9A] to-[#4A148C] text-white shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3)]";
+                  } else if (s === "not_answered" || (visited && s !== "not_visited")) {
+                    btnClass += "bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm";
                   } else {
-                    if (visited) {
-                      btnClass += "bg-gradient-to-br from-[#E64125] to-[#C7270D] text-white [clip-path:polygon(0%_0%,_100%_15%,_100%_85%,_0%_100%)] shadow-sm";
-                    } else {
-                      btnClass += "rounded-[5px] border border-s-stroke2 bg-b-pop text-t-primary";
-                    }
+                    btnClass += "rounded-[5px] border border-s-stroke2 bg-b-pop text-t-primary";
                   }
 
                   const wrapperClass = "p-0.5";

@@ -31,4 +31,14 @@ export interface TestMeta {
 }
 
 export type AnswerMap = Record<string, string>;
-export type StatusMap = Record<string, "unanswered" | "answered" | "review">;
+
+export type QuestionStatus =
+  | "not_visited"
+  | "not_answered"
+  | "answered"
+  | "marked_for_review"
+  | "answered_and_marked_for_review"
+  | "unanswered"
+  | "review";
+
+export type StatusMap = Record<string, QuestionStatus>;

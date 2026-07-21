@@ -16,11 +16,12 @@ import { TestHeader } from "@/components/test/TestHeader";
 import { QuestionContent } from "@/components/test/QuestionContent";
 import { QuestionNavigator } from "@/components/test/QuestionNavigator";
 import { SubmitModal } from "@/components/test/SubmitModal";
+import { ProctorWarningModal } from "@/components/test/ProctorWarningModal";
+import { ReportQuestionModal } from "@/components/test/ReportQuestionModal";
+import { DualDeviceModal } from "@/components/test/DualDeviceModal";
 import "katex/dist/katex.min.css";
 import { apiClient } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
-
-
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -44,10 +45,17 @@ export default function TestPage() {
   const [visitedQs, setVisitedQs] = useState<Record<string, boolean>>({});
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
+  const [showReportModal, setShowReportModal] = useState(false);
+  const [showDualDeviceModal, setShowDualDeviceModal] = useState(false);
   const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
   const [isDemoMode, setIsDemoMode] = useState(false);
   const [attemptId, setAttemptId] = useState<string | null>(null);
   const [saveState, setSaveState] = useState<"saved" | "saving" | "offline">("saved");
+
+  // ── Anti-Cheat Proctoring state ─────────────────────────────────────────────
+  const [tabSwitchCount, setTabSwitchCount] = useState(0);
+  const [showProctorWarning, setShowProctorWarning] = useState(false);
+  const [proctorCountdown, setProctorCountdown] = useState(10);
 
   // ── Timing tracking (Option B: start_timestamp) ─────────────────────────────
   /** Unix ms when the exam timer started (set once when questions load) */
@@ -61,8 +69,6 @@ export default function TestPage() {
   const currentQuestionIdRef = useRef<string | null>(null);
   const answersRef = useRef<AnswerMap>({});
   const statusRef = useRef<StatusMap>({});
-  // Redis is a durability layer, not a heartbeat. Persist only when the
-  // attempt changed, while preserving changes made during an in-flight save.
   const saveVersionRef = useRef(0);
   const savedVersionRef = useRef(0);
   const saveInFlightRef = useRef(false);
@@ -75,6 +81,13 @@ export default function TestPage() {
   /** Called whenever the student navigates to a question */
   const recordQuestionOpen = useCallback((qId: string) => {
     setVisitedQs((prev) => prev[qId] ? prev : { ...prev, [qId]: true });
+    setStatus((prev) => {
+      const currentStatus = prev[qId];
+      if (!currentStatus || currentStatus === "not_visited" || currentStatus === "unanswered") {
+        return { ...prev, [qId]: answersRef.current[qId] ? "answered" : "not_answered" };
+      }
+      return prev;
+    });
     if (examStartMsRef.current === null) return;
     if (questionOpenTimestamps.current[qId] !== undefined) return; // only record FIRST visit
     const offsetSec = Math.floor((Date.now() - examStartMsRef.current) / 1000);
@@ -282,6 +295,55 @@ export default function TestPage() {
       handleSubmit();
     }
   }, [timeLeft, loading, questions.length, handleSubmit]);
+
+  // ── Anti-Cheat Tab-Switch / Focus Proctoring Listener ────────────────────────
+  useEffect(() => {
+    if (loading || !attemptId || showSubmitModal || requestedTestMode === "practice") return;
+
+    const handleFocusLoss = () => {
+      setTabSwitchCount((prev) => {
+        const nextCount = prev + 1;
+        if (nextCount >= 3) {
+          setShowProctorWarning(true);
+          setProctorCountdown(0);
+          void handleSubmit();
+        } else {
+          setShowProctorWarning(true);
+          setProctorCountdown(10);
+        }
+        return nextCount;
+      });
+    };
+
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        handleFocusLoss();
+      }
+    };
+
+    window.addEventListener("visibilitychange", onVisibilityChange);
+    window.addEventListener("blur", handleFocusLoss);
+
+    return () => {
+      window.removeEventListener("visibilitychange", onVisibilityChange);
+      window.removeEventListener("blur", handleFocusLoss);
+    };
+  }, [loading, attemptId, showSubmitModal, requestedTestMode, handleSubmit]);
+
+  // Proctor countdown timer
+  useEffect(() => {
+    if (!showProctorWarning || proctorCountdown <= 0) return;
+    const timer = setTimeout(() => {
+      setProctorCountdown((c) => {
+        if (c <= 1) {
+          void handleSubmit();
+          return 0;
+        }
+        return c - 1;
+      });
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [showProctorWarning, proctorCountdown, handleSubmit]);
 
   // ── Wrapper: navigate and record timestamp (must be BEFORE early returns) ───────
   const navigateTo = useCallback((idx: number) => {
@@ -494,6 +556,7 @@ export default function TestPage() {
           answered={answered}
           markedCount={markedCount}
           isSectionBLimitReached={isSectionBLimitReached}
+          onReportQuestion={() => setShowReportModal(true)}
         />
 
         <QuestionNavigator
@@ -566,6 +629,27 @@ export default function TestPage() {
         unanswered={unanswered}
         onClose={() => setShowSubmitModal(false)}
         onSubmit={handleSubmit}
+      />
+
+      <ProctorWarningModal
+        show={showProctorWarning}
+        warningCount={tabSwitchCount}
+        maxWarnings={3}
+        countdown={proctorCountdown}
+        onResume={() => setShowProctorWarning(false)}
+      />
+
+      <ReportQuestionModal
+        show={showReportModal}
+        questionId={q.id}
+        questionNumber={q.question_number}
+        token={session?.access_token}
+        onClose={() => setShowReportModal(false)}
+      />
+
+      <DualDeviceModal
+        show={showDualDeviceModal}
+        onExit={() => router.push("/student/dashboard")}
       />
 
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>

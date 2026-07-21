@@ -1,5 +1,6 @@
 import React from "react";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
+import { RiFlag2Line } from "@remixicon/react";
 import { Question, AnswerMap, StatusMap } from "./TestTypes";
 
 interface QuestionContentProps {
@@ -16,6 +17,7 @@ interface QuestionContentProps {
   answered: number;
   markedCount: number;
   isSectionBLimitReached: (q: Question) => boolean;
+  onReportQuestion?: () => void;
 }
 
 export function QuestionContent({
@@ -32,6 +34,7 @@ export function QuestionContent({
   answered,
   markedCount,
   isSectionBLimitReached,
+  onReportQuestion,
 }: QuestionContentProps) {
   // Imports made before media normalisation may carry the same diagram both
   // inline in markdown and in image_url. Preserve distinct multi-figure
@@ -39,13 +42,26 @@ export function QuestionContent({
   const hasInlineQuestionImage = Boolean(q.image_url && q.question_text?.includes(`](${q.image_url})`));
   return (
     <section className="group relative card flex min-w-0 flex-col overflow-hidden p-4 sm:p-6 md:p-8 select-none lg:h-[calc(100dvh-9.5rem)] lg:overflow-y-auto">
-      <div className="relative z-10 mb-5 flex flex-wrap items-center gap-2">
-        <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.subject}</span>
-        <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.chapter}</span>
-        {q.topic && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.topic}</span>}
-        <span className={`flex flex-row justify-center items-center px-2 py-0.5 border text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em] ${q.difficulty === "easy" ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : q.difficulty === "hard" ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03" : "border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05"}`}>
-          {q.difficulty}
-        </span>
+      <div className="relative z-10 mb-5 flex flex-wrap items-center justify-between gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.subject}</span>
+          <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.chapter}</span>
+          {q.topic && <span className="flex flex-row justify-center items-center px-2 py-0.5 border border-s-stroke2 bg-b-surface1 text-t-secondary text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em]">{q.topic}</span>}
+          <span className={`flex flex-row justify-center items-center px-2 py-0.5 border text-[12px] font-sans font-semibold rounded-[10px] tracking-[0.004em] ${q.difficulty === "easy" ? "border-s-stroke2/40 bg-[rgba(0,166,86,0.05)] text-primary-02" : q.difficulty === "hard" ? "border-s-stroke2/40 bg-[rgba(255,106,85,0.05)] text-primary-03" : "border-s-stroke2/40 bg-[rgba(239,157,14,0.05)] text-primary-05"}`}>
+            {q.difficulty}
+          </span>
+        </div>
+
+        {onReportQuestion && (
+          <button
+            onClick={onReportQuestion}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-[8px] border border-s-stroke2/60 bg-b-surface1 text-[11px] font-semibold text-t-secondary hover:text-red-500 hover:border-red-500/30 transition-colors"
+            title="Report an issue or error with this question"
+          >
+            <RiFlag2Line size={13} />
+            <span>Report Error</span>
+          </button>
+        )}
       </div>
 
       <div className="relative z-10 mb-6 flex items-start justify-between gap-4 border-b border-s-stroke2 pb-5">
@@ -176,7 +192,7 @@ export function QuestionContent({
           onClick={() => {
             onAttemptChanged();
             if (answers[q.id]) setStatus((s) => ({ ...s, [q.id]: "answered" }));
-            else setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
+            else setStatus((s) => ({ ...s, [q.id]: "not_answered" }));
             if (current < questionsLength - 1) navigateTo(current + 1);
             else setShowSubmitModal(true);
           }}
@@ -193,7 +209,7 @@ export function QuestionContent({
               delete newA[q.id];
               return newA;
             });
-            setStatus((s) => ({ ...s, [q.id]: "unanswered" }));
+            setStatus((s) => ({ ...s, [q.id]: "not_answered" }));
           }}
         >
           Clear response
@@ -203,7 +219,8 @@ export function QuestionContent({
           className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#d98700] bg-primary-05 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#e58d00] active:scale-[0.98] sm:text-[11px] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
-            setStatus((s) => ({ ...s, [q.id]: "review" }));
+            const newStatus = answers[q.id] ? "answered_and_marked_for_review" : "marked_for_review";
+            setStatus((s) => ({ ...s, [q.id]: newStatus }));
             if (current < questionsLength - 1) navigateTo(current + 1);
             else setShowSubmitModal(true);
           }}
@@ -215,7 +232,8 @@ export function QuestionContent({
           className="flex min-h-12 w-full items-center justify-center rounded-[9px] border border-[#245bd2] bg-primary-01 px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#1478e9] active:scale-[0.98] sm:text-[11px] xl:text-xs"
           onClick={() => {
             onAttemptChanged();
-            setStatus((s) => ({ ...s, [q.id]: "review" }));
+            const newStatus = answers[q.id] ? "answered_and_marked_for_review" : "marked_for_review";
+            setStatus((s) => ({ ...s, [q.id]: newStatus }));
             if (current < questionsLength - 1) navigateTo(current + 1);
             else setShowSubmitModal(true);
           }}
