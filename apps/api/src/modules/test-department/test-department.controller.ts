@@ -75,7 +75,7 @@ export async function listDepartmentMembers(req: Request, res: Response): Promis
 export async function createDepartmentMember(req: Request, res: Response): Promise<void> {
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
-    const { name, email, title, access_level } = req.body ?? {};
+    const { name, email, title, access_level, password: customPassword } = req.body ?? {};
     const requestedLevel = access_level === "head" ? "head" : "editor";
     if (req.user?.role === "institute_admin" && requestedLevel !== "head") {
       res.status(403).json({ success: false, message: "The Institute Admin appoints the Test Department Head. The Head manages Test Editors." }); return;
@@ -101,7 +101,9 @@ export async function createDepartmentMember(req: Request, res: Response): Promi
     const normalizedEmail = String(email).trim().toLowerCase();
     const { data: existing } = await supabaseDB.from("users").select("id").eq("email", normalizedEmail).maybeSingle();
     if (existing) { res.status(409).json({ success: false, message: "An account with this email already exists." }); return; }
-    const tempPassword = `Test#${randomUUID().replace(/-/g, "").slice(0, 10)}`;
+    const tempPassword = (typeof customPassword === "string" && customPassword.trim().length >= 8)
+      ? customPassword.trim()
+      : `Test#${randomUUID().replace(/-/g, "").slice(0, 10)}`;
     const { data: authData, error: authError } = await supabaseAdmin.auth.admin.createUser({
       email: normalizedEmail, password: tempPassword, email_confirm: true,
       user_metadata: { name: String(name).trim(), role }, app_metadata: { role },

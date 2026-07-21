@@ -31,8 +31,8 @@ export default function TestDepartmentPage() {
       <Navbar title="Test Department" subtitle="Prepare, verify, and release every assessment with confidence.">
         {canOperate && <Link href="/test-department/create" className="flex h-11 items-center justify-center rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white dark:bg-white dark:text-black">Upload test PDF</Link>}
       </Navbar>
-      <main className="mx-auto w-full max-w-[1560px] px-4 pb-12 pt-5 md:px-6">
-        <section className="card overflow-hidden">
+      <main className="mx-auto flex w-full max-w-[1560px] flex-1 flex-col px-4 pb-6 pt-5 md:px-6">
+        <section className="card flex flex-1 flex-col overflow-hidden">
           <div className="flex items-center justify-between border-b border-s-stroke2 px-5 py-4">
             <div>
               <h2 className="font-semibold text-t-primary">Review workspace</h2>

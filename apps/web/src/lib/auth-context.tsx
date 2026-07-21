@@ -57,7 +57,8 @@ function homePath(role: string): string {
     case "super_admin":     return "/"; // middleware rewrites / → /superadmin on admin subdomain
     case "institute_admin": return "/institute";
     case "teacher":         return "/teacher";
-    case "test_department_head": return "/test-department";
+    case "test_department_head":
+    case "test_department_member": return "/test-department";
     default:                return "/student/dashboard"; // student
   }
 }

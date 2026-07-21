@@ -18,7 +18,7 @@ export default function TestDepartmentTeamPage() {
   const [removingId, setRemovingId] = useState<string | null>(null);
   const isInstituteAdmin = user?.role === "institute_admin";
   const isHead = user?.role === "test_department_head";
-  const [form, setForm] = useState({ name: "", email: "", title: "", access_level: isInstituteAdmin ? "head" : "editor" });
+  const [form, setForm] = useState({ name: "", email: "", title: "", password: "", access_level: isInstituteAdmin ? "head" : "editor" });
 
   const load = async () => {
     if (!session?.access_token) return;
@@ -27,7 +27,7 @@ export default function TestDepartmentTeamPage() {
   };
   useEffect(() => {
     if (!user) return;
-    if (!isInstituteAdmin && !isHead) { router.replace("/student/dashboard"); return; }
+    if (!isInstituteAdmin && !isHead) { router.replace(user?.role === "test_department_member" ? "/test-department" : "/student/dashboard"); return; }
     void load().catch((error) => setMessage(error.message));
   }, [user, session?.access_token]);
 
@@ -36,7 +36,7 @@ export default function TestDepartmentTeamPage() {
     setSaving(true); setMessage("");
     try {
       await apiClient.post("/api/v1/test-department/members", form, session.access_token);
-      setForm({ name: "", email: "", title: "", access_level: isInstituteAdmin ? "head" : "editor" });
+      setForm({ name: "", email: "", title: "", password: "", access_level: isInstituteAdmin ? "head" : "editor" });
       await load(); setMessage(`${isHead ? "Test Editor" : "Test Department Head"} account created and invitation sent.`);
     } catch (error: any) { setMessage(error.message); } finally { setSaving(false); }
   };
@@ -57,7 +57,7 @@ export default function TestDepartmentTeamPage() {
       <section className="card p-5 sm:p-6"><h2 className="font-semibold text-t-primary">Assessment team</h2><p className="mt-1 text-sm text-t-secondary">Editors upload, correct, and review. Only the Department Head can publish or archive.</p>
         <div className="mt-5 space-y-3">{members.length === 0 ? <p className="rounded-[12px] border border-dashed border-s-stroke2 p-8 text-center text-sm text-t-secondary">No Test Department Head has been appointed.</p> : members.map((member) => { const profile = memberProfile(member); const isMemberHead = member.access_level === "head" || profile?.role === "test_department_head"; const canRemove = isInstituteAdmin || (isHead && !isMemberHead); return <div key={member.user_id} className="flex items-center justify-between gap-4 rounded-[12px] border border-s-stroke2 bg-b-surface2/50 p-4"><div><p className="font-semibold text-t-primary">{profile?.name ?? "Team member"}</p><p className="mt-1 text-sm text-t-secondary">{profile?.email}{member.title ? ` · ${member.title}` : ""}</p></div><div className="flex items-center gap-3"><span className="rounded-full border border-primary-01/25 bg-primary-01/10 px-3 py-1 text-xs font-bold text-primary-01">{isMemberHead ? "HEAD" : "EDITOR"}</span>{canRemove && <button disabled={removingId === member.user_id} onClick={() => remove(member)} className="text-xs font-semibold text-primary-03 disabled:opacity-50">{removingId === member.user_id ? "Removing…" : "Remove"}</button>}</div></div>; })}</div>
       </section>
-      {canAdd && <form onSubmit={create} className="card h-fit p-5"><h2 className="font-semibold text-t-primary">Add {roleLabel}</h2><p className="mt-1 text-sm text-t-secondary">A secure sign-in email will be sent to this person.</p>{message && <p className="mt-4 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-3 py-2 text-sm text-t-secondary">{message}</p>}<div className="mt-5 space-y-4"><Field label="Name" value={form.name} onChange={(name) => setForm({ ...form, name })} required /><Field label="Email" type="email" value={form.email} onChange={(email) => setForm({ ...form, email })} required /><Field label="Job title" value={form.title} onChange={(title) => setForm({ ...form, title })} /><button disabled={saving} className="h-11 w-full rounded-[10px] bg-shade-02 text-sm font-semibold text-white disabled:opacity-60">{saving ? "Creating…" : `Add ${roleLabel}`}</button></div></form>}
+      {canAdd && <form onSubmit={create} className="card h-fit p-5"><h2 className="font-semibold text-t-primary">Add {roleLabel}</h2><p className="mt-1 text-sm text-t-secondary">A secure sign-in email will be sent to this person.</p>{message && <p className="mt-4 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-3 py-2 text-sm text-t-secondary">{message}</p>}<div className="mt-5 space-y-4"><Field label="Name" value={form.name} onChange={(name) => setForm({ ...form, name })} required /><Field label="Email" type="email" value={form.email} onChange={(email) => setForm({ ...form, email })} required /><Field label="Job title" value={form.title} onChange={(title) => setForm({ ...form, title })} /><Field label="Password (optional — leave blank to auto-generate)" type="password" value={form.password} onChange={(password) => setForm({ ...form, password })} /><button disabled={saving} className="h-11 w-full rounded-[10px] bg-shade-02 text-sm font-semibold text-white disabled:opacity-60">{saving ? "Creating…" : `Add ${roleLabel}`}</button></div></form>}
     </main>
   </>;
 }

@@ -138,7 +138,7 @@ export default function Sidebar() {
 
   const testDepartmentNav = [
     { label: "Test Workspace", href: "/test-department", icon: <RiDashboardLine size={18} />, active: cleanPath === "/test-department" },
-    { label: "Review Queue", href: "/test-department?status=needs_review", icon: <RiShieldCheckLine size={18} />, active: cleanPath === "/test-department" },
+    ...(userRole === "test_department_head" ? [{ label: "Review Queue", href: "/test-department?status=needs_review", icon: <RiShieldCheckLine size={18} />, active: cleanPath === "/test-department" }] : []),
     ...(userRole === "test_department_head" ? [{ label: "Team", href: "/test-department/team", icon: <RiTeamLine size={18} />, active: cleanPath.startsWith("/test-department/team") }] : []),
     { label: "Study Material", href: "/test-department/resources", icon: <RiBookOpenLine size={18} />, active: cleanPath.startsWith("/test-department/resources") },
   ];
