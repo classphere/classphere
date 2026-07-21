@@ -68,7 +68,7 @@ const EMPTY_FORM = {
 };
 
 export default function InstituteFacultyPage() {
-  const { faculty, loading, error, addFaculty, refetch } = useFaculty();
+  const { faculty, loading, error, addFaculty, removeFaculty, refetch } = useFaculty();
   const { batches, loading: batchesLoading } = useBatches();
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -77,6 +77,15 @@ export default function InstituteFacultyPage() {
   const [form, setForm] = useState(EMPTY_FORM);
   const [submitting, setSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
+  const [removingId, setRemovingId] = useState<string | null>(null);
+
+  const handleRemove = async (id: string, name: string) => {
+    if (!window.confirm(`Remove ${name}? Their sign-in and all batch assignments will be disabled, while history is retained.`)) return;
+    setRemovingId(id);
+    const result = await removeFaculty(id);
+    setRemovingId(null);
+    if (!result.success) window.alert(result.message);
+  };
 
   const filteredFaculty = faculty.filter(fac =>
     fac.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -274,8 +283,8 @@ export default function InstituteFacultyPage() {
                 </div>
 
                 <div className="shrink-0 pl-1 sm:pl-0">
-                  <button className="flex items-center justify-center size-8 rounded-full text-t-secondary hover:text-t-primary dark:hover:text-t-primary hover:bg-b-surface1 dark:hover:bg-b-surface3 border border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 transition-all active:scale-95 shadow-xs shrink-0">
-                    <RiMore2Fill size={18} />
+                  <button onClick={() => handleRemove(fac.id, fac.name)} disabled={removingId === fac.id} title="Remove faculty" className="flex items-center justify-center size-8 rounded-full text-t-secondary hover:text-primary-03 dark:hover:text-primary-03 hover:bg-primary-03/5 border border-s-stroke2/30 bg-b-surface2 dark:bg-b-surface2 transition-all active:scale-95 shadow-xs shrink-0 disabled:opacity-50">
+                    {removingId === fac.id ? <RiLoaderLine size={16} className="animate-spin" /> : <RiMore2Fill size={18} />}
                   </button>
                 </div>
               </div>

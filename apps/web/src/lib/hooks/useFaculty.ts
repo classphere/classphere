@@ -115,5 +115,15 @@ export function useFaculty() {
     [fetchFaculty]
   );
 
-  return { faculty, loading, error, refetch: fetchFaculty, addFaculty };
+  const removeFaculty = useCallback(async (id: string): Promise<{ success: boolean; message: string }> => {
+    try {
+      await apiFetch(`/api/v1/faculty/${id}`, { method: "DELETE" });
+      await fetchFaculty();
+      return { success: true, message: "Faculty member removed." };
+    } catch (err: any) {
+      return { success: false, message: err.message };
+    }
+  }, [fetchFaculty]);
+
+  return { faculty, loading, error, refetch: fetchFaculty, addFaculty, removeFaculty };
 }
