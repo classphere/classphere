@@ -187,7 +187,7 @@ export default function ScheduleTestPage() {
               if (chunk.status === "success") {
                 setStatus("success");
                 setStatusMsg("Test created successfully!");
-                router.push("/institute/tests");
+                router.push("/test-department");
               } else {
                 setStatus("processing");
                 setStatusMsg(chunk.message || "Processing...");
@@ -213,7 +213,7 @@ export default function ScheduleTestPage() {
       {/* ── Top Navigation Row (Figma Style) ── */}
       <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full h-auto md:h-12 gap-4 md:gap-6">
         <div className="flex items-center gap-4">
-          <Link href="/institute" className="btn btn-outline w-12 h-12 !px-0 rounded-[10px] flex items-center justify-center shrink-0 cursor-pointer">
+          <Link href="/test-department" className="btn btn-outline w-12 h-12 !px-0 rounded-[10px] flex items-center justify-center shrink-0 cursor-pointer">
             <RiArrowLeftLine size={20} />
           </Link>
           <h1 className="font-sans font-semibold text-[24px] md:text-[32px] leading-[145%] tracking-[0.0025em] text-t-primary dark:text-t-primary">
@@ -589,7 +589,7 @@ export default function ScheduleTestPage() {
         {/* Submit Buttons */}
         <div className="flex flex-col sm:flex-row justify-end gap-3 mt-2 w-full">
           <Link 
-            href="/institute" 
+            href="/test-department"
             className="btn btn-outline h-12 px-6 rounded-[10px] text-sm font-semibold flex items-center justify-center w-full sm:w-auto"
           >
             Cancel

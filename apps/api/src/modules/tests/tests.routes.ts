@@ -35,20 +35,20 @@ router.get("/assigned", authenticate, getAssignedTests);
 router.post(
   "/upload-test",
   authenticate,
-  requireRole("teacher", "institute_admin", "super_admin", "test_department_head"),
+  requireRole("super_admin", "test_department_head", "test_department_member"),
   uploadFields as any,
   uploadTestController
 );
 
-router.post("/", authenticate, requireRole("teacher", "institute_admin", "super_admin", "test_department_head"), createTest);
+router.post("/", authenticate, requireRole("super_admin", "test_department_head", "test_department_member"), createTest);
 router.patch("/bulk/global", authenticate, requireRole("super_admin"), bulkUpdateGlobalTests);
 router.delete("/bulk/global", authenticate, requireRole("super_admin"), bulkDeleteGlobalTests);
 router.patch("/:id/global", authenticate, requireRole("super_admin"), updateGlobalTest);
 router.get("/:id", authenticate, getTest);
-router.delete("/:id", authenticate, requireRole("super_admin", "institute_admin"), deleteTest);
+router.delete("/:id", authenticate, requireRole("super_admin"), deleteTest);
 
 // teacher only
-router.post("/:id/publish", authenticate, requireRole("teacher", "institute_admin", "super_admin"), publishTest);
+router.post("/:id/publish", authenticate, requireRole("super_admin"), publishTest);
 
 export default router;
 

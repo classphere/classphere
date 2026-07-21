@@ -45,6 +45,12 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
+    const canReviewInstitutePaper = req.user?.role === "super_admin" || req.user?.role === "test_department_head";
+    if (paper.institute_id && req.user?.role !== "student" && !canReviewInstitutePaper) {
+      res.status(403).json({ success: false, message: "Institute test papers are managed by the Test Admin." });
+      return;
+    }
+
     if (req.user?.role === "student") {
       const access = await getStudentTestAccess(req.user.id, paper);
       if (!access.allowed) {

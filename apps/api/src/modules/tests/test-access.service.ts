@@ -39,6 +39,11 @@ export async function getStudentTestAccess(studentId: string, paper: PaperWindow
     const memberIds = new Set((memberships ?? []).map((row: any) => row.batch_id));
     const assignment = (assignments ?? []).find((row: any) => memberIds.has(row.batch_id));
     if (!assignment) return { allowed: false, status: 403, message: "This test is not assigned to one of your batches." };
+    const { data: batch } = await supabaseDB.from("batches").select("is_active, starts_at, ends_at").eq("id", assignment.batch_id).maybeSingle();
+    const now = Date.now();
+    if (!batch?.is_active || (batch.starts_at && Date.parse(batch.starts_at) > now) || (batch.ends_at && Date.parse(batch.ends_at) <= now)) {
+      return { allowed: false, status: 403, message: "This batch is no longer active." };
+    }
     batchId = assignment.batch_id;
     assignmentStart = assignment.scheduled_at ?? null;
   }
