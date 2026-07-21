@@ -22,9 +22,10 @@ import { apiClient } from "@/lib/api.client";
 
 // Exam codes must match the `exams` table in Supabase
 const EXAM_OPTIONS = [
-  { id: "jee-main",     label: "JEE Main" },
-  { id: "jee-advanced", label: "JEE Advanced" },
-  { id: "neet-ug",      label: "NEET UG" },
+  { id: "jee-main",          label: "JEE Main" },
+  { id: "jee-advanced",      label: "JEE Advanced" },
+  { id: "jee-main-advanced", label: "JEE Main + Advanced" },
+  { id: "neet-ug",           label: "NEET UG" },
 ];
 
 const COLORS = [
@@ -40,6 +41,7 @@ export default function BatchesPage() {
   const { batches, loading, error, createBatch, updateBatch, deactivateBatch, refetch } = useBatches();
   const [searchQuery, setSearchQuery] = useState("");
   const [enabledExamCodes, setEnabledExamCodes] = useState<string[]>([]);
+  const [examCalendar, setExamCalendar] = useState<Record<string, { suggested_ends_at: string; notes: string | null }>>({});
 
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,12 +65,30 @@ export default function BatchesPage() {
     ).then((response) => {
       if (response.success) setEnabledExamCodes(response.data.institute.enabled_exam_codes ?? []);
     }).catch(() => setEnabledExamCodes([]));
+    // Fetch exam calendar for auto-fill
+    apiClient.get<{ success: boolean; data: { calendar: { exam_code: string; suggested_ends_at: string; notes: string | null }[] } }>(
+      "/api/v1/batches/exam-calendar"
+    ).then((resp) => {
+      if (resp.success) {
+        const map: Record<string, { suggested_ends_at: string; notes: string | null }> = {};
+        resp.data.calendar.forEach((row) => { map[row.exam_code] = { suggested_ends_at: row.suggested_ends_at, notes: row.notes }; });
+        setExamCalendar(map);
+      }
+    }).catch(() => {});
   }, [session?.access_token]);
 
   const openModal = () => {
     setForm({ name: "", exam: "", starts_at: "", ends_at: "" });
     setFeedback(null);
     setIsModalOpen(true);
+  };
+
+  const handleExamChange = (examCode: string) => {
+    const cal = examCalendar[examCode];
+    const suggestedDate = cal?.suggested_ends_at
+      ? new Date(cal.suggested_ends_at).toISOString().slice(0, 10) + "T23:59"
+      : "";
+    setForm((f) => ({ ...f, exam: examCode, ends_at: suggestedDate }));
   };
 
   const handleCreate = async () => {
@@ -216,7 +236,7 @@ export default function BatchesPage() {
                     {batch.name}
                   </span>
                   <span className="text-[11px] sm:text-xs text-t-secondary mt-0.5 uppercase tracking-wide truncate">
-                    {batch.exam}
+                    {EXAM_OPTIONS.find((e) => e.id === batch.exam)?.label ?? batch.exam}
                   </span>
                 </div>
               </div>
@@ -308,7 +328,7 @@ export default function BatchesPage() {
               <select
                 className="input-field w-full appearance-none pr-10"
                 value={form.exam}
-                onChange={(e) => setForm({ ...form, exam: e.target.value })}
+                onChange={(e) => handleExamChange(e.target.value)}
               >
                 <option value="" disabled>Select Exam...</option>
                 {availableExams.map((e) => (
@@ -317,6 +337,12 @@ export default function BatchesPage() {
               </select>
               <RiArrowDownSLine size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-t-secondary pointer-events-none" />
             </div>
+            {form.exam && examCalendar[form.exam] && (
+              <p className="mt-1.5 text-xs text-t-secondary">
+                📅 Suggested expiry: <strong>{new Date(examCalendar[form.exam].suggested_ends_at).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</strong>
+                {examCalendar[form.exam].notes ? ` · ${examCalendar[form.exam].notes}` : ""}
+              </p>
+            )}
           </div>
 
           <p className="rounded-[10px] border border-s-stroke2/50 bg-b-surface2/60 px-3 py-2.5 text-xs text-t-secondary">

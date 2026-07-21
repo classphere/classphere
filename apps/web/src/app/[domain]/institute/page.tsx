@@ -27,9 +27,10 @@ import { useBatches } from "@/lib/hooks/useBatches";
 import { apiClient } from "@/lib/api.client";
 
 const EXAM_LABELS: Record<string, string> = {
-  "jee-main": "JEE Main",
-  "jee-advanced": "JEE Advanced",
-  "neet-ug": "NEET UG",
+  "jee-main":          "JEE Main",
+  "jee-advanced":      "JEE Advanced",
+  "jee-main-advanced": "JEE Main + Advanced",
+  "neet-ug":           "NEET UG",
 };
 
 export default function InstituteDashboardPage() {

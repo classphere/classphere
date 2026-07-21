@@ -175,7 +175,7 @@ export async function provisionInstitute(
 ): Promise<InstituteRow & { tempPassword: string }> {
   const { name, adminEmail, adminUsername, preferredSubdomain, trialMonths = 2, logoUrl, enabledExamCodes } = input;
   const supportedExamCodes = [...new Set((enabledExamCodes ?? ["jee-main", "jee-advanced", "neet-ug"])
-    .filter((exam) => ["jee-main", "jee-advanced", "neet-ug"].includes(exam)))];
+    .filter((exam) => ["jee-main", "jee-advanced", "jee-main-advanced", "neet-ug"].includes(exam)))];
   if (supportedExamCodes.length === 0) {
     const err = new Error("Select at least one supported examination.");
     (err as any).statusCode = 400;

@@ -59,10 +59,10 @@ interface Resource {
 
 const API_BASE = API_V1_URL;
 const EXAM_LABELS: Record<string, string> = {
-  "jee-main": "JEE Main",
-  "jee-advanced": "JEE Advanced",
-  "neet-ug": "NEET-UG",
-  "ssc-cgl": "SSC CGL",
+  "jee-main":          "JEE Main",
+  "jee-advanced":      "JEE Advanced",
+  "jee-main-advanced": "JEE Main + Advanced",
+  "neet-ug":           "NEET-UG",
 };
 const TYPES = [
   { id: "assigned", label: "Assigned Tests" },
@@ -97,7 +97,7 @@ function TestsHubContent() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [activeExam, setActiveExam] = useState("jee-main");
-  const EXAM_OPTIONS = ["jee-main", "jee-advanced", "neet-ug", "ssc-cgl"];
+  const EXAM_OPTIONS = ["jee-main", "jee-advanced", "jee-main-advanced", "neet-ug"];
   const [activeType, setActiveType] = useState(() => searchParams.get("tab") === "resources" ? "resources" : "assigned");
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");

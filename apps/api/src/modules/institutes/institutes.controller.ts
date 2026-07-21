@@ -184,7 +184,7 @@ export const updateInstitute = async (req: Request, res: Response): Promise<void
 
     if (isSuperAdmin && req.body.enabled_exam_codes !== undefined) {
       const codes = req.body.enabled_exam_codes;
-      const validCodes = ["jee-main", "jee-advanced", "neet-ug"];
+      const validCodes = ["jee-main", "jee-advanced", "jee-main-advanced", "neet-ug"];
       if (!Array.isArray(codes) || codes.length === 0 || codes.some((code) => !validCodes.includes(code))) {
         res.status(400).json({ success: false, message: "enabled_exam_codes must contain one or more supported exam codes." });
         return;
@@ -493,7 +493,11 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
         name: name.trim(),
         exam: exam.trim(),
         starts_at: starts_at || null,
-        ends_at: ends_at || null,
+        ends_at: (() => {
+          if (ends_at) return ends_at;
+          // Auto-fill from exam_calendar
+          return null; // will be patched below after insert
+        })(),
         is_active: true,
       })
       .select()
@@ -503,6 +507,26 @@ export const createBatch = async (req: Request, res: Response): Promise<void> =>
       console.error("[createBatch] DB error:", batchErr);
       res.status(500).json({ success: false, message: batchErr?.message ?? "Failed to create batch" });
       return;
+    }
+
+    // Auto-fill ends_at from exam_calendar if not provided
+    if (!ends_at && batch) {
+      const { data: calRow } = await supabaseDB
+        .from("exam_calendar")
+        .select("suggested_ends_at")
+        .eq("exam_code", exam.trim())
+        .maybeSingle();
+      if (calRow?.suggested_ends_at) {
+        let suggestedDate = new Date(calRow.suggested_ends_at);
+        // If the suggested date is in the past, push to next year
+        if (suggestedDate < new Date()) {
+          suggestedDate.setFullYear(suggestedDate.getFullYear() + 1);
+        }
+        await supabaseDB.from("batches").update({
+          ends_at: suggestedDate.toISOString().split("T")[0]
+        }).eq("id", batch.id);
+        (batch as any).ends_at = suggestedDate.toISOString().split("T")[0];
+      }
     }
 
     console.log(`[createBatch] Created batch "${batch.name}" (id=${batch.id}) for institute ${institute.id}`);
@@ -522,7 +546,7 @@ export const listBatches = async (req: Request, res: Response): Promise<void> =>
     const userId = req.user?.id;
     const role = req.user?.role;
 
-    if (role === "institute_admin" || role === "test_department_head") {
+    if (role === "institute_admin" || role === "test_department_head" || role === "test_department_member") {
       // ── Find institute owned by this admin ─────────────────────────────────
       let instituteQuery = supabaseDB
         .from("institutes")
@@ -953,6 +977,54 @@ export const getInstituteSubscription = async (req: Request, res: Response): Pro
     }
 
     res.status(200).json({ success: true, data: sub });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Exam Calendar
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * GET /api/v1/batches/exam-calendar
+ * Public — returns all exam calendar rows ordered by suggested_ends_at.
+ * Used by the batch create form to pre-fill suggested expiry date.
+ */
+export const getExamCalendar = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { data, error } = await supabaseDB
+      .from("exam_calendar")
+      .select("exam_code, exam_label, suggested_ends_at, notes")
+      .order("suggested_ends_at", { ascending: true });
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+    res.status(200).json({ success: true, data: { calendar: data ?? [] } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * PATCH /api/v1/batches/exam-calendar/:exam_code
+ * [super_admin] — Update suggested_ends_at and/or notes for an exam.
+ * Used when exams get postponed.
+ */
+export const updateExamCalendarEntry = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { exam_code } = req.params;
+    const { suggested_ends_at, notes } = req.body ?? {};
+    if (!suggested_ends_at) {
+      res.status(400).json({ success: false, message: "suggested_ends_at is required." }); return;
+    }
+    const { data, error } = await supabaseDB
+      .from("exam_calendar")
+      .update({ suggested_ends_at, notes: notes ?? null, updated_by: req.user!.id, updated_at: new Date().toISOString() })
+      .eq("exam_code", exam_code)
+      .select()
+      .single();
+    if (error) { res.status(500).json({ success: false, message: error.message }); return; }
+    if (!data) { res.status(404).json({ success: false, message: "Exam not found in calendar." }); return; }
+    res.status(200).json({ success: true, data: { entry: data } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
