@@ -1,0 +1,9 @@
+decrypted/
+tmp/
+QUESTIONS.zip
+neetprep.json
+neetshala.json
+apps/api/temp_test/
+node_modules/
+.next/
+dist/
