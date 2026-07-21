@@ -402,8 +402,8 @@ export const listTests = async (req: Request, res: Response): Promise<void> => {
     const filtered = exam
       ? (data ?? []).filter((p: any) => {
           if (!p.exams) return false;
-          const codes = Array.isArray(p.exams) ? p.exams.map(e => e.code) : [p.exams.code];
-          return codes.some(c => c && c.toLowerCase() === (exam as string).toLowerCase());
+          const codes = Array.isArray(p.exams) ? p.exams.map((e: any) => e.code) : [p.exams.code];
+          return codes.some((c: any) => c && c.toLowerCase() === (exam as string).toLowerCase());
         })
       : (data ?? []).filter((p: any) => {
           if (!p.exams) return false;
@@ -412,6 +412,66 @@ export const listTests = async (req: Request, res: Response): Promise<void> => {
         });
 
     res.json({ success: true, data: { papers: filtered, total: filtered.length } });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * POST /api/v1/questions/:id/report
+ * Authenticated — Submit a discrepancy flag for a question.
+ */
+export const reportQuestion = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id: questionId } = req.params;
+    const studentId = req.user!.id;
+    const { reason, details } = req.body ?? {};
+
+    if (!reason) {
+      res.status(400).json({ success: false, message: "reason is required" });
+      return;
+    }
+
+    const { data, error } = await supabaseDB
+      .from("question_reports")
+      .insert({
+        question_id: questionId,
+        reported_by: studentId,
+        reason,
+        details: details || null,
+        status: "open",
+      })
+      .select()
+      .single();
+
+    if (error) {
+      res.status(500).json({ success: false, message: error.message });
+      return;
+    }
+
+    res.status(201).json({ success: true, data: { report: data }, message: "Question report submitted successfully." });
+  } catch (err: any) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * GET /api/v1/questions/reports/aggregated
+ * Staff view — Fetch list of discrepancy flags.
+ */
+export const getQuestionReports = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { data, error } = await supabaseDB
+      .from("question_reports")
+      .select("id, question_id, reported_by, reason, details, status, created_at, questions(question_text, subject, chapter, correct_answer)")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      res.status(500).json({ success: false, message: error.message });
+      return;
+    }
+
+    res.status(200).json({ success: true, data: { reports: data } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }

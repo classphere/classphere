@@ -11,6 +11,8 @@ import {
   bulkUpsertQuestions,
   listTests,
   createTopicPractice,
+  reportQuestion,
+  getQuestionReports,
 } from "./questions.controller";
 
 const router = Router();
@@ -20,6 +22,10 @@ const router = Router();
 // Tests Hub — list papers from DB (chapter-wise / mock-test / pyq)
 router.get("/tests", authenticate, listTests);
 router.post("/topic-practice", authenticate, requireRole("student"), createTopicPractice);
+
+// Question discrepancy flags / reports
+router.get("/reports/aggregated", authenticate, requireRole("super_admin", "teacher"), getQuestionReports);
+router.post("/:id/report", authenticate, reportQuestion);
 
 // Exam meta for dropdowns (subject/chapter lists)
 router.get("/meta/exams", authenticate, getExamsMeta);
