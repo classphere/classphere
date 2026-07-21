@@ -51,7 +51,8 @@ export default function AppShell({ children }: Readonly<{ children: React.ReactN
     (cleanPath.startsWith("/institute") && user?.role !== "institute_admin") ||
     (cleanPath.startsWith("/teacher") && user?.role !== "teacher") ||
     (cleanPath.startsWith("/student") && user?.role !== "student") ||
-    (cleanPath.startsWith("/test-department") && !isTestDepartment && !(user?.role === "institute_admin" && cleanPath.startsWith("/test-department/team")))
+    (cleanPath.startsWith("/test-department") && !isTestDepartment) ||
+    (cleanPath.startsWith("/institute/tests") && user?.role === "institute_admin")
   );
 
   const homeForRole = () => {
