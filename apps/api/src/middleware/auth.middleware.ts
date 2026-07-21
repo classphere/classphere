@@ -58,6 +58,22 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
     const role: string = dbUser.role || (user.app_metadata?.role as string) || "student";
     const institute_id: string | null = dbUser.institute_id ?? null;
 
+    if (role === "teacher") {
+      const { data: faculty } = await supabaseDB.from("faculty").select("is_active").eq("id", user.id).maybeSingle();
+      if (!faculty?.is_active) {
+        res.status(403).json({ success: false, code: "FACULTY_INACTIVE", message: "This faculty account is no longer active." });
+        return;
+      }
+    }
+    if (role === "test_department_head" || role === "test_department_member") {
+      const { data: membership } = await supabaseDB.from("test_department_members")
+        .select("is_active").eq("user_id", user.id).eq("institute_id", institute_id).maybeSingle();
+      if (!membership?.is_active) {
+        res.status(403).json({ success: false, code: "TEST_DEPARTMENT_INACTIVE", message: "This Test Department account is no longer active." });
+        return;
+      }
+    }
+
     req.user = { id: user.id, email: user.email ?? "", role, institute_id };
 
     // Service-role queries bypass RLS, so this must be enforced centrally.

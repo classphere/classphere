@@ -12,6 +12,7 @@ export interface FacultyInviteParams {
 
 export interface StaffInviteParams extends FacultyInviteParams {
   roleLabel: string;
+  loginUrl?: string;
 }
 
 function escapeHtml(value: string): string {
@@ -38,7 +39,8 @@ export async function sendStaffInviteEmail(params: StaffInviteParams): Promise<v
   const institute = escapeHtml(params.instituteName);
   const password = escapeHtml(params.tempPassword);
   const roleLabel = escapeHtml(params.roleLabel);
-  const html = `<p>Welcome, ${name}.</p><p>You have been added as ${roleLabel} at ${institute}.</p><p>Email: ${recipient}<br>Temporary password: <code>${password}</code></p><p><a href="${appUrl}/login">Log in</a></p>`;
+  const loginUrl = escapeHtml(params.loginUrl ?? `${appUrl}/login`);
+  const html = `<p>Welcome, ${name}.</p><p>You have been added as ${roleLabel} at ${institute}.</p><p>Email: ${recipient}<br>Temporary password: <code>${password}</code></p><p><a href="${loginUrl}">Log in</a></p>`;
   const { error } = await new Resend(apiKey).emails.send({
     from: fromEmail,
     to: params.to,
