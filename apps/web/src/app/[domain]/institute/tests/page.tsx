@@ -18,7 +18,9 @@ import {
   RiCheckLine,
   RiDraftLine,
   RiSearchLine,
+  RiBarChartGroupedLine,
 } from "@remixicon/react";
+import { BatchMatrixModal } from "@/components/analytics/BatchMatrixModal";
 
 interface Test {
   id: string;
@@ -35,8 +37,8 @@ interface Test {
 const EXAM_LABELS: Record<string, string> = {
   "jee-main": "JEE Main",
   "jee-advanced": "JEE Advanced",
+  "jee-main-advanced": "JEE Main + Advanced",
   "neet-ug": "NEET-UG",
-  "ssc-cgl": "SSC CGL",
 };
 
 const TYPE_LABELS: Record<string, string> = {
@@ -63,6 +65,7 @@ export default function InstituteTestsPage() {
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [selectedPaperIdForMatrix, setSelectedPaperIdForMatrix] = useState<string | null>(null);
 
   useEffect(() => {
     if (!session?.access_token) return;
@@ -177,12 +180,20 @@ export default function InstituteTestsPage() {
                   deleting={deletingId === test.id}
                   onDelete={() => handleDelete(test)}
                   onView={() => router.push(`/institute/tests/view/${test.id}`)}
+                  onCompare={() => setSelectedPaperIdForMatrix(test.id)}
                 />
               ))}
             </div>
           </>
         )}
       </main>
+
+      <BatchMatrixModal
+        show={selectedPaperIdForMatrix !== null}
+        paperId={selectedPaperIdForMatrix}
+        token={session?.access_token}
+        onClose={() => setSelectedPaperIdForMatrix(null)}
+      />
     </>
   );
 }
@@ -192,11 +203,13 @@ function TestCard({
   deleting,
   onDelete,
   onView,
+  onCompare,
 }: {
   test: Test;
   deleting: boolean;
   onDelete: () => void;
   onView: () => void;
+  onCompare: () => void;
 }) {
   return (
     <div className="group relative flex flex-col justify-between bg-b-surface2 p-5 rounded-[20px] border border-s-stroke2 hover:border-t-secondary/30 transition-all duration-300 overflow-hidden">
@@ -256,6 +269,16 @@ function TestCard({
         >
           View Test
         </button>
+        {test.is_published && (
+          <button
+            onClick={onCompare}
+            className="flex shrink-0 items-center justify-center h-11 w-11 rounded-[10px] border border-s-stroke2 hover:bg-b-surface2 text-t-secondary hover:text-t-primary transition-all active:scale-95"
+            title="Batch vs. Batch Analytics Matrix"
+            aria-label="Compare batch performance"
+          >
+            <RiBarChartGroupedLine size={16} />
+          </button>
+        )}
         <button
           onClick={onDelete}
           disabled={deleting}
