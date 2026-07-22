@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { SegmentEditor } from "./SegmentEditor";
 import { EXAM_SUBJECTS, DIFFICULTY_OPTIONS } from "@/lib/exam-config";
 import {
-  RiCheckLine, RiAddLine, RiDeleteBin7Line, RiSaveLine,
+  RiCheckLine, RiAddLine, RiDeleteBin7Line,
 } from "@remixicon/react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -217,20 +217,12 @@ export function QuestionReviewEditor({
             />
           </div>
 
-          {/* Save — top-right, always visible, no scrolling needed */}
+          {/* Save — aligned with inputs, same height, no icon */}
           {canEdit && (
-            <div className="shrink-0 flex flex-col items-end gap-1">
-              <button
-                type="button"
-                disabled={saving}
-                onClick={saveAll}
-                className="flex h-9 items-center gap-2 rounded-[10px] bg-[#151515] px-4 text-sm font-semibold text-white transition-opacity disabled:opacity-50 dark:bg-white dark:text-black"
-              >
-                <RiSaveLine size={14} />
-                {saving ? "Saving…" : "Save"}
-              </button>
-              <div className="flex items-center gap-2 text-[10px]">
-                {error && <span className="text-primary-03 truncate max-w-[180px]">{error}</span>}
+            <div className="shrink-0 flex flex-col justify-end gap-1">
+              {/* Status line (acts as a label above the button) */}
+              <div className="flex items-center justify-end gap-2 text-[10px] h-[14px]">
+                {error && <span className="text-primary-03 truncate max-w-[160px]">{error}</span>}
                 {!draft.correct_answer?.length && !error && (
                   <span className="text-amber-500">No answer set</span>
                 )}
@@ -241,6 +233,14 @@ export function QuestionReviewEditor({
                 )}
                 <span className="text-t-tertiary">v{draft.content_version ?? 0}</span>
               </div>
+              <button
+                type="button"
+                disabled={saving}
+                onClick={saveAll}
+                className="h-9 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-5 text-sm font-semibold text-t-primary transition-colors hover:border-primary-01/50 hover:text-primary-01 disabled:opacity-50"
+              >
+                {saving ? "Saving…" : "Save"}
+              </button>
             </div>
           )}
         </div>
