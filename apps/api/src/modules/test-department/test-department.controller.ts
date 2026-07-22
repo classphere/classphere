@@ -216,14 +216,8 @@ export async function updateReviewQuestion(req: Request, res: Response): Promise
     const updates: Record<string, unknown> = {};
     for (const [key, value] of Object.entries(req.body ?? {})) if (allowedQuestionFields.has(key)) updates[key] = value;
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No editable question fields supplied." }); return; }
-    // Skip full validation when only metadata fields are being updated
-    const updatedKeys = Object.keys(updates);
-    const isMetadataOnly = updatedKeys.every((k) => metadataOnlyFields.has(k));
-    if (!isMetadataOnly) {
-      const candidate = { ...current, ...updates };
-      const validationError = validQuestion(candidate);
-      if (validationError) { res.status(400).json({ success: false, message: validationError }); return; }
-    }
+    // No per-save content validation — "Validate paper" button handles structural checks.
+    // validQuestion only runs at publish time (see transitionReviewPaper → publish).
     updates.content_version = current.content_version + 1;
     updates.review_status = "draft";
     updates.updated_at = new Date().toISOString();

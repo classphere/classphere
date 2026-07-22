@@ -151,18 +151,23 @@ export default function ReviewPaperPage() {
     finally { setValidating(false); }
   };
 
-  // ── Save handlers ───────────────────────────────────────────────────────────
+  // ── Save handler ─────────────────────────────────────────────────────────
+  // Optimistic local update — no full reload. Merges payload into local state
+  // so the sidebar completion counter and the question data are instantly correct.
   const save = async (payload: Record<string, unknown>) => {
     if (!question) return;
-    await apiClient.patch(`/api/v1/test-department/papers/${params.id}/questions/${question.id}`, payload, session!.access_token);
-    await load();
-    setMessage("Saved."); setTimeout(() => setMessage(""), 2500);
-  };
-
-  const saveMetadata = async (payload: Record<string, unknown>) => {
-    if (!question) return;
-    await apiClient.patch(`/api/v1/test-department/papers/${params.id}/questions/${question.id}`, payload, session!.access_token);
-    await load();
+    const r: any = await apiClient.patch(
+      `/api/v1/test-department/papers/${params.id}/questions/${question.id}`,
+      payload,
+      session!.access_token,
+    );
+    const saved = r.data?.question ?? payload;
+    setData((prev: any) => ({
+      ...prev,
+      questions: prev.questions.map((q: any) =>
+        q.id === question.id ? { ...q, ...saved } : q
+      ),
+    }));
   };
 
   // ── Sidebar sections ────────────────────────────────────────────────────────
@@ -306,13 +311,12 @@ export default function ReviewPaperPage() {
             <div className="mb-3 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2.5 text-sm text-t-secondary">{message}</div>
           )}
           {question ? (
-            <div className="card overflow-hidden p-0">
+            <div className="card overflow-hidden p-0" style={{ height: "calc(100vh - 200px)" }}>
               <QuestionReviewEditor
                 key={question.id}
                 question={question}
                 canEdit={canEdit}
                 onSave={save}
-                onSaveMetadata={saveMetadata}
                 examCode={examCode}
               />
             </div>

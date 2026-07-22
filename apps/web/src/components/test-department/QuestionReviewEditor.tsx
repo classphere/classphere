@@ -90,7 +90,6 @@ interface QuestionReviewEditorProps {
   question: Question;
   canEdit: boolean;
   onSave: (payload: Record<string, unknown>) => Promise<void>;
-  onSaveMetadata: (payload: Record<string, unknown>) => Promise<void>;
   examCode: string;
 }
 
@@ -98,11 +97,10 @@ export function QuestionReviewEditor({
   question,
   canEdit,
   onSave,
-  onSaveMetadata,
   examCode,
 }: QuestionReviewEditorProps) {
   const [draft, setDraft] = useState<Question>({ ...question });
-  const [saving, setSaving] = useState<"full" | "meta" | null>(null);
+  const [saving, setSaving] = useState(false);
   const [savedAt, setSavedAt] = useState<Date | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -149,35 +147,10 @@ export function QuestionReviewEditor({
     });
   };
 
-  // ── Save: metadata only (no answer required) ───────────────────────────────
-  const saveMetadata = async () => {
+  // ── Save everything ─────────────────────────────────────────────────────────
+  const saveAll = async () => {
     setError(null);
-    setSaving("meta");
-    try {
-      await onSaveMetadata({
-        subject: draft.subject,
-        chapter: draft.chapter,
-        topic: draft.topic,
-        difficulty: draft.difficulty,
-        content_version: draft.content_version,
-      });
-      setSavedAt(new Date());
-      set({ content_version: (draft.content_version ?? 0) + 1 });
-    } catch (e: any) {
-      setError(e?.message ?? "Could not save metadata.");
-    } finally {
-      setSaving(null);
-    }
-  };
-
-  // ── Save: full question (answer required) ──────────────────────────────────
-  const saveQuestion = async () => {
-    setError(null);
-    if (!draft.correct_answer?.length) {
-      setError("Select the correct answer before saving the full question.");
-      return;
-    }
-    setSaving("full");
+    setSaving(true);
     try {
       await onSave({
         subject: draft.subject,
@@ -195,7 +168,7 @@ export function QuestionReviewEditor({
     } catch (e: any) {
       setError(e?.message ?? "Could not save.");
     } finally {
-      setSaving(null);
+      setSaving(false);
     }
   };
 
@@ -251,12 +224,12 @@ export function QuestionReviewEditor({
           <div className="mt-2">
             <button
               type="button"
-              disabled={saving !== null}
-              onClick={saveMetadata}
+              disabled={saving}
+              onClick={saveAll}
               className="flex h-7 items-center gap-1.5 rounded-[7px] border border-s-stroke2 bg-b-surface2 px-3 text-xs font-semibold text-t-secondary transition-colors hover:border-primary-01/40 hover:text-primary-01 disabled:opacity-50"
             >
               <RiSaveLine size={11} />
-              {saving === "meta" ? "Saving…" : "Save classification"}
+              {saving ? "Saving…" : "Save"}
             </button>
           </div>
         )}
@@ -373,20 +346,21 @@ export function QuestionReviewEditor({
           <div className="flex items-center gap-3">
             <button
               type="button"
-              disabled={saving !== null}
-              onClick={saveQuestion}
+              disabled={saving}
+              onClick={saveAll}
               className="h-9 flex-1 rounded-[10px] bg-[#151515] text-sm font-semibold text-white transition-opacity disabled:opacity-50 dark:bg-white dark:text-black"
             >
-              {saving === "full" ? "Saving…" : "Save question"}
+              {saving ? "Saving…" : "Save"}
             </button>
+            {!draft.correct_answer?.length && (
+              <span className="shrink-0 text-[10px] text-amber-500">No answer selected</span>
+            )}
             {savedAt && (
               <p className="shrink-0 text-[11px] text-t-tertiary">
                 Saved {savedAt.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}
               </p>
             )}
-            <p className="ml-auto shrink-0 text-[10px] text-t-tertiary">
-              v{draft.content_version ?? 0}
-            </p>
+            <p className="ml-auto shrink-0 text-[10px] text-t-tertiary">v{draft.content_version ?? 0}</p>
           </div>
         </div>
       )}
