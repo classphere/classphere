@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { SegmentEditor } from "./SegmentEditor";
-import { MarkdownRenderer } from "@/components/MarkdownRenderer";
-import { EXAM_SUBJECTS, DIFFICULTY_OPTIONS, SUBJECT_COLOR } from "@/lib/exam-config";
+import { EXAM_SUBJECTS, DIFFICULTY_OPTIONS } from "@/lib/exam-config";
 import {
-  RiCheckLine, RiCloseLine, RiAddLine, RiDeleteBin7Line,
+  RiCheckLine, RiAddLine, RiDeleteBin7Line,
   RiSaveLine, RiInformationLine,
 } from "@remixicon/react";
 
