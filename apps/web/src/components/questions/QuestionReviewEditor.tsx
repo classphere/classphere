@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SegmentEditor } from "./SegmentEditor";
+import { TiptapMathField } from "./TiptapMathField";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { EXAM_SUBJECTS, DIFFICULTY_OPTIONS } from "@/lib/exam-config";
 import {
-  RiCheckLine, RiAddLine, RiDeleteBin7Line,
+  RiCheckLine, RiAddLine, RiDeleteBin7Line, RiEyeLine, RiEditLine,
 } from "@remixicon/react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -102,12 +103,14 @@ export function QuestionReviewEditor({
   const [saving, setSaving] = useState(false);
   const [savedAt, setSavedAt] = useState<Date | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [preview, setPreview] = useState(false); // student-preview mode
 
   // Sync when the parent switches to a different question
   useEffect(() => {
     setDraft({ ...question });
     setError(null);
     setSavedAt(null);
+    setPreview(false);
   }, [question.id]);
 
   // Derived subject options from exam code
@@ -217,10 +220,9 @@ export function QuestionReviewEditor({
             />
           </div>
 
-          {/* Save — aligned with inputs, same height, no icon */}
+          {/* Save + preview — aligned with inputs, same height */}
           {canEdit && (
             <div className="shrink-0 flex flex-col justify-end gap-1">
-              {/* Status line (acts as a label above the button) */}
               <div className="flex items-center justify-end gap-2 text-[10px] h-[14px]">
                 {error && <span className="text-primary-03 truncate max-w-[160px]">{error}</span>}
                 {!draft.correct_answer?.length && !error && (
@@ -233,116 +235,182 @@ export function QuestionReviewEditor({
                 )}
                 <span className="text-t-tertiary">v{draft.content_version ?? 0}</span>
               </div>
-              <button
-                type="button"
-                disabled={saving}
-                onClick={saveAll}
-                className="h-9 rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white transition-opacity disabled:opacity-50 dark:bg-white dark:text-black"
-              >
-                {saving ? "Saving…" : "Save"}
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setPreview((p) => !p)}
+                  title={preview ? "Back to editor" : "Preview as student"}
+                  className={[
+                    "flex h-9 items-center gap-1 rounded-[10px] border px-3 text-sm font-semibold transition-colors",
+                    preview
+                      ? "border-primary-01/40 bg-primary-01/10 text-primary-01"
+                      : "border-s-stroke2 bg-b-surface1 text-t-primary hover:border-primary-01/40",
+                  ].join(" ")}
+                >
+                  {preview ? <RiEditLine size={15} /> : <RiEyeLine size={15} />}
+                  {preview ? "Edit" : "Preview"}
+                </button>
+                <button
+                  type="button"
+                  disabled={saving}
+                  onClick={saveAll}
+                  className="h-9 rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white transition-opacity disabled:opacity-50 dark:bg-white dark:text-black"
+                >
+                  {saving ? "Saving…" : "Save"}
+                </button>
+              </div>
             </div>
           )}
         </div>
       </div>
 
-      {/* ── Question body ────────────────────────────────────────────────── */}
+      {/* ── Body ────────────────────────────────────────────────────────── */}
       <div className="flex-1 overflow-y-auto px-5 py-4 space-y-5">
 
-        <SegmentEditor
-          label="Question text"
-          value={draft.question_text ?? ""}
-          disabled={!canEdit}
-          onChange={(v: string) => set({ question_text: v })}
-          placeholder="Type question text…"
-        />
-
-        {/* Options */}
-        <div>
-          <div className="mb-2 flex items-center justify-between">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-t-secondary">
-              Options
-              {isSingle ? " — select one correct" : " — select all correct"}
-            </p>
-            {canEdit && (draft.options?.length ?? 0) < 8 && (
-              <button
-                type="button"
-                onClick={() => {
-                  const newId = `opt-${Date.now()}`;
-                  set({ options: [...(draft.options ?? []), { id: newId, text: "" }] });
-                }}
-                className="flex h-6 items-center gap-1 rounded-full border border-s-stroke2 px-2 text-[11px] text-t-secondary hover:text-primary-01"
-              >
-                <RiAddLine size={11} />Add option
-              </button>
+        {preview ? (
+          /* ── Student preview: render exactly as a student sees it ─────── */
+          <div className="space-y-5">
+            <div className="rounded-[12px] border border-s-stroke2 bg-b-surface1 p-4">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-t-tertiary mb-2">Question (student view)</p>
+              <div className="text-[15px] leading-relaxed text-t-primary">
+                <MarkdownRenderer>{draft.question_text ?? ""}</MarkdownRenderer>
+              </div>
+            </div>
+            <div>
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-t-tertiary">
+                Options {isSingle ? "— select one correct" : "— select all correct"}
+              </p>
+              <div className="space-y-2">
+                {(draft.options ?? []).map((opt, i) => {
+                  const letter = String.fromCharCode(65 + i);
+                  const isCorrect = draft.correct_answer?.includes(opt.id);
+                  return (
+                    <div
+                      key={opt.id}
+                      className={[
+                        "flex items-start gap-3 rounded-[12px] border p-3",
+                        isCorrect ? "border-green-500/40 bg-green-500/5" : "border-s-stroke2 bg-b-surface2/40",
+                      ].join(" ")}
+                    >
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-s-stroke2 bg-b-surface1 text-xs font-bold text-t-secondary">
+                        {letter}
+                      </span>
+                      <div className="flex-1 min-w-0 text-[15px] leading-relaxed text-t-primary">
+                        <MarkdownRenderer>{opt.text ?? ""}</MarkdownRenderer>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            {draft.explanation?.trim() && (
+              <div className="rounded-[12px] border border-s-stroke2 bg-b-surface2/40 p-4">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-t-tertiary mb-2">Explanation</p>
+                <div className="text-sm leading-relaxed text-t-secondary">
+                  <MarkdownRenderer>{draft.explanation ?? ""}</MarkdownRenderer>
+                </div>
+              </div>
             )}
           </div>
+        ) : (
+          /* ── Edit mode ──────────────────────────────────────────────── */
+          <>
+            <TiptapMathField
+              label="Question text"
+              value={draft.question_text ?? ""}
+              disabled={!canEdit}
+              onChange={(v: string) => set({ question_text: v })}
+              placeholder="Type question text…"
+            />
 
-          <div className="space-y-2">
-            {(draft.options ?? []).map((opt, i) => {
-              const letter = String.fromCharCode(65 + i);
-              const isCorrect = draft.correct_answer?.includes(opt.id);
-              return (
-                <div
-                  key={opt.id}
-                  className={[
-                    "group flex items-start gap-2 rounded-[12px] border p-3 transition-colors",
-                    isCorrect
-                      ? "border-green-500/40 bg-green-500/5"
-                      : "border-s-stroke2 bg-b-surface2/40",
-                  ].join(" ")}
-                >
-                  {/* Correct-answer toggle */}
+            {/* Options */}
+            <div>
+              <div className="mb-2 flex items-center justify-between">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-t-secondary">
+                  Options
+                  {isSingle ? " — select one correct" : " — select all correct"}
+                </p>
+                {canEdit && (draft.options?.length ?? 0) < 8 && (
                   <button
                     type="button"
-                    disabled={!canEdit}
-                    onClick={() => toggleAnswer(opt.id)}
-                    title={isCorrect ? "Marked correct" : "Mark as correct"}
-                    className={[
-                      "mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold transition-all",
-                      isCorrect
-                        ? "border-green-500 bg-green-500 text-white"
-                        : "border-s-stroke2 bg-b-surface1 text-t-tertiary hover:border-primary-01/50",
-                      !canEdit && "cursor-default",
-                    ].join(" ")}
+                    onClick={() => {
+                      const newId = `opt-${Date.now()}`;
+                      set({ options: [...(draft.options ?? []), { id: newId, text: "" }] });
+                    }}
+                    className="flex h-6 items-center gap-1 rounded-full border border-s-stroke2 px-2 text-[11px] text-t-secondary hover:text-primary-01"
                   >
-                    {isCorrect ? <RiCheckLine size={13} /> : letter}
+                    <RiAddLine size={11} />Add option
                   </button>
+                )}
+              </div>
 
-                  {/* Option text (WYSIWYG) */}
-                  <div className="flex-1 min-w-0">
-                    <SegmentEditor
-                      value={opt.text ?? ""}
-                      disabled={!canEdit}
-                      onChange={(v: string) => updateOptionText(i, v)}
-                      placeholder={`Option ${letter}`}
-                    />
-                  </div>
-
-                  {/* Remove option */}
-                  {canEdit && (draft.options?.length ?? 0) > 2 && (
-                    <button
-                      type="button"
-                      onClick={() => removeOption(i)}
-                      className="mt-0.5 shrink-0 rounded-full p-1 text-t-tertiary opacity-0 transition-opacity hover:text-primary-03 group-hover:opacity-100"
-                      title="Remove option"
+              <div className="space-y-2">
+                {(draft.options ?? []).map((opt, i) => {
+                  const letter = String.fromCharCode(65 + i);
+                  const isCorrect = draft.correct_answer?.includes(opt.id);
+                  return (
+                    <div
+                      key={opt.id}
+                      className={[
+                        "group flex items-start gap-2 rounded-[12px] border p-3 transition-colors",
+                        isCorrect
+                          ? "border-green-500/40 bg-green-500/5"
+                          : "border-s-stroke2 bg-b-surface2/40",
+                      ].join(" ")}
                     >
-                      <RiDeleteBin7Line size={13} />
-                    </button>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+                      {/* Correct-answer toggle */}
+                      <button
+                        type="button"
+                        disabled={!canEdit}
+                        onClick={() => toggleAnswer(opt.id)}
+                        title={isCorrect ? "Marked correct" : "Mark as correct"}
+                        className={[
+                          "mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold transition-all",
+                          isCorrect
+                            ? "border-green-500 bg-green-500 text-white"
+                            : "border-s-stroke2 bg-b-surface1 text-t-tertiary hover:border-primary-01/50",
+                          !canEdit && "cursor-default",
+                        ].join(" ")}
+                      >
+                        {isCorrect ? <RiCheckLine size={13} /> : letter}
+                      </button>
 
-        <SegmentEditor
-          label="Explanation"
-          value={draft.explanation ?? ""}
-          disabled={!canEdit}
-          onChange={(v: string) => set({ explanation: v })}
-          placeholder="Solution / explanation…"
-        />
+                      {/* Option text (WYSIWYG inline math) */}
+                      <div className="flex-1 min-w-0">
+                        <TiptapMathField
+                          value={opt.text ?? ""}
+                          disabled={!canEdit}
+                          onChange={(v: string) => updateOptionText(i, v)}
+                          placeholder={`Option ${letter}`}
+                        />
+                      </div>
+
+                      {/* Remove option */}
+                      {canEdit && (draft.options?.length ?? 0) > 2 && (
+                        <button
+                          type="button"
+                          onClick={() => removeOption(i)}
+                          className="mt-0.5 shrink-0 rounded-full p-1 text-t-tertiary opacity-0 transition-opacity hover:text-primary-03 group-hover:opacity-100"
+                          title="Remove option"
+                        >
+                          <RiDeleteBin7Line size={13} />
+                        </button>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <TiptapMathField
+              label="Explanation"
+              value={draft.explanation ?? ""}
+              disabled={!canEdit}
+              onChange={(v: string) => set({ explanation: v })}
+              placeholder="Solution / explanation…"
+            />
+          </>
+        )}
       </div>
 
     </div>

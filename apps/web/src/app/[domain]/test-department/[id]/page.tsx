@@ -96,6 +96,9 @@ export default function ReviewPaperPage() {
     );
     setData(result.data);
     setActiveId((cur) => cur ?? result.data?.questions?.[0]?.id ?? null);
+    // set the initial subject tab to the first question's subject
+    const firstSub = result.data?.questions?.[0]?.subject ?? null;
+    setActiveTab((cur) => cur ?? firstSub);
   }, [session?.access_token, params.id]);
 
   useEffect(() => { load().catch((e) => setMessage(e.message)); }, [load]);
@@ -130,10 +133,23 @@ export default function ReviewPaperPage() {
     return ordered.map((sub) => ({ subject: sub, qs: questions.filter((q) => q.subject === sub) }));
   }, [questions, subjects]);
 
-  // Auto-select first tab
+  // Auto-select first tab only if none set yet (preserves user choice)
   useEffect(() => {
     if (sections.length && !activeTab) setActiveTab(sections[0].subject);
-  }, [sections]);
+  }, [sections, activeTab]);
+
+  // Keep the active subject tab in sync with the selected question's subject.
+  // This fixes the mismatch where the PHY tab is highlighted while the editor
+  // shows a Mathematics question: selecting a question now moves the tab to that
+  // question's subject.
+  useEffect(() => {
+    if (question?.subject && question.subject !== activeTab) {
+      // only switch if the question's subject is a known tab
+      if (sections.some((s) => s.subject === question.subject)) {
+        setActiveTab(question.subject);
+      }
+    }
+  }, [question, activeTab, sections]);
 
   const activeSection = sections.find((s) => s.subject === activeTab) ?? sections[0];
 
