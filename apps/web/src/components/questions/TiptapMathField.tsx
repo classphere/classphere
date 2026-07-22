@@ -25,7 +25,7 @@ import {
   RiFunctionLine,
   RiImageAddLine,
   RiDeleteBin7Line,
-  RiFormatLineSpacing,
+  RiParagraph,
 } from "@remixicon/react";
 
 // ── MathLive type stub (web component, dynamic import) ─────────────────────────
@@ -673,7 +673,7 @@ export function TiptapMathField({ label, value, disabled, onChange, placeholder 
               className="flex items-center gap-1 text-[11px] text-t-tertiary hover:text-primary-01 transition-colors"
               title="Insert display (centered) equation"
             >
-              <RiFormatLineSpacing size={12} />
+              <RiParagraph size={12} />
               + display
             </button>
             <button
