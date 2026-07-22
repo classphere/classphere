@@ -1,12 +1,14 @@
 import { Router } from "express";
 import { authenticate } from "../../middleware/auth.middleware";
 import { requireRole } from "../../middleware/rbac.middleware";
+import rateLimit from "express-rate-limit";
 import { 
   uploadQuestions, 
   getPlatformStats, 
   listInstitutes, 
   listTransactions, 
   extractPDFController,
+  getPdfExtractionJobStatus,
   getPlatformTelemetry,
   getPlatformConfig,
   updatePlatformConfig,
@@ -89,12 +91,26 @@ router.get("/institutes", listInstitutes);
  */
 router.post("/upload-questions", uploadQuestions);
 
+// Rate limiter: max 3 PDF extractions per IP per 10 minutes
+const pdfExtractionLimiter = rateLimit({
+  windowMs: 10 * 60 * 1000,
+  max: 3,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, message: "Too many PDF extraction requests. Please wait 10 minutes before trying again." },
+});
+
 /**
  * POST /api/v1/superadmin/extract-pdf
- * Extract questions dynamically from a PDF using AI OCR.
- * Body: pdf file, pages string
+ * Enqueue an async PDF extraction job. Returns jobId immediately.
  */
-router.post("/extract-pdf", uploadPDF.single("pdf") as any, extractPDFController);
+router.post("/extract-pdf", pdfExtractionLimiter as any, uploadPDF.single("pdf") as any, extractPDFController);
+
+/**
+ * GET /api/v1/superadmin/extract-pdf/:jobId
+ * Poll for the status and result of an async PDF extraction job.
+ */
+router.get("/extract-pdf/:jobId", getPdfExtractionJobStatus);
 
 /**
  * GET /api/v1/superadmin/tickets

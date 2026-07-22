@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { listAllInstitutes, getInstituteCRMStats } from "../institutes/institutes.service";
 import { randomUUID } from "crypto";
-import { uploadToR2 } from "../../lib/r2";
-import { extractPDF } from "../../services/extractor/pdfExtractor.service";
+import { uploadToR2, uploadToR2Raw } from "../../lib/r2";
+import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { connection as redisConnection } from "../../lib/queue/redis";
 import { logAdminAction as writeAdminAudit } from "../../lib/admin-audit";
 import * as fs from "fs";
@@ -457,48 +457,80 @@ export const extractPDFController = async (req: Request, res: Response): Promise
       return;
     }
 
-    const pages = req.body.pages as string | undefined;
-
-    // Create temp directory
-    const tempDir = path.join(__dirname, "../../../temp_uploads");
-    if (!fs.existsSync(tempDir)) {
-      fs.mkdirSync(tempDir, { recursive: true });
+    // Validate: PDF only, max 50MB (already enforced by multer, this is defence-in-depth)
+    if (req.file.size > 50 * 1024 * 1024) {
+      res.status(400).json({ success: false, message: "PDF exceeds the 50 MB size limit." });
+      return;
     }
 
-    const uniqueId = `${Date.now()}_${Math.random().toString(36).substring(7)}`;
-    const tempWorkingDir = path.join(tempDir, `extract_${uniqueId}`);
-    fs.mkdirSync(tempWorkingDir, { recursive: true });
+    const pages = req.body.pages as string | undefined;
+    const jobId = randomUUID();
+    const r2Key = `temp-pdf-jobs/${jobId}.pdf`;
 
-    const tempPdfPath = path.join(tempWorkingDir, "temp.pdf");
-    fs.writeFileSync(tempPdfPath, req.file.buffer);
+    // 1. Upload the PDF buffer to R2 (temp key, deleted by worker after processing)
+    await uploadToR2Raw(req.file.buffer, r2Key, "application/pdf");
 
-    console.log(`[extractPDFController] Starting extraction on ${tempPdfPath} (pages: ${pages || "all"})`);
-    const result = await extractPDF(tempPdfPath, pages);
+    // 2. Create a job row in Supabase so the frontend can poll for status
+    const { error: insertErr } = await supabaseAdmin
+      .from("pdf_extraction_jobs")
+      .insert({
+        id: jobId,
+        status: "pending",
+        requested_by: req.user?.id ?? null,
+        pages: pages ?? null,
+        created_at: new Date().toISOString(),
+      });
+    if (insertErr) throw new Error(`Failed to create job row: ${insertErr.message}`);
 
-    // Cleanup files asynchronously
-    setTimeout(() => {
-      try {
-        fs.rmSync(tempWorkingDir, { recursive: true, force: true });
-        console.log(`[extractPDFController] Cleaned up temporary directory: ${tempWorkingDir}`);
-      } catch (cleanupErr: any) {
-        console.error(`[extractPDFController] Clean up failed: ${cleanupErr.message}`);
-      }
-    }, 15000);
+    // 3. Push job to BullMQ — returns immediately
+    await enqueuePdfExtraction({ jobId, r2Key, pages, requestedBy: req.user?.id ?? "" });
 
-    if (!result.success) {
-      res.status(500).json({ success: false, message: result.message, questions: [] });
+    console.log(`[extractPDFController] Enqueued async PDF extraction job: ${jobId}`);
+
+    // 4. Respond immediately with the job ID for polling
+    res.status(202).json({
+      success: true,
+      message: "PDF extraction started. Poll the status endpoint for results.",
+      data: { jobId },
+    });
+  } catch (err: any) {
+    console.error("[extractPDFController] ERROR:", err.message);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+/**
+ * GET /api/v1/superadmin/extract-pdf/:jobId
+ * Poll for the status and result of an async PDF extraction job.
+ */
+export const getPdfExtractionJobStatus = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { jobId } = req.params;
+    const { data, error } = await supabaseAdmin
+      .from("pdf_extraction_jobs")
+      .select("id, status, result, error, created_at, started_at, completed_at")
+      .eq("id", jobId)
+      .single();
+
+    if (error || !data) {
+      res.status(404).json({ success: false, message: "Job not found." });
       return;
     }
 
     res.status(200).json({
       success: true,
-      message: result.message,
       data: {
-        questions: result.questions,
+        jobId: data.id,
+        status: data.status,           // pending | processing | done | failed
+        result: data.status === "done" ? data.result : null,
+        error:  data.status === "failed" ? data.error : null,
+        createdAt: data.created_at,
+        startedAt: data.started_at,
+        completedAt: data.completed_at,
       },
     });
   } catch (err: any) {
-    console.error("[extractPDFController] ERROR:", err.message);
+    console.error("[getPdfExtractionJobStatus] ERROR:", err.message);
     res.status(500).json({ success: false, message: err.message });
   }
 };

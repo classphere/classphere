@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
-import { supabaseDB } from "../../lib/supabase";
+import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 import { randomUUID } from "crypto";
 import * as fs from "fs";
 import * as path from "path";
 import { execSync } from "child_process";
-import { uploadToR2 } from "../../lib/r2";
+import { uploadToR2, uploadToR2Raw } from "../../lib/r2";
 import { extractPDF } from "../../services/extractor/pdfExtractor.service";
+import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
 import { logAdminAction } from "../../lib/admin-audit";
 import { normalizeQuestionMedia } from "../../lib/question-media";
@@ -716,15 +717,61 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     }
     const examId = examObj.id;
 
-    // 3. Write PDF to temporary working directory and run AI extraction
-    tempWorkingDir = path.join(process.cwd(), "apps/api/temp", `extract_${Date.now()}_${Math.random().toString(36).substring(7)}`);
+    // 3. Setup temporary working directory for local operations (answer key parsing)
+    tempWorkingDir = path.join(__dirname, "../../temp", `extract_${Date.now()}_${Math.random().toString(36).substring(7)}`);
     fs.mkdirSync(tempWorkingDir, { recursive: true });
-
+    
     const tempPdfPath = path.join(tempWorkingDir, "temp.pdf");
     fs.writeFileSync(tempPdfPath, pdfFile.buffer);
 
-    sendProgress("extracting_questions", "Analyzing pages & running AI question extraction (OCR)...");
-    const extractionResult = await extractPDF(tempPdfPath);
+    // 4. Push job to worker and poll to keep HTTP SSE stream alive
+    const jobId = randomUUID();
+    const r2Key = `temp-pdf-jobs/${jobId}.pdf`;
+
+    sendProgress("extracting_questions", "Uploading PDF to secure processing queue...");
+    await uploadToR2Raw(pdfFile.buffer, r2Key, "application/pdf");
+
+    await supabaseAdmin.from("pdf_extraction_jobs").insert({
+      id: jobId,
+      status: "pending",
+      requested_by: userId,
+      created_at: new Date().toISOString(),
+    });
+
+    await enqueuePdfExtraction({ jobId, r2Key, requestedBy: userId });
+
+    let extractionResult: any = null;
+    let pollCount = 0;
+    
+    // Poll every 5s. This keeps the SSE connection alive and waits for the worker.
+    while (true) {
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      pollCount++;
+
+      const { data: jobData, error: jobErr } = await supabaseAdmin
+        .from("pdf_extraction_jobs")
+        .select("status, result, error")
+        .eq("id", jobId)
+        .single();
+
+      if (jobErr) {
+        sendError(`Failed to check extraction status: ${jobErr.message}`);
+        return;
+      }
+
+      if (jobData.status === "done") {
+        extractionResult = jobData.result;
+        break;
+      } else if (jobData.status === "failed") {
+        sendError(`AI extraction failed: ${jobData.error}`);
+        return;
+      } else {
+        // Still processing or pending
+        if (pollCount % 3 === 0) {
+          sendProgress("extracting_questions", `Analyzing pages & running AI question extraction (OCR)... ${pollCount * 5}s elapsed`);
+        }
+      }
+    }
 
     if (!extractionResult?.questions || extractionResult.questions.length === 0) {
       sendError("Failed to extract questions from the PDF.");

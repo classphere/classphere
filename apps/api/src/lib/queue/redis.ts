@@ -29,10 +29,7 @@ export const getRedisOptions = (): RedisOptions => {
 };
 
 export const createRedisClient = (): Redis => {
-  return new Redis(REDIS_URL, {
-    maxRetriesPerRequest: null,
-    enableReadyCheck: false,
-  });
+  return new Redis(getRedisOptions() as any);
 };
 
 export const connection = createRedisClient();
