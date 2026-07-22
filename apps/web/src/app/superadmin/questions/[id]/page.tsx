@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
-import { QuestionReviewEditor } from "@/components/test-department/QuestionReviewEditor";
+import { QuestionReviewEditor } from "@/components/questions/QuestionReviewEditor";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
 

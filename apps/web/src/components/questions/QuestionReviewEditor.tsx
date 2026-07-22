@@ -253,7 +253,7 @@ export function QuestionReviewEditor({
           label="Question text"
           value={draft.question_text ?? ""}
           disabled={!canEdit}
-          onChange={(v) => set({ question_text: v })}
+          onChange={(v: string) => set({ question_text: v })}
           placeholder="Type question text…"
         />
 
@@ -314,7 +314,7 @@ export function QuestionReviewEditor({
                     <SegmentEditor
                       value={opt.text ?? ""}
                       disabled={!canEdit}
-                      onChange={(v) => updateOptionText(i, v)}
+                      onChange={(v: string) => updateOptionText(i, v)}
                       placeholder={`Option ${letter}`}
                     />
                   </div>
@@ -340,7 +340,7 @@ export function QuestionReviewEditor({
           label="Explanation"
           value={draft.explanation ?? ""}
           disabled={!canEdit}
-          onChange={(v) => set({ explanation: v })}
+          onChange={(v: string) => set({ explanation: v })}
           placeholder="Solution / explanation…"
         />
       </div>
