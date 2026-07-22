@@ -176,7 +176,15 @@ export async function listReviewPapers(req: Request, res: Response): Promise<voi
 export async function getReviewPaper(req: Request, res: Response): Promise<void> {
   try {
     const instituteId = hasInstitute(req, res); if (!instituteId) return;
-    const paper = await getOwnedPaper(req.params.id, instituteId);
+    // Join the exams table to get the resolved exam code (e.g. "jee-main", "neet-ug")
+    const { data: paper, error: paperErr } = await supabaseDB
+      .from("papers")
+      .select("*, exam_code:exams(code)")
+      .eq("id", req.params.id)
+      .eq("institute_id", instituteId)
+      .eq("is_active", true)
+      .maybeSingle();
+    if (paperErr) throw paperErr;
     if (!paper) { res.status(404).json({ success: false, message: "Draft paper not found." }); return; }
     const { data: rows, error } = await supabaseDB.from("paper_questions")
       .select("position, questions(*)").eq("paper_id", paper.id).order("position", { ascending: true });
