@@ -731,7 +731,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     sendProgress("extracting_questions", "Uploading PDF to secure processing queue...");
     await uploadToR2Raw(pdfFile.buffer, r2Key, "application/pdf");
 
-    await supabaseAdmin.from("pdf_extraction_jobs").insert({
+    await supabaseDB.from("pdf_extraction_jobs").insert({
       id: jobId,
       status: "pending",
       requested_by: userId,
@@ -748,7 +748,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       await new Promise(resolve => setTimeout(resolve, 5000));
       pollCount++;
 
-      const { data: jobData, error: jobErr } = await supabaseAdmin
+      const { data: jobData, error: jobErr } = await supabaseDB
         .from("pdf_extraction_jobs")
         .select("status, result, error")
         .eq("id", jobId)

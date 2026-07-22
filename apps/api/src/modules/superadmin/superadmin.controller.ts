@@ -471,7 +471,7 @@ export const extractPDFController = async (req: Request, res: Response): Promise
     await uploadToR2Raw(req.file.buffer, r2Key, "application/pdf");
 
     // 2. Create a job row in Supabase so the frontend can poll for status
-    const { error: insertErr } = await supabaseAdmin
+    const { error: insertErr } = await supabaseDB
       .from("pdf_extraction_jobs")
       .insert({
         id: jobId,
@@ -506,7 +506,7 @@ export const extractPDFController = async (req: Request, res: Response): Promise
 export const getPdfExtractionJobStatus = async (req: Request, res: Response): Promise<void> => {
   try {
     const { jobId } = req.params;
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await supabaseDB
       .from("pdf_extraction_jobs")
       .select("id, status, result, error, created_at, started_at, completed_at")
       .eq("id", jobId)
