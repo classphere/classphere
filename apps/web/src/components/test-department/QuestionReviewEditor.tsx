@@ -247,21 +247,17 @@ export function QuestionReviewEditor({
           />
         </div>
 
-        {/* Metadata save row */}
         {canEdit && (
-          <div className="mt-2 flex items-center gap-2">
+          <div className="mt-2">
             <button
               type="button"
               disabled={saving !== null}
               onClick={saveMetadata}
-              className="flex h-7 items-center gap-1.5 rounded-[8px] border border-s-stroke2 bg-b-surface2 px-3 text-xs font-semibold text-t-secondary transition-colors hover:border-primary-01/40 hover:text-primary-01 disabled:opacity-50"
+              className="flex h-7 items-center gap-1.5 rounded-[7px] border border-s-stroke2 bg-b-surface2 px-3 text-xs font-semibold text-t-secondary transition-colors hover:border-primary-01/40 hover:text-primary-01 disabled:opacity-50"
             >
-              <RiSaveLine size={12} />
+              <RiSaveLine size={11} />
               {saving === "meta" ? "Saving…" : "Save classification"}
             </button>
-            <p className="text-[10px] text-t-tertiary">
-              Save subject / chapter / topic / difficulty without needing a correct answer.
-            </p>
           </div>
         )}
       </div>
@@ -269,13 +265,12 @@ export function QuestionReviewEditor({
       {/* ── Question body ────────────────────────────────────────────────── */}
       <div className="flex-1 overflow-y-auto px-5 py-4 space-y-5">
 
-        {/* Question text */}
         <SegmentEditor
           label="Question text"
           value={draft.question_text ?? ""}
           disabled={!canEdit}
           onChange={(v) => set({ question_text: v })}
-          placeholder="Type question text here. Click ∑ to insert an equation."
+          placeholder="Type question text…"
         />
 
         {/* Options */}
@@ -357,17 +352,13 @@ export function QuestionReviewEditor({
           </div>
         </div>
 
-        {/* Explanation */}
         <SegmentEditor
-          label="Explanation / Solution"
+          label="Explanation"
           value={draft.explanation ?? ""}
           disabled={!canEdit}
           onChange={(v) => set({ explanation: v })}
-          placeholder="Type the solution or explanation here. Click ∑ to insert equations."
+          placeholder="Solution / explanation…"
         />
-
-        {/* Bottom padding for sticky bar */}
-        <div className="h-16" />
       </div>
 
       {/* ── Sticky save bar ──────────────────────────────────────────────── */}
