@@ -140,15 +140,92 @@ export default function AIExtractor() {
 
       const data = await res.json();
 
-      if (data.success) {
-        setStatus("success");
-        setExtractedQuestions(data.data.questions);
-        setResultMsg(data.message || "Extraction complete. Verify questions below.");
+      if (data.success && data.data?.jobId) {
+        setStatus("extracting");
+        setResultMsg("PDF uploaded to processing queue. AI extraction in progress...");
         
-        // Auto-fill paper title from PDF name if blank
-        if (!form.title) {
-          const defaultTitle = pdfFile.name.replace(/\.[^/.]+$/, "").replace(/_/g, " ");
-          setField("title", defaultTitle);
+        // Poll for job status
+        const jobId = data.data.jobId;
+        let jobDone = false;
+        
+        while (!jobDone) {
+          await new Promise(resolve => setTimeout(resolve, 5000));
+          
+          const statusRes = await fetch(`${API_BASE}/superadmin/extract-pdf/${jobId}`, {
+            headers: { Authorization: `Bearer ${session.access_token}` }
+          });
+          const statusData = await statusRes.json();
+          
+          if (!statusData.success) {
+            setStatus("error");
+            setResultMsg(statusData.message || "Failed to check extraction status.");
+            jobDone = true;
+            break;
+          }
+          
+          const jobState = statusData.data;
+          
+          if (jobState.status === "done") {
+            setResultMsg("Extraction complete! Saving to global draft for review...");
+            
+            // Auto-fill paper title from PDF name if blank
+            let finalTitle = form.title;
+            if (!finalTitle) {
+              finalTitle = pdfFile.name.replace(/\.[^/.]+$/, "").replace(/_/g, " ");
+              setField("title", finalTitle);
+            }
+            
+            // Automatically push to DB as a draft
+            const uploadBody = {
+              exam: form.exam,
+              test_type: form.test_type,
+              title: finalTitle,
+              subject: form.subject || null,
+              chapter: form.chapter || null,
+              year: form.year ? parseInt(form.year) : null,
+              shift: form.shift || null,
+              duration: parseInt(form.duration),
+              marks: parseInt(form.marks),
+              difficulty: form.difficulty,
+              questions: jobState.result.questions,
+            };
+
+            try {
+              const uploadRes = await fetch(`${API_BASE}/superadmin/upload-questions`, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${session.access_token}`,
+                },
+                body: JSON.stringify(uploadBody),
+              });
+              const uploadData = await uploadRes.json();
+              
+              if (uploadData.success) {
+                 setStatus("success");
+                 setResultMsg("Successfully created draft. Redirecting to advanced review...");
+                 setTimeout(() => {
+                   router.push(`/superadmin/questions/${uploadData.data.paper_id}`);
+                 }, 1500);
+              } else {
+                 setStatus("error");
+                 setResultMsg("Failed to save draft: " + uploadData.message);
+                 setExtractedQuestions(jobState.result.questions); // fallback inline preview
+              }
+            } catch (err: any) {
+              setStatus("error");
+              setResultMsg("Network error saving draft: " + err.message);
+              setExtractedQuestions(jobState.result.questions);
+            }
+            jobDone = true;
+          } else if (jobState.status === "failed") {
+            setStatus("error");
+            setResultMsg(jobState.error || "AI extraction failed.");
+            jobDone = true;
+          } else {
+            // still processing or pending
+            setResultMsg(`AI extraction in progress... (Status: ${jobState.status})`);
+          }
         }
       } else {
         setStatus("error");
