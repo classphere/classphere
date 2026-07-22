@@ -7,6 +7,7 @@ import * as Sentry from "@sentry/node";
 import "@sentry/profiling-node"; // Profiling
 
 const app = express();
+app.set("trust proxy", 1); // Trust first proxy (Railway load balancer)
 const port = process.env.PORT || 3001;
 const appBaseDomain = (process.env.APP_BASE_DOMAIN || "classphere.com").toLowerCase();
 const escapedBaseDomain = appBaseDomain.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -85,8 +86,9 @@ app.use(express.json({ limit: "10mb" }));
 
 // ─── Background Workers ───────────────────────────────────────────────────────
 if (process.env.START_WORKERS === "true") {
-  console.log("[API] Initializing background workers (analysis & lifecycle) inside this process...");
+  console.log("[API] Initializing background workers (analysis & lifecycle & pdf-extraction) inside this process...");
   require("./workers/analysis.worker");
+  require("./workers/pdf-extraction.worker");
   const { setupLifecycleCron } = require("./workers/lifecycle.worker");
   setupLifecycleCron().catch((err: any) => console.error("[API] Lifecycle cron setup failed:", err));
 } else {

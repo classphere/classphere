@@ -1,4 +1,5 @@
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
+import { Readable } from "stream";
 
 const R2_ACCESS_KEY_ID = process.env.CLOUDFLARE_R2_ACCESS_KEY_ID || process.env.R2_ACCESS_KEY_ID;
 const R2_SECRET_ACCESS_KEY = process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY || process.env.R2_SECRET_ACCESS_KEY;
@@ -62,4 +63,55 @@ export async function uploadToR2(
   } else {
     return `${formattedBaseUrl}${R2_BUCKET_NAME}/${cleanFileName}`;
   }
+}
+
+/**
+ * Uploads a raw buffer to R2 at a specific key (no timestamp prefix).
+ * Returns the key for later retrieval/deletion.
+ */
+export async function uploadToR2Raw(
+  fileBuffer: Buffer,
+  key: string,
+  contentType: string
+): Promise<string> {
+  if (!r2Client || !R2_BUCKET_NAME) {
+    throw new Error("R2 is not configured — cannot store temp PDF for async extraction.");
+  }
+  await r2Client.send(new PutObjectCommand({
+    Bucket: R2_BUCKET_NAME,
+    Key: key,
+    Body: fileBuffer,
+    ContentType: contentType,
+  }));
+  return key;
+}
+
+/**
+ * Downloads an object from R2 by key and returns it as a Buffer.
+ */
+export async function getR2Object(key: string): Promise<Buffer> {
+  if (!r2Client || !R2_BUCKET_NAME) {
+    throw new Error("R2 is not configured — cannot retrieve temp PDF.");
+  }
+  const response = await r2Client.send(new GetObjectCommand({
+    Bucket: R2_BUCKET_NAME,
+    Key: key,
+  }));
+  if (!response.Body) throw new Error(`R2 object ${key} has no body`);
+  const chunks: Uint8Array[] = [];
+  for await (const chunk of response.Body as Readable) {
+    chunks.push(chunk);
+  }
+  return Buffer.concat(chunks);
+}
+
+/**
+ * Deletes an object from R2 by key. Silent if the object doesn't exist.
+ */
+export async function deleteR2Object(key: string): Promise<void> {
+  if (!r2Client || !R2_BUCKET_NAME) return;
+  await r2Client.send(new DeleteObjectCommand({
+    Bucket: R2_BUCKET_NAME,
+    Key: key,
+  })).catch(() => { /* silent */ });
 }

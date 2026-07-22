@@ -18,6 +18,8 @@ dist/
 # misc
 .DS_Store
 *.pem
+# Cerebras API keys — never commit
+apps/api/src/services/extractor/api_keys.txt
 
 # debug
 npm-debug.log*

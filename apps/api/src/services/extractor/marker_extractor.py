@@ -89,21 +89,22 @@ def _request_with_retry(method, url, *, retries=4, backoff=4, **kwargs):
 
 def submit_pdf(pdf_path, api_key, force_ocr=True, use_llm=True):
     print(f"Submitting to Marker (force_ocr={force_ocr}, use_llm={use_llm}): {pdf_path}")
+    # Stream the file directly instead of reading it all into memory first.
+    # Use a (connect, read) timeout tuple: 30s to connect, 300s for the upload.
     with open(pdf_path, "rb") as f:
-        file_bytes = f.read()
-    resp = _request_with_retry(
-        "POST", MARKER_SUBMIT_URL,
-        headers={"X-API-Key": api_key},
-        files={"file": (Path(pdf_path).name, file_bytes, "application/pdf")},
-        data={
-            "output_format": "json",
-            "extract_images": "true",
-            "use_llm": "true" if use_llm else "false",
-            "force_ocr": "true" if force_ocr else "false",
-            "paginate_output": "false",
-        },
-        timeout=90,
-    )
+        resp = _request_with_retry(
+            "POST", MARKER_SUBMIT_URL,
+            headers={"X-API-Key": api_key},
+            files={"file": (Path(pdf_path).name, f, "application/pdf")},
+            data={
+                "output_format": "json",
+                "extract_images": "true",
+                "use_llm": "true" if use_llm else "false",
+                "force_ocr": "true" if force_ocr else "false",
+                "paginate_output": "false",
+            },
+            timeout=(30, 300),
+        )
     data = resp.json()
     if not data.get("success"):
         print(f"ERROR: Marker rejected submission: {data}")
