@@ -467,11 +467,11 @@ function MathLiveInline({
   return (
     <div
       ref={wrapperRef}
-      className="mt-1 w-full rounded-[12px] border border-primary-01/30 bg-b-surface1 p-3 shadow-xl shadow-black/5"
+      className="mt-1.5 w-full rounded-[14px] border border-s-stroke2 bg-b-surface1 p-3 shadow-dropdown"
       contentEditable={false}
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="mb-2.5 overflow-hidden rounded-[10px] border border-s-stroke2 bg-white/[0.02]">
+      <div className="mb-2.5 overflow-hidden rounded-[10px] border border-s-stroke2 bg-b-surface2/60">
         {ready ? (
           /* @ts-ignore — math-field is a custom element registered by mathlive */
           <math-field

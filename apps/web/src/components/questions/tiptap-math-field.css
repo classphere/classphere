@@ -57,14 +57,15 @@ math-field {
   --selection-color: var(--text-primary);
   font-family: var(--font-inter), system-ui, sans-serif;
 }
-/* Hide MathLive's contextual toolbar/menu that appears above the field */
-math-field::part(virtual-keyboard),
-math-field[part="toolbar"],
-.ML__toolbar,
-.ML__menu-toggle {
+/* Hide MathLive's inline keyboard-toggle and menu-toggle (the two icons that
+   sit at the right edge of the math field). We provide our own symbol palette,
+   so these are redundant. Correct part names per MathLive docs. */
+math-field::part(virtual-keyboard-toggle),
+math-field::part(menu-toggle) {
   display: none !important;
 }
-/* Keep the math content itself from being cramped */
+/* Keep the math content itself from being cramped and not clipped */
 math-field::part(container) {
   padding: 0.1rem 0;
+  overflow: visible;
 }
