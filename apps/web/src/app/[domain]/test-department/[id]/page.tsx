@@ -6,7 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import { QuestionReviewEditor } from "@/components/questions/QuestionReviewEditor";
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
-import { EXAM_LABELS, EXAM_SUBJECTS, SUBJECT_COLOR } from "@/lib/exam-config";
+import { EXAM_LABELS, EXAM_SUBJECTS, SUBJECT_COLOR, detectExamCode } from "@/lib/exam-config";
 import { RiShieldCheckLine, RiErrorWarningLine, RiAlertLine } from "@remixicon/react";
 
 // ── Status badge ──────────────────────────────────────────────────────────────
@@ -58,16 +58,6 @@ function ValidationPanel({ result, onClose }: { result: ValidationResult; onClos
   );
 }
 
-// ── Exam detection: derive from subjects present, not from DB exam_id ─────────
-function detectExamCode(questions: any[], fallback: string): string {
-  const subs = new Set(
-    questions.map((q) => (q.subject ?? "").toLowerCase().trim()).filter(Boolean)
-  );
-  if (subs.has("biology") || subs.has("bio")) return "neet-ug";
-  if (subs.has("mathematics") || subs.has("maths") || subs.has("math")) return "jee-main";
-  return fallback;
-}
-
 // ── Page ──────────────────────────────────────────────────────────────────────
 const PANEL_H = "calc(100vh - 210px)"; // both panels same height
 
@@ -108,7 +98,9 @@ export default function ReviewPaperPage() {
   const questions: any[] = data?.questions ?? [];
   const status       = paper?.workflow_status ?? "draft";
 
-  // Detect exam code from actual subject names in the paper, not the DB exam_id
+  // Detect exam code from actual subject names in the paper, not the DB exam_id.
+  // Uses the shared detectExamCode (same logic as the superadmin global page and
+  // the backend validatePaper/loadPaperQuestions).
   const examCode  = useMemo(
     () => detectExamCode(questions, paper?.exam_code?.code ?? ""),
     [questions, paper?.exam_code?.code],

@@ -37,3 +37,22 @@ export const DIFFICULTY_OPTIONS = [
   { value: "medium", label: "Medium" },
   { value: "hard",   label: "Hard" },
 ];
+
+/**
+ * Detect the exam code from the subjects actually present in a paper's questions,
+ * falling back to a provided code only when subjects are ambiguous/missing.
+ *
+ * Mirrors the backend's subject-based detection (see test-department.controller
+ * validatePaper + attempts.controller loadPaperQuestions) so a mis-assigned
+ * exam_id FK in the DB doesn't poison the editor's subject list or downstream
+ * analysis routing. NEET papers (Biology) and JEE papers (Mathematics) are
+ * distinguished correctly even when the DB exam row is wrong.
+ */
+export function detectExamCode(questions: { subject?: string }[], fallback: string): string {
+  const subs = new Set(
+    questions.map((q) => (q.subject ?? "").toLowerCase().trim()).filter(Boolean)
+  );
+  if (subs.has("biology") || subs.has("bio")) return "neet-ug";
+  if (subs.has("mathematics") || subs.has("maths") || subs.has("math")) return "jee-main";
+  return fallback;
+}
