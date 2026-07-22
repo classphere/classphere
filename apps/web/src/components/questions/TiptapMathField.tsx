@@ -21,6 +21,7 @@ import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { useAuth } from "@/lib/auth-context";
+import "./tiptap-math-field.css";
 import {
   RiFunctionLine,
   RiImageAddLine,
@@ -57,6 +58,17 @@ const SYMBOL_GROUPS = [
       { d: "( )", s: "\\left( \\right)" },
       { d: "| |", s: "\\left| \\right|" },
       { d: "[ ]", s: "\\left[ \\right]" },
+    ],
+  },
+  {
+    label: "Combinatorics",
+    symbols: [
+      { d: "n!", s: "{}!" },
+      { d: "nPr", s: "{}P{}" },
+      { d: "nCr", s: "\\binom{}{}" },
+      { d: "ₙCᵣ", s: "{}_{}C_{}" },
+      { d: "ₙPᵣ", s: "{}_{}P_{}" },
+      { d: "(ⁿⁿ)", s: "\\left( \\right)^{}" },
     ],
   },
   {
@@ -401,7 +413,7 @@ function MathLiveInline({
 }) {
   const mfRef = useRef<any>(null);
   const [ready, setReady] = useState(false);
-  const [activeGroup, setActiveGroup] = useState(1); // Matrix is the most useful default
+  const [activeGroup, setActiveGroup] = useState(1); // Combinatorics (nPr/nCr/!) — a common JEE default
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -455,83 +467,87 @@ function MathLiveInline({
   return (
     <div
       ref={wrapperRef}
-      className="w-full rounded-[10px] border border-primary-01/30 bg-b-surface1 p-2 shadow-lg"
+      className="mt-1 w-full rounded-[12px] border border-primary-01/30 bg-b-surface1 p-3 shadow-xl shadow-black/5"
       contentEditable={false}
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="mb-2 overflow-hidden rounded-[8px] border border-s-stroke2 bg-b-surface2">
+      <div className="mb-2.5 overflow-hidden rounded-[10px] border border-s-stroke2 bg-white/[0.02]">
         {ready ? (
           /* @ts-ignore — math-field is a custom element registered by mathlive */
           <math-field
             ref={mfRef}
             virtual-keyboard-mode="off"
             smart-mode="true"
+            mathVirtualKeyboardPolicy="manual"
             style={{
               display: "block",
               width: "100%",
-              minHeight: display ? "3.5rem" : "2.5rem",
-              fontSize: "1.1rem",
-              padding: "0.3rem 0.6rem",
+              minHeight: display ? "4rem" : "2.75rem",
+              fontSize: "1.15rem",
+              padding: "0.6rem 0.75rem",
               background: "transparent",
               outline: "none",
               border: "none",
+              // Hide MathLive's built-in toolbar/menu chrome — we provide our own
+              // symbol palette below, so the native action bar is redundant clutter.
+              ["--.smart-mode-color" as any]: "transparent",
             } as React.CSSProperties}
           />
         ) : (
-          <p className="flex h-10 items-center px-3 text-sm text-t-tertiary">Loading…</p>
+          <p className="flex h-11 items-center px-3 text-sm text-t-tertiary">Loading equation editor…</p>
         )}
       </div>
 
       {/* Grouped symbol palette */}
-      <div className="mb-1.5 flex flex-wrap gap-1">
+      <div className="mb-2 flex flex-wrap gap-1">
         {SYMBOL_GROUPS.map((g, i) => (
           <button
             key={g.label}
             type="button"
             onClick={() => setActiveGroup(i)}
-            className={`rounded-full px-2 py-0.5 text-[10px] font-semibold transition-colors ${
+            className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide transition-colors ${
               activeGroup === i
                 ? "bg-primary-01 text-white"
-                : "border border-s-stroke2 bg-b-surface2 text-t-secondary hover:text-t-primary"
+                : "border border-s-stroke2 bg-b-surface2 text-t-secondary hover:text-t-primary hover:border-primary-01/30"
             }`}
           >
             {g.label}
           </button>
         ))}
       </div>
-      <div className="mb-2 flex flex-wrap gap-1">
+      <div className="mb-2.5 flex flex-wrap gap-1.5">
         {SYMBOL_GROUPS[activeGroup].symbols.map((sym) => (
           <button
             key={sym.s + sym.d}
             type="button"
             onClick={() => insertSymbol(sym.s)}
             title={sym.s}
-            className="min-w-[1.8rem] rounded-[6px] border border-s-stroke2 bg-b-surface2 px-2 py-1 text-center text-xs text-t-primary transition-colors hover:border-primary-01/40 hover:bg-primary-01/5"
+            className="min-w-[2rem] rounded-[7px] border border-s-stroke2 bg-b-surface2 px-2.5 py-1.5 text-center text-[13px] font-medium text-t-primary transition-colors hover:border-primary-01/40 hover:bg-primary-01/5"
           >
             {sym.d}
           </button>
         ))}
       </div>
 
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-2 border-t border-s-stroke2 pt-2.5">
         <button
           type="button"
           onClick={() => {
             const val = (mfRef.current?.value ?? "").trim();
             if (val) onSave(val);
           }}
-          className="h-7 rounded-[7px] bg-[#151515] px-3 text-xs font-semibold text-white dark:bg-white dark:text-black"
+          className="h-8 rounded-[8px] bg-[#151515] px-4 text-xs font-bold text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-black"
         >
-          Save
+          Save equation
         </button>
         <button
           type="button"
           onClick={onClose}
-          className="h-7 rounded-[7px] px-3 text-xs text-t-tertiary hover:text-t-primary"
+          className="h-8 rounded-[8px] border border-s-stroke2 bg-b-surface2 px-4 text-xs font-semibold text-t-secondary transition-colors hover:text-t-primary"
         >
           Cancel
         </button>
-        <span className="ml-auto hidden text-[10px] text-t-tertiary sm:inline">⌘/Ctrl+Enter save · Esc cancel</span>
+        <span className="ml-auto hidden text-[10px] text-t-tertiary sm:inline">⌘/Ctrl+Enter to save · Esc to cancel</span>
       </div>
     </div>
   );
@@ -571,6 +587,11 @@ export function TiptapMathField({ label, value, disabled, onChange, placeholder 
     ],
     content: storedToDoc(value ?? ""),
     editable: !disabled,
+    // React 19 / Next 16: Tiptap renders synchronously on mount by default, which
+    // triggers a "flushSync was called from inside a lifecycle method" warning.
+    // immediatelyRender: false defers the first render to a microtask, which is
+    // the documented Tiptap fix for React 18+/19 + SSR.
+    immediatelyRender: false,
     editorProps: {
       attributes: {
         class: "tiptap-math-field text-sm leading-relaxed text-t-primary outline-none",
@@ -646,44 +667,44 @@ export function TiptapMathField({ label, value, disabled, onChange, placeholder 
       )}
       <div
         className={[
-          "w-full rounded-[10px] border px-3 py-2.5 transition-colors",
+          "w-full rounded-[12px] border px-3.5 py-3 transition-colors",
           disabled
             ? "border-s-stroke2 bg-b-surface2/50"
-            : "border-s-stroke2 bg-b-surface1 focus-within:border-primary-01/40",
+            : "border-s-stroke2 bg-b-surface1 focus-within:border-primary-01/40 focus-within:ring-1 focus-within:ring-primary-01/20",
         ].join(" ")}
       >
-        <div className="min-h-[2.5rem]" data-placeholder={placeholder}>
+        <div className="min-h-[2.75rem] tiptap-math-field-host" data-placeholder={placeholder}>
           <EditorContent editor={editor} />
         </div>
 
         {!disabled && (
-          <div className="mt-1 flex items-center gap-3">
+          <div className="mt-2 flex items-center gap-1.5 border-t border-s-stroke2/60 pt-2">
             <button
               type="button"
               onClick={insertInlineMath}
-              className="flex items-center gap-1 text-[11px] text-t-tertiary hover:text-primary-01 transition-colors"
+              className="flex h-7 items-center gap-1.5 rounded-full border border-s-stroke2 bg-b-surface2 px-2.5 text-[11px] font-semibold text-t-secondary transition-colors hover:border-primary-01/40 hover:bg-primary-01/5 hover:text-primary-01"
               title="Insert inline equation"
             >
-              <RiFunctionLine size={12} />
-              + equation
+              <RiFunctionLine size={13} />
+              equation
             </button>
             <button
               type="button"
               onClick={insertDisplayMath}
-              className="flex items-center gap-1 text-[11px] text-t-tertiary hover:text-primary-01 transition-colors"
+              className="flex h-7 items-center gap-1.5 rounded-full border border-s-stroke2 bg-b-surface2 px-2.5 text-[11px] font-semibold text-t-secondary transition-colors hover:border-primary-01/40 hover:bg-primary-01/5 hover:text-primary-01"
               title="Insert display (centered) equation"
             >
-              <RiParagraph size={12} />
-              + display
+              <RiParagraph size={13} />
+              display
             </button>
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
               disabled={uploading}
-              className="flex items-center gap-1 text-[11px] text-t-tertiary hover:text-primary-01 transition-colors disabled:opacity-50"
+              className="flex h-7 items-center gap-1.5 rounded-full border border-s-stroke2 bg-b-surface2 px-2.5 text-[11px] font-semibold text-t-secondary transition-colors hover:border-primary-01/40 hover:bg-primary-01/5 hover:text-primary-01 disabled:opacity-50"
             >
-              <RiImageAddLine size={12} />
-              {uploading ? "uploading..." : "+ image"}
+              <RiImageAddLine size={13} />
+              {uploading ? "uploading…" : "image"}
             </button>
             <input type="file" ref={fileInputRef} accept="image/*" className="hidden" onChange={handleImageUpload} />
           </div>

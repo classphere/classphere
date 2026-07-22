@@ -1,0 +1,70 @@
+/* ═══════════════════════════════════════════════════════════
+   TIPTAP MATH EDITOR (TiptapMathField)
+   Scoped styles for the inline WYSIWYG used in the paper-review
+   editor. Hides MathLive's built-in chrome (we ship our own symbol
+   palette) and gives the content area proper prose spacing.
+════════════════════════════════════════════════════════════ */
+
+/* The ProseMirror editable surface inside the field */
+.tiptap-math-field.ProseMirror {
+  min-height: 2.75rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  caret-color: var(--primary-01);
+}
+.tiptap-math-field.ProseMirror:focus {
+  outline: none;
+}
+.tiptap-math-field.ProseMirror p {
+  margin: 0 0 0.4em;
+}
+.tiptap-math-field.ProseMirror p:last-child {
+  margin-bottom: 0;
+}
+/* Placeholder shown when the field is empty */
+.tiptap-math-field-host[data-placeholder] .ProseMirror.is-empty::before {
+  content: attr(data-placeholder);
+  color: var(--text-tertiary);
+  opacity: 0.6;
+  pointer-events: none;
+  float: left;
+  height: 0;
+  font-style: italic;
+}
+
+/* Inline math chips inside the editor */
+.tiptap-math-field [data-inline-math] .katex,
+.tiptap-math-field [data-display-math] .katex {
+  font-size: 1.05em;
+}
+.tiptap-math-field img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--stroke-stroke2);
+  margin: 0.25em 0;
+}
+
+/* ── MathLive: strip the built-in toolbar/menu chrome ──────────────────────
+   We provide a grouped symbol palette ourselves, so MathLive's native action
+   bar (the dark overlapping block + keyboard/menu icons) is redundant clutter
+   and visually collides with our panel. */
+math-field {
+  --primary: var(--primary-01);
+  --caret-color: var(--primary-01);
+  --selection-background-color: rgba(42, 133, 255, 0.2);
+  --selection-color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+/* Hide MathLive's contextual toolbar/menu that appears above the field */
+math-field::part(virtual-keyboard),
+math-field[part="toolbar"],
+.ML__toolbar,
+.ML__menu-toggle {
+  display: none !important;
+}
+/* Keep the math content itself from being cramped */
+math-field::part(container) {
+  padding: 0.1rem 0;
+}
