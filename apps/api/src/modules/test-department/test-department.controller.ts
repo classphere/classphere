@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { sendStaffInviteEmail } from "../../lib/mailer";
 import { supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { notifyStudents } from "../notifications/notifications.service";
+import { uploadToR2 } from "../../lib/r2";
 
 const TEST_ADMIN_ROLE = "test_department_head";
 const TEST_EDITOR_ROLE = "test_department_member";
@@ -387,3 +388,22 @@ export async function validatePaper(req: Request, res: Response): Promise<void> 
     res.json({ success: true, data: { valid: errors.length === 0, errors, warnings, counts, total: questions.length, examCode } });
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
+
+export const uploadImage = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const instituteId = hasInstitute(req, res);
+    if (!instituteId) return;
+
+    if (!req.file) {
+      res.status(400).json({ success: false, message: "No file uploaded" });
+      return;
+    }
+
+    const url = await uploadToR2(req.file.buffer, req.file.originalname, req.file.mimetype);
+    res.json({ success: true, data: { url } });
+  } catch (err: any) {
+    console.error("[test-department/uploadImage error]", err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+

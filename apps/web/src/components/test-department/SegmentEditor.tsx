@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { parseSegments, normaliseSegments, segmentsToString, Segment } from "@/lib/segment-parser";
-import { RiDeleteBin7Line, RiEditLine } from "@remixicon/react";
+import { RiDeleteBin7Line, RiEditLine, RiImageAddLine } from "@remixicon/react";
+import { useAuth } from "@/lib/auth-context";
+import { apiClient } from "@/lib/api.client";
 
 // ── MathLive type stub ────────────────────────────────────────────────────────
 declare global {
@@ -107,7 +109,7 @@ function InlineMathPanel({
 
   return (
     <div className="mt-2 rounded-[10px] border border-s-stroke2 bg-b-surface2/80 p-3 shadow-sm">
-      {/* MathLive field — virtual keyboard OFF (prevents the browser-level keyboard overlay) */}
+      {/* MathLive field — virtual keyboard OFF */}
       <div className="mb-2 overflow-hidden rounded-[8px] border border-s-stroke2 bg-b-surface1">
         {ready ? (
           /* @ts-ignore */
@@ -146,23 +148,27 @@ function InlineMathPanel({
         ))}
       </div>
 
-      {/* Actions */}
+      {/* Actions — always read from the DOM element directly to avoid stale state */}
       <div className="flex items-center gap-1.5">
         <button
           type="button"
-          disabled={!latex.trim()}
-          onClick={() => latex.trim() && onDone(latex, false)}
-          className="h-7 rounded-[7px] bg-[#151515] px-3 text-xs font-semibold text-white disabled:opacity-40 dark:bg-white dark:text-black"
+          onClick={() => {
+            const val = mfRef.current?.value ?? latex;
+            if (val.trim()) onDone(val.trim(), false);
+          }}
+          className="h-7 rounded-[7px] bg-[#151515] px-3 text-xs font-semibold text-white dark:bg-white dark:text-black"
         >
-          Inline  <span className="ml-1 opacity-50 font-mono text-[10px]">$…$</span>
+          Inline <span className="ml-1 opacity-50 font-mono text-[10px]">$…$</span>
         </button>
         <button
           type="button"
-          disabled={!latex.trim()}
-          onClick={() => latex.trim() && onDone(latex, true)}
-          className="h-7 rounded-[7px] border border-s-stroke2 bg-b-surface1 px-3 text-xs font-semibold text-t-primary disabled:opacity-40"
+          onClick={() => {
+            const val = mfRef.current?.value ?? latex;
+            if (val.trim()) onDone(val.trim(), true);
+          }}
+          className="h-7 rounded-[7px] border border-s-stroke2 bg-b-surface1 px-3 text-xs font-semibold text-t-primary"
         >
-          Display  <span className="opacity-50 font-mono text-[10px]">$$…$$</span>
+          Display <span className="opacity-50 font-mono text-[10px]">$$…$$</span>
         </button>
         <button
           type="button"
@@ -254,7 +260,10 @@ export function SegmentEditor({ label, value, disabled, onChange, placeholder }:
     normaliseSegments(parseSegments(value ?? ""))
   );
   const [panel, setPanel] = useState<PanelState | null>(null);
+  const [uploading, setUploading] = useState(false);
   const prevValue = useRef(value);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const { session } = useAuth();
 
   // Sync external value changes (e.g. switching question)
   useEffect(() => {
@@ -294,6 +303,42 @@ export function SegmentEditor({ label, value, disabled, onChange, placeholder }:
     emit(normaliseSegments(raw.length ? raw : [{ type: "text", content: "" }]));
   };
 
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !session?.access_token) return;
+    try {
+      setUploading(true);
+      const formData = new FormData();
+      formData.append("image", file);
+      
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"}/api/v1/test-department/upload`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${session.access_token}` },
+        body: formData,
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message || "Upload failed");
+      
+      // Append image markdown to the last segment or create a new text segment
+      const url = data.data.url;
+      const imgMd = `\n![Image](${url})\n`;
+      
+      const next = [...segments];
+      const last = next[next.length - 1];
+      if (last && last.type === "text") {
+        last.content += imgMd;
+      } else {
+        next.push({ type: "text", content: imgMd });
+      }
+      emit(normaliseSegments(next));
+    } catch (err: any) {
+      alert("Image upload failed: " + err.message);
+    } finally {
+      setUploading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  };
+
   return (
     <div>
       {label && <p className="mb-1.5 text-[10px] font-bold uppercase tracking-wider text-t-secondary">{label}</p>}
@@ -314,13 +359,31 @@ export function SegmentEditor({ label, value, disabled, onChange, placeholder }:
           )
         )}
         {!disabled && !panel && (
-          <button
-            type="button"
-            onClick={() => setPanel({ afterIndex: segments.length - 1, initial: "" })}
-            className="mt-1 text-[11px] text-t-tertiary hover:text-primary-01 transition-colors"
-          >
-            + equation
-          </button>
+          <div className="mt-1 flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setPanel({ afterIndex: segments.length - 1, initial: "" })}
+              className="text-[11px] text-t-tertiary hover:text-primary-01 transition-colors"
+            >
+              + equation
+            </button>
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploading}
+              className="flex items-center gap-1 text-[11px] text-t-tertiary hover:text-primary-01 transition-colors disabled:opacity-50"
+            >
+              <RiImageAddLine size={12} />
+              {uploading ? "uploading..." : "+ image"}
+            </button>
+            <input 
+              type="file" 
+              ref={fileInputRef} 
+              accept="image/*" 
+              className="hidden" 
+              onChange={handleImageUpload} 
+            />
+          </div>
         )}
       </div>
 
