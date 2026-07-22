@@ -326,7 +326,22 @@ export async function validatePaper(req: Request, res: Response): Promise<void> 
     if (error) throw error;
 
     const questions = (rows ?? []).map((r: any) => ({ position: r.position, ...(Array.isArray(r.questions) ? r.questions[0] : r.questions) }));
-    const examCode: string = (paper as any).exam_code?.code ?? "";
+
+    // Detect exam code from question subjects (more reliable than the DB FK).
+    // If Biology is present → NEET UG. If Mathematics → JEE Main.
+    // Fall back to the paper's exam_code FK only if subjects are ambiguous.
+    const subjectSet = new Set(
+      questions.map((q: any) => (q.subject ?? "").toLowerCase().trim()).filter(Boolean)
+    );
+    let examCode: string;
+    if (subjectSet.has("biology") || subjectSet.has("bio")) {
+      examCode = "neet-ug";
+    } else if (subjectSet.has("mathematics") || subjectSet.has("maths") || subjectSet.has("math")) {
+      examCode = "jee-main";
+    } else {
+      examCode = (paper as any).exam_code?.code ?? "";
+    }
+
     const pattern = EXAM_PATTERNS[examCode];
     const errors: string[] = [];
     const warnings: string[] = [];

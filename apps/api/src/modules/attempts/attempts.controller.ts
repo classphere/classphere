@@ -31,8 +31,6 @@ async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; 
     .eq("is_active", true)
     .maybeSingle();
 
-  const examCode = (paperRow as any)?.exam_code?.code ?? "jee-main";
-
   // Fetch ordered question IDs
   const { data: pqs } = await supabaseDB
     .from("paper_questions")
@@ -41,7 +39,7 @@ async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; 
     .order("position", { ascending: true });
 
   const questionIds = (pqs ?? []).map((r: any) => r.question_id);
-  if (questionIds.length === 0) return { questions: [], examCode };
+  if (questionIds.length === 0) return { questions: [], examCode: (paperRow as any)?.exam_code?.code ?? "jee-main" };
 
   const { data: rawQs } = await supabaseDB
     .from("questions")
@@ -52,6 +50,21 @@ async function loadPaperQuestions(paperId: string): Promise<{ questions: any[]; 
   const byId: Record<string, any> = {};
   for (const q of rawQs ?? []) byId[q.id] = q;
   const questions = questionIds.map((qid: string) => byId[qid]).filter(Boolean);
+
+  // Detect exam code from question subjects — more reliable than the DB FK.
+  // Biology present → NEET UG. Mathematics → JEE Main.
+  // Fall back to the paper's DB exam_code only when subjects are ambiguous.
+  const subjectSet = new Set(
+    questions.map((q: any) => (q.subject ?? "").toLowerCase().trim()).filter(Boolean)
+  );
+  let examCode: string;
+  if (subjectSet.has("biology") || subjectSet.has("bio")) {
+    examCode = "neet-ug";
+  } else if (subjectSet.has("mathematics") || subjectSet.has("maths") || subjectSet.has("math")) {
+    examCode = "jee-main";
+  } else {
+    examCode = (paperRow as any)?.exam_code?.code ?? "jee-main";
+  }
 
   return { questions, examCode };
 }
