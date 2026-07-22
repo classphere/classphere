@@ -7,7 +7,7 @@ import { QuestionReviewEditor } from "@/components/test-department/QuestionRevie
 import { useAuth } from "@/lib/auth-context";
 import { apiClient } from "@/lib/api.client";
 import { EXAM_LABELS, EXAM_SUBJECTS, SUBJECT_COLOR } from "@/lib/exam-config";
-import { RiCheckLine, RiAlertLine, RiErrorWarningLine, RiShieldCheckLine } from "@remixicon/react";
+import { RiShieldCheckLine, RiErrorWarningLine, RiAlertLine } from "@remixicon/react";
 
 // ── Status badge ──────────────────────────────────────────────────────────────
 const STATUS_STYLES: Record<string, string> = {
@@ -58,24 +58,36 @@ function ValidationPanel({ result, onClose }: { result: ValidationResult; onClos
   );
 }
 
+// ── Exam detection: derive from subjects present, not from DB exam_id ─────────
+function detectExamCode(questions: any[], fallback: string): string {
+  const subs = new Set(
+    questions.map((q) => (q.subject ?? "").toLowerCase().trim()).filter(Boolean)
+  );
+  if (subs.has("biology") || subs.has("bio")) return "neet-ug";
+  if (subs.has("mathematics") || subs.has("maths") || subs.has("math")) return "jee-main";
+  return fallback;
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
+const PANEL_H = "calc(100vh - 156px)"; // both panels same height
+
 export default function ReviewPaperPage() {
   const params = useParams<{ id: string }>();
   const { session, user } = useAuth();
 
-  const [data, setData] = useState<any>(null);
-  // Use ID-based selection — avoids index-vs-array mismatch bugs
-  const [activeId, setActiveId] = useState<string | null>(null);
-  const [message, setMessage] = useState("");
-  const [transacting, setTransacting] = useState(false);
-  const [validating, setValidating] = useState(false);
-  const [validation, setValidation] = useState<ValidationResult | null>(null);
+  const [data, setData]           = useState<any>(null);
+  const [activeId, setActiveId]   = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<string | null>(null); // subject tab
+  const [message, setMessage]     = useState("");
+  const [transacting, setTransacting]   = useState(false);
+  const [validating, setValidating]     = useState(false);
+  const [validation, setValidation]     = useState<ValidationResult | null>(null);
 
-  const isHead         = user?.role === "test_department_head";
-  const isMember       = user?.role === "test_department_member";
+  const isHead          = user?.role === "test_department_head";
+  const isMember        = user?.role === "test_department_member";
   const isDepartmentUser = isHead || isMember;
 
-  // ── Data fetching ───────────────────────────────────────────────────────────
+  // ── Load ──────────────────────────────────────────────────────────────────
   const load = useCallback(async () => {
     if (!session?.access_token || !params.id) return;
     const result: any = await apiClient.get(
@@ -83,28 +95,49 @@ export default function ReviewPaperPage() {
       session.access_token,
     );
     setData(result.data);
-    // Auto-select first question on initial load
     setActiveId((cur) => cur ?? result.data?.questions?.[0]?.id ?? null);
   }, [session?.access_token, params.id]);
 
   useEffect(() => { load().catch((e) => setMessage(e.message)); }, [load]);
 
-  // ── Derived state ───────────────────────────────────────────────────────────
-  const paper       = data?.paper;
+  // ── Derived ───────────────────────────────────────────────────────────────
+  const paper        = data?.paper;
   const questions: any[] = data?.questions ?? [];
-  const status      = paper?.workflow_status ?? "draft";
-  const examCode    = paper?.exam_code?.code ?? "";
-  const examLabel   = EXAM_LABELS[examCode] ?? examCode;
-  const subjects    = EXAM_SUBJECTS[examCode] ?? [];
-  const canEdit     = ["draft", "changes_requested", "needs_review"].includes(status) && isDepartmentUser;
+  const status       = paper?.workflow_status ?? "draft";
 
-  // ID-based current question lookup — no index arithmetic
+  // Detect exam code from actual subject names in the paper, not the DB exam_id
+  const examCode  = useMemo(
+    () => detectExamCode(questions, paper?.exam_code?.code ?? ""),
+    [questions, paper?.exam_code?.code],
+  );
+  const examLabel = EXAM_LABELS[examCode] ?? examCode;
+  const subjects  = EXAM_SUBJECTS[examCode] ?? [];
+  const canEdit   = ["draft", "changes_requested", "needs_review"].includes(status) && isDepartmentUser;
+
   const question = useMemo(
     () => questions.find((q) => q.id === activeId) ?? questions[0] ?? null,
     [questions, activeId],
   );
 
-  // ── Keyboard nav: ←/→ across questions ─────────────────────────────────────
+  // ── Subject sections ──────────────────────────────────────────────────────
+  const sections = useMemo(() => {
+    if (!questions.length) return [];
+    const seenSubs = [...new Set(questions.map((q) => q.subject).filter(Boolean))] as string[];
+    const canonical = subjects.length ? subjects.filter((s) => seenSubs.includes(s)) : seenSubs;
+    const extras    = seenSubs.filter((s) => !subjects.includes(s));
+    const ordered   = [...canonical, ...extras];
+    if (!ordered.length) return [{ subject: "All", qs: questions }];
+    return ordered.map((sub) => ({ subject: sub, qs: questions.filter((q) => q.subject === sub) }));
+  }, [questions, subjects]);
+
+  // Auto-select first tab
+  useEffect(() => {
+    if (sections.length && !activeTab) setActiveTab(sections[0].subject);
+  }, [sections]);
+
+  const activeSection = sections.find((s) => s.subject === activeTab) ?? sections[0];
+
+  // ── Keyboard nav ─────────────────────────────────────────────────────────
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       const tag = (e.target as Element)?.tagName;
@@ -114,19 +147,19 @@ export default function ReviewPaperPage() {
       if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         e.preventDefault();
         const next = questions[Math.min(idx + 1, questions.length - 1)];
-        if (next) setActiveId(next.id);
+        if (next) { setActiveId(next.id); setActiveTab(next.subject ?? activeTab); }
       }
       if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
         e.preventDefault();
         const prev = questions[Math.max(idx - 1, 0)];
-        if (prev) setActiveId(prev.id);
+        if (prev) { setActiveId(prev.id); setActiveTab(prev.subject ?? activeTab); }
       }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [questions, activeId]);
+  }, [questions, activeId, activeTab]);
 
-  // ── Workflow ────────────────────────────────────────────────────────────────
+  // ── Workflow ──────────────────────────────────────────────────────────────
   const transition = async (action: string) => {
     setTransacting(true);
     try {
@@ -151,9 +184,7 @@ export default function ReviewPaperPage() {
     finally { setValidating(false); }
   };
 
-  // ── Save handler ─────────────────────────────────────────────────────────
-  // Optimistic local update — no full reload. Merges payload into local state
-  // so the sidebar completion counter and the question data are instantly correct.
+  // ── Save (optimistic local update — no full reload) ───────────────────────
   const save = async (payload: Record<string, unknown>) => {
     if (!question) return;
     const r: any = await apiClient.patch(
@@ -164,24 +195,11 @@ export default function ReviewPaperPage() {
     const saved = r.data?.question ?? payload;
     setData((prev: any) => ({
       ...prev,
-      questions: prev.questions.map((q: any) =>
-        q.id === question.id ? { ...q, ...saved } : q
-      ),
+      questions: prev.questions.map((q: any) => q.id === question.id ? { ...q, ...saved } : q),
     }));
   };
 
-  // ── Sidebar sections ────────────────────────────────────────────────────────
-  const sections = useMemo(() => {
-    if (!questions.length) return [];
-    const seenSubjects = [...new Set(questions.map((q) => q.subject).filter(Boolean))] as string[];
-    const canonicalSubs = subjects.length ? subjects.filter((s) => seenSubjects.includes(s)) : seenSubjects;
-    const extras = seenSubjects.filter((s) => !subjects.includes(s));
-    const ordered = [...canonicalSubs, ...extras];
-    if (ordered.length === 0) return [{ subject: "All", qs: questions }];
-    return ordered.map((sub) => ({ subject: sub, qs: questions.filter((q) => q.subject === sub) }));
-  }, [questions, subjects]);
-
-  // ── Stats ───────────────────────────────────────────────────────────────────
+  // ── Stats ─────────────────────────────────────────────────────────────────
   const complete = questions.filter((q) => (q.correct_answer?.length ?? 0) > 0).length;
   const pct      = questions.length ? Math.round((complete / questions.length) * 100) : 0;
 
@@ -191,7 +209,7 @@ export default function ReviewPaperPage() {
 
   return (
     <>
-      {/* ── Navbar ─────────────────────────────────────────────────────────── */}
+      {/* ── Navbar ──────────────────────────────────────────────────────── */}
       <Navbar title={paper.title} breadcrumbs="TEST DEPARTMENT › PAPER REVIEW" subtitle={`${questions.length} questions`}>
         <div className="flex flex-wrap items-center gap-2">
           <StatusBadge status={status} />
@@ -229,13 +247,13 @@ export default function ReviewPaperPage() {
         </div>
       </Navbar>
 
-      {/* ── 2-column layout ─────────────────────────────────────────────────── */}
-      <main className="mx-auto grid w-full max-w-[1600px] gap-4 px-4 pb-12 pt-4 md:px-6 lg:grid-cols-[220px_minmax(0,1fr)]">
+      {/* ── 2-column layout ─────────────────────────────────────────────── */}
+      <main className="mx-auto grid w-full max-w-[1600px] gap-4 px-4 pt-4 md:px-6 lg:grid-cols-[240px_minmax(0,1fr)]" style={{ height: PANEL_H }}>
 
-        {/* ── LEFT: compact question navigator ─────────────────────────────── */}
-        <aside className="flex flex-col gap-3">
-          {/* Completion bar */}
-          <div className="rounded-[12px] border border-s-stroke2 bg-b-surface1 px-4 py-3">
+        {/* ── LEFT sidebar ──────────────────────────────────────────────── */}
+        <aside className="flex flex-col gap-3 overflow-hidden" style={{ height: PANEL_H }}>
+          {/* Completion */}
+          <div className="shrink-0 rounded-[12px] border border-s-stroke2 bg-b-surface1 px-4 py-3">
             <div className="mb-1.5 flex items-center justify-between">
               <p className="text-[10px] font-bold uppercase tracking-wider text-t-secondary">Completion</p>
               <p className="text-[11px] font-bold text-t-primary">{complete}/{questions.length}</p>
@@ -245,73 +263,83 @@ export default function ReviewPaperPage() {
             </div>
           </div>
 
-          {/* Question navigator */}
-          <div className="rounded-[12px] border border-s-stroke2 bg-b-surface1 overflow-hidden">
-            <div className="sticky top-0 border-b border-s-stroke2 bg-b-surface1 px-3 py-2">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-t-secondary">Questions</p>
-            </div>
-            <div className="max-h-[calc(100vh-280px)] overflow-y-auto p-3 space-y-3">
+          {/* Question navigator with subject tabs */}
+          <div className="flex-1 min-h-0 rounded-[12px] border border-s-stroke2 bg-b-surface1 overflow-hidden flex flex-col">
+            {/* Subject tab strip */}
+            <div className="shrink-0 flex border-b border-s-stroke2">
               {sections.map(({ subject, qs }) => {
                 const color = SUBJECT_COLOR[subject];
-                const secComplete = qs.filter((q) => (q.correct_answer?.length ?? 0) > 0).length;
-                const globalStart = questions.indexOf(qs[0]) + 1;
+                const done  = qs.filter((q) => (q.correct_answer?.length ?? 0) > 0).length;
+                const isTab = activeTab === subject;
                 return (
-                  <div key={subject}>
-                    {/* Section label */}
-                    <div className="mb-1.5 flex items-center gap-1.5">
-                      {color && <span className={`h-1.5 w-1.5 rounded-full shrink-0 ${color.dot}`} />}
-                      <span className={`text-[11px] font-bold ${color?.text ?? "text-t-secondary"}`}>{subject}</span>
-                      <span className="ml-auto text-[10px] text-t-tertiary">{secComplete}/{qs.length}</span>
-                    </div>
-                    {/* 8-column grid of question cells */}
-                    <div className="grid grid-cols-8 gap-1">
-                      {qs.map((q) => {
-                        const isActive  = q.id === activeId;
-                        const hasAnswer = (q.correct_answer?.length ?? 0) > 0;
-                        const globalIdx = questions.indexOf(q);
-                        return (
-                          <button
-                            key={q.id}
-                            type="button"
-                            onClick={() => setActiveId(q.id)}
-                            title={`Q${globalIdx + 1} · ${q.subject}`}
-                            className={[
-                              "flex items-center justify-center rounded-[6px] border py-1 text-[11px] font-semibold transition-colors",
-                              isActive
-                                ? "border-primary-01 bg-primary-01 text-white"
-                                : hasAnswer
-                                  ? color
-                                    ? `${color.bg} ${color.border} ${color.text}`
-                                    : "border-green-500/30 bg-green-500/10 text-green-600"
-                                  : "border-s-stroke2 bg-b-surface2/50 text-t-secondary hover:border-primary-01/30 hover:text-t-primary",
-                            ].join(" ")}
-                          >
-                            {globalIdx + 1}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
+                  <button
+                    key={subject}
+                    type="button"
+                    onClick={() => setActiveTab(subject)}
+                    className={[
+                      "flex-1 flex flex-col items-center py-2 px-1 text-[11px] font-bold border-b-2 transition-colors",
+                      isTab
+                        ? `border-current ${color?.text ?? "text-primary-01"}`
+                        : "border-transparent text-t-tertiary hover:text-t-secondary",
+                    ].join(" ")}
+                  >
+                    <span className="truncate">{subject.slice(0, 3).toUpperCase()}</span>
+                    <span className={`text-[9px] font-normal ${isTab ? "opacity-70" : "opacity-50"}`}>{done}/{qs.length}</span>
+                  </button>
                 );
               })}
             </div>
+
+            {/* Question cells — only active subject */}
+            <div className="flex-1 overflow-y-auto p-3">
+              {activeSection && (
+                <div className="grid grid-cols-5 gap-1.5">
+                  {activeSection.qs.map((q: any) => {
+                    const color     = SUBJECT_COLOR[q.subject];
+                    const isActive  = q.id === activeId;
+                    const hasAnswer = (q.correct_answer?.length ?? 0) > 0;
+                    const globalIdx = questions.indexOf(q);
+                    return (
+                      <button
+                        key={q.id}
+                        type="button"
+                        onClick={() => setActiveId(q.id)}
+                        title={`Q${globalIdx + 1} · ${q.subject}`}
+                        className={[
+                          "flex items-center justify-center rounded-[8px] border py-2 text-[12px] font-semibold transition-colors",
+                          isActive
+                            ? "border-primary-01 bg-primary-01 text-white"
+                            : hasAnswer
+                              ? color
+                                ? `${color.bg} ${color.border} ${color.text}`
+                                : "border-green-500/30 bg-green-500/10 text-green-600"
+                              : "border-s-stroke2 bg-b-surface2/50 text-t-secondary hover:border-primary-01/30 hover:text-t-primary",
+                        ].join(" ")}
+                      >
+                        {globalIdx + 1}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           </div>
 
-          <p className="px-1 text-[10px] text-t-tertiary">
+          <p className="shrink-0 px-1 text-[10px] text-t-tertiary">
             <kbd className="rounded border border-s-stroke2 bg-b-surface1 px-1 font-mono text-[9px]">←</kbd>{" "}
             <kbd className="rounded border border-s-stroke2 bg-b-surface1 px-1 font-mono text-[9px]">→</kbd>{" "}
-            to navigate
+            navigate
           </p>
         </aside>
 
-        {/* ── RIGHT: editor ────────────────────────────────────────────────── */}
-        <section className="min-w-0">
+        {/* ── RIGHT: editor ─────────────────────────────────────────────── */}
+        <section className="min-w-0 flex flex-col" style={{ height: PANEL_H }}>
           {validation && <ValidationPanel result={validation} onClose={() => setValidation(null)} />}
           {message && (
-            <div className="mb-3 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2.5 text-sm text-t-secondary">{message}</div>
+            <div className="mb-3 shrink-0 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2.5 text-sm text-t-secondary">{message}</div>
           )}
           {question ? (
-            <div className="card overflow-hidden p-0" style={{ height: "calc(100vh - 200px)" }}>
+            <div className="card flex-1 min-h-0 overflow-hidden p-0 rounded-[12px]">
               <QuestionReviewEditor
                 key={question.id}
                 question={question}

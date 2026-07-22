@@ -237,7 +237,7 @@ export function QuestionReviewEditor({
                 type="button"
                 disabled={saving}
                 onClick={saveAll}
-                className="h-9 rounded-[10px] border border-s-stroke2 bg-b-surface1 px-5 text-sm font-semibold text-t-primary transition-colors hover:border-primary-01/50 hover:text-primary-01 disabled:opacity-50"
+                className="h-9 rounded-[10px] bg-[#151515] px-5 text-sm font-semibold text-white transition-opacity disabled:opacity-50 dark:bg-white dark:text-black"
               >
                 {saving ? "Saving…" : "Save"}
               </button>
@@ -249,13 +249,15 @@ export function QuestionReviewEditor({
       {/* ── Question body ────────────────────────────────────────────────── */}
       <div className="flex-1 overflow-y-auto px-5 py-4 space-y-5">
 
-        <SegmentEditor
-          label="Question text"
-          value={draft.question_text ?? ""}
-          disabled={!canEdit}
-          onChange={(v) => set({ question_text: v })}
-          placeholder="Type question text…"
-        />
+        <div className="rounded-[10px] border border-s-stroke2 bg-b-surface2/40">
+          <SegmentEditor
+            label="Question text"
+            value={draft.question_text ?? ""}
+            disabled={!canEdit}
+            onChange={(v) => set({ question_text: v })}
+            placeholder="Type question text…"
+          />
+        </div>
 
         {/* Options */}
         <div>
