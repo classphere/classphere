@@ -1,7 +1,8 @@
 import { Redis, RedisOptions } from "ioredis";
+import { env } from "../../config/env";
 
-// Use an environment variable for Upstash or a local fallback
-const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
+// Resolve from validated env (falls back to a local dev redis when unset).
+const REDIS_URL = env.REDIS_URL || "redis://localhost:6379";
 
 export const getRedisOptions = (): RedisOptions => {
   if (REDIS_URL.startsWith("rediss://") || REDIS_URL.startsWith("redis://")) {
@@ -9,10 +10,15 @@ export const getRedisOptions = (): RedisOptions => {
       const url = new URL(REDIS_URL);
       return {
         host: url.hostname,
-        port: url.port ? parseInt(url.port, 10) : (url.protocol === "rediss:" ? 6379 : 6379),
+        port: url.port ? parseInt(url.port, 10) : 6379,
         username: url.username ? decodeURIComponent(url.username) : undefined,
         password: url.password ? decodeURIComponent(url.password) : undefined,
-        tls: url.protocol === "rediss:" ? { rejectUnauthorized: false } : undefined,
+        // For `rediss://` (TLS), validate the certificate. Upstash and other
+        // hosted Redis providers use publicly-trusted CAs, so the default trust
+        // store works. Do NOT set rejectUnauthorized:false — that disables
+        // certificate verification and allows man-in-the-middle attacks on the
+        // queue (job payloads, tokens in job data).
+        tls: url.protocol === "rediss:" ? { rejectUnauthorized: true } : undefined,
         maxRetriesPerRequest: null,
         enableReadyCheck: false,
       };

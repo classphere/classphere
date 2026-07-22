@@ -34,19 +34,37 @@ export async function setupLifecycleCron() {
   console.log("[lifecycleQueue] Repeatable cron job 'check_batch_expiry' scheduled.");
 }
 
+// Process expired batches in bounded pages so a mass-expiry day (e.g. end of
+// term) doesn't load every row into memory at once.
+const BATCH_PAGE_SIZE = 500;
+
 export const lifecycleWorker = new Worker(
   LIFECYCLE_QUEUE_NAME,
   async (job: Job) => {
-    if (job.name === "check_batch_expiry") {
-      console.log("[Worker] Running batch expiry checks...");
-      const nowIso = new Date().toISOString();
+    if (job.name !== "check_batch_expiry") return { success: true, deactivated: 0 };
 
-      // Fetch all active batches whose ends_at has passed
-      const { data: expiredBatches, error } = await supabaseDB
+    console.log("[Worker] Running batch expiry checks...");
+    const nowIso = new Date().toISOString();
+    let totalDeactivated = 0;
+    let page = 0;
+
+    // Page through expired batches by ordering on id and using lt() on a cursor.
+    // Supabase/PostgREST range pagination via .range() would skip/duplicate rows
+    // if rows change mid-iteration, so we keyset-paginate on a stable cursor.
+    let cursor: string | undefined;
+
+    while (true) {
+      let query = supabaseDB
         .from("batches")
         .select("id, name, ends_at")
         .eq("is_active", true)
-        .lt("ends_at", nowIso);
+        .lt("ends_at", nowIso)
+        .order("id", { ascending: true })
+        .limit(BATCH_PAGE_SIZE);
+
+      if (cursor) query = query.gt("id", cursor);
+
+      const { data: expiredBatches, error } = await query;
 
       if (error) {
         console.error("[Worker] Error fetching expired batches:", error.message);
@@ -54,14 +72,13 @@ export const lifecycleWorker = new Worker(
       }
 
       if (!expiredBatches || expiredBatches.length === 0) {
-        console.log("[Worker] No newly expired batches found.");
-        return { success: true, deactivated: 0 };
+        break; // no more pages
       }
 
-      console.log(`[Worker] Found ${expiredBatches.length} expired batches to deactivate.`);
       const batchIds = expiredBatches.map((b) => b.id);
+      cursor = batchIds[batchIds.length - 1]; // advance keyset cursor
 
-      // Update batches to set is_active = false
+      // Update this page's batches to inactive.
       const { error: updateErr } = await supabaseDB
         .from("batches")
         .update({ is_active: false })
@@ -72,24 +89,30 @@ export const lifecycleWorker = new Worker(
         throw updateErr;
       }
 
-      // Record lifecycle events in batch_lifecycle_events
+      // Record lifecycle events for this page.
       const events = expiredBatches.map((b) => ({
         batch_id: b.id,
         event_type: "expired",
         details: { ends_at: b.ends_at, auto_deactivated: true },
       }));
-
       const { error: eventErr } = await supabaseDB
         .from("batch_lifecycle_events")
         .insert(events);
 
       if (eventErr) {
         console.error("[Worker] Error logging batch lifecycle events:", eventErr.message);
+        // Don't throw — the deactivation already succeeded; events are best-effort audit.
       }
 
-      console.log(`[Worker] Successfully deactivated ${expiredBatches.length} expired batches.`);
-      return { success: true, deactivated: expiredBatches.length };
+      totalDeactivated += expiredBatches.length;
+      console.log(`[Worker] Deactivated page of ${expiredBatches.length} batches (running total ${totalDeactivated}).`);
+
+      // Last page — stop.
+      if (expiredBatches.length < BATCH_PAGE_SIZE) break;
     }
+
+    console.log(`[Worker] Done. Deactivated ${totalDeactivated} expired batches.`);
+    return { success: true, deactivated: totalDeactivated };
   },
   {
     connection: getRedisOptions() as any,
