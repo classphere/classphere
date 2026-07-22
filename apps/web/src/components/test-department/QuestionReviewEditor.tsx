@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { SegmentEditor } from "./SegmentEditor";
 import { EXAM_SUBJECTS, DIFFICULTY_OPTIONS } from "@/lib/exam-config";
 import {
-  RiCheckLine, RiAddLine, RiDeleteBin7Line,
-  RiSaveLine, RiInformationLine,
+  RiCheckLine, RiAddLine, RiDeleteBin7Line, RiSaveLine,
 } from "@remixicon/react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -175,64 +174,76 @@ export function QuestionReviewEditor({
   // ── Render ──────────────────────────────────────────────────────────────────
   return (
     <div className="flex flex-col h-full">
-      {/* ── Classification row ──────────────────────────────────────────── */}
+      {/* ── Header: Classification + Save ─────────────────────────────── */}
       <div className="shrink-0 border-b border-s-stroke2 bg-b-surface1 px-5 py-3">
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-          <LockedSelect
-            id="q-subject"
-            label="Subject"
-            value={draft.subject ?? ""}
-            options={subjectOptions}
-            disabled={!canEdit}
-            onChange={(v) => set({ subject: v })}
-          />
-          <div>
-            <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">
-              Chapter
-            </label>
-            <input
-              value={draft.chapter ?? ""}
+        <div className="flex items-end gap-3">
+          {/* Dropdowns */}
+          <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4">
+            <LockedSelect
+              id="q-subject"
+              label="Subject"
+              value={draft.subject ?? ""}
+              options={subjectOptions}
               disabled={!canEdit}
-              onChange={(e) => set({ chapter: e.target.value })}
-              placeholder="Chapter name"
-              className="h-9 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+              onChange={(v) => set({ subject: v })}
+            />
+            <div>
+              <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">Chapter</label>
+              <input
+                value={draft.chapter ?? ""}
+                disabled={!canEdit}
+                onChange={(e) => set({ chapter: e.target.value })}
+                placeholder="Chapter name"
+                className="h-9 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">Topic</label>
+              <input
+                value={draft.topic ?? ""}
+                disabled={!canEdit}
+                onChange={(e) => set({ topic: e.target.value })}
+                placeholder="Topic name"
+                className="h-9 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+              />
+            </div>
+            <LockedSelect
+              id="q-difficulty"
+              label="Difficulty"
+              value={draft.difficulty ?? "medium"}
+              options={DIFFICULTY_OPTIONS}
+              disabled={!canEdit}
+              onChange={(v) => set({ difficulty: v })}
             />
           </div>
-          <div>
-            <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-t-secondary">
-              Topic
-            </label>
-            <input
-              value={draft.topic ?? ""}
-              disabled={!canEdit}
-              onChange={(e) => set({ topic: e.target.value })}
-              placeholder="Topic name"
-              className="h-9 w-full rounded-[10px] border border-s-stroke2 bg-b-surface1 px-3 text-sm text-t-primary placeholder:text-t-tertiary focus:border-primary-01/40 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
-            />
-          </div>
-          <LockedSelect
-            id="q-difficulty"
-            label="Difficulty"
-            value={draft.difficulty ?? "medium"}
-            options={DIFFICULTY_OPTIONS}
-            disabled={!canEdit}
-            onChange={(v) => set({ difficulty: v })}
-          />
-        </div>
 
-        {canEdit && (
-          <div className="mt-2">
-            <button
-              type="button"
-              disabled={saving}
-              onClick={saveAll}
-              className="flex h-7 items-center gap-1.5 rounded-[7px] border border-s-stroke2 bg-b-surface2 px-3 text-xs font-semibold text-t-secondary transition-colors hover:border-primary-01/40 hover:text-primary-01 disabled:opacity-50"
-            >
-              <RiSaveLine size={11} />
-              {saving ? "Saving…" : "Save"}
-            </button>
-          </div>
-        )}
+          {/* Save — top-right, always visible, no scrolling needed */}
+          {canEdit && (
+            <div className="shrink-0 flex flex-col items-end gap-1">
+              <button
+                type="button"
+                disabled={saving}
+                onClick={saveAll}
+                className="flex h-9 items-center gap-2 rounded-[10px] bg-[#151515] px-4 text-sm font-semibold text-white transition-opacity disabled:opacity-50 dark:bg-white dark:text-black"
+              >
+                <RiSaveLine size={14} />
+                {saving ? "Saving…" : "Save"}
+              </button>
+              <div className="flex items-center gap-2 text-[10px]">
+                {error && <span className="text-primary-03 truncate max-w-[180px]">{error}</span>}
+                {!draft.correct_answer?.length && !error && (
+                  <span className="text-amber-500">No answer set</span>
+                )}
+                {savedAt && !error && (
+                  <span className="text-t-tertiary">
+                    Saved {savedAt.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}
+                  </span>
+                )}
+                <span className="text-t-tertiary">v{draft.content_version ?? 0}</span>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* ── Question body ────────────────────────────────────────────────── */}
@@ -334,36 +345,6 @@ export function QuestionReviewEditor({
         />
       </div>
 
-      {/* ── Sticky save bar ──────────────────────────────────────────────── */}
-      {canEdit && (
-        <div className="shrink-0 border-t border-s-stroke2 bg-b-surface1/90 px-5 py-3 backdrop-blur-sm">
-          {error && (
-            <div className="mb-2 flex items-center gap-2 rounded-[8px] border border-primary-03/30 bg-primary-03/5 px-3 py-2">
-              <RiInformationLine size={14} className="shrink-0 text-primary-03" />
-              <p className="text-xs text-primary-03">{error}</p>
-            </div>
-          )}
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              disabled={saving}
-              onClick={saveAll}
-              className="h-9 flex-1 rounded-[10px] bg-[#151515] text-sm font-semibold text-white transition-opacity disabled:opacity-50 dark:bg-white dark:text-black"
-            >
-              {saving ? "Saving…" : "Save"}
-            </button>
-            {!draft.correct_answer?.length && (
-              <span className="shrink-0 text-[10px] text-amber-500">No answer selected</span>
-            )}
-            {savedAt && (
-              <p className="shrink-0 text-[11px] text-t-tertiary">
-                Saved {savedAt.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}
-              </p>
-            )}
-            <p className="ml-auto shrink-0 text-[10px] text-t-tertiary">v{draft.content_version ?? 0}</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
