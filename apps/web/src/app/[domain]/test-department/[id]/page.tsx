@@ -253,7 +253,7 @@ export default function ReviewPaperPage() {
         {/* ── LEFT sidebar ──────────────────────────────────────────────── */}
         <aside className="flex flex-col gap-3 overflow-hidden" style={{ height: PANEL_H }}>
           {/* Completion */}
-          <div className="shrink-0 rounded-[24px] border border-s-stroke2 bg-b-surface1 px-4 py-3">
+          <div className="shrink-0 rounded-[12px] border border-s-stroke2 bg-b-surface1 px-4 py-3">
             <div className="mb-1.5 flex items-center justify-between">
               <p className="text-[10px] font-bold uppercase tracking-wider text-t-secondary">Completion</p>
               <p className="text-[11px] font-bold text-t-primary">{complete}/{questions.length}</p>
@@ -264,7 +264,7 @@ export default function ReviewPaperPage() {
           </div>
 
           {/* Question navigator with subject tabs */}
-          <div className="flex-1 min-h-0 rounded-[24px] border border-s-stroke2 bg-b-surface1 overflow-hidden flex flex-col">
+          <div className="flex-1 min-h-0 rounded-[12px] border border-s-stroke2 bg-b-surface1 overflow-hidden flex flex-col">
             {/* Subject tab strip */}
             <div className="shrink-0 flex border-b border-s-stroke2">
               {sections.map(({ subject, qs }) => {
@@ -333,7 +333,7 @@ export default function ReviewPaperPage() {
             <div className="mb-3 shrink-0 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2.5 text-sm text-t-secondary">{message}</div>
           )}
           {question ? (
-            <div className="card flex-1 min-h-0 overflow-hidden p-0 rounded-[24px]">
+            <div className="card flex-1 min-h-0 overflow-hidden p-0 rounded-[12px]">
               <QuestionReviewEditor
                 key={question.id}
                 question={question}
