@@ -29,6 +29,9 @@ RUN apk add --no-cache python3 py3-pip \
 
 # Set node env to production
 ENV NODE_ENV production
+# Align the listening port with EXPOSE below so the process binds to the port
+# the platform expects, regardless of whether PORT is injected externally.
+ENV PORT 8080
 
 # Copy necessary files from builder
 COPY --from=builder /app/package.json ./
@@ -44,6 +47,11 @@ COPY --from=builder /app/apps/api/src/services/extractor ./apps/api/dist/service
 
 # Expose port
 EXPOSE 8080
+
+# Container healthcheck — hits the readiness endpoint. A 503 (dependency down)
+# is treated as unhealthy so the orchestrator stops routing traffic.
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
+  CMD wget -qO- --spider http://127.0.0.1:${PORT}/health || exit 1
 
 # Start the application
 CMD ["node", "apps/api/dist/index.js"]

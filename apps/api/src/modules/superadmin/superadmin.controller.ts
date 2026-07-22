@@ -10,54 +10,28 @@ import * as fs from "fs";
 import * as path from "path";
 import { normalizeQuestionMedia } from "../../lib/question-media";
 
-const SUPABASE_URL = process.env.SUPABASE_URL!;
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY!;
+// Supabase credentials are read from the validated env via the supabaseDB
+// client (service-role). The previous module-level SUPABASE_SERVICE_KEY
+// constant + raw fetch() helpers (sbPost/sbSelect) are removed: they bypassed
+// the supabase-js abstraction and kept the service key in the call stack where
+// an unexpected error could surface it in logs. All DB access now goes through
+// supabaseDB, which is parameterized and never exposes the key to application
+// code.
 
-// â”€â”€â”€ Supabase REST helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-async function sbPost(table: string, rows: any[], prefer = "resolution=merge-duplicates,return=minimal") {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
-    method: "POST",
-    headers: {
-      "Content-Type":  "application/json",
-      "apikey":        SUPABASE_SERVICE_KEY,
-      "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
-      "Prefer":        prefer,
-    },
-    body: JSON.stringify(rows),
-  });
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Supabase ${table} insert failed (${res.status}): ${text}`);
-  }
-  if (prefer.includes("return=representation")) return res.json();
-  return null;
-}
-
-async function sbSelect(table: string, query: string) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?${query}`, {
-    headers: {
-      "apikey":        SUPABASE_SERVICE_KEY,
-      "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
-    },
-  });
-  if (!res.ok) throw new Error(`Supabase select failed: ${await res.text()}`);
-  return res.json();
-}
-
-// â”€â”€â”€ Chunk helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Chunk helper ─────────────────────────────────────────────────────────────
 function chunk<T>(arr: T[], size: number): T[][] {
   const chunks: T[][] = [];
   for (let i = 0; i < arr.length; i += size) chunks.push(arr.slice(i, i + size));
   return chunks;
 }
 
-// â”€â”€â”€ UUID helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── UUID helper ──────────────────────────────────────────────────────────────
 const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 function ensureUUID(id: any): string {
   return typeof id === "string" && UUID_REGEX.test(id) ? id : randomUUID();
 }
 
-// â”€â”€â”€ Validation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Validation ───────────────────────────────────────────────────────────────
 function validateQuestion(q: any, index: number): string | null {
   if (!q.question_text) return `Question #${index + 1}: missing 'question_text'`;
   // Drafts are intentionally allowed to have missing keys or damaged matching
@@ -68,7 +42,7 @@ function validateQuestion(q: any, index: number): string | null {
   return null;
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 /**
  * GET /api/v1/superadmin/stats
  * [super_admin only]
@@ -123,13 +97,13 @@ export const getPlatformStats = async (req: Request, res: Response): Promise<voi
   }
 };
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 /**
  * GET /api/v1/superadmin/institutes
  * [super_admin only]
  *
  * Returns all institutes with owner info and student counts.
- * Delegates to institutes.service.ts per ARCHITECTURE_V2 Â§4.1.
+ * Delegates to institutes.service.ts per ARCHITECTURE_V2 §4.1.
  */
 export const listInstitutes = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -141,7 +115,7 @@ export const listInstitutes = async (req: Request, res: Response): Promise<void>
   }
 };
 
-// â”€â”€ Helper to process base64 inline images and upload to R2 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Helper to process base64 inline images and upload to R2 ──────────────────
 async function processBase64ImagesInText(text: string): Promise<string> {
   if (!text) return text;
   const base64Regex = /!\[image\]\(data:(image\/[a-zA-Z+.-]+);base64,([^)]+)\)/g;
@@ -179,7 +153,7 @@ async function processBase64ImageUrl(imageUrl: string | null): Promise<string | 
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 /**
  * POST /api/v1/superadmin/upload-questions
  * [super_admin only]
@@ -203,7 +177,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       questions,
     } = req.body;
 
-    // â”€â”€ 1. Validate required metadata â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── 1. Validate required metadata ───────────────────────────────────────
     const missing = [];
     if (!exam)      missing.push("exam");
     if (!test_type) missing.push("test_type");
@@ -240,7 +214,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    // â”€â”€ 2. Validate questions array â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── 2. Validate questions array ─────────────────────────────────────────
     const errors: string[] = [];
     for (let i = 0; i < questions.length; i++) {
       const err = validateQuestion(questions[i], i);
@@ -252,15 +226,22 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    // â”€â”€ 3. Resolve exam_id from DB â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    const exams = await sbSelect("exams", `code=eq.${exam}&select=id,code`);
-    if (!exams.length) {
+    // ── 3. Resolve exam_id from DB ──────────────────────────────────────────
+    // (Replaced the raw-fetch sbSelect helper with supabaseDB — no service key
+    //  in the call stack, parameterized query.)
+    const { data: exams, error: examError } = await supabaseDB
+      .from("exams")
+      .select("id, code")
+      .eq("code", exam)
+      .limit(1);
+    if (examError) throw examError;
+    if (!exams || !exams.length) {
       res.status(400).json({ success: false, message: `Exam '${exam}' not found in database. Run migration 02 first.` });
       return;
     }
     const examId = exams[0].id;
 
-    // â”€â”€ 4. Map questions to DB schema â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── 4. Map questions to DB schema ───────────────────────────────────────
     const questionRows = await Promise.all(
       questions.map(async (q: any) => {
         const isNumerical = !q.options || q.options.length < 2;
@@ -313,7 +294,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       })
     );
 
-    // â”€â”€ 5. Bulk upsert questions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── 5. Bulk upsert questions via a single RPC ───────────────────────────
     const { data: paperId, error: uploadError } = await supabaseDB.rpc(
       "create_global_review_draft_with_questions",
       {
@@ -336,7 +317,7 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
     await writeAdminAudit(
       req.user?.id,
       "Global question bank upload",
-      `Created global paper \"${title.trim()}\" with ${questionRows.length} questions.`,
+      `Created global paper "${title.trim()}" with ${questionRows.length} questions.`,
       "question_bank",
       "success"
     );
@@ -347,70 +328,13 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
       data: { paper_id: paperId, title, exam, test_type, total_questions: questionRows.length },
     });
     return;
-
-    const batches = chunk(questionRows, 100);
-    for (const batch of batches) {
-      await sbPost("questions", batch);
-    }
-
-    // â”€â”€ 6. Create the Paper record â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    const paperRows = [{
-      exam_id:         examId,
-      test_type,
-      title,
-      subject:         subject  || null,
-      chapter:         chapter  || null,
-      year:            year     || null,
-      shift:           shift    || null,
-      total_questions: questionRows.length,
-      total_marks:     marks,
-      duration_min:    duration,
-      difficulty,
-      is_published:    false,
-      workflow_status: "draft",
-      is_active:       true,
-    }];
-
-    const createdPapers = await sbPost(
-      "papers",
-      paperRows,
-      "return=representation"
-    );
-
-    const paper = Array.isArray(createdPapers) ? createdPapers[0] : null;
-
-    // â”€â”€ 7. Link questions to paper via paper_questions join table â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    if (paper?.id) {
-      const pqRows = questionRows.map((q: any, idx: number) => ({
-        paper_id:    paper.id,
-        question_id: q.id,
-        position:    idx + 1,
-      }));
-      const pqBatches = chunk(pqRows, 100);
-      for (const batch of pqBatches) {
-        await sbPost("paper_questions", batch, "resolution=merge-duplicates,return=minimal");
-      }
-    }
-
-    // â”€â”€ 8. Respond â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    res.status(201).json({
-      success: true,
-      message: `Draft created with ${questionRows.length} questions. Review and publish it from the question bank.`,
-      data: {
-        paper_id:       paper?.id ?? null,
-        title,
-        exam,
-        test_type,
-        total_questions: questionRows.length,
-      },
-    });
   } catch (err: any) {
     console.error("[uploadQuestions] ERROR:", err.message);
     res.status(500).json({ success: false, message: err.message });
   }
 };
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 /**
  * GET /api/v1/superadmin/transactions
  * [super_admin only]
@@ -535,9 +459,9 @@ export const getPdfExtractionJobStatus = async (req: Request, res: Response): Pr
   }
 };
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// â”€â”€â”€ Extended Superadmin Features (Integration Wiring) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
+// ─── Extended Superadmin Features (Integration Wiring) ───────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 
 /**
  * Helper to log admin actions to the database audit_logs table
@@ -889,7 +813,7 @@ export const getPlatformAnalytics = async (req: Request, res: Response): Promise
         return {
           name: inst.name,
           studentCount: inst.student_count ?? 0,
-          tokens: "â€”",
+          tokens: "—",
         };
       });
 
