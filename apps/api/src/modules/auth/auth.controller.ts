@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
 import { randomUUID } from "crypto";
 import { createRequestAuthClient, supabaseAdmin, supabaseDB } from "../../lib/supabase";
+import { invalidateAuthContext, expectedBoundSessionToken } from "../../middleware/auth.middleware";
 
 // ─────────────────────────────────────────────────────────────────────────────
 /**
  * POST /api/v1/auth/login
- * Public — no middleware.
+ * Public — no middleware (authLimiter applied at the route).
  *
  * Handles two login types:
  *   - phone_dob  : Student login via Phone Number + Date of Birth
@@ -23,19 +24,19 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     // ── Build Supabase credentials ───────────────────────────────────────────
     let supabaseEmail: string;
     let supabasePassword: string;
-    console.log("[LOGIN API] Received institute_slug:", institute_slug);
+    console.debug("[login] received login_type:", login_type, "institute_slug:", institute_slug);
 
     if (login_type === "phone_dob") {
       if (!phone || !dob) {
         res.status(400).json({ success: false, message: "phone and dob are required for student login." });
         return;
       }
-      
+
       let resolvedSlug = String(institute_slug || "").toLowerCase().trim();
       if (resolvedSlug.includes("localhost")) {
         resolvedSlug = resolvedSlug.split(".")[0];
       }
-      
+
       if (!resolvedSlug) {
         // Attempt to auto-resolve institute by phone
         const { data: matchedUsers } = await supabaseDB
@@ -43,7 +44,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
           .select("institute_id")
           .eq("phone", String(phone).trim())
           .eq("role", "student");
-          
+
         if (!matchedUsers || matchedUsers.length === 0) {
           res.status(401).json({ success: false, message: "Invalid credentials. Please check and try again." });
           return;
@@ -53,19 +54,19 @@ export const login = async (req: Request, res: Response): Promise<void> => {
           res.status(400).json({ success: false, message: "Your phone is registered in multiple institutes. Please use your institute's specific login URL (e.g. institute.classphere.com)." });
           return;
         }
-        
+
         // Exactly one match
         const { data: instData } = await supabaseDB
           .from("institutes")
           .select("subdomain_slug")
           .eq("id", matchedUsers[0].institute_id)
           .single();
-          
+
         if (!instData) {
           res.status(401).json({ success: false, message: "Invalid credentials. Please check and try again." });
           return;
         }
-        
+
         resolvedSlug = instData.subdomain_slug || "unknown";
         req.body.institute_slug = resolvedSlug; // For subsequent tenant isolation checks below
       }
@@ -99,8 +100,6 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     const userId = authData.user.id;
 
-    console.log("[login] Auth success. userId:", userId, "email:", supabaseEmail);
-
     // ── Fetch user profile from DB ─────────────────────────────────────────────
     const { data: userRecord1, error: userError1 } = await supabaseDB
       .from("users")
@@ -108,35 +107,29 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       .eq("id", userId)
       .single();
 
-    console.log("[login] Query by ID result:", { found: !!userRecord1, error: userError1?.message, code: userError1?.code });
-
     let userRecord = userRecord1;
 
     // Fallback A: If not found by ID, try by email (handles dev ID mismatch)
     if (!userRecord) {
-      const { data: fallbackRecord, error: fallbackError } = await supabaseDB
+      const { data: fallbackRecord } = await supabaseDB
         .from("users")
         .select("id, name, email, role, avatar_url, institute_id, active_session_token")
         .eq("email", supabaseEmail)
         .single();
 
-      console.log("[login] Query by email result:", { found: !!fallbackRecord, error: fallbackError?.message });
-
       if (fallbackRecord) {
         userRecord = fallbackRecord;
         // Fix the ID mismatch so future logins work directly
-        const { error: updateErr } = await supabaseDB.from("users").update({ id: userId }).eq("email", supabaseEmail);
-        console.log("[login] ID mismatch fix:", updateErr ? updateErr.message : "OK");
+        await supabaseDB.from("users").update({ id: userId }).eq("email", supabaseEmail);
       } else {
         // Fallback B: Auto-create profile from auth metadata
-        const { data: authUserData, error: authUserErr } = await supabaseAdmin.auth.admin.getUserById(userId);
-        console.log("[login] getUserById:", { found: !!authUserData?.user, error: authUserErr?.message });
+        const { data: authUserData } = await supabaseAdmin.auth.admin.getUserById(userId);
 
         if (authUserData?.user) {
           const meta = authUserData.user.user_metadata ?? {};
           const roleFromMeta = (authUserData.user.app_metadata?.role as string) ?? "student";
 
-          const { data: upserted, error: upsertErr } = await supabaseDB
+          const { data: upserted } = await supabaseDB
             .from("users")
             .upsert({
               id: userId,
@@ -147,7 +140,6 @@ export const login = async (req: Request, res: Response): Promise<void> => {
             .select("id, name, email, role, avatar_url, institute_id, active_session_token")
             .single();
 
-          console.log("[login] upsert result:", { data: upserted, error: upsertErr?.message });
           userRecord = upserted ?? null;
         }
       }
@@ -216,17 +208,23 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     }
 
     // ── One-device: generate new session token ─────────────────────────────────
-    // This overwrites any existing token, effectively logging out the previous device.
+    // The client receives the plain token and sends it back on every request.
+    // The DB stores the cryptographically bound form (HMAC of userId|token) so a
+    // stolen JWT alone cannot forge a valid session token. See auth.middleware.
     const sessionToken = randomUUID();
+    const storedToken = expectedBoundSessionToken(userId, sessionToken);
 
     await supabaseDB
       .from("users")
       .update({
-        active_session_token: sessionToken,
+        active_session_token: storedToken,
         last_login_at: new Date().toISOString(),
         last_login_device: (req.headers["user-agent"] ?? "unknown").substring(0, 255),
       })
       .eq("id", userId);
+
+    // Drop the cached auth context so the next request re-reads the new token.
+    await invalidateAuthContext(userId);
 
     // ── Success ───────────────────────────────────────────────────────────────
     res.status(200).json({
@@ -531,5 +529,3 @@ export const updateMe = async (req: Request, res: Response): Promise<void> => {
     res.status(500).json({ success: false, message: err.message });
   }
 };
-
-
