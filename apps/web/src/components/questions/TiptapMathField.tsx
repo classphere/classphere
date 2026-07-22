@@ -15,7 +15,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useEditor, EditorContent, ReactNodeViewRenderer, type Editor, type NodeViewProps } from "@tiptap/react";
+import { useEditor, EditorContent, ReactNodeViewRenderer, NodeViewWrapper, type Editor, type NodeViewProps } from "@tiptap/react";
 import { Node, mergeAttributes } from "@tiptap/core";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
@@ -300,13 +300,13 @@ function InlineMathView({ node, selected, deleteNode, updateAttributes, editor }
   const latex = node.attrs.latex ?? "";
   const [editing, setEditing] = useState(false);
   return (
-    <span
+    <NodeViewWrapper
+      as="span"
       className={`group/math inline-flex items-center rounded-[5px] border align-middle transition-colors ${
         selected
           ? "border-primary-01/60 bg-primary-01/10"
           : "border-primary-01/20 bg-primary-01/5 hover:border-primary-01/50"
       }`}
-      contentEditable={false}
     >
       {editing ? (
         <MathLiveInline
@@ -342,7 +342,7 @@ function InlineMathView({ node, selected, deleteNode, updateAttributes, editor }
           <RiDeleteBin7Line size={9} />
         </button>
       )}
-    </span>
+    </NodeViewWrapper>
   );
 }
 
@@ -350,13 +350,13 @@ function DisplayMathView({ node, selected, deleteNode, updateAttributes, editor 
   const latex = node.attrs.latex ?? "";
   const [editing, setEditing] = useState(false);
   return (
-    <span
-      className={`group/math mx-1 my-1 inline-flex w-full items-center justify-center gap-1 rounded-[8px] border py-1 transition-colors ${
+    <NodeViewWrapper
+      as="div"
+      className={`group/math my-1 flex w-full items-center justify-center gap-1 rounded-[8px] border py-1 transition-colors ${
         selected
           ? "border-primary-01/60 bg-primary-01/10"
           : "border-primary-01/20 bg-primary-01/5 hover:border-primary-01/50"
       }`}
-      contentEditable={false}
     >
       {editing ? (
         <div className="w-full max-w-2xl">
@@ -395,7 +395,7 @@ function DisplayMathView({ node, selected, deleteNode, updateAttributes, editor 
           <RiDeleteBin7Line size={10} />
         </button>
       )}
-    </span>
+    </NodeViewWrapper>
   );
 }
 
