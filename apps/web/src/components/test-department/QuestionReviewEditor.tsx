@@ -175,7 +175,7 @@ export function QuestionReviewEditor({
   return (
     <div className="flex flex-col h-full">
       {/* ── Header: Classification + Save ─────────────────────────────── */}
-      <div className="shrink-0 border-b border-s-stroke2 bg-b-surface1 px-5 py-3">
+      <div className="shrink-0 border-b border-s-stroke2 bg-b-surface1 px-5 py-3 rounded-t-[24px]">
         <div className="flex items-end gap-3">
           {/* Dropdowns */}
           <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4">
@@ -249,15 +249,13 @@ export function QuestionReviewEditor({
       {/* ── Question body ────────────────────────────────────────────────── */}
       <div className="flex-1 overflow-y-auto px-5 py-4 space-y-5">
 
-        <div className="rounded-[10px] border border-s-stroke2 bg-b-surface2/40">
-          <SegmentEditor
-            label="Question text"
-            value={draft.question_text ?? ""}
-            disabled={!canEdit}
-            onChange={(v) => set({ question_text: v })}
-            placeholder="Type question text…"
-          />
-        </div>
+        <SegmentEditor
+          label="Question text"
+          value={draft.question_text ?? ""}
+          disabled={!canEdit}
+          onChange={(v) => set({ question_text: v })}
+          placeholder="Type question text…"
+        />
 
         {/* Options */}
         <div>
