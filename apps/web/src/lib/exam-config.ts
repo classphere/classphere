@@ -4,6 +4,8 @@ export const EXAM_SUBJECTS: Record<string, string[]> = {
   "jee-advanced":      ["Physics", "Chemistry", "Mathematics"],
   "jee-main-advanced": ["Physics", "Chemistry", "Mathematics"],
   "neet-ug":           ["Physics", "Chemistry", "Biology"],
+  // Fallback for unknown exams
+  "default":           ["Physics", "Chemistry", "Mathematics"],
 };
 
 /** Human-readable labels for each exam code. */
@@ -23,11 +25,15 @@ export const SUBJECT_ABBR: Record<string, string> = {
 };
 
 /** Subject accent colours — Tailwind-compatible CSS variable names. */
-export const SUBJECT_COLOR: Record<string, { bg: string; text: string; border: string }> = {
-  Physics:     { bg: "bg-blue-500/10",   text: "text-blue-500",   border: "border-blue-500/30" },
-  Chemistry:   { bg: "bg-green-500/10",  text: "text-green-500",  border: "border-green-500/30" },
-  Mathematics: { bg: "bg-violet-500/10", text: "text-violet-500", border: "border-violet-500/30" },
-  Biology:     { bg: "bg-emerald-500/10",text: "text-emerald-500",border: "border-emerald-500/30" },
+export const SUBJECT_COLOR: Record<string, { bg: string; text: string; border: string; dot: string }> = {
+  Physics:     { bg: "bg-blue-500/10",    text: "text-blue-500",    border: "border-blue-500/30",    dot: "bg-blue-500" },
+  Chemistry:   { bg: "bg-green-500/10",   text: "text-green-500",   border: "border-green-500/30",   dot: "bg-green-500" },
+  Mathematics: { bg: "bg-violet-500/10",  text: "text-violet-500",  border: "border-violet-500/30",  dot: "bg-violet-500" },
+  Biology:     { bg: "bg-emerald-500/10", text: "text-emerald-500", border: "border-emerald-500/30", dot: "bg-emerald-500" },
 };
 
-export const DIFFICULTY_OPTIONS = ["Easy", "Medium", "Hard"];
+export const DIFFICULTY_OPTIONS = [
+  { value: "easy",   label: "Easy" },
+  { value: "medium", label: "Medium" },
+  { value: "hard",   label: "Hard" },
+];

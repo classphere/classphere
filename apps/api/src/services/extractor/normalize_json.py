@@ -348,14 +348,18 @@ def enforce_subjects(questions: list, kind: str, dominant, report: dict):
         return
 
     if kind == "neet":
-        print("  NEET paper detected. Enforcing ranges: 1-50 Physics, 51-100 Chemistry, 101+ Biology")
+        # NTA NEET 2024-2026 official pattern:
+        #   Physics  Q1–45  (45 questions)
+        #   Chemistry Q46–90 (45 questions)
+        #   Biology  Q91–180 (90 questions, includes Botany + Zoology)
+        print("  NEET paper detected. Enforcing ranges: 1-45 Physics, 46-90 Chemistry, 91+ Biology")
         for q in questions:
             qnum = q.get("question_number", 0)
-            if 1 <= qnum <= 50:
+            if 1 <= qnum <= 45:
                 q["subject"] = "Physics"
-            elif 51 <= qnum <= 100:
+            elif 46 <= qnum <= 90:
                 q["subject"] = "Chemistry"
-            elif qnum >= 101:
+            elif qnum >= 91:
                 q["subject"] = "Biology"
         report["subject_layout"] = "neet"
         return

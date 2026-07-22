@@ -13,6 +13,8 @@ const allowedQuestionFields = new Set([
   "question_text", "image_url", "options", "correct_answer", "explanation", "tags",
   "source_reference",
 ]);
+// Metadata-only fields: no correct_answer validation required when only these change
+const metadataOnlyFields = new Set(["subject", "chapter", "topic", "difficulty", "tags", "year", "source", "source_reference"]);
 
 function isDepartmentUser(req: Request) {
   return departmentRoles.has(req.user?.role ?? "");
@@ -214,9 +216,14 @@ export async function updateReviewQuestion(req: Request, res: Response): Promise
     const updates: Record<string, unknown> = {};
     for (const [key, value] of Object.entries(req.body ?? {})) if (allowedQuestionFields.has(key)) updates[key] = value;
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No editable question fields supplied." }); return; }
-    const candidate = { ...current, ...updates };
-    const validationError = validQuestion(candidate);
-    if (validationError) { res.status(400).json({ success: false, message: validationError }); return; }
+    // Skip full validation when only metadata fields are being updated
+    const updatedKeys = Object.keys(updates);
+    const isMetadataOnly = updatedKeys.every((k) => metadataOnlyFields.has(k));
+    if (!isMetadataOnly) {
+      const candidate = { ...current, ...updates };
+      const validationError = validQuestion(candidate);
+      if (validationError) { res.status(400).json({ success: false, message: validationError }); return; }
+    }
     updates.content_version = current.content_version + 1;
     updates.review_status = "draft";
     updates.updated_at = new Date().toISOString();
@@ -288,5 +295,86 @@ export async function transitionReviewPaper(req: Request, res: Response): Promis
     }
     await audit({ instituteId, paperId: paper.id, actorId: req.user!.id, action: `paper_${action}`, reason, before: { workflow_status: paper.workflow_status }, after: { workflow_status } });
     res.json({ success: true, data: { paper: updated } });
+  } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
+}
+
+// ── Exam pattern rules — deterministic, rule-based (not AI) ───────────────────
+const EXAM_PATTERNS: Record<string, { subjects: string[]; counts: Record<string, number>; total: number }> = {
+  "neet-ug": {
+    subjects: ["Physics", "Chemistry", "Biology"],
+    counts: { Physics: 45, Chemistry: 45, Biology: 90 },
+    total: 180,
+  },
+  "jee-main": {
+    subjects: ["Physics", "Chemistry", "Mathematics"],
+    counts: { Physics: 25, Chemistry: 25, Mathematics: 25 },
+    total: 75,
+  },
+  "jee-advanced": {
+    subjects: ["Physics", "Chemistry", "Mathematics"],
+    // JEE Advanced has variable counts per year; validate total only
+    counts: {},
+    total: 0, // 0 = skip total validation
+  },
+};
+
+export async function validatePaper(req: Request, res: Response): Promise<void> {
+  try {
+    const instituteId = hasInstitute(req, res); if (!instituteId) return;
+    const { data: paper, error: paperErr } = await supabaseDB
+      .from("papers").select("*, exam_code:exams(code)")
+      .eq("id", req.params.id).eq("institute_id", instituteId).eq("is_active", true).maybeSingle();
+    if (paperErr) throw paperErr;
+    if (!paper) { res.status(404).json({ success: false, message: "Paper not found." }); return; }
+
+    const { data: rows, error } = await supabaseDB.from("paper_questions")
+      .select("position, questions(id, subject, question_text)").eq("paper_id", paper.id).order("position", { ascending: true });
+    if (error) throw error;
+
+    const questions = (rows ?? []).map((r: any) => ({ position: r.position, ...(Array.isArray(r.questions) ? r.questions[0] : r.questions) }));
+    const examCode: string = (paper as any).exam_code?.code ?? "";
+    const pattern = EXAM_PATTERNS[examCode];
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    // Count subjects
+    const counts: Record<string, number> = {};
+    for (const q of questions) {
+      const sub = q.subject || "Unknown";
+      counts[sub] = (counts[sub] ?? 0) + 1;
+    }
+
+    if (pattern) {
+      // Total count
+      if (pattern.total > 0 && questions.length !== pattern.total) {
+        errors.push(`Expected ${pattern.total} questions total, found ${questions.length}.`);
+      }
+      // Per-subject counts
+      for (const [sub, expected] of Object.entries(pattern.counts)) {
+        const found = counts[sub] ?? 0;
+        if (found !== expected) {
+          errors.push(`Expected ${sub}: ${expected}, Found: ${found}.`);
+        }
+      }
+      // Unknown subjects
+      const unknownSubs = Object.keys(counts).filter((s) => !pattern.subjects.includes(s));
+      for (const sub of unknownSubs) {
+        warnings.push(`${counts[sub]} question(s) have subject "${sub}" which is not expected for ${examCode}.`);
+      }
+      // Missing answers
+      const noAnswer = questions.filter((q: any) => !q.correct_answer?.length);
+      if (noAnswer.length > 0) {
+        warnings.push(`${noAnswer.length} question(s) have no correct answer set.`);
+      }
+      // Missing question text
+      const noText = questions.filter((q: any) => !String(q.question_text ?? "").trim());
+      if (noText.length > 0) {
+        errors.push(`${noText.length} question(s) have empty question text.`);
+      }
+    } else {
+      warnings.push(`No validation pattern defined for exam "${examCode}" — manual review required.`);
+    }
+
+    res.json({ success: true, data: { valid: errors.length === 0, errors, warnings, counts, total: questions.length, examCode } });
   } catch (error: any) { res.status(500).json({ success: false, message: error.message }); }
 }
