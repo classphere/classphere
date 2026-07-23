@@ -170,10 +170,19 @@ def main():
             em = error_count(qm, M_imgs)
             if ep < em:                       # PyMuPDF strictly better → keep it
                 chosen, src_imgs, tag = qp, P_imgs, "pymupdf"
-            else:                             # Marker's text (fixes math); tie → Marker
+            elif em < ep:                     # Marker strictly better → keep it
                 chosen, src_imgs, tag = qm, M_imgs, "marker"
+            else:
+                # TIE: prefer PyMuPDF for digital PDFs — its text comes from
+                # the actual text layer (clean, no OCR drift). Marker's OCR
+                # can introduce subtle character errors (0 vs O, 1 vs l, etc.)
+                # that pass structural checks but are semantically wrong.
+                # Images: still swap PyMuPDF natives in (handled below).
+                chosen, src_imgs, tag = qp, P_imgs, "pymupdf"
             if tag == "marker" and em != ep:
                 detail.append(f"Q{n}: marker (errs {ep}->{em})")
+            elif tag == "pymupdf" and ep != em:
+                detail.append(f"Q{n}: pymupdf (errs {em}->{ep})")
 
         # IMAGES: always prefer PyMuPDF's native embedded images (best source).
         if tag == "marker" and qp is not None:

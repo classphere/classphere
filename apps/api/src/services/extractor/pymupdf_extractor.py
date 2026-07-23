@@ -880,10 +880,42 @@ def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs:
     diagram_items.extend(b for b in leftover_bars
                          if (b[2] - b[0]) >= 8 or (b[3] - b[1]) >= 8)
 
-    # 3b. Reassemble same-row segments into full-width line elements. Fixes
-    #     full-width lines that inline math split into L/R halves (which caused
-    #     2-column misclassification and reading-order scrambling on dense pages).
-    elements = reassemble_rows(elements)
+    # 3b. Column detection + row reassembly.
+    #
+    # CRITICAL ORDERING: detect 2-column layout BEFORE reassemble_rows. If we
+    # reassemble first, fragments from the left and right columns on the same
+    # visual row get merged into one full-width element (because the column
+    # gutter on Aakash/Allen PDFs can be very narrow or even overlap at the
+    # midline). Those merged elements then look "full-width" and the 2-column
+    # detector returns false — falling back to single-column reading order,
+    # which interleaves left/right line-by-line. That's the question-mixup bug.
+    #
+    # Fix: check if the page is 2-column NOW (from the raw element x-positions).
+    # If it is, run reassemble_rows ONLY within each column (left fragments
+    # merge with left, right with right, never across the midline). If it's
+    # single-column, reassemble normally (merge across the full width).
+    text_els_for_detect = [e for e in elements if e.get("kind") == "text"
+                           and (e["bbox"][2] - e["bbox"][0]) < page_w * 0.65]
+    left_count = sum(1 for e in text_els_for_detect if (e["bbox"][0] + e["bbox"][2]) / 2 < mid_x)
+    right_count = sum(1 for e in text_els_for_detect if (e["bbox"][0] + e["bbox"][2]) / 2 >= mid_x)
+    page_is_2col = left_count >= 3 and right_count >= 3
+
+    if page_is_2col:
+        # Split elements into left/right/full, reassemble each column separately.
+        left_els = [e for e in elements if e.get("kind") == "text"
+                    and (e["bbox"][0] + e["bbox"][2]) / 2 < mid_x]
+        right_els = [e for e in elements if e.get("kind") == "text"
+                     and (e["bbox"][0] + e["bbox"][2]) / 2 >= mid_x]
+        non_text = [e for e in elements if e.get("kind") != "text"]
+        # Full-width text elements (headers, section bands) go through normally.
+        full_text = [e for e in elements if e.get("kind") == "text"
+                     and (e["bbox"][2] - e["bbox"][0]) >= page_w * 0.65]
+        left_reassembled = reassemble_rows(left_els)
+        right_reassembled = reassemble_rows(right_els)
+        full_reassembled = reassemble_rows(full_text)
+        elements = left_reassembled + right_reassembled + full_reassembled + non_text
+    else:
+        elements = reassemble_rows(elements)
 
     # 4. Raster images (skip boilerplate + tiny)
     raster = []
