@@ -1,4 +1,4 @@
-﻿import { Worker, Job } from "bullmq";
+import { Worker, Job } from "bullmq";
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
@@ -63,7 +63,13 @@ export const pdfExtractionWorker = new Worker<PdfExtractionJobData>(
     connection: getRedisOptions() as any,
     concurrency: 2,
     drainDelay: 60,
-    stalledInterval: 600000,
+    // PDF extraction can take 5-10 minutes (PyMuPDF + Cerebras for 180
+    // questions + Marker escalation + merge + normalize). The default
+    // lockDuration is 30s — far too short. Set it to 15 minutes so the lock
+    // survives even the longest extraction. BullMQ auto-renews at
+    // lockDuration/2, so renewal happens every 7.5 min.
+    lockDuration: 15 * 60 * 1000, // 15 minutes
+    stalledInterval: 600000,       // 10 min — check for stalled jobs
     maxStalledCount: 1,
   }
 );
