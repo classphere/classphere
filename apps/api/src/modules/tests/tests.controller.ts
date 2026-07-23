@@ -22,7 +22,6 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
 
-    // 1. Fetch paper metadata
     const { data: paper, error: pErr } = await supabaseDB
       .from("papers")
       .select("*, exams(code, full_name)")
@@ -39,8 +38,6 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    // Service-role database access bypasses RLS, so tenant ownership needs an
-    // explicit guard before a staff account can read an institute paper.
     if (paper.institute_id && req.user?.role !== "super_admin" && paper.institute_id !== req.user?.institute_id) {
       res.status(403).json({ success: false, message: "Access denied. This test belongs to another institute." });
       return;
@@ -63,7 +60,6 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    // 2. Fetch ordered question IDs from join table
     const { data: pqs, error: pqErr } = await supabaseDB
       .from("paper_questions")
       .select("question_id, position")
@@ -79,7 +75,6 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
     let questions: any[] = [];
 
     if (questionIds.length > 0) {
-      // Fetch in batches of 50 to avoid connection drops on large payloads
       const BATCH_SIZE = 50;
       const rawQs: any[] = [];
       for (let i = 0; i < questionIds.length; i += BATCH_SIZE) {
@@ -98,7 +93,6 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
 
       const byId: Record<string, any> = {};
       for (const q of rawQs) {
-        // Normalize: ensure text fields are always plain strings (guards against JSONB type bleed)
         const normalizeText = (v: any): string =>
           v == null ? "" : typeof v === "string" ? v : typeof v === "object" ? JSON.stringify(v) : String(v);
 
@@ -132,6 +126,7 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
     const meta = {
       id: paper.id,
       exam: examLabel || examCode,
+      exam_code: examCode,
       year: paper.year ?? null,
       shift: paper.shift ?? paper.title,
       questions: questions.length,
@@ -148,12 +143,6 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-/**
- * POST /api/v1/tests
- * [institute_admin / teacher] — Create an institute test.
- * Body: { exam_id, title, type, question_count, subjects, difficulty_mix,
- *         duration_minutes, batch_ids, scheduled_start, scheduled_end }
- */
 export const createTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user!.id;
@@ -181,7 +170,6 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       return;
     }
 
-    // Verify that all batch_ids belong to the creator's institute (SEC-3)
     const { count: matchingBatchesCount, error: countErr } = await supabaseDB
       .from("batches")
       .select("id", { count: "exact", head: true })
@@ -198,7 +186,6 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       return;
     }
 
-    // 1. Select random questions matching config
     let questionQuery = supabaseDB
       .from("questions")
       .select("id, subject, difficulty")
@@ -218,10 +205,8 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       return;
     }
 
-    // Shuffle and pick question_count
     const shuffled = allQs.sort(() => Math.random() - 0.5).slice(0, question_count);
 
-    // 2. Insert paper row (SEC-4: use supabaseDB instead of supabaseAdmin)
     const { data: paper, error: pErr } = await supabaseDB
       .from("papers")
       .insert({
@@ -248,7 +233,6 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       return;
     }
 
-    // 3. Insert paper_questions join rows (SEC-4: use supabaseDB)
     const pqRows = shuffled.map((q: any, idx: number) => ({
       paper_id: paper.id,
       question_id: q.id,
@@ -256,7 +240,6 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
     }));
     await supabaseDB.from("paper_questions").insert(pqRows);
 
-    // 4. Assign to batches (using test_batch_assignments) (SEC-4: use supabaseDB)
     if (batch_ids && batch_ids.length > 0) {
       const tbRows = batch_ids.map((b_id: string) => ({
         test_id: paper.id,
@@ -265,7 +248,7 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
       }));
       await supabaseDB.from("test_batch_assignments").insert(tbRows);
     }
-    
+
     console.log(`[createTest] Created paper ${paper.id} with ${shuffled.length} questions, assigned to ${batch_ids.length} batches`);
 
     res.status(201).json({ success: true, data: { test: { id: paper.id, title, question_count: shuffled.length, batch_ids } } });
@@ -275,10 +258,6 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
   }
 };
 
-/**
- * GET /api/v1/tests/my
- * Authenticated — List papers created by the current user.
- */
 export const getMyTests = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user!.id;
@@ -305,15 +284,10 @@ export const getMyTests = async (req: Request, res: Response): Promise<void> => 
   }
 };
 
-/**
- * GET /api/v1/tests/assigned
- * Authenticated (student) — List all tests assigned to the student's batches.
- */
 export const getAssignedTests = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.user!.id;
 
-    // Get student's batch IDs
     const { data: batchLinks } = await supabaseDB
       .from("batch_students")
       .select("batch_id")
@@ -325,7 +299,6 @@ export const getAssignedTests = async (req: Request, res: Response): Promise<voi
       return;
     }
 
-    // Fetch tests assigned to these batches
     const { data: assignments, error: assignErr } = await supabaseDB
       .from("test_batch_assignments")
       .select("assigned_at, scheduled_at, batch_id, papers(id, title, test_type, total_questions, total_marks, duration_min, is_active, is_published, delivery_mode, available_from, available_until, created_at)")
@@ -337,7 +310,6 @@ export const getAssignedTests = async (req: Request, res: Response): Promise<voi
       return;
     }
 
-    // Deduplicate in case multiple batches have the same test, keep earliest scheduled_at
     const testsMap = new Map();
     for (const a of (assignments ?? [])) {
       const p: any = Array.isArray(a.papers) ? a.papers[0] : a.papers;
@@ -355,10 +327,6 @@ export const getAssignedTests = async (req: Request, res: Response): Promise<voi
   }
 };
 
-/**
- * POST /api/v1/tests/:id/publish
- * [teacher / institute_admin] — Publish a test so students can see it.
- */
 export const publishTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
@@ -415,10 +383,6 @@ export const publishTest = async (req: Request, res: Response): Promise<void> =>
   }
 };
 
-/**
- * DELETE /api/v1/tests/:id
- * [super_admin / institute_admin] — Soft delete a test (is_active = false).
- */
 export const deleteTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
@@ -456,7 +420,6 @@ export const deleteTest = async (req: Request, res: Response): Promise<void> => 
   }
 };
 
-/** Super-admin metadata editor for global papers. */
 export const updateGlobalTest = async (req: Request, res: Response): Promise<void> => {
   try {
     const allowed = ["title", "subject", "chapter", "year", "shift", "difficulty", "duration_min", "total_marks"];
@@ -480,14 +443,13 @@ export const updateGlobalTest = async (req: Request, res: Response): Promise<voi
       res.status(404).json({ success: false, message: "Global paper not found." });
       return;
     }
-    await logAdminAction(req.user?.id, "Global paper updated", `Updated metadata for \"${data.title}\".`, "question_bank", "success");
+    await logAdminAction(req.user?.id, "Global paper updated", `Updated metadata for "${data.title}".`, "question_bank", "success");
     res.status(200).json({ success: true, data: { test: data } });
   } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
 };
 
-/** Performs a single database update for selected global papers. */
 export const bulkUpdateGlobalTests = async (req: Request, res: Response): Promise<void> => {
   try {
     const { ids, updates } = req.body as { ids?: string[]; updates?: Record<string, unknown> };
@@ -607,13 +569,14 @@ function chunk<T>(arr: T[], size: number): T[][] {
 /**
  * POST /api/v1/tests/upload-test
  * [institute_admin / teacher / super_admin]
- * Accepts PDF (pdf) and optional answer key CSV (csv) file fields, parses them, 
- * processes crops, creates paper, inserts questions, and assigns to target batches.
+ * Accepts PDF (pdf) and optional answer key CSV/PDF (answer_key) file fields,
+ * parses them, processes crops, creates paper, inserts questions, and assigns
+ * to target batches. Now also extracts worked solutions from the answer-key PDF
+ * into the explanation field.
  */
 export const uploadTestController = async (req: Request, res: Response): Promise<void> => {
   let tempWorkingDir = "";
 
-  // Set headers for NDJSON stream
   res.setHeader("Content-Type", "application/x-ndjson");
   res.setHeader("Transfer-Encoding", "chunked");
   res.setHeader("Cache-Control", "no-cache");
@@ -674,7 +637,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
 
     sendProgress("verifying", "Verifying batch institute access...");
 
-    // 1. Verify target batches belong to user's institute (SEC-3/4)
     const { count: matchingBatchesCount, error: countErr } = await supabaseDB
       .from("batches")
       .select("id", { count: "exact", head: true })
@@ -688,7 +650,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
 
     sendProgress("resolving_exam", "Resolving target exam syllabus target...");
 
-    // 2. Resolve exam_id from the first batch
     const { data: targetBatches, error: fbErr } = await supabaseDB
       .from("batches")
       .select("id, exam")
@@ -717,14 +678,12 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     }
     const examId = examObj.id;
 
-    // 3. Setup temporary working directory for local operations (answer key parsing)
     tempWorkingDir = path.join(__dirname, "../../temp", `extract_${Date.now()}_${Math.random().toString(36).substring(7)}`);
     fs.mkdirSync(tempWorkingDir, { recursive: true });
-    
+
     const tempPdfPath = path.join(tempWorkingDir, "temp.pdf");
     fs.writeFileSync(tempPdfPath, pdfFile.buffer);
 
-    // 4. Push job to worker and poll to keep HTTP SSE stream alive
     const jobId = randomUUID();
     const r2Key = `temp-pdf-jobs/${jobId}.pdf`;
 
@@ -742,8 +701,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
 
     let extractionResult: any = null;
     let pollCount = 0;
-    
-    // Poll every 5s. This keeps the SSE connection alive and waits for the worker.
+
     while (true) {
       await new Promise(resolve => setTimeout(resolve, 5000));
       pollCount++;
@@ -766,7 +724,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         sendError(`AI extraction failed: ${jobData.error}`);
         return;
       } else {
-        // Still processing or pending
         if (pollCount % 3 === 0) {
           sendProgress("extracting_questions", `Analyzing pages & running AI question extraction (OCR)... ${pollCount * 5}s elapsed`);
         }
@@ -778,22 +735,24 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       return;
     }
 
-    // Matching questions are especially vulnerable to OCR table loss. Keep the
-    // extracted draft so a reviewer can repair it; it must never reach a
-    // learner until the Test Admin explicitly publishes it.
     const malformedMatching = extractionResult.questions
       .map((question: any, index: number) => ({ question, index }))
       .filter(({ question }: any) => String(question.question_type ?? "").toLowerCase().includes("matching"))
       .filter(({ question }: any) => !Array.isArray(question.options) || question.options.filter((option: any) => String(option?.text ?? "").trim() || String(option?.image_url ?? "").trim()).length < 2);
 
-    // 4. Parse Answer Key (could be CSV or separate PDF), or fallback to extracting from Master PDF
+    // ── Parse Answer Key (CSV or PDF) + Solutions ───────────────────────────
+    // The answer-key parser (parse_pdf_answer_key.py v2) now:
+    //   - reads ALL pages (not just last 3 — Aakash keys have the table on p1)
+    //   - converts (1)->A, (2)->B, (3)->C, (4)->D to match platform option ids
+    //   - extracts worked solutions into a separate solutions map
+    // Output format: { "answers": {"1": ["A"], ...}, "solutions": {"1": "...", ...} }
     sendProgress("extracting_answers", "Parsing correct answers and mapping solutions...");
     const csvAnswers: Record<number, string[]> = {};
+    const pdfSolutions: Record<number, string> = {};
     const isCsv = answerKeyFile?.originalname?.toLowerCase()?.endsWith(".csv") || answerKeyFile?.mimetype === "text/csv";
     const isPdf = answerKeyFile?.originalname?.toLowerCase()?.endsWith(".pdf") || answerKeyFile?.mimetype === "application/pdf";
 
     if (answerKeyFile && isCsv) {
-      // Case 1: Separate CSV uploaded
       const csvContent = answerKeyFile.buffer.toString("utf-8");
       const lines = csvContent.split(/\r?\n/);
       for (const line of lines) {
@@ -815,7 +774,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         }
       }
     } else {
-      // Case 2 or 3: Separate Answer Key PDF uploaded OR Fallback to Master PDF
+      // Separate Answer Key PDF OR fallback to Master PDF
       const tempAnswersJsonPath = path.join(tempWorkingDir, "answers.json");
       let targetPdfPath = tempPdfPath; // fallback: Master PDF
 
@@ -826,15 +785,26 @@ export const uploadTestController = async (req: Request, res: Response): Promise
 
       const parseKeyCmd = `python "${path.join(__dirname, "../../services/extractor/parse_pdf_answer_key.py")}" "${targetPdfPath}" "${tempAnswersJsonPath}"`;
       try {
-        execSync(parseKeyCmd, { stdio: "pipe", timeout: 60000 });
+        execSync(parseKeyCmd, { stdio: "pipe", timeout: 120000 });
         if (fs.existsSync(tempAnswersJsonPath)) {
-          const parsedPdfAnswers = JSON.parse(fs.readFileSync(tempAnswersJsonPath, "utf-8"));
-          for (const [qNumStr, ans] of Object.entries(parsedPdfAnswers)) {
+          const parsed = JSON.parse(fs.readFileSync(tempAnswersJsonPath, "utf-8"));
+          // v2 parser returns { answers, solutions }; v1 returned a flat dict.
+          // Handle both for backward compatibility.
+          const answersMap = parsed.answers ?? parsed;
+          const solutionsMap = parsed.solutions ?? {};
+          for (const [qNumStr, ans] of Object.entries(answersMap)) {
             const qNum = parseInt(qNumStr, 10);
             if (!isNaN(qNum) && Array.isArray(ans)) {
               csvAnswers[qNum] = ans;
             }
           }
+          for (const [qNumStr, sol] of Object.entries(solutionsMap)) {
+            const qNum = parseInt(qNumStr, 10);
+            if (!isNaN(qNum) && typeof sol === "string" && sol.trim()) {
+              pdfSolutions[qNum] = sol;
+            }
+          }
+          console.log(`[uploadTestController] Answer key: ${Object.keys(csvAnswers).length} answers, ${Object.keys(pdfSolutions).length} solutions`);
         }
       } catch (err: any) {
         console.error("[uploadTestController] PDF Answer Key extraction failed:", err.message);
@@ -842,7 +812,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     }
 
     sendProgress("cropping_images", "Processing diagrams & uploading cropped images to Cloud...");
-    // 5. Map and upload questions & process inline base64 images
     const questionRows = await Promise.all(
       extractionResult.questions.map(async (q: any, idx: number) => {
         const processedText = await processBase64ImagesInText(q.question_text);
@@ -863,13 +832,19 @@ export const uploadTestController = async (req: Request, res: Response): Promise
 
         const finalOptions = processedOptions || [];
         const isMcq = q.question_type === "MCQ" || q.question_type === "mcq_single" || q.question_type === "Assertion-Reason" || q.question_type === "Matching";
-        
+
         const isNumerical = !isMcq && (!finalOptions || finalOptions.length < 2);
         const type = isNumerical ? "integer" : (q.question_type || "mcq_single");
 
         const csvAns = csvAnswers[idx + 1];
         const extractedAnswers = Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [];
         const correctAnswers = (csvAns && csvAns.length) ? csvAns : extractedAnswers;
+
+        // Use the solution from the answer-key PDF if available; otherwise keep
+        // the LLM-extracted explanation. The answer-key PDF's solution is
+        // authoritative (it's the institute's own worked solution).
+        const solutionFromKey = pdfSolutions[idx + 1];
+        const finalExplanation = solutionFromKey || processedExplanation || "";
 
         const normalizedMedia = normalizeQuestionMedia({
           question_text: processedText,
@@ -892,7 +867,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           image_url:      normalizedMedia.image_url,
           options:        normalizedMedia.options,
           correct_answer: correctAnswers,
-          explanation:    processedExplanation,
+          explanation:    finalExplanation,
           tags:           q.tags || [],
           institute_id:   req.user!.institute_id,
           content_scope:  "institute_private",
@@ -908,7 +883,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     );
 
     sendProgress("saving_db", "Saving extracted draft for Test Department review...");
-    // 6. Insert the Paper
     const { data: paper, error: pErr } = await supabaseDB
       .from("papers")
       .insert({
@@ -933,7 +907,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       throw new Error(`Failed to create paper: ${pErr?.message}`);
     }
 
-    // 7. Bulk insert questions
     const questionBatches = chunk(questionRows, 100);
     for (const qBatch of questionBatches) {
       const { error: qErr } = await supabaseDB.from("questions").insert(qBatch);
@@ -942,7 +915,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       }
     }
 
-    // 8. Link questions to paper
     const pqRows = questionRows.map((q: any, idx: number) => ({
       paper_id: paper.id,
       question_id: q.id,
@@ -953,7 +925,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       throw new Error(`Failed to link paper questions: ${pqErr.message}`);
     }
 
-    // 9. Assign target batches (with scheduled_at from the submitted date)
     const tbRows = batchIds.map((b_id: string) => ({
       test_id: paper.id,
       batch_id: b_id,
@@ -964,7 +935,6 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       throw new Error(`Failed to assign test to batches: ${tbErr.message}`);
     }
 
-    // 10. Clean up temp folder
     try {
       fs.rmSync(tempWorkingDir, { recursive: true, force: true });
     } catch (cleanupErr: any) {
@@ -989,4 +959,3 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     sendError(err.message || "Failed to process test PDF");
   }
 };
-
