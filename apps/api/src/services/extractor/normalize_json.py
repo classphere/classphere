@@ -337,6 +337,48 @@ def detect_paper_kind(questions: list):
     return "jee", None
 
 
+def _extracted_subjects_are_reliable(questions: list) -> tuple[bool, dict[str, str]]:
+    """Check if the LLM-extracted subject labels are consistent enough to trust.
+
+    Returns (reliable, subject_by_qnum) where subject_by_qnum maps question
+    numbers to their extracted subject. We trust the extraction when:
+      - >= 80% of questions have a non-empty, recognized subject
+      - Subjects form contiguous blocks (no interleaving like P,C,P,C,B,B)
+        — a coaching paper always groups subjects in sections
+
+    This lets us adapt to any coaching's subject ORDER (Chemistry first,
+    Physics last, etc.) instead of hardcoding NTA's official layout.
+    """
+    recognized = {"Physics", "Chemistry", "Mathematics", "Biology", "Botany", "Zoology"}
+    labeled = 0
+    subj_by_qnum = {}
+    for q in questions:
+        s = (q.get("subject") or "").strip()
+        if s in recognized:
+            labeled += 1
+            subj_by_qnum[q.get("question_number", 0)] = s
+
+    total = len(questions)
+    if total == 0 or labeled / total < 0.80:
+        return False, {}
+
+    # Check contiguity: subjects should form blocks, not interleave.
+    # Sort by qnum, get the sequence of subjects, count how many times
+    # the subject CHANGES. A 3-subject paper should have ~2 changes.
+    sorted_qnums = sorted(subj_by_qnum.keys())
+    subjects_seq = [subj_by_qnum[q] for q in sorted_qnums]
+    changes = sum(1 for i in range(1, len(subjects_seq))
+                  if subjects_seq[i] != subjects_seq[i - 1])
+    # Allow some noise (a few mislabeled questions) but not constant switching.
+    # A 180-question NEET paper with 3 subjects: ~2 changes is ideal, up to ~10
+    # is tolerable (some questions near section boundaries get mislabeled).
+    max_changes = max(6, total // 15)
+    if changes > max_changes:
+        return False, {}
+
+    return True, subj_by_qnum
+
+
 def enforce_subjects(questions: list, kind: str, dominant, report: dict):
     num_qs = len(questions)
 
@@ -347,12 +389,42 @@ def enforce_subjects(questions: list, kind: str, dominant, report: dict):
         report["subject_layout"] = f"single:{dominant}"
         return
 
+    # ── Adaptive: trust the extracted subjects when they're reliable ──────
+    # The LLM extracts subject per question from section headers (data-section
+    # annotations). When those labels are consistent (>= 80% labeled, contiguous
+    # blocks), trust them — this adapts to any coaching's subject order
+    # (Chemistry first, Physics last, Botany/Zoology split, etc.).
+    # Fall back to hardcoded NTA ranges only when the extraction failed.
+    reliable, subj_by_qnum = _extracted_subjects_are_reliable(questions)
+
+    if reliable:
+        # Normalize Botany/Zoology → Biology (NEET-style sub-sections)
+        applied = 0
+        for q in questions:
+            qnum = q.get("question_number", 0)
+            extracted = subj_by_qnum.get(qnum)
+            if extracted:
+                normalized = SUBJECT_MAP.get(extracted.lower(), extracted)
+                if normalized in ("Physics", "Chemistry", "Mathematics", "Biology"):
+                    q["subject"] = normalized
+                    applied += 1
+        # Report the detected subject order for transparency
+        order = []
+        seen = set()
+        for qnum in sorted(subj_by_qnum.keys()):
+            s = SUBJECT_MAP.get(subj_by_qnum[qnum].lower(), subj_by_qnum[qnum])
+            if s not in seen:
+                order.append(s)
+                seen.add(s)
+        print(f"  Adaptive subject layout (from extraction): {' → '.join(order)} — trusted {applied}/{num_qs} labels")
+        report["subject_layout"] = f"adaptive:{','.join(order)}"
+        return
+
+    # ── Fallback: hardcoded NTA ranges (extraction was unreliable) ────────
     if kind == "neet":
-        # NTA NEET 2024-2026 official pattern:
-        #   Physics  Q1–45  (45 questions)
-        #   Chemistry Q46–90 (45 questions)
-        #   Biology  Q91–180 (90 questions, includes Botany + Zoology)
-        print("  NEET paper detected. Enforcing ranges: 1-45 Physics, 46-90 Chemistry, 91+ Biology")
+        # NTA NEET official pattern (fallback only):
+        #   Physics  Q1–45, Chemistry Q46–90, Biology Q91–180
+        print("  NEET paper detected. Extracted subjects unreliable — falling back to NTA ranges: 1-45 Physics, 46-90 Chemistry, 91+ Biology")
         for q in questions:
             qnum = q.get("question_number", 0)
             if 1 <= qnum <= 45:
@@ -361,7 +433,7 @@ def enforce_subjects(questions: list, kind: str, dominant, report: dict):
                 q["subject"] = "Chemistry"
             elif qnum >= 91:
                 q["subject"] = "Biology"
-        report["subject_layout"] = "neet"
+        report["subject_layout"] = "neet:fallback"
         return
 
     # JEE: 3 equal sections, order detected by majority vote per section
