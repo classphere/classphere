@@ -90,6 +90,16 @@ GLYPH_NAME_MAP = {
 _CAPS_TOKEN = re.compile(r'\b([A-Z]{4,})\b')
 _UNI_TOKEN = re.compile(r'\buni([0-9A-Fa-f]{4})\b')
 
+# Legacy ASCII-mapped Hindi/Devanagari fonts (KrutiDev, DevLys, Chanakya, …).
+# Coaching papers are often bilingual: English in one column, a Hindi
+# translation (in one of these fonts) in the other. The Hindi column is a
+# duplicate of the English question and must be dropped, or its garbled ASCII
+# ("nzO;eku", "CykWd") leaks into the stem.
+HINDI_FONT_RE = re.compile(
+    r'(?i)krutidev|kruti\s*dev|devlys|chanakya|shusha|shivaji|kundli|walkman|'
+    r'yogesh|aksharyogini|priya|richa|krishna|aakash|dev\s*nagari|devnagari|'
+    r'agra|sanskrit99|shree\s*dev|mangal')
+
 # Watermark / branding lines to drop entirely (configurable).
 WATERMARK_PATTERNS = [
     re.compile(r'(?i)^\s*by\s*:?\s*c\s*i\s*p\s*h\s*[eξ]\s*r\s*$'),
@@ -376,6 +386,9 @@ def extract_text_elements(page) -> list:
             dom_font = dominant.get("font", "")
             dom_bold = bool(re.search(r'(?i)bold|black|heavy', dom_font)) or \
                 bool(dominant.get("flags", 0) & 16)
+            # Line uses a legacy Hindi font if ANY span does (math/numbers in a
+            # Hindi line stay in Times, so check every span).
+            line_hindi = any(HINDI_FONT_RE.search(s.get("font", "")) for s in spans)
 
             def flush_segment(seg_spans):
                 if not seg_spans:
@@ -402,6 +415,7 @@ def extract_text_elements(page) -> list:
                 elements.append({
                     "kind": "text", "bbox": bbox, "runs": runs,
                     "size": dom_size, "bold": dom_bold, "row": row_key,
+                    "hindi": line_hindi,
                 })
 
             segment = []
@@ -438,6 +452,7 @@ def extract_text_elements(page) -> list:
                             "kind": "text", "bbox": list(span["bbox"]),
                             "runs": runs, "size": s_size, "bold": False,
                             "float": style, "row": row_key,
+                            "hindi": bool(HINDI_FONT_RE.search(span.get("font", ""))),
                         })
             flush_segment(segment)
     return elements
@@ -808,6 +823,37 @@ def rect_intersects(b1, b2, pad=2.0):
                 b1[3] + pad < b2[1] or b2[3] + pad < b1[1])
 
 
+def _bbox_cx(b):
+    return (b[0] + b[2]) / 2.0
+
+
+def detect_translation_side(text_elements: list, page_w: float):
+    """If a page is bilingual (a legacy-Hindi-font column duplicating the English
+    one), return the side ('left'|'right') that holds the Hindi translation, else
+    None. Decided by where the Hindi-font lines cluster."""
+    mid = page_w / 2
+    hindi = [e for e in text_elements if e.get("hindi")]
+    if len(hindi) < 3:
+        return None
+    right = sum(1 for e in hindi if _bbox_cx(e["bbox"]) > mid)
+    left = len(hindi) - right
+    # require a clear one-sided cluster (>=70%) to avoid false positives
+    if right >= max(3, 0.7 * len(hindi)):
+        return "right"
+    if left >= max(3, 0.7 * len(hindi)):
+        return "left"
+    return None
+
+
+def on_side(bbox, side: str, page_w: float) -> bool:
+    """True if bbox sits in the given half AND isn't a full-width (shared)
+    element like a header/section band."""
+    if bbox[2] - bbox[0] > 0.60 * page_w:
+        return False
+    cx = _bbox_cx(bbox)
+    return cx > page_w / 2 if side == "right" else cx < page_w / 2
+
+
 # ── Page extraction ───────────────────────────────────────────────────────────
 
 def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs: set) -> dict:
@@ -818,8 +864,16 @@ def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs:
     # 1. Text elements with sup/sub runs
     elements = extract_text_elements(page)
 
+    # 1b. Bilingual papers: drop the Hindi translation column (text now, its
+    #     duplicate images/diagrams below). Keeps the complete English column.
+    hindi_side = detect_translation_side(elements, page_w)
+    if hindi_side:
+        elements = [e for e in elements if not on_side(e["bbox"], hindi_side, page_w)]
+
     # 2. Drawings → fraction bars + diagram primitives
     bars, diagram_items = collect_drawing_items(page)
+    if hindi_side:
+        diagram_items = [b for b in diagram_items if not on_side(b, hindi_side, page_w)]
 
     # 3. Fraction merging (consumes matched bars' num/den text)
     elements, leftover_bars = match_fractions(elements, bars)
@@ -843,6 +897,9 @@ def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs:
                     area = rect.width * rect.height
                     if area > 0.85 * page.rect.width * page.rect.height:
                         continue  # full-page background
+                    rb = [rect.x0, rect.y0, rect.x1, rect.y1]
+                    if hindi_side and on_side(rb, hindi_side, page_w):
+                        continue  # duplicate image in the Hindi translation column
                     raster.append((xref, rect))
         except Exception:
             pass
@@ -950,15 +1007,29 @@ def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs:
         left_sorted = sort_elements_overlap(left_els)
         right_sorted = sort_elements_overlap(right_els)
 
-        combined, last_y = [], -1.0
+        # Reading order for a true 2-column page: read the LEFT column top→bottom
+        # in full, THEN the RIGHT column top→bottom in full. Full-width bands
+        # (section headers like "PHYSICS", page headers) are spliced in by their
+        # y-position relative to where each column's content sits, but they do
+        # NOT cause left/right lines on the same row to be interleaved — that
+        # interleaving was the root cause of question mixups (a left-column
+        # question's lines merged with a right-column question's lines on the
+        # same visual row). Headers sit between column rows, never across them.
+        combined = []
+        left_idx = right_idx = 0
         for fe in full_sorted:
             fy = fe["bbox"][1]
-            combined.extend([e for e in left_sorted if last_y < e["bbox"][1] <= fy])
-            combined.extend([e for e in right_sorted if last_y < e["bbox"][1] <= fy])
+            # advance the LEFT column up to this band, then the RIGHT column,
+            # each independently — so a band emits "all left above me" then
+            # "all right above me" without ever pairing L[i] with R[i].
+            while left_idx < len(left_sorted) and left_sorted[left_idx]["bbox"][1] <= fy:
+                combined.append(left_sorted[left_idx]); left_idx += 1
+            while right_idx < len(right_sorted) and right_sorted[right_idx]["bbox"][1] <= fy:
+                combined.append(right_sorted[right_idx]); right_idx += 1
             combined.append(fe)
-            last_y = fy
-        combined.extend([e for e in left_sorted if e["bbox"][1] > last_y])
-        combined.extend([e for e in right_sorted if e["bbox"][1] > last_y])
+        # remaining column content below the last band
+        combined.extend(left_sorted[left_idx:])
+        combined.extend(right_sorted[right_idx:])
     else:
         combined = sort_elements_overlap(classified)
 

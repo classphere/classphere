@@ -338,6 +338,34 @@ Fixes:
 
 Harness: 97 checks.
 
+## Bilingual coaching papers + non-JEE structure
+
+Tested on a Momentum Coaching MTSE scholarship paper (60 Q, Physics/Chemistry/
+Maths 20 each, all MCQ, English + Hindi side-by-side). Three additions:
+
+- **Bilingual Hindi-column strip** — coaching papers print each question twice:
+  English in one column, a Hindi translation in the other (legacy KrutiDev/DevLys
+  font in the PyMuPDF path; real Devanagari after Marker OCR). Both would leak
+  into the stem.
+  - PyMuPDF path (`pymupdf_extractor`): detect the legacy-Hindi-font column
+    (`HINDI_FONT_RE`), find which side it clusters on, and drop that side's text
+    AND its duplicate images/diagrams by bbox.
+  - Marker path (`marker_extractor`): drop Hindi-side leaf blocks by bbox, plus a
+    line-level Devanagari filter for pages where Marker merged both columns into
+    one full-width block. Verified: 0 Devanagari across all 60 questions.
+- **Adaptive 3-subject split** (`normalize_json.enforce_subjects`): the section
+  size now divides the question count evenly when possible (60 → 20/20/20)
+  instead of assuming the JEE 25/25 layout.
+- **All-MCQ papers skip the JEE integer lock** (`apply_structural_lock`): the
+  fixed JEE Main integer ranges are only applied when the paper shows
+  integer/numerical evidence (a type hint, a Numerical question, or a fill-in
+  blank). An all-MCQ coaching paper keeps all 60 as MCQ instead of having 10
+  MCQs wrongly converted to integer.
+
+Harness: 104 checks. (Note: a full live 60-Q re-run was limited by Cerebras key
+quota during testing; the fixes are verified by unit + harness checks and the
+end-to-end Hindi-strip run.)
+
 ## How to run
 
 ```powershell

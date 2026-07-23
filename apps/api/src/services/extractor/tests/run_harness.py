@@ -175,6 +175,48 @@ def postprocess_checks():
     check("markdown table preserved through sanitize",
           "| --- |" in sanitize_text("| A | B |\n| --- | --- |\n| 1 | 2 |"))
 
+    # bilingual coaching papers: Hindi translation column stripped
+    try:
+        from pymupdf_extractor import detect_translation_side, on_side, HINDI_FONT_RE
+        check("legacy Hindi font recognised", bool(HINDI_FONT_RE.search("KrutiDev010")))
+        els = ([{"bbox": [40, y, 280, y + 12], "hindi": False} for y in (100, 130, 160)] +
+               [{"bbox": [320, y, 550, y + 12], "hindi": True} for y in (100, 130, 160)])
+        side = detect_translation_side(els, 595.0)
+        check("bilingual right (Hindi) side detected", side == "right")
+        check("on_side drops right-half, keeps left-half",
+              on_side([320, 100, 550, 112], "right", 595.0) and
+              not on_side([40, 100, 280, 112], "right", 595.0))
+        check("no false-positive on monolingual page",
+              detect_translation_side([{"bbox": [40, 100, 280, 112], "hindi": False}], 595.0) is None)
+    except ImportError:
+        pass
+    try:
+        from marker_extractor import adapt_marker_html
+        biling = ('<p>1. English question here</p><p>(A) x</p>'
+                  '<p>1. यह हिंदी अनुवाद है द्रव्यमान</p><p>(A) x</p>')
+        out = adapt_marker_html(biling)
+        check("marker adapter drops Devanagari lines",
+              "English question" in out and "हिंदी" not in out)
+    except ImportError:
+        pass
+    # normalizer: 3-subject split adapts to count; all-MCQ skips integer lock
+    try:
+        import normalize_json as _nj
+        qs = [{"question_number": n, "subject": ("Physics" if n <= 20 else "Chemistry" if n <= 40 else "Mathematics"),
+               "question_type": "MCQ", "options": [{"id": c, "text": "o"} for c in "ABCD"]} for n in range(1, 61)]
+        rep = {}
+        _nj.enforce_subjects(qs, "jee", None, rep)
+        from collections import Counter as _C
+        counts = _C(q["subject"] for q in qs)
+        check("60-Q paper splits 20/20/20", counts["Physics"] == 20 and counts["Chemistry"] == 20 and counts["Mathematics"] == 20)
+        qs2 = [{"question_number": n, "question_type": "MCQ", "options": [{"id": c, "text": "o"} for c in "ABCD"]} for n in range(1, 61)]
+        rep2 = {}
+        _nj.apply_structural_lock(qs2, "jee", rep2)
+        check("all-MCQ paper skips JEE integer lock",
+              sum(1 for q in qs2 if q["question_type"] == "Numerical") == 0)
+    except ImportError:
+        pass
+
     # merge_markdown_tables: split/repeated-header tables → one table
     try:
         from normalize_json import merge_markdown_tables

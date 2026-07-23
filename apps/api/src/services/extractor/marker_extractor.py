@@ -89,22 +89,21 @@ def _request_with_retry(method, url, *, retries=4, backoff=4, **kwargs):
 
 def submit_pdf(pdf_path, api_key, force_ocr=True, use_llm=True):
     print(f"Submitting to Marker (force_ocr={force_ocr}, use_llm={use_llm}): {pdf_path}")
-    # Stream the file directly instead of reading it all into memory first.
-    # Use a (connect, read) timeout tuple: 30s to connect, 300s for the upload.
     with open(pdf_path, "rb") as f:
-        resp = _request_with_retry(
-            "POST", MARKER_SUBMIT_URL,
-            headers={"X-API-Key": api_key},
-            files={"file": (Path(pdf_path).name, f, "application/pdf")},
-            data={
-                "output_format": "json",
-                "extract_images": "true",
-                "use_llm": "true" if use_llm else "false",
-                "force_ocr": "true" if force_ocr else "false",
-                "paginate_output": "false",
-            },
-            timeout=(30, 300),
-        )
+        file_bytes = f.read()
+    resp = _request_with_retry(
+        "POST", MARKER_SUBMIT_URL,
+        headers={"X-API-Key": api_key},
+        files={"file": (Path(pdf_path).name, file_bytes, "application/pdf")},
+        data={
+            "output_format": "json",
+            "extract_images": "true",
+            "use_llm": "true" if use_llm else "false",
+            "force_ocr": "true" if force_ocr else "false",
+            "paginate_output": "false",
+        },
+        timeout=90,
+    )
     data = resp.json()
     if not data.get("success"):
         print(f"ERROR: Marker rejected submission: {data}")
@@ -200,6 +199,7 @@ def _table_to_markdown(html: str) -> str:
     return _TABLE_RE.sub(conv, html)
 
 
+_DEVANAGARI_RE = re.compile(r'[ऀ-ॿ]')
 _IMG_DESC_OPEN_RE = re.compile(r'<div\s+class="img-(?:description|alt)"', re.IGNORECASE)
 _DIV_TAG_RE = re.compile(r'<(/?)div\b[^>]*>', re.IGNORECASE)
 _IMG_ALT_RE = re.compile(r'(<img\b[^>]*?)\s+alt="[^"]*"', re.IGNORECASE)
@@ -258,10 +258,15 @@ def adapt_marker_html(html: str) -> str:
     # drop every remaining tag EXCEPT <img …>
     html = _NON_IMG_TAG_RE.sub(" ", html)
     html = re.sub(r"[ \t]{2,}", " ", html)
-    # keep markdown-table rows intact; collapse only 3+ blank lines
+    # keep markdown-table rows intact; collapse only 3+ blank lines; and drop
+    # any line containing Devanagari — the second layer for bilingual papers
+    # where Marker merged the English+Hindi columns into one full-width block
+    # (block-position drop can't split those; a Hindi line is unambiguous).
     lines = [ln.rstrip() for ln in html.split("\n")]
     out, blanks = [], 0
     for ln in lines:
+        if _DEVANAGARI_RE.search(ln):
+            continue
         if ln.strip():
             out.append(ln.strip()); blanks = 0
         else:
@@ -271,20 +276,78 @@ def adapt_marker_html(html: str) -> str:
     return "\n".join(out).strip()
 
 
+def _leaf_blocks(block):
+    """Yield leaf blocks (with bbox + html, no children) from a Marker block tree."""
+    kids = block.get("children") or []
+    if not kids:
+        if block.get("html") and block.get("bbox"):
+            yield block
+        return
+    for k in kids:
+        yield from _leaf_blocks(k)
+
+
+def _page_html_dropping_translation(pg: dict):
+    """If a Marker page is bilingual (a Devanagari translation column beside the
+    English one), rebuild the page HTML from only the NON-Hindi-side leaf blocks.
+    Returns None when the page isn't bilingual (caller uses pg['html'] as-is).
+
+    Marker force_ocr renders the legacy-Hindi column into real Devanagari and
+    lays the page out as English-column blocks then Hindi-column blocks; the
+    Hindi option/diagram blocks are Latin-only but sit on the Hindi side, so we
+    drop by bbox position (like the PyMuPDF path), not by script alone."""
+    bbox = pg.get("bbox") or [0, 0, 0, 0]
+    pw = bbox[2] or 0
+    if pw <= 0:
+        return None
+    blocks = list(_leaf_blocks(pg))
+    if not blocks:
+        return None
+    dev = [b for b in blocks if _DEVANAGARI_RE.search(b.get("html", ""))]
+    if len(dev) < 2:
+        return None
+    mid = pw / 2
+    right = sum(1 for b in dev if (b["bbox"][0] + b["bbox"][2]) / 2 > mid)
+    left = len(dev) - right
+    if right >= max(2, 0.7 * len(dev)):
+        side = "right"
+    elif left >= max(2, 0.7 * len(dev)):
+        side = "left"
+    else:
+        return None
+
+    def on_hindi_side(b):
+        bb = b["bbox"]
+        if bb[2] - bb[0] > 0.60 * pw:      # full-width shared block → keep
+            return False
+        cx = (bb[0] + bb[2]) / 2
+        return cx > mid if side == "right" else cx < mid
+
+    kept = [b for b in blocks if not on_hindi_side(b)]
+    return "\n".join(b.get("html", "") for b in kept)
+
+
 def build_pipeline_raw(result: dict, out_dir: Path, api_key: str) -> dict:
     """Download images and write marker_raw.json in the pipeline format."""
     images_dir = out_dir / "marker_images"
     n_img = download_images(result.get("images", {}), images_dir, api_key)
 
     pages = []
+    bilingual_pages = 0
     for pg in result.get("json", {}).get("children", []) or []:
-        adapted = adapt_marker_html(pg.get("html", ""))
+        stripped = _page_html_dropping_translation(pg)
+        if stripped is not None:
+            bilingual_pages += 1
+        page_html = stripped if stripped is not None else pg.get("html", "")
+        adapted = adapt_marker_html(page_html)
         img_names = {s: True for s in re.findall(r'src="([^"]+)"', adapted)}
         pages.append({
             "html": adapted,
             "images": img_names,
             "children": [{"images": img_names}],
         })
+    if bilingual_pages:
+        print(f"  Bilingual layout: dropped Hindi translation column on {bilingual_pages} page(s)")
 
     raw = {
         "json": {"children": pages},
