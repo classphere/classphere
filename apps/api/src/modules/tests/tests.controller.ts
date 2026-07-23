@@ -783,7 +783,11 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         fs.writeFileSync(targetPdfPath, answerKeyFile.buffer);
       }
 
-      const parseKeyCmd = `python "${path.join(__dirname, "../../services/extractor/parse_pdf_answer_key.py")}" "${targetPdfPath}" "${tempAnswersJsonPath}"`;
+      // Pass the extracted question count as an upper bound. The answer/solution
+      // PDF may contain equations such as "T' = 300 (4)^{1/2}"; without this
+      // bound the regex can misread that as a fictitious Q300→4 entry.
+      const maxQuestionNumber = extractionResult.questions.length;
+      const parseKeyCmd = `python "${path.join(__dirname, "../../services/extractor/parse_pdf_answer_key.py")}" "${targetPdfPath}" "${tempAnswersJsonPath}" "${maxQuestionNumber}"`;
       try {
         execSync(parseKeyCmd, { stdio: "pipe", timeout: 120000 });
         if (fs.existsSync(tempAnswersJsonPath)) {
@@ -794,13 +798,13 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           const solutionsMap = parsed.solutions ?? {};
           for (const [qNumStr, ans] of Object.entries(answersMap)) {
             const qNum = parseInt(qNumStr, 10);
-            if (!isNaN(qNum) && Array.isArray(ans)) {
+            if (!isNaN(qNum) && qNum >= 1 && qNum <= maxQuestionNumber && Array.isArray(ans)) {
               csvAnswers[qNum] = ans;
             }
           }
           for (const [qNumStr, sol] of Object.entries(solutionsMap)) {
             const qNum = parseInt(qNumStr, 10);
-            if (!isNaN(qNum) && typeof sol === "string" && sol.trim()) {
+            if (!isNaN(qNum) && qNum >= 1 && qNum <= maxQuestionNumber && typeof sol === "string" && sol.trim()) {
               pdfSolutions[qNum] = sol;
             }
           }

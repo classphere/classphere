@@ -106,6 +106,11 @@ WATERMARK_PATTERNS = [
     re.compile(r'(?i)c\s*i\s*p\s*h\s*[eξ]\s*r'),
     re.compile(r'(?i)^\s*downloaded\s+from\b'),
     re.compile(r'(?i)^\s*www\.[a-z0-9.-]+\s*$'),
+    # Coaching document-code watermarks repeated across the page. These often
+    # sit on the exact same y-coordinate as a question anchor and get merged
+    # into it ("CC-006115.Select...CC-006"), hiding the anchor. Drop the
+    # standalone watermark BEFORE any row/column merge.
+    re.compile(r'(?i)^\s*[A-Z]{1,6}[-_/]\d{2,6}\s*$'),
 ]
 
 # Unicode superscript / subscript character runs → converted to tags
@@ -216,7 +221,12 @@ QCAND_PATTERNS = [
     re.compile(r'^\s*Question\s*No\.?\s*[:.\-]?\s*(\d{1,3})\b(.*)$', re.IGNORECASE),
     re.compile(r'^\s*QUESTION\s+(\d{1,3})\b(.*)$'),
     re.compile(r'^\s*Q\s*[\.:]?\s*(\d{1,3})\s*[\.\):]?(.*)$'),
-    re.compile(r'^\s*(\d{1,3})\s*[\.\)]\s(.*)$'),
+    # Standard numbered stem: "3. Two liquids..." / "3) Two liquids..."
+    re.compile(r'^\s*(\d{1,3})\s*[\.\)]\s+(.*)$'),
+    # Compact coaching layout: "108.Identify..." / "136.Select..." (no
+    # whitespace after the period). Require an uppercase letter immediately
+    # after the period so decimals like "3.14" are never treated as anchors.
+    re.compile(r'^\s*(\d{1,3})\.(?=[A-Z])(.*)$'),
     re.compile(r'^\s*(\d{1,3})\s*[\.\)]$'),
 ]
 
@@ -447,7 +457,31 @@ def extract_text_elements(page) -> list:
                     segment = []
                     runs = merge_adjacent_runs(runs_from_plain(s_text, style))
                     plain = runs_plain(runs)
-                    if plain.strip() and not is_watermark_line(plain):
+                    if not plain.strip() or is_watermark_line(plain):
+                        continue
+
+                    # Attach short numeric sup/sub spans directly to the base
+                    # element on the same source row. MuPDF often emits t₁/₂ as
+                    # base "t" plus tiny standalone spans "1" and "2". If left
+                    # standalone, "1." can be misclassified as question Q1
+                    # inside Q84. Geometric attachment preserves the math and
+                    # prevents false question anchors.
+                    attached = False
+                    if (re.fullmatch(r'[0-9+\-]{1,4}', plain) and elements and
+                            elements[-1].get("row") == row_key):
+                        prev = elements[-1]
+                        gap = span["bbox"][0] - prev["bbox"][2]
+                        if -5.0 <= gap <= 4.0:
+                            prev["runs"].extend(runs)
+                            prev["runs"] = merge_adjacent_runs(prev["runs"])
+                            prev["bbox"] = [
+                                min(prev["bbox"][0], span["bbox"][0]),
+                                min(prev["bbox"][1], span["bbox"][1]),
+                                max(prev["bbox"][2], span["bbox"][2]),
+                                max(prev["bbox"][3], span["bbox"][3]),
+                            ]
+                            attached = True
+                    if not attached:
                         elements.append({
                             "kind": "text", "bbox": list(span["bbox"]),
                             "runs": runs, "size": s_size, "bold": False,
@@ -650,8 +684,26 @@ def match_fractions(elements: list, bars: list):
             leftover_bars.append(bar)
             continue
 
-        # Guard: parts must be short-ish (a fraction, not a paragraph)
-        if len(runs_plain(num_el["runs"])) > 60 or len(runs_plain(den_el["runs"])) > 60:
+        # Guards: fraction parts must be actual math, never document structure.
+        # A page-section box can look exactly like a fraction geometrically:
+        #   PHYSICS
+        #   ───────  (box border)
+        #   3.       (right-column question number)
+        # The old matcher consumed PHYSICS as numerator and Q3 as denominator,
+        # producing <frac><num>PHYSICS</num><den>3.</den></frac> inside Q1 and
+        # permanently deleting the Q3 anchor. Reject any candidate part that is
+        # a section header or a question-number anchor before consuming it.
+        num_plain = runs_plain(num_el["runs"]).strip()
+        den_plain = runs_plain(den_el["runs"]).strip()
+        num_q, _ = detect_qcand(num_plain)
+        den_q, _ = detect_qcand(den_plain)
+        if (detect_section(num_plain) or detect_section(den_plain) or
+                num_q is not None or den_q is not None):
+            leftover_bars.append(bar)
+            continue
+
+        # Parts must also be short-ish (a fraction, not a paragraph).
+        if len(num_plain) > 60 or len(den_plain) > 60:
             leftover_bars.append(bar)
             continue
 
@@ -1010,7 +1062,16 @@ def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs:
     for el in elements:
         x0, _, x1, _ = el["bbox"]
         width = x1 - x0
-        if width > page_w * 0.75 or (x0 < mid_x - 80 and x1 > mid_x + 80):
+        # Subject / section labels (PHYSICS, CHEMISTRY, ZOOLOGY, SECTION-B)
+        # are semantic full-width bands even when their text bbox is narrow and
+        # centered over the divider. Classifying CHEMISTRY as "left" caused the
+        # lower Chemistry questions Q46-47 to be read before upper-right Physics
+        # questions Q43-45. Always promote recognized section text to full.
+        plain_for_section = (runs_plain(el.get("runs", [])).strip()
+                             if el.get("kind") == "text" else "")
+        if plain_for_section and detect_section(plain_for_section):
+            el["col"] = "full"
+        elif width > page_w * 0.75 or (x0 < mid_x - 80 and x1 > mid_x + 80):
             el["col"] = "full"
         elif (x0 + x1) / 2 < mid_x:
             el["col"] = "left"
@@ -1022,12 +1083,18 @@ def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs:
     crossing_text = sum(1 for e in classified if e["kind"] == "text"
                         and e["bbox"][0] < mid_x - 40 and e["bbox"][2] > mid_x + 40)
 
-    is_2_col = False
-    if total_text > 0:
+    # Preserve the geometry decision made BEFORE row reassembly. Recomputing
+    # from reassembled elements can flip a true 2-column page to single-column
+    # when full-width instructions/headers inflate crossing_text. That exact
+    # flip caused page 1 to be sorted horizontally again (Q1, Q3, Q1-cont,
+    # Q3-cont) even though the raw geometry had already proved it was 2-column.
+    is_2_col = page_is_2col
+    if not is_2_col and total_text > 0:
+        # Secondary fallback for pages where the early detector was inconclusive.
         ratio = crossing_text / total_text
-        left_count = sum(1 for e in classified if e["col"] == "left" and e["kind"] == "text")
-        right_count = sum(1 for e in classified if e["col"] == "right" and e["kind"] == "text")
-        if ratio < 0.12 and left_count >= 3 and right_count >= 3:
+        classified_left = sum(1 for e in classified if e["col"] == "left" and e["kind"] == "text")
+        classified_right = sum(1 for e in classified if e["col"] == "right" and e["kind"] == "text")
+        if ratio < 0.12 and classified_left >= 3 and classified_right >= 3:
             is_2_col = True
 
     if is_2_col:
@@ -1039,29 +1106,46 @@ def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs:
         left_sorted = sort_elements_overlap(left_els)
         right_sorted = sort_elements_overlap(right_els)
 
-        # Reading order for a true 2-column page: read the LEFT column top→bottom
-        # in full, THEN the RIGHT column top→bottom in full. Full-width bands
-        # (section headers like "PHYSICS", page headers) are spliced in by their
-        # y-position relative to where each column's content sits, but they do
-        # NOT cause left/right lines on the same row to be interleaved — that
-        # interleaving was the root cause of question mixups (a left-column
-        # question's lines merged with a right-column question's lines on the
-        # same visual row). Headers sit between column rows, never across them.
-        combined = []
+        # True two-column reading order is absolute: page/section headers first,
+        # then the ENTIRE left column top→bottom, then the ENTIRE right column
+        # top→bottom. Never use arbitrary full-width graphics/watermarks as
+        # mid-page "bands" — doing so produced Q6,Q7,Q9,Q10,Q8,... because a
+        # full-width watermark split the columns halfway down the page.
+        first_col_y = min(
+            [e["bbox"][1] for e in left_sorted + right_sorted],
+            default=1e9,
+        )
+        last_col_y = max(
+            [e["bbox"][3] for e in left_sorted + right_sorted],
+            default=-1,
+        )
+        full_before = [e for e in full_sorted if e["bbox"][3] <= first_col_y]
+        full_after = [e for e in full_sorted if e["bbox"][1] >= last_col_y]
+        # Full-width elements inside the question area are typically watermarks,
+        # divider art or large page furniture. They must not affect reading order.
+        # Textual section headers are the only safe mid-page full elements, and
+        # they define READING-ORDER BANDS. Example page 6:
+        #   left Q40-42 → right Q43-45 → CHEMISTRY header → left Q46-47 → right Q48-49
+        # Example page 15:
+        #   left Q129-130 → right Q131-135 → ZOOLOGY header → left Q136 → right Q137
+        full_mid_sections = [e for e in full_sorted
+                             if first_col_y < e["bbox"][1] < last_col_y
+                             and e.get("kind") == "text"
+                             and detect_section(runs_plain(e.get("runs", [])).strip())]
+        combined = list(full_before)
         left_idx = right_idx = 0
-        for fe in full_sorted:
-            fy = fe["bbox"][1]
-            # advance the LEFT column up to this band, then the RIGHT column,
-            # each independently — so a band emits "all left above me" then
-            # "all right above me" without ever pairing L[i] with R[i].
-            while left_idx < len(left_sorted) and left_sorted[left_idx]["bbox"][1] <= fy:
+        last_band_y = -1.0
+        for section_el in full_mid_sections:
+            section_y = section_el["bbox"][1]
+            while left_idx < len(left_sorted) and left_sorted[left_idx]["bbox"][1] < section_y:
                 combined.append(left_sorted[left_idx]); left_idx += 1
-            while right_idx < len(right_sorted) and right_sorted[right_idx]["bbox"][1] <= fy:
+            while right_idx < len(right_sorted) and right_sorted[right_idx]["bbox"][1] < section_y:
                 combined.append(right_sorted[right_idx]); right_idx += 1
-            combined.append(fe)
-        # remaining column content below the last band
+            combined.append(section_el)
+            last_band_y = section_y
         combined.extend(left_sorted[left_idx:])
         combined.extend(right_sorted[right_idx:])
+        combined.extend(full_after)
     else:
         combined = sort_elements_overlap(classified)
 
@@ -1149,6 +1233,15 @@ def extract_page(doc: fitz.Document, page_idx: int, img_dir: Path, boiler_xrefs:
         if el["kind"] == "text":
             plain = runs_plain(el["runs"]).strip()
             qn, style_idx = detect_qcand(plain)
+            # A tiny standalone token like "1." can be a line-wrapped exponent
+            # (e.g. the final 1 in s^{-1}), not a new question. If we already
+            # have a much larger current question number on this page, reject a
+            # backwards tiny candidate unless it carries real stem text. This
+            # prevents a false Q1 anchor inside Q84 without blocking a genuine
+            # section restart such as "1. A full question stem...".
+            if (qn is not None and current_q is not None and qn <= current_q and
+                    len(plain) <= 5 and not el.get("bold")):
+                qn, style_idx = None, None
             section = detect_section(plain)
             if section and qn is None:
                 el["section"] = section

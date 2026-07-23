@@ -61,11 +61,15 @@ except ImportError:
 
 # ── Setup ─────────────────────────────────────────────────────────────────────
 if len(sys.argv) < 3:
-    print("Usage: python parse_pdf_answer_key.py <pdf_path> <output_json_path>")
+    print("Usage: python parse_pdf_answer_key.py <pdf_path> <output_json_path> [max_question_number]")
     sys.exit(1)
 
 PDF_PATH = Path(sys.argv[1]).resolve()
 OUTPUT_JSON = Path(sys.argv[2]).resolve()
+# Optional upper bound supplied by the upload controller from the extracted
+# paper. It prevents solution equations such as "T' = 300 (4)^{1/2}" from
+# becoming a fictitious answer-key entry Q300→4. Standalone default stays 400.
+EXPECTED_MAX_QNUM = int(sys.argv[3]) if len(sys.argv) >= 4 else 400
 
 # ── Read ALL pages ────────────────────────────────────────────────────────────
 doc = fitz.open(str(PDF_PATH))
@@ -138,7 +142,7 @@ ALL_PATTERNS = [
     ("numerical", PAT_NUMERICAL),
 ]
 
-MAX_QNUM = 400
+MAX_QNUM = EXPECTED_MAX_QNUM
 
 
 def extract_answers_regex(text: str) -> dict:
@@ -336,7 +340,7 @@ If a question has no solution, omit it. Return ONLY valid JSON. No markdown."""
                 except Exception as e:
                     print(f"[parse_pdf_answer_key] Solution extraction attempt {attempt + 1} failed: {e}")
         except ImportError:
-            print("[parse_pdf_answer_sdk not installed — skipping solutions")
+            print("[parse_pdf_answer_key] cerebras-cloud-sdk not installed — skipping solutions")
 else:
     print("[parse_pdf_answer_key] No solution markers found — pure answer key, skipping LLM")
 

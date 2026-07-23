@@ -168,16 +168,25 @@ def main():
         else:
             ep = error_count(qp, P_imgs)
             em = error_count(qm, M_imgs)
-            if ep < em:                       # PyMuPDF strictly better → keep it
+            p_refs = _live_refs(qp)
+            m_refs = _live_refs(qm)
+
+            # DIGITAL-PDF IMAGE POLICY (hard invariant): if either source says
+            # the question contains an image/diagram and a PyMuPDF question is
+            # available, choose the complete PyMuPDF question. This guarantees
+            # every final image comes from the original digital PDF extraction
+            # (native_ or vector_ file), never from a lower-fidelity Marker OCR
+            # crop. Scanned PDFs never enter this merge path; they use Marker
+            # directly, so Marker cropped images remain correct for scans.
+            if p_refs or m_refs:
+                chosen, src_imgs, tag = qp, P_imgs, "pymupdf"
+            elif ep < em:                     # PyMuPDF strictly better → keep it
                 chosen, src_imgs, tag = qp, P_imgs, "pymupdf"
             elif em < ep:                     # Marker strictly better → keep it
                 chosen, src_imgs, tag = qm, M_imgs, "marker"
             else:
                 # TIE: prefer PyMuPDF for digital PDFs — its text comes from
-                # the actual text layer (clean, no OCR drift). Marker's OCR
-                # can introduce subtle character errors (0 vs O, 1 vs l, etc.)
-                # that pass structural checks but are semantically wrong.
-                # Images: still swap PyMuPDF natives in (handled below).
+                # the actual text layer (clean, no OCR drift).
                 chosen, src_imgs, tag = qp, P_imgs, "pymupdf"
             if tag == "marker" and em != ep:
                 detail.append(f"Q{n}: marker (errs {ep}->{em})")
