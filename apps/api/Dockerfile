@@ -11,8 +11,12 @@ COPY package.json package-lock.json turbo.json ./
 COPY packages ./packages
 COPY apps/api ./apps/api
 
-# Install dependencies (using npm ci for clean install if lockfile exists)
-RUN npm ci
+# Install dependencies. Using `npm install` (not `npm ci`) so the build
+# succeeds even if package-lock.json is momentarily out of sync with
+# package.json (npm install reconciles the lockfile; npm ci refuses).
+# For fully reproducible builds, regenerate and commit package-lock.json from
+# a local `npm install` and this can switch back to `npm ci`.
+RUN npm install --no-audit --no-fund
 
 # Build the API (assumes there is a build script in apps/api/package.json)
 WORKDIR /app/apps/api
@@ -28,10 +32,10 @@ RUN apk add --no-cache python3 py3-pip \
   && python3 -m pip install --no-cache-dir --break-system-packages requests PyMuPDF Pillow
 
 # Set node env to production
-ENV NODE_ENV production
+ENV NODE_ENV=production
 # Align the listening port with EXPOSE below so the process binds to the port
 # the platform expects, regardless of whether PORT is injected externally.
-ENV PORT 8080
+ENV PORT=8080
 
 # Copy necessary files from builder
 COPY --from=builder /app/package.json ./
