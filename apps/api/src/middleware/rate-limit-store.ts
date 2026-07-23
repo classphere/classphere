@@ -1,5 +1,5 @@
 import { env } from "../config/env";
-import { connection as redisConnection } from "./queue/redis";
+import { connection as redisConnection } from "../lib/queue/redis";
 
 /**
  * Optional Redis-backed store for express-rate-limit.
