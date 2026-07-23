@@ -841,26 +841,26 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         const rawAnswers = (csvAns && csvAns.length) ? csvAns : extractedAnswers;
 
         // Convert raw answer-key tokens to the platform format, using the
-        // QUESTION TYPE to decide what a token means.
+        // QUESTION TYPE and EXAM TYPE to decide what a token means.
         //
         // CRITICAL: a numerical answer of "4" must stay "4", not become "D".
-        // In JEE Main, the last 5 questions per subject are numerical (answer
-        // can be 1-9 or even 0.x). In JEE Advanced, numerical questions are
-        // scattered randomly. So we CANNOT assume "4" means "option D" just
-        // because it's 1-4.
+        //   NEET:         180 questions, ALL MCQ, zero numericals. Every 1-4
+        //                 answer ALWAYS converts to A-D. No exceptions.
+        //   JEE Main:     MCQ + numerical. Numericals at fixed positions
+        //                 (Q21-25, Q46-50, Q71-75 per subject section of 25).
+        //   JEE Advanced: numericals scattered randomly — unpredictable.
+        //   JEE Main+Adv: mix of both — the dangerous case.
         //
         // Decision tree:
-        //   - If the extracted question has NO options (isNumerical): keep raw.
-        //   - If the extracted question HAS >= 2 options (MCQ/MSQ): convert
-        //     1->A, 2->B, 3->C, 4->D. Already-letters pass through.
-        //   - AMBIGUOUS (question type unknown / extraction didn't classify):
-        //     A raw answer of 1-4 with NO options extracted is almost certainly
-        //     a numerical answer (the extractor dropped options by mistake, or
-        //     it's genuinely numerical). Keep it raw and flag for review rather
-        //     than risk converting "4" -> "D" on a numerical question.
-        //   - Any answer > 4 or < 1 or decimal or negative: definitely
-        //     numerical, keep raw regardless of type.
+        //   1. NEET exam → ALL answers are MCQ → always convert 1-4 to A-D.
+        //   2. Non-NEET + question has >= 2 options (MCQ) → convert 1-4 to A-D,
+        //      UNLESS any token is clearly numerical (>4, decimal, negative).
+        //   3. Non-NEET + question has NO options (numerical/ambiguous) → keep raw.
+        //      Never risk converting "4" to "D" on a numerical question.
+        //   4. Any token > 4 or < 1 or decimal or negative → definitely
+        //      numerical, keep raw regardless of exam or type.
         const NUM_TO_LETTER: Record<string, string> = { "1": "A", "2": "B", "3": "C", "4": "D" };
+        const isNeetExam = examCode === "neet-ug";
 
         function isDefinitelyNumerical(val: string): boolean {
           const n = Number(val);
@@ -869,25 +869,29 @@ export const uploadTestController = async (req: Request, res: Response): Promise
 
         let correctAnswers: string[];
         const hasRealOptions = finalOptions && finalOptions.length >= 2;
+        const anyDefinitelyNumerical = rawAnswers.some(isDefinitelyNumerical);
 
-        if (isNumerical || !hasRealOptions) {
-          // Numerical question, or MCQ whose options weren't extracted (ambiguous).
-          // Keep raw — never risk converting a numerical answer to a letter.
+        if (anyDefinitelyNumerical) {
+          // Any answer > 4 / decimal / negative → definitely numerical, keep raw
+          // regardless of exam type or question type.
           correctAnswers = rawAnswers;
+        } else if (isNeetExam) {
+          // NEET: no numericals, ever. All answers 1-4 are option indices.
+          // Convert even if the extractor dropped options (safe for NEET).
+          correctAnswers = rawAnswers.map((a: string) => {
+            const upper = a.toUpperCase().trim();
+            return NUM_TO_LETTER[upper] ?? upper;
+          });
+        } else if (hasRealOptions) {
+          // JEE (Main/Adv/Main+Adv) MCQ with real options: convert 1-4 to A-D.
+          correctAnswers = rawAnswers.map((a: string) => {
+            const upper = a.toUpperCase().trim();
+            return NUM_TO_LETTER[upper] ?? upper;
+          });
         } else {
-          // MCQ/MSQ with real options: convert option numbers to letters.
-          // But if ANY answer token is clearly numerical (>4, decimal, negative),
-          // keep ALL tokens raw for this question — it's probably a numerical
-          // question that was misclassified as MCQ.
-          const anyNumerical = rawAnswers.some(isDefinitelyNumerical);
-          if (anyNumerical) {
-            correctAnswers = rawAnswers;
-          } else {
-            correctAnswers = rawAnswers.map((a: string) => {
-              const upper = a.toUpperCase().trim();
-              return NUM_TO_LETTER[upper] ?? upper;
-            });
-          }
+          // JEE with NO options extracted: could be numerical (answer "4" is
+          // the value, not option D). Keep raw and let review catch it.
+          correctAnswers = rawAnswers;
         }
 
         // Use the solution from the answer-key PDF if available; otherwise keep
