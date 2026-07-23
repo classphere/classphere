@@ -41,7 +41,9 @@ Sentry.setupExpressErrorHandler(app);
 // Lazily loaded via middleware/rate-limit-store so the app starts even if
 // rate-limit-redis isn't installed yet (in-memory fallback). When REDIS_URL is
 // set and the package is present, counters are shared across replicas.
-const rateLimitStore = getRateLimitStore();
+// Each limiter gets its OWN store instance with a unique prefix (v8 forbids
+// sharing one instance across limiters).
+const rateLimitStore = getRateLimitStore("rl:global:");
 
 // ─── Global Middleware ────────────────────────────────────────────────────────
 // 1. Security Headers

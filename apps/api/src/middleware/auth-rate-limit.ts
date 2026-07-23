@@ -16,5 +16,5 @@ export const authLimiter = rateLimit({
   legacyHeaders: false,
   message: { success: false, message: "Too many login attempts. Please try again after 15 minutes." },
   // @ts-ignore — store is optional in the type but accepted at runtime
-  store: getRateLimitStore(),
+  store: getRateLimitStore("rl:auth:"),
 });
