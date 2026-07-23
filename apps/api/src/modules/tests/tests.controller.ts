@@ -838,7 +838,29 @@ export const uploadTestController = async (req: Request, res: Response): Promise
 
         const csvAns = csvAnswers[idx + 1];
         const extractedAnswers = Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [];
-        const correctAnswers = (csvAns && csvAns.length) ? csvAns : extractedAnswers;
+        const rawAnswers = (csvAns && csvAns.length) ? csvAns : extractedAnswers;
+
+        // Convert raw answer-key tokens to the platform format, using the
+        // QUESTION TYPE to decide what a token means:
+        //   - MCQ with options:  "1"->"A", "2"->"B", "3"->"C", "4"->"D"
+        //                         (already-letters pass through unchanged)
+        //   - Numerical:         "42", "-3.5" stay as-is
+        //   - MSQ:               "1,4" -> ["A","D"]
+        // This prevents the catastrophic case where "4" was a numerical answer
+        // but got blindly converted to "D".
+        const NUM_TO_LETTER: Record<string, string> = { "1": "A", "2": "B", "3": "C", "4": "D" };
+        let correctAnswers: string[];
+        if (isNumerical) {
+          // Numerical: keep raw values (strip any option-letter conversion that
+          // the parser might have applied for a mixed-format key).
+          correctAnswers = rawAnswers;
+        } else {
+          // MCQ/MSQ: convert option numbers to letters; letters pass through.
+          correctAnswers = rawAnswers.map((a: string) => {
+            const upper = a.toUpperCase().trim();
+            return NUM_TO_LETTER[upper] ?? upper;
+          });
+        }
 
         // Use the solution from the answer-key PDF if available; otherwise keep
         // the LLM-extracted explanation. The answer-key PDF's solution is

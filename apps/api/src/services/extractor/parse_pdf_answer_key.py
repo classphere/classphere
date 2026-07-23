@@ -1,22 +1,41 @@
 """
-parse_pdf_answer_key.py  (v2 — full-document, regex-first, solution-aware)
+parse_pdf_answer_key.py  (v3 — broad-regex, format-agnostic, LLM-fallback)
 ==========================================================================
 Parses an answer-key / solutions PDF into:
   {
-    "answers":   { "1": ["A"], "2": ["C"], ... },   # option letters
-    "solutions": { "1": "solution text...", ... }    # worked solutions (if present)
+    "answers":   { "1": ["4"], "2": ["3"], ... },    # RAW answers (no conversion)
+    "solutions": { "1": "solution text...", ... }     # worked solutions (if present)
   }
 
-v2 fixes vs v1:
-  1. Reads ALL pages, not just the last 3. Aakash/Allen answer keys put the
-     answer table on page 1 and solutions after — v1 missed the table entirely.
-  2. Regex-first answer extraction (deterministic, no LLM needed for the key):
-     matches "1. (4)", "27) (2)", "Q3  (1)" etc. across multi-column layouts.
-     Converts (1)->A, (2)->B, (3)->C, (4)->D so it matches platform option ids.
-     MSQ like "(1,4)" -> ["A","D"]. Numerical answers ("42", "-3.5") kept as-is.
-  3. Solution extraction via Cerebras LLM: if the PDF contains worked solutions
-     ("Answer : (4)" followed by steps), extract them per question into the
-     solutions map. Skipped if no solution text is found (pure answer-key PDF).
+DESIGN PHILOSOPHY: the answer key itself must be extracted deterministically
+(offline regex). An LLM can hallucinate a wrong answer — that's worse than
+missing one. So:
+
+  1. Primary path = broad regex covering every coaching format:
+     - Aakash:    1. (4)    27) (2)    145.(3)
+     - Allen:     1. A      2. C       3. (B)
+     - Resonance: Q.1->(C)  1->B       27. (d)
+     - Lowercase: 1. (a)    2. b
+     - MSQ:       1. (1,4)  2. (B,D)   3. A,C
+     - Numerical: 1. 42     2. -3.5    3. 0.25
+     - Tables:    multi-column layouts where qnum and answer are on the same line
+     - Arrow:     1->4      2->C       3->(2)
+
+  2. Answers are output RAW — no 1->A conversion here. The controller does the
+     conversion because only it knows the question type (MCQ vs numerical).
+     - MCQ with 4 options:  "4" -> "D",  "1" -> "A"
+     - Numerical:           "42" stays "42"
+     This prevents the catastrophic case where "4" was a numerical answer but
+     got converted to "D" (which doesn't exist on a numerical question).
+
+  3. LLM fallback ONLY when regex finds < 10 answers (a non-standard or garbled
+     key the regex couldn't parse). The LLM prompt is conservative: extract
+     ONLY what's explicitly written, never guess. Regex answers always take
+     priority over LLM answers.
+
+  4. Solutions: if the PDF has worked solutions (>=5 "Answer :"/"Solution:"
+     markers), extract them via LLM. Solutions are explanatory text — LLM
+     hallucination there is far less dangerous than a wrong answer letter.
 
 Usage:
     python parse_pdf_answer_key.py <pdf_path> <output_json_path>
@@ -29,7 +48,6 @@ import json
 import fitz
 from pathlib import Path
 
-# Force stdout/stderr to use UTF-8 encoding on Windows
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 if hasattr(sys.stderr, "reconfigure"):
@@ -61,82 +79,103 @@ for idx in range(total_pages):
 combined_text = "\n".join(all_text)
 print(f"[parse_pdf_answer_key] Read all {total_pages} pages ({len(combined_text)} chars)")
 
-# ── Regex-first answer extraction ─────────────────────────────────────────────
-# Matches patterns like:
-#   1. (4)     27) (2)     Q3 (1)     145.(3)
-#   1. 42      27) -3.5    (numerical)
-#   1. (1,4)   (multiple correct / MSQ)
-ANSWER_RE = re.compile(
-    r'(?:Q(?:uestion)?\.?\s*)?(\d{1,3})\s*[.)]\s*'   # question number + delimiter
-    r'\(?\s*'                                          # optional opening paren
-    r'((?:-?\d+(?:\.\d+)?)'                            # numerical answer
-    r'|(?:[1-4](?:\s*[,/]\s*[1-4])*)'                  # option number(s) 1-4
-    r'|(?:[A-D](?:\s*[,/]\s*[A-D])*)'                  # or letter(s) A-D
-    r')'
-    r'\s*\)?',                                         # optional closing paren
+# ── Broad regex answer extraction ─────────────────────────────────────────────
+# Each pattern captures (question_number, raw_answer_token). The controller
+# decides whether the token is an option index (1-4) to convert to A-D, or a
+# numerical answer to keep as-is.
+
+# Pattern A: "1. (4)" / "27) (2)" / "145.(3)" / "Q3 (1)"
+PAT_PAREN = re.compile(
+    r'(?:Q(?:uestion)?\.?\s*)?(\d{1,3})\s*[.)\-:]?\s*'
+    r'\(\s*'
+    r'([1-4A-Da-d](?:\s*[,/]\s*[1-4A-Da-d])*)'
+    r'\s*\)',
     re.IGNORECASE
 )
 
-NUM_TO_LETTER = {"1": "A", "2": "B", "3": "C", "4": "D"}
+# Pattern B: "1. A" / "2. C" / "27) B" / "Q.3 d"
+PAT_LETTER = re.compile(
+    r'(?:Q(?:uestion)?\.?\s*)?(\d{1,3})\s*[.)\-:]\s*'
+    r'([A-Da-d](?:\s*[,/]\s*[A-Da-d])*)'
+    r'(?!\s*\d)',
+    re.IGNORECASE
+)
+
+# Pattern C: "1. 42" / "2. -3.5" / "27) 0.25"
+PAT_NUMERICAL = re.compile(
+    r'(?:Q(?:uestion)?\.?\s*)?(\d{1,3})\s*[.)\-:]\s*'
+    r'(-?\d+(?:\.\d+)?)'
+    r'(?!\s*\d)',
+)
+
+# Pattern D: "1->4" / "2->C" / "3->(2)"
+PAT_ARROW = re.compile(
+    r'(?:Q(?:uestion)?\.?\s*)?(\d{1,3})\s*(?:->|→)\s*'
+    r'\(?\s*([1-4A-Da-d](?:\s*[,/]\s*[1-4A-Da-d])*)'
+    r'\s*\)?',
+    re.IGNORECASE
+)
+
+# Pattern E: "1->42" / "2->-3.5"
+PAT_ARROW_NUM = re.compile(
+    r'(?:Q(?:uestion)?\.?\s*)?(\d{1,3})\s*(?:->|→)\s*'
+    r'(-?\d+(?:\.\d+)?)',
+)
+
+# Pattern F: "1 4" / "2 3" — whitespace-separated, whole-line match only.
+# Used only when other patterns found few answers and the page looks like a
+# compact answer table (many short "N X" lines).
+PAT_SPACE = re.compile(
+    r'^(\d{1,3})\s+([1-4A-Da-d])\s*$',
+    re.IGNORECASE | re.MULTILINE
+)
+
+ALL_PATTERNS = [
+    ("paren", PAT_PAREN),
+    ("letter", PAT_LETTER),
+    ("arrow", PAT_ARROW),
+    ("arrow_num", PAT_ARROW_NUM),
+    ("numerical", PAT_NUMERICAL),
+]
+
+MAX_QNUM = 400
 
 
-def normalize_answer(raw: str) -> list:
-    """Convert a raw answer token to a list of option letters or a numeric string."""
-    raw = raw.strip()
-    # MSQ: "1,4" or "1/4" or "A,C"
-    if re.match(r'^([1-4A-Da-d])(\s*[,/]\s*([1-4A-Da-d]))+$', raw):
+def extract_answers_regex(text: str) -> dict:
+    answers: dict[str, list] = {}
+
+    def try_add(qnum: str, raw: str):
+        qnum_int = int(qnum)
+        if qnum_int < 1 or qnum_int > MAX_QNUM:
+            return
+        if qnum == raw:
+            return
         parts = re.split(r'[,/]', raw)
-        letters = []
-        for p in parts:
-            p = p.strip().upper()
-            if p in NUM_TO_LETTER:
-                letters.append(NUM_TO_LETTER[p])
-            elif p in "ABCD":
-                letters.append(p)
-        return letters if letters else [raw]
-    # Single option number
-    if raw in NUM_TO_LETTER:
-        return [NUM_TO_LETTER[raw]]
-    # Single letter
-    if raw.upper() in "ABCD":
-        return [raw.upper()]
-    # Numerical answer — keep as string
-    if re.match(r'^-?\d+(?:\.\d+)?$', raw):
-        return [raw]
-    return [raw]
-
-
-answers: dict[str, list] = {}
-for m in ANSWER_RE.finditer(combined_text):
-    qnum = m.group(1)
-    raw_ans = m.group(2)
-    # Skip false positives: question numbers > 400, or answer that's just the qnum
-    qnum_int = int(qnum)
-    if qnum_int < 1 or qnum_int > 400:
-        continue
-    if qnum == raw_ans:
-        continue
-    normalized = normalize_answer(raw_ans)
-    if normalized:
-        # Don't overwrite an existing answer (first match wins — answer tables
-        # come before solutions in the PDF, and the table is authoritative)
+        parts = [p.strip().upper() for p in parts if p.strip()]
+        if not parts:
+            return
         if qnum not in answers:
-            answers[qnum] = normalized
+            answers[qnum] = parts
 
+    for _, pat in ALL_PATTERNS:
+        for m in pat.finditer(text):
+            try_add(m.group(1), m.group(2))
+
+    if len(answers) < 10:
+        space_matches = PAT_SPACE.findall(text)
+        if len(space_matches) >= 5:
+            for qnum, raw in space_matches:
+                try_add(qnum, raw)
+
+    return answers
+
+
+answers = extract_answers_regex(combined_text)
 print(f"[parse_pdf_answer_key] Regex extracted {len(answers)} answers")
 
-# ── Solution extraction (LLM, only if solutions exist) ────────────────────────
-# Detect if this PDF has worked solutions (not just a bare answer table).
-# Heuristic: "Answer :" or "Solution:" or "Sol." appears multiple times.
-solution_markers = len(re.findall(r'(?i)\bAnswer\s*[:\-]|Solution\s*[:\-]|Sol\.\s', combined_text))
-has_solutions = solution_markers >= 5
-
-solutions: dict[str, str] = {}
-
-if has_solutions:
-    print(f"[parse_pdf_answer_key] Detected {solution_markers} solution markers — extracting solutions via LLM")
-
-    # Load Cerebras keys (lazy)
+# ── LLM fallback (only if regex found < 10) ───────────────────────────────────
+if len(answers) < 10 and total_pages >= 1:
+    print(f"[parse_pdf_answer_key] Regex found only {len(answers)} — trying LLM fallback")
     KEYS_FILE = Path(__file__).parent / "api_keys.txt"
     api_keys = []
     if KEYS_FILE.exists():
@@ -145,34 +184,37 @@ if has_solutions:
     if not api_keys and os.environ.get("CEREBRAS_API_KEY"):
         api_keys.append(os.environ["CEREBRAS_API_KEY"])
 
-    if not api_keys:
-        print("[parse_pdf_answer_key] No Cerebras keys — skipping solution extraction")
-    else:
+    if api_keys:
         try:
             from cerebras.cloud.sdk import Cerebras
-            clients = [Cerebras(api_key=k) for k in api_keys]
-            client_idx = [0]
+            _clients = [Cerebras(api_key=k) for k in api_keys]
+            _ci = [0]
 
             def get_client():
-                c = clients[client_idx[0] % len(clients)]
-                client_idx[0] += 1
+                c = _clients[_ci[0] % len(_clients)]
+                _ci[0] += 1
                 return c
 
-            SOLUTION_PROMPT = """You are a solution extractor for competitive exam papers (JEE/NEET).
-Below is the text from an answer key + solutions PDF. For each question number,
-extract the WORKED SOLUTION text (the steps/explanation after "Answer : (X)").
-Skip the answer letter itself — only extract the solution steps.
+            LLM_ANSWER_PROMPT = """You are a careful answer-key extractor for Indian competitive exams (JEE/NEET).
+Below is text extracted from an answer-key PDF. Extract ONLY the answer
+mappings that are EXPLICITLY written in the text. Do NOT guess, infer, or
+fill in answers that aren't there.
 
-Return a JSON object where keys are question numbers (as strings) and values
-are the solution text (as a single string, preserving math as LaTeX in $...$).
+The format varies by coaching:
+- Some use option numbers: "1. (4)" -> answer is "4"
+- Some use letters: "1. A" -> answer is "A"
+- Some use lowercase: "1. (b)" -> answer is "B"
+- Some use mixed: MCQs as letters, numericals as raw numbers
+- MSQ: "1. (1,4)" -> answers are "1" and "4"
+
+Output a JSON object: keys = question numbers as strings, values = list of
+raw answer tokens as strings (NO conversion — keep "4" as "4", "A" as "A").
+The downstream system will convert numbers to letters where appropriate.
 
 Example output:
-{
-  "1": "Using $t = \\\\frac{A}{a}\\\\sqrt{\\\\frac{2H}{g}}$, we get $t \\\\propto \\\\sqrt{H}$...",
-  "2": "From the lens formula $\\\\frac{1}{v} - \\\\frac{1}{u} = \\\\frac{1}{f}$..."
-}
+{"1": ["4"], "2": ["3"], "3": ["A"], "4": ["B", "D"], "5": ["42"], "6": ["-3.5"]}
 
-If a question has no solution text, omit it from the output.
+If you cannot find any answer key in the text, return: {}
 Return ONLY valid JSON. No markdown, no code fences."""
 
             def clean_json(raw):
@@ -188,34 +230,113 @@ Return ONLY valid JSON. No markdown, no code fences."""
                     raw = "\n".join(lines).strip()
                 return raw
 
-            # Send the full text (may need to chunk for very large PDFs)
-            max_chars = 50000
-            text_to_send = combined_text[:max_chars]
-            if len(combined_text) > max_chars:
-                print(f"  (truncating solutions text from {len(combined_text)} to {max_chars} chars)")
-
             for attempt in range(3):
                 try:
                     client = get_client()
                     resp = client.chat.completions.create(
                         model="gpt-oss-120b",
                         messages=[
+                            {"role": "system", "content": LLM_ANSWER_PROMPT},
+                            {"role": "user", "content": combined_text[:50000]},
+                        ],
+                        response_format={"type": "json_object"},
+                        temperature=0.0,
+                        max_tokens=4000,
+                    )
+                    raw_output = resp.choices[0].message.content
+                    cleaned = clean_json(raw_output)
+                    llm_answers = json.loads(cleaned)
+                    for qnum, ans_list in llm_answers.items():
+                        if qnum not in answers and isinstance(ans_list, list):
+                            answers[qnum] = [str(a) for a in ans_list]
+                    print(f"[parse_pdf_answer_key] LLM fallback: {len(answers)} total answers")
+                    break
+                except Exception as e:
+                    print(f"[parse_pdf_answer_key] LLM fallback attempt {attempt + 1} failed: {e}")
+        except ImportError:
+            print("[parse_pdf_answer_key] cerebras-cloud-sdk not installed — skipping LLM fallback")
+else:
+    if len(answers) >= 10:
+        print(f"[parse_pdf_answer_key] Regex found {len(answers)} answers — no LLM fallback needed")
+
+# ── Solution extraction (LLM, only if solutions exist) ────────────────────────
+solution_markers = len(re.findall(r'(?i)\bAnswer\s*[:\-]|Solution\s*[:\-]|Sol\.\s', combined_text))
+has_solutions = solution_markers >= 5
+
+solutions: dict[str, str] = {}
+
+if has_solutions:
+    print(f"[parse_pdf_answer_key] Detected {solution_markers} solution markers — extracting solutions via LLM")
+
+    KEYS_FILE = Path(__file__).parent / "api_keys.txt"
+    api_keys = []
+    if KEYS_FILE.exists():
+        api_keys = [k.strip() for k in KEYS_FILE.read_text().splitlines()
+                    if k.strip() and not k.startswith("#")]
+    if not api_keys and os.environ.get("CEREBRAS_API_KEY"):
+        api_keys.append(os.environ["CEREBRAS_API_KEY"])
+
+    if not api_keys:
+        print("[parse_pdf_answer_key] No Cerebras keys — skipping solution extraction")
+    else:
+        try:
+            from cerebras.cloud.sdk import Cerebras
+            if "_clients" not in dir():
+                _clients = [Cerebras(api_key=k) for k in api_keys]
+                _ci = [0]
+
+            def get_sol_client():
+                c = _clients[_ci[0] % len(_clients)]
+                _ci[0] += 1
+                return c
+
+            SOLUTION_PROMPT = """You are a solution extractor for competitive exam papers (JEE/NEET).
+Below is text from an answer key + solutions PDF. For each question number,
+extract the WORKED SOLUTION text (the steps/explanation after the answer).
+Skip the answer letter itself — only extract the solution steps.
+
+Return JSON: keys = question numbers (strings), values = solution text (string,
+math as LaTeX in $...$).
+
+Example: {"1": "Using $t = \\\\frac{A}{a}\\\\sqrt{\\\\frac{2H}{g}}$...", "2": "From lens formula..."}
+
+If a question has no solution, omit it. Return ONLY valid JSON. No markdown."""
+
+            def clean_json_sol(raw):
+                if not raw:
+                    return "{}"
+                raw = str(raw).strip()
+                if raw.startswith("```"):
+                    lines = raw.splitlines()
+                    if lines and lines[0].startswith("```"):
+                        lines = lines[1:]
+                    if lines and lines[-1].strip() == "```":
+                        lines = lines[:-1]
+                    raw = "\n".join(lines).strip()
+                return raw
+
+            for attempt in range(3):
+                try:
+                    client = get_sol_client()
+                    resp = client.chat.completions.create(
+                        model="gpt-oss-120b",
+                        messages=[
                             {"role": "system", "content": SOLUTION_PROMPT},
-                            {"role": "user", "content": text_to_send},
+                            {"role": "user", "content": combined_text[:50000]},
                         ],
                         response_format={"type": "json_object"},
                         temperature=0.1,
                         max_tokens=8000,
                     )
                     raw_output = resp.choices[0].message.content
-                    cleaned = clean_json(raw_output)
+                    cleaned = clean_json_sol(raw_output)
                     solutions = json.loads(cleaned)
                     print(f"[parse_pdf_answer_key] LLM extracted {len(solutions)} solutions")
                     break
                 except Exception as e:
                     print(f"[parse_pdf_answer_key] Solution extraction attempt {attempt + 1} failed: {e}")
         except ImportError:
-            print("[parse_pdf_answer_key] cerebras-cloud-sdk not installed — skipping solutions")
+            print("[parse_pdf_answer_sdk not installed — skipping solutions")
 else:
     print("[parse_pdf_answer_key] No solution markers found — pure answer key, skipping LLM")
 
