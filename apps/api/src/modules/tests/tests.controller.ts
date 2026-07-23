@@ -841,25 +841,53 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         const rawAnswers = (csvAns && csvAns.length) ? csvAns : extractedAnswers;
 
         // Convert raw answer-key tokens to the platform format, using the
-        // QUESTION TYPE to decide what a token means:
-        //   - MCQ with options:  "1"->"A", "2"->"B", "3"->"C", "4"->"D"
-        //                         (already-letters pass through unchanged)
-        //   - Numerical:         "42", "-3.5" stay as-is
-        //   - MSQ:               "1,4" -> ["A","D"]
-        // This prevents the catastrophic case where "4" was a numerical answer
-        // but got blindly converted to "D".
+        // QUESTION TYPE to decide what a token means.
+        //
+        // CRITICAL: a numerical answer of "4" must stay "4", not become "D".
+        // In JEE Main, the last 5 questions per subject are numerical (answer
+        // can be 1-9 or even 0.x). In JEE Advanced, numerical questions are
+        // scattered randomly. So we CANNOT assume "4" means "option D" just
+        // because it's 1-4.
+        //
+        // Decision tree:
+        //   - If the extracted question has NO options (isNumerical): keep raw.
+        //   - If the extracted question HAS >= 2 options (MCQ/MSQ): convert
+        //     1->A, 2->B, 3->C, 4->D. Already-letters pass through.
+        //   - AMBIGUOUS (question type unknown / extraction didn't classify):
+        //     A raw answer of 1-4 with NO options extracted is almost certainly
+        //     a numerical answer (the extractor dropped options by mistake, or
+        //     it's genuinely numerical). Keep it raw and flag for review rather
+        //     than risk converting "4" -> "D" on a numerical question.
+        //   - Any answer > 4 or < 1 or decimal or negative: definitely
+        //     numerical, keep raw regardless of type.
         const NUM_TO_LETTER: Record<string, string> = { "1": "A", "2": "B", "3": "C", "4": "D" };
+
+        function isDefinitelyNumerical(val: string): boolean {
+          const n = Number(val);
+          return !isNaN(n) && (n > 4 || n < 1 || !Number.isInteger(n));
+        }
+
         let correctAnswers: string[];
-        if (isNumerical) {
-          // Numerical: keep raw values (strip any option-letter conversion that
-          // the parser might have applied for a mixed-format key).
+        const hasRealOptions = finalOptions && finalOptions.length >= 2;
+
+        if (isNumerical || !hasRealOptions) {
+          // Numerical question, or MCQ whose options weren't extracted (ambiguous).
+          // Keep raw — never risk converting a numerical answer to a letter.
           correctAnswers = rawAnswers;
         } else {
-          // MCQ/MSQ: convert option numbers to letters; letters pass through.
-          correctAnswers = rawAnswers.map((a: string) => {
-            const upper = a.toUpperCase().trim();
-            return NUM_TO_LETTER[upper] ?? upper;
-          });
+          // MCQ/MSQ with real options: convert option numbers to letters.
+          // But if ANY answer token is clearly numerical (>4, decimal, negative),
+          // keep ALL tokens raw for this question — it's probably a numerical
+          // question that was misclassified as MCQ.
+          const anyNumerical = rawAnswers.some(isDefinitelyNumerical);
+          if (anyNumerical) {
+            correctAnswers = rawAnswers;
+          } else {
+            correctAnswers = rawAnswers.map((a: string) => {
+              const upper = a.toUpperCase().trim();
+              return NUM_TO_LETTER[upper] ?? upper;
+            });
+          }
         }
 
         // Use the solution from the answer-key PDF if available; otherwise keep
