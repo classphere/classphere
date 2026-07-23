@@ -16,7 +16,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useEditor, EditorContent, ReactNodeViewRenderer, NodeViewWrapper, type Editor, type NodeViewProps } from "@tiptap/react";
-import { Node, mergeAttributes } from "@tiptap/core";
+import { Node as TiptapNode, mergeAttributes } from "@tiptap/core";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
@@ -252,7 +252,7 @@ function renderInline(content: any[] | undefined): string {
 }
 
 // ── Inline math node ───────────────────────────────────────────────────────────
-const InlineMath = Node.create({
+const InlineMath = TiptapNode.create({
   name: "inlineMath",
   group: "inline",
   inline: true,
@@ -275,7 +275,7 @@ const InlineMath = Node.create({
 // ── Display math node ──────────────────────────────────────────────────────────
 // Inline atom (lives inside a paragraph) so it round-trips losslessly, but rendered
 // as a centered block via CSS, matching KaTeX's display-mode presentation.
-const DisplayMath = Node.create({
+const DisplayMath = TiptapNode.create({
   name: "displayMath",
   group: "inline",
   inline: true,
