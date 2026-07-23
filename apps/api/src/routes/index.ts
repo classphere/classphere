@@ -10,6 +10,7 @@ import batchesRouter from "../modules/batches/batches.routes";
 import facultyRouter from "../modules/institutes/faculty/faculty.routes";
 import studentsRouter from "../modules/institutes/students/students.routes";
 import internalRouter from "../modules/internal/internal.routes";
+import datalabWebhookRouter from "../modules/webhooks/datalab.routes";
 import pyqsRouter from "../modules/pyqs/pyqs.routes";
 import superadminRouter from "../modules/superadmin/superadmin.routes";
 import dashboardRouter from "../modules/dashboard/dashboard.routes";
@@ -26,6 +27,7 @@ const router = Router();
 router.use("/auth", authRouter);
 router.use("/pyqs", pyqsRouter);
 router.use("/syllabus", syllabusRouter);
+router.use("/webhooks/datalab", datalabWebhookRouter);
 
 // ─── Authenticated ───────────────────────────────────────────────────────────
 router.use("/questions", questionsRouter);

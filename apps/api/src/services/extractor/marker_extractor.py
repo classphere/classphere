@@ -87,21 +87,24 @@ def _request_with_retry(method, url, *, retries=4, backoff=4, **kwargs):
     raise last if last else RuntimeError("request failed")
 
 
-def submit_pdf(pdf_path, api_key, force_ocr=True, use_llm=True):
-    print(f"Submitting to Marker (force_ocr={force_ocr}, use_llm={use_llm}): {pdf_path}")
+def submit_pdf(pdf_path, api_key, force_ocr=True, use_llm=True, webhook_url=None):
+    print(f"Submitting to Marker (force_ocr={force_ocr}, use_llm={use_llm}, webhook={bool(webhook_url)}): {pdf_path}")
     with open(pdf_path, "rb") as f:
         file_bytes = f.read()
+    form_data = {
+        "output_format": "json",
+        "extract_images": "true",
+        "use_llm": "true" if use_llm else "false",
+        "force_ocr": "true" if force_ocr else "false",
+        "paginate_output": "false",
+    }
+    if webhook_url:
+        form_data["webhook_url"] = webhook_url
     resp = _request_with_retry(
         "POST", MARKER_SUBMIT_URL,
         headers={"X-API-Key": api_key},
         files={"file": (Path(pdf_path).name, file_bytes, "application/pdf")},
-        data={
-            "output_format": "json",
-            "extract_images": "true",
-            "use_llm": "true" if use_llm else "false",
-            "force_ocr": "true" if force_ocr else "false",
-            "paginate_output": "false",
-        },
+        data=form_data,
         timeout=90,
     )
     data = resp.json()
@@ -129,6 +132,18 @@ def poll_until_done(check_url, api_key):
             sys.exit(EXIT_ERROR)
     print("ERROR: Timed out waiting for Marker.")
     sys.exit(EXIT_ERROR)
+
+
+def fetch_completed(check_url, api_key):
+    """Fetch a Marker result once after a verified completion webhook.
+    The webhook is only a notification; full results still come from the
+    request_check_url. Never loops/polls here."""
+    data = _request_with_retry("GET", check_url,
+                               headers={"X-API-Key": api_key}, timeout=60).json()
+    status = data.get("status", "unknown")
+    if status != "complete":
+        raise RuntimeError(f"Marker result is not complete (status={status})")
+    return data
 
 
 def download_images(images, images_dir, api_key):
@@ -369,11 +384,19 @@ def build_pipeline_raw(result: dict, out_dir: Path, api_key: str) -> dict:
 
 def run():
     ap = argparse.ArgumentParser(description="Datalab Marker extractor")
-    ap.add_argument("pdf_path")
+    ap.add_argument("pdf_path", nargs="?", help="PDF path (not needed with --fetch-url)")
     ap.add_argument("--api-key", default=None)
-    ap.add_argument("--out", default=None, help="Output dir (default <pdf>/../extracted_data)")
+    ap.add_argument("--out", default=None, help="Output dir")
     ap.add_argument("--force-ocr", default="true", choices=["true", "false"])
     ap.add_argument("--no-llm", action="store_true")
+    ap.add_argument("--webhook-url", default=None,
+                    help="Per-request Datalab completion callback")
+    ap.add_argument("--submit-only", action="store_true",
+                    help="Submit with webhook and exit without polling")
+    ap.add_argument("--request-json", default=None,
+                    help="Write request_id/check_url JSON here in submit-only mode")
+    ap.add_argument("--fetch-url", default=None,
+                    help="Fetch one completed result from request_check_url")
     args = ap.parse_args()
 
     api_key = get_api_key(args.api_key)
@@ -381,14 +404,40 @@ def run():
         print("Marker skipped: no DATALAB_API_KEY set (optional stage).")
         sys.exit(EXIT_NO_KEY)
 
+    if args.fetch_url:
+        if not args.out:
+            ap.error("--out is required with --fetch-url")
+        out_dir = Path(args.out).resolve()
+        out_dir.mkdir(parents=True, exist_ok=True)
+        result = fetch_completed(args.fetch_url, api_key)
+        build_pipeline_raw(result, out_dir, api_key)
+        print(f"\nNext step: run cerebras_from_marker.py {out_dir}")
+        sys.exit(EXIT_OK)
+
+    if not args.pdf_path:
+        ap.error("pdf_path is required unless --fetch-url is used")
     pdf_path = Path(args.pdf_path).resolve()
     out_dir = Path(args.out).resolve() if args.out else pdf_path.parent / "extracted_data"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     submit = submit_pdf(pdf_path, api_key,
                         force_ocr=(args.force_ocr == "true"),
-                        use_llm=not args.no_llm)
-    print("Polling for results...")
+                        use_llm=not args.no_llm,
+                        webhook_url=args.webhook_url)
+    if args.submit_only:
+        request_meta = {
+            "request_id": submit["request_id"],
+            "request_check_url": submit["request_check_url"],
+        }
+        if args.request_json:
+            Path(args.request_json).write_text(
+                json.dumps(request_meta, ensure_ascii=False), encoding="utf-8")
+        print("MARKER_REQUEST=" + json.dumps(request_meta))
+        sys.exit(EXIT_OK)
+
+    # Legacy/local fallback: synchronous polling. Production supplies a webhook
+    # URL and uses --submit-only, so worker slots are never held here.
+    print("Polling for results (legacy fallback)...")
     result = poll_until_done(submit["request_check_url"], api_key)
     build_pipeline_raw(result, out_dir, api_key)
     print(f"\nNext step: run cerebras_from_marker.py {out_dir}")

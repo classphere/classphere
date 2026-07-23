@@ -1,6 +1,45 @@
-import { execSync } from "child_process";
+import { execSync, spawn } from "child_process";
 import * as fs from "fs";
 import * as path from "path";
+
+/** Non-blocking child-process runner. The old execSync calls blocked Node's
+ * event loop for minutes, so BullMQ could not renew locks and concurrency=2 was
+ * effectively concurrency=1. Production webhook phases use this runner; the
+ * legacy synchronous extractPDF path remains for local compatibility. */
+function runCommand(command: string, timeoutMs: number): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, {
+      shell: true,
+      env: process.env,
+      windowsHide: true,
+    });
+    let stdout = "";
+    let stderr = "";
+    const timer = setTimeout(() => {
+      child.kill("SIGTERM");
+      reject(new Error(`Command timed out after ${timeoutMs}ms: ${command.slice(0, 160)}`));
+    }, timeoutMs);
+    child.stdout?.on("data", (chunk) => {
+      const text = chunk.toString();
+      stdout += text;
+      process.stdout.write(text);
+    });
+    child.stderr?.on("data", (chunk) => {
+      const text = chunk.toString();
+      stderr += text;
+      process.stderr.write(text);
+    });
+    child.on("error", (err) => {
+      clearTimeout(timer);
+      reject(err);
+    });
+    child.on("close", (code) => {
+      clearTimeout(timer);
+      if (code === 0) resolve(stdout);
+      else reject(new Error(`Command exited ${code}: ${stderr.slice(-1000) || stdout.slice(-1000)}`));
+    });
+  });
+}
 
 export interface ExtractionResult {
   success: boolean;
@@ -77,6 +116,26 @@ function runCerebrasNormalizeOnly(
            { stdio: "inherit", timeout: 300000 });
 }
 
+async function runCerebrasAndNormalizeAsync(
+  scriptDir: string, dir: string, jsonPath: string, imagesDir: string,
+  pagesArg: string, source: string
+): Promise<void> {
+  console.log(`[pdfExtractor] Cerebras extraction (${source})...`);
+  await runCommand(`python "${path.join(scriptDir, "cerebras_from_marker.py")}" "${dir}"${pagesArg}`,
+                   600000);
+  console.log(`[pdfExtractor] Normalizing (${source})...`);
+  await runCommand(`python "${path.join(scriptDir, "normalize_json.py")}" "${jsonPath}" ` +
+                   `--images-dir "${imagesDir}" --source ${source}`, 600000);
+}
+
+async function normalizeOnlyAsync(
+  scriptDir: string, jsonPath: string, imagesDir: string, source: string
+): Promise<void> {
+  console.log(`[pdfExtractor] Normalizing merged set (${source})...`);
+  await runCommand(`python "${path.join(scriptDir, "normalize_json.py")}" "${jsonPath}" ` +
+                   `--images-dir "${imagesDir}" --source ${source}`, 300000);
+}
+
 function readReport(jsonPath: string): any {
   const reportPath = jsonPath.replace(/\.json$/, ".report.json");
   try {
@@ -90,6 +149,177 @@ function readQuestions(jsonPath: string): any[] {
     if (fs.existsSync(jsonPath)) return JSON.parse(fs.readFileSync(jsonPath, "utf-8")).questions || [];
   } catch { /* ignore */ }
   return [];
+}
+
+export interface MarkerWaitState {
+  state: "waiting_marker";
+  source: "pymupdf" | "marker";
+  requestId: string;
+  requestCheckUrl: string;
+}
+
+export interface CompleteState {
+  state: "complete";
+  result: ExtractionResult;
+}
+
+export type PreparedExtraction = MarkerWaitState | CompleteState;
+
+async function markerSubmitOnly(
+  scriptDir: string, pdfPath: string, outDir: string, webhookUrl: string
+): Promise<{ request_id: string; request_check_url: string }> {
+  fs.mkdirSync(outDir, { recursive: true });
+  const requestPath = path.join(outDir, "marker_request.json");
+  await runCommand(`python "${path.join(scriptDir, "marker_extractor.py")}" "${pdfPath}" ` +
+                   `--out "${outDir}" --force-ocr true --webhook-url "${webhookUrl}" ` +
+                   `--submit-only --request-json "${requestPath}"`, 120000);
+  return JSON.parse(fs.readFileSync(requestPath, "utf-8"));
+}
+
+async function markerFetchCompleted(
+  scriptDir: string, outDir: string, requestCheckUrl: string
+): Promise<void> {
+  fs.mkdirSync(outDir, { recursive: true });
+  await runCommand(`python "${path.join(scriptDir, "marker_extractor.py")}" ` +
+                   `--out "${outDir}" --fetch-url "${requestCheckUrl}"`, 180000);
+}
+
+function finalizeQuestions(jsonPath: string, imagesDir: string, suffix = ""): ExtractionResult {
+  if (!fs.existsSync(jsonPath)) {
+    return { success: false, message: "Pipeline completed but no output JSON was found.", questions: [] };
+  }
+  const parsed = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
+  const questions = parsed.questions || [];
+  console.log(`[pdfExtractor] Embedding base64 images into ${questions.length} questions...`);
+  for (const q of questions) {
+    if (q.question_text) q.question_text = embedImagesInText(q.question_text, imagesDir);
+    if (Array.isArray(q.options)) {
+      for (const opt of q.options) {
+        if (opt.text) opt.text = embedImagesInText(opt.text, imagesDir);
+        if (opt.image_url) opt.image_url = embedImagesInText(`![image](${opt.image_url})`, imagesDir)
+          .replace(/^!\[image\]\(|\)$/g, "");
+      }
+    }
+    if (q.explanation) q.explanation = embedImagesInText(q.explanation, imagesDir);
+  }
+  return {
+    success: questions.length > 0,
+    message: questions.length > 0
+      ? `Extracted ${questions.length} questions successfully${suffix}.`
+      : "Extraction produced no questions.",
+    questions,
+  };
+}
+
+/** Phase 1 for production: run local PyMuPDF/Cerebras work, then either finish
+ * immediately or submit Marker with a webhook and release the worker slot. */
+export async function preparePDFExtraction(
+  pdfPath: string,
+  pagesRange: string | undefined,
+  webhookUrl: string | undefined,
+): Promise<PreparedExtraction> {
+  const workingDir = path.dirname(pdfPath);
+  const outputDir = path.join(workingDir, "extracted_data");
+  const imagesDir = path.join(outputDir, "marker_images");
+  const finalJson = path.join(outputDir, "all_extracted_data.json");
+  const scriptDir = path.join(__dirname);
+  fs.mkdirSync(outputDir, { recursive: true });
+
+  const pyCmd = `python "${path.join(scriptDir, "pymupdf_extractor.py")}" "${pdfPath}" "${outputDir}"`;
+  let stdout = "";
+  try {
+    stdout = await runCommand(pyCmd, 180000);
+  } catch (err: any) {
+    stdout = err?.message || String(err);
+    console.error("[pdfExtractor] PyMuPDF execution error:", stdout);
+  }
+
+  const pagesArg = pagesRange ? ` --pages "${pagesRange}"` : "";
+  const scanned = stdout.includes("Scanned PDF detected");
+  const hasDatalab = !!(process.env.DATALAB_API_KEY || "").trim();
+
+  if (scanned) {
+    if (!hasDatalab) {
+      return { state: "complete", result: {
+        success: false,
+        message: "Scanned PDF detected but no DATALAB_API_KEY is configured.",
+        questions: [],
+      }};
+    }
+    if (webhookUrl) {
+      const req = await markerSubmitOnly(scriptDir, pdfPath, outputDir, webhookUrl);
+      return { state: "waiting_marker", source: "marker",
+               requestId: req.request_id, requestCheckUrl: req.request_check_url };
+    }
+    // Local/legacy fallback when no public webhook URL is configured.
+    runMarker(scriptDir, pdfPath, outputDir);
+    await runCerebrasAndNormalizeAsync(scriptDir, outputDir, finalJson, imagesDir, pagesArg, "marker");
+    return { state: "complete", result: finalizeQuestions(finalJson, imagesDir, " via Marker") };
+  }
+
+  // Digital PDF: PyMuPDF is the primary source and owns all final images.
+  await runCerebrasAndNormalizeAsync(scriptDir, outputDir, finalJson, imagesDir, pagesArg, "pymupdf");
+  const report = readReport(finalJson);
+  const escalate = !!report?.escalation?.escalate;
+  if (!escalate || !hasDatalab) {
+    return { state: "complete", result: finalizeQuestions(finalJson, imagesDir) };
+  }
+  if (!webhookUrl) {
+    // Local/legacy fallback: poll Marker synchronously, but reuse the PyMuPDF
+    // result we already produced (do not recursively rerun the whole pipeline).
+    const escDir = path.join(outputDir, "marker_escalation");
+    const escImages = path.join(escDir, "marker_images");
+    const escJson = path.join(escDir, "all_extracted_data.json");
+    const mergedDir = path.join(outputDir, "merged");
+    const mergedImages = path.join(mergedDir, "marker_images");
+    const mergedJson = path.join(mergedDir, "all_extracted_data.json");
+    runMarker(scriptDir, pdfPath, escDir);
+    await runCerebrasAndNormalizeAsync(scriptDir, escDir, escJson, escImages, pagesArg, "marker");
+    await runCommand(`python "${path.join(scriptDir, "merge_extractions.py")}" ` +
+                     `--pymupdf "${outputDir}" --marker "${escDir}" --out "${mergedDir}"`,
+                     120000);
+    await normalizeOnlyAsync(scriptDir, mergedJson, mergedImages, "marker");
+    return { state: "complete", result: finalizeQuestions(mergedJson, mergedImages, " via Marker merge") };
+  }
+  const escDir = path.join(outputDir, "marker_escalation");
+  const req = await markerSubmitOnly(scriptDir, pdfPath, escDir, webhookUrl);
+  return { state: "waiting_marker", source: "pymupdf",
+           requestId: req.request_id, requestCheckUrl: req.request_check_url };
+}
+
+/** Phase 2: called by the continuation job after Datalab's verified webhook. */
+export async function continuePDFExtraction(
+  workingDir: string,
+  requestCheckUrl: string,
+  source: "pymupdf" | "marker",
+  pagesRange?: string,
+): Promise<ExtractionResult> {
+  const outputDir = path.join(workingDir, "extracted_data");
+  const primaryImages = path.join(outputDir, "marker_images");
+  const primaryJson = path.join(outputDir, "all_extracted_data.json");
+  const scriptDir = path.join(__dirname);
+  const pagesArg = pagesRange ? ` --pages "${pagesRange}"` : "";
+
+  if (source === "marker") {
+    await markerFetchCompleted(scriptDir, outputDir, requestCheckUrl);
+    await runCerebrasAndNormalizeAsync(scriptDir, outputDir, primaryJson, primaryImages, pagesArg, "marker");
+    return finalizeQuestions(primaryJson, primaryImages, " via Marker webhook");
+  }
+
+  const escDir = path.join(outputDir, "marker_escalation");
+  const escImages = path.join(escDir, "marker_images");
+  const escJson = path.join(escDir, "all_extracted_data.json");
+  const mergedDir = path.join(outputDir, "merged");
+  const mergedImages = path.join(mergedDir, "marker_images");
+  const mergedJson = path.join(mergedDir, "all_extracted_data.json");
+
+  await markerFetchCompleted(scriptDir, escDir, requestCheckUrl);
+  await runCerebrasAndNormalizeAsync(scriptDir, escDir, escJson, escImages, pagesArg, "marker");
+  await runCommand(`python "${path.join(scriptDir, "merge_extractions.py")}" ` +
+                   `--pymupdf "${outputDir}" --marker "${escDir}" --out "${mergedDir}"`,
+                   120000);
+  await normalizeOnlyAsync(scriptDir, mergedJson, mergedImages, "marker");
+  return finalizeQuestions(mergedJson, mergedImages, " via Marker webhook merge");
 }
 
 /**
