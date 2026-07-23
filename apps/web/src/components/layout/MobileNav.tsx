@@ -223,7 +223,7 @@ export default function MobileNav() {
       <div className="lg:hidden sticky top-0 z-40 flex items-center justify-between w-full h-16 px-4 bg-[#edecec] dark:bg-[#090909] bg-opacity-90 dark:bg-opacity-90 shrink-0">
         <Link href={isSuperAdmin ? "/superadmin" : (isTestDepartment ? "/test-department" : (isTeacher ? "/teacher" : (isInstitute ? "/institute" : "/student/dashboard")))} className="flex items-center gap-3">
           <img
-            src={tenant.logoUrl ?? "/logo.png"}
+            src={tenant.logoUrl ?? "/logoC.png"}
             alt={displayName}
             className="size-9 rounded-[8px] object-contain bg-b-surface2 border border-s-stroke2/50 shadow-sm"
           />

@@ -24,7 +24,7 @@ export function TestHeader({ meta, questionsLength, timeLeft, timeWarning, isTim
     <header className="sticky top-0 z-50 border-b border-s-stroke2 bg-b-surface1/95 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 py-3.5 md:px-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex min-w-0 items-center gap-3.5">
-          <img src={tenant.logoUrl ?? "/logo.png"} alt={displayName} className="size-11 shrink-0 rounded-[10px] border border-s-stroke2 bg-b-pop object-contain p-1.5" />
+          <img src={tenant.logoUrl ?? "/logoC.png"} alt={displayName} className="size-11 shrink-0 rounded-[10px] border border-s-stroke2 bg-b-pop object-contain p-1.5" />
           <div className="min-w-0">
             <div className="flex min-w-0 items-center gap-2.5">
               <span className="truncate text-body-1 font-bold tracking-tight text-t-primary">{displayName}</span>

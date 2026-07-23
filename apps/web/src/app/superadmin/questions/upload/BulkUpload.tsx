@@ -113,6 +113,11 @@ export default function BulkUpload() {
           next.test_type = "chapter-wise";
         }
       }
+      // Clear shared subject when switching test_type so stale value doesn't leak
+      if (k === "test_type") {
+        next.subject = "";
+        next.chapter = "";
+      }
       return next;
     });
   };
@@ -196,6 +201,7 @@ export default function BulkUpload() {
         };
 
         const isChapterWise = meta.test_type === "chapter-wise" || meta.test_type === "ncert";
+        const isPyq = meta.test_type === "pyq";
 
         const res = await fetch(`${API_BASE}/superadmin/upload-questions`, {
           method: "POST",
@@ -204,7 +210,8 @@ export default function BulkUpload() {
             exam:       meta.exam,
             test_type:  meta.test_type,
             title:      f.title,                              // user-entered name
-            subject:    isChapterWise ? meta.subject : f.subject, // shared vs per-file
+            // shared subject for chapter-wise/ncert/pyq; per-file for mock-test
+            subject:    (isChapterWise || isPyq) ? meta.subject : f.subject,
             chapter:    isChapterWise ? meta.chapter : f.chapter,
             duration:   meta.test_type === "ncert" ? 0 : parseInt(meta.duration),
             marks:      meta.test_type === "ncert" ? 0 : parseInt(meta.marks),
@@ -227,6 +234,7 @@ export default function BulkUpload() {
   // ── Derived state ─────────────────────────────────────────────────────────────
 
   const isChapterWise    = meta.test_type === "chapter-wise" || meta.test_type === "ncert";
+  const isPyq            = meta.test_type === "pyq";
   const subjectOptions   = EXAM_SUBJECTS[meta.exam] ?? [];
 
   const pendingFiles     = files.filter(f => f.status === "pending" && f.questions);
@@ -236,6 +244,7 @@ export default function BulkUpload() {
 
   const titlesFilledCount = pendingFiles.filter(f => f.title.trim() !== "").length;
   const allTitlesFilled   = pendingCount > 0 && titlesFilledCount === pendingCount;
+  // subject is required for chapter-wise/ncert; optional for pyq and mock-test
   const chapterWiseMet    = !isChapterWise || (meta.subject !== "");
   const canUpload         = !uploading && pendingCount > 0 && meta.exam !== "" && allTitlesFilled && chapterWiseMet;
 
@@ -343,6 +352,35 @@ export default function BulkUpload() {
                   className="w-72 h-12 px-4 border border-s-stroke2/40 rounded-[10px] bg-b-surface1 dark:bg-b-surface1 text-[15px] font-sans text-t-primary dark:text-t-primary placeholder:text-t-secondary focus:border-t-primary dark:focus:border-t-primary outline-none transition-all shadow-inner"
                 />
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* PYQ: optional shared subject selector */}
+        {isPyq && (
+          <div className="relative z-10 mt-6 pt-6 border-t border-s-stroke2/30 flex flex-col gap-5">
+            <div className="flex flex-col gap-2">
+              <label className="text-[13px] font-semibold text-t-secondary uppercase tracking-[0.02em]">
+                Subject{" "}
+                <span className="normal-case font-medium text-t-secondary/60">(optional){!meta.exam && " — select an exam first"}</span>
+              </label>
+              {subjectOptions.length > 0 ? (
+                <div className="flex flex-wrap gap-3">
+                  {/* "All Subjects" deselect pill */}
+                  <Pill active={meta.subject === ""} onClick={() => setMetaField("subject", "")}>
+                    All Subjects
+                  </Pill>
+                  {subjectOptions.map(s => (
+                    <Pill key={s} active={meta.subject === s} onClick={() => setMetaField("subject", s)}>
+                      {s}
+                    </Pill>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-[13px] font-sans text-t-secondary italic">
+                  Select an exam above to see subject options
+                </p>
+              )}
             </div>
           </div>
         )}

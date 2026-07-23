@@ -60,7 +60,7 @@ export default function SuperAdminLoginPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,157,61,0.24),transparent_38%),linear-gradient(145deg,#1e1e1e,#090909)]" />
           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
           <div className="absolute left-7 top-7 flex items-center gap-3">
-            <Image src="/logo.png" alt="Classphere" width={44} height={44} className="size-11 rounded-[10px] object-contain bg-white/10" />
+            <Image src="/logoC.png" alt="Classphere" width={44} height={44} className="size-11 rounded-[10px] object-contain bg-white/10" />
             <span className="text-lg font-bold tracking-tight text-white">Classphere</span>
           </div>
           <div className="absolute bottom-8 left-7 right-7">

@@ -180,7 +180,7 @@ export default function Sidebar() {
         <div className="pl-1">
           <Link href={isSuperAdmin ? "/" : isTestDepartment ? "/test-department" : isInstitute ? "/institute" : isTeacher ? "/teacher" : "/student/dashboard"} className="flex items-center gap-3.5 rounded-[10px] transition-colors">
             <img
-              src={tenant.logoUrl ?? "/logo.png"}
+              src={tenant.logoUrl ?? "/logoC.png"}
               alt={displayName}
               className="size-12 rounded-[10px] object-contain bg-b-surface2 border border-s-stroke2/50 shadow-widget"
             />

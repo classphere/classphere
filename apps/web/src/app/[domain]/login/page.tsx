@@ -99,7 +99,7 @@ function LoginForm() {
   // Left Panel Logo Overlay
   const leftPanelLogo = (
     <Image
-      src={tenant.logoUrl ?? "/logo.png"}
+      src={tenant.logoUrl ?? "/logoC.png"}
       alt={displayName}
       width={44}
       height={44}

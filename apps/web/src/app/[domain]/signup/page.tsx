@@ -103,7 +103,7 @@ export default function SignupPage() {
         {/* Logo */}
         <div className="text-center mb-10">
           <Link href="/login" className="inline-flex items-center gap-2.5 no-underline mb-6">
-            <img src="/logo.png" alt="Classphere" className="size-10 rounded-[10px] object-contain bg-b-surface2 border border-s-stroke2/50" />
+            <img src="/logoC.png" alt="Classphere" className="size-10 rounded-[10px] object-contain bg-b-surface2 border border-s-stroke2/50" />
             <span className="font-sans text-[22px] font-bold text-t-primary dark:text-t-primary tracking-tight">
               Classphere
             </span>

@@ -7,7 +7,7 @@ export function LandingFooter() {
         <div className="flex flex-col justify-between gap-12 md:flex-row">
           <div>
             <a href="#top" className="flex items-center gap-3 text-xl font-bold text-[#171717]">
-              <Image src="/logo.png" alt="" width={36} height={36} className="rounded-lg" />
+              <Image src="/logoC.png" alt="" width={25} height={25} className="rounded-md" />
               Classphere
             </a>
             <p className="mt-5 max-w-sm font-manrope text-[#6d6d6d]">

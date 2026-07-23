@@ -15,6 +15,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Classphere — Dashboard",
   description: "Classphere B2B LMS",
+  icons: {
+    icon: [{ url: "/logoC.png?v=1", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({

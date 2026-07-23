@@ -7,7 +7,7 @@ export function HeroSection() {
     <section id="top" className="overflow-hidden bg-[#edecec] px-5 pb-16 pt-8 sm:px-10 lg:px-20 lg:pb-24">
       <nav className="mx-auto flex max-w-[1280px] items-center justify-between gap-5">
         <a href="#top" className="flex items-center gap-3 text-xl font-extrabold tracking-tight text-[#1d1d1d]">
-          <Image src="/logo.png" alt="" width={40} height={40} className="rounded-xl" priority />
+          <Image src="/logoC.png" alt="" width={30} height={30} className="rounded-lg" priority />
           Classphere
         </a>
         <div className="hidden items-center gap-8 text-sm font-semibold text-[#5b5b5b] md:flex">
