@@ -37,6 +37,19 @@ FALLBACK_QCAND_PATTERNS = [
     re.compile(r'^\s*(\d{1,3})\s*[\.\)]$'),
 ]
 
+# Pattern to detect a question number embedded MID-LINE in a <p> tag.
+# In 2-column layouts, the column reading order can put Q(N)'s last option
+# and Q(N+1)'s number on the same <p> line:
+#   "<p>(4) 1 mm 3. Two liquids of density d and 3d...</p>"
+# We split such lines at the embedded question number so each question gets
+# its own line and the start-of-line anchor patterns can match.
+# The pattern looks for: a number (1-400) followed by ". " followed by an
+# UPPERCASE letter or a lowercase word-start — the signature of a question
+# stem beginning, not a continuation of option text.
+MIDLINE_QSPLIT_RE = re.compile(
+    r'(?<=[\)\.\d])\s+(\d{1,3})\.\s+([A-Z][a-z]{2,})'
+)
+
 TYPE_HINT_INTEGER_RE = re.compile(
     r'(?i)\b(numerical\s+value|integer\s+type|non[\s-]*negative\s+integer|'
     r'numerical\s+type|fill\s+in\s+the\s+blank)\b')
@@ -164,7 +177,32 @@ def segment_questions(pages: list):
     for pnum, page in enumerate(pages, 1):
         for ln in (page.get("html") or "").split("\n"):
             if ln.strip():
-                lines.append((pnum, ln))
+                # ── Mid-line question-number split ──────────────────────────
+                # In 2-column layouts, the column reading order can put two
+                # questions on the same <p> line (Q(N)'s last option + Q(N+1)'s
+                # number + stem). Split them so each question gets its own line
+                # and the start-of-line anchor patterns can catch Q(N+1).
+                # Only split on the plain-text view to avoid mangling HTML tags.
+                plain = line_plain(ln)
+                splits = list(MIDLINE_QSPLIT_RE.finditer(plain))
+                if len(splits) >= 1:
+                    # Reconstruct: find the split points in the original HTML
+                    # line by matching the plain-text positions. We split the
+                    # HTML at the same character offset where the plain text
+                    # has the embedded question number.
+                    parts = []
+                    last_end = 0
+                    for m in splits:
+                        # The match starts at the number; the lookbehind consumed
+                        # the preceding separator, so m.start() is the number.
+                        parts.append(ln[last_end:m.start()].rstrip())
+                        last_end = m.start()
+                    parts.append(ln[last_end:].lstrip())
+                    for p in parts:
+                        if p.strip():
+                            lines.append((pnum, p))
+                else:
+                    lines.append((pnum, ln))
 
     cands = []
     for idx, (pnum, ln) in enumerate(lines):
@@ -221,6 +259,66 @@ def segment_questions(pages: list):
         current["lines"].append(ln)
         if pnum not in current["pages"]:
             current["pages"].append(pnum)
+
+    # ── Deterministic gap fill ──────────────────────────────────────────────
+    # If the anchor chain has a gap (e.g. Q2→Q4, Q3 missing), search the
+    # PREVIOUS block's lines for the missing number as a mid-line or start-of-
+    # line pattern. If found, split the block there — no LLM needed.
+    # This catches the case where a question number was embedded in the
+    # previous question's HTML and the mid-line split above didn't catch it
+    # (e.g. "136." merged with Q135's trailing text without a clear separator).
+    if blocks:
+        block_qnums = {b["qnum"] for b in blocks}
+        all_nums = sorted(block_qnums)
+        seg_missing = [n for n in range(all_nums[0], all_nums[-1] + 1)
+                       if n not in block_qnums]
+        for missing_num in seg_missing:
+            # Find the block just before the missing number
+            prev_block = None
+            for b in blocks:
+                if b["qnum"] < missing_num:
+                    prev_block = b
+                else:
+                    break
+            if not prev_block:
+                continue
+            # Search the prev block's lines for the missing number as a
+            # question-start pattern: "N." or "N)" at start of line, or
+            # "N." preceded by option-like text.
+            missing_str = str(missing_num)
+            split_at = None
+            for li, ln in enumerate(prev_block["lines"]):
+                plain = line_plain(ln)
+                # Start-of-line: "3. Two..." or "3) Two..."
+                if re.match(rf'^\s*{missing_str}\s*[.)]\s+[A-Z]', plain):
+                    split_at = li
+                    break
+                # Mid-line: "...(4) 1 mm 3. Two..." — same MIDLINE pattern
+                m = MIDLINE_QSPLIT_RE.search(plain)
+                if m and m.group(1) == missing_str:
+                    split_at = li
+                    # Also split within this line at the match point
+                    split_pos = m.start()
+                    prev_block["lines"][li] = ln[:split_pos].rstrip()
+                    break
+            if split_at is not None:
+                # Split the prev block: lines[0..split_at] stay with prev,
+                # lines[split_at:] become the missing question's block.
+                new_lines = prev_block["lines"][split_at:]
+                prev_block["lines"] = prev_block["lines"][:split_at]
+                # Insert the new block right after prev_block in the list
+                new_block = {
+                    "qnum": missing_num,
+                    "lines": new_lines,
+                    "pages": list(prev_block["pages"]),
+                    "section_hint": prev_block.get("section_hint"),
+                    "type_hint": type_hint_from_text(
+                        line_plain(new_lines[0]) if new_lines else ""),
+                    "anchor_annotated": False,
+                }
+                insert_pos = blocks.index(prev_block) + 1
+                blocks.insert(insert_pos, new_block)
+                print(f"  [segment_questions] Gap fill: split Q{missing_num} out of Q{prev_block['qnum']}'s block (deterministic)")
 
     out = []
     for b in blocks:
