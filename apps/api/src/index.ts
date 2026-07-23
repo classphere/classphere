@@ -3,10 +3,10 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import { RedisStore } from "rate-limit-redis";
 import * as Sentry from "@sentry/node";
 import "@sentry/profiling-node"; // Profiling
 import { env } from "./config/env";
+import { getRateLimitStore } from "./middleware/rate-limit-store";
 import { connection as redisConnection } from "./lib/queue/redis";
 
 const app = express();
@@ -38,14 +38,10 @@ Sentry.init({
 Sentry.setupExpressErrorHandler(app);
 
 // ─── Redis-backed rate limit store ─────────────────────────────────────────────
-// Falls back to the in-memory store when Redis is unavailable so the app still
-// starts in dev. In production, REDIS_URL is required (warned in env.ts).
-const rateLimitStore = env.REDIS_URL
-  ? new RedisStore({
-      sendCommand: (command: string, ...args: string[]) =>
-        redisConnection.call(command, ...args) as Promise<number>,
-    })
-  : undefined;
+// Lazily loaded via middleware/rate-limit-store so the app starts even if
+// rate-limit-redis isn't installed yet (in-memory fallback). When REDIS_URL is
+// set and the package is present, counters are shared across replicas.
+const rateLimitStore = getRateLimitStore();
 
 // ─── Global Middleware ────────────────────────────────────────────────────────
 // 1. Security Headers
