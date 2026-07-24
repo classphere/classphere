@@ -2,6 +2,19 @@ import { execSync, spawn } from "child_process";
 import * as fs from "fs";
 import * as path from "path";
 
+/**
+ * Absolute path to the Python extractor scripts directory.
+ * Anchored to pdfExtractor.service.ts's __dirname so the path is correct
+ * in both local dev (src/services/extractor/) and production (where tsup
+ * bundles everything into dist/ but scripts are copied to
+ * dist/services/extractor/ by the Dockerfile).
+ * Other modules MUST import this constant instead of computing their own
+ * path.join(__dirname, "../../services/extractor/...") — those relative
+ * paths break in the flat CJS bundle.
+ */
+export const EXTRACTOR_SCRIPT_DIR: string = path.join(__dirname);
+
+
 /** Non-blocking child-process runner. The old execSync calls blocked Node's
  * event loop for minutes, so BullMQ could not renew locks and concurrency=2 was
  * effectively concurrency=1. Production webhook phases use this runner; the

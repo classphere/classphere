@@ -5,7 +5,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { execSync } from "child_process";
 import { uploadToR2, uploadToR2Raw } from "../../lib/r2";
-import { extractPDF } from "../../services/extractor/pdfExtractor.service";
+import { extractPDF, EXTRACTOR_SCRIPT_DIR } from "../../services/extractor/pdfExtractor.service";
 import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
 import { logAdminAction } from "../../lib/admin-audit";
@@ -804,7 +804,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       // PDF may contain equations such as "T' = 300 (4)^{1/2}"; without this
       // bound the regex can misread that as a fictitious Q300→4 entry.
       const maxQuestionNumber = extractionResult.questions.length;
-      const parseKeyCmd = `python "${path.join(__dirname, "../../services/extractor/parse_pdf_answer_key.py")}" "${targetPdfPath}" "${tempAnswersJsonPath}" "${maxQuestionNumber}"`;
+      const parseKeyCmd = `python "${path.join(EXTRACTOR_SCRIPT_DIR, "parse_pdf_answer_key.py")}" "${targetPdfPath}" "${tempAnswersJsonPath}" "${maxQuestionNumber}"`;
       try {
         execSync(parseKeyCmd, { stdio: "pipe", timeout: 120000 });
         if (fs.existsSync(tempAnswersJsonPath)) {
