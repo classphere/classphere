@@ -154,7 +154,8 @@ export async function preparePDFExtractionV4(
   // Respect an explicit user range. Otherwise exclude confidently classified
   // answer-key and worked-solution pages before question segmentation.
   const effectivePages = pagesRange || questionPageRange(profile);
-  const prepared = await preparePDFExtraction(pdfPath, effectivePages, webhookUrl);
+  const forceMarker = profile?.document_kind === "hybrid" || Boolean(profile?.ocr_pages?.length);
+  const prepared = await preparePDFExtraction(pdfPath, effectivePages, webhookUrl, { forceMarker });
   if (prepared.state === "complete") {
     return { ...prepared, profile, effectivePages, result: enrichResult(prepared.result, profile) };
   }
@@ -180,5 +181,10 @@ export async function extractPDFV4(pdfPath: string, pagesRange?: string): Promis
   } catch (error: any) {
     console.warn(`[pdfExtractorV4] Document profiling failed; preserving legacy extraction: ${error?.message || error}`);
   }
-  return enrichResult(await extractPDF(pdfPath, pagesRange || questionPageRange(profile)), profile);
+  const forceMarker = profile?.document_kind === "hybrid" || Boolean(profile?.ocr_pages?.length);
+  return enrichResult(await extractPDF(
+    pdfPath,
+    pagesRange || questionPageRange(profile),
+    { forceMarker },
+  ), profile);
 }

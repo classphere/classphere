@@ -12,7 +12,7 @@ The safety contract is **no silent loss**. Structured text, math, diagrams, opti
 
 1. `document_profile.py` classifies digital/scanned/hybrid pages, likely columns, page roles, and OCR/escalation needs without writing files.
 2. When the user did not request a page range, confidently detected answer-key and worked-solution pages are excluded from question segmentation.
-3. The existing PyMuPDF/Marker/Cerebras pipeline still performs extraction.
+3. The existing PyMuPDF/Marker/Cerebras pipeline still performs extraction; profile-detected hybrid/OCR pages force the existing Marker best-of-both merge instead of trusting an incomplete text layer.
 4. `pdfExtractorV4.service.ts` adds extraction metadata.
 5. Upload controllers persist R2-backed ordered blocks while preserving `question_text`, `image_url`, `options`, and `explanation`.
 
