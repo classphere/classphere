@@ -638,11 +638,21 @@ export function TiptapMathField({ label, value, disabled, onChange, placeholder 
     if (!file || !ed || !session?.access_token) return;
     try {
       setUploading(true);
+      const sessionToken = typeof window !== "undefined"
+        ? localStorage.getItem("classphere_session_token") ?? ""
+        : "";
       const formData = new FormData();
       formData.append("image", file);
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"}/api/v1/test-department/upload`,
-        { method: "POST", headers: { Authorization: `Bearer ${session.access_token}` }, body: formData }
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+            ...(sessionToken ? { "x-session-token": sessionToken } : {}),
+          },
+          body: formData,
+        }
       );
       const data = await res.json();
       if (!data.success) throw new Error(data.message || "Upload failed");

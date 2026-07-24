@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { supabaseDB } from "../../lib/supabase";
+import { supabaseAdmin } from "../../lib/supabase";
 import { generateBatchAnalysis } from "./services/batch-analysis";
 import { enqueueAnalysis } from "../../lib/queue/analysis.queue";
 
@@ -13,7 +13,7 @@ export const getAnalysis = async (req: Request, res: Response): Promise<void> =>
     const { attempt_id } = req.params;
 
     // Security: verify the attempt belongs to this user (or super_admin can view any)
-    const { data: attempt } = await supabaseDB
+    const { data: attempt } = await supabaseAdmin
       .from("attempts")
       .select("student_id, paper_id, papers(result_release_at)")
       .eq("id", attempt_id)
@@ -30,7 +30,7 @@ export const getAnalysis = async (req: Request, res: Response): Promise<void> =>
     }
 
     // Read analysis from Supabase
-    const { data: analysis, error } = await supabaseDB
+    const { data: analysis, error } = await supabaseAdmin
       .from("analysis_results")
       .select("result, processing_ms, created_at")
       .eq("attempt_id", attempt_id)
@@ -62,7 +62,7 @@ export const regenerateAnalysis = async (req: Request, res: Response): Promise<v
     const { attempt_id } = req.params;
 
     // Verify attempt exists
-    const { data: attempt } = await supabaseDB
+    const { data: attempt } = await supabaseAdmin
       .from("attempts")
       .select("id, student_id, paper_id, status, exam_code")
       .eq("id", attempt_id)
@@ -92,7 +92,7 @@ export const regenerateAnalysis = async (req: Request, res: Response): Promise<v
 export const retryMyAnalysis = async (req: Request, res: Response): Promise<void> => {
   try {
     const { attempt_id } = req.params;
-    const { data: attempt, error } = await supabaseDB
+    const { data: attempt, error } = await supabaseAdmin
       .from("attempts")
       .select("id, student_id, status, exam_code")
       .eq("id", attempt_id)
@@ -108,7 +108,7 @@ export const retryMyAnalysis = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    const { data: existing } = await supabaseDB
+    const { data: existing } = await supabaseAdmin
       .from("analysis_results")
       .select("attempt_id")
       .eq("attempt_id", attempt_id)
@@ -134,8 +134,8 @@ export const getBatchAnalysis = async (req: Request, res: Response): Promise<voi
   try {
     const { test_id, batch_id } = req.params;
     if (req.user?.role !== "super_admin") {
-      const { data: batch } = await supabaseDB.from("batches").select("institute_id").eq("id", batch_id).maybeSingle();
-      const { data: assignment } = await supabaseDB.from("test_batch_assignments").select("test_id").eq("test_id", test_id).eq("batch_id", batch_id).maybeSingle();
+      const { data: batch } = await supabaseAdmin.from("batches").select("institute_id").eq("id", batch_id).maybeSingle();
+      const { data: assignment } = await supabaseAdmin.from("test_batch_assignments").select("test_id").eq("test_id", test_id).eq("batch_id", batch_id).maybeSingle();
       if (!batch || batch.institute_id !== req.user?.institute_id || !assignment) {
         res.status(403).json({ success: false, message: "Access denied" });
         return;

@@ -1,9 +1,9 @@
-import { supabaseDB } from "../../../lib/supabase";
+import { supabaseAdmin } from "../../../lib/supabase";
 import { BatchAnalysisResult, AnalysisResult } from "../../../../../../packages/types/src/analysis.types";
 
 export const generateBatchAnalysis = async (testId: string, batchId: string): Promise<BatchAnalysisResult> => {
   // 1. Fetch all submitted attempts for this batch + test (paper)
-  const { data: attempts } = await supabaseDB
+  const { data: attempts } = await supabaseAdmin
     .from("attempts")
     .select("id, student_id, score, max_score")
     .eq("paper_id", testId)
@@ -26,7 +26,7 @@ export const generateBatchAnalysis = async (testId: string, batchId: string): Pr
   }
 
   // 2. Fetch analysis results for those attempts from Supabase
-  const { data: analysisRows } = await supabaseDB
+  const { data: analysisRows } = await supabaseAdmin
     .from("analysis_results")
     .select("result")
     .in("attempt_id", relevantAttemptIds);

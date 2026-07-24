@@ -10,7 +10,7 @@
  *   - student_error_profiles (new — created via migration)
  */
 
-import { supabaseDB } from "../../../lib/supabase";
+import { supabaseAdmin } from "../../../lib/supabase";
 import {
   AttemptAnswer,
   AnalysisResult,
@@ -38,7 +38,7 @@ export const db = {
   // ── Fetch full attempt + all answers with question data ────────────────────
   getAttemptWithAnswers: async (attemptId: string): Promise<{ attempt: AttemptRecord; answers: AttemptAnswer[] }> => {
     // Fetch attempt row
-    const { data: attempt, error: aErr } = await supabaseDB
+    const { data: attempt, error: aErr } = await supabaseAdmin
       .from("attempts")
       .select("id, student_id, paper_id, exam_code, batch_id, marking_scheme, total_duration_sec, status")
       .eq("id", attemptId)
@@ -49,7 +49,7 @@ export const db = {
     }
 
     // Fetch all answers for this attempt
-    const { data: rawAnswers, error: aaErr } = await supabaseDB
+    const { data: rawAnswers, error: aaErr } = await supabaseAdmin
       .from("attempt_answers")
       .select("id, attempt_id, question_id, selected_answer, is_correct, marks_awarded, time_taken_sec, start_timestamp, marked_review")
       .eq("attempt_id", attemptId);
@@ -63,7 +63,7 @@ export const db = {
     let questionMap: Record<string, Question> = {};
 
     if (questionIds.length > 0) {
-      const { data: questions } = await supabaseDB
+      const { data: questions } = await supabaseAdmin
         .from("questions")
         .select("id, question_text, image_url, options, correct_answer, explanation, explanation_image_url, question_type, subject, chapter, topic, difficulty, source, year, tags")
         .in("id", questionIds);
@@ -81,7 +81,7 @@ export const db = {
     }
 
     // Fetch paper question ordering positions (REL-3)
-    const { data: paperQs } = await supabaseDB
+    const { data: paperQs } = await supabaseAdmin
       .from("paper_questions")
       .select("question_id, position")
       .eq("paper_id", attempt.paper_id);
@@ -126,8 +126,11 @@ export const db = {
 
   // ── Batch averages per topic (for comparison) ──────────────────────────────
   getBatchAvgsByTopic: async (batchId: string): Promise<Map<string, number>> => {
+    // Guard: null/empty batchId causes a Postgres UUID parse error in the RPC.
+    // Students not assigned to a batch simply get no peer comparison data.
+    if (!batchId) return new Map<string, number>();
     try {
-      const { data, error } = await supabaseDB.rpc("calculate_batch_topic_averages", {
+      const { data, error } = await supabaseAdmin.rpc("calculate_batch_topic_averages", {
         p_batch_id: batchId,
       });
 
@@ -152,7 +155,7 @@ export const db = {
 
   // ── Seen question IDs (for booster config de-duplication) ─────────────────
   getSeenQuestionIds: async (studentId: string, _examCode: string): Promise<string[]> => {
-    const { data } = await supabaseDB
+    const { data } = await supabaseAdmin
       .from("attempt_answers")
       .select("question_id, attempts!inner(student_id)")
       .eq("attempts.student_id", studentId);
@@ -161,7 +164,7 @@ export const db = {
 
   // ── Upsert analysis result ─────────────────────────────────────────────────
   upsertAnalysis: async (attemptId: string, studentId: string, examCode: string, result: AnalysisResult): Promise<void> => {
-    const { error } = await supabaseDB
+    const { error } = await supabaseAdmin
       .from("analysis_results")
       .upsert({
         attempt_id: attemptId,
@@ -190,7 +193,7 @@ export const db = {
   // ── Student error profile (longitudinal) ──────────────────────────────────
 
   getStudentErrorProfile: async (studentId: string, examCode: string): Promise<StudentErrorProfile | null> => {
-    const { data, error } = await supabaseDB
+    const { data, error } = await supabaseAdmin
       .from("student_error_profiles")
       .select("student_id, exam_code, topic_history, last_updated")
       .eq("student_id", studentId)
@@ -219,7 +222,7 @@ export const db = {
     while (!success && retries < MAX_RETRIES) {
       retries++;
       // Read existing with last_updated to do OCC check (M20)
-      const { data: existing } = await supabaseDB
+      const { data: existing } = await supabaseAdmin
         .from("student_error_profiles")
         .select("topic_history, last_updated")
         .eq("student_id", studentId)
@@ -267,7 +270,7 @@ export const db = {
 
       if (existing) {
         // Update with OCC guard
-        const { data: updatedRows, error: updateErr } = await supabaseDB
+        const { data: updatedRows, error: updateErr } = await supabaseAdmin
           .from("student_error_profiles")
           .update({
             topic_history: topicHistory as any,
@@ -287,7 +290,7 @@ export const db = {
         }
       } else {
         // First insert
-        const { error: insertErr } = await supabaseDB
+        const { error: insertErr } = await supabaseAdmin
           .from("student_error_profiles")
           .insert({
             student_id: studentId,
@@ -336,7 +339,7 @@ export const db = {
         });
 
       if (revisionTasks.length > 0) {
-        const { error: taskError } = await supabaseDB
+        const { error: taskError } = await supabaseAdmin
           .from("student_revision_tasks")
           .upsert(revisionTasks, { onConflict: "student_id,exam_code,subject,chapter,topic,task_type" });
         if (taskError) console.error(`[db.service] revision queue update failed: ${taskError.message}`);
