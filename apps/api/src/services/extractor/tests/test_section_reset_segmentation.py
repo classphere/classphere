@@ -32,19 +32,20 @@ class SectionResetSegmentationTests(unittest.TestCase):
     def test_v4_keeps_all_local_numbering_runs_and_renumbers_globally(self):
         os.environ["PDF_EXTRACTOR_V4"] = "true"
         pages = [{"html": "\n".join([
-            '<p>SECTION 1 - Physics [SINGLE CORRECT TYPE]</p>',
+            '<p>SECTION-I</p>',
             question(1, "physics one"),
             question(2, "physics two"),
-            '<p>SECTION 2 - Physics [NUMERICAL VALUE TYPE]</p>',
+            '<p>SECTION-II</p>',
             question(1, "physics numerical one"),
             question(2, "physics numerical two"),
-            '<p>SECTION 1 - Chemistry [SINGLE CORRECT TYPE]</p>',
+            '<p>SECTION-I</p>',
             question(1, "chemistry one"),
         ])}]
 
         blocks, _ = segment_questions(pages)
         self.assertEqual([block["qnum"] for block in blocks], [1, 2, 3, 4, 5])
         self.assertEqual([block["source_qnum"] for block in blocks], [1, 2, 1, 2, 1])
+        self.assertEqual(blocks[2]["section_hint"], "SECTION-II")
         self.assertIn("chemistry one", blocks[-1]["html"])
 
     def test_v4_preserves_global_numbers_when_sections_do_not_reset(self):

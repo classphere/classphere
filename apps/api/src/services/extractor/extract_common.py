@@ -253,7 +253,9 @@ def segment_questions(pages: list):
 
         # plain-text section headers between questions
         plain = line_plain(ln)
-        if re.match(r'(?i)^\s*SECTION\s*[-–—]?\s*[A-D1-4]\b', plain) and len(plain) < 90:
+        is_legacy_section = re.match(r'(?i)^\s*SECTION\s*[-–—]?\s*[A-D1-4]\b', plain)
+        is_v4_section = v4_resets and SECTION_BOUNDARY_RE.match(plain)
+        if (is_legacy_section or is_v4_section) and len(plain) < 140:
             section_hint = plain
             continue
 
