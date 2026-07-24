@@ -9,6 +9,17 @@ import { env } from "./config/env";
 import { getRateLimitStore } from "./middleware/rate-limit-store";
 import { connection as redisConnection } from "./lib/queue/redis";
 
+// ─── Process-level error safety net ──────────────────────────────────────────
+// Prevent ancillary services (Redis, BullMQ, etc.) from crashing the API
+// process via an unhandled rejection. We log prominently and keep serving.
+// Sentry will still capture these via its integration.
+process.on("unhandledRejection", (reason: unknown) => {
+  console.error("[Server] Unhandled Promise rejection — keeping process alive:", reason);
+});
+process.on("uncaughtException", (err: Error) => {
+  console.error("[Server] Uncaught exception — keeping process alive:", err);
+});
+
 const app = express();
 app.set("trust proxy", 1); // Trust first proxy (Railway load balancer)
 const port = env.PORT;

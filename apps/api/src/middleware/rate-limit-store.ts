@@ -12,8 +12,8 @@ import { connection as redisConnection } from "../lib/queue/redis";
  * unique `prefix` and gets its own fresh store instance. The prefix also
  * namespaces the Redis keys so the limiters don't interfere with each other.
  *
- * Returns undefined (in-memory fallback) when rate-limit-redis isn't installed
- * or REDIS_URL isn't configured.
+ * Returns undefined (in-memory fallback) when rate-limit-redis isn't installed,
+ * REDIS_URL isn't configured, or Redis is unavailable (e.g. quota exhausted).
  */
 let RedisStoreCtor: any | undefined;
 try {
@@ -25,10 +25,44 @@ try {
 
 export function getRateLimitStore(prefix: string): any | undefined {
   if (!env.REDIS_URL || !RedisStoreCtor) return undefined;
-  return new RedisStoreCtor({
-    // Unique prefix per limiter so their counters live in separate keyspaces.
-    prefix,
-    sendCommand: (command: string, ...args: string[]) =>
-      redisConnection.call(command, ...args) as Promise<number>,
-  });
+  try {
+    const store = new RedisStoreCtor({
+      prefix,
+      sendCommand: async (command: string, ...args: string[]) => {
+        try {
+          return await (redisConnection.call(command, ...args) as Promise<number>);
+        } catch (err: any) {
+          console.warn("[rate-limit] Redis command failed:", err?.message ?? err);
+          throw err;
+        }
+      },
+    });
+
+    // express-rate-limit v8 calls store.init() without await or try/catch.
+    // If the SCRIPT LOAD inside init() fails (e.g. Upstash quota exhausted),
+    // the rejection becomes unhandled and crashes the process. We wrap init()
+    // here so any failure is swallowed and logged instead.
+    const originalInit = store.init?.bind(store);
+    if (typeof originalInit === "function") {
+      store.init = async (...args: any[]) => {
+        try {
+          await originalInit(...args);
+        } catch (err: any) {
+          console.warn(
+            "[rate-limit] Redis store init failed (SCRIPT LOAD rejected). " +
+            "Rate limiting will use in-memory fallback until Redis recovers. " +
+            "Reason:", err?.message ?? err,
+          );
+          // Don't re-throw — express-rate-limit will call increment() per
+          // request, which will throw (no SHA loaded), and express-rate-limit
+          // catches store errors and falls through to allow the request.
+        }
+      };
+    }
+
+    return store;
+  } catch (err: any) {
+    console.warn("[rate-limit] Redis store creation failed, using in-memory fallback:", err?.message ?? err);
+    return undefined;
+  }
 }
