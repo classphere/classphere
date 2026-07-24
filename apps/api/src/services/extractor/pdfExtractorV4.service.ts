@@ -17,6 +17,8 @@ export interface DocumentProfile {
   two_column_pages: number[];
   answer_key_pages: number[];
   solution_pages: number[];
+  numbering_reset_count: number;
+  numbering_reset_pages: number[];
   ocr_pages: number[];
   escalation_reasons: string[];
   pages: Array<Record<string, unknown>>;

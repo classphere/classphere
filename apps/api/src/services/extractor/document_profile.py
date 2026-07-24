@@ -18,6 +18,10 @@ from typing import Any, Dict, List, Sequence, Tuple
 
 import fitz  # PyMuPDF
 
+QUESTION_NUMBER_RE = re.compile(
+    r"(?im)^\s*(?:q(?:uestion)?\s*(?:no\.?\s*)?[:.\-]?\s*)?(\d{1,3})\s*[.)]\s+"
+)
+
 ROLE_PATTERNS = {
     "answer_key": re.compile(r"\b(?:answer\s*keys?|answer\s*sheet|key\s*answers?)\b", re.I),
     "solutions": re.compile(r"(?im)^\s*(?:solutions?|\d+\s*[.)]\s*explain\s+question\s*:|worked\s+solutions?)\s*"),
@@ -140,6 +144,7 @@ def _page_profile(page: fitz.Page, page_number: int) -> Dict[str, Any]:
 
     columns = _digital_columns(page, blocks) if text_chars >= 80 else _raster_gutter_columns(page)
     role, role_signals = _role(plain_text)
+    question_numbers = [int(value) for value in QUESTION_NUMBER_RE.findall(plain_text)]
     reasons: List[str] = []
     if content_kind == "scanned":
         reasons.append("no_reliable_text_layer")
@@ -156,6 +161,7 @@ def _page_profile(page: fitz.Page, page_number: int) -> Dict[str, Any]:
         "likely_columns": columns,
         "role": role,
         "role_signals": role_signals,
+        "question_number_candidates": question_numbers,
         "text_characters": text_chars,
         "text_blocks": len(blocks),
         "embedded_images": len(images),
@@ -212,6 +218,20 @@ def profile_document(document: fitz.Document) -> Dict[str, Any]:
         document_kind = "hybrid"
 
     reasons = sorted({reason for page in pages for reason in page["escalation_reasons"]})
+    number_stream = [
+        (page["page"], number)
+        for page in pages
+        if page["role"] not in {"answer_key", "solutions"}
+        for number in page.get("question_number_candidates", [])
+    ]
+    reset_pages = []
+    for (previous_page, previous), (current_page, current) in zip(number_stream, number_stream[1:]):
+        if previous >= 3 and current <= 3 and current <= previous:
+            reset_pages.append(current_page)
+    reset_pages = sorted(set(reset_pages))
+    if reset_pages:
+        reasons = sorted(set(reasons) | {"section_local_numbering_resets"})
+
     return {
         "profile_version": 1,
         "document_kind": document_kind,
@@ -220,6 +240,8 @@ def profile_document(document: fitz.Document) -> Dict[str, Any]:
         "two_column_pages": [page["page"] for page in pages if page["likely_columns"] == 2],
         "answer_key_pages": [page["page"] for page in pages if page["role"] == "answer_key"],
         "solution_pages": [page["page"] for page in pages if page["role"] == "solutions"],
+        "numbering_reset_count": len(reset_pages),
+        "numbering_reset_pages": reset_pages,
         "ocr_pages": [page["page"] for page in pages if page["requires_ocr"]],
         "escalation_reasons": reasons,
         "pages": pages,
