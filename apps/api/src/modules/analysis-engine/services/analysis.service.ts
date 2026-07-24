@@ -1,5 +1,5 @@
 import { AnalysisResult } from "../../../../../../packages/types/src/analysis.types";
-import { supabaseDB } from "../../../lib/supabase";
+import { supabaseAdmin } from "../../../lib/supabase";
 import { analyzeJeeAttempt } from "./jee/jee-analysis.service";
 import { analyzeNeetAttempt } from "./neet/neet-analysis.service";
 import { analyzeSscAttempt } from "./ssc/ssc-analysis.service";
@@ -12,7 +12,7 @@ import { analyzeSscAttempt } from "./ssc/ssc-analysis.service";
 export async function analyzeAttempt(attemptId: string, hasTimingData = true): Promise<AnalysisResult> {
   // Fetch only exam_code first to route to the correct sub-pipeline,
   // preventing double fetches of attempts/answers.
-  const { data } = await supabaseDB
+  const { data } = await supabaseAdmin
     .from("attempts")
     .select("exam_code")
     .eq("id", attemptId)

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { supabaseDB } from "../../lib/supabase";
+import { supabaseAdmin } from "../../lib/supabase";
 
 const ALLOWED_COUNTS = new Set([15, 20, 25, 30]);
 
@@ -28,12 +28,12 @@ export const createBooster = async (req: Request, res: Response): Promise<void> 
     }
 
     const [{ data: attempt, error: attemptError }, { data: analysis, error: analysisError }] = await Promise.all([
-      supabaseDB
+      supabaseAdmin
         .from("attempts")
         .select("id, student_id, status, paper_id, papers(exam_id)")
         .eq("id", attemptId)
         .maybeSingle(),
-      supabaseDB
+      supabaseAdmin
         .from("analysis_results")
         .select("result")
         .eq("attempt_id", attemptId)
@@ -70,7 +70,7 @@ export const createBooster = async (req: Request, res: Response): Promise<void> 
     const selectFields = "id";
     const candidates = new Map<string, any>();
     if (topics.length > 0) {
-      const { data, error } = await supabaseDB
+      const { data, error } = await supabaseAdmin
         .from("questions")
         .select(selectFields)
         .eq("exam_id", examId)
@@ -81,7 +81,7 @@ export const createBooster = async (req: Request, res: Response): Promise<void> 
       for (const question of data ?? []) candidates.set(question.id, question);
     }
     if (chapters.length > 0 && candidates.size < questionCount) {
-      const { data, error } = await supabaseDB
+      const { data, error } = await supabaseAdmin
         .from("questions")
         .select(selectFields)
         .eq("exam_id", examId)
@@ -102,7 +102,7 @@ export const createBooster = async (req: Request, res: Response): Promise<void> 
     }
 
     const totalMarks = selectedQuestions.length * 4;
-    const { data: boosterPaper, error: paperError } = await supabaseDB
+    const { data: boosterPaper, error: paperError } = await supabaseAdmin
       .from("papers")
       .insert({
         exam_id: examId,
@@ -121,11 +121,11 @@ export const createBooster = async (req: Request, res: Response): Promise<void> 
       .single();
     if (paperError || !boosterPaper) throw paperError ?? new Error("Could not create the booster paper.");
 
-    const { error: linksError } = await supabaseDB.from("paper_questions").insert(
+    const { error: linksError } = await supabaseAdmin.from("paper_questions").insert(
       selectedQuestions.map((question, index) => ({ paper_id: boosterPaper.id, question_id: question.id, position: index + 1 }))
     );
     if (linksError) {
-      await supabaseDB.from("papers").delete().eq("id", boosterPaper.id).eq("created_by", studentId);
+      await supabaseAdmin.from("papers").delete().eq("id", boosterPaper.id).eq("created_by", studentId);
       throw linksError;
     }
 
