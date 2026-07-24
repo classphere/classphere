@@ -2,13 +2,11 @@ import { spawn } from "child_process";
 import * as fs from "fs";
 import * as path from "path";
 import {
-  CompleteState,
-  ExtractionResult,
-  MarkerWaitState,
   continuePDFExtraction,
   extractPDF,
   preparePDFExtraction,
 } from "./pdfExtractor.service";
+import type { CompleteState, ExtractionResult, MarkerWaitState } from "./pdfExtractor.service";
 import { enrichQuestionContentV4 } from "../../lib/question-content";
 
 export interface DocumentProfile {
