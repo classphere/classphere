@@ -288,10 +288,18 @@ export const createQuestion = async (req: Request, res: Response): Promise<void>
 export const updateQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const allowed = ["subject", "chapter", "topic", "difficulty", "question_type", "question_text", "image_url", "options", "correct_answer", "explanation", "source", "year", "tags"];
+    const allowed = [
+      "subject", "chapter", "topic", "difficulty", "question_type", "question_text",
+      "image_url", "options", "correct_answer", "explanation", "source", "year", "tags",
+      "content_blocks", "extraction_metadata", "extractor_version", "source_crop_url", "source_reference",
+    ];
     const updates: Record<string, any> = {};
     for (const key of allowed) {
       if (req.body[key] !== undefined) updates[key] = req.body[key];
+    }
+    // Never leave an extracted block projection stale after a legacy-only edit.
+    if ((req.body.question_text !== undefined || req.body.image_url !== undefined) && req.body.content_blocks === undefined) {
+      updates.content_blocks = null;
     }
     if (Object.keys(updates).length === 0) {
       res.status(400).json({ success: false, message: "No valid fields to update" });

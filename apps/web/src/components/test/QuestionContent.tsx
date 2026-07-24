@@ -1,5 +1,5 @@
 import React from "react";
-import { MarkdownRenderer } from "@/components/MarkdownRenderer";
+import { QuestionBody, hasRenderableQuestionContent } from "@/components/QuestionBody";
 import { RiFlag2Line } from "@remixicon/react";
 import { Question, AnswerMap, StatusMap } from "./TestTypes";
 
@@ -36,10 +36,6 @@ export function QuestionContent({
   isSectionBLimitReached,
   onReportQuestion,
 }: QuestionContentProps) {
-  // Imports made before media normalisation may carry the same diagram both
-  // inline in markdown and in image_url. Preserve distinct multi-figure
-  // questions while avoiding a duplicate figure for legacy records.
-  const hasInlineQuestionImage = Boolean(q.image_url && q.question_text?.includes(`](${q.image_url})`));
   return (
     <section className="group relative card flex min-w-0 flex-col overflow-hidden p-4 sm:p-6 md:p-8 select-none lg:h-[calc(100dvh-9.5rem)] lg:overflow-y-auto">
       <div className="relative z-10 mb-5 flex flex-wrap items-center justify-between gap-2">
@@ -65,12 +61,20 @@ export function QuestionContent({
       </div>
 
       <div className="relative z-10 mb-6 flex items-start justify-between gap-4 border-b border-s-stroke2 pb-5">
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <div className="text-overline font-bold uppercase tracking-wider text-t-tertiary">
             Question {current + 1} of {questionsLength}
           </div>
           <div className="question-stem mt-2 text-sub-title-1 leading-relaxed text-t-primary">
-            <MarkdownRenderer>{q.question_text}</MarkdownRenderer>
+            <QuestionBody
+              blocks={q.content_blocks}
+              legacyText={q.question_text}
+              legacyImageUrl={q.image_url}
+              legacyImageAlt={`Figure for question ${q.question_number}`}
+              confidence={q.extraction_confidence}
+              needs_review={q.needs_review ?? q._needs_review}
+              review_reasons={q.review_reasons ?? q._defects}
+            />
           </div>
         </div>
         <div className="hidden shrink-0 rounded-[10px] border border-s-stroke2 bg-b-surface2 px-4 py-2 text-right sm:block">
@@ -78,14 +82,6 @@ export function QuestionContent({
           <div className="text-body-2 font-bold text-t-primary">{answered + markedCount}/{questionsLength}</div>
         </div>
       </div>
-
-      {/* Question images */}
-      {q.image_url && !hasInlineQuestionImage && (
-        <div className="mb-6">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={q.image_url} alt="Figure" className="max-h-[420px] max-w-full rounded-[10px] border border-s-stroke2 object-contain" referrerPolicy="no-referrer" />
-        </div>
-      )}
 
       {/* Options or Text Input */}
       <div className="relative z-10 space-y-3">
@@ -122,16 +118,14 @@ export function QuestionContent({
             {q.options.map((opt) => {
               const selected = answers[q.id] === opt.id;
               const disabled = isSectionBLimitReached(q) && !selected;
-              const hasText = opt.text && opt.text.trim().length > 0;
-              const hasImage = !!opt.image_url && !opt.text?.includes(`](${opt.image_url})`);
-              const isEmpty = !hasText && !hasImage;
+              const isEmpty = !hasRenderableQuestionContent(opt.content_blocks, opt.text, opt.image_url);
 
               return (
                 <button
                   key={opt.id}
                   id={`option-${opt.id}`}
                   disabled={disabled || isEmpty}
-                  className={`group/opt flex h-[72px] items-center gap-3 rounded-[10px] border p-3 text-left transition-all relative overflow-hidden ${
+                  className={`group/opt flex min-h-[72px] items-center gap-3 rounded-[10px] border p-3 text-left transition-all relative overflow-hidden ${
                     isEmpty
                       ? "border-dashed border-s-stroke2 bg-b-surface2/30 opacity-50 cursor-not-allowed"
                       : selected
@@ -153,29 +147,16 @@ export function QuestionContent({
                     {isEmpty ? (
                       <span className="text-caption text-t-tertiary italic">Option not available</span>
                     ) : (
-                      <>
-                        {hasText && <MarkdownRenderer>{opt.text}</MarkdownRenderer>}
-                        {hasImage && (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            src={opt.image_url!}
-                            alt={`Option ${opt.id}`}
-                            className="mt-2 max-h-36 max-w-full object-contain rounded-[10px] bg-white p-2 border border-s-stroke2/50 shadow-sm"
-                            referrerPolicy="no-referrer"
-                            onError={(e) => {
-                              const target = e.currentTarget;
-                              target.style.display = "none";
-                              const parent = target.parentElement;
-                              if (parent && !parent.querySelector(".img-error")) {
-                                const err = document.createElement("span");
-                                err.className = "img-error text-caption text-t-tertiary italic";
-                                err.textContent = "⚠ Image unavailable";
-                                parent.appendChild(err);
-                              }
-                            }}
-                          />
-                        )}
-                      </>
+                      <QuestionBody
+                        blocks={opt.content_blocks}
+                        legacyText={opt.text}
+                        legacyImageUrl={opt.image_url}
+                        legacyImageAlt={`Option ${opt.id}`}
+                        compact
+                        confidence={opt.extraction_confidence}
+                        needs_review={opt.needs_review}
+                        review_reasons={opt.review_reasons}
+                      />
                     )}
                   </div>
                 </button>
