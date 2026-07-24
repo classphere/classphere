@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { QuestionReviewEditor } from "@/components/questions/QuestionReviewEditor";
@@ -130,18 +130,18 @@ export default function ReviewPaperPage() {
     if (sections.length && !activeTab) setActiveTab(sections[0].subject);
   }, [sections, activeTab]);
 
-  // Keep the active subject tab in sync with the selected question's subject.
-  // This fixes the mismatch where the PHY tab is highlighted while the editor
-  // shows a Mathematics question: selecting a question now moves the tab to that
-  // question's subject.
+  // Keep the active subject tab in sync when the user selects a DIFFERENT question.
+  // We track the previous activeId so the tab only follows question changes,
+  // NOT user tab-clicks (which would otherwise be immediately overridden).
+  const prevActiveId = useRef<string | null>(null);
   useEffect(() => {
-    if (question?.subject && question.subject !== activeTab) {
-      // only switch if the question's subject is a known tab
-      if (sections.some((s) => s.subject === question.subject)) {
+    if (activeId !== prevActiveId.current) {
+      prevActiveId.current = activeId;
+      if (question?.subject && sections.some((s) => s.subject === question.subject)) {
         setActiveTab(question.subject);
       }
     }
-  }, [question, activeTab, sections]);
+  }, [activeId, question, sections]);
 
   const activeSection = sections.find((s) => s.subject === activeTab) ?? sections[0];
 
