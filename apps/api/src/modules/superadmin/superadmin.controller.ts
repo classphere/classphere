@@ -9,6 +9,7 @@ import { logAdminAction as writeAdminAudit } from "../../lib/admin-audit";
 import * as fs from "fs";
 import * as path from "path";
 import { normalizeQuestionMedia } from "../../lib/question-media";
+import { deriveLegacyContentBlocks } from "../../lib/question-content";
 
 // Supabase credentials are read from the validated env via the supabaseDB
 // client (service-role). The previous module-level SUPABASE_SERVICE_KEY
@@ -260,6 +261,17 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
               ...opt,
               text: processedOptText,
               image_url: processedOptImageUrl,
+              ...(q.extractor_version === "v4" ? {
+                content_blocks: deriveLegacyContentBlocks({
+                  question_text: processedOptText,
+                  image_url: processedOptImageUrl,
+                  extraction_confidence: opt.extraction_confidence ?? q.extraction_confidence,
+                  needs_review: opt.needs_review ?? q.needs_review ?? q._needs_review,
+                  review_reasons: opt.review_reasons ?? q.review_reasons ?? q._defects,
+                  source_crop: opt.source_crop,
+                  source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "option" } : undefined,
+                }),
+              } : {}),
             };
           })
         );
@@ -287,6 +299,21 @@ export const uploadQuestions = async (req: Request, res: Response): Promise<void
           correct_answer: Array.isArray(q.correct_answer) ? q.correct_answer : q.correct_answer ? [q.correct_answer] : [],
           explanation:    processedExplanation,
           tags:           q.tags || [],
+          ...(q.extractor_version === "v4" ? {
+            content_blocks: deriveLegacyContentBlocks({
+              question_text: normalizedMedia.question_text,
+              image_url: normalizedMedia.image_url,
+              extraction_confidence: q.extraction_confidence,
+              needs_review: q.needs_review ?? q._needs_review,
+              review_reasons: q.review_reasons ?? q._defects,
+              source_crop: q.source_crop,
+              source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "stem" } : undefined,
+            }),
+            extraction_metadata: q.extraction_metadata ?? null,
+            extractor_version: "v4",
+            source_crop_url: q.source_crop?.url ?? q.source_crop_url ?? null,
+            source_reference: q.source_reference ?? {},
+          } : {}),
           content_scope:  "global",
           review_status:  "draft",
           created_by:     req.user?.id ?? null,

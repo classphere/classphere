@@ -47,6 +47,11 @@ export interface ExtractionResult {
   questions: any[];
 }
 
+export interface ExtractionOptions {
+  /** Force the existing Marker best-of-both path for profile-detected hybrid pages. */
+  forceMarker?: boolean;
+}
+
 /**
  * Encodes a local file to a base64 Data URL.
  */
@@ -217,6 +222,7 @@ export async function preparePDFExtraction(
   pdfPath: string,
   pagesRange: string | undefined,
   webhookUrl: string | undefined,
+  options: ExtractionOptions = {},
 ): Promise<PreparedExtraction> {
   const workingDir = path.dirname(pdfPath);
   const outputDir = path.join(workingDir, "extracted_data");
@@ -260,7 +266,10 @@ export async function preparePDFExtraction(
   // Digital PDF: PyMuPDF is the primary source and owns all final images.
   await runCerebrasAndNormalizeAsync(scriptDir, outputDir, finalJson, imagesDir, pagesArg, "pymupdf");
   const report = readReport(finalJson);
-  const escalate = !!report?.escalation?.escalate;
+  const escalate = options.forceMarker === true || !!report?.escalation?.escalate;
+  if (options.forceMarker && !hasDatalab) {
+    console.warn("[pdfExtractor] Profile requested Marker escalation, but DATALAB_API_KEY is not configured; keeping PyMuPDF output.");
+  }
   if (!escalate || !hasDatalab) {
     return { state: "complete", result: finalizeQuestions(finalJson, imagesDir) };
   }
@@ -334,7 +343,8 @@ export async function continuePDFExtraction(
  */
 export async function extractPDF(
   pdfPath: string,
-  pagesRange?: string
+  pagesRange?: string,
+  options: ExtractionOptions = {},
 ): Promise<ExtractionResult> {
   const workingDir = path.dirname(pdfPath);
   const outputDir = path.join(workingDir, "extracted_data");
@@ -392,10 +402,12 @@ export async function extractPDF(
 
     if (source === "pymupdf") {
       const report = readReport(finalJsonPath);
-      const escalate = !!report?.escalation?.escalate;
+      const escalate = options.forceMarker === true || !!report?.escalation?.escalate;
       if (escalate && hasDatalabKey) {
-        const reasons = (report.escalation.reasons || []).join("; ");
-        console.log(`[pdfExtractor] Vector-math signature detected (${reasons}). ` +
+        const reasons = options.forceMarker
+          ? "document profile detected pages requiring OCR"
+          : ((report?.escalation?.reasons || []).join("; ") || "vector-math signature");
+        console.log(`[pdfExtractor] Marker escalation requested (${reasons}). ` +
                     `Escalating to Datalab Marker (force_ocr)...`);
         const escDir = path.join(outputDir, "marker_escalation");
         const escImagesDir = path.join(escDir, "marker_images");

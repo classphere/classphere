@@ -2,14 +2,22 @@
 
 import { useEffect, useState } from "react";
 import { TiptapMathField } from "./TiptapMathField";
-import { MarkdownRenderer } from "@/components/MarkdownRenderer";
+import { QuestionBody } from "@/components/QuestionBody";
 import { EXAM_SUBJECTS, DIFFICULTY_OPTIONS } from "@/lib/exam-config";
 import {
   RiCheckLine, RiAddLine, RiDeleteBin7Line, RiEyeLine, RiEditLine,
 } from "@remixicon/react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
-type Option = { id: string; text?: string; image_url?: string | null };
+type Option = {
+  id: string;
+  text?: string;
+  image_url?: string | null;
+  content_blocks?: any[] | null;
+  extraction_confidence?: "high" | "medium" | "low" | number | null;
+  needs_review?: boolean;
+  review_reasons?: string[] | null;
+};
 type Question = Record<string, any> & {
   options?: Option[];
   correct_answer?: string[];
@@ -136,7 +144,9 @@ export function QuestionReviewEditor({
 
   const updateOptionText = (index: number, text: string) => {
     const opts = [...(draft.options ?? [])];
-    opts[index] = { ...opts[index], text };
+    // Once a reviewer changes legacy text, discard the stale extracted block
+    // projection. The backend can regenerate ordered blocks from the saved text.
+    opts[index] = { ...opts[index], text, content_blocks: null };
     set({ options: opts });
   };
 
@@ -163,6 +173,10 @@ export function QuestionReviewEditor({
         options: draft.options,
         correct_answer: draft.correct_answer,
         explanation: draft.explanation,
+        content_blocks: draft.content_blocks,
+        extraction_metadata: draft.extraction_metadata,
+        extractor_version: draft.extractor_version,
+        source_crop_url: draft.source_crop_url,
         content_version: draft.content_version,
       });
       setSavedAt(new Date());
@@ -273,7 +287,16 @@ export function QuestionReviewEditor({
             <div className="rounded-[12px] border border-s-stroke2 bg-b-surface1 p-4">
               <p className="text-[10px] font-bold uppercase tracking-wider text-t-tertiary mb-2">Question (student view)</p>
               <div className="text-[15px] leading-relaxed text-t-primary">
-                <MarkdownRenderer>{draft.question_text ?? ""}</MarkdownRenderer>
+                <QuestionBody
+                  blocks={draft.content_blocks}
+                  legacyText={draft.question_text ?? ""}
+                  legacyImageUrl={draft.image_url}
+                  legacyImageAlt="Question figure"
+                  reviewerMode
+                  confidence={draft.extraction_metadata?.confidence}
+                  needs_review={draft.extraction_metadata?.needs_review}
+                  review_reasons={draft.extraction_metadata?.review_reasons}
+                />
               </div>
             </div>
             <div>
@@ -296,7 +319,17 @@ export function QuestionReviewEditor({
                         {letter}
                       </span>
                       <div className="flex-1 min-w-0 text-[15px] leading-relaxed text-t-primary">
-                        <MarkdownRenderer>{opt.text ?? ""}</MarkdownRenderer>
+                        <QuestionBody
+                          blocks={opt.content_blocks}
+                          legacyText={opt.text ?? ""}
+                          legacyImageUrl={opt.image_url}
+                          legacyImageAlt={`Option ${letter}`}
+                          reviewerMode
+                          compact
+                          confidence={opt.extraction_confidence}
+                          needs_review={opt.needs_review}
+                          review_reasons={opt.review_reasons}
+                        />
                       </div>
                     </div>
                   );
@@ -307,7 +340,7 @@ export function QuestionReviewEditor({
               <div className="rounded-[12px] border border-s-stroke2 bg-b-surface2/40 p-4">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-t-tertiary mb-2">Explanation</p>
                 <div className="text-sm leading-relaxed text-t-secondary">
-                  <MarkdownRenderer>{draft.explanation ?? ""}</MarkdownRenderer>
+                  <QuestionBody legacyText={draft.explanation ?? ""} reviewerMode />
                 </div>
               </div>
             )}
@@ -319,7 +352,7 @@ export function QuestionReviewEditor({
               label="Question text"
               value={draft.question_text ?? ""}
               disabled={!canEdit}
-              onChange={(v: string) => set({ question_text: v })}
+              onChange={(v: string) => set({ question_text: v, content_blocks: null })}
               placeholder="Type question text…"
             />
 

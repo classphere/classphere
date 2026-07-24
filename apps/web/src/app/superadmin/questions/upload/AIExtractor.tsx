@@ -9,7 +9,7 @@ import {
 } from "@remixicon/react";
 import { API_V1_URL } from "@/lib/api.client";
 import { useAuth } from "@/lib/auth-context";
-import { MarkdownRenderer } from "@/components/MarkdownRenderer";
+import { QuestionBody } from "@/components/QuestionBody";
 
 const API_BASE = API_V1_URL;
 
@@ -680,7 +680,16 @@ export default function AIExtractor() {
                     <div className="flex flex-col gap-4 text-t-primary">
                       {/* Text */}
                       <div className="text-[15px] font-sans font-medium leading-relaxed pr-2">
-                        <MarkdownRenderer>{q.question_text || ""}</MarkdownRenderer>
+                        <QuestionBody
+                          blocks={q.content_blocks}
+                          legacyText={q.question_text || ""}
+                          legacyImageUrl={q.image_url}
+                          legacyImageAlt={`Figure for question ${q.question_number}`}
+                          reviewerMode
+                          confidence={q.extraction_metadata?.confidence ?? q.extraction_confidence}
+                          needs_review={q.extraction_metadata?.needs_review ?? q.needs_review ?? q._needs_review}
+                          review_reasons={q.extraction_metadata?.review_reasons ?? q.review_reasons ?? q._defects}
+                        />
                       </div>
 
                       {/* Options */}
@@ -694,8 +703,18 @@ export default function AIExtractor() {
                               <span className="shrink-0 font-sans font-bold text-[14px] text-t-secondary mt-0.5">
                                 ({opt.id})
                               </span>
-                              <div className="text-[14px] font-sans font-medium text-t-primary leading-normal">
-                                <MarkdownRenderer>{opt.text || ""}</MarkdownRenderer>
+                              <div className="text-[14px] font-sans font-medium text-t-primary leading-normal min-w-0 flex-1">
+                                <QuestionBody
+                                  blocks={opt.content_blocks}
+                                  legacyText={opt.text || ""}
+                                  legacyImageUrl={opt.image_url}
+                                  legacyImageAlt={`Option ${opt.id}`}
+                                  reviewerMode
+                                  compact
+                                  confidence={opt.extraction_confidence}
+                                  needs_review={opt.needs_review}
+                                  review_reasons={opt.review_reasons}
+                                />
                               </div>
                             </div>
                           ))}
@@ -716,7 +735,7 @@ export default function AIExtractor() {
                           <div className="text-[13px] font-sans font-medium text-t-secondary leading-relaxed mt-2 pt-2 border-t border-s-stroke2/10">
                             <strong>Explanation:</strong>
                             <div className="mt-1">
-                              <MarkdownRenderer>{q.explanation}</MarkdownRenderer>
+                              <QuestionBody legacyText={q.explanation} reviewerMode />
                             </div>
                           </div>
                         )}
@@ -770,7 +789,7 @@ function EditQuestionForm({ question, onSave }: EditFormProps) {
 
   const handleOptionTextChange = (id: string, newText: string) => {
     setOptions(prev =>
-      prev.map(opt => (opt.id === id ? { ...opt, text: newText } : opt))
+      prev.map(opt => (opt.id === id ? { ...opt, text: newText, content_blocks: null } : opt))
     );
   };
 
@@ -780,6 +799,7 @@ function EditQuestionForm({ question, onSave }: EditFormProps) {
       correct_answer: correctAnswer.split(",").map((a: string) => a.trim().toUpperCase()).filter(Boolean),
       explanation,
       options,
+      content_blocks: null,
     });
   };
 

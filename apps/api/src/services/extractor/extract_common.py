@@ -540,6 +540,7 @@ Shared deterministic logic for the extraction pipeline:
 Used by cerebras_from_marker.py and validate_extraction.py.
 """
 
+import os
 import re
 
 # ── Anchor detection ──────────────────────────────────────────────────────────
@@ -715,6 +716,33 @@ def _candidate_quality(lines: list, idx: int, cand_line_idxs: set) -> int:
     return 0
 
 
+SECTION_BOUNDARY_RE = re.compile(
+    r'(?i)^\s*SECTION\s*[-–—]?\s*(?:[A-D]|[IVX]+|\d+)\b')
+
+
+def select_anchors_by_section(lines: list, cands: list) -> list:
+    """Select one monotonic anchor chain per explicit exam section.
+
+    Coaching/JEE Advanced papers commonly restart numbering at 1 for every
+    subject section. The legacy whole-document longest chain silently retained
+    only one section. V4 keeps the proven selector, but applies it independently
+    between real SECTION headers (instruction-list mentions are excluded because
+    the header must begin the line).
+    """
+    boundaries = [idx for idx, (_pnum, line) in enumerate(lines)
+                  if len(line_plain(line)) < 140 and SECTION_BOUNDARY_RE.match(line_plain(line))]
+    if not boundaries:
+        return select_anchors(cands)
+
+    anchors = []
+    for position, start in enumerate(boundaries):
+        end = boundaries[position + 1] if position + 1 < len(boundaries) else len(lines)
+        group = [candidate for candidate in cands if start < candidate[0] < end]
+        if group:
+            anchors.extend(select_anchors(group))
+    return sorted({anchor[0]: anchor for anchor in anchors}.values(), key=lambda item: item[0])
+
+
 # ── Question-block segmentation ───────────────────────────────────────────────
 
 def segment_questions(pages: list):
@@ -745,8 +773,15 @@ def segment_questions(pages: list):
     cands = [tuple(c) + (_candidate_quality(lines, c[0], cand_line_idxs),)
              for c in cands]
 
-    anchors = select_anchors(cands)
+    # The legacy path is byte-for-byte stable unless the v4 flag is enabled.
+    # unless the v4 feature flag is enabled.
+    v4_resets = (os.environ.get("PDF_EXTRACTOR_V4") or "").strip().lower() in {"1", "true", "yes", "on", "v4"}
+    anchors = select_anchors_by_section(lines, cands) if v4_resets else select_anchors(cands)
+    source_numbers = [candidate[1] for candidate in anchors]
+    has_reset = any(current <= previous for previous, current in zip(source_numbers, source_numbers[1:]))
     anchor_idx = {c[0]: c for c in anchors}
+    anchor_numbers = {candidate[0]: (index + 1 if has_reset else candidate[1])
+                      for index, candidate in enumerate(anchors)}
     anchor_line_set = set(anchor_idx.keys())
 
     blocks = []
@@ -761,9 +796,10 @@ def segment_questions(pages: list):
             continue
 
         if idx in anchor_line_set:
-            _, num, bold, annotated = anchor_idx[idx][:4]
+            _, source_num, bold, annotated = anchor_idx[idx][:4]
             current = {
-                "qnum": num,
+                "qnum": anchor_numbers[idx],
+                "source_qnum": source_num,
                 "lines": [ln],
                 "pages": [pnum],
                 "section_hint": section_hint,
@@ -783,7 +819,9 @@ def segment_questions(pages: list):
 
         # plain-text section headers between questions
         plain = line_plain(ln)
-        if re.match(r'(?i)^\s*SECTION\s*[-–—]?\s*[A-D1-4]\b', plain) and len(plain) < 90:
+        is_legacy_section = re.match(r'(?i)^\s*SECTION\s*[-–—]?\s*[A-D1-4]\b', plain)
+        is_v4_section = v4_resets and SECTION_BOUNDARY_RE.match(plain)
+        if (is_legacy_section or is_v4_section) and len(plain) < 140:
             section_hint = plain
             continue
 
@@ -809,6 +847,7 @@ def segment_questions(pages: list):
         prev_qnum = b["qnum"]
         out.append({
             "qnum": b["qnum"],
+            "source_qnum": b.get("source_qnum", b["qnum"]),
             "part_index": part_index,
             "html": html,
             "pages": b["pages"],
