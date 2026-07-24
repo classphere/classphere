@@ -46,3 +46,9 @@ fix_styles.js
 migrate-sprint1.js
 # trigger build 4
 .env*
+
+# Python and Temp files
+__pycache__/
+*.pyc
+*.zip
+apps/api/src/temp/
