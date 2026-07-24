@@ -1,5 +1,7 @@
 import { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
+import { NodeHttpHandler } from "@smithy/node-http-handler";
 import { Readable } from "stream";
+import * as https from "https";
 
 const R2_ACCESS_KEY_ID = process.env.CLOUDFLARE_R2_ACCESS_KEY_ID || process.env.R2_ACCESS_KEY_ID;
 const R2_SECRET_ACCESS_KEY = process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY || process.env.R2_SECRET_ACCESS_KEY;
@@ -19,6 +21,18 @@ if (R2_ACCESS_KEY_ID && R2_SECRET_ACCESS_KEY && R2_ENDPOINT) {
       accessKeyId: R2_ACCESS_KEY_ID,
       secretAccessKey: R2_SECRET_ACCESS_KEY,
     },
+    // Retry up to 3 times on transient errors (ECONNRESET, ETIMEDOUT, 5xx)
+    maxAttempts: 3,
+    requestHandler: new NodeHttpHandler({
+      // 30-second request timeout — prevents hangs on large uploads
+      requestTimeout: 30_000,
+      connectionTimeout: 10_000,
+      httpsAgent: new https.Agent({
+        keepAlive: true,        // reuse connections; avoids reset on idle sockets
+        keepAliveMsecs: 10_000,
+        maxSockets: 10,
+      }),
+    }),
   });
 }
 
@@ -56,7 +70,7 @@ export async function uploadToR2(
   // Return the public URL for accessing the uploaded asset
   const baseUrl = R2_PUBLIC_URL || R2_ENDPOINT || "";
   const formattedBaseUrl = baseUrl ? (baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`) : "";
-  
+
   // If using public URL custom domain, use that; else fallback to endpoint path style
   if (R2_PUBLIC_URL) {
     return `${formattedBaseUrl}${cleanFileName}`;
