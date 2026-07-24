@@ -4,6 +4,10 @@ FROM node:22-alpine AS builder
 # Set working directory
 WORKDIR /app
 
+# Bust Docker layer cache on every commit — Railway injects RAILWAY_GIT_COMMIT_SHA
+# automatically as a build arg, so the cache is always fresh.
+ARG CACHEBUST=1
+
 # Copy root configurations
 COPY package.json package-lock.json turbo.json ./
 
