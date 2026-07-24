@@ -12,7 +12,7 @@ const departmentRoles = new Set([TEST_ADMIN_ROLE, TEST_EDITOR_ROLE]);
 const allowedQuestionFields = new Set([
   "subject", "chapter", "topic", "difficulty", "year", "source", "question_type",
   "question_text", "image_url", "options", "correct_answer", "explanation", "tags",
-  "source_reference",
+  "source_reference", "content_blocks", "extraction_metadata", "extractor_version", "source_crop_url",
 ]);
 // Metadata-only fields: no correct_answer validation required when only these change
 const metadataOnlyFields = new Set(["subject", "chapter", "topic", "difficulty", "tags", "year", "source", "source_reference"]);
@@ -216,6 +216,10 @@ export async function updateReviewQuestion(req: Request, res: Response): Promise
     }
     const updates: Record<string, unknown> = {};
     for (const [key, value] of Object.entries(req.body ?? {})) if (allowedQuestionFields.has(key)) updates[key] = value;
+    // Never leave an extracted block projection stale after a legacy-only edit.
+    if ((req.body.question_text !== undefined || req.body.image_url !== undefined) && req.body.content_blocks === undefined) {
+      updates.content_blocks = null;
+    }
     if (Object.keys(updates).length === 0) { res.status(400).json({ success: false, message: "No editable question fields supplied." }); return; }
     // No per-save content validation — "Validate paper" button handles structural checks.
     // validQuestion only runs at publish time (see transitionReviewPaper → publish).

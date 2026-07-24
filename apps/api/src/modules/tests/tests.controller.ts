@@ -10,6 +10,7 @@ import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
 import { logAdminAction } from "../../lib/admin-audit";
 import { normalizeQuestionMedia } from "../../lib/question-media";
+import { deriveLegacyContentBlocks } from "../../lib/question-content";
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -81,7 +82,7 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
         const batchIds = questionIds.slice(i, i + BATCH_SIZE);
         const { data: batchData, error: qErr } = await supabaseDB
           .from("questions")
-          .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, content_version")
+          .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, content_version, content_blocks, extraction_metadata, extractor_version, source_crop_url")
           .in("id", batchIds);
 
         if (qErr) {
@@ -96,8 +97,15 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
         const normalizeText = (v: any): string =>
           v == null ? "" : typeof v === "string" ? v : typeof v === "object" ? JSON.stringify(v) : String(v);
 
+        const extractionMetadata = q.extraction_metadata && typeof q.extraction_metadata === "object"
+          ? q.extraction_metadata
+          : {};
         const normalized = normalizeQuestionMedia({
           ...q,
+          extraction_confidence: extractionMetadata.confidence ?? null,
+          needs_review: extractionMetadata.needs_review ?? false,
+          review_reasons: Array.isArray(extractionMetadata.review_reasons) ? extractionMetadata.review_reasons : [],
+          source_crop: q.source_crop_url ? { url: q.source_crop_url, confidence: extractionMetadata.confidence ?? "low", needs_review: true } : null,
           question_text: normalizeText(q.question_text),
           explanation: normalizeText(q.explanation),
           options: Array.isArray(q.options)
@@ -830,6 +838,17 @@ export const uploadTestController = async (req: Request, res: Response): Promise
               ...opt,
               text: processedOptText,
               image_url: processedOptImageUrl,
+              ...(q.extractor_version === "v4" ? {
+                content_blocks: deriveLegacyContentBlocks({
+                  question_text: processedOptText,
+                  image_url: processedOptImageUrl,
+                  extraction_confidence: opt.extraction_confidence ?? q.extraction_confidence,
+                  needs_review: opt.needs_review ?? q.needs_review ?? q._needs_review,
+                  review_reasons: opt.review_reasons ?? q.review_reasons ?? q._defects,
+                  source_crop: opt.source_crop,
+                  source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "option" } : undefined,
+                }),
+              } : {}),
             };
           })
         );
@@ -927,11 +946,26 @@ export const uploadTestController = async (req: Request, res: Response): Promise
           correct_answer: correctAnswers,
           explanation:    finalExplanation,
           tags:           q.tags || [],
+          ...(q.extractor_version === "v4" ? {
+            content_blocks: deriveLegacyContentBlocks({
+              question_text: normalizedMedia.question_text,
+              image_url: normalizedMedia.image_url,
+              extraction_confidence: q.extraction_confidence,
+              needs_review: q.needs_review ?? q._needs_review,
+              review_reasons: q.review_reasons ?? q._defects,
+              source_crop: q.source_crop,
+              source: Array.isArray(q._pages) && q._pages.length ? { page: q._pages[0], role: "stem" } : undefined,
+            }),
+            extraction_metadata: q.extraction_metadata ?? null,
+            extractor_version: "v4",
+            source_crop_url: q.source_crop?.url ?? q.source_crop_url ?? null,
+          } : {}),
           institute_id:   req.user!.institute_id,
           content_scope:  "institute_private",
           review_status:  malformedMatching.some(({ index }: any) => index === idx) || correctAnswers.length === 0 ? "changes_requested" : "draft",
           created_by:     userId,
-          source_reference: { extracted_question_number: idx + 1, extraction_flags: [
+          source_reference: { ...(q.source_reference ?? {}), extracted_question_number: idx + 1, extraction_flags: [
+            ...(Array.isArray(q.source_reference?.extraction_flags) ? q.source_reference.extraction_flags : []),
             ...(malformedMatching.some(({ index }: any) => index === idx) ? ["matching_options_missing"] : []),
             ...(correctAnswers.length === 0 ? ["answer_key_missing"] : []),
           ] },

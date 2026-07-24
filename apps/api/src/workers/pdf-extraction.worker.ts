@@ -4,7 +4,7 @@ import * as os from "os";
 import * as path from "path";
 import { getRedisOptions } from "../lib/queue/redis";
 import { PDF_EXTRACTION_QUEUE_NAME, PdfExtractionJobData, scheduleMarkerRecovery } from "../lib/queue/pdf-extraction.queue";
-import { preparePDFExtraction, continuePDFExtraction } from "../services/extractor/pdfExtractor.service";
+import { preparePDFExtractionV4, continuePDFExtractionV4 } from "../services/extractor/pdfExtractorV4.service";
 import { supabaseAdmin } from "../lib/supabase";
 import { getR2Object, deleteR2Object } from "../lib/r2";
 import { uploadPipelineBundle, downloadPipelineBundle, deletePipelineBundle } from "../lib/queue/pipeline-artifacts";
@@ -55,14 +55,18 @@ async function processStart(job: Job<PdfExtractionJobData>) {
       ? `${env.DATALAB_WEBHOOK_BASE_URL.replace(/\/$/, "")}/${jobId}`
       : undefined;
 
-    const prepared = await preparePDFExtraction(pdfPath, pages, webhookUrl);
+    const prepared = await preparePDFExtractionV4(pdfPath, pages, webhookUrl);
     if (prepared.state === "complete") {
       if (!prepared.result.success || !prepared.result.questions?.length) {
         throw new Error(prepared.result.message || "Extraction produced no questions");
       }
       await updateJobStatus(jobId, {
         status: "done",
-        result: { questions: prepared.result.questions, message: prepared.result.message },
+        result: {
+          questions: prepared.result.questions,
+          message: prepared.result.message,
+          ...(prepared.profile ? { profile: prepared.profile, extractor_version: "v4" } : {}),
+        },
         completed_at: new Date().toISOString(),
       }, true);
       await deleteR2Object(r2Key);
@@ -83,9 +87,10 @@ async function processStart(job: Job<PdfExtractionJobData>) {
           request_check_url: prepared.requestCheckUrl,
           bundle_key: bundleKey,
           r2_key: r2Key,
-          pages: pages ?? null,
+          pages: prepared.effectivePages ?? pages ?? null,
           requested_by: requestedBy,
           submitted_at: new Date().toISOString(),
+          ...(prepared.profile ? { profile: prepared.profile, extractor_version: "v4" } : {}),
         },
       },
     }, true);
@@ -136,11 +141,12 @@ async function processContinuation(job: Job<PdfExtractionJobData>) {
 
   try {
     await downloadPipelineBundle(state.bundle_key, extractedDir);
-    const result = await continuePDFExtraction(
+    const result = await continuePDFExtractionV4(
       workDir,
       job.data.requestCheckUrl || state.request_check_url,
       state.source,
       state.pages || undefined,
+      state.profile || undefined,
     );
     if (!result.success || !result.questions?.length) {
       throw new Error(result.message || "Marker continuation produced no questions");
@@ -151,6 +157,7 @@ async function processContinuation(job: Job<PdfExtractionJobData>) {
         questions: result.questions,
         message: result.message,
         pipeline: { stage: "complete", request_id: state.request_id },
+        ...(state.profile ? { profile: state.profile, extractor_version: "v4" } : {}),
       },
       completed_at: new Date().toISOString(),
     }, true);
