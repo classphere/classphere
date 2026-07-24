@@ -24,7 +24,9 @@ export async function notifyStudents(input: StudentNotification): Promise<void> 
   const { error } = await supabaseDB.from("notifications").upsert(rows, {
     onConflict: "user_id,event_key", ignoreDuplicates: true,
   });
-  if (error) throw error;
+  // Don't throw — a notification DB failure must never crash publish/submit.
+  // Log it and continue; in-app delivery is best-effort.
+  if (error) console.error("[notifications] upsert failed:", error.message, { eventKey: input.eventKey });
   void deliverNativePush(input, userIds);
 }
 
