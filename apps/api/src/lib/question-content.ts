@@ -251,6 +251,37 @@ export function projectBlocksToLegacyMarkdown(blocks: QuestionContentBlock[]): s
   }).filter(Boolean).join("\n\n");
 }
 
+function compactProfileForQuestion(
+  profile: Record<string, unknown> | null | undefined,
+  sourcePages: number[],
+): Record<string, unknown> | null {
+  if (!profile) return null;
+  const allowedPages = new Set(sourcePages);
+  const pageProfiles = Array.isArray(profile.pages)
+    ? profile.pages
+        .filter((page) => page && typeof page === "object" && allowedPages.has(Number((page as Record<string, unknown>).page)))
+        .map((page) => {
+          const value = page as Record<string, unknown>;
+          return {
+            page: Number(value.page),
+            content_kind: value.content_kind,
+            likely_columns: value.likely_columns,
+            role: value.role,
+            requires_ocr: value.requires_ocr,
+            escalation_reasons: stringList(value.escalation_reasons),
+          };
+        })
+    : [];
+  return {
+    profile_version: profile.profile_version,
+    document_kind: profile.document_kind,
+    page_count: profile.page_count,
+    page_kind_counts: profile.page_kind_counts,
+    escalation_reasons: stringList(profile.escalation_reasons),
+    source_page_profiles: pageProfiles,
+  };
+}
+
 export function enrichQuestionContentV4(input: Record<string, unknown>, profile?: Record<string, unknown> | null): Record<string, unknown> {
   // Preserve genuine structured blocks emitted by a future layout extractor,
   // but do not duplicate legacy base64 markdown in the queued job payload.
@@ -275,7 +306,7 @@ export function enrichQuestionContentV4(input: Record<string, unknown>, profile?
     .filter((page): page is number => Number.isInteger(page) && page > 0))];
   const extractionMetadata: ExtractionMetadata = {
     version: "v4",
-    profile: profile ?? null,
+    profile: compactProfileForQuestion(profile, pages),
     confidence: confidence(input.extraction_confidence, needsReview ? "low" : "medium"),
     needs_review: needsReview,
     review_reasons: reasons,
