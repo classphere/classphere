@@ -80,11 +80,20 @@ export const getTest = async (req: Request, res: Response): Promise<void> => {
       const rawQs: any[] = [];
       for (let i = 0; i < questionIds.length; i += BATCH_SIZE) {
         const batchIds = questionIds.slice(i, i + BATCH_SIZE);
-        const { data: batchData, error: qErr } = await supabaseDB
+        const legacyFields = "id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, content_version";
+        let { data: batchData, error: qErr } = await supabaseDB
           .from("questions")
-          .select("id, question_text, image_url, options, correct_answer, explanation, question_type, subject, chapter, topic, difficulty, source, year, tags, content_version, content_blocks, extraction_metadata, extractor_version, source_crop_url")
+          .select(`${legacyFields}, content_blocks, extraction_metadata, extractor_version, source_crop_url`)
           .in("id", batchIds);
 
+        // Migration 31 is intentionally deployable separately. During a rolling
+        // deploy, an old database must keep serving the exact legacy payload.
+        if (qErr && /content_blocks|extraction_metadata|extractor_version|source_crop_url/i.test(qErr.message ?? "")) {
+          ({ data: batchData, error: qErr } = await supabaseDB
+            .from("questions")
+            .select(legacyFields)
+            .in("id", batchIds));
+        }
         if (qErr) {
           res.status(500).json({ success: false, message: qErr.message });
           return;

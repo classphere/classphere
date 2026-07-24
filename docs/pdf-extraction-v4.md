@@ -2,7 +2,7 @@
 
 ## Purpose
 
-V4 adds deterministic document profiling, ordered question content, source provenance, confidence/review metadata, and a shared CBT/reviewer renderer. It is additive: legacy fields remain populated and remain the fallback for every existing question.
+V4 adds deterministic document profiling, ordered question content, source provenance, confidence/review metadata, and one shared renderer used by the CBT, extraction preview, Test Editor, Test Head, and Superadmin review. It is additive: legacy fields remain populated and remain the fallback for every existing question.
 
 The safety contract is **no silent loss**. Structured text, math, diagrams, option images, and tables are used when verified. Uncertain regions retain a source crop and a review reason rather than shipping corrupted content as if it were correct.
 
