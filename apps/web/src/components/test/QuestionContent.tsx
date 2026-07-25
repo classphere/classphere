@@ -65,7 +65,7 @@ export function QuestionContent({
           <div className="text-overline font-bold uppercase tracking-wider text-t-tertiary">
             Question {current + 1} of {questionsLength}
           </div>
-          <div className="question-stem mt-2 text-sub-title-1 leading-relaxed text-t-primary">
+          <div className="question-stem mt-2 text-sub-title-1 leading-relaxed text-t-primary [&_.katex]:text-[1.1em] [&_.katex-display]:my-2">
             <QuestionBody
               blocks={q.content_blocks}
               legacyText={q.question_text}
@@ -143,7 +143,7 @@ export function QuestionContent({
                   }`}>
                     {opt.id}
                   </div>
-                  <div className="min-w-0 flex-1 text-[22px] font-medium leading-8 text-t-primary [&_.katex]:text-[1.3em]">
+                  <div className="min-w-0 flex-1 text-[16px] font-medium leading-snug text-t-primary [&_.katex]:text-[1.1em]">
                     {isEmpty ? (
                       <span className="text-caption text-t-tertiary italic">Option not available</span>
                     ) : (
