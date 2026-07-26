@@ -8,6 +8,7 @@ import "@sentry/profiling-node"; // Profiling
 import { env } from "./config/env";
 import { getRateLimitStore } from "./middleware/rate-limit-store";
 import { connection as redisConnection } from "./lib/queue/redis";
+import { startWorkers, stopWorkers } from "./worker";
 
 // ─── Process-level error safety net ──────────────────────────────────────────
 // Prevent ancillary services (Redis, BullMQ, etc.) from crashing the API
@@ -186,21 +187,24 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 const server = app.listen(port, () => {
   console.log(`[API] Classphere API Server running on port ${port}`);
   console.log(`[API] Routes mounted at /api/v1`);
+  startWorkers();
 });
 
 let shuttingDown = false;
 const shutdown = (signal: string) => {
   if (shuttingDown) return;
   shuttingDown = true;
-  console.log(`[API] ${signal} received — draining connections...`);
+  console.log(`[API] ${signal} received — draining connections and stopping workers...`);
   // Stop accepting new connections and finish in-flight requests.
-  server.close((err) => {
-    if (err) {
-      console.error("[API] Error closing server:", err.message);
-      process.exit(1);
-    }
-    console.log("[API] Server closed cleanly.");
-    process.exit(0);
+  stopWorkers().finally(() => {
+    server.close((err) => {
+      if (err) {
+        console.error("[API] Error closing server:", err.message);
+        process.exit(1);
+      }
+      console.log("[API] Server closed cleanly.");
+      process.exit(0);
+    });
   });
   // Force-exit if something hangs (e.g. a long-lived SSE upload stream).
   setTimeout(() => {
