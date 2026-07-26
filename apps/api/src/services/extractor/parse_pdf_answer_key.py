@@ -180,24 +180,19 @@ print(f"[parse_pdf_answer_key] Regex extracted {len(answers)} answers")
 # ── LLM fallback (only if regex found < 10) ───────────────────────────────────
 if len(answers) < 10 and total_pages >= 1:
     print(f"[parse_pdf_answer_key] Regex found only {len(answers)} — trying LLM fallback")
-    KEYS_FILE = Path(__file__).parent / "api_keys.txt"
-    api_keys = []
-    if KEYS_FILE.exists():
-        api_keys = [k.strip() for k in KEYS_FILE.read_text().splitlines()
-                    if k.strip() and not k.startswith("#")]
-    if not api_keys and os.environ.get("CEREBRAS_API_KEY"):
-        api_keys.append(os.environ["CEREBRAS_API_KEY"])
+    api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
 
-    if api_keys:
+    if api_key:
         try:
-            from cerebras.cloud.sdk import Cerebras
-            _clients = [Cerebras(api_key=k) for k in api_keys]
-            _ci = [0]
-
-            def get_client():
-                c = _clients[_ci[0] % len(_clients)]
-                _ci[0] += 1
-                return c
+            from openai import OpenAI
+            client = OpenAI(
+                base_url="https://openrouter.ai/api/v1",
+                api_key=api_key,
+                default_headers={
+                    "HTTP-Referer": "https://classphere.com",
+                    "X-Title": "Classphere PDF Extractor",
+                },
+            )
 
             LLM_ANSWER_PROMPT = """You are a careful answer-key extractor for Indian competitive exams (JEE/NEET).
 Below is text extracted from an answer-key PDF. Extract ONLY the answer
@@ -236,9 +231,8 @@ Return ONLY valid JSON. No markdown, no code fences."""
 
             for attempt in range(3):
                 try:
-                    client = get_client()
                     resp = client.chat.completions.create(
-                        model="gpt-oss-120b",
+                        model=os.environ.get("LLM_MODEL", "deepseek/deepseek-v4-flash"),
                         messages=[
                             {"role": "system", "content": LLM_ANSWER_PROMPT},
                             {"role": "user", "content": combined_text[:50000]},
@@ -246,6 +240,7 @@ Return ONLY valid JSON. No markdown, no code fences."""
                         response_format={"type": "json_object"},
                         temperature=0.0,
                         max_tokens=4000,
+                        extra_body={"reasoning": {"enabled": False, "effort": "none", "max_tokens": 0}},
                     )
                     raw_output = resp.choices[0].message.content
                     cleaned = clean_json(raw_output)
@@ -258,7 +253,7 @@ Return ONLY valid JSON. No markdown, no code fences."""
                 except Exception as e:
                     print(f"[parse_pdf_answer_key] LLM fallback attempt {attempt + 1} failed: {e}")
         except ImportError:
-            print("[parse_pdf_answer_key] cerebras-cloud-sdk not installed — skipping LLM fallback")
+            print("[parse_pdf_answer_key] openai package not installed — skipping LLM fallback")
 else:
     if len(answers) >= 10:
         print(f"[parse_pdf_answer_key] Regex found {len(answers)} answers — no LLM fallback needed")
@@ -272,27 +267,21 @@ solutions: dict[str, str] = {}
 if has_solutions:
     print(f"[parse_pdf_answer_key] Detected {solution_markers} solution markers — extracting solutions via LLM")
 
-    KEYS_FILE = Path(__file__).parent / "api_keys.txt"
-    api_keys = []
-    if KEYS_FILE.exists():
-        api_keys = [k.strip() for k in KEYS_FILE.read_text().splitlines()
-                    if k.strip() and not k.startswith("#")]
-    if not api_keys and os.environ.get("CEREBRAS_API_KEY"):
-        api_keys.append(os.environ["CEREBRAS_API_KEY"])
+    api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
 
-    if not api_keys:
-        print("[parse_pdf_answer_key] No Cerebras keys — skipping solution extraction")
+    if not api_key:
+        print("[parse_pdf_answer_key] No OPENROUTER_API_KEY — skipping solution extraction")
     else:
         try:
-            from cerebras.cloud.sdk import Cerebras
-            if "_clients" not in dir():
-                _clients = [Cerebras(api_key=k) for k in api_keys]
-                _ci = [0]
-
-            def get_sol_client():
-                c = _clients[_ci[0] % len(_clients)]
-                _ci[0] += 1
-                return c
+            from openai import OpenAI
+            client = OpenAI(
+                base_url="https://openrouter.ai/api/v1",
+                api_key=api_key,
+                default_headers={
+                    "HTTP-Referer": "https://classphere.com",
+                    "X-Title": "Classphere PDF Extractor",
+                },
+            )
 
             SOLUTION_PROMPT = """You are a solution extractor for competitive exam papers (JEE/NEET).
 Below is text from an answer key + solutions PDF. For each question number,
@@ -321,9 +310,8 @@ If a question has no solution, omit it. Return ONLY valid JSON. No markdown."""
 
             for attempt in range(3):
                 try:
-                    client = get_sol_client()
                     resp = client.chat.completions.create(
-                        model="gpt-oss-120b",
+                        model=os.environ.get("LLM_MODEL", "deepseek/deepseek-v4-flash"),
                         messages=[
                             {"role": "system", "content": SOLUTION_PROMPT},
                             {"role": "user", "content": combined_text[:50000]},
@@ -331,6 +319,7 @@ If a question has no solution, omit it. Return ONLY valid JSON. No markdown."""
                         response_format={"type": "json_object"},
                         temperature=0.1,
                         max_tokens=8000,
+                        extra_body={"reasoning": {"enabled": False, "effort": "none", "max_tokens": 0}},
                     )
                     raw_output = resp.choices[0].message.content
                     cleaned = clean_json_sol(raw_output)
@@ -340,7 +329,7 @@ If a question has no solution, omit it. Return ONLY valid JSON. No markdown."""
                 except Exception as e:
                     print(f"[parse_pdf_answer_key] Solution extraction attempt {attempt + 1} failed: {e}")
         except ImportError:
-            print("[parse_pdf_answer_key] cerebras-cloud-sdk not installed — skipping solutions")
+            print("[parse_pdf_answer_key] openai package not installed — skipping solutions")
 else:
     print("[parse_pdf_answer_key] No solution markers found — pure answer key, skipping LLM")
 
