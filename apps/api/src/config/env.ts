@@ -46,12 +46,9 @@ const envSchema = z.object({
   // (legacy behavior) with a startup warning in production.
   SESSION_BINDING_SECRET: z.string().min(16).optional(),
 
-  // Datalab Marker webhook orchestration. BASE_URL is the public callback
-  // prefix without /:jobId, e.g.
-  // https://api.classphere.com/api/v1/webhooks/datalab/marker
-  DATALAB_API_KEY: z.string().min(1).optional(),
-  DATALAB_WEBHOOK_BASE_URL: z.string().url().optional(),
-  DATALAB_WEBHOOK_SECRET: z.string().min(16).optional(),
+  // OpenRouter (PDF extraction via LLM). Required when PDF upload is used.
+  OPENROUTER_API_KEY: z.string().min(1).optional(),
+  LLM_MODEL: z.string().optional(),
 
   // Observability
   SENTRY_DSN: z.string().url().optional(),
@@ -78,9 +75,7 @@ function parseEnv() {
     if (!e.SUPABASE_JWT_SECRET) console.warn("[config] SUPABASE_JWT_SECRET missing — auth will make a network round-trip per request.");
     if (!e.SESSION_BINDING_SECRET) console.warn("[config] SESSION_BINDING_SECRET missing — session token is not cryptographically bound to the JWT.");
     if (!e.INTERNAL_API_KEY) console.warn("[config] INTERNAL_API_KEY missing — internal cron routes will reject all calls.");
-    if (e.DATALAB_API_KEY && (!e.DATALAB_WEBHOOK_BASE_URL || !e.DATALAB_WEBHOOK_SECRET)) {
-      console.warn("[config] Datalab is configured without webhook URL/secret — Marker will use legacy synchronous polling.");
-    }
+    if (!e.OPENROUTER_API_KEY) console.warn("[config] OPENROUTER_API_KEY missing — PDF extraction will fail.");
   }
 
   return e;
