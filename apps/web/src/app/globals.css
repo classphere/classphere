@@ -405,6 +405,26 @@
   -webkit-touch-callout: none;
 }
 
+/* ── CRITICAL: scrollable containers must NOT have user-select: none
+   In Android WebView, user-select: none on a scroll container prevents
+   touch-pan gestures from being recognised as scroll. Override it. ── */
+.native-platform .overflow-y-auto,
+.native-platform .overflow-y-scroll,
+.native-platform .overflow-auto,
+.native-platform .overflow-scroll,
+.native-platform [class*="overflow-y"] {
+  -webkit-user-select: auto !important;
+  user-select: auto !important;
+  /* Explicitly tell WebView: vertical touch = scroll */
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Also allow pan on the body itself */
+.native-platform {
+  touch-action: pan-y;
+}
+
 /* Re-enable text selection inside form controls */
 .native-platform input,
 .native-platform textarea,
@@ -413,15 +433,6 @@
   user-select: text;
 }
 
-/* Scrollable areas should scroll smoothly */
-.native-platform [data-scroll],
-.native-platform .overflow-y-auto,
-.native-platform .overflow-y-scroll,
-.native-platform .overflow-auto,
-.native-platform .overflow-scroll {
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-}
 
 
 @layer components {
