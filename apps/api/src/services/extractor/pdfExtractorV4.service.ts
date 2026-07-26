@@ -1,12 +1,8 @@
 import { spawn } from "child_process";
 import * as fs from "fs";
 import * as path from "path";
-import {
-  continuePDFExtraction,
-  extractPDF,
-  preparePDFExtraction,
-} from "./pdfExtractor.service";
-import type { CompleteState, ExtractionResult, MarkerWaitState } from "./pdfExtractor.service";
+import { extractPDF } from "./pdfExtractor.service";
+import type { ExtractionResult, ExtractionOptions } from "./pdfExtractor.service";
 import { enrichQuestionContentV4 } from "../../lib/question-content";
 
 export interface DocumentProfile {
@@ -24,10 +20,6 @@ export interface DocumentProfile {
   pages: Array<Record<string, unknown>>;
 }
 
-export type PreparedExtractionV4 =
-  | (MarkerWaitState & { profile?: DocumentProfile | null; effectivePages?: string })
-  | (CompleteState & { profile?: DocumentProfile | null; effectivePages?: string });
-
 function v4Enabled(): boolean {
   return /^(1|true|yes|on|v4)$/i.test((process.env.PDF_EXTRACTOR_V4 || "").trim());
 }
@@ -39,7 +31,7 @@ function profilerScriptPath(): string {
     path.join(process.cwd(), "apps", "api", "dist", "services", "extractor", "document_profile.py"),
     path.join(process.cwd(), "src", "services", "extractor", "document_profile.py"),
   ];
-  const script = candidates.find((candidate) => fs.existsSync(candidate));
+  const script = candidates.find((c) => fs.existsSync(c));
   if (!script) throw new Error("document_profile.py is missing from the API runtime bundle");
   return script;
 }
@@ -65,18 +57,9 @@ function profilePDF(pdfPath: string): Promise<DocumentProfile> {
       reject(new Error("PDF document profiling timed out"));
     }, 90_000);
 
-    child.stdout.on("data", (chunk) => {
-      stdout += chunk.toString();
-      if (stdout.length > 5_000_000) {
-        child.kill("SIGTERM");
-        reject(new Error("PDF document profile exceeded the safe output limit"));
-      }
-    });
+    child.stdout.on("data", (chunk) => { stdout += chunk.toString(); });
     child.stderr.on("data", (chunk) => { stderr += chunk.toString(); });
-    child.on("error", (error) => {
-      clearTimeout(timeout);
-      reject(error);
-    });
+    child.on("error", (error) => { clearTimeout(timeout); reject(error); });
     child.on("close", (code) => {
       clearTimeout(timeout);
       if (code !== 0) {
@@ -93,20 +76,17 @@ function profilePDF(pdfPath: string): Promise<DocumentProfile> {
 }
 
 function compactPageRange(pages: number[]): string | undefined {
-  const sorted = [...new Set(pages.filter((page) => Number.isInteger(page) && page > 0))].sort((a, b) => a - b);
+  const sorted = [...new Set(pages.filter((p) => Number.isInteger(p) && p > 0))].sort((a, b) => a - b);
   if (!sorted.length) return undefined;
   const ranges: string[] = [];
   let start = sorted[0];
-  let previous = sorted[0];
+  let prev = sorted[0];
   for (const page of sorted.slice(1)) {
-    if (page === previous + 1) {
-      previous = page;
-      continue;
-    }
-    ranges.push(start === previous ? String(start) : `${start}-${previous}`);
-    start = previous = page;
+    if (page === prev + 1) { prev = page; continue; }
+    ranges.push(start === prev ? String(start) : `${start}-${prev}`);
+    start = prev = page;
   }
-  ranges.push(start === previous ? String(start) : `${start}-${previous}`);
+  ranges.push(start === prev ? String(start) : `${start}-${prev}`);
   return ranges.join(",");
 }
 
@@ -115,8 +95,8 @@ function questionPageRange(profile?: DocumentProfile | null): string | undefined
   const excluded = new Set([...profile.answer_key_pages, ...profile.solution_pages]);
   if (!excluded.size) return undefined;
   const pages = profile.pages
-    .map((page) => Number(page.page))
-    .filter((page) => Number.isInteger(page) && !excluded.has(page));
+    .map((p) => Number(p.page))
+    .filter((p) => Number.isInteger(p) && !excluded.has(p));
   return compactPageRange(pages);
 }
 
@@ -125,68 +105,45 @@ function enrichResult(result: ExtractionResult, profile?: DocumentProfile | null
   return {
     ...result,
     message: `${result.message.replace(/\s+$/, "")} [extractor v4]`,
-    questions: result.questions.map((question) => enrichQuestionContentV4(
-      question && typeof question === "object" ? question as Record<string, unknown> : {},
-      profile as unknown as Record<string, unknown> | null,
-    )),
+    questions: result.questions.map((q) =>
+      enrichQuestionContentV4(
+        q && typeof q === "object" ? q as Record<string, unknown> : {},
+        profile as unknown as Record<string, unknown> | null,
+      )
+    ),
   };
 }
 
+export interface ExtractionResultV4 extends ExtractionResult {
+  profile?: DocumentProfile | null;
+  effectivePages?: string;
+}
+
 /**
- * Version-gated adapter around the proven v3 extractor.
+ * V4 entry point used by the BullMQ worker.
  *
- * V4 adds document/page routing metadata and a lossless ordered-content envelope;
- * the legacy fields are never rewritten. With PDF_EXTRACTOR_V4 unset, this is a
- * strict pass-through to the existing production path.
+ * Adds document profiling (auto page-range exclusion of answer keys / solutions)
+ * and enriches the question content envelope. With PDF_EXTRACTOR_V4 unset this
+ * is a strict pass-through to the core extractPDF pipeline.
  */
-export async function preparePDFExtractionV4(
+export async function extractPDFV4(
   pdfPath: string,
-  pagesRange: string | undefined,
-  webhookUrl: string | undefined,
-): Promise<PreparedExtractionV4> {
-  if (!v4Enabled()) return preparePDFExtraction(pdfPath, pagesRange, webhookUrl);
-
-  let profile: DocumentProfile | null = null;
-  try {
-    profile = await profilePDF(pdfPath);
-  } catch (error: any) {
-    console.warn(`[pdfExtractorV4] Document profiling failed; preserving legacy extraction: ${error?.message || error}`);
-  }
-
-  // Respect an explicit user range. Otherwise exclude confidently classified
-  // answer-key and worked-solution pages before question segmentation.
-  const effectivePages = pagesRange || questionPageRange(profile);
-  const forceMarker = profile?.document_kind === "hybrid" || Boolean(profile?.ocr_pages?.length);
-  const prepared = await preparePDFExtraction(pdfPath, effectivePages, webhookUrl, { forceMarker });
-  if (prepared.state === "complete") {
-    return { ...prepared, profile, effectivePages, result: enrichResult(prepared.result, profile) };
-  }
-  return { ...prepared, profile, effectivePages };
-}
-
-export async function continuePDFExtractionV4(
-  workingDir: string,
-  requestCheckUrl: string,
-  source: "pymupdf" | "marker",
   pagesRange?: string,
-  profile?: DocumentProfile | null,
-): Promise<ExtractionResult> {
-  const result = await continuePDFExtraction(workingDir, requestCheckUrl, source, pagesRange);
-  return v4Enabled() ? enrichResult(result, profile) : result;
-}
+  options: ExtractionOptions = {},
+): Promise<ExtractionResultV4> {
+  if (!v4Enabled()) {
+    const result = await extractPDF(pdfPath, pagesRange, options);
+    return result;
+  }
 
-export async function extractPDFV4(pdfPath: string, pagesRange?: string): Promise<ExtractionResult> {
-  if (!v4Enabled()) return extractPDF(pdfPath, pagesRange);
   let profile: DocumentProfile | null = null;
   try {
     profile = await profilePDF(pdfPath);
   } catch (error: any) {
-    console.warn(`[pdfExtractorV4] Document profiling failed; preserving legacy extraction: ${error?.message || error}`);
+    console.warn(`[pdfExtractorV4] Profiling failed; falling back to no-profile path: ${error?.message || error}`);
   }
-  const forceMarker = profile?.document_kind === "hybrid" || Boolean(profile?.ocr_pages?.length);
-  return enrichResult(await extractPDF(
-    pdfPath,
-    pagesRange || questionPageRange(profile),
-    { forceMarker },
-  ), profile);
+
+  const effectivePages = pagesRange || questionPageRange(profile);
+  const result = await extractPDF(pdfPath, effectivePages, options);
+  return { ...enrichResult(result, profile), profile, effectivePages };
 }
