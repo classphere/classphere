@@ -1,1 +1,1 @@
-export { default } from "../../../tests/create/page";
+export { default } from "../../tests/create/page";
