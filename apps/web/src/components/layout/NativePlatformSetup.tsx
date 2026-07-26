@@ -23,15 +23,18 @@ export default function NativePlatformSetup() {
     // 1. Apply native-platform CSS class
     document.body.classList.add("native-platform");
 
-    // 2. Dismiss the splash screen (with a short fade so it's not jarring)
-    //    @capacitor/splash-screen is optional — gracefully skip if not installed
-    import("@capacitor/splash-screen")
-      .then(({ SplashScreen }) => {
+    // 2. Dismiss the splash screen via the Capacitor bridge global.
+    //    We use window.Capacitor.Plugins directly so there's no npm import
+    //    that would break the Vercel/Turbopack build.
+    try {
+      // @ts-ignore — Capacitor global injected by the native bridge at runtime
+      const SplashScreen = window.Capacitor?.Plugins?.SplashScreen;
+      if (SplashScreen) {
         SplashScreen.hide({ fadeOutDuration: 200 });
-      })
-      .catch(() => {
-        // SplashScreen plugin not installed — no-op
-      });
+      }
+    } catch {
+      // Not in Capacitor context or plugin not available — no-op
+    }
   }, []);
 
   // Renders nothing — pure side-effect component
