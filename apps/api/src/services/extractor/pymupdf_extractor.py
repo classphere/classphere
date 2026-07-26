@@ -269,18 +269,21 @@ def detect_section(plain: str):
 
 # ── PDF type detection (unchanged behavior; string grepped by TS service) ────
 
-def is_digital_pdf(doc: fitz.Document, min_char_avg: int = 200, min_text_page_ratio: float = 0.75) -> bool:
-    """Returns True if the PDF has a real text layer."""
+def is_digital_pdf(doc: fitz.Document, min_total_chars: int = 300, min_text_page_ratio: float = 0.15) -> bool:
+    """Returns True if the PDF has a selectable text layer."""
     total = len(doc)
+    if total == 0:
+        return False
     pages_with_text = 0
     total_chars = 0
     for i in range(total):
         text = doc[i].get_text().strip()
         total_chars += len(text)
-        if len(text) > 50:
+        if len(text) > 25:
             pages_with_text += 1
-    avg = total_chars / total if total else 0
-    return pages_with_text >= total * min_text_page_ratio and avg >= min_char_avg
+    # A PDF is digital if it has at least 300 total characters across the document,
+    # or at least 15% of pages have selectable text, or if total text exceeds 1,000 chars.
+    return total_chars >= min_total_chars and (pages_with_text >= total * min_text_page_ratio or total_chars >= 1000)
 
 
 # ── Element helpers ───────────────────────────────────────────────────────────
