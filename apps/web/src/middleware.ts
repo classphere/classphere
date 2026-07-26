@@ -74,6 +74,18 @@ export default function middleware(req: NextRequest) {
 
   // If we have a valid institute subdomain or custom domain, rewrite to /[domain]/path
   if (tenantDomain) {
+    // The PDF test creator is shared with the Test Department workspace. Route
+    // the Institute Admin entry points to its registered page so both roles use
+    // the same creation flow on a tenant subdomain.
+    if (
+      url.pathname === "/institute/tests/create" ||
+      url.pathname === "/institute/test-department/create"
+    ) {
+      return NextResponse.rewrite(
+        new URL(`/${tenantDomain}/test-department/create${url.search}`, req.url),
+      );
+    }
+
     // Guard: only skip rewrite if path is already double-prefixed (e.g. /test/test/...).
     // A simple startsWith check is NOT sufficient — it causes false positives when the subdomain
     // name matches a real route segment (e.g. subdomain='test', path='/test/uuid' is a real page).

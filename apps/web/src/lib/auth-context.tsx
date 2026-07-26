@@ -156,7 +156,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       (cleanPath.startsWith("/teacher") && appUser.role !== "teacher") ||
       (cleanPath.startsWith("/superadmin") && appUser.role !== "super_admin") ||
       (cleanPath.startsWith("/test-department") && !isTestDepartment) ||
-      (cleanPath.startsWith("/institute/tests") && appUser.role === "institute_admin") ||
       (cleanPath.startsWith("/student") && appUser.role !== "student");
     if (routeDenied) {
       router.replace(homePath(appUser.role));
