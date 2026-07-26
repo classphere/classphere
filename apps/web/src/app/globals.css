@@ -381,21 +381,18 @@
    Applied to <body> by NativePlatformSetup.tsx when
    Capacitor.isNativePlatform() is true.
 
-   KEY DESIGN DECISION:
-   We do NOT set user-select: none here. That job belongs to
-   MainActivity.java (setOnLongClickListener + setLongClickable).
-   Setting user-select: none in CSS on Android WebView breaks
-   touch-scroll on overflow containers — exactly the bug we saw
-   with the institute app.
+   DESIGN PRINCIPLE: Do as little as possible in CSS.
+   MainActivity.java handles: text selection, zoom, overscroll.
+   CSS handles only: safe-area insets, tap highlight removal.
+   
+   DO NOT add touch-action or overscroll-behavior here.
+   Android WebView's gesture recognizer gets confused by
+   explicit touch-action on non-scrollable ancestors, which
+   breaks scroll in nested overflow containers (the institute
+   app's sidebar layout).
 ═══════════════════════════════════════════════════════════ */
 
 .native-platform {
-  /* No rubber-band overscroll on the page root */
-  overscroll-behavior: none;
-  /* Allow both axes to pan — critical on Android WebView */
-  touch-action: pan-x pan-y;
-  /* Momentum scrolling on iOS */
-  -webkit-overflow-scrolling: touch;
   /* Safe area: keep content below status bar / above nav bar */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
@@ -411,25 +408,6 @@
   -webkit-touch-callout: none;
 }
 
-/* Ensure inner scroll containers also allow pan gestures */
-.native-platform .overflow-y-auto,
-.native-platform .overflow-y-scroll,
-.native-platform .overflow-auto,
-.native-platform .overflow-scroll,
-.native-platform [class*="overflow-y"] {
-  touch-action: pan-y;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-}
-
-/* Re-enable normal text interaction inside form controls */
-.native-platform input,
-.native-platform textarea,
-.native-platform [contenteditable="true"] {
-  -webkit-user-select: text;
-  user-select: text;
-  touch-action: auto;
-}
 
 @layer components {
   /* ═══════════════════════════════════════════════════════════
