@@ -3,8 +3,11 @@ import { supabaseDB, supabaseAdmin } from "../../lib/supabase";
 import { randomUUID } from "crypto";
 import * as fs from "fs";
 import * as path from "path";
-import { execSync } from "child_process";
+import { execSync, exec } from "child_process";
+import { promisify } from "util";
 import { uploadToR2, uploadToR2Raw } from "../../lib/r2";
+
+const execAsync = promisify(exec);
 import { extractPDF, EXTRACTOR_SCRIPT_DIR } from "../../services/extractor/pdfExtractor.service";
 import { enqueuePdfExtraction } from "../../lib/queue/pdf-extraction.queue";
 import { getStudentTestAccess } from "./test-access.service";
@@ -741,9 +744,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         sendError(`AI extraction failed: ${jobData.error}`);
         return;
       } else {
-        if (pollCount % 3 === 0) {
-          sendProgress("extracting_questions", `Analyzing pages & running AI question extraction (OCR)... ${pollCount * 5}s elapsed`);
-        }
+        sendProgress("extracting_questions", `Analyzing pages & running AI question extraction... ${pollCount * 5}s elapsed`);
       }
     }
 
@@ -806,7 +807,14 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       const maxQuestionNumber = extractionResult.questions.length;
       const parseKeyCmd = `python "${path.join(EXTRACTOR_SCRIPT_DIR, "parse_pdf_answer_key.py")}" "${targetPdfPath}" "${tempAnswersJsonPath}" "${maxQuestionNumber}"`;
       try {
-        execSync(parseKeyCmd, { stdio: "pipe", timeout: 120000 });
+        const keyKeepAlive = setInterval(() => {
+          sendProgress("extracting_answers", "AI is reading correct answers and extracting worked solutions...");
+        }, 4000);
+        try {
+          await execAsync(parseKeyCmd, { timeout: 120000 });
+        } finally {
+          clearInterval(keyKeepAlive);
+        }
         if (fs.existsSync(tempAnswersJsonPath)) {
           const parsed = JSON.parse(fs.readFileSync(tempAnswersJsonPath, "utf-8"));
           // v2 parser returns { answers, solutions }; v1 returned a flat dict.
@@ -833,8 +841,13 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     }
 
     sendProgress("cropping_images", "Processing diagrams & uploading cropped images to Cloud...");
-    const questionRows = await Promise.all(
-      extractionResult.questions.map(async (q: any, idx: number) => {
+    const imgKeepAlive = setInterval(() => {
+      sendProgress("cropping_images", "Processing diagrams & uploading cropped images to Cloud... please wait");
+    }, 4000);
+    const questionRows = await (async () => {
+      try {
+        return await Promise.all(
+          extractionResult.questions.map(async (q: any, idx: number) => {
         const processedText = await processBase64ImagesInText(q.question_text);
         const processedExplanation = await processBase64ImagesInText(q.explanation);
         const processedImageUrl = await processBase64ImageUrl(q.image_url);
@@ -982,6 +995,10 @@ export const uploadTestController = async (req: Request, res: Response): Promise
         };
       })
     );
+      } finally {
+        clearInterval(imgKeepAlive);
+      }
+    })();
 
     sendProgress("saving_db", "Saving extracted draft for Test Department review...");
     const { data: paper, error: pErr } = await supabaseDB
