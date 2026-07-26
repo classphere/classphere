@@ -36,6 +36,21 @@ const ADAPTIVE_SIZES = [
   { dir: "mipmap-xxxhdpi", size: 216 },
 ];
 
+// Splash screen dimensions (width × height in px) for each screen density
+const SPLASH_SIZES = [
+  { dir: "drawable",              w: 1080, h: 1920 }, // default fallback
+  { dir: "drawable-port-mdpi",    w: 320,  h: 480  },
+  { dir: "drawable-port-hdpi",    w: 480,  h: 800  },
+  { dir: "drawable-port-xhdpi",   w: 720,  h: 1280 },
+  { dir: "drawable-port-xxhdpi",  w: 1080, h: 1920 },
+  { dir: "drawable-port-xxxhdpi", w: 1280, h: 2400 },
+  { dir: "drawable-land-mdpi",    w: 480,  h: 320  },
+  { dir: "drawable-land-hdpi",    w: 800,  h: 480  },
+  { dir: "drawable-land-xhdpi",   w: 1280, h: 720  },
+  { dir: "drawable-land-xxhdpi",  w: 1920, h: 1080 },
+  { dir: "drawable-land-xxxhdpi", w: 2400, h: 1280 },
+];
+
 async function main() {
   // Lazy-require sharp so the error message is clear if it's missing
   let sharp;
@@ -141,9 +156,39 @@ async function main() {
     console.log(`  ✅  values/colors.xml → added ic_launcher_background (#FFFFFF)`);
   }
 
-  console.log(`\n✅  All Android icons generated!\n`);
-  console.log(`    Rebuild the APK in Android Studio to see the new icon.\n`);
+  // ── Branded Splash Screens (splash.png) ──────────────────────────────────
+  console.log(`\n🌊  Generating branded splash screens...\n`);
+  for (const { dir, w, h } of SPLASH_SIZES) {
+    const dest = path.join(RES, dir, "splash.png");
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+
+    // Center logo at ~35% of the shorter dimension
+    const minDim = Math.min(w, h);
+    const logoSize = Math.round(minDim * 0.35);
+
+    const logoBuf = await sharp(SRC_ICON)
+      .resize(logoSize, logoSize, { fit: "contain" })
+      .toBuffer();
+
+    await sharp({
+      create: {
+        width: w,
+        height: h,
+        channels: 4,
+        background: { r: 255, g: 255, b: 255, alpha: 1 },
+      },
+    })
+      .composite([{ input: logoBuf, gravity: "center" }])
+      .png()
+      .toFile(dest);
+
+    console.log(`  ✅  ${dir}/splash.png  (${w}×${h})`);
+  }
+
+  console.log(`\n✅  All Android icons and splash screens generated!\n`);
+  console.log(`    Rebuild the APK in Android Studio to see the new icons & splash screen.\n`);
 }
+
 
 main().catch((err) => {
   console.error("\n❌  Error:", err.message);
