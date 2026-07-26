@@ -1,0 +1,12 @@
+{
+  "institutes": [
+    {
+      "slug": "test",
+      "name": "Classphere Test",
+      "domain": "test.classphere.com",
+      "packageId": "com.classphere.test",
+      "versionCode": 1,
+      "versionName": "1.0.0"
+    }
+  ]
+}

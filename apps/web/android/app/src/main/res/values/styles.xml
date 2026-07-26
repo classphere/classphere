@@ -12,10 +12,16 @@
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <!-- White background prevents the black flash while WebView loads the remote URL -->
+        <!-- Prevent black flash while WebView loads -->
         <item name="android:windowBackground">@drawable/splash</item>
         <item name="android:background">@drawable/splash</item>
+        <!-- Let Capacitor bridge manage edge-to-edge via the WebView.
+             We use env(safe-area-inset-*) on the web side to pad content. -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
+
 
 
     <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">

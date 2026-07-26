@@ -8,9 +8,16 @@
     "start": "next start",
     "lint": "eslint",
     "cap:sync": "cap sync android",
-    "cap:sync:production": "cross-env CAPACITOR_SERVER_URL=https://classphere.com cap sync android",
+    "cap:sync:institute": "cross-env CAPACITOR_SERVER_URL=https://classphere.com cap sync android",
     "cap:sync:admin": "cross-env CAPACITOR_SERVER_URL=https://admin.classphere.com cap sync android",
-    "cap:open:android": "cap open android"
+    "cap:sync:production": "cross-env CAPACITOR_SERVER_URL=https://classphere.com cap sync android",
+    "cap:open:android": "cap open android",
+    "build:institutes": "node scripts/build-institute-apps.js",
+    "build:institute": "node scripts/build-institute-apps.js --slug",
+    "build:institute:list": "node scripts/build-institute-apps.js --list",
+    "prepare:institute": "node scripts/build-institute-apps.js --slug",
+    "prepare:institutes": "node scripts/build-institute-apps.js --config-only",
+    "generate:icons": "node scripts/generate-android-icons.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1084.0",
@@ -46,6 +53,7 @@
     "eslint": "^9",
     "eslint-config": "*",
     "eslint-config-next": "16.2.7",
+    "sharp": "^0.34.5",
     "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4",
     "tsconfig": "*",

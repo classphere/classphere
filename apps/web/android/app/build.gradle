@@ -4,6 +4,7 @@ android {
     namespace "com.classphere.app"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
+        // Base applicationId — overridden per flavor below
         applicationId "com.classphere.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -11,11 +12,28 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
-             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
-             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
-            ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+             ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+
+    // Two separate APKs from one project:
+    //   institute  →  com.classphere.app    (students, teachers, HOD, institute admin)
+    //   admin      →  com.classphere.admin  (superadmin / Classphere ops)
+    flavorDimensions "target"
+    productFlavors {
+        // Institute APKs: one per coaching, applicationId injected by build script
+        // e.g: ./gradlew assembleInstituteRelease -PinstituteAppId=com.classphere.iit2025
+        institute {
+            dimension "target"
+            applicationId project.hasProperty('instituteAppId') ? project.instituteAppId : "com.classphere.app"
+        }
+        // Admin APK: single internal APK for Classphere ops team
+        admin {
+            dimension "target"
+            applicationId "com.classphere.admin"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,6 +41,7 @@ android {
         }
     }
 }
+
 
 repositories {
     flatDir{

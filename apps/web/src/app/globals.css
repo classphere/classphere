@@ -376,6 +376,54 @@
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   NATIVE APP MODE
+   Applied to <body> by layout.tsx when Capacitor.isNativePlatform() is true.
+   Strips all "this is a browser" behaviours.
+═══════════════════════════════════════════════════════════ */
+.native-platform {
+  /* No rubber-band overscroll */
+  overscroll-behavior: none;
+  /* Momentum scroll on iOS (Android handles this natively) */
+  -webkit-overflow-scrolling: touch;
+  /* Account for notch / status bar / navigation bar */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Disable text selection everywhere (like a native app) */
+.native-platform *,
+.native-platform *::before,
+.native-platform *::after {
+  -webkit-user-select: none;
+  user-select: none;
+  /* Remove the blue/grey tap flash */
+  -webkit-tap-highlight-color: transparent;
+  /* Disable the iOS callout popup (defines, share, etc.) */
+  -webkit-touch-callout: none;
+}
+
+/* Re-enable text selection inside form controls */
+.native-platform input,
+.native-platform textarea,
+.native-platform [contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Scrollable areas should scroll smoothly */
+.native-platform [data-scroll],
+.native-platform .overflow-y-auto,
+.native-platform .overflow-y-scroll,
+.native-platform .overflow-auto,
+.native-platform .overflow-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+
 @layer components {
   /* ═══════════════════════════════════════════════════════════
      CORE 2.0 COMPONENTS

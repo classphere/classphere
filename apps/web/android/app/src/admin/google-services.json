@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "588712602418",
+    "project_id": "classphere-1",
+    "storage_bucket": "classphere-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588712602418:android:ff7d934ffdba2df4af452b",
+        "android_client_info": {
+          "package_name": "com.classphere.admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_sgdA-iMyuKOLLKspMoV6XTxwI2NSWEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
