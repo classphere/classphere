@@ -14,7 +14,6 @@
         <item name="windowNoTitle">true</item>
         <!-- Prevent black flash while WebView loads -->
         <item name="android:windowBackground">@drawable/splash</item>
-        <item name="android:background">@drawable/splash</item>
         <!-- Let Capacitor bridge manage edge-to-edge via the WebView.
              We use env(safe-area-inset-*) on the web side to pad content. -->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
@@ -22,9 +21,9 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-
-
     <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
-        <item name="android:background">@drawable/splash</item>
+        <item name="windowSplashScreenBackground">@android:color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash</item>
+        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
     </style>
 </resources>

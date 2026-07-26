@@ -25,7 +25,7 @@ android {
         // e.g: ./gradlew assembleInstituteRelease -PinstituteAppId=com.classphere.iit2025
         institute {
             dimension "target"
-            applicationId project.hasProperty('instituteAppId') ? project.instituteAppId : "com.classphere.app"
+            applicationId project.hasProperty('instituteAppId') ? project.instituteAppId : "com.classphere.test"
         }
         // Admin APK: single internal APK for Classphere ops team
         admin {
