@@ -102,19 +102,21 @@ const corsOptions = {
         .select("id")
         .eq("custom_domain", hostname)
         .maybeSingle()
-        .then(({ data }) => {
-          if (data) {
-            allowedCustomWebOrigins.add(origin); // Cache in memory for 0ms subsequent checks
-            callback(null, true);
-          } else {
+        .then(
+          ({ data }) => {
+            if (data) {
+              allowedCustomWebOrigins.add(origin); // Cache in memory for 0ms subsequent checks
+              callback(null, true);
+            } else {
+              console.warn(`[CORS Blocked] Origin: ${origin}`);
+              callback(new Error(`Not allowed by CORS: ${origin}`));
+            }
+          },
+          () => {
             console.warn(`[CORS Blocked] Origin: ${origin}`);
             callback(new Error(`Not allowed by CORS: ${origin}`));
           }
-        })
-        .catch(() => {
-          console.warn(`[CORS Blocked] Origin: ${origin}`);
-          callback(new Error(`Not allowed by CORS: ${origin}`));
-        });
+        );
     } catch (e) {
       console.warn(`[CORS Blocked] Origin: ${origin}`);
       callback(new Error(`Not allowed by CORS: ${origin}`));
