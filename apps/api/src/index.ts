@@ -84,40 +84,38 @@ const corsOptions = {
       }
     }
 
-    // Production: direct Classphere institute subdomains.
+    // Production: direct Classphere and partner institute subdomains.
     const isProdSubdomain = new RegExp(`^https:\\/\\/[a-z0-9-]+\\.${escapedBaseDomain}$`).test(origin);
+    const isPartnerDomain = /^https?:\/\/([a-zA-Z0-9-_\.]+\.)?(graphiteclasses|graphitegkp)\.com(:\d+)?$/i.test(origin);
 
     // Local dev: *.localhost:PORT (e.g. test.localhost:3000, allen.localhost:3000)
     const isLocalSubdomain = /^http:\/\/[a-z0-9-_\.]+\.localhost(:\d+)?$/.test(origin);
 
-    if (allowedOrigins.includes(origin) || allowedCustomWebOrigins.has(origin) || isProdSubdomain || isLocalSubdomain) {
+    if (allowedOrigins.includes(origin) || allowedCustomWebOrigins.has(origin) || allowedCustomWebOrigins.has("*") || isProdSubdomain || isPartnerDomain || isLocalSubdomain) {
       return callback(null, true);
     }
 
-    // Dynamic fallback: check if origin is a registered custom domain in Supabase
+    // Dynamic fallback: check if origin is registered in Supabase (check both institute_settings and institutes)
     try {
       const hostname = new URL(origin).hostname.toLowerCase();
-      supabaseDB
-        .from("institute_settings")
-        .select("id")
-        .or(`custom_domain.eq.${hostname},custom_domain.eq.${origin},custom_domain.ilike.%${hostname}%,subdomain.eq.${hostname}`)
-        .limit(1)
-        .maybeSingle()
-        .then(
-          ({ data }) => {
-            if (data) {
-              allowedCustomWebOrigins.add(origin); // Cache in memory for 0ms subsequent checks
-              callback(null, true);
-            } else {
-              console.warn(`[CORS Blocked] Origin: ${origin}`);
-              callback(new Error(`Not allowed by CORS: ${origin}`));
-            }
-          },
-          () => {
+      Promise.all([
+        supabaseDB.from("institute_settings").select("id").or(`custom_domain.ilike.%${hostname}%,subdomain.ilike.%${hostname}%`).limit(1).maybeSingle(),
+        supabaseDB.from("institutes").select("id").or(`subdomain_slug.ilike.%${hostname}%`).limit(1).maybeSingle()
+      ]).then(
+        ([res1, res2]) => {
+          if (res1.data || res2.data) {
+            allowedCustomWebOrigins.add(origin); // Cache in memory for 0ms subsequent checks
+            callback(null, true);
+          } else {
             console.warn(`[CORS Blocked] Origin: ${origin}`);
             callback(new Error(`Not allowed by CORS: ${origin}`));
           }
-        );
+        },
+        () => {
+          console.warn(`[CORS Blocked] Origin: ${origin}`);
+          callback(new Error(`Not allowed by CORS: ${origin}`));
+        }
+      );
     } catch (e) {
       console.warn(`[CORS Blocked] Origin: ${origin}`);
       callback(new Error(`Not allowed by CORS: ${origin}`));
