@@ -46,7 +46,7 @@ export default function SuperAdminLayout({
     <div className="flex min-h-screen flex-col bg-b-surface1 font-manrope lg:flex-row">
       <Sidebar />
       <MobileNav />
-      <div className="flex h-[calc(100dvh-64px)] min-w-0 flex-1 flex-col overflow-hidden lg:h-screen">
+      <div className="flex h-[calc(100dvh-64px)] min-w-0 flex-1 flex-col overflow-x-hidden overflow-y-auto lg:h-screen">
         {children}
       </div>
     </div>
