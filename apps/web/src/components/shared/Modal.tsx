@@ -16,6 +16,8 @@ interface ModalProps {
   children: React.ReactNode;
   /** Max width class — default "max-w-[500px]" */
   maxWidth?: string;
+  /** Keeps the header visible while long modal content scrolls within the viewport */
+  scrollable?: boolean;
 }
 
 /**
@@ -36,6 +38,7 @@ export function Modal({
   subtitle,
   children,
   maxWidth = "max-w-[500px]",
+  scrollable = false,
 }: ModalProps) {
   // Close on Escape key
   useEffect(() => {
@@ -67,11 +70,11 @@ export function Modal({
       onClick={onClose}
     >
       <div
-        className={`w-full ${maxWidth} rounded-[10px] bg-b-surface2 p-8 shadow-depth animate-in zoom-in-95 duration-200 border border-s-stroke2/40`}
+        className={`w-full ${maxWidth} rounded-[10px] bg-b-surface2 p-8 shadow-depth animate-in zoom-in-95 duration-200 border border-s-stroke2/40 ${scrollable ? "flex max-h-[calc(100dvh-2rem)] flex-col" : ""}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-start justify-between mb-8 gap-4">
+        <div className={`flex items-start justify-between mb-8 gap-4 ${scrollable ? "shrink-0" : ""}`}>
           <div className="flex flex-col gap-1">
             <h2 className="t-heading-l text-t-primary">{title}</h2>
             {subtitle && (
@@ -88,7 +91,11 @@ export function Modal({
         </div>
 
         {/* Body */}
-        {children}
+        {scrollable ? (
+          <div className="min-h-0 flex-1 overflow-y-auto pr-1">{children}</div>
+        ) : (
+          children
+        )}
       </div>
     </div>
   );
