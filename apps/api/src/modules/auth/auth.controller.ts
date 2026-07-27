@@ -3,6 +3,37 @@ import { randomUUID } from "crypto";
 import { createRequestAuthClient, supabaseAdmin, supabaseDB } from "../../lib/supabase";
 import { invalidateAuthContext, expectedBoundSessionToken } from "../../middleware/auth.middleware";
 
+// Helper: resolve a custom domain or subdomain to its canonical institute subdomain_slug
+async function resolveCanonicalInstituteSlug(input: string): Promise<string> {
+  if (!input) return "";
+  let clean = String(input).toLowerCase().trim();
+  if (clean.includes("localhost")) {
+    clean = clean.split(".")[0];
+  }
+
+  // 1. Check direct subdomain_slug in institutes
+  const { data: inst } = await supabaseDB
+    .from("institutes")
+    .select("subdomain_slug")
+    .eq("subdomain_slug", clean)
+    .eq("is_active", true)
+    .maybeSingle();
+  if (inst?.subdomain_slug) return inst.subdomain_slug;
+
+  // 2. Check institute_settings by custom_domain or subdomain
+  const { data: settings } = await supabaseDB
+    .from("institute_settings")
+    .select("subdomain, institutes(subdomain_slug, is_active)")
+    .or(`custom_domain.ilike.%${clean}%,subdomain.ilike.%${clean}%`)
+    .maybeSingle();
+
+  if (settings && (settings.institutes as any)?.is_active) {
+    return (settings.institutes as any).subdomain_slug || settings.subdomain || clean;
+  }
+
+  return clean;
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 /**
  * POST /api/v1/auth/login
@@ -19,7 +50,11 @@ import { invalidateAuthContext, expectedBoundSessionToken } from "../../middlewa
  */
 export const login = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { login_type, phone, dob, email, password, institute_slug } = req.body;
+    let { login_type, phone, dob, email, password, institute_slug } = req.body;
+    if (institute_slug) {
+      institute_slug = await resolveCanonicalInstituteSlug(institute_slug);
+      req.body.institute_slug = institute_slug;
+    }
 
     // ── Build Supabase credentials ───────────────────────────────────────────
     let supabaseEmail: string;
