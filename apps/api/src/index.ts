@@ -100,7 +100,8 @@ const corsOptions = {
       supabaseDB
         .from("institute_settings")
         .select("id")
-        .eq("custom_domain", hostname)
+        .or(`custom_domain.eq.${hostname},custom_domain.eq.${origin},custom_domain.ilike.%${hostname}%,subdomain.eq.${hostname}`)
+        .limit(1)
         .maybeSingle()
         .then(
           ({ data }) => {
