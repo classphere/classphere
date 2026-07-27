@@ -151,58 +151,78 @@ export default function ScheduleTestPage() {
       formData.append("date", new Date(testStart).toISOString());
       formData.append("batch_ids", JSON.stringify(selectedBatches));
 
-      const res = await fetch(`${API_URL}/api/v1/tests/upload-test`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          ...(sessionToken ? { "x-session-token": sessionToken } : {}),
-        },
-        body: formData,
-      });
+      // XMLHttpRequest provides upload progress while retaining incremental
+      // reads of the NDJSON response. fetch() supports the latter but leaves a
+      // large PDF upload looking frozen until Multer has read it completely.
+      await new Promise<void>((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        let responseOffset = 0;
+        let responseBuffer = "";
+        let streamError: Error | null = null;
 
-      if (!res.body) {
-        throw new Error("Response body is not readable.");
-      }
+        const consumeNdjson = () => {
+          const newText = xhr.responseText.slice(responseOffset);
+          responseOffset = xhr.responseText.length;
+          if (!newText) return;
+          responseBuffer += newText;
+          const lines = responseBuffer.split("\n");
+          responseBuffer = lines.pop() || "";
 
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = "";
-
-      while (true) {
-        const { value, done } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split("\n");
-        buffer = lines.pop() || ""; // retain incomplete line in buffer
-
-        for (const line of lines) {
-          if (!line.trim()) continue;
-          try {
-            const chunk = JSON.parse(line);
-            if (chunk.success === false || chunk.status === "error") {
-              throw new Error(chunk.message || "Failed to process and upload test.");
-            }
-            
-            // Map streamed status to local status / progress messages
-            if (chunk.status) {
+          for (const line of lines) {
+            if (!line.trim()) continue;
+            try {
+              const chunk = JSON.parse(line);
+              if (chunk.success === false || chunk.status === "error") {
+                streamError = new Error(chunk.message || "Failed to process and upload test.");
+                xhr.abort();
+                return;
+              }
               if (chunk.status === "success") {
                 setStatus("success");
                 setStatusMsg("Test created successfully!");
                 router.push(returnPath);
-              } else {
+              } else if (chunk.status) {
                 setStatus("processing");
                 setStatusMsg(chunk.message || "Processing...");
               }
-            }
-          } catch (e: any) {
-            // Throw error to break out of stream reading loop if it's an operational error
-            if (e.message && !e.message.startsWith("Unexpected token")) {
-              throw e;
+            } catch {
+              // Wait for the terminal HTTP handler if a proxy returns a
+              // non-NDJSON error page instead of the API response.
             }
           }
-        }
-      }
+        };
+
+        xhr.open("POST", `${API_URL}/api/v1/tests/upload-test`);
+        xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+        if (sessionToken) xhr.setRequestHeader("x-session-token", sessionToken);
+
+        xhr.upload.addEventListener("loadstart", () => {
+          setStatus("uploading");
+          setStatusMsg(`Uploading ${pdfFile.name}...`);
+        });
+        xhr.upload.addEventListener("progress", (event) => {
+          if (!event.lengthComputable) return;
+          const percent = Math.min(100, Math.round((event.loaded / event.total) * 100));
+          setStatus("uploading");
+          setStatusMsg(`Uploading ${pdfFile.name}... ${percent}% (${(event.loaded / 1024 / 1024).toFixed(1)} MB of ${(event.total / 1024 / 1024).toFixed(1)} MB)`);
+        });
+        xhr.addEventListener("progress", consumeNdjson);
+        xhr.addEventListener("load", () => {
+          consumeNdjson();
+          if (streamError) {
+            reject(streamError);
+            return;
+          }
+          if (xhr.status < 200 || xhr.status >= 300) {
+            reject(new Error(xhr.responseText.trim() || `Upload failed with HTTP ${xhr.status}.`));
+            return;
+          }
+          resolve();
+        });
+        xhr.addEventListener("error", () => reject(new Error("Network error while uploading the PDF. Confirm that the API is running on port 3001.")));
+        xhr.addEventListener("abort", () => reject(streamError || new Error("PDF upload was cancelled.")));
+        xhr.send(formData);
+      });
     } catch (err: any) {
       setStatus("error");
       setErrorMsg(err.message || "Network error. Failed to create test.");
