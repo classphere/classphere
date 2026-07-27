@@ -1399,6 +1399,8 @@ def run():
     out_dir.mkdir(parents=True, exist_ok=True)
     img_dir = out_dir / "marker_images"
     img_dir.mkdir(parents=True, exist_ok=True)
+    page_img_dir = out_dir / "page_images"
+    page_img_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Opening PDF: {pdf_path}")
     doc = fitz.open(str(pdf_path))
@@ -1410,7 +1412,7 @@ def run():
         print("Scanned documents are not supported.")
         return
 
-    print("[DIGITAL PDF] Text layer confirmed. Extracting with PyMuPDF (v3 geometry-aware)...")
+    print("[DIGITAL PDF] Text layer confirmed. Rendering page images and extracting geometry with PyMuPDF (v3)...")
 
     boiler = prescan_boilerplate_xrefs(doc)
     if boiler:
@@ -1422,11 +1424,20 @@ def run():
 
     for i in range(len(doc)):
         print(f"  Page {i+1}/{len(doc)}...", end=" ", flush=True)
+        # Gemini receives this rendered page for visual verification while the
+        # original, embedded image bytes below remain the source of truth for
+        # the student-facing question media.
+        page_image_name = f"page_{i+1:04d}.png"
+        page_image_path = page_img_dir / page_image_name
+        if not page_image_path.exists():
+            pix = doc[i].get_pixmap(dpi=150, alpha=False)
+            pix.save(str(page_image_path))
         page_data = extract_page(doc, i, img_dir, boiler)
         all_pages.append({
             "html": page_data["html"],
             "images": page_data["images"],
             "children": page_data["children"],
+            "page_image": f"page_images/{page_image_name}",
         })
         all_images.update(page_data["images"])
         imgs_on_page = len(page_data["images"])
@@ -1441,6 +1452,8 @@ def run():
             "pdf_type": "digital",
             "total_pages": len(doc),
             "total_native_images": total_images,
+            "rendered_page_images_dir": "page_images",
+            "rendered_page_dpi": 150,
             "annotated": True,
         }
     }
@@ -1452,6 +1465,7 @@ def run():
     print(f"\n{'='*50}")
     print(f"Pages processed    : {len(doc)}")
     print(f"Native images saved: {total_images}  ->  {img_dir}")
+    print(f"Page images rendered: {len(doc)}  ->  {page_img_dir}")
     print(f"Raw JSON saved     : {raw_path}")
     print(f"{'='*50}")
     print(f"\nNext step: run cerebras_from_marker.py {out_dir}")

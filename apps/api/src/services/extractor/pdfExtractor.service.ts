@@ -10,21 +10,17 @@ export const EXTRACTOR_SCRIPT_DIR: string = path.join(__dirname);
 
 // ── OpenRouter model ID ──────────────────────────────────────────────────────
 // Override via environment variable if needed.
-const MODEL = process.env.LLM_MODEL || "deepseek/deepseek-v4-flash";
+const MODEL = process.env.GEMINI_MODEL || "google/gemini-2.5-flash";
 
 export type ExamCategory = "jee_main" | "jee_advanced" | "neet" | "other";
-
-/** Toggle thinking ON for JEE/Advanced/other, OFF for NEET. */
-function thinkingForExam(exam?: ExamCategory): "on" | "off" {
-  if (exam === "neet") return "off";
-  return "on";
-}
 
 // ── Child-process runner ──────────────────────────────────────────────────────
 
 /** Non-blocking runner — avoids blocking the BullMQ event loop. */
-function runCommand(command: string, timeoutMs: number): Promise<string> {
+function runCommand(command: string, timeoutMs: number, stage = "command"): Promise<string> {
   return new Promise((resolve, reject) => {
+    const startedAt = Date.now();
+    console.info(`[pdfExtractor][${stage}] Started (timeout ${Math.round(timeoutMs / 1000)}s).`);
     const child = spawn(command, {
       shell: true,
       env: process.env,
@@ -34,6 +30,7 @@ function runCommand(command: string, timeoutMs: number): Promise<string> {
     let stderr = "";
     const timer = setTimeout(() => {
       child.kill("SIGTERM");
+      console.error(`[pdfExtractor][${stage}] Timed out after ${Date.now() - startedAt}ms.`);
       reject(new Error(`Command timed out after ${timeoutMs}ms: ${command.slice(0, 160)}`));
     }, timeoutMs);
     child.stdout?.on("data", (chunk) => {
@@ -49,8 +46,13 @@ function runCommand(command: string, timeoutMs: number): Promise<string> {
     child.on("error", (err) => { clearTimeout(timer); reject(err); });
     child.on("close", (code) => {
       clearTimeout(timer);
-      if (code === 0) resolve(stdout);
-      else reject(new Error(`Command exited ${code}: ${stderr.slice(-1000) || stdout.slice(-1000)}`));
+      if (code === 0) {
+        console.info(`[pdfExtractor][${stage}] Completed in ${Date.now() - startedAt}ms.`);
+        resolve(stdout);
+      } else {
+        console.error(`[pdfExtractor][${stage}] Failed in ${Date.now() - startedAt}ms with exit code ${code}.`);
+        reject(new Error(`Command exited ${code}: ${stderr.slice(-1000) || stdout.slice(-1000)}`));
+      }
     });
   });
 }
@@ -127,8 +129,8 @@ function finalizeQuestions(jsonPath: string, imagesDir: string, suffix = ""): Ex
 /**
  * Full PDF extraction pipeline (digital PDFs only):
  *
- *   1. pymupdf_extractor.py  — text & native image extraction
- *   2. llm_extractor.py      — DeepSeek R1 (JEE) or V3 (NEET) via OpenRouter
+ *   1. pymupdf_extractor.py  — page rendering, text and native image extraction
+ *   2. gemini_page_extractor.py — parallel Gemini 2.5 Flash page extraction via OpenRouter
  *   3. normalize_json.py     — schema normalisation & dedup
  *   4. Embed images as base64 data URLs
  *
@@ -140,7 +142,6 @@ export async function extractPDF(
   options: ExtractionOptions = {},
 ): Promise<ExtractionResult> {
   const effectivePages = options.pagesRange ?? pagesRange;
-  const thinking       = thinkingForExam(options.examCategory);
   const workingDir     = path.dirname(pdfPath);
   const outputDir      = path.join(workingDir, "extracted_data");
   const imagesDir      = path.join(outputDir, "marker_images");
@@ -149,19 +150,34 @@ export async function extractPDF(
 
   fs.mkdirSync(outputDir, { recursive: true });
 
+  // This value is interpolated into a shell command below; accept only the
+  // documented comma-separated 1-based range syntax before doing so.
+  if (effectivePages && !/^[0-9,\-\s]+$/.test(effectivePages)) {
+    return { success: false, message: "Invalid page range. Use values such as 1-5,8.", questions: [] };
+  }
+
   try {
     // ── 1. PyMuPDF ────────────────────────────────────────────────────────────
     console.log(`[pdfExtractor] PyMuPDF on: ${pdfPath}`);
     const pyCmd = `python "${path.join(scriptDir, "pymupdf_extractor.py")}" "${pdfPath}" "${outputDir}"`;
-    let stdOut = "";
+    let pyMuPdfOutput = "";
     try {
-      stdOut = await runCommand(pyCmd, 180_000);
+      pyMuPdfOutput = await runCommand(pyCmd, 180_000, "pymupdf");
     } catch (err: any) {
-      stdOut = err?.message || String(err);
-      console.error("[pdfExtractor] PyMuPDF error:", stdOut.slice(0, 500));
+      pyMuPdfOutput = err?.message || String(err);
+      console.error("[pdfExtractor] PyMuPDF error:", pyMuPdfOutput.slice(0, 500));
+
+      // This file is the mandatory producer for marker_raw.json. Continuing to
+      // the LLM stage after it fails only hides the real dependency/runtime
+      // error behind a misleading "marker_raw.json not found" message.
+      return {
+        success: false,
+        message: `PyMuPDF extraction failed: ${pyMuPdfOutput.slice(-800)}`,
+        questions: [],
+      };
     }
 
-    if (stdOut.includes("Scanned PDF detected")) {
+    if (pyMuPdfOutput.includes("Scanned PDF detected")) {
       return {
         success: false,
         message: "Scanned PDF detected — only digital (searchable) PDFs are supported.",
@@ -170,12 +186,12 @@ export async function extractPDF(
     }
 
     // ── 2. LLM extraction (thinking toggled by exam type) ─────────────────────
-    const pagesArg = effectivePages ? ` --pages "${effectivePages}"` : "";
-    console.log(`[pdfExtractor] LLM extraction — model: ${MODEL}, thinking: ${thinking.toUpperCase()}`);
+    console.log(`[pdfExtractor] Gemini page extraction via OpenRouter — model: ${MODEL}`);
     await runCommand(
-      `python "${path.join(scriptDir, "llm_extractor.py")}" "${outputDir}"` +
-      ` --model "${MODEL}" --thinking ${thinking}${pagesArg}`,
+      `python "${path.join(scriptDir, "gemini_page_extractor.py")}" "${outputDir}"` +
+      ` --model "${MODEL}"${effectivePages ? ` --pages "${effectivePages}"` : ""}`,
       600_000,
+      "gemini-page-workers",
     );
 
     // ── 3. Normalise ──────────────────────────────────────────────────────────
@@ -184,10 +200,11 @@ export async function extractPDF(
       `python "${path.join(scriptDir, "normalize_json.py")}" "${finalJson}" ` +
       `--images-dir "${imagesDir}" --source pymupdf`,
       300_000,
+      "normalization",
     );
 
     // ── 4. Finalise & embed images ────────────────────────────────────────────
-    return finalizeQuestions(finalJson, imagesDir, ` [${MODEL} (thinking=${thinking})]`);
+    return finalizeQuestions(finalJson, imagesDir, ` [${MODEL} parallel page extraction]`);
 
   } catch (err: any) {
     console.error("[pdfExtractor] Pipeline error:", err);

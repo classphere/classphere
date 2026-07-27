@@ -32,8 +32,8 @@ FROM node:22-alpine AS runner
 WORKDIR /app
 
 # The PDF pipeline invokes the bundled Python extractors at runtime.
-# openai + python-dotenv are required by llm_extractor.py
-# (the LLM extraction stage); PyMuPDF + Pillow by pymupdf_extractor.py.
+# openai + python-dotenv are required by gemini_page_extractor.py
+# (the Gemini extraction stage); PyMuPDF + Pillow by pymupdf_extractor.py.
 RUN apk add --no-cache python3 py3-pip \
   && python3 -m pip install --no-cache-dir --break-system-packages \
      requests PyMuPDF Pillow openai python-dotenv

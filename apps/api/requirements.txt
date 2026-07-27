@@ -1,0 +1,6 @@
+# Runtime dependencies for the local PDF-to-test extraction pipeline.
+# Install with: python -m pip install -r requirements.txt
+PyMuPDF
+Pillow
+openai
+python-dotenv
