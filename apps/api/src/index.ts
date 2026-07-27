@@ -8,6 +8,7 @@ import "@sentry/profiling-node"; // Profiling
 import { env } from "./config/env";
 import { getRateLimitStore } from "./middleware/rate-limit-store";
 import { connection as redisConnection } from "./lib/queue/redis";
+import { supabaseDB } from "./lib/supabase";
 import { startWorkers, stopWorkers } from "./worker";
 
 // ─── Process-level error safety net ──────────────────────────────────────────
@@ -90,8 +91,31 @@ const corsOptions = {
     const isLocalSubdomain = /^http:\/\/[a-z0-9-_\.]+\.localhost(:\d+)?$/.test(origin);
 
     if (allowedOrigins.includes(origin) || allowedCustomWebOrigins.has(origin) || isProdSubdomain || isLocalSubdomain) {
-      callback(null, true);
-    } else {
+      return callback(null, true);
+    }
+
+    // Dynamic fallback: check if origin is a registered custom domain in Supabase
+    try {
+      const hostname = new URL(origin).hostname.toLowerCase();
+      supabaseDB
+        .from("institute_settings")
+        .select("id")
+        .eq("custom_domain", hostname)
+        .maybeSingle()
+        .then(({ data }) => {
+          if (data) {
+            allowedCustomWebOrigins.add(origin); // Cache in memory for 0ms subsequent checks
+            callback(null, true);
+          } else {
+            console.warn(`[CORS Blocked] Origin: ${origin}`);
+            callback(new Error(`Not allowed by CORS: ${origin}`));
+          }
+        })
+        .catch(() => {
+          console.warn(`[CORS Blocked] Origin: ${origin}`);
+          callback(new Error(`Not allowed by CORS: ${origin}`));
+        });
+    } catch (e) {
       console.warn(`[CORS Blocked] Origin: ${origin}`);
       callback(new Error(`Not allowed by CORS: ${origin}`));
     }
