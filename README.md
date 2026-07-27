@@ -2,7 +2,7 @@
   <img src="/logoC.png" alt="Classphere Logo" width="100" />
   <h1>Classphere</h1>
   <p><b>The B2B SaaS Test Prep Platform for JEE, NEET, and Beyond</b></p>
-  <!-- Last updated: 2026-07-26 -->
+  <!-- Last updated: 2026-07-27 — AI PDF Extraction Pipeline v4 -->
 </div>
 
 ---
