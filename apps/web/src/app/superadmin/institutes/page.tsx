@@ -434,6 +434,7 @@ export default function InstitutesPage() {
         onClose={() => setIsCreateModalOpen(false)}
         title="Onboard New Institute"
         maxWidth="max-w-[500px]"
+        scrollable
       >
         <div className="flex flex-col gap-6">
 
