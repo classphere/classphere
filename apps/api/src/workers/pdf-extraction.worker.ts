@@ -10,6 +10,15 @@ import { getR2Object, deleteR2Object } from "../lib/r2";
 
 const TEMP_DIR = path.join(os.tmpdir(), "classphere-pdf-jobs");
 
+/**
+ * These failures are caused by the uploaded input, not a transient worker or
+ * provider issue. Completing the BullMQ job after saving the failure prevents
+ * its configured retry from being claimed by a stale/other worker process.
+ */
+function isTerminalInputFailure(message: string): boolean {
+  return /scanned pdf detected|only digital \(searchable\) pdfs are supported|invalid page range/i.test(message);
+}
+
 async function updateJobStatus(
   jobId: string,
   fields: Record<string, unknown>,
@@ -29,6 +38,10 @@ async function updateJobStatus(
 
 async function processPdfJob(job: Job<PdfExtractionJobData>): Promise<void> {
   const { jobId, r2Key, pages, examCategory } = job.data;
+  const startedAt = Date.now();
+  const logStage = (stage: string, message: string) =>
+    console.info(`[pdfWorker][${jobId}][+${Date.now() - startedAt}ms][${stage}] ${message}`);
+  logStage("start", `Processing queue job ${job.id}${pages ? ` for pages ${pages}` : ""}.`);
   await updateJobStatus(jobId, { status: "processing", started_at: new Date().toISOString() });
 
   const workDir = path.join(TEMP_DIR, `job_${jobId}`);
@@ -36,12 +49,27 @@ async function processPdfJob(job: Job<PdfExtractionJobData>): Promise<void> {
   const pdfPath = path.join(workDir, "temp.pdf");
 
   try {
-    fs.writeFileSync(pdfPath, await getR2Object(r2Key));
+    logStage("download", `Downloading ${r2Key} from object storage.`);
+    const pdfBuffer = await getR2Object(r2Key);
+    logStage("download", `Downloaded ${(pdfBuffer.byteLength / 1024 / 1024).toFixed(2)} MB.`);
+    fs.writeFileSync(pdfPath, pdfBuffer);
 
+    logStage("extract", "Starting PyMuPDF page rendering and parallel Gemini extraction via OpenRouter.");
     const result = await extractPDFV4(pdfPath, pages, { examCategory });
 
     if (!result.success || !result.questions?.length) {
-      throw new Error(result.message || "Extraction produced no questions");
+      const message = result.message || "Extraction produced no questions";
+      if (isTerminalInputFailure(message)) {
+        logStage("rejected", message);
+        await updateJobStatus(jobId, {
+          status: "failed",
+          error: message,
+          completed_at: new Date().toISOString(),
+        }, true);
+        await deleteR2Object(r2Key).catch(() => {});
+        return;
+      }
+      throw new Error(message);
     }
 
     await updateJobStatus(jobId, {
@@ -55,7 +83,11 @@ async function processPdfJob(job: Job<PdfExtractionJobData>): Promise<void> {
     }, true);
 
     await deleteR2Object(r2Key);
+    logStage("complete", `Extraction completed with ${result.questions.length} questions.`);
     console.log(`[pdfWorker] Job ${jobId} done — ${result.questions.length} questions`);
+  } catch (error: any) {
+    logStage("error", error?.message || String(error));
+    throw error;
   } finally {
     try { fs.rmSync(workDir, { recursive: true, force: true }); } catch { /* ignore */ }
   }
@@ -78,6 +110,15 @@ pdfExtractionWorker.on("failed", async (job, err) => {
   console.error(`[pdfWorker] Job ${job?.id} failed:`, err.message);
   if (job?.data?.jobId) {
     const isFinalAttempt = (job.attemptsMade ?? 0) >= (job.opts?.attempts ?? 1);
+    if (!isFinalAttempt) {
+      await updateJobStatus(job.data.jobId, {
+        // Keep the established status vocabulary; the saved error explains that
+        // BullMQ will retry while the controller reports the job as queued.
+        status: "pending",
+        error: `Attempt ${job.attemptsMade ?? 1} failed and will retry: ${err.message}`,
+      });
+      return;
+    }
     if (isFinalAttempt) {
       await updateJobStatus(job.data.jobId, {
         status: "failed",

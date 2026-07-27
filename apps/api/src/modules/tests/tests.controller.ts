@@ -596,22 +596,36 @@ function chunk<T>(arr: T[], size: number): T[][] {
  */
 export const uploadTestController = async (req: Request, res: Response): Promise<void> => {
   let tempWorkingDir = "";
+  const requestId = res.locals.pdfUpload?.requestId ?? `pdf-upload-${Date.now().toString(36)}`;
+  const startedAt = res.locals.pdfUpload?.startedAt ?? Date.now();
+  const elapsed = () => Date.now() - startedAt;
+  const logStage = (stage: string, message: string) => {
+    console.info(`[pdfUpload][${requestId}][+${elapsed()}ms][${stage}] ${message}`);
+  };
 
   res.setHeader("Content-Type", "application/x-ndjson");
   res.setHeader("Transfer-Encoding", "chunked");
   res.setHeader("Cache-Control", "no-cache");
   res.setHeader("Connection", "keep-alive");
+  res.setHeader("X-Accel-Buffering", "no");
+  res.flushHeaders();
 
   const sendProgress = (status: string, message: string, data?: any) => {
-    res.write(JSON.stringify({ success: true, status, message, data }) + "\n");
+    logStage(status, message);
+    res.write(JSON.stringify({ success: true, status, message, data, request_id: requestId, elapsed_ms: elapsed() }) + "\n");
+    (res as any).flush?.();
   };
 
   const sendError = (message: string) => {
-    res.write(JSON.stringify({ success: false, status: "error", message }) + "\n");
-    res.end();
+    console.error(`[pdfUpload][${requestId}][+${elapsed()}ms][error] ${message}`);
+    if (!res.writableEnded) {
+      res.write(JSON.stringify({ success: false, status: "error", message, request_id: requestId, elapsed_ms: elapsed() }) + "\n");
+      res.end();
+    }
   };
 
   try {
+    sendProgress("received", "Upload received. Validating test details...");
     const userId = req.user!.id;
     const {
       title,
@@ -708,7 +722,9 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     const r2Key = `temp-pdf-jobs/${jobId}.pdf`;
 
     sendProgress("extracting_questions", "Uploading PDF to secure processing queue...");
+    const r2StartedAt = Date.now();
     await uploadToR2Raw(pdfFile.buffer, r2Key, "application/pdf");
+    logStage("extracting_questions", `PDF stored in processing queue in ${Date.now() - r2StartedAt}ms (job ${jobId}).`);
 
     await supabaseDB.from("pdf_extraction_jobs").insert({
       id: jobId,
@@ -718,13 +734,21 @@ export const uploadTestController = async (req: Request, res: Response): Promise
     });
 
     await enqueuePdfExtraction({ jobId, r2Key, requestedBy: userId });
+    sendProgress("queued", "PDF queued. Waiting for the extraction worker to start...", { job_id: jobId });
 
     let extractionResult: any = null;
     let pollCount = 0;
+    const extractionWaitStartedAt = Date.now();
+    const maxWaitMs = Number(process.env.PDF_EXTRACTION_WAIT_TIMEOUT_MS ?? 15 * 60 * 1000);
 
     while (true) {
       await new Promise(resolve => setTimeout(resolve, 5000));
       pollCount++;
+
+      if (Date.now() - extractionWaitStartedAt > maxWaitMs) {
+        sendError(`PDF extraction timed out after ${Math.round(maxWaitMs / 60000)} minutes. Check the API console using request ${requestId}.`);
+        return;
+      }
 
       const { data: jobData, error: jobErr } = await supabaseDB
         .from("pdf_extraction_jobs")
@@ -739,12 +763,16 @@ export const uploadTestController = async (req: Request, res: Response): Promise
 
       if (jobData.status === "done") {
         extractionResult = jobData.result;
+        logStage("extracting_questions", `Worker completed extraction after ${Date.now() - extractionWaitStartedAt}ms.`);
         break;
       } else if (jobData.status === "failed") {
         sendError(`AI extraction failed: ${jobData.error}`);
         return;
       } else {
-        sendProgress("extracting_questions", `Analyzing pages & running AI question extraction... ${pollCount * 5}s elapsed`);
+        const queueMessage = jobData.status === "pending" || jobData.status === "retrying"
+          ? "Queued for extraction worker"
+          : "Analyzing pages & running AI question extraction";
+        sendProgress("extracting_questions", `${queueMessage}... ${pollCount * 5}s elapsed`, { job_id: jobId, worker_status: jobData.status });
       }
     }
 
@@ -1065,6 +1093,7 @@ export const uploadTestController = async (req: Request, res: Response): Promise
       total_questions: questionRows.length,
       workflow_status: paper.workflow_status,
     });
+    logStage("success", `Completed PDF-to-test workflow with ${questionRows.length} questions.`);
     res.end();
 
   } catch (err: any) {

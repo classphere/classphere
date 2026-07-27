@@ -46,8 +46,11 @@ const envSchema = z.object({
   // (legacy behavior) with a startup warning in production.
   SESSION_BINDING_SECRET: z.string().min(16).optional(),
 
-  // OpenRouter (PDF extraction via LLM). Required when PDF upload is used.
+  // OpenRouter (Gemini PDF extraction). Required when PDF upload is used.
   OPENROUTER_API_KEY: z.string().min(1).optional(),
+  GEMINI_MODEL: z.string().optional(),
+  GEMINI_PAGE_WORKERS: z.coerce.number().int().min(1).max(8).optional(),
+  GEMINI_PAGE_BATCH_SIZE: z.coerce.number().int().min(1).max(32).optional(),
   LLM_MODEL: z.string().optional(),
 
   // Observability
