@@ -17,6 +17,7 @@ import argparse
 import base64
 import concurrent.futures
 import json
+import re
 import os
 import random
 import sys
@@ -92,12 +93,56 @@ NEXT-PAGE HEAD (use only to complete a question that starts on this page):
 """
 
 
-def parse_json(raw: str) -> dict[str, Any]:
-    raw = (raw or "").strip()
+def clean_raw_json_response(raw: str) -> str:
+    if not raw:
+        return "{}"
+    raw = raw.strip()
     if raw.startswith("```"):
         lines = raw.splitlines()
-        raw = "\n".join(lines[1:-1] if len(lines) > 2 and lines[-1].strip() == "```" else lines[1:]).strip()
-    value = json.loads(raw)
+        lines = lines[1:] if lines[0].startswith("```") else lines
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        raw = "\n".join(lines).strip()
+    raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL).strip()
+    try:
+        json.loads(raw)
+        return raw
+    except (json.JSONDecodeError, ValueError):
+        pass
+    VALID_ESC = {'"', '\\', '/', 'b', 'f', 'n', 'r', 't', 'u'}
+    result = []
+    in_str = False
+    i, n = 0, len(raw)
+    while i < n:
+        ch = raw[i]
+        if not in_str:
+            result.append(ch)
+            if ch == '"':
+                in_str = True
+            i += 1
+        else:
+            if ch == '\\':
+                nxt = raw[i + 1] if i + 1 < n else ''
+                if nxt in VALID_ESC:
+                    result.append(ch); result.append(nxt)
+                    i += 2
+                    if nxt == 'u' and i + 4 <= n:
+                        result.extend(raw[i:i + 4]); i += 4
+                else:
+                    result.append('\\\\'); i += 1
+            elif ch == '"':
+                result.append(ch); in_str = False; i += 1
+            elif ch == '\n':
+                result.append('\\n'); i += 1
+            elif ch == '\r':
+                result.append('\\r'); i += 1
+            else:
+                result.append(ch); i += 1
+    return "".join(result)
+
+def parse_json(raw: str) -> dict[str, Any]:
+    cleaned = clean_raw_json_response(raw)
+    value = json.loads(cleaned)
     if not isinstance(value, dict) or not isinstance(value.get("questions"), list):
         raise ValueError("Gemini returned JSON without a questions array")
     return value
