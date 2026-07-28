@@ -4,11 +4,10 @@ import * as path from "path";
 
 /**
  * Absolute path to the Python extractor scripts directory.
- * Resolves correctly whether running from src/ (dev) or dist/ (production bundled).
+ * In production, Dockerfile copies Python scripts to dist/services/extractor/ alongside
+ * the compiled JS — so __dirname is already correct in both dev and prod.
  */
-export const EXTRACTOR_SCRIPT_DIR: string = __dirname.includes("dist")
-  ? path.resolve(__dirname, "../src/services/extractor")
-  : __dirname;
+export const EXTRACTOR_SCRIPT_DIR: string = __dirname;
 
 // ── OpenRouter model ID ──────────────────────────────────────────────────────
 // Override via environment variable if needed.
