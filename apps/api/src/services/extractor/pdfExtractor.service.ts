@@ -4,9 +4,11 @@ import * as path from "path";
 
 /**
  * Absolute path to the Python extractor scripts directory.
- * Other modules MUST import this constant instead of computing their own path.
+ * Resolves correctly whether running from src/ (dev) or dist/ (production bundled).
  */
-export const EXTRACTOR_SCRIPT_DIR: string = path.join(__dirname);
+export const EXTRACTOR_SCRIPT_DIR: string = __dirname.includes("dist")
+  ? path.resolve(__dirname, "../src/services/extractor")
+  : __dirname;
 
 // ── OpenRouter model ID ──────────────────────────────────────────────────────
 // Override via environment variable if needed.
