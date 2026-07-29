@@ -132,14 +132,20 @@ export default function TestPage() {
     const loadTestAndAttempt = async () => {
       setLoading(true);
       try {
-        const testResponse = await apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/tests/${testId}`, token);
+        // Starting an attempt only needs testId from the URL, not the test-details
+        // response — the backend independently re-validates the paper (existence,
+        // access, delivery mode) and resumes an existing in-progress attempt rather
+        // than duplicating, so these two calls are safe to run concurrently instead
+        // of one after the other.
+        const [testResponse, startResponse] = await Promise.all([
+          apiClient.get<{ success: boolean; data: any; message?: string }>(`/api/v1/tests/${testId}`, token),
+          apiClient.post<{ success: boolean; data: { attempt: { id: string } }; message?: string }>(
+            "/api/v1/attempts",
+            { paper_id: testId, test_mode: requestedTestMode },
+            token
+          ),
+        ]);
         if (!testResponse.success) throw new Error(testResponse.message ?? "Failed to load questions.");
-
-        const startResponse = await apiClient.post<{ success: boolean; data: { attempt: { id: string } }; message?: string }>(
-          "/api/v1/attempts",
-          { paper_id: testId, test_mode: requestedTestMode },
-          token
-        );
         if (!startResponse.success) throw new Error(startResponse.message ?? "Failed to start your test attempt.");
 
         const startedAttemptId = startResponse.data.attempt.id;
