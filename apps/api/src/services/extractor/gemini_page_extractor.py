@@ -40,7 +40,7 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1"
 DEFAULT_MODEL = os.environ.get("GEMINI_MODEL", "google/gemini-2.5-flash")
 DEFAULT_WORKERS = max(1, min(8, int(os.environ.get("GEMINI_PAGE_WORKERS", "4"))))
 DEFAULT_BATCH_SIZE = max(1, int(os.environ.get("GEMINI_PAGE_BATCH_SIZE", str(DEFAULT_WORKERS))))
-MAX_PAGE_OUTPUT_TOKENS = int(os.environ.get("GEMINI_PAGE_MAX_OUTPUT_TOKENS", "12000"))
+MAX_PAGE_OUTPUT_TOKENS = int(os.environ.get("GEMINI_PAGE_MAX_OUTPUT_TOKENS", "16000"))
 PAGE_TIMEOUT_SECONDS = int(os.environ.get("GEMINI_PAGE_TIMEOUT_SECONDS", "120"))
 CONTEXT_CHARS = int(os.environ.get("GEMINI_PAGE_CONTINUITY_CHARS", "2500"))
 
@@ -222,7 +222,16 @@ def extract_page(index: int, pages: list[dict[str, Any]], work_dir: Path, model:
             parsed = parse_json(response.choices[0].message.content or "")
             questions: list[dict[str, Any]] = []
             for question in parsed["questions"]:
-                if not isinstance(question, dict) or not isinstance(question.get("question_number"), int):
+                if not isinstance(question, dict):
+                    continue
+                # Coerce question_number to int — Gemini sometimes returns it as a string
+                qnum = question.get("question_number")
+                if isinstance(qnum, str):
+                    try:
+                        question["question_number"] = int(qnum)
+                    except (ValueError, TypeError):
+                        continue
+                elif not isinstance(qnum, int):
                     continue
                 question["_pages"] = [page_number]
                 question["_page_index"] = index
