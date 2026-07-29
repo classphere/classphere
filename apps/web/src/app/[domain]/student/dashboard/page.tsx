@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/lib/auth-context";
 import { PageWrapper } from "@/components/ui";
@@ -13,12 +14,18 @@ import {
   RiLoader4Line
 } from "@remixicon/react";
 
-import { ScorePerformanceWidget } from "@/components/dashboard/ScorePerformanceWidget";
+// Recharts is a heavy client-only dependency — keep it out of this route's
+// initial bundle and only fetch it once the dashboard actually renders.
+const ScorePerformanceWidget = dynamic(
+  () => import("@/components/dashboard/ScorePerformanceWidget").then((m) => m.ScorePerformanceWidget),
+  { ssr: false, loading: () => <div className="h-72 w-full animate-pulse rounded-2xl bg-b-surface2" /> }
+);
 import { PendingDPPsWidget } from "@/components/dashboard/PendingDPPsWidget";
 import { ActionRequiredWidget } from "@/components/dashboard/ActionRequiredWidget";
 import { LeaderboardWidget } from "@/components/dashboard/LeaderboardWidget";
 import { StudentBatchWidget } from "@/components/dashboard/StudentBatchWidget";
 import { apiClient } from "@/lib/api.client";
+import { scheduleDppReminder } from "@/lib/notifications/local-reminders";
 
 export default function Dashboard() {
   const { user, session } = useAuth();
@@ -43,7 +50,11 @@ export default function Dashboard() {
       apiClient.get("/api/v1/dpps/student", session.access_token),
     ])
       .then(([statsRes, historyRes, dppsRes]) => {
-        if (statsRes.success) setStats(statsRes.data);
+        if (statsRes.success) {
+          setStats(statsRes.data);
+          // Best-effort — no-ops on web / when permission isn't granted.
+          void scheduleDppReminder(statsRes.data?.metrics?.pendingDPPs ?? 0);
+        }
         if (historyRes.success) setHistory(historyRes.data.history || []);
         if (dppsRes.success) setDpps(dppsRes.data.dpps || []);
       })
