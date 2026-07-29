@@ -700,21 +700,6 @@ def main():
         order = {"A": 0, "B": 1, "C": 2, "D": 3}
         q["options"] = sorted(opts, key=lambda o: order.get(o.get("id", ""), 99))
 
-    # ── Deduplicate by question_number (keep first occurrence by page index) ────
-    seen_qnums: dict[int, int] = {}  # question_number -> index in list
-    deduped: list = []
-    for q in questions:
-        qnum = q.get("question_number", 0)
-        if qnum in seen_qnums:
-            print(f"  [dedup] Dropping duplicate Q{qnum} (already seen at index {seen_qnums[qnum]})")
-        else:
-            seen_qnums[qnum] = len(deduped)
-            deduped.append(q)
-    if len(deduped) < len(questions):
-        removed = len(questions) - len(deduped)
-        print(f"  [dedup] Removed {removed} duplicate question(s). {len(deduped)} unique questions remain.")
-    questions[:] = deduped
-
     questions.sort(key=lambda q: q.get("question_number", 0))
 
     # ── Subject + type enforcement ───────────────────────────────────────────
